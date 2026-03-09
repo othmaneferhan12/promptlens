@@ -2,7 +2,13 @@ import Anthropic from '@anthropic-ai/sdk';
 import { Redis } from '@upstash/redis';
 import type { VercelRequest, VercelResponse } from '@vercel/node';
 
-// ── Redis client (lazy — only created if env vars are set) ────────────────────
+const RATE_LIMIT = 10;
+const DAY_SECONDS = 24 * 60 * 60;
+
+// ── In-memory fallback (local dev only) ───────────────────────────────────────
+const memStore = new Map<string, { count: number; expires: number }>();
+
+// ── Redis client ───────────────────────────────────────────────────────────────
 function getRedis(): Redis | null {
   const url = process.env.UPSTASH_REDIS_REST_URL;
   const token = process.env.UPSTASH_REDIS_REST_TOKEN;
@@ -10,32 +16,37 @@ function getRedis(): Redis | null {
   return new Redis({ url, token });
 }
 
-// ── Persistent Redis rate limiter ─────────────────────────────────────────────
+// ── Persistent rate limiter (Redis in prod, memory in local dev) ──────────────
 async function checkRateLimit(ip: string): Promise<{ allowed: boolean; resetTime: number }> {
+  const isProduction = process.env.VERCEL_ENV === 'production' || process.env.VERCEL_ENV === 'preview';
   const redis = getRedis();
-  const LIMIT = 10;
-  const DAY_SECONDS = 24 * 60 * 60;
 
+  // Production without Redis configured → block all to prevent abuse
+  if (!redis && isProduction) {
+    console.error('UPSTASH_REDIS_REST_URL / UPSTASH_REDIS_REST_TOKEN not set in production!');
+    return { allowed: false, resetTime: Date.now() + DAY_SECONDS * 1000 };
+  }
+
+  // Local dev fallback: in-memory
   if (!redis) {
-    // Fallback: allow all if Redis not configured (local dev)
-    return { allowed: true, resetTime: Date.now() + DAY_SECONDS * 1000 };
+    const now = Date.now();
+    const key = `${ip}:${new Date().toISOString().slice(0, 10)}`;
+    const entry = memStore.get(key) ?? { count: 0, expires: now + DAY_SECONDS * 1000 };
+    if (now > entry.expires) { entry.count = 0; entry.expires = now + DAY_SECONDS * 1000; }
+    if (entry.count >= RATE_LIMIT) return { allowed: false, resetTime: entry.expires };
+    entry.count++;
+    memStore.set(key, entry);
+    return { allowed: true, resetTime: entry.expires };
   }
 
-  const key = `rl:${ip}:${new Date().toISOString().slice(0, 10)}`; // e.g. rl:1.2.3.4:2026-03-09
-
-  // Increment and get new count atomically
+  // Redis (production)
+  const key = `rl:${ip}:${new Date().toISOString().slice(0, 10)}`;
   const count = await redis.incr(key);
-
-  // Set TTL on first request of the day (expires at end of day)
-  if (count === 1) {
-    await redis.expire(key, DAY_SECONDS);
-  }
-
+  if (count === 1) await redis.expire(key, DAY_SECONDS);
   const ttl = await redis.ttl(key);
   const resetTime = Date.now() + Math.max(ttl, 0) * 1000;
 
-  if (count > LIMIT) {
-    // Decrement back — we already rejected, don't count this request
+  if (count > RATE_LIMIT) {
     await redis.decr(key);
     return { allowed: false, resetTime };
   }
