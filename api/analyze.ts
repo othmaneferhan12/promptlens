@@ -1,8 +1,47 @@
 import Anthropic from '@anthropic-ai/sdk';
+import { Redis } from '@upstash/redis';
 import type { VercelRequest, VercelResponse } from '@vercel/node';
 
-// ── In-memory rate limiting (resets on cold start — good enough for serverless) ──
-const ipRequestCounts: Map<string, { count: number; resetTime: number }> = new Map();
+// ── Redis client (lazy — only created if env vars are set) ────────────────────
+function getRedis(): Redis | null {
+  const url = process.env.UPSTASH_REDIS_REST_URL;
+  const token = process.env.UPSTASH_REDIS_REST_TOKEN;
+  if (!url || !token) return null;
+  return new Redis({ url, token });
+}
+
+// ── Persistent Redis rate limiter ─────────────────────────────────────────────
+async function checkRateLimit(ip: string): Promise<{ allowed: boolean; resetTime: number }> {
+  const redis = getRedis();
+  const LIMIT = 10;
+  const DAY_SECONDS = 24 * 60 * 60;
+
+  if (!redis) {
+    // Fallback: allow all if Redis not configured (local dev)
+    return { allowed: true, resetTime: Date.now() + DAY_SECONDS * 1000 };
+  }
+
+  const key = `rl:${ip}:${new Date().toISOString().slice(0, 10)}`; // e.g. rl:1.2.3.4:2026-03-09
+
+  // Increment and get new count atomically
+  const count = await redis.incr(key);
+
+  // Set TTL on first request of the day (expires at end of day)
+  if (count === 1) {
+    await redis.expire(key, DAY_SECONDS);
+  }
+
+  const ttl = await redis.ttl(key);
+  const resetTime = Date.now() + Math.max(ttl, 0) * 1000;
+
+  if (count > LIMIT) {
+    // Decrement back — we already rejected, don't count this request
+    await redis.decr(key);
+    return { allowed: false, resetTime };
+  }
+
+  return { allowed: true, resetTime };
+}
 
 // ── Allowed origins ───────────────────────────────────────────────────────────────
 function getAllowedOrigins(): string[] {
@@ -52,31 +91,20 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
     return res.status(403).json({ error: 'Forbidden' });
   }
 
-  // ── SECURITY LAYER 3: IP RATE LIMITING (10 req/day per IP) ───────────────────
+  // ── SECURITY LAYER 3: IP RATE LIMITING (10 req/day per IP — Redis) ──────────
   const ip =
     ((req.headers['x-forwarded-for'] as string) || '').split(',')[0].trim() ||
     req.socket?.remoteAddress ||
     'unknown';
 
-  const now = Date.now();
-  const dayMs = 24 * 60 * 60 * 1000;
-  const ipData = ipRequestCounts.get(ip) ?? { count: 0, resetTime: now + dayMs };
-
-  if (now > ipData.resetTime) {
-    ipData.count = 0;
-    ipData.resetTime = now + dayMs;
-  }
-
-  if (ipData.count >= 10) {
+  const { allowed, resetTime } = await checkRateLimit(ip);
+  if (!allowed) {
     return res.status(429).json({
       error: 'Rate limit exceeded',
       message: 'You have used all 10 free analyses for today. Come back tomorrow!',
-      resetTime: ipData.resetTime,
+      resetTime,
     });
   }
-
-  ipData.count++;
-  ipRequestCounts.set(ip, ipData);
 
   // ── SECURITY LAYER 3: INPUT VALIDATION ───────────────────────────────────────
   const body = req.body as Record<string, unknown>;
