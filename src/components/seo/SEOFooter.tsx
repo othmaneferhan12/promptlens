@@ -1,0 +1,103 @@
+export default function SEOFooter() {
+  return (
+    <footer className="border-t border-[var(--border-subtle)] bg-[var(--bg-card)] mt-8">
+      <div className="mx-auto max-w-5xl px-4 py-12 sm:px-6">
+        {/* Brand + description */}
+        <div className="mb-8">
+          <p className="font-grotesk text-sm font-600 text-[var(--text-primary)] mb-2">
+            ImageTo<span style={{ color: 'var(--accent-lens)' }}>Prompt</span>
+          </p>
+          <p className="font-inter text-sm text-[var(--text-secondary)] leading-relaxed max-w-2xl">
+            ImageToPrompt is a free AI image-to-prompt generator powered by Claude AI vision. Upload any
+            photo and instantly get optimized prompts for Midjourney, Stable Diffusion, Flux, DALL-E
+            3, Adobe Firefly, Leonardo AI, and Ideogram. No login required. 10 free analyses per
+            day.
+          </p>
+        </div>
+
+        <div className="grid grid-cols-1 gap-8 sm:grid-cols-3 mb-8">
+          {/* Navigation */}
+          <div>
+            <p className="font-grotesk text-xs font-600 uppercase tracking-wider text-[var(--text-secondary)] mb-3">
+              Navigation
+            </p>
+            <nav className="flex flex-col gap-2" aria-label="Site sections">
+              {[
+                { href: '#tool', label: 'Image to Prompt Generator' },
+                { href: '#how-it-works', label: 'How It Works' },
+                { href: '#models', label: 'Supported AI Models' },
+                { href: '#examples', label: 'Prompt Examples' },
+                { href: '#faq', label: 'FAQ' },
+              ].map((link) => (
+                <a
+                  key={link.href}
+                  href={link.href}
+                  className="font-inter text-sm text-[var(--text-secondary)] hover:text-[var(--text-primary)] transition-colors"
+                >
+                  {link.label}
+                </a>
+              ))}
+            </nav>
+          </div>
+
+          {/* Models */}
+          <div>
+            <p className="font-grotesk text-xs font-600 uppercase tracking-wider text-[var(--text-secondary)] mb-3">
+              Generate prompts for
+            </p>
+            <nav className="flex flex-col gap-2" aria-label="Supported models">
+              {[
+                { href: '#midjourney', label: 'Midjourney Prompt Generator' },
+                { href: '#stable-diffusion', label: 'Stable Diffusion Prompt Generator' },
+                { href: '#flux', label: 'Flux AI Prompt Generator' },
+                { href: '#dalle3', label: 'DALL-E 3 Prompt Generator' },
+                { href: '#firefly', label: 'Adobe Firefly Prompt Generator' },
+                { href: '#leonardo', label: 'Leonardo AI Prompt Generator' },
+                { href: '#ideogram', label: 'Ideogram Prompt Generator' },
+              ].map((link) => (
+                <a
+                  key={link.href}
+                  href={link.href}
+                  className="font-inter text-sm text-[var(--text-secondary)] hover:text-[var(--text-primary)] transition-colors"
+                >
+                  {link.label}
+                </a>
+              ))}
+            </nav>
+          </div>
+
+          {/* Features */}
+          <div>
+            <p className="font-grotesk text-xs font-600 uppercase tracking-wider text-[var(--text-secondary)] mb-3">
+              Features
+            </p>
+            <ul className="flex flex-col gap-2">
+              {[
+                'Image to prompt conversion',
+                'Negative prompt generation',
+                'Color palette extraction',
+                'Lighting & mood analysis',
+                'Creative remix prompts',
+                'Prompt history (local)',
+                '10 free analyses per day',
+              ].map((f) => (
+                <li key={f} className="font-inter text-sm text-[var(--text-secondary)]">
+                  {f}
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
+
+        <div className="border-t border-[var(--border-subtle)] pt-6 flex flex-col sm:flex-row items-center justify-between gap-3">
+          <p className="font-inter text-xs text-[var(--text-secondary)]/50">
+            ImageToPrompt does not store your images. All analysis is ephemeral and private.
+          </p>
+          <p className="font-mono text-[10px] text-[var(--text-secondary)]/40">
+            100% Free · Powered by Claude Vision · v1.0.0
+          </p>
+        </div>
+      </div>
+    </footer>
+  );
+}

@@ -8,7 +8,11 @@ import AnalysisResult from './components/AnalysisResult';
 import LoadingState from './components/LoadingState';
 import RateLimitModal from './components/RateLimitModal';
 import PromptHistory from './components/PromptHistory';
-import Footer from './components/Footer';
+import HowItWorksSection from './components/seo/HowItWorksSection';
+import ModelsSection from './components/seo/ModelsSection';
+import FAQSection from './components/seo/FAQSection';
+import ExamplesSection from './components/seo/ExamplesSection';
+import SEOFooter from './components/seo/SEOFooter';
 import { useImageAnalysis } from './hooks/useImageAnalysis';
 import { useRateLimit } from './hooks/useRateLimit';
 import { usePromptHistory } from './hooks/usePromptHistory';
@@ -149,7 +153,7 @@ export default function App() {
             {/* Hero */}
             <div className="text-center">
               <h1 className="font-grotesk text-4xl font-700 text-[var(--text-primary)] sm:text-5xl">
-                AI Prompt
+                Image To
                 <span
                   className="ml-2"
                   style={{
@@ -158,7 +162,7 @@ export default function App() {
                     WebkitTextFillColor: 'transparent',
                   }}
                 >
-                  Engineer
+                  Prompt
                 </span>
               </h1>
               <p className="mt-3 font-inter text-base text-[var(--text-secondary)] max-w-xl mx-auto">
@@ -249,7 +253,11 @@ export default function App() {
         )}
       </main>
 
-      <Footer />
+      <HowItWorksSection />
+      <ModelsSection />
+      <ExamplesSection />
+      <FAQSection />
+      <SEOFooter />
 
       {/* Modals */}
       <AnimatePresence>

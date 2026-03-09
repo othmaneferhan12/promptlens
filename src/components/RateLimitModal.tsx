@@ -12,10 +12,10 @@ export default function RateLimitModal({ onClose, timeUntilReset }: RateLimitMod
   const [subscribed, setSubscribed] = useState(false);
 
   const handleShare = () => {
-    const text = 'Check out PromptLens — free AI image prompt generator! 🎨';
+    const text = 'Check out ImageToPrompt — free AI image prompt generator! 🎨';
     const url = window.location.href;
     if (navigator.share) {
-      navigator.share({ title: 'PromptLens', text, url });
+      navigator.share({ title: 'ImageToPrompt', text, url });
     } else {
       navigator.clipboard.writeText(`${text}\n${url}`);
     }
@@ -112,7 +112,7 @@ export default function RateLimitModal({ onClose, timeUntilReset }: RateLimitMod
               className="flex flex-1 items-center justify-center gap-2 rounded-xl border border-[var(--border-accent)] bg-[var(--accent-lens-dim)] py-2.5 font-grotesk text-sm font-600 text-[var(--accent-lens)] transition-all hover:bg-[var(--accent-lens)] hover:text-black"
             >
               <Share2 size={14} />
-              Share PromptLens
+              Share ImageToPrompt
             </button>
             <button
               onClick={onClose}

@@ -16,7 +16,7 @@ try {
   }
 } catch { /* no .env file */ }
 
-const PORT = 4000;
+const PORT = 4001;
 
 function buildSystemPrompt(model, style) {
   const modelInstructions = {
@@ -76,14 +76,40 @@ Return ONLY this JSON (no markdown fences, no explanations, no extra keys):
 }`;
 }
 
+// IP rate limiting — 10 req/day per IP
+const ipCounts = new Map();
+
 const server = http.createServer((req, res) => {
   res.setHeader('Access-Control-Allow-Origin', '*');
   res.setHeader('Access-Control-Allow-Methods', 'POST, OPTIONS');
-  res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
+  res.setHeader('Access-Control-Allow-Headers', 'Content-Type, X-App-Key');
 
   if (req.method === 'OPTIONS') { res.writeHead(200); res.end(); return; }
 
   if (req.method === 'POST' && req.url === '/api/analyze') {
+    // Secret key check
+    const appSecret = process.env.APP_SECRET;
+    const clientKey = req.headers['x-app-key'];
+    if (appSecret && clientKey !== appSecret) {
+      res.writeHead(403, { 'Content-Type': 'application/json' });
+      res.end(JSON.stringify({ error: 'Forbidden' }));
+      return;
+    }
+
+    // IP rate limiting
+    const ip = (req.headers['x-forwarded-for'] || '').split(',')[0].trim() || req.socket?.remoteAddress || 'unknown';
+    const now = Date.now();
+    const dayMs = 24 * 60 * 60 * 1000;
+    const ipData = ipCounts.get(ip) ?? { count: 0, resetTime: now + dayMs };
+    if (now > ipData.resetTime) { ipData.count = 0; ipData.resetTime = now + dayMs; }
+    if (ipData.count >= 10) {
+      res.writeHead(429, { 'Content-Type': 'application/json' });
+      res.end(JSON.stringify({ error: 'Rate limit exceeded', message: 'You have used all 10 free analyses for today. Come back tomorrow!', resetTime: ipData.resetTime }));
+      return;
+    }
+    ipData.count++;
+    ipCounts.set(ip, ipData);
+
     let body = '';
     req.on('data', chunk => body += chunk);
     req.on('end', async () => {

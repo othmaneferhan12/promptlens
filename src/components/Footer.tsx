@@ -22,7 +22,7 @@ export default function Footer() {
           </div>
         </div>
         <p className="mt-4 text-center font-inter text-[10px] text-[var(--text-secondary)]/40">
-          PromptLens does not store your images. All analysis is ephemeral and private.
+          ImageToPrompt does not store your images. All analysis is ephemeral and private.
         </p>
       </div>
     </footer>

@@ -37,31 +37,38 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
   }
 
   res.setHeader('Access-Control-Allow-Methods', 'POST, OPTIONS');
-  res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
+  res.setHeader('Access-Control-Allow-Headers', 'Content-Type, X-App-Key');
   res.setHeader('Access-Control-Max-Age', '86400');
 
   if (req.method === 'OPTIONS') return res.status(200).end();
   if (req.method !== 'POST') return res.status(405).json({ error: 'Method not allowed' });
 
-  // ── SECURITY LAYER 2: IP RATE LIMITING (10 req/hour per IP) ──────────────────
+  // ── SECURITY LAYER 2: SECRET API KEY CHECK ────────────────────────────────────
+  const appSecret = process.env.APP_SECRET;
+  const clientKey = req.headers['x-app-key'] as string;
+  if (appSecret && clientKey !== appSecret) {
+    return res.status(403).json({ error: 'Forbidden' });
+  }
+
+  // ── SECURITY LAYER 3: IP RATE LIMITING (10 req/day per IP) ───────────────────
   const ip =
     ((req.headers['x-forwarded-for'] as string) || '').split(',')[0].trim() ||
     req.socket?.remoteAddress ||
     'unknown';
 
   const now = Date.now();
-  const hourMs = 60 * 60 * 1000;
-  const ipData = ipRequestCounts.get(ip) ?? { count: 0, resetTime: now + hourMs };
+  const dayMs = 24 * 60 * 60 * 1000;
+  const ipData = ipRequestCounts.get(ip) ?? { count: 0, resetTime: now + dayMs };
 
   if (now > ipData.resetTime) {
     ipData.count = 0;
-    ipData.resetTime = now + hourMs;
+    ipData.resetTime = now + dayMs;
   }
 
   if (ipData.count >= 10) {
     return res.status(429).json({
       error: 'Rate limit exceeded',
-      message: 'You have reached the hourly server limit. Please try again later.',
+      message: 'You have used all 10 free analyses for today. Come back tomorrow!',
       resetTime: ipData.resetTime,
     });
   }

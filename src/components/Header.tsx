@@ -32,23 +32,40 @@ export default function Header({ rateLimit, onHistoryOpen, hasHistory }: HeaderP
             transition={{ duration: 0.4 }}
           >
             <div className="relative flex h-8 w-8 items-center justify-center">
-              <div className="absolute inset-0 rounded-full bg-[var(--accent-lens)] opacity-20 blur-md" />
+              <div className="absolute inset-0 rounded-xl bg-[var(--accent-lens)] opacity-20 blur-md" />
               <svg viewBox="0 0 32 32" className="h-8 w-8" fill="none">
-                <circle cx="16" cy="16" r="10" stroke="#e040fb" strokeWidth="1.5" />
-                <circle cx="16" cy="16" r="6" stroke="#e040fb" strokeWidth="1" opacity="0.6" />
-                <circle cx="16" cy="16" r="2.5" fill="#e040fb" />
-                <line x1="16" y1="2" x2="16" y2="7" stroke="#e040fb" strokeWidth="1.5" strokeLinecap="round" />
-                <line x1="16" y1="25" x2="16" y2="30" stroke="#e040fb" strokeWidth="1.5" strokeLinecap="round" />
-                <line x1="2" y1="16" x2="7" y2="16" stroke="#e040fb" strokeWidth="1.5" strokeLinecap="round" />
-                <line x1="25" y1="16" x2="30" y2="16" stroke="#e040fb" strokeWidth="1.5" strokeLinecap="round" />
+                {/* AI brain / neural node icon */}
+                <rect x="2" y="2" width="28" height="28" rx="8" fill="url(#aigrad)" />
+                {/* Central node */}
+                <circle cx="16" cy="16" r="3.5" fill="#fff" fillOpacity="0.95" />
+                {/* Neural connections */}
+                <circle cx="7" cy="10" r="2" fill="#e040fb" />
+                <circle cx="25" cy="10" r="2" fill="#00e5ff" />
+                <circle cx="7" cy="22" r="2" fill="#00e5ff" />
+                <circle cx="25" cy="22" r="2" fill="#e040fb" />
+                <circle cx="16" cy="5" r="2" fill="#e040fb" fillOpacity="0.8" />
+                <circle cx="16" cy="27" r="2" fill="#00e5ff" fillOpacity="0.8" />
+                {/* Connection lines */}
+                <line x1="16" y1="12.5" x2="16" y2="7" stroke="#e040fb" strokeWidth="1" strokeOpacity="0.6" />
+                <line x1="16" y1="19.5" x2="16" y2="25" stroke="#00e5ff" strokeWidth="1" strokeOpacity="0.6" />
+                <line x1="12.8" y1="14.2" x2="9" y2="11.5" stroke="#e040fb" strokeWidth="1" strokeOpacity="0.6" />
+                <line x1="19.2" y1="14.2" x2="23" y2="11.5" stroke="#00e5ff" strokeWidth="1" strokeOpacity="0.6" />
+                <line x1="12.8" y1="17.8" x2="9" y2="20.5" stroke="#00e5ff" strokeWidth="1" strokeOpacity="0.6" />
+                <line x1="19.2" y1="17.8" x2="23" y2="20.5" stroke="#e040fb" strokeWidth="1" strokeOpacity="0.6" />
+                <defs>
+                  <linearGradient id="aigrad" x1="0" y1="0" x2="32" y2="32" gradientUnits="userSpaceOnUse">
+                    <stop offset="0%" stopColor="#1a0a2e" />
+                    <stop offset="100%" stopColor="#0a1628" />
+                  </linearGradient>
+                </defs>
               </svg>
             </div>
             <div>
               <span className="font-grotesk text-lg font-700 text-[var(--text-primary)] tracking-tight">
-                Prompt<span className="text-[var(--accent-lens)]">Lens</span>
+                ImageTo<span className="text-[var(--accent-lens)]">Prompt</span>
               </span>
               <div className="text-[10px] text-[var(--text-secondary)] font-inter -mt-0.5 hidden sm:block">
-                AI Image Prompt Engineer
+                Free AI Prompt Generator
               </div>
             </div>
           </motion.div>
