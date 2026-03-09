@@ -8,15 +8,22 @@ import AnalysisResult from './components/AnalysisResult';
 import LoadingState from './components/LoadingState';
 import RateLimitModal from './components/RateLimitModal';
 import PromptHistory from './components/PromptHistory';
+import ChangelogPage from './components/ChangelogPage';
+import MetricsSection from './components/seo/MetricsSection';
 import HowItWorksSection from './components/seo/HowItWorksSection';
+import SocialProofSection from './components/seo/SocialProofSection';
 import ModelsSection from './components/seo/ModelsSection';
 import FAQSection from './components/seo/FAQSection';
 import ExamplesSection from './components/seo/ExamplesSection';
+import NewsletterSection from './components/seo/NewsletterSection';
 import SEOFooter from './components/seo/SEOFooter';
 import { useImageAnalysis } from './hooks/useImageAnalysis';
 import { useRateLimit } from './hooks/useRateLimit';
 import { usePromptHistory } from './hooks/usePromptHistory';
 import type { UploadedImage, AIModel, PromptStyle, AnalysisResult as AnalysisResultType, HistoryItem } from './types';
+
+// Detect embed mode
+const isEmbed = new URLSearchParams(window.location.search).get('embed') === 'true';
 
 export default function App() {
   const [currentImage, setCurrentImage] = useState<UploadedImage | null>(null);
@@ -24,71 +31,55 @@ export default function App() {
   const [selectedStyle, setSelectedStyle] = useState<PromptStyle>('cinematic');
   const [showRateLimitModal, setShowRateLimitModal] = useState(false);
   const [showHistory, setShowHistory] = useState(false);
+  const [showChangelog, setShowChangelog] = useState(false);
   const [activeResult, setActiveResult] = useState<AnalysisResultType | null>(null);
 
   const { result, isLoading, error, analyze, reset: resetAnalysis } = useImageAnalysis();
   const rateLimit = useRateLimit();
   const { history, addToHistory, clearHistory, removeItem } = usePromptHistory();
 
-  // Sync result to activeResult
   useEffect(() => {
     if (result) setActiveResult(result);
   }, [result]);
 
-  // Keyboard shortcuts
   useEffect(() => {
     const handleKeyDown = async (e: KeyboardEvent) => {
-      // Ctrl+V paste image
       if (e.ctrlKey && e.key === 'v' && !currentImage) {
         try {
           const items = await navigator.clipboard.read();
           for (const item of items) {
             const imageType = item.types.find((t) => t.startsWith('image/'));
-            if (imageType) {
-              // Let UploadZone handle via its own paste logic — we just focus it
-              break;
-            }
+            if (imageType) break;
           }
         } catch {
           // ignore
         }
       }
-
-      // Ctrl+Enter analyze
       if (e.ctrlKey && e.key === 'Enter') {
-        if (currentImage && !isLoading && !activeResult) {
-          handleAnalyze();
-        }
+        if (currentImage && !isLoading && !activeResult) handleAnalyze();
       }
-
-      // Escape reset
-      if (e.key === 'Escape' && !showHistory && !showRateLimitModal) {
+      if (e.key === 'Escape' && !showHistory && !showRateLimitModal && !showChangelog) {
         handleReset();
       }
     };
-
     window.addEventListener('keydown', handleKeyDown);
     return () => window.removeEventListener('keydown', handleKeyDown);
   // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [currentImage, isLoading, activeResult, showHistory, showRateLimitModal]);
+  }, [currentImage, isLoading, activeResult, showHistory, showRateLimitModal, showChangelog]);
 
   const handleAnalyze = useCallback(async () => {
     if (!currentImage || isLoading) return;
-
     if (!rateLimit.canAnalyze) {
       setShowRateLimitModal(true);
       return;
     }
-
     rateLimit.incrementUsage();
-
     const analysisResult = await analyze({
       base64: currentImage.base64,
       mediaType: currentImage.mediaType,
       model: selectedModel,
       style: selectedStyle,
     });
-
     if (analysisResult) {
       setActiveResult(analysisResult);
       await addToHistory(
@@ -119,10 +110,64 @@ export default function App() {
   const showResult = !!activeResult && !isLoading;
   const showUpload = !activeResult && !isLoading;
 
+  // ── Embed mode ──────────────────────────────────────────────────────────────
+  if (isEmbed) {
+    return (
+      <div className="min-h-screen bg-[var(--bg-void)]">
+        <main className="relative mx-auto max-w-3xl px-4 py-8 sm:px-6" role="main">
+          {showUpload && (
+            <div className="space-y-6">
+              <UploadZone onImageReady={setCurrentImage} onClear={handleReset} currentImage={currentImage} />
+              <ModelSelector selected={selectedModel} onChange={setSelectedModel} />
+              <StyleSelector selected={selectedStyle} onChange={setSelectedStyle} />
+              {error && !isLoading && (
+                <div className="flex items-center gap-3 rounded-xl border border-[var(--error)]/30 bg-[var(--error)]/10 px-4 py-3" role="alert" aria-live="polite">
+                  <span className="text-[var(--error)]" aria-hidden="true">⚠</span>
+                  <p className="font-inter text-sm text-[var(--error)]">{error}</p>
+                </div>
+              )}
+              <div className="flex justify-center">
+                <button
+                  onClick={handleAnalyze}
+                  disabled={!currentImage || isLoading || !rateLimit.canAnalyze}
+                  className="rounded-2xl px-8 py-3 font-grotesk text-base font-700 text-black disabled:opacity-50 disabled:cursor-not-allowed"
+                  style={{ background: 'linear-gradient(135deg, var(--accent-lens), var(--accent-cyan))' }}
+                >
+                  Generate Prompt
+                </button>
+              </div>
+            </div>
+          )}
+          <AnimatePresence>
+            {isLoading && currentImage && <LoadingState previewUrl={currentImage.previewUrl} />}
+          </AnimatePresence>
+          {showResult && activeResult && (
+            <AnalysisResult result={activeResult} model={selectedModel} style={selectedStyle} onReset={handleReset} onRegenerate={handleAnalyze} />
+          )}
+          <p className="mt-8 text-center font-inter text-xs text-[var(--text-secondary)]">
+            Powered by{' '}
+            <a href="https://imagetoprompt.dev" target="_blank" rel="noopener noreferrer" className="text-[var(--accent-lens)] hover:underline">
+              ImageToPrompt.dev
+            </a>
+          </p>
+        </main>
+      </div>
+    );
+  }
+
+  // ── Full app ────────────────────────────────────────────────────────────────
   return (
     <div className="min-h-screen bg-[var(--bg-void)]">
+      {/* Skip nav */}
+      <a
+        href="#tool"
+        className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[100] focus:rounded-lg focus:bg-[var(--accent-lens)] focus:px-4 focus:py-2 focus:font-grotesk focus:text-sm focus:font-700 focus:text-black"
+      >
+        Skip to tool
+      </a>
+
       {/* Animated nebula background */}
-      <div className="pointer-events-none fixed inset-0 overflow-hidden">
+      <div className="pointer-events-none fixed inset-0 overflow-hidden" aria-hidden="true">
         <div
           className="absolute -left-1/4 -top-1/4 h-[800px] w-[800px] animate-nebula rounded-full opacity-[0.07]"
           style={{
@@ -144,13 +189,14 @@ export default function App() {
         rateLimit={rateLimit}
         onHistoryOpen={() => setShowHistory(true)}
         hasHistory={history.length > 0}
+        onChangelogOpen={() => setShowChangelog(true)}
       />
 
-      <main className="relative mx-auto max-w-5xl px-4 py-10 sm:px-6">
-        {/* Upload + config section */}
+      <MetricsSection />
+
+      <main id="tool" className="relative mx-auto max-w-5xl px-4 pb-10 sm:px-6" role="main">
         {showUpload && (
           <div className="space-y-8">
-            {/* Hero */}
             <div className="text-center">
               <h1 className="font-grotesk text-4xl font-700 text-[var(--text-primary)] sm:text-5xl">
                 Image To
@@ -171,28 +217,33 @@ export default function App() {
               </p>
             </div>
 
-            <UploadZone
-              onImageReady={setCurrentImage}
-              onClear={handleReset}
-              currentImage={currentImage}
-            />
-
+            <UploadZone onImageReady={setCurrentImage} onClear={handleReset} currentImage={currentImage} />
             <ModelSelector selected={selectedModel} onChange={setSelectedModel} />
             <StyleSelector selected={selectedStyle} onChange={setSelectedStyle} />
 
-            {/* Error */}
             {error && !isLoading && (
-              <div className="flex items-center gap-3 rounded-xl border border-[var(--error)]/30 bg-[var(--error)]/10 px-4 py-3">
-                <span className="text-[var(--error)]">⚠</span>
+              <div
+                className="flex items-center gap-3 rounded-xl border border-[var(--error)]/30 bg-[var(--error)]/10 px-4 py-3"
+                role="alert"
+                aria-live="polite"
+              >
+                <span className="text-[var(--error)]" aria-hidden="true">⚠</span>
                 <p className="font-inter text-sm text-[var(--error)]">{error}</p>
               </div>
             )}
 
-            {/* Analyze button */}
             <div className="flex justify-center">
               <button
                 onClick={handleAnalyze}
                 disabled={!currentImage || isLoading || !rateLimit.canAnalyze}
+                aria-disabled={!currentImage || isLoading || !rateLimit.canAnalyze}
+                aria-label={
+                  !currentImage
+                    ? 'Upload an image first to generate a prompt'
+                    : !rateLimit.canAnalyze
+                    ? 'Daily analysis limit reached'
+                    : 'Generate prompt from image'
+                }
                 className="group relative overflow-hidden rounded-2xl px-10 py-4 font-grotesk text-lg font-700 text-black transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
                 style={{
                   background: 'linear-gradient(135deg, var(--accent-lens), var(--accent-cyan))',
@@ -200,37 +251,31 @@ export default function App() {
                 }}
               >
                 <span className="relative z-10 flex items-center gap-2">
-                  <span>✦</span>
+                  <span aria-hidden="true">✦</span>
                   {!currentImage
                     ? 'Upload an image first'
                     : !rateLimit.canAnalyze
                     ? 'Daily limit reached'
                     : 'Generate Prompt'}
-                  <span className="font-mono text-sm opacity-60">Ctrl+↵</span>
+                  <span className="font-mono text-sm opacity-60" aria-hidden="true">Ctrl+↵</span>
                 </span>
-                {/* Shimmer effect */}
-                <div className="absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-white/20 to-transparent transition-transform duration-700 group-hover:translate-x-full" />
+                <div className="absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-white/20 to-transparent transition-transform duration-700 group-hover:translate-x-full" aria-hidden="true" />
               </button>
             </div>
           </div>
         )}
 
-        {/* Loading State */}
         <AnimatePresence>
-          {isLoading && currentImage && (
-            <LoadingState previewUrl={currentImage.previewUrl} />
-          )}
+          {isLoading && currentImage && <LoadingState previewUrl={currentImage.previewUrl} />}
         </AnimatePresence>
 
-        {/* Result */}
         {showResult && activeResult && (
-          <div className="space-y-8">
-            {/* Image preview strip */}
+          <div className="space-y-8" aria-live="polite" aria-label="Analysis result ready">
             <div className="flex items-center gap-4 rounded-2xl border border-[var(--border-subtle)] bg-[var(--bg-card)] p-4">
               {currentImage && (
                 <img
                   src={currentImage.previewUrl}
-                  alt=""
+                  alt={`Preview of uploaded image: ${currentImage.name}`}
                   className="h-16 w-16 rounded-xl object-cover border border-[var(--border-subtle)]"
                 />
               )}
@@ -253,13 +298,17 @@ export default function App() {
         )}
       </main>
 
-      <HowItWorksSection />
-      <ModelsSection />
-      <ExamplesSection />
-      <FAQSection />
+      <div role="complementary" aria-label="More information">
+        <HowItWorksSection />
+        <SocialProofSection />
+        <ModelsSection />
+        <ExamplesSection />
+        <FAQSection />
+        <NewsletterSection />
+      </div>
+
       <SEOFooter />
 
-      {/* Modals */}
       <AnimatePresence>
         {showRateLimitModal && (
           <RateLimitModal
@@ -276,6 +325,11 @@ export default function App() {
         onRestore={handleRestoreFromHistory}
         onClear={clearHistory}
         onRemove={removeItem}
+      />
+
+      <ChangelogPage
+        isOpen={showChangelog}
+        onClose={() => setShowChangelog(false)}
       />
     </div>
   );

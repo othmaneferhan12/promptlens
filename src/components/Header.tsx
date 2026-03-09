@@ -8,6 +8,7 @@ interface HeaderProps {
   rateLimit: RateLimitState;
   onHistoryOpen: () => void;
   hasHistory: boolean;
+  onChangelogOpen: () => void;
 }
 
 const SHORTCUTS = [
@@ -17,7 +18,7 @@ const SHORTCUTS = [
   { keys: ['?'], description: 'Show this shortcuts panel' },
 ];
 
-export default function Header({ rateLimit, onHistoryOpen, hasHistory }: HeaderProps) {
+export default function Header({ rateLimit, onHistoryOpen, hasHistory, onChangelogOpen }: HeaderProps) {
   const [showShortcuts, setShowShortcuts] = useState(false);
 
   return (
@@ -34,18 +35,14 @@ export default function Header({ rateLimit, onHistoryOpen, hasHistory }: HeaderP
             <div className="relative flex h-8 w-8 items-center justify-center">
               <div className="absolute inset-0 rounded-xl bg-[var(--accent-lens)] opacity-20 blur-md" />
               <svg viewBox="0 0 32 32" className="h-8 w-8" fill="none">
-                {/* AI brain / neural node icon */}
                 <rect x="2" y="2" width="28" height="28" rx="8" fill="url(#aigrad)" />
-                {/* Central node */}
                 <circle cx="16" cy="16" r="3.5" fill="#fff" fillOpacity="0.95" />
-                {/* Neural connections */}
                 <circle cx="7" cy="10" r="2" fill="#e040fb" />
                 <circle cx="25" cy="10" r="2" fill="#00e5ff" />
                 <circle cx="7" cy="22" r="2" fill="#00e5ff" />
                 <circle cx="25" cy="22" r="2" fill="#e040fb" />
                 <circle cx="16" cy="5" r="2" fill="#e040fb" fillOpacity="0.8" />
                 <circle cx="16" cy="27" r="2" fill="#00e5ff" fillOpacity="0.8" />
-                {/* Connection lines */}
                 <line x1="16" y1="12.5" x2="16" y2="7" stroke="#e040fb" strokeWidth="1" strokeOpacity="0.6" />
                 <line x1="16" y1="19.5" x2="16" y2="25" stroke="#00e5ff" strokeWidth="1" strokeOpacity="0.6" />
                 <line x1="12.8" y1="14.2" x2="9" y2="11.5" stroke="#e040fb" strokeWidth="1" strokeOpacity="0.6" />
@@ -72,17 +69,30 @@ export default function Header({ rateLimit, onHistoryOpen, hasHistory }: HeaderP
 
           {/* Right side actions */}
           <motion.div
-            className="flex items-center gap-3"
+            className="flex items-center gap-2"
             initial={{ opacity: 0, x: 20 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.4 }}
           >
             <UsageCounter rateLimit={rateLimit} />
 
+            {/* What's New pill */}
+            <button
+              onClick={onChangelogOpen}
+              aria-label="What's new — open changelog"
+              className="hidden sm:flex items-center gap-1.5 rounded-full border border-[var(--border-subtle)] px-3 py-1 font-inter text-xs text-[var(--text-secondary)] transition-all duration-200 hover:border-[var(--accent-lens)] hover:text-[var(--accent-lens)]"
+            >
+              <span
+                className="h-1.5 w-1.5 rounded-full"
+                style={{ background: 'var(--accent-lens)' }}
+              />
+              v1.2
+            </button>
+
             <button
               onClick={() => setShowShortcuts(true)}
+              aria-label="Keyboard shortcuts"
               className="flex h-8 w-8 items-center justify-center rounded-lg border border-[var(--border-subtle)] text-[var(--text-secondary)] transition-all duration-200 hover:border-[var(--border-accent)] hover:text-[var(--accent-lens)]"
-              title="Keyboard shortcuts"
             >
               <Keyboard size={15} />
             </button>
@@ -90,6 +100,7 @@ export default function Header({ rateLimit, onHistoryOpen, hasHistory }: HeaderP
             {hasHistory && (
               <button
                 onClick={onHistoryOpen}
+                aria-label="Open prompt history"
                 className="flex items-center gap-1.5 rounded-lg border border-[var(--border-subtle)] px-3 py-1.5 text-sm font-inter text-[var(--text-secondary)] transition-all duration-200 hover:border-[var(--border-accent)] hover:text-[var(--text-primary)]"
               >
                 <History size={14} />
@@ -109,6 +120,9 @@ export default function Header({ rateLimit, onHistoryOpen, hasHistory }: HeaderP
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             onClick={() => setShowShortcuts(false)}
+            role="dialog"
+            aria-modal="true"
+            aria-label="Keyboard shortcuts"
           >
             <div className="absolute inset-0 bg-black/60 backdrop-blur-sm" />
             <motion.div
@@ -125,6 +139,7 @@ export default function Header({ rateLimit, onHistoryOpen, hasHistory }: HeaderP
                 </h2>
                 <button
                   onClick={() => setShowShortcuts(false)}
+                  aria-label="Close shortcuts panel"
                   className="flex h-7 w-7 items-center justify-center rounded-lg text-[var(--text-secondary)] hover:text-[var(--text-primary)]"
                 >
                   <X size={16} />
