@@ -9,6 +9,8 @@ function getAllowedOrigins(): string[] {
   const origins: string[] = [
     'http://localhost:5173',
     'http://localhost:3000',
+    'https://imagetoprompt.dev',
+    'https://www.imagetoprompt.dev',
   ];
   // Add deployed Vercel domain if set
   if (process.env.VERCEL_URL) {
@@ -94,10 +96,10 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
     return res.status(400).json({ error: 'Invalid file type. Only JPEG, PNG, WEBP, GIF allowed.' });
   }
 
-  // Validate base64 size (client says ≤2MB → base64 ≤~2.73MB)
+  // Validate base64 size (client says ≤5MB → base64 ≤~6.8MB)
   const estimatedBytes = Math.ceil((imageBase64.length * 3) / 4);
-  if (estimatedBytes > 2.8 * 1024 * 1024) {
-    return res.status(400).json({ error: 'File too large. Maximum size is 2MB.' });
+  if (estimatedBytes > 6.9 * 1024 * 1024) {
+    return res.status(400).json({ error: 'File too large. Maximum size is 5MB.' });
   }
 
   // ── SECURITY LAYER 4: VALIDATE MAGIC BYTES ───────────────────────────────────
