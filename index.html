@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" dir="ltr">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0" />
@@ -7,6 +7,9 @@
     <!-- DNS prefetch for external origins -->
     <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
     <link rel="dns-prefetch" href="https://www.google-analytics.com" />
+
+    <!-- Preload main entry point -->
+    <link rel="modulepreload" href="/src/main.tsx" />
 
     <!-- Primary SEO -->
     <title>Image to Prompt Generator — Free AI Prompts for Midjourney, Flux & More | ImageToPrompt</title>
@@ -103,6 +106,12 @@
     <noscript>
       <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700&family=Inter:wght@400;500&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet" />
     </noscript>
+
+    <!-- Critical CSS: prevent blank white flash before React mounts -->
+    <style>
+      html,body{background-color:#080810;color:#f5f5ff;margin:0;padding:0}
+      #root{min-height:100vh;background-color:#080810}
+    </style>
 
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png" />

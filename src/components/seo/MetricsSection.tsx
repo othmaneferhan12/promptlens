@@ -9,10 +9,11 @@ const METRICS = [
 // ─────────────────────────────────────────────────────────────────────────────
 
 function useCountUp(target: number, duration: number, active: boolean) {
-  const [count, setCount] = useState(0);
+  const [count, setCount] = useState(target);
 
   useEffect(() => {
     if (!active) return;
+    setCount(0);
     let start: number | null = null;
     const step = (timestamp: number) => {
       if (!start) start = timestamp;

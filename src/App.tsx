@@ -310,7 +310,7 @@ export default function App() {
       </main>
 
       <Suspense fallback={null}>
-        <div role="complementary" aria-label="More information">
+        <div role="complementary" aria-label="More information" style={{ contentVisibility: 'auto', containIntrinsicSize: '0 800px' }}>
           <HowItWorksSection />
           <SocialProofSection />
           <ModelsSection />
