@@ -97,7 +97,7 @@ export default function Header({ rateLimit, onHistoryOpen, hasHistory, onChangel
             <button
               onClick={() => setShowShortcuts(true)}
               aria-label="Keyboard shortcuts"
-              className="hidden sm:flex h-10 w-10 items-center justify-center rounded-lg border border-[var(--border-subtle)] text-[var(--text-secondary)] transition-all duration-200 hover:border-[var(--border-accent)] hover:text-[var(--accent-lens)]"
+              className="flex h-8 w-8 items-center justify-center rounded-lg border border-[var(--border-subtle)] text-[var(--text-secondary)] transition-all duration-200 hover:border-[var(--border-accent)] hover:text-[var(--accent-lens)]"
             >
               <Keyboard size={15} />
             </button>
@@ -106,7 +106,7 @@ export default function Header({ rateLimit, onHistoryOpen, hasHistory, onChangel
               <button
                 onClick={onHistoryOpen}
                 aria-label="Open prompt history"
-                className="flex items-center gap-1.5 rounded-lg border border-[var(--border-subtle)] px-3 py-2 text-sm font-inter text-[var(--text-secondary)] transition-all duration-200 hover:border-[var(--border-accent)] hover:text-[var(--text-primary)]"
+                className="flex items-center gap-1.5 rounded-lg border border-[var(--border-subtle)] px-3 py-1.5 text-sm font-inter text-[var(--text-secondary)] transition-all duration-200 hover:border-[var(--border-accent)] hover:text-[var(--text-primary)]"
               >
                 <History size={14} />
                 <span className="hidden sm:inline">History</span>
@@ -145,7 +145,7 @@ export default function Header({ rateLimit, onHistoryOpen, hasHistory, onChangel
                 <button
                   onClick={() => setShowShortcuts(false)}
                   aria-label="Close shortcuts panel"
-                  className="flex h-10 w-10 items-center justify-center rounded-lg text-[var(--text-secondary)] hover:text-[var(--text-primary)]"
+                  className="flex h-7 w-7 items-center justify-center rounded-lg text-[var(--text-secondary)] hover:text-[var(--text-primary)]"
                 >
                   <X size={16} />
                 </button>

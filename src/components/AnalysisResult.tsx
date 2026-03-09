@@ -148,16 +148,14 @@ export default function AnalysisResult({
         <div className="flex items-center gap-2">
           <button
             onClick={handleExport}
-            aria-label="Export prompts as text file"
-            className="flex items-center gap-1.5 rounded-xl border border-[var(--border-subtle)] px-3 py-2.5 font-inter text-xs text-[var(--text-secondary)] transition-all hover:border-[var(--border-accent)] hover:text-[var(--text-primary)]"
+            className="flex items-center gap-1.5 rounded-xl border border-[var(--border-subtle)] px-3 py-2 font-inter text-xs text-[var(--text-secondary)] transition-all hover:border-[var(--border-accent)] hover:text-[var(--text-primary)]"
           >
             <Download size={13} />
             Export
           </button>
           <button
             onClick={onReset}
-            aria-label="Start over with a new image"
-            className="flex items-center gap-1.5 rounded-xl border border-[var(--border-subtle)] px-3 py-2.5 font-inter text-xs text-[var(--text-secondary)] transition-all hover:border-[var(--error)]/50 hover:text-[var(--error)]"
+            className="flex items-center gap-1.5 rounded-xl border border-[var(--border-subtle)] px-3 py-2 font-inter text-xs text-[var(--text-secondary)] transition-all hover:border-[var(--error)]/50 hover:text-[var(--error)]"
           >
             <RotateCcw size={13} />
             New Image
@@ -220,8 +218,7 @@ export default function AnalysisResult({
             <div className="group relative">
               <button
                 onClick={() => navigator.clipboard.writeText(result.negativePrompt)}
-                aria-label="Copy negative prompt"
-                className="flex items-center gap-1 rounded-lg px-3 py-2 font-mono text-xs text-[var(--error)]/70 transition-all hover:text-[var(--error)]"
+                className="flex items-center gap-1 rounded-lg px-2.5 py-1 font-mono text-xs text-[var(--error)]/70 transition-all hover:text-[var(--error)]"
               >
                 Copy
               </button>
@@ -285,8 +282,7 @@ export default function AnalysisResult({
             </div>
             <button
               onClick={() => navigator.clipboard.writeText(result.remixPrompt)}
-              aria-label="Copy remix prompt"
-              className="flex items-center gap-1 rounded-lg px-3 py-2 font-mono text-xs text-[var(--accent-cyan)]/70 transition-all hover:text-[var(--accent-cyan)]"
+              className="flex items-center gap-1 rounded-lg px-2.5 py-1 font-mono text-xs text-[var(--accent-cyan)]/70 transition-all hover:text-[var(--accent-cyan)]"
             >
               Copy
             </button>

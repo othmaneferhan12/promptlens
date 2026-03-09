@@ -1,24 +1,22 @@
-import { useState, useCallback, useEffect, lazy, Suspense } from 'react';
+import { useState, useCallback, useEffect } from 'react';
 import { AnimatePresence } from 'framer-motion';
-// Above-the-fold: load immediately
 import Header from './components/Header';
 import UploadZone from './components/UploadZone';
 import ModelSelector from './components/ModelSelector';
 import StyleSelector from './components/StyleSelector';
 import AnalysisResult from './components/AnalysisResult';
 import LoadingState from './components/LoadingState';
-// Below-the-fold / conditional: lazy load to reduce initial bundle
-const RateLimitModal = lazy(() => import('./components/RateLimitModal'));
-const PromptHistory = lazy(() => import('./components/PromptHistory'));
-const ChangelogPage = lazy(() => import('./components/ChangelogPage'));
-const MetricsSection = lazy(() => import('./components/seo/MetricsSection'));
-const HowItWorksSection = lazy(() => import('./components/seo/HowItWorksSection'));
-const SocialProofSection = lazy(() => import('./components/seo/SocialProofSection'));
-const ModelsSection = lazy(() => import('./components/seo/ModelsSection'));
-const FAQSection = lazy(() => import('./components/seo/FAQSection'));
-const ExamplesSection = lazy(() => import('./components/seo/ExamplesSection'));
-const NewsletterSection = lazy(() => import('./components/seo/NewsletterSection'));
-const SEOFooter = lazy(() => import('./components/seo/SEOFooter'));
+import RateLimitModal from './components/RateLimitModal';
+import PromptHistory from './components/PromptHistory';
+import ChangelogPage from './components/ChangelogPage';
+import MetricsSection from './components/seo/MetricsSection';
+import HowItWorksSection from './components/seo/HowItWorksSection';
+import SocialProofSection from './components/seo/SocialProofSection';
+import ModelsSection from './components/seo/ModelsSection';
+import FAQSection from './components/seo/FAQSection';
+import ExamplesSection from './components/seo/ExamplesSection';
+import NewsletterSection from './components/seo/NewsletterSection';
+import SEOFooter from './components/seo/SEOFooter';
 import { useImageAnalysis } from './hooks/useImageAnalysis';
 import { useRateLimit } from './hooks/useRateLimit';
 import { usePromptHistory } from './hooks/usePromptHistory';
@@ -170,8 +168,8 @@ export default function App() {
         Skip to tool
       </a>
 
-      {/* Animated nebula background — hidden on mobile to avoid GPU load */}
-      <div className="pointer-events-none fixed inset-0 overflow-hidden hidden sm:block" aria-hidden="true">
+      {/* Animated nebula background */}
+      <div className="pointer-events-none fixed inset-0 overflow-hidden" aria-hidden="true">
         <div
           className="absolute -left-1/4 -top-1/4 h-[800px] w-[800px] animate-nebula rounded-full opacity-[0.07]"
           style={{
@@ -197,10 +195,6 @@ export default function App() {
         language={selectedLanguage}
         onLanguageChange={setSelectedLanguage}
       />
-
-      <Suspense fallback={null}>
-        <MetricsSection />
-      </Suspense>
 
       <main id="tool" className="relative mx-auto max-w-5xl px-4 pb-10 sm:px-6" role="main">
         {showUpload && (
@@ -284,9 +278,6 @@ export default function App() {
                 <img
                   src={currentImage.previewUrl}
                   alt={`Preview of uploaded image: ${currentImage.name}`}
-                  width={64}
-                  height={64}
-                  decoding="async"
                   className="h-16 w-16 rounded-xl object-cover border border-[var(--border-subtle)]"
                 />
               )}
@@ -309,45 +300,40 @@ export default function App() {
         )}
       </main>
 
-      <Suspense fallback={null}>
-        <div role="complementary" aria-label="More information" style={{ contentVisibility: 'auto', containIntrinsicSize: '0 800px' }}>
-          <HowItWorksSection />
-          <SocialProofSection />
-          <ModelsSection />
-          <ExamplesSection />
-          <FAQSection />
-          <NewsletterSection />
-        </div>
-      </Suspense>
+      <div role="complementary" aria-label="More information">
+        <HowItWorksSection />
+        <MetricsSection />
+        <SocialProofSection />
+        <ModelsSection />
+        <ExamplesSection />
+        <FAQSection />
+        <NewsletterSection />
+      </div>
 
-      <Suspense fallback={null}>
-        <SEOFooter />
-      </Suspense>
+      <SEOFooter />
 
-      <Suspense fallback={null}>
-        <AnimatePresence>
-          {showRateLimitModal && (
-            <RateLimitModal
-              onClose={() => setShowRateLimitModal(false)}
-              timeUntilReset={rateLimit.timeUntilReset}
-            />
-          )}
-        </AnimatePresence>
+      <AnimatePresence>
+        {showRateLimitModal && (
+          <RateLimitModal
+            onClose={() => setShowRateLimitModal(false)}
+            timeUntilReset={rateLimit.timeUntilReset}
+          />
+        )}
+      </AnimatePresence>
 
-        <PromptHistory
-          isOpen={showHistory}
-          onClose={() => setShowHistory(false)}
-          history={history}
-          onRestore={handleRestoreFromHistory}
-          onClear={clearHistory}
-          onRemove={removeItem}
-        />
+      <PromptHistory
+        isOpen={showHistory}
+        onClose={() => setShowHistory(false)}
+        history={history}
+        onRestore={handleRestoreFromHistory}
+        onClear={clearHistory}
+        onRemove={removeItem}
+      />
 
-        <ChangelogPage
-          isOpen={showChangelog}
-          onClose={() => setShowChangelog(false)}
-        />
-      </Suspense>
+      <ChangelogPage
+        isOpen={showChangelog}
+        onClose={() => setShowChangelog(false)}
+      />
     </div>
   );
 }

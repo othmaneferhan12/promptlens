@@ -1,4 +1,4 @@
-import { useRef } from 'react';
+import { useRef, useState, useEffect } from 'react';
 
 interface Testimonial {
   quote: string;
@@ -61,11 +61,25 @@ function TestimonialCard({ testimonial }: { testimonial: Testimonial }) {
 
 export default function SocialProofSection() {
   const trackRef = useRef<HTMLDivElement>(null);
+  const sectionRef = useRef<HTMLElement>(null);
+  const [inView, setInView] = useState(false);
   // Duplicate for seamless loop
   const items = [...TESTIMONIALS, ...TESTIMONIALS];
 
+  useEffect(() => {
+    const el = sectionRef.current;
+    if (!el) return;
+    const observer = new IntersectionObserver(
+      ([entry]) => { if (entry.isIntersecting) setInView(true); },
+      { threshold: 0.1 }
+    );
+    observer.observe(el);
+    return () => observer.disconnect();
+  }, []);
+
   return (
     <section
+      ref={sectionRef}
       className="py-16 overflow-hidden"
       aria-label="Testimonials"
       role="complementary"
@@ -105,7 +119,7 @@ export default function SocialProofSection() {
         <div
           ref={trackRef}
           className="flex gap-4 w-max"
-          style={{ animation: 'marquee 40s linear infinite' }}
+          style={{ animation: inView ? 'marquee 40s linear infinite' : 'none' }}
         >
           {items.map((t, i) => (
             <TestimonialCard key={i} testimonial={t} />
@@ -117,9 +131,6 @@ export default function SocialProofSection() {
         @keyframes marquee {
           0% { transform: translateX(0); }
           100% { transform: translateX(-50%); }
-        }
-        @media (prefers-reduced-motion: reduce) {
-          [style*="animation: marquee"] { animation: none !important; }
         }
       `}</style>
     </section>

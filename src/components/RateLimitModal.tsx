@@ -46,8 +46,7 @@ export default function RateLimitModal({ onClose, timeUntilReset }: RateLimitMod
           {/* Close */}
           <button
             onClick={onClose}
-            aria-label="Close"
-            className="absolute right-3 top-4 flex h-10 w-10 items-center justify-center rounded-lg text-[var(--text-secondary)] transition-all hover:bg-[var(--bg-card)] hover:text-[var(--text-primary)]"
+            className="absolute right-4 top-5 flex h-7 w-7 items-center justify-center rounded-lg text-[var(--text-secondary)] transition-all hover:bg-[var(--bg-card)] hover:text-[var(--text-primary)]"
           >
             <X size={16} />
           </button>

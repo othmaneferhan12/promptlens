@@ -91,8 +91,7 @@ export default function PromptCard({
             <button
               onClick={handleRegenerate}
               disabled={cooldownSecs > 0}
-              aria-label="Regenerate prompt"
-              className="flex items-center gap-1 rounded-lg px-3 py-2 font-mono text-[10px] text-[var(--text-secondary)] transition-all hover:text-[var(--text-primary)] disabled:opacity-50"
+              className="flex items-center gap-1 rounded-lg px-2 py-1 font-mono text-[10px] text-[var(--text-secondary)] transition-all hover:text-[var(--text-primary)] disabled:opacity-50"
               title="Regenerate (3s cooldown)"
             >
               <motion.div animate={regenerating ? { rotate: 360 } : {}} transition={{ duration: 1, repeat: Infinity, ease: 'linear' }}>
@@ -103,8 +102,7 @@ export default function PromptCard({
           )}
           <button
             onClick={handleCopy}
-            aria-label={copied ? 'Copied' : 'Copy prompt'}
-            className="flex items-center gap-1 rounded-lg px-3 py-2 font-mono text-xs transition-all duration-200 hover:bg-[var(--bg-void)]"
+            className="flex items-center gap-1 rounded-lg px-2.5 py-1 font-mono text-xs transition-all duration-200 hover:bg-[var(--bg-void)]"
             style={{ color: copied ? 'var(--success)' : 'var(--text-secondary)' }}
           >
             <AnimatePresence mode="wait">

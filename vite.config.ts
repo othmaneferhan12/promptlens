@@ -15,20 +15,5 @@ export default defineConfig({
   build: {
     outDir: 'dist',
     sourcemap: false,
-    minify: 'esbuild',
-    esbuild: {
-      drop: ['console', 'debugger'],
-    },
-    chunkSizeWarningLimit: 500,
-    rollupOptions: {
-      output: {
-        manualChunks: {
-          'react-vendor': ['react', 'react-dom'],
-          'framer': ['framer-motion'],
-          'icons': ['lucide-react'],
-          'dropzone': ['react-dropzone'],
-        },
-      },
-    },
   },
 });
