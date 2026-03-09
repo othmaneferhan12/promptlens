@@ -1,5 +1,3 @@
-@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=Fira+Code:wght@400;500&display=swap');
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -39,6 +37,7 @@ html {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-rendering: optimizeLegibility;
+  font-size: 100%; /* 16px base — Google legibility requirement */
 }
 
 body {
@@ -208,4 +207,68 @@ input[type='number']::-webkit-outer-spin-button,
 input[type='number']::-webkit-inner-spin-button {
   -webkit-appearance: none;
   margin: 0;
+}
+
+/* ── Word wrap for all text ─────────────────────────────────── */
+p, h1, h2, h3, h4, h5, h6, li, span, a, td, th {
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+}
+
+/* ── Mobile tap targets (Google: 48×48px min) ───────────────── */
+@media (max-width: 768px) {
+  button,
+  [role='button'],
+  input,
+  select,
+  textarea {
+    min-height: 44px;
+  }
+}
+
+/* ── Mobile typography scaling ──────────────────────────────── */
+@media (max-width: 768px) {
+  body {
+    line-height: 1.6;
+    font-size: 1rem; /* ensure 16px minimum */
+  }
+
+  h1 {
+    font-size: clamp(1.75rem, 7vw, 3rem);
+    line-height: 1.2;
+  }
+
+  h2 {
+    font-size: clamp(1.25rem, 5vw, 2rem);
+    line-height: 1.3;
+  }
+}
+
+/* ── Mobile section spacing ─────────────────────────────────── */
+@media (max-width: 640px) {
+  section {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+}
+
+/* ── Reduced motion: decorative-only animations ─────────────── */
+@media (prefers-reduced-motion: reduce) {
+  .animate-nebula,
+  .drop-zone-idle {
+    animation: none;
+  }
+}
+
+/* Throttle heavy GPU animation on mobile */
+@media (max-width: 768px) {
+  .animate-nebula {
+    animation-duration: 20s;
+  }
+}
+
+/* ── StyleSelector: touch-friendly horizontal scroll ────────── */
+.style-scroll-touch {
+  -webkit-overflow-scrolling: touch;
+  touch-action: pan-x;
 }

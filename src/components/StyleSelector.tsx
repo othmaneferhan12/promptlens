@@ -18,7 +18,7 @@ export default function StyleSelector({ selected, onChange }: StyleSelectorProps
       </h2>
       <div
         ref={scrollRef}
-        className="flex gap-2 overflow-x-auto pb-2 scrollbar-thin"
+        className="flex gap-2 overflow-x-auto pb-2 scrollbar-thin style-scroll-touch"
         style={{ scrollbarWidth: 'thin' }}
       >
         {STYLE_CONFIGS.map((s, index) => {
@@ -32,7 +32,7 @@ export default function StyleSelector({ selected, onChange }: StyleSelectorProps
               transition={{ delay: index * 0.05, duration: 0.3 }}
               whileHover={{ scale: 1.04 }}
               whileTap={{ scale: 0.96 }}
-              className="group flex shrink-0 items-center gap-2 rounded-full border px-4 py-2 transition-all duration-200"
+              className="group flex shrink-0 items-center gap-2 rounded-full border px-4 py-2.5 transition-all duration-200"
               style={{
                 borderColor: isSelected ? 'var(--accent-lens)' : 'var(--border-subtle)',
                 backgroundColor: isSelected ? 'var(--accent-lens-dim)' : 'var(--bg-card)',

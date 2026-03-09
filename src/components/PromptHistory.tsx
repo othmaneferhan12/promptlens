@@ -77,7 +77,8 @@ export default function PromptHistory({
                 )}
                 <button
                   onClick={onClose}
-                  className="flex h-8 w-8 items-center justify-center rounded-lg text-[var(--text-secondary)] transition-all hover:bg-[var(--bg-card)] hover:text-[var(--text-primary)]"
+                  aria-label="Close history"
+                  className="flex h-10 w-10 items-center justify-center rounded-lg text-[var(--text-secondary)] transition-all hover:bg-[var(--bg-card)] hover:text-[var(--text-primary)]"
                 >
                   <X size={16} />
                 </button>
@@ -119,6 +120,10 @@ export default function PromptHistory({
                         <img
                           src={item.thumbnail}
                           alt=""
+                          width={64}
+                          height={64}
+                          loading="lazy"
+                          decoding="async"
                           className="h-full w-full object-cover"
                         />
                       </div>
@@ -148,10 +153,11 @@ export default function PromptHistory({
                         </div>
                       </div>
 
-                      {/* Remove button */}
+                      {/* Remove button — always visible on touch, hover-reveal on desktop */}
                       <button
                         onClick={(e) => { e.stopPropagation(); onRemove(item.id); }}
-                        className="opacity-0 group-hover:opacity-100 flex h-6 w-6 shrink-0 items-center justify-center rounded-lg text-[var(--text-secondary)] transition-all hover:text-[var(--error)]"
+                        aria-label="Remove item"
+                        className="sm:opacity-0 sm:group-hover:opacity-100 flex h-9 w-9 shrink-0 items-center justify-center rounded-lg text-[var(--text-secondary)] transition-all hover:text-[var(--error)]"
                       >
                         <X size={12} />
                       </button>

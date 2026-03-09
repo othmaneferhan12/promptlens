@@ -202,7 +202,8 @@ export default function UploadZone({ onImageReady, onClear, currentImage }: Uplo
         <div className="relative aspect-video max-h-72 overflow-hidden">
           <img
             src={currentImage.previewUrl}
-            alt="Uploaded"
+            alt={`Uploaded image: ${currentImage.name}`}
+            decoding="async"
             className="h-full w-full object-contain bg-[var(--bg-void)]"
           />
           {/* Metadata overlay */}
