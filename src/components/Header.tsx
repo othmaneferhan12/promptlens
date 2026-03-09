@@ -2,13 +2,16 @@ import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { History, Keyboard, X } from 'lucide-react';
 import UsageCounter from './UsageCounter';
-import type { RateLimitState } from '../types';
+import LanguageSelector from './LanguageSelector';
+import type { RateLimitState, SupportedLanguage } from '../types';
 
 interface HeaderProps {
   rateLimit: RateLimitState;
   onHistoryOpen: () => void;
   hasHistory: boolean;
   onChangelogOpen: () => void;
+  language: SupportedLanguage;
+  onLanguageChange: (lang: SupportedLanguage) => void;
 }
 
 const SHORTCUTS = [
@@ -18,7 +21,7 @@ const SHORTCUTS = [
   { keys: ['?'], description: 'Show this shortcuts panel' },
 ];
 
-export default function Header({ rateLimit, onHistoryOpen, hasHistory, onChangelogOpen }: HeaderProps) {
+export default function Header({ rateLimit, onHistoryOpen, hasHistory, onChangelogOpen, language, onLanguageChange }: HeaderProps) {
   const [showShortcuts, setShowShortcuts] = useState(false);
 
   return (
@@ -75,6 +78,8 @@ export default function Header({ rateLimit, onHistoryOpen, hasHistory, onChangel
             transition={{ duration: 0.4 }}
           >
             <UsageCounter rateLimit={rateLimit} />
+
+            <LanguageSelector selected={language} onChange={onLanguageChange} />
 
             {/* What's New pill */}
             <button

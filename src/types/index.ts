@@ -94,3 +94,22 @@ export interface ValidationResult {
 }
 
 export type AppPhase = 'upload' | 'loading' | 'result';
+
+export type SupportedLanguage =
+  | 'en'
+  | 'fr'
+  | 'es'
+  | 'de'
+  | 'pt'
+  | 'ar'
+  | 'ja'
+  | 'zh'
+  | 'it'
+  | 'nl';
+
+export interface LanguageConfig {
+  code: SupportedLanguage;
+  label: string;
+  flag: string;
+  nativeName: string;
+}

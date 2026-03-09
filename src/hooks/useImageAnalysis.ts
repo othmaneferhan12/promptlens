@@ -1,11 +1,12 @@
 import { useState, useCallback } from 'react';
-import type { AnalysisResult, AIModel, PromptStyle } from '../types';
+import type { AnalysisResult, AIModel, PromptStyle, SupportedLanguage } from '../types';
 
 interface AnalysisOptions {
   base64: string;
   mediaType: string;
   model: AIModel;
   style: PromptStyle;
+  language: SupportedLanguage;
 }
 
 interface UseImageAnalysisReturn {
@@ -38,6 +39,7 @@ export function useImageAnalysis(): UseImageAnalysisReturn {
           mediaType: opts.mediaType,
           selectedModel: opts.model,
           selectedStyle: opts.style,
+          selectedLanguage: opts.language,
         }),
       });
 
@@ -56,7 +58,6 @@ export function useImageAnalysis(): UseImageAnalysisReturn {
 
       const data = await response.json() as AnalysisResult;
 
-      // Validate essential fields exist
       if (!data.mainPrompt) {
         throw new Error('Invalid response from server. Please try again.');
       }

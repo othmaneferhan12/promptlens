@@ -14,8 +14,8 @@ const ENTRIES: ChangelogEntry[] = [
     version: 'v1.2',
     date: 'March 2026',
     items: [
+      { type: 'new',      text: 'Multi-language support (10 languages)' },
       { type: 'new',      text: 'Added SEO content sections' },
-      { type: 'new',      text: 'Multi-language support coming soon' },
       { type: 'improved', text: 'Improved prompt accuracy for Flux model' },
       { type: 'improved', text: 'Faster processing (avg 1.8 seconds)' },
     ],

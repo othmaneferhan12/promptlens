@@ -80,7 +80,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
 
   // ── SECURITY LAYER 3: INPUT VALIDATION ───────────────────────────────────────
   const body = req.body as Record<string, unknown>;
-  const { imageBase64, mediaType, selectedModel, selectedStyle } = body;
+  const { imageBase64, mediaType, selectedModel, selectedStyle, selectedLanguage } = body;
 
   if (!imageBase64 || typeof imageBase64 !== 'string') {
     return res.status(400).json({ error: 'Missing or invalid imageBase64 field' });
@@ -149,9 +149,11 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
     'epic',
     'photographic',
   ] as const;
+  const validLanguages = ['en', 'fr', 'es', 'de', 'pt', 'ar', 'ja', 'zh', 'it', 'nl'] as const;
 
   const rawModel = typeof selectedModel === 'string' ? selectedModel.slice(0, 50) : '';
   const rawStyle = typeof selectedStyle === 'string' ? selectedStyle.slice(0, 50) : '';
+  const rawLang = typeof selectedLanguage === 'string' ? selectedLanguage.slice(0, 10) : 'en';
 
   const model = (validModels as readonly string[]).includes(rawModel)
     ? (rawModel as typeof validModels[number])
@@ -159,6 +161,9 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
   const style = (validStyles as readonly string[]).includes(rawStyle)
     ? (rawStyle as typeof validStyles[number])
     : 'cinematic';
+  const language = (validLanguages as readonly string[]).includes(rawLang)
+    ? rawLang
+    : 'en';
 
   // ── CLAUDE API CALL ───────────────────────────────────────────────────────────
   const apiKey = process.env.ANTHROPIC_API_KEY;
@@ -169,7 +174,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
 
   try {
     const client = new Anthropic({ apiKey });
-    const systemPrompt = buildSystemPrompt(model, style);
+    const systemPrompt = buildSystemPrompt(model, style, language);
 
     const response = await client.messages.create({
       model: 'claude-haiku-4-5-20251001',
@@ -256,10 +261,17 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
   }
 }
 
+const LANGUAGE_NAMES: Record<string, string> = {
+  en: 'English', fr: 'French', es: 'Spanish', de: 'German',
+  pt: 'Portuguese', ar: 'Arabic', ja: 'Japanese', zh: 'Chinese (Simplified)',
+  it: 'Italian', nl: 'Dutch',
+};
+
 // ── System Prompt Builder ─────────────────────────────────────────────────────────
 function buildSystemPrompt(
   model: string,
-  style: string
+  style: string,
+  language: string
 ): string {
   const modelInstructions: Record<string, string> = {
     midjourney:
@@ -307,28 +319,33 @@ ${modelInstructions[model] ?? modelInstructions['midjourney']}
 STYLE PREFERENCE: ${style}
 ${styleModifiers[style] ?? styleModifiers['cinematic']}
 
+LANGUAGE: ${LANGUAGE_NAMES[language] ?? 'English'} (${language})
+- Write subject, composition, lighting, mood, style, negativePrompt, remixPrompt in ${LANGUAGE_NAMES[language] ?? 'English'}.
+- "mainPrompt" MUST always be in English — AI image generators require English.
+- qualityTags and styleTags MUST always be in English.
+
 ANALYSIS INSTRUCTIONS:
 1. Analyze the image deeply: subject, composition, lighting, colors, mood, art style, technical details.
 2. Generate a prompt optimized for ${model} that would reproduce this image.
 3. Extract dominant colors as HEX codes.
-4. Generate quality and style tags.
-5. Create a creative "remix" variant that takes creative liberties inspired by the original.
+4. Generate quality and style tags (always in English).
+5. Create a creative "remix" variant inspired by the original.
 
 Return ONLY this JSON (no markdown fences, no explanations, no extra keys):
 {
-  "mainPrompt": "the full optimized generation prompt for ${model}",
-  "negativePrompt": "comma-separated list of elements to exclude for best results",
-  "remixPrompt": "a creative variation that reimagines the image with a twist",
-  "subject": "clear description of the main subject",
-  "composition": "framing, rule of thirds, perspective, depth",
-  "lighting": "light sources, quality, direction, color temperature",
+  "mainPrompt": "the full optimized generation prompt for ${model} — always in English",
+  "negativePrompt": "in ${LANGUAGE_NAMES[language] ?? 'English'}: elements to exclude",
+  "remixPrompt": "in ${LANGUAGE_NAMES[language] ?? 'English'}: creative variation of the image",
+  "subject": "in ${LANGUAGE_NAMES[language] ?? 'English'}: main subject description",
+  "composition": "in ${LANGUAGE_NAMES[language] ?? 'English'}: framing and perspective",
+  "lighting": "in ${LANGUAGE_NAMES[language] ?? 'English'}: light sources and quality",
   "colorPalette": ["#RRGGBB", "#RRGGBB", "#RRGGBB", "#RRGGBB", "#RRGGBB"],
-  "mood": "emotional atmosphere and feeling",
-  "style": "detected art style, medium, technique",
+  "mood": "in ${LANGUAGE_NAMES[language] ?? 'English'}: emotional atmosphere",
+  "style": "in ${LANGUAGE_NAMES[language] ?? 'English'}: detected art style and technique",
   "suggestedAspectRatio": "e.g. 16:9 or 1:1 or 3:4",
   "qualityTags": ["8k", "highly detailed", "sharp focus"],
   "styleTags": ["cinematic", "dramatic", "moody"],
-  "modelSpecificParams": "model-specific syntax additions like --ar 16:9 --v 6.1",
+  "modelSpecificParams": "model-specific syntax like --ar 16:9 --v 6.1",
   "confidence": 92
 }`;
 }

@@ -20,7 +20,7 @@ import SEOFooter from './components/seo/SEOFooter';
 import { useImageAnalysis } from './hooks/useImageAnalysis';
 import { useRateLimit } from './hooks/useRateLimit';
 import { usePromptHistory } from './hooks/usePromptHistory';
-import type { UploadedImage, AIModel, PromptStyle, AnalysisResult as AnalysisResultType, HistoryItem } from './types';
+import type { UploadedImage, AIModel, PromptStyle, SupportedLanguage, AnalysisResult as AnalysisResultType, HistoryItem } from './types';
 
 // Detect embed mode
 const isEmbed = new URLSearchParams(window.location.search).get('embed') === 'true';
@@ -29,6 +29,7 @@ export default function App() {
   const [currentImage, setCurrentImage] = useState<UploadedImage | null>(null);
   const [selectedModel, setSelectedModel] = useState<AIModel>('midjourney');
   const [selectedStyle, setSelectedStyle] = useState<PromptStyle>('cinematic');
+  const [selectedLanguage, setSelectedLanguage] = useState<SupportedLanguage>('en');
   const [showRateLimitModal, setShowRateLimitModal] = useState(false);
   const [showHistory, setShowHistory] = useState(false);
   const [showChangelog, setShowChangelog] = useState(false);
@@ -79,6 +80,7 @@ export default function App() {
       mediaType: currentImage.mediaType,
       model: selectedModel,
       style: selectedStyle,
+      language: selectedLanguage,
     });
     if (analysisResult) {
       setActiveResult(analysisResult);
@@ -190,6 +192,8 @@ export default function App() {
         onHistoryOpen={() => setShowHistory(true)}
         hasHistory={history.length > 0}
         onChangelogOpen={() => setShowChangelog(true)}
+        language={selectedLanguage}
+        onLanguageChange={setSelectedLanguage}
       />
 
       <MetricsSection />
