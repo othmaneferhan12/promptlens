@@ -31,8 +31,8 @@ export default function Header({ rateLimit, onHistoryOpen, hasHistory, onChangel
           {/* Logo */}
           <motion.div
             className="flex items-center gap-2.5"
-            initial={{ opacity: 0, x: -20 }}
-            animate={{ opacity: 1, x: 0 }}
+            initial={{ x: -20 }}
+            animate={{ x: 0 }}
             transition={{ duration: 0.4 }}
           >
             <div className="relative flex h-8 w-8 items-center justify-center">
@@ -73,8 +73,8 @@ export default function Header({ rateLimit, onHistoryOpen, hasHistory, onChangel
           {/* Right side actions */}
           <motion.div
             className="flex items-center gap-2"
-            initial={{ opacity: 0, x: 20 }}
-            animate={{ opacity: 1, x: 0 }}
+            initial={{ x: 20 }}
+            animate={{ x: 0 }}
             transition={{ duration: 0.4 }}
           >
             <UsageCounter rateLimit={rateLimit} />

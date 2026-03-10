@@ -1,4 +1,72 @@
-@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=Fira+Code:wght@400;500&display=swap');
+/* ── Self-hosted fonts (same-origin, no CDN round-trip) ─────── */
+/* Space Grotesk — used for headings / LCP element */
+@font-face {
+  font-family: 'Space Grotesk';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 400;
+  src: url('/fonts/space-grotesk-400.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'Space Grotesk';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 500;
+  src: url('/fonts/space-grotesk-500.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'Space Grotesk';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 600;
+  src: url('/fonts/space-grotesk-600.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'Space Grotesk';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 700;
+  src: url('/fonts/space-grotesk-700.woff2') format('woff2');
+}
+
+/* Inter — used for body text */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 400;
+  src: url('/fonts/inter-400.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 500;
+  src: url('/fonts/inter-500.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 600;
+  src: url('/fonts/inter-600.woff2') format('woff2');
+}
+
+/* Fira Code — used for code panels */
+@font-face {
+  font-family: 'Fira Code';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 400;
+  src: url('/fonts/fira-code-400.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'Fira Code';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 500;
+  src: url('/fonts/fira-code-500.woff2') format('woff2');
+}
 
 @tailwind base;
 @tailwind components;
@@ -136,6 +204,7 @@ body {
 
 .animate-nebula {
   animation: nebula 8s ease-in-out infinite alternate;
+  will-change: transform;
 }
 
 @keyframes shimmer {
@@ -208,4 +277,18 @@ input[type='number']::-webkit-outer-spin-button,
 input[type='number']::-webkit-inner-spin-button {
   -webkit-appearance: none;
   margin: 0;
+}
+
+/* ── Reduced motion ─────────────────────────────────────────── */
+@media (prefers-reduced-motion: reduce) {
+  .animate-nebula,
+  .drop-zone-idle {
+    animation: none;
+  }
+}
+
+/* ── Below-fold content optimization ────────────────────────── */
+[role="complementary"] > * {
+  content-visibility: auto;
+  contain-intrinsic-size: auto 600px;
 }

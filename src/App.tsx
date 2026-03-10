@@ -1,26 +1,27 @@
-import { useState, useCallback, useEffect } from 'react';
-import { AnimatePresence } from 'framer-motion';
+import { useState, useCallback, useEffect, lazy, Suspense } from 'react';
 import Header from './components/Header';
 import UploadZone from './components/UploadZone';
 import ModelSelector from './components/ModelSelector';
 import StyleSelector from './components/StyleSelector';
-import AnalysisResult from './components/AnalysisResult';
-import LoadingState from './components/LoadingState';
-import RateLimitModal from './components/RateLimitModal';
-import PromptHistory from './components/PromptHistory';
-import ChangelogPage from './components/ChangelogPage';
-import MetricsSection from './components/seo/MetricsSection';
-import HowItWorksSection from './components/seo/HowItWorksSection';
-import SocialProofSection from './components/seo/SocialProofSection';
-import ModelsSection from './components/seo/ModelsSection';
-import FAQSection from './components/seo/FAQSection';
-import ExamplesSection from './components/seo/ExamplesSection';
-import NewsletterSection from './components/seo/NewsletterSection';
-import SEOFooter from './components/seo/SEOFooter';
 import { useImageAnalysis } from './hooks/useImageAnalysis';
 import { useRateLimit } from './hooks/useRateLimit';
 import { usePromptHistory } from './hooks/usePromptHistory';
 import type { UploadedImage, AIModel, PromptStyle, SupportedLanguage, AnalysisResult as AnalysisResultType, HistoryItem } from './types';
+
+// Lazy-load framer-motion dependents and modal components
+const AnalysisResult = lazy(() => import('./components/AnalysisResult'));
+const LoadingState = lazy(() => import('./components/LoadingState'));
+const RateLimitModal = lazy(() => import('./components/RateLimitModal'));
+const PromptHistory = lazy(() => import('./components/PromptHistory'));
+const ChangelogPage = lazy(() => import('./components/ChangelogPage'));
+const HowItWorksSection = lazy(() => import('./components/seo/HowItWorksSection'));
+const MetricsSection = lazy(() => import('./components/seo/MetricsSection'));
+const SocialProofSection = lazy(() => import('./components/seo/SocialProofSection'));
+const ModelsSection = lazy(() => import('./components/seo/ModelsSection'));
+const FAQSection = lazy(() => import('./components/seo/FAQSection'));
+const ExamplesSection = lazy(() => import('./components/seo/ExamplesSection'));
+const NewsletterSection = lazy(() => import('./components/seo/NewsletterSection'));
+const SEOFooter = lazy(() => import('./components/seo/SEOFooter'));
 
 // Detect embed mode
 const isEmbed = new URLSearchParams(window.location.search).get('embed') === 'true';
@@ -140,12 +141,14 @@ export default function App() {
               </div>
             </div>
           )}
-          <AnimatePresence>
+          <Suspense fallback={null}>
             {isLoading && currentImage && <LoadingState previewUrl={currentImage.previewUrl} />}
-          </AnimatePresence>
-          {showResult && activeResult && (
-            <AnalysisResult result={activeResult} model={selectedModel} style={selectedStyle} onReset={handleReset} onRegenerate={handleAnalyze} />
-          )}
+          </Suspense>
+          <Suspense fallback={null}>
+            {showResult && activeResult && (
+              <AnalysisResult result={activeResult} model={selectedModel} style={selectedStyle} onReset={handleReset} onRegenerate={handleAnalyze} />
+            )}
+          </Suspense>
           <p className="mt-8 text-center font-inter text-xs text-[var(--text-secondary)]">
             Powered by{' '}
             <a href="https://imagetoprompt.dev" target="_blank" rel="noopener noreferrer" className="text-[var(--accent-lens)] hover:underline">
@@ -267,9 +270,9 @@ export default function App() {
           </div>
         )}
 
-        <AnimatePresence>
+        <Suspense fallback={null}>
           {isLoading && currentImage && <LoadingState previewUrl={currentImage.previewUrl} />}
-        </AnimatePresence>
+        </Suspense>
 
         {showResult && activeResult && (
           <div className="space-y-8" aria-live="polite" aria-label="Analysis result ready">
@@ -300,40 +303,42 @@ export default function App() {
         )}
       </main>
 
-      <div role="complementary" aria-label="More information">
-        <HowItWorksSection />
-        <MetricsSection />
-        <SocialProofSection />
-        <ModelsSection />
-        <ExamplesSection />
-        <FAQSection />
-        <NewsletterSection />
-      </div>
+      <Suspense fallback={null}>
+        <div role="complementary" aria-label="More information">
+          <HowItWorksSection />
+          <MetricsSection />
+          <SocialProofSection />
+          <ModelsSection />
+          <ExamplesSection />
+          <FAQSection />
+          <NewsletterSection />
+        </div>
 
-      <SEOFooter />
+        <SEOFooter />
+      </Suspense>
 
-      <AnimatePresence>
+      <Suspense fallback={null}>
         {showRateLimitModal && (
           <RateLimitModal
             onClose={() => setShowRateLimitModal(false)}
             timeUntilReset={rateLimit.timeUntilReset}
           />
         )}
-      </AnimatePresence>
 
-      <PromptHistory
-        isOpen={showHistory}
-        onClose={() => setShowHistory(false)}
-        history={history}
-        onRestore={handleRestoreFromHistory}
-        onClear={clearHistory}
-        onRemove={removeItem}
-      />
+        <PromptHistory
+          isOpen={showHistory}
+          onClose={() => setShowHistory(false)}
+          history={history}
+          onRestore={handleRestoreFromHistory}
+          onClear={clearHistory}
+          onRemove={removeItem}
+        />
 
-      <ChangelogPage
-        isOpen={showChangelog}
-        onClose={() => setShowChangelog(false)}
-      />
+        <ChangelogPage
+          isOpen={showChangelog}
+          onClose={() => setShowChangelog(false)}
+        />
+      </Suspense>
     </div>
   );
 }

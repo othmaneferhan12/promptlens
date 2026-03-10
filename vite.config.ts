@@ -15,5 +15,18 @@ export default defineConfig({
   build: {
     outDir: 'dist',
     sourcemap: false,
+    minify: 'esbuild',
+    target: 'es2020',
+    cssMinify: true,
+    rollupOptions: {
+      output: {
+        manualChunks: {
+          'react-vendor': ['react', 'react-dom'],
+          'framer': ['framer-motion'],
+          'icons': ['lucide-react'],
+          'dropzone': ['react-dropzone'],
+        },
+      },
+    },
   },
 });
