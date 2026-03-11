@@ -28,6 +28,7 @@ export default function SEOFooter() {
                 { href: '#models', label: 'Supported AI Models' },
                 { href: '#examples', label: 'Prompt Examples' },
                 { href: '#faq', label: 'FAQ' },
+                { href: '/blog/', label: 'Blog & Guides' },
               ].map((link) => (
                 <a
                   key={link.href}

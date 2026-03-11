@@ -15,26 +15,26 @@
     </style>
 
     <!-- Primary SEO -->
-    <title>Image to Prompt Generator — Free AI Prompts for Midjourney, Flux & More | ImageToPrompt</title>
-    <meta name="description" content="Upload any image and get optimized AI prompts for Midjourney, Stable Diffusion, Flux, DALL-E 3, Firefly, Leonardo & Ideogram. Free, no login, 10 analyses/day." />
+    <title>Free Image to Prompt Generator — AI Prompts for Midjourney, Flux, DALL·E & More | ImageToPrompt</title>
+    <meta name="description" content="Convert any image into optimized AI prompts for Midjourney, Stable Diffusion, DALL·E 3, Flux, and more. Free, fast, no sign-up required. Upload an image and get your prompt instantly." />
     <meta name="theme-color" content="#080810" />
     <link rel="canonical" href="https://imagetoprompt.dev/" />
 
     <!-- Open Graph -->
-    <meta property="og:title" content="ImageToPrompt — Free AI Prompt Generator from Any Image" />
-    <meta property="og:description" content="Turn any photo into a perfect AI image prompt in seconds. Supports Midjourney, Stable Diffusion, Flux, DALL-E 3 and more. Free forever." />
-    <meta property="og:url" content="https://imagetoprompt.dev" />
     <meta property="og:type" content="website" />
-    <meta property="og:site_name" content="ImageToPrompt" />
+    <meta property="og:url" content="https://imagetoprompt.dev/" />
+    <meta property="og:title" content="Free Image to Prompt Generator — AI Prompt Tool | ImageToPrompt" />
+    <meta property="og:description" content="Upload any image and get optimized AI prompts for Midjourney, Stable Diffusion, DALL·E 3, Flux, and more — instantly and for free." />
     <meta property="og:image" content="https://imagetoprompt.dev/og-image.png" />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
-    <meta name="twitter:image" content="https://imagetoprompt.dev/og-image.png" />
+    <meta property="og:site_name" content="ImageToPrompt" />
 
-    <!-- Twitter -->
+    <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="ImageToPrompt — Free AI Prompt Generator" />
-    <meta name="twitter:description" content="Upload any image → get perfect AI prompts for Midjourney, Flux, DALL-E 3 and more. Free, no login." />
+    <meta name="twitter:title" content="Free Image to Prompt Generator — AI Prompt Tool" />
+    <meta name="twitter:description" content="Upload any image → get optimized AI prompts for Midjourney, Flux, DALL·E 3 and more. Free, no login." />
+    <meta name="twitter:image" content="https://imagetoprompt.dev/og-image.png" />
 
     <!-- WebApplication Schema -->
     <script type="application/ld+json">
@@ -42,12 +42,14 @@
       "@context": "https://schema.org",
       "@type": "WebApplication",
       "name": "ImageToPrompt",
-      "url": "https://imagetoprompt.dev",
-      "description": "Free AI tool that generates optimized prompts for Midjourney, Stable Diffusion, Flux, DALL-E 3, Adobe Firefly, Leonardo AI, and Ideogram from any uploaded image.",
-      "applicationCategory": "UtilitiesApplication",
-      "operatingSystem": "Web Browser",
+      "url": "https://imagetoprompt.dev/",
+      "description": "Free AI-powered tool that converts any image into optimized text prompts for Midjourney, Stable Diffusion, Flux, DALL-E 3, Adobe Firefly, Leonardo AI, and Ideogram.",
+      "applicationCategory": "DesignApplication",
+      "operatingSystem": "Any",
       "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+      "browserRequirements": "Requires JavaScript. Works in all modern browsers.",
       "featureList": [
+        "Image to prompt conversion",
         "Midjourney prompt generator from image",
         "Stable Diffusion prompt with negative prompts",
         "Flux AI prompt generator",
@@ -86,10 +88,109 @@
     }
     </script>
 
+    <!-- FAQPage Schema (static — also injected dynamically by FAQSection.tsx after React loads) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What is an image to prompt generator?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "An image to prompt generator is an AI tool that analyzes an uploaded image and creates a detailed text prompt you can use to recreate similar images with AI art tools like Midjourney, Stable Diffusion, or DALL-E 3. ImageToPrompt uses Claude AI vision to extract composition, style, lighting, colors, and mood from any image."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How does the image to prompt converter work?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Upload any image, select your target AI model (Midjourney, Stable Diffusion, Flux, DALL-E 3, etc.), and ImageToPrompt sends it to Claude AI vision for analysis. The AI identifies composition, lighting, color palette, style, mood, and subjects, then formats an optimized prompt in the exact syntax your chosen model understands."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is ImageToPrompt free to use?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes, ImageToPrompt is completely free with 10 image analyses per day. No account or credit card required. Your daily limit resets at midnight."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What image formats are supported?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "ImageToPrompt accepts JPG, PNG, WEBP, and GIF images up to 5MB. You can upload via drag and drop, file picker, or paste directly from your clipboard with Ctrl+V."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Which AI art generators work with the generated prompts?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "ImageToPrompt generates prompts optimized for Midjourney, Stable Diffusion (SD 1.5, SDXL, SD 3.5), Flux AI, DALL-E 3, Adobe Firefly, Leonardo AI, and Ideogram. Each model gets a prompt written in its specific syntax."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Do you store my uploaded images?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. Your images are processed in real time and never stored on our servers. The image is sent to Claude AI for analysis and immediately discarded. We only store your prompt history locally in your browser."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I use this for commercial projects?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes, you can use the generated prompts for any purpose including commercial projects. The prompts themselves are not copyrighted. Always verify that the images you generate comply with the terms of service of your chosen AI art generator."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How accurate are the generated prompts?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "ImageToPrompt uses Claude AI vision with a confidence score on every analysis. The AI identifies subject, composition, lighting, color palette, mood, and style, then formats the prompt specifically for your chosen AI model. Results are highly accurate for photographic and AI-generated images."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Do I need to create an account?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No account or sign-up is required. ImageToPrompt works instantly in your browser with no registration needed."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What makes ImageToPrompt different from other tools?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "ImageToPrompt uses Claude AI vision — one of the most accurate vision models available — and generates model-specific prompts with proper syntax for each AI generator. It also includes negative prompts, color palettes, style tags, aspect ratio suggestions, and a creative remix prompt. All completely free."
+          }
+        }
+      ]
+    }
+    </script>
+
+    <!-- Organization Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "ImageToPrompt",
+      "url": "https://imagetoprompt.dev/",
+      "logo": "https://imagetoprompt.dev/favicon.svg"
+    }
+    </script>
+
     <!-- Self-hosted font preloads (same-origin, starts downloading immediately) -->
-    <!-- Space Grotesk 700 is used for the LCP h1 heading -->
     <link rel="preload" as="font" type="font/woff2" crossorigin href="/fonts/space-grotesk-700.woff2" />
-    <!-- Inter 400 is used for body text (FCP) -->
     <link rel="preload" as="font" type="font/woff2" crossorigin href="/fonts/inter-400.woff2" />
 
     <!-- Google Analytics (deferred until after page load) -->
@@ -107,7 +208,7 @@
       });
     </script>
 
-    <!-- DNS prefetch for analytics (loaded after interaction) -->
+    <!-- DNS prefetch for analytics -->
     <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
     <link rel="dns-prefetch" href="https://www.google-analytics.com" />
 
@@ -124,23 +225,314 @@
   <body>
     <div id="root">
       <!--
-        Static pre-render shell — paints the LCP element (h1) before React loads.
-        React will replace this content. Styles exactly match App.tsx hero layout.
+        Static pre-render shell — full page HTML rendered before React loads.
+        Googlebot indexes this content directly on first crawl.
+        React replaces this on mount (no CLS: above-fold layout matches exactly).
         header: sticky, py-3 (24px) + h-8 content (32px) + border = 57px
-        main:   max-w-5xl (64rem), px-4 (1rem) on mobile, no padding-top
+        main:   max-w-5xl (64rem), px-4 on mobile
       -->
-      <div aria-hidden="true" style="min-height:100vh;background:#080810">
-        <div style="height:57px;border-bottom:1px solid rgba(255,255,255,0.06);background:rgba(8,8,16,0.8)"></div>
-        <div style="max-width:64rem;margin:0 auto;padding:0 1rem 2.5rem">
-          <div style="text-align:center">
+      <div style="min-height:100vh;background:#080810;font-family:Inter,system-ui,sans-serif">
+
+        <!-- Header — height matches React header exactly (57px) -->
+        <header style="height:57px;border-bottom:1px solid rgba(255,255,255,0.06);background:rgba(8,8,16,0.8);display:flex;align-items:center;padding:0 1rem">
+          <div style="max-width:80rem;width:100%;margin:0 auto;display:flex;align-items:center;justify-content:space-between">
+            <a href="/" style="text-decoration:none">
+              <span style="font-family:'Space Grotesk',Inter,system-ui,sans-serif;font-size:1.125rem;font-weight:700;color:#f5f5ff">
+                ImageTo<span style="color:#e040fb">Prompt</span>
+              </span>
+            </a>
+            <nav style="display:flex;align-items:center;gap:1rem" aria-label="Main navigation">
+              <a href="/blog/" style="font-size:0.875rem;color:#8888bb;text-decoration:none">Blog</a>
+              <a href="#faq" style="font-size:0.875rem;color:#8888bb;text-decoration:none">FAQ</a>
+              <a href="#how-it-works" style="font-size:0.875rem;color:#8888bb;text-decoration:none">How It Works</a>
+            </nav>
+          </div>
+        </header>
+
+        <!-- Hero — matches React main exactly -->
+        <main id="tool" style="max-width:64rem;margin:0 auto;padding:3rem 1rem 2.5rem" role="main">
+          <div style="text-align:center;margin-bottom:2rem">
             <h1 style="font-family:'Space Grotesk',Inter,system-ui,sans-serif;font-size:2.25rem;line-height:2.5rem;font-weight:700;color:#f5f5ff">
-              Image To<span style="margin-left:0.5rem;background:linear-gradient(135deg,#e040fb,#00e5ff);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text">Prompt</span>
+              Free Image to <span style="margin-left:0.25rem;background:linear-gradient(135deg,#e040fb,#00e5ff);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text">Prompt Generator</span>
             </h1>
-            <p style="margin-top:0.75rem;font-family:Inter,system-ui,sans-serif;font-size:1rem;color:#8888bb;max-width:36rem;margin-left:auto;margin-right:auto;line-height:1.625">
-              Upload any image. Get optimized prompts for Midjourney, Stable Diffusion, DALL·E, Flux, and more — instantly.
+            <p style="margin-top:0.75rem;font-size:1rem;color:#8888bb;max-width:36rem;margin-left:auto;margin-right:auto;line-height:1.625">
+              Upload any image and instantly get optimized AI prompts for Midjourney, Stable Diffusion, DALL·E 3, Flux, and more. 100% free, no sign-up required.
             </p>
           </div>
-        </div>
+          <!-- Upload zone placeholder — React replaces with interactive tool -->
+          <div style="border:2px dashed rgba(255,255,255,0.1);border-radius:1rem;padding:3rem 2rem;text-align:center;color:#8888bb;margin-bottom:2rem" role="presentation">
+            <p style="font-size:1rem">Drag &amp; drop an image, or click to upload</p>
+            <p style="font-size:0.75rem;margin-top:0.5rem">Supports JPG, PNG, WEBP up to 5MB · Paste with Ctrl+V</p>
+          </div>
+        </main>
+
+        <!-- How It Works -->
+        <section id="how-it-works" style="max-width:64rem;margin:0 auto;padding:3rem 1rem" aria-labelledby="hiw-heading">
+          <h2 id="hiw-heading" style="font-family:'Space Grotesk',Inter,system-ui,sans-serif;font-size:1.5rem;font-weight:700;color:#f5f5ff;margin-bottom:0.5rem">How ImageToPrompt Works</h2>
+          <p style="color:#8888bb;font-size:0.875rem;margin-bottom:2.5rem">Turn any image into a ready-to-use AI generation prompt in three steps.</p>
+          <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1.5rem">
+
+            <div style="border:1px solid rgba(255,255,255,0.06);border-radius:1rem;padding:1.5rem;background:#0e0e1a">
+              <div style="display:inline-flex;align-items:center;justify-content:center;width:2rem;height:2rem;border-radius:50%;background:linear-gradient(135deg,#e040fb,#00e5ff);color:#000;font-weight:700;font-size:0.875rem;margin-bottom:0.75rem">1</div>
+              <h3 style="font-family:'Space Grotesk',Inter,system-ui,sans-serif;font-size:1rem;font-weight:600;color:#f5f5ff;margin-bottom:0.5rem">Upload Your Image</h3>
+              <p style="font-size:0.875rem;color:#8888bb;line-height:1.6">Drag and drop any image, paste from clipboard with Ctrl+V, or click to browse. ImageToPrompt accepts JPG, PNG, WEBP, and GIF files up to 5MB. Our AI analyzes your image instantly — no account required.</p>
+            </div>
+
+            <div style="border:1px solid rgba(255,255,255,0.06);border-radius:1rem;padding:1.5rem;background:#0e0e1a">
+              <div style="display:inline-flex;align-items:center;justify-content:center;width:2rem;height:2rem;border-radius:50%;background:linear-gradient(135deg,#e040fb,#00e5ff);color:#000;font-weight:700;font-size:0.875rem;margin-bottom:0.75rem">2</div>
+              <h3 style="font-family:'Space Grotesk',Inter,system-ui,sans-serif;font-size:1rem;font-weight:600;color:#f5f5ff;margin-bottom:0.5rem">Select Your AI Model</h3>
+              <p style="font-size:0.875rem;color:#8888bb;line-height:1.6">Choose from 7 major AI image generators: Midjourney, Stable Diffusion, Flux, DALL-E 3, Adobe Firefly, Leonardo AI, or Ideogram. Each model gets a prompt written specifically in its syntax and style.</p>
+            </div>
+
+            <div style="border:1px solid rgba(255,255,255,0.06);border-radius:1rem;padding:1.5rem;background:#0e0e1a">
+              <div style="display:inline-flex;align-items:center;justify-content:center;width:2rem;height:2rem;border-radius:50%;background:linear-gradient(135deg,#e040fb,#00e5ff);color:#000;font-weight:700;font-size:0.875rem;margin-bottom:0.75rem">3</div>
+              <h3 style="font-family:'Space Grotesk',Inter,system-ui,sans-serif;font-size:1rem;font-weight:600;color:#f5f5ff;margin-bottom:0.5rem">Get Your Perfect Prompt</h3>
+              <p style="font-size:0.875rem;color:#8888bb;line-height:1.6">Powered by Claude AI vision, ImageToPrompt generates a complete prompt including the main description, negative prompt, style tags, color palette, lighting analysis, and model-specific parameters — ready to copy and paste.</p>
+            </div>
+
+          </div>
+        </section>
+
+        <!-- Supported AI Models -->
+        <section id="models" style="max-width:64rem;margin:0 auto;padding:3rem 1rem" aria-labelledby="models-heading">
+          <h2 id="models-heading" style="font-family:'Space Grotesk',Inter,system-ui,sans-serif;font-size:1.5rem;font-weight:700;color:#f5f5ff;margin-bottom:0.5rem">Supported AI Image Models</h2>
+          <p style="color:#8888bb;font-size:0.875rem;margin-bottom:2.5rem">Every model gets a prompt written in its specific syntax — not a generic description.</p>
+          <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1rem">
+
+            <div id="midjourney" style="border:1px solid rgba(255,255,255,0.06);border-radius:1rem;padding:1.25rem;background:#0e0e1a">
+              <h3 style="font-family:'Space Grotesk',Inter,system-ui,sans-serif;font-size:0.9375rem;font-weight:600;color:#e040fb;margin-bottom:0.5rem">Midjourney Prompt Generator</h3>
+              <p style="font-size:0.875rem;color:#8888bb;line-height:1.6">Generate Midjourney prompts from any image instantly. Our AI creates prompts with proper --ar aspect ratio, --v 6.1 version, --style raw parameters and artistic descriptors that Midjourney understands. Perfect for artists wanting to recreate or remix reference images.</p>
+            </div>
+
+            <div id="stable-diffusion" style="border:1px solid rgba(255,255,255,0.06);border-radius:1rem;padding:1.25rem;background:#0e0e1a">
+              <h3 style="font-family:'Space Grotesk',Inter,system-ui,sans-serif;font-size:0.9375rem;font-weight:600;color:#ff7043;margin-bottom:0.5rem">Stable Diffusion Prompt Generator</h3>
+              <p style="font-size:0.875rem;color:#8888bb;line-height:1.6">Create Stable Diffusion prompts with proper (weighted:syntax) formatting. Includes negative prompts optimized for SD models to eliminate unwanted artifacts. Works with SD 1.5, SD XL, and SD 3.5.</p>
+            </div>
+
+            <div id="flux" style="border:1px solid rgba(255,255,255,0.06);border-radius:1rem;padding:1.25rem;background:#0e0e1a">
+              <h3 style="font-family:'Space Grotesk',Inter,system-ui,sans-serif;font-size:0.9375rem;font-weight:600;color:#00e5ff;margin-bottom:0.5rem">Flux AI Prompt Generator</h3>
+              <p style="font-size:0.875rem;color:#8888bb;line-height:1.6">Generate highly detailed Flux AI prompts that maximize the model's photorealistic capabilities. Our prompts include precise lighting, texture, and composition descriptors that Flux responds to best.</p>
+            </div>
+
+            <div id="dalle3" style="border:1px solid rgba(255,255,255,0.06);border-radius:1rem;padding:1.25rem;background:#0e0e1a">
+              <h3 style="font-family:'Space Grotesk',Inter,system-ui,sans-serif;font-size:0.9375rem;font-weight:600;color:#00c853;margin-bottom:0.5rem">DALL-E 3 Prompt Generator</h3>
+              <p style="font-size:0.875rem;color:#8888bb;line-height:1.6">Convert any image into natural language DALL-E 3 prompts. We format prompts as descriptive sentences that OpenAI's model interprets accurately, preserving style, mood, and composition.</p>
+            </div>
+
+            <div id="firefly" style="border:1px solid rgba(255,255,255,0.06);border-radius:1rem;padding:1.25rem;background:#0e0e1a">
+              <h3 style="font-family:'Space Grotesk',Inter,system-ui,sans-serif;font-size:0.9375rem;font-weight:600;color:#ff6d00;margin-bottom:0.5rem">Adobe Firefly Prompt Generator</h3>
+              <p style="font-size:0.875rem;color:#8888bb;line-height:1.6">Generate commercially safe Adobe Firefly prompts from reference images. Our prompts avoid copyrighted styles and use Firefly-compatible language perfect for professional and commercial use.</p>
+            </div>
+
+            <div id="leonardo" style="border:1px solid rgba(255,255,255,0.06);border-radius:1rem;padding:1.25rem;background:#0e0e1a">
+              <h3 style="font-family:'Space Grotesk',Inter,system-ui,sans-serif;font-size:0.9375rem;font-weight:600;color:#ffd600;margin-bottom:0.5rem">Leonardo AI Prompt Generator</h3>
+              <p style="font-size:0.875rem;color:#8888bb;line-height:1.6">Create Leonardo AI prompts optimized for game art, fantasy scenes, and character design. Our AI extracts artistic style elements and translates them into Leonardo-specific vocabulary.</p>
+            </div>
+
+            <div id="ideogram" style="border:1px solid rgba(255,255,255,0.06);border-radius:1rem;padding:1.25rem;background:#0e0e1a">
+              <h3 style="font-family:'Space Grotesk',Inter,system-ui,sans-serif;font-size:0.9375rem;font-weight:600;color:#7c4dff;margin-bottom:0.5rem">Ideogram Prompt Generator</h3>
+              <p style="font-size:0.875rem;color:#8888bb;line-height:1.6">Generate Ideogram prompts that preserve text elements, typography style, and graphic design components from your reference image. Ideal for designers working with text-in-image generation.</p>
+            </div>
+
+          </div>
+        </section>
+
+        <!-- Why Use ImageToPrompt -->
+        <section style="max-width:64rem;margin:0 auto;padding:3rem 1rem" aria-labelledby="why-heading">
+          <h2 id="why-heading" style="font-family:'Space Grotesk',Inter,system-ui,sans-serif;font-size:1.5rem;font-weight:700;color:#f5f5ff;margin-bottom:0.5rem">Why Use ImageToPrompt?</h2>
+          <p style="color:#8888bb;font-size:0.875rem;margin-bottom:2.5rem">The fastest way to go from any image to an AI-ready prompt.</p>
+          <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1rem">
+
+            <div style="border:1px solid rgba(255,255,255,0.06);border-radius:1rem;padding:1.25rem;background:#0e0e1a">
+              <h3 style="font-family:'Space Grotesk',Inter,system-ui,sans-serif;font-size:0.9375rem;font-weight:600;color:#f5f5ff;margin-bottom:0.5rem">Reverse Engineer Any AI Art</h3>
+              <p style="font-size:0.875rem;color:#8888bb;line-height:1.6">Saw an AI image you love? Upload it and extract the exact prompt style. Learn how top AI artists craft their prompts by analyzing real examples and recreating them in your chosen tool.</p>
+            </div>
+
+            <div style="border:1px solid rgba(255,255,255,0.06);border-radius:1rem;padding:1.25rem;background:#0e0e1a">
+              <h3 style="font-family:'Space Grotesk',Inter,system-ui,sans-serif;font-size:0.9375rem;font-weight:600;color:#f5f5ff;margin-bottom:0.5rem">Learn Prompt Engineering by Example</h3>
+              <p style="font-size:0.875rem;color:#8888bb;line-height:1.6">Each generated prompt breaks down composition, lighting, style tags, and technical parameters. It's the fastest way to understand how professional AI prompts are structured and why they work.</p>
+            </div>
+
+            <div style="border:1px solid rgba(255,255,255,0.06);border-radius:1rem;padding:1.25rem;background:#0e0e1a">
+              <h3 style="font-family:'Space Grotesk',Inter,system-ui,sans-serif;font-size:0.9375rem;font-weight:600;color:#f5f5ff;margin-bottom:0.5rem">Save Hours of Manual Writing</h3>
+              <p style="font-size:0.875rem;color:#8888bb;line-height:1.6">Instead of spending 30 minutes crafting a Midjourney prompt from scratch, get a detailed, model-specific result in under 10 seconds. Your creative time goes further.</p>
+            </div>
+
+            <div style="border:1px solid rgba(255,255,255,0.06);border-radius:1rem;padding:1.25rem;background:#0e0e1a">
+              <h3 style="font-family:'Space Grotesk',Inter,system-ui,sans-serif;font-size:0.9375rem;font-weight:600;color:#f5f5ff;margin-bottom:0.5rem">Works with Photos, Illustrations &amp; AI Art</h3>
+              <p style="font-size:0.875rem;color:#8888bb;line-height:1.6">Upload real photographs, digital illustrations, scanned artwork, screenshots, or AI-generated images. Claude AI handles all visual styles with high accuracy.</p>
+            </div>
+
+            <div style="border:1px solid rgba(255,255,255,0.06);border-radius:1rem;padding:1.25rem;background:#0e0e1a">
+              <h3 style="font-family:'Space Grotesk',Inter,system-ui,sans-serif;font-size:0.9375rem;font-weight:600;color:#f5f5ff;margin-bottom:0.5rem">No Account or Sign-up Needed</h3>
+              <p style="font-size:0.875rem;color:#8888bb;line-height:1.6">Open the tool and start immediately. No email, no password, no subscription. Your prompt history is stored locally in your browser, never on our servers.</p>
+            </div>
+
+            <div style="border:1px solid rgba(255,255,255,0.06);border-radius:1rem;padding:1.25rem;background:#0e0e1a">
+              <h3 style="font-family:'Space Grotesk',Inter,system-ui,sans-serif;font-size:0.9375rem;font-weight:600;color:#f5f5ff;margin-bottom:0.5rem">100% Free — Always</h3>
+              <p style="font-size:0.875rem;color:#8888bb;line-height:1.6">ImageToPrompt gives you 10 free image analyses every day. No paywalls, no premium tier for basic features. We believe AI tools should be accessible to everyone.</p>
+            </div>
+
+          </div>
+        </section>
+
+        <!-- Use Cases -->
+        <section style="max-width:64rem;margin:0 auto;padding:3rem 1rem" aria-labelledby="usecases-heading">
+          <h2 id="usecases-heading" style="font-family:'Space Grotesk',Inter,system-ui,sans-serif;font-size:1.5rem;font-weight:700;color:#f5f5ff;margin-bottom:0.5rem">Who Uses ImageToPrompt?</h2>
+          <p style="color:#8888bb;font-size:0.875rem;margin-bottom:2.5rem">From beginners to professionals — anyone working with AI image generation benefits from image-to-prompt conversion.</p>
+          <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1rem">
+
+            <div style="border:1px solid rgba(255,255,255,0.06);border-radius:1rem;padding:1.25rem;background:#0e0e1a">
+              <h3 style="font-family:'Space Grotesk',Inter,system-ui,sans-serif;font-size:0.9375rem;font-weight:600;color:#f5f5ff;margin-bottom:0.5rem">AI Artists &amp; Digital Creators</h3>
+              <p style="font-size:0.875rem;color:#8888bb;line-height:1.6">Reverse engineer the style of any reference image you love. Upload a mood board photo and get an instant Midjourney or Stable Diffusion prompt that captures the same atmosphere, lighting, and aesthetic.</p>
+            </div>
+
+            <div style="border:1px solid rgba(255,255,255,0.06);border-radius:1rem;padding:1.25rem;background:#0e0e1a">
+              <h3 style="font-family:'Space Grotesk',Inter,system-ui,sans-serif;font-size:0.9375rem;font-weight:600;color:#f5f5ff;margin-bottom:0.5rem">Graphic Designers &amp; Brand Teams</h3>
+              <p style="font-size:0.875rem;color:#8888bb;line-height:1.6">Convert brand inspiration images into precise prompts for consistent AI-generated visuals. Maintain visual identity across generated content by using style-matched prompts from reference imagery.</p>
+            </div>
+
+            <div style="border:1px solid rgba(255,255,255,0.06);border-radius:1rem;padding:1.25rem;background:#0e0e1a">
+              <h3 style="font-family:'Space Grotesk',Inter,system-ui,sans-serif;font-size:0.9375rem;font-weight:600;color:#f5f5ff;margin-bottom:0.5rem">Content Creators &amp; Social Media</h3>
+              <p style="font-size:0.875rem;color:#8888bb;line-height:1.6">Need consistent AI-generated visuals for your channel or feed? Upload a reference image and generate a reusable prompt style. Scale your content production without losing visual coherence.</p>
+            </div>
+
+            <div style="border:1px solid rgba(255,255,255,0.06);border-radius:1rem;padding:1.25rem;background:#0e0e1a">
+              <h3 style="font-family:'Space Grotesk',Inter,system-ui,sans-serif;font-size:0.9375rem;font-weight:600;color:#f5f5ff;margin-bottom:0.5rem">Educators &amp; Prompt Engineering Students</h3>
+              <p style="font-size:0.875rem;color:#8888bb;line-height:1.6">ImageToPrompt is an ideal teaching tool for understanding how AI image prompts work. Analyze real images to learn how subject, style, lighting, and technical parameters combine in effective prompts.</p>
+            </div>
+
+            <div style="border:1px solid rgba(255,255,255,0.06);border-radius:1rem;padding:1.25rem;background:#0e0e1a">
+              <h3 style="font-family:'Space Grotesk',Inter,system-ui,sans-serif;font-size:0.9375rem;font-weight:600;color:#f5f5ff;margin-bottom:0.5rem">Developers &amp; AI Engineers</h3>
+              <p style="font-size:0.875rem;color:#8888bb;line-height:1.6">Integrate image-to-prompt conversion into your workflows using our free web interface. Useful for building training datasets, testing prompt effectiveness, or prototyping AI art pipelines.</p>
+            </div>
+
+          </div>
+        </section>
+
+        <!-- FAQ -->
+        <section id="faq" style="max-width:64rem;margin:0 auto;padding:3rem 1rem" aria-labelledby="faq-heading">
+          <h2 id="faq-heading" style="font-family:'Space Grotesk',Inter,system-ui,sans-serif;font-size:1.5rem;font-weight:700;color:#f5f5ff;margin-bottom:0.5rem">Frequently Asked Questions</h2>
+          <p style="color:#8888bb;font-size:0.875rem;margin-bottom:2rem">Everything you need to know about generating AI prompts from images.</p>
+          <div style="border:1px solid rgba(255,255,255,0.06);border-radius:1rem;background:#0e0e1a;padding:0 1.5rem">
+
+            <div style="padding:1.25rem 0;border-bottom:1px solid rgba(255,255,255,0.06)">
+              <h3 style="font-family:'Space Grotesk',Inter,system-ui,sans-serif;font-size:0.875rem;font-weight:600;color:#f5f5ff;margin-bottom:0.5rem">What is an image to prompt generator?</h3>
+              <p style="font-size:0.875rem;color:#8888bb;line-height:1.6">An image to prompt generator is an AI tool that analyzes an uploaded image and creates a detailed text prompt you can use to recreate similar images with AI art tools like Midjourney, Stable Diffusion, or DALL-E 3. ImageToPrompt uses Claude AI vision to extract composition, style, lighting, colors, and mood from any image.</p>
+            </div>
+
+            <div style="padding:1.25rem 0;border-bottom:1px solid rgba(255,255,255,0.06)">
+              <h3 style="font-family:'Space Grotesk',Inter,system-ui,sans-serif;font-size:0.875rem;font-weight:600;color:#f5f5ff;margin-bottom:0.5rem">How does the image to prompt converter work?</h3>
+              <p style="font-size:0.875rem;color:#8888bb;line-height:1.6">Upload any image, select your target AI model (Midjourney, Stable Diffusion, Flux, DALL-E 3, etc.), and ImageToPrompt sends it to Claude AI vision for analysis. The AI identifies composition, lighting, color palette, style, mood, and subjects, then formats an optimized prompt in the exact syntax your chosen model understands.</p>
+            </div>
+
+            <div style="padding:1.25rem 0;border-bottom:1px solid rgba(255,255,255,0.06)">
+              <h3 style="font-family:'Space Grotesk',Inter,system-ui,sans-serif;font-size:0.875rem;font-weight:600;color:#f5f5ff;margin-bottom:0.5rem">Is ImageToPrompt free to use?</h3>
+              <p style="font-size:0.875rem;color:#8888bb;line-height:1.6">Yes, ImageToPrompt is completely free with 10 image analyses per day. No account or credit card required. Your daily limit resets at midnight.</p>
+            </div>
+
+            <div style="padding:1.25rem 0;border-bottom:1px solid rgba(255,255,255,0.06)">
+              <h3 style="font-family:'Space Grotesk',Inter,system-ui,sans-serif;font-size:0.875rem;font-weight:600;color:#f5f5ff;margin-bottom:0.5rem">What image formats are supported?</h3>
+              <p style="font-size:0.875rem;color:#8888bb;line-height:1.6">ImageToPrompt accepts JPG, PNG, WEBP, and GIF images up to 5MB. You can upload via drag and drop, file picker, or paste directly from your clipboard with Ctrl+V.</p>
+            </div>
+
+            <div style="padding:1.25rem 0;border-bottom:1px solid rgba(255,255,255,0.06)">
+              <h3 style="font-family:'Space Grotesk',Inter,system-ui,sans-serif;font-size:0.875rem;font-weight:600;color:#f5f5ff;margin-bottom:0.5rem">Which AI art generators work with the generated prompts?</h3>
+              <p style="font-size:0.875rem;color:#8888bb;line-height:1.6">ImageToPrompt generates prompts optimized for Midjourney, Stable Diffusion (SD 1.5, SDXL, SD 3.5), Flux AI, DALL-E 3, Adobe Firefly, Leonardo AI, and Ideogram. Each model gets a prompt written in its specific syntax.</p>
+            </div>
+
+            <div style="padding:1.25rem 0;border-bottom:1px solid rgba(255,255,255,0.06)">
+              <h3 style="font-family:'Space Grotesk',Inter,system-ui,sans-serif;font-size:0.875rem;font-weight:600;color:#f5f5ff;margin-bottom:0.5rem">Do you store my uploaded images?</h3>
+              <p style="font-size:0.875rem;color:#8888bb;line-height:1.6">No. Your images are processed in real time and never stored on our servers. The image is sent to Claude AI for analysis and immediately discarded. We only store your prompt history locally in your browser.</p>
+            </div>
+
+            <div style="padding:1.25rem 0;border-bottom:1px solid rgba(255,255,255,0.06)">
+              <h3 style="font-family:'Space Grotesk',Inter,system-ui,sans-serif;font-size:0.875rem;font-weight:600;color:#f5f5ff;margin-bottom:0.5rem">Can I use this for commercial projects?</h3>
+              <p style="font-size:0.875rem;color:#8888bb;line-height:1.6">Yes, you can use the generated prompts for any purpose including commercial projects. The prompts themselves are not copyrighted. Always verify that images you generate comply with the terms of service of your chosen AI art generator.</p>
+            </div>
+
+            <div style="padding:1.25rem 0;border-bottom:1px solid rgba(255,255,255,0.06)">
+              <h3 style="font-family:'Space Grotesk',Inter,system-ui,sans-serif;font-size:0.875rem;font-weight:600;color:#f5f5ff;margin-bottom:0.5rem">How accurate are the generated prompts?</h3>
+              <p style="font-size:0.875rem;color:#8888bb;line-height:1.6">ImageToPrompt uses Claude AI vision with a confidence score on every analysis. The AI identifies subject, composition, lighting, color palette, mood, and style, then formats the prompt specifically for your chosen AI model. Results are highly accurate for photographic and AI-generated images.</p>
+            </div>
+
+            <div style="padding:1.25rem 0;border-bottom:1px solid rgba(255,255,255,0.06)">
+              <h3 style="font-family:'Space Grotesk',Inter,system-ui,sans-serif;font-size:0.875rem;font-weight:600;color:#f5f5ff;margin-bottom:0.5rem">Do I need to create an account?</h3>
+              <p style="font-size:0.875rem;color:#8888bb;line-height:1.6">No account or sign-up is required. ImageToPrompt works instantly in your browser with no registration needed.</p>
+            </div>
+
+            <div style="padding:1.25rem 0">
+              <h3 style="font-family:'Space Grotesk',Inter,system-ui,sans-serif;font-size:0.875rem;font-weight:600;color:#f5f5ff;margin-bottom:0.5rem">What makes ImageToPrompt different from other tools?</h3>
+              <p style="font-size:0.875rem;color:#8888bb;line-height:1.6">ImageToPrompt uses Claude AI vision — one of the most accurate vision models available — and generates model-specific prompts with proper syntax for each AI generator. It also includes negative prompts, color palettes, style tags, aspect ratio suggestions, and a creative remix prompt. All completely free.</p>
+            </div>
+
+          </div>
+        </section>
+
+        <!-- Blog / Learning Resources -->
+        <section style="max-width:64rem;margin:0 auto;padding:3rem 1rem" aria-labelledby="blog-heading">
+          <h2 id="blog-heading" style="font-family:'Space Grotesk',Inter,system-ui,sans-serif;font-size:1.5rem;font-weight:700;color:#f5f5ff;margin-bottom:0.5rem">AI Prompt Guides &amp; Resources</h2>
+          <p style="color:#8888bb;font-size:0.875rem;margin-bottom:2rem">In-depth guides to help you get more out of AI image generation.</p>
+          <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1rem">
+
+            <a href="/blog/convert-image-to-ai-prompt/" style="text-decoration:none;border:1px solid rgba(255,255,255,0.06);border-radius:1rem;padding:1.25rem;background:#0e0e1a;display:block">
+              <p style="font-size:0.7rem;color:#e040fb;text-transform:uppercase;letter-spacing:0.05em;margin-bottom:0.5rem">Step-by-Step Guide</p>
+              <h3 style="font-family:'Space Grotesk',Inter,system-ui,sans-serif;font-size:0.9375rem;font-weight:600;color:#f5f5ff;margin-bottom:0.5rem;line-height:1.4">How to Convert Any Image to an AI Prompt</h3>
+              <p style="font-size:0.8125rem;color:#8888bb;line-height:1.5">A practical guide to converting images to prompts with tips for better results across all AI models.</p>
+            </a>
+
+            <a href="/blog/reverse-engineer-ai-art-prompts/" style="text-decoration:none;border:1px solid rgba(255,255,255,0.06);border-radius:1rem;padding:1.25rem;background:#0e0e1a;display:block">
+              <p style="font-size:0.7rem;color:#e040fb;text-transform:uppercase;letter-spacing:0.05em;margin-bottom:0.5rem">Tutorial</p>
+              <h3 style="font-family:'Space Grotesk',Inter,system-ui,sans-serif;font-size:0.9375rem;font-weight:600;color:#f5f5ff;margin-bottom:0.5rem;line-height:1.4">How to Reverse Engineer AI Art Prompts</h3>
+              <p style="font-size:0.8125rem;color:#8888bb;line-height:1.5">Techniques professional AI artists use to extract and adapt prompts from existing artwork.</p>
+            </a>
+
+            <a href="/blog/midjourney-prompt-guide-2026/" style="text-decoration:none;border:1px solid rgba(255,255,255,0.06);border-radius:1rem;padding:1.25rem;background:#0e0e1a;display:block">
+              <p style="font-size:0.7rem;color:#e040fb;text-transform:uppercase;letter-spacing:0.05em;margin-bottom:0.5rem">Midjourney Guide</p>
+              <h3 style="font-family:'Space Grotesk',Inter,system-ui,sans-serif;font-size:0.9375rem;font-weight:600;color:#f5f5ff;margin-bottom:0.5rem;line-height:1.4">Midjourney Prompts: Complete Guide for 2026</h3>
+              <p style="font-size:0.8125rem;color:#8888bb;line-height:1.5">Everything you need to know about Midjourney prompt structure, parameters, and techniques.</p>
+            </a>
+
+            <a href="/blog/stable-diffusion-vs-midjourney-vs-dalle3/" style="text-decoration:none;border:1px solid rgba(255,255,255,0.06);border-radius:1rem;padding:1.25rem;background:#0e0e1a;display:block">
+              <p style="font-size:0.7rem;color:#e040fb;text-transform:uppercase;letter-spacing:0.05em;margin-bottom:0.5rem">Comparison</p>
+              <h3 style="font-family:'Space Grotesk',Inter,system-ui,sans-serif;font-size:0.9375rem;font-weight:600;color:#f5f5ff;margin-bottom:0.5rem;line-height:1.4">Stable Diffusion vs Midjourney vs DALL·E 3 vs Flux</h3>
+              <p style="font-size:0.8125rem;color:#8888bb;line-height:1.5">How prompt syntax and style differ across the major AI image generators.</p>
+            </a>
+
+            <a href="/blog/prompt-engineering-for-ai-art/" style="text-decoration:none;border:1px solid rgba(255,255,255,0.06);border-radius:1rem;padding:1.25rem;background:#0e0e1a;display:block">
+              <p style="font-size:0.7rem;color:#e040fb;text-transform:uppercase;letter-spacing:0.05em;margin-bottom:0.5rem">Beginner's Guide</p>
+              <h3 style="font-family:'Space Grotesk',Inter,system-ui,sans-serif;font-size:0.9375rem;font-weight:600;color:#f5f5ff;margin-bottom:0.5rem;line-height:1.4">What Is Prompt Engineering for AI Art?</h3>
+              <p style="font-size:0.8125rem;color:#8888bb;line-height:1.5">Learn the fundamentals of writing effective AI image prompts from scratch.</p>
+            </a>
+
+          </div>
+          <div style="margin-top:1.5rem;text-align:center">
+            <a href="/blog/" style="display:inline-block;padding:0.625rem 1.5rem;border:1px solid rgba(255,255,255,0.15);border-radius:2rem;color:#8888bb;text-decoration:none;font-size:0.875rem">View all articles →</a>
+          </div>
+        </section>
+
+        <!-- Footer -->
+        <footer style="border-top:1px solid rgba(255,255,255,0.06);background:#0e0e1a;margin-top:2rem;padding:3rem 1rem">
+          <div style="max-width:64rem;margin:0 auto">
+            <p style="font-family:'Space Grotesk',Inter,system-ui,sans-serif;font-size:0.875rem;font-weight:600;color:#f5f5ff;margin-bottom:0.5rem">
+              ImageTo<span style="color:#e040fb">Prompt</span>
+            </p>
+            <p style="font-size:0.875rem;color:#8888bb;line-height:1.6;max-width:36rem;margin-bottom:2rem">
+              ImageToPrompt is a free AI image-to-prompt generator powered by Claude AI vision. Upload any photo and instantly get optimized prompts for Midjourney, Stable Diffusion, Flux, DALL-E 3, Adobe Firefly, Leonardo AI, and Ideogram. No login required. 10 free analyses per day.
+            </p>
+            <nav aria-label="Footer navigation" style="display:flex;flex-wrap:wrap;gap:1.5rem;margin-bottom:2rem">
+              <a href="/" style="font-size:0.875rem;color:#8888bb;text-decoration:none">Image to Prompt Generator</a>
+              <a href="#how-it-works" style="font-size:0.875rem;color:#8888bb;text-decoration:none">How It Works</a>
+              <a href="#models" style="font-size:0.875rem;color:#8888bb;text-decoration:none">Supported Models</a>
+              <a href="#faq" style="font-size:0.875rem;color:#8888bb;text-decoration:none">FAQ</a>
+              <a href="/blog/" style="font-size:0.875rem;color:#8888bb;text-decoration:none">Blog</a>
+            </nav>
+            <p style="font-size:0.75rem;color:rgba(136,136,187,0.4)">
+              ImageToPrompt does not store your images. All analysis is ephemeral and private. · Powered by Claude Vision · 100% Free
+            </p>
+          </div>
+        </footer>
+
       </div>
     </div>
     <script type="module" src="/src/main.tsx"></script>

@@ -204,7 +204,7 @@ export default function App() {
           <div className="space-y-8">
             <div className="text-center">
               <h1 className="font-grotesk text-4xl font-700 text-[var(--text-primary)] sm:text-5xl">
-                Image To
+                Free Image to
                 <span
                   className="ml-2"
                   style={{
@@ -213,7 +213,7 @@ export default function App() {
                     WebkitTextFillColor: 'transparent',
                   }}
                 >
-                  Prompt
+                  Prompt Generator
                 </span>
               </h1>
               <p className="mt-3 font-inter text-base text-[var(--text-secondary)] max-w-xl mx-auto">
