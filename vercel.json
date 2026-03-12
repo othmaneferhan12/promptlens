@@ -10,9 +10,17 @@
   },
   "rewrites": [
     { "source": "/api/(.*)", "destination": "/api/$1" },
+    { "source": "/images/(.*)", "destination": "/images/$1" },
+    { "source": "/blog/(.*)", "destination": "/blog/$1" },
     { "source": "/(.*)", "destination": "/index.html" }
   ],
   "headers": [
+    {
+      "source": "/images/(.*)",
+      "headers": [
+        { "key": "Cache-Control", "value": "public, max-age=86400, stale-while-revalidate=3600" }
+      ]
+    },
     {
       "source": "/assets/(.*)",
       "headers": [
