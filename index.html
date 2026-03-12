@@ -88,7 +88,7 @@
     }
     </script>
 
-    <!-- FAQPage Schema (static — also injected dynamically by FAQSection.tsx after React loads) -->
+    <!-- FAQPage Schema -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -96,31 +96,39 @@
       "mainEntity": [
         {
           "@type": "Question",
-          "name": "What is an image to prompt generator?",
+          "name": "What is ImageToPrompt?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "An image to prompt generator is an AI tool that analyzes an uploaded image and creates a detailed text prompt you can use to recreate similar images with AI art tools like Midjourney, Stable Diffusion, or DALL-E 3. ImageToPrompt uses Claude AI vision to extract composition, style, lighting, colors, and mood from any image."
+            "text": "ImageToPrompt is a free AI-powered tool that analyzes any image you upload and generates optimized text prompts for AI image generators including Midjourney, Stable Diffusion, Flux, DALL-E 3, Adobe Firefly, Leonardo AI, and Ideogram. No account or login is required."
           }
         },
         {
           "@type": "Question",
-          "name": "How does the image to prompt converter work?",
+          "name": "How many images can I analyze for free?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Upload any image, select your target AI model (Midjourney, Stable Diffusion, Flux, DALL-E 3, etc.), and ImageToPrompt sends it to Claude AI vision for analysis. The AI identifies composition, lighting, color palette, style, mood, and subjects, then formats an optimized prompt in the exact syntax your chosen model understands."
+            "text": "ImageToPrompt is completely free with 10 analyses per day. Your daily limit resets at midnight. The usage counter in the top-right corner of the app shows how many analyses you have remaining today."
           }
         },
         {
           "@type": "Question",
-          "name": "Is ImageToPrompt free to use?",
+          "name": "What AI models does ImageToPrompt support?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Yes, ImageToPrompt is completely free with 10 image analyses per day. No account or credit card required. Your daily limit resets at midnight."
+            "text": "ImageToPrompt generates prompts optimized for 7 AI image generators: Midjourney (with --ar and --v 6.1 parameters), Stable Diffusion (with weighted syntax), Flux AI, DALL-E 3, Adobe Firefly, Leonardo AI, and Ideogram. Select your model before generating to get model-specific syntax."
           }
         },
         {
           "@type": "Question",
-          "name": "What image formats are supported?",
+          "name": "What is a negative prompt and why do I need one?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "A negative prompt tells your AI image generator what to exclude from the output. Common examples include blurry, low quality, watermark, and deformed. ImageToPrompt automatically generates a negative prompt alongside your main prompt for every analysis."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What image formats does ImageToPrompt accept?",
           "acceptedAnswer": {
             "@type": "Answer",
             "text": "ImageToPrompt accepts JPG, PNG, WEBP, and GIF images up to 5MB. You can upload via drag and drop, file picker, or paste directly from your clipboard with Ctrl+V."
@@ -128,50 +136,42 @@
         },
         {
           "@type": "Question",
-          "name": "Which AI art generators work with the generated prompts?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "ImageToPrompt generates prompts optimized for Midjourney, Stable Diffusion (SD 1.5, SDXL, SD 3.5), Flux AI, DALL-E 3, Adobe Firefly, Leonardo AI, and Ideogram. Each model gets a prompt written in its specific syntax."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Do you store my uploaded images?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "No. Your images are processed in real time and never stored on our servers. The image is sent to Claude AI for analysis and immediately discarded. We only store your prompt history locally in your browser."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Can I use this for commercial projects?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Yes, you can use the generated prompts for any purpose including commercial projects. The prompts themselves are not copyrighted. Always verify that the images you generate comply with the terms of service of your chosen AI art generator."
-          }
-        },
-        {
-          "@type": "Question",
           "name": "How accurate are the generated prompts?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "ImageToPrompt uses Claude AI vision with a confidence score on every analysis. The AI identifies subject, composition, lighting, color palette, mood, and style, then formats the prompt specifically for your chosen AI model. Results are highly accurate for photographic and AI-generated images."
+            "text": "ImageToPrompt uses Claude AI vision to analyze images, providing a confidence score with every prompt. The AI identifies subject, composition, lighting, color palette, mood, and style, then formats the prompt specifically for your chosen AI model."
           }
         },
         {
           "@type": "Question",
-          "name": "Do I need to create an account?",
+          "name": "Is my uploaded image stored or saved?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "No account or sign-up is required. ImageToPrompt works instantly in your browser with no registration needed."
+            "text": "No. Your images are processed in real time and never stored on our servers. The image is sent directly to Claude AI for analysis and immediately discarded. We only store your prompt history locally in your browser."
           }
         },
         {
           "@type": "Question",
-          "name": "What makes ImageToPrompt different from other tools?",
+          "name": "What is the remix prompt feature?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "ImageToPrompt uses Claude AI vision — one of the most accurate vision models available — and generates model-specific prompts with proper syntax for each AI generator. It also includes negative prompts, color palettes, style tags, aspect ratio suggestions, and a creative remix prompt. All completely free."
+            "text": "Every analysis includes a Creative Remix prompt — an alternative, creatively reimagined version of the main prompt. It keeps the core subject and mood but adds unexpected artistic twists, giving you two distinct creative directions from a single image."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I use ImageToPrompt on mobile?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. ImageToPrompt is fully responsive and works on all screen sizes from mobile phones to widescreen monitors. You can upload images directly from your phone camera roll."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What prompt styles are available?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "ImageToPrompt offers 6 style modes: Cinematic (dramatic film-grade), Technical (hyper-realistic precision), Artistic (painterly and stylized), Minimal (clean and essence-focused), Epic (grand atmospheric scale), and Photographic (camera specs and lens language)."
           }
         }
       ]
@@ -417,53 +417,53 @@
           <div style="border:1px solid rgba(255,255,255,0.06);border-radius:1rem;background:#0e0e1a;padding:0 1.5rem">
 
             <div style="padding:1.25rem 0;border-bottom:1px solid rgba(255,255,255,0.06)">
-              <h3 style="font-family:'Space Grotesk',Inter,system-ui,sans-serif;font-size:0.875rem;font-weight:600;color:#f5f5ff;margin-bottom:0.5rem">What is an image to prompt generator?</h3>
-              <p style="font-size:0.875rem;color:#8888bb;line-height:1.6">An image to prompt generator is an AI tool that analyzes an uploaded image and creates a detailed text prompt you can use to recreate similar images with AI art tools like Midjourney, Stable Diffusion, or DALL-E 3. ImageToPrompt uses Claude AI vision to extract composition, style, lighting, colors, and mood from any image.</p>
+              <h3 style="font-family:'Space Grotesk',Inter,system-ui,sans-serif;font-size:0.875rem;font-weight:600;color:#f5f5ff;margin-bottom:0.5rem">What is ImageToPrompt?</h3>
+              <p style="font-size:0.875rem;color:#8888bb;line-height:1.6">ImageToPrompt is a free AI-powered tool that analyzes any image you upload and generates optimized text prompts for AI image generators including Midjourney, Stable Diffusion, Flux, DALL-E 3, Adobe Firefly, Leonardo AI, and Ideogram. No account or login is required.</p>
             </div>
 
             <div style="padding:1.25rem 0;border-bottom:1px solid rgba(255,255,255,0.06)">
-              <h3 style="font-family:'Space Grotesk',Inter,system-ui,sans-serif;font-size:0.875rem;font-weight:600;color:#f5f5ff;margin-bottom:0.5rem">How does the image to prompt converter work?</h3>
-              <p style="font-size:0.875rem;color:#8888bb;line-height:1.6">Upload any image, select your target AI model (Midjourney, Stable Diffusion, Flux, DALL-E 3, etc.), and ImageToPrompt sends it to Claude AI vision for analysis. The AI identifies composition, lighting, color palette, style, mood, and subjects, then formats an optimized prompt in the exact syntax your chosen model understands.</p>
+              <h3 style="font-family:'Space Grotesk',Inter,system-ui,sans-serif;font-size:0.875rem;font-weight:600;color:#f5f5ff;margin-bottom:0.5rem">How many images can I analyze for free?</h3>
+              <p style="font-size:0.875rem;color:#8888bb;line-height:1.6">ImageToPrompt is completely free with 10 analyses per day. Your daily limit resets at midnight. The usage counter in the top-right corner of the app shows how many analyses you have remaining today.</p>
             </div>
 
             <div style="padding:1.25rem 0;border-bottom:1px solid rgba(255,255,255,0.06)">
-              <h3 style="font-family:'Space Grotesk',Inter,system-ui,sans-serif;font-size:0.875rem;font-weight:600;color:#f5f5ff;margin-bottom:0.5rem">Is ImageToPrompt free to use?</h3>
-              <p style="font-size:0.875rem;color:#8888bb;line-height:1.6">Yes, ImageToPrompt is completely free with 10 image analyses per day. No account or credit card required. Your daily limit resets at midnight.</p>
+              <h3 style="font-family:'Space Grotesk',Inter,system-ui,sans-serif;font-size:0.875rem;font-weight:600;color:#f5f5ff;margin-bottom:0.5rem">What AI models does ImageToPrompt support?</h3>
+              <p style="font-size:0.875rem;color:#8888bb;line-height:1.6">ImageToPrompt generates prompts optimized for 7 AI image generators: Midjourney (with --ar and --v 6.1 parameters), Stable Diffusion (with weighted syntax), Flux AI, DALL-E 3, Adobe Firefly, Leonardo AI, and Ideogram. Select your model before generating to get model-specific syntax.</p>
             </div>
 
             <div style="padding:1.25rem 0;border-bottom:1px solid rgba(255,255,255,0.06)">
-              <h3 style="font-family:'Space Grotesk',Inter,system-ui,sans-serif;font-size:0.875rem;font-weight:600;color:#f5f5ff;margin-bottom:0.5rem">What image formats are supported?</h3>
+              <h3 style="font-family:'Space Grotesk',Inter,system-ui,sans-serif;font-size:0.875rem;font-weight:600;color:#f5f5ff;margin-bottom:0.5rem">What is a negative prompt and why do I need one?</h3>
+              <p style="font-size:0.875rem;color:#8888bb;line-height:1.6">A negative prompt tells your AI image generator what to exclude from the output. Common examples include blurry, low quality, watermark, and deformed. ImageToPrompt automatically generates a negative prompt alongside your main prompt for every analysis.</p>
+            </div>
+
+            <div style="padding:1.25rem 0;border-bottom:1px solid rgba(255,255,255,0.06)">
+              <h3 style="font-family:'Space Grotesk',Inter,system-ui,sans-serif;font-size:0.875rem;font-weight:600;color:#f5f5ff;margin-bottom:0.5rem">What image formats does ImageToPrompt accept?</h3>
               <p style="font-size:0.875rem;color:#8888bb;line-height:1.6">ImageToPrompt accepts JPG, PNG, WEBP, and GIF images up to 5MB. You can upload via drag and drop, file picker, or paste directly from your clipboard with Ctrl+V.</p>
             </div>
 
             <div style="padding:1.25rem 0;border-bottom:1px solid rgba(255,255,255,0.06)">
-              <h3 style="font-family:'Space Grotesk',Inter,system-ui,sans-serif;font-size:0.875rem;font-weight:600;color:#f5f5ff;margin-bottom:0.5rem">Which AI art generators work with the generated prompts?</h3>
-              <p style="font-size:0.875rem;color:#8888bb;line-height:1.6">ImageToPrompt generates prompts optimized for Midjourney, Stable Diffusion (SD 1.5, SDXL, SD 3.5), Flux AI, DALL-E 3, Adobe Firefly, Leonardo AI, and Ideogram. Each model gets a prompt written in its specific syntax.</p>
-            </div>
-
-            <div style="padding:1.25rem 0;border-bottom:1px solid rgba(255,255,255,0.06)">
-              <h3 style="font-family:'Space Grotesk',Inter,system-ui,sans-serif;font-size:0.875rem;font-weight:600;color:#f5f5ff;margin-bottom:0.5rem">Do you store my uploaded images?</h3>
-              <p style="font-size:0.875rem;color:#8888bb;line-height:1.6">No. Your images are processed in real time and never stored on our servers. The image is sent to Claude AI for analysis and immediately discarded. We only store your prompt history locally in your browser.</p>
-            </div>
-
-            <div style="padding:1.25rem 0;border-bottom:1px solid rgba(255,255,255,0.06)">
-              <h3 style="font-family:'Space Grotesk',Inter,system-ui,sans-serif;font-size:0.875rem;font-weight:600;color:#f5f5ff;margin-bottom:0.5rem">Can I use this for commercial projects?</h3>
-              <p style="font-size:0.875rem;color:#8888bb;line-height:1.6">Yes, you can use the generated prompts for any purpose including commercial projects. The prompts themselves are not copyrighted. Always verify that images you generate comply with the terms of service of your chosen AI art generator.</p>
-            </div>
-
-            <div style="padding:1.25rem 0;border-bottom:1px solid rgba(255,255,255,0.06)">
               <h3 style="font-family:'Space Grotesk',Inter,system-ui,sans-serif;font-size:0.875rem;font-weight:600;color:#f5f5ff;margin-bottom:0.5rem">How accurate are the generated prompts?</h3>
-              <p style="font-size:0.875rem;color:#8888bb;line-height:1.6">ImageToPrompt uses Claude AI vision with a confidence score on every analysis. The AI identifies subject, composition, lighting, color palette, mood, and style, then formats the prompt specifically for your chosen AI model. Results are highly accurate for photographic and AI-generated images.</p>
+              <p style="font-size:0.875rem;color:#8888bb;line-height:1.6">ImageToPrompt uses Claude AI vision to analyze images, providing a confidence score with every prompt. The AI identifies subject, composition, lighting, color palette, mood, and style, then formats the prompt specifically for your chosen AI model.</p>
             </div>
 
             <div style="padding:1.25rem 0;border-bottom:1px solid rgba(255,255,255,0.06)">
-              <h3 style="font-family:'Space Grotesk',Inter,system-ui,sans-serif;font-size:0.875rem;font-weight:600;color:#f5f5ff;margin-bottom:0.5rem">Do I need to create an account?</h3>
-              <p style="font-size:0.875rem;color:#8888bb;line-height:1.6">No account or sign-up is required. ImageToPrompt works instantly in your browser with no registration needed.</p>
+              <h3 style="font-family:'Space Grotesk',Inter,system-ui,sans-serif;font-size:0.875rem;font-weight:600;color:#f5f5ff;margin-bottom:0.5rem">Is my uploaded image stored or saved?</h3>
+              <p style="font-size:0.875rem;color:#8888bb;line-height:1.6">No. Your images are processed in real time and never stored on our servers. The image is sent directly to Claude AI for analysis and immediately discarded. We only store your prompt history locally in your browser.</p>
+            </div>
+
+            <div style="padding:1.25rem 0;border-bottom:1px solid rgba(255,255,255,0.06)">
+              <h3 style="font-family:'Space Grotesk',Inter,system-ui,sans-serif;font-size:0.875rem;font-weight:600;color:#f5f5ff;margin-bottom:0.5rem">What is the remix prompt feature?</h3>
+              <p style="font-size:0.875rem;color:#8888bb;line-height:1.6">Every analysis includes a Creative Remix prompt — an alternative, creatively reimagined version of the main prompt. It keeps the core subject and mood but adds unexpected artistic twists, giving you two distinct creative directions from a single image.</p>
+            </div>
+
+            <div style="padding:1.25rem 0;border-bottom:1px solid rgba(255,255,255,0.06)">
+              <h3 style="font-family:'Space Grotesk',Inter,system-ui,sans-serif;font-size:0.875rem;font-weight:600;color:#f5f5ff;margin-bottom:0.5rem">Can I use ImageToPrompt on mobile?</h3>
+              <p style="font-size:0.875rem;color:#8888bb;line-height:1.6">Yes. ImageToPrompt is fully responsive and works on all screen sizes from mobile phones to widescreen monitors. You can upload images directly from your phone camera roll.</p>
             </div>
 
             <div style="padding:1.25rem 0">
-              <h3 style="font-family:'Space Grotesk',Inter,system-ui,sans-serif;font-size:0.875rem;font-weight:600;color:#f5f5ff;margin-bottom:0.5rem">What makes ImageToPrompt different from other tools?</h3>
-              <p style="font-size:0.875rem;color:#8888bb;line-height:1.6">ImageToPrompt uses Claude AI vision — one of the most accurate vision models available — and generates model-specific prompts with proper syntax for each AI generator. It also includes negative prompts, color palettes, style tags, aspect ratio suggestions, and a creative remix prompt. All completely free.</p>
+              <h3 style="font-family:'Space Grotesk',Inter,system-ui,sans-serif;font-size:0.875rem;font-weight:600;color:#f5f5ff;margin-bottom:0.5rem">What prompt styles are available?</h3>
+              <p style="font-size:0.875rem;color:#8888bb;line-height:1.6">ImageToPrompt offers 6 style modes: Cinematic (dramatic film-grade), Technical (hyper-realistic precision), Artistic (painterly and stylized), Minimal (clean and essence-focused), Epic (grand atmospheric scale), and Photographic (camera specs and lens language).</p>
             </div>
 
           </div>
