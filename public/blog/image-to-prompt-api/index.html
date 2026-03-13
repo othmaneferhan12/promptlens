@@ -1,0 +1,640 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Image to Prompt API: Build AI Image Analysis into Your App (2026 Guide)</title>
+  <meta name="description" content="How to build image-to-prompt functionality into your app using Claude Vision API, GPT-4V, and Gemini. Includes code examples, prompt templates, and integration patterns." />
+  <link rel="canonical" href="https://www.imagetoprompt.dev/blog/image-to-prompt-api/" />
+  <meta property="og:title" content="Image to Prompt API: Build AI Image Analysis into Your App (2026 Guide)" />
+  <meta property="og:description" content="How to build image-to-prompt functionality into your app using Claude Vision API, GPT-4V, and Gemini. Includes code examples, prompt templates, and integration patterns." />
+  <meta property="og:url" content="https://www.imagetoprompt.dev/blog/image-to-prompt-api/" />
+  <meta property="og:type" content="article" />
+  <meta property="og:image" content="https://www.imagetoprompt.dev/og-image.png" />
+  <meta property="og:site_name" content="ImageToPrompt" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Image to Prompt API: Build AI Image Analysis into Your App (2026 Guide)" />
+  <meta name="twitter:description" content="How to build image-to-prompt functionality into your app using Claude Vision API, GPT-4V, and Gemini. Includes code examples, prompt templates, and integration patterns." />
+  <meta name="twitter:image" content="https://www.imagetoprompt.dev/og-image.png" />
+  <meta name="twitter:site" content="@imagetoprompt" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="/fonts/space-grotesk-700.woff2" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="/fonts/inter-400.woff2" />
+  <link rel="stylesheet" href="/blog.css" />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Image to Prompt API: Build AI Image Analysis into Your App (2026 Guide)",
+    "description": "How to build image-to-prompt functionality into your app using Claude Vision API, GPT-4V, and Gemini. Includes code examples, prompt templates, and integration patterns.",
+    "image": "https://www.imagetoprompt.dev/og-image.png",
+    "datePublished": "2026-03-13",
+    "dateModified": "2026-03-13",
+    "author": { "@type": "Person", "name": "ImageToPrompt Team", "url": "https://www.imagetoprompt.dev/" },
+    "publisher": { "@type": "Organization", "name": "ImageToPrompt", "logo": { "@type": "ImageObject", "url": "https://www.imagetoprompt.dev/favicon.svg" } },
+    "mainEntityOfPage": { "@type": "WebPage", "@id": "https://www.imagetoprompt.dev/blog/image-to-prompt-api/" }
+  }
+  </script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="inner">
+      <a href="/" class="site-logo">ImageTo<span class="accent">Prompt</span></a>
+      <nav class="site-nav" aria-label="Main navigation">
+        <a href="/">Tool</a>
+        <a href="/blog/" class="active">Blog</a>
+        <a href="/#faq">FAQ</a>
+        <a href="/" style="background:linear-gradient(135deg,#e040fb,#00e5ff);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;font-weight:600">Try Free →</a>
+      </nav>
+    </div>
+  </header>
+  <nav class="breadcrumb" aria-label="Breadcrumb">
+    <a href="/">Home</a><span class="sep">›</span><a href="/blog/">Blog</a><span class="sep">›</span><span>Image to Prompt API</span>
+  </nav>
+  <div class="page-wrapper">
+    <header class="article-header">
+      <p class="article-tag">Developer Guide</p>
+      <h1>Image to Prompt API: Build AI Image Analysis into Your App (2026 Guide)</h1>
+      <div class="article-meta">
+        <span>March 2026</span><span class="dot">·</span><span>14 min read</span><span class="dot">·</span><span>API, Claude Vision, GPT-4V, Developers</span>
+      </div>
+    </header>
+    <div class="article-body">
+
+      <p>Image-to-prompt functionality — the ability to analyze an image and generate an AI-ready text prompt describing it — has moved from novelty to essential feature in dozens of creative tools. Design apps use it for style matching. Browser extensions use it to analyze images users are viewing. Content pipelines use it for batch processing visual assets.</p>
+
+      <p>If you want to add this capability to your own application, you have three serious options: Claude Vision (Anthropic), GPT-4V (OpenAI), and Gemini Vision (Google). This guide covers the technical integration for each, with actual working code, and gives you the prompting templates that produce high-quality structured outputs.</p>
+
+      <h2>Why Developers Need Image-to-Prompt APIs</h2>
+
+      <p>The use cases are broader than they might first appear:</p>
+
+      <ul>
+        <li><strong>Creative tools:</strong> Let users upload inspiration images and get AI-ready prompts for generation tools (Midjourney, Stable Diffusion, DALL·E)</li>
+        <li><strong>Design platforms:</strong> Analyze uploaded mood boards to extract style guidelines</li>
+        <li><strong>E-commerce:</strong> Generate product descriptions from product photos</li>
+        <li><strong>Content moderation pipelines:</strong> Understand image content for classification and tagging</li>
+        <li><strong>Accessibility tools:</strong> Generate detailed alt-text and image descriptions</li>
+        <li><strong>Game asset pipelines:</strong> Auto-tag and describe assets in large libraries</li>
+        <li><strong>Social media tools:</strong> Generate captions and hashtags from uploaded images</li>
+        <li><strong>Photo organization apps:</strong> Semantic search over image collections</li>
+      </ul>
+
+      <h2>The Three Main API Options</h2>
+
+      <table>
+        <thead>
+          <tr><th>API</th><th>Provider</th><th>Image Input</th><th>Pricing (approx.)</th><th>Best For</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Claude Vision (claude-haiku-4-5 / claude-sonnet)</td><td>Anthropic</td><td>Base64 or URL</td><td>$0.25–$3 per 1M input tokens</td><td>Detailed prompts, instruction-following</td></tr>
+          <tr><td>GPT-4V / GPT-4o</td><td>OpenAI</td><td>Base64 or URL</td><td>$2.50–$10 per 1M input tokens</td><td>Broad knowledge, chat integration</td></tr>
+          <tr><td>Gemini Vision (1.5 Flash/Pro)</td><td>Google</td><td>Base64, URL, or GCS</td><td>$0.075–$3.50 per 1M input tokens</td><td>High volume, cost-sensitive workloads</td></tr>
+        </tbody>
+      </table>
+
+      <p>For image-to-prompt specifically, Claude Vision tends to produce the most structured, art-direction-aware outputs. GPT-4o is the most versatile if you're already in the OpenAI ecosystem. Gemini 1.5 Flash is the cheapest option for high-volume pipelines where cost matters more than maximum quality.</p>
+
+      <h2>Claude Vision API: Setup and Authentication</h2>
+
+      <p>First, install the Anthropic SDK:</p>
+
+      <pre><code>pip install anthropic</code></pre>
+
+      <p>Or for Node.js:</p>
+
+      <pre><code>npm install @anthropic-ai/sdk</code></pre>
+
+      <p>Get your API key from <a href="https://console.anthropic.com" target="_blank" rel="noopener">console.anthropic.com</a> and set it as an environment variable:</p>
+
+      <pre><code>export ANTHROPIC_API_KEY="sk-ant-api03-..."</code></pre>
+
+      <h2>Image Encoding: Base64 vs URL</h2>
+
+      <p>Claude Vision accepts images in two formats:</p>
+
+      <p><strong>Base64 (recommended for local files):</strong> Encode the image as a base64 string and include it directly in the API request. Supports JPEG, PNG, GIF, and WebP. Maximum 5MB per image.</p>
+
+      <p><strong>URL (recommended for web-hosted images):</strong> Pass a publicly accessible image URL. Claude will fetch the image server-side. The URL must be publicly reachable (no authentication required).</p>
+
+      <div class="callout callout-tip">
+        <strong>Performance tip:</strong> For production workloads, base64 gives you more predictable latency since you're not dependent on the downstream URL being fast or available. For prototyping, URLs are simpler.
+      </div>
+
+      <h2>System Prompt Template for Generating AI-Ready Prompts</h2>
+
+      <p>The system prompt is the most important part of your implementation. A weak system prompt produces generic image descriptions. A well-crafted one produces structured, actionable prompts that work well with image generation models.</p>
+
+      <p>Here is the system prompt template that produces high-quality Midjourney/Stable Diffusion compatible output:</p>
+
+      <pre><code>You are an expert AI art prompt engineer. When given an image, analyze it thoroughly and generate an optimized text prompt that would recreate a similar image using an AI image generation tool.
+
+Your output must follow this structure:
+
+PROMPT:
+[Single paragraph, comma-separated descriptors. Include: subject description, environment/setting, lighting conditions, color palette, mood/atmosphere, art style, rendering quality. Be specific and concrete. 60-120 words.]
+
+STYLE NOTES:
+[2-3 sentences describing the visual style, medium, and any distinctive aesthetic characteristics]
+
+NEGATIVE PROMPT:
+[Comma-separated list of elements to exclude for best results]
+
+MODEL RECOMMENDATION:
+[One of: Midjourney, Stable Diffusion, DALL·E 3, Flux, Ideogram — based on the image style]
+
+Do not include any preamble, explanation, or text outside this structure.</code></pre>
+
+      <h2>Python Implementation: Claude Vision</h2>
+
+      <pre><code>import anthropic
+import base64
+from pathlib import Path
+
+def image_to_prompt(image_path: str, target_model: str = "Midjourney") -> dict:
+    """
+    Analyze an image and generate an AI art prompt.
+
+    Args:
+        image_path: Path to local image file
+        target_model: Target AI model ("Midjourney", "Stable Diffusion", etc.)
+
+    Returns:
+        dict with 'prompt', 'style_notes', 'negative_prompt', 'model_recommendation'
+    """
+    client = anthropic.Anthropic()
+
+    # Read and encode image
+    image_data = Path(image_path).read_bytes()
+    base64_image = base64.standard_b64encode(image_data).decode("utf-8")
+
+    # Detect media type
+    suffix = Path(image_path).suffix.lower()
+    media_type_map = {
+        ".jpg": "image/jpeg",
+        ".jpeg": "image/jpeg",
+        ".png": "image/png",
+        ".gif": "image/gif",
+        ".webp": "image/webp"
+    }
+    media_type = media_type_map.get(suffix, "image/jpeg")
+
+    system_prompt = """You are an expert AI art prompt engineer. Analyze the provided image and generate an optimized prompt for AI image generation.
+
+Output this exact structure:
+
+PROMPT:
+[60-120 word comma-separated prompt covering subject, environment, lighting, colors, mood, style, quality tokens]
+
+STYLE NOTES:
+[2-3 sentences on visual style and distinctive characteristics]
+
+NEGATIVE PROMPT:
+[Comma-separated exclusion list]
+
+MODEL RECOMMENDATION:
+[Best model: Midjourney, Stable Diffusion, DALL·E 3, Flux, or Ideogram]"""
+
+    message = client.messages.create(
+        model="claude-haiku-4-5",
+        max_tokens=1024,
+        system=system_prompt,
+        messages=[
+            {
+                "role": "user",
+                "content": [
+                    {
+                        "type": "image",
+                        "source": {
+                            "type": "base64",
+                            "media_type": media_type,
+                            "data": base64_image,
+                        },
+                    },
+                    {
+                        "type": "text",
+                        "text": f"Analyze this image and generate an AI art prompt optimized for {target_model}."
+                    }
+                ],
+            }
+        ],
+    )
+
+    # Parse response
+    response_text = message.content[0].text
+    return parse_prompt_response(response_text)
+
+
+def parse_prompt_response(text: str) -> dict:
+    """Parse structured response into a dictionary."""
+    result = {}
+    sections = {
+        "prompt": "PROMPT:",
+        "style_notes": "STYLE NOTES:",
+        "negative_prompt": "NEGATIVE PROMPT:",
+        "model_recommendation": "MODEL RECOMMENDATION:"
+    }
+
+    lines = text.split("\n")
+    current_section = None
+    current_content = []
+
+    for line in lines:
+        line = line.strip()
+        matched = False
+        for key, header in sections.items():
+            if line.startswith(header):
+                if current_section:
+                    result[current_section] = " ".join(current_content).strip()
+                current_section = key
+                remainder = line[len(header):].strip()
+                current_content = [remainder] if remainder else []
+                matched = True
+                break
+        if not matched and current_section and line:
+            current_content.append(line)
+
+    if current_section:
+        result[current_section] = " ".join(current_content).strip()
+
+    return result
+
+
+# Example usage
+if __name__ == "__main__":
+    result = image_to_prompt("reference_photo.jpg", target_model="Midjourney")
+    print("PROMPT:", result.get("prompt"))
+    print("NEGATIVE:", result.get("negative_prompt"))
+    print("RECOMMENDED MODEL:", result.get("model_recommendation"))</code></pre>
+
+      <h2>JavaScript / Node.js Implementation</h2>
+
+      <pre><code>import Anthropic from "@anthropic-ai/sdk";
+import fs from "fs";
+import path from "path";
+
+const client = new Anthropic({
+  apiKey: process.env.ANTHROPIC_API_KEY,
+});
+
+const SYSTEM_PROMPT = `You are an expert AI art prompt engineer. Analyze the provided image and generate an optimized prompt for AI image generation.
+
+Output this exact structure:
+
+PROMPT:
+[60-120 word comma-separated prompt covering subject, environment, lighting, colors, mood, style, quality tokens]
+
+STYLE NOTES:
+[2-3 sentences on visual style and distinctive characteristics]
+
+NEGATIVE PROMPT:
+[Comma-separated exclusion list]
+
+MODEL RECOMMENDATION:
+[Best model: Midjourney, Stable Diffusion, DALL·E 3, Flux, or Ideogram]`;
+
+async function imageToPrompt(imagePath, targetModel = "Midjourney") {
+  const imageBuffer = fs.readFileSync(imagePath);
+  const base64Image = imageBuffer.toString("base64");
+
+  const ext = path.extname(imagePath).toLowerCase();
+  const mediaTypeMap = {
+    ".jpg": "image/jpeg",
+    ".jpeg": "image/jpeg",
+    ".png": "image/png",
+    ".gif": "image/gif",
+    ".webp": "image/webp",
+  };
+  const mediaType = mediaTypeMap[ext] || "image/jpeg";
+
+  const message = await client.messages.create({
+    model: "claude-haiku-4-5",
+    max_tokens: 1024,
+    system: SYSTEM_PROMPT,
+    messages: [
+      {
+        role: "user",
+        content: [
+          {
+            type: "image",
+            source: {
+              type: "base64",
+              media_type: mediaType,
+              data: base64Image,
+            },
+          },
+          {
+            type: "text",
+            text: `Analyze this image and generate an AI art prompt optimized for ${targetModel}.`,
+          },
+        ],
+      },
+    ],
+  });
+
+  const responseText = message.content[0].text;
+  return parsePromptResponse(responseText);
+}
+
+function parsePromptResponse(text) {
+  const result = {};
+  const sections = {
+    prompt: "PROMPT:",
+    style_notes: "STYLE NOTES:",
+    negative_prompt: "NEGATIVE PROMPT:",
+    model_recommendation: "MODEL RECOMMENDATION:",
+  };
+
+  let currentSection = null;
+  let currentLines = [];
+
+  for (const rawLine of text.split("\n")) {
+    const line = rawLine.trim();
+    let matched = false;
+
+    for (const [key, header] of Object.entries(sections)) {
+      if (line.startsWith(header)) {
+        if (currentSection) {
+          result[currentSection] = currentLines.join(" ").trim();
+        }
+        currentSection = key;
+        const remainder = line.slice(header.length).trim();
+        currentLines = remainder ? [remainder] : [];
+        matched = true;
+        break;
+      }
+    }
+
+    if (!matched && currentSection && line) {
+      currentLines.push(line);
+    }
+  }
+
+  if (currentSection) {
+    result[currentSection] = currentLines.join(" ").trim();
+  }
+
+  return result;
+}
+
+// Example usage
+const result = await imageToPrompt("./reference.png", "Stable Diffusion");
+console.log("Prompt:", result.prompt);
+console.log("Negative:", result.negative_prompt);</code></pre>
+
+      <h2>Using a URL Instead of Base64</h2>
+
+      <pre><code>async function imageToPromptFromUrl(imageUrl, targetModel = "Midjourney") {
+  const message = await client.messages.create({
+    model: "claude-haiku-4-5",
+    max_tokens: 1024,
+    system: SYSTEM_PROMPT,
+    messages: [
+      {
+        role: "user",
+        content: [
+          {
+            type: "image",
+            source: {
+              type: "url",
+              url: imageUrl,
+            },
+          },
+          {
+            type: "text",
+            text: `Analyze this image and generate an AI art prompt optimized for ${targetModel}.`,
+          },
+        ],
+      },
+    ],
+  });
+
+  return parsePromptResponse(message.content[0].text);
+}</code></pre>
+
+      <h2>Error Handling: Rate Limits, Image Size Limits, Unsupported Formats</h2>
+
+      <p>Production implementations must handle these failure modes gracefully:</p>
+
+      <pre><code>async function imageToPromptSafe(imagePath, targetModel = "Midjourney") {
+  // Check file size before upload (5MB limit)
+  const stats = fs.statSync(imagePath);
+  const fileSizeMB = stats.size / (1024 * 1024);
+  if (fileSizeMB > 5) {
+    throw new Error(`Image too large: ${fileSizeMB.toFixed(1)}MB. Max 5MB.`);
+  }
+
+  // Check format
+  const ext = path.extname(imagePath).toLowerCase();
+  const supported = [".jpg", ".jpeg", ".png", ".gif", ".webp"];
+  if (!supported.includes(ext)) {
+    throw new Error(`Unsupported format: ${ext}. Use JPG, PNG, GIF, or WebP.`);
+  }
+
+  try {
+    return await imageToPrompt(imagePath, targetModel);
+  } catch (error) {
+    if (error.status === 429) {
+      // Rate limited — implement exponential backoff
+      const retryAfter = parseInt(error.headers?.["retry-after"] || "60");
+      console.warn(`Rate limited. Retry after ${retryAfter}s`);
+      await new Promise(resolve => setTimeout(resolve, retryAfter * 1000));
+      return await imageToPrompt(imagePath, targetModel); // single retry
+    }
+    if (error.status === 400) {
+      throw new Error(`Bad request — check image format and size: ${error.message}`);
+    }
+    throw error;
+  }
+}</code></pre>
+
+      <h2>Cost Comparison: Claude vs GPT-4V vs Gemini Vision</h2>
+
+      <p>Image tokens are calculated differently across providers. Here's a practical comparison for a typical 1024x1024 JPEG (~300KB):</p>
+
+      <table>
+        <thead>
+          <tr><th>API</th><th>Image Token Cost</th><th>Text Output Cost</th><th>Cost per 1000 images</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Claude Haiku 4.5</td><td>~1,600 input tokens</td><td>~300 output tokens</td><td>~$0.40</td></tr>
+          <tr><td>Claude Sonnet 3.5</td><td>~1,600 input tokens</td><td>~300 output tokens</td><td>~$3.60</td></tr>
+          <tr><td>GPT-4o mini</td><td>~765 input tokens (low detail)</td><td>~300 output tokens</td><td>~$0.23</td></tr>
+          <tr><td>GPT-4o</td><td>~765 input tokens</td><td>~300 output tokens</td><td>~$2.70</td></tr>
+          <tr><td>Gemini 1.5 Flash</td><td>~258 input tokens</td><td>~300 output tokens</td><td>~$0.08</td></tr>
+          <tr><td>Gemini 1.5 Pro</td><td>~258 input tokens</td><td>~300 output tokens</td><td>~$0.90</td></tr>
+        </tbody>
+      </table>
+
+      <p><em>Prices approximate as of March 2026. Verify current pricing at each provider's website.</em></p>
+
+      <p>For a consumer app doing hundreds of images per day, Gemini Flash or GPT-4o mini are most cost-effective. For quality-critical pipelines where prompt accuracy matters, Claude Haiku offers the best quality-to-cost ratio.</p>
+
+      <h2>Caching Strategies to Reduce API Costs</h2>
+
+      <p>For production deployments, caching is essential. The same image should never be analyzed twice:</p>
+
+      <pre><code>import crypto from "crypto";
+import Redis from "ioredis";
+
+const redis = new Redis(process.env.REDIS_URL);
+const CACHE_TTL = 60 * 60 * 24 * 30; // 30 days
+
+async function imageToPromptCached(imageBuffer, targetModel = "Midjourney") {
+  // Create cache key from image content hash + model
+  const imageHash = crypto
+    .createHash("sha256")
+    .update(imageBuffer)
+    .digest("hex");
+  const cacheKey = `img2prompt:${imageHash}:${targetModel}`;
+
+  // Check cache
+  const cached = await redis.get(cacheKey);
+  if (cached) {
+    return JSON.parse(cached);
+  }
+
+  // Generate prompt
+  const base64Image = imageBuffer.toString("base64");
+  const result = await imageToPrompt(base64Image, targetModel);
+
+  // Cache result
+  await redis.setex(cacheKey, CACHE_TTL, JSON.stringify(result));
+
+  return result;
+}</code></pre>
+
+      <h2>Production Architecture: Serverless Function Pattern</h2>
+
+      <p>The most practical production pattern for web apps is a serverless function that accepts image data and returns the prompt. This is the pattern used by ImageToPrompt itself, deployed on Vercel:</p>
+
+      <pre><code>// api/analyze.ts (Vercel serverless function)
+import type { VercelRequest, VercelResponse } from "@vercel/node";
+import Anthropic from "@anthropic-ai/sdk";
+
+const client = new Anthropic({ apiKey: process.env.ANTHROPIC_API_KEY });
+
+export default async function handler(req: VercelRequest, res: VercelResponse) {
+  if (req.method !== "POST") {
+    return res.status(405).json({ error: "Method not allowed" });
+  }
+
+  // CORS
+  res.setHeader("Access-Control-Allow-Origin", process.env.ALLOWED_ORIGIN || "*");
+
+  const { image, mediaType, targetModel } = req.body;
+
+  if (!image || !mediaType) {
+    return res.status(400).json({ error: "image and mediaType are required" });
+  }
+
+  try {
+    const message = await client.messages.create({
+      model: "claude-haiku-4-5",
+      max_tokens: 1024,
+      system: SYSTEM_PROMPT,
+      messages: [
+        {
+          role: "user",
+          content: [
+            {
+              type: "image",
+              source: { type: "base64", media_type: mediaType, data: image },
+            },
+            {
+              type: "text",
+              text: `Generate an AI art prompt optimized for ${targetModel || "Midjourney"}.`,
+            },
+          ],
+        },
+      ],
+    });
+
+    const parsed = parsePromptResponse(message.content[0].text);
+    return res.status(200).json(parsed);
+  } catch (error: unknown) {
+    const err = error as { status?: number; message?: string };
+    if (err.status === 429) {
+      return res.status(429).json({ error: "Rate limit exceeded" });
+    }
+    return res.status(500).json({ error: "Analysis failed" });
+  }
+}</code></pre>
+
+      <h2>Real-World Use Cases</h2>
+
+      <h3>Batch Processing a Directory of Images</h3>
+
+      <pre><code>import { glob } from "glob";
+import { writeFileSync } from "fs";
+
+async function batchProcess(directory, targetModel = "Midjourney") {
+  const images = await glob(`${directory}/**/*.{jpg,jpeg,png,webp}`);
+  const results = [];
+
+  for (const imagePath of images) {
+    try {
+      console.log(`Processing: ${imagePath}`);
+      const result = await imageToPromptSafe(imagePath, targetModel);
+      results.push({ file: imagePath, ...result });
+
+      // Respectful rate limiting: 1 request per second
+      await new Promise(resolve => setTimeout(resolve, 1000));
+    } catch (error) {
+      console.error(`Failed: ${imagePath}`, error.message);
+      results.push({ file: imagePath, error: error.message });
+    }
+  }
+
+  writeFileSync("prompts.json", JSON.stringify(results, null, 2));
+  console.log(`Processed ${results.length} images`);
+}
+
+batchProcess("./assets/reference-images", "Stable Diffusion");</code></pre>
+
+      <h3>Browser Extension Pattern</h3>
+      <p>For a browser extension that analyzes images the user is viewing, you'd fetch the image from the page, convert it to base64 in the content script, send it to your backend serverless function (to keep your API key server-side), and display the returned prompt in a popup.</p>
+
+      <p>Key consideration: Never expose your Anthropic API key in client-side JavaScript. Always proxy through a backend function that validates requests before forwarding to the Anthropic API.</p>
+
+      <h2>ImageToPrompt as a Reference Implementation</h2>
+
+      <p><a href="/">ImageToPrompt</a> (the tool on this site) is a working reference implementation of this pattern. It uses Claude Haiku for image analysis, a Vercel serverless function as the backend, Upstash Redis for rate limiting (10 requests per IP per day on the free tier), and a React frontend that handles image upload, preview, and prompt display.</p>
+
+      <p>The full architecture — serverless function, rate limiting, CORS handling, error responses — represents a production-ready pattern you can adapt for your own use case. If you're building something similar, studying how a working implementation handles edge cases (large files, unsupported formats, concurrent requests) is more valuable than any tutorial.</p>
+
+      <div class="related-guides">
+        <h3>Related Guides</h3>
+        <ul>
+          <li><a href="/blog/convert-image-to-ai-prompt/">How to Convert Any Image to an AI Prompt</a></li>
+          <li><a href="/blog/best-image-to-prompt-tools-2026/">Best Image-to-Prompt Tools 2026</a></li>
+          <li><a href="/blog/reverse-engineer-ai-art-prompts/">Reverse Engineer AI Art Prompts</a></li>
+          <li><a href="/blog/prompt-engineering-for-ai-art/">Prompt Engineering for AI Art</a></li>
+          <li><a href="/blog/midjourney-prompt-guide-2026/">Midjourney Prompt Guide 2026</a></li>
+        </ul>
+      </div>
+    </div>
+    <aside class="author-bio">
+      <div class="author-avatar">IT</div>
+      <div class="author-info">
+        <strong>ImageToPrompt Team</strong>
+        <p>We build and maintain the free Image to Prompt Generator at imagetoprompt.dev.</p>
+      </div>
+    </aside>
+    <div class="cta-box">
+      <h3>Try It Yourself</h3>
+      <p>Upload any image and get an optimized AI prompt in under 10 seconds. Free, no account required.</p>
+      <a href="/" class="cta-btn">Try the Free Image to Prompt Generator →</a>
+    </div>
+  </div>
+  <footer class="site-footer">
+    <div class="inner">
+      <p>© 2026 <a href="/" style="color:#8888bb;text-decoration:none">ImageToPrompt</a> · Free AI Prompt Generator · Powered by Claude Vision</p>
+      <nav aria-label="Footer navigation">
+        <a href="/">Home</a><a href="/blog/">Blog</a><a href="/#how-it-works">How It Works</a><a href="/#faq">FAQ</a>
+      </nav>
+    </div>
+  </footer>
+</body>
+</html>

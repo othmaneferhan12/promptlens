@@ -1,0 +1,418 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Image to Prompt for Anime Art: Complete Guide to AI Anime Generation</title>
+  <meta name="description" content="Learn how to convert anime images to AI prompts for Stable Diffusion, NovelAI, and Midjourney. Covers booru tags, quality tokens, character features, and styles." />
+  <link rel="canonical" href="https://www.imagetoprompt.dev/blog/image-to-prompt-for-anime/" />
+  <meta property="og:title" content="Image to Prompt for Anime Art: Complete Guide to AI Anime Generation" />
+  <meta property="og:description" content="Learn how to convert anime images to AI prompts for Stable Diffusion, NovelAI, and Midjourney. Covers booru tags, quality tokens, character features, and styles." />
+  <meta property="og:url" content="https://www.imagetoprompt.dev/blog/image-to-prompt-for-anime/" />
+  <meta property="og:type" content="article" />
+  <meta property="og:image" content="https://www.imagetoprompt.dev/og-image.png" />
+  <meta property="og:site_name" content="ImageToPrompt" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Image to Prompt for Anime Art: Complete Guide to AI Anime Generation" />
+  <meta name="twitter:description" content="Learn how to convert anime images to AI prompts for Stable Diffusion, NovelAI, and Midjourney. Covers booru tags, quality tokens, character features, and styles." />
+  <meta name="twitter:image" content="https://www.imagetoprompt.dev/og-image.png" />
+  <meta name="twitter:site" content="@imagetoprompt" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="/fonts/space-grotesk-700.woff2" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="/fonts/inter-400.woff2" />
+  <link rel="stylesheet" href="/blog.css" />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Image to Prompt for Anime Art: Complete Guide to AI Anime Generation",
+    "description": "Learn how to convert anime images to AI prompts for Stable Diffusion, NovelAI, and Midjourney. Covers booru tags, quality tokens, character features, and styles.",
+    "image": "https://www.imagetoprompt.dev/og-image.png",
+    "datePublished": "2026-03-13",
+    "dateModified": "2026-03-13",
+    "author": { "@type": "Person", "name": "ImageToPrompt Team", "url": "https://www.imagetoprompt.dev/" },
+    "publisher": { "@type": "Organization", "name": "ImageToPrompt", "logo": { "@type": "ImageObject", "url": "https://www.imagetoprompt.dev/favicon.svg" } },
+    "mainEntityOfPage": { "@type": "WebPage", "@id": "https://www.imagetoprompt.dev/blog/image-to-prompt-for-anime/" }
+  }
+  </script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="inner">
+      <a href="/" class="site-logo">ImageTo<span class="accent">Prompt</span></a>
+      <nav class="site-nav" aria-label="Main navigation">
+        <a href="/">Tool</a>
+        <a href="/blog/" class="active">Blog</a>
+        <a href="/#faq">FAQ</a>
+        <a href="/" style="background:linear-gradient(135deg,#e040fb,#00e5ff);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;font-weight:600">Try Free →</a>
+      </nav>
+    </div>
+  </header>
+
+  <nav class="breadcrumb" aria-label="Breadcrumb">
+    <a href="/">Home</a><span class="sep">›</span>
+    <a href="/blog/">Blog</a><span class="sep">›</span>
+    <span>Image to Prompt for Anime</span>
+  </nav>
+
+  <div class="page-wrapper">
+    <header class="article-header">
+      <p class="article-tag">Anime AI Art</p>
+      <h1>Image to Prompt for Anime Art: Complete Guide to AI Anime Generation</h1>
+      <div class="article-meta">
+        <span>March 2026</span>
+        <span class="dot">·</span>
+        <span>10 min read</span>
+        <span class="dot">·</span>
+        <span>Anime · Stable Diffusion · NovelAI · Booru Tags</span>
+      </div>
+    </header>
+
+    <div class="article-body">
+      <p>Anime AI generation operates by entirely different rules than photorealistic generation. The models were trained on different data, they respond to different vocabulary, and the quality modifiers that work wonders in Midjourney will fall flat — or produce strange results — in an anime-focused Stable Diffusion checkpoint. If you've been trying to extract prompts from anime reference images using generic tools and getting mediocre results, this guide explains why and shows you what to do instead.</p>
+
+      <p>We'll cover the booru tag system that underpins anime AI models, the quality tokens that separate mediocre from stunning outputs, how to use ImageToPrompt with anime references, and complete example prompts for major anime aesthetics.</p>
+
+      <nav class="toc" aria-label="Table of contents">
+        <details open>
+          <summary>In this guide</summary>
+          <ol>
+            <li><a href="#why-different">Why Anime Prompting Is Fundamentally Different</a></li>
+            <li><a href="#sd-anime-models">Stable Diffusion Anime Models</a></li>
+            <li><a href="#booru-tags">Understanding Booru Tags</a></li>
+            <li><a href="#quality-tokens">Quality Tokens That Actually Work</a></li>
+            <li><a href="#negative-prompts">Anime-Specific Negative Prompts</a></li>
+            <li><a href="#using-imagetoprompt">Using ImageToPrompt for Anime References</a></li>
+            <li><a href="#aesthetic-styles">Shounen, Shoujo, and Seinen Aesthetics</a></li>
+            <li><a href="#mj-vs-sd">Midjourney Anime vs SD Anime</a></li>
+            <li><a href="#example-prompts">Example Prompts With Analysis</a></li>
+          </ol>
+        </details>
+      </nav>
+
+      <h2 id="why-different">Why Anime Prompting Is Fundamentally Different</h2>
+
+      <p>Most AI image generators — including Midjourney, DALL·E 3, and Flux — were trained primarily on photographic and painterly content from the general web. Their vocabulary naturally skews toward photographic concepts: f-stops, ISO, film emulsions, lighting rigs.</p>
+
+      <p>Anime-focused Stable Diffusion models like Anything V5, Counterfeit-V3, and Waifu Diffusion were fine-tuned on anime and manga datasets sourced from sites like Danbooru, Gelbooru, and Safebooru. These sites use a <strong>structured tag taxonomy</strong> rather than natural language descriptions. An image on Danbooru isn't described as "a cheerful girl with long silver hair standing in a sunny field" — it's tagged with individual, discrete attributes: <code>1girl</code>, <code>silver hair</code>, <code>long hair</code>, <code>smile</code>, <code>field</code>, <code>sunlight</code>, <code>outdoors</code>.</p>
+
+      <p>Because these models learned to associate image features with tag-format text rather than flowing prose, they respond significantly better to that same tag format when generating. Using natural language in an Anything V5 prompt often produces softer, less precise results than an equivalent tag-formatted prompt.</p>
+
+      <p>This creates a challenge when reverse-engineering prompts from anime images: most general-purpose vision tools output natural language descriptions, not booru-format tags. You need either a specialized tool (WD14 Tagger) or a general-purpose tool specifically instructed to produce tag format (ImageToPrompt's anime style preset).</p>
+
+      <h2 id="sd-anime-models">Major Stable Diffusion Anime Models (2026)</h2>
+
+      <div class="table-wrap">
+        <table class="comparison-table">
+          <thead>
+            <tr>
+              <th>Model</th>
+              <th>Base</th>
+              <th>Style</th>
+              <th>Best For</th>
+              <th>Tag Sensitivity</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Anything V5 / V5.1</td>
+              <td>SD 1.5</td>
+              <td>Clean anime, versatile</td>
+              <td>General anime characters</td>
+              <td>High — very responsive to booru tags</td>
+            </tr>
+            <tr>
+              <td>Counterfeit-V3.0</td>
+              <td>SD 1.5</td>
+              <td>Soft, painterly anime</td>
+              <td>Illustrations, scenic shots</td>
+              <td>High — prefers quality tokens</td>
+            </tr>
+            <tr>
+              <td>Waifu Diffusion 1.5</td>
+              <td>SD 1.5</td>
+              <td>Classic anime style</td>
+              <td>Character portraits</td>
+              <td>Very high — booru-native</td>
+            </tr>
+            <tr>
+              <td>NovelAI (Anime v3)</td>
+              <td>NAIFU (proprietary)</td>
+              <td>Highly detailed, consistent</td>
+              <td>Character art, fiction illustration</td>
+              <td>Very high — uses own tag system</td>
+            </tr>
+            <tr>
+              <td>SDXL + Animagine XL 3.1</td>
+              <td>SDXL</td>
+              <td>High-res modern anime</td>
+              <td>High-quality renders, details</td>
+              <td>Medium — supports both tags and prose</td>
+            </tr>
+            <tr>
+              <td>Pony Diffusion V6 XL</td>
+              <td>SDXL</td>
+              <td>Versatile, stylized</td>
+              <td>Diverse styles, furry, anime</td>
+              <td>Medium — uses score tags</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <p>When converting an anime image to a prompt, the first step is knowing which model you'll be using. Different models have different tag vocabularies, quality markers, and style sensitivities.</p>
+
+      <h2 id="booru-tags">Understanding Booru Tags: The Anatomy of an Anime Prompt</h2>
+
+      <p>Booru tag systems organize visual attributes into hierarchical categories. Understanding these categories helps you build prompts that precisely describe what you want and helps you interpret what image-to-prompt tools output.</p>
+
+      <h3>Character Count Tags</h3>
+      <p>These are almost always the first tags in an anime prompt and establish the basic scene structure:</p>
+      <ul>
+        <li><code>1girl</code> — single female character</li>
+        <li><code>1boy</code> — single male character</li>
+        <li><code>2girls</code>, <code>3girls</code> — multiple characters</li>
+        <li><code>solo</code> — explicitly no other characters in frame</li>
+        <li><code>couple</code>, <code>hetero</code> — interaction between characters</li>
+      </ul>
+
+      <h3>Physical Features</h3>
+      <p>Hair is the most important physical feature in anime art because it's the primary way characters are visually differentiated:</p>
+      <ul>
+        <li><strong>Color:</strong> <code>blonde hair</code>, <code>white hair</code>, <code>silver hair</code>, <code>pink hair</code>, <code>gradient hair</code>, <code>multicolored hair</code></li>
+        <li><strong>Length:</strong> <code>short hair</code>, <code>medium hair</code>, <code>long hair</code>, <code>very long hair</code></li>
+        <li><strong>Style:</strong> <code>twintails</code>, <code>ponytail</code>, <code>braid</code>, <code>ahoge</code> (the single hair curl iconic to anime), <code>hair bun</code></li>
+        <li><strong>Eyes:</strong> <code>blue eyes</code>, <code>red eyes</code>, <code>heterochromia</code>, <code>closed eyes</code>, <code>half-closed eyes</code>, <code>starry eyes</code></li>
+      </ul>
+
+      <h3>Clothing and Accessories</h3>
+      <p>Clothing tags are granular and specific in booru systems:</p>
+      <ul>
+        <li><code>school uniform</code>, <code>sailor uniform</code>, <code>blazer</code> for school settings</li>
+        <li><code>maid outfit</code>, <code>maid apron</code> for service-themed characters</li>
+        <li><code>kimono</code>, <code>yukata</code>, <code>hakama</code> for traditional Japanese clothing</li>
+        <li><code>casual clothes</code>, <code>hoodie</code>, <code>jeans</code> for modern everyday settings</li>
+        <li><code>fantasy armor</code>, <code>plate armor</code>, <code>leather armor</code> for RPG aesthetics</li>
+      </ul>
+
+      <h3>Pose and Expression</h3>
+      <ul>
+        <li><strong>Expression:</strong> <code>smile</code>, <code>grin</code>, <code>blush</code>, <code>crying</code>, <code>embarrassed</code>, <code>determined</code>, <code>shy</code></li>
+        <li><strong>Gaze:</strong> <code>looking at viewer</code>, <code>looking away</code>, <code>looking up</code>, <code>eye contact</code></li>
+        <li><strong>Pose:</strong> <code>standing</code>, <code>sitting</code>, <code>lying</code>, <code>running</code>, <code>arms behind back</code>, <code>hand on hip</code></li>
+      </ul>
+
+      <h3>Background and Setting</h3>
+      <ul>
+        <li><code>outdoors</code>, <code>indoors</code>, <code>classroom</code>, <code>city</code>, <code>forest</code>, <code>beach</code></li>
+        <li><code>simple background</code>, <code>white background</code> for clean character sheets</li>
+        <li><code>cherry blossoms</code>, <code>autumn leaves</code> for seasonal atmosphere</li>
+      </ul>
+
+      <h2 id="quality-tokens">Quality Tokens That Actually Work</h2>
+
+      <p>Quality tokens are special tags that tell anime SD models to prioritize rendering quality. Unlike the subject-matter tags above, quality tokens don't describe visual content — they describe the level of refinement expected in the output. They're one of the most impactful elements in an anime prompt.</p>
+
+      <h3>Standard Quality Tokens (SD 1.5 Models)</h3>
+
+      <pre><code class="prompt-example">(masterpiece:1.2), (best quality:1.1), (ultra-detailed:1.1), (highres:1.0)</code></pre>
+
+      <p>The number after the colon is a weight modifier. Values above 1.0 increase emphasis; below 1.0 decrease it. For quality tokens, values between 1.1 and 1.3 work best — going higher than 1.4 can cause artifacts.</p>
+
+      <h3>Additional Quality Enhancers</h3>
+      <ul>
+        <li><code>(extremely detailed CG unity 8k wallpaper)</code> — for highly rendered scenes</li>
+        <li><code>(amazing fine detail)</code> — for intricate textures and details</li>
+        <li><code>(beautiful detailed face)</code> — specifically improves facial rendering</li>
+        <li><code>(beautiful detailed eyes)</code> — improves eye rendering quality</li>
+        <li><code>sharp focus</code> — reduces softness in the overall image</li>
+      </ul>
+
+      <h3>SDXL / Animagine XL Tokens</h3>
+      <p>SDXL-based models use a different quality token system:</p>
+
+      <pre><code class="prompt-example">score_9, score_8_up, score_7_up, masterpiece, best quality, absurdres</code></pre>
+
+      <p>For Animagine XL specifically, always start with: <code>masterpiece, best quality, 1girl (or 1boy), ...</code></p>
+
+      <h3>NovelAI Tokens</h3>
+      <p>NovelAI's proprietary model has its own quality system. The most reliable quality tokens for NovelAI Anime v3 are:</p>
+
+      <pre><code class="prompt-example">masterpiece, best quality, very aesthetic, absurdres</code></pre>
+
+      <h2 id="negative-prompts">Anime-Specific Negative Prompts</h2>
+
+      <p>Negative prompts are more important in anime generation than in photorealistic generation because anime models are prone to specific failure modes: anatomically incorrect hands and fingers, merging facial features, and low-quality aesthetic tokens.</p>
+
+      <h3>Universal Anime Negative Prompt</h3>
+
+      <pre><code class="prompt-example">(worst quality:1.4), (low quality:1.4), (normal quality:1.2), lowres, bad anatomy, bad hands, ((missing fingers)), extra digit, fewer digits, bad proportions, poorly drawn face, mutation, deformed, ugly, blurry, bad eyes, cross-eyed, watermark, signature, text</code></pre>
+
+      <h3>Portrait-Specific Additions</h3>
+
+      <pre><code class="prompt-example">asymmetrical eyes, uneven eyes, floating head, disconnected limbs, extra limbs, cloned face, long neck, too many fingers</code></pre>
+
+      <h3>Full-Body Shot Additions</h3>
+
+      <pre><code class="prompt-example">bad legs, bad feet, missing legs, extra legs, floating limbs, disconnected body, awkward pose, stiff pose</code></pre>
+
+      <div class="callout">
+        <p><strong>Note on EasyNegative:</strong> EasyNegative is a textual inversion embedding that encodes hundreds of negative concepts into a single token. For SD 1.5 anime models, adding <code>EasyNegative</code> (or <code>easynegative</code>) to your negative prompt is equivalent to including a long list of quality-reduction descriptors. Make sure you've downloaded and installed the embedding before using it.</p>
+      </div>
+
+      <h2 id="using-imagetoprompt">Using ImageToPrompt for Anime Reference Images</h2>
+
+      <p>When you upload an anime image to ImageToPrompt.dev and select the "Anime" style preset, the tool shifts its analysis vocabulary from photographic/painterly language to booru-compatible tag format. This is what makes it genuinely useful for anime workflows rather than just producing generic descriptions.</p>
+
+      <p>For best results with anime images:</p>
+
+      <ol>
+        <li><strong>Select your target model.</strong> Choose Stable Diffusion for tag-format output, or Midjourney if you want prose-style anime prompts for MJ.</li>
+        <li><strong>Choose the "Anime" style preset.</strong> This switches the output format from prose to structured tags and adds appropriate quality tokens.</li>
+        <li><strong>Upload a clean, high-resolution crop.</strong> Cropping to just the character eliminates background noise that might dilute the character-specific tags in the output.</li>
+        <li><strong>Review and supplement the output.</strong> ImageToPrompt will identify the major visual features, but you may need to manually add specific character traits the model knows about (e.g., if you're generating a specific character like Rem from Re:Zero, add her name explicitly).</li>
+      </ol>
+
+      <p>Example ImageToPrompt output for an anime character portrait (SD target, Anime style):</p>
+
+      <pre><code class="prompt-example">(masterpiece:1.2), (best quality:1.1), (ultra-detailed:1.0), 1girl, solo, long white hair, blue eyes, maid outfit, white apron, blush, slight smile, looking at viewer, indoors, soft lighting, detailed face, beautiful detailed eyes
+Negative: (worst quality:1.4), (low quality:1.3), bad anatomy, bad hands, missing fingers, watermark</code></pre>
+
+      <h2 id="aesthetic-styles">Shounen, Shoujo, and Seinen Aesthetics in AI Prompts</h2>
+
+      <p>Anime is not a monolithic style. The major demographic categories — shounen, shoujo, seinen, josei — have distinct visual languages that translate to different prompting strategies.</p>
+
+      <h3>Shounen Aesthetics</h3>
+      <p>Shounen (target: young male audience) art emphasizes bold lines, dynamic poses, expressive emotions, and action-oriented composition. Character designs are typically sturdy and energetic.</p>
+
+      <pre><code class="prompt-example">(masterpiece:1.2), (best quality:1.1), 1boy, spiky black hair, determined expression, battle stance, torn clothes, dynamic pose, dramatic lighting, energy aura, motion lines, detailed background, intense atmosphere, shounen style</code></pre>
+
+      <h3>Shoujo Aesthetics</h3>
+      <p>Shoujo (target: young female audience) art favors soft lines, large expressive eyes, delicate details, floral motifs, and romantic or emotional atmospheres. The color palette tends toward pastels and warm tones.</p>
+
+      <pre><code class="prompt-example">(masterpiece:1.2), (best quality:1.1), 1girl, long flowing hair, sparkly large eyes, delicate features, soft smile, flower petals, pastel colors, romantic atmosphere, shojo style, detailed hair accessories, dreamy background, gentle lighting</code></pre>
+
+      <h3>Seinen Aesthetics</h3>
+      <p>Seinen (target: adult male audience) art is more realistic in proportions, darker in tone, and often features complex environmental design and mature themes. Think Attack on Titan, Berserk, or Vinland Saga visually.</p>
+
+      <pre><code class="prompt-example">(masterpiece:1.2), (best quality:1.1), 1man, realistic proportions, weathered face, detailed armor, grim expression, dark atmosphere, complex environment, muted color palette, seinen style, cinematic composition, dramatic shadows, high detail</code></pre>
+
+      <h2 id="mj-vs-sd">Midjourney Anime Prompts vs Stable Diffusion Anime Prompts</h2>
+
+      <p>If you want anime-style output from Midjourney rather than Stable Diffusion, the approach is completely different. Midjourney doesn't respond well to booru tags — you need natural language that describes the anime aesthetic through stylistic references.</p>
+
+      <div class="table-wrap">
+        <table class="comparison-table">
+          <thead>
+            <tr>
+              <th>Aspect</th>
+              <th>Stable Diffusion (Anime Model)</th>
+              <th>Midjourney</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Format</td>
+              <td>Comma-separated booru tags</td>
+              <td>Natural language sentences</td>
+            </tr>
+            <tr>
+              <td>Quality tokens</td>
+              <td>(masterpiece:1.2), (best quality:1.1)</td>
+              <td>Not needed / not effective</td>
+            </tr>
+            <tr>
+              <td>Style references</td>
+              <td>Model checkpoint handles style</td>
+              <td>"anime style," "Studio Ghibli," "by Makoto Shinkai"</td>
+            </tr>
+            <tr>
+              <td>Negative prompt</td>
+              <td>Essential</td>
+              <td>Not supported (use --no)</td>
+            </tr>
+            <tr>
+              <td>Aspect ratio</td>
+              <td>width/height in settings</td>
+              <td>--ar 9:16</td>
+            </tr>
+            <tr>
+              <td>Anime accuracy</td>
+              <td>Excellent (with right model)</td>
+              <td>Good but less precise</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <p>A Midjourney anime prompt for the same character concept:</p>
+
+      <pre><code class="prompt-example">a young woman with long white hair and bright blue eyes wearing a maid outfit, anime art style, soft indoor lighting, gentle expression, highly detailed illustration, by Ilya Kuvshinov, clean lines, vibrant colors --ar 2:3 --style raw --v 6.1</code></pre>
+
+      <h2 id="example-prompts">Complete Example Prompts With Analysis</h2>
+
+      <h3>Example 1: Magical Girl (SD — Anything V5)</h3>
+
+      <pre><code class="prompt-example">(masterpiece:1.2), (best quality:1.1), (ultra-detailed:1.0), 1girl, solo, twin tails, pink hair, gradient hair, pink to white, large eyes, blue eyes, magical girl outfit, white dress, pink ribbons, magical staff, glowing particles, cherry blossoms, night sky, full moon, sparkles, dynamic pose, wind in hair, smile, looking at viewer
+
+Negative: (worst quality:1.4), (low quality:1.3), bad anatomy, bad hands, extra fingers, missing fingers, ugly, blurry, watermark, text</code></pre>
+
+      <p>Analysis: Opens with quality tokens, establishes character count and key physical features, moves to clothing, adds environmental context, closes with composition and expression. Negative prompt targets the most common failure modes for this character type.</p>
+
+      <h3>Example 2: Fantasy Warrior (SDXL — Animagine XL)</h3>
+
+      <pre><code class="prompt-example">masterpiece, best quality, absurdres, 1girl, solo, silver hair, short hair, red eyes, fantasy knight armor, detailed pauldrons, sword, battle stance, dramatic lighting, castle interior, stone floor, torchlight, determined expression, looking at viewer, dynamic pose, highly detailed armor
+
+Negative: worst quality, low quality, bad anatomy, bad hands, ugly, blurry, missing limbs</code></pre>
+
+      <h3>Example 3: Slice-of-Life Scene (SD — Counterfeit-V3)</h3>
+
+      <pre><code class="prompt-example">(masterpiece:1.2), (best quality:1.1), 2girls, school uniforms, blazer, one with brown hair short, one with black hair long, sitting at cafe, afternoon sunlight, warm tones, laughing together, coffee cups on table, city window background, casual atmosphere, soft lighting, slice of life, detailed background
+
+Negative: (worst quality:1.4), (low quality:1.3), bad anatomy, deformed, ugly, watermark</code></pre>
+
+      <div class="callout">
+        <p><strong>Key insight:</strong> Notice how specific the physical attributes are in each example. Anime AI models are highly responsive to precise feature descriptions — the difference between "hair" and "twin tails, pink hair, gradient from pink to white" is enormous in the output. More specificity almost always produces better results.</p>
+      </div>
+
+      <div class="related-guides">
+        <h3>Related Guides</h3>
+        <ul>
+          <li><a href="/blog/negative-prompts-stable-diffusion/">Negative Prompts for Stable Diffusion: The Complete Guide</a></li>
+          <li><a href="/blog/convert-image-to-ai-prompt/">How to Convert Any Image to an AI Prompt</a></li>
+          <li><a href="/stable-diffusion-prompt-generator/">Stable Diffusion Prompt Generator</a></li>
+          <li><a href="/midjourney-prompt-generator/">Midjourney Prompt Generator</a></li>
+          <li><a href="/blog/best-image-to-prompt-tools-2026/">7 Best Image to Prompt Tools in 2026</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <aside class="author-bio">
+      <div class="author-avatar">IT</div>
+      <div class="author-info">
+        <strong>ImageToPrompt Team</strong>
+        <p>We build and maintain the free Image to Prompt Generator at imagetoprompt.dev. Our mission is to make AI image generation accessible to everyone.</p>
+      </div>
+    </aside>
+
+    <div class="cta-box">
+      <h3>Try It Yourself</h3>
+      <p>Upload any image and get an optimized AI prompt in under 10 seconds. Free, no account required.</p>
+      <a href="/" class="cta-btn">Try the Free Image to Prompt Generator →</a>
+    </div>
+  </div>
+
+  <footer class="site-footer">
+    <div class="inner">
+      <p>© 2026 <a href="/" style="color:#8888bb;text-decoration:none">ImageToPrompt</a> · Free AI Prompt Generator · Powered by Claude Vision</p>
+      <nav aria-label="Footer navigation">
+        <a href="/">Home</a>
+        <a href="/blog/">Blog</a>
+        <a href="/#how-it-works">How It Works</a>
+        <a href="/#faq">FAQ</a>
+      </nav>
+    </div>
+  </footer>
+</body>
+</html>

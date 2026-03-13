@@ -1,0 +1,420 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>15 AI Prompt Engineering Mistakes (And How to Fix Every One)</title>
+  <meta name="description" content="Avoid the 15 most common AI image prompt mistakes. From vague descriptions to wrong model syntax — learn what's killing your results and how to fix each mistake." />
+  <link rel="canonical" href="https://www.imagetoprompt.dev/blog/prompt-engineering-mistakes/" />
+  <meta property="og:title" content="15 AI Prompt Engineering Mistakes (And How to Fix Every One)" />
+  <meta property="og:description" content="Avoid the 15 most common AI image prompt mistakes. From vague descriptions to wrong model syntax — learn what's killing your results and how to fix each mistake." />
+  <meta property="og:url" content="https://www.imagetoprompt.dev/blog/prompt-engineering-mistakes/" />
+  <meta property="og:type" content="article" />
+  <meta property="og:image" content="https://www.imagetoprompt.dev/og-image.png" />
+  <meta property="og:site_name" content="ImageToPrompt" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="15 AI Prompt Engineering Mistakes (And How to Fix Every One)" />
+  <meta name="twitter:description" content="Avoid the 15 most common AI image prompt mistakes. From vague descriptions to wrong model syntax — learn what's killing your results and how to fix each mistake." />
+  <meta name="twitter:image" content="https://www.imagetoprompt.dev/og-image.png" />
+  <meta name="twitter:site" content="@imagetoprompt" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="/fonts/space-grotesk-700.woff2" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="/fonts/inter-400.woff2" />
+  <link rel="stylesheet" href="/blog.css" />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "15 AI Prompt Engineering Mistakes (And How to Fix Every One)",
+    "description": "Avoid the 15 most common AI image prompt mistakes. From vague descriptions to wrong model syntax — learn what's killing your results and how to fix each mistake.",
+    "image": "https://www.imagetoprompt.dev/og-image.png",
+    "datePublished": "2026-03-13",
+    "dateModified": "2026-03-13",
+    "author": { "@type": "Person", "name": "ImageToPrompt Team", "url": "https://www.imagetoprompt.dev/" },
+    "publisher": { "@type": "Organization", "name": "ImageToPrompt", "logo": { "@type": "ImageObject", "url": "https://www.imagetoprompt.dev/favicon.svg" } },
+    "mainEntityOfPage": { "@type": "WebPage", "@id": "https://www.imagetoprompt.dev/blog/prompt-engineering-mistakes/" }
+  }
+  </script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="inner">
+      <a href="/" class="site-logo">ImageTo<span class="accent">Prompt</span></a>
+      <nav class="site-nav" aria-label="Main navigation">
+        <a href="/">Tool</a>
+        <a href="/blog/" class="active">Blog</a>
+        <a href="/#faq">FAQ</a>
+        <a href="/" style="background:linear-gradient(135deg,#e040fb,#00e5ff);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;font-weight:600">Try Free →</a>
+      </nav>
+    </div>
+  </header>
+  <nav class="breadcrumb" aria-label="Breadcrumb">
+    <a href="/">Home</a><span class="sep">›</span><a href="/blog/">Blog</a><span class="sep">›</span><span>15 Prompt Engineering Mistakes</span>
+  </nav>
+  <div class="page-wrapper">
+    <header class="article-header">
+      <p class="article-tag">Prompt Engineering</p>
+      <h1>15 AI Prompt Engineering Mistakes (And How to Fix Every One)</h1>
+      <div class="article-meta">
+        <span>March 2026</span><span class="dot">·</span><span>14 min read</span><span class="dot">·</span><span>Midjourney, Stable Diffusion, Flux, DALL·E</span>
+      </div>
+    </header>
+    <div class="article-body">
+
+      <p>Most people who use AI image generators for the first time produce mediocre results — not because the tools are bad, but because writing prompts is a skill that takes practice to develop. The frustrating part is that the same underlying mistakes show up again and again, across different tools and experience levels. Once you know what they are, they're fixable.</p>
+
+      <p>This guide covers the 15 most common prompt engineering mistakes, why each one causes problems, and — most importantly — exactly how to fix them. Every mistake includes a before/after prompt comparison so you can see the difference in practice.</p>
+
+      <hr />
+
+      <h2>Mistake 1: Being Too Vague</h2>
+
+      <p><strong>The mistake:</strong> Writing open-ended prompts that leave too much to the model's interpretation — "a person in a city", "a nice landscape", "a dog", "a beautiful woman".</p>
+
+      <p><strong>Why it fails:</strong> AI models fill ambiguity with averages. Ask for "a person in a city" and you'll get the most statistically average person the model knows, in the most generic city it knows, in the most average composition. The result is technically correct but creatively empty.</p>
+
+      <p><strong>The fix:</strong> Specificity is the most powerful lever in prompt engineering. Who is this person? What do they look like? What are they doing? What city, what time of day, what weather, what camera angle? Every detail you add collapses the probability space toward something interesting.</p>
+
+      <table>
+        <thead><tr><th>Weak</th><th>Strong</th></tr></thead>
+        <tbody>
+          <tr>
+            <td>a person in a city</td>
+            <td>young Japanese woman in her 30s, wearing a yellow rain jacket, waiting at a crosswalk in Tokyo during heavy rain, neon signs reflecting on wet pavement, street photography, f/1.8 shallow depth of field</td>
+          </tr>
+          <tr>
+            <td>a nice landscape</td>
+            <td>golden hour over the Scottish Highlands, dramatic storm clouds breaking to reveal shafts of orange light over rolling heather moorland, ancient stone wall in the foreground, wide angle landscape photography, high detail</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <hr />
+
+      <h2>Mistake 2: Using the Wrong Prompt Syntax for the Model</h2>
+
+      <p><strong>The mistake:</strong> Writing Midjourney-style prompts with parameters like <code>--ar 16:9 --v 6.1</code> and pasting them into Flux or Stable Diffusion. Or writing long flowing sentences that work in DALL·E and using them in SD without adapting.</p>
+
+      <p><strong>Why it fails:</strong> Each model has its own syntax. Midjourney uses <code>--parameter value</code> flags. Stable Diffusion works best with comma-separated tags and has its own weighting syntax. Flux and DALL·E both understand natural language but process it differently. Syntax from the wrong model either gets ignored or actively confuses the generator.</p>
+
+      <p><strong>Model syntax guide:</strong></p>
+
+      <table>
+        <thead><tr><th>Model</th><th>Best Prompt Format</th><th>Parameters Syntax</th></tr></thead>
+        <tbody>
+          <tr><td>Midjourney</td><td>Natural language or tags</td><td><code>--ar 16:9 --v 6.1 --style raw</code></td></tr>
+          <tr><td>Stable Diffusion</td><td>Comma-separated tags</td><td>Separate negative prompt field; (word:1.3) weighting</td></tr>
+          <tr><td>Flux</td><td>Natural descriptive sentences</td><td>No special parameters; descriptive language</td></tr>
+          <tr><td>DALL·E 3</td><td>Natural language instructions</td><td>No parameters; conversational style works</td></tr>
+          <tr><td>Ideogram</td><td>Natural language; quoted text for rendering</td><td>Style/magic prompt toggles in UI</td></tr>
+        </tbody>
+      </table>
+
+      <p><strong>The fix:</strong> Before pasting any prompt into a new model, strip out model-specific syntax and reformat for the target tool. A <a href="/">prompt extractor tool</a> can help you get the core description from any image so you can rewrite it for your target model.</p>
+
+      <hr />
+
+      <h2>Mistake 3: Overloading the Prompt with Too Many Concepts</h2>
+
+      <p><strong>The mistake:</strong> Cramming every interesting idea you have into a single prompt — "a cyberpunk samurai riding a dragon through a neon Tokyo rainstorm while fighting robots next to a cherry blossom waterfall with a moon in the background".</p>
+
+      <p><strong>Why it fails:</strong> AI models have a limited capacity to balance competing concepts. When you give it 8 distinct ideas, it will try to average them all or pick the ones that dominate its training distribution. The result is visual chaos — elements merged nonsensically or some concepts simply ignored.</p>
+
+      <p><strong>The fix:</strong> Choose one primary subject, one environment, and one mood. Everything else is supporting detail for those three things. If you have many ideas, make multiple images — one per focused concept — rather than one overloaded image.</p>
+
+      <table>
+        <thead><tr><th>Overloaded</th><th>Focused</th></tr></thead>
+        <tbody>
+          <tr>
+            <td>cyberpunk samurai on a dragon in rainy Tokyo fighting robots near cherry blossoms with a full moon</td>
+            <td>cyberpunk samurai standing in rain-soaked neon-lit Tokyo alley, cherry blossom petals drifting past glowing advertisements, cinematic composition, dramatic rim lighting</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <hr />
+
+      <h2>Mistake 4: Forgetting About Lighting</h2>
+
+      <p><strong>The mistake:</strong> Describing every element of a scene — subject, environment, style — but saying nothing about the lighting.</p>
+
+      <p><strong>Why it fails:</strong> Lighting is what transforms a technically correct image into a striking one. Without lighting instruction, the AI defaults to flat, generic studio lighting that makes even the most interesting subject look boring. Lighting creates mood, directs attention, and defines the atmosphere of an image more than almost any other single variable.</p>
+
+      <p><strong>The fix:</strong> Always include at least one lighting descriptor. Choose from these high-impact options:</p>
+      <ul>
+        <li><strong>Time of day:</strong> golden hour, blue hour, midday harsh sun, pre-dawn</li>
+        <li><strong>Source:</strong> natural window light, backlit, candlelit, neon sign lighting, bioluminescent</li>
+        <li><strong>Quality:</strong> dramatic chiaroscuro, soft diffused, harsh direct, dappled through leaves, volumetric god rays</li>
+        <li><strong>Color temperature:</strong> warm amber glow, cool blue moonlight, orange fire light, clinical white fluorescent</li>
+      </ul>
+
+      <table>
+        <thead><tr><th>Without lighting</th><th>With lighting</th></tr></thead>
+        <tbody>
+          <tr>
+            <td>ancient castle in a forest</td>
+            <td>ancient castle in a dense forest, golden hour light breaking through storm clouds, shafts of light illuminating misty ground, dramatic and atmospheric</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <hr />
+
+      <h2>Mistake 5: Ignoring Aspect Ratio and Composition Guidance</h2>
+
+      <p><strong>The mistake:</strong> Always generating in square format regardless of what you're creating, and never mentioning composition (camera angle, framing, perspective).</p>
+
+      <p><strong>Why it fails:</strong> A portrait photo needs a vertical format. A landscape scene needs horizontal. A YouTube thumbnail needs 16:9. Generating in the wrong aspect ratio forces the AI to make compositional compromises that degrade the result. Similarly, without composition guidance, the AI defaults to a centered, head-on "average" composition.</p>
+
+      <p><strong>The fix:</strong> Specify format and composition in every prompt:</p>
+      <ul>
+        <li><strong>Aspect ratio:</strong> <code>--ar 16:9</code> (MJ), <code>landscape format</code>, <code>vertical portrait orientation</code></li>
+        <li><strong>Camera angle:</strong> overhead bird's eye view, low angle worm's eye view, eye level, Dutch tilt</li>
+        <li><strong>Framing:</strong> extreme close-up, medium shot, wide establishing shot, rule of thirds composition</li>
+        <li><strong>Lens:</strong> wide angle, telephoto compressed perspective, fisheye, macro</li>
+      </ul>
+
+      <hr />
+
+      <h2>Mistake 6: Not Using Negative Prompts in Stable Diffusion</h2>
+
+      <p><strong>The mistake:</strong> Using Stable Diffusion without a negative prompt, or using one that's so short it does nothing.</p>
+
+      <p><strong>Why it fails:</strong> SD models have persistent tendencies toward certain artifacts — deformed hands, extra fingers, blurry faces, watermarks, low quality textures. Without a negative prompt pushing against these tendencies, you'll fight them every generation.</p>
+
+      <p><strong>The fix:</strong> Use a comprehensive standard negative prompt as your baseline, then add subject-specific exclusions:</p>
+
+      <pre><code>Standard negative: ugly, deformed, noisy, blurry, distorted, out of focus, bad anatomy, extra limbs, poorly drawn hands, poorly drawn face, mutation, watermark, signature, text, logo, oversaturated, jpeg artifacts, low quality, worst quality, lowres
+
+Add for portraits: asymmetric eyes, crossed eyes, bad teeth, skin texture issues
+
+Add for environments: people (if unwanted), cars (if anachronistic)
+
+Add for product shots: reflections (if unwanted), background clutter</code></pre>
+
+      <div class="callout callout-tip">
+        <strong>Model-specific note:</strong> SDXL-based models respond well to quality tokens in the positive prompt (<code>masterpiece, best quality, highly detailed</code>) combined with quality exclusions in the negative. Older SD 1.5 models rely more heavily on negative prompts alone.
+      </div>
+
+      <hr />
+
+      <h2>Mistake 7: Using Outdated Model Parameters</h2>
+
+      <p><strong>The mistake:</strong> Running <code>--v 4</code> in Midjourney when v6.1 is available, or using SD 1.5 checkpoints when SDXL offers dramatically better quality for the same effort.</p>
+
+      <p><strong>Why it fails:</strong> Model versions represent significant quality jumps. Midjourney v4 vs v6.1 is not a minor difference — v6.1 produces substantially more coherent anatomy, better prompt adherence, and higher visual quality. Running old versions because "that's what the tutorial used" leaves significant quality on the table.</p>
+
+      <p><strong>The fix:</strong> Check what the current recommended version is for your tool before each project. For Midjourney in 2026, set <code>--v 6.1</code> or use <code>/settings</code> to make it default. For Stable Diffusion, prefer SDXL-based checkpoints over SD 1.5 for new work unless you have a specific reason to use older models.</p>
+
+      <hr />
+
+      <h2>Mistake 8: Copying Prompts Without Adapting Them</h2>
+
+      <p><strong>The mistake:</strong> Copying a prompt from Reddit, PromptHero, or another community site and running it unchanged, then being confused when the result doesn't match the example image.</p>
+
+      <p><strong>Why it fails:</strong> Shared prompts are tied to specific models, versions, seeds, and settings. The same prompt on a different model version, with different sampler settings, or with a different seed will produce a different image. Additionally, popular shared prompts often include custom model trigger words or LoRA references that don't apply to your setup.</p>
+
+      <p><strong>The fix:</strong> Use shared prompts as a starting point, not a recipe. Extract the style and structural elements that make it work, understand why those elements work, and rewrite the prompt for your exact tool and use case. Think of it as studying someone's technique, not photocopying their work.</p>
+
+      <hr />
+
+      <h2>Mistake 9: Not Specifying a Medium or Rendering Style</h2>
+
+      <p><strong>The mistake:</strong> Describing what to show but not how to render it — leaving the model to guess whether you want a photograph, a digital illustration, an oil painting, or a 3D render.</p>
+
+      <p><strong>Why it fails:</strong> Without medium specification, AI models default to whatever rendering style is most common in their training data for that subject — which is usually a generic digital illustration or photo hybrid that belongs fully to neither category.</p>
+
+      <p><strong>The fix:</strong> Always specify a medium. Choose one that fits your use case:</p>
+
+      <table>
+        <thead><tr><th>Medium Descriptor</th><th>What It Produces</th></tr></thead>
+        <tbody>
+          <tr><td>photorealistic, DSLR photography, f/2.8</td><td>Photo-quality image with camera characteristics</td></tr>
+          <tr><td>digital concept art, artstation quality</td><td>Professional illustration style seen on portfolio sites</td></tr>
+          <tr><td>oil painting, impasto texture</td><td>Traditional painted look with visible brushwork</td></tr>
+          <tr><td>watercolor illustration, loose brushstrokes</td><td>Soft, translucent painted style</td></tr>
+          <tr><td>3D render, octane render, subsurface scattering</td><td>CG-rendered look with ray-traced lighting</td></tr>
+          <tr><td>ink illustration, pen and ink, crosshatching</td><td>Black and white or limited color line art</td></tr>
+          <tr><td>flat vector illustration, minimal</td><td>Clean, geometric, icon-adjacent style</td></tr>
+        </tbody>
+      </table>
+
+      <hr />
+
+      <h2>Mistake 10: Using Conflicting Descriptors</h2>
+
+      <p><strong>The mistake:</strong> Combining style descriptors that are mutually exclusive or aesthetically incompatible — "cinematic photography AND flat design AND watercolor illustration".</p>
+
+      <p><strong>Why it fails:</strong> The model tries to satisfy all instructions simultaneously. Cinematic implies photorealism. Flat design implies geometric abstraction. Watercolor implies traditional painting. Each pulls in a different direction and the result satisfies none of them well.</p>
+
+      <p><strong>The fix:</strong> Pick one visual register and stay in it. If you want to combine styles, be intentional and specific about the fusion: "watercolor illustration with a cinematic color palette and moody atmospheric lighting" is coherent because it specifies a clear medium (watercolor) with stylistic influences applied to it.</p>
+
+      <table>
+        <thead><tr><th>Conflicting</th><th>Coherent Fusion</th></tr></thead>
+        <tbody>
+          <tr>
+            <td>cinematic photography, flat design, watercolor</td>
+            <td>watercolor illustration with cinematic composition and dramatic atmospheric lighting — keep the medium clear, apply style elements to it</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <hr />
+
+      <h2>Mistake 11: Over-Weighting in Stable Diffusion</h2>
+
+      <p><strong>The mistake:</strong> Using excessive attention weighting like <code>(subject:2.5)</code> or <code>((((beautiful))))</code> to force emphasis on an element.</p>
+
+      <p><strong>Why it fails:</strong> Weights above 1.3-1.5 in most SD models cause visual artifacts — the weighted element becomes oversaturated, distorted, or rendered in a way that breaks coherence with the rest of the image. "Beautiful" repeated four times in parentheses doesn't make something more beautiful; it makes the model distort toward its idea of beauty until it breaks.</p>
+
+      <p><strong>The fix:</strong> Keep weights between 0.8 and 1.3 for minor adjustments. For emphasis, use descriptive language rather than weight values — "strikingly beautiful" is more effective than <code>(beautiful:2.0)</code> because it gives the model more semantic signal rather than just raw attention weight.</p>
+
+      <pre><code>Instead of: (beautiful woman:2.0), (detailed face:1.8), ((perfect eyes:2.5))
+Use: portrait of a strikingly beautiful woman, perfectly proportioned features, detailed realistic eyes, professional portrait photography</code></pre>
+
+      <hr />
+
+      <h2>Mistake 12: Forgetting Quality Tokens in Stable Diffusion</h2>
+
+      <p><strong>The mistake:</strong> Writing a detailed subject description but omitting quality signals entirely in SD prompts.</p>
+
+      <p><strong>Why it fails:</strong> SD models were trained on images tagged with quality metadata. Tokens like "masterpiece", "best quality", "highly detailed", "8k", and "sharp focus" steer the model toward the high-quality examples from its training set. Without them, the model samples from across its entire training distribution — which includes a lot of mediocre content.</p>
+
+      <p><strong>The fix:</strong> Begin or end every Stable Diffusion prompt with quality anchors:</p>
+
+      <pre><code>masterpiece, best quality, highly detailed, sharp focus, 8k uhd, [your actual prompt here]</code></pre>
+
+      <p>For portraits specifically, add: <code>photorealistic, skin texture detail, professional photography</code></p>
+
+      <p>Note: This technique is most important for older SD 1.5 models. SDXL and later models are less dependent on quality tokens but still benefit from them.</p>
+
+      <hr />
+
+      <h2>Mistake 13: Using Celebrity or Brand Names</h2>
+
+      <p><strong>The mistake:</strong> Prompting with "a portrait of [specific celebrity]" or "generate a Nike logo" or "in the style of [living artist's name]".</p>
+
+      <p><strong>Why it fails:</strong> This creates two problems. First, content filtering — most commercial AI tools will decline or produce degraded results for named celebrity likenesses. Second, inconsistency — even when the filter doesn't block it, the model's representation of a named person is often composite and inconsistent between generations.</p>
+
+      <p><strong>The fix:</strong> Describe the visual characteristics rather than the name. Instead of "a portrait of [celebrity]", describe their distinguishing features: hair color and texture, eye shape, facial structure, approximate age. This produces more consistent results and avoids content filtering entirely.</p>
+
+      <table>
+        <thead><tr><th>Problematic</th><th>Better</th></tr></thead>
+        <tbody>
+          <tr>
+            <td>portrait of [celebrity name]</td>
+            <td>portrait of a woman in her 40s with auburn wavy shoulder-length hair, strong jaw, warm brown eyes, charismatic expression, Hollywood lighting, editorial photography</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <hr />
+
+      <h2>Mistake 14: Giving Up After One Failed Attempt</h2>
+
+      <p><strong>The mistake:</strong> Submitting one prompt, seeing a result that doesn't match the mental image, and concluding either that the tool is bad or that the desired output is impossible.</p>
+
+      <p><strong>Why it fails:</strong> Professional AI artists rarely get their best work on the first generation. The first output is diagnostic — it tells you what the model understood from your prompt and where it diverged from your intention. A bad first result is data, not failure.</p>
+
+      <p><strong>The fix:</strong> Develop an iteration practice. After each generation:</p>
+      <ol>
+        <li>Identify the specific element(s) that are wrong (composition? lighting? subject appearance? style?)</li>
+        <li>Change one thing in the prompt to address that specific issue</li>
+        <li>Regenerate and compare</li>
+        <li>Repeat until the output matches the vision</li>
+      </ol>
+
+      <p>Most experienced AI artists spend 10-30 iterations on a prompt before reaching a final result they're satisfied with. Budget for this in your workflow.</p>
+
+      <div class="callout callout-tip">
+        <strong>Workflow tip:</strong> Use <a href="/">ImageToPrompt</a> to analyze any output you like but want to build on — it will extract what the AI "decided" about the image, giving you a precise prompt to iterate from rather than starting from scratch.
+      </div>
+
+      <hr />
+
+      <h2>Mistake 15: Ignoring the Model's Native Strengths</h2>
+
+      <p><strong>The mistake:</strong> Trying to generate text-heavy graphics in Midjourney, photorealistic product photography in DALL·E 3, or anime character designs in Flux — using a tool for use cases where it's genuinely weak.</p>
+
+      <p><strong>Why it fails:</strong> Every model has real strengths and real weaknesses that aren't just marketing. Midjourney excels at artistic, editorial, atmospheric imagery but struggles with accurate text and precise technical outputs. DALL·E 3 is good at following compositional instructions but its aesthetic defaults to clean/commercial. Flux is outstanding for photorealism but less compelling for stylized art. Ideogram is the only reliable choice for text-in-image work.</p>
+
+      <p><strong>Model-to-use-case matching guide:</strong></p>
+
+      <table>
+        <thead><tr><th>Use Case</th><th>Best Model</th><th>Avoid</th></tr></thead>
+        <tbody>
+          <tr><td>Photorealistic people/environments</td><td>Flux 1.1 Pro</td><td>Midjourney (stylizes too much)</td></tr>
+          <tr><td>Artistic/editorial illustration</td><td>Midjourney v6.1</td><td>DALL·E 3 (too literal)</td></tr>
+          <tr><td>Text in images (posters, logos)</td><td>Ideogram 2.0</td><td>Midjourney, Stable Diffusion</td></tr>
+          <tr><td>Game art / concept art</td><td>Leonardo AI, Midjourney</td><td>DALL·E 3</td></tr>
+          <tr><td>Anime / manga style</td><td>NovelAI, Niji Journey</td><td>Flux</td></tr>
+          <tr><td>Following precise instructions</td><td>DALL·E 3</td><td>Midjourney</td></tr>
+          <tr><td>Custom fine-tuned styles</td><td>Stable Diffusion XL</td><td>Any closed-source model</td></tr>
+        </tbody>
+      </table>
+
+      <p><strong>The fix:</strong> Before starting any project, ask: "Which tool is genuinely best suited for this specific output?" If you're not sure, do a quick test generation on two or three tools before committing to one for a longer project. The five minutes spent on that test saves hours of fighting the wrong tool.</p>
+
+      <hr />
+
+      <h2>Summary: The Prompt Engineering Checklist</h2>
+
+      <p>Before submitting any prompt, run through this checklist:</p>
+
+      <ul>
+        <li>Is the subject specific enough? (Who, what, doing what)</li>
+        <li>Have I matched the syntax to my specific model?</li>
+        <li>Is the prompt focused on one main idea?</li>
+        <li>Have I specified lighting?</li>
+        <li>Have I specified aspect ratio and composition?</li>
+        <li>Have I set up a negative prompt (for SD/Flux)?</li>
+        <li>Am I using the current model version?</li>
+        <li>Is this a prompt that will need adaptation from someone else's example?</li>
+        <li>Have I specified a medium/rendering style?</li>
+        <li>Are my style descriptors coherent with each other?</li>
+        <li>Are my attention weights reasonable (below 1.3)?</li>
+        <li>Have I included quality tokens (for SD)?</li>
+        <li>Am I avoiding celebrity/brand names?</li>
+        <li>Am I prepared to iterate on this result?</li>
+        <li>Is this use case a genuine strength of the model I'm using?</li>
+      </ul>
+
+      <p>Fixing even half of these in your current practice will produce noticeably better results immediately. The biggest gains usually come from Mistakes 1 (specificity), 4 (lighting), 9 (medium), and 15 (model-use-case fit). Start there if you want the fastest improvement.</p>
+
+      <div class="related-guides">
+        <h3>Related Guides</h3>
+        <ul>
+          <li><a href="/blog/prompt-engineering-for-ai-art/">Prompt Engineering for AI Art: Complete Guide</a></li>
+          <li><a href="/blog/negative-prompts-stable-diffusion/">Negative Prompts for Stable Diffusion</a></li>
+          <li><a href="/blog/midjourney-prompt-guide-2026/">Midjourney Prompt Guide 2026</a></li>
+          <li><a href="/blog/stable-diffusion-prompt-guide/">Stable Diffusion Prompt Guide</a></li>
+          <li><a href="/blog/flux-ai-prompt-guide/">Flux AI Prompt Guide</a></li>
+          <li><a href="/blog/stable-diffusion-vs-midjourney-vs-dalle3/">Stable Diffusion vs Midjourney vs DALL·E 3</a></li>
+          <li><a href="/blog/how-to-write-ai-prompts-beginners/">How to Write AI Prompts for Beginners</a></li>
+        </ul>
+      </div>
+    </div>
+    <aside class="author-bio">
+      <div class="author-avatar">IT</div>
+      <div class="author-info">
+        <strong>ImageToPrompt Team</strong>
+        <p>We build and maintain the free Image to Prompt Generator at imagetoprompt.dev.</p>
+      </div>
+    </aside>
+    <div class="cta-box">
+      <h3>Try It Yourself</h3>
+      <p>Upload any image and get an optimized AI prompt in under 10 seconds. Free, no account required.</p>
+      <a href="/" class="cta-btn">Try the Free Image to Prompt Generator →</a>
+    </div>
+  </div>
+  <footer class="site-footer">
+    <div class="inner">
+      <p>© 2026 <a href="/" style="color:#8888bb;text-decoration:none">ImageToPrompt</a> · Free AI Prompt Generator · Powered by Claude Vision</p>
+      <nav aria-label="Footer navigation">
+        <a href="/">Home</a><a href="/blog/">Blog</a><a href="/#how-it-works">How It Works</a><a href="/#faq">FAQ</a>
+      </nav>
+    </div>
+  </footer>
+</body>
+</html>

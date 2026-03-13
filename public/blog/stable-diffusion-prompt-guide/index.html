@@ -1,0 +1,432 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Stable Diffusion Prompt Guide 2026: From Basics to Advanced Techniques</title>
+  <meta name="description" content="The complete Stable Diffusion prompt guide for 2026. Master weighted prompts, negative prompts, CFG scale, samplers, and model-specific syntax for SD 1.5, SDXL, and SD 3.5." />
+  <link rel="canonical" href="https://www.imagetoprompt.dev/blog/stable-diffusion-prompt-guide/" />
+  <meta property="og:title" content="Stable Diffusion Prompt Guide 2026: From Basics to Advanced Techniques" />
+  <meta property="og:description" content="The complete Stable Diffusion prompt guide for 2026. Master weighted prompts, negative prompts, CFG scale, samplers, and model-specific syntax for SD 1.5, SDXL, and SD 3.5." />
+  <meta property="og:url" content="https://www.imagetoprompt.dev/blog/stable-diffusion-prompt-guide/" />
+  <meta property="og:type" content="article" />
+  <meta property="og:image" content="https://www.imagetoprompt.dev/og-image.png" />
+  <meta property="og:site_name" content="ImageToPrompt" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Stable Diffusion Prompt Guide 2026: From Basics to Advanced Techniques" />
+  <meta name="twitter:description" content="The complete Stable Diffusion prompt guide for 2026. Master weighted prompts, negative prompts, CFG scale, samplers, and model-specific syntax for SD 1.5, SDXL, and SD 3.5." />
+  <meta name="twitter:image" content="https://www.imagetoprompt.dev/og-image.png" />
+  <meta name="twitter:site" content="@imagetoprompt" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="/fonts/space-grotesk-700.woff2" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="/fonts/inter-400.woff2" />
+  <link rel="stylesheet" href="/blog.css" />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Stable Diffusion Prompt Guide 2026: From Basics to Advanced Techniques",
+    "description": "The complete Stable Diffusion prompt guide for 2026. Master weighted prompts, negative prompts, CFG scale, samplers, and model-specific syntax for SD 1.5, SDXL, and SD 3.5.",
+    "image": "https://www.imagetoprompt.dev/og-image.png",
+    "datePublished": "2026-03-13",
+    "dateModified": "2026-03-13",
+    "author": { "@type": "Person", "name": "ImageToPrompt Team", "url": "https://www.imagetoprompt.dev/" },
+    "publisher": { "@type": "Organization", "name": "ImageToPrompt", "logo": { "@type": "ImageObject", "url": "https://www.imagetoprompt.dev/favicon.svg" } },
+    "mainEntityOfPage": { "@type": "WebPage", "@id": "https://www.imagetoprompt.dev/blog/stable-diffusion-prompt-guide/" }
+  }
+  </script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="inner">
+      <a href="/" class="site-logo">ImageTo<span class="accent">Prompt</span></a>
+      <nav class="site-nav" aria-label="Main navigation">
+        <a href="/">Tool</a>
+        <a href="/blog/" class="active">Blog</a>
+        <a href="/#faq">FAQ</a>
+        <a href="/" style="background:linear-gradient(135deg,#e040fb,#00e5ff);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;font-weight:600">Try Free →</a>
+      </nav>
+    </div>
+  </header>
+  <nav class="breadcrumb" aria-label="Breadcrumb">
+    <a href="/">Home</a><span class="sep">›</span><a href="/blog/">Blog</a><span class="sep">›</span><span>Stable Diffusion Prompt Guide</span>
+  </nav>
+  <div class="page-wrapper">
+    <header class="article-header">
+      <p class="article-tag">Stable Diffusion</p>
+      <h1>Stable Diffusion Prompt Guide 2026: From Basics to Advanced Techniques</h1>
+      <div class="article-meta">
+        <span>March 2026</span><span class="dot">·</span><span>15 min read</span><span class="dot">·</span><span>Stable Diffusion, Prompt Engineering, AI Art</span>
+      </div>
+    </header>
+    <div class="article-body">
+
+      <p>Stable Diffusion is the most powerful and most demanding AI image generator available. Unlike Midjourney's managed cloud or DALL-E 3's conversational interface, SD gives you direct access to the model's internals: token weights, samplers, CFG scale, negative prompts, and a vast ecosystem of fine-tuned models. With that power comes a steeper learning curve.</p>
+
+      <p>This guide covers everything: from the basic comma-separated token syntax to advanced weight manipulation, model selection, sampler choice, and the differences between SD 1.5, SDXL, and SD 3.5. You'll also learn how to use <a href="/stable-diffusion-prompt-generator/">our Stable Diffusion prompt generator</a> and tools like <a href="/">ImageToPrompt</a> to generate SD-ready prompts from reference images.</p>
+
+      <h2>Why Stable Diffusion Prompting Is the Most Complex — and Most Powerful</h2>
+
+      <p>SD's complexity is a feature. Every parameter is exposed because the community demanded it. Here's what SD offers that most cloud-based generators don't:</p>
+
+      <ul>
+        <li><strong>Negative prompts:</strong> A separate field for explicitly excluding unwanted elements — critical for avoiding common SD artifacts</li>
+        <li><strong>Token weighting:</strong> Assign numerical importance to any concept in your prompt</li>
+        <li><strong>CFG scale:</strong> Control how closely the model follows your prompt (vs. creative freedom)</li>
+        <li><strong>Sampler selection:</strong> Choose the denoising algorithm, each with different quality/speed/style tradeoffs</li>
+        <li><strong>Model ecosystem:</strong> Thousands of fine-tuned models specialized for anime, photorealism, architecture, product photography, etc.</li>
+        <li><strong>LoRA and embeddings:</strong> Inject specific styles, characters, or concepts with a few extra tokens</li>
+      </ul>
+
+      <p>If you're coming from Midjourney or DALL-E 3, expect a 2–4 week adjustment period before SD results match your expectations. The ceiling is much higher, but the floor requires work to reach.</p>
+
+      <h2>Prompt Syntax Basics: Token Lists vs Natural Language</h2>
+
+      <p>SD was originally trained on LAION datasets with short, descriptive alt-text captions. As a result, comma-separated short phrases (tokens) work more reliably than full sentences — especially on SD 1.5 and SDXL.</p>
+
+      <h3>Token-based (recommended for SD 1.5 and SDXL)</h3>
+      <div class="code-block">
+        <code>masterpiece, best quality, 1girl, long silver hair, blue eyes, white dress, standing in a moonlit forest, ethereal lighting, bokeh background, photorealistic</code>
+      </div>
+
+      <h3>Natural language (works better on SD 3.5)</h3>
+      <div class="code-block">
+        <code>A photorealistic portrait of a young woman with long silver hair and blue eyes, wearing a flowing white dress, standing in a moonlit forest with soft ethereal lighting and a blurred background.</code>
+      </div>
+
+      <p>SD 3.5 was specifically trained with natural language prompts and handles them much better than previous versions. For SD 1.5 and SDXL, stick to comma-separated tokens for best results.</p>
+
+      <h2>The Token Weight System</h2>
+
+      <p>Token weights let you tell the model which elements of your prompt are most important. Without weights, all tokens receive equal attention — the model may de-emphasize something you care about in favor of a generic element.</p>
+
+      <h3>Increasing weight (parentheses)</h3>
+      <div class="code-block">
+        <code>(important concept:1.3)    ← 30% more emphasis
+((very important:1.5))    ← double parentheses also increase weight
+(normal importance)       ← single parentheses = slight boost (~1.05x)</code>
+      </div>
+
+      <h3>Decreasing weight (square brackets)</h3>
+      <div class="code-block">
+        <code>[less important:0.8]      ← 20% less emphasis
+[barely noticeable:0.5]   ← 50% less emphasis</code>
+      </div>
+
+      <h3>Practical weight examples</h3>
+      <div class="code-block">
+        <code>masterpiece, (photorealistic:1.4), portrait of a woman, (red hair:1.3), green eyes, [background:0.7], soft lighting, sharp focus</code>
+      </div>
+
+      <p>This prompt prioritizes photorealism and red hair, while slightly de-emphasizing the background so it doesn't compete with the subject.</p>
+
+      <div class="callout callout-warning">
+        <strong>Caution with high weights:</strong> Weights above 1.5 often cause artifacts, overexposure, or color distortion. Stay between 0.7 and 1.4 for most use cases. Extreme weights (above 1.8) will break image quality.
+      </div>
+
+      <h2>Structuring Your Positive Prompt</h2>
+
+      <p>SD responds to token position — earlier tokens receive slightly more weight in the attention mechanism. The recommended structure for maximum control:</p>
+
+      <h3>Recommended token order</h3>
+      <ol>
+        <li><strong>Quality tokens</strong> (most important)</li>
+        <li><strong>Medium/format</strong> (photography, painting, illustration, etc.)</li>
+        <li><strong>Subject</strong> (main focus of the image)</li>
+        <li><strong>Subject details</strong> (appearance, attributes)</li>
+        <li><strong>Action/pose</strong></li>
+        <li><strong>Setting/environment</strong></li>
+        <li><strong>Lighting</strong></li>
+        <li><strong>Style and artist references</strong></li>
+        <li><strong>Camera/technical details</strong></li>
+      </ol>
+
+      <h2>Quality Tokens: The SD Vocabulary for "Make It Good"</h2>
+
+      <p>Quality tokens are phrases that SD associates with high-quality training images. Including them at the start of your prompt biases the model toward better outputs. Not all of these work equally well on all models — test and remove any that don't improve your results.</p>
+
+      <h3>Universal quality tokens</h3>
+      <div class="code-block">
+        <code>masterpiece, best quality, ultra-detailed, high resolution</code>
+      </div>
+
+      <h3>Photography-specific quality tokens</h3>
+      <div class="code-block">
+        <code>photorealistic, hyperrealistic, photograph, RAW photo, 8k uhd, DSLR, sharp focus, high detail, professional photography</code>
+      </div>
+
+      <h3>Illustration/art quality tokens</h3>
+      <div class="code-block">
+        <code>highly detailed illustration, intricate details, sharp lines, beautiful artwork, trending on artstation, detailed digital painting</code>
+      </div>
+
+      <h3>Tokens to use cautiously</h3>
+      <p>Some tokens (like "award winning" or "featured on artstation") have become diluted from overuse. Test their effect by running with and without them — on some models they add noise rather than quality.</p>
+
+      <h2>Negative Prompts: Your Most Powerful SD Tool</h2>
+
+      <p>Negative prompts are what separates experienced SD users from beginners. While positive prompts tell the model what to include, negative prompts tell it what to exclude. The effect is dramatic — a well-crafted negative prompt can prevent the most common SD failure modes entirely.</p>
+
+      <p>For a complete treatment of negative prompts, see our <a href="/blog/negative-prompts-stable-diffusion/">Negative Prompts in Stable Diffusion guide</a>. Here's the essential starter negative prompt:</p>
+
+      <h3>Universal negative prompt (copy and use)</h3>
+      <div class="code-block">
+        <code>lowres, bad anatomy, bad hands, text, error, missing fingers, extra digit, fewer digits, cropped, worst quality, low quality, normal quality, jpeg artifacts, signature, watermark, username, blurry, artist name, deformed, ugly, duplicate, morbid, mutilated, out of frame, extra fingers, mutated hands, poorly drawn hands, poorly drawn face, mutation, deformed, blurry, bad proportions, gross proportions, malformed limbs, missing arms, missing legs, extra arms, extra legs, fused fingers, too many fingers, long neck</code>
+      </div>
+
+      <h3>Photography-specific negative additions</h3>
+      <div class="code-block">
+        <code>illustration, painting, cartoon, anime, drawing, sketch, 3d render, CGI</code>
+      </div>
+
+      <h3>Portrait-specific negative additions</h3>
+      <div class="code-block">
+        <code>bad eyes, asymmetrical eyes, crossed eyes, bad teeth, bad lips, uneven skin tone, skin blemishes, acne</code>
+      </div>
+
+      <h2>CFG Scale: Following Your Prompt vs Creative Freedom</h2>
+
+      <p>CFG (Classifier-Free Guidance) scale controls how strictly the model adheres to your prompt. Low values give the model creative freedom but may drift from your description. High values force strict adherence but cause artifacts and oversaturation.</p>
+
+      <table>
+        <thead>
+          <tr><th>CFG Value</th><th>Behavior</th><th>Best For</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>1–4</td><td>Very loose, model does its own thing</td><td>Artistic experimentation, happy accidents</td></tr>
+          <tr><td>5–7</td><td>Balanced, some creative interpretation</td><td>Most art styles, illustrations, creative images</td></tr>
+          <tr><td>7–9</td><td>Good prompt adherence, standard quality</td><td>Default for most use cases</td></tr>
+          <tr><td>10–12</td><td>Strong prompt adherence, some saturation</td><td>Precise compositions, complex scenes</td></tr>
+          <tr><td>13–17</td><td>Very strict, increasing artifacts</td><td>Rarely recommended</td></tr>
+          <tr><td>18+</td><td>Overcooked, flat, posterized</td><td>Avoid</td></tr>
+        </tbody>
+      </table>
+
+      <p><strong>Recommended default:</strong> CFG 7 for most art styles, CFG 6 for photorealistic, CFG 8–9 for complex prompts with many elements.</p>
+
+      <h2>Sampler Selection: Which One to Use and When</h2>
+
+      <p>Samplers are the denoising algorithm that generates your image step by step. Different samplers produce different results at the same step count and can produce dramatically different image character.</p>
+
+      <table>
+        <thead>
+          <tr><th>Sampler</th><th>Speed</th><th>Quality</th><th>Best For</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>DPM++ 2M Karras</td><td>Fast</td><td>Excellent</td><td>Default recommendation, photorealism</td></tr>
+          <tr><td>DPM++ SDE Karras</td><td>Slow</td><td>Excellent, detailed</td><td>High-detail portraits, fine textures</td></tr>
+          <tr><td>Euler a</td><td>Fast</td><td>Good, varied</td><td>Exploration, getting diverse results</td></tr>
+          <tr><td>Euler</td><td>Fast</td><td>Good, consistent</td><td>Consistent iterations on the same prompt</td></tr>
+          <tr><td>DDIM</td><td>Fast</td><td>Good, smooth</td><td>Inpainting, img2img workflows</td></tr>
+          <tr><td>LMS Karras</td><td>Medium</td><td>Good</td><td>Artistic styles, illustrations</td></tr>
+          <tr><td>Heun</td><td>Slow (2x steps)</td><td>High quality</td><td>Final renders when quality matters most</td></tr>
+        </tbody>
+      </table>
+
+      <p><strong>Recommendation for beginners:</strong> Start with DPM++ 2M Karras at 20–30 steps. It produces excellent results efficiently and is the community default for good reason.</p>
+
+      <h2>Step Count Recommendations</h2>
+
+      <p>More steps generally produce more detailed, refined images — up to a point. Beyond that point, you waste compute time with diminishing returns or slight degradation.</p>
+
+      <ul>
+        <li><strong>10–15 steps:</strong> Rough draft, quick experiments, exploring composition</li>
+        <li><strong>20–25 steps:</strong> Good quality, efficient, covers 90% of use cases</li>
+        <li><strong>30–40 steps:</strong> High quality, more detail, slower generation</li>
+        <li><strong>50+ steps:</strong> Diminishing returns for most samplers. Only worth it for Euler a, which keeps changing at high step counts</li>
+      </ul>
+
+      <p><strong>Rule of thumb:</strong> 25 steps with DPM++ 2M Karras is the standard. Increase to 35 for final renders; decrease to 15 for rapid exploration.</p>
+
+      <h2>SD 1.5 vs SDXL vs SD 3.5: Key Prompt Differences</h2>
+
+      <h3>Stable Diffusion 1.5</h3>
+      <p>The original widely-used version. Has the largest ecosystem of fine-tuned models, LoRAs, and embeddings. Prompt token limit: 75 tokens (77 with separator). Responds best to comma-separated tokens. Negative prompts are essential. Default resolution: 512×512 (upscale after).</p>
+      <div class="code-block">
+        <code>masterpiece, best quality, photorealistic, (portrait of a young woman:1.2), brown hair, brown eyes, white blouse, sitting at a cafe, warm lighting, bokeh background, sharp focus, 8k</code>
+      </div>
+
+      <h3>Stable Diffusion XL (SDXL)</h3>
+      <p>Larger model with significantly improved understanding of complex prompts and human anatomy. Default resolution: 1024×1024. Handles longer prompts better than SD 1.5. Still benefits from quality tokens at start. Has separate base and refiner models for best results.</p>
+      <div class="code-block">
+        <code>professional portrait photography, young woman, brown hair pulled back, warm smile, sitting at a sunlit coffee shop, shallow depth of field, golden hour light from window, Canon 5D Mark IV, 85mm lens, f/1.8, photorealistic, high detail</code>
+      </div>
+
+      <h3>Stable Diffusion 3.5</h3>
+      <p>The latest generation. Understands natural language much better than previous versions. Produces more accurate text in images. Better prompt coherence for complex multi-element scenes. Uses a different architecture (Multimodal Diffusion Transformer). Natural language works well alongside or instead of token lists.</p>
+      <div class="code-block">
+        <code>A professional portrait of a young woman with warm brown hair, sitting in a sunlit coffee shop with golden afternoon light coming through the window. She's wearing a white blouse and has a natural, warm smile. Shot with shallow depth of field, photorealistic, high detail.</code>
+      </div>
+
+      <h2>LoRA and Embedding Integration in Prompts</h2>
+
+      <p>LoRAs (Low-Rank Adaptations) are small model add-ons that inject a specific style, character, or concept. They're activated by including their trigger word(s) in your prompt.</p>
+
+      <h3>Using a LoRA in A1111/Forge</h3>
+      <div class="code-block">
+        <code>masterpiece, best quality, [LoRA trigger word], [rest of your prompt] &lt;lora:lora_filename:0.8&gt;</code>
+      </div>
+
+      <p>The number after the colon (0.8) is the LoRA strength. Values between 0.6 and 1.0 work for most LoRAs. Higher values amplify the style but can cause artifacts. Lower values blend the style more subtly with the base model.</p>
+
+      <h3>Textual Inversions (Embeddings)</h3>
+      <p>Embeddings are activated simply by typing their name as a token in your prompt:</p>
+      <div class="code-block">
+        <code>masterpiece, best quality, EasyNegative, bad_prompt_version2, [rest of negative prompt]</code>
+      </div>
+
+      <p>EasyNegative and bad_prompt_version2 are popular negative prompt embeddings that pack hundreds of exclusion tokens into a single word — include them in your negative prompt for a quick quality boost.</p>
+
+      <h2>Anatomy of a Complete SD Prompt</h2>
+
+      <p>Here's a fully annotated example showing every element in action:</p>
+
+      <div class="code-block">
+        <code>POSITIVE:
+masterpiece, best quality, ultra-detailed,     ← quality tokens
+photorealistic, RAW photo,                      ← medium/format
+(1girl:1.1),                                    ← subject (weighted)
+long auburn hair, amber eyes, freckles,         ← subject details
+wearing a leather jacket, sitting on a          ← action/setting
+motorcycle on a rain-slicked city street,
+night scene, neon reflections on wet asphalt,   ← environment details
+(volumetric lighting:1.2), (rim light:1.1),    ← lighting (weighted)
+cinematic, film grain, 35mm,                    ← style/technical
+bokeh, f/2.8, sharp focus on face              ← camera details
+
+NEGATIVE:
+lowres, bad anatomy, bad hands, extra fingers,
+worst quality, low quality, blurry, watermark,
+poorly drawn face, deformed, ugly, bad proportions</code>
+      </div>
+
+      <h2>15 Complete Example Prompts Across Categories</h2>
+
+      <h3>1. Photorealistic Female Portrait</h3>
+      <div class="code-block">
+        <code>masterpiece, best quality, photorealistic, RAW photo, portrait of a beautiful woman in her 30s, dark red hair, green eyes, natural makeup, white silk blouse, soft studio lighting, rembrandt lighting, shallow depth of field, bokeh, 85mm lens, sharp focus, 8k</code>
+      </div>
+
+      <h3>2. Fantasy Landscape</h3>
+      <div class="code-block">
+        <code>masterpiece, best quality, ultra-detailed, epic fantasy landscape, ancient ruined temple overgrown with vines, glowing magical stones, misty atmosphere, golden light through forest canopy, digital painting, concept art, artstation trending, cinematic composition, volumetric lighting</code>
+      </div>
+
+      <h3>3. Cyberpunk City</h3>
+      <div class="code-block">
+        <code>masterpiece, best quality, cyberpunk city street at night, rain-slicked asphalt, neon signs in Japanese and English, holographic advertisements, crowded with pedestrians in futuristic clothing, (atmospheric fog:1.2), volumetric neon lighting, cinematic, ultra-detailed, 8k</code>
+      </div>
+
+      <h3>4. Product Photography</h3>
+      <div class="code-block">
+        <code>masterpiece, best quality, product photography, perfume bottle on white marble surface, soft studio lighting, bokeh background, water droplets on glass, luxury editorial style, clean and minimal, sharp focus, commercial photography, white background</code>
+      </div>
+
+      <h3>5. Anime Character</h3>
+      <div class="code-block">
+        <code>masterpiece, best quality, 1girl, anime style, silver hair, blue eyes, school uniform, cherry blossom background, sunlight filtering through petals, detailed illustration, artstation, beautiful detailed eyes, sharp focus, vibrant colors</code>
+      </div>
+
+      <h3>6. Abstract Digital Art</h3>
+      <div class="code-block">
+        <code>masterpiece, best quality, abstract digital art, flowing liquid metal, iridescent colors, fractal patterns, dark background, (bioluminescent:1.3), surreal, cinematic lighting, ultra-detailed, 8k, trending on artstation</code>
+      </div>
+
+      <h3>7. Architecture Exterior</h3>
+      <div class="code-block">
+        <code>masterpiece, best quality, architectural photography, modern minimalist house, large glass windows, concrete and wood exterior, surrounded by lush garden, golden hour lighting, (dramatic sky:1.2), architectural visualization, ultra-detailed, sharp focus</code>
+      </div>
+
+      <h3>8. Food Photography</h3>
+      <div class="code-block">
+        <code>masterpiece, best quality, food photography, overhead shot of ramen bowl with rich broth, soft-boiled egg, chashu pork, green onions, nori, steam rising, (warm lighting:1.2), natural light, wooden table surface, editorial food styling, shallow depth of field</code>
+      </div>
+
+      <h3>9. Historical Portrait</h3>
+      <div class="code-block">
+        <code>masterpiece, best quality, oil painting portrait, 17th century Dutch master style, merchant in dark clothes, fur collar, holding a globe, dark background, (Rembrandt lighting:1.3), detailed brushwork, museum quality, highly detailed</code>
+      </div>
+
+      <h3>10. Sci-Fi Spaceship</h3>
+      <div class="code-block">
+        <code>masterpiece, best quality, ultra-detailed, sci-fi spacecraft approaching a ringed gas giant, (hard science fiction:1.2), NASA concept art style, photorealistic rendering, solar light from the right, stars and nebula in background, cinematic composition</code>
+      </div>
+
+      <h3>11. Nature Macro</h3>
+      <div class="code-block">
+        <code>masterpiece, best quality, macro photography, dew drops on spider web at sunrise, (golden hour light:1.3), bokeh background, sharp focus on droplets, (prismatic light refraction:1.2), nature photography, canon 100mm macro lens</code>
+      </div>
+
+      <h3>12. Character Concept Art</h3>
+      <div class="code-block">
+        <code>masterpiece, best quality, character concept art, female warrior in ornate dark plate armor, (battle-worn:1.1), scarred face, determined expression, full body shot, neutral background, detailed armor design, artstation trending, sharp focus, professional concept art</code>
+      </div>
+
+      <h3>13. Cozy Interior</h3>
+      <div class="code-block">
+        <code>masterpiece, best quality, interior photography, cozy home library, floor-to-ceiling bookshelves, leather armchair, warm fireplace light, (golden hour window light:1.2), Persian rug, plants, candles, atmospheric, soft shadows, inviting atmosphere</code>
+      </div>
+
+      <h3>14. Watercolor Illustration</h3>
+      <div class="code-block">
+        <code>masterpiece, best quality, watercolor illustration, charming street cafe in Paris, loose expressive brushwork, soft washes of color, warm afternoon light, people at outdoor tables, flowering window boxes, impressionist influence, detailed watercolor painting</code>
+      </div>
+
+      <h3>15. Portrait with Environment</h3>
+      <div class="code-block">
+        <code>masterpiece, best quality, photorealistic, environmental portrait of an old fisherman, weathered face, kind eyes, yellow rain slicker, harbor in fog behind him, (moody overcast light:1.2), documentary photography style, Sebastião Salgado influence, deep focus, grain, black and white</code>
+      </div>
+
+      <h2>Using ImageToPrompt to Generate SD Prompts from References</h2>
+
+      <p>The fastest way to develop your SD prompting skills is to analyze images that already look the way you want. <a href="/">ImageToPrompt</a> uses Claude Vision to extract detailed, SD-compatible prompts from any uploaded image.</p>
+
+      <p>When you upload an image, the tool identifies:</p>
+      <ul>
+        <li>Subject and composition elements</li>
+        <li>Lighting type and direction</li>
+        <li>Color palette and mood</li>
+        <li>Art style and medium</li>
+        <li>Technical characteristics (depth of field, grain, etc.)</li>
+      </ul>
+
+      <p>You can select the Stable Diffusion output format to get a prompt already structured in the comma-separated token format SD expects. This eliminates guesswork when trying to replicate a specific visual style.</p>
+
+      <p>For comparison with other generators, see our <a href="/blog/stable-diffusion-vs-midjourney-vs-dalle3/">Stable Diffusion vs Midjourney vs DALL-E 3 comparison</a>. For negative prompt strategies, see the <a href="/blog/negative-prompts-stable-diffusion/">negative prompts deep dive</a>. For general prompt engineering principles, see <a href="/blog/prompt-engineering-for-ai-art/">prompt engineering for AI art</a>.</p>
+
+      <div class="related-guides">
+        <h3>Related Guides</h3>
+        <ul>
+          <li><a href="/blog/negative-prompts-stable-diffusion/">Negative Prompts in Stable Diffusion: Complete Guide</a></li>
+          <li><a href="/blog/stable-diffusion-vs-midjourney-vs-dalle3/">Stable Diffusion vs Midjourney vs DALL-E 3</a></li>
+          <li><a href="/blog/prompt-engineering-for-ai-art/">Advanced Prompt Engineering for AI Art</a></li>
+          <li><a href="/blog/how-to-write-ai-prompts-beginners/">How to Write AI Image Prompts for Beginners</a></li>
+          <li><a href="/blog/reverse-engineer-ai-art-prompts/">How to Reverse-Engineer AI Art Prompts</a></li>
+          <li><a href="/blog/best-image-to-prompt-tools-2026/">Best Image to Prompt Tools 2026</a></li>
+        </ul>
+      </div>
+    </div>
+    <aside class="author-bio">
+      <div class="author-avatar">IT</div>
+      <div class="author-info">
+        <strong>ImageToPrompt Team</strong>
+        <p>We build and maintain the free Image to Prompt Generator at imagetoprompt.dev.</p>
+      </div>
+    </aside>
+    <div class="cta-box">
+      <h3>Try It Yourself</h3>
+      <p>Upload any image and get an optimized AI prompt in under 10 seconds. Free, no account required.</p>
+      <a href="/" class="cta-btn">Try the Free Image to Prompt Generator →</a>
+    </div>
+  </div>
+  <footer class="site-footer">
+    <div class="inner">
+      <p>© 2026 <a href="/" style="color:#8888bb;text-decoration:none">ImageToPrompt</a> · Free AI Prompt Generator · Powered by Claude Vision</p>
+      <nav aria-label="Footer navigation">
+        <a href="/">Home</a><a href="/blog/">Blog</a><a href="/#how-it-works">How It Works</a><a href="/#faq">FAQ</a>
+      </nav>
+    </div>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,417 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Negative Prompts for Stable Diffusion: The Complete Guide (2026)</title>
+  <meta name="description" content="Master Stable Diffusion negative prompts. Get the best universal negative prompts, model-specific negatives, and learn how CFG scale affects negative prompt strength." />
+  <link rel="canonical" href="https://www.imagetoprompt.dev/blog/negative-prompts-stable-diffusion/" />
+  <meta property="og:title" content="Negative Prompts for Stable Diffusion: The Complete Guide (2026)" />
+  <meta property="og:description" content="Master Stable Diffusion negative prompts. Get the best universal negative prompts, model-specific negatives, and learn how CFG scale affects negative prompt strength." />
+  <meta property="og:url" content="https://www.imagetoprompt.dev/blog/negative-prompts-stable-diffusion/" />
+  <meta property="og:type" content="article" />
+  <meta property="og:image" content="https://www.imagetoprompt.dev/og-image.png" />
+  <meta property="og:site_name" content="ImageToPrompt" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Negative Prompts for Stable Diffusion: The Complete Guide (2026)" />
+  <meta name="twitter:description" content="Master Stable Diffusion negative prompts. Get the best universal negative prompts, model-specific negatives, and learn how CFG scale affects negative prompt strength." />
+  <meta name="twitter:image" content="https://www.imagetoprompt.dev/og-image.png" />
+  <meta name="twitter:site" content="@imagetoprompt" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="/fonts/space-grotesk-700.woff2" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="/fonts/inter-400.woff2" />
+  <link rel="stylesheet" href="/blog.css" />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Negative Prompts for Stable Diffusion: The Complete Guide (2026)",
+    "description": "Master Stable Diffusion negative prompts. Get the best universal negative prompts, model-specific negatives, and learn how CFG scale affects negative prompt strength.",
+    "image": "https://www.imagetoprompt.dev/og-image.png",
+    "datePublished": "2026-03-13",
+    "dateModified": "2026-03-13",
+    "author": { "@type": "Person", "name": "ImageToPrompt Team", "url": "https://www.imagetoprompt.dev/" },
+    "publisher": { "@type": "Organization", "name": "ImageToPrompt", "logo": { "@type": "ImageObject", "url": "https://www.imagetoprompt.dev/favicon.svg" } },
+    "mainEntityOfPage": { "@type": "WebPage", "@id": "https://www.imagetoprompt.dev/blog/negative-prompts-stable-diffusion/" }
+  }
+  </script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="inner">
+      <a href="/" class="site-logo">ImageTo<span class="accent">Prompt</span></a>
+      <nav class="site-nav" aria-label="Main navigation">
+        <a href="/">Tool</a>
+        <a href="/blog/" class="active">Blog</a>
+        <a href="/#faq">FAQ</a>
+        <a href="/" style="background:linear-gradient(135deg,#e040fb,#00e5ff);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;font-weight:600">Try Free →</a>
+      </nav>
+    </div>
+  </header>
+
+  <nav class="breadcrumb" aria-label="Breadcrumb">
+    <a href="/">Home</a><span class="sep">›</span>
+    <a href="/blog/">Blog</a><span class="sep">›</span>
+    <span>Negative Prompts for Stable Diffusion</span>
+  </nav>
+
+  <div class="page-wrapper">
+    <header class="article-header">
+      <p class="article-tag">Stable Diffusion</p>
+      <h1>Negative Prompts for Stable Diffusion: The Complete Guide (2026)</h1>
+      <div class="article-meta">
+        <span>March 2026</span>
+        <span class="dot">·</span>
+        <span>11 min read</span>
+        <span class="dot">·</span>
+        <span>Stable Diffusion · Negative Prompts · CFG Scale</span>
+      </div>
+    </header>
+
+    <div class="article-body">
+      <p>If you've been generating images with Stable Diffusion without a negative prompt, you've been generating with one hand tied behind your back. Negative prompts are not an optional add-on — they're a fundamental control mechanism that can mean the difference between an unusable output and a gallery-worthy image. This guide covers everything from the underlying math of how negative prompts work to complete, copy-paste negative prompt libraries for every use case.</p>
+
+      <nav class="toc" aria-label="Table of contents">
+        <details open>
+          <summary>In this guide</summary>
+          <ol>
+            <li><a href="#how-they-work">How Negative Prompts Work (CFG Scale Explained)</a></li>
+            <li><a href="#universal-negative">Universal Negative Prompts</a></li>
+            <li><a href="#use-case-negatives">Negative Prompts by Use Case</a></li>
+            <li><a href="#model-specific">Model-Specific Negative Prompts</a></li>
+            <li><a href="#weighted-syntax">Weighted Negative Prompts: (keyword:weight) Syntax</a></li>
+            <li><a href="#embeddings">EasyNegative and Other Embedding Negatives</a></li>
+            <li><a href="#what-to-avoid">What NOT to Put in Negative Prompts</a></li>
+            <li><a href="#imagetoprompt">How ImageToPrompt Generates Negative Prompts</a></li>
+            <li><a href="#impact-comparison">Impact Comparison: With and Without</a></li>
+          </ol>
+        </details>
+      </nav>
+
+      <h2 id="how-they-work">How Negative Prompts Work: The CFG Scale Explained</h2>
+
+      <p>To understand negative prompts, you first need to understand <strong>Classifier-Free Guidance (CFG)</strong> — the algorithm that makes them work.</p>
+
+      <p>During each denoising step in Stable Diffusion, the model makes two predictions: one conditioned on your positive prompt (what you want) and one conditioned on your negative prompt (what you don't want). The final denoising direction is calculated as:</p>
+
+      <pre><code class="prompt-example">final_direction = unconditional_prediction + CFG_scale × (conditional_prediction − unconditional_prediction)</code></pre>
+
+      <p>When you add a negative prompt, the "unconditional prediction" is replaced by the negative-prompt-conditioned prediction. The CFG scale multiplier then determines how strongly the model moves <em>away</em> from the negative concepts while moving <em>toward</em> the positive concepts.</p>
+
+      <p>In practical terms:</p>
+      <ul>
+        <li><strong>CFG 3–5:</strong> Negative prompts have minimal effect. Good for artistic/abstract work where you want the model to be more creative.</li>
+        <li><strong>CFG 7:</strong> Standard balance. Negative prompts have moderate effect. Most recommended starting point.</li>
+        <li><strong>CFG 9–11:</strong> Strong negative prompt influence. Good for very specific subject matter but can introduce artifacts.</li>
+        <li><strong>CFG 12+:</strong> Negative prompts dominate heavily. Often produces over-saturated, artifact-heavy images. Rarely useful.</li>
+      </ul>
+
+      <div class="callout">
+        <p><strong>Key insight:</strong> Your negative prompt is working in proportion to your CFG scale. If your negative prompt isn't having enough effect, increasing CFG scale (up to about 9) will amplify it. But increasing CFG too high degrades overall image quality — there's a sweet spot around 7–8 for most workflows.</p>
+      </div>
+
+      <h2 id="universal-negative">Universal Negative Prompts That Work for Most Images</h2>
+
+      <p>These negative prompts address the most common failure modes across all SD models and use cases. Start with these and add use-case-specific terms on top.</p>
+
+      <h3>Core Universal Negative Prompt</h3>
+
+      <pre><code class="prompt-example">(worst quality:1.4), (low quality:1.4), (normal quality:1.2), lowres, bad anatomy, bad hands, missing fingers, extra fingers, too many fingers, mutated hands, poorly drawn hands, poorly drawn face, mutation, deformed, ugly, blurry, bad proportions, extra limbs, cloned face, disfigured, malformed limbs, missing arms, missing legs, extra arms, extra legs, watermark, signature, text, username, artist name</code></pre>
+
+      <h3>Expanded Universal Negative</h3>
+      <p>For more demanding outputs where you want tighter quality control:</p>
+
+      <pre><code class="prompt-example">(worst quality:1.4), (low quality:1.4), (normal quality:1.3), lowres, bad anatomy, bad hands, ((missing fingers)), ((extra digit)), ((fewer digits)), missing limb, mutated hands, poorly drawn hands, poorly drawn face, mutation, deformed, ugly, disgusting, blurry, out of focus, bad proportions, bad body, extra limbs, cloned face, disfigured, malformed limbs, missing arms, missing legs, extra arms, extra legs, fused fingers, too many fingers, long neck, cross-eyed, floating limbs, disconnected limbs, watermark, signature, text, logo, cropped, duplicate, error, jpeg artifacts, oversaturated, grainy</code></pre>
+
+      <h2 id="use-case-negatives">Negative Prompts by Use Case</h2>
+
+      <h3>Portrait Photography / Realistic Faces</h3>
+      <p>Face generation is where SD models fail most visibly. Add these to the universal base:</p>
+
+      <pre><code class="prompt-example">asymmetrical eyes, uneven eyes, crossed eyes, lazy eye, unfocused eyes, poorly lit face, unnatural skin texture, plastic-looking skin, oversaturated skin, uncanny valley, dead eyes, missing pupils, extra pupils, floating head, disconnected head, double face, multiple faces, blurry face, deformed face, disfigured face</code></pre>
+
+      <h3>Landscapes and Environments</h3>
+      <p>Landscapes fail less on anatomy but more on structural coherence:</p>
+
+      <pre><code class="prompt-example">overexposed sky, blown out highlights, flat lighting, unrealistic colors, cartoonish, anime style, illustrated, painted, fake looking, sky hole, horizon errors, floating objects, impossible architecture, deformed trees, unrealistic foliage, color banding, lens flare artifacts</code></pre>
+
+      <h3>Anime / Illustration</h3>
+
+      <pre><code class="prompt-example">(worst quality:1.4), (low quality:1.4), (normal quality:1.3), lowres, bad anatomy, bad hands, missing fingers, extra fingers, floating limbs, disconnected limbs, poorly drawn face, asymmetrical eyes, blurry, out of focus, signature, watermark, text, jpeg artifacts, low resolution, username, bad legs, bad feet, missing legs</code></pre>
+
+      <h3>Concept Art / Fantasy</h3>
+
+      <pre><code class="prompt-example">photorealistic, photo, photograph, 3D render, blender render, CGI, realistic, hyperrealistic, watermark, signature, text, cropped, low quality, bad anatomy, deformed, ugly, amateur, sketch lines, incomplete, missing details</code></pre>
+
+      <h3>Product Photography</h3>
+
+      <pre><code class="prompt-example">soft focus, blurry, out of focus, poorly lit, dark shadows obscuring product, color inaccurate, distorted perspective, watermark, text overlaid, cluttered background, distracting elements, uneven lighting, harsh flash, blown highlights, low resolution, pixelated</code></pre>
+
+      <h2 id="model-specific">Model-Specific Negative Prompts</h2>
+
+      <p>Different SD models have different failure modes based on their training data. Using the right model-specific negative prompt makes a significant difference.</p>
+
+      <h3>SD 1.5 (Base Model and Fine-Tunes)</h3>
+      <p>SD 1.5 is most prone to anatomical errors, particularly hands and fingers. It also tends toward muddied color palettes without guidance:</p>
+
+      <pre><code class="prompt-example">(worst quality:1.4), (low quality:1.4), (normal quality:1.2), bad anatomy, bad hands, (missing fingers:1.3), (extra fingers:1.3), poorly drawn hands, poorly drawn face, mutation, deformed, ugly, blurry, bad proportions, extra limbs, cloned face, disfigured, malformed, watermark, signature, text, (oversaturated:1.2), muddy colors</code></pre>
+
+      <h3>SDXL</h3>
+      <p>SDXL has better anatomy than SD 1.5 but can produce overly polished, plastic-looking skin and tends toward over-sharpening:</p>
+
+      <pre><code class="prompt-example">worst quality, low quality, bad anatomy, deformed hands, ugly, watermark, signature, text, oversaturated, plastic skin, artificial lighting, overly smooth skin, uncanny valley, dull colors, flat lighting, overexposed</code></pre>
+
+      <div class="callout">
+        <p><strong>Note:</strong> SDXL is less sensitive to negative prompts than SD 1.5. The (keyword:weight) syntax has less impact in SDXL — you often get better results using plain text without weights for SDXL negative prompts.</p>
+      </div>
+
+      <h3>SD 3.5 (Stable Diffusion 3.5)</h3>
+      <p>SD 3.5 uses a different architecture (multimodal diffusion transformer) and is less responsive to traditional SD negative prompt syntax. Simpler, descriptive negative prompts work better:</p>
+
+      <pre><code class="prompt-example">low quality, blurry, bad anatomy, watermark, text, deformed, ugly, distorted</code></pre>
+
+      <h3>Realistic Vision / CyberRealistic (SD 1.5 Checkpoints)</h3>
+      <p>Photorealistic SD 1.5 checkpoints have a tendency toward over-smoothed skin and slightly over-exposed highlights:</p>
+
+      <pre><code class="prompt-example">(worst quality:1.4), (low quality:1.4), bad anatomy, bad hands, missing fingers, extra fingers, (plastic skin:1.2), (oversaturation:1.2), overexposed, blown highlights, poorly drawn face, deformed, mutation, watermark, signature, text, (smooth face:1.2), unnatural skin, fake looking</code></pre>
+
+      <h2 id="weighted-syntax">Weighted Negative Prompts: The (keyword:weight) Syntax</h2>
+
+      <p>The parentheses-colon syntax allows you to increase or decrease the emphasis on specific negative terms. This is most effective in SD 1.5-based models and has diminishing returns in SDXL and later architectures.</p>
+
+      <h3>Weight Values and Their Effects</h3>
+
+      <div class="table-wrap">
+        <table class="comparison-table">
+          <thead>
+            <tr>
+              <th>Syntax</th>
+              <th>Weight Multiplier</th>
+              <th>Effect</th>
+              <th>When to Use</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><code>keyword</code></td>
+              <td>1.0x</td>
+              <td>Standard avoidance</td>
+              <td>General quality terms</td>
+            </tr>
+            <tr>
+              <td><code>(keyword:1.1)</code></td>
+              <td>1.1x</td>
+              <td>Slightly stronger</td>
+              <td>Stubborn but non-critical issues</td>
+            </tr>
+            <tr>
+              <td><code>(keyword:1.2)</code></td>
+              <td>1.2x</td>
+              <td>Noticeably stronger</td>
+              <td>Common failure modes</td>
+            </tr>
+            <tr>
+              <td><code>(keyword:1.3)</code></td>
+              <td>1.3x</td>
+              <td>Strong avoidance</td>
+              <td>Persistent errors that keep appearing</td>
+            </tr>
+            <tr>
+              <td><code>(keyword:1.4)</code></td>
+              <td>1.4x</td>
+              <td>Very strong</td>
+              <td>Quality tier terms (worst/low quality)</td>
+            </tr>
+            <tr>
+              <td><code>(keyword:1.6+)</code></td>
+              <td>1.6x+</td>
+              <td>Overpowering — causes artifacts</td>
+              <td>Avoid for most terms</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h3>Double Parentheses Shortcut</h3>
+      <p>In AUTOMATIC1111 and ComfyUI, double parentheses multiply weight by 1.1 per layer:</p>
+      <ul>
+        <li><code>((keyword))</code> = approximately 1.21x weight</li>
+        <li><code>(((keyword)))</code> = approximately 1.33x weight</li>
+      </ul>
+
+      <p>Explicit weights <code>(keyword:1.4)</code> are more predictable than stacked parentheses, but both approaches work.</p>
+
+      <h3>Strategic Weighting Examples</h3>
+
+      <pre><code class="prompt-example">/* For a portrait where hands keep appearing malformed: */
+(bad hands:1.4), (missing fingers:1.3), (extra fingers:1.3), bad anatomy
+
+/* For a landscape where the sky keeps blowing out: */
+(overexposed sky:1.3), (blown highlights:1.2), bad lighting
+
+/* For anime where faces keep looking wrong: */
+(poorly drawn face:1.4), (asymmetrical eyes:1.3), bad anatomy</code></pre>
+
+      <h2 id="embeddings">EasyNegative, bad-artist-anime, and Other Embedding Negatives</h2>
+
+      <p>Textual inversion embeddings are special files that encode complex concepts into a single token. For negative prompts, embeddings can replace long lists of quality-reduction descriptors with a single word.</p>
+
+      <h3>EasyNegative</h3>
+      <p>The most widely used negative prompt embedding. It was trained to compress hundreds of quality-reduction concepts into the token <code>EasyNegative</code>. Using it in your negative prompt is roughly equivalent to including a 50-word quality-reduction list.</p>
+      <p><strong>Use with SD 1.5 models.</strong> Not compatible with SDXL without specific SDXL versions.</p>
+
+      <pre><code class="prompt-example">EasyNegative, (worst quality:1.2), bad anatomy, watermark</code></pre>
+
+      <h3>bad-artist-anime</h3>
+      <p>Specifically trained on low-quality anime art to encode common anime failure modes. Pairs well with anime-focused checkpoints like Anything V5 and Counterfeit.</p>
+
+      <pre><code class="prompt-example">bad-artist-anime, (worst quality:1.4), (low quality:1.3), bad anatomy</code></pre>
+
+      <h3>verybadimagenegative_v1.3</h3>
+      <p>An alternative to EasyNegative with slightly different training emphasis. Some users find it works better for photorealistic outputs.</p>
+
+      <h3>How to Use Embeddings</h3>
+      <ol>
+        <li>Download the embedding file (.pt or .safetensors) from Civitai or Hugging Face</li>
+        <li>Place it in your A1111 <code>embeddings/</code> folder (or ComfyUI's equivalent)</li>
+        <li>Reference it by filename (without extension) in your negative prompt</li>
+        <li>Refresh your embeddings list in the UI if needed</li>
+      </ol>
+
+      <div class="callout">
+        <p><strong>Important:</strong> Embeddings are checkpoint-specific. An embedding trained on SD 1.5 data will not work correctly with SDXL. Always check the embedding's model requirements before using it.</p>
+      </div>
+
+      <h2 id="what-to-avoid">What NOT to Put in Negative Prompts (Common Mistakes)</h2>
+
+      <p>Negative prompts can backfire if used incorrectly. These mistakes are common:</p>
+
+      <ol>
+        <li>
+          <strong>Negating desired subject matter.</strong> If your positive prompt includes "forest" and you add "trees" to your negative prompt, you'll fight against yourself. Only negative-prompt attributes you genuinely don't want.
+        </li>
+        <li>
+          <strong>Using concepts the model barely knows.</strong> Adding highly specific or obscure terms to negative prompts that the model didn't encounter much in training has little effect and may introduce unexpected biases.
+        </li>
+        <li>
+          <strong>Extremely long negative prompts (200+ words).</strong> CLIP has a 77-token limit. Any text beyond 77 tokens is either truncated (in standard SD) or requires extended attention (in A1111 with "enable parsing"). Focus on the terms that matter most.
+        </li>
+        <li>
+          <strong>Using positive language in negative prompts.</strong> "No bad quality" doesn't work — SD processes the semantic content of words, not their grammatical relationship to "no." Write "bad quality" in the negative field, not "no bad quality."
+        </li>
+        <li>
+          <strong>Over-weighting everything.</strong> If every term in your negative prompt has a weight of 1.4+, you've effectively raised the baseline, and none of the weights provide differential emphasis. Reserve high weights for the most persistent problems.
+        </li>
+        <li>
+          <strong>Copying anime negative prompts for photorealistic work.</strong> The quality tokens differ between anime and photorealistic workflows. Mixing them can produce unexpected stylistic drift.
+        </li>
+      </ol>
+
+      <h2 id="imagetoprompt">How ImageToPrompt Generates Negative Prompts from Reference Images</h2>
+
+      <p>When you use ImageToPrompt.dev with Stable Diffusion as the target model, the tool analyzes your reference image and generates both a positive prompt and a contextually appropriate negative prompt.</p>
+
+      <p>The negative prompt generation is intelligent rather than template-based. If your reference image is a portrait, the tool emphasizes face and anatomy negatives. If it's a landscape, it skips anatomy terms and focuses on exposure and color negatives. If it identifies an anime style, it switches to anime-appropriate quality tokens.</p>
+
+      <p>For example, uploading a reference portrait of a professional headshot and targeting SD produces:</p>
+
+      <pre><code class="prompt-example">Positive: (masterpiece:1.2), (best quality:1.1), (photorealistic:1.1), professional headshot portrait, man in his 40s, short dark hair, business attire, neutral background, soft studio lighting, sharp focus, 85mm portrait lens
+
+Negative: (worst quality:1.4), (low quality:1.3), bad anatomy, bad hands, (poorly drawn face:1.3), asymmetrical eyes, deformed, ugly, blurry, plastic skin, unnatural skin texture, oversaturation, watermark, signature, text</code></pre>
+
+      <p>This saves time compared to manually assembling a negative prompt from scratch, and it's contextually appropriate rather than a generic paste.</p>
+
+      <h2 id="impact-comparison">Negative Prompt Impact Comparison</h2>
+
+      <div class="table-wrap">
+        <table class="comparison-table">
+          <thead>
+            <tr>
+              <th>Scenario</th>
+              <th>Without Negative Prompt</th>
+              <th>With Basic Negative Prompt</th>
+              <th>With Optimized Negative Prompt</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Portrait face quality</td>
+              <td>~40% acceptable</td>
+              <td>~65% acceptable</td>
+              <td>~85% acceptable</td>
+            </tr>
+            <tr>
+              <td>Hand rendering</td>
+              <td>~20% correct</td>
+              <td>~50% correct</td>
+              <td>~70% correct</td>
+            </tr>
+            <tr>
+              <td>Watermarks/text artifacts</td>
+              <td>Frequent (~30%)</td>
+              <td>Rare (~5%)</td>
+              <td>Very rare (~2%)</td>
+            </tr>
+            <tr>
+              <td>Extra limbs/anatomy errors</td>
+              <td>~35% occurrence</td>
+              <td>~15% occurrence</td>
+              <td>~8% occurrence</td>
+            </tr>
+            <tr>
+              <td>Overall usability (no editing needed)</td>
+              <td>~25% of generations</td>
+              <td>~55% of generations</td>
+              <td>~75% of generations</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <p>These figures are approximate and vary by model, subject matter, and seed. But the pattern is consistent: negative prompts significantly reduce the iteration burden. The difference between no negative prompt and an optimized one is typically the difference between needing 10+ generations to get one usable image versus 3–4.</p>
+
+      <div class="callout">
+        <p><strong>Final recommendation:</strong> Start every Stable Diffusion session with a saved negative prompt preset appropriate to your use case. In AUTOMATIC1111, you can save negative prompts as styles. In ComfyUI, use a negative prompt node connected to all samplers. Treating negative prompts as a permanent fixture rather than an optional add-on is one of the single most impactful habits in SD workflows.</p>
+      </div>
+
+      <div class="related-guides">
+        <h3>Related Guides</h3>
+        <ul>
+          <li><a href="/blog/image-to-prompt-for-anime/">Image to Prompt for Anime Art: Complete Guide</a></li>
+          <li><a href="/stable-diffusion-prompt-generator/">Stable Diffusion Prompt Generator — Try It Free</a></li>
+          <li><a href="/blog/prompt-engineering-for-ai-art/">What Is Prompt Engineering for AI Art?</a></li>
+          <li><a href="/blog/stable-diffusion-vs-midjourney-vs-dalle3/">SD vs MJ vs DALL·E 3 vs Flux Comparison</a></li>
+          <li><a href="/blog/convert-image-to-ai-prompt/">How to Convert Any Image to an AI Prompt</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <aside class="author-bio">
+      <div class="author-avatar">IT</div>
+      <div class="author-info">
+        <strong>ImageToPrompt Team</strong>
+        <p>We build and maintain the free Image to Prompt Generator at imagetoprompt.dev. Our mission is to make AI image generation accessible to everyone.</p>
+      </div>
+    </aside>
+
+    <div class="cta-box">
+      <h3>Try It Yourself</h3>
+      <p>Upload any image and get an optimized AI prompt in under 10 seconds. Free, no account required.</p>
+      <a href="/" class="cta-btn">Try the Free Image to Prompt Generator →</a>
+    </div>
+  </div>
+
+  <footer class="site-footer">
+    <div class="inner">
+      <p>© 2026 <a href="/" style="color:#8888bb;text-decoration:none">ImageToPrompt</a> · Free AI Prompt Generator · Powered by Claude Vision</p>
+      <nav aria-label="Footer navigation">
+        <a href="/">Home</a>
+        <a href="/blog/">Blog</a>
+        <a href="/#how-it-works">How It Works</a>
+        <a href="/#faq">FAQ</a>
+      </nav>
+    </div>
+  </footer>
+</body>
+</html>
