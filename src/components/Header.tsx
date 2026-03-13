@@ -1,9 +1,19 @@
-import { useState } from 'react';
+import { useState, useRef, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { History, Keyboard, X } from 'lucide-react';
+import { History, Keyboard, X, ChevronDown } from 'lucide-react';
 import UsageCounter from './UsageCounter';
 import LanguageSelector from './LanguageSelector';
 import type { RateLimitState, SupportedLanguage } from '../types';
+
+const MODEL_LINKS = [
+  { href: '/midjourney-prompt-generator/',       icon: '🎨', label: 'Midjourney',       color: '#00b4d8' },
+  { href: '/stable-diffusion-prompt-generator/', icon: '⚙️', label: 'Stable Diffusion', color: '#ff6b35' },
+  { href: '/flux-prompt-generator/',             icon: '⚡', label: 'Flux AI',           color: '#7c3aed' },
+  { href: '/dall-e-prompt-generator/',           icon: '🧠', label: 'DALL·E 3',          color: '#10a37f' },
+  { href: '/adobe-firefly-prompt-generator/',    icon: '🦋', label: 'Adobe Firefly',    color: '#ff4444' },
+  { href: '/leonardo-ai-prompt-generator/',      icon: '🎮', label: 'Leonardo AI',      color: '#f59e0b' },
+  { href: '/ideogram-prompt-generator/',         icon: '✍️', label: 'Ideogram',         color: '#06b6d4' },
+];
 
 interface HeaderProps {
   rateLimit: RateLimitState;
@@ -23,6 +33,19 @@ const SHORTCUTS = [
 
 export default function Header({ rateLimit, onHistoryOpen, hasHistory, onChangelogOpen, language, onLanguageChange }: HeaderProps) {
   const [showShortcuts, setShowShortcuts] = useState(false);
+  const [showTools, setShowTools] = useState(false);
+  const toolsRef = useRef<HTMLDivElement>(null);
+
+  // Close dropdown on outside click
+  useEffect(() => {
+    function handleClick(e: MouseEvent) {
+      if (toolsRef.current && !toolsRef.current.contains(e.target as Node)) {
+        setShowTools(false);
+      }
+    }
+    if (showTools) document.addEventListener('mousedown', handleClick);
+    return () => document.removeEventListener('mousedown', handleClick);
+  }, [showTools]);
 
   return (
     <>
@@ -77,6 +100,51 @@ export default function Header({ rateLimit, onHistoryOpen, hasHistory, onChangel
             animate={{ x: 0 }}
             transition={{ duration: 0.4 }}
           >
+            {/* Tools dropdown */}
+            <div ref={toolsRef} className="relative hidden sm:block">
+              <button
+                onClick={() => setShowTools((v) => !v)}
+                aria-expanded={showTools}
+                aria-haspopup="menu"
+                className="flex items-center gap-1 rounded-lg border border-[var(--border-subtle)] px-3 py-1.5 font-inter text-sm text-[var(--text-secondary)] transition-all duration-200 hover:border-[var(--border-accent)] hover:text-[var(--text-primary)]"
+              >
+                Tools
+                <ChevronDown size={12} className={`transition-transform duration-200 ${showTools ? 'rotate-180' : ''}`} />
+              </button>
+              <AnimatePresence>
+                {showTools && (
+                  <motion.div
+                    initial={{ opacity: 0, y: -6, scale: 0.97 }}
+                    animate={{ opacity: 1, y: 0, scale: 1 }}
+                    exit={{ opacity: 0, y: -6, scale: 0.97 }}
+                    transition={{ duration: 0.15 }}
+                    role="menu"
+                    className="absolute right-0 top-full mt-2 w-56 rounded-xl border border-[var(--border-subtle)] bg-[var(--bg-elevated)] p-1.5 shadow-2xl z-50"
+                    style={{ backdropFilter: 'blur(20px)' }}
+                  >
+                    {MODEL_LINKS.map((m) => (
+                      <a
+                        key={m.href}
+                        href={m.href}
+                        role="menuitem"
+                        onClick={() => setShowTools(false)}
+                        className="flex items-center gap-2.5 rounded-lg px-3 py-2 font-inter text-sm text-[var(--text-secondary)] transition-colors duration-150 hover:bg-[var(--bg-card)] hover:text-[var(--text-primary)]"
+                      >
+                        <span className="text-base leading-none">{m.icon}</span>
+                        <span>{m.label}</span>
+                        <span
+                          className="ml-auto text-[10px] font-600 rounded-full px-1.5 py-0.5"
+                          style={{ background: `${m.color}18`, color: m.color }}
+                        >
+                          Generator
+                        </span>
+                      </a>
+                    ))}
+                  </motion.div>
+                )}
+              </AnimatePresence>
+            </div>
+
             <a
               href="/blog/"
               className="hidden sm:flex items-center gap-1.5 rounded-lg border border-[var(--border-subtle)] px-3 py-1.5 font-inter text-sm text-[var(--text-secondary)] transition-all duration-200 hover:border-[var(--border-accent)] hover:text-[var(--text-primary)]"
