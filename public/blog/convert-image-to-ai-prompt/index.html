@@ -267,34 +267,64 @@
       <div class="example-grid">
         <div class="example-block">
           <h3>Example 1: Photograph → Prompt</h3>
-          <div class="image-row">
-            <img src="/images/ex1-original-photo.jpeg" alt="Original photograph — source image for prompt extraction" width="800" height="600" loading="lazy" style="width:100%;border-radius:0.375rem;display:block;" />
-            <img src="/images/ex1-tool-output.jpeg" alt="ImageToPrompt tool output screenshot showing generated prompt" width="800" height="600" loading="lazy" style="width:100%;border-radius:0.375rem;display:block;" />
-            <img src="/images/ex1-recreated.jpeg" alt="AI-recreated image using the prompt extracted by ImageToPrompt" width="800" height="600" loading="lazy" style="width:100%;border-radius:0.375rem;display:block;" />
+          <div class="comparison-flow">
+            <div class="comparison-card">
+              <span class="comparison-badge badge-original">Original</span>
+              <img src="/images/ex1-original-photo.jpeg" alt="Original photograph — source image for AI prompt extraction" width="800" height="600" loading="lazy" />
+            </div>
+            <span class="comparison-arrow">→</span>
+            <div class="comparison-card">
+              <span class="comparison-badge badge-tool">Tool Output</span>
+              <img src="/images/ex1-tool-output.jpeg" alt="ImageToPrompt tool output screenshot showing generated Midjourney prompt" width="800" height="600" loading="lazy" />
+            </div>
+            <span class="comparison-arrow">→</span>
+            <div class="comparison-card">
+              <span class="comparison-badge badge-recreation">AI Recreation</span>
+              <img src="/images/ex1-recreated.jpeg" alt="AI-recreated image using the prompt extracted by ImageToPrompt" width="800" height="600" loading="lazy" />
+            </div>
           </div>
-          <p class="img-labels"><em>Original → Tool Output → Recreated Result</em></p>
           <p>The tool detected warm golden-hour lighting, wide landscape composition, and a cinematic photography style. The generated Midjourney prompt included <code>--ar 16:9</code> and <code>golden hour lighting</code> — both critical for reproducing the original atmosphere.</p>
         </div>
 
         <div class="example-block">
           <h3>Example 2: Digital Illustration → Prompt</h3>
-          <div class="image-row">
-            <img src="/images/ex2-original-illustration.jpeg" alt="Original digital illustration — fantasy character" width="800" height="600" loading="lazy" style="width:100%;border-radius:0.375rem;display:block;" />
-            <img src="/images/ex2-tool-output.jpeg" alt="ImageToPrompt tool output for digital illustration" width="800" height="600" loading="lazy" style="width:100%;border-radius:0.375rem;display:block;" />
-            <img src="/images/ex2-recreated.jpeg" alt="AI-recreated illustration using extracted prompt" width="800" height="600" loading="lazy" style="width:100%;border-radius:0.375rem;display:block;" />
+          <div class="comparison-flow">
+            <div class="comparison-card">
+              <span class="comparison-badge badge-original">Original</span>
+              <img src="/images/ex2-original-illustration.jpeg" alt="Original digital illustration — fantasy character source image" width="800" height="600" loading="lazy" />
+            </div>
+            <span class="comparison-arrow">→</span>
+            <div class="comparison-card">
+              <span class="comparison-badge badge-tool">Tool Output</span>
+              <img src="/images/ex2-tool-output.jpeg" alt="ImageToPrompt tool output for digital illustration prompt extraction" width="800" height="600" loading="lazy" />
+            </div>
+            <span class="comparison-arrow">→</span>
+            <div class="comparison-card">
+              <span class="comparison-badge badge-recreation">AI Recreation</span>
+              <img src="/images/ex2-recreated.jpeg" alt="AI-recreated illustration using the extracted prompt from ImageToPrompt" width="800" height="600" loading="lazy" />
+            </div>
           </div>
-          <p class="img-labels"><em>Original → Tool Output → Recreated Result</em></p>
           <p>For digital illustrations, the AI excels at identifying style keywords like <code>concept art</code>, <code>digital painting</code>, and specific color palette descriptors. These style anchors are what make the recreated image feel consistent with the original.</p>
         </div>
 
         <div class="example-block">
           <h3>Example 3: AI-Generated Art → Prompt</h3>
-          <div class="image-row">
-            <img src="/images/ex3-original-ai-art.jpeg" alt="Original AI-generated sci-fi artwork" width="800" height="600" loading="lazy" style="width:100%;border-radius:0.375rem;display:block;" />
-            <img src="/images/ex3-tool-output.jpeg" alt="ImageToPrompt tool output for AI-generated artwork" width="800" height="600" loading="lazy" style="width:100%;border-radius:0.375rem;display:block;" />
-            <img src="/images/ex3-recreated.jpeg" alt="Recreated AI image using the extracted prompt" width="800" height="600" loading="lazy" style="width:100%;border-radius:0.375rem;display:block;" />
+          <div class="comparison-flow">
+            <div class="comparison-card">
+              <span class="comparison-badge badge-original">Original</span>
+              <img src="/images/ex3-original-ai-art.jpeg" alt="Original AI-generated sci-fi artwork used as reference" width="800" height="600" loading="lazy" />
+            </div>
+            <span class="comparison-arrow">→</span>
+            <div class="comparison-card">
+              <span class="comparison-badge badge-tool">Tool Output</span>
+              <img src="/images/ex3-tool-output.jpeg" alt="ImageToPrompt tool output for AI-generated artwork analysis" width="800" height="600" loading="lazy" />
+            </div>
+            <span class="comparison-arrow">→</span>
+            <div class="comparison-card">
+              <span class="comparison-badge badge-recreation">AI Recreation</span>
+              <img src="/images/ex3-recreated.jpeg" alt="Recreated AI image using the reverse-engineered prompt" width="800" height="600" loading="lazy" />
+            </div>
           </div>
-          <p class="img-labels"><em>Original → Tool Output → Recreated Result</em></p>
           <p>AI-generated images often contain subtle style signatures from their original model. ImageToPrompt identifies these and generates prompts that preserve them — useful when you want to extend or vary existing AI artwork.</p>
         </div>
       </div>
