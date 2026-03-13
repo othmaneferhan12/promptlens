@@ -12,6 +12,13 @@
     { "source": "/api/(.*)", "destination": "/api/$1" },
     { "source": "/images/(.*)", "destination": "/images/$1" },
     { "source": "/blog/(.*)", "destination": "/blog/$1" },
+    { "source": "/midjourney-prompt-generator/(.*)", "destination": "/midjourney-prompt-generator/$1" },
+    { "source": "/stable-diffusion-prompt-generator/(.*)", "destination": "/stable-diffusion-prompt-generator/$1" },
+    { "source": "/flux-prompt-generator/(.*)", "destination": "/flux-prompt-generator/$1" },
+    { "source": "/dall-e-prompt-generator/(.*)", "destination": "/dall-e-prompt-generator/$1" },
+    { "source": "/adobe-firefly-prompt-generator/(.*)", "destination": "/adobe-firefly-prompt-generator/$1" },
+    { "source": "/leonardo-ai-prompt-generator/(.*)", "destination": "/leonardo-ai-prompt-generator/$1" },
+    { "source": "/ideogram-prompt-generator/(.*)", "destination": "/ideogram-prompt-generator/$1" },
     { "source": "/(.*)", "destination": "/index.html" }
   ],
   "headers": [
@@ -61,6 +68,19 @@
       "source": "/blog.css",
       "headers": [
         { "key": "Cache-Control", "value": "public, max-age=86400, stale-while-revalidate=3600" }
+      ]
+    },
+    {
+      "source": "/model-pages.css",
+      "headers": [
+        { "key": "Cache-Control", "value": "public, max-age=86400, stale-while-revalidate=3600" }
+      ]
+    },
+    {
+      "source": "/(midjourney|stable-diffusion|flux|dall-e|adobe-firefly|leonardo-ai|ideogram)-prompt-generator/(.*)",
+      "headers": [
+        { "key": "Cache-Control", "value": "public, max-age=3600, stale-while-revalidate=86400" },
+        { "key": "X-Content-Type-Options", "value": "nosniff" }
       ]
     },
     {

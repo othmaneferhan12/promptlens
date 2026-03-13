@@ -44,17 +44,17 @@ export default function SEOFooter() {
           {/* Models */}
           <div>
             <p className="font-grotesk text-xs font-600 uppercase tracking-wider text-[var(--text-secondary)] mb-3">
-              Generate prompts for
+              Prompt Generators
             </p>
-            <nav className="flex flex-col gap-2" aria-label="Supported models">
+            <nav className="flex flex-col gap-2" aria-label="Model prompt generators">
               {[
-                { href: '#midjourney', label: 'Midjourney Prompt Generator' },
-                { href: '#stable-diffusion', label: 'Stable Diffusion Prompt Generator' },
-                { href: '#flux', label: 'Flux AI Prompt Generator' },
-                { href: '#dalle3', label: 'DALL-E 3 Prompt Generator' },
-                { href: '#firefly', label: 'Adobe Firefly Prompt Generator' },
-                { href: '#leonardo', label: 'Leonardo AI Prompt Generator' },
-                { href: '#ideogram', label: 'Ideogram Prompt Generator' },
+                { href: '/midjourney-prompt-generator/', label: 'Midjourney Prompt Generator' },
+                { href: '/stable-diffusion-prompt-generator/', label: 'Stable Diffusion Prompt Generator' },
+                { href: '/flux-prompt-generator/', label: 'Flux AI Prompt Generator' },
+                { href: '/dall-e-prompt-generator/', label: 'DALL-E 3 Prompt Generator' },
+                { href: '/adobe-firefly-prompt-generator/', label: 'Adobe Firefly Prompt Generator' },
+                { href: '/leonardo-ai-prompt-generator/', label: 'Leonardo AI Prompt Generator' },
+                { href: '/ideogram-prompt-generator/', label: 'Ideogram Prompt Generator' },
               ].map((link) => (
                 <a
                   key={link.href}

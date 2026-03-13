@@ -23,12 +23,16 @@ const ExamplesSection = lazy(() => import('./components/seo/ExamplesSection'));
 const NewsletterSection = lazy(() => import('./components/seo/NewsletterSection'));
 const SEOFooter = lazy(() => import('./components/seo/SEOFooter'));
 
-// Detect embed mode
-const isEmbed = new URLSearchParams(window.location.search).get('embed') === 'true';
+// Detect embed mode and pre-selected model from URL params
+const _urlParams = new URLSearchParams(window.location.search);
+const isEmbed = _urlParams.get('embed') === 'true';
+const _urlModel = _urlParams.get('model') as AIModel | null;
+const VALID_MODELS: AIModel[] = ['midjourney', 'stable-diffusion', 'flux', 'dalle3', 'firefly', 'leonardo', 'ideogram'];
+const initialModel: AIModel = (_urlModel && VALID_MODELS.includes(_urlModel)) ? _urlModel : 'midjourney';
 
 export default function App() {
   const [currentImage, setCurrentImage] = useState<UploadedImage | null>(null);
-  const [selectedModel, setSelectedModel] = useState<AIModel>('midjourney');
+  const [selectedModel, setSelectedModel] = useState<AIModel>(initialModel);
   const [selectedStyle, setSelectedStyle] = useState<PromptStyle>('cinematic');
   const [selectedLanguage, setSelectedLanguage] = useState<SupportedLanguage>('en');
   const [showRateLimitModal, setShowRateLimitModal] = useState(false);

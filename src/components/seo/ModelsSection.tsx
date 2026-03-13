@@ -5,6 +5,7 @@ const models = [
     icon: '🎨',
     color: '#e040fb',
     keyword: 'Midjourney Prompt Generator',
+    href: '/midjourney-prompt-generator/',
     description:
       'Generate Midjourney prompts from any image instantly. Our AI creates prompts with proper --ar aspect ratio, --v 6.1 version, --style raw parameters and artistic descriptors that Midjourney understands. Perfect for artists wanting to recreate or remix reference images.',
   },
@@ -14,6 +15,7 @@ const models = [
     icon: '⚡',
     color: '#ff7043',
     keyword: 'Stable Diffusion Prompt Generator',
+    href: '/stable-diffusion-prompt-generator/',
     description:
       'Create Stable Diffusion prompts with proper (weighted:syntax) formatting. Includes negative prompts optimized for SD models to eliminate unwanted artifacts. Works with SD 1.5, SD XL, and SD 3.5.',
   },
@@ -23,6 +25,7 @@ const models = [
     icon: '🌊',
     color: '#00e5ff',
     keyword: 'Flux AI Prompt Generator',
+    href: '/flux-prompt-generator/',
     description:
       'Generate highly detailed Flux AI prompts that maximize the model\'s photorealistic capabilities. Our prompts include precise lighting, texture, and composition descriptors that Flux responds to best.',
   },
@@ -32,6 +35,7 @@ const models = [
     icon: '🤖',
     color: '#00c853',
     keyword: 'DALL-E 3 Prompt Generator',
+    href: '/dall-e-prompt-generator/',
     description:
       'Convert any image into natural language DALL-E 3 prompts. We format prompts as descriptive sentences that OpenAI\'s model interprets accurately, preserving style, mood, and composition.',
   },
@@ -41,6 +45,7 @@ const models = [
     icon: '🔥',
     color: '#ff6d00',
     keyword: 'Adobe Firefly Prompt Generator',
+    href: '/adobe-firefly-prompt-generator/',
     description:
       'Generate commercially safe Adobe Firefly prompts from reference images. Our prompts avoid copyrighted styles and use Firefly-compatible language perfect for professional and commercial use.',
   },
@@ -50,6 +55,7 @@ const models = [
     icon: '🦁',
     color: '#ffd600',
     keyword: 'Leonardo AI Prompt Generator',
+    href: '/leonardo-ai-prompt-generator/',
     description:
       'Create Leonardo AI prompts optimized for game art, fantasy scenes, and character design. Our AI extracts artistic style elements and translates them into Leonardo-specific vocabulary.',
   },
@@ -59,6 +65,7 @@ const models = [
     icon: '✏️',
     color: '#7c4dff',
     keyword: 'Ideogram Prompt Generator',
+    href: '/ideogram-prompt-generator/',
     description:
       'Generate Ideogram prompts that preserve text elements, typography style, and graphic design components from your reference image. Ideal for designers working with text-in-image generation.',
   },
@@ -96,9 +103,16 @@ export default function ModelsSection() {
                 {model.keyword}
               </h3>
             </div>
-            <p className="font-inter text-sm text-[var(--text-secondary)] leading-relaxed">
+            <p className="font-inter text-sm text-[var(--text-secondary)] leading-relaxed mb-3">
               {model.description}
             </p>
+            <a
+              href={model.href}
+              className="inline-flex items-center gap-1 font-inter text-xs font-600 transition-colors duration-150"
+              style={{ color: model.color }}
+            >
+              Try {model.name} Prompt Generator →
+            </a>
           </div>
         ))}
       </div>
