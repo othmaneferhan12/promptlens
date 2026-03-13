@@ -77,6 +77,13 @@ export default function Header({ rateLimit, onHistoryOpen, hasHistory, onChangel
             animate={{ x: 0 }}
             transition={{ duration: 0.4 }}
           >
+            <a
+              href="/blog/"
+              className="hidden sm:flex items-center gap-1.5 rounded-lg border border-[var(--border-subtle)] px-3 py-1.5 font-inter text-sm text-[var(--text-secondary)] transition-all duration-200 hover:border-[var(--border-accent)] hover:text-[var(--text-primary)]"
+            >
+              Blog
+            </a>
+
             <UsageCounter rateLimit={rateLimit} />
 
             <LanguageSelector selected={language} onChange={onLanguageChange} />
