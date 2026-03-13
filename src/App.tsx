@@ -15,6 +15,7 @@ const RateLimitModal = lazy(() => import('./components/RateLimitModal'));
 const PromptHistory = lazy(() => import('./components/PromptHistory'));
 const ChangelogPage = lazy(() => import('./components/ChangelogPage'));
 const HowItWorksSection = lazy(() => import('./components/seo/HowItWorksSection'));
+const BeforeAfterSection = lazy(() => import('./components/seo/BeforeAfterSection'));
 const MetricsSection = lazy(() => import('./components/seo/MetricsSection'));
 const SocialProofSection = lazy(() => import('./components/seo/SocialProofSection'));
 const ModelsSection = lazy(() => import('./components/seo/ModelsSection'));
@@ -310,6 +311,7 @@ export default function App() {
       <Suspense fallback={null}>
         <div role="complementary" aria-label="More information">
           <HowItWorksSection />
+          <BeforeAfterSection />
           <MetricsSection />
           <SocialProofSection />
           <ModelsSection />
