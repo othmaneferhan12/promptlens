@@ -61,7 +61,7 @@ export default function Header({ rateLimit, onHistoryOpen, hasHistory, onChangel
             <img
               src="/favicon-96x96.png"
               alt="ImageToPrompt logo"
-              className="h-9 w-9 rounded-xl"
+              className="h-[108px] w-[108px] rounded-2xl"
             />
             <div>
               <span className="font-grotesk text-lg font-700 text-[var(--text-primary)] tracking-tight">
