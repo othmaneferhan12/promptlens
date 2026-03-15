@@ -78,6 +78,8 @@ function buildRobots() {
   return `User-agent: *
 Allow: /
 Disallow: /api/
+Disallow: /og-image.png
+Disallow: /*.png$
 
 User-agent: GPTBot
 Allow: /
