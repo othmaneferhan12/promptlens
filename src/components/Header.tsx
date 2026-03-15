@@ -59,9 +59,9 @@ export default function Header({ rateLimit, onHistoryOpen, hasHistory, onChangel
             transition={{ duration: 0.4 }}
           >
             <img
-              src="/android-icon-144x144.png"
+              src="/favicon-96x96.png"
               alt="ImageToPrompt logo"
-              className="h-[108px] w-[108px] rounded-2xl"
+              className="h-10 w-10 rounded-xl"
             />
             <div>
               <span className="font-grotesk text-lg font-700 text-[var(--text-primary)] tracking-tight">
