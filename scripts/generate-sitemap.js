@@ -27,6 +27,21 @@ const STATIC_PAGES = [
   { path: '/leonardo-ai-prompt-generator/',         changefreq: 'weekly', priority: '0.9' },
   { path: '/ideogram-prompt-generator/',            changefreq: 'weekly', priority: '0.9' },
   { path: '/blog/', changefreq: 'weekly',  priority: '0.8' },
+  // VS comparison pages
+  { path: '/imagetoprompt-vs-prompthero/',        changefreq: 'monthly', priority: '0.7' },
+  { path: '/imagetoprompt-vs-lexica/',            changefreq: 'monthly', priority: '0.7' },
+  { path: '/imagetoprompt-vs-img2prompt/',        changefreq: 'monthly', priority: '0.7' },
+  { path: '/imagetoprompt-vs-clip-interrogator/', changefreq: 'monthly', priority: '0.7' },
+  { path: '/imagetoprompt-vs-dalle3/',            changefreq: 'monthly', priority: '0.7' },
+  // International pages
+  { path: '/ja/', changefreq: 'monthly', priority: '0.8' },
+  { path: '/es/', changefreq: 'monthly', priority: '0.8' },
+  { path: '/ko/', changefreq: 'monthly', priority: '0.8' },
+  { path: '/ar/', changefreq: 'monthly', priority: '0.8' },
+  // Web Stories
+  { path: '/stories/image-to-prompt-how-it-works/', changefreq: 'monthly', priority: '0.6' },
+  { path: '/stories/midjourney-prompt-tips/',        changefreq: 'monthly', priority: '0.6' },
+  { path: '/stories/same-image-4-models/',           changefreq: 'monthly', priority: '0.6' },
 ];
 
 // ── Auto-discover blog posts ─────────────────────────────────────────────────
