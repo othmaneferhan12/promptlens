@@ -94,9 +94,14 @@ export default function SEOFooter() {
           <p className="font-inter text-xs text-[var(--text-secondary)]/50">
             ImageToPrompt does not store your images. All analysis is ephemeral and private.
           </p>
-          <p className="font-mono text-[10px] text-[var(--text-secondary)]/40">
-            100% Free · Powered by Claude Vision · v1.0.0
-          </p>
+          <nav className="flex gap-4 items-center" aria-label="Legal links">
+            <a href="/privacy-policy/" className="font-inter text-xs text-[var(--text-secondary)]/50 hover:text-[var(--text-secondary)] transition-colors">
+              Privacy Policy
+            </a>
+            <a href="/terms-of-service/" className="font-inter text-xs text-[var(--text-secondary)]/50 hover:text-[var(--text-secondary)] transition-colors">
+              Terms of Service
+            </a>
+          </nav>
         </div>
       </div>
     </footer>
