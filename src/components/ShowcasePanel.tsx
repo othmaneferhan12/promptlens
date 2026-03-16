@@ -3,34 +3,34 @@ import { motion, AnimatePresence } from 'framer-motion';
 
 const EXAMPLES = [
   {
-    image: '/images/mj-fantasy-library.jpeg',
-    label: 'Fantasy Scene',
+    image: '/images/pair2-golden-hour.jpeg',
+    label: 'Golden Hour',
     prompt:
-      'A vast ancient library carved into living stone, towering bookshelves ascending into misty darkness, warm amber lanterns casting pools of golden light, dust motes drifting through shafts of ethereal blue illumination, a lone scholar studying at an ornate wooden desk — cinematic, ultra-detailed, 8K, Midjourney v6',
+      'Cinematic portrait, golden hour rim lighting, shallow depth of field, warm amber tones, film grain, soft bokeh background --ar 2:3 --v 6.1 --style raw',
   },
   {
-    image: '/images/mj-portrait-fisherman.jpeg',
-    label: 'Portrait',
+    image: '/images/pair3-oil-painting.jpeg',
+    label: 'Oil Painting',
     prompt:
-      'Weathered fisherman portrait, deep-set ocean-grey eyes reflecting decades of sea voyages, salt-and-pepper stubble, worn oilskin jacket, dramatic side lighting from a stormy horizon, shallow depth of field, bokeh harbour background — editorial photography, f/1.4, Nikon Z9, photorealistic',
+      'Classical oil painting style, rich impasto brushstrokes, Renaissance-inspired composition, warm earth tones, dramatic chiaroscuro lighting, gallery-quality fine art',
   },
   {
-    image: '/images/mj-product-perfume.jpeg',
-    label: 'Product Shot',
+    image: '/images/compare1-mj.jpeg',
+    label: 'Digital Art',
     prompt:
-      'Luxury perfume bottle on black marble, dramatic studio lighting with sharp specular highlights, translucent amber liquid visible through crystal glass, soft violet smoke tendrils curling upward, depth-of-field blur on dark velvet — commercial photography, Hasselblad medium format, 4K',
+      '(masterpiece:1.2), highly detailed digital art, cinematic composition, volumetric lighting, vibrant color palette, epic atmosphere, 8k ultra HD',
   },
   {
-    image: '/images/mj-abstract-paint.jpeg',
-    label: 'Abstract Art',
+    image: '/images/ex3-recreated.jpeg',
+    label: 'Retro Illustration',
     prompt:
-      'Abstract expressionist painting, bold gestural brushstrokes of cobalt blue and burnt sienna colliding in dynamic tension, impasto texture creating sculptural relief, gold leaf accents catching gallery light, emotional turbulence rendered through pure colour and form — oil on canvas, large format, museum quality',
+      'Retro mid-century modern scene, pastel color palette, dreamy nostalgic atmosphere, soft gradients, stylized illustration, vintage travel poster aesthetic',
   },
   {
-    image: '/images/mj-architecture-cathedral.jpeg',
-    label: 'Architecture',
+    image: '/images/stage1-cat.jpeg',
+    label: 'Watercolor',
     prompt:
-      'Gothic cathedral interior bathed in divine light streaming through rose windows, intricate stone ribbed vaulting arching overhead, kaleidoscopic stained glass casting prismatic reflections on ancient limestone floors, atmospheric haze softening the distant choir — long exposure, tilt-shift lens, golden hour',
+      'Fluffy orange tabby cat sitting among wildflowers in an English cottage garden, watercolor illustration, golden hour sunlight, dappled light through trees',
   },
 ];
 
