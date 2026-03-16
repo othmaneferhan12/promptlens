@@ -983,18 +983,24 @@ body {
 .img-single {
   margin: 1.75rem auto;
   max-width: 800px;
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.10);
+  border-radius: 16px;
+  padding: 10px;
 }
 .img-single a { display: block; text-decoration: none; }
 .img-single img {
   width: 100%;
-  border-radius: 0.75rem;
+  border-radius: 10px;
   box-shadow: 0 4px 28px rgba(0,0,0,0.55);
   display: block;
+  max-height: 450px;
+  object-fit: contain;
   transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 .img-single a:hover img {
-  transform: scale(1.01);
-  box-shadow: 0 8px 36px rgba(0,0,0,0.65);
+  transform: scale(1.02);
+  box-shadow: 0 10px 40px rgba(0,0,0,0.65);
 }
 .img-single .img-caption {
   text-align: center;
@@ -1002,6 +1008,61 @@ body {
   font-size: 0.8125rem;
   color: #6660a0;
   font-style: italic;
+}
+
+/* ── Figure Image Container (glass-morphism) ─────── */
+.img-figure {
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.10);
+  border-radius: 16px;
+  padding: 10px;
+  margin: 1.75rem auto;
+  max-width: 800px;
+}
+.img-figure img {
+  width: 100%;
+  border-radius: 10px;
+  display: block;
+  max-height: 450px;
+  object-fit: contain;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.50);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.img-figure img:hover {
+  transform: scale(1.02);
+  box-shadow: 0 10px 40px rgba(0,0,0,0.65);
+}
+.img-figure figcaption {
+  text-align: center;
+  margin-top: 0.625rem;
+  font-size: 0.8125rem;
+  color: #6660a0;
+  font-style: italic;
+  padding: 0 0.5rem 0.25rem;
+}
+
+/* RTL figure captions */
+[dir="rtl"] .img-figure figcaption,
+[dir="rtl"] .img-single .img-caption {
+  text-align: right;
+}
+
+/* RTL comparison flow — grid flows right-to-left */
+[dir="rtl"] .comparison-flow {
+  direction: rtl;
+}
+[dir="rtl"] .comparison-badge {
+  margin-right: 0;
+  margin-left: auto;
+  display: block;
+  width: fit-content;
+  margin-bottom: 0.375rem;
+}
+/* On mobile RTL, stacked arrow stays pointing down */
+@media (max-width: 640px) {
+  [dir="rtl"] .comparison-arrow {
+    transform: rotate(90deg);
+  }
 }
 
 /* ── Exercises ──────────────────────────────────── */

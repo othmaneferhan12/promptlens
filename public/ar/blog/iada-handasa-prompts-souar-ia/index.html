@@ -1,0 +1,403 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0" />
+  <title>كيفية استخراج برومبتات صور الذكاء الاصطناعي (الهندسة العكسية للصور) | ImageToPrompt</title>
+  <meta name="description" content="تعلّم كيفية استخراج البرومبتات من أي صورة ذكاء اصطناعي. اكتشف الأسلوب والإضاءة والتركيب لإعادة إنشائها في Midjourney أو Stable Diffusion أو Flux." />
+  <link rel="canonical" href="https://www.imagetoprompt.dev/ar/blog/iada-handasa-prompts-souar-ia/" />
+  <link rel="alternate" hreflang="en" href="https://www.imagetoprompt.dev/blog/reverse-engineer-ai-art-prompts/" />
+  <link rel="alternate" hreflang="fr" href="https://www.imagetoprompt.dev/fr/blog/reverse-engineering-prompts-ia/" />
+  <link rel="alternate" hreflang="ar" href="https://www.imagetoprompt.dev/ar/blog/iada-handasa-prompts-souar-ia/" />
+  <link rel="alternate" hreflang="x-default" href="https://www.imagetoprompt.dev/blog/reverse-engineer-ai-art-prompts/" />
+  <meta property="og:title" content="كيفية استخراج برومبتات صور الذكاء الاصطناعي (الهندسة العكسية للصور)" />
+  <meta property="og:description" content="استخرج الأسلوب والإضاءة والتركيب من أي صورة ذكاء اصطناعي لإعادة إنشائها في Midjourney و Stable Diffusion و Flux." />
+  <meta property="og:url" content="https://www.imagetoprompt.dev/ar/blog/iada-handasa-prompts-souar-ia/" />
+  <meta property="og:type" content="article" />
+  <meta property="og:image" content="https://www.imagetoprompt.dev/og-image.png" />
+  <meta property="og:site_name" content="ImageToPrompt" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="كيفية استخراج برومبتات صور الذكاء الاصطناعي (الهندسة العكسية للصور)" />
+  <meta name="twitter:description" content="دليل شامل للهندسة العكسية لبرومبتات الذكاء الاصطناعي لـ Midjourney و Stable Diffusion و Flux." />
+  <meta name="twitter:image" content="https://www.imagetoprompt.dev/og-image.png" />
+  <meta name="twitter:site" content="@imagetoprompt" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-icon-180x180.png" />
+  <meta name="msapplication-config" content="/browserconfig.xml" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="/fonts/space-grotesk-700.woff2" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="/fonts/inter-400.woff2" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Arabic:wght@400;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/blog.css" />
+  <style>
+    body { font-family: 'Noto Sans Arabic', 'Space Grotesk', sans-serif; }
+    .article-body { direction: rtl; text-align: right; }
+    code, pre { direction: ltr; text-align: left; display: inline-block; }
+    .toc ol, .toc ul { padding-right: 1.5rem; padding-left: 0; }
+    .article-body ul, .article-body ol { margin-right: 1.5rem; margin-left: 0; }
+    .breadcrumb { direction: rtl; }
+  </style>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "كيفية استخراج برومبتات صور الذكاء الاصطناعي (الهندسة العكسية للصور)",
+    "description": "تعلّم كيفية استخراج البرومبتات من أي صورة ذكاء اصطناعي. اكتشف الأسلوب والإضاءة والتركيب لإعادة إنشائها في Midjourney أو Stable Diffusion أو Flux.",
+    "image": "https://www.imagetoprompt.dev/og-image.png",
+    "datePublished": "2026-03-10",
+    "dateModified": "2026-03-15",
+    "inLanguage": "ar",
+    "author": {
+      "@type": "Person",
+      "name": "ImageToPrompt Team",
+      "url": "https://www.imagetoprompt.dev/"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "ImageToPrompt",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://www.imagetoprompt.dev/favicon.svg"
+      }
+    },
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https://www.imagetoprompt.dev/ar/blog/iada-handasa-prompts-souar-ia/"
+    }
+  }
+  </script>
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="inner">
+      <a href="/ar/" class="site-logo"><svg viewBox="0 0 32 32" width="32" height="32" fill="none" style="display:inline-block;vertical-align:middle;margin-left:6px"><rect x="2" y="2" width="28" height="28" rx="8" fill="url(#aigrad-h)"/><circle cx="16" cy="16" r="3.5" fill="#fff" fill-opacity=".95"/><circle cx="7" cy="10" r="2" fill="#e040fb"/><circle cx="25" cy="10" r="2" fill="#00e5ff"/><circle cx="7" cy="22" r="2" fill="#00e5ff"/><circle cx="25" cy="22" r="2" fill="#e040fb"/><circle cx="16" cy="5" r="2" fill="#e040fb" fill-opacity=".8"/><circle cx="16" cy="27" r="2" fill="#00e5ff" fill-opacity=".8"/><line x1="16" y1="12.5" x2="16" y2="7" stroke="#e040fb" stroke-width="1" stroke-opacity=".6"/><line x1="16" y1="19.5" x2="16" y2="25" stroke="#00e5ff" stroke-width="1" stroke-opacity=".6"/><line x1="12.8" y1="14.2" x2="9" y2="11.5" stroke="#e040fb" stroke-width="1" stroke-opacity=".6"/><line x1="19.2" y1="14.2" x2="23" y2="11.5" stroke="#00e5ff" stroke-width="1" stroke-opacity=".6"/><line x1="12.8" y1="17.8" x2="9" y2="20.5" stroke="#00e5ff" stroke-width="1" stroke-opacity=".6"/><line x1="19.2" y1="17.8" x2="23" y2="20.5" stroke="#e040fb" stroke-width="1" stroke-opacity=".6"/><defs><linearGradient id="aigrad-h" x1="0" y1="0" x2="32" y2="32" gradientUnits="userSpaceOnUse"><stop offset="0%" stop-color="#1a0a2e"/><stop offset="100%" stop-color="#0a1628"/></linearGradient></defs></svg>ImageTo<span class="accent">Prompt</span></a>
+      <nav class="site-nav" aria-label="التنقل الرئيسي">
+        <a href="/ar/">الرئيسية</a>
+        <a href="/ar/blog/" class="active">المدونة</a>
+        <a href="/ar/#faq">الأسئلة الشائعة</a>
+        <span style="display:inline-flex;align-items:center;gap:4px;font-size:0.75rem;color:#8888bb">
+          <a href="/blog/reverse-engineer-ai-art-prompts/" style="color:#8888bb;text-decoration:none" title="English">EN</a><span style="color:rgba(255,255,255,0.2)">|</span><a href="/fr/blog/reverse-engineering-prompts-ia/" style="color:#8888bb;text-decoration:none" title="Français">FR</a><span style="color:rgba(255,255,255,0.2)">|</span><a href="/ar/blog/iada-handasa-prompts-souar-ia/" style="color:#e040fb;text-decoration:none;font-weight:600" title="العربية">AR</a>
+        </span>
+        <a href="/" style="background:linear-gradient(135deg,#e040fb,#00e5ff);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;font-weight:600">جرّب مجاناً ←</a>
+      </nav>
+    </div>
+  </header>
+
+  <nav class="breadcrumb" aria-label="مسار التنقل">
+    <a href="/ar/">الرئيسية</a><span class="sep">›</span>
+    <a href="/ar/blog/">المدونة</a><span class="sep">›</span>
+    <span>استخراج برومبتات صور الذكاء الاصطناعي</span>
+  </nav>
+
+  <div class="page-wrapper">
+
+    <header class="article-header">
+      <p class="article-tag">برنامج تعليمي</p>
+      <h1>كيفية استخراج برومبتات صور الذكاء الاصطناعي (الهندسة العكسية للصور)</h1>
+      <div class="article-meta">
+        <span>مارس 2026</span>
+        <span class="dot">·</span>
+        <span>9 دقائق قراءة</span>
+        <span class="dot">·</span>
+        <span>Midjourney · Stable Diffusion · Flux</span>
+        <span class="dot">·</span>
+        <span>محدّث مارس 2026</span>
+      </div>
+    </header>
+
+    <div class="article-body">
+
+      <p>تتصفح معرضاً فنياً للذكاء الاصطناعي — DeviantArt أو ArtStation أو Twitter أو أحد سيرفرات Discord — وتتوقف أمام صورة تُعبّر تماماً عما تحاول إنشاءه. الإضاءة مثالية. التركيب مذهل. الأسلوب هو بالضبط ما تريده.</p>
+
+      <nav class="toc" aria-label="محتويات المقال">
+        <details open>
+          <summary>في هذا الدليل</summary>
+          <ol>
+            <li><a href="#limatha-yanjah">لماذا تنجح الهندسة العكسية (وما حدودها)</a></li>
+            <li><a href="#tariqat-1-adaat-ia">الطريقة 1: استخدام أداة ذكاء اصطناعي لتحويل الصورة إلى برومبت</a></li>
+            <li><a href="#tariqat-2-tahlil-yadawi">الطريقة 2: التحليل البصري اليدوي</a></li>
+            <li><a href="#tariqat-3-jam-al-tariqatayn">الطريقة 3: الجمع بين الطريقتين — سير العمل الاحترافي</a></li>
+            <li><a href="#mithal-kamil">مثال كامل: الهندسة العكسية لصورة</a></li>
+            <li><a href="#nasaih-per-model">نصائح الهندسة العكسية حسب النموذج</a></li>
+            <li><a href="#nafs-al-soura-namadhij-mukhtalifa">نفس الصورة، نماذج مختلفة</a></li>
+            <li><a href="#ittibarat-akhlaqqiya">اعتبارات أخلاقية</a></li>
+            <li><a href="#usloub-mutaqadim">أسلوب متقدم: نقل الأسلوب عبر البرومبت</a></li>
+          </ol>
+        </details>
+      </nav>
+
+      <p>المشكلة: لا تعرف البرومبت. وحتى لو عرفته، هل نسخه سيُعطيك النتيجة ذاتها؟</p>
+
+      <p>هذا هو فن <strong>الهندسة العكسية للبرومبت</strong> — استخراج الحمض النووي البصري لصورة ما وترجمته إلى تعليمات نصية. عند إتقانها، تُصبح من أقوى المهارات التي يمكن لفنان ذكاء اصطناعي أن يطوّرها. هذا الدليل يرافقك خلال العملية كاملة.</p>
+
+      <h2 id="limatha-yanjah">لماذا تنجح الهندسة العكسية (وما حدودها)</h2>
+
+      <p>تُدرَّب مولدات الصور بالذكاء الاصطناعي على ربط البرومبتات النصية بالمخرجات البصرية. الهندسة العكسية تستغل هذه العلاقة: إذا كان النموذج قادراً على الانتقال من نص ← صورة، فبالأدوات الصحيحة يمكنك أيضاً الانتقال من صورة ← تقريب نصي.</p>
+
+      <p>هذا ليس مثالياً. لدى مولدات الذكاء الاصطناعي عشوائية متأصلة (تتحكم بها قيم البذرة)، والبرومبت ذاته سيُنتج تنويعات لا نسخاً متطابقة. لكن الهندسة العكسية تُقربك بما يكفي لـ:</p>
+      <ul>
+        <li>إعادة إنشاء الجماليات والأجواء العامة</li>
+        <li>تطبيق الأسلوب ذاته على موضوعات مختلفة</li>
+        <li>البناء على أسلوب بصري موجود مع إضافاتك الإبداعية الخاصة</li>
+        <li>فهم كيفية تحقيق تأثيرات بصرية محددة</li>
+      </ul>
+
+      <h2 id="tariqat-1-adaat-ia">الطريقة 1: استخدام أداة ذكاء اصطناعي لتحويل الصورة إلى برومبت</h2>
+
+      <p>الطريقة الأسرع هي استخدام <a href="/">محوّل صورة إلى برومبت</a> مخصص كـ ImageToPrompt. تستخدم هذه الأدوات الذكاء الاصطناعي للرؤية الحاسوبية لتحليل صورتك المرجعية وتوليد برومبت كامل منسَّق للنموذج الهدف.</p>
+
+      <p>سير العمل:</p>
+      <ol>
+        <li>احفظ الصورة التي تريد هندستها عكسياً</li>
+        <li>ارفعها على <a href="/">ImageToPrompt.dev</a></li>
+        <li>اختر نموذج الذكاء الاصطناعي الذي تريد استخدامه (Midjourney أو Stable Diffusion أو Flux وغيرها)</li>
+        <li>احصل على برومبت جاهز للاستخدام في ثوانٍ</li>
+      </ol>
+
+      <p>هذا هو الأسلوب الذي يستخدمه معظم فناني الذكاء الاصطناعي المحترفين كنقطة بداية. يتولى الجزء الشاق المتعلق بتحديد التفاصيل البصرية والتعبير عنها، مما يتيح لك التركيز على التحسين.</p>
+
+      <div class="cta-inline">
+        <p>جرّبه بنفسك — ارفع أي صورة واحصل على برومبت AI محسّن في ثوانٍ.</p>
+        <a href="/" class="cta-btn-sm">جرّب مجاناً ←</a>
+      </div>
+
+      <h2 id="tariqat-2-tahlil-yadawi">الطريقة 2: التحليل البصري اليدوي</h2>
+
+      <p>حتى مع مساعدة الذكاء الاصطناعي، فهم كيفية تفكيك الصورة يدوياً يجعل منك مهندس برومبتات أفضل بكثير. إليك كيفية قراءة أي صورة بشكل منهجي:</p>
+
+      <h3>تحليل الموضوع</h3>
+      <p>ابدأ بالواضح: ما الذي في الصورة؟ كن محدداً. "امرأة" وصف ضعيف. "شابة في العشرينيات بشعر داكن متوسط الطول، ترتدي سترة جلدية قديمة" يمنح الذكاء الاصطناعي ما هو أكثر بكثير ليعمل معه.</p>
+
+      <div class="img-single">
+        <a href="/images/annotated-artwork.jpeg" target="_blank" rel="noopener">
+          <img src="/images/annotated-artwork.jpeg" alt="عمل فني مُنشأ بالذكاء الاصطناعي مع تعليقات توضيحية تُظهر الموضوع واتجاه الإضاءة ومناطق لوحة الألوان وخطوط التركيب ومؤشرات الأسلوب لهندسة برومبتات الصور عكسياً" width="1000" height="700" loading="lazy" />
+        </a>
+        <p class="img-caption">التفكيك البصري: تحديد كل عنصر في صورة قبل ترجمته إلى لغة البرومبت. انقر للعرض بالحجم الكامل.</p>
+      </div>
+
+      <h3>قراءة الإضاءة</h3>
+      <p>الإضاءة من أقوى العناصر في أي صورة. اسأل نفسك هذه الأسئلة:</p>
+      <ul>
+        <li>أين مصدر الضوء؟ (إضاءة أمامية، جانبية، خلفية، rim lighting)</li>
+        <li>هل الضوء حاد أم ناعم؟ (شمس مباشرة حادة مقابل سماء غائمة ناعمة)</li>
+        <li>ما لون الضوء؟ (ساعة ذهبية دافئة، شفق أزرق بارد، استوديو محايد)</li>
+        <li>هل توجد مصادر ضوء ثانوية أو مرشحات ملونة؟</li>
+        <li>هل الظلال درامية؟</li>
+      </ul>
+
+      <h3>تحديد الأسلوب والوسيط</h3>
+      <p>هل هو فوتوغرافي أم مرسوم؟ إذا كان فوتوغرافياً: أي كاميرا، أي عدسة؟ إذا كان مرسوماً: أي وسيط (زيتي، مائي، رقمي)، أي أسلوب فني (انطباعي، فائق الواقعية، أنيمي)؟</p>
+
+      <p>من الأوصاف الأسلوبية المفيدة: <code>cinematic</code>، <code>hyperrealistic</code>، <code>painterly</code>، <code>concept art</code>، <code>illustration</code>، <code>watercolor</code>، <code>cel shading</code>، <code>photorealism</code>، <code>editorial</code></p>
+
+      <h3>ملاحظة لوحة الألوان</h3>
+      <p>تستجيب مولدات الذكاء الاصطناعي بقوة لأوصاف الألوان. حدّد:</p>
+      <ul>
+        <li>الألوان السائدة (2–4 ألوان تُعرّف الصورة)</li>
+        <li>درجة الحرارة العامة (دافئة، باردة، أو محايدة)</li>
+        <li>التشبع (زاهي، مكتوم، غير مشبع)</li>
+        <li>مستوى التباين (تباين قوي، مسطح، منخفض التباين)</li>
+      </ul>
+
+      <h3>وصف التركيب</h3>
+      <p>كيف يُؤطَّر المشهد؟ أوصاف التركيب الشائعة:</p>
+      <ul>
+        <li>نوع اللقطة: قريبة، متوسطة، واسعة، جوية، من الأسفل</li>
+        <li>عمق الميدان: bokeh، عمق ميدان ضحل، تركيز عميق</li>
+        <li>قاعدة الثلثات، التركيب المتمركز، الخطوط التوجيهية</li>
+        <li>المساحة السلبية</li>
+      </ul>
+
+      <h2 id="tariqat-3-jam-al-tariqatayn">الطريقة 3: الجمع بين الطريقتين — سير العمل الاحترافي</h2>
+
+      <p>الأسلوب الأكثر فاعلية يجمع التحليل بالذكاء الاصطناعي مع التحسين اليدوي. إليك سير العمل الكامل الذي يستخدمه فنانو الذكاء الاصطناعي المحترفون:</p>
+
+      <h3>الخطوة 1: توليد برومبت أساسي</h3>
+      <p>ارفع صورتك المرجعية على <a href="/">ImageToPrompt</a> وولّد برومبتاً أولياً. هذا يُوصلك إلى حوالي 80% من الطريق ويستغرق عادةً أقل من 30 ثانية.</p>
+
+      <h3>الخطوة 2: المراجعة والتعليق اليدوي</h3>
+      <p>افحص البرومبت المُولَّد بشكل نقدي. قارنه بالصورة. ما الذي ينقصه؟ ما الذي غير دقيق؟ نقاط محددة للفحص:</p>
+      <ul>
+        <li>هل تُوصَف الإضاءة بدقة؟</li>
+        <li>هل يتطابق وصف الأسلوب مع ما تراه؟</li>
+        <li>هل ثمة عناصر تركيبية مهمة مفقودة؟</li>
+        <li>هل ثمة ألوان سائدة لم تُذكر؟</li>
+      </ul>
+
+      <h3>الخطوة 3: إضافة مراجع فنانين (اختياري)</h3>
+      <p>للصور ذات الأسلوب المميز، إضافة اسم فنان يمكن أن تُحسّن النتائج بشكل ملحوظ. "In the style of Greg Rutkowski" أو "in the style of Makoto Shinkai" يُشير إلى مفردات بصرية كاملة للنموذج. استخدم هذا بشكل أخلاقي — أشر إلى الأسلوب، لا إلى أعمال بعينها.</p>
+
+      <h3>الخطوة 4: الاختبار والتكرار</h3>
+      <p>ولّد 4 إلى 8 تنويعات بالبرومبت المحسَّن. قارنها بمرجعك. حدّد أكبر الفجوات وعدّل البرومبت لسدّها. كرّر حتى الرضا.</p>
+
+      <h2 id="mithal-kamil">مثال كامل: الهندسة العكسية لصورة</h2>
+
+      <p>لنتناول العملية كاملة على صورة واحدة — بالجمع بين التحليل الآلي والتحسين اليدوي لإنتاج برومبت يُعيد الإنشاء فعلياً.</p>
+
+      <div class="img-single">
+        <a href="/images/walkthrough-reference.jpeg" target="_blank" rel="noopener">
+          <img src="/images/walkthrough-reference.jpeg" alt="بورتريه خيالي مرجعي مستخدم في مثال الهندسة العكسية — العمل الفني الأصلي المُنشأ بالذكاء الاصطناعي للتحليل" width="800" height="1100" loading="lazy" />
+        </a>
+        <p class="img-caption">الصورة المرجعية التي نُطبّق عليها الهندسة العكسية. انقر للعرض بالحجم الكامل.</p>
+      </div>
+
+      <h3>الخطوة 1: التحليل الآلي</h3>
+      <p>بعد الرفع على ImageToPrompt مع اختيار Midjourney، ولّدت الأداة:</p>
+
+      <pre class="prompt-block">dramatic fantasy portrait of a female warrior, battle-worn armor with intricate engravings, fierce expression, rim lighting from behind with warm orange glow, particle effects and embers, dark atmospheric background, cinematic concept art, digital painting, highly detailed --ar 2:3 --v 6.1 --style raw --q 2</pre>
+
+      <h3>الخطوة 2: الملاحظات اليدوية</h3>
+      <p>عند فحص الناتج الآلي مقارنةً بالصورة الأصلية، برز أمران. أولاً، لم يلتقط الذكاء الاصطناعي تباين الألوان المحدد — كانت للدرع ظلّة verdigris (أخضر النحاس المؤكسد) لم تُذكر. ثانياً، الخلفية لم تكن "مظلمة" فحسب — كانت ذات أجواء مدخّنة تقريباً بركانية مع جسيمات رماد مرئية. لم ينتقل أيٌّ من هذين العنصرين إلى البرومبت الأول.</p>
+
+      <h3>الخطوة 3: البرومبت المحسَّن</h3>
+      <p>بإضافة العناصر المفقودة وضبط التأكيد:</p>
+
+      <pre class="prompt-block">dramatic fantasy portrait of a female warrior, battle-worn armor with verdigris patina and intricate engravings, fierce determined expression, rim lighting from behind with warm volcanic orange glow, ash particles and floating embers, smoky atmospheric background with volcanic haze, cinematic concept art, digital painting, highly detailed, deep shadow contrast --ar 2:3 --v 6.1 --style raw --q 2</pre>
+
+      <div class="img-single">
+        <a href="/images/walkthrough-recreated.jpeg" target="_blank" rel="noopener">
+          <img src="/images/walkthrough-recreated.jpeg" alt="بورتريه خيالي مُعاد إنشاؤه باستخدام البرومبت المحسَّن من الهندسة العكسية — يُظهر ظلّة verdigris والأجواء البركانية" width="800" height="1100" loading="lazy" />
+        </a>
+        <p class="img-caption">النتيجة المُحصَّل عليها بالبرومبت المحسَّن. ظلّة verdigris والأجواء البركانية موجودتان الآن.</p>
+      </div>
+
+      <p>الإضافتان — طلاء verdigris والأجواء البركانية — غيّرتا السرد البصري للصورة بشكل جوهري. هذا ما تُضيفه الملاحظة اليدوية إلى التحليل الآلي: التفاصيل المحددة التي تجعل الصورة مميزة لا اعتيادية.</p>
+
+      <h2 id="nasaih-per-model">نصائح الهندسة العكسية حسب النموذج</h2>
+
+      <h3>هندسة صور Midjourney عكسياً</h3>
+      <p>لـ Midjourney جماليات مميزة — تفاصيل دقيقة بصفات تصويرية. عند هندسة صور Midjourney عكسياً، أدرج معاملاته الخاصة: <code>--style raw</code> لمخرجات أقل تحيزاً، أو <code>--v 6.1</code> للإصدار الأحدث. أضف <code>--chaos 15-25</code> إذا أردت مزيداً من التنويع في نتائجك.</p>
+
+      <h3>هندسة صور Stable Diffusion عكسياً</h3>
+      <p>لصور SD غالباً علامات مميزة: تُنتج نقاط تفتيش نماذج محددة بصمات مرئية خاصة. إذا علمت أن الصورة أُنشئت بـ SDXL، استخدم نقطة تفتيش SDXL. أدرج برومبتاً سلبياً قوياً لتجنب مشاكل SD الشائعة: <code>blurry, low quality, bad anatomy, watermark, text</code>.</p>
+
+      <h3>هندسة صور Flux عكسياً</h3>
+      <p>يُنتج Flux صوراً فائقة الواقعية الفوتوغرافية. عند هندسة مخرجات Flux عكسياً، ركّز على اللغة الفوتوغرافية: أنواع العدسات وإعدادات الكاميرا وأوصاف الإضاءة الطبيعية. يستجيب Flux جيداً للمصطلحات الفوتوغرافية التقنية.</p>
+
+      <h2 id="nafs-al-soura-namadhij-mukhtalifa">نفس الصورة، نماذج مختلفة</h2>
+
+      <p>الصورة المرجعية ذاتها تُنتج برومبتات مختلفة جداً بحسب نموذج الذكاء الاصطناعي المختار. إليك لماذا هذا مهم وكيف تبدو الفروق عملياً.</p>
+
+      <div class="img-single">
+        <a href="/images/model-comparison-source.jpeg" target="_blank" rel="noopener">
+          <img src="/images/model-comparison-source.jpeg" alt="صورة بورتريه مصدر مستخدمة لإظهار فروق أسلوب البرومبت بين Midjourney و Stable Diffusion و DALL-E 3 و Flux" width="800" height="1000" loading="lazy" />
+        </a>
+      </div>
+
+      <div class="model-prompts-grid">
+        <div class="model-prompt-card">
+          <p class="model-label">Midjourney</p>
+          <pre class="prompt-block-sm">dramatic portrait, strong directional lighting, deep shadows, intense gaze, cinematic photography style --ar 2:3 --v 6.1 --style raw</pre>
+        </div>
+        <div class="model-prompt-card">
+          <p class="model-label">Stable Diffusion</p>
+          <pre class="prompt-block-sm">(photorealistic:1.2), dramatic portrait, (strong rim lighting:1.3), deep shadows, (intense gaze:1.1), professional photography
+برومبت سلبي: blurry, low quality, deformed, bad anatomy, watermark</pre>
+        </div>
+        <div class="model-prompt-card">
+          <p class="model-label">Flux</p>
+          <pre class="prompt-block-sm">High-resolution photograph of a person in dramatic portrait lighting. Strong rim light from the left creates deep shadows. Shot with Canon EOS R5, 85mm f/1.4, shallow depth of field, cinematic color grading.</pre>
+        </div>
+        <div class="model-prompt-card">
+          <p class="model-label">DALL·E 3</p>
+          <pre class="prompt-block-sm">A dramatic portrait photograph with strong directional lighting creating deep shadows on one side of the face. The subject has an intense, direct gaze. Cinematic, professional quality with shallow depth of field.</pre>
+        </div>
+      </div>
+
+      <p>كل برومبت يلتقط الصورة ذاتها لكن بالأسلوب الأصلي لنموذجه. يستخدم Midjourney أوصافاً موجزة ومعاملات. يستخدم Stable Diffusion صياغة الأوزان وبرومبتاً سلبياً. يستخدم Flux لغة فوتوغرافية/تقنية. يستخدم DALL·E 3 جملاً طبيعية كاملة. المحتوى البصري ذاته، أربعة تنسيقات مختلفة.</p>
+
+      <h2 id="ittibarat-akhlaqqiya">اعتبارات أخلاقية</h2>
+
+      <p>هندسة فن الذكاء الاصطناعي عكسياً مقبولة بشكل عام — أنت تعمل ضمن نموذج التدريب الذي تعمل به هذه النماذج. لكن ثمة نقاط للتأمل:</p>
+
+      <ul>
+        <li><strong>لا تدّعِ ملكية فن ذكاء اصطناعي لشخص آخر.</strong> الهندسة العكسية للتعلم أمر مقبول؛ تقديم الناتج باعتباره إبداعك الأصلي دون الإشارة إلى المصدر أمر مضلّل.</li>
+        <li><strong>كن حذراً مع الصور الحقيقية لأشخاص.</strong> استخراج برومبت من صورة ثم توليد صور ذكاء اصطناعي لشخص حقيقي محدد يُثير تساؤلات أخلاقية وقانونية جدية.</li>
+        <li><strong>راجع شروط استخدام المنصات.</strong> بعض المنصات تحظر استخدام صورها المُولَّدة بالذكاء الاصطناعي كبيانات تدريب أو مدخلات للهندسة العكسية. اقرأ الشروط قبل المتابعة.</li>
+      </ul>
+
+      <h2 id="usloub-mutaqadim">أسلوب متقدم: نقل الأسلوب عبر البرومبت</h2>
+
+      <p>بمجرد استخراج برومبت أسلوب جيد من صورة مرجعية، يمكنك تطبيقه على أي موضوع. يُسمى هذا نقل الأسلوب القائم على البرومبت، وهو من أكثر الاستخدامات الإبداعية للهندسة العكسية.</p>
+
+      <p>مثال: تُطبّق الهندسة العكسية على بورتريه بإضاءة ساعة ذهبية رائعة وتحصل على برومبت مثل: <em>"cinematic portrait photography, golden hour rim lighting, shallow depth of field, warm amber and rust tones, film grain, Canon 85mm f/1.4"</em></p>
+
+      <p>الآن استبدل موضوع البورتريه بأي شيء: مبنى، منظر طبيعي، طبيعة صامتة، حيوان. تنتقل معلومات الإضاءة والأسلوب إلى الموضوع الجديد، مانحةً إياك جماليات متسقة عبر صور متباينة جداً.</p>
+
+      <div class="cta-box">
+        <h3>ابدأ الهندسة العكسية في ثوانٍ</h3>
+        <p>ارفع أي صورة على ImageToPrompt واحصل على برومبت كامل خاص بالنموذج، جاهز للاستخدام في Midjourney أو Stable Diffusion أو Flux.</p>
+        <a href="/" class="cta-btn">جرّب مولد برومبت AI المجاني ←</a>
+      </div>
+
+    </div>
+
+    <div class="author-bio">
+      <svg class="author-photo" width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="صورة المؤلف"><circle cx="32" cy="32" r="32" fill="#2a1f4e"/><circle cx="32" cy="26" r="11" fill="#7c6bc4"/><ellipse cx="32" cy="52" rx="18" ry="11" fill="#7c6bc4"/></svg>
+      <div class="author-info">
+        <p class="author-name">فريق ImageToPrompt</p>
+        <p class="author-desc">مهندسو برومبتات وفنانو ذكاء اصطناعي متخصصون في Midjourney و Stable Diffusion و Flux. نبني ImageToPrompt لجعل توليد الصور بالذكاء الاصطناعي في متناول الجميع.</p>
+        <a href="https://twitter.com/imagetoprompt" class="author-link">تابعنا على X ←</a>
+      </div>
+    </div>
+
+    <div class="cta-box cta-download">
+      <h3>تنزيل مجاني: ورقة مرجعية للهندسة العكسية للبرومبت</h3>
+      <p>بطاقة مرجعية بصرية تضم أنواع الإضاءة ومصطلحات التركيب وأوصاف الأسلوب ومفردات الألوان — كل ما تحتاجه لتفكيك أي صورة إلى لغة برومبت.</p>
+      <a href="/downloads/cheat-sheet.pdf" class="cta-btn">تنزيل PDF ←</a>
+    </div>
+
+    <div class="related-posts">
+      <h2>أدلة ذات صلة</h2>
+      <div class="related-grid">
+        <a href="/ar/blog/tahwil-soura-ila-prompt/" class="related-card">
+          <p class="tag">دليل</p>
+          <h3>كيفية تحويل أي صورة إلى برومبت ذكاء اصطناعي</h3>
+        </a>
+        <a href="/ar/blog/dalil-prompts-midjourney-2026/" class="related-card">
+          <p class="tag">Midjourney</p>
+          <h3>دليل برومبتات Midjourney الشامل 2026</h3>
+        </a>
+        <a href="/ar/blog/stable-diffusion-vs-midjourney-vs-dalle3/" class="related-card">
+          <p class="tag">مقارنة</p>
+          <h3>مقارنة SD مقابل Midjourney مقابل DALL·E 3 مقابل Flux</h3>
+        </a>
+        <a href="/ar/blog/handasa-prompts-fan-ia/" class="related-card">
+          <p class="tag">مبتدئون</p>
+          <h3>هندسة البرومبتات لفن الذكاء الاصطناعي</h3>
+        </a>
+        <a href="/blog/best-image-to-prompt-tools-2026/" class="related-card">
+          <p class="tag">مقارنة أدوات</p>
+          <h3>أفضل 7 أدوات لتحويل الصورة إلى برومبت في 2026</h3>
+        </a>
+        <a href="/blog/flux-ai-prompt-guide/" class="related-card">
+          <p class="tag">Flux AI</p>
+          <h3>دليل برومبتات Flux AI 2026</h3>
+        </a>
+      </div>
+    </div>
+
+  </div>
+
+  <footer class="site-footer">
+    <div class="inner">
+      <p>© 2026 <a href="/" style="color:#8888bb;text-decoration:none">ImageToPrompt</a> · مولد برومبت AI مجاني</p>
+      <nav aria-label="تنقل التذييل">
+        <a href="/ar/">الرئيسية</a>
+        <a href="/ar/blog/">المدونة</a>
+        <a href="/midjourney-prompt-generator/">Midjourney</a>
+        <a href="/stable-diffusion-prompt-generator/">Stable Diffusion</a>
+        <a href="/privacy-policy/">سياسة الخصوصية</a>
+        <a href="/terms-of-service/">شروط الاستخدام</a>
+      </nav>
+    </div>
+  </footer>
+
+<script src="/newsletter-inject.js" defer></script>
+</body>
+</html>
