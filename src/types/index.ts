@@ -107,6 +107,57 @@ export type SupportedLanguage =
   | 'it'
   | 'nl';
 
+export type VideoModel =
+  | 'veo'
+  | 'kling'
+  | 'runway'
+  | 'pika'
+  | 'luma'
+  | 'sora'
+  | 'minimax'
+  | 'stable-video';
+
+export type VideoMotionStyle =
+  | 'cinematic'
+  | 'dynamic'
+  | 'slow-motion'
+  | 'timelapse'
+  | 'smooth'
+  | 'dramatic';
+
+export type VideoDuration = '2s' | '4s' | '6s' | '8s' | '10s';
+
+export type VideoCameraMovement =
+  | 'static'
+  | 'pan-left'
+  | 'pan-right'
+  | 'zoom-in'
+  | 'zoom-out'
+  | 'orbit'
+  | 'dolly'
+  | 'tilt-up'
+  | 'tilt-down';
+
+export interface VideoModelConfig {
+  id: VideoModel;
+  name: string;
+  color: string;
+  badge: string;
+  company: string;
+  icon: string;
+}
+
+export interface VideoResult {
+  mainPrompt: string;
+  motionDescription: string;
+  cameraDirection: string;
+  creativeVariant: string;
+  motionTags: string[];
+  suggestedAspectRatio: string;
+  modelTips: string;
+  confidence: number;
+}
+
 export interface LanguageConfig {
   code: SupportedLanguage;
   label: string;

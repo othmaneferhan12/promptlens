@@ -10,6 +10,14 @@
     "api/text-to-prompt.ts": {
       "maxDuration": 30,
       "memory": 512
+    },
+    "api/image-to-video-prompt.ts": {
+      "maxDuration": 30,
+      "memory": 512
+    },
+    "api/text-to-video-prompt.ts": {
+      "maxDuration": 30,
+      "memory": 512
     }
   },
   "rewrites": [
@@ -23,6 +31,16 @@
     { "source": "/adobe-firefly-prompt-generator/(.*)", "destination": "/adobe-firefly-prompt-generator/$1" },
     { "source": "/leonardo-ai-prompt-generator/(.*)", "destination": "/leonardo-ai-prompt-generator/$1" },
     { "source": "/ideogram-prompt-generator/(.*)", "destination": "/ideogram-prompt-generator/$1" },
+    { "source": "/veo-prompt-generator/(.*)", "destination": "/veo-prompt-generator/$1" },
+    { "source": "/kling-prompt-generator/(.*)", "destination": "/kling-prompt-generator/$1" },
+    { "source": "/runway-prompt-generator/(.*)", "destination": "/runway-prompt-generator/$1" },
+    { "source": "/pika-prompt-generator/(.*)", "destination": "/pika-prompt-generator/$1" },
+    { "source": "/luma-prompt-generator/(.*)", "destination": "/luma-prompt-generator/$1" },
+    { "source": "/sora-prompt-generator/(.*)", "destination": "/sora-prompt-generator/$1" },
+    { "source": "/minimax-prompt-generator/(.*)", "destination": "/minimax-prompt-generator/$1" },
+    { "source": "/stable-video-prompt-generator/(.*)", "destination": "/stable-video-prompt-generator/$1" },
+    { "source": "/image-to-video-prompt/(.*)", "destination": "/image-to-video-prompt/$1" },
+    { "source": "/text-to-video-prompt/(.*)", "destination": "/text-to-video-prompt/$1" },
     { "source": "/imagetoprompt-vs-prompthero/(.*)", "destination": "/imagetoprompt-vs-prompthero/$1" },
     { "source": "/imagetoprompt-vs-lexica/(.*)", "destination": "/imagetoprompt-vs-lexica/$1" },
     { "source": "/imagetoprompt-vs-img2prompt/(.*)", "destination": "/imagetoprompt-vs-img2prompt/$1" },
@@ -96,6 +114,20 @@
     },
     {
       "source": "/(midjourney|stable-diffusion|flux|dall-e|adobe-firefly|leonardo-ai|ideogram)-prompt-generator/(.*)",
+      "headers": [
+        { "key": "Cache-Control", "value": "public, max-age=3600, stale-while-revalidate=86400" },
+        { "key": "X-Content-Type-Options", "value": "nosniff" }
+      ]
+    },
+    {
+      "source": "/(veo|kling|runway|pika|luma|sora|minimax|stable-video)-prompt-generator/(.*)",
+      "headers": [
+        { "key": "Cache-Control", "value": "public, max-age=3600, stale-while-revalidate=86400" },
+        { "key": "X-Content-Type-Options", "value": "nosniff" }
+      ]
+    },
+    {
+      "source": "/(image-to-video-prompt|text-to-video-prompt)/(.*)",
       "headers": [
         { "key": "Cache-Control", "value": "public, max-age=3600, stale-while-revalidate=86400" },
         { "key": "X-Content-Type-Options", "value": "nosniff" }

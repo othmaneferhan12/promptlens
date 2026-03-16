@@ -1,0 +1,326 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0" />
+  <title>Minimax / Hailuo Prompt Generator — Video AI | ImageToPrompt</title>
+  <meta name="description" content="Generate Minimax and Hailuo AI video prompts. Character animation, facial expressions, and gesture control. Free prompt tool." />
+  <link rel="canonical" href="https://www.imagetoprompt.dev/minimax-prompt-generator/" />
+  <meta property="og:title" content="Minimax / Hailuo Prompt Generator — Video AI | ImageToPrompt" />
+  <meta property="og:description" content="Generate Minimax and Hailuo AI video prompts. Character animation, facial expressions, and gesture control. Free prompt tool." />
+  <meta property="og:url" content="https://www.imagetoprompt.dev/minimax-prompt-generator/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="https://www.imagetoprompt.dev/og-image.png" />
+  <meta property="og:site_name" content="ImageToPrompt" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Minimax / Hailuo Prompt Generator — Video AI | ImageToPrompt" />
+  <meta name="twitter:description" content="Generate Minimax and Hailuo AI video prompts. Character animation, facial expressions, and gesture control. Free prompt tool." />
+  <meta name="twitter:image" content="https://www.imagetoprompt.dev/og-image.png" />
+  <meta name="twitter:site" content="@imagetoprompt" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="48x48" href="/favicon-48.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+  <link rel="manifest" href="/site.webmanifest" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="/fonts/space-grotesk-700.woff2" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="/fonts/inter-400.woff2" />
+  <link rel="stylesheet" href="/blog.css" />
+  <link rel="stylesheet" href="/model-pages.css" />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "Minimax / Hailuo Video Prompt Generator",
+    "applicationCategory": "DesignApplication",
+    "operatingSystem": "Web",
+    "url": "https://www.imagetoprompt.dev/minimax-prompt-generator/",
+    "description": "Generate Minimax and Hailuo AI video prompts. Character animation, facial expressions, and gesture control. Free prompt tool.",
+    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+    "publisher": {
+      "@type": "Organization",
+      "name": "ImageToPrompt",
+      "url": "https://www.imagetoprompt.dev/"
+    }
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.imagetoprompt.dev/" },
+      { "@type": "ListItem", "position": 2, "name": "Minimax / Hailuo Prompt Generator", "item": "https://www.imagetoprompt.dev/minimax-prompt-generator/" }
+    ]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What is Minimax AI best for?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Minimax AI's video model is best for character-centric video generation, particularly scenes requiring detailed facial expressions, natural gesture animation, and emotional range. If you need a person to convey a specific emotion convincingly — a genuine laugh, a hesitant look, a wide-eyed reaction — Minimax outperforms most competing models. It is widely used for portrait animations, character demos, and emotional storytelling videos." }
+      },
+      {
+        "@type": "Question",
+        "name": "What is Hailuo AI?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Hailuo AI is the international brand name for Minimax AI's video generation product. The underlying model and technology are the same — Minimax is the company name used in China and in technical contexts, while Hailuo is the consumer-facing brand name used internationally. If you see references to 'Hailuo video AI', they are referring to the same Minimax video generation model." }
+      },
+      {
+        "@type": "Question",
+        "name": "How do I control facial expressions in video prompts?",
+        "acceptedAnswer": { "@type": "Answer", "text": "For precise facial expression control in Minimax/Hailuo, describe the expression in layered detail: start with the broad emotional state, then add specific facial muscle cues. For example: 'genuine surprise — eyes widen suddenly, eyebrows lift, mouth opens slightly, then settles into a delighted smile'. Include timing words like 'quickly', 'slowly', 'gradually' to control the expression transition speed. Mentioning the emotional trigger (what caused the expression) also helps Minimax render it more authentically." }
+      },
+      {
+        "@type": "Question",
+        "name": "Is Minimax free?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Minimax / Hailuo offers a free tier that allows a limited number of video generations per month. The free tier is accessible through hailuoai.com internationally. Paid plans unlock higher quality, longer videos, and more monthly credits. The ImageToPrompt prompt generator for Minimax is completely free to use." }
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="inner">
+      <a href="/" class="site-logo"><img src="/favicon.svg" alt="ImageToPrompt" width="48" height="48"><div class="site-logo-text">Image<span class="accent">To</span>Prompt<span class="site-logo-sub">Free AI Prompt Generator</span></div></a>
+      <nav class="site-nav" aria-label="Main navigation">
+        <div class="nav-dropdown">
+          <button class="nav-dropdown-trigger" aria-haspopup="true" aria-expanded="false">Tools <span class="nav-chevron" aria-hidden="true">&#9660;</span></button>
+          <div class="nav-dropdown-menu" role="menu">
+            <a href="/text-to-prompt/" role="menuitem">&#9999;&#65039; Text to Prompt</a>
+            <a href="/midjourney-prompt-generator/" role="menuitem">&#127912; Midjourney</a>
+            <a href="/stable-diffusion-prompt-generator/" role="menuitem">&#9881;&#65039; Stable Diffusion</a>
+            <a href="/flux-prompt-generator/" role="menuitem">&#9889; Flux AI</a>
+            <a href="/dall-e-prompt-generator/" role="menuitem">&#129504; DALL&#xB7;E 3</a>
+            <a href="/adobe-firefly-prompt-generator/" role="menuitem">&#129419; Adobe Firefly</a>
+            <a href="/leonardo-ai-prompt-generator/" role="menuitem">&#127918; Leonardo AI</a>
+            <a href="/ideogram-prompt-generator/" role="menuitem">&#9997;&#65039; Ideogram</a>
+            <span class="nav-category" style="display:block;padding:0.25rem 0.75rem;font-size:0.65rem;text-transform:uppercase;letter-spacing:0.08em;color:#8888bb;pointer-events:none;user-select:none">Video Prompts</span>
+            <a href="/image-to-video-prompt/" role="menuitem">&#127909; Image to Video</a>
+            <a href="/text-to-video-prompt/" role="menuitem">&#9999;&#65039; Text to Video</a>
+            <a href="/veo-prompt-generator/" role="menuitem">&#127909; Veo</a>
+            <a href="/kling-prompt-generator/" role="menuitem">&#127910; Kling</a>
+            <a href="/runway-prompt-generator/" role="menuitem">&#127911; Runway Gen-3</a>
+            <a href="/pika-prompt-generator/" role="menuitem">&#9889; Pika</a>
+            <a href="/luma-prompt-generator/" role="menuitem">&#127914; Luma Dream Machine</a>
+            <a href="/sora-prompt-generator/" role="menuitem">&#127775; Sora</a>
+            <a href="/minimax-prompt-generator/" role="menuitem">&#127935; Minimax / Hailuo</a>
+            <a href="/stable-video-prompt-generator/" role="menuitem">&#9881;&#65039; Stable Video</a>
+          </div>
+        </div>
+        <a href="/blog/">Blog</a>
+        <a href="/" class="nav-try-free">Try Free &#8594;</a>
+      </nav>
+    </div>
+  </header>
+
+  <nav class="breadcrumb" aria-label="Breadcrumb">
+    <a href="/">Home</a><span class="sep">›</span>
+    <span>Minimax / Hailuo Prompt Generator</span>
+  </nav>
+
+  <div class="page-wrapper model-page-wrapper">
+
+    <header class="model-page-hero">
+      <div class="model-badge-hero" style="--model-color:#845EF7">&#127935; Best for Characters</div>
+      <h1>Free Minimax / Hailuo Video Prompt Generator</h1>
+      <p class="model-page-subtitle">Generate Minimax and Hailuo AI video prompts optimized for character animation, facial expressions, and emotional range. No login required.</p>
+    </header>
+
+    <!-- Embedded Tool -->
+    <div class="tool-embed-container">
+      <iframe
+        src="/?tab=video&model=minimax&embed=true"
+        title="Minimax / Hailuo Prompt Generator Tool"
+        class="tool-embed-frame"
+        loading="eager"
+        allow="clipboard-write; clipboard-read"
+      ></iframe>
+    </div>
+
+    <!-- Section: Features -->
+    <section class="model-features-section">
+      <h2>What Makes Minimax Unique</h2>
+      <div class="model-features-grid">
+        <div class="model-feature-card" style="--card-accent:#845EF7">
+          <div class="feature-icon">&#128512;</div>
+          <h3>Facial Expression Control</h3>
+          <p>Describe micro-expressions in detail — brow raises, lip movements, eye widening — and Minimax renders them convincingly. No other model matches this granularity of facial animation.</p>
+        </div>
+        <div class="model-feature-card" style="--card-accent:#845EF7">
+          <div class="feature-icon">&#129332;</div>
+          <h3>Gesture Animation</h3>
+          <p>Hand gestures, body language, and physical emphasis all animate with natural timing and rhythm. Describe the gesture and its emotional context for the most authentic results.</p>
+        </div>
+        <div class="model-feature-card" style="--card-accent:#845EF7">
+          <div class="feature-icon">&#127775;</div>
+          <h3>Character Consistency</h3>
+          <p>Minimax maintains character appearance and identity throughout the clip — critical for portrait animations, actor substitution, and character demonstration videos.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Content -->
+    <article class="model-page-content">
+
+      <h2>What is Minimax / Hailuo?</h2>
+      <p>Minimax AI is a Chinese AI company that has developed one of the most capable video generation models available in 2026. The model is marketed internationally as <strong>Hailuo AI</strong> and is accessible through hailuoai.com. Unlike general-purpose video models, Minimax/Hailuo was developed with a strong focus on <strong>human character animation</strong> — particularly the nuanced micro-expressions, gesture timing, and emotional range that makes animated characters feel genuinely alive rather than robotically stiff.</p>
+      <p>This specialization has made it a favorite among content creators who need portrait-style videos, character demonstrations, emotional storytelling clips, and any footage where a human subject's face and body language are the primary focus.</p>
+
+      <h2>Minimax / Hailuo Strengths</h2>
+      <ul class="tips-list">
+        <li><strong>Facial expression control:</strong> The model responds to detailed descriptions of facial movements, from subtle eyebrow raises to full laughing sequences with authentic muscle behavior.</li>
+        <li><strong>Gesture animation:</strong> Hands, arms, and body language animate with natural weight, timing, and flow — not the stiff or jerky motion seen in less specialized models.</li>
+        <li><strong>Character consistency:</strong> Appearance, hair, clothing, and skin tone remain stable throughout the generated clip.</li>
+        <li><strong>Emotional range:</strong> From delicate vulnerability to exuberant joy, Minimax handles the full human emotional spectrum convincingly.</li>
+        <li><strong>Portrait focus:</strong> Excels at close-up and medium shots where character details are the center of attention.</li>
+      </ul>
+
+      <h2>How to Describe Character Motion for Minimax</h2>
+      <p>Minimax responds best to <strong>layered, emotionally-aware descriptions</strong>. Rather than just stating an action, describe the physical expression of an internal state. Include:</p>
+      <ul class="tips-list">
+        <li><strong>The emotion first:</strong> "Genuine surprise", "warm affection", "nervous hesitation"</li>
+        <li><strong>Specific facial cues:</strong> "eyes widen", "corners of mouth lift", "brow furrows slightly"</li>
+        <li><strong>Body language:</strong> "shoulders relax", "leans slightly forward", "head tilts"</li>
+        <li><strong>Motion timing:</strong> "quickly", "gradually", "hesitantly", "in a fluid sweep"</li>
+        <li><strong>Transition:</strong> Describe how the expression or gesture evolves — what it begins as and what it settles into</li>
+      </ul>
+
+      <h2>Example Minimax / Hailuo Prompts</h2>
+
+      <h3>Intimate Portrait — Surprise Reaction</h3>
+      <div class="code-example">
+        <code>Young woman looks up from book, eyes widen in surprise, slight smile forms, turns head slowly to face camera, 3 seconds, intimate portrait</code>
+      </div>
+      <p>The layered description — first the trigger (looks up), then the expression (eyes widen, smile forms), then the movement (turns head) — gives Minimax a clear sequence to animate with natural timing.</p>
+
+      <h3>Performance — Street Juggler</h3>
+      <div class="code-example">
+        <code>Street performer juggles three glowing orbs, rhythmic tossing pattern, catching each with precision, crowd visible in blurred background, 5 seconds</code>
+      </div>
+      <p>This demonstrates Minimax's gesture animation capability. The "rhythmic tossing pattern" instruction shapes the cadence; the blurred background crowd adds environmental context without competing for motion complexity.</p>
+
+      <h3>Documentary Style — Authentic Laughter</h3>
+      <div class="code-example">
+        <code>Elderly man laughs genuinely at something off-screen, eyes crinkle, shoulders shaking, then settles into warm smile, 4 seconds, documentary</code>
+      </div>
+      <p>The progression from laughter to settled smile gives Minimax a complete emotional arc to animate within the 4-second clip. The "documentary" style cue pushes toward natural, unposed movement rather than performed aesthetics.</p>
+
+      <h2>Tips for Best Character Animation Results</h2>
+      <ul class="tips-list">
+        <li><strong>Be specific about emotion:</strong> "Surprised" is less effective than "wide-eyed surprise with a quick sharp intake of breath, then breaking into a wide grin".</li>
+        <li><strong>Describe motion timing:</strong> Include pace words — "quick", "slow", "hesitant", "fluid", "sharp" — for each motion element you describe.</li>
+        <li><strong>Include facial details:</strong> Name specific facial features and their movement direction. "Eyebrows draw together" outperforms "concerned look".</li>
+        <li><strong>Use close to medium shots:</strong> Minimax's strengths show best in portrait framing where facial details are prominent. Wide shots dilute the model's advantage.</li>
+        <li><strong>Describe the emotional trigger:</strong> "Hears unexpected good news" or "notices something across the room" gives Minimax context to make the reaction feel authentic rather than performed.</li>
+      </ul>
+
+      <div class="related-blog">
+        <span class="related-label">Related Guide</span>
+        <a href="/blog/video-prompt-guide-2026/">AI Video Prompt Guide 2026: Write Better Prompts for Every Model &#8594;</a>
+      </div>
+
+      <!-- FAQs -->
+      <h2>Frequently Asked Questions</h2>
+      <div class="faq-list">
+        <details class="faq-item">
+          <summary>What is Minimax AI best for?</summary>
+          <p>Minimax AI's video model is best for character-centric video generation, particularly scenes requiring detailed facial expressions, natural gesture animation, and emotional range. If you need a person to convey a specific emotion convincingly — a genuine laugh, a hesitant look, a wide-eyed reaction — Minimax outperforms most competing models.</p>
+        </details>
+        <details class="faq-item">
+          <summary>What is Hailuo AI?</summary>
+          <p>Hailuo AI is the international brand name for Minimax AI's video generation product. The underlying model and technology are the same — Minimax is the company name used in China and in technical contexts, while Hailuo is the consumer-facing brand name used internationally. References to "Hailuo video AI" refer to the same Minimax video generation model.</p>
+        </details>
+        <details class="faq-item">
+          <summary>How do I control facial expressions in video prompts?</summary>
+          <p>For precise facial expression control, describe the expression in layered detail: start with the broad emotional state, then add specific facial muscle cues. For example: "genuine surprise — eyes widen suddenly, eyebrows lift, mouth opens slightly, then settles into a delighted smile". Include timing words like "quickly", "slowly", "gradually" to control transition speed.</p>
+        </details>
+        <details class="faq-item">
+          <summary>Is Minimax free?</summary>
+          <p>Minimax / Hailuo offers a free tier accessible through hailuoai.com internationally, with a limited number of video generations per month. Paid plans unlock higher quality, longer videos, and more monthly credits. The ImageToPrompt prompt generator for Minimax is completely free to use.</p>
+        </details>
+      </div>
+
+      <!-- Related Blog -->
+      <div class="model-related-section">
+        <h2>Video Prompt Guides &amp; Resources</h2>
+        <div class="model-related-grid">
+          <a href="/blog/video-prompt-guide-2026/" class="model-related-card">
+            <img src="/images/pair1-cinematic.jpeg" alt="AI Video Prompt Guide 2026" loading="lazy" />
+            <div class="model-related-text">
+              <span class="model-related-category">Guide</span>
+              <h4>AI Video Prompt Guide 2026: Write Better Prompts for Every Model</h4>
+            </div>
+          </a>
+          <a href="/blog/veo-vs-kling-vs-runway/" class="model-related-card">
+            <img src="/images/model-comparison-source.jpeg" alt="Veo vs Kling vs Runway vs Sora Comparison" loading="lazy" />
+            <div class="model-related-text">
+              <span class="model-related-category">Comparison</span>
+              <h4>Veo vs Kling vs Runway vs Sora: Complete AI Video Generator Comparison</h4>
+            </div>
+          </a>
+          <a href="/blog/midjourney-prompt-guide-2026/" class="model-related-card">
+            <img src="/images/mj-version-v6.jpeg" alt="Midjourney Prompt Guide 2026" loading="lazy" />
+            <div class="model-related-text">
+              <span class="model-related-category">Guide</span>
+              <h4>The Complete Midjourney Prompt Guide for 2026</h4>
+            </div>
+          </a>
+        </div>
+      </div>
+
+      <!-- Other Video Models -->
+      <div class="other-models-section">
+        <h2>Try Other Video Prompt Generators</h2>
+        <div class="other-models-grid">
+          <a href="/veo-prompt-generator/" class="other-model-card" style="--c:#4285F4">&#127909;<span>Veo</span></a>
+          <a href="/kling-prompt-generator/" class="other-model-card" style="--c:#FF6B35">&#127910;<span>Kling</span></a>
+          <a href="/runway-prompt-generator/" class="other-model-card" style="--c:#E91E8C">&#127911;<span>Runway Gen-3</span></a>
+          <a href="/pika-prompt-generator/" class="other-model-card" style="--c:#6C63FF">&#9889;<span>Pika</span></a>
+          <a href="/luma-prompt-generator/" class="other-model-card" style="--c:#FFD700">&#127914;<span>Luma</span></a>
+          <a href="/sora-prompt-generator/" class="other-model-card" style="--c:#10A37F">&#127775;<span>Sora</span></a>
+          <a href="/stable-video-prompt-generator/" class="other-model-card" style="--c:#8B5CF6">&#9881;&#65039;<span>Stable Video</span></a>
+        </div>
+      </div>
+
+    </article>
+  </div>
+
+  <footer class="site-footer-simple">
+    <div class="inner">
+      <div class="footer-links">
+        <a href="/">Home</a>
+        <a href="/blog/">Blog</a>
+        <a href="/midjourney-prompt-generator/">Midjourney</a>
+        <a href="/stable-diffusion-prompt-generator/">Stable Diffusion</a>
+        <a href="/flux-prompt-generator/">Flux</a>
+        <a href="/dall-e-prompt-generator/">DALL&#xB7;E 3</a>
+        <a href="/adobe-firefly-prompt-generator/">Firefly</a>
+        <a href="/leonardo-ai-prompt-generator/">Leonardo</a>
+        <a href="/ideogram-prompt-generator/">Ideogram</a>
+        <a href="/veo-prompt-generator/">Veo</a>
+        <a href="/kling-prompt-generator/">Kling</a>
+        <a href="/runway-prompt-generator/">Runway</a>
+        <a href="/pika-prompt-generator/">Pika</a>
+        <a href="/luma-prompt-generator/">Luma</a>
+        <a href="/sora-prompt-generator/">Sora</a>
+        <a href="/minimax-prompt-generator/">Minimax</a>
+        <a href="/stable-video-prompt-generator/">Stable Video</a>
+        <a href="/privacy-policy/">Privacy Policy</a>
+        <a href="/terms-of-service/">Terms of Service</a>
+      </div>
+      <div class="footer-lang">
+        <span class="footer-lang-label">Language:</span>
+        <a href="/">English</a><span class="footer-lang-sep">&#xB7;</span><a href="/fr/">Fran&#231;ais</a><span class="footer-lang-sep">&#xB7;</span><a href="/ar/">&#1575;&#1604;&#1593;&#1585;&#1576;&#1610;&#1577;</a>
+      </div>
+      <p class="footer-copy">&#169; 2026 ImageToPrompt.dev &#8212; Free AI Prompt Generator</p>
+    </div>
+  </footer>
+
+<script src="/nav.js" defer></script>
+</body>
+</html>

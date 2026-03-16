@@ -359,9 +359,10 @@ STYLE PREFERENCE: ${style}
 ${styleModifiers[style] ?? styleModifiers['cinematic']}
 
 LANGUAGE: ${LANGUAGE_NAMES[language] ?? 'English'} (${language})
-- Write subject, composition, lighting, mood, style, negativePrompt, remixPrompt in ${LANGUAGE_NAMES[language] ?? 'English'}.
-- "mainPrompt" MUST always be in English — AI image generators require English.
-- qualityTags and styleTags MUST always be in English.
+IMPORTANT — these fields MUST ALWAYS be in English (AI image generators only understand English):
+- mainPrompt, negativePrompt, remixPrompt, qualityTags, styleTags, modelSpecificParams — ALWAYS English, no exceptions.
+These fields are for the USER and should be written in ${LANGUAGE_NAMES[language] ?? 'English'}:
+- subject, composition, lighting, mood, style (visual breakdown explanations only).
 
 ANALYSIS INSTRUCTIONS:
 1. Analyze the image deeply: subject, composition, lighting, colors, mood, art style, technical details.
@@ -372,15 +373,15 @@ ANALYSIS INSTRUCTIONS:
 
 Return ONLY this JSON (no markdown fences, no explanations, no extra keys):
 {
-  "mainPrompt": "the full optimized generation prompt for ${model} — always in English",
-  "negativePrompt": "in ${LANGUAGE_NAMES[language] ?? 'English'}: elements to exclude",
-  "remixPrompt": "in ${LANGUAGE_NAMES[language] ?? 'English'}: creative variation of the image",
-  "subject": "in ${LANGUAGE_NAMES[language] ?? 'English'}: main subject description",
-  "composition": "in ${LANGUAGE_NAMES[language] ?? 'English'}: framing and perspective",
-  "lighting": "in ${LANGUAGE_NAMES[language] ?? 'English'}: light sources and quality",
+  "mainPrompt": "ENGLISH ONLY — the full optimized generation prompt for ${model}",
+  "negativePrompt": "ENGLISH ONLY — elements to exclude from the image",
+  "remixPrompt": "ENGLISH ONLY — creative variation prompt for ${model}",
+  "subject": "IN ${(LANGUAGE_NAMES[language] ?? 'English').toUpperCase()} — main subject description",
+  "composition": "IN ${(LANGUAGE_NAMES[language] ?? 'English').toUpperCase()} — framing and perspective",
+  "lighting": "IN ${(LANGUAGE_NAMES[language] ?? 'English').toUpperCase()} — light sources and quality",
   "colorPalette": ["#RRGGBB", "#RRGGBB", "#RRGGBB", "#RRGGBB", "#RRGGBB"],
-  "mood": "in ${LANGUAGE_NAMES[language] ?? 'English'}: emotional atmosphere",
-  "style": "in ${LANGUAGE_NAMES[language] ?? 'English'}: detected art style and technique",
+  "mood": "IN ${(LANGUAGE_NAMES[language] ?? 'English').toUpperCase()} — emotional atmosphere",
+  "style": "IN ${(LANGUAGE_NAMES[language] ?? 'English').toUpperCase()} — detected art style and technique",
   "suggestedAspectRatio": "e.g. 16:9 or 1:1 or 3:4",
   "qualityTags": ["8k", "highly detailed", "sharp focus"],
   "styleTags": ["cinematic", "dramatic", "moody"],

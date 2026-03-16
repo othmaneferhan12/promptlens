@@ -1,0 +1,325 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0" />
+  <title>Image to Video Prompt Generator — Free AI Tool | ImageToPrompt</title>
+  <meta name="description" content="Upload any image and generate optimized video prompts for Veo, Kling, Runway, Pika, Luma, Sora, and more. Free image to video prompt generator, no login required." />
+  <link rel="canonical" href="https://www.imagetoprompt.dev/image-to-video-prompt/" />
+  <meta property="og:title" content="Image to Video Prompt Generator — Free AI Tool | ImageToPrompt" />
+  <meta property="og:description" content="Upload any image and generate optimized video prompts for Veo, Kling, Runway, Pika, Luma, Sora, and more. Free image to video prompt generator, no login required." />
+  <meta property="og:url" content="https://www.imagetoprompt.dev/image-to-video-prompt/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="https://www.imagetoprompt.dev/og-image.png" />
+  <meta property="og:site_name" content="ImageToPrompt" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Image to Video Prompt Generator — Free AI Tool | ImageToPrompt" />
+  <meta name="twitter:description" content="Upload any image and generate optimized video prompts for Veo, Kling, Runway, Pika, Luma, Sora, and more. Free image to video prompt generator, no login required." />
+  <meta name="twitter:image" content="https://www.imagetoprompt.dev/og-image.png" />
+  <meta name="twitter:site" content="@imagetoprompt" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="48x48" href="/favicon-48.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+  <link rel="manifest" href="/site.webmanifest" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="/fonts/space-grotesk-700.woff2" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="/fonts/inter-400.woff2" />
+  <link rel="stylesheet" href="/blog.css" />
+  <link rel="stylesheet" href="/model-pages.css" />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "Image to Video Prompt Generator",
+    "applicationCategory": "MultimediaApplication",
+    "operatingSystem": "Web",
+    "url": "https://www.imagetoprompt.dev/image-to-video-prompt/",
+    "description": "Upload any image and generate optimized video prompts for Veo, Kling, Runway, Pika, Luma, Sora, and more. Free, no login required.",
+    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+    "publisher": {
+      "@type": "Organization",
+      "name": "ImageToPrompt",
+      "url": "https://www.imagetoprompt.dev/"
+    }
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.imagetoprompt.dev/" },
+      { "@type": "ListItem", "position": 2, "name": "Image to Video Prompt Generator", "item": "https://www.imagetoprompt.dev/image-to-video-prompt/" }
+    ]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Which video model is best for image-to-video generation?",
+        "acceptedAnswer": { "@type": "Answer", "text": "The best model depends on your use case. Google Veo 2 and Kling AI lead for photorealistic motion and faithful subject preservation. Runway Gen-3 Alpha excels at creative stylized motion. Luma Dream Machine is a strong all-rounder for general-purpose image animation. Our tool lets you generate prompts optimized for each model so you can compare results." }
+      },
+      {
+        "@type": "Question",
+        "name": "How long can my generated video clips be?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Clip length varies by model. Most AI video generators currently produce clips between 3 and 10 seconds from a single prompt. Veo 2 supports up to 8 seconds, Kling AI up to 5–10 seconds depending on tier, Runway Gen-3 Alpha produces 4-second clips, and Pika 1.5 generates up to 3 seconds. Longer videos can be created by chaining clips together in platforms like Flow Studio or Runway." }
+      },
+      {
+        "@type": "Question",
+        "name": "What image formats can I upload?",
+        "acceptedAnswer": { "@type": "Answer", "text": "ImageToPrompt accepts JPEG, PNG, WebP, and GIF image formats. For best results, upload a clear, well-lit image at a resolution of at least 512×512 pixels. Higher-resolution images give the AI model more detail to work with when generating the motion description." }
+      },
+      {
+        "@type": "Question",
+        "name": "Is this tool free to use?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Yes, ImageToPrompt is completely free to use. You can generate up to 10 video prompts per day without creating an account or providing any payment information. The prompts themselves are ready to paste directly into your chosen AI video platform." }
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="inner">
+      <a href="/" class="site-logo"><img src="/favicon.svg" alt="ImageToPrompt" width="48" height="48"><div class="site-logo-text">Image<span class="accent">To</span>Prompt<span class="site-logo-sub">Free AI Prompt Generator</span></div></a>
+      <nav class="site-nav" aria-label="Main navigation">
+        <div class="nav-dropdown">
+          <button class="nav-dropdown-trigger" aria-haspopup="true" aria-expanded="false">Tools <span class="nav-chevron" aria-hidden="true">&#9660;</span></button>
+          <div class="nav-dropdown-menu" role="menu">
+            <span class="nav-category-label" style="display:block;padding:0.375rem 0.75rem 0.25rem;font-size:0.625rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:rgba(136,136,187,0.5);">Image Tools</span>
+            <a href="/text-to-prompt/" role="menuitem">&#9999;&#65039; Text to Prompt</a>
+            <a href="/midjourney-prompt-generator/" role="menuitem">&#127912; Midjourney</a>
+            <a href="/stable-diffusion-prompt-generator/" role="menuitem">&#9881;&#65039; Stable Diffusion</a>
+            <a href="/flux-prompt-generator/" role="menuitem">&#9889; Flux AI</a>
+            <a href="/dall-e-prompt-generator/" role="menuitem">&#129504; DALL&#xB7;E 3</a>
+            <a href="/adobe-firefly-prompt-generator/" role="menuitem">&#129419; Adobe Firefly</a>
+            <a href="/leonardo-ai-prompt-generator/" role="menuitem">&#127918; Leonardo AI</a>
+            <a href="/ideogram-prompt-generator/" role="menuitem">&#9997;&#65039; Ideogram</a>
+            <span class="nav-category-label" style="display:block;padding:0.5rem 0.75rem 0.25rem;font-size:0.625rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:rgba(136,136,187,0.5);border-top:1px solid rgba(255,255,255,0.06);margin-top:0.25rem;">Video Tools</span>
+            <a href="/image-to-video-prompt/" role="menuitem">&#127909; Image to Video</a>
+            <a href="/text-to-video-prompt/" role="menuitem">&#9999;&#65039; Text to Video</a>
+            <a href="/veo-prompt-generator/" role="menuitem">&#127909; Veo / Flow Studio</a>
+            <a href="/kling-prompt-generator/" role="menuitem">&#127916; Kling AI</a>
+            <a href="/runway-prompt-generator/" role="menuitem">&#127910; Runway Gen-3</a>
+            <a href="/pika-prompt-generator/" role="menuitem">&#9889; Pika</a>
+            <a href="/luma-prompt-generator/" role="menuitem">&#127774; Luma Dream Machine</a>
+            <a href="/sora-prompt-generator/" role="menuitem">&#127775; Sora</a>
+            <a href="/minimax-prompt-generator/" role="menuitem">&#127803; Minimax</a>
+            <a href="/stable-video-prompt-generator/" role="menuitem">&#9881;&#65039; Stable Video</a>
+          </div>
+        </div>
+        <a href="/blog/">Blog</a>
+        <a href="/" class="nav-try-free">Try Free &#8594;</a>
+      </nav>
+    </div>
+  </header>
+
+  <nav class="breadcrumb" aria-label="Breadcrumb">
+    <a href="/">Home</a><span class="sep">›</span>
+    <span>Image to Video Prompt Generator</span>
+  </nav>
+
+  <div class="page-wrapper model-page-wrapper">
+
+    <header class="model-page-hero">
+      <div class="model-badge-hero" style="--model-color:#7C3AED">&#127909; 8 Video Models Supported</div>
+      <h1>Free Image to Video Prompt Generator</h1>
+      <p class="model-page-subtitle">Upload any image, choose your video model, and get a professionally crafted video prompt — instantly. No login required.</p>
+    </header>
+
+    <!-- Embedded Tool -->
+    <div class="tool-embed-container">
+      <iframe
+        src="/?tab=image-to-video&embed=true"
+        title="Image to Video Prompt Generator Tool"
+        class="tool-embed-frame"
+        loading="eager"
+        allow="clipboard-write; clipboard-read"
+      ></iframe>
+    </div>
+
+    <article class="model-page-content">
+
+      <h2>What is Image to Video Prompting?</h2>
+      <p>Image to video prompting is the process of starting with a still photograph or illustration and describing how you want that image to come to life as a video clip. Rather than generating a scene from scratch, you provide a reference frame — and the AI video model animates it according to your prompt.</p>
+      <p>The technique solves one of the hardest problems in AI video generation: maintaining visual consistency. When you generate video purely from text, the model invents every visual detail from scratch, making it difficult to produce footage that matches a specific look, character, or setting. By anchoring the generation to a reference image, the model inherits the existing composition, lighting, colors, and subjects — then adds motion on top.</p>
+      <p>This workflow is particularly powerful for creators who already have a visual identity: product photographers animating still shots, concept artists bringing illustrations to life, social media creators adding motion to brand photography, or filmmakers pre-visualizing scenes with reference stills. Upload your image, describe the motion you want, and our AI generates a prompt precisely tuned to the video model you are targeting.</p>
+
+      <h2>Supported Video Models</h2>
+      <p>Our image to video prompt generator creates optimized prompts for the eight leading AI video platforms. Each model has a distinct syntax preference, motion vocabulary, and set of parameters — our tool handles all of that automatically.</p>
+      <div class="other-models-grid" style="margin-top:1.25rem;">
+        <a href="/veo-prompt-generator/" class="other-model-card" style="--c:#4285F4">&#127909;<span>Veo / Flow Studio</span></a>
+        <a href="/kling-prompt-generator/" class="other-model-card" style="--c:#FF6B35">&#127916;<span>Kling AI</span></a>
+        <a href="/runway-prompt-generator/" class="other-model-card" style="--c:#00D4AA">&#127910;<span>Runway Gen-3</span></a>
+        <a href="/pika-prompt-generator/" class="other-model-card" style="--c:#FF4081">&#9889;<span>Pika 1.5</span></a>
+        <a href="/luma-prompt-generator/" class="other-model-card" style="--c:#7C3AED">&#127774;<span>Luma Dream Machine</span></a>
+        <a href="/sora-prompt-generator/" class="other-model-card" style="--c:#10A37F">&#127775;<span>Sora</span></a>
+        <a href="/minimax-prompt-generator/" class="other-model-card" style="--c:#F59E0B">&#127803;<span>Minimax / Hailuo</span></a>
+        <a href="/stable-video-prompt-generator/" class="other-model-card" style="--c:#FF6B35">&#9881;&#65039;<span>Stable Video Diffusion</span></a>
+      </div>
+      <div class="params-grid" style="margin-top:2rem;">
+        <div class="param-card" style="--c:#4285F4">
+          <div class="param-name">Veo / Flow Studio</div>
+          <div class="param-desc">Google DeepMind's flagship video model. Best-in-class for photorealistic physics — water, fire, fabric, and environmental motion render with exceptional accuracy. Prompts should use natural prose describing motion narratively.</div>
+        </div>
+        <div class="param-card" style="--c:#FF6B35">
+          <div class="param-name">Kling AI</div>
+          <div class="param-desc">Kuaishou's video model, known for strong subject consistency across frames and expressive character motion. Particularly well-suited for portrait and human animation. Supports both 5-second and 10-second clip lengths.</div>
+        </div>
+        <div class="param-card" style="--c:#00D4AA">
+          <div class="param-name">Runway Gen-3 Alpha</div>
+          <div class="param-desc">Runway's latest generation model, optimized for creative and stylized motion with strong adherence to cinematic references. Responds well to camera direction terminology and mood descriptors.</div>
+        </div>
+        <div class="param-card" style="--c:#FF4081">
+          <div class="param-name">Pika 1.5</div>
+          <div class="param-desc">Pika Labs' model with a strong emphasis on character expression and object-level control. Supports dedicated negative prompts and modifier keywords for fine-tuning motion intensity.</div>
+        </div>
+        <div class="param-card" style="--c:#7C3AED">
+          <div class="param-name">Luma Dream Machine</div>
+          <div class="param-desc">A versatile all-rounder with fast generation speed and strong general motion quality. Works well for both abstract and photorealistic content, with good prompt adherence across a wide range of subjects.</div>
+        </div>
+        <div class="param-card" style="--c:#10A37F">
+          <div class="param-name">Sora</div>
+          <div class="param-desc">OpenAI's video generation model with a focus on long-form coherence and complex multi-element scenes. Understands rich narrative descriptions and maintains subject identity across longer clips.</div>
+        </div>
+        <div class="param-card" style="--c:#F59E0B">
+          <div class="param-name">Minimax / Hailuo</div>
+          <div class="param-desc">Minimax's video model (also distributed as Hailuo AI Video) excels at smooth, cinematic motion with a strong aesthetic sensibility. Performs particularly well for landscape and atmospheric content.</div>
+        </div>
+        <div class="param-card" style="--c:#FF6B35">
+          <div class="param-name">Stable Video Diffusion</div>
+          <div class="param-desc">Stability AI's open-weight video model, available for local deployment and fine-tuning. Generates short motion clips from a conditioning image, with community checkpoints for stylized outputs.</div>
+        </div>
+      </div>
+
+      <h2>How to Write Great Image-to-Video Prompts</h2>
+      <p>Effective image-to-video prompts follow a consistent structure that communicates four distinct layers of information to the model. Here is the framework our tool uses when generating your prompts:</p>
+      <ol class="tips-list" style="list-style:decimal;padding-left:1.5rem;">
+        <li style="margin-bottom:1rem;"><strong>Describe the starting frame.</strong> Even though the model receives your image directly, a brief anchor description helps it interpret which elements to focus on. Identify the primary subject and the scene context — for example, "woman in red jacket standing at a rain-wet street corner at dusk." This grounds the prompt and prevents the model from inventing competing interpretations of the image.</li>
+        <li style="margin-bottom:1rem;"><strong>Specify the motion explicitly.</strong> This is the most critical element. Be precise about what moves, how it moves, and at what speed. "Hair blowing gently in wind" is far more effective than "add some movement." Distinguish between primary motion (the main action) and secondary motion (ambient details like leaves rustling or fabric settling). Separate subject motion from camera motion clearly — many beginners conflate the two.</li>
+        <li style="margin-bottom:1rem;"><strong>Add camera movement.</strong> AI video models treat camera motion as a first-class parameter. Common camera moves include: slow push-in (dolly forward), pull-back reveal, tracking shot following the subject, pan left or right, tilt up or down, orbit around subject, and aerial descent. If you want the camera to stay still, state it explicitly with "static camera, locked off."</li>
+        <li style="margin-bottom:1rem;"><strong>Set the mood and style.</strong> Closing modifiers shape the overall aesthetic of the output. Include lighting quality ("soft golden-hour light," "harsh overhead fluorescent"), atmosphere ("misty," "hazy," "crystal clear"), and if relevant a stylistic reference ("cinematic," "documentary," "dreamy"). For models like Runway that accept duration hints, add the target clip length at the end: "5 seconds, cinematic."</li>
+      </ol>
+      <div class="code-example">
+        <code>Woman in red jacket at rain-wet street corner at dusk, hair and jacket moving gently in wind, slow push-in toward face, rain falling softly, warm lamplight reflecting on wet pavement, 5 seconds, cinematic</code>
+      </div>
+      <p>Our tool analyzes your uploaded image and generates a prompt that follows this structure, tailored to the specific vocabulary and parameter preferences of whichever video model you select.</p>
+
+      <h2>Why Use a Dedicated Image-to-Video Prompt Tool?</h2>
+      <p>Writing prompts that work well with AI video models requires a different skill set than writing image generation prompts. Image models are relatively forgiving of vague descriptions — they will fill in the gaps with plausible details. Video models are less forgiving: vague motion descriptions produce jittery, incoherent clips, while precise motion descriptions produce smooth, intentional-looking results.</p>
+      <p>The challenge is compounded by the fact that each of the eight major video platforms has developed its own prompt vocabulary. Veo responds to natural narrative prose. Runway responds well to cinematic shorthand. Pika has specific modifier keywords. Kling prefers structured descriptions with explicit duration. Writing effective prompts for all of them from scratch would require learning each platform's quirks individually.</p>
+      <p>Our tool does this work for you. When you upload your image and select a target model, our AI analyzes the visual content — subjects, composition, lighting, setting, implied motion potential — and generates a prompt that speaks the model's language. You get a production-ready prompt you can paste directly into your video platform, without needing to master the syntax of each tool.</p>
+
+      <div class="related-blog">
+        <span class="related-label">Related Guide</span>
+        <a href="/blog/video-prompt-guide-2026/">The Complete Video Prompt Guide for 2026 →</a>
+      </div>
+
+      <!-- FAQs -->
+      <h2>Frequently Asked Questions</h2>
+      <div class="faq-list">
+        <details class="faq-item">
+          <summary>Which video model is best for image-to-video generation?</summary>
+          <p>The best model depends on your use case. Google Veo 2 and Kling AI lead for photorealistic motion and faithful subject preservation. Runway Gen-3 Alpha excels at creative stylized motion. Luma Dream Machine is a strong all-rounder for general-purpose image animation. Our tool lets you generate prompts optimized for each model so you can compare results.</p>
+        </details>
+        <details class="faq-item">
+          <summary>How long can my generated video clips be?</summary>
+          <p>Clip length varies by model. Most AI video generators currently produce clips between 3 and 10 seconds from a single prompt. Veo 2 supports up to 8 seconds, Kling AI up to 5–10 seconds depending on tier, Runway Gen-3 Alpha produces 4-second clips, and Pika 1.5 generates up to 3 seconds. Longer videos can be created by chaining clips together in platforms like Flow Studio or Runway.</p>
+        </details>
+        <details class="faq-item">
+          <summary>What image formats can I upload?</summary>
+          <p>ImageToPrompt accepts JPEG, PNG, WebP, and GIF image formats. For best results, upload a clear, well-lit image at a resolution of at least 512×512 pixels. Higher-resolution images give the AI model more detail to work with when generating the motion description.</p>
+        </details>
+        <details class="faq-item">
+          <summary>Is this tool free to use?</summary>
+          <p>Yes, ImageToPrompt is completely free to use. You can generate up to 10 video prompts per day without creating an account or providing any payment information. The prompts themselves are ready to paste directly into your chosen AI video platform.</p>
+        </details>
+      </div>
+
+      <!-- Related Blog Posts -->
+      <div class="model-related-section">
+        <h2>Prompt Guides &amp; Resources</h2>
+        <div class="model-related-grid">
+          <a href="/blog/video-prompt-guide-2026/" class="model-related-card">
+            <img src="/images/walkthrough-reference.jpeg" alt="The Complete Video Prompt Guide for 2026" loading="lazy" />
+            <div class="model-related-text">
+              <span class="model-related-category">Guide</span>
+              <h4>The Complete Video Prompt Guide for 2026</h4>
+            </div>
+          </a>
+          <a href="/blog/veo-vs-kling-vs-runway/" class="model-related-card">
+            <img src="/images/compare1-mj.jpeg" alt="Veo vs Kling vs Runway: Which AI Video Model Wins?" loading="lazy" />
+            <div class="model-related-text">
+              <span class="model-related-category">Comparison</span>
+              <h4>Veo vs Kling vs Runway: Which AI Video Model Wins?</h4>
+            </div>
+          </a>
+          <a href="/blog/reverse-engineer-ai-art-prompts/" class="model-related-card">
+            <img src="/images/model-comparison-source.jpeg" alt="How to Reverse-Engineer AI Prompts from Any Scene" loading="lazy" />
+            <div class="model-related-text">
+              <span class="model-related-category">Tutorial</span>
+              <h4>How to Reverse-Engineer AI Prompts from Any Scene</h4>
+            </div>
+          </a>
+        </div>
+      </div>
+
+      <!-- Other Tools -->
+      <div class="other-models-section">
+        <h2>Try Model-Specific Video Prompt Generators</h2>
+        <div class="other-models-grid">
+          <a href="/veo-prompt-generator/" class="other-model-card" style="--c:#4285F4">&#127909;<span>Veo</span></a>
+          <a href="/kling-prompt-generator/" class="other-model-card" style="--c:#FF6B35">&#127916;<span>Kling AI</span></a>
+          <a href="/runway-prompt-generator/" class="other-model-card" style="--c:#00D4AA">&#127910;<span>Runway Gen-3</span></a>
+          <a href="/pika-prompt-generator/" class="other-model-card" style="--c:#FF4081">&#9889;<span>Pika</span></a>
+          <a href="/luma-prompt-generator/" class="other-model-card" style="--c:#7C3AED">&#127774;<span>Luma</span></a>
+          <a href="/sora-prompt-generator/" class="other-model-card" style="--c:#10A37F">&#127775;<span>Sora</span></a>
+          <a href="/minimax-prompt-generator/" class="other-model-card" style="--c:#F59E0B">&#127803;<span>Minimax</span></a>
+          <a href="/stable-video-prompt-generator/" class="other-model-card" style="--c:#FF6B35">&#9881;&#65039;<span>Stable Video</span></a>
+        </div>
+      </div>
+
+    </article>
+  </div>
+
+  <footer class="site-footer-simple">
+    <div class="inner">
+      <div class="footer-links">
+        <a href="/">Home</a>
+        <a href="/blog/">Blog</a>
+        <a href="/midjourney-prompt-generator/">Midjourney</a>
+        <a href="/stable-diffusion-prompt-generator/">Stable Diffusion</a>
+        <a href="/flux-prompt-generator/">Flux</a>
+        <a href="/dall-e-prompt-generator/">DALL·E 3</a>
+        <a href="/adobe-firefly-prompt-generator/">Firefly</a>
+        <a href="/leonardo-ai-prompt-generator/">Leonardo</a>
+        <a href="/ideogram-prompt-generator/">Ideogram</a>
+        <a href="/veo-prompt-generator/">Veo</a>
+        <a href="/kling-prompt-generator/">Kling</a>
+        <a href="/runway-prompt-generator/">Runway</a>
+        <a href="/pika-prompt-generator/">Pika</a>
+        <a href="/luma-prompt-generator/">Luma</a>
+        <a href="/sora-prompt-generator/">Sora</a>
+        <a href="/minimax-prompt-generator/">Minimax</a>
+        <a href="/stable-video-prompt-generator/">Stable Video</a>
+        <a href="/image-to-video-prompt/">Image to Video</a>
+        <a href="/text-to-video-prompt/">Text to Video</a>
+        <a href="/privacy-policy/">Privacy Policy</a>
+        <a href="/terms-of-service/">Terms of Service</a>
+      </div>
+      <div class="footer-lang">
+        <span class="footer-lang-label">Language:</span>
+        <a href="/">English</a><span class="footer-lang-sep">&#xB7;</span><a href="/fr/">Fran&#231;ais</a><span class="footer-lang-sep">&#xB7;</span><a href="/ar/">&#1575;&#1604;&#1593;&#1585;&#1576;&#1610;&#1577;</a>
+      </div>
+      <p class="footer-copy">© 2026 ImageToPrompt.dev — Free AI Prompt Generator</p>
+    </div>
+  </footer>
+
+<script src="/nav.js" defer></script>
+</body>
+</html>

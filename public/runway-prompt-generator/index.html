@@ -1,0 +1,362 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0" />
+  <title>Runway Gen-3 Prompt Generator — Video AI Tool | ImageToPrompt</title>
+  <meta name="description" content="Generate cinematic Runway Gen-3 Alpha video prompts. Camera movements, transitions, and visual effects. Free prompt generator." />
+  <link rel="canonical" href="https://www.imagetoprompt.dev/runway-prompt-generator/" />
+  <meta property="og:title" content="Runway Gen-3 Prompt Generator — Video AI Tool | ImageToPrompt" />
+  <meta property="og:description" content="Generate cinematic Runway Gen-3 Alpha video prompts. Camera movements, transitions, and visual effects. Free prompt generator." />
+  <meta property="og:url" content="https://www.imagetoprompt.dev/runway-prompt-generator/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="https://www.imagetoprompt.dev/og-image.png" />
+  <meta property="og:site_name" content="ImageToPrompt" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Runway Gen-3 Prompt Generator — Video AI Tool | ImageToPrompt" />
+  <meta name="twitter:description" content="Generate cinematic Runway Gen-3 Alpha video prompts. Camera movements, transitions, and visual effects. Free prompt generator." />
+  <meta name="twitter:image" content="https://www.imagetoprompt.dev/og-image.png" />
+  <meta name="twitter:site" content="@imagetoprompt" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="48x48" href="/favicon-48.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+  <link rel="manifest" href="/site.webmanifest" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="/fonts/space-grotesk-700.woff2" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="/fonts/inter-400.woff2" />
+  <link rel="stylesheet" href="/blog.css" />
+  <link rel="stylesheet" href="/model-pages.css" />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "Runway Gen-3 Alpha Video Prompt Generator",
+    "applicationCategory": "MultimediaApplication",
+    "operatingSystem": "Web",
+    "url": "https://www.imagetoprompt.dev/runway-prompt-generator/",
+    "description": "Generate cinematic Runway Gen-3 Alpha video prompts. Camera movements, transitions, and visual effects. Free prompt generator.",
+    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+    "publisher": {
+      "@type": "Organization",
+      "name": "ImageToPrompt",
+      "url": "https://www.imagetoprompt.dev/"
+    }
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.imagetoprompt.dev/" },
+      { "@type": "ListItem", "position": 2, "name": "Runway Prompt Generator", "item": "https://www.imagetoprompt.dev/runway-prompt-generator/" }
+    ]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What's new in Gen-3 Alpha?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Gen-3 Alpha introduces significantly improved camera control, better motion consistency over time, enhanced handling of complex camera movements like orbits and cranes, and improved text rendering within video frames." }
+      },
+      {
+        "@type": "Question",
+        "name": "How do I control camera movement in Runway?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Use specific cinematography terms: dolly, crane, orbit, pan, tilt, push-in, pull-out. Runway Gen-3 responds well to these terms placed at the start or end of the prompt." }
+      },
+      {
+        "@type": "Question",
+        "name": "Can I use motion brush with text prompts?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Motion brush is primarily an image-to-video feature in Runway's interface. For text prompts, you can achieve directional motion by describing movement vectors explicitly in your prompt." }
+      },
+      {
+        "@type": "Question",
+        "name": "What resolution does Runway output?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Runway Gen-3 outputs at 1280×768 (landscape), 768×1280 (portrait), or 1104×624. The aspect ratio is set by your prompt or project settings." }
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="inner">
+      <a href="/" class="site-logo"><img src="/favicon.svg" alt="ImageToPrompt" width="48" height="48"><div class="site-logo-text">Image<span class="accent">To</span>Prompt<span class="site-logo-sub">Free AI Prompt Generator</span></div></a>
+      <nav class="site-nav" aria-label="Main navigation">
+        <div class="nav-dropdown">
+          <button class="nav-dropdown-trigger" aria-haspopup="true" aria-expanded="false">Tools <span class="nav-chevron" aria-hidden="true">&#9660;</span></button>
+          <div class="nav-dropdown-menu" role="menu">
+            <span class="nav-category-label" style="display:block;padding:0.375rem 0.75rem 0.25rem;font-size:0.625rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:rgba(136,136,187,0.5);">Image Tools</span>
+            <a href="/text-to-prompt/" role="menuitem">&#9999;&#65039; Text to Prompt</a>
+            <a href="/midjourney-prompt-generator/" role="menuitem">&#127912; Midjourney</a>
+            <a href="/stable-diffusion-prompt-generator/" role="menuitem">&#9881;&#65039; Stable Diffusion</a>
+            <a href="/flux-prompt-generator/" role="menuitem">&#9889; Flux AI</a>
+            <a href="/dall-e-prompt-generator/" role="menuitem">&#129504; DALL&#xB7;E 3</a>
+            <a href="/adobe-firefly-prompt-generator/" role="menuitem">&#129419; Adobe Firefly</a>
+            <a href="/leonardo-ai-prompt-generator/" role="menuitem">&#127918; Leonardo AI</a>
+            <a href="/ideogram-prompt-generator/" role="menuitem">&#9997;&#65039; Ideogram</a>
+            <span class="nav-category-label" style="display:block;padding:0.5rem 0.75rem 0.25rem;font-size:0.625rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:rgba(136,136,187,0.5);border-top:1px solid rgba(255,255,255,0.06);margin-top:0.25rem;">Video Tools</span>
+            <a href="/image-to-video-prompt/" role="menuitem">&#127909; Image to Video</a>
+            <a href="/text-to-video-prompt/" role="menuitem">&#9999;&#65039; Text to Video</a>
+            <a href="/veo-prompt-generator/" role="menuitem">&#127909; Veo / Flow Studio</a>
+            <a href="/kling-prompt-generator/" role="menuitem">&#127916; Kling AI</a>
+            <a href="/runway-prompt-generator/" role="menuitem">&#127910; Runway Gen-3</a>
+            <a href="/pika-prompt-generator/" role="menuitem">&#9889; Pika</a>
+            <a href="/luma-prompt-generator/" role="menuitem">&#127774; Luma Dream Machine</a>
+            <a href="/sora-prompt-generator/" role="menuitem">&#127775; Sora</a>
+            <a href="/minimax-prompt-generator/" role="menuitem">&#127803; Minimax</a>
+            <a href="/stable-video-prompt-generator/" role="menuitem">&#9881;&#65039; Stable Video</a>
+          </div>
+        </div>
+        <a href="/blog/">Blog</a>
+        <a href="/" class="nav-try-free">Try Free &#8594;</a>
+      </nav>
+    </div>
+  </header>
+
+  <nav class="breadcrumb" aria-label="Breadcrumb">
+    <a href="/">Home</a><span class="sep">›</span>
+    <span>Runway Gen-3 Prompt Generator</span>
+  </nav>
+
+  <div class="page-wrapper model-page-wrapper">
+
+    <header class="model-page-hero">
+      <div class="model-badge-hero" style="--model-color:#00D4AA">&#127910; Best for Cinematic</div>
+      <h1>Free Runway Gen-3 Alpha Video Prompt Generator</h1>
+      <p class="model-page-subtitle">Generate cinematic Runway Gen-3 Alpha video prompts with precise camera movements, professional transitions, and visual effects. No login required.</p>
+    </header>
+
+    <!-- Embedded Tool -->
+    <div class="tool-embed-container">
+      <iframe
+        src="/?tab=video&model=runway&embed=true"
+        title="Runway Gen-3 Alpha Video Prompt Generator Tool"
+        class="tool-embed-frame"
+        loading="eager"
+        allow="clipboard-write; clipboard-read"
+      ></iframe>
+    </div>
+
+    <!-- Section 1: See It in Action -->
+    <section class="model-showcase-section">
+      <h2>See It in Action</h2>
+      <div class="model-showcase-grid">
+        <div class="showcase-col">
+          <span class="showcase-label">Scene Reference</span>
+          <figure class="img-figure">
+            <img src="/images/model-comparison-source.jpeg" alt="Reference scene for Runway Gen-3 cinematic prompt generation" width="600" height="400" loading="lazy" />
+            <figcaption>Reference image for cinematic framing</figcaption>
+          </figure>
+        </div>
+        <div class="showcase-arrow">→</div>
+        <div class="showcase-col">
+          <span class="showcase-label generated" style="--model-color:#00D4AA">Runway Prompt Output</span>
+          <figure class="img-figure">
+            <img src="/images/compare2-mj.jpeg" alt="Scene described with a Runway Gen-3 cinematic prompt" width="600" height="400" loading="lazy" />
+            <figcaption>Described with a Runway Gen-3-optimized prompt</figcaption>
+          </figure>
+        </div>
+      </div>
+      <div class="showcase-prompt-box">
+        <div class="showcase-prompt-header">
+          <span class="showcase-prompt-badge" style="background:rgba(0,212,170,0.12);color:#00D4AA;border-color:rgba(0,212,170,0.25)">&#127910; Runway Gen-3 Prompt</span>
+        </div>
+        <code class="showcase-prompt-code">Dolly forward through empty cathedral, shafts of colored light streaming through stained glass, dust particles floating in beams, cinematic 24fps, 6 seconds</code>
+      </div>
+    </section>
+
+    <!-- Section 2: Why Use -->
+    <section class="model-features-section">
+      <h2>Why Use Runway Gen-3 Alpha?</h2>
+      <div class="model-features-grid">
+        <div class="model-feature-card" style="--card-accent:#00D4AA">
+          <div class="feature-icon">&#127910;</div>
+          <h3>Precise Camera Control</h3>
+          <p>Runway Gen-3 Alpha responds to explicit cinematography language — dolly, crane, orbit, pan — with precision that no other consumer video model matches.</p>
+        </div>
+        <div class="model-feature-card" style="--card-accent:#00D4AA">
+          <div class="feature-icon">&#127916;</div>
+          <h3>Professional Transitions</h3>
+          <p>Motion brush, temporal masking, and seamless transitions produce broadcast-quality results suitable for commercial and short film use.</p>
+        </div>
+        <div class="model-feature-card" style="--card-accent:#00D4AA">
+          <div class="feature-icon">&#10024;</div>
+          <h3>Temporal Consistency</h3>
+          <p>Subjects, lighting, and scene composition remain stable across the full clip duration — preventing the flickering artifacts common in earlier video models.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Content -->
+    <article class="model-page-content">
+
+      <h2>What is Runway Gen-3 Alpha?</h2>
+      <p>Runway Gen-3 Alpha is Runway AI's most advanced video generation model — the industry standard for cinematic AI video. Runway has been the tool of choice for film directors, VFX artists, and commercial studios since it pioneered the text-to-video space, and Gen-3 Alpha represents a significant leap forward in camera control, motion quality, and temporal consistency.</p>
+      <p>Where Veo excels at photorealistic natural motion and Kling handles complex multi-subject scenes, Runway Gen-3 Alpha is the clear choice when <strong>cinematographic precision</strong> is the primary requirement. The model understands camera language at a level that allows you to specify exact movement types, speed, and framing transitions.</p>
+
+      <h2>How to Write Effective Runway Prompts</h2>
+      <p>Runway Gen-3 Alpha responds best to prompts that use <strong>cinematic language</strong> — the vocabulary cinematographers use on set. Place camera movement instructions at the start of the prompt, followed by the scene description and any visual effect details:</p>
+      <div class="code-example">
+        <code>Slow crane shot rising above foggy harbor at dawn, fishing boats visible below, city emerging from mist, golden light cresting horizon, 8 seconds, widescreen</code>
+      </div>
+      <p>Visual effects and atmosphere — rain, fog, dust particles, lens flares — are also handled exceptionally well by Gen-3 Alpha. Describe atmospheric conditions as part of the scene rather than as stylistic tags.</p>
+
+      <h2>Camera Movement Vocabulary for Runway</h2>
+      <div class="params-grid">
+        <div class="param-card" style="--c:#00D4AA">
+          <div class="param-name">Dolly / Push-In / Pull-Out</div>
+          <div class="param-desc">Camera physically moves forward or backward along the lens axis. "Dolly forward" creates an immersive entry effect; "pull-out" reveals the wider context of a scene.</div>
+        </div>
+        <div class="param-card" style="--c:#00D4AA">
+          <div class="param-name">Crane Shot</div>
+          <div class="param-desc">Camera rises or descends vertically, often revealing scale. "Crane rising above" produces dramatic reveals. Pair with fog or environmental details for maximum impact.</div>
+        </div>
+        <div class="param-card" style="--c:#00D4AA">
+          <div class="param-name">Orbit / Arc Shot</div>
+          <div class="param-desc">Camera circles around a subject. "Camera orbits 180 degrees" is one of Runway Gen-3's signature capabilities — produces smooth, professional-looking circular motion.</div>
+        </div>
+        <div class="param-card" style="--c:#00D4AA">
+          <div class="param-name">Pan / Tilt</div>
+          <div class="param-desc">Camera rotates horizontally (pan) or vertically (tilt) from a fixed position. Useful for revealing environments and tracking horizontal movement.</div>
+        </div>
+        <div class="param-card" style="--c:#00D4AA">
+          <div class="param-name">Tracking Shot</div>
+          <div class="param-desc">Camera moves alongside a subject, keeping it in frame. "Camera tracks alongside" subjects in motion — walking, running, or driving scenes.</div>
+        </div>
+        <div class="param-card" style="--c:#00D4AA">
+          <div class="param-name">Handheld / Steadicam</div>
+          <div class="param-desc">"Handheld" adds organic subtle shake for documentary realism. "Steadicam" produces smooth flowing movement without the rigidity of a dolly track.</div>
+        </div>
+      </div>
+
+      <h2>Example Runway Gen-3 Prompts</h2>
+      <div class="code-example">
+        <code>Dolly forward through empty cathedral, shafts of colored light streaming through stained glass, dust particles floating in beams, cinematic 24fps, 6 seconds</code>
+      </div>
+      <div class="code-example">
+        <code>Slow crane shot rising above foggy harbor at dawn, fishing boats visible below, city emerging from mist, golden light cresting horizon, 8 seconds, widescreen</code>
+      </div>
+      <div class="code-example">
+        <code>Subject in neon-lit alley, camera orbits 180 degrees from front to behind, rain falling in slow motion, light reflections on wet ground, 5 seconds, neo-noir</code>
+      </div>
+
+      <h2>Motion Brush Tips (Image-to-Video)</h2>
+      <p>Runway's <strong>Motion Brush</strong> feature lets you paint motion directions directly onto an uploaded image, then describe the overall scene motion in text. For best results with image-to-video workflows:</p>
+      <ul class="tips-list">
+        <li><strong>Paint foreground and background separately:</strong> Use different motion vectors for near and far elements to create a parallax depth effect — this is one of the most cinematic results Runway can produce.</li>
+        <li><strong>Match brush direction to your text prompt:</strong> If your prompt says "rain falling", your brush strokes on the sky/foreground should move downward. Conflicting directions produce artifacts.</li>
+        <li><strong>Keep brush coverage sparse:</strong> Runway handles partial-coverage brushing better than full-frame coverage. Let 30–40% of the image remain without explicit motion instructions.</li>
+        <li><strong>Use slow motion for effect shots:</strong> Adding "slow motion" to the text prompt while keeping brush intensity moderate produces high-quality slow-motion atmospheric scenes.</li>
+      </ul>
+
+      <div class="related-blog">
+        <span class="related-label">Related Guide</span>
+        <a href="/blog/veo-vs-kling-vs-runway/">Veo vs Kling vs Runway: Which AI Video Model Wins? →</a>
+      </div>
+
+      <!-- FAQs -->
+      <h2>Frequently Asked Questions</h2>
+      <div class="faq-list">
+        <details class="faq-item">
+          <summary>What's new in Gen-3 Alpha?</summary>
+          <p>Gen-3 Alpha introduces significantly improved camera control, better motion consistency over time, enhanced handling of complex camera movements like orbits and cranes, and improved text rendering within video frames.</p>
+        </details>
+        <details class="faq-item">
+          <summary>How do I control camera movement in Runway?</summary>
+          <p>Use specific cinematography terms: dolly, crane, orbit, pan, tilt, push-in, pull-out. Runway Gen-3 responds well to these terms placed at the start or end of the prompt.</p>
+        </details>
+        <details class="faq-item">
+          <summary>Can I use motion brush with text prompts?</summary>
+          <p>Motion brush is primarily an image-to-video feature in Runway's interface. For text prompts, you can achieve directional motion by describing movement vectors explicitly in your prompt.</p>
+        </details>
+        <details class="faq-item">
+          <summary>What resolution does Runway output?</summary>
+          <p>Runway Gen-3 outputs at 1280×768 (landscape), 768×1280 (portrait), or 1104×624. The aspect ratio is set by your prompt or project settings.</p>
+        </details>
+      </div>
+
+      <!-- Related Blog Posts -->
+      <div class="model-related-section">
+        <h2>Prompt Guides &amp; Resources</h2>
+        <div class="model-related-grid">
+          <a href="/blog/video-prompt-guide-2026/" class="model-related-card">
+            <img src="/images/walkthrough-reference.jpeg" alt="The Complete Video Prompt Guide for 2026" loading="lazy" />
+            <div class="model-related-text">
+              <span class="model-related-category">Guide</span>
+              <h4>The Complete Video Prompt Guide for 2026</h4>
+            </div>
+          </a>
+          <a href="/blog/veo-vs-kling-vs-runway/" class="model-related-card">
+            <img src="/images/compare1-mj.jpeg" alt="Veo vs Kling vs Runway: Which AI Video Model Wins?" loading="lazy" />
+            <div class="model-related-text">
+              <span class="model-related-category">Comparison</span>
+              <h4>Veo vs Kling vs Runway: Which AI Video Model Wins?</h4>
+            </div>
+          </a>
+          <a href="/blog/reverse-engineer-ai-art-prompts/" class="model-related-card">
+            <img src="/images/model-comparison-source.jpeg" alt="How to Reverse-Engineer AI Prompts" loading="lazy" />
+            <div class="model-related-text">
+              <span class="model-related-category">Tutorial</span>
+              <h4>How to Reverse-Engineer AI Prompts from Any Scene</h4>
+            </div>
+          </a>
+        </div>
+      </div>
+
+      <!-- Other Video Models -->
+      <div class="other-models-section">
+        <h2>Try Other Video Prompt Generators</h2>
+        <div class="other-models-grid">
+          <a href="/veo-prompt-generator/" class="other-model-card" style="--c:#4285F4">&#127909;<span>Veo / Flow</span></a>
+          <a href="/kling-prompt-generator/" class="other-model-card" style="--c:#FF6B35">&#127916;<span>Kling AI</span></a>
+          <a href="/pika-prompt-generator/" class="other-model-card" style="--c:#FF4081">&#9889;<span>Pika</span></a>
+          <a href="/luma-prompt-generator/" class="other-model-card" style="--c:#7C3AED">&#127774;<span>Luma</span></a>
+          <a href="/sora-prompt-generator/" class="other-model-card" style="--c:#10A37F">&#127775;<span>Sora</span></a>
+          <a href="/minimax-prompt-generator/" class="other-model-card" style="--c:#F59E0B">&#127803;<span>Minimax</span></a>
+          <a href="/stable-video-prompt-generator/" class="other-model-card" style="--c:#FF6B35">&#9881;&#65039;<span>Stable Video</span></a>
+        </div>
+      </div>
+
+    </article>
+  </div>
+
+  <footer class="site-footer-simple">
+    <div class="inner">
+      <div class="footer-links">
+        <a href="/">Home</a>
+        <a href="/blog/">Blog</a>
+        <a href="/midjourney-prompt-generator/">Midjourney</a>
+        <a href="/stable-diffusion-prompt-generator/">Stable Diffusion</a>
+        <a href="/flux-prompt-generator/">Flux</a>
+        <a href="/dall-e-prompt-generator/">DALL·E 3</a>
+        <a href="/adobe-firefly-prompt-generator/">Firefly</a>
+        <a href="/leonardo-ai-prompt-generator/">Leonardo</a>
+        <a href="/ideogram-prompt-generator/">Ideogram</a>
+        <a href="/veo-prompt-generator/">Veo</a>
+        <a href="/kling-prompt-generator/">Kling</a>
+        <a href="/runway-prompt-generator/">Runway</a>
+        <a href="/pika-prompt-generator/">Pika</a>
+        <a href="/luma-prompt-generator/">Luma</a>
+        <a href="/sora-prompt-generator/">Sora</a>
+        <a href="/minimax-prompt-generator/">Minimax</a>
+        <a href="/stable-video-prompt-generator/">Stable Video</a>
+        <a href="/privacy-policy/">Privacy Policy</a>
+        <a href="/terms-of-service/">Terms of Service</a>
+      </div>
+      <div class="footer-lang">
+        <span class="footer-lang-label">Language:</span>
+        <a href="/">English</a><span class="footer-lang-sep">&#xB7;</span><a href="/fr/">Fran&#231;ais</a><span class="footer-lang-sep">&#xB7;</span><a href="/ar/">&#1575;&#1604;&#1593;&#1585;&#1576;&#1610;&#1577;</a>
+      </div>
+      <p class="footer-copy">© 2026 ImageToPrompt.dev — Free AI Prompt Generator</p>
+    </div>
+  </footer>
+
+<script src="/nav.js" defer></script>
+</body>
+</html>
