@@ -103,6 +103,23 @@ export default function SEOFooter() {
             </a>
           </nav>
         </div>
+
+        {/* Language switcher */}
+        <div className="mt-4 pt-4 border-t border-[var(--border-subtle)] flex items-center gap-2 flex-wrap">
+          <span className="font-inter text-xs text-[var(--text-secondary)]/40">Language:</span>
+          {[
+            { href: '/', label: 'English' },
+            { href: '/fr/', label: 'Français' },
+            { href: '/ar/', label: 'العربية' },
+          ].map((lang, i, arr) => (
+            <span key={lang.href} className="flex items-center gap-2">
+              <a href={lang.href} className="font-inter text-xs text-[var(--text-secondary)]/50 hover:text-[var(--text-secondary)] transition-colors">
+                {lang.label}
+              </a>
+              {i < arr.length - 1 && <span className="font-inter text-xs text-[var(--text-secondary)]/20">·</span>}
+            </span>
+          ))}
+        </div>
       </div>
     </footer>
   );

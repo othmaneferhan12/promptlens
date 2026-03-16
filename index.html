@@ -285,23 +285,25 @@
         Static pre-render shell — full page HTML rendered before React loads.
         Googlebot indexes this content directly on first crawl.
         React replaces this on mount (no CLS: above-fold layout matches exactly).
-        header: sticky, py-3 (24px) + h-8 content (32px) + border = 57px
+        header: sticky, h-[64px] fixed height
         main:   max-w-5xl (64rem), px-4 on mobile
       -->
       <div style="min-height:100vh;background:#080810;font-family:Inter,system-ui,sans-serif">
 
-        <!-- Header — height matches React header exactly (57px) -->
-        <header style="height:57px;border-bottom:1px solid rgba(255,255,255,0.06);background:rgba(8,8,16,0.8);display:flex;align-items:center;padding:0 1rem">
+        <!-- Header — height matches React header exactly (64px) -->
+        <header style="height:64px;border-bottom:1px solid rgba(255,255,255,0.06);background:rgba(8,8,16,0.8);display:flex;align-items:center;padding:0 1rem">
           <div style="max-width:80rem;width:100%;margin:0 auto;display:flex;align-items:center;justify-content:space-between">
-            <a href="/" style="text-decoration:none">
-              <span style="font-family:'Space Grotesk',Inter,system-ui,sans-serif;font-size:1.125rem;font-weight:700;color:#f5f5ff">
-                ImageTo<span style="color:#e040fb">Prompt</span>
-              </span>
+            <a href="/" style="display:flex;align-items:center;gap:10px;text-decoration:none">
+              <img src="/favicon.svg" alt="ImageToPrompt" width="40" height="40" style="border-radius:8px;flex-shrink:0" />
+              <div style="display:flex;flex-direction:column;line-height:1.15">
+                <span style="font-family:'Space Grotesk',Inter,system-ui,sans-serif;font-size:1.0625rem;font-weight:700;color:#f5f5ff">ImageTo<span style="color:#e040fb">Prompt</span></span>
+                <span style="font-size:0.625rem;color:#8888bb;font-family:Inter,system-ui,sans-serif;margin-top:2px">Free AI Prompt Generator</span>
+              </div>
             </a>
-            <nav style="display:flex;align-items:center;gap:1rem" aria-label="Main navigation">
+            <nav style="display:flex;align-items:center;gap:1.25rem" aria-label="Main navigation">
+              <span style="font-size:0.875rem;color:#8888bb">Tools ▾</span>
               <a href="/blog/" style="font-size:0.875rem;color:#8888bb;text-decoration:none">Blog</a>
-              <a href="#faq" style="font-size:0.875rem;color:#8888bb;text-decoration:none">FAQ</a>
-              <a href="#how-it-works" style="font-size:0.875rem;color:#8888bb;text-decoration:none">How It Works</a>
+              <a href="/" style="background:linear-gradient(135deg,#e040fb,#00e5ff);color:#000;font-family:'Space Grotesk',Inter,sans-serif;font-weight:700;font-size:0.8125rem;text-decoration:none;padding:0.375rem 0.875rem;border-radius:8px">Try Free →</a>
             </nav>
           </div>
         </header>

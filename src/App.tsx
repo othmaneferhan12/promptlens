@@ -5,6 +5,7 @@ import ModelSelector from './components/ModelSelector';
 import StyleSelector from './components/StyleSelector';
 import ShowcasePanel from './components/ShowcasePanel';
 import LanguageSelector from './components/LanguageSelector';
+import UsageCounter from './components/UsageCounter';
 import { useImageAnalysis } from './hooks/useImageAnalysis';
 import { useRateLimit } from './hooks/useRateLimit';
 import { usePromptHistory } from './hooks/usePromptHistory';
@@ -15,7 +16,6 @@ const AnalysisResult = lazy(() => import('./components/AnalysisResult'));
 const LoadingState = lazy(() => import('./components/LoadingState'));
 const RateLimitModal = lazy(() => import('./components/RateLimitModal'));
 const PromptHistory = lazy(() => import('./components/PromptHistory'));
-const ChangelogPage = lazy(() => import('./components/ChangelogPage'));
 const HowItWorksSection = lazy(() => import('./components/seo/HowItWorksSection'));
 const BeforeAfterSection = lazy(() => import('./components/seo/BeforeAfterSection'));
 const MetricsSection = lazy(() => import('./components/seo/MetricsSection'));
@@ -40,7 +40,6 @@ export default function App() {
   const [selectedLanguage, setSelectedLanguage] = useState<SupportedLanguage>('en');
   const [showRateLimitModal, setShowRateLimitModal] = useState(false);
   const [showHistory, setShowHistory] = useState(false);
-  const [showChangelog, setShowChangelog] = useState(false);
   const [activeResult, setActiveResult] = useState<AnalysisResultType | null>(null);
 
   const { result, isLoading, error, analyze, reset: resetAnalysis } = useImageAnalysis();
@@ -67,14 +66,14 @@ export default function App() {
       if (e.ctrlKey && e.key === 'Enter') {
         if (currentImage && !isLoading && !activeResult) handleAnalyze();
       }
-      if (e.key === 'Escape' && !showHistory && !showRateLimitModal && !showChangelog) {
+      if (e.key === 'Escape' && !showHistory && !showRateLimitModal) {
         handleReset();
       }
     };
     window.addEventListener('keydown', handleKeyDown);
     return () => window.removeEventListener('keydown', handleKeyDown);
   // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [currentImage, isLoading, activeResult, showHistory, showRateLimitModal, showChangelog]);
+  }, [currentImage, isLoading, activeResult, showHistory, showRateLimitModal]);
 
   const handleAnalyze = useCallback(async () => {
     if (!currentImage || isLoading) return;
@@ -100,7 +99,7 @@ export default function App() {
         currentImage.name
       );
     }
-  }, [currentImage, isLoading, rateLimit, analyze, selectedModel, selectedStyle, addToHistory]);
+  }, [currentImage, isLoading, rateLimit, analyze, selectedModel, selectedStyle, selectedLanguage, addToHistory]);
 
   const handleReset = useCallback(() => {
     setCurrentImage(null);
@@ -201,9 +200,6 @@ export default function App() {
         rateLimit={rateLimit}
         onHistoryOpen={() => setShowHistory(true)}
         hasHistory={history.length > 0}
-        onChangelogOpen={() => setShowChangelog(true)}
-        language={selectedLanguage}
-        onLanguageChange={setSelectedLanguage}
       />
 
       <main id="tool" className="relative mx-auto max-w-6xl px-4 pb-10 sm:px-6" role="main">
@@ -260,6 +256,14 @@ export default function App() {
                     <p className="font-inter text-sm text-[var(--error)]">{error}</p>
                   </div>
                 )}
+
+                {/* Usage counter */}
+                <div className="flex items-center justify-between gap-3">
+                  <span className="font-inter text-xs text-[var(--text-secondary)]/60">
+                    Daily analyses
+                  </span>
+                  <UsageCounter rateLimit={rateLimit} onLimitClick={() => setShowRateLimitModal(true)} />
+                </div>
 
                 {/* Generate button — full width, bottom of container */}
                 <button
@@ -363,11 +367,6 @@ export default function App() {
           onRestore={handleRestoreFromHistory}
           onClear={clearHistory}
           onRemove={removeItem}
-        />
-
-        <ChangelogPage
-          isOpen={showChangelog}
-          onClose={() => setShowChangelog(false)}
         />
       </Suspense>
     </div>

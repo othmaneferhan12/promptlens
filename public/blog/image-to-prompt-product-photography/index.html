@@ -43,14 +43,22 @@
 <body>
   <header class="site-header">
     <div class="inner">
-      <a href="/" class="site-logo"><img src="/favicon.svg" alt="ImageToPrompt" width="48" height="48">Image<span class="accent">To</span>Prompt</a>
+      <a href="/" class="site-logo"><img src="/favicon.svg" alt="ImageToPrompt" width="40" height="40"><div class="site-logo-text">Image<span class="accent">To</span>Prompt<span class="site-logo-sub">Free AI Prompt Generator</span></div></a>
       <nav class="site-nav" aria-label="Main navigation">
-        <a href="/">Tool</a>
+        <div class="nav-dropdown">
+          <button class="nav-dropdown-trigger" aria-haspopup="true" aria-expanded="false">Tools <span class="nav-chevron" aria-hidden="true">&#9660;</span></button>
+          <div class="nav-dropdown-menu" role="menu">
+            <a href="/midjourney-prompt-generator/" role="menuitem">&#127912; Midjourney</a>
+            <a href="/stable-diffusion-prompt-generator/" role="menuitem">&#9881;&#65039; Stable Diffusion</a>
+            <a href="/flux-prompt-generator/" role="menuitem">&#9889; Flux AI</a>
+            <a href="/dall-e-prompt-generator/" role="menuitem">&#129504; DALL&#xB7;E 3</a>
+            <a href="/adobe-firefly-prompt-generator/" role="menuitem">&#129419; Adobe Firefly</a>
+            <a href="/leonardo-ai-prompt-generator/" role="menuitem">&#127918; Leonardo AI</a>
+            <a href="/ideogram-prompt-generator/" role="menuitem">&#9997;&#65039; Ideogram</a>
+          </div>
+        </div>
         <a href="/blog/" class="active">Blog</a>
-        <a href="/#faq">FAQ</a>
-        <a href="/privacy-policy/">Privacy Policy</a>
-        <a href="/terms-of-service/">Terms of Service</a>
-        <a href="/" style="background:linear-gradient(135deg,#e040fb,#00e5ff);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;font-weight:600">Try Free →</a>
+        <a href="/" class="nav-try-free">Try Free &#8594;</a>
       </nav>
     </div>
   </header>
@@ -316,8 +324,13 @@
         <a href="/privacy-policy/">Privacy Policy</a>
         <a href="/terms-of-service/">Terms of Service</a>
       </nav>
+      <div class="footer-lang">
+        <span class="footer-lang-label">Language:</span>
+        <a href="/">English</a><span class="footer-lang-sep">&#xB7;</span><a href="/fr/">Fran&#231;ais</a><span class="footer-lang-sep">&#xB7;</span><a href="/ar/">&#1575;&#1604;&#1593;&#1585;&#1576;&#1610;&#1577;</a>
+      </div>
     </div>
   </footer>
 <script src="/newsletter-inject.js" defer></script>
+<script src="/nav.js" defer></script>
 </body>
 </html>
