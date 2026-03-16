@@ -61,6 +61,13 @@ export default function App() {
     if (textResult) setActiveResult(textResult);
   }, [textResult]);
 
+  useEffect(() => {
+    if (activeResult) {
+      const el = document.getElementById('prompt-result');
+      if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  }, [activeResult]);
+
   const combinedIsLoading = isLoading || textIsLoading;
   const combinedError = error || textError;
 
@@ -423,7 +430,7 @@ export default function App() {
         </Suspense>
 
         {showResult && activeResult && (
-          <div className="space-y-8" aria-live="polite" aria-label="Analysis result ready">
+          <div id="prompt-result" className="space-y-8" style={{ scrollMarginTop: '100px' }} aria-live="polite" aria-label="Analysis result ready">
             {toolTab === 'image' && currentImage && (
               <div className="flex items-center gap-4 rounded-2xl border border-[var(--border-subtle)] bg-[var(--bg-card)] p-4">
                 <img
