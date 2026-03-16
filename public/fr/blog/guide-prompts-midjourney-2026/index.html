@@ -1,0 +1,595 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Guide Complet des Prompts Midjourney 2026 : Paramètres, Exemples et Astuces</title>
+  <meta name="description" content="Guide complet des prompts Midjourney 2026. Version actuelle --v 6.1, tableau des paramètres, 10 prompts prêts à l'emploi et conseils avancés. Mis à jour mars 2026." />
+  <link rel="canonical" href="https://www.imagetoprompt.dev/fr/blog/guide-prompts-midjourney-2026/" />
+  <link rel="alternate" hreflang="fr" href="https://www.imagetoprompt.dev/fr/blog/guide-prompts-midjourney-2026/" />
+  <link rel="alternate" hreflang="en" href="https://www.imagetoprompt.dev/blog/midjourney-prompt-guide-2026/" />
+  <link rel="alternate" hreflang="ar" href="https://www.imagetoprompt.dev/ar/blog/dalil-prompts-midjourney-2026/" />
+  <link rel="alternate" hreflang="x-default" href="https://www.imagetoprompt.dev/blog/midjourney-prompt-guide-2026/" />
+  <meta property="og:title" content="Guide Complet des Prompts Midjourney 2026 : Paramètres, Exemples et Astuces" />
+  <meta property="og:description" content="Guide complet des prompts Midjourney 2026. Version --v 6.1, paramètres, structure, 10 exemples prêts à l'emploi." />
+  <meta property="og:url" content="https://www.imagetoprompt.dev/fr/blog/guide-prompts-midjourney-2026/" />
+  <meta property="og:type" content="article" />
+  <meta property="og:image" content="https://www.imagetoprompt.dev/og-image.png" />
+  <meta property="og:site_name" content="ImageToPrompt" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Guide Complet des Prompts Midjourney 2026" />
+  <meta name="twitter:description" content="Paramètres --v 6.1, structure de prompt, 10 exemples prêts à copier." />
+  <meta name="twitter:image" content="https://www.imagetoprompt.dev/og-image.png" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-icon-180x180.png" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="/fonts/space-grotesk-700.woff2" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="/fonts/inter-400.woff2" />
+  <link rel="stylesheet" href="/blog.css" />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Guide Complet des Prompts Midjourney 2026 : Paramètres, Exemples et Astuces",
+    "description": "Guide complet des prompts Midjourney 2026. Version actuelle --v 6.1, tableau des paramètres, 10 prompts prêts à l'emploi.",
+    "image": "https://www.imagetoprompt.dev/og-image.png",
+    "datePublished": "2026-03-10",
+    "dateModified": "2026-03-15",
+    "inLanguage": "fr",
+    "author": {
+      "@type": "Person",
+      "name": "ImageToPrompt Team",
+      "url": "https://www.imagetoprompt.dev/"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "ImageToPrompt",
+      "logo": { "@type": "ImageObject", "url": "https://www.imagetoprompt.dev/favicon.svg" }
+    },
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https://www.imagetoprompt.dev/fr/blog/guide-prompts-midjourney-2026/"
+    }
+  }
+  </script>
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="inner">
+      <a href="/fr/" class="site-logo"><svg viewBox="0 0 32 32" width="32" height="32" fill="none" style="display:inline-block;vertical-align:middle;margin-right:6px"><rect x="2" y="2" width="28" height="28" rx="8" fill="url(#aigrad-h)"/><circle cx="16" cy="16" r="3.5" fill="#fff" fill-opacity=".95"/><circle cx="7" cy="10" r="2" fill="#e040fb"/><circle cx="25" cy="10" r="2" fill="#00e5ff"/><circle cx="7" cy="22" r="2" fill="#00e5ff"/><circle cx="25" cy="22" r="2" fill="#e040fb"/><circle cx="16" cy="5" r="2" fill="#e040fb" fill-opacity=".8"/><circle cx="16" cy="27" r="2" fill="#00e5ff" fill-opacity=".8"/><line x1="16" y1="12.5" x2="16" y2="7" stroke="#e040fb" stroke-width="1" stroke-opacity=".6"/><line x1="16" y1="19.5" x2="16" y2="25" stroke="#00e5ff" stroke-width="1" stroke-opacity=".6"/><line x1="12.8" y1="14.2" x2="9" y2="11.5" stroke="#e040fb" stroke-width="1" stroke-opacity=".6"/><line x1="19.2" y1="14.2" x2="23" y2="11.5" stroke="#00e5ff" stroke-width="1" stroke-opacity=".6"/><line x1="12.8" y1="17.8" x2="9" y2="20.5" stroke="#00e5ff" stroke-width="1" stroke-opacity=".6"/><line x1="19.2" y1="17.8" x2="23" y2="20.5" stroke="#e040fb" stroke-width="1" stroke-opacity=".6"/><defs><linearGradient id="aigrad-h" x1="0" y1="0" x2="32" y2="32" gradientUnits="userSpaceOnUse"><stop offset="0%" stop-color="#1a0a2e"/><stop offset="100%" stop-color="#0a1628"/></linearGradient></defs></svg>ImageTo<span class="accent">Prompt</span></a>
+      <nav class="site-nav" aria-label="Navigation principale">
+        <a href="/fr/">Accueil</a>
+        <a href="/fr/blog/" class="active">Blog</a>
+        <a href="/#faq">FAQ</a>
+        <span style="display:inline-flex;align-items:center;gap:4px;font-size:0.75rem;color:#8888bb">
+          <a href="/blog/midjourney-prompt-guide-2026/" style="color:#8888bb;text-decoration:none" title="English">EN</a><span style="color:rgba(255,255,255,0.2)">|</span><a href="/fr/blog/guide-prompts-midjourney-2026/" style="color:#8888bb;text-decoration:none;font-weight:600" title="Français">FR</a><span style="color:rgba(255,255,255,0.2)">|</span><a href="/ar/" style="color:#8888bb;text-decoration:none" title="العربية">AR</a>
+        </span>
+        <a href="/" style="background:linear-gradient(135deg,#e040fb,#00e5ff);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;font-weight:600">Essayer Gratuitement →</a>
+      </nav>
+    </div>
+  </header>
+
+  <nav class="breadcrumb" aria-label="Fil d'Ariane">
+    <a href="/fr/">Accueil</a><span class="sep">›</span>
+    <a href="/fr/blog/">Blog</a><span class="sep">›</span>
+    <span>Guide Prompts Midjourney 2026</span>
+  </nav>
+
+  <div class="page-wrapper">
+
+    <header class="article-header">
+      <p class="article-tag">Guide Midjourney</p>
+      <h1>Guide Complet des Prompts Midjourney 2026 : Paramètres, Exemples et Astuces</h1>
+      <div class="article-meta">
+        <span>Mars 2026</span>
+        <span class="dot">·</span>
+        <span>11 min de lecture</span>
+        <span class="dot">·</span>
+        <span>Midjourney v6.1</span>
+        <span class="dot">·</span>
+        <span>Mis à jour mars 2026</span>
+      </div>
+    </header>
+
+    <div class="article-body">
+
+      <p>Midjourney est le générateur d'images IA le plus populaire au monde — et pour de bonnes raisons. Quand vous lui donnez le bon prompt, il produit des images genuinement époustouflantes. Quand vous lui donnez le mauvais prompt, vous obtenez quelque chose de générique, de brouillon ou complètement hors sujet.</p>
+
+      <nav class="toc" aria-label="Sommaire">
+        <details open>
+          <summary>Dans ce guide</summary>
+          <ol>
+            <li><a href="#version-actuelle">Version Actuelle de Midjourney en 2026 (--v 6.1)</a></li>
+            <li><a href="#structure-du-prompt">Structure du Prompt Midjourney</a></li>
+            <li><a href="#formule-du-prompt">La Formule du Prompt Midjourney</a></li>
+            <li><a href="#descriptions-de-sujet">Rédiger de Bonnes Descriptions de Sujet</a></li>
+            <li><a href="#style-et-medium">Descripteurs de Style et de Medium</a></li>
+            <li><a href="#eclairage">L'Éclairage, C'est Tout</a></li>
+            <li><a href="#parametres-essentiels">Paramètres Essentiels de Midjourney</a></li>
+            <li><a href="#10-prompts-prets">10 Prompts Midjourney Prêts à Copier-Coller pour 2026</a></li>
+            <li><a href="#comparaison-structures">Comparaison des Structures : Midjourney vs Flux vs Stable Diffusion</a></li>
+            <li><a href="#exemples-avec-resultats">Exemples de Prompts avec Résultats</a></li>
+            <li><a href="#comparaison-versions">Comparaison des Versions</a></li>
+            <li><a href="#ponderation-de-prompt">Pondération de Prompt</a></li>
+            <li><a href="#erreurs-courantes">Erreurs Courantes dans les Prompts Midjourney</a></li>
+            <li><a href="#resultats-coherents">Obtenir des Résultats Cohérents</a></li>
+            <li><a href="#multi-prompts">Multi-Prompts et Permutations</a></li>
+            <li><a href="#references-images">Utiliser les Références d'Images Efficacement</a></li>
+            <li><a href="#depannage">Résolution des Problèmes Courants</a></li>
+          </ol>
+        </details>
+      </nav>
+
+      <p>La différence entre un résultat Midjourney médiocre et un résultat exceptionnel se résume généralement à la qualité du prompt. Ce guide couvre tout ce dont vous avez besoin pour rédiger des prompts Midjourney systématiquement excellents en 2026.</p>
+
+      <div class="callout">
+        <p><strong>Vous avez une image que vous souhaitez recréer ?</strong> Au lieu de rédiger un prompt de zéro, <a href="/">téléchargez-la sur ImageToPrompt</a> et obtenez automatiquement un prompt Midjourney tout prêt. Utilisez ensuite ce guide pour l'affiner.</p>
+      </div>
+
+      <h2 id="version-actuelle">Version Actuelle de Midjourney en 2026 (--v 6.1)</h2>
+
+      <p>En mars 2026, la version Midjourney par défaut est <strong>--v 6.1</strong>. C'est la version qui s'exécute automatiquement si vous n'en spécifiez pas une — et elle est significativement meilleure que ses prédécesseurs d'une manière qui affecte directement votre façon de rédiger des prompts.</p>
+
+      <p>Le saut de <strong>v6 à v6.1</strong> a apporté trois améliorations majeures. D'abord, la cohérence : v6.1 suit les prompts en plusieurs parties plus fidèlement, ce qui signifie que les scènes complexes avec plusieurs éléments décrits sont rendues plus précisément. Ensuite, les mains et l'anatomie : l'une des faiblesses persistantes de Midjourney était les mains déformées — v6.1 gère cela nettement mieux, bien qu'ajouter <code>--no deformed hands</code> reste conseillé pour les gros plans de sujets humains. Enfin, le rendu de texte : bien que toujours moins performant qu'Ideogram ou DALL·E 3 pour la typographie, v6.1 peut rendre de façon fiable des mots courts et des phrases simples à l'intérieur des images lorsque vous utilisez des guillemets dans votre prompt.</p>
+
+      <p>Pour utiliser explicitement la version actuelle, ajoutez toujours <code>--v 6.1</code> à la fin de vos prompts. Cela pérennise vos prompts sauvegardés — quand Midjourney sortira la v7, vos prompts existants ne changeront pas silencieusement de comportement. Vous pouvez définir v6.1 comme version par défaut dans vos paramètres Midjourney (<code>/settings</code> → sélectionner la version).</p>
+
+      <p>En perspective, Midjourney a signalé que <strong>v7</strong> se concentrera sur la génération vidéo, la cohérence 3D entre les images et la cohérence améliorée des personnages — la capacité à garder le visage et les vêtements d'un même personnage cohérents entre plusieurs générations. Pour la création d'images statiques en 2026, v6.1 reste le bon choix : utilisez <code>--v 6.1</code> et <code>--style raw</code> pour l'output le plus photoréaliste et fidèle au prompt.</p>
+
+      <div class="callout">
+        <p><strong>Référence rapide :</strong> Incluez toujours <code>--v 6.1</code> à la fin de vos prompts pour verrouiller la meilleure version actuelle. Exemple : <code>votre prompt ici --ar 16:9 --v 6.1 --style raw</code></p>
+      </div>
+
+      <h2 id="structure-du-prompt">Structure du Prompt Midjourney</h2>
+
+      <p>Un prompt Midjourney complet suit cette structure :</p>
+
+      <p><code>[description du sujet], [style et medium], [éclairage], [composition], [ambiance], [détails techniques] --paramètre valeur --paramètre valeur</code></p>
+
+      <p>Par exemple :</p>
+      <p><code>ancient stone temple overgrown with vines and glowing bioluminescent moss, cinematic concept art, dramatic rim lighting with deep shadows, wide angle shot, mysterious and otherworldly atmosphere --ar 16:9 --v 6.1 --style raw --q 2</code></p>
+
+      <p>Décomposons chaque composant.</p>
+
+      <h2 id="formule-du-prompt">La Formule du Prompt Midjourney</h2>
+
+      <div class="formula-box">
+        <p class="formula-line"><span class="formula-tag subject">Sujet + détails</span> + <span class="formula-tag setting">Environnement/décor</span> + <span class="formula-tag style">Style/medium</span> + <span class="formula-tag lighting">Éclairage</span> + <span class="formula-tag color">Palette de couleurs</span> + <span class="formula-tag mood">Ambiance</span> + <span class="formula-tag composition">Composition</span> + <span class="formula-tag params">--paramètres</span></p>
+      </div>
+
+      <h3>Exemple de Portrait</h3>
+      <p><code><span class="formula-inline subject">elderly Japanese craftsman, weathered hands, focused expression</span>, <span class="formula-inline setting">seated at a traditional woodworking bench covered in tools</span>, <span class="formula-inline style">editorial photography</span>, <span class="formula-inline lighting">soft window light from the left</span>, <span class="formula-inline color">warm wood tones with cool shadow areas</span>, <span class="formula-inline mood">contemplative, dignified</span>, <span class="formula-inline composition">medium shot, shallow depth of field</span> <span class="formula-inline params">--ar 2:3 --v 6.1 --style raw</span></code></p>
+
+      <h3>Exemple de Paysage</h3>
+      <p><code><span class="formula-inline subject">ancient stone ruins half-submerged in still water</span>, <span class="formula-inline setting">flooded valley surrounded by dense jungle</span>, <span class="formula-inline style">cinematic photography</span>, <span class="formula-inline lighting">blue hour, mist rising off the water</span>, <span class="formula-inline color">cool blue-greens with warm torch light reflections</span>, <span class="formula-inline mood">mysterious, lost civilization atmosphere</span>, <span class="formula-inline composition">wide establishing shot, symmetrical reflection</span> <span class="formula-inline params">--ar 21:9 --v 6.1 --q 2</span></code></p>
+
+      <h3>Exemple Commercial / Produit</h3>
+      <p><code><span class="formula-inline subject">minimalist ceramic coffee mug, steam rising</span>, <span class="formula-inline setting">on a clean marble surface with morning light</span>, <span class="formula-inline style">commercial product photography</span>, <span class="formula-inline lighting">soft diffused natural light, subtle rim highlight</span>, <span class="formula-inline color">white and cream palette with warm coffee tones</span>, <span class="formula-inline mood">calm, premium, aspirational</span>, <span class="formula-inline composition">close-up, 45-degree angle, negative space above</span> <span class="formula-inline params">--ar 4:5 --v 6.1 --style raw</span></code></p>
+
+      <div class="cta-inline">
+        <p>Essayez vous-même — téléchargez n'importe quelle image et obtenez un prompt IA optimisé en quelques secondes.</p>
+        <a href="/" class="cta-btn-sm">Essayer Gratuitement →</a>
+      </div>
+
+      <h2 id="descriptions-de-sujet">Rédiger de Bonnes Descriptions de Sujet</h2>
+
+      <p>Le sujet est le fondement de votre prompt. L'erreur la plus courante est d'être trop vague. « Un dragon » produit un dragon générique. « Un dragon antique aux écailles d'émeraude iridescentes, perché sur un trône de pierre effondré dans une chambre souterraine inondée » produit quelque chose de bien plus spécifique et intéressant.</p>
+
+      <p>Éléments de sujet utiles à inclure :</p>
+      <ul>
+        <li><strong>Caractéristiques physiques :</strong> taille, âge, condition, traits distinctifs</li>
+        <li><strong>Contexte :</strong> où se trouve le sujet, ce qu'il fait, ce qui l'entoure</li>
+        <li><strong>État émotionnel :</strong> expression, posture, énergie</li>
+        <li><strong>Relation à l'environnement :</strong> comment le sujet interagit avec son cadre</li>
+      </ul>
+
+      <h2 id="style-et-medium">Descripteurs de Style et de Medium</h2>
+
+      <p>Après le sujet, précisez comment vous souhaitez que l'image soit stylistiquement. Midjourney comprend un large vocabulaire de termes de style :</p>
+
+      <h3>Styles Photographiques</h3>
+      <ul>
+        <li><code>cinematic photography</code> — qualité filmique avec profondeur et drame</li>
+        <li><code>editorial photography</code> — propre, professionnel, prêt pour un magazine</li>
+        <li><code>documentary photography</code> — candide, brut, authentique</li>
+        <li><code>studio portrait</code> — éclairage contrôlé, fond neutre</li>
+      </ul>
+
+      <h3>Styles Artistiques</h3>
+      <ul>
+        <li><code>concept art</code> — illustration détaillée et narrative</li>
+        <li><code>digital painting</code> — texture picturale avec précision numérique</li>
+        <li><code>oil painting</code> — texturé, couleur riche, classique</li>
+        <li><code>watercolor illustration</code> — bords doux, couches transparentes</li>
+        <li><code>ink illustration</code> — lignes audacieuses, fort contraste</li>
+        <li><code>anime style</code> — esthétique animation japonaise</li>
+      </ul>
+
+      <h3>Styles de Rendu</h3>
+      <ul>
+        <li><code>octane render</code> / <code>unreal engine</code> — rendu 3D photoréaliste</li>
+        <li><code>isometric illustration</code> — perspective 3D vue de dessus</li>
+        <li><code>pixel art</code> — esthétique jeu rétro</li>
+      </ul>
+
+      <h2 id="eclairage">L'Éclairage, C'est Tout</h2>
+
+      <p>Plus que presque tout autre élément, l'éclairage définit l'ambiance d'une image. Midjourney est exceptionnellement doué pour interpréter les descriptions d'éclairage.</p>
+
+      <h3>Éclairage Naturel</h3>
+      <ul>
+        <li><code>golden hour lighting</code> — chaud, horizontal, longues ombres (lever/coucher de soleil)</li>
+        <li><code>blue hour</code> — frais, crépusculaire, lumière ambiante douce</li>
+        <li><code>overcast soft lighting</code> — diffus, uniforme, sans ombres dures</li>
+        <li><code>harsh midday sunlight</code> — fort contraste, ombres marquées</li>
+        <li><code>moonlight</code> — bleu-blanc froid, mystérieux</li>
+      </ul>
+
+      <h3>Éclairage de Studio et Artificiel</h3>
+      <ul>
+        <li><code>Rembrandt lighting</code> — éclairage de portrait classique avec triangle lumineux</li>
+        <li><code>rim lighting</code> / <code>backlit</code> — sujet contouré par la lumière</li>
+        <li><code>neon lighting</code> — lumière colorée vive, esthétique cyberpunk</li>
+        <li><code>dramatic chiaroscuro</code> — contraste extrême lumière/ombre</li>
+        <li><code>volumetric lighting</code> — rayons de lumière visibles, profondeur atmosphérique</li>
+      </ul>
+
+      <h2 id="parametres-essentiels">Paramètres Essentiels de Midjourney</h2>
+
+      <p>Les paramètres s'ajoutent à la fin de votre prompt après des doubles tirets. Ils vous donnent un contrôle précis sur le résultat.</p>
+
+      <div class="table-wrap">
+      <table class="comparison-table">
+        <thead>
+          <tr>
+            <th>Paramètre</th>
+            <th>Syntaxe</th>
+            <th>Plage / Valeurs</th>
+            <th>Ce qu'il fait</th>
+            <th>Défaut</th>
+            <th>Exemple</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>Ratio d'Aspect</td><td><code>--ar L:H</code></td><td>N'importe quel ratio</td><td>Définit les proportions de l'image</td><td>1:1</td><td><code>--ar 16:9</code></td></tr>
+          <tr><td>Version</td><td><code>--v N</code></td><td>4, 5, 5.1, 5.2, 6, 6.1</td><td>Version du modèle</td><td>6.1</td><td><code>--v 6.1</code></td></tr>
+          <tr><td>Style Raw</td><td><code>--style raw</code></td><td>Activé/désactivé</td><td>Sortie moins opiniâtre, plus littérale</td><td>Désactivé</td><td><code>--style raw</code></td></tr>
+          <tr><td>Stylize</td><td><code>--s N</code></td><td>0–1000</td><td>Intensité d'interprétation artistique</td><td>100</td><td><code>--s 750</code></td></tr>
+          <tr><td>Chaos</td><td><code>--c N</code></td><td>0–100</td><td>Variation entre les résultats de la grille</td><td>0</td><td><code>--c 30</code></td></tr>
+          <tr><td>Qualité</td><td><code>--q N</code></td><td>0.25, 0.5, 1, 2</td><td>Qualité de rendu et temps de calcul</td><td>1</td><td><code>--q 2</code></td></tr>
+          <tr><td>No</td><td><code>--no [termes]</code></td><td>N'importe quels mots</td><td>Exclure des éléments du résultat</td><td>—</td><td><code>--no blur, text</code></td></tr>
+          <tr><td>Seed</td><td><code>--seed N</code></td><td>0–4294967295</td><td>Point de départ reproductible</td><td>Aléatoire</td><td><code>--seed 12345</code></td></tr>
+          <tr><td>Tile</td><td><code>--tile</code></td><td>Activé/désactivé</td><td>Crée des motifs à répétition</td><td>Désactivé</td><td><code>--tile</code></td></tr>
+          <tr><td>Repeat</td><td><code>--repeat N</code></td><td>1–40</td><td>Exécuter le prompt plusieurs fois</td><td>1</td><td><code>--repeat 4</code></td></tr>
+          <tr><td>Image Weight</td><td><code>--iw N</code></td><td>0.5–2</td><td>Force d'influence de la référence image</td><td>1</td><td><code>--iw 1.5</code></td></tr>
+        </tbody>
+      </table>
+      </div>
+
+      <h2 id="10-prompts-prets">10 Prompts Midjourney Prêts à Copier-Coller pour 2026</h2>
+
+      <p>Ces 10 prompts sont prêts pour la production avec Midjourney v6.1. Copiez-les directement, ou utilisez-les comme modèles de départ à adapter pour vos propres sujets.</p>
+
+      <h3>1. Portrait Cinématique</h3>
+      <p>Produit un gros plan dramatique de qualité cinématographique avec un éclairage professionnel et une faible profondeur de champ.</p>
+      <pre><code class="prompt-example">young woman with sharp features and silver-streaked hair, intense gaze, wearing a weathered leather jacket, shot on Sony A7R V with 85mm f/1.4, shallow depth of field, dramatic Rembrandt lighting, cinematic color grade with teal shadows and warm highlights --ar 2:3 --v 6.1 --style raw --q 2</code></pre>
+
+      <h3>2. Paysage Fantastique</h3>
+      <p>Génère un environnement fantastique épique grand angle avec profondeur atmosphérique et couleurs extraordinaires.</p>
+      <pre><code class="prompt-example">floating sky islands covered in ancient ruins and waterfalls cascading into clouds below, twin moons on the horizon, bioluminescent flora glowing at twilight, vast epic scale, fantasy concept art, matte painting style, volumetric god rays --ar 21:9 --v 6.1 --q 2 --s 400</code></pre>
+
+      <h3>3. Photographie de Produit</h3>
+      <p>Crée une photo commerciale premium propre convenant pour le e-commerce ou la publicité.</p>
+      <pre><code class="prompt-example">minimalist glass perfume bottle with gold cap on white marble surface, water droplets condensation, soft diffused natural light from left window, subtle reflections, premium commercial product photography, razor-sharp focus, negative space --ar 4:5 --v 6.1 --style raw</code></pre>
+
+      <h3>4. Personnage Anime</h3>
+      <p>Produit une illustration de personnage anime détaillée avec des traits expressifs et un design stylisé.</p>
+      <pre><code class="prompt-example">female mage character with flowing silver hair and glowing violet eyes, ornate blue and gold robes with celestial embroidery, casting a spell with trails of light, dramatic upward angle, highly detailed anime illustration, soft cel shading, dynamic pose --ar 2:3 --v 6.1 --q 2</code></pre>
+
+      <h3>5. Visualisation d'Architecture</h3>
+      <p>Rend un extérieur architectural photoréaliste avec des matériaux précis et un éclairage professionnel.</p>
+      <pre><code class="prompt-example">modern minimalist villa at twilight, floor-to-ceiling glass walls revealing warm interior light, infinity pool reflecting orange sky, concrete and dark wood facade, surrounded by curated desert landscaping, architectural photography, wide angle exterior shot --ar 16:9 --v 6.1 --style raw --q 2</code></pre>
+
+      <h3>6. Art Abstrait</h3>
+      <p>Crée une composition abstraite saisissante adaptée à l'art mural ou aux fonds numériques.</p>
+      <pre><code class="prompt-example">fluid simulation of molten gold and deep cobalt blue colliding in slow motion, macro photography, high-speed capture frozen in time, swirling organic forms, extreme detail in surface tension and droplet formation, studio lighting, abstract fine art --ar 1:1 --v 6.1 --q 2 --s 600</code></pre>
+
+      <h3>7. Photographie Culinaire</h3>
+      <p>Produit une photo éditoriale de qualité appétissante avec un stylisme et un éclairage intentionnels.</p>
+      <pre><code class="prompt-example">rustic sourdough loaf just pulled from oven, steam rising, golden-brown crust, cracked top revealing open crumb, on a worn wooden board with scattered flour and a linen cloth, warm kitchen window light, food photography, close-up overhead angle --ar 4:5 --v 6.1 --style raw</code></pre>
+
+      <h3>8. Concept Art Science-Fiction</h3>
+      <p>Génère un art d'environnement sci-fi détaillé dans un style cinématique et narratif.</p>
+      <pre><code class="prompt-example">abandoned alien megastructure half-buried in red desert sand, towering monolithic slabs of dark metal covered in cryptic geometric engravings, dramatic low sun casting long shadows, lone explorer figure for scale, sci-fi concept art, matte painting, cinematic wide shot --ar 21:9 --v 6.1 --q 2</code></pre>
+
+      <h3>9. Style Vintage / Rétro</h3>
+      <p>Crée une image au caractère vintage authentique avec une esthétique et un traitement des couleurs d'époque.</p>
+      <pre><code class="prompt-example">1970s road trip across American Southwest, vintage station wagon on Route 66, dust clouds behind, vast red canyon landscape, analog film grain, Kodachrome color palette, warm faded tones, cinematic 16mm aesthetic, wide angle --ar 16:9 --v 6.1 --style raw --s 200</code></pre>
+
+      <h3>10. Design Minimaliste</h3>
+      <p>Produit une image épurée et orientée design avec un espace négatif délibéré et un langage visuel raffiné.</p>
+      <pre><code class="prompt-example">single red tulip in a clear glass vase on a white table, high-key even lighting, long shadow cast to the right, minimal composition with intentional negative space, Japanese minimalist aesthetic, commercial photography --ar 4:5 --v 6.1 --style raw</code></pre>
+
+      <div class="callout">
+        <p><strong>Conseil :</strong> Utilisez <a href="/">ImageToPrompt</a> pour générer automatiquement des prompts similaires à partir de n'importe quelle image de référence — puis servez-vous de ces modèles pour comprendre la structure et affiner le résultat.</p>
+      </div>
+
+      <h2 id="comparaison-structures">Comparaison des Structures : Midjourney, Flux et Stable Diffusion</h2>
+
+      <p>L'une des erreurs les plus courantes des artistes IA est d'écrire des prompts dans le mauvais format pour le modèle qu'ils utilisent. Midjourney, Flux et Stable Diffusion ont des langages de prompt fondamentalement différents — un prompt qui fonctionne parfaitement dans l'un produira des résultats médiocres dans un autre.</p>
+
+      <p><strong>Midjourney</strong> préfère une séquence de descripteurs séparés par des virgules, classés par importance visuelle. Commencez par le sujet et l'action, puis le style/medium, puis l'éclairage, puis la composition, puis l'ambiance — suivi des <code>--paramètres</code>. Midjourney distribue l'attention proportionnellement à votre prompt, donc ce que vous mettez en premier reçoit le plus de poids visuel.</p>
+
+      <p><strong>Flux</strong> (Flux.1 Dev/Pro/Schnell) utilise un grand modèle de langue T5-XXL pour interpréter les prompts, ce qui signifie qu'il comprend le langage naturel bien mieux que l'approche CLIP de Midjourney. Rédigez les prompts Flux comme des phrases descriptives complètes. Flux ne supporte pas les <code>--paramètres</code>, les prompts négatifs, ni la syntaxe de poids.</p>
+
+      <p><strong>Stable Diffusion</strong> utilise un encodage CLIP basé sur des tokens, ce qui signifie qu'il répond à des listes d'étiquettes pondérées. Des tokens de qualité au début (<code>masterpiece, best quality, ultra-detailed</code>), puis les tokens de sujet et de style, puis un champ de prompt négatif séparé. Les poids comme <code>(concept important:1.3)</code> ou <code>[moins important:0.7]</code> vous permettent de régler l'emphase précisément.</p>
+
+      <div class="table-wrap">
+      <table class="comparison-table">
+        <thead>
+          <tr>
+            <th>Aspect</th>
+            <th>Midjourney v6.1</th>
+            <th>Flux.1 Dev/Pro</th>
+            <th>Stable Diffusion XL</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Format du prompt</td>
+            <td>Descripteurs séparés par virgules</td>
+            <td>Phrases en langage naturel</td>
+            <td>Listes d'étiquettes pondérées</td>
+          </tr>
+          <tr>
+            <td>Paramètres</td>
+            <td><code>--ar --v --s --c --q</code></td>
+            <td>Aucun (défini dans l'UI/API)</td>
+            <td>CFG scale, steps, sampler</td>
+          </tr>
+          <tr>
+            <td>Prompts négatifs</td>
+            <td><code>--no [termes]</code></td>
+            <td>Non supporté</td>
+            <td>Champ négatif dédié</td>
+          </tr>
+          <tr>
+            <td>Longueur du prompt</td>
+            <td>Moyenne (50–150 mots)</td>
+            <td>Long (1–4 phrases)</td>
+            <td>Court–moyen (listes d'étiquettes)</td>
+          </tr>
+          <tr>
+            <td>Contrôle du poids</td>
+            <td>Syntaxe <code>sujet::2</code></td>
+            <td>Emphase par la phrase uniquement</td>
+            <td>Syntaxe <code>(terme:1.3)</code></td>
+          </tr>
+          <tr>
+            <td>Meilleur pour</td>
+            <td>Artistique, stylisé, esthétique cohérente</td>
+            <td>Photoréaliste, open-source, hébergement perso</td>
+            <td>Modèles affinés, anime, workflows personnalisés</td>
+          </tr>
+        </tbody>
+      </table>
+      </div>
+
+      <h2 id="exemples-avec-resultats">Exemples de Prompts avec Résultats</h2>
+
+      <p>Six prompts complets dans différentes catégories, avec des explications des choix clés qui font fonctionner chacun d'eux.</p>
+
+      <div class="prompt-example">
+        <p class="example-category">Portrait</p>
+        <pre class="prompt-block">elderly Japanese fisherman with weathered face and deep-set eyes, worn rain gear, standing at harbor at dawn, dramatic side lighting with golden fog, documentary photography, shallow depth of field, rule of thirds --ar 2:3 --v 6.1 --style raw --q 2</pre>
+        <img src="/images/mj-portrait-fisherman.jpeg" alt="Résultat du prompt portrait Midjourney V6.1 — pêcheur japonais âgé au port à l'aube, style photographie documentaire" width="800" height="1200" loading="lazy" />
+        <p><em>Pourquoi ça fonctionne :</em> La spécificité du sujet (nationalité, âge, profession, trait spécifique) + lieu + heure de la journée fait la majeure partie du travail. <code>--style raw</code> empêche Midjourney d'embellir excessivement un sujet qui devrait paraître réel.</p>
+      </div>
+
+      <div class="prompt-example">
+        <p class="example-category">Paysage</p>
+        <pre class="prompt-block">vast salt flats at sunset stretching to the horizon, lone dead tree in foreground, mirror-like water reflection of dramatic orange and purple sky, surreal and otherworldly, wide angle shot, hyperrealistic photography --ar 21:9 --v 6.1 --q 2</pre>
+        <img src="/images/mj-landscape-ruins.jpeg" alt="Résultat du prompt paysage Midjourney V6.1 — étendues de sel au coucher du soleil avec arbre mort et reflet miroir" width="1200" height="514" loading="lazy" />
+        <p><em>Pourquoi ça fonctionne :</em> Le reflet miroir sur l'eau crée un dispositif compositionnel qui double le ciel. <code>--ar 21:9</code> correspond à la largeur cinématique de la scène. L'élément de premier plan (arbre mort) ajoute de la profondeur.</p>
+      </div>
+
+      <div class="prompt-example">
+        <p class="example-category">Fantaisie / Concept Art</p>
+        <pre class="prompt-block">ancient library inside a living tree, bookshelves carved into the wood, glowing bioluminescent spores floating in the air, reading nooks with warm candlelight, moss and vines growing between shelves, fantasy concept art, digital painting, magical atmosphere --ar 16:9 --v 6.1 --q 2</pre>
+        <img src="/images/mj-fantasy-library.jpeg" alt="Résultat du prompt concept art fantastique Midjourney V6.1 — bibliothèque ancienne dans un arbre vivant avec spores bioluminescentes" width="1200" height="675" loading="lazy" />
+        <p><em>Pourquoi ça fonctionne :</em> Plusieurs détails d'environnement spécifiques créent une richesse en se disputant l'attention. Le mélange de sources lumineuses (bioluminescent + bougie) donne à l'IA des indices de contraste clairs.</p>
+      </div>
+
+      <div class="prompt-example">
+        <p class="example-category">Photographie de Produit</p>
+        <pre class="prompt-block">luxury perfume bottle on black marble surface, dramatic backlit lighting creating caustic light patterns, water droplets on glass, dark moody atmosphere with deep shadows, commercial product photography, macro lens, sharp focus --ar 1:1 --v 6.1 --style raw</pre>
+        <img src="/images/mj-product-perfume.jpeg" alt="Résultat du prompt photographie de produit Midjourney V6.1 — flacon de parfum luxe sur marbre noir avec éclairage caustic dramatique" width="800" height="800" loading="lazy" />
+        <p><em>Pourquoi ça fonctionne :</em> <code>caustic light patterns</code> est un terme d'éclairage spécifique qui active la compréhension photographique. Fond sombre + contre-jour est une combinaison de photographie produit fiable que Midjourney gère bien.</p>
+      </div>
+
+      <div class="prompt-example">
+        <p class="example-category">Abstrait</p>
+        <pre class="prompt-block">liquid metallic paint in motion, swirling golds and deep blues colliding, extreme macro photography, high contrast, rich saturated color, abstract art, studio lighting --ar 1:1 --v 6.1 --q 2</pre>
+        <img src="/images/mj-abstract-paint.jpeg" alt="Résultat du prompt art abstrait Midjourney V6.1 — peinture métallique liquide en tourbillon or et bleu profond en macro extrême" width="800" height="800" loading="lazy" />
+        <p><em>Pourquoi ça fonctionne :</em> Pour le travail abstrait, le matériau (<code>liquid metallic paint</code>) + le mouvement + l'échelle (<code>extreme macro</code>) est plus utile que la description du sujet. Le contraste de couleurs (or vs bleu profond) donne une direction forte.</p>
+      </div>
+
+      <div class="prompt-example">
+        <p class="example-category">Architecture</p>
+        <pre class="prompt-block">brutalist concrete cathedral interior, massive columns with vertical light slits, dramatic shafts of sunlight cutting through dust, vast empty nave, black and white architectural photography, wide angle, deep perspective --ar 2:3 --v 6.1 --style raw --q 2</pre>
+        <img src="/images/mj-architecture-cathedral.jpeg" alt="Résultat du prompt architecture Midjourney V6.1 — intérieur de cathédrale brutaliste en béton avec rayons de lumière dramatiques" width="800" height="1200" loading="lazy" />
+        <p><em>Pourquoi ça fonctionne :</em> Les shots architecturaux nécessitent un langage de composition fort (perspective, indices d'échelle comme « massive », « vast »). Les rayons de lumière à travers des ouvertures spécifiques sont un effet dramatique fiable que Midjourney rend magnifiquement.</p>
+      </div>
+
+      <h2 id="comparaison-versions">Comparaison des Versions Midjourney</h2>
+
+      <div class="image-row">
+        <div>
+          <span class="comparison-badge badge-original" style="margin-bottom:0.375rem;">V5.2</span>
+          <img src="/images/mj-version-v52.jpeg" alt="Résultat Midjourney V5.2 — même prompt utilisé dans la comparaison de versions" width="800" height="800" loading="lazy" />
+        </div>
+        <div>
+          <span class="comparison-badge badge-tool" style="margin-bottom:0.375rem;">V6</span>
+          <img src="/images/mj-version-v6.jpeg" alt="Résultat Midjourney V6 — comparaison de versions montrant un réalisme amélioré" width="800" height="800" loading="lazy" />
+        </div>
+        <div>
+          <span class="comparison-badge badge-recreation" style="margin-bottom:0.375rem;">V6.1</span>
+          <img src="/images/mj-version-v61.jpeg" alt="Résultat Midjourney V6.1 — dernière version avec détail et cohérence améliorés" width="800" height="800" loading="lazy" />
+        </div>
+      </div>
+
+      <div class="table-wrap">
+      <table class="comparison-table">
+        <thead>
+          <tr><th>Aspect</th><th>V5.2</th><th>V6</th><th>V6.1</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Photoréalisme</td><td>Bon</td><td>Très Bon</td><td>Meilleur</td></tr>
+          <tr><td>Rendu de Texte</td><td>Mauvais</td><td>Amélioré</td><td>Bon</td></tr>
+          <tr><td>Niveau de Détail</td><td>Élevé</td><td>Très Élevé</td><td>Très Élevé</td></tr>
+          <tr><td>Suivi du Prompt</td><td>Modéré</td><td>Bon</td><td>Très Bon</td></tr>
+          <tr><td>Style Esthétique</td><td>Look MJ distinctif</td><td>Plus naturaliste</td><td>Le plus naturaliste</td></tr>
+        </tbody>
+      </table>
+      </div>
+
+      <h2 id="ponderation-de-prompt">Pondération de Prompt</h2>
+
+      <p>Vous pouvez contrôler l'emphase que Midjourney place sur des parties spécifiques de votre prompt en utilisant la syntaxe <code>::</code> suivie d'un nombre :</p>
+
+      <p><code>a surreal landscape::2 with tiny clockwork figures::1</code></p>
+
+      <p>Le <code>::2</code> indique à Midjourney que le paysage est deux fois plus important que les figurines. Vous pouvez également utiliser des poids négatifs pour réduire des éléments : <code>forest::2 buildings::-1</code> met en avant la forêt et éloigne les bâtiments.</p>
+
+      <h2 id="erreurs-courantes">Erreurs Courantes dans les Prompts Midjourney</h2>
+
+      <h3>Trop de Détails sur des Éléments Peu Importants</h3>
+      <p>Midjourney distribue l'attention sur tout votre prompt. Si vous passez 50 mots à décrire des éléments d'arrière-plan, ils rivalisent avec votre sujet principal. Commencez par ce qui est le plus important.</p>
+
+      <h3>Instructions Contradictoires</h3>
+      <p>« Lumineux et ensoleillé » + « atmosphère sombre et dramatique » crée de la confusion. Soyez cohérent en interne. Si vous voulez une scène globalement lumineuse avec des ombres dramatiques, soyez précis : « lumière ambiante vive avec des ombres profondes et dramatiques ».</p>
+
+      <h3>Oublier la Composition</h3>
+      <p>Sans guidage compositionnel, Midjourney fait ses propres choix. Ajoutez une composition explicite : « portrait en gros plan », « plan d'ensemble large », « vue aérienne », « macro en gros plan extrême ». Cela change dramatiquement le résultat.</p>
+
+      <h3>Oublier le Ratio d'Aspect</h3>
+      <p>Le format carré 1:1 par défaut est rarement ce que vous voulez. Ajoutez toujours <code>--ar</code> pour correspondre à votre utilisation prévue.</p>
+
+      <h2 id="resultats-coherents">Obtenir des Résultats Cohérents</h2>
+
+      <p>Une fois que vous trouvez un résultat que vous aimez, utilisez la <strong>valeur seed</strong> pour recréer des résultats similaires. Ajoutez une réaction emoji à n'importe quel message Midjourney pour obtenir le seed, puis utilisez <code>--seed [nombre]</code> dans les futurs prompts pour obtenir un point de départ compositionnel similaire.</p>
+
+      <h2 id="multi-prompts">Multi-Prompts et Permutations</h2>
+
+      <p>La syntaxe <code>::</code> vous permet de diviser votre prompt en segments pondérés, indiquant à Midjourney quelle importance accorder à chaque partie.</p>
+
+      <p><strong>Pondération de base :</strong></p>
+      <p><code>stormy ocean::2 tiny sailing ship::1</code> — l'océan obtient deux fois le poids visuel du bateau.</p>
+
+      <p><strong>Pondération négative :</strong></p>
+      <p><code>forest::2 buildings::-1</code> — met en avant la forêt, éloigne activement les bâtiments du résultat.</p>
+
+      <p><strong>Scène vs. division de style :</strong></p>
+      <p><code>ancient warrior::2 oil painting::1.5 dark background::-0.5</code> — forte emphase sur le sujet, style pictural, fond minimal.</p>
+
+      <h2 id="references-images">Utiliser les Références d'Images Efficacement</h2>
+
+      <p>Midjourney accepte des URLs d'images au début de votre prompt. Le paramètre <code>--iw</code> (image weight) contrôle l'influence de la référence sur le résultat.</p>
+
+      <ul>
+        <li><code>--iw 0.5</code> : Influence subtile — la référence guide vaguement le style et l'ambiance</li>
+        <li><code>--iw 1</code> : Influence modérée — par défaut, équilibre la référence avec le prompt textuel</li>
+        <li><code>--iw 2</code> : Forte influence — le résultat ressemblera étroitement à la référence</li>
+      </ul>
+
+      <p>C'est ainsi que les <a href="/">outils image-vers-prompt comme ImageToPrompt</a> complètent Midjourney — extrayez un prompt textuel de votre image de référence, puis fournissez également l'URL de l'image comme ancre visuelle pour un transfert de style encore plus fort.</p>
+
+      <h2 id="depannage">Résolution des Problèmes Courants de Midjourney</h2>
+
+      <div class="troubleshooting-grid">
+        <div class="trouble-item">
+          <p class="trouble-q">Mes images sont trop sombres</p>
+          <p class="trouble-a">Ajoutez un éclairage explicite : <code>bright ambient lighting</code>, <code>well-lit scene</code>, ou une source lumineuse spécifique. Supprimez tous les mots d'ambiance qui impliquent l'obscurité.</p>
+        </div>
+        <div class="trouble-item">
+          <p class="trouble-q">Les mains paraissent déformées</p>
+          <p class="trouble-a">Utilisez <code>--no deformed hands, extra fingers, fused fingers</code> et incluez <code>detailed hands, accurate anatomy</code> dans votre prompt positif. V6.1 gère mieux les mains que les versions précédentes.</p>
+        </div>
+        <div class="trouble-item">
+          <p class="trouble-q">Les 4 résultats de grille se ressemblent tous</p>
+          <p class="trouble-a">Ajoutez <code>--chaos 30</code> ou plus. Le chaos faible (0 par défaut) produit des variations très similaires. Utilisez chaos 20–50 lors de l'exploration ; revenez à 0 une fois que vous avez trouvé une direction qui vous plaît.</p>
+        </div>
+        <div class="trouble-item">
+          <p class="trouble-q">Le texte dans l'image est brouillé</p>
+          <p class="trouble-a">Utilisez V6 ou V6.1 (pas les versions antérieures). Mettez le texte exact que vous voulez entre guillemets dans votre prompt : <code>"OPEN" sign on the door</code>. Gardez le texte court — les mots simples ou les phrases de 2–3 mots fonctionnent le mieux.</p>
+        </div>
+      </div>
+
+      <div class="cta-box">
+        <h3>Générez des Prompts Midjourney à Partir de Vos Images</h3>
+        <p>Téléchargez n'importe quelle image de référence et obtenez un prompt Midjourney complet avec les paramètres --ar, --v et de style déjà inclus.</p>
+        <a href="/" class="cta-btn">Essayer le Générateur de Prompts Midjourney Gratuit →</a>
+      </div>
+
+    </div>
+
+    <div class="author-bio">
+      <svg class="author-photo" width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="Avatar de l'auteur"><circle cx="32" cy="32" r="32" fill="#2a1f4e"/><circle cx="32" cy="26" r="11" fill="#7c6bc4"/><ellipse cx="32" cy="52" rx="18" ry="11" fill="#7c6bc4"/></svg>
+      <div class="author-info">
+        <p class="author-name">ImageToPrompt Team</p>
+        <p class="author-desc">Ingénieurs de prompts et artistes IA spécialisés dans Midjourney, Stable Diffusion et Flux. Nous construisons ImageToPrompt pour rendre la génération d'images IA accessible à tous.</p>
+        <a href="https://twitter.com/imagetoprompt" class="author-link">Suivre sur X →</a>
+      </div>
+    </div>
+
+    <div class="related-posts">
+      <h2>Guides Associés</h2>
+      <div class="related-grid">
+        <a href="/fr/blog/stable-diffusion-vs-midjourney-vs-dalle3/" class="related-card">
+          <p class="tag">Comparatif</p>
+          <h3>SD vs Midjourney vs DALL·E 3 vs Flux : Comparaison des Prompts</h3>
+        </a>
+        <a href="/fr/blog/convertir-image-en-prompt-ia/" class="related-card">
+          <p class="tag">Guide</p>
+          <h3>Comment Convertir une Image en Prompt Midjourney</h3>
+        </a>
+        <a href="/fr/blog/prompt-engineering-art-ia-debutants/" class="related-card">
+          <p class="tag">Débutant</p>
+          <h3>Fondamentaux du Prompt Engineering pour l'Art IA</h3>
+        </a>
+        <a href="/blog/midjourney-vs-flux/" class="related-card">
+          <p class="tag">Comparatif</p>
+          <h3>Midjourney vs Flux AI : Lequel est Meilleur en 2026 ?</h3>
+        </a>
+        <a href="/blog/ai-art-styles-glossary/" class="related-card">
+          <p class="tag">Référence</p>
+          <h3>Glossaire de 50 Styles d'Art IA</h3>
+        </a>
+        <a href="/blog/prompt-engineering-mistakes/" class="related-card">
+          <p class="tag">Conseils</p>
+          <h3>15 Erreurs de Prompt Engineering à Éviter</h3>
+        </a>
+      </div>
+    </div>
+
+  </div>
+
+  <footer class="site-footer">
+    <div class="inner">
+      <p>© 2026 <a href="/" style="color:#8888bb;text-decoration:none">ImageToPrompt</a> · Générateur de Prompts IA Gratuit</p>
+      <nav aria-label="Navigation pied de page">
+        <a href="/fr/">Accueil</a>
+        <a href="/fr/blog/">Blog</a>
+        <a href="/#faq">FAQ</a>
+        <a href="/privacy-policy/">Confidentialité</a>
+        <a href="/terms-of-service/">CGU</a>
+      </nav>
+    </div>
+  </footer>
+
+<script src="/newsletter-inject.js" defer></script>
+</body>
+</html>

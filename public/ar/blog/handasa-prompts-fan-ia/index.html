@@ -1,0 +1,534 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0" />
+  <title>هندسة البرومبتات لفن الذكاء الاصطناعي : دليل المبتدئين | ImageToPrompt</title>
+  <meta name="description" content="تعلّم أساسيات هندسة البرومبتات لفن الذكاء الاصطناعي من الصفر. يشمل الموضوع والأسلوب والإضاءة والتركيب مع أمثلة حقيقية لـ Midjourney وStable Diffusion وFlux." />
+  <link rel="canonical" href="https://www.imagetoprompt.dev/ar/blog/handasa-prompts-fan-ia/" />
+  <link rel="alternate" hreflang="ar" href="https://www.imagetoprompt.dev/ar/blog/handasa-prompts-fan-ia/" />
+  <link rel="alternate" hreflang="en" href="https://www.imagetoprompt.dev/blog/prompt-engineering-for-ai-art/" />
+  <link rel="alternate" hreflang="fr" href="https://www.imagetoprompt.dev/fr/blog/prompt-engineering-art-ia-debutants/" />
+  <link rel="alternate" hreflang="x-default" href="https://www.imagetoprompt.dev/blog/prompt-engineering-for-ai-art/" />
+  <meta property="og:title" content="هندسة البرومبتات لفن الذكاء الاصطناعي : دليل المبتدئين" />
+  <meta property="og:description" content="تعلّم كيفية كتابة برومبتات فعّالة للذكاء الاصطناعي من الصفر مع أمثلة حقيقية." />
+  <meta property="og:url" content="https://www.imagetoprompt.dev/ar/blog/handasa-prompts-fan-ia/" />
+  <meta property="og:type" content="article" />
+  <meta property="og:image" content="https://www.imagetoprompt.dev/og-image.png" />
+  <meta property="og:site_name" content="ImageToPrompt" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="هندسة البرومبتات لفن الذكاء الاصطناعي : دليل المبتدئين" />
+  <meta name="twitter:description" content="تعلّم كيفية كتابة برومبتات فعّالة للذكاء الاصطناعي من الصفر." />
+  <meta name="twitter:image" content="https://www.imagetoprompt.dev/og-image.png" />
+  <meta name="twitter:site" content="@imagetoprompt" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-icon-180x180.png" />
+  <meta name="msapplication-config" content="/browserconfig.xml" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="/fonts/space-grotesk-700.woff2" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="/fonts/inter-400.woff2" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Arabic:wght@400;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/blog.css" />
+  <style>
+    body { font-family: 'Noto Sans Arabic', 'Space Grotesk', sans-serif; }
+    .article-body { direction: rtl; text-align: right; }
+    code, pre { direction: ltr; text-align: left; display: inline-block; }
+    .toc ol, .toc ul { padding-right: 1.5rem; padding-left: 0; }
+    .article-body ul, .article-body ol { margin-right: 1.5rem; margin-left: 0; }
+    .breadcrumb { direction: rtl; }
+    .word-pair { display: grid; grid-template-columns: 1fr auto 1fr; gap: 1rem; align-items: center; margin: 1.5rem 0; padding: 1.25rem; background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.06); border-radius: 0.75rem; }
+    .word-pair-item { text-align: center; }
+    .word-pair-item img { width: 100%; border-radius: 0.5rem; display: block; margin-top: 0.5rem; }
+    .word-pair-vs { text-align: center; }
+    .vs-badge { background: rgba(255,255,255,0.1); padding: 0.3rem 0.6rem; border-radius: 50%; font-size: 0.75rem; font-weight: 700; color: #8888bb; }
+    .pair-explanation { grid-column: 1 / -1; color: #8888bb; font-size: 0.875rem; margin: 0.5rem 0 0; line-height: 1.7; }
+    .exercise-block { background: rgba(224,64,251,0.06); border: 1px solid rgba(224,64,251,0.2); border-radius: 0.75rem; padding: 1.25rem; margin: 1rem 0; }
+    .exercise-block h3 { color: #e040fb; margin-top: 0; }
+    .stage-content img { width: 100%; border-radius: 0.5rem; display: block; margin: 0.75rem 0; }
+  </style>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "هندسة البرومبتات لفن الذكاء الاصطناعي : دليل المبتدئين",
+    "description": "تعلّم أساسيات هندسة البرومبتات لفن الذكاء الاصطناعي. يشمل الموضوع والأسلوب والإضاءة والتركيب مع أمثلة حقيقية.",
+    "image": "https://www.imagetoprompt.dev/og-image.png",
+    "datePublished": "2026-03-10",
+    "dateModified": "2026-03-15",
+    "inLanguage": "ar",
+    "author": {
+      "@type": "Person",
+      "name": "ImageToPrompt Team",
+      "url": "https://www.imagetoprompt.dev/"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "ImageToPrompt",
+      "logo": { "@type": "ImageObject", "url": "https://www.imagetoprompt.dev/favicon.svg" }
+    },
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https://www.imagetoprompt.dev/ar/blog/handasa-prompts-fan-ia/"
+    }
+  }
+  </script>
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="inner">
+      <a href="/" class="site-logo"><svg viewBox="0 0 32 32" width="32" height="32" fill="none" style="display:inline-block;vertical-align:middle;margin-left:6px"><rect x="2" y="2" width="28" height="28" rx="8" fill="url(#aigrad-h)"/><circle cx="16" cy="16" r="3.5" fill="#fff" fill-opacity=".95"/><circle cx="7" cy="10" r="2" fill="#e040fb"/><circle cx="25" cy="10" r="2" fill="#00e5ff"/><circle cx="7" cy="22" r="2" fill="#00e5ff"/><circle cx="25" cy="22" r="2" fill="#e040fb"/><circle cx="16" cy="5" r="2" fill="#e040fb" fill-opacity=".8"/><circle cx="16" cy="27" r="2" fill="#00e5ff" fill-opacity=".8"/><line x1="16" y1="12.5" x2="16" y2="7" stroke="#e040fb" stroke-width="1" stroke-opacity=".6"/><line x1="16" y1="19.5" x2="16" y2="25" stroke="#00e5ff" stroke-width="1" stroke-opacity=".6"/><line x1="12.8" y1="14.2" x2="9" y2="11.5" stroke="#e040fb" stroke-width="1" stroke-opacity=".6"/><line x1="19.2" y1="14.2" x2="23" y2="11.5" stroke="#00e5ff" stroke-width="1" stroke-opacity=".6"/><line x1="12.8" y1="17.8" x2="9" y2="20.5" stroke="#00e5ff" stroke-width="1" stroke-opacity=".6"/><line x1="19.2" y1="17.8" x2="23" y2="20.5" stroke="#e040fb" stroke-width="1" stroke-opacity=".6"/><defs><linearGradient id="aigrad-h" x1="0" y1="0" x2="32" y2="32" gradientUnits="userSpaceOnUse"><stop offset="0%" stop-color="#1a0a2e"/><stop offset="100%" stop-color="#0a1628"/></linearGradient></defs></svg>ImageTo<span class="accent">Prompt</span></a>
+      <nav class="site-nav" aria-label="التنقل الرئيسي">
+        <a href="/ar/">الرئيسية</a>
+        <a href="/ar/blog/" class="active">المدونة</a>
+        <span style="display:inline-flex;align-items:center;gap:4px;font-size:0.75rem;color:#8888bb">
+          <a href="/blog/prompt-engineering-for-ai-art/" style="color:#8888bb;text-decoration:none" title="English">EN</a><span style="color:rgba(255,255,255,0.2)">|</span><a href="/fr/blog/prompt-engineering-art-ia-debutants/" style="color:#8888bb;text-decoration:none" title="Français">FR</a><span style="color:rgba(255,255,255,0.2)">|</span><a href="/ar/blog/handasa-prompts-fan-ia/" style="color:#e040fb;text-decoration:none;font-weight:600" title="العربية">AR</a>
+        </span>
+        <a href="/" style="background:linear-gradient(135deg,#e040fb,#00e5ff);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;font-weight:600">جرّب مجاناً ←</a>
+      </nav>
+    </div>
+  </header>
+
+  <nav class="breadcrumb" aria-label="مسار التنقل">
+    <a href="/ar/">الرئيسية</a><span class="sep">›</span>
+    <a href="/ar/blog/">المدونة</a><span class="sep">›</span>
+    <span>هندسة البرومبتات لفن الذكاء الاصطناعي: دليل المبتدئين</span>
+  </nav>
+
+  <div class="page-wrapper">
+
+    <header class="article-header">
+      <p class="article-tag">دليل المبتدئين</p>
+      <h1>هندسة البرومبتات لفن الذكاء الاصطناعي : دليل المبتدئين</h1>
+      <div class="article-meta">
+        <span>مارس 2026</span>
+        <span class="dot">·</span>
+        <span>10 دقائق قراءة</span>
+        <span class="dot">·</span>
+        <span>Midjourney · Stable Diffusion · Flux · DALL·E 3</span>
+        <span class="dot">·</span>
+        <span>محدّث مارس 2026</span>
+      </div>
+    </header>
+
+    <div class="article-body">
+
+      <p>تفتح Midjourney للمرة الأولى، تكتب "تنّين رائع"، وتحصل على نتيجة... مقبولة. عامة. لا تشبه ما كان في ذهنك أبداً. في المقابل، شخص آخر يكتب فقرة كاملة من الواصفات المحددة ويُنتج شيئاً رائعاً.</p>
+
+      <nav class="toc" aria-label="محتويات المقال">
+        <details open>
+          <summary>في هذا الدليل</summary>
+          <ol>
+            <li><a href="#what-is-prompt">ما هو البرومبت؟</a></li>
+            <li><a href="#why-cool-dragon">لماذا "تنّين رائع" لا يعمل</a></li>
+            <li><a href="#single-word-changes">شاهد الفرق: كيف تُغيّر كلمة واحدة كل شيء</a></li>
+            <li><a href="#five-pillars">الركائز الخمس للبرومبت القوي</a></li>
+            <li><a href="#prompt-anatomy">تشريح البرومبت الاحترافي</a></li>
+            <li><a href="#quality-tags">وسوم الجودة: المعزّزات الموثوقة</a></li>
+            <li><a href="#negative-prompts">البرومبتات السلبية: ما لا تريده</a></li>
+            <li><a href="#vocabulary">مرجع مصطلحات البرومبت</a></li>
+            <li><a href="#prompt-evolution">شاهد تطور برومبت: من أساسي إلى احترافي</a></li>
+            <li><a href="#learn-fast">كيف تتعلم هندسة البرومبتات بسرعة</a></li>
+            <li><a href="#fastest-path">أسرع طريق من الصفر إلى نتائج جيدة</a></li>
+            <li><a href="#exercises">3 تمارين للتطبيق الآن</a></li>
+          </ol>
+        </details>
+      </nav>
+
+      <p>الفرق هو <strong>هندسة البرومبتات</strong> — مهارة التواصل مع مولدات صور الذكاء الاصطناعي بوضوح وفعالية. إنها ليست برمجة. وليست سحراً. إنها حرفة قابلة للتعلم، وهذا الدليل يمنحك أساساً صلباً من الصفر.</p>
+
+      <h2 id="what-is-prompt">ما هو البرومبت؟</h2>
+
+      <p>في سياق توليد الصور بالذكاء الاصطناعي، <strong>البرومبت</strong> هو التعليمات النصية التي تُعطيها لنموذج AI لتوليد صورة. يقرأ الذكاء الاصطناعي نصك، يُفسر ما تعنيه، ويُنتج بكسلات تحاول مطابقة وصفك.</p>
+
+      <p>التحدي الأساسي: نماذج AI مُدرَّبة على مليارات الصور والتعليقات. تعلّمت الارتباطات بين الكلمات والمفاهيم البصرية. لكنها تُفسّر كلماتك بشكل احتمالي — كل توليد مختلف قليلاً، والنموذج يتخذ قرارات صغيرة لا تعد حول ما "عنيته فعلاً."</p>
+
+      <p>هندسة البرومبتات هي ممارسة كتابة برومبتات تُوجّه تلك القرارات الصغيرة نحو النتيجة التي تريدها فعلاً.</p>
+
+      <h2 id="why-cool-dragon">لماذا "تنّين رائع" لا يعمل</h2>
+
+      <p>"تنّين رائع" غامض بشكل أقصى. رأى الذكاء الاصطناعي آلاف التنانين الموصوفة بـ"رائع" — تنانين غربية وشرقية وكرتونية وواقعية وتنفث النار وتحلق. بدون توجيه إضافي، يختار شيئاً يُعبّر عن المتوسط الإحصائي لجميع هؤلاء. النتيجة تبدو عامة لأنها في الأساس كذلك — إنها المتوسط الإحصائي لـ"تنّين رائع."</p>
+
+      <p>كلما كان برومبتك أكثر تحديداً، كلما كان أمام الذكاء الاصطناعي ما يعمل معه، وكلما كانت نتيجتك أكثر تميزاً. قارن:</p>
+
+      <p><strong>ضعيف:</strong> <code dir="ltr">cool dragon</code></p>
+      <p><strong>قوي:</strong> <code dir="ltr">ancient sea dragon emerging from stormy ocean waves at night, translucent teal scales catching moonlight, massive wingspan, serpentine body, bioluminescent markings, cinematic wide shot, dramatic lighting, dark fantasy concept art</code></p>
+
+      <p>نفس الموضوع. نتائج مختلفة جداً.</p>
+
+      <div class="cta-inline">
+        <p>جرّبه بنفسك — ارفع أي صورة واحصل على برومبت AI محسّن في ثوانٍ.</p>
+        <a href="/" class="cta-btn-sm">جرّب مجاناً ←</a>
+      </div>
+
+      <h2 id="single-word-changes">شاهد الفرق: كيف تُغيّر كلمة واحدة كل شيء</h2>
+
+      <p>تصبح قوة هندسة البرومبتات أوضح ما يكون عندما تُغيّر كلمة واحدة بالضبط وتُقارن النتائج. إليك خمسة أزواج تُوضح كم تُحوّل مصطلح واحد المخرجات.</p>
+
+      <div class="word-pair">
+        <div class="word-pair-item">
+          <code dir="ltr">cinematic portrait</code>
+          <img src="/images/pair1-cinematic.jpeg" alt="بورتريه سينمائي — إضاءة سينمائية درامية ومزاج لمقارنة برومبتات AI" width="800" height="1200" loading="lazy" />
+        </div>
+        <div class="word-pair-vs"><span class="vs-badge">مقابل</span></div>
+        <div class="word-pair-item">
+          <code dir="ltr"><strong>editorial</strong> portrait</code>
+          <img src="/images/pair1-editorial.jpeg" alt="بورتريه تحريري — أسلوب نظيف احترافي جاهز للمجلة" width="800" height="1200" loading="lazy" />
+        </div>
+        <p class="pair-explanation"><strong>السينمائي (cinematic)</strong> يدفع نحو إضاءة سينمائية درامية وظلال عميقة ومزاج مسرحي. <strong>التحريري (editorial)</strong> يُشير إلى نظيف واحترافي وجاهز للمجلة — عادةً أكثر إشراقاً وتحكماً وأقل جوية.</p>
+      </div>
+
+      <div class="word-pair">
+        <div class="word-pair-item">
+          <code dir="ltr"><strong>golden hour</strong> lighting</code>
+          <img src="/images/pair2-golden-hour.jpeg" alt="إضاءة الساعة الذهبية — ألوان برتقالية وعنبر دافئة عند الغروب" width="800" height="1200" loading="lazy" />
+        </div>
+        <div class="word-pair-vs"><span class="vs-badge">مقابل</span></div>
+        <div class="word-pair-item">
+          <code dir="ltr"><strong>blue hour</strong> lighting</code>
+          <img src="/images/pair2-blue-hour.jpeg" alt="إضاءة الساعة الزرقاء — ألوان زرقاء باردة وناعمة عند الشفق" width="800" height="1200" loading="lazy" />
+        </div>
+        <p class="pair-explanation"><strong>الساعة الذهبية (golden hour)</strong> تُنتج ضوءاً دافئاً برتقالياً وعنبرياً مع ظلال طويلة. <strong>الساعة الزرقاء (blue hour)</strong> تُنتج ضوءاً أزرق بارداً ومنتشراً وناعماً مع ظلال منعدمة تقريباً — مزاج عاطفي مختلف تماماً.</p>
+      </div>
+
+      <div class="word-pair">
+        <div class="word-pair-item">
+          <code dir="ltr"><strong>oil painting</strong></code>
+          <img src="/images/pair3-oil-painting.jpeg" alt="فن بالزيت — ألوان غنية مشبعة مع نسيج فرشاة مرئي" width="800" height="600" loading="lazy" />
+        </div>
+        <div class="word-pair-vs"><span class="vs-badge">مقابل</span></div>
+        <div class="word-pair-item">
+          <code dir="ltr"><strong>watercolor</strong> painting</code>
+          <img src="/images/pair3-watercolor.jpeg" alt="فن بالألوان المائية — حواف ناعمة وغسلات شفافة" width="800" height="600" loading="lazy" />
+        </div>
+        <p class="pair-explanation"><strong>الزيت (oil painting)</strong> يُوحي بألوان غنية مشبعة ونسيج فرشاة مرئي وإحساس بالثقل. <strong>الألوان المائية (watercolor)</strong> تُوحي بحواف ناعمة وغسلات شفافة وألوان أخف وخطوط رقيقة — أكثر خفة وزئبقية.</p>
+      </div>
+
+      <div class="word-pair">
+        <div class="word-pair-item">
+          <code dir="ltr"><strong>wide angle shot</strong></code>
+          <img src="/images/pair4-wide-shot.jpeg" alt="لقطة واسعة الزاوية — الموضوع يظهر في سياقه البيئي الكامل" width="1200" height="675" loading="lazy" />
+        </div>
+        <div class="word-pair-vs"><span class="vs-badge">مقابل</span></div>
+        <div class="word-pair-item">
+          <code dir="ltr"><strong>extreme close-up</strong></code>
+          <img src="/images/pair4-closeup.jpeg" alt="مقرّبة جداً — التفصيلة تملأ الإطار كله" width="800" height="800" loading="lazy" />
+        </div>
+        <p class="pair-explanation"><strong>اللقطة الواسعة (wide angle shot)</strong> تضع موضوعك في سياقه، مُظهِرةً البيئة حوله. <strong>المقرّبة جداً (extreme close-up)</strong> تُلغي السياق كلياً، مُركِّزةً على تفصيلة واحدة. هذان متضادان تركيبيان ينتجان صوراً مختلفة جذرياً لنفس الموضوع.</p>
+      </div>
+
+      <div class="word-pair">
+        <div class="word-pair-item">
+          <code dir="ltr"><strong>peaceful</strong> mood</code>
+          <img src="/images/pair5-peaceful.jpeg" alt="مزاج هادئ — مشهد هادئ مريح بضوء ناعم" width="800" height="600" loading="lazy" />
+        </div>
+        <div class="word-pair-vs"><span class="vs-badge">مقابل</span></div>
+        <div class="word-pair-item">
+          <code dir="ltr"><strong>ominous</strong> mood</code>
+          <img src="/images/pair5-ominous.jpeg" alt="مزاج شؤم — مشهد داكن مُهدِّد مع جو مُنذِر" width="800" height="600" loading="lazy" />
+        </div>
+        <p class="pair-explanation">كلمات المزاج تؤثر في اختيارات الألوان ومعالجة الإضاءة وحتى تعبير الموضوع. <strong>الهادئ (peaceful)</strong> يميل نحو ضوء ناعم وفضاء مفتوح وألوان هادئة. <strong>الشؤم (ominous)</strong> يميل نحو إضاءة منخفضة وظلال عميقة وإحساس بالتهديد — حتى مع موضوع متطابق.</p>
+      </div>
+
+      <h2 id="five-pillars">الركائز الخمس للبرومبت القوي لفن الذكاء الاصطناعي</h2>
+
+      <h3>1. الموضوع — ما الذي في الصورة؟</h3>
+
+      <p>الموضوع هو نقطة بدايتك: الشخص أو المخلوق أو الشيء أو المشهد الذي تريد تصويره. كن دقيقاً:</p>
+      <ul>
+        <li><strong>ضعيف:</strong> "امرأة"</li>
+        <li><strong>قوي:</strong> "محاربة يابانية في الثلاثينيات من عمرها ترتدي درعاً احتفالية متقنة الصنع، واقفة في غابة من الخيزران"</li>
+      </ul>
+
+      <p>أدرج: الخصائص الجسدية، العمر/الحقبة، الملابس، التعبير، الإجراء، العلاقة بالبيئة.</p>
+
+      <h3>2. الأسلوب — كيف يجب أن تبدو؟</h3>
+
+      <p>يُخبر الأسلوب الذكاء الاصطناعي بأي سجل فني أو فوتوغرافي يعمل فيه. بدون هذا، يختار الذكاء الاصطناعي بنفسه — عادةً شيء بين الواقعية الفوتوغرافية وفن المفاهيم.</p>
+
+      <p>فئات الأسلوب الشائعة:</p>
+      <ul>
+        <li><strong>فوتوغرافي:</strong> <code dir="ltr">cinematic photography</code>، <code dir="ltr">editorial portrait</code>، <code dir="ltr">documentary photography</code>، <code dir="ltr">macro photography</code></li>
+        <li><strong>لوحة:</strong> <code dir="ltr">oil painting</code>، <code dir="ltr">watercolor illustration</code>، <code dir="ltr">impressionist painting</code>، <code dir="ltr">digital painting</code></li>
+        <li><strong>توضيح:</strong> <code dir="ltr">concept art</code>، <code dir="ltr">anime style</code>، <code dir="ltr">comic book illustration</code></li>
+        <li><strong>ثلاثي الأبعاد/تصيير:</strong> <code dir="ltr">octane render</code>، <code dir="ltr">unreal engine 5</code>، <code dir="ltr">CGI animation</code></li>
+      </ul>
+
+      <h3>3. الإضاءة — ماذا تفعل الإضاءة؟</h3>
+
+      <p>الإضاءة هي على الأرجح العنصر الأقوى تأثيراً في المزاج والجودة. مولدات الذكاء الاصطناعي جيدة بشكل لافت في تفسير أوصاف الإضاءة المحددة.</p>
+
+      <p>واصفات الإضاءة الرئيسية:</p>
+      <ul>
+        <li><strong>الاتجاه:</strong> مضاء أمامي، جانبي، خلفي، من الأعلى، من الأسفل</li>
+        <li><strong>الجودة:</strong> ضوء ناعم منتشر، ضوء مباشر قاسٍ، ضوء متقطع</li>
+        <li><strong>وقت اليوم:</strong> الساعة الذهبية، الساعة الزرقاء، منتصف النهار، غائم، ليل</li>
+        <li><strong>النوع:</strong> ضوء شمس طبيعي، إضاءة استوديو، أضواء نيون، ضوء شمعة، بيولومينية، نار</li>
+        <li><strong>إعدادات الإضاءة المسمّاة:</strong> إضاءة Rembrandt، إضاءة فراشة، كياروسكورو</li>
+      </ul>
+
+      <h3>4. التركيب — كيف يُؤطَّر؟</h3>
+
+      <p>التركيب يُخبر الذكاء الاصطناعي كيف يُرتّب العناصر داخل الإطار. بدون توجيه، يتخلف الذكاء الاصطناعي إلى ما كان أكثر شيوعاً في بيانات تدريبه — عادةً تأطير محايد مركزي.</p>
+
+      <p>أنواع اللقطات (مستعارة من السينما/التصوير):</p>
+      <ul>
+        <li><code dir="ltr">extreme close-up</code> — يملأ الإطار بتفصيلة واحدة</li>
+        <li><code dir="ltr">close-up portrait</code> — الوجه والكتفان</li>
+        <li><code dir="ltr">medium shot</code> — من الخصر إلى الأعلى</li>
+        <li><code dir="ltr">full body shot</code> — الموضوع من الرأس إلى القدم</li>
+        <li><code dir="ltr">wide shot</code> — الموضوع في بيئته الكاملة</li>
+        <li><code dir="ltr">aerial view</code> / <code dir="ltr">bird's eye view</code> — النظر مباشرة للأسفل</li>
+        <li><code dir="ltr">worm's eye view</code> — النظر مباشرة للأعلى</li>
+        <li><code dir="ltr">Dutch angle</code> — كاميرا مائلة للتوتر</li>
+      </ul>
+
+      <h3>5. المزاج والجو — كيف يجب أن يُشعر؟</h3>
+
+      <p>المزاج يُوصل السجل العاطفي. يؤثر في اختيارات الألوان ومعالجة الإضاءة والإحساس العام بالصورة حتى حين لا تُحدد كل تفصيلة.</p>
+
+      <p>واصفات المزاج المفيدة:</p>
+      <ul>
+        <li>غامض، شؤم، مُرعب، مُقلق</li>
+        <li>مُفعَم بالأمل، دافئ، حنيني، هادئ</li>
+        <li>ملحمي، عظيم، مُلهِم، جليل</li>
+        <li>حزين، هادئ، وحيد، تأملي</li>
+        <li>متوتر، عاجل، فوضوي، نشيط</li>
+        <li>سحري، من عالم آخر، حلمي، سريالي</li>
+      </ul>
+
+      <h2 id="prompt-anatomy">تشريح البرومبت الاحترافي</h2>
+
+      <p>لنُشرّح برومبتاً احترافياً كاملاً، مُصنِّفين كل مكوّن لنرى بالضبط كيف يرتبط بالركائز الخمس.</p>
+
+      <div class="prompt-anatomy-box">
+        <p>
+          <span class="anatomy-tag subject" dir="ltr">ancient sea dragon emerging from stormy ocean waves at night</span>,
+          <span class="anatomy-tag style" dir="ltr">dark fantasy concept art, digital painting</span>,
+          <span class="anatomy-tag lighting" dir="ltr">dramatic rim lighting, bioluminescent glow from below</span>,
+          <span class="anatomy-tag color" dir="ltr">deep navy blue and teal with warm orange accents</span>,
+          <span class="anatomy-tag composition" dir="ltr">cinematic wide shot, low angle perspective</span>,
+          <span class="anatomy-tag mood" dir="ltr">mysterious, awe-inspiring, powerful</span>
+          <span class="anatomy-tag params" dir="ltr">--ar 21:9 --v 6.1 --style raw --q 2</span>
+        </p>
+        <div class="anatomy-legend">
+          <span class="anatomy-tag subject">الموضوع</span>
+          <span class="anatomy-tag style">الأسلوب</span>
+          <span class="anatomy-tag lighting">الإضاءة</span>
+          <span class="anatomy-tag color">اللون</span>
+          <span class="anatomy-tag composition">التركيب</span>
+          <span class="anatomy-tag mood">المزاج</span>
+          <span class="anatomy-tag params">المعاملات</span>
+        </div>
+      </div>
+
+      <p>كل عنصر يستحق مكانه. احذف "التوهج البيولوميني من الأسفل" ويفقد التنّين صفته الأخرى-عالمية. احذف "منظور زاوية منخفضة" وينهار الإحساس بالحجم. البرومبتات الاحترافية ليست طويلة لمجرد الطول — إنها محددة لأن كل مصطلح يُضيف معلومات يمكن للذكاء الاصطناعي استخدامها.</p>
+
+      <h2 id="quality-tags">وسوم الجودة: المعزّزات الموثوقة</h2>
+
+      <p>تستجيب كثير من مولدات AI لمصطلحات إشارة الجودة التي تُخبر النموذج بإنتاج أفضل مخرجاته. هذه مهمة بشكل خاص في Stable Diffusion:</p>
+
+      <ul>
+        <li><code dir="ltr">masterpiece</code>، <code dir="ltr">best quality</code>، <code dir="ltr">highly detailed</code></li>
+        <li><code dir="ltr">8k resolution</code>، <code dir="ltr">ultra-high definition</code></li>
+        <li><code dir="ltr">sharp focus</code>، <code dir="ltr">professional</code></li>
+        <li><code dir="ltr">award-winning photography</code></li>
+      </ul>
+
+      <p>في Midjourney وFlux، هذه الوسوم أقل ضرورة لأن هذه النماذج تستهدف الجودة العالية بشكل افتراضي. لكن في SD تُحدث فرقاً ملموساً.</p>
+
+      <h2 id="negative-prompts">البرومبتات السلبية: ما لا تريده</h2>
+
+      <p>يملك Stable Diffusion حقل <strong>برومبت سلبي</strong> منفصلاً حيث تُدرج العناصر التي تريد استبعادها. هذه إحدى أقوى ميزات SD.</p>
+
+      <p>خط برومبت سلبي قياسي:</p>
+      <p><code dir="ltr">blurry, low quality, bad anatomy, deformed fingers, watermark, text, logo, cropped, out of frame, duplicate, ugly, amateur, jpeg artifacts</code></p>
+
+      <p>أضف سلبيات مخصصة للنموذج لنقطة تفتيشك. لتوليد البورتريه، أدرج دائماً: <code dir="ltr">bad hands, missing fingers, extra fingers, fused fingers, mutated hands</code></p>
+
+      <p>يتعامل Midjourney مع هذا بـ <code dir="ltr">--no [term]</code> في نهاية برومبتك، وإن كان أقل قوة من تنفيذ SD.</p>
+
+      <h2 id="vocabulary">مرجع مصطلحات البرومبت</h2>
+
+      <p>جدول مرجعي لأكثر مصطلحات البرومبت موثوقية حسب الفئة. ضعه إشارة مرجعية واستخدمه كنقطة بداية عند بناء برومبتات جديدة.</p>
+
+      <div class="table-wrap">
+      <table class="comparison-table vocab-table">
+        <thead>
+          <tr><th>الفئة</th><th>مصطلحات مفيدة</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>الإضاءة</td><td dir="ltr">golden hour, blue hour, rim light, backlit, Rembrandt lighting, volumetric light, neon light, candlelight, overcast, harsh shadow, soft diffused light, chiaroscuro, bioluminescent</td></tr>
+          <tr><td>الأسلوب</td><td dir="ltr">cinematic, editorial, concept art, oil painting, watercolor, anime style, photorealistic, hyperrealistic, minimalist, surrealist, impressionist, Art Nouveau, dark fantasy, retrofuturism</td></tr>
+          <tr><td>المزاج</td><td dir="ltr">ethereal, dramatic, serene, ominous, nostalgic, whimsical, melancholic, epic, cozy, unsettling, mysterious, triumphant, desolate, magical</td></tr>
+          <tr><td>التركيب</td><td dir="ltr">close-up portrait, wide shot, bird's eye view, Dutch angle, rule of thirds, centered symmetrical, leading lines, negative space, shallow depth of field, deep focus, extreme close-up, establishing shot</td></tr>
+          <tr><td>اللون</td><td dir="ltr">warm tones, cool tones, muted palette, vibrant saturated, monochromatic, complementary colors, pastel, earth tones, jewel tones, high contrast, desaturated</td></tr>
+          <tr><td>الجودة (SD)</td><td dir="ltr">masterpiece, best quality, highly detailed, 8k resolution, ultra HD, sharp focus, professional, award-winning photography</td></tr>
+          <tr><td>الكاميرا/العدسة</td><td dir="ltr">85mm f/1.4, 24mm wide angle, macro lens, Canon EOS R5, Hasselblad, film grain, bokeh, tilt-shift, anamorphic lens flare, shallow depth of field</td></tr>
+        </tbody>
+      </table>
+      </div>
+
+      <h2 id="prompt-evolution">شاهد تطور برومبت: من أساسي إلى احترافي</h2>
+
+      <p>الطريقة الأكثر فعالية لفهم هندسة البرومبتات هي مشاهدة برومبت واحد ينمو من الغامض إلى الدقيق. كل مرحلة تُضيف طبقة واحدة من المعلومات.</p>
+
+      <div class="progression-stage">
+        <div class="stage-connector"><div class="stage-bubble">1</div></div>
+        <div class="stage-content">
+          <p class="stage-label">المرحلة 1 — غامق جداً</p>
+          <pre class="prompt-block" dir="ltr">a cat in a garden</pre>
+          <img src="/images/stage1-cat.jpeg" alt="نتيجة المرحلة 1: قطة عامة في حديقة — برومبت غامض يُنتج مخرجاً متوسطاً" width="800" height="600" loading="lazy" />
+          <p class="stage-note">عام. يختار الذكاء الاصطناعي المتوسط الإحصائي لـ"قطة في حديقة" — على الأرجح قطة منزلية، نهار، عشب أخضر. لا شيء مميز.</p>
+        </div>
+      </div>
+
+      <div class="progression-stage">
+        <div class="stage-connector"><div class="stage-bubble">2</div></div>
+        <div class="stage-content">
+          <p class="stage-label">المرحلة 2 — موضوع وإعداد محددان</p>
+          <pre class="prompt-block" dir="ltr">a fluffy orange tabby cat sitting among wildflowers in an English cottage garden</pre>
+          <img src="/images/stage2-cat.jpeg" alt="نتيجة المرحلة 2: قطة برتقالية ذات فروة كثيفة في حديقة كوخ إنجليزية مع زهور برية" width="800" height="600" loading="lazy" />
+          <p class="stage-note">أفضل. الآن لدينا فصيلة (برتقالية مخططة)، الفراء (كثيف)، الإجراء (جالسة)، بيئة محددة (زهور برية، حديقة كوخ إنجليزية). لكن لا يزال ليس لدينا توجيه فني.</p>
+        </div>
+      </div>
+
+      <div class="progression-stage">
+        <div class="stage-connector"><div class="stage-bubble">3</div></div>
+        <div class="stage-content">
+          <p class="stage-label">المرحلة 3 — إضافة الأسلوب</p>
+          <pre class="prompt-block" dir="ltr">a fluffy orange tabby cat sitting among wildflowers in an English cottage garden, watercolor illustration style, soft edges, delicate linework</pre>
+          <img src="/images/stage3-cat.jpeg" alt="نتيجة المرحلة 3: قطة بأسلوب توضيح ألوان مائية في حديقة كوخ" width="800" height="600" loading="lazy" />
+          <p class="stage-note">الآن لديها توجيه فني. كلمات الأسلوب تُعطي الذكاء الاصطناعي سجلاً بصرياً يعمل فيه. الموضوع هو نفسه لكن الأسلوب يُحوّله.</p>
+        </div>
+      </div>
+
+      <div class="progression-stage">
+        <div class="stage-connector"><div class="stage-bubble">4</div></div>
+        <div class="stage-content">
+          <p class="stage-label">المرحلة 4 — إضافة الإضاءة</p>
+          <pre class="prompt-block" dir="ltr">a fluffy orange tabby cat sitting among wildflowers in an English cottage garden, watercolor illustration style, soft edges, delicate linework, golden hour sunlight, dappled light filtering through trees, warm amber tones</pre>
+          <img src="/images/stage4-cat.jpeg" alt="نتيجة المرحلة 4: قطة ألوان مائية في حديقة بضوء ذهبي ومتقطع وألوان عنبر دافئة" width="800" height="600" loading="lazy" />
+          <p class="stage-note">الإضاءة تُحوّل المزاج بالكامل. نفس المشهد يشعر الآن بالدفء والحنين والسحر. الإضاءة هي في الغالب الإضافة ذات التأثير الأعلى التي يمكنك إضافتها إلى برومبت.</p>
+        </div>
+      </div>
+
+      <div class="progression-stage">
+        <div class="stage-connector"><div class="stage-bubble">5</div></div>
+        <div class="stage-content">
+          <p class="stage-label">المرحلة 5 — إضافة التركيب والمعاملات</p>
+          <pre class="prompt-block" dir="ltr">a fluffy orange tabby cat sitting among wildflowers in an English cottage garden, watercolor illustration style, soft edges, delicate linework, golden hour sunlight, dappled light filtering through trees, warm amber tones, shallow depth of field, rule of thirds composition --ar 3:2 --v 6.1</pre>
+          <img src="/images/stage5-cat.jpeg" alt="نتيجة المرحلة 5: بورتريه قطة ألوان مائية احترافي مع تركيب قاعدة الثلثات وعمق ميدان ضحل" width="800" height="600" loading="lazy" />
+          <p class="stage-note">نتيجة احترافية. مصطلحات التركيب تُوجّه تأطير الذكاء الاصطناعي. نسبة الأبعاد تتطابق مع الاستخدام المقصود. هذا نفس الموضوع في المرحلة 1 — تحوّل بخمس طبقات من التحديد.</p>
+        </div>
+      </div>
+
+      <h2 id="learn-fast">كيف تتعلم هندسة البرومبتات بسرعة</h2>
+
+      <h3>دراسة برومبتات موجودة</h3>
+      <p>مواقع مثل PromptHero وCivitai وLexica تتيح لك تصفح الفن بالذكاء الاصطناعي مع البرومبتات التي أنشأته. ادرس الواصفات التي تُنتج نتائج محددة. ابحث عن الأنماط في البرومبتات خلف الصور التي تعجبك.</p>
+
+      <h3>استخدام تحويل الصورة إلى برومبت</h3>
+      <p>من أفضل طرق التعلم هي تحليل الصور التي تحبها. <a href="/">ارفع أي صورة إلى ImageToPrompt</a> وافحص البرومبت المُنشأ بعناية. ستر كيف تُترجم الصفات البصرية المحددة إلى لغة برومبت. افعل هذا مع 10-20 صورة وستستوعب المصطلحات بسرعة.</p>
+
+      <h3>غيّر شيئاً واحداً في كل مرة</h3>
+      <p>عند التجريب، غيّر عنصراً واحداً فقط بين التوليدات. إذا غيّرت خمسة أشياء وتحسنت النتيجة، لا تعرف أي تغيير ساعد. إذا غيّرت شيئاً واحداً، تتعلم بالضبط ما يفعله.</p>
+
+      <h3>ابنِ مكتبة برومبت شخصية</h3>
+      <p>احتفظ بمستند يحتوي على العبارات والمجموعات التي تعمل بشكل جيد لديك. "بورتريه بإضاءة Rembrandt ذهبية خلفية" قد يكون شيئاً تستخدمه في 30٪ من برومبتاتك. وجود مكتبة من العبارات الموثوقة يُسرّع سير عملك بشكل كبير.</p>
+
+      <h2 id="fastest-path">أسرع طريق من الصفر إلى نتائج جيدة</h2>
+
+      <p>إذا كنت تبدأ للتو وتريد نتائج جيدة بسرعة، إليك الاختصار:</p>
+
+      <ol>
+        <li>ابحث عن 3-5 صور تمثل الأسلوب الذي تريد إنشاءه</li>
+        <li>ارفع كل واحدة إلى <a href="/">ImageToPrompt</a> لاستخراج البرومبت</li>
+        <li>حدد العناصر المشتركة عبر تلك البرومبتات — هذه مراسيك الأسلوبية</li>
+        <li>ابنِ برومبتك الخاص باستخدام تلك المراسي كأساس</li>
+        <li>ولّد، وقيّم، وعدّل عنصراً واحداً في كل مرة</li>
+      </ol>
+
+      <p>هذا النهج يختصر أشهراً من التجريب والخطأ بإعطائك مصطلحات حقيقية تعمل في برومبتات حقيقية، مشتقة من صور تعجبك فعلاً.</p>
+
+      <h2 id="exercises">3 تمارين للتطبيق الآن</h2>
+
+      <p>القراءة عن هندسة البرومبتات ذات فائدة محدودة. هذه التمارين تُبني حدساً حقيقياً بسرعة.</p>
+
+      <div class="exercise-block">
+        <h3>التمرين 1: التحليل والمقارنة</h3>
+        <p>ارفع صورتك المفضلة إلى <a href="/">ImageToPrompt</a>. اقرأ البرومبت المُنشأ بعناية. ثم أغلقه واكتب برومبتك الخاص لنفس الصورة من الصفر دون النظر إلى ناتج الذكاء الاصطناعي. قارن بين الاثنين — ماذا فاتك؟ ماذا فاته الذكاء الاصطناعي؟ الفجوات في كلا الاتجاهين تُعلّمك أكثر من أي درس.</p>
+      </div>
+
+      <div class="exercise-block">
+        <h3>التمرين 2: لعبة الكلمة الواحدة</h3>
+        <p>خذ أي برومبت يعمل وغيّر كلمة واحدة بالضبط. ولّد كلا الإصدارين وقارن. افعل هذا 5 مرات مع 5 كلمات مختلفة. ستتعلم بسرعة أي الواصفات لها أكبر تأثير بصري — وسيُفاجئك الأمر. في الغالب يكون مصطلح إضاءة أو كلمة مزاج واحدة، وليس وصف الموضوع، هو ما يُحدث الفرق الأكبر.</p>
+      </div>
+
+      <div class="exercise-block">
+        <h3>التمرين 3: نقل الأسلوب</h3>
+        <p>ولّد برومبتاً من صورة فوتوغرافية للمناظر الطبيعية باستخدام ImageToPrompt. الآن احتفظ بجميع مصطلحات الأسلوب والإضاءة واللون والمزاج من ذلك البرومبت — لكن استبدل الموضوع بشيء مختلف تماماً (شخص، مركبة، مبنى). شاهد كيف تنتقل اللغة البصرية إلى الموضوع الجديد. هكذا يبني فنانو الذكاء الاصطناعي المحترفون أساليب متسقة عبر موضوعات متنوعة.</p>
+      </div>
+
+      <div class="cta-box">
+        <h3>ابدأ التعلم بتحليل الصور الحقيقية</h3>
+        <p>ارفع أي صورة إلى ImageToPrompt وشاهد بالضبط كيف تُترجم الصفات البصرية إلى لغة برومبت. أسرع طريقة لتعلم هندسة البرومبتات.</p>
+        <a href="/" class="cta-btn">جرّب مولد الصور إلى برومبت المجاني ←</a>
+      </div>
+
+    </div>
+
+    <div class="author-bio">
+      <svg class="author-photo" width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="صورة المؤلف"><circle cx="32" cy="32" r="32" fill="#2a1f4e"/><circle cx="32" cy="26" r="11" fill="#7c6bc4"/><ellipse cx="32" cy="52" rx="18" ry="11" fill="#7c6bc4"/></svg>
+      <div class="author-info">
+        <p class="author-name">فريق ImageToPrompt</p>
+        <p class="author-desc">مهندسو برومبتات وفنانو ذكاء اصطناعي متخصصون في Midjourney و Stable Diffusion و Flux. نبني ImageToPrompt لجعل توليد الصور بالذكاء الاصطناعي في متناول الجميع.</p>
+        <a href="https://twitter.com/imagetoprompt" class="author-link">تابعنا على X ←</a>
+      </div>
+    </div>
+
+    <div class="related-posts">
+      <h2>أدلة ذات صلة</h2>
+      <div class="related-grid">
+        <a href="/ar/blog/tahwil-soura-ila-prompt/" class="related-card">
+          <p class="tag">دليل</p>
+          <h3>كيفية تحويل أي صورة إلى برومبت AI</h3>
+        </a>
+        <a href="/ar/blog/dalil-prompts-midjourney-2026/" class="related-card">
+          <p class="tag">Midjourney</p>
+          <h3>دليل برومبتات Midjourney الشامل 2026</h3>
+        </a>
+        <a href="/ar/blog/stable-diffusion-vs-midjourney-vs-dalle3/" class="related-card">
+          <p class="tag">مقارنة</p>
+          <h3>SD مقابل Midjourney مقابل DALL·E 3 مقابل Flux</h3>
+        </a>
+        <a href="/ar/blog/iada-handasa-prompts-souar-ia/" class="related-card">
+          <p class="tag">تقنية متقدمة</p>
+          <h3>استخراج برومبتات الذكاء الاصطناعي بالهندسة العكسية</h3>
+        </a>
+      </div>
+    </div>
+
+  </div>
+
+  <footer class="site-footer">
+    <div class="inner">
+      <p>© 2026 <a href="/" style="color:#8888bb;text-decoration:none">ImageToPrompt</a> · مولد برومبت AI مجاني</p>
+      <nav aria-label="تنقل التذييل">
+        <a href="/ar/">الرئيسية</a>
+        <a href="/ar/blog/">المدونة</a>
+        <a href="/midjourney-prompt-generator/">Midjourney</a>
+        <a href="/stable-diffusion-prompt-generator/">Stable Diffusion</a>
+        <a href="/privacy-policy/">سياسة الخصوصية</a>
+        <a href="/terms-of-service/">شروط الاستخدام</a>
+      </nav>
+    </div>
+  </footer>
+
+<script src="/newsletter-inject.js" defer></script>
+</body>
+</html>

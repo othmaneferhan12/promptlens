@@ -38,6 +38,19 @@ const STATIC_PAGES = [
   { path: '/es/', changefreq: 'monthly', priority: '0.8' },
   { path: '/ko/', changefreq: 'monthly', priority: '0.8' },
   { path: '/ar/', changefreq: 'monthly', priority: '0.8' },
+  { path: '/fr/', changefreq: 'monthly', priority: '0.8' },
+  // French blog posts
+  { path: '/fr/blog/convertir-image-en-prompt-ia/', changefreq: 'monthly', priority: '0.7' },
+  { path: '/fr/blog/guide-prompts-midjourney-2026/', changefreq: 'monthly', priority: '0.7' },
+  { path: '/fr/blog/stable-diffusion-vs-midjourney-vs-dalle3/', changefreq: 'monthly', priority: '0.7' },
+  { path: '/fr/blog/reverse-engineering-prompts-ia/', changefreq: 'monthly', priority: '0.7' },
+  { path: '/fr/blog/prompt-engineering-art-ia-debutants/', changefreq: 'monthly', priority: '0.7' },
+  // Arabic blog posts
+  { path: '/ar/blog/tahwil-soura-ila-prompt/', changefreq: 'monthly', priority: '0.7' },
+  { path: '/ar/blog/dalil-prompts-midjourney-2026/', changefreq: 'monthly', priority: '0.7' },
+  { path: '/ar/blog/stable-diffusion-vs-midjourney-vs-dalle3/', changefreq: 'monthly', priority: '0.7' },
+  { path: '/ar/blog/handasa-prompts-fan-ia/', changefreq: 'monthly', priority: '0.7' },
+  { path: '/ar/blog/iada-handasa-prompts-souar-ia/', changefreq: 'monthly', priority: '0.7' },
   // Web Stories
   { path: '/stories/image-to-prompt-how-it-works/', changefreq: 'monthly', priority: '0.6' },
   { path: '/stories/midjourney-prompt-tips/',        changefreq: 'monthly', priority: '0.6' },

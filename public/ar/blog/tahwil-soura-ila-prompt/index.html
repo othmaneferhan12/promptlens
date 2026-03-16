@@ -1,0 +1,478 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0" />
+  <title>كيفية تحويل أي صورة إلى برومبت ذكاء اصطناعي (دليل خطوة بخطوة) | ImageToPrompt</title>
+  <meta name="description" content="تعلّم كيفية تحويل أي صورة إلى برومبت محسّن لـ Midjourney و Stable Diffusion و DALL·E 3 و Flux. دليل عملي خطوة بخطوة مع أمثلة حقيقية." />
+  <link rel="canonical" href="https://www.imagetoprompt.dev/ar/blog/tahwil-soura-ila-prompt/" />
+  <link rel="alternate" hreflang="ar" href="https://www.imagetoprompt.dev/ar/blog/tahwil-soura-ila-prompt/" />
+  <link rel="alternate" hreflang="en" href="https://www.imagetoprompt.dev/blog/convert-image-to-ai-prompt/" />
+  <link rel="alternate" hreflang="fr" href="https://www.imagetoprompt.dev/fr/blog/convertir-image-en-prompt-ia/" />
+  <link rel="alternate" hreflang="x-default" href="https://www.imagetoprompt.dev/blog/convert-image-to-ai-prompt/" />
+  <meta property="og:title" content="كيفية تحويل أي صورة إلى برومبت ذكاء اصطناعي (دليل خطوة بخطوة)" />
+  <meta property="og:description" content="تعلّم كيفية تحويل أي صورة إلى برومبت محسّن لـ Midjourney و Stable Diffusion و DALL·E 3 و Flux." />
+  <meta property="og:url" content="https://www.imagetoprompt.dev/ar/blog/tahwil-soura-ila-prompt/" />
+  <meta property="og:type" content="article" />
+  <meta property="og:image" content="https://www.imagetoprompt.dev/og-image.png" />
+  <meta property="og:site_name" content="ImageToPrompt" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="كيفية تحويل أي صورة إلى برومبت ذكاء اصطناعي" />
+  <meta name="twitter:description" content="دليل خطوة بخطوة لتحويل أي صورة إلى برومبت محسّن لنماذج AI." />
+  <meta name="twitter:image" content="https://www.imagetoprompt.dev/og-image.png" />
+  <meta name="twitter:site" content="@imagetoprompt" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-icon-180x180.png" />
+  <meta name="msapplication-config" content="/browserconfig.xml" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="/fonts/space-grotesk-700.woff2" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="/fonts/inter-400.woff2" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Arabic:wght@400;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/blog.css" />
+  <style>
+    body { font-family: 'Noto Sans Arabic', 'Space Grotesk', sans-serif; }
+    .article-body { direction: rtl; text-align: right; }
+    code, pre { direction: ltr; text-align: left; display: inline-block; }
+    .toc ol, .toc ul { padding-right: 1.5rem; padding-left: 0; }
+    .article-body ul, .article-body ol { margin-right: 1.5rem; margin-left: 0; }
+    .breadcrumb { direction: rtl; }
+  </style>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "كيفية تحويل أي صورة إلى برومبت ذكاء اصطناعي (دليل خطوة بخطوة)",
+    "description": "تعلّم كيفية تحويل أي صورة إلى برومبت محسّن لـ Midjourney و Stable Diffusion و DALL·E 3 و Flux. دليل عملي خطوة بخطوة مع أمثلة حقيقية.",
+    "image": "https://www.imagetoprompt.dev/og-image.png",
+    "datePublished": "2026-03-10",
+    "dateModified": "2026-03-15",
+    "inLanguage": "ar",
+    "author": {
+      "@type": "Person",
+      "name": "ImageToPrompt Team",
+      "url": "https://www.imagetoprompt.dev/"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "ImageToPrompt",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://www.imagetoprompt.dev/favicon.svg"
+      }
+    },
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https://www.imagetoprompt.dev/ar/blog/tahwil-soura-ila-prompt/"
+    }
+  }
+  </script>
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="inner">
+      <a href="/" class="site-logo"><svg viewBox="0 0 32 32" width="32" height="32" fill="none" style="display:inline-block;vertical-align:middle;margin-left:6px"><rect x="2" y="2" width="28" height="28" rx="8" fill="url(#aigrad-h)"/><circle cx="16" cy="16" r="3.5" fill="#fff" fill-opacity=".95"/><circle cx="7" cy="10" r="2" fill="#e040fb"/><circle cx="25" cy="10" r="2" fill="#00e5ff"/><circle cx="7" cy="22" r="2" fill="#00e5ff"/><circle cx="25" cy="22" r="2" fill="#e040fb"/><circle cx="16" cy="5" r="2" fill="#e040fb" fill-opacity=".8"/><circle cx="16" cy="27" r="2" fill="#00e5ff" fill-opacity=".8"/><line x1="16" y1="12.5" x2="16" y2="7" stroke="#e040fb" stroke-width="1" stroke-opacity=".6"/><line x1="16" y1="19.5" x2="16" y2="25" stroke="#00e5ff" stroke-width="1" stroke-opacity=".6"/><line x1="12.8" y1="14.2" x2="9" y2="11.5" stroke="#e040fb" stroke-width="1" stroke-opacity=".6"/><line x1="19.2" y1="14.2" x2="23" y2="11.5" stroke="#00e5ff" stroke-width="1" stroke-opacity=".6"/><line x1="12.8" y1="17.8" x2="9" y2="20.5" stroke="#00e5ff" stroke-width="1" stroke-opacity=".6"/><line x1="19.2" y1="17.8" x2="23" y2="20.5" stroke="#e040fb" stroke-width="1" stroke-opacity=".6"/><defs><linearGradient id="aigrad-h" x1="0" y1="0" x2="32" y2="32" gradientUnits="userSpaceOnUse"><stop offset="0%" stop-color="#1a0a2e"/><stop offset="100%" stop-color="#0a1628"/></linearGradient></defs></svg>ImageTo<span class="accent">Prompt</span></a>
+      <nav class="site-nav" aria-label="التنقل الرئيسي">
+        <a href="/ar/">الرئيسية</a>
+        <a href="/ar/blog/" class="active">المدونة</a>
+        <a href="/ar/#faq">الأسئلة الشائعة</a>
+        <span style="display:inline-flex;align-items:center;gap:4px;font-size:0.75rem;color:#8888bb">
+          <a href="/blog/convert-image-to-ai-prompt/" style="color:#8888bb;text-decoration:none" title="English">EN</a><span style="color:rgba(255,255,255,0.2)">|</span><a href="/fr/blog/convertir-image-en-prompt-ia/" style="color:#8888bb;text-decoration:none" title="Français">FR</a><span style="color:rgba(255,255,255,0.2)">|</span><a href="/ar/blog/tahwil-soura-ila-prompt/" style="color:#e040fb;text-decoration:none;font-weight:600" title="العربية">AR</a>
+        </span>
+        <a href="/" style="background:linear-gradient(135deg,#e040fb,#00e5ff);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;font-weight:600">جرّب مجاناً ←</a>
+      </nav>
+    </div>
+  </header>
+
+  <nav class="breadcrumb" aria-label="مسار التنقل">
+    <a href="/ar/">الرئيسية</a><span class="sep">›</span>
+    <a href="/ar/blog/">المدونة</a><span class="sep">›</span>
+    <span>كيفية تحويل أي صورة إلى برومبت</span>
+  </nav>
+
+  <div class="page-wrapper">
+
+    <header class="article-header">
+      <p class="article-tag">دليل خطوة بخطوة</p>
+      <h1>كيفية تحويل أي صورة إلى برومبت ذكاء اصطناعي (دليل خطوة بخطوة)</h1>
+      <div class="article-meta">
+        <span>مارس 2026</span>
+        <span class="dot">·</span>
+        <span>8 دقائق قراءة</span>
+        <span class="dot">·</span>
+        <span>Midjourney · Stable Diffusion · Flux · DALL·E 3</span>
+        <span class="dot">·</span>
+        <span>محدّث مارس 2026</span>
+      </div>
+    </header>
+
+    <div class="article-body">
+
+      <p>عثرت على صورة تعجبك — ربما هي قطعة فنية من إنتاج الذكاء الاصطناعي، أو صورة فوتوغرافية بإضاءة رائعة، أو رسم توضيحي بأسلوب مميز. والآن تريد إنشاء شيء مشابه باستخدام Midjourney أو Stable Diffusion أو Flux. المشكلة: لا تعرف أي برومبت أنتج هذه الصورة أصلاً.</p>
+
+      <nav class="toc" aria-label="محتويات المقال">
+        <details open>
+          <summary>في هذا الدليل</summary>
+          <ol>
+            <li><a href="#what-is-conversion">ما هو تحويل الصورة إلى برومبت؟</a></li>
+            <li><a href="#how-tools-work">كيف تعمل أدوات التحويل؟</a></li>
+            <li><a href="#step1-image">الخطوة 1: اختيار الصورة المناسبة</a></li>
+            <li><a href="#step2-model">الخطوة 2: اختيار نموذج AI الهدف</a></li>
+            <li><a href="#step3-upload">الخطوة 3: الرفع والتحليل</a></li>
+            <li><a href="#real-examples">أمثلة حقيقية: التحويل في العمل</a></li>
+            <li><a href="#step4-refine">الخطوة 4: تحسين البرومبت المُنشأ</a></li>
+            <li><a href="#step5-iterate">الخطوة 5: التجريب والتكرار</a></li>
+            <li><a href="#common-mistakes">5 أخطاء شائعة يجب تجنّبها</a></li>
+            <li><a href="#tips">نصائح للحصول على نتائج أفضل</a></li>
+            <li><a href="#faq">أسئلة شائعة</a></li>
+          </ol>
+        </details>
+      </nav>
+
+      <p>هذا بالضبط ما يحله تحويل الصورة إلى برومبت. في هذا الدليل، ستتعلم كيفية تحويل أي صورة إلى برومبت AI جاهز للاستخدام، وأي الأدوات تستخدم، وكيف تحصل على أفضل النتائج لكل نموذج رئيسي.</p>
+
+      <img src="/images/interface-annotated.jpeg" alt="واجهة أداة ImageToPrompt تُظهر منطقة رفع الصورة ومحدد النموذج وخيارات الأسلوب وناتج البرومبت" width="1200" height="700" loading="eager" style="width:100%;border-radius:0.75rem;display:block;margin:1.5rem 0;" />
+
+      <div class="callout">
+        <p><strong>بداية سريعة:</strong> إذا أردت تحويل صورة الآن فوراً، <a href="/">استخدم مولد البرومبت المجاني</a>. ارفع صورتك، اختر النموذج، واحصل على برومبتك في أقل من 10 ثوانٍ. لا حاجة لحساب.</p>
+      </div>
+
+      <h2 id="what-is-conversion">ما هو تحويل الصورة إلى برومبت؟</h2>
+
+      <p>تحويل الصورة إلى برومبت هو عملية تحليل صورة بصرية وتوليد وصف نصي (برومبت) يُنتج، عند إدخاله في مولد صور AI، نتيجة مشابهة بصرياً. إنها بشكل جوهري هندسة عكسية — الانتقال من الصورة إلى التعليمات النصية.</p>
+
+      <p>تفيد هذه العملية في عدة سيناريوهات:</p>
+      <ul>
+        <li>وجدت صورة مُنشأة بالذكاء الاصطناعي عبر الإنترنت وتريد إعادة إنشاء أسلوبها</li>
+        <li>لديك صورة مرجعية وتريد من AI إنشاء شيء بنفس المزاج أو الجماليات</li>
+        <li>تريد فهم ما يجعل أسلوباً بصرياً معيناً يعمل حتى تتمكن من كتابة برومبتات أفضل يدوياً</li>
+        <li>تبني هوية بصرية متسقة وتحتاج إلى أسلوب برومبت قابل لإعادة الاستخدام من صورة مرجعية</li>
+      </ul>
+
+      <h2 id="how-tools-work">كيف تعمل أدوات التحويل؟</h2>
+
+      <p>تستخدم أدوات تحويل الصورة إلى برومبت الحديثة ذكاء اصطناعياً للرؤية الحاسوبية — عادةً نماذج متعددة الوسائط الكبيرة مثل Claude أو GPT-4V — لتحليل الصورة. يفحص الذكاء الاصطناعي أبعاداً متعددة في الصورة في آنٍ واحد:</p>
+
+      <ul>
+        <li><strong>الموضوع والمحتوى:</strong> ما يوجد فعلياً في الصورة من أشياء وأشخاص ومشاهد وحيوانات</li>
+        <li><strong>التركيب:</strong> قاعدة الثلثات والتماثل والمنظور وعمق الميدان والإطار</li>
+        <li><strong>الإضاءة:</strong> طبيعية أم اصطناعية، ناعمة أم قاسية، الاتجاه ودرجة حرارة اللون والظلال</li>
+        <li><strong>لوحة الألوان:</strong> الألوان السائدة ومستويات التشبع والدفء مقابل البرود والتباين</li>
+        <li><strong>الأسلوب والوسيط:</strong> فوتوغرافي، لوني، رقمي، توضيحي، سينمائي</li>
+        <li><strong>المزاج والجو:</strong> النبرة العاطفية ووقت اليوم والظروف البيئية</li>
+        <li><strong>التفاصيل التقنية:</strong> البعد البؤري الظاهر وزاوية الكاميرا وأسلوب التصيير</li>
+      </ul>
+
+      <p>تُجمَع كل هذه المعطيات في برومبت نصي مُنسَّق لنموذج AI الهدف الذي اخترته — لأن Midjourney وStable Diffusion وFlux تملك متطلبات صياغة مختلفة تماماً.</p>
+
+      <h2 id="step1-image">الخطوة 1: اختيار الصورة المناسبة</h2>
+
+      <p>لا تُنتج جميع الصور برومبتات مفيدة بالتساوي. إليك ما يعمل بشكل أفضل:</p>
+
+      <h3>الصور التي تُحوَّل بشكل جيد</h3>
+      <ul>
+        <li><strong>موضوعات واضحة بأسلوب مميز:</strong> الصور التي يكون فيها الأسلوب البصري مقصوداً — التصوير السينمائي، الرسوم الخيالية، فن المفاهيم</li>
+        <li><strong>الصور المُنشأة بالذكاء الاصطناعي:</strong> لديها بالفعل "جودة شبيهة بالبرومبت" — الجماليات مقصودة</li>
+        <li><strong>التصوير الفوتوغرافي الاحترافي:</strong> صور الاستوديو، والتصوير الطبيعي، والتصوير التحريري لها خصائص يمكن وصفها باستمرار</li>
+        <li><strong>الرسوم التوضيحية الرقمية:</strong> الأنيمي والكوميكس وفن المفاهيم — أساليب يفهمها مولدو AI جيداً</li>
+      </ul>
+
+      <h3>الصور الأصعب تحويلاً</h3>
+      <ul>
+        <li>لقطات فوتوغرافية عشوائية بموضوعات مختلطة بدون موضوع بصري واضح</li>
+        <li>صور تحتوي على نصوص كثيرة (شعارات، أغلفة كتب)</li>
+        <li>صور تجريدية أو غير تمثيلية جداً</li>
+        <li>صور منخفضة الدقة أو مضغوطة بشدة</li>
+      </ul>
+
+      <h2 id="step2-model">الخطوة 2: اختيار نموذج AI الهدف</h2>
+
+      <p>هذه هي الخطوة الأهم التي يتخطاها معظم المبتدئين. لكل مولد صور AI لغة برومبت مختلفة تماماً. برومبت Midjourney الرائع سينتج نتائج متواضعة في Stable Diffusion والعكس صحيح.</p>
+
+      <div class="table-wrap">
+      <table class="comparison-table">
+        <thead>
+          <tr>
+            <th>الميزة</th>
+            <th>Midjourney</th>
+            <th>Stable Diffusion</th>
+            <th>Flux</th>
+            <th>DALL·E 3</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>أسلوب البرومبت</td>
+            <td>مفصولة بفاصلة + معاملات</td>
+            <td>وسوم بأوزان (syntax:1.2)</td>
+            <td>لغة طبيعية مفصّلة</td>
+            <td>جمل كاملة</td>
+          </tr>
+          <tr>
+            <td>النصوص السلبية</td>
+            <td><code dir="ltr">--no flag</code></td>
+            <td>حقل مستقل</td>
+            <td>غير مدعومة</td>
+            <td>غير مدعومة</td>
+          </tr>
+          <tr>
+            <td>المعاملات الرئيسية</td>
+            <td><code dir="ltr">--ar, --v, --style, --chaos</code></td>
+            <td>CFG scale, steps, sampler</td>
+            <td>بسيطة</td>
+            <td>بسيطة</td>
+          </tr>
+          <tr>
+            <td>الأفضل لـ</td>
+            <td>فني، سينمائي</td>
+            <td>تحكم تقني، نماذج مخصصة</td>
+            <td>واقعية فوتوغرافية</td>
+            <td>نص في الصور، اتباع التعليمات</td>
+          </tr>
+          <tr>
+            <td>مثال مختصر</td>
+            <td><code dir="ltr">portrait, golden hour --ar 2:3 --v 6.1</code></td>
+            <td><code dir="ltr">(portrait:1.2), golden hour, (bokeh:0.8)</code></td>
+            <td><code dir="ltr">Photograph of portrait at golden hour, Canon 85mm f/1.4</code></td>
+            <td>صورة بورتريه فوتوغرافية ملتقطة خلال الساعة الذهبية بضوء دافئ وناعم</td>
+          </tr>
+        </tbody>
+      </table>
+      </div>
+
+      <h3>Midjourney</h3>
+      <p>تستخدم برومبتات Midjourney عبارات وصفية مفصولة بفاصلة متبوعة بمعاملات. يبدو برومبت Midjourney الجيد هكذا: <code dir="ltr">cinematic portrait of a woman in golden hour light, shallow depth of field, film grain, warm tones --ar 3:2 --v 6.1 --style raw</code></p>
+
+      <h3>Stable Diffusion</h3>
+      <p>يستخدم Stable Diffusion صياغة أوزان بأقواس ونقطتين: <code dir="ltr">(masterpiece:1.2), highly detailed portrait, golden hour lighting, (bokeh:0.8)</code> — بالإضافة إلى حقل برومبت سلبي منفصل.</p>
+
+      <h3>Flux</h3>
+      <p>يستجيب Flux من Black Forest Labs بشكل أفضل للغة الطبيعية التفصيلية. يتعامل جيداً مع الأوصاف الطويلة والدقيقة دون الحاجة إلى صياغة خاصة.</p>
+
+      <h3>DALL·E 3</h3>
+      <p>يعمل DALL·E 3 بشكل أفضل مع الجمل الطبيعية الكاملة. يفهم السياق والنية، لذا صِف ما تريد رؤيته بوضوح ومباشرة.</p>
+
+      <div class="cta-inline">
+        <p>جرّبه بنفسك — ارفع أي صورة واحصل على برومبت AI محسّن في ثوانٍ.</p>
+        <a href="/" class="cta-btn-sm">جرّب مجاناً ←</a>
+      </div>
+
+      <h2 id="step3-upload">الخطوة 3: الرفع والتحليل</h2>
+
+      <img src="/images/interface-annotated.jpeg" alt="واجهة ImageToPrompt مع تعليقات توضيحية — منطقة الرفع ومحدد النموذج ومحدد الأسلوب وزر التوليد ومنطقة الناتج" width="1200" height="700" loading="lazy" style="width:100%;border-radius:0.5rem;display:block;margin:1.5rem 0;" />
+
+      <p>مع <a href="/">ImageToPrompt</a>، العملية بسيطة للغاية:</p>
+
+      <ol>
+        <li><strong>ارفع صورتك</strong> — اسحب وأفلت، أو انقر للتصفح، أو الصق بـ <code dir="ltr">Ctrl+V</code></li>
+        <li><strong>اختر نموذجك الهدف</strong> — اختر من Midjourney أو Stable Diffusion أو Flux أو DALL-E 3 أو غيرها</li>
+        <li><strong>اختر الأسلوب</strong> — سينمائي، تقني، فني، بسيط، ملحمي، أو فوتوغرافي</li>
+        <li><strong>انقر على توليد</strong> — يحلل Claude AI الصورة وينتج برومبتك</li>
+      </ol>
+
+      <p>يستغرق التحليل حوالي 5-10 ثوانٍ وينتج:</p>
+      <ul>
+        <li>برومبت رئيسي منسَّق للنموذج الذي اخترته</li>
+        <li>برومبت سلبي (لنماذج Stable Diffusion)</li>
+        <li>نسخة إبداعية تُعيد تفسير الصورة</li>
+        <li>لوحة ألوان مستخرجة ووسوم أسلوب ووسوم جودة</li>
+        <li>نسبة أبعاد مقترحة</li>
+      </ul>
+
+      <h2 id="real-examples">أمثلة حقيقية: التحويل في العمل</h2>
+
+      <p>إليك كيف يؤدي ImageToPrompt على أنواع مختلفة من الصور — من الصور الفوتوغرافية إلى الفن الرقمي إلى الصور المُنشأة بالذكاء الاصطناعي.</p>
+
+      <div class="example-grid">
+        <div class="example-block">
+          <h3>مثال 1: صورة فوتوغرافية ← برومبت</h3>
+          <div class="comparison-flow">
+            <div class="comparison-card">
+              <span class="comparison-badge badge-original">الأصل</span>
+              <img src="/images/ex1-original-photo.jpeg" alt="الصورة الفوتوغرافية الأصلية — الصورة المصدر لاستخراج برومبت AI" width="800" height="600" loading="lazy" />
+            </div>
+            <span class="comparison-arrow">←</span>
+            <div class="comparison-card">
+              <span class="comparison-badge badge-tool">ناتج الأداة</span>
+              <img src="/images/ex1-tool-output.jpeg" alt="ناتج ImageToPrompt يُظهر برومبت Midjourney المُنشأ" width="800" height="600" loading="lazy" />
+            </div>
+            <span class="comparison-arrow">←</span>
+            <div class="comparison-card">
+              <span class="comparison-badge badge-recreation">إعادة الإنشاء</span>
+              <img src="/images/ex1-recreated.jpeg" alt="الصورة المُعاد إنشاؤها بالذكاء الاصطناعي باستخدام البرومبت المستخرج" width="800" height="600" loading="lazy" />
+            </div>
+          </div>
+          <p>اكتشفت الأداة الإضاءة الدافئة لساعة الذهب، والتركيب البانورامي الواسع، والأسلوب السينمائي للتصوير. تضمّن برومبت Midjourney المُنشأ <code dir="ltr">--ar 16:9</code> و<code dir="ltr">golden hour lighting</code> — كلاهما حاسمان لإعادة إنتاج الجو الأصلي.</p>
+        </div>
+
+        <div class="example-block">
+          <h3>مثال 2: رسم توضيحي رقمي ← برومبت</h3>
+          <div class="comparison-flow">
+            <div class="comparison-card">
+              <span class="comparison-badge badge-original">الأصل</span>
+              <img src="/images/ex2-original-illustration.jpeg" alt="الرسم التوضيحي الرقمي الأصلي — صورة شخصية خيالية مصدر" width="800" height="600" loading="lazy" />
+            </div>
+            <span class="comparison-arrow">←</span>
+            <div class="comparison-card">
+              <span class="comparison-badge badge-tool">ناتج الأداة</span>
+              <img src="/images/ex2-tool-output.jpeg" alt="ناتج ImageToPrompt لاستخراج برومبت الرسم التوضيحي الرقمي" width="800" height="600" loading="lazy" />
+            </div>
+            <span class="comparison-arrow">←</span>
+            <div class="comparison-card">
+              <span class="comparison-badge badge-recreation">إعادة الإنشاء</span>
+              <img src="/images/ex2-recreated.jpeg" alt="الرسم التوضيحي المُعاد إنشاؤه بالذكاء الاصطناعي باستخدام البرومبت المستخرج" width="800" height="600" loading="lazy" />
+            </div>
+          </div>
+          <p>بالنسبة للرسوم التوضيحية الرقمية، يتفوق الذكاء الاصطناعي في تحديد الكلمات الدالة على الأسلوب مثل <code dir="ltr">concept art</code> و<code dir="ltr">digital painting</code> وأوصاف لوحة الألوان المحددة. هذه المراسي الأسلوبية هي ما يجعل الصورة المُعاد إنشاؤها تبدو متسقة مع الأصل.</p>
+        </div>
+
+        <div class="example-block">
+          <h3>مثال 3: فن مُنشأ بالذكاء الاصطناعي ← برومبت</h3>
+          <div class="comparison-flow">
+            <div class="comparison-card">
+              <span class="comparison-badge badge-original">الأصل</span>
+              <img src="/images/ex3-original-ai-art.jpeg" alt="الفن الأصلي المُنشأ بالذكاء الاصطناعي المستخدم كمرجع" width="800" height="600" loading="lazy" />
+            </div>
+            <span class="comparison-arrow">←</span>
+            <div class="comparison-card">
+              <span class="comparison-badge badge-tool">ناتج الأداة</span>
+              <img src="/images/ex3-tool-output.jpeg" alt="ناتج ImageToPrompt لتحليل الفن المُنشأ بالذكاء الاصطناعي" width="800" height="600" loading="lazy" />
+            </div>
+            <span class="comparison-arrow">←</span>
+            <div class="comparison-card">
+              <span class="comparison-badge badge-recreation">إعادة الإنشاء</span>
+              <img src="/images/ex3-recreated.jpeg" alt="الصورة المُعاد إنشاؤها بالذكاء الاصطناعي باستخدام البرومبت المستعاد هندسياً" width="800" height="600" loading="lazy" />
+            </div>
+          </div>
+          <p>تحتوي الصور المُنشأة بالذكاء الاصطناعي في الغالب على توقيعات أسلوبية دقيقة من نموذجها الأصلي. يُحدد ImageToPrompt هذه التوقيعات ويُنشئ برومبتات تحافظ عليها — مفيدة عندما تريد تمديد أعمال فنية AI الموجودة أو تنويعها.</p>
+        </div>
+      </div>
+
+      <h2 id="step4-refine">الخطوة 4: تحسين البرومبت المُنشأ</h2>
+
+      <p>البرومبتات المُنشأة بالذكاء الاصطناعي هي نقاط بداية ممتازة، لكنها نادراً ما تكون مثالية في المحاولة الأولى. إليك كيفية تحسينها:</p>
+
+      <h3>إضافة أو إزالة التفاصيل</h3>
+      <p>إذا كانت نتائجك عامة جداً، أضف المزيد من التفاصيل المحددة. وإذا كانت مقيّدة جداً، احذف بعض الأوصاف. على سبيل المثال، "امرأة" أكثر غموضاً من "امرأة في الثلاثينيات من عمرها بشعر أحمر مجعّد."</p>
+
+      <h3>ضبط وزن الأسلوب</h3>
+      <p>في Stable Diffusion، زِد الوزن على عناصر الأسلوب الأكثر أهمية. في Midjourney، جرّب إضافة <code dir="ltr">--style raw</code> للتفسير الأكثر حرفية أو زيادة <code dir="ltr">--stylize</code> للمزيد من البريق الفني.</p>
+
+      <h3>التكرار مع ميزة الإعادة الإبداعية</h3>
+      <p>يُنشئ ImageToPrompt برومبت "إعادة إبداعية" جنباً إلى جنب مع البرومبت الرئيسي. يُقدم هذا تفسيراً بديلاً يفتح في الغالب اتجاهات إبداعية غير متوقعة.</p>
+
+      <h2 id="step5-iterate">الخطوة 5: التجريب والتكرار</h2>
+
+      <p>الصق برومبتك في مولد AI الهدف وأنشئ 3-4 تنويعات. لا تتوقف عند واحدة. لدى معظم مولدات AI عشوائية متأصلة — تشغيل نفس البرومبت عدة مرات يُعطيك مجموعة من النتائج للاختيار منها.</p>
+
+      <p>عندما تجد نتيجة تعجبك، لاحظ ما نجح وما لم ينجح. عدّل عناصر محددة في البرومبت — استبدل وصفاً واحداً في كل مرة حتى تفهم ما يُحرّك كل تغيير بصري.</p>
+
+      <h2 id="common-mistakes">5 أخطاء شائعة عند تحويل الصور إلى برومبتات</h2>
+
+      <p>هذه هي الأخطاء التي تُنتج باستمرار نتائج مخيبة للآمال — وكيفية تجنّبها.</p>
+
+      <ol class="mistakes-list">
+        <li>
+          <strong>استخدام صور مصدر منخفضة الدقة أو ضبابية.</strong> الذكاء الاصطناعي لا يستطيع استخراج ما هو غير مرئي. الصورة الضبابية أو المضغوطة تُعطي النموذج أقل ما يعمل معه، مُنتِجةً برومبتات غامضة. استخدم أوضح وأعلى دقة للصورة المصدر.
+        </li>
+        <li>
+          <strong>تجاهل محدد النموذج.</strong> برومبت منسَّق لـ Midjourney لن يعمل جيداً في Stable Diffusion والعكس صحيح. الصياغة ونظام الأوزان وعلامات المعاملات مختلفة تماماً. اختر دائماً نموذجك الهدف قبل التوليد.
+        </li>
+        <li>
+          <strong>استخدام الناتج الخام بدون تحرير.</strong> البرومبت المُنشأ هو نقطة بداية قوية، وليس منتجاً نهائياً. اقرأه بشكل نقدي — هل يتطابق كل مصطلح مع ما تريده؟ احذف الأوصاف غير المنطبقة. أضف العناصر التي فاتها الذكاء الاصطناعي.
+        </li>
+        <li>
+          <strong>عدم الاختبار بتوليدات متعددة.</strong> توليد صور الذكاء الاصطناعي احتمالي. أي برومبت منفرد يمكن أن يُنتج نتائج رائعة أو متواضعة بسبب عشوائية البذرة. ولّد 4-8 تنويعات قبل الاستنتاج بأن البرومبت لا يعمل.
+        </li>
+        <li>
+          <strong>نسخ البرومبتات بدون فهمها.</strong> إذا كنت لا تعرف لماذا يوجد مصطلح في برومبتك، فلن تتمكن من تحسينه عندما تكون النتائج قاصرة. خذ وقتاً لفهم ما يفعله كل وصف — ينعكس ذلك إيجاباً في كل توليد مستقبلي.
+        </li>
+      </ol>
+
+      <h2 id="tips">نصائح للحصول على نتائج أفضل</h2>
+
+      <h3>استخدم صور مصدر عالية الجودة</h3>
+      <p>يحلل الذكاء الاصطناعي كل تفصيلة في صورتك المصدر. الصورة عالية الجودة بتركيب واضح تُعطي المزيد من المواد للعمل معها. إذا كانت مصدرك ضبابية أو منخفضة التباين، سيكون البرومبت الناتج أقل تحديداً.</p>
+
+      <h3>جرّب أوضاع الأسلوب المتعددة</h3>
+      <p>أوضاع أسلوب ImageToPrompt (سينمائي، تقني، فني، إلخ) تؤثر على كيفية صياغة البرومبت. البرومبت السينمائي يُؤكد الدراما والجو؛ البرومبت التقني يُعطي الأولوية للدقة والواقعية. نفس الصورة ستُنتج برومبتات مختلفة ومفيدة في كل وضع.</p>
+
+      <h3>استخدم ناتج لوحة الألوان</h3>
+      <p>تُظهر لوحة الألوان المستخرجة رموز hex السائدة في صورتك. يمكنك الإشارة إليها مباشرةً في البرومبتات التي تدعم وصف الألوان: "لوحة ألوان من الفيروزي الباهت والعنبر الدافئ" أو "يسيطر عليها اللون النيلي العميق وألوان الذهب الوردي."</p>
+
+      <h3>استخرج الأسلوب وليس المحتوى</h3>
+      <p>استخدام قوي لتحويل الصور إلى برومبتات: لا تريد إعادة إنشاء الصورة — تريد استخراج أسلوبها وتطبيقه على شيء آخر. ولّد برومبتاً من صورتك المرجعية، ثم استبدل الموضوع. على سبيل المثال: خذ الإضاءة والمزاج من صورة غروب درامية، لكن استبدل "مشهد جبلي" بـ "أفق المدينة."</p>
+
+      <div class="cta-box">
+        <h3>حوّل صورتك الأولى مجاناً</h3>
+        <p>ارفع أي صورة واحصل على برومبت محسّن لـ Midjourney أو Stable Diffusion أو Flux أو DALL·E 3 — لا تسجيل مطلوب.</p>
+        <a href="/" class="cta-btn">جرّب ImageToPrompt مجاناً ←</a>
+      </div>
+
+      <h2 id="faq">أسئلة شائعة</h2>
+
+      <h3>هل يمكنني تحويل لقطات الشاشة أو تصاميم واجهة المستخدم؟</h3>
+      <p>نعم، وإن كانت النتائج ستكون أكثر تجريداً. تميل لقطات الشاشة وتصاميم UI إلى توليد برومبتات تُركّز على التخطيط ونظام الألوان والأسلوب البصري بدلاً من التفاصيل الفوتوغرافية. مفيدة لإنشاء مراجع أسلوبية.</p>
+
+      <h3>هل سيُعيد البرومبت المُنشأ إنشاء الصورة بشكل طبيعي؟</h3>
+      <p>لا — وهذا مقصود. مولدات صور الذكاء الاصطناعي احتمالية. حتى مع برومبت مثالي، ستحصل على تنويع للأصل، وليس نسخة طبق الأصل. الهدف هو التقاط الجوهر البصري، وليس إعادة إنتاج البكسلات.</p>
+
+      <h3>ماذا لو كان البرومبت طويلاً جداً؟</h3>
+      <p>لدى معظم مولدات AI حدود للرموز. بالنسبة لـ Stable Diffusion، قد يتم اقتطاع البرومبتات التي تتجاوز 75 رمزاً (حوالي 60 كلمة). ركّز على العناصر الأهم أولاً. بالنسبة لـ Midjourney وFlux، تُعامَل البرومبتات الأطول بشكل أفضل.</p>
+
+    </div>
+
+    <div class="author-bio">
+      <svg class="author-photo" width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="صورة المؤلف"><circle cx="32" cy="32" r="32" fill="#2a1f4e"/><circle cx="32" cy="26" r="11" fill="#7c6bc4"/><ellipse cx="32" cy="52" rx="18" ry="11" fill="#7c6bc4"/></svg>
+      <div class="author-info">
+        <p class="author-name">فريق ImageToPrompt</p>
+        <p class="author-desc">مهندسو برومبتات وفنانو ذكاء اصطناعي متخصصون في Midjourney و Stable Diffusion و Flux. نبني ImageToPrompt لجعل توليد الصور بالذكاء الاصطناعي في متناول الجميع.</p>
+        <a href="https://twitter.com/imagetoprompt" class="author-link">تابعنا على X ←</a>
+      </div>
+    </div>
+
+    <div class="related-posts">
+      <h2>أدلة ذات صلة</h2>
+      <div class="related-grid">
+        <a href="/ar/blog/iada-handasa-prompts-souar-ia/" class="related-card">
+          <p class="tag">برنامج تعليمي</p>
+          <h3>كيفية استخراج برومبتات صور الذكاء الاصطناعي</h3>
+        </a>
+        <a href="/ar/blog/dalil-prompts-midjourney-2026/" class="related-card">
+          <p class="tag">Midjourney</p>
+          <h3>دليل برومبتات Midjourney الشامل 2026</h3>
+        </a>
+        <a href="/ar/blog/handasa-prompts-fan-ia/" class="related-card">
+          <p class="tag">مبتدئون</p>
+          <h3>هندسة البرومبتات لفن الذكاء الاصطناعي</h3>
+        </a>
+        <a href="/ar/blog/stable-diffusion-vs-midjourney-vs-dalle3/" class="related-card">
+          <p class="tag">مقارنة</p>
+          <h3>مقارنة SD مقابل Midjourney مقابل DALL·E 3 مقابل Flux</h3>
+        </a>
+      </div>
+    </div>
+
+  </div>
+
+  <footer class="site-footer">
+    <div class="inner">
+      <p>© 2026 <a href="/" style="color:#8888bb;text-decoration:none">ImageToPrompt</a> · مولد برومبت AI مجاني</p>
+      <nav aria-label="تنقل التذييل">
+        <a href="/ar/">الرئيسية</a>
+        <a href="/ar/blog/">المدونة</a>
+        <a href="/midjourney-prompt-generator/">Midjourney</a>
+        <a href="/stable-diffusion-prompt-generator/">Stable Diffusion</a>
+        <a href="/privacy-policy/">سياسة الخصوصية</a>
+        <a href="/terms-of-service/">شروط الاستخدام</a>
+      </nav>
+    </div>
+  </footer>
+
+<script src="/newsletter-inject.js" defer></script>
+</body>
+</html>

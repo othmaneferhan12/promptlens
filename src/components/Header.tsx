@@ -152,6 +152,13 @@ export default function Header({ rateLimit, onHistoryOpen, hasHistory, onChangel
               Blog
             </a>
 
+            {/* Site language links */}
+            <div className="hidden sm:flex items-center gap-1 rounded-lg border border-[var(--border-subtle)] px-2.5 py-1.5 font-inter text-xs text-[var(--text-secondary)]">
+              <a href="/fr/" className="hover:text-[var(--accent-lens)] transition-colors" title="Français">FR</a>
+              <span className="opacity-20">|</span>
+              <a href="/ar/" className="hover:text-[var(--accent-lens)] transition-colors" title="العربية">AR</a>
+            </div>
+
             <UsageCounter rateLimit={rateLimit} />
 
             <LanguageSelector selected={language} onChange={onLanguageChange} />
