@@ -58,7 +58,7 @@ export default function Header({ rateLimit, onHistoryOpen, hasHistory, onChangel
             animate={{ x: 0 }}
             transition={{ duration: 0.4 }}
           >
-            <img src="/favicon.svg" alt="ImageToPrompt" width="36" height="36" className="rounded-xl" />
+            <img src="/favicon.svg" alt="ImageToPrompt" width="48" height="48" className="rounded-xl" />
             <div>
               <span className="font-grotesk text-lg font-700 text-[var(--text-primary)] tracking-tight">
                 ImageTo<span className="text-[var(--accent-lens)]">Prompt</span>
