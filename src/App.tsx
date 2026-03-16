@@ -3,6 +3,7 @@ import Header from './components/Header';
 import UploadZone from './components/UploadZone';
 import ModelSelector from './components/ModelSelector';
 import StyleSelector from './components/StyleSelector';
+import ShowcasePanel from './components/ShowcasePanel';
 import { useImageAnalysis } from './hooks/useImageAnalysis';
 import { useRateLimit } from './hooks/useRateLimit';
 import { usePromptHistory } from './hooks/usePromptHistory';
@@ -204,73 +205,81 @@ export default function App() {
         onLanguageChange={setSelectedLanguage}
       />
 
-      <main id="tool" className="relative mx-auto max-w-5xl px-4 pb-10 sm:px-6" role="main">
+      <main id="tool" className="relative mx-auto max-w-6xl px-4 pb-10 sm:px-6" role="main">
         {showUpload && (
-          <div className="space-y-8">
-            <div className="text-center">
-              <h1 className="font-grotesk text-4xl font-700 text-[var(--text-primary)] sm:text-5xl">
-                Free Image to
-                <span
-                  className="ml-2"
+          <div className="grid grid-cols-1 xl:grid-cols-[1fr_360px] gap-6 xl:gap-10 xl:items-start">
+            {/* ── Tool column ─────────────────────────────────────── */}
+            <div className="space-y-8">
+              <div className="text-center">
+                <h1 className="font-grotesk text-4xl font-700 text-[var(--text-primary)] sm:text-5xl">
+                  Free Image to
+                  <span
+                    className="ml-2"
+                    style={{
+                      background: 'linear-gradient(135deg, var(--accent-lens), var(--accent-cyan))',
+                      WebkitBackgroundClip: 'text',
+                      WebkitTextFillColor: 'transparent',
+                    }}
+                  >
+                    Prompt Generator
+                  </span>
+                </h1>
+                <p className="mt-3 font-inter text-base text-[var(--text-secondary)] max-w-xl mx-auto">
+                  Upload any image. Get optimized prompts for Midjourney, Stable Diffusion,
+                  DALL·E, Flux, and more — instantly.
+                </p>
+              </div>
+
+              <UploadZone onImageReady={setCurrentImage} onClear={handleReset} currentImage={currentImage} />
+              <ModelSelector selected={selectedModel} onChange={setSelectedModel} />
+              <StyleSelector selected={selectedStyle} onChange={setSelectedStyle} />
+
+              {error && !isLoading && (
+                <div
+                  className="flex items-center gap-3 rounded-xl border border-[var(--error)]/30 bg-[var(--error)]/10 px-4 py-3"
+                  role="alert"
+                  aria-live="polite"
+                >
+                  <span className="text-[var(--error)]" aria-hidden="true">⚠</span>
+                  <p className="font-inter text-sm text-[var(--error)]">{error}</p>
+                </div>
+              )}
+
+              <div className="flex justify-center">
+                <button
+                  onClick={handleAnalyze}
+                  disabled={!currentImage || isLoading || !rateLimit.canAnalyze}
+                  aria-disabled={!currentImage || isLoading || !rateLimit.canAnalyze}
+                  aria-label={
+                    !currentImage
+                      ? 'Upload an image first to generate a prompt'
+                      : !rateLimit.canAnalyze
+                      ? 'Daily analysis limit reached'
+                      : 'Generate prompt from image'
+                  }
+                  className="group relative overflow-hidden rounded-2xl px-10 py-4 font-grotesk text-lg font-700 text-black transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
                   style={{
                     background: 'linear-gradient(135deg, var(--accent-lens), var(--accent-cyan))',
-                    WebkitBackgroundClip: 'text',
-                    WebkitTextFillColor: 'transparent',
+                    boxShadow: currentImage ? 'var(--glow)' : 'none',
                   }}
                 >
-                  Prompt Generator
-                </span>
-              </h1>
-              <p className="mt-3 font-inter text-base text-[var(--text-secondary)] max-w-xl mx-auto">
-                Upload any image. Get optimized prompts for Midjourney, Stable Diffusion,
-                DALL·E, Flux, and more — instantly.
-              </p>
+                  <span className="relative z-10 flex items-center gap-2">
+                    <span aria-hidden="true">✦</span>
+                    {!currentImage
+                      ? 'Upload an image first'
+                      : !rateLimit.canAnalyze
+                      ? 'Daily limit reached'
+                      : 'Generate Prompt'}
+                    <span className="font-mono text-sm opacity-60" aria-hidden="true">Ctrl+↵</span>
+                  </span>
+                  <div className="absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-white/20 to-transparent transition-transform duration-700 group-hover:translate-x-full" aria-hidden="true" />
+                </button>
+              </div>
             </div>
 
-            <UploadZone onImageReady={setCurrentImage} onClear={handleReset} currentImage={currentImage} />
-            <ModelSelector selected={selectedModel} onChange={setSelectedModel} />
-            <StyleSelector selected={selectedStyle} onChange={setSelectedStyle} />
-
-            {error && !isLoading && (
-              <div
-                className="flex items-center gap-3 rounded-xl border border-[var(--error)]/30 bg-[var(--error)]/10 px-4 py-3"
-                role="alert"
-                aria-live="polite"
-              >
-                <span className="text-[var(--error)]" aria-hidden="true">⚠</span>
-                <p className="font-inter text-sm text-[var(--error)]">{error}</p>
-              </div>
-            )}
-
-            <div className="flex justify-center">
-              <button
-                onClick={handleAnalyze}
-                disabled={!currentImage || isLoading || !rateLimit.canAnalyze}
-                aria-disabled={!currentImage || isLoading || !rateLimit.canAnalyze}
-                aria-label={
-                  !currentImage
-                    ? 'Upload an image first to generate a prompt'
-                    : !rateLimit.canAnalyze
-                    ? 'Daily analysis limit reached'
-                    : 'Generate prompt from image'
-                }
-                className="group relative overflow-hidden rounded-2xl px-10 py-4 font-grotesk text-lg font-700 text-black transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
-                style={{
-                  background: 'linear-gradient(135deg, var(--accent-lens), var(--accent-cyan))',
-                  boxShadow: currentImage ? 'var(--glow)' : 'none',
-                }}
-              >
-                <span className="relative z-10 flex items-center gap-2">
-                  <span aria-hidden="true">✦</span>
-                  {!currentImage
-                    ? 'Upload an image first'
-                    : !rateLimit.canAnalyze
-                    ? 'Daily limit reached'
-                    : 'Generate Prompt'}
-                  <span className="font-mono text-sm opacity-60" aria-hidden="true">Ctrl+↵</span>
-                </span>
-                <div className="absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-white/20 to-transparent transition-transform duration-700 group-hover:translate-x-full" aria-hidden="true" />
-              </button>
+            {/* ── Showcase panel — right column on desktop, below on mobile ── */}
+            <div className="xl:sticky xl:top-24">
+              <ShowcasePanel />
             </div>
           </div>
         )}
