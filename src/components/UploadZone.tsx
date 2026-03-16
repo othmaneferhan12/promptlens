@@ -287,7 +287,7 @@ export default function UploadZone({ onImageReady, onClear, currentImage }: Uplo
       {activeTab === 'file' && (
         <div
           {...getRootProps()}
-          className="relative flex min-h-[220px] cursor-pointer flex-col items-center justify-center gap-4 rounded-2xl border-2 border-dashed p-8 text-center transition-all duration-300"
+          className="relative flex min-h-[200px] cursor-pointer flex-col items-center justify-center gap-4 rounded-2xl border-2 border-dashed p-4 sm:p-8 text-center transition-all duration-300"
           style={{
             borderColor: isDragActive ? 'var(--accent-lens)' : 'var(--border-subtle)',
             backgroundColor: isDragActive ? 'var(--accent-lens-dim)' : 'var(--bg-card)',
@@ -330,7 +330,7 @@ export default function UploadZone({ onImageReady, onClear, currentImage }: Uplo
       )}
 
       {activeTab === 'url' && (
-        <div className="flex min-h-[220px] flex-col items-center justify-center gap-4 rounded-2xl border border-[var(--border-subtle)] bg-[var(--bg-card)] p-8">
+        <div className="flex min-h-[200px] flex-col items-center justify-center gap-4 rounded-2xl border border-[var(--border-subtle)] bg-[var(--bg-card)] p-4 sm:p-8">
           <div className="flex h-16 w-16 items-center justify-center rounded-2xl border border-[var(--border-subtle)] bg-[var(--bg-elevated)]">
             <Link size={28} className="text-[var(--text-secondary)]" />
           </div>
@@ -345,7 +345,7 @@ export default function UploadZone({ onImageReady, onClear, currentImage }: Uplo
                 onChange={(e) => setUrlInput(e.target.value)}
                 onKeyDown={(e) => e.key === 'Enter' && handleUrlSubmit()}
                 placeholder="https://example.com/image.jpg"
-                className="flex-1 rounded-xl border border-[var(--border-subtle)] bg-[var(--bg-elevated)] px-4 py-2.5 font-mono text-sm text-[var(--text-primary)] placeholder-[var(--text-secondary)] outline-none focus:border-[var(--border-accent)]"
+                className="flex-1 rounded-xl border border-[var(--border-subtle)] bg-[var(--bg-elevated)] px-4 py-2.5 font-mono text-base sm:text-sm text-[var(--text-primary)] placeholder-[var(--text-secondary)] outline-none focus:border-[var(--border-accent)]"
                 disabled={isProcessing}
               />
               <button
@@ -361,7 +361,7 @@ export default function UploadZone({ onImageReady, onClear, currentImage }: Uplo
       )}
 
       {activeTab === 'clipboard' && (
-        <div className="flex min-h-[220px] flex-col items-center justify-center gap-4 rounded-2xl border border-[var(--border-subtle)] bg-[var(--bg-card)] p-8">
+        <div className="flex min-h-[200px] flex-col items-center justify-center gap-4 rounded-2xl border border-[var(--border-subtle)] bg-[var(--bg-card)] p-4 sm:p-8">
           <div className="flex h-16 w-16 items-center justify-center rounded-2xl border border-[var(--border-subtle)] bg-[var(--bg-elevated)]">
             <Clipboard size={28} className="text-[var(--text-secondary)]" />
           </div>

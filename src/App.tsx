@@ -206,7 +206,7 @@ export default function App() {
         {showUpload && (
           <>
             {/* ── Page hero — standalone, centered, above the tool ── */}
-            <div className="pt-8 pb-7 text-center">
+            <div className="pt-5 pb-4 sm:pt-8 sm:pb-7 text-center">
               <h1 className="font-grotesk text-4xl font-700 text-[var(--text-primary)] sm:text-5xl">
                 Free Image to
                 <span
@@ -311,7 +311,7 @@ export default function App() {
                       : !rateLimit.canAnalyze
                       ? 'Daily limit reached'
                       : 'Generate Prompt'}
-                    <span className="font-mono text-sm opacity-60" aria-hidden="true">Ctrl+↵</span>
+                    <span className="hidden sm:inline font-mono text-sm opacity-60" aria-hidden="true">Ctrl+↵</span>
                   </span>
                   <div className="absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-white/20 to-transparent transition-transform duration-700 group-hover:translate-x-full" aria-hidden="true" />
                 </button>
@@ -323,8 +323,8 @@ export default function App() {
                   <ShowcasePanel />
                 </div>
               </div>
-              {/* Mobile: show showcase below tool */}
-              <div className="xl:hidden">
+              {/* Tablet only: show showcase below tool (hidden on phones to reduce scroll) */}
+              <div className="hidden sm:block xl:hidden">
                 <ShowcasePanel />
               </div>
             </div>

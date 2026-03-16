@@ -12,7 +12,7 @@ export default function ModelSelector({ selected, onChange }: ModelSelectorProps
       <p className="mb-2 font-inter text-xs font-600 uppercase tracking-widest text-[var(--text-secondary)]">
         Target Model
       </p>
-      <div className="grid grid-cols-3 gap-2">
+      <div className="grid grid-cols-2 sm:grid-cols-3 gap-2">
         {MODEL_CONFIGS.map((model) => {
           const isSelected = selected === model.id;
           return (
