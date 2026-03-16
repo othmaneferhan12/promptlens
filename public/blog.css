@@ -65,13 +65,18 @@ body {
   justify-content: space-between;
 }
 .site-logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
   text-decoration: none;
   font-family: 'Space Grotesk', Inter, system-ui, sans-serif;
   font-size: 1.0625rem;
   font-weight: 700;
   color: #f5f5ff;
 }
-.site-logo .accent { color: #e040fb; }
+.site-logo img { border-radius: 8px; flex-shrink: 0; }
+.site-logo .accent { color: #7C3AED; }
+[dir="rtl"] .site-logo { direction: ltr; }
 .site-nav { display: flex; align-items: center; gap: 1.25rem; }
 .site-nav a {
   text-decoration: none;

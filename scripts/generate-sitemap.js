@@ -107,7 +107,6 @@ function buildRobots() {
 Allow: /
 Disallow: /api/
 Disallow: /og-image.png
-Disallow: /*.png$
 
 User-agent: GPTBot
 Allow: /
