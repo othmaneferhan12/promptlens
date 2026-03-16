@@ -4,6 +4,7 @@ import { History, ChevronDown } from 'lucide-react';
 import type { RateLimitState } from '../types';
 
 const MODEL_LINKS = [
+  { href: '/text-to-prompt/',                    icon: '✏️', label: 'Text to Prompt',   color: '#a78bfa' },
   { href: '/midjourney-prompt-generator/',       icon: '🎨', label: 'Midjourney',       color: '#00b4d8' },
   { href: '/stable-diffusion-prompt-generator/', icon: '⚙️', label: 'Stable Diffusion', color: '#ff6b35' },
   { href: '/flux-prompt-generator/',             icon: '⚡', label: 'Flux AI',           color: '#7c3aed' },

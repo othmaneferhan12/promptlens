@@ -1,0 +1,381 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Text to Prompt: How to Turn Simple Descriptions into Professional AI Prompts</title>
+  <meta name="description" content="Learn how to transform rough text descriptions into professional AI prompts for Midjourney, Stable Diffusion, Flux, and DALL-E 3. 5 before/after examples, tips, and a free tool." />
+  <link rel="canonical" href="https://www.imagetoprompt.dev/blog/text-to-prompt-generator/" />
+  <meta property="og:title" content="Text to Prompt: How to Turn Simple Descriptions into Professional AI Prompts" />
+  <meta property="og:description" content="Learn how to transform rough text descriptions into professional AI prompts. 5 before/after examples across Midjourney, Stable Diffusion, Flux, DALL-E 3, and Leonardo AI." />
+  <meta property="og:url" content="https://www.imagetoprompt.dev/blog/text-to-prompt-generator/" />
+  <meta property="og:type" content="article" />
+  <meta property="og:image" content="https://www.imagetoprompt.dev/og-image.png" />
+  <meta property="og:site_name" content="ImageToPrompt" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Text to Prompt: Turn Simple Descriptions into Professional AI Prompts" />
+  <meta name="twitter:description" content="5 before/after examples showing how to expand rough descriptions into optimized prompts for Midjourney, Stable Diffusion, Flux, DALL-E 3, and Leonardo AI." />
+  <meta name="twitter:image" content="https://www.imagetoprompt.dev/og-image.png" />
+  <meta name="twitter:site" content="@imagetoprompt" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="48x48" href="/favicon-48.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+  <link rel="manifest" href="/site.webmanifest" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="/fonts/space-grotesk-700.woff2" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="/fonts/inter-400.woff2" />
+  <link rel="stylesheet" href="/blog.css" />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Text to Prompt: How to Turn Simple Descriptions into Professional AI Prompts",
+    "description": "Learn how to transform rough text descriptions into professional AI prompts for Midjourney, Stable Diffusion, Flux, and DALL-E 3. 5 before/after examples, practical tips, and a free tool.",
+    "image": "https://www.imagetoprompt.dev/og-image.png",
+    "datePublished": "2026-03-16",
+    "dateModified": "2026-03-16",
+    "author": {
+      "@type": "Person",
+      "name": "ImageToPrompt Team",
+      "url": "https://www.imagetoprompt.dev/"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "ImageToPrompt",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://www.imagetoprompt.dev/favicon.svg"
+      }
+    },
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https://www.imagetoprompt.dev/blog/text-to-prompt-generator/"
+    },
+    "breadcrumb": {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.imagetoprompt.dev/" },
+        { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://www.imagetoprompt.dev/blog/" },
+        { "@type": "ListItem", "position": 3, "name": "Text to Prompt Generator Guide", "item": "https://www.imagetoprompt.dev/blog/text-to-prompt-generator/" }
+      ]
+    }
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What is text-to-prompt and how does it work?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Text-to-prompt is the process of transforming a simple written description into a detailed, model-optimized AI image prompt. You describe your idea in plain English, and an AI expands it with lighting, composition, mood, color palette, quality tags, and model-specific syntax. The result can be pasted directly into your chosen AI image generator."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can text-to-prompt be used to improve existing prompts?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. Paste your existing prompt as the input and the tool will enrich it with additional detail, better structure, and model-appropriate syntax. This is useful when you have a prompt that produces mediocre results — the AI adds the specificity that separates good prompts from great ones."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Is text-to-prompt or image-to-prompt better for beginners?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Both tools are beginner-friendly, but text-to-prompt may feel more natural if you already have an idea in mind. Image-to-prompt is better when you have a visual reference you want to recreate or build upon. Many users start with text-to-prompt to generate images, then use image-to-prompt to analyze and improve the results."
+        }
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="inner">
+      <a href="/" class="site-logo"><img src="/favicon.svg" alt="ImageToPrompt" width="48" height="48"><div class="site-logo-text">Image<span class="accent">To</span>Prompt<span class="site-logo-sub">Free AI Prompt Generator</span></div></a>
+      <nav class="site-nav" aria-label="Main navigation">
+        <div class="nav-dropdown">
+          <button class="nav-dropdown-trigger" aria-haspopup="true" aria-expanded="false">Tools <span class="nav-chevron" aria-hidden="true">&#9660;</span></button>
+          <div class="nav-dropdown-menu" role="menu">
+            <a href="/text-to-prompt/" role="menuitem">&#9999;&#65039; Text to Prompt</a>
+            <a href="/midjourney-prompt-generator/" role="menuitem">&#127912; Midjourney</a>
+            <a href="/stable-diffusion-prompt-generator/" role="menuitem">&#9881;&#65039; Stable Diffusion</a>
+            <a href="/flux-prompt-generator/" role="menuitem">&#9889; Flux AI</a>
+            <a href="/dall-e-prompt-generator/" role="menuitem">&#129504; DALL&#xB7;E 3</a>
+            <a href="/adobe-firefly-prompt-generator/" role="menuitem">&#129419; Adobe Firefly</a>
+            <a href="/leonardo-ai-prompt-generator/" role="menuitem">&#127918; Leonardo AI</a>
+            <a href="/ideogram-prompt-generator/" role="menuitem">&#9997;&#65039; Ideogram</a>
+          </div>
+        </div>
+        <a href="/blog/" class="active">Blog</a>
+        <a href="/" class="nav-try-free">Try Free &#8594;</a>
+      </nav>
+    </div>
+  </header>
+
+  <nav class="breadcrumb" aria-label="Breadcrumb">
+    <a href="/">Home</a><span class="sep">›</span>
+    <a href="/blog/">Blog</a><span class="sep">›</span>
+    <span>Text to Prompt Generator Guide</span>
+  </nav>
+
+  <div class="page-wrapper">
+
+    <header class="article-header">
+      <p class="article-tag">Prompt Engineering</p>
+      <h1>Text to Prompt: How to Turn Simple Descriptions into Professional AI Prompts</h1>
+      <div class="article-meta">
+        <span>March 2026</span>
+        <span class="dot">·</span>
+        <span>9 min read</span>
+        <span class="dot">·</span>
+        <span>ImageToPrompt Team</span>
+      </div>
+    </header>
+
+    <div class="article-body">
+
+      <h2>Why "a cat in a garden" Produces Generic AI Images</h2>
+      <p>
+        You've seen it happen. You type a simple description into Midjourney or Stable Diffusion and get back something disappointingly generic — a flat-looking cat, a blurry garden, no sense of atmosphere or artistic intent. You try again with slightly different words and still get mediocre results. You wonder what experienced users are doing differently.
+      </p>
+      <p>
+        The answer is specificity. Professional AI prompt engineers don't type "a cat in a garden." They type something like: <em>"a regal Maine Coon cat perched on a weathered stone wall in a wildflower English cottage garden at golden hour, dappled sunlight through climbing roses creating bokeh, shallow depth of field, dreamy pastoral atmosphere, professional nature photography style --ar 4:3 --v 6.1 --q 2."</em>
+      </p>
+      <p>
+        Every additional detail constrains the probability space of the AI's output. More specificity means less random variation and more intentional results. The problem is that writing these detailed prompts takes time, knowledge of model-specific syntax, and experience with what vocabulary works for each generator. Text-to-prompt automates this expertise so you can focus on your creative idea rather than technical formatting.
+      </p>
+
+      <h2>The Anatomy of a Professional AI Prompt</h2>
+      <p>
+        Every great AI prompt shares the same core components, though their format varies by model:
+      </p>
+      <div class="table-wrap">
+      <table class="comparison-table">
+        <thead>
+          <tr><th>Component</th><th>What It Does</th><th>Example</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Subject</td><td>The main focus — who or what is in the image</td><td>"regal Maine Coon cat, amber eyes, sitting upright"</td></tr>
+          <tr><td>Setting / Environment</td><td>Where the scene takes place</td><td>"weathered stone wall in English cottage garden"</td></tr>
+          <tr><td>Lighting</td><td>Light source, quality, and direction</td><td>"golden hour, dappled sunlight, soft diffused backlight"</td></tr>
+          <tr><td>Mood / Atmosphere</td><td>The emotional quality of the scene</td><td>"dreamy, pastoral, serene"</td></tr>
+          <tr><td>Style / Medium</td><td>The artistic technique or genre</td><td>"professional nature photography, bokeh, f/2.8"</td></tr>
+          <tr><td>Composition</td><td>Camera angle and framing</td><td>"rule of thirds, shallow depth of field, centered subject"</td></tr>
+          <tr><td>Color Palette</td><td>Dominant colors and tone</td><td>"warm golden tones, soft greens, muted pastels"</td></tr>
+          <tr><td>Model Parameters</td><td>Model-specific technical settings</td><td>"--ar 4:3 --v 6.1 --q 2 --style raw"</td></tr>
+        </tbody>
+      </table>
+      </div>
+      <p>
+        A basic description typically covers only the subject. A professional prompt covers all eight components. The difference in output quality is dramatic. Each component guides the AI's decisions in a different dimension — without specifying lighting, the model picks something arbitrary; without specifying mood, the result lacks emotional coherence; without model parameters, you miss optimization opportunities specific to each generator.
+      </p>
+      <p>
+        Text-to-prompt fills in all missing components based on context clues in your description, your chosen model, and your selected style. It infers that a "stormy lighthouse" should probably have dramatic side-lighting and cold blue-grey tones, and adds those details automatically.
+      </p>
+
+      <h2>5 Before/After Examples</h2>
+      <p>Here are real examples of what text-to-prompt expansion looks like across different models and subjects.</p>
+
+      <h3>Example 1 — Midjourney: Sunset Beach</h3>
+
+      <div class="prompt-example">
+        <p class="example-category">Before (rough input)</p>
+        <pre class="prompt-block">sunset beach</pre>
+      </div>
+
+      <div class="prompt-example">
+        <p class="example-category">After (enhanced Midjourney prompt)</p>
+        <pre class="prompt-block">golden sunset over tropical beach with calm turquoise water, silhouette of coconut palms against dramatic orange and pink sky, reflections on wet sand at low tide, warm golden light, serene and peaceful atmosphere, long exposure photography, Sony A7R IV 24mm f/8, cinematic wide angle composition --ar 16:9 --v 6.1 --style raw --q 2</pre>
+      </div>
+
+      <p>The enhanced prompt adds the beach type (tropical), water characteristics (calm, turquoise), sky detail (orange and pink), foreground framing (silhouette palms), ground texture (wet sand at low tide), camera specs, and cinematic framing. Each addition nudges the output toward something visually intentional rather than randomly generic.</p>
+
+      <h3>Example 2 — Stable Diffusion: Fantasy Warrior</h3>
+
+      <div class="prompt-example">
+        <p class="example-category">Before (rough input)</p>
+        <pre class="prompt-block">fantasy warrior</pre>
+      </div>
+
+      <div class="prompt-example">
+        <p class="example-category">After (enhanced Stable Diffusion XL prompt)</p>
+        <pre class="prompt-block">(heroic female warrior:1.3), (ornate silver plate armor with dragon motifs:1.2), standing on cliff edge overlooking battlefield at dusk, (dramatic rim lighting:1.2), flowing red cape in wind, (determined expression:1.1), fantasy concept art, digital painting, (highly detailed:1.4), (epic composition:1.2), fog and smoke in valley below, crimson and gold color palette
+
+Negative: (blurry:1.3), (deformed hands:1.4), (ugly:1.2), text, watermark, low quality, bad anatomy</pre>
+      </div>
+
+      <p>For Stable Diffusion, the expansion uses (parenthetical:weight) syntax to control emphasis. High-weight elements like armor detail (1.2) and the highly detailed quality tag (1.4) get more attention. The separate negative prompt prevents common SD failure modes like deformed hands.</p>
+
+      <h3>Example 3 — Flux: Product Photo</h3>
+
+      <div class="prompt-example">
+        <p class="example-category">Before (rough input)</p>
+        <pre class="prompt-block">product photo of perfume bottle</pre>
+      </div>
+
+      <div class="prompt-example">
+        <p class="example-category">After (enhanced Flux prompt)</p>
+        <pre class="prompt-block">luxury glass perfume bottle with gold stopper on polished black marble surface, dramatic backlit studio lighting creating caustic light refraction patterns through glass, condensation droplets on bottle exterior, rich jewel-toned amber liquid visible inside, deep black background with volumetric light rays, commercial product photography, macro lens details, photorealistic render, 8K resolution, precise material rendering of glass optical properties</pre>
+      </div>
+
+      <p>Flux excels at photorealistic material rendering. The expansion emphasizes physical properties: glass optical behavior (caustic refraction, condensation), material surfaces (polished marble), and specific lighting physics (volumetric rays). These technical lighting terms trigger Flux's understanding of real-world optics.</p>
+
+      <h3>Example 4 — DALL-E 3: Cozy Coffee Shop</h3>
+
+      <div class="prompt-example">
+        <p class="example-category">Before (rough input)</p>
+        <pre class="prompt-block">cozy coffee shop</pre>
+      </div>
+
+      <div class="prompt-example">
+        <p class="example-category">After (enhanced DALL-E 3 prompt)</p>
+        <pre class="prompt-block">A warm and inviting independent coffee shop interior with exposed brick walls and mismatched vintage furniture. Soft amber lighting from Edison bulb pendant lights creates pools of warmth on wooden tables. A barista is visible behind a copper espresso machine. Bookshelves line one wall, rain streaks the large front windows, and a few customers work quietly on laptops. The overall atmosphere is intimate, creative, and slightly bohemian. Rendered in a warm photographic style with slight grain.</pre>
+      </div>
+
+      <p>DALL-E 3 responds best to natural language sentences that tell a story. Rather than comma-separated tags, the expansion writes a coherent description of the scene as a paragraph. Details like "rain streaks the large front windows" add narrative depth that DALL-E 3 can interpret holistically.</p>
+
+      <h3>Example 5 — Leonardo AI: Game Character</h3>
+
+      <div class="prompt-example">
+        <p class="example-category">Before (rough input)</p>
+        <pre class="prompt-block">game character</pre>
+      </div>
+
+      <div class="prompt-example">
+        <p class="example-category">After (enhanced Leonardo AI prompt)</p>
+        <pre class="prompt-block">rogue assassin game character, young woman in dark leather armor with hood and mask, twin daggers at hips, glowing purple magic runes on gauntlets, urban fantasy city rooftop setting at night, neon-lit rain, cinematic dramatic lighting from below, sharp focus on character, out-of-focus background, game concept art style, character sheet design, professional digital illustration, ArtStation trending quality</pre>
+      </div>
+
+      <p>Leonardo AI is tuned for game asset creation. The expansion uses game-art vocabulary (character sheet, concept art, ArtStation quality), specifies weapon and armor types familiar to game designers, and uses cinematic lighting from below — a technique common in game cinematics to make characters look powerful.</p>
+
+      <h2>Tips for Writing Better Input Descriptions</h2>
+      <p>Even with text-to-prompt expansion, a better starting description produces a better result. Here are five tips:</p>
+      <ol>
+        <li><strong>Start with the subject and one key detail</strong> — "a lighthouse with crumbling stonework" is better than "a lighthouse" because it establishes an important visual characteristic early.</li>
+        <li><strong>Mention the time of day or weather</strong> — These contextual details carry enormous lighting information. "At dawn" implies warm side-lighting; "during a thunderstorm" implies dramatic dark skies and rain.</li>
+        <li><strong>Name the emotion you want</strong> — "melancholic," "triumphant," "serene," or "unsettling" help the AI select consistent visual cues that reinforce a mood.</li>
+        <li><strong>Specify the broad style if you have one in mind</strong> — "like a Dutch Golden Age painting," "in anime style," or "photorealistic" give strong direction that overrides the model's defaults.</li>
+        <li><strong>Mention any must-include elements</strong> — If specific details are non-negotiable (a red door, a specific animal, a particular weather condition), include them explicitly so the expansion treats them as constraints.</li>
+      </ol>
+
+      <h2>Text-to-Prompt vs Image-to-Prompt: Which Should You Use?</h2>
+      <p>
+        Both tools serve different creative workflows. Text-to-prompt is the right choice when you have an original idea in your head but no reference image — you're creating from imagination rather than referencing existing visuals. Image-to-prompt is the right choice when you have a reference image you admire and want to recreate or build upon its style.
+      </p>
+      <p>
+        Many users combine both: generate an image from a text description, then feed that image into image-to-prompt to extract a refined prompt they can iterate on. This workflow rapidly builds prompt intuition because you can see exactly how the AI translated your description into visual terms.
+      </p>
+
+      <h2>When to Use Each Tool</h2>
+      <div class="table-wrap">
+      <table class="comparison-table">
+        <thead>
+          <tr><th>Scenario</th><th>Best Tool</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>You have a creative idea but no reference image</td><td>Text-to-Prompt</td></tr>
+          <tr><td>You found an image you love and want to recreate it</td><td>Image-to-Prompt</td></tr>
+          <tr><td>You want to match a specific artist's style from their work</td><td>Image-to-Prompt</td></tr>
+          <tr><td>You want to generate a character, scene, or product from scratch</td><td>Text-to-Prompt</td></tr>
+          <tr><td>You have a mediocre prompt and want to improve it</td><td>Text-to-Prompt</td></tr>
+          <tr><td>You want to understand why an AI image looks the way it does</td><td>Image-to-Prompt</td></tr>
+          <tr><td>You're switching between AI generators and need syntax conversion</td><td>Text-to-Prompt</td></tr>
+        </tbody>
+      </table>
+      </div>
+
+      <div style="margin:2.5rem 0;text-align:center;padding:2rem;background:rgba(224,64,251,0.05);border:1px solid rgba(224,64,251,0.2);border-radius:1rem;">
+        <h3 style="margin-top:0;">Try the Free Text-to-Prompt Tool</h3>
+        <p style="color:#9999bb;">Transform any rough description into a professional AI prompt in seconds. Free, no login required.</p>
+        <a href="/text-to-prompt/" style="display:inline-block;background:linear-gradient(135deg,#e040fb,#00e5ff);color:#000;font-weight:700;padding:0.875rem 2rem;border-radius:0.75rem;font-size:1rem;text-decoration:none;margin-top:0.5rem;">Open Text to Prompt Generator &#8594;</a>
+      </div>
+
+      <h2>Frequently Asked Questions</h2>
+
+      <h3>What is text-to-prompt and how does it work?</h3>
+      <p>
+        Text-to-prompt is the process of transforming a simple written description into a detailed, model-optimized AI image prompt. You describe your idea in plain English — anything from a single phrase to a detailed paragraph — and an AI expands it with lighting, composition, mood, color palette, quality tags, and model-specific syntax. The result can be pasted directly into Midjourney, Stable Diffusion, Flux, DALL-E 3, or any other supported generator.
+      </p>
+
+      <h3>Can text-to-prompt improve existing prompts?</h3>
+      <p>
+        Yes. Paste your existing prompt as the input and the tool will enrich it with additional detail, better structure, and model-appropriate syntax. This is particularly useful when you have a prompt that produces inconsistent or underwhelming results — the AI adds the specificity and structure that separates good prompts from great ones.
+      </p>
+
+      <h3>Is text-to-prompt or image-to-prompt better for beginners?</h3>
+      <p>
+        Both tools are designed to be beginner-friendly. Text-to-prompt may feel more natural if you already have an idea in mind and want to start generating immediately. Image-to-prompt is better when you have a visual reference you want to recreate. Many beginners start with text-to-prompt to generate their first images, then use image-to-prompt to refine and iterate once they can see what the AI produces.
+      </p>
+
+    </div>
+
+    <div class="author-bio">
+      <svg class="author-photo" width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="Author avatar"><circle cx="32" cy="32" r="32" fill="#2a1f4e"/><circle cx="32" cy="26" r="11" fill="#7c6bc4"/><ellipse cx="32" cy="52" rx="18" ry="11" fill="#7c6bc4"/></svg>
+      <div class="author-info">
+        <p class="author-name">ImageToPrompt Team</p>
+        <p class="author-desc">Prompt engineers and AI artists specializing in Midjourney, Stable Diffusion, and Flux. Building ImageToPrompt to make AI image generation accessible to everyone.</p>
+        <a href="https://twitter.com/imagetoprompt" class="author-link">Follow on X &#8594;</a>
+      </div>
+    </div>
+
+    <div class="related-posts">
+      <h2>Related Guides</h2>
+      <div class="related-grid">
+        <a href="/blog/midjourney-prompt-guide-2026/" class="related-card">
+          <p class="tag">Midjourney Guide</p>
+          <h3>Midjourney Prompts 2026: Complete Parameter Guide</h3>
+        </a>
+        <a href="/blog/stable-diffusion-vs-midjourney-vs-dalle3/" class="related-card">
+          <p class="tag">Comparison</p>
+          <h3>SD vs Midjourney vs DALL&#xB7;E 3 vs Flux: Prompt Differences</h3>
+        </a>
+        <a href="/blog/convert-image-to-ai-prompt/" class="related-card">
+          <p class="tag">Guide</p>
+          <h3>How to Convert Any Image to an AI Prompt</h3>
+        </a>
+        <a href="/blog/prompt-engineering-for-ai-art/" class="related-card">
+          <p class="tag">Beginner</p>
+          <h3>Prompt Engineering Fundamentals for AI Art</h3>
+        </a>
+        <a href="/text-to-prompt/" class="related-card">
+          <p class="tag">Tool</p>
+          <h3>Free Text to Prompt Generator</h3>
+        </a>
+        <a href="/blog/" class="related-card">
+          <p class="tag">Blog</p>
+          <h3>All Prompt Engineering Guides</h3>
+        </a>
+      </div>
+    </div>
+
+  </div>
+
+  <footer class="site-footer">
+    <div class="inner">
+      <p>&#169; 2026 <a href="/" style="color:#8888bb;text-decoration:none">ImageToPrompt</a> · Free AI Prompt Generator</p>
+      <nav aria-label="Footer navigation">
+        <a href="/">Home</a>
+        <a href="/blog/">Blog</a>
+        <a href="/#how-it-works">How It Works</a>
+        <a href="/#faq">FAQ</a>
+        <a href="/privacy-policy/">Privacy Policy</a>
+        <a href="/terms-of-service/">Terms of Service</a>
+      </nav>
+      <div class="footer-lang">
+        <span class="footer-lang-label">Language:</span>
+        <a href="/">English</a><span class="footer-lang-sep">&#xB7;</span><a href="/fr/">Fran&#231;ais</a><span class="footer-lang-sep">&#xB7;</span><a href="/ar/">&#1575;&#1604;&#1593;&#1585;&#1576;&#1610;&#1577;</a>
+      </div>
+    </div>
+  </footer>
+
+<script src="/newsletter-inject.js" defer></script>
+<script src="/nav.js" defer></script>
+</body>
+</html>

@@ -6,7 +6,9 @@ import StyleSelector from './components/StyleSelector';
 import ShowcasePanel from './components/ShowcasePanel';
 import LanguageSelector from './components/LanguageSelector';
 import UsageCounter from './components/UsageCounter';
+import TextInputArea from './components/TextInputArea';
 import { useImageAnalysis } from './hooks/useImageAnalysis';
+import { useTextToPrompt } from './hooks/useTextToPrompt';
 import { useRateLimit } from './hooks/useRateLimit';
 import { usePromptHistory } from './hooks/usePromptHistory';
 import type { UploadedImage, AIModel, PromptStyle, SupportedLanguage, AnalysisResult as AnalysisResultType, HistoryItem } from './types';
@@ -30,8 +32,10 @@ const SEOFooter = lazy(() => import('./components/seo/SEOFooter'));
 const _urlParams = new URLSearchParams(window.location.search);
 const isEmbed = _urlParams.get('embed') === 'true';
 const _urlModel = _urlParams.get('model') as AIModel | null;
+const _urlTab = _urlParams.get('tab') as 'image' | 'text' | null;
 const VALID_MODELS: AIModel[] = ['midjourney', 'stable-diffusion', 'flux', 'dalle3', 'firefly', 'leonardo', 'ideogram'];
 const initialModel: AIModel = (_urlModel && VALID_MODELS.includes(_urlModel)) ? _urlModel : 'midjourney';
+const initialTab: 'image' | 'text' = _urlTab === 'text' ? 'text' : 'image';
 
 export default function App() {
   const [currentImage, setCurrentImage] = useState<UploadedImage | null>(null);
@@ -41,14 +45,24 @@ export default function App() {
   const [showRateLimitModal, setShowRateLimitModal] = useState(false);
   const [showHistory, setShowHistory] = useState(false);
   const [activeResult, setActiveResult] = useState<AnalysisResultType | null>(null);
+  const [toolTab, setToolTab] = useState<'image' | 'text'>(initialTab);
+  const [textInput, setTextInput] = useState('');
 
   const { result, isLoading, error, analyze, reset: resetAnalysis } = useImageAnalysis();
+  const { result: textResult, isLoading: textIsLoading, error: textError, enhance: enhanceText, reset: resetTextAnalysis } = useTextToPrompt();
   const rateLimit = useRateLimit();
   const { history, addToHistory, clearHistory, removeItem } = usePromptHistory();
 
   useEffect(() => {
     if (result) setActiveResult(result);
   }, [result]);
+
+  useEffect(() => {
+    if (textResult) setActiveResult(textResult);
+  }, [textResult]);
+
+  const combinedIsLoading = isLoading || textIsLoading;
+  const combinedError = error || textError;
 
   useEffect(() => {
     const handleKeyDown = async (e: KeyboardEvent) => {
@@ -64,7 +78,8 @@ export default function App() {
         }
       }
       if (e.ctrlKey && e.key === 'Enter') {
-        if (currentImage && !isLoading && !activeResult) handleAnalyze();
+        if (toolTab === 'image' && currentImage && !combinedIsLoading && !activeResult) handleAnalyze();
+        if (toolTab === 'text' && textInput.trim() && !combinedIsLoading && !activeResult) handleEnhanceText();
       }
       if (e.key === 'Escape' && !showHistory && !showRateLimitModal) {
         handleReset();
@@ -73,7 +88,7 @@ export default function App() {
     window.addEventListener('keydown', handleKeyDown);
     return () => window.removeEventListener('keydown', handleKeyDown);
   // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [currentImage, isLoading, activeResult, showHistory, showRateLimitModal]);
+  }, [currentImage, combinedIsLoading, activeResult, showHistory, showRateLimitModal, toolTab, textInput]);
 
   const handleAnalyze = useCallback(async () => {
     if (!currentImage || isLoading) return;
@@ -101,11 +116,27 @@ export default function App() {
     }
   }, [currentImage, isLoading, rateLimit, analyze, selectedModel, selectedStyle, selectedLanguage, addToHistory]);
 
+  const handleEnhanceText = useCallback(async () => {
+    if (!textInput.trim() || textIsLoading) return;
+    if (!rateLimit.canAnalyze) {
+      setShowRateLimitModal(true);
+      return;
+    }
+    rateLimit.incrementUsage();
+    await enhanceText({
+      text: textInput,
+      model: selectedModel,
+      style: selectedStyle,
+      language: selectedLanguage,
+    });
+  }, [textInput, textIsLoading, rateLimit, enhanceText, selectedModel, selectedStyle, selectedLanguage]);
+
   const handleReset = useCallback(() => {
     setCurrentImage(null);
     setActiveResult(null);
     resetAnalysis();
-  }, [resetAnalysis]);
+    resetTextAnalysis();
+  }, [resetAnalysis, resetTextAnalysis]);
 
   const handleRestoreFromHistory = useCallback(
     (restoredResult: AnalysisResultType, item: HistoryItem) => {
@@ -116,8 +147,8 @@ export default function App() {
     []
   );
 
-  const showResult = !!activeResult && !isLoading;
-  const showUpload = !activeResult && !isLoading;
+  const showResult = !!activeResult && !combinedIsLoading;
+  const showUpload = !activeResult && !combinedIsLoading;
 
   // ── Embed mode ──────────────────────────────────────────────────────────────
   if (isEmbed) {
@@ -129,16 +160,16 @@ export default function App() {
               <UploadZone onImageReady={setCurrentImage} onClear={handleReset} currentImage={currentImage} />
               <ModelSelector selected={selectedModel} onChange={setSelectedModel} />
               <StyleSelector selected={selectedStyle} onChange={setSelectedStyle} />
-              {error && !isLoading && (
+              {combinedError && !combinedIsLoading && (
                 <div className="flex items-center gap-3 rounded-xl border border-[var(--error)]/30 bg-[var(--error)]/10 px-4 py-3" role="alert" aria-live="polite">
                   <span className="text-[var(--error)]" aria-hidden="true">⚠</span>
-                  <p className="font-inter text-sm text-[var(--error)]">{error}</p>
+                  <p className="font-inter text-sm text-[var(--error)]">{combinedError}</p>
                 </div>
               )}
               <div className="flex justify-center">
                 <button
                   onClick={handleAnalyze}
-                  disabled={!currentImage || isLoading || !rateLimit.canAnalyze}
+                  disabled={!currentImage || combinedIsLoading || !rateLimit.canAnalyze}
                   className="rounded-2xl px-8 py-3 font-grotesk text-base font-700 text-black disabled:opacity-50 disabled:cursor-not-allowed"
                   style={{ background: 'linear-gradient(135deg, var(--accent-lens), var(--accent-cyan))' }}
                 >
@@ -148,7 +179,7 @@ export default function App() {
             </div>
           )}
           <Suspense fallback={null}>
-            {isLoading && currentImage && <LoadingState previewUrl={currentImage.previewUrl} />}
+            {combinedIsLoading && <LoadingState previewUrl={currentImage?.previewUrl} />}
           </Suspense>
           <Suspense fallback={null}>
             {showResult && activeResult && (
@@ -255,7 +286,32 @@ export default function App() {
                 className="flex flex-col gap-5 rounded-2xl border p-5 sm:p-6"
                 style={{ borderColor: 'var(--border-subtle)', background: 'var(--bg-card)' }}
               >
-                <UploadZone onImageReady={setCurrentImage} onClear={handleReset} currentImage={currentImage} />
+                {/* Tab switcher */}
+                <div className="flex gap-2 p-1 rounded-xl border border-[var(--border-subtle)] bg-[var(--bg-elevated)]">
+                  {([['image', '🖼', 'Image to Prompt'], ['text', '✏️', 'Text to Prompt']] as const).map(([tab, icon, label]) => (
+                    <button
+                      key={tab}
+                      onClick={() => { setToolTab(tab); handleReset(); }}
+                      className="flex-1 flex items-center justify-center gap-1.5 rounded-lg py-2 font-inter text-sm font-500 transition-all duration-200"
+                      style={{
+                        backgroundColor: toolTab === tab ? 'var(--bg-card)' : 'transparent',
+                        color: toolTab === tab ? 'var(--text-primary)' : 'var(--text-secondary)',
+                        boxShadow: toolTab === tab ? '0 1px 4px rgba(0,0,0,0.3)' : 'none',
+                      }}
+                    >
+                      <span>{icon}</span>
+                      <span>{label}</span>
+                    </button>
+                  ))}
+                </div>
+
+                {/* Input area */}
+                {toolTab === 'image' ? (
+                  <UploadZone onImageReady={setCurrentImage} onClear={handleReset} currentImage={currentImage} />
+                ) : (
+                  <TextInputArea text={textInput} onChange={setTextInput} disabled={textIsLoading} />
+                )}
+
                 <ModelSelector selected={selectedModel} onChange={setSelectedModel} />
                 <StyleSelector selected={selectedStyle} onChange={setSelectedStyle} />
 
@@ -267,14 +323,14 @@ export default function App() {
                   <LanguageSelector selected={selectedLanguage} onChange={setSelectedLanguage} />
                 </div>
 
-                {error && !isLoading && (
+                {combinedError && !combinedIsLoading && (
                   <div
                     className="flex items-center gap-3 rounded-xl border border-[var(--error)]/30 bg-[var(--error)]/10 px-4 py-3"
                     role="alert"
                     aria-live="polite"
                   >
                     <span className="text-[var(--error)]" aria-hidden="true">⚠</span>
-                    <p className="font-inter text-sm text-[var(--error)]">{error}</p>
+                    <p className="font-inter text-sm text-[var(--error)]">{combinedError}</p>
                   </div>
                 )}
 
@@ -287,34 +343,65 @@ export default function App() {
                 </div>
 
                 {/* Generate button — full width, bottom of container */}
-                <button
-                  onClick={handleAnalyze}
-                  disabled={!currentImage || isLoading || !rateLimit.canAnalyze}
-                  aria-disabled={!currentImage || isLoading || !rateLimit.canAnalyze}
-                  aria-label={
-                    !currentImage
-                      ? 'Upload an image first to generate a prompt'
-                      : !rateLimit.canAnalyze
-                      ? 'Daily analysis limit reached'
-                      : 'Generate prompt from image'
-                  }
-                  className="group relative w-full overflow-hidden rounded-2xl py-4 font-grotesk text-lg font-700 text-black transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed mt-auto"
-                  style={{
-                    background: 'linear-gradient(135deg, var(--accent-lens), var(--accent-cyan))',
-                    boxShadow: currentImage ? 'var(--glow)' : 'none',
-                  }}
-                >
-                  <span className="relative z-10 flex items-center justify-center gap-2">
-                    <span aria-hidden="true">✦</span>
-                    {!currentImage
-                      ? 'Upload an image first'
-                      : !rateLimit.canAnalyze
-                      ? 'Daily limit reached'
-                      : 'Generate Prompt'}
-                    <span className="hidden sm:inline font-mono text-sm opacity-60" aria-hidden="true">Ctrl+↵</span>
-                  </span>
-                  <div className="absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-white/20 to-transparent transition-transform duration-700 group-hover:translate-x-full" aria-hidden="true" />
-                </button>
+                {toolTab === 'image' ? (
+                  <button
+                    onClick={handleAnalyze}
+                    disabled={!currentImage || combinedIsLoading || !rateLimit.canAnalyze}
+                    aria-disabled={!currentImage || combinedIsLoading || !rateLimit.canAnalyze}
+                    aria-label={
+                      !currentImage
+                        ? 'Upload an image first to generate a prompt'
+                        : !rateLimit.canAnalyze
+                        ? 'Daily analysis limit reached'
+                        : 'Generate prompt from image'
+                    }
+                    className="group relative w-full overflow-hidden rounded-2xl py-4 font-grotesk text-lg font-700 text-black transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed mt-auto"
+                    style={{
+                      background: 'linear-gradient(135deg, var(--accent-lens), var(--accent-cyan))',
+                      boxShadow: currentImage ? 'var(--glow)' : 'none',
+                    }}
+                  >
+                    <span className="relative z-10 flex items-center justify-center gap-2">
+                      <span aria-hidden="true">✦</span>
+                      {!currentImage
+                        ? 'Upload an image first'
+                        : !rateLimit.canAnalyze
+                        ? 'Daily limit reached'
+                        : 'Generate Prompt'}
+                      <span className="hidden sm:inline font-mono text-sm opacity-60" aria-hidden="true">Ctrl+↵</span>
+                    </span>
+                    <div className="absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-white/20 to-transparent transition-transform duration-700 group-hover:translate-x-full" aria-hidden="true" />
+                  </button>
+                ) : (
+                  <button
+                    onClick={handleEnhanceText}
+                    disabled={!textInput.trim() || combinedIsLoading || !rateLimit.canAnalyze}
+                    aria-disabled={!textInput.trim() || combinedIsLoading || !rateLimit.canAnalyze}
+                    aria-label={
+                      !textInput.trim()
+                        ? 'Enter a description first'
+                        : !rateLimit.canAnalyze
+                        ? 'Daily analysis limit reached'
+                        : 'Enhance prompt from description'
+                    }
+                    className="group relative w-full overflow-hidden rounded-2xl py-4 font-grotesk text-lg font-700 text-black transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed mt-auto"
+                    style={{
+                      background: 'linear-gradient(135deg, var(--accent-lens), var(--accent-cyan))',
+                      boxShadow: textInput.trim() ? 'var(--glow)' : 'none',
+                    }}
+                  >
+                    <span className="relative z-10 flex items-center justify-center gap-2">
+                      <span aria-hidden="true">✨</span>
+                      {!textInput.trim()
+                        ? 'Enter a description first'
+                        : !rateLimit.canAnalyze
+                        ? 'Daily limit reached'
+                        : '✨ Enhance Prompt'}
+                      <span className="hidden sm:inline font-mono text-sm opacity-60" aria-hidden="true">Ctrl+↵</span>
+                    </span>
+                    <div className="absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-white/20 to-transparent transition-transform duration-700 group-hover:translate-x-full" aria-hidden="true" />
+                  </button>
+                )}
               </div>
 
               {/* ── Showcase panel — right column, vertically centered, slightly shorter ── */}
@@ -332,33 +419,34 @@ export default function App() {
         )}
 
         <Suspense fallback={null}>
-          {isLoading && currentImage && <LoadingState previewUrl={currentImage.previewUrl} />}
+          {combinedIsLoading && <LoadingState previewUrl={currentImage?.previewUrl} />}
         </Suspense>
 
         {showResult && activeResult && (
           <div className="space-y-8" aria-live="polite" aria-label="Analysis result ready">
-            <div className="flex items-center gap-4 rounded-2xl border border-[var(--border-subtle)] bg-[var(--bg-card)] p-4">
-              {currentImage && (
+            {toolTab === 'image' && currentImage && (
+              <div className="flex items-center gap-4 rounded-2xl border border-[var(--border-subtle)] bg-[var(--bg-card)] p-4">
                 <img
                   src={currentImage.previewUrl}
                   alt={`Preview of uploaded image: ${currentImage.name}`}
                   className="h-16 w-16 rounded-xl object-cover border border-[var(--border-subtle)]"
                 />
-              )}
-              <div>
-                <p className="font-inter text-xs text-[var(--text-secondary)]">Analyzing</p>
-                <p className="font-grotesk text-sm font-600 text-[var(--text-primary)]">
-                  {currentImage?.name ?? 'Uploaded image'}
-                </p>
+                <div>
+                  <p className="font-inter text-xs text-[var(--text-secondary)]">Analyzing</p>
+                  <p className="font-grotesk text-sm font-600 text-[var(--text-primary)]">
+                    {currentImage.name}
+                  </p>
+                </div>
               </div>
-            </div>
+            )}
 
             <AnalysisResult
               result={activeResult}
               model={selectedModel}
               style={selectedStyle}
               onReset={handleReset}
-              onRegenerate={handleAnalyze}
+              onRegenerate={toolTab === 'image' ? handleAnalyze : handleEnhanceText}
+              resetLabel={toolTab === 'text' ? 'Enhance Another Description' : undefined}
             />
           </div>
         )}

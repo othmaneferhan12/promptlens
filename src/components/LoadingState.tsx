@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 
 interface LoadingStateProps {
-  previewUrl: string;
+  previewUrl?: string;
 }
 
 const STEPS = [
@@ -41,16 +41,20 @@ export default function LoadingState({ previewUrl }: LoadingStateProps) {
       exit={{ opacity: 0 }}
     >
       {/* Blurred background image */}
-      <div
-        className="absolute inset-0"
-        style={{
-          backgroundImage: `url(${previewUrl})`,
-          backgroundSize: 'cover',
-          backgroundPosition: 'center',
-          filter: 'blur(20px) brightness(0.2) saturate(1.5)',
-          transform: 'scale(1.05)',
-        }}
-      />
+      {previewUrl ? (
+        <div
+          className="absolute inset-0"
+          style={{
+            backgroundImage: `url(${previewUrl})`,
+            backgroundSize: 'cover',
+            backgroundPosition: 'center',
+            filter: 'blur(20px) brightness(0.2) saturate(1.5)',
+            transform: 'scale(1.05)',
+          }}
+        />
+      ) : (
+        <div className="absolute inset-0 bg-[var(--bg-void)]" />
+      )}
       <div className="absolute inset-0 bg-[var(--bg-void)]/70" />
 
       {/* Top progress bar */}

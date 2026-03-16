@@ -19,6 +19,7 @@ const TODAY = new Date().toISOString().split('T')[0];
 // ── Static pages ────────────────────────────────────────────────────────────
 const STATIC_PAGES = [
   { path: '/',      changefreq: 'daily',   priority: '1.0' },
+  { path: '/text-to-prompt/',                        changefreq: 'weekly', priority: '0.9' },
   { path: '/midjourney-prompt-generator/',          changefreq: 'weekly', priority: '0.9' },
   { path: '/stable-diffusion-prompt-generator/',    changefreq: 'weekly', priority: '0.9' },
   { path: '/flux-prompt-generator/',                changefreq: 'weekly', priority: '0.9' },

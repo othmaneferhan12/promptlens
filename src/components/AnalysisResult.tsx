@@ -13,6 +13,7 @@ interface AnalysisResultProps {
   style: PromptStyle;
   onReset: () => void;
   onRegenerate: () => void;
+  resetLabel?: string;
 }
 
 const MODELSWITHTECHNOLOGY = ['midjourney', 'stable-diffusion', 'flux'];
@@ -45,6 +46,7 @@ export default function AnalysisResult({
   style,
   onReset,
   onRegenerate,
+  resetLabel = 'Analyze Another Image',
 }: AnalysisResultProps) {
   const [breakdownOpen, setBreakdownOpen] = useState(false);
   const modelConfig = getModelConfig(model);
@@ -158,7 +160,7 @@ export default function AnalysisResult({
             className="flex items-center gap-1.5 rounded-xl border border-[var(--border-subtle)] px-3 py-2 font-inter text-xs text-[var(--text-secondary)] transition-all hover:border-[var(--error)]/50 hover:text-[var(--error)]"
           >
             <RotateCcw size={13} />
-            New Image
+            New
           </button>
         </div>
       </motion.div>
@@ -307,7 +309,7 @@ export default function AnalysisResult({
         >
           <span className="relative z-10 flex items-center gap-2">
             <RotateCcw size={18} />
-            Analyze Another Image
+            {resetLabel}
           </span>
           <div className="absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-white/20 to-transparent transition-transform duration-700 group-hover:translate-x-full" />
         </button>

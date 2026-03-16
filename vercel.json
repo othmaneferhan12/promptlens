@@ -6,6 +6,10 @@
     "api/analyze.ts": {
       "maxDuration": 30,
       "memory": 512
+    },
+    "api/text-to-prompt.ts": {
+      "maxDuration": 30,
+      "memory": 512
     }
   },
   "rewrites": [
@@ -32,6 +36,7 @@
     { "source": "/fr/(.*)", "destination": "/fr/$1" },
     { "source": "/privacy-policy/(.*)", "destination": "/privacy-policy/$1" },
     { "source": "/terms-of-service/(.*)", "destination": "/terms-of-service/$1" },
+    { "source": "/text-to-prompt/(.*)", "destination": "/text-to-prompt/$1" },
     { "source": "/(.*)", "destination": "/index.html" }
   ],
   "headers": [
@@ -98,6 +103,13 @@
     },
     {
       "source": "/blog/(.*)",
+      "headers": [
+        { "key": "Cache-Control", "value": "public, max-age=3600, stale-while-revalidate=86400" },
+        { "key": "X-Content-Type-Options", "value": "nosniff" }
+      ]
+    },
+    {
+      "source": "/text-to-prompt/(.*)",
       "headers": [
         { "key": "Cache-Control", "value": "public, max-age=3600, stale-while-revalidate=86400" },
         { "key": "X-Content-Type-Options", "value": "nosniff" }
