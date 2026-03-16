@@ -54,7 +54,7 @@ export default function ShowcasePanel() {
 
   return (
     <motion.div
-      className="rounded-2xl overflow-hidden flex flex-col"
+      className="rounded-2xl overflow-hidden flex flex-col h-full"
       style={{
         background: 'rgba(255,255,255,0.04)',
         border: '1px solid rgba(255,255,255,0.10)',
@@ -98,15 +98,14 @@ export default function ShowcasePanel() {
             animate={{ opacity: 1, x: 0 }}
             exit={{ opacity: 0, x: -28 }}
             transition={{ duration: 0.32, ease: 'easeInOut' }}
-            className="p-4"
+            className="p-4 flex flex-col h-full"
           >
-            {/* Image */}
-            <div className="overflow-hidden rounded-xl">
+            {/* Image — grows to fill available space */}
+            <div className="overflow-hidden rounded-xl flex-1 min-h-[180px]">
               <img
                 src={EXAMPLES[active].image}
                 alt={`Example: ${EXAMPLES[active].label}`}
-                className="w-full object-cover rounded-xl"
-                style={{ height: '220px', objectFit: 'cover' }}
+                className="w-full h-full object-cover rounded-xl"
                 loading="lazy"
               />
             </div>

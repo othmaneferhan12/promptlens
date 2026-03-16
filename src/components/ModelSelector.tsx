@@ -1,4 +1,3 @@
-import { motion } from 'framer-motion';
 import { MODEL_CONFIGS } from '../utils/imageUtils';
 import type { AIModel } from '../types';
 
@@ -9,54 +8,37 @@ interface ModelSelectorProps {
 
 export default function ModelSelector({ selected, onChange }: ModelSelectorProps) {
   return (
-    <div className="w-full">
-      <h2 className="mb-4 font-grotesk text-sm font-600 uppercase tracking-widest text-[var(--text-secondary)]">
-        Target AI Model
-      </h2>
-      <div className="grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-7">
-        {MODEL_CONFIGS.map((model, index) => {
+    <div>
+      <p className="mb-2 font-inter text-xs font-600 uppercase tracking-widest text-[var(--text-secondary)]">
+        Target Model
+      </p>
+      <div className="grid grid-cols-3 gap-2">
+        {MODEL_CONFIGS.map((model) => {
           const isSelected = selected === model.id;
           return (
-            <motion.button
+            <button
               key={model.id}
               onClick={() => onChange(model.id)}
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: index * 0.05, duration: 0.3 }}
-              whileHover={{ scale: 1.03 }}
-              whileTap={{ scale: 0.97 }}
-              className="relative flex flex-col items-center gap-2 rounded-xl border p-3 text-center transition-all duration-200"
+              className="flex items-center gap-2 rounded-xl border px-3 py-2.5 text-left transition-all duration-200 hover:scale-[1.02] active:scale-[0.97]"
               style={{
                 borderColor: isSelected ? model.color : 'var(--border-subtle)',
-                backgroundColor: isSelected
-                  ? `${model.color}15`
-                  : 'var(--bg-card)',
-                boxShadow: isSelected ? `0 0 20px ${model.color}30` : 'none',
+                backgroundColor: isSelected ? `${model.color}18` : 'var(--bg-elevated)',
+                boxShadow: isSelected ? `0 0 12px ${model.color}28` : 'none',
               }}
             >
-              {/* Badge */}
-              <span
-                className="absolute -top-2 left-1/2 -translate-x-1/2 whitespace-nowrap rounded-full px-2 py-0.5 text-[9px] font-600 font-inter uppercase tracking-wider"
-                style={{
-                  backgroundColor: isSelected ? model.color : 'var(--bg-elevated)',
-                  color: isSelected ? '#000' : 'var(--text-secondary)',
-                  border: `1px solid ${isSelected ? model.color : 'var(--border-subtle)'}`,
-                }}
-              >
-                {model.badge}
-              </span>
-
-              <span className="text-2xl leading-none mt-1">{model.icon}</span>
-              <span
-                className="font-grotesk text-xs font-600 leading-tight"
-                style={{ color: isSelected ? model.color : 'var(--text-primary)' }}
-              >
-                {model.name}
-              </span>
-              <span className="font-inter text-[10px] leading-tight text-[var(--text-secondary)] line-clamp-2">
-                {model.description}
-              </span>
-            </motion.button>
+              <span className="text-base leading-none shrink-0">{model.icon}</span>
+              <div className="min-w-0 flex-1">
+                <div
+                  className="font-grotesk text-xs font-600 leading-tight truncate"
+                  style={{ color: isSelected ? model.color : 'var(--text-primary)' }}
+                >
+                  {model.name}
+                </div>
+                <div className="font-inter text-[10px] leading-tight text-[var(--text-secondary)] truncate">
+                  {model.badge}
+                </div>
+              </div>
+            </button>
           );
         })}
       </div>

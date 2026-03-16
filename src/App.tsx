@@ -4,6 +4,7 @@ import UploadZone from './components/UploadZone';
 import ModelSelector from './components/ModelSelector';
 import StyleSelector from './components/StyleSelector';
 import ShowcasePanel from './components/ShowcasePanel';
+import LanguageSelector from './components/LanguageSelector';
 import { useImageAnalysis } from './hooks/useImageAnalysis';
 import { useRateLimit } from './hooks/useRateLimit';
 import { usePromptHistory } from './hooks/usePromptHistory';
@@ -207,45 +208,60 @@ export default function App() {
 
       <main id="tool" className="relative mx-auto max-w-6xl px-4 pb-10 sm:px-6" role="main">
         {showUpload && (
-          <div className="grid grid-cols-1 xl:grid-cols-[1fr_360px] gap-6 xl:gap-10 xl:items-start">
-            {/* ── Tool column ─────────────────────────────────────── */}
-            <div className="space-y-8">
-              <div className="text-center">
-                <h1 className="font-grotesk text-4xl font-700 text-[var(--text-primary)] sm:text-5xl">
-                  Free Image to
-                  <span
-                    className="ml-2"
-                    style={{
-                      background: 'linear-gradient(135deg, var(--accent-lens), var(--accent-cyan))',
-                      WebkitBackgroundClip: 'text',
-                      WebkitTextFillColor: 'transparent',
-                    }}
-                  >
-                    Prompt Generator
-                  </span>
-                </h1>
-                <p className="mt-3 font-inter text-base text-[var(--text-secondary)] max-w-xl mx-auto">
-                  Upload any image. Get optimized prompts for Midjourney, Stable Diffusion,
-                  DALL·E, Flux, and more — instantly.
-                </p>
-              </div>
-
-              <UploadZone onImageReady={setCurrentImage} onClear={handleReset} currentImage={currentImage} />
-              <ModelSelector selected={selectedModel} onChange={setSelectedModel} />
-              <StyleSelector selected={selectedStyle} onChange={setSelectedStyle} />
-
-              {error && !isLoading && (
-                <div
-                  className="flex items-center gap-3 rounded-xl border border-[var(--error)]/30 bg-[var(--error)]/10 px-4 py-3"
-                  role="alert"
-                  aria-live="polite"
+          <>
+            {/* ── Page hero — standalone, centered, above the tool ── */}
+            <div className="pt-8 pb-7 text-center">
+              <h1 className="font-grotesk text-4xl font-700 text-[var(--text-primary)] sm:text-5xl">
+                Free Image to
+                <span
+                  className="ml-2"
+                  style={{
+                    background: 'linear-gradient(135deg, var(--accent-lens), var(--accent-cyan))',
+                    WebkitBackgroundClip: 'text',
+                    WebkitTextFillColor: 'transparent',
+                  }}
                 >
-                  <span className="text-[var(--error)]" aria-hidden="true">⚠</span>
-                  <p className="font-inter text-sm text-[var(--error)]">{error}</p>
-                </div>
-              )}
+                  Prompt Generator
+                </span>
+              </h1>
+              <p className="mt-3 font-inter text-base text-[var(--text-secondary)] max-w-xl mx-auto">
+                Upload any image. Get optimized prompts for Midjourney, Stable Diffusion,
+                DALL·E, Flux, and more — instantly.
+              </p>
+            </div>
 
-              <div className="flex justify-center">
+            {/* ── Tool container + Showcase panel — side by side on desktop ── */}
+            <div className="grid grid-cols-1 xl:grid-cols-[55fr_45fr] gap-6 xl:gap-8 xl:items-stretch">
+
+              {/* ── ONE unified tool container ── */}
+              <div
+                className="flex flex-col gap-5 rounded-2xl border p-5 sm:p-6"
+                style={{ borderColor: 'var(--border-subtle)', background: 'var(--bg-card)' }}
+              >
+                <UploadZone onImageReady={setCurrentImage} onClear={handleReset} currentImage={currentImage} />
+                <ModelSelector selected={selectedModel} onChange={setSelectedModel} />
+                <StyleSelector selected={selectedStyle} onChange={setSelectedStyle} />
+
+                {/* Language row */}
+                <div className="flex items-center justify-between gap-3">
+                  <span className="font-inter text-xs font-600 uppercase tracking-widest text-[var(--text-secondary)]">
+                    Output Language
+                  </span>
+                  <LanguageSelector selected={selectedLanguage} onChange={setSelectedLanguage} />
+                </div>
+
+                {error && !isLoading && (
+                  <div
+                    className="flex items-center gap-3 rounded-xl border border-[var(--error)]/30 bg-[var(--error)]/10 px-4 py-3"
+                    role="alert"
+                    aria-live="polite"
+                  >
+                    <span className="text-[var(--error)]" aria-hidden="true">⚠</span>
+                    <p className="font-inter text-sm text-[var(--error)]">{error}</p>
+                  </div>
+                )}
+
+                {/* Generate button — full width, bottom of container */}
                 <button
                   onClick={handleAnalyze}
                   disabled={!currentImage || isLoading || !rateLimit.canAnalyze}
@@ -257,13 +273,13 @@ export default function App() {
                       ? 'Daily analysis limit reached'
                       : 'Generate prompt from image'
                   }
-                  className="group relative overflow-hidden rounded-2xl px-10 py-4 font-grotesk text-lg font-700 text-black transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
+                  className="group relative w-full overflow-hidden rounded-2xl py-4 font-grotesk text-lg font-700 text-black transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed mt-auto"
                   style={{
                     background: 'linear-gradient(135deg, var(--accent-lens), var(--accent-cyan))',
                     boxShadow: currentImage ? 'var(--glow)' : 'none',
                   }}
                 >
-                  <span className="relative z-10 flex items-center gap-2">
+                  <span className="relative z-10 flex items-center justify-center gap-2">
                     <span aria-hidden="true">✦</span>
                     {!currentImage
                       ? 'Upload an image first'
@@ -275,13 +291,13 @@ export default function App() {
                   <div className="absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-white/20 to-transparent transition-transform duration-700 group-hover:translate-x-full" aria-hidden="true" />
                 </button>
               </div>
-            </div>
 
-            {/* ── Showcase panel — right column on desktop, below on mobile ── */}
-            <div className="xl:sticky xl:top-24">
-              <ShowcasePanel />
+              {/* ── Showcase panel — right column, stretches to match tool height ── */}
+              <div className="h-full">
+                <ShowcasePanel />
+              </div>
             </div>
-          </div>
+          </>
         )}
 
         <Suspense fallback={null}>
