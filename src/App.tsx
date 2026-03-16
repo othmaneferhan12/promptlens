@@ -224,10 +224,31 @@ export default function App() {
                 Upload any image. Get optimized prompts for Midjourney, Stable Diffusion,
                 DALL·E, Flux, and more — instantly.
               </p>
+
+              {/* Trust badges */}
+              <div className="mt-4 flex flex-wrap items-center justify-center gap-3">
+                {[
+                  { label: '100% FREE',         color: '#60A5FA' },
+                  { label: 'NO LOGIN REQUIRED', color: '#4ADE80' },
+                  { label: '10 FREE DAILY',     color: '#FBBF24' },
+                ].map(({ label, color }) => (
+                  <span
+                    key={label}
+                    className="font-inter text-[0.6875rem] font-600 uppercase tracking-[1.5px] px-3 py-1 rounded-full"
+                    style={{
+                      border: `1px solid ${color}40`,
+                      color,
+                      background: `${color}0d`,
+                    }}
+                  >
+                    {label}
+                  </span>
+                ))}
+              </div>
             </div>
 
             {/* ── Tool container + Showcase panel — side by side on desktop ── */}
-            <div className="grid grid-cols-1 xl:grid-cols-[55fr_45fr] gap-6 xl:gap-8 xl:items-stretch">
+            <div className="grid grid-cols-1 xl:grid-cols-[60fr_40fr] gap-6 xl:gap-8 xl:items-stretch">
 
               {/* ── ONE unified tool container ── */}
               <div
@@ -296,8 +317,14 @@ export default function App() {
                 </button>
               </div>
 
-              {/* ── Showcase panel — right column, stretches to match tool height ── */}
-              <div className="h-full">
+              {/* ── Showcase panel — right column, vertically centered, slightly shorter ── */}
+              <div className="hidden xl:flex items-center justify-center h-full py-6">
+                <div className="w-full h-full">
+                  <ShowcasePanel />
+                </div>
+              </div>
+              {/* Mobile: show showcase below tool */}
+              <div className="xl:hidden">
                 <ShowcasePanel />
               </div>
             </div>
