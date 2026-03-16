@@ -58,7 +58,7 @@ export interface UploadedImage {
   width: number;
   height: number;
   name: string;
-  source: 'file' | 'url' | 'clipboard' | 'webcam';
+  source: 'file' | 'url' | 'clipboard';
 }
 
 export interface HistoryItem {

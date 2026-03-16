@@ -1,12 +1,12 @@
-import { useState, useCallback, useRef, useEffect } from 'react';
+import { useState, useCallback } from 'react';
 import { useDropzone } from 'react-dropzone';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Upload, Link, Clipboard, Camera, X, RefreshCw, AlertCircle } from 'lucide-react';
+import { Upload, Link, Clipboard, X, RefreshCw, AlertCircle } from 'lucide-react';
 import { validateImageFile, formatFileSize } from '../utils/fileValidator';
-import { compressImage, compressFromUrl, compressFromBase64 } from '../utils/imageCompressor';
+import { compressImage, compressFromUrl } from '../utils/imageCompressor';
 import type { UploadedImage } from '../types';
 
-type Tab = 'file' | 'url' | 'clipboard' | 'webcam';
+type Tab = 'file' | 'url' | 'clipboard';
 
 interface UploadZoneProps {
   onImageReady: (img: UploadedImage) => void;
@@ -19,22 +19,6 @@ export default function UploadZone({ onImageReady, onClear, currentImage }: Uplo
   const [urlInput, setUrlInput] = useState('');
   const [isProcessing, setIsProcessing] = useState(false);
   const [error, setError] = useState<string | null>(null);
-  const webcamRef = useRef<HTMLVideoElement>(null);
-  const [webcamStream, setWebcamStream] = useState<MediaStream | null>(null);
-
-  // Stop webcam on unmount or tab change
-  useEffect(() => {
-    if (activeTab !== 'webcam' && webcamStream) {
-      webcamStream.getTracks().forEach((t) => t.stop());
-      setWebcamStream(null);
-    }
-  }, [activeTab, webcamStream]);
-
-  useEffect(() => {
-    return () => {
-      webcamStream?.getTracks().forEach((t) => t.stop());
-    };
-  }, [webcamStream]);
 
   const processFile = useCallback(
     async (file: File, source: UploadedImage['source'] = 'file') => {
@@ -139,56 +123,10 @@ export default function UploadZone({ onImageReady, onClear, currentImage }: Uplo
     }
   }, [processFile]);
 
-  const startWebcam = async () => {
-    try {
-      const stream = await navigator.mediaDevices.getUserMedia({ video: true });
-      setWebcamStream(stream);
-      if (webcamRef.current) {
-        webcamRef.current.srcObject = stream;
-      }
-    } catch {
-      setError('Could not access camera. Check permissions.');
-    }
-  };
-
-  const captureWebcam = async () => {
-    if (!webcamRef.current) return;
-    const canvas = document.createElement('canvas');
-    canvas.width = webcamRef.current.videoWidth;
-    canvas.height = webcamRef.current.videoHeight;
-    const ctx = canvas.getContext('2d');
-    if (!ctx) return;
-    ctx.drawImage(webcamRef.current, 0, 0);
-    const dataUrl = canvas.toDataURL('image/jpeg', 0.9);
-    const base64 = dataUrl.replace(/^data:image\/jpeg;base64,/, '');
-    setIsProcessing(true);
-    try {
-      const compressed = await compressFromBase64(base64, 'image/jpeg');
-      const previewUrl = `data:${compressed.mediaType};base64,${compressed.base64}`;
-      onImageReady({
-        file: null,
-        previewUrl,
-        base64: compressed.base64,
-        mediaType: compressed.mediaType,
-        originalSize: compressed.originalSize,
-        compressedSize: compressed.compressedSize,
-        width: compressed.width,
-        height: compressed.height,
-        name: 'webcam-capture.jpg',
-        source: 'webcam',
-      });
-      webcamStream?.getTracks().forEach((t) => t.stop());
-      setWebcamStream(null);
-    } finally {
-      setIsProcessing(false);
-    }
-  };
-
   const TABS = [
     { id: 'file' as Tab, label: 'File Upload', icon: Upload },
     { id: 'url' as Tab, label: 'Image URL', icon: Link },
     { id: 'clipboard' as Tab, label: 'Clipboard', icon: Clipboard },
-    { id: 'webcam' as Tab, label: 'Webcam', icon: Camera },
   ];
 
   if (currentImage) {
@@ -381,54 +319,6 @@ export default function UploadZone({ onImageReady, onClear, currentImage }: Uplo
             <Clipboard size={15} />
             Paste Image
           </button>
-        </div>
-      )}
-
-      {activeTab === 'webcam' && (
-        <div className="flex min-h-[220px] flex-col items-center justify-center gap-4 rounded-2xl border border-[var(--border-subtle)] bg-[var(--bg-card)] p-4">
-          {!webcamStream ? (
-            <>
-              <div className="flex h-16 w-16 items-center justify-center rounded-2xl border border-[var(--border-subtle)] bg-[var(--bg-elevated)]">
-                <Camera size={28} className="text-[var(--text-secondary)]" />
-              </div>
-              <div className="text-center">
-                <p className="font-grotesk text-base font-600 text-[var(--text-primary)]">Webcam Capture</p>
-                <p className="mt-1 font-inter text-xs text-[var(--text-secondary)]">Grant camera access to take a photo</p>
-              </div>
-              <button
-                onClick={startWebcam}
-                className="flex items-center gap-2 rounded-xl border border-[var(--border-accent)] bg-[var(--accent-lens-dim)] px-6 py-2.5 font-grotesk text-sm font-600 text-[var(--accent-lens)] transition-all hover:bg-[var(--accent-lens)] hover:text-black"
-              >
-                <Camera size={15} />
-                Start Camera
-              </button>
-            </>
-          ) : (
-            <div className="w-full">
-              <video
-                ref={webcamRef}
-                autoPlay
-                playsInline
-                muted
-                className="w-full rounded-xl"
-                onLoadedMetadata={() => { if (webcamRef.current) webcamRef.current.play(); }}
-              />
-              <div className="mt-3 flex gap-3">
-                <button
-                  onClick={captureWebcam}
-                  className="flex-1 rounded-xl bg-[var(--accent-lens)] py-2.5 font-grotesk text-sm font-600 text-black transition-opacity hover:opacity-90"
-                >
-                  📸 Capture
-                </button>
-                <button
-                  onClick={() => { webcamStream.getTracks().forEach((t) => t.stop()); setWebcamStream(null); }}
-                  className="rounded-xl border border-[var(--border-subtle)] px-4 py-2.5 font-inter text-sm text-[var(--text-secondary)]"
-                >
-                  Cancel
-                </button>
-              </div>
-            </div>
-          )}
         </div>
       )}
     </div>
