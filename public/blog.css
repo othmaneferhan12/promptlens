@@ -76,8 +76,10 @@ body {
 }
 .site-logo img { border-radius: 8px; flex-shrink: 0; }
 .site-logo .accent { color: #e040fb; }
-.site-logo-text { display: flex; flex-direction: column; line-height: 1.15; }
+.site-logo-text { line-height: 1.15; white-space: nowrap; }
 .site-logo-sub {
+  display: block;
+  white-space: normal;
   font-size: 0.625rem;
   font-weight: 400;
   color: #8888bb;
@@ -85,6 +87,7 @@ body {
   margin-top: 2px;
 }
 [dir="rtl"] .site-logo { direction: ltr; }
+[dir="rtl"] .site-header .inner { direction: ltr; }
 .site-nav { display: flex; align-items: center; gap: 1.25rem; }
 .site-nav a {
   text-decoration: none;
