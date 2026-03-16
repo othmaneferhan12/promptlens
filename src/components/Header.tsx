@@ -43,7 +43,7 @@ export default function Header({ onHistoryOpen, hasHistory }: HeaderProps) {
   }, [showTools]);
 
   return (
-    <header className="sticky top-0 z-40 border-b border-[var(--border-subtle)] bg-[var(--bg-void)]/80 backdrop-blur-xl h-[64px] flex items-center">
+    <header className="sticky top-0 z-40 border-b border-[var(--border-subtle)] bg-[var(--bg-void)]/80 backdrop-blur-xl h-[57px] flex items-center">
       <div className="mx-auto flex w-full max-w-7xl items-center justify-between px-4 sm:px-6">
         {/* Logo */}
         <motion.a
@@ -53,7 +53,7 @@ export default function Header({ onHistoryOpen, hasHistory }: HeaderProps) {
           animate={{ x: 0 }}
           transition={{ duration: 0.4 }}
         >
-          <img src="/favicon.svg" alt="ImageToPrompt" width="40" height="40" className="rounded-xl flex-shrink-0" />
+          <img src="/favicon.svg" alt="ImageToPrompt" width="48" height="48" className="rounded-xl flex-shrink-0" />
           <div className="flex flex-col leading-tight">
             <span className="font-grotesk text-[1.0625rem] font-700 text-[var(--text-primary)] tracking-tight">
               ImageTo<span className="text-[var(--accent-lens)]">Prompt</span>
