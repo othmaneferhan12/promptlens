@@ -3,153 +3,356 @@
   "outputDirectory": "dist",
   "installCommand": "npm install",
   "functions": {
-    "api/analyze.ts": { "maxDuration": 30 },
-    "api/text-to-prompt.ts": { "maxDuration": 30 },
-    "api/image-to-video-prompt.ts": { "maxDuration": 30 },
-    "api/text-to-video-prompt.ts": { "maxDuration": 30 }
+    "api/analyze.ts": {
+      "maxDuration": 30
+    },
+    "api/text-to-prompt.ts": {
+      "maxDuration": 30
+    },
+    "api/image-to-video-prompt.ts": {
+      "maxDuration": 30
+    },
+    "api/text-to-video-prompt.ts": {
+      "maxDuration": 30
+    }
   },
   "rewrites": [
-    { "source": "/api/(.*)", "destination": "/api/$1" },
-    { "source": "/images/(.*)", "destination": "/images/$1" },
-    { "source": "/blog/(.*)", "destination": "/blog/$1" },
-    { "source": "/midjourney-prompt-generator/(.*)", "destination": "/midjourney-prompt-generator/$1" },
-    { "source": "/stable-diffusion-prompt-generator/(.*)", "destination": "/stable-diffusion-prompt-generator/$1" },
-    { "source": "/flux-prompt-generator/(.*)", "destination": "/flux-prompt-generator/$1" },
-    { "source": "/dall-e-prompt-generator/(.*)", "destination": "/dall-e-prompt-generator/$1" },
-    { "source": "/adobe-firefly-prompt-generator/(.*)", "destination": "/adobe-firefly-prompt-generator/$1" },
-    { "source": "/leonardo-ai-prompt-generator/(.*)", "destination": "/leonardo-ai-prompt-generator/$1" },
-    { "source": "/ideogram-prompt-generator/(.*)", "destination": "/ideogram-prompt-generator/$1" },
-    { "source": "/veo-prompt-generator/(.*)", "destination": "/veo-prompt-generator/$1" },
-    { "source": "/kling-prompt-generator/(.*)", "destination": "/kling-prompt-generator/$1" },
-    { "source": "/runway-prompt-generator/(.*)", "destination": "/runway-prompt-generator/$1" },
-    { "source": "/pika-prompt-generator/(.*)", "destination": "/pika-prompt-generator/$1" },
-    { "source": "/luma-prompt-generator/(.*)", "destination": "/luma-prompt-generator/$1" },
-    { "source": "/sora-prompt-generator/(.*)", "destination": "/sora-prompt-generator/$1" },
-    { "source": "/minimax-prompt-generator/(.*)", "destination": "/minimax-prompt-generator/$1" },
-    { "source": "/stable-video-prompt-generator/(.*)", "destination": "/stable-video-prompt-generator/$1" },
-    { "source": "/image-to-video-prompt/(.*)", "destination": "/image-to-video-prompt/$1" },
-    { "source": "/text-to-video-prompt/(.*)", "destination": "/text-to-video-prompt/$1" },
-    { "source": "/imagetoprompt-vs-prompthero/(.*)", "destination": "/imagetoprompt-vs-prompthero/$1" },
-    { "source": "/imagetoprompt-vs-lexica/(.*)", "destination": "/imagetoprompt-vs-lexica/$1" },
-    { "source": "/imagetoprompt-vs-img2prompt/(.*)", "destination": "/imagetoprompt-vs-img2prompt/$1" },
-    { "source": "/imagetoprompt-vs-clip-interrogator/(.*)", "destination": "/imagetoprompt-vs-clip-interrogator/$1" },
-    { "source": "/imagetoprompt-vs-dalle3/(.*)", "destination": "/imagetoprompt-vs-dalle3/$1" },
-    { "source": "/ja/(.*)", "destination": "/ja/$1" },
-    { "source": "/es/(.*)", "destination": "/es/$1" },
-    { "source": "/ko/(.*)", "destination": "/ko/$1" },
-    { "source": "/ar/(.*)", "destination": "/ar/$1" },
-    { "source": "/stories/(.*)", "destination": "/stories/$1" },
-    { "source": "/fr/(.*)", "destination": "/fr/$1" },
-    { "source": "/privacy-policy/(.*)", "destination": "/privacy-policy/$1" },
-    { "source": "/terms-of-service/(.*)", "destination": "/terms-of-service/$1" },
-    { "source": "/text-to-prompt/(.*)", "destination": "/text-to-prompt/$1" },
-    { "source": "/(.*)", "destination": "/index.html" }
+    {
+      "source": "/api/(.*)",
+      "destination": "/api/$1"
+    },
+    {
+      "source": "/images/(.*)",
+      "destination": "/images/$1"
+    },
+    {
+      "source": "/blog/(.*)",
+      "destination": "/blog/$1"
+    },
+    {
+      "source": "/midjourney-prompt-generator/(.*)",
+      "destination": "/midjourney-prompt-generator/$1"
+    },
+    {
+      "source": "/stable-diffusion-prompt-generator/(.*)",
+      "destination": "/stable-diffusion-prompt-generator/$1"
+    },
+    {
+      "source": "/flux-prompt-generator/(.*)",
+      "destination": "/flux-prompt-generator/$1"
+    },
+    {
+      "source": "/dall-e-prompt-generator/(.*)",
+      "destination": "/dall-e-prompt-generator/$1"
+    },
+    {
+      "source": "/adobe-firefly-prompt-generator/(.*)",
+      "destination": "/adobe-firefly-prompt-generator/$1"
+    },
+    {
+      "source": "/leonardo-ai-prompt-generator/(.*)",
+      "destination": "/leonardo-ai-prompt-generator/$1"
+    },
+    {
+      "source": "/ideogram-prompt-generator/(.*)",
+      "destination": "/ideogram-prompt-generator/$1"
+    },
+    {
+      "source": "/veo-prompt-generator/(.*)",
+      "destination": "/veo-prompt-generator/$1"
+    },
+    {
+      "source": "/kling-prompt-generator/(.*)",
+      "destination": "/kling-prompt-generator/$1"
+    },
+    {
+      "source": "/runway-prompt-generator/(.*)",
+      "destination": "/runway-prompt-generator/$1"
+    },
+    {
+      "source": "/pika-prompt-generator/(.*)",
+      "destination": "/pika-prompt-generator/$1"
+    },
+    {
+      "source": "/luma-prompt-generator/(.*)",
+      "destination": "/luma-prompt-generator/$1"
+    },
+    {
+      "source": "/sora-prompt-generator/(.*)",
+      "destination": "/sora-prompt-generator/$1"
+    },
+    {
+      "source": "/minimax-prompt-generator/(.*)",
+      "destination": "/minimax-prompt-generator/$1"
+    },
+    {
+      "source": "/stable-video-prompt-generator/(.*)",
+      "destination": "/stable-video-prompt-generator/$1"
+    },
+    {
+      "source": "/image-to-video-prompt/(.*)",
+      "destination": "/image-to-video-prompt/$1"
+    },
+    {
+      "source": "/text-to-video-prompt/(.*)",
+      "destination": "/text-to-video-prompt/$1"
+    },
+    {
+      "source": "/imagetoprompt-vs-prompthero/(.*)",
+      "destination": "/imagetoprompt-vs-prompthero/$1"
+    },
+    {
+      "source": "/imagetoprompt-vs-lexica/(.*)",
+      "destination": "/imagetoprompt-vs-lexica/$1"
+    },
+    {
+      "source": "/imagetoprompt-vs-img2prompt/(.*)",
+      "destination": "/imagetoprompt-vs-img2prompt/$1"
+    },
+    {
+      "source": "/imagetoprompt-vs-clip-interrogator/(.*)",
+      "destination": "/imagetoprompt-vs-clip-interrogator/$1"
+    },
+    {
+      "source": "/imagetoprompt-vs-dalle3/(.*)",
+      "destination": "/imagetoprompt-vs-dalle3/$1"
+    },
+    {
+      "source": "/ja/(.*)",
+      "destination": "/ja/$1"
+    },
+    {
+      "source": "/es/(.*)",
+      "destination": "/es/$1"
+    },
+    {
+      "source": "/ko/(.*)",
+      "destination": "/ko/$1"
+    },
+    {
+      "source": "/ar/(.*)",
+      "destination": "/ar/$1"
+    },
+    {
+      "source": "/stories/(.*)",
+      "destination": "/stories/$1"
+    },
+    {
+      "source": "/fr/(.*)",
+      "destination": "/fr/$1"
+    },
+    {
+      "source": "/privacy-policy/(.*)",
+      "destination": "/privacy-policy/$1"
+    },
+    {
+      "source": "/terms-of-service/(.*)",
+      "destination": "/terms-of-service/$1"
+    },
+    {
+      "source": "/text-to-prompt/(.*)",
+      "destination": "/text-to-prompt/$1"
+    },
+    {
+      "source": "/about/(.*)",
+      "destination": "/about/$1"
+    },
+    {
+      "source": "/contact/(.*)",
+      "destination": "/contact/$1"
+    },
+    {
+      "source": "/pricing/(.*)",
+      "destination": "/pricing/$1"
+    },
+    {
+      "source": "/(.*)",
+      "destination": "/index.html"
+    }
   ],
   "headers": [
     {
       "source": "/images/(.*)",
       "headers": [
-        { "key": "Cache-Control", "value": "public, max-age=86400, stale-while-revalidate=3600" }
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=86400, stale-while-revalidate=3600"
+        }
       ]
     },
     {
       "source": "/assets/(.*)",
       "headers": [
-        { "key": "Cache-Control", "value": "public, max-age=31536000, immutable" }
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=31536000, immutable"
+        }
       ]
     },
     {
       "source": "/fonts/(.*)",
       "headers": [
-        { "key": "Cache-Control", "value": "public, max-age=31536000, immutable" }
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=31536000, immutable"
+        }
       ]
     },
     {
       "source": "/favicon(.*)",
       "headers": [
-        { "key": "Cache-Control", "value": "public, max-age=604800, stale-while-revalidate=86400" }
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=604800, stale-while-revalidate=86400"
+        }
       ]
     },
     {
       "source": "/apple-touch-icon.png",
       "headers": [
-        { "key": "Cache-Control", "value": "public, max-age=604800, stale-while-revalidate=86400" }
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=604800, stale-while-revalidate=86400"
+        }
       ]
     },
     {
       "source": "/web-app-manifest-(.*)",
       "headers": [
-        { "key": "Cache-Control", "value": "public, max-age=604800, stale-while-revalidate=86400" }
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=604800, stale-while-revalidate=86400"
+        }
       ]
     },
     {
       "source": "/og-image.png",
       "headers": [
-        { "key": "Cache-Control", "value": "public, max-age=86400, stale-while-revalidate=3600" }
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=86400, stale-while-revalidate=3600"
+        }
       ]
     },
     {
       "source": "/blog.css",
       "headers": [
-        { "key": "Cache-Control", "value": "public, max-age=86400, stale-while-revalidate=3600" }
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=86400, stale-while-revalidate=3600"
+        }
       ]
     },
     {
       "source": "/model-pages.css",
       "headers": [
-        { "key": "Cache-Control", "value": "public, max-age=86400, stale-while-revalidate=3600" }
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=86400, stale-while-revalidate=3600"
+        }
       ]
     },
     {
       "source": "/(midjourney|stable-diffusion|flux|dall-e|adobe-firefly|leonardo-ai|ideogram)-prompt-generator/(.*)",
       "headers": [
-        { "key": "Cache-Control", "value": "public, max-age=3600, stale-while-revalidate=86400" },
-        { "key": "X-Content-Type-Options", "value": "nosniff" }
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=3600, stale-while-revalidate=86400"
+        },
+        {
+          "key": "X-Content-Type-Options",
+          "value": "nosniff"
+        }
       ]
     },
     {
       "source": "/(veo|kling|runway|pika|luma|sora|minimax|stable-video)-prompt-generator/(.*)",
       "headers": [
-        { "key": "Cache-Control", "value": "public, max-age=3600, stale-while-revalidate=86400" },
-        { "key": "X-Content-Type-Options", "value": "nosniff" }
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=3600, stale-while-revalidate=86400"
+        },
+        {
+          "key": "X-Content-Type-Options",
+          "value": "nosniff"
+        }
       ]
     },
     {
       "source": "/(image-to-video-prompt|text-to-video-prompt)/(.*)",
       "headers": [
-        { "key": "Cache-Control", "value": "public, max-age=3600, stale-while-revalidate=86400" },
-        { "key": "X-Content-Type-Options", "value": "nosniff" }
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=3600, stale-while-revalidate=86400"
+        },
+        {
+          "key": "X-Content-Type-Options",
+          "value": "nosniff"
+        }
       ]
     },
     {
       "source": "/blog/(.*)",
       "headers": [
-        { "key": "Cache-Control", "value": "public, max-age=3600, stale-while-revalidate=86400" },
-        { "key": "X-Content-Type-Options", "value": "nosniff" }
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=3600, stale-while-revalidate=86400"
+        },
+        {
+          "key": "X-Content-Type-Options",
+          "value": "nosniff"
+        }
       ]
     },
     {
       "source": "/text-to-prompt/(.*)",
       "headers": [
-        { "key": "Cache-Control", "value": "public, max-age=3600, stale-while-revalidate=86400" },
-        { "key": "X-Content-Type-Options", "value": "nosniff" }
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=3600, stale-while-revalidate=86400"
+        },
+        {
+          "key": "X-Content-Type-Options",
+          "value": "nosniff"
+        }
       ]
     },
     {
       "source": "/api/(.*)",
       "headers": [
-        { "key": "X-Content-Type-Options", "value": "nosniff" },
-        { "key": "X-Frame-Options", "value": "DENY" },
-        { "key": "X-XSS-Protection", "value": "1; mode=block" },
-        { "key": "Referrer-Policy", "value": "strict-origin-when-cross-origin" },
-        { "key": "Cache-Control", "value": "no-store, no-cache, must-revalidate" }
+        {
+          "key": "X-Content-Type-Options",
+          "value": "nosniff"
+        },
+        {
+          "key": "X-Frame-Options",
+          "value": "DENY"
+        },
+        {
+          "key": "X-XSS-Protection",
+          "value": "1; mode=block"
+        },
+        {
+          "key": "Referrer-Policy",
+          "value": "strict-origin-when-cross-origin"
+        },
+        {
+          "key": "Cache-Control",
+          "value": "no-store, no-cache, must-revalidate"
+        }
       ]
     },
     {
       "source": "/(.*)",
       "headers": [
-        { "key": "X-Content-Type-Options", "value": "nosniff" },
-        { "key": "X-Frame-Options", "value": "SAMEORIGIN" }
+        {
+          "key": "X-Content-Type-Options",
+          "value": "nosniff"
+        },
+        {
+          "key": "X-Frame-Options",
+          "value": "SAMEORIGIN"
+        }
       ]
     }
   ]

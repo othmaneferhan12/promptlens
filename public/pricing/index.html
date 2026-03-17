@@ -1,0 +1,506 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0" />
+  <title>Pricing | ImageToPrompt — Free AI Prompt Generator</title>
+  <meta name="description" content="ImageToPrompt is free — 10 AI prompt analyses per day, all 7 image models and 8 video models included, no login required. Pro plan coming soon." />
+  <link rel="canonical" href="https://www.imagetoprompt.dev/pricing/" />
+  <meta property="og:title" content="Pricing | ImageToPrompt — Free AI Prompt Generator" />
+  <meta property="og:description" content="ImageToPrompt is free — 10 AI prompt analyses per day, all 7 image models and 8 video models included, no login required." />
+  <meta property="og:url" content="https://www.imagetoprompt.dev/pricing/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="https://www.imagetoprompt.dev/og-image.png" />
+  <meta property="og:site_name" content="ImageToPrompt" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Pricing | ImageToPrompt — Free AI Prompt Generator" />
+  <meta name="twitter:description" content="ImageToPrompt is free — 10 analyses per day, all models included, no login required. Pro plan coming soon." />
+  <meta name="twitter:image" content="https://www.imagetoprompt.dev/og-image.png" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+  <link rel="manifest" href="/site.webmanifest" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="/fonts/space-grotesk-700.woff2" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="/fonts/inter-400.woff2" />
+  <link rel="stylesheet" href="/blog.css" />
+  <link rel="stylesheet" href="/model-pages.css" />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "Pricing | ImageToPrompt",
+    "url": "https://www.imagetoprompt.dev/pricing/",
+    "description": "ImageToPrompt is free — 10 AI prompt analyses per day, all models included, no login required.",
+    "publisher": {
+      "@type": "Organization",
+      "name": "ImageToPrompt",
+      "url": "https://www.imagetoprompt.dev/"
+    }
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.imagetoprompt.dev/" },
+      { "@type": "ListItem", "position": 2, "name": "Pricing", "item": "https://www.imagetoprompt.dev/pricing/" }
+    ]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Is ImageToPrompt really free?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Yes, completely free. You get 10 AI prompt analyses per day at no cost, with no credit card or login required. The limit resets daily at midnight." }
+      },
+      {
+        "@type": "Question",
+        "name": "Will there be a paid plan?",
+        "acceptedAnswer": { "@type": "Answer", "text": "A Pro plan is in development. It will offer higher daily limits, priority processing, and additional features. You can sign up to be notified when it launches." }
+      },
+      {
+        "@type": "Question",
+        "name": "What's included in the free plan?",
+        "acceptedAnswer": { "@type": "Answer", "text": "The free plan includes 10 analyses per day, access to all 7 image models (Midjourney, Stable Diffusion, Flux, DALL-E 3, Adobe Firefly, Leonardo AI, Ideogram), all 8 video models (Veo, Kling, Runway, Pika, Luma, Sora, Minimax, Stable Video), 6 prompt styles, prompt history, creative remix prompts, and multi-language support. No login required." }
+      }
+    ]
+  }
+  </script>
+  <!-- Google AdSense -->
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4499206373485728" crossorigin="anonymous"></script>
+  <style>
+    .pricing-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.5rem;
+      margin: 2.5rem 0;
+    }
+    @media (max-width: 640px) {
+      .pricing-grid { grid-template-columns: 1fr; }
+    }
+    .pricing-card {
+      background: rgba(255,255,255,0.03);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 16px;
+      padding: 2rem;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+    }
+    .pricing-card.featured {
+      border-color: rgba(224,64,251,0.35);
+      background: rgba(224,64,251,0.05);
+    }
+    .pricing-badge {
+      position: absolute;
+      top: -12px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: #e040fb;
+      color: #fff;
+      font-size: 0.75rem;
+      font-weight: 700;
+      padding: 0.25rem 0.875rem;
+      border-radius: 20px;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      white-space: nowrap;
+    }
+    .pricing-plan-name {
+      font-family: 'Space Grotesk', Inter, system-ui, sans-serif;
+      font-size: 1.125rem;
+      font-weight: 700;
+      color: #f5f5ff;
+      margin: 0 0 0.5rem;
+    }
+    .pricing-price {
+      font-family: 'Space Grotesk', Inter, system-ui, sans-serif;
+      font-size: 3rem;
+      font-weight: 800;
+      color: #f5f5ff;
+      line-height: 1;
+      margin: 0.75rem 0 0.25rem;
+    }
+    .pricing-price span {
+      font-size: 1.25rem;
+      font-weight: 600;
+      color: #8888bb;
+    }
+    .pricing-period {
+      font-size: 0.875rem;
+      color: #6666aa;
+      margin-bottom: 1.75rem;
+    }
+    .pricing-features {
+      list-style: none;
+      padding: 0;
+      margin: 0 0 1.75rem;
+      flex: 1;
+    }
+    .pricing-features li {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.625rem;
+      font-size: 0.9375rem;
+      color: #c8c8e8;
+      padding: 0.4rem 0;
+      border-bottom: 1px solid rgba(255,255,255,0.04);
+    }
+    .pricing-features li:last-child { border-bottom: none; }
+    .pricing-check {
+      color: #e040fb;
+      font-weight: 700;
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+    .pricing-check.soon { color: #6666aa; }
+    .pricing-cta {
+      display: block;
+      text-align: center;
+      padding: 0.75rem 1.5rem;
+      border-radius: 8px;
+      font-weight: 700;
+      font-size: 0.9375rem;
+      text-decoration: none;
+      transition: opacity 0.2s, transform 0.15s;
+    }
+    .pricing-cta:hover { opacity: 0.9; transform: translateY(-1px); }
+    .pricing-cta.primary { background: #e040fb; color: #fff; }
+    .pricing-cta.secondary {
+      background: transparent;
+      color: #e040fb;
+      border: 1px solid rgba(224,64,251,0.4);
+    }
+
+    .notify-wrap {
+      margin-top: 1rem;
+    }
+    .notify-form {
+      display: flex;
+      gap: 0.5rem;
+      margin-top: 0.75rem;
+    }
+    .notify-form input {
+      flex: 1;
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 8px;
+      color: #f5f5ff;
+      font-family: Inter, system-ui, sans-serif;
+      font-size: 0.875rem;
+      padding: 0.625rem 0.875rem;
+      outline: none;
+      transition: border-color 0.2s;
+    }
+    .notify-form input:focus { border-color: rgba(224,64,251,0.5); }
+    .notify-form button {
+      background: rgba(224,64,251,0.15);
+      border: 1px solid rgba(224,64,251,0.3);
+      color: #e040fb;
+      font-weight: 700;
+      font-size: 0.875rem;
+      padding: 0.625rem 1rem;
+      border-radius: 8px;
+      cursor: pointer;
+      font-family: Inter, system-ui, sans-serif;
+      white-space: nowrap;
+      transition: background 0.2s;
+    }
+    .notify-form button:hover { background: rgba(224,64,251,0.25); }
+    .notify-label {
+      font-size: 0.8125rem;
+      color: #6666aa;
+    }
+
+    .faq-list { margin-top: 1rem; }
+    .faq-item {
+      border: 1px solid rgba(255,255,255,0.07);
+      border-radius: 10px;
+      margin-bottom: 0.75rem;
+      overflow: hidden;
+    }
+    .faq-item summary {
+      padding: 1rem 1.25rem;
+      font-weight: 600;
+      color: #f5f5ff;
+      cursor: pointer;
+      list-style: none;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 0.9375rem;
+    }
+    .faq-item summary::-webkit-details-marker { display: none; }
+    .faq-item summary::after {
+      content: '+';
+      font-size: 1.25rem;
+      color: #e040fb;
+      flex-shrink: 0;
+    }
+    .faq-item[open] summary::after { content: '−'; }
+    .faq-item p {
+      padding: 0 1.25rem 1rem;
+      margin: 0;
+      font-size: 0.9375rem;
+      color: #c8c8e8;
+      line-height: 1.7;
+    }
+
+    .compare-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 1.5rem 0;
+      font-size: 0.9rem;
+    }
+    .compare-table th {
+      font-family: 'Space Grotesk', Inter, system-ui, sans-serif;
+      font-weight: 700;
+      color: #f5f5ff;
+      padding: 0.75rem 1rem;
+      border-bottom: 1px solid rgba(255,255,255,0.1);
+      text-align: left;
+    }
+    .compare-table th:not(:first-child) { text-align: center; }
+    .compare-table td {
+      padding: 0.625rem 1rem;
+      color: #c8c8e8;
+      border-bottom: 1px solid rgba(255,255,255,0.04);
+    }
+    .compare-table td:not(:first-child) { text-align: center; }
+    .compare-table tr:last-child td { border-bottom: none; }
+    .compare-table .yes { color: #e040fb; font-weight: 700; }
+    .compare-table .no { color: #4444aa; }
+    .compare-table .soon-tag {
+      font-size: 0.75rem;
+      background: rgba(255,255,255,0.07);
+      border-radius: 4px;
+      padding: 0.15rem 0.4rem;
+      color: #8888bb;
+    }
+  </style>
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="inner">
+      <a href="/" class="site-logo"><img src="/favicon.svg" alt="ImageToPrompt" width="48" height="48"><div class="site-logo-text">ImageTo<span class="accent">Prompt</span><span class="site-logo-sub">Free AI Prompt Generator</span></div></a>
+      <nav class="site-nav" aria-label="Main navigation">
+        <div class="nav-dropdown">
+          <button class="nav-dropdown-trigger" aria-haspopup="true" aria-expanded="false">Tools <span class="nav-chevron" aria-hidden="true">&#9660;</span></button>
+          <div class="nav-dropdown-menu" role="menu">
+            <div class="nav-mega-grid">
+              <div class="nav-mega-col">
+                <div class="nav-mega-heading">&#128444; IMAGE TOOLS</div>
+                <a href="/" role="menuitem" class="nav-mega-tool">Image to Prompt <span class="nav-mega-arrow">&#8594;</span></a>
+                <a href="/text-to-prompt/" role="menuitem" class="nav-mega-tool">Text to Prompt <span class="nav-mega-arrow">&#8594;</span></a>
+                <div class="nav-mega-models-label">Models</div>
+                <div class="nav-mega-models"><a href="/midjourney-prompt-generator/">Midjourney</a><span class="nav-dot">&#xB7;</span><a href="/stable-diffusion-prompt-generator/">SD</a></div>
+                <div class="nav-mega-models"><a href="/flux-prompt-generator/">Flux</a><span class="nav-dot">&#xB7;</span><a href="/dall-e-prompt-generator/">DALL&#xB7;E&#xA0;3</a></div>
+                <div class="nav-mega-models"><a href="/adobe-firefly-prompt-generator/">Firefly</a><span class="nav-dot">&#xB7;</span><a href="/leonardo-ai-prompt-generator/">Leonardo</a></div>
+                <div class="nav-mega-models"><a href="/ideogram-prompt-generator/">Ideogram</a></div>
+              </div>
+              <div class="nav-mega-divider" aria-hidden="true"></div>
+              <div class="nav-mega-col">
+                <div class="nav-mega-heading">&#127909; VIDEO TOOLS</div>
+                <a href="/?tab=image-to-video" role="menuitem" class="nav-mega-tool">Image to Video <span class="nav-mega-arrow">&#8594;</span></a>
+                <a href="/?tab=text-to-video" role="menuitem" class="nav-mega-tool">Text to Video <span class="nav-mega-arrow">&#8594;</span></a>
+                <div class="nav-mega-models-label">Models</div>
+                <div class="nav-mega-models"><a href="/veo-prompt-generator/">Veo</a><span class="nav-dot">&#xB7;</span><a href="/kling-prompt-generator/">Kling</a></div>
+                <div class="nav-mega-models"><a href="/runway-prompt-generator/">Runway</a><span class="nav-dot">&#xB7;</span><a href="/pika-prompt-generator/">Pika</a></div>
+                <div class="nav-mega-models"><a href="/luma-prompt-generator/">Luma</a><span class="nav-dot">&#xB7;</span><a href="/sora-prompt-generator/">Sora</a></div>
+                <div class="nav-mega-models"><a href="/minimax-prompt-generator/">Minimax</a><span class="nav-dot">&#xB7;</span><a href="/stable-video-prompt-generator/">Stable</a></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <a href="/blog/">Blog</a>
+        <a href="/pricing/" aria-current="page">Pricing</a>
+        <a href="/about/">About</a>
+        <a href="/" class="nav-try-free">Try Free &#8594;</a>
+      </nav>
+    </div>
+  </header>
+
+  <nav class="breadcrumb" aria-label="Breadcrumb">
+    <a href="/">Home</a><span class="sep">›</span>
+    <span>Pricing</span>
+  </nav>
+
+  <div class="page-wrapper model-page-wrapper">
+    <article class="model-page-article">
+
+      <header class="model-page-hero">
+        <h1>Pricing</h1>
+        <p class="model-page-subtitle">Start free. No credit card, no login. Everything you need is already included.</p>
+      </header>
+
+      <div class="article-body">
+
+        <div class="pricing-grid">
+
+          <!-- Free Plan -->
+          <div class="pricing-card featured">
+            <div class="pricing-badge">Current Plan</div>
+            <p class="pricing-plan-name">Free</p>
+            <div class="pricing-price">$0<span>/mo</span></div>
+            <p class="pricing-period">Forever free &mdash; no credit card needed</p>
+            <ul class="pricing-features">
+              <li><span class="pricing-check">&#10003;</span> 10 analyses per day</li>
+              <li><span class="pricing-check">&#10003;</span> All 7 image models (Midjourney, SD, Flux, DALL&middot;E 3, Firefly, Leonardo, Ideogram)</li>
+              <li><span class="pricing-check">&#10003;</span> All 8 video models (Veo, Kling, Runway, Pika, Luma, Sora, Minimax, Stable)</li>
+              <li><span class="pricing-check">&#10003;</span> 6 prompt styles (Cinematic, Artistic, Technical&hellip;)</li>
+              <li><span class="pricing-check">&#10003;</span> Creative Remix prompts</li>
+              <li><span class="pricing-check">&#10003;</span> Negative prompt generation</li>
+              <li><span class="pricing-check">&#10003;</span> Prompt history (browser-saved)</li>
+              <li><span class="pricing-check">&#10003;</span> Multi-language output (10 languages)</li>
+              <li><span class="pricing-check">&#10003;</span> No account or login required</li>
+              <li><span class="pricing-check">&#10003;</span> Your images are never stored</li>
+            </ul>
+            <a href="/" class="pricing-cta primary">Start Generating Free &#8594;</a>
+          </div>
+
+          <!-- Pro Plan -->
+          <div class="pricing-card">
+            <p class="pricing-plan-name">Pro</p>
+            <div class="pricing-price" style="color:#8888bb">???<span>/mo</span></div>
+            <p class="pricing-period">Coming soon &mdash; sign up to be notified</p>
+            <ul class="pricing-features">
+              <li><span class="pricing-check soon">&#10003;</span> <span style="color:#6666aa">Unlimited analyses per day</span></li>
+              <li><span class="pricing-check soon">&#10003;</span> <span style="color:#6666aa">Priority processing</span></li>
+              <li><span class="pricing-check soon">&#10003;</span> <span style="color:#6666aa">Batch image analysis</span></li>
+              <li><span class="pricing-check soon">&#10003;</span> <span style="color:#6666aa">API access</span></li>
+              <li><span class="pricing-check soon">&#10003;</span> <span style="color:#6666aa">Extended prompt history</span></li>
+              <li><span class="pricing-check soon">&#10003;</span> <span style="color:#6666aa">Higher resolution analysis</span></li>
+              <li><span class="pricing-check soon">&#10003;</span> <span style="color:#6666aa">Early access to new models</span></li>
+              <li><span class="pricing-check soon">&#10003;</span> <span style="color:#6666aa">Email support</span></li>
+            </ul>
+            <div class="notify-wrap">
+              <p class="notify-label">Notify me when Pro launches:</p>
+              <form class="notify-form" action="https://formsubmit.co/ferhanothmane@gmail.com" method="POST">
+                <input type="hidden" name="_subject" value="Pro Plan Waitlist" />
+                <input type="hidden" name="_captcha" value="false" />
+                <input type="hidden" name="_next" value="https://www.imagetoprompt.dev/pricing/?waitlist=1" />
+                <input type="email" name="email" placeholder="your@email.com" required />
+                <button type="submit">Notify me</button>
+              </form>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Feature comparison -->
+        <h2>Full Feature Comparison</h2>
+        <table class="compare-table">
+          <thead>
+            <tr>
+              <th>Feature</th>
+              <th>Free</th>
+              <th>Pro</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>Daily analyses</td><td class="yes">10 / day</td><td><span class="soon-tag">Unlimited</span></td></tr>
+            <tr><td>Image model prompts (7 models)</td><td class="yes">&#10003;</td><td class="yes">&#10003;</td></tr>
+            <tr><td>Video model prompts (8 models)</td><td class="yes">&#10003;</td><td class="yes">&#10003;</td></tr>
+            <tr><td>6 prompt styles</td><td class="yes">&#10003;</td><td class="yes">&#10003;</td></tr>
+            <tr><td>Creative Remix prompts</td><td class="yes">&#10003;</td><td class="yes">&#10003;</td></tr>
+            <tr><td>Negative prompt generation</td><td class="yes">&#10003;</td><td class="yes">&#10003;</td></tr>
+            <tr><td>Multi-language output</td><td class="yes">&#10003;</td><td class="yes">&#10003;</td></tr>
+            <tr><td>No login required</td><td class="yes">&#10003;</td><td class="yes">&#10003;</td></tr>
+            <tr><td>Batch analysis</td><td class="no">&#8212;</td><td><span class="soon-tag">Coming soon</span></td></tr>
+            <tr><td>API access</td><td class="no">&#8212;</td><td><span class="soon-tag">Coming soon</span></td></tr>
+            <tr><td>Priority processing</td><td class="no">&#8212;</td><td><span class="soon-tag">Coming soon</span></td></tr>
+            <tr><td>Extended prompt history</td><td class="no">&#8212;</td><td><span class="soon-tag">Coming soon</span></td></tr>
+          </tbody>
+        </table>
+
+        <!-- FAQ -->
+        <h2>Frequently Asked Questions</h2>
+        <div class="faq-list">
+          <details class="faq-item">
+            <summary>Is ImageToPrompt really free?</summary>
+            <p>Yes, completely free. You get 10 AI prompt analyses per day at no cost, with no credit card or login required. The limit resets every day at midnight.</p>
+          </details>
+          <details class="faq-item">
+            <summary>Will there be a paid plan?</summary>
+            <p>A Pro plan is in development. It will offer higher daily limits, priority processing, batch image analysis, and API access. Sign up above to be notified when it launches — early subscribers will receive a founding member discount.</p>
+          </details>
+          <details class="faq-item">
+            <summary>What's included in the free plan?</summary>
+            <p>Everything: all 7 image models (Midjourney, Stable Diffusion, Flux, DALL-E 3, Adobe Firefly, Leonardo AI, Ideogram), all 8 video models (Veo, Kling, Runway, Pika, Luma, Sora, Minimax, Stable Video), all 6 prompt styles, creative remix prompts, negative prompts, prompt history, and multi-language support. No hidden limits, no watermarks.</p>
+          </details>
+          <details class="faq-item">
+            <summary>Why is there a 10/day limit?</summary>
+            <p>Each analysis uses Claude AI's vision model, which has a real cost. The 10/day limit lets us keep the tool completely free for everyone. If you regularly need more than 10 analyses per day, the Pro plan will be for you.</p>
+          </details>
+        </div>
+
+      </div>
+
+    </article>
+  </div>
+
+  <footer class="footer-4col">
+    <div class="f4-inner">
+      <div class="f4-brand">
+        <img src="/favicon.svg" alt="ImageToPrompt" width="28" height="28">
+        <span class="f4-brand-name">ImageTo<span class="accent">Prompt</span></span>
+        <span class="f4-brand-sub">&mdash; Free AI Prompt Generator</span>
+      </div>
+      <div class="f4-grid">
+        <div class="f4-section">
+          <h4 class="f4-heading">Image Prompt Tools</h4>
+          <a href="/">Image to Prompt</a>
+          <a href="/text-to-prompt/">Text to Prompt</a>
+          <a href="/midjourney-prompt-generator/">Midjourney</a>
+          <a href="/stable-diffusion-prompt-generator/">Stable Diffusion</a>
+          <a href="/flux-prompt-generator/">Flux</a>
+          <a href="/dall-e-prompt-generator/">DALL-E 3</a>
+          <a href="/adobe-firefly-prompt-generator/">Adobe Firefly</a>
+          <a href="/leonardo-ai-prompt-generator/">Leonardo AI</a>
+          <a href="/ideogram-prompt-generator/">Ideogram</a>
+        </div>
+        <div class="f4-section">
+          <h4 class="f4-heading">Video Prompt Tools</h4>
+          <a href="/image-to-video-prompt/">Image to Video Prompt</a>
+          <a href="/text-to-video-prompt/">Text to Video Prompt</a>
+          <a href="/veo-prompt-generator/">Veo / Flow Studio</a>
+          <a href="/kling-prompt-generator/">Kling AI</a>
+          <a href="/runway-prompt-generator/">Runway Gen-3</a>
+          <a href="/pika-prompt-generator/">Pika</a>
+          <a href="/luma-prompt-generator/">Luma Dream Machine</a>
+          <a href="/sora-prompt-generator/">Sora</a>
+          <a href="/minimax-prompt-generator/">Minimax</a>
+          <a href="/stable-video-prompt-generator/">Stable Video</a>
+        </div>
+        <div class="f4-section">
+          <h4 class="f4-heading">Resources</h4>
+          <a href="/blog/">Blog</a>
+          <a href="/about/">About</a>
+          <a href="/pricing/" aria-current="page">Pricing</a>
+          <a href="/contact/">Contact</a>
+          <a href="/privacy-policy/">Privacy Policy</a>
+          <a href="/terms-of-service/">Terms of Service</a>
+        </div>
+        <div class="f4-section">
+          <h4 class="f4-heading">Languages</h4>
+          <a href="/">English</a>
+          <a href="/fr/">Fran&#231;ais</a>
+          <a href="/ar/">&#1575;&#1604;&#1593;&#1585;&#1576;&#1610;&#1577;</a>
+        </div>
+      </div>
+      <div class="f4-bottom">
+        <p>&#169; 2026 ImageToPrompt.dev &#8212; Free AI Prompt Generator</p>
+        <p>Your images are never stored. All analysis is ephemeral and private.</p>
+      </div>
+    </div>
+  </footer>
+
+<script src="/nav.js" defer></script>
+</body>
+</html>
