@@ -74,12 +74,17 @@ body {
   font-weight: 700;
   color: #f5f5ff;
 }
-.site-logo img { border-radius: 8px; flex-shrink: 0; }
-.site-logo .accent { color: #e040fb; }
+.site-logo img { width: 40px; height: 40px; border-radius: 8px; flex-shrink: 0; }
+.site-logo .accent {
+  background: linear-gradient(135deg, #e040fb, #f06292);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
 .site-logo-text { line-height: 1.15; white-space: nowrap; }
 .site-logo-sub {
   display: block;
-  white-space: normal;
+  white-space: nowrap;
   font-size: 0.625rem;
   font-weight: 400;
   color: #8888bb;
@@ -1241,4 +1246,66 @@ body {
   .troubleshooting-grid { grid-template-columns: 1fr; }
   .cta-inline { flex-direction: column; }
   .formula-line { font-size: 0.6875rem; }
+}
+
+/* ── 4-column site footer ───────────────────────── */
+.footer-4col {
+  border-top: 1px solid rgba(255,255,255,0.06);
+  background: #0e0e1a;
+  padding: 3rem 1.5rem 2rem;
+  margin-top: 2rem;
+}
+.f4-inner {
+  max-width: 900px;
+  margin: 0 auto;
+}
+.f4-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2rem 1.5rem;
+  margin-bottom: 2rem;
+}
+.f4-section {
+  display: flex;
+  flex-direction: column;
+  gap: 0.375rem;
+}
+.f4-heading {
+  font-family: 'Space Grotesk', Inter, system-ui, sans-serif;
+  font-size: 0.5625rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: rgba(136,136,187,0.45);
+  margin: 0 0 0.625rem;
+}
+.f4-section a {
+  font-family: 'Inter', system-ui, sans-serif;
+  font-size: 0.8125rem;
+  color: #5858a0;
+  text-decoration: none;
+  transition: color 0.15s;
+  line-height: 1.4;
+}
+.f4-section a:hover { color: #c0c0dd; }
+.f4-bottom {
+  border-top: 1px solid rgba(255,255,255,0.05);
+  padding-top: 1.25rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.5rem;
+}
+.f4-bottom p {
+  font-size: 0.75rem;
+  color: #3a3a66;
+  margin: 0;
+}
+@media (max-width: 860px) {
+  .f4-grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 460px) {
+  .f4-grid { grid-template-columns: 1fr; }
+  .footer-4col { padding: 2rem 1rem 1.5rem; }
 }

@@ -158,7 +158,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
     const response = await client.messages.create({
       model: 'claude-haiku-4-5-20251001',
       max_tokens: 1200,
-      system: buildSystemPrompt(model, motion, dur, camera, lang),
+      system: buildSystemPrompt(model, motion, dur, camera),
       messages: [
         {
           role: 'user',
@@ -209,7 +209,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
   }
 }
 
-function buildSystemPrompt(model: string, motionStyle: string, duration: string, cameraMovement: string, language: string): string {
+function buildSystemPrompt(model: string, motionStyle: string, duration: string, cameraMovement: string): string {
   const cameraMap: Record<string, string> = {
     'static': 'fixed camera, no movement',
     'pan-left': 'camera pans left horizontally',

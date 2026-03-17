@@ -3,22 +3,10 @@
   "outputDirectory": "dist",
   "installCommand": "npm install",
   "functions": {
-    "api/analyze.ts": {
-      "maxDuration": 30,
-      "memory": 512
-    },
-    "api/text-to-prompt.ts": {
-      "maxDuration": 30,
-      "memory": 512
-    },
-    "api/image-to-video-prompt.ts": {
-      "maxDuration": 30,
-      "memory": 512
-    },
-    "api/text-to-video-prompt.ts": {
-      "maxDuration": 30,
-      "memory": 512
-    }
+    "api/analyze.ts": { "maxDuration": 30 },
+    "api/text-to-prompt.ts": { "maxDuration": 30 },
+    "api/image-to-video-prompt.ts": { "maxDuration": 30 },
+    "api/text-to-video-prompt.ts": { "maxDuration": 30 }
   },
   "rewrites": [
     { "source": "/api/(.*)", "destination": "/api/$1" },

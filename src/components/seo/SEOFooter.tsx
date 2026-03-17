@@ -1,125 +1,79 @@
+const linkCls = 'font-inter text-[0.8125rem] text-[var(--text-secondary)]/40 hover:text-[var(--text-secondary)] transition-colors duration-150 leading-snug';
+const headingCls = 'font-grotesk text-[0.5625rem] font-700 uppercase tracking-[0.12em] text-[var(--text-secondary)]/40 mb-2.5';
+
+function FooterCol({ heading, links }: { heading: string; links: { href: string; label: string }[] }) {
+  return (
+    <div className="flex flex-col gap-1.5">
+      <p className={headingCls}>{heading}</p>
+      {links.map(({ href, label }) => (
+        <a key={href} href={href} className={linkCls}>{label}</a>
+      ))}
+    </div>
+  );
+}
+
 export default function SEOFooter() {
   return (
     <footer className="border-t border-[var(--border-subtle)] bg-[var(--bg-card)] mt-8">
-      <div className="mx-auto max-w-5xl px-4 py-12 sm:px-6">
-        {/* Brand + description */}
-        <div className="mb-8">
-          <p className="font-grotesk text-sm font-600 text-[var(--text-primary)] mb-2">
-            ImageTo<span style={{ color: 'var(--accent-lens)' }}>Prompt</span>
+      <div className="mx-auto max-w-5xl px-4 pt-10 pb-8 sm:px-6">
+
+        <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-4 mb-8">
+          <FooterCol
+            heading="Image Prompt Tools"
+            links={[
+              { href: '/',                                    label: 'Image to Prompt'    },
+              { href: '/text-to-prompt/',                     label: 'Text to Prompt'     },
+              { href: '/midjourney-prompt-generator/',        label: 'Midjourney'         },
+              { href: '/stable-diffusion-prompt-generator/', label: 'Stable Diffusion'   },
+              { href: '/flux-prompt-generator/',              label: 'Flux'               },
+              { href: '/dall-e-prompt-generator/',            label: 'DALL-E 3'           },
+              { href: '/adobe-firefly-prompt-generator/',     label: 'Adobe Firefly'      },
+              { href: '/leonardo-ai-prompt-generator/',       label: 'Leonardo AI'        },
+              { href: '/ideogram-prompt-generator/',          label: 'Ideogram'           },
+            ]}
+          />
+          <FooterCol
+            heading="Video Prompt Tools"
+            links={[
+              { href: '/image-to-video-prompt/',              label: 'Image to Video Prompt' },
+              { href: '/text-to-video-prompt/',               label: 'Text to Video Prompt'  },
+              { href: '/veo-prompt-generator/',               label: 'Veo / Flow Studio'     },
+              { href: '/kling-prompt-generator/',             label: 'Kling AI'              },
+              { href: '/runway-prompt-generator/',            label: 'Runway Gen-3'          },
+              { href: '/pika-prompt-generator/',              label: 'Pika'                  },
+              { href: '/luma-prompt-generator/',              label: 'Luma Dream Machine'    },
+              { href: '/sora-prompt-generator/',              label: 'Sora'                  },
+              { href: '/minimax-prompt-generator/',           label: 'Minimax'               },
+              { href: '/stable-video-prompt-generator/',      label: 'Stable Video'          },
+            ]}
+          />
+          <FooterCol
+            heading="Resources"
+            links={[
+              { href: '/blog/',             label: 'Blog'            },
+              { href: '/privacy-policy/',   label: 'Privacy Policy'  },
+              { href: '/terms-of-service/', label: 'Terms of Service'},
+            ]}
+          />
+          <FooterCol
+            heading="Languages"
+            links={[
+              { href: '/',    label: 'English'   },
+              { href: '/fr/', label: 'Français'  },
+              { href: '/ar/', label: 'العربية'   },
+            ]}
+          />
+        </div>
+
+        <div className="border-t border-[var(--border-subtle)] pt-5 flex flex-col sm:flex-row justify-between gap-2">
+          <p className="font-inter text-xs text-[var(--text-secondary)]/30">
+            © 2026 ImageToPrompt.dev — Free AI Prompt Generator
           </p>
-          <p className="font-inter text-sm text-[var(--text-secondary)] leading-relaxed max-w-2xl">
-            ImageToPrompt is a free AI image-to-prompt generator powered by Claude AI vision. Upload any
-            photo and instantly get optimized prompts for Midjourney, Stable Diffusion, Flux, DALL-E
-            3, Adobe Firefly, Leonardo AI, and Ideogram. No login required. 10 free analyses per
-            day.
+          <p className="font-inter text-xs text-[var(--text-secondary)]/25">
+            Your images are never stored. All analysis is ephemeral and private.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 gap-8 sm:grid-cols-3 mb-8">
-          {/* Navigation */}
-          <div>
-            <p className="font-grotesk text-xs font-600 uppercase tracking-wider text-[var(--text-secondary)] mb-3">
-              Navigation
-            </p>
-            <nav className="flex flex-col gap-2" aria-label="Site sections">
-              {[
-                { href: '#tool', label: 'Image to Prompt Generator' },
-                { href: '#how-it-works', label: 'How It Works' },
-                { href: '#models', label: 'Supported AI Models' },
-                { href: '#examples', label: 'Prompt Examples' },
-                { href: '#faq', label: 'FAQ' },
-                { href: '/blog/', label: 'Blog & Guides' },
-              ].map((link) => (
-                <a
-                  key={link.href}
-                  href={link.href}
-                  className="font-inter text-sm text-[var(--text-secondary)] hover:text-[var(--text-primary)] transition-colors"
-                >
-                  {link.label}
-                </a>
-              ))}
-            </nav>
-          </div>
-
-          {/* Models */}
-          <div>
-            <p className="font-grotesk text-xs font-600 uppercase tracking-wider text-[var(--text-secondary)] mb-3">
-              Prompt Generators
-            </p>
-            <nav className="flex flex-col gap-2" aria-label="Model prompt generators">
-              {[
-                { href: '/midjourney-prompt-generator/', label: 'Midjourney Prompt Generator' },
-                { href: '/stable-diffusion-prompt-generator/', label: 'Stable Diffusion Prompt Generator' },
-                { href: '/flux-prompt-generator/', label: 'Flux AI Prompt Generator' },
-                { href: '/dall-e-prompt-generator/', label: 'DALL-E 3 Prompt Generator' },
-                { href: '/adobe-firefly-prompt-generator/', label: 'Adobe Firefly Prompt Generator' },
-                { href: '/leonardo-ai-prompt-generator/', label: 'Leonardo AI Prompt Generator' },
-                { href: '/ideogram-prompt-generator/', label: 'Ideogram Prompt Generator' },
-              ].map((link) => (
-                <a
-                  key={link.href}
-                  href={link.href}
-                  className="font-inter text-sm text-[var(--text-secondary)] hover:text-[var(--text-primary)] transition-colors"
-                >
-                  {link.label}
-                </a>
-              ))}
-            </nav>
-          </div>
-
-          {/* Features */}
-          <div>
-            <p className="font-grotesk text-xs font-600 uppercase tracking-wider text-[var(--text-secondary)] mb-3">
-              Features
-            </p>
-            <ul className="flex flex-col gap-2">
-              {[
-                'Image to prompt conversion',
-                'Negative prompt generation',
-                'Color palette extraction',
-                'Lighting & mood analysis',
-                'Creative remix prompts',
-                'Prompt history (local)',
-                '10 free analyses per day',
-              ].map((f) => (
-                <li key={f} className="font-inter text-sm text-[var(--text-secondary)]">
-                  {f}
-                </li>
-              ))}
-            </ul>
-          </div>
-        </div>
-
-        <div className="border-t border-[var(--border-subtle)] pt-6 flex flex-col sm:flex-row items-center justify-between gap-3">
-          <p className="font-inter text-xs text-[var(--text-secondary)]/50">
-            ImageToPrompt does not store your images. All analysis is ephemeral and private.
-          </p>
-          <nav className="flex gap-4 items-center" aria-label="Legal links">
-            <a href="/privacy-policy/" className="font-inter text-xs text-[var(--text-secondary)]/50 hover:text-[var(--text-secondary)] transition-colors">
-              Privacy Policy
-            </a>
-            <a href="/terms-of-service/" className="font-inter text-xs text-[var(--text-secondary)]/50 hover:text-[var(--text-secondary)] transition-colors">
-              Terms of Service
-            </a>
-          </nav>
-        </div>
-
-        {/* Language switcher */}
-        <div className="mt-4 pt-4 border-t border-[var(--border-subtle)] flex items-center gap-2 flex-wrap">
-          <span className="font-inter text-xs text-[var(--text-secondary)]/40">Language:</span>
-          {[
-            { href: '/', label: 'English' },
-            { href: '/fr/', label: 'Français' },
-            { href: '/ar/', label: 'العربية' },
-          ].map((lang, i, arr) => (
-            <span key={lang.href} className="flex items-center gap-2">
-              <a href={lang.href} className="font-inter text-xs text-[var(--text-secondary)]/50 hover:text-[var(--text-secondary)] transition-colors">
-                {lang.label}
-              </a>
-              {i < arr.length - 1 && <span className="font-inter text-xs text-[var(--text-secondary)]/20">·</span>}
-            </span>
-          ))}
-        </div>
       </div>
     </footer>
   );
