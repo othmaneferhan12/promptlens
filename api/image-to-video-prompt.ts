@@ -147,7 +147,6 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
   const motion = (validMotionStyles as readonly string[]).includes(rawMotion) ? rawMotion : 'cinematic';
   const dur = (validDurations as readonly string[]).includes(rawDuration) ? rawDuration : '4s';
   const camera = (validCameraMovements as readonly string[]).includes(rawCamera) ? rawCamera : 'static';
-  const lang = typeof selectedLanguage === 'string' && selectedLanguage.length <= 10 ? selectedLanguage : 'en';
 
   const apiKey = process.env.ANTHROPIC_API_KEY;
   if (!apiKey) return res.status(500).json({ error: 'Server configuration error.' });
