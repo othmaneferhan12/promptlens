@@ -97,6 +97,12 @@ export default function App() {
     activeTab === 'image-to-video' ? imgVideoError :
     textVideoError;
 
+  // Initialize theme from localStorage
+  useEffect(() => {
+    const saved = localStorage.getItem('theme') || 'dark';
+    document.documentElement.setAttribute('data-theme', saved);
+  }, []);
+
   useEffect(() => {
     if (result) setActiveResult(result);
   }, [result]);

@@ -94,6 +94,25 @@
   --glow-cyan: 0 0 30px rgba(0, 229, 255, 0.2);
 }
 
+/* ── Light theme overrides ──────────────────────────────────── */
+[data-theme="light"] {
+  --bg-void: #f8f9fc;
+  --bg-surface: #ffffff;
+  --bg-card: #eef0f8;
+  --bg-elevated: #e8eaf4;
+  --text-primary: #1a1a2e;
+  --text-secondary: #6060a0;
+  --border-subtle: rgba(0,0,0,0.07);
+  --border-accent: rgba(192,32,216,0.25);
+  --accent-lens: #c020d8;
+  --accent-cyan: #0099cc;
+  --accent-lens-dim: rgba(192,32,216,0.10);
+}
+
+[data-theme="light"] ::-webkit-scrollbar-track { background: #f1f5f9; }
+[data-theme="light"] ::-webkit-scrollbar-thumb { background: rgba(192,32,216,0.20); }
+[data-theme="light"] body { background-color: var(--bg-void); }
+
 /* ── Base Resets ────────────────────────────────────────────── */
 *,
 *::before,

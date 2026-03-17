@@ -1,0 +1,128 @@
+/* ImageToPrompt — Theme Variables */
+
+/* ── Dark theme (default) ──────────────────────────────────── */
+:root {
+  --bg-base: #080810;
+  --bg-surface: #0d0d1a;
+  --bg-elevated: #111120;
+  --bg-card: rgba(255,255,255,0.03);
+  --bg-card-hover: rgba(255,255,255,0.055);
+  --bg-code: rgba(255,255,255,0.04);
+  --bg-input: rgba(0,0,0,0.3);
+
+  --text-primary: #f5f5ff;
+  --text-secondary: #c0c0dd;
+  --text-muted: #8888bb;
+  --text-dim: #6060aa;
+
+  --border-subtle: rgba(255,255,255,0.06);
+  --border-mid: rgba(255,255,255,0.10);
+  --border-card: rgba(255,255,255,0.08);
+
+  --nav-bg: rgba(8,8,16,0.88);
+  --footer-bg: #0e0e1a;
+
+  --accent: #e040fb;
+  --accent-dim: rgba(224,64,251,0.12);
+  --accent-border: rgba(224,64,251,0.25);
+  --accent-cyan: #00e5ff;
+  --accent-cyan-dim: rgba(0,229,255,0.10);
+
+  --code-text: #a78bfa;
+  --code-bg: rgba(255,255,255,0.04);
+
+  --shadow-card: 0 4px 24px rgba(0,0,0,0.35);
+  --shadow-dropdown: 0 8px 40px rgba(0,0,0,0.6);
+  --shadow-hover: 0 8px 40px rgba(0,0,0,0.45);
+
+  --scrollbar-track: transparent;
+  --scrollbar-thumb: rgba(224,64,251,0.25);
+
+  /* Toggle button */
+  --toggle-bg: rgba(255,255,255,0.05);
+  --toggle-border: rgba(255,255,255,0.10);
+  --toggle-hover: rgba(255,255,255,0.10);
+}
+
+/* ── Light theme ──────────────────────────────────────────── */
+[data-theme="light"] {
+  --bg-base: #f8f9fc;
+  --bg-surface: #ffffff;
+  --bg-elevated: #eef0f8;
+  --bg-card: rgba(0,0,0,0.025);
+  --bg-card-hover: rgba(0,0,0,0.045);
+  --bg-code: #f1f5f9;
+  --bg-input: #ffffff;
+
+  --text-primary: #1a1a2e;
+  --text-secondary: #3a3a5e;
+  --text-muted: #6060a0;
+  --text-dim: #9090bb;
+
+  --border-subtle: rgba(0,0,0,0.07);
+  --border-mid: rgba(0,0,0,0.11);
+  --border-card: rgba(0,0,0,0.08);
+
+  --nav-bg: rgba(248,249,252,0.92);
+  --footer-bg: #eef0f8;
+
+  --accent: #c020d8;
+  --accent-dim: rgba(192,32,216,0.09);
+  --accent-border: rgba(192,32,216,0.22);
+  --accent-cyan: #0099cc;
+  --accent-cyan-dim: rgba(0,153,204,0.09);
+
+  --code-text: #6d28d9;
+  --code-bg: #f1f5f9;
+
+  --shadow-card: 0 2px 12px rgba(0,0,0,0.08);
+  --shadow-dropdown: 0 4px 24px rgba(0,0,0,0.14);
+  --shadow-hover: 0 4px 24px rgba(0,0,0,0.12);
+
+  --scrollbar-track: #f1f5f9;
+  --scrollbar-thumb: #c0c0d8;
+
+  /* Toggle button */
+  --toggle-bg: rgba(0,0,0,0.04);
+  --toggle-border: rgba(0,0,0,0.10);
+  --toggle-hover: rgba(0,0,0,0.08);
+}
+
+/* ── Smooth theme transition ─────────────────────────────── */
+*,
+*::before,
+*::after {
+  transition: background-color 0.25s ease,
+              color 0.25s ease,
+              border-color 0.25s ease,
+              box-shadow 0.25s ease !important;
+}
+
+/* Suppress transition on page load (added/removed by JS) */
+.no-transition,
+.no-transition * {
+  transition: none !important;
+}
+
+/* ── Theme toggle button ─────────────────────────────────── */
+#theme-toggle {
+  background: var(--toggle-bg);
+  border: 1px solid var(--toggle-border);
+  border-radius: 50%;
+  width: 34px;
+  height: 34px;
+  min-width: 34px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 15px;
+  line-height: 1;
+  transition: background 0.2s, border-color 0.2s, transform 0.15s;
+  flex-shrink: 0;
+}
+#theme-toggle:hover {
+  background: var(--toggle-hover);
+  border-color: var(--accent);
+  transform: scale(1.08);
+}

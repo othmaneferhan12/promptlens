@@ -52,6 +52,14 @@ const vidPillCls =
 export default function Header({ onHistoryOpen, hasHistory }: HeaderProps) {
   const [showTools, setShowTools] = useState(false);
   const toolsRef = useRef<HTMLDivElement>(null);
+  const [theme, setTheme] = useState<'dark' | 'light'>(() => (localStorage.getItem('theme') || 'dark') as 'dark' | 'light');
+
+  const toggleTheme = () => {
+    const next = theme === 'dark' ? 'light' : 'dark';
+    setTheme(next);
+    document.documentElement.setAttribute('data-theme', next);
+    localStorage.setItem('theme', next);
+  };
 
   useEffect(() => {
     function handleClick(e: MouseEvent) {
@@ -248,6 +256,25 @@ export default function Header({ onHistoryOpen, hasHistory }: HeaderProps) {
               <History size={14} />
             </button>
           )}
+
+          {/* Theme toggle */}
+          <button
+            onClick={toggleTheme}
+            aria-label={theme === 'dark' ? 'Switch to light mode' : 'Switch to dark mode'}
+            title={theme === 'dark' ? 'Switch to light mode' : 'Switch to dark mode'}
+            className="flex items-center justify-center rounded-full border transition-all duration-200 hover:scale-110"
+            style={{
+              width: '34px',
+              height: '34px',
+              minWidth: '34px',
+              fontSize: '15px',
+              background: 'var(--toggle-bg, rgba(255,255,255,0.05))',
+              borderColor: 'var(--toggle-border, rgba(255,255,255,0.10))',
+              cursor: 'pointer',
+            }}
+          >
+            {theme === 'dark' ? '☀️' : '🌙'}
+          </button>
 
           {/* Try Free CTA */}
           <a
