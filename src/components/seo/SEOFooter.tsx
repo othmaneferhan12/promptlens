@@ -98,6 +98,9 @@ export default function SEOFooter() {
             linkCls={defLinkCls}
             links={[
               { href: '/blog/',             label: 'Blog'            },
+              { href: '/about/',            label: 'About'           },
+              { href: '/pricing/',          label: 'Pricing'         },
+              { href: '/contact/',          label: 'Contact'         },
               { href: '/privacy-policy/',   label: 'Privacy Policy'  },
               { href: '/terms-of-service/', label: 'Terms of Service'},
             ]}
