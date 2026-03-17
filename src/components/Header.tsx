@@ -204,6 +204,22 @@ export default function Header({ onHistoryOpen, hasHistory }: HeaderProps) {
             Blog
           </a>
 
+          {/* Pricing */}
+          <a
+            href="/pricing/"
+            className="hidden sm:flex items-center rounded-lg px-3 py-1.5 font-inter text-sm text-[var(--text-secondary)] transition-all duration-200 hover:text-[var(--text-primary)]"
+          >
+            Pricing
+          </a>
+
+          {/* About */}
+          <a
+            href="/about/"
+            className="hidden sm:flex items-center rounded-lg px-3 py-1.5 font-inter text-sm text-[var(--text-secondary)] transition-all duration-200 hover:text-[var(--text-primary)]"
+          >
+            About
+          </a>
+
           {/* History */}
           {hasHistory && (
             <button
