@@ -212,11 +212,11 @@ export default function Header({ onHistoryOpen, hasHistory }: HeaderProps) {
               color: '#e040fb',
               padding: '0.3rem 0.75rem',
               borderRadius: '20px',
-              border: '1px solid rgba(224,64,251,0.3)',
-              background: 'rgba(224,64,251,0.07)',
+              border: '1px solid transparent',
+              background: 'transparent',
             }}
-            onMouseEnter={e => { (e.currentTarget as HTMLAnchorElement).style.background = 'rgba(224,64,251,0.15)'; (e.currentTarget as HTMLAnchorElement).style.borderColor = 'rgba(224,64,251,0.6)'; }}
-            onMouseLeave={e => { (e.currentTarget as HTMLAnchorElement).style.background = 'rgba(224,64,251,0.07)'; (e.currentTarget as HTMLAnchorElement).style.borderColor = 'rgba(224,64,251,0.3)'; }}
+            onMouseEnter={e => { (e.currentTarget as HTMLAnchorElement).style.background = 'rgba(224,64,251,0.10)'; (e.currentTarget as HTMLAnchorElement).style.borderColor = 'rgba(224,64,251,0.35)'; }}
+            onMouseLeave={e => { (e.currentTarget as HTMLAnchorElement).style.background = 'transparent'; (e.currentTarget as HTMLAnchorElement).style.borderColor = 'transparent'; }}
           >
             Pricing
           </a>

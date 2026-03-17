@@ -101,7 +101,7 @@ body {
   transition: color 0.15s;
 }
 .site-nav a:hover { color: #f5f5ff; }
-.site-nav a.active { color: #e040fb; }
+.site-nav a.active { color: #e040fb; text-decoration: underline; text-underline-offset: 3px; text-decoration-color: rgba(224,64,251,0.45); }
 
 /* Nav Tools dropdown */
 .nav-dropdown { position: relative; }
@@ -264,7 +264,7 @@ body {
 }
 .site-nav .nav-try-free:hover { opacity: 0.88; color: #000; -webkit-text-fill-color: #000; }
 
-/* Pricing pill — subtle purple outline */
+/* Pricing pill — purple text only by default, pill on hover */
 .site-nav .nav-pill-pricing {
   display: inline-flex;
   align-items: center;
@@ -275,14 +275,14 @@ body {
   text-decoration: none;
   padding: 0.3rem 0.75rem;
   border-radius: 20px;
-  border: 1px solid rgba(224,64,251,0.3);
-  background: rgba(224,64,251,0.07);
+  border: 1px solid transparent;
+  background: transparent;
   transition: background 0.2s, border-color 0.2s, color 0.2s;
   white-space: nowrap;
 }
 .site-nav .nav-pill-pricing:hover {
-  background: rgba(224,64,251,0.15);
-  border-color: rgba(224,64,251,0.6);
+  background: rgba(224,64,251,0.1);
+  border-color: rgba(224,64,251,0.35);
   color: #f06fff;
 }
 
