@@ -127,13 +127,13 @@ body {
   position: absolute;
   top: calc(100% + 8px);
   right: 0;
-  background: #12121e;
+  background: linear-gradient(160deg, #13131f 0%, #0d0d18 100%);
   border: 1px solid rgba(255,255,255,0.10);
   border-radius: 16px;
   padding: 0;
   min-width: 480px;
   z-index: 100;
-  box-shadow: 0 20px 40px rgba(0,0,0,0.6), 0 0 0 1px rgba(255,255,255,0.04);
+  box-shadow: 0 20px 60px rgba(0,0,0,0.7), 0 0 0 1px rgba(255,255,255,0.04), inset 0 1px 0 rgba(255,255,255,0.06);
   overflow: hidden;
 }
 .nav-dropdown.open .nav-dropdown-menu { display: block; }
@@ -146,14 +146,28 @@ body {
   padding: 1rem;
 }
 .nav-mega-col { display: flex; flex-direction: column; gap: 2px; }
+
+/* Column headings — pink for image, cyan for video */
 .nav-mega-heading {
+  display: flex;
+  align-items: center;
+  gap: 6px;
   font-size: 0.5625rem;
   font-weight: 700;
   letter-spacing: 0.12em;
   text-transform: uppercase;
-  color: rgba(136,136,187,0.55);
   padding: 0 6px 10px 6px;
 }
+.nav-mega-heading::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: rgba(255,255,255,0.05);
+}
+.nav-mega-col:first-child .nav-mega-heading { color: rgba(224,100,251,0.8); }
+.nav-mega-col:last-child  .nav-mega-heading { color: rgba(0,210,255,0.8); }
+
+/* Tool links with column-aware hover */
 .nav-mega-tool {
   display: flex;
   align-items: center;
@@ -164,30 +178,65 @@ body {
   font-weight: 500;
   color: #d8d8f0;
   text-decoration: none;
-  transition: background 0.1s, color 0.1s;
+  transition: background 0.12s, color 0.12s, box-shadow 0.12s;
   white-space: nowrap;
 }
-.nav-mega-tool:hover { background: rgba(255,255,255,0.07); color: #fff; }
-.nav-mega-arrow { color: rgba(136,136,187,0.45); font-size: 0.75rem; }
+.nav-mega-col:first-child .nav-mega-tool:hover {
+  background: rgba(224,64,251,0.08);
+  color: #fff;
+  box-shadow: inset 2px 0 0 #e040fb;
+}
+.nav-mega-col:last-child .nav-mega-tool:hover {
+  background: rgba(0,229,255,0.08);
+  color: #fff;
+  box-shadow: inset 2px 0 0 #00e5ff;
+}
+.nav-mega-arrow {
+  color: rgba(136,136,187,0.4);
+  font-size: 0.75rem;
+  transition: color 0.12s;
+}
+.nav-mega-col:first-child .nav-mega-tool:hover .nav-mega-arrow { color: #e040fb; }
+.nav-mega-col:last-child  .nav-mega-tool:hover .nav-mega-arrow { color: #00e5ff; }
+
+/* Models section */
 .nav-mega-models-label {
   font-size: 0.5rem;
   font-weight: 600;
   letter-spacing: 0.1em;
   text-transform: uppercase;
-  color: rgba(136,136,187,0.35);
-  padding: 8px 8px 2px 8px;
+  color: rgba(136,136,187,0.3);
+  padding: 8px 8px 4px 8px;
+  border-top: 1px solid rgba(255,255,255,0.05);
+  margin-top: 4px;
 }
-.nav-mega-models { display: flex; flex-wrap: wrap; align-items: center; gap: 2px; padding: 2px 6px; }
+/* Hide dot separators — pills use gap instead */
+.nav-mega-models { display: flex; flex-wrap: wrap; align-items: center; gap: 4px; padding: 3px 4px; }
+.nav-mega-models .nav-dot { display: none; }
+
+/* Pill badges */
 .nav-mega-models a {
-  font-size: 0.75rem;
-  color: #7878aa;
+  font-size: 0.6875rem;
+  color: #8888bb;
   text-decoration: none;
-  padding: 2px 4px;
-  border-radius: 4px;
-  transition: color 0.1s, background 0.1s;
+  padding: 2px 9px;
+  border-radius: 999px;
+  border: 1px solid rgba(136,136,187,0.15);
+  transition: color 0.15s, background 0.15s, border-color 0.15s, box-shadow 0.15s;
   white-space: nowrap;
 }
-.nav-mega-models a:hover { color: #e040fb; background: rgba(224,64,251,0.08); }
+.nav-mega-col:first-child .nav-mega-models a:hover {
+  color: #e040fb;
+  background: rgba(224,64,251,0.09);
+  border-color: rgba(224,64,251,0.45);
+  box-shadow: 0 0 8px rgba(224,64,251,0.15);
+}
+.nav-mega-col:last-child .nav-mega-models a:hover {
+  color: #00e5ff;
+  background: rgba(0,229,255,0.09);
+  border-color: rgba(0,229,255,0.45);
+  box-shadow: 0 0 8px rgba(0,229,255,0.12);
+}
 .nav-dot { font-size: 0.75rem; color: rgba(136,136,187,0.25); padding: 0 2px; user-select: none; }
 .nav-mega-divider { width: 1px; background: rgba(255,255,255,0.07); margin: 0 8px; align-self: stretch; }
 

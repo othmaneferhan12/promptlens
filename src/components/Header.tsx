@@ -1,15 +1,15 @@
 import { useState, useRef, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { History, ChevronDown } from 'lucide-react';
+import { History, ChevronDown, Image as ImageIcon, Type as TypeIcon, Video as VideoIcon, Film as FilmIcon } from 'lucide-react';
 import type { RateLimitState } from '../types';
 
 const IMG_MAIN = [
-  { href: '/',               label: 'Image to Prompt' },
-  { href: '/text-to-prompt/', label: 'Text to Prompt'  },
+  { href: '/',                label: 'Image to Prompt', Icon: ImageIcon },
+  { href: '/text-to-prompt/', label: 'Text to Prompt',  Icon: TypeIcon  },
 ];
 const VID_MAIN = [
-  { href: '/?tab=image-to-video', label: 'Image to Video' },
-  { href: '/?tab=text-to-video',  label: 'Text to Video'  },
+  { href: '/?tab=image-to-video', label: 'Image to Video', Icon: VideoIcon },
+  { href: '/?tab=text-to-video',  label: 'Text to Video',  Icon: FilmIcon  },
 ];
 const IMG_MODELS = [
   ['Midjourney', '/midjourney-prompt-generator/'],
@@ -31,15 +31,6 @@ const VID_MODELS = [
   ['Stable', '/stable-video-prompt-generator/'],
 ] as const;
 
-// Group into pairs for compact dot-separated rows
-function pairModels<T extends readonly [string, string]>(models: readonly T[]) {
-  const rows: T[][] = [];
-  for (let i = 0; i < models.length; i += 2) {
-    rows.push(models.slice(i, i + 2) as T[]);
-  }
-  return rows;
-}
-
 interface HeaderProps {
   rateLimit: RateLimitState;
   onHistoryOpen: () => void;
@@ -47,13 +38,16 @@ interface HeaderProps {
 }
 
 const colBase = 'flex flex-col gap-0.5';
-const headingCls = 'text-[0.5625rem] font-700 tracking-[0.12em] uppercase pb-2.5 px-1.5';
-const mainLinkCls =
-  'flex items-center justify-between rounded-lg px-2 py-1.5 text-[0.8125rem] font-500 text-[#d8d8f0] transition-colors duration-100 hover:bg-white/[0.07] hover:text-white whitespace-nowrap font-inter';
-const modelsLabelCls = 'text-[0.5rem] font-600 tracking-[0.1em] uppercase pt-2 pb-0.5 px-2';
-const modelRowCls = 'flex items-center gap-0.5 px-1.5 py-0.5 flex-wrap';
-const modelLinkCls = 'text-[0.75rem] text-[#7878aa] no-underline rounded px-1 py-0.5 transition-colors duration-100 hover:text-[#e040fb] hover:bg-[rgba(224,64,251,0.08)] whitespace-nowrap font-inter';
-const dotCls = 'text-[0.75rem] select-none px-0.5' ;
+const imgToolCls =
+  'flex items-center gap-2 justify-between rounded-lg px-2 py-1.5 text-[0.8125rem] font-500 text-[#d8d8f0] transition-all duration-100 hover:bg-[rgba(224,64,251,0.08)] hover:text-white hover:shadow-[inset_2px_0_0_#e040fb] whitespace-nowrap font-inter';
+const vidToolCls =
+  'flex items-center gap-2 justify-between rounded-lg px-2 py-1.5 text-[0.8125rem] font-500 text-[#d8d8f0] transition-all duration-100 hover:bg-[rgba(0,229,255,0.08)] hover:text-white hover:shadow-[inset_2px_0_0_#00e5ff] whitespace-nowrap font-inter';
+const modelsLabelCls =
+  'text-[0.5rem] font-600 tracking-[0.1em] uppercase text-[rgba(136,136,187,0.3)] px-2 pt-2 pb-1 mt-1 border-t border-white/[0.05]';
+const imgPillCls =
+  'text-[0.6875rem] text-[#8888bb] no-underline rounded-full px-2.5 py-0.5 border border-[rgba(136,136,187,0.15)] transition-all duration-150 hover:text-[#e040fb] hover:border-[rgba(224,64,251,0.45)] hover:bg-[rgba(224,64,251,0.09)] hover:shadow-[0_0_8px_rgba(224,64,251,0.15)] font-inter whitespace-nowrap';
+const vidPillCls =
+  'text-[0.6875rem] text-[#8888bb] no-underline rounded-full px-2.5 py-0.5 border border-[rgba(136,136,187,0.15)] transition-all duration-150 hover:text-[#00e5ff] hover:border-[rgba(0,229,255,0.45)] hover:bg-[rgba(0,229,255,0.09)] hover:shadow-[0_0_8px_rgba(0,229,255,0.12)] font-inter whitespace-nowrap';
 
 export default function Header({ onHistoryOpen, hasHistory }: HeaderProps) {
   const [showTools, setShowTools] = useState(false);
@@ -128,29 +122,41 @@ export default function Header({ onHistoryOpen, hasHistory }: HeaderProps) {
                   transition={{ duration: 0.15 }}
                   role="menu"
                   className="absolute right-0 top-full mt-2 rounded-2xl border border-[var(--border-subtle)] shadow-2xl z-50 overflow-hidden"
-                  style={{ backdropFilter: 'blur(20px)', background: '#12121e', width: '480px' }}
+                  style={{
+                    backdropFilter: 'blur(20px)',
+                    background: 'linear-gradient(160deg, #13131f 0%, #0d0d18 100%)',
+                    width: '480px',
+                    boxShadow: '0 20px 60px rgba(0,0,0,0.7), 0 0 0 1px rgba(255,255,255,0.04), inset 0 1px 0 rgba(255,255,255,0.06)',
+                  }}
                 >
                   <div className="grid p-4" style={{ gridTemplateColumns: '1fr auto 1fr', gap: 0 }}>
 
                     {/* ── Left: Image Tools ── */}
                     <div className={colBase}>
-                      <div className={headingCls} style={{ color: 'rgba(136,136,187,0.55)' }}>🖼 Image Tools</div>
-                      {IMG_MAIN.map(({ href, label }) => (
-                        <a key={href} href={href} role="menuitem" onClick={() => setShowTools(false)} className={mainLinkCls}>
-                          {label} <span style={{ color: 'rgba(136,136,187,0.45)', fontSize: '0.75rem' }}>→</span>
+                      {/* Heading */}
+                      <div className="flex items-center gap-1.5 px-1.5 pb-2.5">
+                        <span className="text-[0.5625rem] font-700 tracking-[0.12em] uppercase" style={{ color: 'rgba(224,100,251,0.8)' }}>
+                          🖼 Image Tools
+                        </span>
+                        <span className="flex-1 h-px bg-white/[0.05]" />
+                      </div>
+                      {/* Main tools */}
+                      {IMG_MAIN.map(({ href, label, Icon }) => (
+                        <a key={href} href={href} role="menuitem" onClick={() => setShowTools(false)} className={imgToolCls}>
+                          <span className="flex items-center gap-2">
+                            <Icon size={13} style={{ color: 'rgba(224,100,251,0.55)', flexShrink: 0 }} />
+                            {label}
+                          </span>
+                          <span style={{ color: 'rgba(136,136,187,0.4)', fontSize: '0.75rem' }}>→</span>
                         </a>
                       ))}
-                      <div className={modelsLabelCls} style={{ color: 'rgba(136,136,187,0.35)' }}>Models</div>
-                      {pairModels(IMG_MODELS).map((row, i) => (
-                        <div key={i} className={modelRowCls}>
-                          {row.map(([name, href], j) => (
-                            <>
-                              <a key={href} href={href} onClick={() => setShowTools(false)} className={modelLinkCls}>{name}</a>
-                              {j < row.length - 1 && <span className={dotCls} style={{ color: 'rgba(136,136,187,0.25)' }}>·</span>}
-                            </>
-                          ))}
-                        </div>
-                      ))}
+                      {/* Models */}
+                      <div className={modelsLabelCls}>Models</div>
+                      <div className="flex flex-wrap gap-1 px-1 pb-1">
+                        {IMG_MODELS.map(([name, href]) => (
+                          <a key={href} href={href} onClick={() => setShowTools(false)} className={imgPillCls}>{name}</a>
+                        ))}
+                      </div>
                     </div>
 
                     {/* ── Divider ── */}
@@ -158,23 +164,30 @@ export default function Header({ onHistoryOpen, hasHistory }: HeaderProps) {
 
                     {/* ── Right: Video Tools ── */}
                     <div className={colBase}>
-                      <div className={headingCls} style={{ color: 'rgba(136,136,187,0.55)' }}>🎬 Video Tools</div>
-                      {VID_MAIN.map(({ href, label }) => (
-                        <a key={href} href={href} role="menuitem" onClick={() => setShowTools(false)} className={mainLinkCls}>
-                          {label} <span style={{ color: 'rgba(136,136,187,0.45)', fontSize: '0.75rem' }}>→</span>
+                      {/* Heading */}
+                      <div className="flex items-center gap-1.5 px-1.5 pb-2.5">
+                        <span className="text-[0.5625rem] font-700 tracking-[0.12em] uppercase" style={{ color: 'rgba(0,210,255,0.8)' }}>
+                          🎬 Video Tools
+                        </span>
+                        <span className="flex-1 h-px bg-white/[0.05]" />
+                      </div>
+                      {/* Main tools */}
+                      {VID_MAIN.map(({ href, label, Icon }) => (
+                        <a key={href} href={href} role="menuitem" onClick={() => setShowTools(false)} className={vidToolCls}>
+                          <span className="flex items-center gap-2">
+                            <Icon size={13} style={{ color: 'rgba(0,210,255,0.55)', flexShrink: 0 }} />
+                            {label}
+                          </span>
+                          <span style={{ color: 'rgba(136,136,187,0.4)', fontSize: '0.75rem' }}>→</span>
                         </a>
                       ))}
-                      <div className={modelsLabelCls} style={{ color: 'rgba(136,136,187,0.35)' }}>Models</div>
-                      {pairModels(VID_MODELS).map((row, i) => (
-                        <div key={i} className={modelRowCls}>
-                          {row.map(([name, href], j) => (
-                            <>
-                              <a key={href} href={href} onClick={() => setShowTools(false)} className={modelLinkCls}>{name}</a>
-                              {j < row.length - 1 && <span className={dotCls} style={{ color: 'rgba(136,136,187,0.25)' }}>·</span>}
-                            </>
-                          ))}
-                        </div>
-                      ))}
+                      {/* Models */}
+                      <div className={modelsLabelCls}>Models</div>
+                      <div className="flex flex-wrap gap-1 px-1 pb-1">
+                        {VID_MODELS.map(([name, href]) => (
+                          <a key={href} href={href} onClick={() => setShowTools(false)} className={vidPillCls}>{name}</a>
+                        ))}
+                      </div>
                     </div>
 
                   </div>
