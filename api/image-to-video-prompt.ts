@@ -100,7 +100,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
   }
 
   const body = req.body as Record<string, unknown>;
-  const { imageBase64, mediaType, selectedModel, motionStyle, duration, cameraMovement, selectedLanguage } = body;
+  const { imageBase64, mediaType, selectedModel, motionStyle, duration, cameraMovement } = body;
 
   if (!imageBase64 || typeof imageBase64 !== 'string') {
     return res.status(400).json({ error: 'Missing or invalid imageBase64 field' });
