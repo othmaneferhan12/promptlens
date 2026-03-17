@@ -1346,15 +1346,55 @@ body {
 
 /* ── 4-column site footer ───────────────────────── */
 .footer-4col {
-  border-top: 1px solid rgba(255,255,255,0.06);
-  background: #0e0e1a;
+  border-top: none;
+  background: linear-gradient(180deg, #0e0e1a 0%, #080810 100%);
   padding: 3rem 1.5rem 2rem;
   margin-top: 2rem;
+  position: relative;
+}
+/* Gradient rainbow top line */
+.footer-4col::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(224,64,251,0.35), rgba(0,229,255,0.35), transparent);
 }
 .f4-inner {
   max-width: 900px;
   margin: 0 auto;
 }
+
+/* Brand row */
+.f4-brand {
+  display: flex;
+  align-items: center;
+  gap: 0.625rem;
+  margin-bottom: 2rem;
+}
+.f4-brand img {
+  width: 28px; height: 28px;
+  border-radius: 7px;
+  opacity: 0.75;
+}
+.f4-brand-name {
+  font-family: 'Space Grotesk', Inter, system-ui, sans-serif;
+  font-size: 0.875rem;
+  font-weight: 700;
+  color: #e8e8f8;
+  white-space: nowrap;
+}
+.f4-brand-name .accent {
+  background: linear-gradient(135deg, #e040fb, #f06292);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.f4-brand-sub {
+  font-size: 0.6875rem;
+  color: rgba(136,136,187,0.35);
+  white-space: nowrap;
+}
+
 .f4-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -1366,24 +1406,53 @@ body {
   flex-direction: column;
   gap: 0.375rem;
 }
+
+/* Column headings with icon + trailing line */
 .f4-heading {
+  display: flex;
+  align-items: center;
+  gap: 5px;
   font-family: 'Space Grotesk', Inter, system-ui, sans-serif;
   font-size: 0.5625rem;
   font-weight: 700;
   letter-spacing: 0.12em;
   text-transform: uppercase;
-  color: rgba(136,136,187,0.45);
   margin: 0 0 0.625rem;
 }
+.f4-heading::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: rgba(255,255,255,0.05);
+}
+/* Column 1: Image Tools — pink */
+.f4-grid .f4-section:nth-child(1) .f4-heading { color: rgba(224,100,251,0.75); }
+.f4-grid .f4-section:nth-child(1) .f4-heading::before { content: '🖼'; font-size: 0.625rem; }
+/* Column 2: Video Tools — cyan */
+.f4-grid .f4-section:nth-child(2) .f4-heading { color: rgba(0,210,255,0.75); }
+.f4-grid .f4-section:nth-child(2) .f4-heading::before { content: '🎬'; font-size: 0.625rem; }
+/* Column 3: Resources */
+.f4-grid .f4-section:nth-child(3) .f4-heading { color: rgba(136,136,187,0.65); }
+.f4-grid .f4-section:nth-child(3) .f4-heading::before { content: '📚'; font-size: 0.625rem; }
+/* Column 4: Languages */
+.f4-grid .f4-section:nth-child(4) .f4-heading { color: rgba(136,136,187,0.65); }
+.f4-grid .f4-section:nth-child(4) .f4-heading::before { content: '🌐'; font-size: 0.625rem; }
+
+/* Links */
 .f4-section a {
   font-family: 'Inter', system-ui, sans-serif;
   font-size: 0.8125rem;
-  color: #5858a0;
+  color: rgba(120,120,180,0.6);
   text-decoration: none;
   transition: color 0.15s;
   line-height: 1.4;
 }
-.f4-section a:hover { color: #c0c0dd; }
+/* Column-aware hover colors */
+.f4-grid .f4-section:nth-child(1) a:hover { color: #e040fb; }
+.f4-grid .f4-section:nth-child(2) a:hover { color: #00e5ff; }
+.f4-grid .f4-section:nth-child(3) a:hover { color: #c0c0dd; }
+.f4-grid .f4-section:nth-child(4) a:hover { color: #c0c0dd; }
+
 .f4-bottom {
   border-top: 1px solid rgba(255,255,255,0.05);
   padding-top: 1.25rem;
@@ -1400,6 +1469,7 @@ body {
 }
 @media (max-width: 860px) {
   .f4-grid { grid-template-columns: repeat(2, 1fr); }
+  .f4-brand-sub { display: none; }
 }
 @media (max-width: 460px) {
   .f4-grid { grid-template-columns: 1fr; }

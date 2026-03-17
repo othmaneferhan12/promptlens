@@ -1,10 +1,28 @@
-const linkCls = 'font-inter text-[0.8125rem] text-[var(--text-secondary)]/40 hover:text-[var(--text-secondary)] transition-colors duration-150 leading-snug';
-const headingCls = 'font-grotesk text-[0.5625rem] font-700 uppercase tracking-[0.12em] text-[var(--text-secondary)]/40 mb-2.5';
+import type { ReactNode } from 'react';
+import { Image as ImageIcon, Video as VideoIcon, BookOpen, Globe } from 'lucide-react';
 
-function FooterCol({ heading, links }: { heading: string; links: { href: string; label: string }[] }) {
+const imgLinkCls = 'font-inter text-[0.8125rem] text-[rgba(120,120,180,0.6)] hover:text-[#e040fb] transition-colors duration-150 leading-snug';
+const vidLinkCls = 'font-inter text-[0.8125rem] text-[rgba(120,120,180,0.6)] hover:text-[#00e5ff] transition-colors duration-150 leading-snug';
+const defLinkCls = 'font-inter text-[0.8125rem] text-[rgba(120,120,180,0.6)] hover:text-[var(--text-secondary)] transition-colors duration-150 leading-snug';
+
+interface FooterColProps {
+  heading: string;
+  icon: ReactNode;
+  headingColor: string;
+  links: { href: string; label: string }[];
+  linkCls: string;
+}
+
+function FooterCol({ heading, icon, headingColor, links, linkCls }: FooterColProps) {
   return (
     <div className="flex flex-col gap-1.5">
-      <p className={headingCls}>{heading}</p>
+      <div className="flex items-center gap-1.5 mb-1.5">
+        <span style={{ color: headingColor, display: 'flex', flexShrink: 0 }}>{icon}</span>
+        <p className="font-grotesk text-[0.5625rem] font-700 uppercase tracking-[0.12em] m-0 whitespace-nowrap" style={{ color: headingColor }}>
+          {heading}
+        </p>
+        <span className="flex-1 h-px bg-white/[0.05]" />
+      </div>
       {links.map(({ href, label }) => (
         <a key={href} href={href} className={linkCls}>{label}</a>
       ))}
@@ -14,12 +32,35 @@ function FooterCol({ heading, links }: { heading: string; links: { href: string;
 
 export default function SEOFooter() {
   return (
-    <footer className="border-t border-[var(--border-subtle)] bg-[var(--bg-card)] mt-8">
+    <footer
+      className="border-t border-[var(--border-subtle)] mt-8 relative"
+      style={{ background: 'linear-gradient(180deg, var(--bg-card) 0%, #080810 100%)' }}
+    >
+      {/* Gradient top line */}
+      <div
+        className="absolute top-0 left-0 right-0 h-px"
+        style={{ background: 'linear-gradient(90deg, transparent, rgba(224,64,251,0.35), rgba(0,229,255,0.35), transparent)' }}
+      />
+
       <div className="mx-auto max-w-5xl px-4 pt-10 pb-8 sm:px-6">
+
+        {/* Brand row */}
+        <div className="flex items-center gap-2.5 mb-8">
+          <img src="/favicon.svg" alt="" width="28" height="28" className="rounded-lg opacity-75 flex-shrink-0" />
+          <span className="font-grotesk text-sm font-700 text-[var(--text-primary)] whitespace-nowrap">
+            ImageTo<span style={{ background: 'linear-gradient(135deg, #e040fb, #f06292)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>Prompt</span>
+          </span>
+          <span className="font-inter text-[0.6875rem] text-[var(--text-secondary)]/35 whitespace-nowrap hidden sm:block">
+            — Free AI Prompt Generator
+          </span>
+        </div>
 
         <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-4 mb-8">
           <FooterCol
-            heading="Image Prompt Tools"
+            heading="Image Tools"
+            icon={<ImageIcon size={11} />}
+            headingColor="rgba(224,100,251,0.75)"
+            linkCls={imgLinkCls}
             links={[
               { href: '/',                                    label: 'Image to Prompt'    },
               { href: '/text-to-prompt/',                     label: 'Text to Prompt'     },
@@ -33,7 +74,10 @@ export default function SEOFooter() {
             ]}
           />
           <FooterCol
-            heading="Video Prompt Tools"
+            heading="Video Tools"
+            icon={<VideoIcon size={11} />}
+            headingColor="rgba(0,210,255,0.75)"
+            linkCls={vidLinkCls}
             links={[
               { href: '/image-to-video-prompt/',              label: 'Image to Video Prompt' },
               { href: '/text-to-video-prompt/',               label: 'Text to Video Prompt'  },
@@ -49,6 +93,9 @@ export default function SEOFooter() {
           />
           <FooterCol
             heading="Resources"
+            icon={<BookOpen size={11} />}
+            headingColor="rgba(136,136,187,0.65)"
+            linkCls={defLinkCls}
             links={[
               { href: '/blog/',             label: 'Blog'            },
               { href: '/privacy-policy/',   label: 'Privacy Policy'  },
@@ -57,6 +104,9 @@ export default function SEOFooter() {
           />
           <FooterCol
             heading="Languages"
+            icon={<Globe size={11} />}
+            headingColor="rgba(136,136,187,0.65)"
+            linkCls={defLinkCls}
             links={[
               { href: '/',    label: 'English'   },
               { href: '/fr/', label: 'Français'  },
