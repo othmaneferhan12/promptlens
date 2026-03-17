@@ -204,6 +204,40 @@ export default function Header({ onHistoryOpen, hasHistory }: HeaderProps) {
             Blog
           </a>
 
+          {/* Pricing pill */}
+          <a
+            href="/pricing/"
+            className="hidden sm:flex items-center font-grotesk text-[0.8125rem] font-600 whitespace-nowrap transition-all duration-200"
+            style={{
+              color: '#e040fb',
+              padding: '0.3rem 0.75rem',
+              borderRadius: '20px',
+              border: '1px solid rgba(224,64,251,0.3)',
+              background: 'rgba(224,64,251,0.07)',
+            }}
+            onMouseEnter={e => { (e.currentTarget as HTMLAnchorElement).style.background = 'rgba(224,64,251,0.15)'; (e.currentTarget as HTMLAnchorElement).style.borderColor = 'rgba(224,64,251,0.6)'; }}
+            onMouseLeave={e => { (e.currentTarget as HTMLAnchorElement).style.background = 'rgba(224,64,251,0.07)'; (e.currentTarget as HTMLAnchorElement).style.borderColor = 'rgba(224,64,251,0.3)'; }}
+          >
+            Pricing
+          </a>
+
+          {/* About pill */}
+          <a
+            href="/about/"
+            className="hidden sm:flex items-center font-grotesk text-[0.8125rem] font-600 whitespace-nowrap transition-all duration-200"
+            style={{
+              color: '#8888bb',
+              padding: '0.3rem 0.75rem',
+              borderRadius: '20px',
+              border: '1px solid rgba(255,255,255,0.1)',
+              background: 'rgba(255,255,255,0.04)',
+            }}
+            onMouseEnter={e => { (e.currentTarget as HTMLAnchorElement).style.background = 'rgba(0,229,255,0.08)'; (e.currentTarget as HTMLAnchorElement).style.borderColor = 'rgba(0,229,255,0.3)'; (e.currentTarget as HTMLAnchorElement).style.color = '#00e5ff'; }}
+            onMouseLeave={e => { (e.currentTarget as HTMLAnchorElement).style.background = 'rgba(255,255,255,0.04)'; (e.currentTarget as HTMLAnchorElement).style.borderColor = 'rgba(255,255,255,0.1)'; (e.currentTarget as HTMLAnchorElement).style.color = '#8888bb'; }}
+          >
+            About
+          </a>
+
           {/* History */}
           {hasHistory && (
             <button
