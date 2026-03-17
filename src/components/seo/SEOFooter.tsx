@@ -33,8 +33,8 @@ function FooterCol({ heading, icon, headingColor, links, linkCls }: FooterColPro
 export default function SEOFooter() {
   return (
     <footer
-      className="border-t border-[var(--border-subtle)] mt-8 relative"
-      style={{ background: 'linear-gradient(180deg, var(--bg-card) 0%, #080810 100%)' }}
+      className="mt-8 relative"
+      style={{ background: 'linear-gradient(180deg, #0e0e1a 0%, #080810 100%)', padding: '3rem 1.5rem 2rem' }}
     >
       {/* Gradient top line */}
       <div
@@ -42,7 +42,7 @@ export default function SEOFooter() {
         style={{ background: 'linear-gradient(90deg, transparent, rgba(224,64,251,0.35), rgba(0,229,255,0.35), transparent)' }}
       />
 
-      <div className="mx-auto max-w-5xl px-4 pt-10 pb-8 sm:px-6">
+      <div style={{ maxWidth: '900px', margin: '0 auto' }}>
 
         {/* Brand row */}
         <div className="flex items-center gap-2.5 mb-8">
@@ -55,7 +55,7 @@ export default function SEOFooter() {
           </span>
         </div>
 
-        <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-4 mb-8">
+        <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-4 mb-8" style={{ gap: '2rem 1.5rem', marginBottom: '2rem' }}>
           <FooterCol
             heading="Image Tools"
             icon={<ImageIcon size={11} />}
@@ -118,11 +118,11 @@ export default function SEOFooter() {
           />
         </div>
 
-        <div className="border-t border-[var(--border-subtle)] pt-5 flex flex-col sm:flex-row justify-between gap-2">
-          <p className="font-inter text-xs text-[var(--text-secondary)]/30">
+        <div className="flex flex-col sm:flex-row justify-between gap-2" style={{ borderTop: '1px solid rgba(255,255,255,0.05)', paddingTop: '1.25rem' }}>
+          <p className="font-inter text-xs m-0" style={{ color: '#3a3a66' }}>
             © 2026 ImageToPrompt.dev — Free AI Prompt Generator
           </p>
-          <p className="font-inter text-xs text-[var(--text-secondary)]/25">
+          <p className="font-inter text-xs m-0" style={{ color: '#3a3a66' }}>
             Your images are never stored. All analysis is ephemeral and private.
           </p>
         </div>
