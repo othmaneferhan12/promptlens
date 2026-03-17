@@ -4,17 +4,17 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0" />
   <title>Pricing | ImageToPrompt — Free AI Prompt Generator</title>
-  <meta name="description" content="ImageToPrompt is free — 10 AI prompt analyses per day, all 7 image models and 8 video models included, no login required. Pro plan coming soon." />
+  <meta name="description" content="ImageToPrompt pricing: 100% free with 10 daily analyses. All features, all models, no login. See our plans." />
   <link rel="canonical" href="https://www.imagetoprompt.dev/pricing/" />
   <meta property="og:title" content="Pricing | ImageToPrompt — Free AI Prompt Generator" />
-  <meta property="og:description" content="ImageToPrompt is free — 10 AI prompt analyses per day, all 7 image models and 8 video models included, no login required." />
+  <meta property="og:description" content="ImageToPrompt pricing: 100% free with 10 daily analyses. All features, all models, no login. See our plans." />
   <meta property="og:url" content="https://www.imagetoprompt.dev/pricing/" />
   <meta property="og:type" content="website" />
   <meta property="og:image" content="https://www.imagetoprompt.dev/og-image.png" />
   <meta property="og:site_name" content="ImageToPrompt" />
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Pricing | ImageToPrompt — Free AI Prompt Generator" />
-  <meta name="twitter:description" content="ImageToPrompt is free — 10 analyses per day, all models included, no login required. Pro plan coming soon." />
+  <meta name="twitter:description" content="ImageToPrompt pricing: 100% free with 10 daily analyses. All features, all models, no login." />
   <meta name="twitter:image" content="https://www.imagetoprompt.dev/og-image.png" />
   <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
@@ -27,15 +27,14 @@
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "WebPage",
-    "name": "Pricing | ImageToPrompt",
-    "url": "https://www.imagetoprompt.dev/pricing/",
-    "description": "ImageToPrompt is free — 10 AI prompt analyses per day, all models included, no login required.",
-    "publisher": {
-      "@type": "Organization",
-      "name": "ImageToPrompt",
-      "url": "https://www.imagetoprompt.dev/"
-    }
+    "@type": "SoftwareApplication",
+    "name": "ImageToPrompt",
+    "applicationCategory": "DesignApplication",
+    "operatingSystem": "Web",
+    "url": "https://www.imagetoprompt.dev/",
+    "description": "Free AI tool that converts images and text into optimized prompts for Midjourney, Stable Diffusion, Flux, DALL-E 3, and more.",
+    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+    "publisher": { "@type": "Organization", "name": "ImageToPrompt", "url": "https://www.imagetoprompt.dev/" }
   }
   </script>
   <script type="application/ld+json">
@@ -56,17 +55,22 @@
       {
         "@type": "Question",
         "name": "Is ImageToPrompt really free?",
-        "acceptedAnswer": { "@type": "Answer", "text": "Yes, completely free. You get 10 AI prompt analyses per day at no cost, with no credit card or login required. The limit resets daily at midnight." }
+        "acceptedAnswer": { "@type": "Answer", "text": "Yes. 10 analyses per day, all features, all models, no login, no credit card. Free forever." }
       },
       {
         "@type": "Question",
         "name": "Will there be a paid plan?",
-        "acceptedAnswer": { "@type": "Answer", "text": "A Pro plan is in development. It will offer higher daily limits, priority processing, and additional features. You can sign up to be notified when it launches." }
+        "acceptedAnswer": { "@type": "Answer", "text": "We're working on a Pro plan with unlimited analyses and API access. Join the waitlist to be notified when it launches." }
       },
       {
         "@type": "Question",
-        "name": "What's included in the free plan?",
-        "acceptedAnswer": { "@type": "Answer", "text": "The free plan includes 10 analyses per day, access to all 7 image models (Midjourney, Stable Diffusion, Flux, DALL-E 3, Adobe Firefly, Leonardo AI, Ideogram), all 8 video models (Veo, Kling, Runway, Pika, Luma, Sora, Minimax, Stable Video), 6 prompt styles, prompt history, creative remix prompts, and multi-language support. No login required." }
+        "name": "What happens after 10 daily analyses?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Your limit resets at midnight. Come back tomorrow for 10 more free analyses." }
+      },
+      {
+        "@type": "Question",
+        "name": "Do I need to create an account?",
+        "acceptedAnswer": { "@type": "Answer", "text": "No. ImageToPrompt works instantly in your browser with no registration needed." }
       }
     ]
   }
@@ -74,150 +78,172 @@
   <!-- Google AdSense -->
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4499206373485728" crossorigin="anonymous"></script>
   <style>
-    .pricing-grid {
+    /* ── Hero tagline ── */
+    .pricing-tagline {
+      text-align: center;
+      font-family: 'Space Grotesk', Inter, system-ui, sans-serif;
+      font-size: 1.125rem;
+      color: #8888bb;
+      margin: 0 0 2.5rem;
+    }
+    .pricing-tagline strong { color: #f5f5ff; }
+
+    /* ── Cards grid ── */
+    .pricing-cards {
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap: 1.5rem;
-      margin: 2.5rem 0;
+      margin: 0 0 3rem;
+      align-items: start;
     }
-    @media (max-width: 640px) {
-      .pricing-grid { grid-template-columns: 1fr; }
-    }
+    @media (max-width: 640px) { .pricing-cards { grid-template-columns: 1fr; } }
+
     .pricing-card {
-      background: rgba(255,255,255,0.03);
-      border: 1px solid rgba(255,255,255,0.08);
-      border-radius: 16px;
-      padding: 2rem;
+      border-radius: 18px;
+      padding: 2rem 1.75rem;
       position: relative;
       display: flex;
       flex-direction: column;
     }
-    .pricing-card.featured {
-      border-color: rgba(224,64,251,0.35);
-      background: rgba(224,64,251,0.05);
+    .pricing-card.free {
+      background: rgba(224,64,251,0.06);
+      border: 2px solid rgba(224,64,251,0.45);
+      box-shadow: 0 0 40px rgba(224,64,251,0.08);
     }
-    .pricing-badge {
+    .pricing-card.pro {
+      background: rgba(255,255,255,0.025);
+      border: 1.5px dashed rgba(255,255,255,0.15);
+    }
+
+    .plan-badge {
       position: absolute;
-      top: -12px;
+      top: -13px;
       left: 50%;
       transform: translateX(-50%);
-      background: #e040fb;
-      color: #fff;
-      font-size: 0.75rem;
-      font-weight: 700;
-      padding: 0.25rem 0.875rem;
-      border-radius: 20px;
-      letter-spacing: 0.05em;
+      font-size: 0.72rem;
+      font-weight: 800;
+      letter-spacing: 0.08em;
       text-transform: uppercase;
+      padding: 0.28rem 0.9rem;
+      border-radius: 20px;
       white-space: nowrap;
     }
-    .pricing-plan-name {
+    .plan-badge.active { background: #e040fb; color: #fff; }
+    .plan-badge.soon { background: rgba(255,255,255,0.08); color: #8888bb; border: 1px solid rgba(255,255,255,0.12); }
+
+    .plan-name {
       font-family: 'Space Grotesk', Inter, system-ui, sans-serif;
-      font-size: 1.125rem;
-      font-weight: 700;
+      font-size: 1.25rem;
+      font-weight: 800;
       color: #f5f5ff;
-      margin: 0 0 0.5rem;
+      margin: 0.5rem 0 0.5rem;
     }
-    .pricing-price {
+    .plan-price {
       font-family: 'Space Grotesk', Inter, system-ui, sans-serif;
-      font-size: 3rem;
+      font-size: 2.75rem;
       font-weight: 800;
       color: #f5f5ff;
       line-height: 1;
-      margin: 0.75rem 0 0.25rem;
+      margin: 0 0 0.25rem;
     }
-    .pricing-price span {
-      font-size: 1.25rem;
-      font-weight: 600;
-      color: #8888bb;
-    }
-    .pricing-period {
-      font-size: 0.875rem;
+    .plan-price .price-unit { font-size: 1.125rem; font-weight: 600; color: #8888bb; }
+    .plan-period {
+      font-size: 0.8125rem;
       color: #6666aa;
-      margin-bottom: 1.75rem;
+      margin: 0 0 1.5rem;
     }
-    .pricing-features {
+    .plan-divider {
+      border: none;
+      border-top: 1px solid rgba(255,255,255,0.07);
+      margin: 0 0 1.25rem;
+    }
+    .plan-subtitle {
+      font-size: 0.8125rem;
+      font-weight: 700;
+      color: #8888bb;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      margin: 0 0 0.875rem;
+    }
+
+    .plan-features {
       list-style: none;
       padding: 0;
       margin: 0 0 1.75rem;
       flex: 1;
     }
-    .pricing-features li {
+    .plan-features li {
       display: flex;
       align-items: flex-start;
       gap: 0.625rem;
-      font-size: 0.9375rem;
+      font-size: 0.9rem;
       color: #c8c8e8;
-      padding: 0.4rem 0;
-      border-bottom: 1px solid rgba(255,255,255,0.04);
+      padding: 0.35rem 0;
     }
-    .pricing-features li:last-child { border-bottom: none; }
-    .pricing-check {
-      color: #e040fb;
-      font-weight: 700;
-      flex-shrink: 0;
-      margin-top: 2px;
-    }
-    .pricing-check.soon { color: #6666aa; }
-    .pricing-cta {
+    .plan-features li .chk { color: #e040fb; font-weight: 800; flex-shrink: 0; }
+    .plan-features li .chk.dim { color: #44446a; }
+
+    .plan-cta {
       display: block;
       text-align: center;
-      padding: 0.75rem 1.5rem;
-      border-radius: 8px;
+      padding: 0.8rem 1.5rem;
+      border-radius: 9px;
+      font-family: 'Space Grotesk', Inter, system-ui, sans-serif;
       font-weight: 700;
       font-size: 0.9375rem;
       text-decoration: none;
       transition: opacity 0.2s, transform 0.15s;
+      cursor: pointer;
+      border: none;
+      width: 100%;
     }
-    .pricing-cta:hover { opacity: 0.9; transform: translateY(-1px); }
-    .pricing-cta.primary { background: #e040fb; color: #fff; }
-    .pricing-cta.secondary {
+    .plan-cta:hover { opacity: 0.88; transform: translateY(-1px); }
+    .plan-cta.primary { background: #e040fb; color: #fff; }
+    .plan-cta.secondary {
       background: transparent;
-      color: #e040fb;
-      border: 1px solid rgba(224,64,251,0.4);
+      color: #8888bb;
+      border: 1px solid rgba(255,255,255,0.12);
+      font-family: 'Space Grotesk', Inter, system-ui, sans-serif;
     }
+    .plan-cta.secondary:hover { border-color: rgba(224,64,251,0.3); color: #e040fb; }
 
-    .notify-wrap {
-      margin-top: 1rem;
-    }
-    .notify-form {
+    /* Notify form inside pro card */
+    .notify-row {
       display: flex;
       gap: 0.5rem;
-      margin-top: 0.75rem;
+      margin-top: 0.625rem;
     }
-    .notify-form input {
+    .notify-row input {
       flex: 1;
       background: rgba(255,255,255,0.05);
       border: 1px solid rgba(255,255,255,0.1);
-      border-radius: 8px;
+      border-radius: 7px;
       color: #f5f5ff;
       font-family: Inter, system-ui, sans-serif;
       font-size: 0.875rem;
-      padding: 0.625rem 0.875rem;
+      padding: 0.55rem 0.75rem;
       outline: none;
-      transition: border-color 0.2s;
+      min-width: 0;
     }
-    .notify-form input:focus { border-color: rgba(224,64,251,0.5); }
-    .notify-form button {
+    .notify-row input:focus { border-color: rgba(224,64,251,0.4); }
+    .notify-row input::placeholder { color: #44446a; }
+    .notify-row button {
       background: rgba(224,64,251,0.15);
       border: 1px solid rgba(224,64,251,0.3);
       color: #e040fb;
+      font-family: 'Space Grotesk', Inter, system-ui, sans-serif;
       font-weight: 700;
-      font-size: 0.875rem;
-      padding: 0.625rem 1rem;
-      border-radius: 8px;
+      font-size: 0.8125rem;
+      padding: 0.55rem 0.875rem;
+      border-radius: 7px;
       cursor: pointer;
-      font-family: Inter, system-ui, sans-serif;
       white-space: nowrap;
       transition: background 0.2s;
     }
-    .notify-form button:hover { background: rgba(224,64,251,0.25); }
-    .notify-label {
-      font-size: 0.8125rem;
-      color: #6666aa;
-    }
+    .notify-row button:hover { background: rgba(224,64,251,0.25); }
 
-    .faq-list { margin-top: 1rem; }
+    /* ── FAQ ── */
+    .faq-list { margin: 0.5rem 0 2.5rem; }
     .faq-item {
       border: 1px solid rgba(255,255,255,0.07);
       border-radius: 10px;
@@ -226,62 +252,49 @@
     }
     .faq-item summary {
       padding: 1rem 1.25rem;
+      font-family: 'Space Grotesk', Inter, system-ui, sans-serif;
       font-weight: 600;
+      font-size: 0.9375rem;
       color: #f5f5ff;
       cursor: pointer;
       list-style: none;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      font-size: 0.9375rem;
+      gap: 1rem;
     }
     .faq-item summary::-webkit-details-marker { display: none; }
-    .faq-item summary::after {
-      content: '+';
-      font-size: 1.25rem;
-      color: #e040fb;
-      flex-shrink: 0;
-    }
+    .faq-item summary::after { content: '+'; font-size: 1.25rem; color: #e040fb; flex-shrink: 0; }
     .faq-item[open] summary::after { content: '−'; }
-    .faq-item p {
-      padding: 0 1.25rem 1rem;
-      margin: 0;
-      font-size: 0.9375rem;
-      color: #c8c8e8;
-      line-height: 1.7;
-    }
+    .faq-item p { padding: 0 1.25rem 1rem; margin: 0; font-size: 0.9rem; color: #c8c8e8; line-height: 1.7; }
 
-    .compare-table {
-      width: 100%;
-      border-collapse: collapse;
-      margin: 1.5rem 0;
-      font-size: 0.9rem;
+    /* ── Trust badges ── */
+    .trust-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      justify-content: center;
+      margin: 2rem 0 1rem;
     }
-    .compare-table th {
+    .trust-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.09);
+      border-radius: 8px;
+      padding: 0.55rem 1rem;
       font-family: 'Space Grotesk', Inter, system-ui, sans-serif;
+      font-size: 0.8rem;
       font-weight: 700;
-      color: #f5f5ff;
-      padding: 0.75rem 1rem;
-      border-bottom: 1px solid rgba(255,255,255,0.1);
-      text-align: left;
-    }
-    .compare-table th:not(:first-child) { text-align: center; }
-    .compare-table td {
-      padding: 0.625rem 1rem;
-      color: #c8c8e8;
-      border-bottom: 1px solid rgba(255,255,255,0.04);
-    }
-    .compare-table td:not(:first-child) { text-align: center; }
-    .compare-table tr:last-child td { border-bottom: none; }
-    .compare-table .yes { color: #e040fb; font-weight: 700; }
-    .compare-table .no { color: #4444aa; }
-    .compare-table .soon-tag {
-      font-size: 0.75rem;
-      background: rgba(255,255,255,0.07);
-      border-radius: 4px;
-      padding: 0.15rem 0.4rem;
       color: #8888bb;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
     }
+    .trust-badge .badge-icon { font-size: 1rem; }
+    .trust-badge.green { border-color: rgba(52,211,153,0.2); color: #34d399; }
+    .trust-badge.purple { border-color: rgba(224,64,251,0.2); color: #e040fb; }
+    .trust-badge.blue { border-color: rgba(0,229,255,0.18); color: #00e5ff; }
   </style>
 </head>
 <body>
@@ -319,8 +332,6 @@
           </div>
         </div>
         <a href="/blog/">Blog</a>
-        <a href="/pricing/" aria-current="page">Pricing</a>
-        <a href="/about/">About</a>
         <a href="/" class="nav-try-free">Try Free &#8594;</a>
       </nav>
     </div>
@@ -335,113 +346,99 @@
     <article class="model-page-article">
 
       <header class="model-page-hero">
-        <h1>Pricing</h1>
-        <p class="model-page-subtitle">Start free. No credit card, no login. Everything you need is already included.</p>
+        <h1>Simple, Transparent Pricing</h1>
+        <p class="model-page-subtitle">AI prompt generation should be free. And it is.</p>
       </header>
 
       <div class="article-body">
 
-        <div class="pricing-grid">
+        <!-- Pricing Cards -->
+        <div class="pricing-cards">
 
-          <!-- Free Plan -->
-          <div class="pricing-card featured">
-            <div class="pricing-badge">Current Plan</div>
-            <p class="pricing-plan-name">Free</p>
-            <div class="pricing-price">$0<span>/mo</span></div>
-            <p class="pricing-period">Forever free &mdash; no credit card needed</p>
-            <ul class="pricing-features">
-              <li><span class="pricing-check">&#10003;</span> 10 analyses per day</li>
-              <li><span class="pricing-check">&#10003;</span> All 7 image models (Midjourney, SD, Flux, DALL&middot;E 3, Firefly, Leonardo, Ideogram)</li>
-              <li><span class="pricing-check">&#10003;</span> All 8 video models (Veo, Kling, Runway, Pika, Luma, Sora, Minimax, Stable)</li>
-              <li><span class="pricing-check">&#10003;</span> 6 prompt styles (Cinematic, Artistic, Technical&hellip;)</li>
-              <li><span class="pricing-check">&#10003;</span> Creative Remix prompts</li>
-              <li><span class="pricing-check">&#10003;</span> Negative prompt generation</li>
-              <li><span class="pricing-check">&#10003;</span> Prompt history (browser-saved)</li>
-              <li><span class="pricing-check">&#10003;</span> Multi-language output (10 languages)</li>
-              <li><span class="pricing-check">&#10003;</span> No account or login required</li>
-              <li><span class="pricing-check">&#10003;</span> Your images are never stored</li>
+          <!-- Free -->
+          <div class="pricing-card free">
+            <span class="plan-badge active">&#10003; Current Plan</span>
+            <p class="plan-name">Free</p>
+            <div class="plan-price">$0<span class="price-unit"> / forever</span></div>
+            <p class="plan-period">No credit card &mdash; no login &mdash; no catch</p>
+            <hr class="plan-divider" />
+            <p class="plan-subtitle">Everything included:</p>
+            <ul class="plan-features">
+              <li><span class="chk">&#10003;</span> 10 image analyses per day</li>
+              <li><span class="chk">&#10003;</span> 10 video prompt generations per day</li>
+              <li><span class="chk">&#10003;</span> All 7 image AI models</li>
+              <li><span class="chk">&#10003;</span> All 8 video AI models</li>
+              <li><span class="chk">&#10003;</span> Image to Prompt</li>
+              <li><span class="chk">&#10003;</span> Text to Prompt</li>
+              <li><span class="chk">&#10003;</span> Image to Video Prompt</li>
+              <li><span class="chk">&#10003;</span> Text to Video Prompt</li>
+              <li><span class="chk">&#10003;</span> Negative prompts included</li>
+              <li><span class="chk">&#10003;</span> Color palette extraction</li>
+              <li><span class="chk">&#10003;</span> Style &amp; quality tags</li>
+              <li><span class="chk">&#10003;</span> Creative remix variants</li>
+              <li><span class="chk">&#10003;</span> No account required</li>
+              <li><span class="chk">&#10003;</span> No credit card needed</li>
+              <li><span class="chk">&#10003;</span> Works on all devices</li>
             </ul>
-            <a href="/" class="pricing-cta primary">Start Generating Free &#8594;</a>
+            <a href="/" class="plan-cta primary">Start Free &#8594;</a>
           </div>
 
-          <!-- Pro Plan -->
-          <div class="pricing-card">
-            <p class="pricing-plan-name">Pro</p>
-            <div class="pricing-price" style="color:#8888bb">???<span>/mo</span></div>
-            <p class="pricing-period">Coming soon &mdash; sign up to be notified</p>
-            <ul class="pricing-features">
-              <li><span class="pricing-check soon">&#10003;</span> <span style="color:#6666aa">Unlimited analyses per day</span></li>
-              <li><span class="pricing-check soon">&#10003;</span> <span style="color:#6666aa">Priority processing</span></li>
-              <li><span class="pricing-check soon">&#10003;</span> <span style="color:#6666aa">Batch image analysis</span></li>
-              <li><span class="pricing-check soon">&#10003;</span> <span style="color:#6666aa">API access</span></li>
-              <li><span class="pricing-check soon">&#10003;</span> <span style="color:#6666aa">Extended prompt history</span></li>
-              <li><span class="pricing-check soon">&#10003;</span> <span style="color:#6666aa">Higher resolution analysis</span></li>
-              <li><span class="pricing-check soon">&#10003;</span> <span style="color:#6666aa">Early access to new models</span></li>
-              <li><span class="pricing-check soon">&#10003;</span> <span style="color:#6666aa">Email support</span></li>
+          <!-- Pro -->
+          <div class="pricing-card pro">
+            <span class="plan-badge soon">Coming Soon</span>
+            <p class="plan-name" style="color:#8888bb">Pro</p>
+            <div class="plan-price" style="color:#8888bb">TBD<span class="price-unit"> / mo</span></div>
+            <p class="plan-period">Join the waitlist &mdash; founding member pricing</p>
+            <hr class="plan-divider" />
+            <p class="plan-subtitle">Everything in Free, plus:</p>
+            <ul class="plan-features">
+              <li><span class="chk dim">&#10003;</span> <span style="color:#6666aa">Unlimited daily analyses</span></li>
+              <li><span class="chk dim">&#10003;</span> <span style="color:#6666aa">Batch processing (multiple images)</span></li>
+              <li><span class="chk dim">&#10003;</span> <span style="color:#6666aa">API access</span></li>
+              <li><span class="chk dim">&#10003;</span> <span style="color:#6666aa">Priority processing speed</span></li>
+              <li><span class="chk dim">&#10003;</span> <span style="color:#6666aa">Custom style presets</span></li>
+              <li><span class="chk dim">&#10003;</span> <span style="color:#6666aa">Prompt history saved in cloud</span></li>
+              <li><span class="chk dim">&#10003;</span> <span style="color:#6666aa">Priority support</span></li>
             </ul>
-            <div class="notify-wrap">
-              <p class="notify-label">Notify me when Pro launches:</p>
-              <form class="notify-form" action="https://formsubmit.co/ferhanothmane@gmail.com" method="POST">
-                <input type="hidden" name="_subject" value="Pro Plan Waitlist" />
-                <input type="hidden" name="_captcha" value="false" />
-                <input type="hidden" name="_next" value="https://www.imagetoprompt.dev/pricing/?waitlist=1" />
-                <input type="email" name="email" placeholder="your@email.com" required />
-                <button type="submit">Notify me</button>
-              </form>
-            </div>
+            <p style="font-size:0.8125rem;color:#6666aa;margin:0 0 0.5rem">Get notified when Pro launches:</p>
+            <form class="notify-row" action="#" method="POST">
+              <input type="email" name="email" placeholder="your@email.com" required />
+              <button type="submit">Notify Me</button>
+            </form>
           </div>
 
         </div>
 
-        <!-- Feature comparison -->
-        <h2>Full Feature Comparison</h2>
-        <table class="compare-table">
-          <thead>
-            <tr>
-              <th>Feature</th>
-              <th>Free</th>
-              <th>Pro</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr><td>Daily analyses</td><td class="yes">10 / day</td><td><span class="soon-tag">Unlimited</span></td></tr>
-            <tr><td>Image model prompts (7 models)</td><td class="yes">&#10003;</td><td class="yes">&#10003;</td></tr>
-            <tr><td>Video model prompts (8 models)</td><td class="yes">&#10003;</td><td class="yes">&#10003;</td></tr>
-            <tr><td>6 prompt styles</td><td class="yes">&#10003;</td><td class="yes">&#10003;</td></tr>
-            <tr><td>Creative Remix prompts</td><td class="yes">&#10003;</td><td class="yes">&#10003;</td></tr>
-            <tr><td>Negative prompt generation</td><td class="yes">&#10003;</td><td class="yes">&#10003;</td></tr>
-            <tr><td>Multi-language output</td><td class="yes">&#10003;</td><td class="yes">&#10003;</td></tr>
-            <tr><td>No login required</td><td class="yes">&#10003;</td><td class="yes">&#10003;</td></tr>
-            <tr><td>Batch analysis</td><td class="no">&#8212;</td><td><span class="soon-tag">Coming soon</span></td></tr>
-            <tr><td>API access</td><td class="no">&#8212;</td><td><span class="soon-tag">Coming soon</span></td></tr>
-            <tr><td>Priority processing</td><td class="no">&#8212;</td><td><span class="soon-tag">Coming soon</span></td></tr>
-            <tr><td>Extended prompt history</td><td class="no">&#8212;</td><td><span class="soon-tag">Coming soon</span></td></tr>
-          </tbody>
-        </table>
+        <!-- Trust badges -->
+        <div class="trust-row">
+          <span class="trust-badge green"><span class="badge-icon">&#10003;</span> 100% Free</span>
+          <span class="trust-badge purple"><span class="badge-icon">&#128274;</span> No Login</span>
+          <span class="trust-badge blue"><span class="badge-icon">&#128179;</span> No Credit Card</span>
+          <span class="trust-badge"><span class="badge-icon">&#8734;</span> Cancel Never — There's Nothing to Cancel</span>
+        </div>
 
         <!-- FAQ -->
         <h2>Frequently Asked Questions</h2>
         <div class="faq-list">
           <details class="faq-item">
             <summary>Is ImageToPrompt really free?</summary>
-            <p>Yes, completely free. You get 10 AI prompt analyses per day at no cost, with no credit card or login required. The limit resets every day at midnight.</p>
+            <p>Yes. 10 analyses per day, all features, all models, no login, no credit card. Free forever. We're committed to keeping the core tool free for everyone.</p>
           </details>
           <details class="faq-item">
             <summary>Will there be a paid plan?</summary>
-            <p>A Pro plan is in development. It will offer higher daily limits, priority processing, batch image analysis, and API access. Sign up above to be notified when it launches — early subscribers will receive a founding member discount.</p>
+            <p>We're working on a Pro plan with unlimited analyses and API access. Join the waitlist above to be notified when it launches — early subscribers will receive founding member pricing.</p>
           </details>
           <details class="faq-item">
-            <summary>What's included in the free plan?</summary>
-            <p>Everything: all 7 image models (Midjourney, Stable Diffusion, Flux, DALL-E 3, Adobe Firefly, Leonardo AI, Ideogram), all 8 video models (Veo, Kling, Runway, Pika, Luma, Sora, Minimax, Stable Video), all 6 prompt styles, creative remix prompts, negative prompts, prompt history, and multi-language support. No hidden limits, no watermarks.</p>
+            <summary>What happens after 10 daily analyses?</summary>
+            <p>Your limit resets at midnight. Come back tomorrow for 10 more free analyses. The counter in the app shows exactly how many you have left today.</p>
           </details>
           <details class="faq-item">
-            <summary>Why is there a 10/day limit?</summary>
-            <p>Each analysis uses Claude AI's vision model, which has a real cost. The 10/day limit lets us keep the tool completely free for everyone. If you regularly need more than 10 analyses per day, the Pro plan will be for you.</p>
+            <summary>Do I need to create an account?</summary>
+            <p>No. ImageToPrompt works instantly in your browser with no registration needed. Just upload an image or type your idea and you'll get a prompt in seconds.</p>
           </details>
         </div>
 
       </div>
-
     </article>
   </div>
 

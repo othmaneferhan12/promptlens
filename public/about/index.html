@@ -4,17 +4,17 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0" />
   <title>About ImageToPrompt | Free AI Prompt Generator</title>
-  <meta name="description" content="ImageToPrompt is a free AI-powered tool built to make AI image generation accessible to everyone. Learn about our mission, technology, and the founder behind it." />
+  <meta name="description" content="Learn about ImageToPrompt — the free AI tool that converts images and text into optimized prompts for Midjourney, Stable Diffusion, Flux, and more." />
   <link rel="canonical" href="https://www.imagetoprompt.dev/about/" />
   <meta property="og:title" content="About ImageToPrompt | Free AI Prompt Generator" />
-  <meta property="og:description" content="Learn about ImageToPrompt — the free AI tool that turns any image into an optimized prompt for Midjourney, Stable Diffusion, Flux, DALL-E 3, and more." />
+  <meta property="og:description" content="Learn about ImageToPrompt — the free AI tool that converts images and text into optimized prompts for Midjourney, Stable Diffusion, Flux, and more." />
   <meta property="og:url" content="https://www.imagetoprompt.dev/about/" />
-  <meta property="og:type" content="website" />
+  <meta property="og:type" content="article" />
   <meta property="og:image" content="https://www.imagetoprompt.dev/og-image.png" />
   <meta property="og:site_name" content="ImageToPrompt" />
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="About ImageToPrompt | Free AI Prompt Generator" />
-  <meta name="twitter:description" content="Learn about ImageToPrompt — the free AI tool that turns any image into an optimized prompt for Midjourney, Stable Diffusion, Flux, DALL-E 3, and more." />
+  <meta name="twitter:description" content="Learn about ImageToPrompt — the free AI tool that converts images and text into optimized prompts for Midjourney, Stable Diffusion, Flux, and more." />
   <meta name="twitter:image" content="https://www.imagetoprompt.dev/og-image.png" />
   <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
@@ -30,6 +30,7 @@
     "@type": "AboutPage",
     "name": "About ImageToPrompt",
     "url": "https://www.imagetoprompt.dev/about/",
+    "description": "Learn about ImageToPrompt — the free AI tool that converts images and text into optimized prompts for Midjourney, Stable Diffusion, Flux, and more.",
     "publisher": {
       "@type": "Organization",
       "name": "ImageToPrompt",
@@ -37,7 +38,8 @@
       "founder": {
         "@type": "Person",
         "name": "Othmane Ferhan",
-        "jobTitle": "Founder"
+        "jobTitle": "Founder & Developer",
+        "address": { "@type": "PostalAddress", "addressLocality": "Casablanca", "addressCountry": "MA" }
       }
     }
   }
@@ -54,6 +56,196 @@
   </script>
   <!-- Google AdSense -->
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4499206373485728" crossorigin="anonymous"></script>
+  <style>
+    /* ── Tool list ── */
+    .about-tools-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.875rem;
+      margin: 1.25rem 0 1.75rem;
+    }
+    @media (max-width: 520px) { .about-tools-grid { grid-template-columns: 1fr; } }
+    .about-tool-card {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.875rem;
+      background: rgba(255,255,255,0.03);
+      border: 1px solid rgba(255,255,255,0.07);
+      border-radius: 12px;
+      padding: 1.125rem 1.125rem;
+      transition: border-color 0.2s;
+    }
+    .about-tool-card:hover { border-color: rgba(224,64,251,0.25); }
+    .about-tool-icon {
+      font-size: 1.375rem;
+      flex-shrink: 0;
+      margin-top: 1px;
+    }
+    .about-tool-text h4 {
+      font-family: 'Space Grotesk', Inter, system-ui, sans-serif;
+      font-size: 0.9375rem;
+      font-weight: 700;
+      color: #f5f5ff;
+      margin: 0 0 0.25rem;
+    }
+    .about-tool-text p {
+      font-size: 0.8125rem;
+      color: #8888bb;
+      margin: 0;
+      line-height: 1.5;
+    }
+
+    /* ── Model pills ── */
+    .model-pill-group { margin: 1rem 0 1.75rem; }
+    .model-pill-group h4 {
+      font-family: 'Space Grotesk', Inter, system-ui, sans-serif;
+      font-size: 0.8125rem;
+      font-weight: 700;
+      color: #8888bb;
+      text-transform: uppercase;
+      letter-spacing: 0.07em;
+      margin: 0 0 0.625rem;
+    }
+    .model-pills { display: flex; flex-wrap: wrap; gap: 0.5rem; }
+    .model-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.375rem;
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.09);
+      border-radius: 20px;
+      padding: 0.3rem 0.75rem;
+      font-size: 0.8125rem;
+      color: #c8c8e8;
+      font-weight: 500;
+    }
+    .model-pill.img-pill { border-color: rgba(167,139,250,0.25); color: #a78bfa; }
+    .model-pill.vid-pill { border-color: rgba(0,229,255,0.2); color: #00e5ff; }
+
+    /* ── Founder card ── */
+    .founder-card {
+      display: flex;
+      align-items: flex-start;
+      gap: 1.5rem;
+      background: rgba(255,255,255,0.03);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 16px;
+      padding: 1.75rem;
+      margin: 1.5rem 0 2rem;
+    }
+    @media (max-width: 520px) { .founder-card { flex-direction: column; align-items: center; text-align: center; } }
+    .founder-avatar {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #e040fb, #00e5ff);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 2rem;
+      flex-shrink: 0;
+    }
+    .founder-info h3 {
+      font-family: 'Space Grotesk', Inter, system-ui, sans-serif;
+      font-size: 1.125rem;
+      font-weight: 700;
+      color: #f5f5ff;
+      margin: 0 0 0.2rem;
+    }
+    .founder-role {
+      font-size: 0.875rem;
+      color: #e040fb;
+      font-weight: 600;
+      display: block;
+      margin-bottom: 0.2rem;
+    }
+    .founder-location {
+      font-size: 0.8125rem;
+      color: #6666aa;
+      display: block;
+      margin-bottom: 0.75rem;
+    }
+    .founder-bio {
+      font-size: 0.9rem;
+      color: #c8c8e8;
+      line-height: 1.65;
+      margin: 0;
+    }
+
+    /* ── Stats ── */
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1rem;
+      margin: 1.5rem 0 2rem;
+    }
+    @media (max-width: 640px) { .stats-grid { grid-template-columns: repeat(2, 1fr); } }
+    .stat-card {
+      background: rgba(255,255,255,0.03);
+      border: 1px solid rgba(255,255,255,0.07);
+      border-radius: 12px;
+      padding: 1.25rem 1rem;
+      text-align: center;
+    }
+    .stat-number {
+      font-family: 'Space Grotesk', Inter, system-ui, sans-serif;
+      font-size: 2rem;
+      font-weight: 800;
+      color: #e040fb;
+      line-height: 1;
+      margin-bottom: 0.375rem;
+    }
+    .stat-label {
+      font-size: 0.8rem;
+      color: #8888bb;
+      line-height: 1.35;
+    }
+
+    /* ── CTA ── */
+    .about-cta {
+      background: rgba(224,64,251,0.07);
+      border: 1px solid rgba(224,64,251,0.2);
+      border-radius: 14px;
+      padding: 2rem;
+      text-align: center;
+      margin-top: 2.5rem;
+    }
+    .about-cta p {
+      font-family: 'Space Grotesk', Inter, system-ui, sans-serif;
+      font-size: 1.0625rem;
+      font-weight: 700;
+      color: #f5f5ff;
+      margin: 0 0 1.25rem;
+    }
+    .cta-btn-row { display: flex; gap: 0.875rem; justify-content: center; flex-wrap: wrap; }
+    .cta-btn-primary {
+      display: inline-block;
+      background: #e040fb;
+      color: #fff;
+      font-family: 'Space Grotesk', Inter, system-ui, sans-serif;
+      font-weight: 700;
+      font-size: 0.9375rem;
+      padding: 0.75rem 1.75rem;
+      border-radius: 8px;
+      text-decoration: none;
+      transition: opacity 0.2s;
+    }
+    .cta-btn-primary:hover { opacity: 0.88; }
+    .cta-btn-secondary {
+      display: inline-block;
+      background: transparent;
+      color: #e040fb;
+      font-family: 'Space Grotesk', Inter, system-ui, sans-serif;
+      font-weight: 700;
+      font-size: 0.9375rem;
+      padding: 0.75rem 1.75rem;
+      border-radius: 8px;
+      border: 1px solid rgba(224,64,251,0.4);
+      text-decoration: none;
+      transition: border-color 0.2s, background 0.2s;
+    }
+    .cta-btn-secondary:hover { border-color: rgba(224,64,251,0.7); background: rgba(224,64,251,0.06); }
+  </style>
 </head>
 <body>
 
@@ -90,8 +282,6 @@
           </div>
         </div>
         <a href="/blog/">Blog</a>
-        <a href="/pricing/">Pricing</a>
-        <a href="/about/" aria-current="page">About</a>
         <a href="/" class="nav-try-free">Try Free &#8594;</a>
       </nav>
     </div>
@@ -107,48 +297,131 @@
 
       <header class="model-page-hero">
         <h1>About ImageToPrompt</h1>
-        <p class="model-page-subtitle">Making AI image generation accessible to everyone — no expertise required.</p>
+        <p class="model-page-subtitle">Making AI image and video generation accessible to everyone.</p>
       </header>
 
       <div class="article-body">
 
-        <h2>What Is ImageToPrompt?</h2>
-        <p>ImageToPrompt is a free, browser-based AI tool that analyzes any image you upload and instantly generates an optimized text prompt for your chosen AI image or video generator. No login. No subscription. No friction.</p>
-        <p>Whether you're a designer trying to recreate a style, a photographer looking to generate variations, or a complete beginner exploring AI art for the first time — ImageToPrompt gives you a production-ready prompt in seconds.</p>
+        <!-- Section 1: Mission -->
+        <h2>The Mission</h2>
+        <p>ImageToPrompt exists to make AI image and video generation accessible to everyone. We believe the barrier to creating stunning AI art shouldn't be knowing how to write a perfect prompt. You have the vision — we handle the vocabulary.</p>
 
-        <h2>Why I Built It</h2>
-        <p>When I started experimenting with AI image generators, the hardest part wasn't the tools themselves — it was writing good prompts. Every model has its own syntax, its own quirks, its own vocabulary. Midjourney wants <code>--ar</code> flags and stylize values. Stable Diffusion expects weighted terms and negative prompts. Flux handles natural language differently than DALL-E 3.</p>
-        <p>I kept wishing I could just point at an image and say "give me the prompt for this." So I built it.</p>
-        <p>ImageToPrompt started as a personal tool. When I shared it with a few friends who were learning Midjourney, the response was immediate — they found it genuinely useful. That's when I decided to build it properly and make it free for everyone.</p>
+        <!-- Section 2: The Problem -->
+        <h2>The Problem We Solve</h2>
+        <p>Every AI model speaks a different language. A great Midjourney prompt fails in Stable Diffusion. DALL-E 3 wants natural sentences while Flux wants camera specifications. Kling wants cinematic motion descriptions while Runway wants duration-specific framing. Writing model-specific prompts from scratch takes time and expertise that most creators don't have.</p>
+        <p>ImageToPrompt solves this by analyzing any image or text description and generating a professional prompt formatted specifically for your chosen model — complete with the right syntax, parameters, and vocabulary. What used to take 20 minutes of research and trial-and-error now takes 3 seconds.</p>
 
-        <h2>Our Mission</h2>
-        <p>AI image generation is one of the most exciting creative technologies in decades. But the learning curve — especially around prompt engineering — keeps a lot of people from getting the most out of these tools. ImageToPrompt exists to close that gap.</p>
-        <p>The mission is simple: <strong>anyone with an image and an idea should be able to generate great AI art</strong>, regardless of how much they know about prompt syntax.</p>
+        <!-- Section 3: What We Offer -->
+        <h2>What We Offer</h2>
+        <p>Four free tools in one platform:</p>
+        <div class="about-tools-grid">
+          <div class="about-tool-card">
+            <span class="about-tool-icon">&#128444;</span>
+            <div class="about-tool-text">
+              <h4><a href="/" style="color:#f5f5ff;text-decoration:none">Image to Prompt</a></h4>
+              <p>Upload any image and get an AI-ready prompt optimized for your chosen model</p>
+            </div>
+          </div>
+          <div class="about-tool-card">
+            <span class="about-tool-icon">&#9997;</span>
+            <div class="about-tool-text">
+              <h4><a href="/text-to-prompt/" style="color:#f5f5ff;text-decoration:none">Text to Prompt</a></h4>
+              <p>Type a rough idea and get a professional, model-specific prompt back</p>
+            </div>
+          </div>
+          <div class="about-tool-card">
+            <span class="about-tool-icon">&#127909;</span>
+            <div class="about-tool-text">
+              <h4><a href="/image-to-video-prompt/" style="color:#f5f5ff;text-decoration:none">Image to Video Prompt</a></h4>
+              <p>Animate still images with AI video generators using precise motion prompts</p>
+            </div>
+          </div>
+          <div class="about-tool-card">
+            <span class="about-tool-icon">&#127916;</span>
+            <div class="about-tool-text">
+              <h4><a href="/text-to-video-prompt/" style="color:#f5f5ff;text-decoration:none">Text to Video Prompt</a></h4>
+              <p>Describe a video scene and get model-ready prompts with camera controls</p>
+            </div>
+          </div>
+        </div>
 
-        <h2>What Makes It Different</h2>
-        <p>Most prompt tools are generic. ImageToPrompt is built around the specific syntax and vocabulary of each model:</p>
-        <ul>
-          <li><strong>7 image models</strong> — Midjourney, Stable Diffusion, Flux, DALL-E 3, Adobe Firefly, Leonardo AI, and Ideogram — each with model-specific formatting</li>
-          <li><strong>8 video models</strong> — Veo, Kling, Runway, Pika, Luma, Sora, Minimax, and Stable Video — with motion, duration, and camera movement controls</li>
-          <li><strong>No login required</strong> — 10 free analyses per day, no account needed</li>
-          <li><strong>Claude AI vision</strong> — powered by Anthropic's Claude, which reads images with nuance: lighting, composition, mood, color palette, style</li>
-          <li><strong>Privacy-first</strong> — your images are processed in real time and never stored on our servers</li>
-        </ul>
+        <p>Supporting <strong style="color:#f5f5ff">15 AI models</strong> across image and video generation:</p>
 
+        <div class="model-pill-group">
+          <h4>&#128444; Image Models</h4>
+          <div class="model-pills">
+            <span class="model-pill img-pill">&#127759; Midjourney</span>
+            <span class="model-pill img-pill">&#9881; Stable Diffusion</span>
+            <span class="model-pill img-pill">&#9889; Flux AI</span>
+            <span class="model-pill img-pill">&#129504; DALL&#183;E 3</span>
+            <span class="model-pill img-pill">&#129419; Adobe Firefly</span>
+            <span class="model-pill img-pill">&#127918; Leonardo AI</span>
+            <span class="model-pill img-pill">&#9997; Ideogram</span>
+          </div>
+        </div>
+
+        <div class="model-pill-group">
+          <h4>&#127909; Video Models</h4>
+          <div class="model-pills">
+            <span class="model-pill vid-pill">&#127776; Veo</span>
+            <span class="model-pill vid-pill">&#9994; Kling</span>
+            <span class="model-pill vid-pill">&#128640; Runway</span>
+            <span class="model-pill vid-pill">&#127757; Pika</span>
+            <span class="model-pill vid-pill">&#127774; Luma</span>
+            <span class="model-pill vid-pill">&#129693; Sora</span>
+            <span class="model-pill vid-pill">&#127381; Minimax</span>
+            <span class="model-pill vid-pill">&#9881; Stable Video</span>
+          </div>
+        </div>
+
+        <!-- Section 4: Tech -->
         <h2>The Technology</h2>
-        <p>ImageToPrompt is built with React and TypeScript on the frontend, deployed on Vercel's edge network for fast global response times. Image analysis is powered by Anthropic's Claude AI, which provides the visual understanding needed to generate high-quality, contextually accurate prompts. Rate limiting is handled through Upstash Redis to keep the tool free and fair for everyone.</p>
+        <p>ImageToPrompt is powered by <strong style="color:#f5f5ff">Claude AI Vision from Anthropic</strong> — one of the most capable multimodal AI models available. Our analysis examines composition, lighting, color palette, style, mood, and technical details to generate prompts that capture the essence of any visual.</p>
+        <p>The platform is built with React and TypeScript, deployed on Vercel's global edge network for fast response times worldwide. Rate limiting is handled through Upstash Redis to keep the tool fair and free for everyone.</p>
 
+        <!-- Section 5: Founder -->
         <h2>About the Founder</h2>
-        <p>I'm <strong>Othmane Ferhan</strong>, a developer and AI enthusiast based in Casablanca, Morocco. I build tools at the intersection of AI and creative work — things that make powerful technology more approachable. ImageToPrompt is my most-used personal project, and I'm committed to keeping it free and improving it based on user feedback.</p>
-        <p>Have a feature request, found a bug, or just want to say hello? <a href="/contact/">Reach out here</a>.</p>
+        <div class="founder-card">
+          <div class="founder-avatar">&#128100;</div>
+          <div class="founder-info">
+            <h3>Othmane Ferhan</h3>
+            <span class="founder-role">Founder &amp; Developer</span>
+            <span class="founder-location">&#127474;&#127462; Based in Casablanca, Morocco</span>
+            <p class="founder-bio">Prompt engineer and AI specialist. Built ImageToPrompt to bridge the gap between visual inspiration and AI-ready prompts. Passionate about making AI creative tools free and accessible to creators worldwide. Open to partnerships, collaborations, and feature requests — <a href="/contact/">reach out anytime</a>.</p>
+          </div>
+        </div>
 
-        <div style="margin-top: 2.5rem; padding: 1.5rem; background: rgba(224,64,251,0.07); border: 1px solid rgba(224,64,251,0.2); border-radius: 12px; text-align: center;">
-          <p style="margin: 0 0 1rem; font-size: 1.0625rem; color: #f5f5ff; font-weight: 600;">Ready to try it?</p>
-          <a href="/" style="display: inline-block; background: #e040fb; color: #fff; font-weight: 700; padding: 0.75rem 2rem; border-radius: 8px; text-decoration: none; font-size: 0.9375rem;">Try ImageToPrompt Free &#8594;</a>
+        <!-- Section 6: Stats -->
+        <h2>By the Numbers</h2>
+        <div class="stats-grid">
+          <div class="stat-card">
+            <div class="stat-number">15</div>
+            <div class="stat-label">AI Models Supported</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-number">4</div>
+            <div class="stat-label">Free Tools</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-number">10</div>
+            <div class="stat-label">Daily Free Analyses</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-number">0</div>
+            <div class="stat-label">Login Required</div>
+          </div>
+        </div>
+
+        <!-- Section 7: CTA -->
+        <div class="about-cta">
+          <p>Ready to try it?</p>
+          <div class="cta-btn-row">
+            <a href="/" class="cta-btn-primary">Try Image to Prompt &#8594;</a>
+            <a href="/image-to-video-prompt/" class="cta-btn-secondary">Try Video Prompt &#8594;</a>
+          </div>
         </div>
 
       </div>
-
     </article>
   </div>
 
@@ -188,7 +461,7 @@
         <div class="f4-section">
           <h4 class="f4-heading">Resources</h4>
           <a href="/blog/">Blog</a>
-          <a href="/about/">About</a>
+          <a href="/about/" aria-current="page">About</a>
           <a href="/pricing/">Pricing</a>
           <a href="/contact/">Contact</a>
           <a href="/privacy-policy/">Privacy Policy</a>
