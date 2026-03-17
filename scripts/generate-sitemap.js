@@ -66,6 +66,10 @@ const STATIC_PAGES = [
   { path: '/stories/image-to-prompt-how-it-works/', changefreq: 'monthly', priority: '0.6' },
   { path: '/stories/midjourney-prompt-tips/',        changefreq: 'monthly', priority: '0.6' },
   { path: '/stories/same-image-4-models/',           changefreq: 'monthly', priority: '0.6' },
+  // Company pages
+  { path: '/about/',   changefreq: 'monthly', priority: '0.7' },
+  { path: '/pricing/', changefreq: 'monthly', priority: '0.8' },
+  { path: '/contact/', changefreq: 'monthly', priority: '0.6' },
 ];
 
 // ── Auto-discover blog posts ─────────────────────────────────────────────────
