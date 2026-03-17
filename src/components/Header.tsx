@@ -39,11 +39,11 @@ interface HeaderProps {
 
 const colBase = 'flex flex-col gap-0.5';
 const imgToolCls =
-  'flex items-center gap-2 justify-between rounded-lg px-2 py-1.5 text-[0.8125rem] font-500 text-[#d8d8f0] transition-all duration-100 hover:bg-[rgba(224,64,251,0.08)] hover:text-white hover:shadow-[inset_2px_0_0_#e040fb] whitespace-nowrap font-inter';
+  'flex items-center gap-2 justify-between rounded-lg px-2 py-1.5 text-[0.8125rem] font-500 transition-all duration-100 hover:bg-[rgba(224,64,251,0.08)] hover:shadow-[inset_2px_0_0_#e040fb] whitespace-nowrap font-inter';
 const vidToolCls =
-  'flex items-center gap-2 justify-between rounded-lg px-2 py-1.5 text-[0.8125rem] font-500 text-[#d8d8f0] transition-all duration-100 hover:bg-[rgba(0,229,255,0.08)] hover:text-white hover:shadow-[inset_2px_0_0_#00e5ff] whitespace-nowrap font-inter';
+  'flex items-center gap-2 justify-between rounded-lg px-2 py-1.5 text-[0.8125rem] font-500 transition-all duration-100 hover:bg-[rgba(0,229,255,0.08)] hover:shadow-[inset_2px_0_0_#00e5ff] whitespace-nowrap font-inter';
 const modelsLabelCls =
-  'text-[0.5rem] font-600 tracking-[0.1em] uppercase text-[rgba(136,136,187,0.3)] px-2 pt-2 pb-1 mt-1 border-t border-white/[0.05]';
+  'text-[0.5rem] font-600 tracking-[0.1em] uppercase px-2 pt-2 pb-1 mt-1';
 const imgPillCls =
   'text-[0.6875rem] text-[#8888bb] no-underline rounded-full px-2.5 py-0.5 border border-[rgba(136,136,187,0.15)] transition-all duration-150 hover:text-[#e040fb] hover:border-[rgba(224,64,251,0.45)] hover:bg-[rgba(224,64,251,0.09)] hover:shadow-[0_0_8px_rgba(224,64,251,0.15)] font-inter whitespace-nowrap';
 const vidPillCls =
@@ -132,9 +132,10 @@ export default function Header({ onHistoryOpen, hasHistory }: HeaderProps) {
                   className="absolute right-0 top-full mt-2 rounded-2xl border border-[var(--border-subtle)] shadow-2xl z-50 overflow-hidden"
                   style={{
                     backdropFilter: 'blur(20px)',
-                    background: 'linear-gradient(160deg, #13131f 0%, #0d0d18 100%)',
+                    background: 'var(--bg-elevated)',
                     width: '480px',
-                    boxShadow: '0 20px 60px rgba(0,0,0,0.7), 0 0 0 1px rgba(255,255,255,0.04), inset 0 1px 0 rgba(255,255,255,0.06)',
+                    boxShadow: 'var(--shadow-dropdown, 0 20px 60px rgba(0,0,0,0.6))',
+                    border: '1px solid var(--border-subtle)',
                   }}
                 >
                   <div className="grid p-4" style={{ gridTemplateColumns: '1fr auto 1fr', gap: 0 }}>
@@ -146,20 +147,20 @@ export default function Header({ onHistoryOpen, hasHistory }: HeaderProps) {
                         <span className="text-[0.5625rem] font-700 tracking-[0.12em] uppercase" style={{ color: 'rgba(224,100,251,0.8)' }}>
                           🖼 Image Tools
                         </span>
-                        <span className="flex-1 h-px bg-white/[0.05]" />
+                        <span className="flex-1 h-px" style={{ background: 'var(--border-subtle)' }} />
                       </div>
                       {/* Main tools */}
                       {IMG_MAIN.map(({ href, label, Icon }) => (
-                        <a key={href} href={href} role="menuitem" onClick={() => setShowTools(false)} className={imgToolCls}>
+                        <a key={href} href={href} role="menuitem" onClick={() => setShowTools(false)} className={imgToolCls} style={{ color: 'var(--text-secondary)' }}>
                           <span className="flex items-center gap-2">
                             <Icon size={13} style={{ color: 'rgba(224,100,251,0.55)', flexShrink: 0 }} />
                             {label}
                           </span>
-                          <span style={{ color: 'rgba(136,136,187,0.4)', fontSize: '0.75rem' }}>→</span>
+                          <span style={{ color: 'var(--text-muted)', fontSize: '0.75rem' }}>→</span>
                         </a>
                       ))}
                       {/* Models */}
-                      <div className={modelsLabelCls}>Models</div>
+                      <div className={modelsLabelCls} style={{ color: 'var(--text-dim)', borderTop: '1px solid var(--border-subtle)' }}>Models</div>
                       <div className="flex flex-wrap gap-1 px-1 pb-1">
                         {IMG_MODELS.map(([name, href]) => (
                           <a key={href} href={href} onClick={() => setShowTools(false)} className={imgPillCls}>{name}</a>
@@ -168,7 +169,7 @@ export default function Header({ onHistoryOpen, hasHistory }: HeaderProps) {
                     </div>
 
                     {/* ── Divider ── */}
-                    <div style={{ width: '1px', background: 'rgba(255,255,255,0.07)', margin: '0 8px', alignSelf: 'stretch' }} />
+                    <div style={{ width: '1px', background: 'var(--border-subtle)', margin: '0 8px', alignSelf: 'stretch' }} />
 
                     {/* ── Right: Video Tools ── */}
                     <div className={colBase}>
@@ -177,20 +178,20 @@ export default function Header({ onHistoryOpen, hasHistory }: HeaderProps) {
                         <span className="text-[0.5625rem] font-700 tracking-[0.12em] uppercase" style={{ color: 'rgba(0,210,255,0.8)' }}>
                           🎬 Video Tools
                         </span>
-                        <span className="flex-1 h-px bg-white/[0.05]" />
+                        <span className="flex-1 h-px" style={{ background: 'var(--border-subtle)' }} />
                       </div>
                       {/* Main tools */}
                       {VID_MAIN.map(({ href, label, Icon }) => (
-                        <a key={href} href={href} role="menuitem" onClick={() => setShowTools(false)} className={vidToolCls}>
+                        <a key={href} href={href} role="menuitem" onClick={() => setShowTools(false)} className={vidToolCls} style={{ color: 'var(--text-secondary)' }}>
                           <span className="flex items-center gap-2">
                             <Icon size={13} style={{ color: 'rgba(0,210,255,0.55)', flexShrink: 0 }} />
                             {label}
                           </span>
-                          <span style={{ color: 'rgba(136,136,187,0.4)', fontSize: '0.75rem' }}>→</span>
+                          <span style={{ color: 'var(--text-muted)', fontSize: '0.75rem' }}>→</span>
                         </a>
                       ))}
                       {/* Models */}
-                      <div className={modelsLabelCls}>Models</div>
+                      <div className={modelsLabelCls} style={{ color: 'var(--text-dim)', borderTop: '1px solid var(--border-subtle)' }}>Models</div>
                       <div className="flex flex-wrap gap-1 px-1 pb-1">
                         {VID_MODELS.map(([name, href]) => (
                           <a key={href} href={href} onClick={() => setShowTools(false)} className={vidPillCls}>{name}</a>

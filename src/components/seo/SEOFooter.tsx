@@ -21,7 +21,7 @@ function FooterCol({ heading, icon, headingColor, links, linkCls }: FooterColPro
         <p className="font-grotesk text-[0.5625rem] font-700 uppercase tracking-[0.12em] m-0 whitespace-nowrap" style={{ color: headingColor }}>
           {heading}
         </p>
-        <span className="flex-1 h-px bg-white/[0.05]" />
+        <span className="flex-1 h-px" style={{ background: 'var(--border-subtle)' }} />
       </div>
       {links.map(({ href, label }) => (
         <a key={href} href={href} className={linkCls}>{label}</a>
@@ -34,7 +34,7 @@ export default function SEOFooter() {
   return (
     <footer
       className="mt-8 relative"
-      style={{ background: 'linear-gradient(180deg, #0e0e1a 0%, #080810 100%)', padding: '3rem 1.5rem 2rem' }}
+      style={{ background: 'var(--bg-void)', padding: '3rem 1.5rem 2rem' }}
     >
       {/* Gradient top line */}
       <div
@@ -118,11 +118,11 @@ export default function SEOFooter() {
           />
         </div>
 
-        <div className="flex flex-col sm:flex-row justify-between gap-2" style={{ borderTop: '1px solid rgba(255,255,255,0.05)', paddingTop: '1.25rem' }}>
-          <p className="font-inter text-xs m-0" style={{ color: '#3a3a66' }}>
+        <div className="flex flex-col sm:flex-row justify-between gap-2" style={{ borderTop: '1px solid var(--border-subtle)', paddingTop: '1.25rem' }}>
+          <p className="font-inter text-xs m-0" style={{ color: 'var(--text-muted)' }}>
             © 2026 ImageToPrompt.dev — Free AI Prompt Generator
           </p>
-          <p className="font-inter text-xs m-0" style={{ color: '#3a3a66' }}>
+          <p className="font-inter text-xs m-0" style={{ color: 'var(--text-muted)' }}>
             Your images are never stored. All analysis is ephemeral and private.
           </p>
         </div>
