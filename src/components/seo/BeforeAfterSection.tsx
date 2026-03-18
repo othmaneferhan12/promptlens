@@ -55,8 +55,8 @@ export default function BeforeAfterSection() {
         {EXAMPLES.map((ex, i) => (
           <div
             key={i}
-            className="group rounded-2xl border border-[rgba(255,255,255,0.08)] p-5 transition-transform duration-200 hover:scale-[1.01]"
-            style={{ background: 'rgba(255,255,255,0.03)' }}
+            className="group rounded-2xl border border-[var(--border-subtle)] p-5 transition-transform duration-200 hover:scale-[1.01]"
+            style={{ background: 'var(--bg-card)' }}
           >
             {/* Subject label */}
             <p className="font-inter text-xs text-[var(--text-secondary)] mb-4 uppercase tracking-widest font-600">
@@ -70,7 +70,7 @@ export default function BeforeAfterSection() {
               <div className="flex flex-col gap-2">
                 <span
                   className="font-inter text-[10px] font-700 uppercase tracking-widest"
-                  style={{ color: '#6b7280' }}
+                  style={{ color: 'var(--text-muted)' }}
                 >
                   Original
                 </span>
@@ -120,13 +120,13 @@ export default function BeforeAfterSection() {
                 <div
                   className="rounded-lg p-3"
                   style={{
-                    background: 'rgba(0,0,0,0.4)',
-                    border: '1px solid rgba(255,255,255,0.07)',
+                    background: 'var(--bg-elevated)',
+                    border: '1px solid var(--border-subtle)',
                   }}
                 >
                   <p
                     className="font-mono text-[11px] leading-relaxed"
-                    style={{ color: '#a78bfa', whiteSpace: 'pre-wrap', wordBreak: 'break-word' }}
+                    style={{ color: 'var(--code-text, #a78bfa)', whiteSpace: 'pre-wrap', wordBreak: 'break-word' }}
                   >
                     {ex.prompt.length > 160
                       ? ex.prompt.slice(0, 157) + '…'

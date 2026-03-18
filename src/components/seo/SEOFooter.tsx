@@ -1,9 +1,9 @@
 import type { ReactNode } from 'react';
 import { Image as ImageIcon, Video as VideoIcon, BookOpen, Globe } from 'lucide-react';
 
-const imgLinkCls = 'font-inter text-[0.8125rem] text-[rgba(120,120,180,0.6)] hover:text-[#e040fb] transition-colors duration-150 leading-snug';
-const vidLinkCls = 'font-inter text-[0.8125rem] text-[rgba(120,120,180,0.6)] hover:text-[#00e5ff] transition-colors duration-150 leading-snug';
-const defLinkCls = 'font-inter text-[0.8125rem] text-[rgba(120,120,180,0.6)] hover:text-[var(--text-secondary)] transition-colors duration-150 leading-snug';
+const imgLinkCls = 'font-inter text-[0.8125rem] text-[var(--text-muted)] hover:text-[#e040fb] transition-colors duration-150 leading-snug';
+const vidLinkCls = 'font-inter text-[0.8125rem] text-[var(--text-muted)] hover:text-[#00e5ff] transition-colors duration-150 leading-snug';
+const defLinkCls = 'font-inter text-[0.8125rem] text-[var(--text-muted)] hover:text-[var(--text-secondary)] transition-colors duration-150 leading-snug';
 
 interface FooterColProps {
   heading: string;

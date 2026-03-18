@@ -238,11 +238,11 @@ export default function Header({ onHistoryOpen, hasHistory }: HeaderProps) {
               color: '#8888bb',
               padding: '0.3rem 0.75rem',
               borderRadius: '20px',
-              border: '1px solid rgba(255,255,255,0.1)',
-              background: 'rgba(255,255,255,0.04)',
+              border: '1px solid var(--border-subtle)',
+              background: 'transparent',
             }}
             onMouseEnter={e => { (e.currentTarget as HTMLAnchorElement).style.background = 'rgba(0,229,255,0.08)'; (e.currentTarget as HTMLAnchorElement).style.borderColor = 'rgba(0,229,255,0.3)'; (e.currentTarget as HTMLAnchorElement).style.color = '#00e5ff'; }}
-            onMouseLeave={e => { (e.currentTarget as HTMLAnchorElement).style.background = 'rgba(255,255,255,0.04)'; (e.currentTarget as HTMLAnchorElement).style.borderColor = 'rgba(255,255,255,0.1)'; (e.currentTarget as HTMLAnchorElement).style.color = '#8888bb'; }}
+            onMouseLeave={e => { (e.currentTarget as HTMLAnchorElement).style.background = 'transparent'; (e.currentTarget as HTMLAnchorElement).style.borderColor = 'var(--border-subtle)'; (e.currentTarget as HTMLAnchorElement).style.color = '#8888bb'; }}
           >
             About
           </a>

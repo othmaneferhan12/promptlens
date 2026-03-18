@@ -451,7 +451,7 @@ export default function App() {
                           ? (cat === 'video' ? 'linear-gradient(135deg, #7c3aed33, #0891b233)' : 'linear-gradient(135deg, var(--accent-lens)33, var(--accent-cyan)33)')
                           : 'transparent',
                         color: category === cat ? 'var(--text-primary)' : 'var(--text-secondary)',
-                        border: `1px solid ${category === cat ? (cat === 'video' ? '#7c3aed66' : 'var(--accent-lens)66') : 'var(--border-subtle)'}`,
+                        border: `1px solid ${category === cat ? 'var(--accent-lens)' : 'var(--border-subtle)'}`,
                       }}
                     >
                       <span>{icon}</span>
@@ -474,7 +474,7 @@ export default function App() {
                         style={{
                           backgroundColor: activeTab === tab ? 'var(--bg-card)' : 'transparent',
                           color: activeTab === tab ? 'var(--text-primary)' : 'var(--text-secondary)',
-                          boxShadow: activeTab === tab ? '0 1px 4px rgba(0,0,0,0.3)' : 'none',
+                          boxShadow: activeTab === tab ? 'var(--shadow-tab, 0 1px 4px rgba(0,0,0,0.2))' : 'none',
                         }}
                       >
                         <span>{icon}</span>
@@ -493,7 +493,7 @@ export default function App() {
                         style={{
                           backgroundColor: activeTab === tab ? 'var(--bg-card)' : 'transparent',
                           color: activeTab === tab ? 'var(--text-primary)' : 'var(--text-secondary)',
-                          boxShadow: activeTab === tab ? '0 1px 4px rgba(0,0,0,0.3)' : 'none',
+                          boxShadow: activeTab === tab ? 'var(--shadow-tab, 0 1px 4px rgba(0,0,0,0.2))' : 'none',
                         }}
                       >
                         <span>{icon}</span>

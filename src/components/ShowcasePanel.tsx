@@ -89,8 +89,8 @@ export default function ShowcasePanel() {
     <motion.div
       className="rounded-2xl flex flex-col h-full"
       style={{
-        background: 'rgba(255,255,255,0.04)',
-        border: '1px solid rgba(255,255,255,0.10)',
+        background: 'var(--bg-card)',
+        border: '1px solid var(--border-subtle)',
         backdropFilter: 'blur(12px)',
       }}
       initial={{ opacity: 0, y: 24 }}
@@ -102,7 +102,7 @@ export default function ShowcasePanel() {
       {/* Title bar */}
       <div
         className="flex items-center justify-between px-4 py-3 shrink-0"
-        style={{ borderBottom: '1px solid rgba(255,255,255,0.08)' }}
+        style={{ borderBottom: '1px solid var(--border-subtle)' }}
       >
         <div className="flex items-center gap-1.5" aria-hidden="true">
           <span className="h-3 w-3 rounded-full" style={{ background: '#FF5F57' }} />
@@ -137,8 +137,8 @@ export default function ShowcasePanel() {
                 position: 'absolute',
                 inset: 16,
                 borderRadius: 12,
-                border: '1px solid rgba(255,255,255,0.08)',
-                background: 'rgba(10,10,20,0.6)',
+                border: '1px solid var(--border-subtle)',
+                background: 'var(--bg-elevated)',
                 zIndex: isExiting ? 20 : 13 - dist,
                 transformOrigin: 'top left',
                 overflow: 'hidden',
@@ -162,11 +162,11 @@ export default function ShowcasePanel() {
                   <div className="mt-3 flex items-center gap-2">
                     <span
                       className="rounded-full px-2.5 py-0.5 font-inter text-xs font-500"
-                      style={{ background: 'rgba(255,255,255,0.08)', color: 'var(--text-secondary)' }}
+                      style={{ background: 'var(--bg-card-hover)', color: 'var(--text-secondary)' }}
                     >
                       {ex.label}
                     </span>
-                    <span className="font-inter text-xs" style={{ color: 'rgba(255,255,255,0.25)' }}>
+                    <span className="font-inter text-xs" style={{ color: 'var(--text-muted)' }}>
                       Generated prompt ↓
                     </span>
                   </div>
@@ -196,7 +196,7 @@ export default function ShowcasePanel() {
             style={{
               width: i === active ? '20px' : '6px',
               height: '6px',
-              background: i === active ? '#e040fb' : 'rgba(255,255,255,0.22)',
+              background: i === active ? 'var(--accent-lens)' : 'var(--border-mid, rgba(255,255,255,0.22))',
               outline: 'none',
               cursor: 'pointer',
             }}
