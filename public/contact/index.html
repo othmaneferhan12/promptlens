@@ -82,8 +82,8 @@
     @media (min-width: 481px) and (max-width: 680px) { .contact-cards { grid-template-columns: 1fr 1fr; } }
 
     .contact-card {
-      background: rgba(255,255,255,0.03);
-      border: 1px solid rgba(255,255,255,0.08);
+      background: var(--bg-card);
+      border: 1px solid var(--border-card);
       border-radius: 14px;
       padding: 1.5rem 1.25rem;
       transition: border-color 0.2s, background 0.2s;
@@ -101,7 +101,7 @@
       font-family: 'Space Grotesk', Inter, system-ui, sans-serif;
       font-size: 1rem;
       font-weight: 700;
-      color: #f5f5ff;
+      color: var(--text-primary);
       margin: 0 0 0.35rem;
     }
     .contact-card .card-email {
@@ -124,7 +124,7 @@
     /* ── Contact Form ── */
     .contact-form-section {
       background: rgba(255,255,255,0.025);
-      border: 1px solid rgba(255,255,255,0.07);
+      border: 1px solid var(--border-subtle);
       border-radius: 16px;
       padding: 2rem 2rem 1.75rem;
       margin: 0 0 2.5rem;
@@ -133,7 +133,7 @@
       font-family: 'Space Grotesk', Inter, system-ui, sans-serif;
       font-size: 1.1875rem;
       font-weight: 700;
-      color: #f5f5ff;
+      color: var(--text-primary);
       margin: 0 0 1.5rem;
     }
     .form-row-2 {
@@ -151,17 +151,17 @@
     .form-field label {
       font-size: 0.8rem;
       font-weight: 700;
-      color: #8888bb;
+      color: var(--text-muted);
       text-transform: uppercase;
       letter-spacing: 0.06em;
     }
     .form-field input,
     .form-field select,
     .form-field textarea {
-      background: rgba(255,255,255,0.05);
-      border: 1px solid rgba(255,255,255,0.1);
+      background: var(--border-subtle);
+      border: 1px solid var(--border-mid);
       border-radius: 8px;
-      color: #f5f5ff;
+      color: var(--text-primary);
       font-family: Inter, system-ui, sans-serif;
       font-size: 0.9375rem;
       padding: 0.65rem 0.9rem;
@@ -180,7 +180,7 @@
       box-shadow: 0 0 0 3px rgba(224,64,251,0.1);
     }
     .form-field select { cursor: pointer; }
-    .form-field select option { background: #0e0e1a; color: #f5f5ff; }
+    .form-field select option { background: var(--bg-surface); color: var(--text-primary); }
     .form-field textarea { resize: vertical; min-height: 140px; line-height: 1.6; }
     .form-submit-btn {
       background: #e040fb;
@@ -212,12 +212,12 @@
       margin: 0 0 2.5rem;
     }
     .response-notice-icon { font-size: 1.25rem; flex-shrink: 0; margin-top: 1px; }
-    .response-notice p { margin: 0; font-size: 0.9rem; color: #c8c8e8; line-height: 1.6; }
+    .response-notice p { margin: 0; font-size: 0.9rem; color: var(--text-secondary); line-height: 1.6; }
 
     /* ── FAQ ── */
     .faq-list { margin: 0.5rem 0 0; }
     .faq-item {
-      border: 1px solid rgba(255,255,255,0.07);
+      border: 1px solid var(--border-subtle);
       border-radius: 10px;
       margin-bottom: 0.75rem;
       overflow: hidden;
@@ -227,7 +227,7 @@
       font-family: 'Space Grotesk', Inter, system-ui, sans-serif;
       font-weight: 600;
       font-size: 0.9375rem;
-      color: #f5f5ff;
+      color: var(--text-primary);
       cursor: pointer;
       list-style: none;
       display: flex;
@@ -238,7 +238,7 @@
     .faq-item summary::-webkit-details-marker { display: none; }
     .faq-item summary::after { content: '+'; font-size: 1.25rem; color: #e040fb; flex-shrink: 0; }
     .faq-item[open] summary::after { content: '−'; }
-    .faq-item p { padding: 0 1.25rem 1rem; margin: 0; font-size: 0.9rem; color: #c8c8e8; line-height: 1.7; }
+    .faq-item p { padding: 0 1.25rem 1rem; margin: 0; font-size: 0.9rem; color: var(--text-secondary); line-height: 1.7; }
   </style>
 </head>
 <body>

@@ -85,10 +85,10 @@
       text-align: center;
       font-family: 'Space Grotesk', Inter, system-ui, sans-serif;
       font-size: 1.125rem;
-      color: #8888bb;
+      color: var(--text-muted);
       margin: 0 0 2.5rem;
     }
-    .pricing-tagline strong { color: #f5f5ff; }
+    .pricing-tagline strong { color: var(--text-primary); }
 
     /* ── Cards grid ── */
     .pricing-cards {
@@ -131,24 +131,24 @@
       white-space: nowrap;
     }
     .plan-badge.active { background: #e040fb; color: #fff; }
-    .plan-badge.soon { background: rgba(255,255,255,0.08); color: #8888bb; border: 1px solid rgba(255,255,255,0.12); }
+    .plan-badge.soon { background: var(--border-card); color: var(--text-muted); border: 1px solid rgba(255,255,255,0.12); }
 
     .plan-name {
       font-family: 'Space Grotesk', Inter, system-ui, sans-serif;
       font-size: 1.25rem;
       font-weight: 800;
-      color: #f5f5ff;
+      color: var(--text-primary);
       margin: 0.5rem 0 0.5rem;
     }
     .plan-price {
       font-family: 'Space Grotesk', Inter, system-ui, sans-serif;
       font-size: 2.75rem;
       font-weight: 800;
-      color: #f5f5ff;
+      color: var(--text-primary);
       line-height: 1;
       margin: 0 0 0.25rem;
     }
-    .plan-price .price-unit { font-size: 1.125rem; font-weight: 600; color: #8888bb; }
+    .plan-price .price-unit { font-size: 1.125rem; font-weight: 600; color: var(--text-muted); }
     .plan-period {
       font-size: 0.8125rem;
       color: #6666aa;
@@ -156,13 +156,13 @@
     }
     .plan-divider {
       border: none;
-      border-top: 1px solid rgba(255,255,255,0.07);
+      border-top: 1px solid var(--border-subtle);
       margin: 0 0 1.25rem;
     }
     .plan-subtitle {
       font-size: 0.8125rem;
       font-weight: 700;
-      color: #8888bb;
+      color: var(--text-muted);
       text-transform: uppercase;
       letter-spacing: 0.06em;
       margin: 0 0 0.875rem;
@@ -179,7 +179,7 @@
       align-items: flex-start;
       gap: 0.625rem;
       font-size: 0.9rem;
-      color: #c8c8e8;
+      color: var(--text-secondary);
       padding: 0.35rem 0;
     }
     .plan-features li .chk { color: #e040fb; font-weight: 800; flex-shrink: 0; }
@@ -203,7 +203,7 @@
     .plan-cta.primary { background: #e040fb; color: #fff; }
     .plan-cta.secondary {
       background: transparent;
-      color: #8888bb;
+      color: var(--text-muted);
       border: 1px solid rgba(255,255,255,0.12);
       font-family: 'Space Grotesk', Inter, system-ui, sans-serif;
     }
@@ -217,10 +217,10 @@
     }
     .notify-row input {
       flex: 1;
-      background: rgba(255,255,255,0.05);
-      border: 1px solid rgba(255,255,255,0.1);
+      background: var(--border-subtle);
+      border: 1px solid var(--border-mid);
       border-radius: 7px;
-      color: #f5f5ff;
+      color: var(--text-primary);
       font-family: Inter, system-ui, sans-serif;
       font-size: 0.875rem;
       padding: 0.55rem 0.75rem;
@@ -247,7 +247,7 @@
     /* ── FAQ ── */
     .faq-list { margin: 0.5rem 0 2.5rem; }
     .faq-item {
-      border: 1px solid rgba(255,255,255,0.07);
+      border: 1px solid var(--border-subtle);
       border-radius: 10px;
       margin-bottom: 0.75rem;
       overflow: hidden;
@@ -257,7 +257,7 @@
       font-family: 'Space Grotesk', Inter, system-ui, sans-serif;
       font-weight: 600;
       font-size: 0.9375rem;
-      color: #f5f5ff;
+      color: var(--text-primary);
       cursor: pointer;
       list-style: none;
       display: flex;
@@ -268,7 +268,7 @@
     .faq-item summary::-webkit-details-marker { display: none; }
     .faq-item summary::after { content: '+'; font-size: 1.25rem; color: #e040fb; flex-shrink: 0; }
     .faq-item[open] summary::after { content: '−'; }
-    .faq-item p { padding: 0 1.25rem 1rem; margin: 0; font-size: 0.9rem; color: #c8c8e8; line-height: 1.7; }
+    .faq-item p { padding: 0 1.25rem 1rem; margin: 0; font-size: 0.9rem; color: var(--text-secondary); line-height: 1.7; }
 
     /* ── Trust badges ── */
     .trust-row {
@@ -282,14 +282,14 @@
       display: inline-flex;
       align-items: center;
       gap: 0.5rem;
-      background: rgba(255,255,255,0.04);
+      background: var(--bg-card);
       border: 1px solid rgba(255,255,255,0.09);
       border-radius: 8px;
       padding: 0.55rem 1rem;
       font-family: 'Space Grotesk', Inter, system-ui, sans-serif;
       font-size: 0.8rem;
       font-weight: 700;
-      color: #8888bb;
+      color: var(--text-muted);
       letter-spacing: 0.04em;
       text-transform: uppercase;
     }
