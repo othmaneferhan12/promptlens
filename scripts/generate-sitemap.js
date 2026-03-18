@@ -139,6 +139,8 @@ User-agent: Googlebot
 Allow: /
 
 Sitemap: ${SITE_URL}/sitemap.xml
+Sitemap: ${SITE_URL}/image-sitemap.xml
+Sitemap: ${SITE_URL}/video-sitemap.xml
 `;
 }
 

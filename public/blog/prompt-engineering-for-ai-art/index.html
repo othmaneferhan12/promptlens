@@ -3,7 +3,15 @@
 <head>
   <script src="/theme-toggle.js"></script>
   <meta charset="UTF-8" />
+  <link rel="preload" href="/theme.css" as="style">
+<link rel="dns-prefetch" href="https://www.googletagmanager.com">
+<link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="max-image-preview:large, index, follow">
+  <meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="ImageToPrompt">
   <title>What Is Prompt Engineering for AI Art? A Beginner's Guide</title>
   <meta name="description" content="Learn what prompt engineering for AI art is and how to get started. Covers subject, style, lighting, composition, and technical parameters with real examples for beginners." />
   <link rel="canonical" href="https://www.imagetoprompt.dev/blog/prompt-engineering-for-ai-art/" />
@@ -61,7 +69,18 @@
   </script>
     <!-- Google AdSense -->
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4499206373485728" crossorigin="anonymous"></script>
-  </head>
+    <!-- Web Push Notifications -->
+<script src="https://cdn.onesignal.com/sdks/web/v16/OneSignalSDK.page.js" defer></script>
+<script>
+  window.OneSignalDeferred = window.OneSignalDeferred || [];
+  OneSignalDeferred.push(async function(OneSignal) {
+    await OneSignal.init({
+      appId: "REPLACE_WITH_ONESIGNAL_APP_ID",
+      notifyButton: { enable: false }
+    });
+  });
+</script>
+</head>
 <body>
 
   <header class="site-header">
@@ -115,6 +134,10 @@
     <header class="article-header">
       <p class="article-tag">Beginner's Guide</p>
       <h1>What Is Prompt Engineering for AI Art? A Beginner's Guide</h1>
+      <div class="snippet-answer">
+        <p><strong>What is prompt engineering for AI art?</strong></p>
+        <p>Prompt engineering for AI art is the skill of writing text descriptions that guide AI image generators to produce specific visual results. It involves describing subject, artistic style, lighting, composition, color palette, and mood in language the model understands. Each model — Midjourney, Stable Diffusion, DALL-E 3, Flux — has different syntax and vocabulary.</p>
+      </div>
       <div class="article-meta">
         <span>March 2026</span>
         <span class="dot">·</span>
@@ -607,5 +630,13 @@
 
 <script src="/newsletter-inject.js" defer></script>
 <script src="/nav.js" defer></script>
+  <script>
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', function() {
+    navigator.serviceWorker.register('/sw.js')
+      .catch(function(err) { console.warn('SW registration failed:', err); });
+  });
+}
+</script>
 </body>
 </html>

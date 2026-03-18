@@ -191,6 +191,40 @@
 
     <!-- Google AdSense -->
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4499206373485728" crossorigin="anonymous"></script>
+
+    <!-- WebSite Schema with SearchAction -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "name": "ImageToPrompt",
+      "url": "https://www.imagetoprompt.dev",
+      "description": "Free AI image and video prompt generator for Midjourney, Stable Diffusion, Flux, DALL-E 3, Veo, Kling, and more.",
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": {
+          "@type": "EntryPoint",
+          "urlTemplate": "https://www.imagetoprompt.dev/blog/?q={search_term_string}"
+        },
+        "query-input": "required name=search_term_string"
+      }
+    }
+    </script>
+
+    <!-- Web Push Notifications -->
+    <script src="https://cdn.onesignal.com/sdks/web/v16/OneSignalSDK.page.js" defer></script>
+    <script>
+      window.OneSignalDeferred = window.OneSignalDeferred || [];
+      OneSignalDeferred.push(async function(OneSignal) {
+        await OneSignal.init({
+          appId: "REPLACE_WITH_ONESIGNAL_APP_ID",
+          notifyButton: { enable: false }
+        });
+      });
+    </script>
+
+    <!-- max-image-preview for Google Discover -->
+    <meta name="robots" content="max-image-preview:large, index, follow">
   </head>
   <body>
     <div id="root">
@@ -526,5 +560,31 @@
       </div>
     </div>
     <script type="module" src="/src/main.tsx"></script>
+    <script>
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', function() {
+    navigator.serviceWorker.register('/sw.js')
+      .catch(function(err) { console.warn('SW registration failed:', err); });
+  });
+}
+</script>
+<script>
+var _deferredInstall = null;
+window.addEventListener('beforeinstallprompt', function(e) {
+  e.preventDefault();
+  _deferredInstall = e;
+  var btn = document.getElementById('pwa-install-btn');
+  if (btn) btn.style.display = 'flex';
+});
+window.triggerPWAInstall = function() {
+  if (!_deferredInstall) return;
+  _deferredInstall.prompt();
+  _deferredInstall.userChoice.then(function() {
+    _deferredInstall = null;
+    var btn = document.getElementById('pwa-install-btn');
+    if (btn) btn.style.display = 'none';
+  });
+};
+</script>
   </body>
 </html>

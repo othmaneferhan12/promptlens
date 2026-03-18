@@ -3,7 +3,15 @@
 <head>
   <script src="/theme-toggle.js"></script>
   <meta charset="UTF-8" />
+  <link rel="preload" href="/theme.css" as="style">
+<link rel="dns-prefetch" href="https://www.googletagmanager.com">
+<link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="max-image-preview:large, index, follow">
+  <meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="ImageToPrompt">
   <title>How to Convert Any Image to an AI Prompt (Step-by-Step Guide)</title>
   <meta name="description" content="Learn how to convert any image into an optimized AI prompt for Midjourney, Stable Diffusion, DALL·E 3, and Flux. Step-by-step guide with practical tips." />
   <link rel="canonical" href="https://www.imagetoprompt.dev/blog/convert-image-to-ai-prompt/" />
@@ -61,7 +69,18 @@
   </script>
     <!-- Google AdSense -->
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4499206373485728" crossorigin="anonymous"></script>
-  </head>
+    <!-- Web Push Notifications -->
+<script src="https://cdn.onesignal.com/sdks/web/v16/OneSignalSDK.page.js" defer></script>
+<script>
+  window.OneSignalDeferred = window.OneSignalDeferred || [];
+  OneSignalDeferred.push(async function(OneSignal) {
+    await OneSignal.init({
+      appId: "REPLACE_WITH_ONESIGNAL_APP_ID",
+      notifyButton: { enable: false }
+    });
+  });
+</script>
+</head>
 <body>
 
   <header class="site-header">
@@ -115,6 +134,10 @@
     <header class="article-header">
       <p class="article-tag">Step-by-Step Guide</p>
       <h1>How to Convert Any Image to an AI Prompt (Step-by-Step Guide)</h1>
+      <div class="snippet-answer">
+        <p><strong>How do I convert an image to an AI prompt?</strong></p>
+        <p>To convert an image to an AI prompt: (1) Upload the image to an image-to-prompt tool like ImageToPrompt.dev, (2) Select your target AI model — Midjourney, Stable Diffusion, Flux, or DALL-E 3, (3) The AI analyzes composition, lighting, style, and color to generate a model-specific prompt, (4) Copy and paste the prompt into your AI generator.</p>
+      </div>
       <div class="article-meta">
         <span>March 2026</span>
         <span class="dot">·</span>
@@ -543,5 +566,13 @@
 
 <script src="/newsletter-inject.js" defer></script>
 <script src="/nav.js" defer></script>
+  <script>
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', function() {
+    navigator.serviceWorker.register('/sw.js')
+      .catch(function(err) { console.warn('SW registration failed:', err); });
+  });
+}
+</script>
 </body>
 </html>

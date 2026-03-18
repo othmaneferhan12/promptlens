@@ -3,7 +3,15 @@
 <head>
   <script src="/theme-toggle.js"></script>
   <meta charset="UTF-8" />
+  <link rel="preload" href="/theme.css" as="style">
+<link rel="dns-prefetch" href="https://www.googletagmanager.com">
+<link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="max-image-preview:large, index, follow">
+  <meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="ImageToPrompt">
   <title>Midjourney Prompts Guide 2026 — Current --v Parameter, 10 Copy-Paste Examples &amp; Tips</title>
   <meta name="description" content="Updated March 2026. Midjourney current version --v 6.1, complete parameter cheat sheet (--ar --stylize --chaos --q), 10 ready-to-paste prompts, and pro tips. The only guide you need." />
   <link rel="canonical" href="https://www.imagetoprompt.dev/blog/midjourney-prompt-guide-2026/" />
@@ -61,7 +69,18 @@
   </script>
     <!-- Google AdSense -->
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4499206373485728" crossorigin="anonymous"></script>
-  </head>
+    <!-- Web Push Notifications -->
+<script src="https://cdn.onesignal.com/sdks/web/v16/OneSignalSDK.page.js" defer></script>
+<script>
+  window.OneSignalDeferred = window.OneSignalDeferred || [];
+  OneSignalDeferred.push(async function(OneSignal) {
+    await OneSignal.init({
+      appId: "REPLACE_WITH_ONESIGNAL_APP_ID",
+      notifyButton: { enable: false }
+    });
+  });
+</script>
+</head>
 <body>
 
   <header class="site-header">
@@ -115,6 +134,10 @@
     <header class="article-header">
       <p class="article-tag">Midjourney Guide</p>
       <h1>Midjourney Prompts 2026: Complete Parameter Guide &amp; Ready-to-Paste Examples</h1>
+      <div class="snippet-answer">
+        <p><strong>What is the current Midjourney version in 2026?</strong></p>
+        <p>The current Midjourney version is <strong>V6.1</strong>, accessed with <code>--v 6.1</code>. V6.1 offers improved photorealism, better text rendering, enhanced prompt following, and higher detail levels than V6. It is the default — no parameter needed unless using an older version.</p>
+      </div>
       <div class="article-meta">
         <span>March 2026</span>
         <span class="dot">·</span>
@@ -177,6 +200,10 @@
       </div>
 
       <h2 id="midjourney-prompt-structure">Midjourney Prompt Structure</h2>
+      <div class="snippet-answer">
+        <p><strong>What is the best Midjourney prompt structure?</strong></p>
+        <p>The best Midjourney prompt structure is: [Subject], [artistic style], [lighting], [color palette], [composition], [mood] --ar [ratio] --v 6.1 --style raw. Lead with the most important visual element. Always set an aspect ratio. The order matters — earlier terms have more weight.</p>
+      </div>
 
       <p>A complete Midjourney prompt follows this structure:</p>
 
@@ -300,6 +327,14 @@
           <tr><td>Image Weight</td><td><code>--iw N</code></td><td>0.5–2</td><td>Image reference influence strength</td><td>1</td><td><code>--iw 1.5</code></td></tr>
         </tbody>
       </table>
+      </div>
+      <div class="snippet-answer">
+        <p><strong>What does --style raw do in Midjourney?</strong></p>
+        <p>--style raw reduces Midjourney's default artistic interpretation, producing more literal results that closely match your prompt. Use it when you want precise control rather than Midjourney's signature beautification. Without --style raw, Midjourney adds its own aesthetic choices regardless of what you describe.</p>
+      </div>
+      <div class="snippet-answer">
+        <p><strong>What is the best --stylize value for Midjourney?</strong></p>
+        <p>Use --s 0–50 for literal, minimal artistic interpretation. Use --s 100–250 for balanced results. Use --s 500–1000 for highly stylized output where Midjourney applies strong aesthetic choices. The default is --s 100.</p>
       </div>
 
       <h2 id="ready-to-paste-prompts">10 Ready-to-Paste Midjourney Prompts for 2026</h2>
@@ -674,5 +709,13 @@
 
 <script src="/newsletter-inject.js" defer></script>
 <script src="/nav.js" defer></script>
+  <script>
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', function() {
+    navigator.serviceWorker.register('/sw.js')
+      .catch(function(err) { console.warn('SW registration failed:', err); });
+  });
+}
+</script>
 </body>
 </html>

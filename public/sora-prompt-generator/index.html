@@ -3,7 +3,15 @@
 <head>
   <script src="/theme-toggle.js"></script>
   <meta charset="UTF-8" />
+  <link rel="preload" href="/theme.css" as="style">
+<link rel="dns-prefetch" href="https://www.googletagmanager.com">
+<link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0" />
+  <meta name="robots" content="max-image-preview:large, index, follow">
+  <meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="ImageToPrompt">
   <title>Sora Prompt Generator — OpenAI Video AI Tool | ImageToPrompt</title>
   <meta name="description" content="Create detailed Sora video prompts for OpenAI's video generator. Narrative descriptions, complex scenes, and multi-element motion. Free." />
   <link rel="canonical" href="https://www.imagetoprompt.dev/sora-prompt-generator/" />
@@ -85,7 +93,18 @@
   </script>
     <!-- Google AdSense -->
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4499206373485728" crossorigin="anonymous"></script>
-  </head>
+    <!-- Web Push Notifications -->
+<script src="https://cdn.onesignal.com/sdks/web/v16/OneSignalSDK.page.js" defer></script>
+<script>
+  window.OneSignalDeferred = window.OneSignalDeferred || [];
+  OneSignalDeferred.push(async function(OneSignal) {
+    await OneSignal.init({
+      appId: "REPLACE_WITH_ONESIGNAL_APP_ID",
+      notifyButton: { enable: false }
+    });
+  });
+</script>
+</head>
 <body>
 
   <header class="site-header">
@@ -359,5 +378,13 @@
   </footer>
 
 <script src="/nav.js" defer></script>
+  <script>
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', function() {
+    navigator.serviceWorker.register('/sw.js')
+      .catch(function(err) { console.warn('SW registration failed:', err); });
+  });
+}
+</script>
 </body>
 </html>

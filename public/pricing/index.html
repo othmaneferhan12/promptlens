@@ -3,7 +3,15 @@
 <head>
   <script src="/theme-toggle.js"></script>
   <meta charset="UTF-8" />
+  <link rel="preload" href="/theme.css" as="style">
+<link rel="dns-prefetch" href="https://www.googletagmanager.com">
+<link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0" />
+  <meta name="robots" content="max-image-preview:large, index, follow">
+  <meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="ImageToPrompt">
   <title>Pricing | ImageToPrompt — Free AI Prompt Generator</title>
   <meta name="description" content="ImageToPrompt pricing: 100% free with 10 daily analyses. All features, all models, no login. See our plans." />
   <link rel="canonical" href="https://www.imagetoprompt.dev/pricing/" />
@@ -298,6 +306,17 @@
     .trust-badge.purple { border-color: rgba(224,64,251,0.2); color: #e040fb; }
     .trust-badge.blue { border-color: rgba(0,229,255,0.18); color: #00e5ff; }
   </style>
+  <!-- Web Push Notifications -->
+<script src="https://cdn.onesignal.com/sdks/web/v16/OneSignalSDK.page.js" defer></script>
+<script>
+  window.OneSignalDeferred = window.OneSignalDeferred || [];
+  OneSignalDeferred.push(async function(OneSignal) {
+    await OneSignal.init({
+      appId: "REPLACE_WITH_ONESIGNAL_APP_ID",
+      notifyButton: { enable: false }
+    });
+  });
+</script>
 </head>
 <body>
 
@@ -504,5 +523,13 @@
   </footer>
 
 <script src="/nav.js" defer></script>
+  <script>
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', function() {
+    navigator.serviceWorker.register('/sw.js')
+      .catch(function(err) { console.warn('SW registration failed:', err); });
+  });
+}
+</script>
 </body>
 </html>

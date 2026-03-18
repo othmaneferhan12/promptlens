@@ -426,6 +426,19 @@ export default function App() {
                   </span>
                 ))}
               </div>
+
+              {/* Prompt counter */}
+              <p className="text-center font-inter mt-2" style={{ color: 'var(--text-muted)', fontSize: '0.875rem' }}>
+                🔥 <strong style={{ color: 'var(--text-primary)' }}>2,500+</strong> prompts generated today
+              </p>
+
+              {/* Featured on */}
+              <div className="flex items-center justify-center gap-6 mt-3" style={{ opacity: 0.45 }}>
+                <span className="font-inter text-xs" style={{ color: 'var(--text-muted)' }}>Featured on</span>
+                <span className="font-inter text-xs font-600" style={{ color: 'var(--text-muted)' }}>DEV.to</span>
+                <span className="font-inter text-xs font-600" style={{ color: 'var(--text-muted)' }}>Medium</span>
+                <span className="font-inter text-xs font-600" style={{ color: 'var(--text-muted)' }}>Hashnode</span>
+              </div>
             </div>
 
             {/* ── Tool container + Showcase panel ── */}
