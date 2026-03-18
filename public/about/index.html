@@ -242,33 +242,37 @@
       margin: 0 0 1.375rem;
     }
     .cta-btn-row { display: flex; gap: 0.875rem; justify-content: center; flex-wrap: wrap; }
-    .cta-btn-primary {
+    a.cta-btn-primary,
+    .about-cta a.cta-btn-primary {
       display: inline-block;
       background: var(--accent);
-      color: #fff;
+      color: #fff !important;
       font-family: 'Space Grotesk', Inter, system-ui, sans-serif;
       font-weight: 700;
       font-size: 0.9375rem;
       padding: 0.75rem 1.75rem;
       border-radius: 8px;
-      text-decoration: none;
+      text-decoration: none !important;
       transition: opacity 0.2s;
     }
-    .cta-btn-primary:hover { opacity: 0.88; }
-    .cta-btn-secondary {
+    a.cta-btn-primary:hover,
+    .about-cta a.cta-btn-primary:hover { opacity: 0.88; }
+    a.cta-btn-secondary,
+    .about-cta a.cta-btn-secondary {
       display: inline-block;
       background: transparent;
-      color: var(--accent);
+      color: var(--accent) !important;
       font-family: 'Space Grotesk', Inter, system-ui, sans-serif;
       font-weight: 700;
       font-size: 0.9375rem;
       padding: 0.75rem 1.75rem;
       border-radius: 8px;
       border: 1px solid var(--accent-border);
-      text-decoration: none;
+      text-decoration: none !important;
       transition: border-color 0.2s, background 0.2s;
     }
-    .cta-btn-secondary:hover { border-color: var(--accent); background: var(--accent-dim); }
+    a.cta-btn-secondary:hover,
+    .about-cta a.cta-btn-secondary:hover { border-color: var(--accent); background: var(--accent-dim); }
   </style>
   <!-- Web Push Notifications -->
 <script src="https://cdn.onesignal.com/sdks/web/v16/OneSignalSDK.page.js" defer></script>
