@@ -3,8 +3,7 @@
 <head>
   <script src="/theme-toggle.js"></script>
   <meta charset="UTF-8" />
-  <link rel="preload" href="/theme.css" as="style">
-<link rel="dns-prefetch" href="https://www.googletagmanager.com">
+  <link rel="dns-prefetch" href="https://www.googletagmanager.com">
 <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0" />
   <meta name="robots" content="max-image-preview:large, index, follow">
@@ -41,7 +40,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Arabic:wght@400;600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="/theme.css">
-  <link rel="stylesheet" href="/blog.css" />
+  <link rel="preload" href="/blog.css" as="style" onload="this.onload=null;this.rel='stylesheet'"><noscript><link rel="stylesheet" href="/blog.css"></noscript>
   <style>
     body { font-family: 'Noto Sans Arabic', 'Space Grotesk', sans-serif; }
     .article-body { direction: rtl; text-align: right; }
@@ -374,19 +373,19 @@
       <div class="model-output-grid">
         <div class="model-output">
           <span class="model-badge badge-mj">Midjourney V6.1</span>
-          <img src="/images/compare1-mj.jpeg" alt="ناتج Midjourney V6.1 — رائد فضاء وحيد على كوكب أحمر عند الغروب" width="800" height="457" loading="lazy" />
+          <picture><source srcset="/images/compare1-mj.webp" type="image/webp"><img src="/images/compare1-mj.jpeg" alt="ناتج Midjourney V6.1 — رائد فضاء وحيد على كوكب أحمر عند الغروب" width="800" height="457" loading="lazy"></picture>
         </div>
         <div class="model-output">
           <span class="model-badge badge-sd">Stable Diffusion SDXL</span>
-          <img src="/images/compare1-sd.jpeg" alt="ناتج Stable Diffusion SDXL — رائد فضاء وحيد على كوكب أحمر عند الغروب" width="800" height="457" loading="lazy" />
+          <picture><source srcset="/images/compare1-sd.webp" type="image/webp"><img src="/images/compare1-sd.jpeg" alt="ناتج Stable Diffusion SDXL — رائد فضاء وحيد على كوكب أحمر عند الغروب" width="800" height="457" loading="lazy"></picture>
         </div>
         <div class="model-output">
           <span class="model-badge badge-dalle">DALL·E 3</span>
-          <img src="/images/compare1-dalle.jpeg" alt="ناتج DALL·E 3 — رائد فضاء وحيد على كوكب أحمر عند الغروب" width="800" height="457" loading="lazy" />
+          <picture><source srcset="/images/compare1-dalle.webp" type="image/webp"><img src="/images/compare1-dalle.jpeg" alt="ناتج DALL·E 3 — رائد فضاء وحيد على كوكب أحمر عند الغروب" width="800" height="457" loading="lazy"></picture>
         </div>
         <div class="model-output">
           <span class="model-badge badge-flux">Flux</span>
-          <img src="/images/compare1-flux.jpeg" alt="ناتج Flux — رائد فضاء وحيد على كوكب أحمر عند الغروب" width="800" height="457" loading="lazy" />
+          <picture><source srcset="/images/compare1-flux.webp" type="image/webp"><img src="/images/compare1-flux.jpeg" alt="ناتج Flux — رائد فضاء وحيد على كوكب أحمر عند الغروب" width="800" height="457" loading="lazy"></picture>
         </div>
       </div>
 
@@ -408,19 +407,19 @@
       <div class="model-output-grid">
         <div class="model-output">
           <span class="model-badge badge-mj">Midjourney</span>
-          <img src="/images/compare2-mj.jpeg" alt="ناتج Midjourney — داخل مقهى مريح في يوم ممطر" width="800" height="457" loading="lazy" />
+          <picture><source srcset="/images/compare2-mj.webp" type="image/webp"><img src="/images/compare2-mj.jpeg" alt="ناتج Midjourney — داخل مقهى مريح في يوم ممطر" width="800" height="457" loading="lazy"></picture>
         </div>
         <div class="model-output">
           <span class="model-badge badge-sd">Stable Diffusion</span>
-          <img src="/images/compare2-sd.jpeg" alt="ناتج Stable Diffusion — داخل مقهى مريح في يوم ممطر" width="800" height="457" loading="lazy" />
+          <picture><source srcset="/images/compare2-sd.webp" type="image/webp"><img src="/images/compare2-sd.jpeg" alt="ناتج Stable Diffusion — داخل مقهى مريح في يوم ممطر" width="800" height="457" loading="lazy"></picture>
         </div>
         <div class="model-output">
           <span class="model-badge badge-dalle">DALL·E 3</span>
-          <img src="/images/compare2-dalle.jpeg" alt="ناتج DALL·E 3 — داخل مقهى مريح في يوم ممطر" width="800" height="457" loading="lazy" />
+          <picture><source srcset="/images/compare2-dalle.webp" type="image/webp"><img src="/images/compare2-dalle.jpeg" alt="ناتج DALL·E 3 — داخل مقهى مريح في يوم ممطر" width="800" height="457" loading="lazy"></picture>
         </div>
         <div class="model-output">
           <span class="model-badge badge-flux">Flux</span>
-          <img src="/images/compare2-flux.jpeg" alt="ناتج Flux — داخل مقهى مريح في يوم ممطر" width="800" height="457" loading="lazy" />
+          <picture><source srcset="/images/compare2-flux.webp" type="image/webp"><img src="/images/compare2-flux.jpeg" alt="ناتج Flux — داخل مقهى مريح في يوم ممطر" width="800" height="457" loading="lazy"></picture>
         </div>
       </div>
 
@@ -545,6 +544,9 @@
           <a href="/">English</a>
           <a href="/fr/">Fran&#231;ais</a>
           <a href="/ar/">&#1575;&#1604;&#1593;&#1585;&#1576;&#1610;&#1577;</a>
+          <a href="/es/">Espa&#241;ol</a>
+          <a href="/ko/">&#54620;&#44397;&#50612;</a>
+          <a href="/ja/">&#26085;&#26412;&#35486;</a>
         </div>
       </div>
       <div class="f4-bottom">

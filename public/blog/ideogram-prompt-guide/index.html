@@ -3,8 +3,7 @@
 <head>
   <script src="/theme-toggle.js"></script>
   <meta charset="UTF-8" />
-  <link rel="preload" href="/theme.css" as="style">
-<link rel="dns-prefetch" href="https://www.googletagmanager.com">
+  <link rel="dns-prefetch" href="https://www.googletagmanager.com">
 <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="robots" content="max-image-preview:large, index, follow">
@@ -34,7 +33,7 @@
   <link rel="preload" as="font" type="font/woff2" crossorigin href="/fonts/space-grotesk-700.woff2" />
   <link rel="preload" as="font" type="font/woff2" crossorigin href="/fonts/inter-400.woff2" />
   <link rel="stylesheet" href="/theme.css">
-  <link rel="stylesheet" href="/blog.css" />
+  <link rel="preload" href="/blog.css" as="style" onload="this.onload=null;this.rel='stylesheet'"><noscript><link rel="stylesheet" href="/blog.css"></noscript>
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -236,7 +235,7 @@
       <pre><code>Artisan coffee shop chalkboard menu, text "MORNING BREW" as header in chalk lettering, list of drinks below in smaller chalk script, hand-drawn coffee cup illustration, warm dark background, cozy atmosphere, illustrated botanical elements</code></pre>
 
       <figure style="margin:2rem 0">
-        <img src="/images/compare2-dalle.jpeg" alt="AI-generated image with accurate text rendering — demonstrating the kind of clean typography that makes Ideogram the best tool for text-in-image projects" width="800" height="800" loading="lazy" style="width:100%;max-width:560px;border-radius:0.75rem;display:block;margin:0 auto" />
+        <picture><source srcset="/images/compare2-dalle.webp" type="image/webp"><img src="/images/compare2-dalle.jpeg" alt="AI-generated image with accurate text rendering — demonstrating the kind of clean typography that makes Ideogram the best tool for text-in-image projects" width="800" height="800" loading="lazy" style="width:100%;max-width:560px;border-radius:0.75rem;display:block;margin:0 auto"></picture>
         <figcaption style="color:var(--text-muted);font-size:0.8rem;text-align:center;margin-top:0.75rem">Precise text rendering separates Ideogram from other AI image generators.</figcaption>
       </figure>
 
@@ -484,6 +483,9 @@
           <a href="/">English</a>
           <a href="/fr/">Fran&#231;ais</a>
           <a href="/ar/">&#1575;&#1604;&#1593;&#1585;&#1576;&#1610;&#1577;</a>
+          <a href="/es/">Espa&#241;ol</a>
+          <a href="/ko/">&#54620;&#44397;&#50612;</a>
+          <a href="/ja/">&#26085;&#26412;&#35486;</a>
         </div>
       </div>
       <div class="f4-bottom">

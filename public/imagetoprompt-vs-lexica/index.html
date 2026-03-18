@@ -3,8 +3,7 @@
 <head>
   <script src="/theme-toggle.js"></script>
   <meta charset="UTF-8" />
-  <link rel="preload" href="/theme.css" as="style">
-<link rel="dns-prefetch" href="https://www.googletagmanager.com">
+  <link rel="dns-prefetch" href="https://www.googletagmanager.com">
 <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0" />
   <meta name="robots" content="max-image-preview:large, index, follow">
@@ -33,7 +32,7 @@
   <link rel="preload" as="font" type="font/woff2" crossorigin href="/fonts/space-grotesk-700.woff2" />
   <link rel="preload" as="font" type="font/woff2" crossorigin href="/fonts/inter-400.woff2" />
   <link rel="stylesheet" href="/theme.css">
-  <link rel="stylesheet" href="/blog.css" />
+  <link rel="preload" href="/blog.css" as="style" onload="this.onload=null;this.rel='stylesheet'"><noscript><link rel="stylesheet" href="/blog.css"></noscript>
 
   <script type="application/ld+json">
   {
@@ -252,17 +251,17 @@
       <div class="comparison-flow">
         <div class="comparison-card">
           <span class="comparison-badge badge-original">Original Photo</span>
-          <img src="/images/ex1-original-photo.jpeg" alt="Original reference photo uploaded to ImageToPrompt" width="800" height="800" loading="lazy" />
+          <picture><source srcset="/images/ex1-original-photo.webp" type="image/webp"><img src="/images/ex1-original-photo.jpeg" alt="Original reference photo uploaded to ImageToPrompt" width="800" height="800" loading="lazy"></picture>
         </div>
         <div class="comparison-arrow">→</div>
         <div class="comparison-card">
           <span class="comparison-badge badge-tool">Tool Output</span>
-          <img src="/images/ex1-tool-output.jpeg" alt="ImageToPrompt analysis and prompt output for the reference photo" width="800" height="800" loading="lazy" />
+          <picture><source srcset="/images/ex1-tool-output.webp" type="image/webp"><img src="/images/ex1-tool-output.jpeg" alt="ImageToPrompt analysis and prompt output for the reference photo" width="800" height="800" loading="lazy"></picture>
         </div>
         <div class="comparison-arrow">→</div>
         <div class="comparison-card">
           <span class="comparison-badge badge-recreation">AI Recreation</span>
-          <img src="/images/ex1-recreated.jpeg" alt="AI-generated image using the prompt from ImageToPrompt" width="800" height="800" loading="lazy" />
+          <picture><source srcset="/images/ex1-recreated.webp" type="image/webp"><img src="/images/ex1-recreated.jpeg" alt="AI-generated image using the prompt from ImageToPrompt" width="800" height="800" loading="lazy"></picture>
         </div>
       </div>
       <p class="img-caption">Upload → analyze → recreate. Lexica works in the opposite direction: you search existing images to find prompts.</p>
@@ -370,6 +369,9 @@
           <a href="/">English</a>
           <a href="/fr/">Fran&#231;ais</a>
           <a href="/ar/">&#1575;&#1604;&#1593;&#1585;&#1576;&#1610;&#1577;</a>
+          <a href="/es/">Espa&#241;ol</a>
+          <a href="/ko/">&#54620;&#44397;&#50612;</a>
+          <a href="/ja/">&#26085;&#26412;&#35486;</a>
         </div>
       </div>
       <div class="f4-bottom">

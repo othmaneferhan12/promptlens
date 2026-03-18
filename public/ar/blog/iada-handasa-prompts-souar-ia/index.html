@@ -3,8 +3,7 @@
 <head>
   <script src="/theme-toggle.js"></script>
   <meta charset="UTF-8" />
-  <link rel="preload" href="/theme.css" as="style">
-<link rel="dns-prefetch" href="https://www.googletagmanager.com">
+  <link rel="dns-prefetch" href="https://www.googletagmanager.com">
 <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0" />
   <meta name="robots" content="max-image-preview:large, index, follow">
@@ -41,7 +40,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Arabic:wght@400;600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="/theme.css">
-  <link rel="stylesheet" href="/blog.css" />
+  <link rel="preload" href="/blog.css" as="style" onload="this.onload=null;this.rel='stylesheet'"><noscript><link rel="stylesheet" href="/blog.css"></noscript>
   <style>
     body { font-family: 'Noto Sans Arabic', 'Space Grotesk', sans-serif; }
     .article-body { direction: rtl; text-align: right; }
@@ -221,8 +220,8 @@
       <p>ابدأ بالواضح: ما الذي في الصورة؟ كن محدداً. "امرأة" وصف ضعيف. "شابة في العشرينيات بشعر داكن متوسط الطول، ترتدي سترة جلدية قديمة" يمنح الذكاء الاصطناعي ما هو أكثر بكثير ليعمل معه.</p>
 
       <div class="img-single">
-        <a href="/images/annotated-artwork.jpeg" target="_blank" rel="noopener">
-          <img src="/images/annotated-artwork.jpeg" alt="عمل فني مُنشأ بالذكاء الاصطناعي مع تعليقات توضيحية تُظهر الموضوع واتجاه الإضاءة ومناطق لوحة الألوان وخطوط التركيب ومؤشرات الأسلوب لهندسة برومبتات الصور عكسياً" width="1000" height="700" loading="lazy" />
+        <a href="/images/annotated-artwork.webp" target="_blank" rel="noopener">
+          <picture><source srcset="/images/annotated-artwork.webp" type="image/webp"><img src="/images/annotated-artwork.jpeg" alt="عمل فني مُنشأ بالذكاء الاصطناعي مع تعليقات توضيحية تُظهر الموضوع واتجاه الإضاءة ومناطق لوحة الألوان وخطوط التركيب ومؤشرات الأسلوب لهندسة برومبتات الصور عكسياً" width="1000" height="700" loading="lazy"></picture>
         </a>
         <p class="img-caption">التفكيك البصري: تحديد كل عنصر في صورة قبل ترجمته إلى لغة البرومبت. انقر للعرض بالحجم الكامل.</p>
       </div>
@@ -287,8 +286,8 @@
       <p>لنتناول العملية كاملة على صورة واحدة — بالجمع بين التحليل الآلي والتحسين اليدوي لإنتاج برومبت يُعيد الإنشاء فعلياً.</p>
 
       <div class="img-single">
-        <a href="/images/walkthrough-reference.jpeg" target="_blank" rel="noopener">
-          <img src="/images/walkthrough-reference.jpeg" alt="بورتريه خيالي مرجعي مستخدم في مثال الهندسة العكسية — العمل الفني الأصلي المُنشأ بالذكاء الاصطناعي للتحليل" width="800" height="1100" loading="lazy" />
+        <a href="/images/walkthrough-reference.webp" target="_blank" rel="noopener">
+          <picture><source srcset="/images/walkthrough-reference.webp" type="image/webp"><img src="/images/walkthrough-reference.jpeg" alt="بورتريه خيالي مرجعي مستخدم في مثال الهندسة العكسية — العمل الفني الأصلي المُنشأ بالذكاء الاصطناعي للتحليل" width="800" height="1100" loading="lazy"></picture>
         </a>
         <p class="img-caption">الصورة المرجعية التي نُطبّق عليها الهندسة العكسية. انقر للعرض بالحجم الكامل.</p>
       </div>
@@ -307,8 +306,8 @@
       <pre class="prompt-block">dramatic fantasy portrait of a female warrior, battle-worn armor with verdigris patina and intricate engravings, fierce determined expression, rim lighting from behind with warm volcanic orange glow, ash particles and floating embers, smoky atmospheric background with volcanic haze, cinematic concept art, digital painting, highly detailed, deep shadow contrast --ar 2:3 --v 6.1 --style raw --q 2</pre>
 
       <div class="img-single">
-        <a href="/images/walkthrough-recreated.jpeg" target="_blank" rel="noopener">
-          <img src="/images/walkthrough-recreated.jpeg" alt="بورتريه خيالي مُعاد إنشاؤه باستخدام البرومبت المحسَّن من الهندسة العكسية — يُظهر ظلّة verdigris والأجواء البركانية" width="800" height="1100" loading="lazy" />
+        <a href="/images/walkthrough-recreated.webp" target="_blank" rel="noopener">
+          <picture><source srcset="/images/walkthrough-recreated.webp" type="image/webp"><img src="/images/walkthrough-recreated.jpeg" alt="بورتريه خيالي مُعاد إنشاؤه باستخدام البرومبت المحسَّن من الهندسة العكسية — يُظهر ظلّة verdigris والأجواء البركانية" width="800" height="1100" loading="lazy"></picture>
         </a>
         <p class="img-caption">النتيجة المُحصَّل عليها بالبرومبت المحسَّن. ظلّة verdigris والأجواء البركانية موجودتان الآن.</p>
       </div>
@@ -331,8 +330,8 @@
       <p>الصورة المرجعية ذاتها تُنتج برومبتات مختلفة جداً بحسب نموذج الذكاء الاصطناعي المختار. إليك لماذا هذا مهم وكيف تبدو الفروق عملياً.</p>
 
       <div class="img-single">
-        <a href="/images/model-comparison-source.jpeg" target="_blank" rel="noopener">
-          <img src="/images/model-comparison-source.jpeg" alt="صورة بورتريه مصدر مستخدمة لإظهار فروق أسلوب البرومبت بين Midjourney و Stable Diffusion و DALL-E 3 و Flux" width="800" height="1000" loading="lazy" />
+        <a href="/images/ai-model-comparison-midjourney-vs-stable-diffusion.webp" target="_blank" rel="noopener">
+          <picture><source srcset="/images/ai-model-comparison-midjourney-vs-stable-diffusion.webp" type="image/webp"><img src="/images/ai-model-comparison-midjourney-vs-stable-diffusion.jpeg" alt="صورة بورتريه مصدر مستخدمة لإظهار فروق أسلوب البرومبت بين Midjourney و Stable Diffusion و DALL-E 3 و Flux" width="800" height="1000" loading="lazy"></picture>
         </a>
       </div>
 
@@ -478,6 +477,9 @@
           <a href="/">English</a>
           <a href="/fr/">Fran&#231;ais</a>
           <a href="/ar/">&#1575;&#1604;&#1593;&#1585;&#1576;&#1610;&#1577;</a>
+          <a href="/es/">Espa&#241;ol</a>
+          <a href="/ko/">&#54620;&#44397;&#50612;</a>
+          <a href="/ja/">&#26085;&#26412;&#35486;</a>
         </div>
       </div>
       <div class="f4-bottom">

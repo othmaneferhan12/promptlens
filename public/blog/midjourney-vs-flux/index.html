@@ -3,8 +3,7 @@
 <head>
   <script src="/theme-toggle.js"></script>
   <meta charset="UTF-8" />
-  <link rel="preload" href="/theme.css" as="style">
-<link rel="dns-prefetch" href="https://www.googletagmanager.com">
+  <link rel="dns-prefetch" href="https://www.googletagmanager.com">
 <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="robots" content="max-image-preview:large, index, follow">
@@ -34,7 +33,7 @@
   <link rel="preload" as="font" type="font/woff2" crossorigin href="/fonts/space-grotesk-700.woff2" />
   <link rel="preload" as="font" type="font/woff2" crossorigin href="/fonts/inter-400.woff2" />
   <link rel="stylesheet" href="/theme.css">
-  <link rel="stylesheet" href="/blog.css" />
+  <link rel="preload" href="/blog.css" as="style" onload="this.onload=null;this.rel='stylesheet'"><noscript><link rel="stylesheet" href="/blog.css"></noscript>
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -248,11 +247,11 @@
 
       <div class="img-grid-2" style="margin:2rem 0">
         <figure style="margin:0">
-          <img src="/images/compare1-mj.jpeg" alt="Midjourney V6.1 output — same portrait prompt showing Midjourney's signature aesthetic enhancement and cinematic polish" width="800" height="800" loading="lazy" style="width:100%;border-radius:0.5rem;display:block" />
+          <picture><source srcset="/images/compare1-mj.webp" type="image/webp"><img src="/images/compare1-mj.jpeg" alt="Midjourney V6.1 output — same portrait prompt showing Midjourney's signature aesthetic enhancement and cinematic polish" width="800" height="800" loading="lazy" style="width:100%;border-radius:0.5rem;display:block"></picture>
           <figcaption style="color:var(--text-muted);font-size:0.8rem;text-align:center;margin-top:0.5rem">Midjourney V6.1 — evocative, polished, slightly idealized</figcaption>
         </figure>
         <figure style="margin:0">
-          <img src="/images/compare1-flux.jpeg" alt="Flux.1 Dev output — same portrait prompt showing Flux's photorealistic accurate rendering" width="800" height="800" loading="lazy" style="width:100%;border-radius:0.5rem;display:block" />
+          <picture><source srcset="/images/compare1-flux.webp" type="image/webp"><img src="/images/compare1-flux.jpeg" alt="Flux.1 Dev output — same portrait prompt showing Flux's photorealistic accurate rendering" width="800" height="800" loading="lazy" style="width:100%;border-radius:0.5rem;display:block"></picture>
           <figcaption style="color:var(--text-muted);font-size:0.8rem;text-align:center;margin-top:0.5rem">Flux.1 Dev — photorealistic, literal, camera-accurate</figcaption>
         </figure>
       </div>
@@ -362,11 +361,11 @@
 
       <div class="img-grid-2" style="margin:2rem 0">
         <figure style="margin:0">
-          <img src="/images/compare2-mj.jpeg" alt="Midjourney output — landscape scene showing signature cinematic composition and artistic color grading" width="800" height="800" loading="lazy" style="width:100%;border-radius:0.5rem;display:block" />
+          <picture><source srcset="/images/compare2-mj.webp" type="image/webp"><img src="/images/compare2-mj.jpeg" alt="Midjourney output — landscape scene showing signature cinematic composition and artistic color grading" width="800" height="800" loading="lazy" style="width:100%;border-radius:0.5rem;display:block"></picture>
           <figcaption style="color:var(--text-muted);font-size:0.8rem;text-align:center;margin-top:0.5rem">Midjourney: cinematic, artistically enhanced</figcaption>
         </figure>
         <figure style="margin:0">
-          <img src="/images/compare2-flux.jpeg" alt="Flux AI output — same landscape scene showing photorealistic rendering with accurate details" width="800" height="800" loading="lazy" style="width:100%;border-radius:0.5rem;display:block" />
+          <picture><source srcset="/images/compare2-flux.webp" type="image/webp"><img src="/images/compare2-flux.jpeg" alt="Flux AI output — same landscape scene showing photorealistic rendering with accurate details" width="800" height="800" loading="lazy" style="width:100%;border-radius:0.5rem;display:block"></picture>
           <figcaption style="color:var(--text-muted);font-size:0.8rem;text-align:center;margin-top:0.5rem">Flux: photorealistic, detail-accurate</figcaption>
         </figure>
       </div>
@@ -595,6 +594,9 @@
           <a href="/">English</a>
           <a href="/fr/">Fran&#231;ais</a>
           <a href="/ar/">&#1575;&#1604;&#1593;&#1585;&#1576;&#1610;&#1577;</a>
+          <a href="/es/">Espa&#241;ol</a>
+          <a href="/ko/">&#54620;&#44397;&#50612;</a>
+          <a href="/ja/">&#26085;&#26412;&#35486;</a>
         </div>
       </div>
       <div class="f4-bottom">

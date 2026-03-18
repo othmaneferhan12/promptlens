@@ -3,8 +3,7 @@
 <head>
   <script src="/theme-toggle.js"></script>
   <meta charset="UTF-8" />
-  <link rel="preload" href="/theme.css" as="style">
-<link rel="dns-prefetch" href="https://www.googletagmanager.com">
+  <link rel="dns-prefetch" href="https://www.googletagmanager.com">
 <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="robots" content="max-image-preview:large, index, follow">
@@ -38,7 +37,7 @@
   <link rel="preload" as="font" type="font/woff2" crossorigin href="/fonts/space-grotesk-700.woff2" />
   <link rel="preload" as="font" type="font/woff2" crossorigin href="/fonts/inter-400.woff2" />
   <link rel="stylesheet" href="/theme.css">
-  <link rel="stylesheet" href="/blog.css" />
+  <link rel="preload" href="/blog.css" as="style" onload="this.onload=null;this.rel='stylesheet'"><noscript><link rel="stylesheet" href="/blog.css"></noscript>
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -174,7 +173,7 @@
 
       <p>That's exactly what image-to-prompt conversion solves. In this guide, you'll learn exactly how to convert any image into a ready-to-use AI prompt, what tools to use, and how to get the best results for each major AI image generator.</p>
 
-      <img src="/images/interface-annotated.jpeg" alt="ImageToPrompt tool interface showing image upload area, model selector, style options, and generated prompt output" width="1200" height="700" loading="eager" style="width:100%;border-radius:0.75rem;display:block;margin:1.5rem 0;" />
+      <picture><source srcset="/images/interface-annotated.webp" type="image/webp"><img src="/images/interface-annotated.jpeg" alt="ImageToPrompt tool interface showing image upload area, model selector, style options, and generated prompt output" width="1200" height="700" loading="eager" style="width:100%;border-radius:0.75rem;display:block;margin:1.5rem 0;"></picture>
 
       <div class="callout">
         <p><strong>Quick start:</strong> If you just want to convert an image right now, <a href="/">use our free Image to Prompt Generator</a>. Upload your image, select a model, and get your prompt in under 10 seconds. No account needed.</p>
@@ -304,7 +303,7 @@
 
       <h2 id="step-3-upload-and-analyze">Step 3: Upload and Analyze</h2>
 
-      <img src="/images/interface-annotated.jpeg" alt="Annotated ImageToPrompt interface — upload area, model selector, style selector, generate button, and output area" width="1200" height="700" loading="lazy" style="width:100%;border-radius:0.5rem;display:block;margin:1.5rem 0;" />
+      <picture><source srcset="/images/interface-annotated.webp" type="image/webp"><img src="/images/interface-annotated.jpeg" alt="Annotated ImageToPrompt interface — upload area, model selector, style selector, generate button, and output area" width="1200" height="700" loading="lazy" style="width:100%;border-radius:0.5rem;display:block;margin:1.5rem 0;"></picture>
 
       <p>With <a href="/">ImageToPrompt</a>, the process is straightforward:</p>
 
@@ -334,17 +333,17 @@
           <div class="comparison-flow">
             <div class="comparison-card">
               <span class="comparison-badge badge-original">Original</span>
-              <img src="/images/ex1-original-photo.jpeg" alt="Original photograph — source image for AI prompt extraction" width="800" height="600" loading="lazy" />
+              <picture><source srcset="/images/ex1-original-photo.webp" type="image/webp"><img src="/images/ex1-original-photo.jpeg" alt="Original photograph — source image for AI prompt extraction" width="800" height="600" loading="lazy"></picture>
             </div>
             <span class="comparison-arrow">→</span>
             <div class="comparison-card">
               <span class="comparison-badge badge-tool">Tool Output</span>
-              <img src="/images/ex1-tool-output.jpeg" alt="ImageToPrompt tool output screenshot showing generated Midjourney prompt" width="800" height="600" loading="lazy" />
+              <picture><source srcset="/images/ex1-tool-output.webp" type="image/webp"><img src="/images/ex1-tool-output.jpeg" alt="ImageToPrompt tool output screenshot showing generated Midjourney prompt" width="800" height="600" loading="lazy"></picture>
             </div>
             <span class="comparison-arrow">→</span>
             <div class="comparison-card">
               <span class="comparison-badge badge-recreation">AI Recreation</span>
-              <img src="/images/ex1-recreated.jpeg" alt="AI-recreated image using the prompt extracted by ImageToPrompt" width="800" height="600" loading="lazy" />
+              <picture><source srcset="/images/ex1-recreated.webp" type="image/webp"><img src="/images/ex1-recreated.jpeg" alt="AI-recreated image using the prompt extracted by ImageToPrompt" width="800" height="600" loading="lazy"></picture>
             </div>
           </div>
           <p>The tool detected warm golden-hour lighting, wide landscape composition, and a cinematic photography style. The generated Midjourney prompt included <code>--ar 16:9</code> and <code>golden hour lighting</code> — both critical for reproducing the original atmosphere.</p>
@@ -355,17 +354,17 @@
           <div class="comparison-flow">
             <div class="comparison-card">
               <span class="comparison-badge badge-original">Original</span>
-              <img src="/images/ex2-original-illustration.jpeg" alt="Original digital illustration — fantasy character source image" width="800" height="600" loading="lazy" />
+              <picture><source srcset="/images/ex2-original-illustration.webp" type="image/webp"><img src="/images/ex2-original-illustration.jpeg" alt="Original digital illustration — fantasy character source image" width="800" height="600" loading="lazy"></picture>
             </div>
             <span class="comparison-arrow">→</span>
             <div class="comparison-card">
               <span class="comparison-badge badge-tool">Tool Output</span>
-              <img src="/images/ex2-tool-output.jpeg" alt="ImageToPrompt tool output for digital illustration prompt extraction" width="800" height="600" loading="lazy" />
+              <picture><source srcset="/images/ex2-tool-output.webp" type="image/webp"><img src="/images/ex2-tool-output.jpeg" alt="ImageToPrompt tool output for digital illustration prompt extraction" width="800" height="600" loading="lazy"></picture>
             </div>
             <span class="comparison-arrow">→</span>
             <div class="comparison-card">
               <span class="comparison-badge badge-recreation">AI Recreation</span>
-              <img src="/images/ex2-recreated.jpeg" alt="AI-recreated illustration using the extracted prompt from ImageToPrompt" width="800" height="600" loading="lazy" />
+              <picture><source srcset="/images/ex2-recreated.webp" type="image/webp"><img src="/images/ex2-recreated.jpeg" alt="AI-recreated illustration using the extracted prompt from ImageToPrompt" width="800" height="600" loading="lazy"></picture>
             </div>
           </div>
           <p>For digital illustrations, the AI excels at identifying style keywords like <code>concept art</code>, <code>digital painting</code>, and specific color palette descriptors. These style anchors are what make the recreated image feel consistent with the original.</p>
@@ -376,17 +375,17 @@
           <div class="comparison-flow">
             <div class="comparison-card">
               <span class="comparison-badge badge-original">Original</span>
-              <img src="/images/ex3-original-ai-art.jpeg" alt="Original AI-generated sci-fi artwork used as reference" width="800" height="600" loading="lazy" />
+              <picture><source srcset="/images/ex3-original-ai-art.webp" type="image/webp"><img src="/images/ex3-original-ai-art.jpeg" alt="Original AI-generated sci-fi artwork used as reference" width="800" height="600" loading="lazy"></picture>
             </div>
             <span class="comparison-arrow">→</span>
             <div class="comparison-card">
               <span class="comparison-badge badge-tool">Tool Output</span>
-              <img src="/images/ex3-tool-output.jpeg" alt="ImageToPrompt tool output for AI-generated artwork analysis" width="800" height="600" loading="lazy" />
+              <picture><source srcset="/images/ex3-tool-output.webp" type="image/webp"><img src="/images/ex3-tool-output.jpeg" alt="ImageToPrompt tool output for AI-generated artwork analysis" width="800" height="600" loading="lazy"></picture>
             </div>
             <span class="comparison-arrow">→</span>
             <div class="comparison-card">
               <span class="comparison-badge badge-recreation">AI Recreation</span>
-              <img src="/images/ex3-recreated.jpeg" alt="Recreated AI image using the reverse-engineered prompt" width="800" height="600" loading="lazy" />
+              <picture><source srcset="/images/ex3-recreated.webp" type="image/webp"><img src="/images/ex3-recreated.jpeg" alt="Recreated AI image using the reverse-engineered prompt" width="800" height="600" loading="lazy"></picture>
             </div>
           </div>
           <p>AI-generated images often contain subtle style signatures from their original model. ImageToPrompt identifies these and generates prompts that preserve them — useful when you want to extend or vary existing AI artwork.</p>
@@ -555,6 +554,9 @@
           <a href="/">English</a>
           <a href="/fr/">Fran&#231;ais</a>
           <a href="/ar/">&#1575;&#1604;&#1593;&#1585;&#1576;&#1610;&#1577;</a>
+          <a href="/es/">Espa&#241;ol</a>
+          <a href="/ko/">&#54620;&#44397;&#50612;</a>
+          <a href="/ja/">&#26085;&#26412;&#35486;</a>
         </div>
       </div>
       <div class="f4-bottom">

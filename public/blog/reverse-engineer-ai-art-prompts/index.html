@@ -3,8 +3,7 @@
 <head>
   <script src="/theme-toggle.js"></script>
   <meta charset="UTF-8" />
-  <link rel="preload" href="/theme.css" as="style">
-<link rel="dns-prefetch" href="https://www.googletagmanager.com">
+  <link rel="dns-prefetch" href="https://www.googletagmanager.com">
 <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="robots" content="max-image-preview:large, index, follow">
@@ -38,7 +37,7 @@
   <link rel="preload" as="font" type="font/woff2" crossorigin href="/fonts/space-grotesk-700.woff2" />
   <link rel="preload" as="font" type="font/woff2" crossorigin href="/fonts/inter-400.woff2" />
   <link rel="stylesheet" href="/theme.css">
-  <link rel="stylesheet" href="/blog.css" />
+  <link rel="preload" href="/blog.css" as="style" onload="this.onload=null;this.rel='stylesheet'"><noscript><link rel="stylesheet" href="/blog.css"></noscript>
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -209,8 +208,8 @@
       <p>Start with the obvious: what's in the image? Be specific. "Woman" is weak. "A young woman in her mid-20s with shoulder-length dark hair, wearing a vintage leather jacket" gives the AI much more to work with.</p>
 
       <div class="img-single">
-        <a href="/images/annotated-artwork.jpeg" target="_blank" rel="noopener">
-          <img src="/images/annotated-artwork.jpeg" alt="AI artwork with labeled annotations showing subject, lighting direction, color palette zones, composition lines, and style indicators for reverse engineering prompts" width="1000" height="700" loading="lazy" />
+        <a href="/images/annotated-artwork.webp" target="_blank" rel="noopener">
+          <picture><source srcset="/images/annotated-artwork.webp" type="image/webp"><img src="/images/annotated-artwork.jpeg" alt="AI artwork with labeled annotations showing subject, lighting direction, color palette zones, composition lines, and style indicators for reverse engineering prompts" width="1000" height="700" loading="lazy"></picture>
         </a>
         <p class="img-caption">Visual decomposition: identifying each element in an image before translating it to prompt language. Click to view full size.</p>
       </div>
@@ -275,8 +274,8 @@
       <p>Let's walk through the complete process on a single image — combining automated analysis with manual refinement to produce a prompt that actually recreates the result.</p>
 
       <div class="img-single">
-        <a href="/images/walkthrough-reference.jpeg" target="_blank" rel="noopener">
-          <img src="/images/walkthrough-reference.jpeg" alt="Reference fantasy portrait used in the reverse engineering walkthrough — original AI artwork to analyze" width="800" height="1100" loading="lazy" />
+        <a href="/images/walkthrough-reference.webp" target="_blank" rel="noopener">
+          <picture><source srcset="/images/walkthrough-reference.webp" type="image/webp"><img src="/images/walkthrough-reference.jpeg" alt="Reference fantasy portrait used in the reverse engineering walkthrough — original AI artwork to analyze" width="800" height="1100" loading="lazy"></picture>
         </a>
         <p class="img-caption">The reference image we're reverse engineering. Click to view full size.</p>
       </div>
@@ -295,8 +294,8 @@
       <pre class="prompt-block">dramatic fantasy portrait of a female warrior, battle-worn armor with verdigris patina and intricate engravings, fierce determined expression, rim lighting from behind with warm volcanic orange glow, ash particles and floating embers, smoky atmospheric background with volcanic haze, cinematic concept art, digital painting, highly detailed, deep shadow contrast --ar 2:3 --v 6.1 --style raw --q 2</pre>
 
       <div class="img-single">
-        <a href="/images/walkthrough-recreated.jpeg" target="_blank" rel="noopener">
-          <img src="/images/walkthrough-recreated.jpeg" alt="Recreated fantasy portrait using the refined reverse-engineered prompt — showing verdigris tint and volcanic atmosphere" width="800" height="1100" loading="lazy" />
+        <a href="/images/walkthrough-recreated.webp" target="_blank" rel="noopener">
+          <picture><source srcset="/images/walkthrough-recreated.webp" type="image/webp"><img src="/images/walkthrough-recreated.jpeg" alt="Recreated fantasy portrait using the refined reverse-engineered prompt — showing verdigris tint and volcanic atmosphere" width="800" height="1100" loading="lazy"></picture>
         </a>
         <p class="img-caption">Result using the refined prompt. The verdigris tint and volcanic atmosphere are now present.</p>
       </div>
@@ -319,8 +318,8 @@
       <p>The same reference image produces very different prompts depending on which AI model is selected. Here's why that matters and what the differences look like in practice.</p>
 
       <div class="img-single">
-        <a href="/images/model-comparison-source.jpeg" target="_blank" rel="noopener">
-          <img src="/images/model-comparison-source.jpeg" alt="Source portrait image used to demonstrate prompt style differences across Midjourney, Stable Diffusion, DALL-E 3, and Flux" width="800" height="1000" loading="lazy" />
+        <a href="/images/ai-model-comparison-midjourney-vs-stable-diffusion.webp" target="_blank" rel="noopener">
+          <picture><source srcset="/images/ai-model-comparison-midjourney-vs-stable-diffusion.webp" type="image/webp"><img src="/images/ai-model-comparison-midjourney-vs-stable-diffusion.jpeg" alt="Source portrait image used to demonstrate prompt style differences across Midjourney, Stable Diffusion, DALL-E 3, and Flux" width="800" height="1000" loading="lazy"></picture>
         </a>
       </div>
 
@@ -466,6 +465,9 @@ Negative: blurry, low quality, deformed, bad anatomy, watermark</pre>
           <a href="/">English</a>
           <a href="/fr/">Fran&#231;ais</a>
           <a href="/ar/">&#1575;&#1604;&#1593;&#1585;&#1576;&#1610;&#1577;</a>
+          <a href="/es/">Espa&#241;ol</a>
+          <a href="/ko/">&#54620;&#44397;&#50612;</a>
+          <a href="/ja/">&#26085;&#26412;&#35486;</a>
         </div>
       </div>
       <div class="f4-bottom">

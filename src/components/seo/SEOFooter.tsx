@@ -114,6 +114,9 @@ export default function SEOFooter() {
               { href: '/',    label: 'English'   },
               { href: '/fr/', label: 'Français'  },
               { href: '/ar/', label: 'العربية'   },
+              { href: '/es/', label: 'Español'   },
+              { href: '/ko/', label: '한국어'     },
+              { href: '/ja/', label: '日本語'     },
             ]}
           />
         </div>

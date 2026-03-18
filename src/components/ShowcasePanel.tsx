@@ -3,31 +3,31 @@ import { motion } from 'framer-motion';
 
 const EXAMPLES = [
   {
-    image: '/images/pair2-golden-hour.jpeg',
+    image: '/images/ai-prompt-golden-hour-lighting-example.webp',
     label: 'Golden Hour',
     prompt:
       'Cinematic portrait, golden hour rim lighting, shallow depth of field, warm amber tones, film grain, soft bokeh background --ar 2:3 --v 6.1 --style raw',
   },
   {
-    image: '/images/pair3-oil-painting.jpeg',
+    image: '/images/ai-prompt-oil-painting-style-example.webp',
     label: 'Oil Painting',
     prompt:
       'Classical oil painting style, rich impasto brushstrokes, Renaissance-inspired composition, warm earth tones, dramatic chiaroscuro lighting, gallery-quality fine art',
   },
   {
-    image: '/images/compare1-mj.jpeg',
+    image: '/images/compare1-mj.webp',
     label: 'Digital Art',
     prompt:
       '(masterpiece:1.2), highly detailed digital art, cinematic composition, volumetric lighting, vibrant color palette, epic atmosphere, 8k ultra HD',
   },
   {
-    image: '/images/ex3-recreated.jpeg',
+    image: '/images/ex3-recreated.webp',
     label: 'Retro Illustration',
     prompt:
       'Retro mid-century modern scene, pastel color palette, dreamy nostalgic atmosphere, soft gradients, stylized illustration, vintage travel poster aesthetic',
   },
   {
-    image: '/images/stage1-cat.jpeg',
+    image: '/images/prompt-engineering-basic-cat-garden.webp',
     label: 'Watercolor',
     prompt:
       'Fluffy orange tabby cat sitting among wildflowers in an English cottage garden, watercolor illustration, golden hour sunlight, dappled light through trees',
@@ -150,12 +150,18 @@ export default function ShowcasePanel() {
                 <div className="flex flex-col h-full p-3">
                   {/* Image */}
                   <div className="overflow-hidden rounded-xl flex-1 min-h-[160px]">
-                    <img
-                      src={ex.image}
-                      alt={`Example: ${ex.label}`}
-                      className="w-full h-full object-cover rounded-xl"
-                      loading="lazy"
-                    />
+                    <picture>
+                      <source srcSet={ex.image} type="image/webp" />
+                      <img
+                        src={ex.image.replace('.webp', '.jpeg')}
+                        alt={`Example: ${ex.label}`}
+                        className="w-full h-full object-cover rounded-xl"
+                        loading={idx === 0 && dist === 0 ? 'eager' : 'lazy'}
+                        fetchPriority={idx === 0 && dist === 0 ? 'high' : 'auto'}
+                        width="400"
+                        height="300"
+                      />
+                    </picture>
                   </div>
 
                   {/* Label row */}

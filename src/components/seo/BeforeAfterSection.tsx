@@ -1,8 +1,8 @@
 const EXAMPLES = [
   {
-    original: '/images/ex1-original-photo.jpeg',
+    original: '/images/ex1-original-photo.webp',
     originalAlt: 'Original photograph — source image uploaded to ImageToPrompt',
-    recreated: '/images/ex1-recreated.jpeg',
+    recreated: '/images/ex1-recreated.webp',
     recreatedAlt: 'AI-recreated image generated from the extracted Midjourney prompt',
     model: 'Midjourney',
     modelColor: '#00b4d8',
@@ -11,9 +11,9 @@ const EXAMPLES = [
     subject: 'Portrait photograph',
   },
   {
-    original: '/images/ex2-original-illustration.jpeg',
+    original: '/images/ex2-original-illustration.webp',
     originalAlt: 'Original digital illustration — fantasy character source image',
-    recreated: '/images/ex2-recreated.jpeg',
+    recreated: '/images/ex2-recreated.webp',
     recreatedAlt: 'AI-recreated fantasy illustration from the extracted Stable Diffusion prompt',
     model: 'Stable Diffusion',
     modelColor: '#ff6b35',
@@ -22,9 +22,9 @@ const EXAMPLES = [
     subject: 'Fantasy illustration',
   },
   {
-    original: '/images/ex3-original-ai-art.jpeg',
+    original: '/images/ex3-original-ai-art.webp',
     originalAlt: 'Original AI-generated sci-fi artwork used as reference image',
-    recreated: '/images/ex3-recreated.jpeg',
+    recreated: '/images/ex3-recreated.webp',
     recreatedAlt: 'Flux AI recreation from the reverse-engineered prompt',
     model: 'Flux AI',
     modelColor: '#7c3aed',
@@ -74,20 +74,23 @@ export default function BeforeAfterSection() {
                 >
                   Original
                 </span>
-                <img
-                  src={ex.original}
-                  alt={ex.originalAlt}
-                  loading="lazy"
-                  width="400"
-                  height="400"
-                  style={{
-                    width: '100%',
-                    aspectRatio: '4/3',
-                    objectFit: 'cover',
-                    borderRadius: '8px',
-                    display: 'block',
-                  }}
-                />
+                <picture>
+                  <source srcSet={ex.original} type="image/webp" />
+                  <img
+                    src={ex.original.replace('.webp', '.jpeg')}
+                    alt={ex.originalAlt}
+                    loading="lazy"
+                    width="400"
+                    height="400"
+                    style={{
+                      width: '100%',
+                      aspectRatio: '4/3',
+                      objectFit: 'cover',
+                      borderRadius: '8px',
+                      display: 'block',
+                    }}
+                  />
+                </picture>
               </div>
 
               {/* Arrow */}
@@ -150,20 +153,23 @@ export default function BeforeAfterSection() {
                 >
                   Recreated
                 </span>
-                <img
-                  src={ex.recreated}
-                  alt={ex.recreatedAlt}
-                  loading="lazy"
-                  width="400"
-                  height="400"
-                  style={{
-                    width: '100%',
-                    aspectRatio: '4/3',
-                    objectFit: 'cover',
-                    borderRadius: '8px',
-                    display: 'block',
-                  }}
-                />
+                <picture>
+                  <source srcSet={ex.recreated} type="image/webp" />
+                  <img
+                    src={ex.recreated.replace('.webp', '.jpeg')}
+                    alt={ex.recreatedAlt}
+                    loading="lazy"
+                    width="400"
+                    height="400"
+                    style={{
+                      width: '100%',
+                      aspectRatio: '4/3',
+                      objectFit: 'cover',
+                      borderRadius: '8px',
+                      display: 'block',
+                    }}
+                  />
+                </picture>
               </div>
             </div>
           </div>

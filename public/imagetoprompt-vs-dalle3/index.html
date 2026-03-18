@@ -3,8 +3,7 @@
 <head>
   <script src="/theme-toggle.js"></script>
   <meta charset="UTF-8" />
-  <link rel="preload" href="/theme.css" as="style">
-<link rel="dns-prefetch" href="https://www.googletagmanager.com">
+  <link rel="dns-prefetch" href="https://www.googletagmanager.com">
 <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0" />
   <meta name="robots" content="max-image-preview:large, index, follow">
@@ -33,7 +32,7 @@
   <link rel="preload" as="font" type="font/woff2" crossorigin href="/fonts/space-grotesk-700.woff2" />
   <link rel="preload" as="font" type="font/woff2" crossorigin href="/fonts/inter-400.woff2" />
   <link rel="stylesheet" href="/theme.css">
-  <link rel="stylesheet" href="/blog.css" />
+  <link rel="preload" href="/blog.css" as="style" onload="this.onload=null;this.rel='stylesheet'"><noscript><link rel="stylesheet" href="/blog.css"></noscript>
 
   <script type="application/ld+json">
   {
@@ -269,17 +268,17 @@
       <div class="comparison-flow">
         <div class="comparison-card">
           <span class="comparison-badge badge-original">Reference Image</span>
-          <img src="/images/walkthrough-reference.jpeg" alt="Original reference image uploaded to ImageToPrompt" width="800" height="800" loading="lazy" />
+          <picture><source srcset="/images/walkthrough-reference.webp" type="image/webp"><img src="/images/walkthrough-reference.jpeg" alt="Original reference image uploaded to ImageToPrompt" width="800" height="800" loading="lazy"></picture>
         </div>
         <div class="comparison-arrow">→</div>
         <div class="comparison-card">
           <span class="comparison-badge badge-tool">AI Recreation</span>
-          <img src="/images/walkthrough-recreated.jpeg" alt="AI-generated recreation using the prompt from ImageToPrompt" width="800" height="800" loading="lazy" />
+          <picture><source srcset="/images/walkthrough-recreated.webp" type="image/webp"><img src="/images/walkthrough-recreated.jpeg" alt="AI-generated recreation using the prompt from ImageToPrompt" width="800" height="800" loading="lazy"></picture>
         </div>
         <div class="comparison-arrow">→</div>
         <div class="comparison-card">
           <span class="comparison-badge badge-recreation">Annotated Output</span>
-          <img src="/images/annotated-artwork.jpeg" alt="Annotated breakdown showing what ImageToPrompt extracted from the image" width="800" height="800" loading="lazy" />
+          <picture><source srcset="/images/annotated-artwork.webp" type="image/webp"><img src="/images/annotated-artwork.jpeg" alt="Annotated breakdown showing what ImageToPrompt extracted from the image" width="800" height="800" loading="lazy"></picture>
         </div>
       </div>
       <p class="img-caption">Manual writing requires you to reverse-engineer all of this yourself — lighting, composition, style, mood. ImageToPrompt does it in 10 seconds.</p>
@@ -387,6 +386,9 @@
           <a href="/">English</a>
           <a href="/fr/">Fran&#231;ais</a>
           <a href="/ar/">&#1575;&#1604;&#1593;&#1585;&#1576;&#1610;&#1577;</a>
+          <a href="/es/">Espa&#241;ol</a>
+          <a href="/ko/">&#54620;&#44397;&#50612;</a>
+          <a href="/ja/">&#26085;&#26412;&#35486;</a>
         </div>
       </div>
       <div class="f4-bottom">

@@ -3,8 +3,7 @@
 <head>
   <script src="/theme-toggle.js"></script>
   <meta charset="UTF-8" />
-  <link rel="preload" href="/theme.css" as="style">
-<link rel="dns-prefetch" href="https://www.googletagmanager.com">
+  <link rel="dns-prefetch" href="https://www.googletagmanager.com">
 <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0" />
   <meta name="robots" content="max-image-preview:large, index, follow">
@@ -34,8 +33,8 @@
   <link rel="preload" as="font" type="font/woff2" crossorigin href="/fonts/space-grotesk-700.woff2" />
   <link rel="preload" as="font" type="font/woff2" crossorigin href="/fonts/inter-400.woff2" />
   <link rel="stylesheet" href="/theme.css">
-  <link rel="stylesheet" href="/blog.css" />
-  <link rel="stylesheet" href="/model-pages.css" />
+  <link rel="preload" href="/blog.css" as="style" onload="this.onload=null;this.rel='stylesheet'"><noscript><link rel="stylesheet" href="/blog.css"></noscript>
+  <link rel="preload" href="/model-pages.css" as="style" onload="this.onload=null;this.rel='stylesheet'"><noscript><link rel="stylesheet" href="/model-pages.css"></noscript>
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -179,7 +178,7 @@
         <div class="showcase-col">
           <span class="showcase-label">Reference Image</span>
           <figure class="img-figure">
-            <img src="/images/model-comparison-source.jpeg" alt="Reference image uploaded for Veo video prompt generation" width="600" height="400" loading="lazy" />
+            <picture><source srcset="/images/ai-model-comparison-midjourney-vs-stable-diffusion.webp" type="image/webp"><img src="/images/ai-model-comparison-midjourney-vs-stable-diffusion.jpeg" alt="Reference image uploaded for Veo video prompt generation" width="600" height="400" loading="lazy"></picture>
             <figcaption>Reference image for motion generation</figcaption>
           </figure>
         </div>
@@ -187,7 +186,7 @@
         <div class="showcase-col">
           <span class="showcase-label generated" style="--model-color:#4285F4">Veo Prompt Output</span>
           <figure class="img-figure">
-            <img src="/images/walkthrough-reference.jpeg" alt="Scene described with a Veo video prompt" width="600" height="400" loading="lazy" />
+            <picture><source srcset="/images/walkthrough-reference.webp" type="image/webp"><img src="/images/walkthrough-reference.jpeg" alt="Scene described with a Veo video prompt" width="600" height="400" loading="lazy"></picture>
             <figcaption>Described with a Veo-optimized video prompt</figcaption>
           </figure>
         </div>
@@ -307,21 +306,21 @@
         <h2>Prompt Guides &amp; Resources</h2>
         <div class="model-related-grid">
           <a href="/blog/video-prompt-guide-2026/" class="model-related-card">
-            <img src="/images/walkthrough-reference.jpeg" alt="The Complete Video Prompt Guide for 2026" loading="lazy" />
+            <picture><source srcset="/images/walkthrough-reference.webp" type="image/webp"><img src="/images/walkthrough-reference.jpeg" alt="The Complete Video Prompt Guide for 2026" loading="lazy"></picture>
             <div class="model-related-text">
               <span class="model-related-category">Guide</span>
               <h4>The Complete Video Prompt Guide for 2026</h4>
             </div>
           </a>
           <a href="/blog/veo-vs-kling-vs-runway/" class="model-related-card">
-            <img src="/images/compare1-mj.jpeg" alt="Veo vs Kling vs Runway: Which AI Video Model Wins?" loading="lazy" />
+            <picture><source srcset="/images/compare1-mj.webp" type="image/webp"><img src="/images/compare1-mj.jpeg" alt="Veo vs Kling vs Runway: Which AI Video Model Wins?" loading="lazy"></picture>
             <div class="model-related-text">
               <span class="model-related-category">Comparison</span>
               <h4>Veo vs Kling vs Runway: Which AI Video Model Wins?</h4>
             </div>
           </a>
           <a href="/blog/reverse-engineer-ai-art-prompts/" class="model-related-card">
-            <img src="/images/model-comparison-source.jpeg" alt="How to Reverse-Engineer AI Prompts" loading="lazy" />
+            <picture><source srcset="/images/ai-model-comparison-midjourney-vs-stable-diffusion.webp" type="image/webp"><img src="/images/ai-model-comparison-midjourney-vs-stable-diffusion.jpeg" alt="How to Reverse-Engineer AI Prompts" loading="lazy"></picture>
             <div class="model-related-text">
               <span class="model-related-category">Tutorial</span>
               <h4>How to Reverse-Engineer AI Prompts from Any Scene</h4>
@@ -394,6 +393,9 @@
           <a href="/">English</a>
           <a href="/fr/">Fran&#231;ais</a>
           <a href="/ar/">&#1575;&#1604;&#1593;&#1585;&#1576;&#1610;&#1577;</a>
+          <a href="/es/">Espa&#241;ol</a>
+          <a href="/ko/">&#54620;&#44397;&#50612;</a>
+          <a href="/ja/">&#26085;&#26412;&#35486;</a>
         </div>
       </div>
       <div class="f4-bottom">

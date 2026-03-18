@@ -241,12 +241,20 @@
       ]
     },
     {
-      "source": "/(.*)\\.css",
+      "source": "/theme.css",
       "headers": [{"key": "Cache-Control", "value": "public, max-age=86400, stale-while-revalidate=604800"}]
     },
     {
-      "source": "/(.*)\\.js",
+      "source": "/theme-toggle.js",
       "headers": [{"key": "Cache-Control", "value": "public, max-age=86400, stale-while-revalidate=604800"}]
+    },
+    {
+      "source": "/nav.js",
+      "headers": [{"key": "Cache-Control", "value": "public, max-age=86400, stale-while-revalidate=604800"}]
+    },
+    {
+      "source": "/sw.js",
+      "headers": [{"key": "Cache-Control", "value": "public, max-age=0, must-revalidate"}]
     },
     {
       "source": "/(midjourney|stable-diffusion|flux|dall-e|adobe-firefly|leonardo-ai|ideogram)-prompt-generator/(.*)",
