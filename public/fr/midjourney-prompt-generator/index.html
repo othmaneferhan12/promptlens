@@ -1,0 +1,459 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <script src="/theme-toggle.js"></script>
+  <meta charset="UTF-8" />
+  <link rel="dns-prefetch" href="https://www.googletagmanager.com">
+<link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0" />
+  <meta name="robots" content="max-image-preview:large, index, follow">
+  <meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="ImageToPrompt">
+  <title>Générateur de Prompts Midjourney depuis Image — Gratuit | ImageToPrompt</title>
+  <meta name="description" content="Téléchargez n'importe quelle image et obtenez un prompt Midjourney optimisé avec les paramètres --ar, --v 6.1 et --style raw. Gratuit, sans inscription." />
+  <link rel="canonical" href="https://www.imagetoprompt.dev/fr/midjourney-prompt-generator/" />
+  <link rel="alternate" hreflang="en" href="https://www.imagetoprompt.dev/midjourney-prompt-generator/" />
+  <link rel="alternate" hreflang="fr" href="https://www.imagetoprompt.dev/fr/midjourney-prompt-generator/" />
+  <link rel="alternate" hreflang="ar" href="https://www.imagetoprompt.dev/ar/midjourney-prompt-generator/" />
+  <link rel="alternate" hreflang="x-default" href="https://www.imagetoprompt.dev/midjourney-prompt-generator/" />
+  <meta property="og:title" content="Générateur de Prompts Midjourney depuis Image — Gratuit | ImageToPrompt" />
+  <meta property="og:description" content="Téléchargez n'importe quelle image et obtenez un prompt Midjourney optimisé avec --ar, --v 6.1, --style raw. Gratuit, sans inscription." />
+  <meta property="og:url" content="https://www.imagetoprompt.dev/fr/midjourney-prompt-generator/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="https://www.imagetoprompt.dev/og-image.png" />
+  <meta property="og:site_name" content="ImageToPrompt" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Générateur de Prompts Midjourney depuis Image — Gratuit | ImageToPrompt" />
+  <meta name="twitter:description" content="Téléchargez n'importe quelle image et obtenez un prompt Midjourney optimisé avec --ar, --v 6.1. Gratuit, sans inscription." />
+  <meta name="twitter:image" content="https://www.imagetoprompt.dev/og-image.png" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="48x48" href="/favicon-48.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+  <link rel="manifest" href="/site.webmanifest" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="/fonts/space-grotesk-700.woff2" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="/fonts/inter-400.woff2" />
+  <link rel="stylesheet" href="/theme.css">
+  <link rel="preload" href="/blog.css" as="style" onload="this.onload=null;this.rel='stylesheet'"><noscript><link rel="stylesheet" href="/blog.css"></noscript>
+  <link rel="preload" href="/model-pages.css" as="style" onload="this.onload=null;this.rel='stylesheet'"><noscript><link rel="stylesheet" href="/model-pages.css"></noscript>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "Générateur de Prompts Midjourney",
+    "applicationCategory": "DesignApplication",
+    "operatingSystem": "Web",
+    "url": "https://www.imagetoprompt.dev/fr/midjourney-prompt-generator/",
+    "description": "Téléchargez n'importe quelle image et obtenez un prompt Midjourney optimisé avec les paramètres --ar, --v 6.1 et --style raw. Gratuit, sans inscription.",
+    "inLanguage": "fr",
+    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "EUR" },
+    "publisher": {
+      "@type": "Organization",
+      "name": "ImageToPrompt",
+      "url": "https://www.imagetoprompt.dev/"
+    }
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Accueil", "item": "https://www.imagetoprompt.dev/fr/" },
+      { "@type": "ListItem", "position": 2, "name": "Générateur de Prompts Midjourney", "item": "https://www.imagetoprompt.dev/fr/midjourney-prompt-generator/" }
+    ]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "inLanguage": "fr",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Quels paramètres Midjourney le générateur inclut-il ?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Le générateur produit des prompts avec les paramètres clés de Midjourney : --ar (ratio d'aspect), --v 6.1 (dernière version), --style raw (pour un rendu photoréaliste), --chaos (pour la variation) et les valeurs --stylize. Ces paramètres sont calculés automatiquement à partir de la composition et du style de votre image." }
+      },
+      {
+        "@type": "Question",
+        "name": "Cela fonctionne-t-il avec Midjourney V6.1 ?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Oui. Notre générateur est optimisé pour Midjourney V6.1, la version par défaut actuelle. Les prompts incluent --v 6.1 par défaut et utilisent le vocabulaire et la syntaxe mis à jour qui produisent les meilleurs résultats dans V6.1." }
+      },
+      {
+        "@type": "Question",
+        "name": "Quelle est la différence avec /describe dans Midjourney ?",
+        "acceptedAnswer": { "@type": "Answer", "text": "La commande /describe de Midjourney effectue une rétro-ingénierie des prompts avec le modèle interne de Midjourney, mais nécessite d'être dans le bot Discord de Midjourney. Notre outil fonctionne directement dans votre navigateur, sans accès à Discord, vous donne un contrôle total sur le style et le ton, et supporte 10 langues de sortie." }
+      },
+      {
+        "@type": "Question",
+        "name": "Puis-je utiliser le prompt généré dans le bot Discord de Midjourney ?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Absolument. Copiez simplement le prompt généré et collez-le après /imagine dans le bot Discord de Midjourney ou sur midjourney.com. La sortie est pré-formatée avec des descripteurs séparés par des virgules et des paramètres comme --ar 16:9 --v 6.1 prêts à l'emploi." }
+      }
+    ]
+  }
+  </script>
+  <!-- Google AdSense -->
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4499206373485728" crossorigin="anonymous"></script>
+  <!-- Web Push Notifications -->
+<script src="https://cdn.onesignal.com/sdks/web/v16/OneSignalSDK.page.js" defer></script>
+<script>
+  window.OneSignalDeferred = window.OneSignalDeferred || [];
+  OneSignalDeferred.push(async function(OneSignal) {
+    await OneSignal.init({
+      appId: "REPLACE_WITH_ONESIGNAL_APP_ID",
+      notifyButton: { enable: false }
+    });
+  });
+</script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "VideoObject",
+    "name": "Midjourney Prompt Generator Demo — Free Image to Prompt Tool",
+    "description": "Watch how to generate optimized Midjourney prompts from any image using ImageToPrompt. Free AI tool demo with real V6.1 prompt output.",
+    "thumbnailUrl": "https://img.youtube.com/vi/5lcSaYcMuq8/maxresdefault.jpg",
+    "uploadDate": "2026-03-18",
+    "contentUrl": "https://www.youtube.com/watch?v=5lcSaYcMuq8",
+    "embedUrl": "https://www.youtube.com/embed/5lcSaYcMuq8",
+    "duration": "PT3M",
+    "publisher": {
+      "@type": "Organization",
+      "name": "ImageToPrompt",
+      "logo": { "@type": "ImageObject", "url": "https://www.imagetoprompt.dev/favicon.svg" }
+    }
+  }
+  </script>
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="inner">
+      <a href="/fr/" class="site-logo"><img src="/favicon.svg" alt="ImageToPrompt" width="48" height="48"><div class="site-logo-text">ImageTo<span class="accent">Prompt</span><span class="site-logo-sub">G&#233;n&#233;rateur de Prompts IA Gratuit</span></div></a>
+      <nav class="site-nav" aria-label="Navigation principale">
+        <div class="nav-dropdown">
+          <button class="nav-dropdown-trigger" aria-haspopup="true" aria-expanded="false">Tools <span class="nav-chevron" aria-hidden="true">&#9660;</span></button>
+          <div class="nav-dropdown-menu" role="menu">
+            <div class="nav-mega-grid">
+              <div class="nav-mega-col">
+                <div class="nav-mega-heading">&#128444; IMAGE TOOLS</div>
+                <a href="/" role="menuitem" class="nav-mega-tool">Image to Prompt <span class="nav-mega-arrow">&#8594;</span></a>
+                <a href="/text-to-prompt/" role="menuitem" class="nav-mega-tool">Text to Prompt <span class="nav-mega-arrow">&#8594;</span></a>
+                <div class="nav-mega-models-label">Models</div>
+                <div class="nav-mega-models"><a href="/midjourney-prompt-generator/">Midjourney</a><span class="nav-dot">&#xB7;</span><a href="/stable-diffusion-prompt-generator/">SD</a></div>
+                <div class="nav-mega-models"><a href="/flux-prompt-generator/">Flux</a><span class="nav-dot">&#xB7;</span><a href="/dall-e-prompt-generator/">DALL&#xB7;E&#xA0;3</a></div>
+                <div class="nav-mega-models"><a href="/adobe-firefly-prompt-generator/">Firefly</a><span class="nav-dot">&#xB7;</span><a href="/leonardo-ai-prompt-generator/">Leonardo</a></div>
+                <div class="nav-mega-models"><a href="/ideogram-prompt-generator/">Ideogram</a></div>
+              </div>
+              <div class="nav-mega-divider" aria-hidden="true"></div>
+              <div class="nav-mega-col">
+                <div class="nav-mega-heading">&#127909; VIDEO TOOLS</div>
+                <a href="/?tab=image-to-video" role="menuitem" class="nav-mega-tool">Image to Video <span class="nav-mega-arrow">&#8594;</span></a>
+                <a href="/?tab=text-to-video" role="menuitem" class="nav-mega-tool">Text to Video <span class="nav-mega-arrow">&#8594;</span></a>
+                <div class="nav-mega-models-label">Models</div>
+                <div class="nav-mega-models"><a href="/veo-prompt-generator/">Veo</a><span class="nav-dot">&#xB7;</span><a href="/kling-prompt-generator/">Kling</a></div>
+                <div class="nav-mega-models"><a href="/runway-prompt-generator/">Runway</a><span class="nav-dot">&#xB7;</span><a href="/pika-prompt-generator/">Pika</a></div>
+                <div class="nav-mega-models"><a href="/luma-prompt-generator/">Luma</a><span class="nav-dot">&#xB7;</span><a href="/sora-prompt-generator/">Sora</a></div>
+                <div class="nav-mega-models"><a href="/minimax-prompt-generator/">Minimax</a><span class="nav-dot">&#xB7;</span><a href="/stable-video-prompt-generator/">Stable</a></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <a href="/fr/blog/">Blog</a>
+        <a href="/pricing/" class="nav-pill-pricing">Pricing</a>
+        <a href="/about/" class="nav-pill-about">About</a>
+        <a href="/" class="nav-try-free">Essayer &#8594;</a>
+        <button id="theme-toggle" onclick="toggleTheme()" aria-label="Switch theme" title="Switch theme">&#9728;&#xFE0F;</button>
+  </nav>
+    </div>
+  </header>
+
+  <nav class="breadcrumb" aria-label="Fil d'Ariane">
+    <a href="/fr/">Accueil</a><span class="sep">›</span>
+    <span>Générateur de Prompts Midjourney</span>
+  </nav>
+
+  <div class="page-wrapper model-page-wrapper">
+
+    <header class="model-page-hero">
+      <div class="model-badge-hero" style="--model-color:#00b4d8">🎨 Idéal pour l'Art</div>
+      <h1>Générateur de Prompts Midjourney depuis Image — Gratuit</h1>
+      <p class="model-page-subtitle">Téléchargez n'importe quelle image et obtenez instantanément un prompt Midjourney optimisé — avec les paramètres <code>--ar</code>, <code>--v 6.1</code> et <code>--style raw</code>. Sans inscription, sans abonnement.</p>
+    </header>
+
+    <!-- Outil intégré -->
+    <div class="tool-embed-container">
+      <iframe
+        src="/?model=midjourney&embed=true"
+        title="Générateur de Prompts Midjourney"
+        class="tool-embed-frame"
+        loading="eager"
+        allow="clipboard-write; clipboard-read"
+      ></iframe>
+    </div>
+
+    <!-- Vidéo de démonstration YouTube -->
+    <div class="video-demo-section" style="margin:2.5rem 0;">
+      <h2 style="font-family:'Space Grotesk',sans-serif;font-size:1.25rem;font-weight:700;color:var(--text-primary);margin:0 0 0.5rem;">Voir : Comment ça marche</h2>
+      <p style="color:var(--text-muted);font-size:0.9rem;margin:0 0 1.25rem;">L'outil en action — exemple réel avec sortie de prompt généré par IA.</p>
+      <div style="position:relative;padding-bottom:56.25%;height:0;overflow:hidden;border-radius:12px;border:1px solid var(--border-subtle);">
+        <iframe
+          src="https://www.youtube.com/embed/5lcSaYcMuq8"
+          title="Midjourney Prompt Generator Demo — Free Image to Prompt Tool"
+          frameborder="0"
+          style="position:absolute;top:0;left:0;width:100%;height:100%;border:0;"
+          loading="lazy"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          allowfullscreen>
+        </iframe>
+      </div>
+    </div>
+
+    <!-- Section : Pourquoi utiliser -->
+    <section class="model-features-section">
+      <h2>Pourquoi utiliser des prompts Midjourney ?</h2>
+      <div class="model-features-grid">
+        <div class="model-feature-card" style="--card-accent:#A78BFA">
+          <div class="feature-icon">⚡</div>
+          <h3>Syntaxe spécifique au modèle</h3>
+          <p>Chaque prompt inclut les paramètres natifs Midjourney — <code>--ar</code>, <code>--v 6.1</code>, <code>--stylize</code> — formatés exactement comme la commande <code>/imagine</code> l'attend.</p>
+        </div>
+        <div class="model-feature-card" style="--card-accent:#A78BFA">
+          <div class="feature-icon">🎯</div>
+          <h3>Paramètres optimisés</h3>
+          <p>Le ratio d'aspect est extrait des dimensions de votre image. Les valeurs de stylize et chaos sont calibrées à partir du style artistique et de la complexité de la composition détectés.</p>
+        </div>
+        <div class="model-feature-card" style="--card-accent:#A78BFA">
+          <div class="feature-icon">📋</div>
+          <h3>Prêt à coller</h3>
+          <p>Un clic pour copier. Collez directement après <code>/imagine</code> dans le bot Discord de Midjourney ou sur midjourney.com.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section : En action -->
+    <section class="model-showcase-section">
+      <h2>Voir en action</h2>
+      <div class="model-showcase-grid">
+        <div class="showcase-col">
+          <span class="showcase-label">Image originale</span>
+          <figure class="img-figure">
+            <picture><source srcset="/images/ai-model-comparison-midjourney-vs-stable-diffusion.webp" type="image/webp"><img src="/images/ai-model-comparison-midjourney-vs-stable-diffusion.jpeg" alt="Image originale téléchargée dans ImageToPrompt" width="600" height="400" loading="lazy"></picture>
+            <figcaption>Image originale téléchargée</figcaption>
+          </figure>
+        </div>
+        <div class="showcase-arrow">→</div>
+        <div class="showcase-col">
+          <span class="showcase-label generated" style="--model-color:#A78BFA">Résultat Midjourney</span>
+          <figure class="img-figure">
+            <picture><source srcset="/images/compare1-mj.webp" type="image/webp"><img src="/images/compare1-mj.jpeg" alt="Résultat généré avec Midjourney v6.1" width="600" height="400" loading="lazy"></picture>
+            <figcaption>Généré avec Midjourney v6.1</figcaption>
+          </figure>
+        </div>
+      </div>
+      <div class="showcase-prompt-box">
+        <div class="showcase-prompt-header">
+          <span class="showcase-prompt-badge" style="background:rgba(167,139,250,0.12);color:#A78BFA;border-color:rgba(167,139,250,0.25)">🎨 Prompt Midjourney</span>
+        </div>
+        <code class="showcase-prompt-code">a contemplative figure in a dramatic natural landscape, cinematic golden hour lighting, volumetric fog, ultra-detailed, painterly atmosphere --ar 16:9 --v 6.1 --style raw --stylize 500</code>
+      </div>
+    </section>
+
+    <!-- Contenu -->
+    <article class="model-page-content">
+
+      <h2>Comment fonctionnent les prompts Midjourney</h2>
+      <p>Midjourney utilise une syntaxe de prompt unique qui diffère significativement des autres générateurs d'images IA. Plutôt que des phrases complètes, Midjourney répond mieux aux <strong>descripteurs séparés par des virgules</strong> suivis de paramètres. Un prompt Midjourney bien conçu ressemble à ceci :</p>
+      <div class="code-example">
+        <code>a lone samurai on a misty mountain peak, golden hour lighting, cinematic composition, volumetric fog, ultra-detailed, 8k --ar 16:9 --v 6.1 --style raw --stylize 750</code>
+      </div>
+      <p>Chaque élément joue un rôle : la description du sujet pose la scène, les descripteurs atmosphériques ajoutent l'ambiance, les balises de qualité technique poussent la fidélité, et les paramètres finaux contrôlent le format de sortie et le comportement du modèle.</p>
+
+      <h2>Les paramètres Midjourney expliqués</h2>
+      <p>Notre générateur inclut automatiquement les paramètres les plus impactants basés sur l'analyse de votre image :</p>
+      <div class="params-grid">
+        <div class="param-card" style="--c:#00b4d8">
+          <div class="param-name"><code>--ar</code></div>
+          <div class="param-desc">Ratio d'aspect. Extrait des dimensions natives de votre image (ex. <code>--ar 16:9</code>, <code>--ar 4:5</code>). Utiliser le bon ratio évite les artefacts de recadrage.</div>
+        </div>
+        <div class="param-card" style="--c:#00b4d8">
+          <div class="param-name"><code>--v 6.1</code></div>
+          <div class="param-desc">Spécifie Midjourney V6.1 — la version par défaut actuelle avec un réalisme amélioré, une meilleure adhérence au prompt et un rendu des mains supérieur.</div>
+        </div>
+        <div class="param-card" style="--c:#00b4d8">
+          <div class="param-name"><code>--style raw</code></div>
+          <div class="param-desc">Désactive le biais esthétique de Midjourney pour une interprétation plus littérale. Idéal quand vous voulez que l'IA recrée fidèlement l'ambiance exacte de votre image.</div>
+        </div>
+        <div class="param-card" style="--c:#00b4d8">
+          <div class="param-name"><code>--stylize</code></div>
+          <div class="param-desc">Contrôle l'intensité de la formation artistique de Midjourney (0–1000). Plus la valeur est élevée, plus le résultat est stylisé. Notre générateur définit cette valeur en fonction du style artistique détecté.</div>
+        </div>
+        <div class="param-card" style="--c:#00b4d8">
+          <div class="param-name"><code>--chaos</code></div>
+          <div class="param-desc">Ajoute de la variation entre les 4 images générées (0–100). Utile pour explorer des variantes d'un concept. Inclus quand votre image présente une grande complexité compositionnelle.</div>
+        </div>
+        <div class="param-card" style="--c:#00b4d8">
+          <div class="param-name"><code>--no</code></div>
+          <div class="param-desc">Prompt négatif pour Midjourney. Notre générateur l'utilise pour exclure les éléments qui nuiraient à l'esthétique de votre image (ex. <code>--no text, watermark, blur</code>).</div>
+        </div>
+      </div>
+
+      <h2>Qu'est-ce qui fait un bon prompt Midjourney ?</h2>
+      <p>Les prompts Midjourney les plus efficaces partagent trois qualités : <strong>spécificité du sujet</strong>, <strong>clarté de l'atmosphère</strong>, et <strong>paramètres appropriés</strong>. Les prompts vagues produisent des résultats génériques. Plus vous décrivez précisément l'éclairage, la composition, la palette de couleurs et l'ambiance — plus Midjourney peut recréer ou réimaginer fidèlement votre image.</p>
+      <p>Notre IA analyse votre image téléchargée selon 8 dimensions — sujet, composition, éclairage, palette de couleurs, ambiance, style, marqueurs de qualité et ratio d'aspect optimal — puis les combine en une seule chaîne Midjourney optimisée. Cela vous épargne les 10 à 20 minutes qu'il faut habituellement pour rédiger manuellement un prompt depuis zéro.</p>
+
+      <h2>Conseils pour de meilleurs résultats avec Midjourney</h2>
+      <ul class="tips-list">
+        <li><strong>Utilisez --style raw pour les photographies :</strong> L'esthétique par défaut de Midjourney ajoute une stylisation picturale. Pour une recréation photo réaliste, ajoutez toujours <code>--style raw</code>.</li>
+        <li><strong>Les descripteurs d'éclairage comptent le plus :</strong> Des termes comme "golden hour", "dramatic side lighting", "overcast diffused light" ont un impact majeur sur le rendu Midjourney comparé aux autres modèles.</li>
+        <li><strong>Empilez les balises de qualité :</strong> Ajoutez "ultra-detailed", "sharp focus", "8k", "professional photography" à la fin de vos descripteurs pour des sorties systématiquement plus qualitatives.</li>
+        <li><strong>Utilisez --sref pour les références de style :</strong> Dans V6.1, vous pouvez chaîner <code>--sref [URL]</code> pour tirer le style d'une image de référence en parallèle de votre prompt textuel.</li>
+        <li><strong>Testez les valeurs --stylize :</strong> Commencez à 250 pour des résultats équilibrés. Montez jusqu'à 750+ pour des sorties artistiques fortement stylisées.</li>
+      </ul>
+
+      <div class="related-blog">
+        <span class="related-label">Guide associé</span>
+        <a href="/fr/blog/guide-prompts-midjourney-2026/">Guide Complet des Prompts Midjourney 2026 →</a>
+      </div>
+
+      <!-- FAQ -->
+      <h2>Questions Fréquentes</h2>
+      <div class="faq-list">
+        <details class="faq-item">
+          <summary>Quels paramètres Midjourney le générateur inclut-il ?</summary>
+          <p>Le générateur produit des prompts avec les paramètres clés de Midjourney : <code>--ar</code> (ratio d'aspect), <code>--v 6.1</code> (dernière version), <code>--style raw</code> (pour un rendu photoréaliste), <code>--chaos</code> (pour la variation) et les valeurs <code>--stylize</code>. Ces paramètres sont calculés automatiquement à partir de la composition et du style de votre image.</p>
+        </details>
+        <details class="faq-item">
+          <summary>Cela fonctionne-t-il avec Midjourney V6.1 ?</summary>
+          <p>Oui. Notre générateur est optimisé pour Midjourney V6.1, la version par défaut actuelle. Les prompts incluent <code>--v 6.1</code> par défaut et utilisent le vocabulaire et la syntaxe mis à jour qui produisent les meilleurs résultats dans V6.1, notamment pour les descriptions détaillées et le langage naturel.</p>
+        </details>
+        <details class="faq-item">
+          <summary>Quelle est la différence avec /describe dans Midjourney ?</summary>
+          <p>La commande /describe de Midjourney effectue une rétro-ingénierie des prompts avec le modèle interne de Midjourney, mais nécessite d'être dans le bot Discord de Midjourney. Notre outil fonctionne directement dans votre navigateur, sans accès à Discord, vous donne un contrôle total sur le style et le ton, et supporte 10 langues de sortie.</p>
+        </details>
+        <details class="faq-item">
+          <summary>Puis-je utiliser le prompt généré dans le bot Discord de Midjourney ?</summary>
+          <p>Absolument. Copiez simplement le prompt généré et collez-le après <code>/imagine</code> dans le bot Discord de Midjourney ou sur midjourney.com. La sortie est pré-formatée avec des descripteurs séparés par des virgules et des paramètres comme <code>--ar 16:9 --v 6.1</code> prêts à l'emploi.</p>
+        </details>
+      </div>
+
+      <!-- Guides et ressources -->
+      <div class="model-related-section">
+        <h2>Guides et Ressources</h2>
+        <div class="model-related-grid">
+          <a href="/blog/midjourney-prompt-guide-2026/" class="model-related-card">
+            <picture><source srcset="/images/midjourney-v6-version-comparison.webp" type="image/webp"><img src="/images/midjourney-v6-version-comparison.jpeg" alt="The Complete Midjourney Prompt Guide for 2026" loading="lazy"></picture>
+            <div class="model-related-text">
+              <span class="model-related-category">Guide</span>
+              <h4>The Complete Midjourney Prompt Guide for 2026</h4>
+            </div>
+          </a>
+          <a href="/blog/reverse-engineer-ai-art-prompts/" class="model-related-card">
+            <picture><source srcset="/images/walkthrough-reference.webp" type="image/webp"><img src="/images/walkthrough-reference.jpeg" alt="How to Reverse-Engineer AI Art Prompts" loading="lazy"></picture>
+            <div class="model-related-text">
+              <span class="model-related-category">Tutoriel</span>
+              <h4>How to Reverse-Engineer AI Art Prompts</h4>
+            </div>
+          </a>
+          <a href="/blog/midjourney-vs-flux/" class="model-related-card">
+            <picture><source srcset="/images/compare1-flux.webp" type="image/webp"><img src="/images/compare1-flux.jpeg" alt="Midjourney vs Flux AI: Which Generates Better Prompts?" loading="lazy"></picture>
+            <div class="model-related-text">
+              <span class="model-related-category">Comparatif</span>
+              <h4>Midjourney vs Flux AI: Which Generates Better Prompts?</h4>
+            </div>
+          </a>
+        </div>
+      </div>
+
+      <!-- Autres modèles -->
+      <div class="other-models-section">
+        <h2>Essayer d'autres générateurs de prompts</h2>
+        <div class="other-models-grid">
+          <a href="/stable-diffusion-prompt-generator/" class="other-model-card" style="--c:#ff6b35">⚙️<span>Stable Diffusion</span></a>
+          <a href="/flux-prompt-generator/" class="other-model-card" style="--c:#7c3aed">⚡<span>Flux AI</span></a>
+          <a href="/dall-e-prompt-generator/" class="other-model-card" style="--c:#10a37f">🧠<span>DALL·E 3</span></a>
+          <a href="/adobe-firefly-prompt-generator/" class="other-model-card" style="--c:#ff0000">🦋<span>Adobe Firefly</span></a>
+          <a href="/leonardo-ai-prompt-generator/" class="other-model-card" style="--c:#f59e0b">🎮<span>Leonardo AI</span></a>
+          <a href="/ideogram-prompt-generator/" class="other-model-card" style="--c:#06b6d4">✍️<span>Ideogram</span></a>
+        </div>
+      </div>
+
+      <div style="margin-top:2rem;text-align:center">
+        <a href="/" class="cta-btn">Essayer Gratuitement →</a>
+      </div>
+
+    </article>
+  </div>
+
+  <footer class="footer-4col">
+    <div class="f4-inner">
+      <div class="f4-brand">
+        <img src="/favicon.svg" alt="ImageToPrompt" width="28" height="28">
+        <span class="f4-brand-name">ImageTo<span class="accent">Prompt</span></span>
+        <span class="f4-brand-sub">&mdash; Free AI Prompt Generator</span>
+      </div>
+      <div class="f4-grid">
+        <div class="f4-section">
+          <h4 class="f4-heading">Image Prompt Tools</h4>
+          <a href="/">Image to Prompt</a>
+          <a href="/text-to-prompt/">Text to Prompt</a>
+          <a href="/midjourney-prompt-generator/">Midjourney</a>
+          <a href="/stable-diffusion-prompt-generator/">Stable Diffusion</a>
+          <a href="/flux-prompt-generator/">Flux</a>
+          <a href="/dall-e-prompt-generator/">DALL-E 3</a>
+          <a href="/adobe-firefly-prompt-generator/">Adobe Firefly</a>
+          <a href="/leonardo-ai-prompt-generator/">Leonardo AI</a>
+          <a href="/ideogram-prompt-generator/">Ideogram</a>
+        </div>
+        <div class="f4-section">
+          <h4 class="f4-heading">Video Prompt Tools</h4>
+          <a href="/image-to-video-prompt/">Image to Video Prompt</a>
+          <a href="/text-to-video-prompt/">Text to Video Prompt</a>
+          <a href="/veo-prompt-generator/">Veo / Flow Studio</a>
+          <a href="/kling-prompt-generator/">Kling AI</a>
+          <a href="/runway-prompt-generator/">Runway Gen-3</a>
+          <a href="/pika-prompt-generator/">Pika</a>
+          <a href="/luma-prompt-generator/">Luma Dream Machine</a>
+          <a href="/sora-prompt-generator/">Sora</a>
+          <a href="/minimax-prompt-generator/">Minimax</a>
+          <a href="/stable-video-prompt-generator/">Stable Video</a>
+        </div>
+        <div class="f4-section">
+          <h4 class="f4-heading">Resources</h4>
+          <a href="/blog/">Blog</a>
+          <a href="/about/">About</a>
+          <a href="/pricing/">Pricing</a>
+          <a href="/contact/">Contact</a>
+          <a href="/privacy-policy/">Privacy Policy</a>
+          <a href="/terms-of-service/">Terms of Service</a>
+        </div>
+        <div class="f4-section">
+          <h4 class="f4-heading">Languages</h4>
+          <a href="/">English</a>
+          <a href="/fr/">Fran&#231;ais</a>
+          <a href="/ar/">&#1575;&#1604;&#1593;&#1585;&#1576;&#1610;&#1577;</a>
+          <a href="/es/">Espa&#241;ol</a>
+          <a href="/ko/">&#54620;&#44397;&#50612;</a>
+          <a href="/ja/">&#26085;&#26412;&#35486;</a>
+        </div>
+      </div>
+      <div class="f4-bottom">
+        <p>&#169; 2026 ImageToPrompt.dev &#8212; Free AI Prompt Generator</p>
+        <p>Your images are never stored. All analysis is ephemeral and private.</p>
+      </div>
+    </div>
+  </footer>
+
+<script src="/nav.js" defer></script>
+  <script>
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', function() {
+    navigator.serviceWorker.register('/sw.js')
+      .catch(function(err) { console.warn('SW registration failed:', err); });
+  });
+}
+</script>
+</body>
+</html>

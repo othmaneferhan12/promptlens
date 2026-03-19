@@ -1,0 +1,439 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <script src="/theme-toggle.js"></script>
+  <meta charset="UTF-8" />
+  <link rel="dns-prefetch" href="https://www.googletagmanager.com">
+<link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0" />
+  <meta name="robots" content="max-image-preview:large, index, follow">
+  <meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="ImageToPrompt">
+  <title>Générateur de Prompts Flux AI — Gratuit | ImageToPrompt</title>
+  <meta name="description" content="Générez des prompts Flux AI détaillés depuis n'importe quelle image. Optimisé pour les capacités photoréalistes de Flux avec des descripteurs précis d'éclairage et de composition. Gratuit." />
+  <link rel="canonical" href="https://www.imagetoprompt.dev/fr/flux-prompt-generator/" />
+  <link rel="alternate" hreflang="en" href="https://www.imagetoprompt.dev/flux-prompt-generator/" />
+  <link rel="alternate" hreflang="fr" href="https://www.imagetoprompt.dev/fr/flux-prompt-generator/" />
+  <link rel="alternate" hreflang="ar" href="https://www.imagetoprompt.dev/ar/flux-prompt-generator/" />
+  <link rel="alternate" hreflang="x-default" href="https://www.imagetoprompt.dev/flux-prompt-generator/" />
+  <meta property="og:title" content="Générateur de Prompts Flux AI — Gratuit | ImageToPrompt" />
+  <meta property="og:description" content="Générez des prompts Flux AI détaillés depuis n'importe quelle image. Optimisé pour le photoréalisme de Flux. Gratuit." />
+  <meta property="og:url" content="https://www.imagetoprompt.dev/fr/flux-prompt-generator/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="https://www.imagetoprompt.dev/og-image.png" />
+  <meta property="og:site_name" content="ImageToPrompt" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Générateur de Prompts Flux AI — Gratuit | ImageToPrompt" />
+  <meta name="twitter:description" content="Générez des prompts Flux AI détaillés pour des images photoréalistes. Gratuit." />
+  <meta name="twitter:image" content="https://www.imagetoprompt.dev/og-image.png" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="48x48" href="/favicon-48.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+  <link rel="manifest" href="/site.webmanifest" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="/fonts/space-grotesk-700.woff2" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="/fonts/inter-400.woff2" />
+  <link rel="stylesheet" href="/theme.css">
+  <link rel="preload" href="/blog.css" as="style" onload="this.onload=null;this.rel='stylesheet'"><noscript><link rel="stylesheet" href="/blog.css"></noscript>
+  <link rel="preload" href="/model-pages.css" as="style" onload="this.onload=null;this.rel='stylesheet'"><noscript><link rel="stylesheet" href="/model-pages.css"></noscript>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "Générateur de Prompts Flux AI",
+    "applicationCategory": "DesignApplication",
+    "operatingSystem": "Web",
+    "url": "https://www.imagetoprompt.dev/fr/flux-prompt-generator/",
+    "description": "Générez des prompts Flux AI détaillés depuis n'importe quelle image. Optimisé pour les capacités photoréalistes de Flux avec des descripteurs précis d'éclairage et de composition.",
+    "inLanguage": "fr",
+    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "EUR" },
+    "publisher": { "@type": "Organization", "name": "ImageToPrompt", "url": "https://www.imagetoprompt.dev/" }
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Accueil", "item": "https://www.imagetoprompt.dev/fr/" },
+      { "@type": "ListItem", "position": 2, "name": "Générateur de Prompts Flux AI", "item": "https://www.imagetoprompt.dev/fr/flux-prompt-generator/" }
+    ]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "inLanguage": "fr",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Qu'est-ce qui différencie les prompts Flux de ceux de Midjourney ?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Flux utilise des paragraphes en langage naturel détaillé plutôt que des listes de mots-clés séparés par des virgules. Il répond mieux aux descriptions techniques précises — spécifications de caméra, focale, ouverture, configuration d'éclairage — car il est entraîné à comprendre le langage photographique à un niveau plus profond." }
+      },
+      {
+        "@type": "Question",
+        "name": "Flux supporte-t-il les prompts négatifs ?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Flux.1 (Black Forest Labs) n'utilise pas les prompts négatifs traditionnels comme Stable Diffusion. Il s'appuie plutôt sur un prompting positif détaillé. Notre générateur en tient compte en intégrant toutes les exigences de qualité et de style directement dans le prompt positif." }
+      },
+      {
+        "@type": "Question",
+        "name": "Où puis-je utiliser le prompt Flux généré ?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Les prompts Flux fonctionnent sur toute plateforme utilisant Flux.1 : fal.ai, Replicate, ComfyUI avec les nœuds Flux, et l'API officielle de Black Forest Labs. Le texte généré est optimisé pour les variantes Flux.1 [dev] et Flux.1 [schnell]." }
+      },
+      {
+        "@type": "Question",
+        "name": "Flux est-il meilleur que Midjourney pour le photoréalisme ?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Dans les benchmarks indépendants, Flux.1 [dev] et [pro] produisent des sorties plus photoréalistes que Midjourney V6.1 pour les sujets photographiques réels — notamment pour les portraits, l'architecture et la photographie de produits. Midjourney conserve un avantage pour les sorties artistiques stylisées." }
+      }
+    ]
+  }
+  </script>
+  <!-- Google AdSense -->
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4499206373485728" crossorigin="anonymous"></script>
+  <!-- Web Push Notifications -->
+<script src="https://cdn.onesignal.com/sdks/web/v16/OneSignalSDK.page.js" defer></script>
+<script>
+  window.OneSignalDeferred = window.OneSignalDeferred || [];
+  OneSignalDeferred.push(async function(OneSignal) {
+    await OneSignal.init({
+      appId: "REPLACE_WITH_ONESIGNAL_APP_ID",
+      notifyButton: { enable: false }
+    });
+  });
+</script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "VideoObject",
+    "name": "Flux AI Prompt Generator Demo — Free Image to Prompt Tool",
+    "description": "Watch how to generate optimized Flux.1 prompts from any image using ImageToPrompt. Free demo with natural language output.",
+    "thumbnailUrl": "https://img.youtube.com/vi/5lcSaYcMuq8/maxresdefault.jpg",
+    "uploadDate": "2026-03-18",
+    "contentUrl": "https://www.youtube.com/watch?v=5lcSaYcMuq8",
+    "embedUrl": "https://www.youtube.com/embed/5lcSaYcMuq8",
+    "duration": "PT3M",
+    "publisher": {
+      "@type": "Organization",
+      "name": "ImageToPrompt",
+      "logo": { "@type": "ImageObject", "url": "https://www.imagetoprompt.dev/favicon.svg" }
+    }
+  }
+  </script>
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="inner">
+      <a href="/fr/" class="site-logo"><img src="/favicon.svg" alt="ImageToPrompt" width="48" height="48"><div class="site-logo-text">ImageTo<span class="accent">Prompt</span><span class="site-logo-sub">G&#233;n&#233;rateur de Prompts IA Gratuit</span></div></a>
+      <nav class="site-nav" aria-label="Navigation principale">
+        <div class="nav-dropdown">
+          <button class="nav-dropdown-trigger" aria-haspopup="true" aria-expanded="false">Tools <span class="nav-chevron" aria-hidden="true">&#9660;</span></button>
+          <div class="nav-dropdown-menu" role="menu">
+            <div class="nav-mega-grid">
+              <div class="nav-mega-col">
+                <div class="nav-mega-heading">&#128444; IMAGE TOOLS</div>
+                <a href="/" role="menuitem" class="nav-mega-tool">Image to Prompt <span class="nav-mega-arrow">&#8594;</span></a>
+                <a href="/text-to-prompt/" role="menuitem" class="nav-mega-tool">Text to Prompt <span class="nav-mega-arrow">&#8594;</span></a>
+                <div class="nav-mega-models-label">Models</div>
+                <div class="nav-mega-models"><a href="/midjourney-prompt-generator/">Midjourney</a><span class="nav-dot">&#xB7;</span><a href="/stable-diffusion-prompt-generator/">SD</a></div>
+                <div class="nav-mega-models"><a href="/flux-prompt-generator/">Flux</a><span class="nav-dot">&#xB7;</span><a href="/dall-e-prompt-generator/">DALL&#xB7;E&#xA0;3</a></div>
+                <div class="nav-mega-models"><a href="/adobe-firefly-prompt-generator/">Firefly</a><span class="nav-dot">&#xB7;</span><a href="/leonardo-ai-prompt-generator/">Leonardo</a></div>
+                <div class="nav-mega-models"><a href="/ideogram-prompt-generator/">Ideogram</a></div>
+              </div>
+              <div class="nav-mega-divider" aria-hidden="true"></div>
+              <div class="nav-mega-col">
+                <div class="nav-mega-heading">&#127909; VIDEO TOOLS</div>
+                <a href="/?tab=image-to-video" role="menuitem" class="nav-mega-tool">Image to Video <span class="nav-mega-arrow">&#8594;</span></a>
+                <a href="/?tab=text-to-video" role="menuitem" class="nav-mega-tool">Text to Video <span class="nav-mega-arrow">&#8594;</span></a>
+                <div class="nav-mega-models-label">Models</div>
+                <div class="nav-mega-models"><a href="/veo-prompt-generator/">Veo</a><span class="nav-dot">&#xB7;</span><a href="/kling-prompt-generator/">Kling</a></div>
+                <div class="nav-mega-models"><a href="/runway-prompt-generator/">Runway</a><span class="nav-dot">&#xB7;</span><a href="/pika-prompt-generator/">Pika</a></div>
+                <div class="nav-mega-models"><a href="/luma-prompt-generator/">Luma</a><span class="nav-dot">&#xB7;</span><a href="/sora-prompt-generator/">Sora</a></div>
+                <div class="nav-mega-models"><a href="/minimax-prompt-generator/">Minimax</a><span class="nav-dot">&#xB7;</span><a href="/stable-video-prompt-generator/">Stable</a></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <a href="/fr/blog/">Blog</a>
+        <a href="/pricing/" class="nav-pill-pricing">Pricing</a>
+        <a href="/about/" class="nav-pill-about">About</a>
+        <a href="/" class="nav-try-free">Essayer &#8594;</a>
+        <button id="theme-toggle" onclick="toggleTheme()" aria-label="Switch theme" title="Switch theme">&#9728;&#xFE0F;</button>
+  </nav>
+    </div>
+  </header>
+
+  <nav class="breadcrumb" aria-label="Fil d'Ariane">
+    <a href="/fr/">Accueil</a><span class="sep">›</span>
+    <span>Générateur de Prompts Flux AI</span>
+  </nav>
+
+  <div class="page-wrapper model-page-wrapper">
+
+    <header class="model-page-hero">
+      <div class="model-badge-hero" style="--model-color:#7c3aed">⚡ Meilleure Qualité</div>
+      <h1>Générateur de Prompts Flux AI depuis Image — Gratuit</h1>
+      <p class="model-page-subtitle">Téléchargez n'importe quelle image et générez un prompt Flux AI richement détaillé avec un langage photographique précis — configuration d'éclairage, spécifications de caméra, objectif et analyse de composition. Sans inscription.</p>
+    </header>
+
+    <!-- Outil intégré -->
+    <div class="tool-embed-container">
+      <iframe
+        src="/?model=flux&embed=true"
+        title="Générateur de Prompts Flux AI"
+        class="tool-embed-frame"
+        loading="eager"
+        allow="clipboard-write; clipboard-read"
+      ></iframe>
+    </div>
+
+    <!-- Vidéo de démonstration YouTube -->
+    <div class="video-demo-section" style="margin:2.5rem 0;">
+      <h2 style="font-family:'Space Grotesk',sans-serif;font-size:1.25rem;font-weight:700;color:var(--text-primary);margin:0 0 0.5rem;">Voir : Comment ça marche</h2>
+      <p style="color:var(--text-muted);font-size:0.9rem;margin:0 0 1.25rem;">L'outil en action — exemple réel avec sortie de prompt générée par IA.</p>
+      <div style="position:relative;padding-bottom:56.25%;height:0;overflow:hidden;border-radius:12px;border:1px solid var(--border-subtle);">
+        <iframe
+          src="https://www.youtube.com/embed/5lcSaYcMuq8"
+          title="Flux AI Prompt Generator Demo — Free Image to Prompt Tool"
+          frameborder="0"
+          style="position:absolute;top:0;left:0;width:100%;height:100%;border:0;"
+          loading="lazy"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          allowfullscreen>
+        </iframe>
+      </div>
+    </div>
+
+    <!-- Section : Pourquoi utiliser -->
+    <section class="model-features-section">
+      <h2>Pourquoi utiliser des prompts Flux ?</h2>
+      <div class="model-features-grid">
+        <div class="model-feature-card" style="--card-accent:#FBBF24">
+          <div class="feature-icon">⚡</div>
+          <h3>Syntaxe spécifique au modèle</h3>
+          <p>Flux utilise des phrases en langage naturel plutôt que des mots-clés séparés par des virgules. Une prose descriptive complète produit des résultats plus nets et plus photoréalistes que les listes de mots-clés.</p>
+        </div>
+        <div class="model-feature-card" style="--card-accent:#FBBF24">
+          <div class="feature-icon">🎯</div>
+          <h3>Paramètres optimisés</h3>
+          <p>Le boîtier, l'objectif, l'ouverture, l'ISO et les conditions d'éclairage sont inclus automatiquement. Flux répond exceptionnellement bien au vocabulaire de la photographie technique.</p>
+        </div>
+        <div class="model-feature-card" style="--card-accent:#FBBF24">
+          <div class="feature-icon">📋</div>
+          <h3>Prêt à coller</h3>
+          <p>Collez directement dans Flux sur Replicate, fal.ai ou n'importe quel nœud ComfyUI Flux. Fonctionne avec les variantes Flux.1 Dev, Schnell et Pro.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section : En action -->
+    <section class="model-showcase-section">
+      <h2>Voir en action</h2>
+      <div class="model-showcase-grid">
+        <div class="showcase-col">
+          <span class="showcase-label">Image originale</span>
+          <figure class="img-figure">
+            <picture><source srcset="/images/ai-model-comparison-midjourney-vs-stable-diffusion.webp" type="image/webp"><img src="/images/ai-model-comparison-midjourney-vs-stable-diffusion.jpeg" alt="Image originale téléchargée dans ImageToPrompt" width="600" height="400" loading="lazy"></picture>
+            <figcaption>Image originale téléchargée</figcaption>
+          </figure>
+        </div>
+        <div class="showcase-arrow">→</div>
+        <div class="showcase-col">
+          <span class="showcase-label generated" style="--model-color:#FBBF24">Résultat Flux</span>
+          <figure class="img-figure">
+            <picture><source srcset="/images/compare1-flux.webp" type="image/webp"><img src="/images/compare1-flux.jpeg" alt="Résultat généré avec Flux.1 Dev" width="600" height="400" loading="lazy"></picture>
+            <figcaption>Généré avec Flux.1 Dev</figcaption>
+          </figure>
+        </div>
+      </div>
+      <div class="showcase-prompt-box">
+        <div class="showcase-prompt-header">
+          <span class="showcase-prompt-badge" style="background:rgba(167,139,250,0.12);color:#FBBF24;border-color:rgba(167,139,250,0.25)">⚡ Prompt Flux</span>
+        </div>
+        <code class="showcase-prompt-code">A person standing in a vast natural landscape at golden hour, long shadows cast across rolling terrain, highly photorealistic, ultra-sharp micro-detail, natural film grain, professional landscape photography, Hasselblad H6D, f/8</code>
+      </div>
+    </section>
+
+    <!-- Contenu -->
+    <article class="model-page-content">
+
+      <h2>Pourquoi Flux nécessite une approche différente</h2>
+      <p>Flux (développé par Black Forest Labs) est un modèle diffusion transformer qui traite les prompts fondamentalement différemment des architectures plus anciennes. Tandis que Stable Diffusion et Midjourney répondent aux <strong>listes de mots-clés et aux poids de tokens</strong>, Flux comprend les <strong>descriptions en langage naturel dense</strong> — le type de texte qu'un photographe professionnel utiliserait pour briefer un caméraman.</p>
+      <div class="code-example">
+        <code>A lone figure standing at the edge of a cliff overlooking a vast canyon at golden hour. Shot with a Sony A7R V, 85mm f/1.4 lens, shallow depth of field with the background rendered in soft bokeh. Warm amber and orange tones dominate, with the subject silhouetted against a gradient sky. The composition follows the rule of thirds, with the horizon at the upper third. Ultra-high resolution, cinematic quality, photojournalistic realism.</code>
+      </div>
+      <p>Notez comment le prompt Flux ressemble à un brief de production — il spécifie le boîtier, l'objectif, l'ouverture, la théorie des couleurs et les règles de composition. Ce niveau de spécificité libère le potentiel photoréaliste de Flux.</p>
+
+      <h2>Le langage de photographie technique auquel Flux répond</h2>
+      <div class="params-grid">
+        <div class="param-card" style="--c:#7c3aed">
+          <div class="param-name">Boîtier de caméra</div>
+          <div class="param-desc">Spécifier de vraies caméras (Sony A7R V, Canon EOS R5, Hasselblad X2D) indique à Flux de reproduire la science des couleurs et les caractéristiques de résolution de cette caméra.</div>
+        </div>
+        <div class="param-card" style="--c:#7c3aed">
+          <div class="param-name">Spécifications d'objectif</div>
+          <div class="param-desc">La focale et l'ouverture (85mm f/1.4, 24mm f/2.8, 200mm f/2.8) influencent directement la profondeur de champ, la compression et le rendu du bokeh dans la sortie.</div>
+        </div>
+        <div class="param-card" style="--c:#7c3aed">
+          <div class="param-name">Configuration d'éclairage</div>
+          <div class="param-desc">Les termes d'éclairage professionnels ("three-point lighting", "Rembrandt lighting", "clamshell setup", "golden hour rim light") produisent des résultats mesurément meilleurs dans Flux que dans SD ou MJ.</div>
+        </div>
+        <div class="param-card" style="--c:#7c3aed">
+          <div class="param-name">Étalonnage des couleurs</div>
+          <div class="param-desc">Référencer des étalonnages de couleur ("teal and orange grade", "muted Kodak Portra tones", "high-contrast black and white") correspond aux données d'entraînement de Flux sur la photographie professionnelle.</div>
+        </div>
+      </div>
+
+      <h2>Les variantes de Flux.1 expliquées</h2>
+      <p><strong>Flux.1 [pro]</strong> est la variante de plus haute qualité, disponible via l'API de Black Forest Labs. Idéal pour le travail commercial où un photoréalisme maximum est requis. <strong>Flux.1 [dev]</strong> est la version open-weight avec une excellente qualité — disponible sur ComfyUI, fal.ai et Replicate. <strong>Flux.1 [schnell]</strong> est optimisé pour la vitesse (4 étapes vs 25–50 pour [dev]), sacrifiant une certaine qualité pour une itération rapide. Les trois variantes utilisent la même syntaxe de prompt.</p>
+
+      <h2>Flux vs autres modèles pour le photoréalisme</h2>
+      <p>En termes de qualité de sortie photoréaliste, Flux.1 [dev] et [pro] surpassent régulièrement Stable Diffusion XL et Midjourney V6.1 pour les sujets photographiques réels. C'est particulièrement évident dans les portraits (Flux gère la texture de peau et les détails des yeux bien mieux), la photographie architecturale et les photos de produits. La force de Midjourney reste dans l'art fantastique et les illustrations fortement stylisées.</p>
+
+      <div class="related-blog">
+        <span class="related-label">Guide associé</span>
+        <a href="/blog/stable-diffusion-vs-midjourney-vs-dalle3/">Stable Diffusion vs Midjourney vs DALL-E 3 — Comparaison Complète →</a>
+      </div>
+
+      <!-- FAQ -->
+      <h2>Questions Fréquentes</h2>
+      <div class="faq-list">
+        <details class="faq-item">
+          <summary>Qu'est-ce qui différencie les prompts Flux de ceux de Midjourney ?</summary>
+          <p>Flux utilise des paragraphes en langage naturel détaillé plutôt que des listes de mots-clés séparés par des virgules. Il répond mieux aux descriptions techniques précises — spécifications de caméra, focale, ouverture, configuration d'éclairage — car il est entraîné à comprendre le langage photographique à un niveau plus profond.</p>
+        </details>
+        <details class="faq-item">
+          <summary>Flux supporte-t-il les prompts négatifs ?</summary>
+          <p>Flux.1 n'utilise pas les prompts négatifs traditionnels comme Stable Diffusion. Il s'appuie plutôt sur un prompting positif détaillé. Notre générateur en tient compte en intégrant toutes les exigences de qualité et de style directement dans le prompt positif.</p>
+        </details>
+        <details class="faq-item">
+          <summary>Où puis-je utiliser le prompt Flux généré ?</summary>
+          <p>Les prompts Flux fonctionnent sur toute plateforme utilisant Flux.1 : fal.ai, Replicate, ComfyUI avec les nœuds Flux, et l'API officielle de Black Forest Labs. La sortie est optimisée pour les variantes Flux.1 [dev] et Flux.1 [schnell].</p>
+        </details>
+        <details class="faq-item">
+          <summary>Flux est-il meilleur que Midjourney pour le photoréalisme ?</summary>
+          <p>Dans les benchmarks indépendants, Flux.1 [dev] et [pro] produisent des sorties plus photoréalistes que Midjourney V6.1 pour la photographie réelle — notamment pour les portraits, l'architecture et la photographie de produits. Midjourney conserve un avantage pour les sorties artistiques stylisées.</p>
+        </details>
+      </div>
+
+      <!-- Guides et ressources -->
+      <div class="model-related-section">
+        <h2>Guides et Ressources</h2>
+        <div class="model-related-grid">
+          <a href="/blog/flux-ai-prompt-guide/" class="model-related-card">
+            <picture><source srcset="/images/compare1-flux.webp" type="image/webp"><img src="/images/compare1-flux.jpeg" alt="Flux AI Prompt Guide: Photorealistic Generation in 2026" loading="lazy"></picture>
+            <div class="model-related-text">
+              <span class="model-related-category">Guide</span>
+              <h4>Flux AI Prompt Guide: Photorealistic Generation in 2026</h4>
+            </div>
+          </a>
+          <a href="/blog/midjourney-vs-flux/" class="model-related-card">
+            <picture><source srcset="/images/compare1-mj.webp" type="image/webp"><img src="/images/compare1-mj.jpeg" alt="Midjourney vs Flux AI: Which Generates Better Prompts?" loading="lazy"></picture>
+            <div class="model-related-text">
+              <span class="model-related-category">Comparatif</span>
+              <h4>Midjourney vs Flux AI: Which Generates Better Prompts?</h4>
+            </div>
+          </a>
+          <a href="/blog/prompt-engineering-for-ai-art/" class="model-related-card">
+            <picture><source srcset="/images/ai-prompt-cinematic-portrait-style.webp" type="image/webp"><img src="/images/ai-prompt-cinematic-portrait-style.jpeg" alt="Prompt Engineering for AI Art: Complete Guide" loading="lazy"></picture>
+            <div class="model-related-text">
+              <span class="model-related-category">Tutoriel</span>
+              <h4>Prompt Engineering for AI Art: Complete Guide</h4>
+            </div>
+          </a>
+        </div>
+      </div>
+
+      <!-- Autres modèles -->
+      <div class="other-models-section">
+        <h2>Essayer d'autres générateurs de prompts</h2>
+        <div class="other-models-grid">
+          <a href="/midjourney-prompt-generator/" class="other-model-card" style="--c:#00b4d8">🎨<span>Midjourney</span></a>
+          <a href="/stable-diffusion-prompt-generator/" class="other-model-card" style="--c:#ff6b35">⚙️<span>Stable Diffusion</span></a>
+          <a href="/dall-e-prompt-generator/" class="other-model-card" style="--c:#10a37f">🧠<span>DALL·E 3</span></a>
+          <a href="/adobe-firefly-prompt-generator/" class="other-model-card" style="--c:#ff0000">🦋<span>Adobe Firefly</span></a>
+          <a href="/leonardo-ai-prompt-generator/" class="other-model-card" style="--c:#f59e0b">🎮<span>Leonardo AI</span></a>
+          <a href="/ideogram-prompt-generator/" class="other-model-card" style="--c:#06b6d4">✍️<span>Ideogram</span></a>
+        </div>
+      </div>
+
+      <div style="margin-top:2rem;text-align:center">
+        <a href="/" class="cta-btn">Essayer Gratuitement →</a>
+      </div>
+
+    </article>
+  </div>
+
+  <footer class="footer-4col">
+    <div class="f4-inner">
+      <div class="f4-brand">
+        <img src="/favicon.svg" alt="ImageToPrompt" width="28" height="28">
+        <span class="f4-brand-name">ImageTo<span class="accent">Prompt</span></span>
+        <span class="f4-brand-sub">&mdash; Free AI Prompt Generator</span>
+      </div>
+      <div class="f4-grid">
+        <div class="f4-section">
+          <h4 class="f4-heading">Image Prompt Tools</h4>
+          <a href="/">Image to Prompt</a>
+          <a href="/text-to-prompt/">Text to Prompt</a>
+          <a href="/midjourney-prompt-generator/">Midjourney</a>
+          <a href="/stable-diffusion-prompt-generator/">Stable Diffusion</a>
+          <a href="/flux-prompt-generator/">Flux</a>
+          <a href="/dall-e-prompt-generator/">DALL-E 3</a>
+          <a href="/adobe-firefly-prompt-generator/">Adobe Firefly</a>
+          <a href="/leonardo-ai-prompt-generator/">Leonardo AI</a>
+          <a href="/ideogram-prompt-generator/">Ideogram</a>
+        </div>
+        <div class="f4-section">
+          <h4 class="f4-heading">Video Prompt Tools</h4>
+          <a href="/image-to-video-prompt/">Image to Video Prompt</a>
+          <a href="/text-to-video-prompt/">Text to Video Prompt</a>
+          <a href="/veo-prompt-generator/">Veo / Flow Studio</a>
+          <a href="/kling-prompt-generator/">Kling AI</a>
+          <a href="/runway-prompt-generator/">Runway Gen-3</a>
+          <a href="/pika-prompt-generator/">Pika</a>
+          <a href="/luma-prompt-generator/">Luma Dream Machine</a>
+          <a href="/sora-prompt-generator/">Sora</a>
+          <a href="/minimax-prompt-generator/">Minimax</a>
+          <a href="/stable-video-prompt-generator/">Stable Video</a>
+        </div>
+        <div class="f4-section">
+          <h4 class="f4-heading">Resources</h4>
+          <a href="/blog/">Blog</a>
+          <a href="/about/">About</a>
+          <a href="/pricing/">Pricing</a>
+          <a href="/contact/">Contact</a>
+          <a href="/privacy-policy/">Privacy Policy</a>
+          <a href="/terms-of-service/">Terms of Service</a>
+        </div>
+        <div class="f4-section">
+          <h4 class="f4-heading">Languages</h4>
+          <a href="/">English</a>
+          <a href="/fr/">Fran&#231;ais</a>
+          <a href="/ar/">&#1575;&#1604;&#1593;&#1585;&#1576;&#1610;&#1577;</a>
+          <a href="/es/">Espa&#241;ol</a>
+          <a href="/ko/">&#54620;&#44397;&#50612;</a>
+          <a href="/ja/">&#26085;&#26412;&#35486;</a>
+        </div>
+      </div>
+      <div class="f4-bottom">
+        <p>&#169; 2026 ImageToPrompt.dev &#8212; Free AI Prompt Generator</p>
+        <p>Your images are never stored. All analysis is ephemeral and private.</p>
+      </div>
+    </div>
+  </footer>
+
+<script src="/nav.js" defer></script>
+  <script>
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', function() {
+    navigator.serviceWorker.register('/sw.js')
+      .catch(function(err) { console.warn('SW registration failed:', err); });
+  });
+}
+</script>
+</body>
+</html>

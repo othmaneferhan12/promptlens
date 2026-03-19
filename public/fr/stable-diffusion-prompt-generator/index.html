@@ -1,0 +1,443 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <script src="/theme-toggle.js"></script>
+  <meta charset="UTF-8" />
+  <link rel="dns-prefetch" href="https://www.googletagmanager.com">
+<link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0" />
+  <meta name="robots" content="max-image-preview:large, index, follow">
+  <meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="ImageToPrompt">
+  <title>Générateur de Prompts Stable Diffusion — Gratuit | ImageToPrompt</title>
+  <meta name="description" content="Convertissez n'importe quelle image en prompt Stable Diffusion avec la syntaxe pondérée, les prompts négatifs et les balises de qualité. Compatible SD 1.5, SDXL, SD 3.5. Gratuit." />
+  <link rel="canonical" href="https://www.imagetoprompt.dev/fr/stable-diffusion-prompt-generator/" />
+  <link rel="alternate" hreflang="en" href="https://www.imagetoprompt.dev/stable-diffusion-prompt-generator/" />
+  <link rel="alternate" hreflang="fr" href="https://www.imagetoprompt.dev/fr/stable-diffusion-prompt-generator/" />
+  <link rel="alternate" hreflang="ar" href="https://www.imagetoprompt.dev/ar/stable-diffusion-prompt-generator/" />
+  <link rel="alternate" hreflang="x-default" href="https://www.imagetoprompt.dev/stable-diffusion-prompt-generator/" />
+  <meta property="og:title" content="Générateur de Prompts Stable Diffusion — Gratuit | ImageToPrompt" />
+  <meta property="og:description" content="Convertissez n'importe quelle image en prompt Stable Diffusion avec syntaxe pondérée et prompts négatifs. Compatible SD 1.5, SDXL, SD 3.5. Gratuit." />
+  <meta property="og:url" content="https://www.imagetoprompt.dev/fr/stable-diffusion-prompt-generator/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="https://www.imagetoprompt.dev/og-image.png" />
+  <meta property="og:site_name" content="ImageToPrompt" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Générateur de Prompts Stable Diffusion — Gratuit | ImageToPrompt" />
+  <meta name="twitter:description" content="Convertissez n'importe quelle image en prompt Stable Diffusion avec syntaxe pondérée. Gratuit." />
+  <meta name="twitter:image" content="https://www.imagetoprompt.dev/og-image.png" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="48x48" href="/favicon-48.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+  <link rel="manifest" href="/site.webmanifest" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="/fonts/space-grotesk-700.woff2" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="/fonts/inter-400.woff2" />
+  <link rel="stylesheet" href="/theme.css">
+  <link rel="preload" href="/blog.css" as="style" onload="this.onload=null;this.rel='stylesheet'"><noscript><link rel="stylesheet" href="/blog.css"></noscript>
+  <link rel="preload" href="/model-pages.css" as="style" onload="this.onload=null;this.rel='stylesheet'"><noscript><link rel="stylesheet" href="/model-pages.css"></noscript>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "Générateur de Prompts Stable Diffusion",
+    "applicationCategory": "DesignApplication",
+    "operatingSystem": "Web",
+    "url": "https://www.imagetoprompt.dev/fr/stable-diffusion-prompt-generator/",
+    "description": "Convertissez n'importe quelle image en prompt Stable Diffusion avec la syntaxe pondérée, les prompts négatifs et les balises de qualité. Compatible SD 1.5, SDXL, SD 3.5.",
+    "inLanguage": "fr",
+    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "EUR" },
+    "publisher": { "@type": "Organization", "name": "ImageToPrompt", "url": "https://www.imagetoprompt.dev/" }
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Accueil", "item": "https://www.imagetoprompt.dev/fr/" },
+      { "@type": "ListItem", "position": 2, "name": "Générateur de Prompts Stable Diffusion", "item": "https://www.imagetoprompt.dev/fr/stable-diffusion-prompt-generator/" }
+    ]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "inLanguage": "fr",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Le générateur produit-il des prompts négatifs pour Stable Diffusion ?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Oui. Le générateur produit une section dédiée aux prompts négatifs avec les termes de qualité SD standard comme (worst quality:1.4), (bad anatomy:1.3), blurry, watermark, ainsi que des négatifs spécifiques au contenu identifiés dans votre image pour prévenir les artefacts courants." }
+      },
+      {
+        "@type": "Question",
+        "name": "Cela fonctionne-t-il avec SDXL et SD 3.5 ?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Oui. Le générateur produit des prompts compatibles avec SD 1.5, SDXL (Stable Diffusion XL) et SD 3.5. SDXL et SD 3.5 comprennent un langage plus naturel, donc les prompts fonctionnent légèrement différemment — notre générateur utilise le vocabulaire et les plages de poids appropriés pour chaque version." }
+      },
+      {
+        "@type": "Question",
+        "name": "Quelle syntaxe de poids le prompt utilise-t-il ?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Stable Diffusion utilise des parenthèses avec des poids décimaux : (terme:1.2) augmente l'emphase sur ce terme, (terme:0.8) la réduit. Notre générateur applique les poids intelligemment — les termes de style et de qualité critiques comme (masterpiece:1.2) reçoivent des poids plus élevés, tandis que les descripteurs secondaires restent à 1.0 ou moins." }
+      },
+      {
+        "@type": "Question",
+        "name": "Puis-je utiliser ces prompts avec ComfyUI ou Automatic1111 ?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Oui. Les prompts générés utilisent la syntaxe SD standard qui fonctionne dans Automatic1111 et ComfyUI. Collez simplement le prompt positif dans le champ prompt et le prompt négatif dans le champ prompt négatif." }
+      }
+    ]
+  }
+  </script>
+  <!-- Google AdSense -->
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4499206373485728" crossorigin="anonymous"></script>
+  <!-- Web Push Notifications -->
+<script src="https://cdn.onesignal.com/sdks/web/v16/OneSignalSDK.page.js" defer></script>
+<script>
+  window.OneSignalDeferred = window.OneSignalDeferred || [];
+  OneSignalDeferred.push(async function(OneSignal) {
+    await OneSignal.init({
+      appId: "REPLACE_WITH_ONESIGNAL_APP_ID",
+      notifyButton: { enable: false }
+    });
+  });
+</script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "VideoObject",
+    "name": "Stable Diffusion Prompt Generator Demo — Free Image to Prompt Tool",
+    "description": "See how to create Stable Diffusion prompts with negative prompts using the free ImageToPrompt tool. Real demo with full prompt output.",
+    "thumbnailUrl": "https://img.youtube.com/vi/5lcSaYcMuq8/maxresdefault.jpg",
+    "uploadDate": "2026-03-18",
+    "contentUrl": "https://www.youtube.com/watch?v=5lcSaYcMuq8",
+    "embedUrl": "https://www.youtube.com/embed/5lcSaYcMuq8",
+    "duration": "PT3M",
+    "publisher": {
+      "@type": "Organization",
+      "name": "ImageToPrompt",
+      "logo": { "@type": "ImageObject", "url": "https://www.imagetoprompt.dev/favicon.svg" }
+    }
+  }
+  </script>
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="inner">
+      <a href="/fr/" class="site-logo"><img src="/favicon.svg" alt="ImageToPrompt" width="48" height="48"><div class="site-logo-text">ImageTo<span class="accent">Prompt</span><span class="site-logo-sub">G&#233;n&#233;rateur de Prompts IA Gratuit</span></div></a>
+      <nav class="site-nav" aria-label="Navigation principale">
+        <div class="nav-dropdown">
+          <button class="nav-dropdown-trigger" aria-haspopup="true" aria-expanded="false">Tools <span class="nav-chevron" aria-hidden="true">&#9660;</span></button>
+          <div class="nav-dropdown-menu" role="menu">
+            <div class="nav-mega-grid">
+              <div class="nav-mega-col">
+                <div class="nav-mega-heading">&#128444; IMAGE TOOLS</div>
+                <a href="/" role="menuitem" class="nav-mega-tool">Image to Prompt <span class="nav-mega-arrow">&#8594;</span></a>
+                <a href="/text-to-prompt/" role="menuitem" class="nav-mega-tool">Text to Prompt <span class="nav-mega-arrow">&#8594;</span></a>
+                <div class="nav-mega-models-label">Models</div>
+                <div class="nav-mega-models"><a href="/midjourney-prompt-generator/">Midjourney</a><span class="nav-dot">&#xB7;</span><a href="/stable-diffusion-prompt-generator/">SD</a></div>
+                <div class="nav-mega-models"><a href="/flux-prompt-generator/">Flux</a><span class="nav-dot">&#xB7;</span><a href="/dall-e-prompt-generator/">DALL&#xB7;E&#xA0;3</a></div>
+                <div class="nav-mega-models"><a href="/adobe-firefly-prompt-generator/">Firefly</a><span class="nav-dot">&#xB7;</span><a href="/leonardo-ai-prompt-generator/">Leonardo</a></div>
+                <div class="nav-mega-models"><a href="/ideogram-prompt-generator/">Ideogram</a></div>
+              </div>
+              <div class="nav-mega-divider" aria-hidden="true"></div>
+              <div class="nav-mega-col">
+                <div class="nav-mega-heading">&#127909; VIDEO TOOLS</div>
+                <a href="/?tab=image-to-video" role="menuitem" class="nav-mega-tool">Image to Video <span class="nav-mega-arrow">&#8594;</span></a>
+                <a href="/?tab=text-to-video" role="menuitem" class="nav-mega-tool">Text to Video <span class="nav-mega-arrow">&#8594;</span></a>
+                <div class="nav-mega-models-label">Models</div>
+                <div class="nav-mega-models"><a href="/veo-prompt-generator/">Veo</a><span class="nav-dot">&#xB7;</span><a href="/kling-prompt-generator/">Kling</a></div>
+                <div class="nav-mega-models"><a href="/runway-prompt-generator/">Runway</a><span class="nav-dot">&#xB7;</span><a href="/pika-prompt-generator/">Pika</a></div>
+                <div class="nav-mega-models"><a href="/luma-prompt-generator/">Luma</a><span class="nav-dot">&#xB7;</span><a href="/sora-prompt-generator/">Sora</a></div>
+                <div class="nav-mega-models"><a href="/minimax-prompt-generator/">Minimax</a><span class="nav-dot">&#xB7;</span><a href="/stable-video-prompt-generator/">Stable</a></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <a href="/fr/blog/">Blog</a>
+        <a href="/pricing/" class="nav-pill-pricing">Pricing</a>
+        <a href="/about/" class="nav-pill-about">About</a>
+        <a href="/" class="nav-try-free">Essayer &#8594;</a>
+        <button id="theme-toggle" onclick="toggleTheme()" aria-label="Switch theme" title="Switch theme">&#9728;&#xFE0F;</button>
+  </nav>
+    </div>
+  </header>
+
+  <nav class="breadcrumb" aria-label="Fil d'Ariane">
+    <a href="/fr/">Accueil</a><span class="sep">›</span>
+    <span>Générateur de Prompts Stable Diffusion</span>
+  </nav>
+
+  <div class="page-wrapper model-page-wrapper">
+
+    <header class="model-page-hero">
+      <div class="model-badge-hero" style="--model-color:#ff6b35">⚙️ Idéal pour le Contrôle</div>
+      <h1>Générateur de Prompts Stable Diffusion depuis Image — Gratuit</h1>
+      <p class="model-page-subtitle">Convertissez n'importe quelle image en prompt Stable Diffusion complet avec la <code>(syntaxe:pondérée)</code>, les prompts négatifs et les boosters de qualité. Compatible SD 1.5, SDXL et SD 3.5.</p>
+    </header>
+
+    <!-- Outil intégré -->
+    <div class="tool-embed-container">
+      <iframe
+        src="/?model=stable-diffusion&embed=true"
+        title="Générateur de Prompts Stable Diffusion"
+        class="tool-embed-frame"
+        loading="eager"
+        allow="clipboard-write; clipboard-read"
+      ></iframe>
+    </div>
+
+    <!-- Vidéo de démonstration YouTube -->
+    <div class="video-demo-section" style="margin:2.5rem 0;">
+      <h2 style="font-family:'Space Grotesk',sans-serif;font-size:1.25rem;font-weight:700;color:var(--text-primary);margin:0 0 0.5rem;">Voir : Comment ça marche</h2>
+      <p style="color:var(--text-muted);font-size:0.9rem;margin:0 0 1.25rem;">L'outil en action — exemple réel avec sortie de prompt générée par IA.</p>
+      <div style="position:relative;padding-bottom:56.25%;height:0;overflow:hidden;border-radius:12px;border:1px solid var(--border-subtle);">
+        <iframe
+          src="https://www.youtube.com/embed/5lcSaYcMuq8"
+          title="Stable Diffusion Prompt Generator Demo — Free Image to Prompt Tool"
+          frameborder="0"
+          style="position:absolute;top:0;left:0;width:100%;height:100%;border:0;"
+          loading="lazy"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          allowfullscreen>
+        </iframe>
+      </div>
+    </div>
+
+    <!-- Section : Pourquoi utiliser -->
+    <section class="model-features-section">
+      <h2>Pourquoi utiliser des prompts Stable Diffusion ?</h2>
+      <div class="model-features-grid">
+        <div class="model-feature-card" style="--card-accent:#60A5FA">
+          <div class="feature-icon">⚡</div>
+          <h3>Syntaxe spécifique au modèle</h3>
+          <p>Les prompts utilisent la pondération de tokens SD — <code>(keyword:1.2)</code> — et incluent des blocs <code>&lt;lora:...&gt;</code> et des balises de qualité pour AUTOMATIC1111 / ComfyUI.</p>
+        </div>
+        <div class="model-feature-card" style="--card-accent:#60A5FA">
+          <div class="feature-icon">🎯</div>
+          <h3>Paramètres optimisés</h3>
+          <p>Les prompts positifs et négatifs sont générés séparément. Les spécifications de caméra, les poids LoRA et le vocabulaire compatible CFG sont inclus automatiquement.</p>
+        </div>
+        <div class="model-feature-card" style="--card-accent:#60A5FA">
+          <div class="feature-icon">📋</div>
+          <h3>Prêt à coller</h3>
+          <p>Copiez directement dans AUTOMATIC1111, ComfyUI ou InvokeAI. Les blocs de prompt positif et négatif sont clairement séparés pour une utilisation immédiate.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section : En action -->
+    <section class="model-showcase-section">
+      <h2>Voir en action</h2>
+      <div class="model-showcase-grid">
+        <div class="showcase-col">
+          <span class="showcase-label">Image originale</span>
+          <figure class="img-figure">
+            <picture><source srcset="/images/ai-model-comparison-midjourney-vs-stable-diffusion.webp" type="image/webp"><img src="/images/ai-model-comparison-midjourney-vs-stable-diffusion.jpeg" alt="Image originale téléchargée dans ImageToPrompt" width="600" height="400" loading="lazy"></picture>
+            <figcaption>Image originale téléchargée</figcaption>
+          </figure>
+        </div>
+        <div class="showcase-arrow">→</div>
+        <div class="showcase-col">
+          <span class="showcase-label generated" style="--model-color:#60A5FA">Résultat Stable Diffusion</span>
+          <figure class="img-figure">
+            <picture><source srcset="/images/compare1-sd.webp" type="image/webp"><img src="/images/compare1-sd.jpeg" alt="Résultat généré avec Stable Diffusion XL" width="600" height="400" loading="lazy"></picture>
+            <figcaption>Généré avec Stable Diffusion XL</figcaption>
+          </figure>
+        </div>
+      </div>
+      <div class="showcase-prompt-box">
+        <div class="showcase-prompt-header">
+          <span class="showcase-prompt-badge" style="background:rgba(167,139,250,0.12);color:#60A5FA;border-color:rgba(167,139,250,0.25)">⚙️ Prompt Stable Diffusion</span>
+        </div>
+        <code class="showcase-prompt-code">(masterpiece:1.2), best quality, highly detailed, dramatic natural landscape, cinematic lighting, volumetric fog, ultra-detailed, photorealistic, 8k uhd, DSLR, film grain, Fujifilm XT3, &lt;lora:detail_tweaker:0.8&gt;</code>
+      </div>
+    </section>
+
+    <!-- Contenu -->
+    <article class="model-page-content">
+
+      <h2>Comment les prompts Stable Diffusion diffèrent des autres modèles</h2>
+      <p>La syntaxe de prompt de Stable Diffusion est la plus technique parmi les générateurs d'images IA populaires. Contrairement au style propre à virgules de Midjourney ou aux phrases naturelles de DALL-E 3, les prompts SD utilisent un <strong>système de tokens pondérés</strong> avec notation entre parenthèses. Cela vous donne un contrôle fin sur chaque élément de l'image — mais nécessite de connaître la syntaxe.</p>
+      <div class="code-example">
+        <code>(masterpiece:1.2), (ultra-detailed:1.1), cinematic photograph, lone warrior in ancient ruins, dramatic side lighting, volumetric fog, depth of field, (sharp focus:1.1), 8k resolution<br/><br/>Negative: (worst quality:1.4), (bad anatomy:1.3), blurry, watermark, text, low resolution, duplicate, mutated hands</code>
+      </div>
+
+      <h2>Comprendre la syntaxe pondérée</h2>
+      <p>La syntaxe <code>(terme:poids)</code> est la fonctionnalité la plus puissante de Stable Diffusion. Des poids supérieurs à 1.0 augmentent l'influence d'un token sur la sortie ; des poids inférieurs à 1.0 la réduisent. La plage pratique est de 0.5 à 1.5 — aller trop haut cause des artefacts, trop bas rend le terme inefficace.</p>
+      <div class="params-grid">
+        <div class="param-card" style="--c:#ff6b35">
+          <div class="param-name"><code>(masterpiece:1.2)</code></div>
+          <div class="param-desc">Signale au modèle de produire une sortie de haute qualité. L'un des boosters de qualité les plus efficaces dans les checkpoints SD 1.5 et SDXL.</div>
+        </div>
+        <div class="param-card" style="--c:#ff6b35">
+          <div class="param-name"><code>(sujet:1.1)</code></div>
+          <div class="param-desc">Met légèrement en avant votre sujet principal sans saturer le token. Utile pour s'assurer que l'élément principal reste dominant.</div>
+        </div>
+        <div class="param-card" style="--c:#ff6b35">
+          <div class="param-name"><code>(bad anatomy:1.3)</code></div>
+          <div class="param-desc">Un token de prompt négatif critique. Réduire les erreurs anatomiques (surtout les mains et les visages) est l'une des stratégies de prompt négatif les plus importantes.</div>
+        </div>
+        <div class="param-card" style="--c:#ff6b35">
+          <div class="param-name"><code>[terme]</code></div>
+          <div class="param-desc">Les crochets réduisent le poids du token à environ 0.9x. Une syntaxe alternative à <code>(terme:0.9)</code> pour une déemphase subtile.</div>
+        </div>
+      </div>
+
+      <h2>SD 1.5 vs SDXL vs SD 3.5 : lequel choisir ?</h2>
+      <p><strong>SD 1.5</strong> est le checkpoint le plus largement supporté avec des milliers de fine-tunes communautaires (LoRAs, embeddings). Les prompts nécessitent plus de balises de qualité explicites et de prompts négatifs. <strong>SDXL</strong> produit une résolution nativement bien plus élevée (base 1024×1024) et comprend plus de langage naturel. <strong>SD 3.5</strong> est la dernière architecture avec une adhérence au prompt considérablement améliorée et une anatomie humaine plus précise.</p>
+      <p>Notre générateur produit des prompts qui fonctionnent sur les trois versions. Les descripteurs principaux et la syntaxe pondérée sont universellement compatibles, tandis que les balises de qualité sont calibrées pour les meilleurs résultats dans SDXL et SD 3.5.</p>
+
+      <h2>L'importance des prompts négatifs</h2>
+      <p>Contrairement à Midjourney ou DALL-E 3, Stable Diffusion s'appuie fortement sur les prompts négatifs pour éviter les artefacts de génération courants. Sans prompt négatif approprié, les images SD présentent fréquemment une anatomie distordue, des filigranes, un rendu de faible qualité et des problèmes de composition. Notre générateur produit automatiquement une section de prompt négatif ciblant les faiblesses spécifiques les plus susceptibles d'apparaître compte tenu du contenu et du style de votre image.</p>
+
+      <h2>Compatibilité avec les checkpoints</h2>
+      <p>Les prompts générés sont compatibles avec les checkpoints SD les plus populaires : Realistic Vision, DreamShaper, Deliberate, SDXL Base 1.0, Juggernaut XL et RealVisXL. Pour les images de style anime, le générateur adapte le vocabulaire vers des tokens reconnus par des checkpoints comme AnythingV5 et CounterfeitXL.</p>
+
+      <div class="related-blog">
+        <span class="related-label">Guide associé</span>
+        <a href="/blog/stable-diffusion-vs-midjourney-vs-dalle3/">Stable Diffusion vs Midjourney vs DALL-E 3 — Comparaison Complète →</a>
+      </div>
+
+      <!-- FAQ -->
+      <h2>Questions Fréquentes</h2>
+      <div class="faq-list">
+        <details class="faq-item">
+          <summary>Le générateur produit-il des prompts négatifs pour Stable Diffusion ?</summary>
+          <p>Oui. Le générateur produit une section dédiée aux prompts négatifs avec les termes de qualité SD standard comme <code>(worst quality:1.4)</code>, <code>(bad anatomy:1.3)</code>, blurry, watermark, ainsi que des négatifs spécifiques au contenu identifiés dans votre image pour prévenir les artefacts courants.</p>
+        </details>
+        <details class="faq-item">
+          <summary>Cela fonctionne-t-il avec SDXL et SD 3.5 ?</summary>
+          <p>Oui. Le générateur produit des prompts compatibles avec SD 1.5, SDXL et SD 3.5. SDXL et SD 3.5 comprennent un langage plus naturel, donc les prompts fonctionnent légèrement différemment — notre générateur utilise le vocabulaire et les plages de poids appropriés pour chaque version.</p>
+        </details>
+        <details class="faq-item">
+          <summary>Quelle syntaxe de poids le prompt utilise-t-il ?</summary>
+          <p>Stable Diffusion utilise des parenthèses avec des poids décimaux : <code>(terme:1.2)</code> augmente l'emphase, <code>(terme:0.8)</code> la réduit. Notre générateur applique les poids intelligemment — les termes de style et de qualité critiques comme <code>(masterpiece:1.2)</code> reçoivent des poids plus élevés, tandis que les descripteurs secondaires restent à 1.0.</p>
+        </details>
+        <details class="faq-item">
+          <summary>Puis-je utiliser ces prompts avec ComfyUI ou Automatic1111 ?</summary>
+          <p>Oui. Les prompts générés utilisent la syntaxe SD standard qui fonctionne dans Automatic1111 et ComfyUI. Collez simplement le prompt positif dans le champ prompt et le prompt négatif dans le champ prompt négatif.</p>
+        </details>
+      </div>
+
+      <!-- Guides et ressources -->
+      <div class="model-related-section">
+        <h2>Guides et Ressources</h2>
+        <div class="model-related-grid">
+          <a href="/blog/stable-diffusion-prompt-guide/" class="model-related-card">
+            <picture><source srcset="/images/compare1-sd.webp" type="image/webp"><img src="/images/compare1-sd.jpeg" alt="Stable Diffusion Prompt Guide: Tags, Weights & Negative Prompts" loading="lazy"></picture>
+            <div class="model-related-text">
+              <span class="model-related-category">Guide</span>
+              <h4>Stable Diffusion Prompt Guide: Tags, Weights &amp; Negative Prompts</h4>
+            </div>
+          </a>
+          <a href="/blog/negative-prompts-stable-diffusion/" class="model-related-card">
+            <picture><source srcset="/images/compare2-sd.webp" type="image/webp"><img src="/images/compare2-sd.jpeg" alt="Negative Prompts in Stable Diffusion: Complete Guide" loading="lazy"></picture>
+            <div class="model-related-text">
+              <span class="model-related-category">Analyse approfondie</span>
+              <h4>Negative Prompts in Stable Diffusion: Complete Guide</h4>
+            </div>
+          </a>
+          <a href="/blog/stable-diffusion-vs-midjourney-vs-dalle3/" class="model-related-card">
+            <picture><source srcset="/images/compare3-sd.webp" type="image/webp"><img src="/images/compare3-sd.jpeg" alt="Stable Diffusion vs Midjourney vs DALL·E 3" loading="lazy"></picture>
+            <div class="model-related-text">
+              <span class="model-related-category">Comparatif</span>
+              <h4>Stable Diffusion vs Midjourney vs DALL·E 3</h4>
+            </div>
+          </a>
+        </div>
+      </div>
+
+      <!-- Autres modèles -->
+      <div class="other-models-section">
+        <h2>Essayer d'autres générateurs de prompts</h2>
+        <div class="other-models-grid">
+          <a href="/midjourney-prompt-generator/" class="other-model-card" style="--c:#00b4d8">🎨<span>Midjourney</span></a>
+          <a href="/flux-prompt-generator/" class="other-model-card" style="--c:#7c3aed">⚡<span>Flux AI</span></a>
+          <a href="/dall-e-prompt-generator/" class="other-model-card" style="--c:#10a37f">🧠<span>DALL·E 3</span></a>
+          <a href="/adobe-firefly-prompt-generator/" class="other-model-card" style="--c:#ff0000">🦋<span>Adobe Firefly</span></a>
+          <a href="/leonardo-ai-prompt-generator/" class="other-model-card" style="--c:#f59e0b">🎮<span>Leonardo AI</span></a>
+          <a href="/ideogram-prompt-generator/" class="other-model-card" style="--c:#06b6d4">✍️<span>Ideogram</span></a>
+        </div>
+      </div>
+
+      <div style="margin-top:2rem;text-align:center">
+        <a href="/" class="cta-btn">Essayer Gratuitement →</a>
+      </div>
+
+    </article>
+  </div>
+
+  <footer class="footer-4col">
+    <div class="f4-inner">
+      <div class="f4-brand">
+        <img src="/favicon.svg" alt="ImageToPrompt" width="28" height="28">
+        <span class="f4-brand-name">ImageTo<span class="accent">Prompt</span></span>
+        <span class="f4-brand-sub">&mdash; Free AI Prompt Generator</span>
+      </div>
+      <div class="f4-grid">
+        <div class="f4-section">
+          <h4 class="f4-heading">Image Prompt Tools</h4>
+          <a href="/">Image to Prompt</a>
+          <a href="/text-to-prompt/">Text to Prompt</a>
+          <a href="/midjourney-prompt-generator/">Midjourney</a>
+          <a href="/stable-diffusion-prompt-generator/">Stable Diffusion</a>
+          <a href="/flux-prompt-generator/">Flux</a>
+          <a href="/dall-e-prompt-generator/">DALL-E 3</a>
+          <a href="/adobe-firefly-prompt-generator/">Adobe Firefly</a>
+          <a href="/leonardo-ai-prompt-generator/">Leonardo AI</a>
+          <a href="/ideogram-prompt-generator/">Ideogram</a>
+        </div>
+        <div class="f4-section">
+          <h4 class="f4-heading">Video Prompt Tools</h4>
+          <a href="/image-to-video-prompt/">Image to Video Prompt</a>
+          <a href="/text-to-video-prompt/">Text to Video Prompt</a>
+          <a href="/veo-prompt-generator/">Veo / Flow Studio</a>
+          <a href="/kling-prompt-generator/">Kling AI</a>
+          <a href="/runway-prompt-generator/">Runway Gen-3</a>
+          <a href="/pika-prompt-generator/">Pika</a>
+          <a href="/luma-prompt-generator/">Luma Dream Machine</a>
+          <a href="/sora-prompt-generator/">Sora</a>
+          <a href="/minimax-prompt-generator/">Minimax</a>
+          <a href="/stable-video-prompt-generator/">Stable Video</a>
+        </div>
+        <div class="f4-section">
+          <h4 class="f4-heading">Resources</h4>
+          <a href="/blog/">Blog</a>
+          <a href="/about/">About</a>
+          <a href="/pricing/">Pricing</a>
+          <a href="/contact/">Contact</a>
+          <a href="/privacy-policy/">Privacy Policy</a>
+          <a href="/terms-of-service/">Terms of Service</a>
+        </div>
+        <div class="f4-section">
+          <h4 class="f4-heading">Languages</h4>
+          <a href="/">English</a>
+          <a href="/fr/">Fran&#231;ais</a>
+          <a href="/ar/">&#1575;&#1604;&#1593;&#1585;&#1576;&#1610;&#1577;</a>
+          <a href="/es/">Espa&#241;ol</a>
+          <a href="/ko/">&#54620;&#44397;&#50612;</a>
+          <a href="/ja/">&#26085;&#26412;&#35486;</a>
+        </div>
+      </div>
+      <div class="f4-bottom">
+        <p>&#169; 2026 ImageToPrompt.dev &#8212; Free AI Prompt Generator</p>
+        <p>Your images are never stored. All analysis is ephemeral and private.</p>
+      </div>
+    </div>
+  </footer>
+
+<script src="/nav.js" defer></script>
+  <script>
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', function() {
+    navigator.serviceWorker.register('/sw.js')
+      .catch(function(err) { console.warn('SW registration failed:', err); });
+  });
+}
+</script>
+</body>
+</html>

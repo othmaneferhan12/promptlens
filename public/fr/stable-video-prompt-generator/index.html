@@ -1,0 +1,441 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <script src="/theme-toggle.js"></script>
+  <meta charset="UTF-8" />
+  <link rel="dns-prefetch" href="https://www.googletagmanager.com">
+<link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0" />
+  <meta name="robots" content="max-image-preview:large, index, follow">
+  <meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="ImageToPrompt">
+  <title>Générateur de Prompts Stable Video Diffusion — Gratuit | ImageToPrompt</title>
+  <meta name="description" content="Créez des prompts Stable Video Diffusion avec les paramètres motion_bucket_id, fps et augmentation_level. Générateur open source pour ComfyUI et SD WebUI." />
+  <link rel="canonical" href="https://www.imagetoprompt.dev/fr/stable-video-prompt-generator/" />
+  <link rel="alternate" hreflang="fr" href="https://www.imagetoprompt.dev/fr/stable-video-prompt-generator/" />
+  <link rel="alternate" hreflang="en" href="https://www.imagetoprompt.dev/stable-video-prompt-generator/" />
+  <link rel="alternate" hreflang="ar" href="https://www.imagetoprompt.dev/ar/stable-video-prompt-generator/" />
+  <link rel="alternate" hreflang="x-default" href="https://www.imagetoprompt.dev/stable-video-prompt-generator/" />
+  <meta property="og:title" content="Générateur de Prompts Stable Video Diffusion — Gratuit | ImageToPrompt" />
+  <meta property="og:description" content="Créez des prompts Stable Video Diffusion avec les paramètres motion_bucket_id, fps et augmentation_level. Générateur open source pour ComfyUI et SD WebUI." />
+  <meta property="og:url" content="https://www.imagetoprompt.dev/fr/stable-video-prompt-generator/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="https://www.imagetoprompt.dev/og-image.png" />
+  <meta property="og:site_name" content="ImageToPrompt" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Générateur de Prompts Stable Video Diffusion — Gratuit | ImageToPrompt" />
+  <meta name="twitter:description" content="Créez des prompts Stable Video Diffusion avec les paramètres motion_bucket_id, fps et augmentation_level. Générateur open source pour ComfyUI et SD WebUI." />
+  <meta name="twitter:image" content="https://www.imagetoprompt.dev/og-image.png" />
+  <meta name="twitter:site" content="@imagetoprompt" />
+  <link rel="icon" type="image/svg+xml" href="/favicon-video.svg" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="48x48" href="/favicon-48.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+  <link rel="manifest" href="/site.webmanifest" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="/fonts/space-grotesk-700.woff2" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="/fonts/inter-400.woff2" />
+  <link rel="stylesheet" href="/theme.css">
+  <link rel="preload" href="/blog.css" as="style" onload="this.onload=null;this.rel='stylesheet'"><noscript><link rel="stylesheet" href="/blog.css"></noscript>
+  <link rel="preload" href="/model-pages.css" as="style" onload="this.onload=null;this.rel='stylesheet'"><noscript><link rel="stylesheet" href="/model-pages.css"></noscript>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "Générateur de Prompts Stable Video Diffusion",
+    "applicationCategory": "DesignApplication",
+    "operatingSystem": "Web",
+    "url": "https://www.imagetoprompt.dev/fr/stable-video-prompt-generator/",
+    "description": "Créez des prompts Stable Video Diffusion avec les paramètres motion_bucket_id, fps et augmentation_level. Générateur open source pour ComfyUI et SD WebUI.",
+    "inLanguage": "fr",
+    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "EUR" },
+    "publisher": {
+      "@type": "Organization",
+      "name": "ImageToPrompt",
+      "url": "https://www.imagetoprompt.dev/"
+    }
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Accueil", "item": "https://www.imagetoprompt.dev/fr/" },
+      { "@type": "ListItem", "position": 2, "name": "Générateur de Prompts Stable Video", "item": "https://www.imagetoprompt.dev/fr/stable-video-prompt-generator/" }
+    ]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "inLanguage": "fr",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Qu'est-ce que Stable Video Diffusion ?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Stable Video Diffusion (SVD) est le modèle de génération vidéo open source de Stability AI. Il fonctionne principalement comme un modèle image-vers-vidéo : vous fournissez une image de conditionnement (la première image), et SVD génère les images suivantes en fonction du type de mouvement, des FPS et de la quantité de mouvement que vous spécifiez. Sa nature open source est unique — vous pouvez télécharger les poids, l'exécuter localement sur votre propre matériel et le fine-tuner pour des cas d'usage spécifiques." }
+      },
+      {
+        "@type": "Question",
+        "name": "Comment exécuter SVD localement ?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Les moyens les plus populaires pour exécuter SVD localement sont ComfyUI et le SD WebUI d'Automatic1111 avec l'extension SVD. Vous aurez besoin des poids de modèle SVD ou SVD-XT depuis Hugging Face (stabilityai/stable-video-diffusion-img2vid ou img2vid-xt), et d'un GPU avec au moins 8 Go de VRAM (16 Go recommandés pour SVD-XT en pleine résolution). ComfyUI est recommandé pour sa flexibilité de workflow basé sur les nœuds." }
+      },
+      {
+        "@type": "Question",
+        "name": "Que contrôle motion_bucket_id ?",
+        "acceptedAnswer": { "@type": "Answer", "text": "motion_bucket_id est le paramètre principal pour contrôler la quantité de mouvement dans votre sortie SVD. Il accepte des valeurs de 0 à 255. Les valeurs basses (0–40) produisent un mouvement subtil et minimal — idéal pour les animations ambiantes douces. Les valeurs moyennes (60–120) produisent un mouvement naturel et modéré approprié pour la plupart des scènes. Les valeurs élevées (150–255) produisent une sortie dramatique et très mouvementée." }
+      },
+      {
+        "@type": "Question",
+        "name": "Quelle est la différence entre SVD et SVD-XT ?",
+        "acceptedAnswer": { "@type": "Answer", "text": "SVD génère 14 images à une résolution maximale de 576x1024 pixels. SVD-XT (Extended) génère 25 images à la même résolution, produisant des clips plus longs et plus fluides. SVD-XT nécessite plus de VRAM et de temps de calcul. Les deux modèles acceptent les mêmes paramètres motion_bucket_id, fps_id et augmentation_level. SVD-XT est généralement préféré lorsque le matériel le permet." }
+      }
+    ]
+  }
+  </script>
+    <!-- Google AdSense -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4499206373485728" crossorigin="anonymous"></script>
+    <!-- Web Push Notifications -->
+<script src="https://cdn.onesignal.com/sdks/web/v16/OneSignalSDK.page.js" defer></script>
+<script>
+  window.OneSignalDeferred = window.OneSignalDeferred || [];
+  OneSignalDeferred.push(async function(OneSignal) {
+    await OneSignal.init({
+      appId: "REPLACE_WITH_ONESIGNAL_APP_ID",
+      notifyButton: { enable: false }
+    });
+  });
+</script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "VideoObject",
+    "name": "Stable Video Diffusion Prompt Generator Demo — Free AI Tool",
+    "description": "See how to generate Stable Video Diffusion prompts with ImageToPrompt. Free demo with motion and scene prompt output.",
+    "thumbnailUrl": "https://img.youtube.com/vi/5lcSaYcMuq8/maxresdefault.jpg",
+    "uploadDate": "2026-03-18",
+    "contentUrl": "https://www.youtube.com/watch?v=5lcSaYcMuq8",
+    "embedUrl": "https://www.youtube.com/embed/5lcSaYcMuq8",
+    "duration": "PT3M",
+    "publisher": {
+      "@type": "Organization",
+      "name": "ImageToPrompt",
+      "logo": { "@type": "ImageObject", "url": "https://www.imagetoprompt.dev/favicon.svg" }
+    }
+  }
+  </script>
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="inner">
+      <a href="/fr/" class="site-logo"><img src="/favicon.svg" alt="ImageToPrompt" width="48" height="48"><div class="site-logo-text">ImageTo<span class="accent">Prompt</span><span class="site-logo-sub">G&#233;n&#233;rateur de Prompts IA Gratuit</span></div></a>
+      <nav class="site-nav" aria-label="Navigation principale">
+        <div class="nav-dropdown">
+          <button class="nav-dropdown-trigger" aria-haspopup="true" aria-expanded="false">Tools <span class="nav-chevron" aria-hidden="true">&#9660;</span></button>
+          <div class="nav-dropdown-menu" role="menu">
+            <div class="nav-mega-grid">
+              <div class="nav-mega-col">
+                <div class="nav-mega-heading">&#128444; IMAGE TOOLS</div>
+                <a href="/" role="menuitem" class="nav-mega-tool">Image to Prompt <span class="nav-mega-arrow">&#8594;</span></a>
+                <a href="/text-to-prompt/" role="menuitem" class="nav-mega-tool">Text to Prompt <span class="nav-mega-arrow">&#8594;</span></a>
+                <div class="nav-mega-models-label">Models</div>
+                <div class="nav-mega-models"><a href="/midjourney-prompt-generator/">Midjourney</a><span class="nav-dot">&#xB7;</span><a href="/stable-diffusion-prompt-generator/">SD</a></div>
+                <div class="nav-mega-models"><a href="/flux-prompt-generator/">Flux</a><span class="nav-dot">&#xB7;</span><a href="/dall-e-prompt-generator/">DALL&#xB7;E&#xA0;3</a></div>
+                <div class="nav-mega-models"><a href="/adobe-firefly-prompt-generator/">Firefly</a><span class="nav-dot">&#xB7;</span><a href="/leonardo-ai-prompt-generator/">Leonardo</a></div>
+                <div class="nav-mega-models"><a href="/ideogram-prompt-generator/">Ideogram</a></div>
+              </div>
+              <div class="nav-mega-divider" aria-hidden="true"></div>
+              <div class="nav-mega-col">
+                <div class="nav-mega-heading">&#127909; VIDEO TOOLS</div>
+                <a href="/?tab=image-to-video" role="menuitem" class="nav-mega-tool">Image to Video <span class="nav-mega-arrow">&#8594;</span></a>
+                <a href="/?tab=text-to-video" role="menuitem" class="nav-mega-tool">Text to Video <span class="nav-mega-arrow">&#8594;</span></a>
+                <div class="nav-mega-models-label">Models</div>
+                <div class="nav-mega-models"><a href="/veo-prompt-generator/">Veo</a><span class="nav-dot">&#xB7;</span><a href="/kling-prompt-generator/">Kling</a></div>
+                <div class="nav-mega-models"><a href="/runway-prompt-generator/">Runway</a><span class="nav-dot">&#xB7;</span><a href="/pika-prompt-generator/">Pika</a></div>
+                <div class="nav-mega-models"><a href="/luma-prompt-generator/">Luma</a><span class="nav-dot">&#xB7;</span><a href="/sora-prompt-generator/">Sora</a></div>
+                <div class="nav-mega-models"><a href="/minimax-prompt-generator/">Minimax</a><span class="nav-dot">&#xB7;</span><a href="/stable-video-prompt-generator/">Stable</a></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <a href="/fr/blog/">Blog</a>
+        <a href="/pricing/" class="nav-pill-pricing">Pricing</a>
+        <a href="/about/" class="nav-pill-about">About</a>
+        <a href="/fr/" class="nav-try-free">Essayer &#8594;</a>
+        <button id="theme-toggle" onclick="toggleTheme()" aria-label="Switch theme" title="Switch theme">&#9728;&#xFE0F;</button>
+  </nav>
+    </div>
+  </header>
+
+  <nav class="breadcrumb" aria-label="Fil d'Ariane">
+    <a href="/fr/">Accueil</a><span class="sep">›</span>
+    <span>Générateur de Prompts Stable Video</span>
+  </nav>
+
+  <div class="page-wrapper model-page-wrapper">
+
+    <header class="model-page-hero">
+      <div class="model-badge-hero" style="--model-color:#8B5CF6">&#9881;&#65039; Idéal pour l'Open Source</div>
+      <h1>Générateur Gratuit de Prompts Stable Video Diffusion</h1>
+      <p class="model-page-subtitle">Générez des prompts Stable Video Diffusion avec les paramètres de quantité de mouvement, fréquence d'images et conditionnement. Parfait pour les workflows ComfyUI, SD WebUI et déploiement local.</p>
+    </header>
+
+    <!-- Outil intégré -->
+    <div class="tool-embed-container">
+      <iframe
+        src="/?tab=video&model=stable-video&embed=true"
+        title="Stable Video Diffusion Prompt Generator Tool"
+        class="tool-embed-frame"
+        loading="eager"
+        allow="clipboard-write; clipboard-read"
+      ></iframe>
+    </div>
+
+    <!-- Vidéo de démonstration YouTube -->
+      <div class="video-demo-section" style="margin:2.5rem 0;">
+        <h2 style="font-family:'Space Grotesk',sans-serif;font-size:1.25rem;font-weight:700;color:var(--text-primary);margin:0 0 0.5rem;">Voir : Comment ça marche</h2>
+        <p style="color:var(--text-muted);font-size:0.9rem;margin:0 0 1.25rem;">Voyez l'outil en action — exemple réel avec une sortie de prompt générée par IA.</p>
+        <div style="position:relative;padding-bottom:56.25%;height:0;overflow:hidden;border-radius:12px;border:1px solid var(--border-subtle);">
+          <iframe
+            src="https://www.youtube.com/embed/5lcSaYcMuq8"
+            title="Stable Video Diffusion Prompt Generator Demo — Free AI Tool"
+            frameborder="0"
+            style="position:absolute;top:0;left:0;width:100%;height:100%;border:0;"
+            loading="lazy"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowfullscreen>
+          </iframe>
+        </div>
+      </div>
+
+    <!-- Section : Pourquoi choisir SVD -->
+    <section class="model-features-section">
+      <h2>Pourquoi choisir Stable Video Diffusion</h2>
+      <div class="model-features-grid">
+        <div class="model-feature-card" style="--card-accent:#8B5CF6">
+          <div class="feature-icon">&#9881;&#65039;</div>
+          <h3>Entièrement open source</h3>
+          <p>Les poids du modèle SVD sont disponibles gratuitement sur Hugging Face. Téléchargez, exécutez localement, fine-tunez et intégrez dans n'importe quel pipeline — sans abonnements, sans limites de taux, confidentialité totale.</p>
+        </div>
+        <div class="model-feature-card" style="--card-accent:#8B5CF6">
+          <div class="feature-icon">&#127774;</div>
+          <h3>Conditionnement par image</h3>
+          <p>SVD fonctionne à partir d'une image de référence (première image), ce qui le rend idéal pour animer vos propres œuvres d'art, photos ou rendus. Le visuel de départ est toujours exactement ce que vous définissez.</p>
+        </div>
+        <div class="model-feature-card" style="--card-accent:#8B5CF6">
+          <div class="feature-icon">&#127918;</div>
+          <h3>Contrôle précis des paramètres</h3>
+          <p>Contrôlez la quantité de mouvement avec <code>motion_bucket_id</code>, la fréquence d'images avec <code>fps_id</code>, et la force de conditionnement avec <code>augmentation_level</code> — sans approximations.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contenu -->
+    <article class="model-page-content">
+
+      <h2>Qu'est-ce que Stable Video Diffusion ?</h2>
+      <p>Stable Video Diffusion (SVD) est <strong>le modèle de génération vidéo open source de Stability AI</strong>. Contrairement aux modèles vidéo commerciaux qui s'exécutent dans le cloud, SVD peut être téléchargé et exécuté entièrement sur votre propre matériel — ce qui en fait le modèle de choix pour les développeurs, les chercheurs, les créateurs soucieux de leur vie privée et toute personne souhaitant un contrôle total sur son pipeline de génération vidéo.</p>
+      <p>SVD existe en deux variantes : le <strong>SVD</strong> original (14 images, jusqu'à 576×1024) et <strong>SVD-XT</strong> (25 images, même résolution). SVD-XT produit des animations plus longues et plus fluides et est généralement préféré lorsque le matériel le permet. Les deux modèles fonctionnent comme des générateurs image-vers-vidéo : vous fournissez une image de conditionnement comme première image, puis décrivez le mouvement que vous souhaitez lui appliquer.</p>
+
+      <h2>Paramètres techniques SVD</h2>
+      <p>Contrairement aux modèles vidéo axés sur le texte, le comportement de SVD est largement façonné par des <strong>paramètres numériques</strong> en plus d'une description de mouvement. Les comprendre vous donne un contrôle précis :</p>
+
+      <div class="params-grid">
+        <div class="param-card" style="--c:#8B5CF6">
+          <div class="param-name"><code>motion_bucket_id</code></div>
+          <div class="param-desc">Plage : 0–255. Contrôle la quantité globale de mouvement dans la sortie. Valeurs basses (0–40) = mouvement ambiant subtil. Moyennes (60–120) = mouvement naturel et modéré. Élevées (150–255) = mouvement dramatique et très énergique. La valeur par défaut est environ 127 pour des résultats équilibrés.</div>
+        </div>
+        <div class="param-card" style="--c:#8B5CF6">
+          <div class="param-name"><code>fps_id</code></div>
+          <div class="param-desc">Suggère la fréquence d'images pour l'interprétation du rythme de mouvement. Valeurs courantes : 6, 8, 12, 24. Des FPS plus bas rendent le mouvement plus saccadé ; des FPS plus élevés créent un mouvement plus fluide et continu. Cela ne modifie pas les FPS de lecture réels du fichier de sortie — cela affecte la distribution du mouvement sur les images.</div>
+        </div>
+        <div class="param-card" style="--c:#8B5CF6">
+          <div class="param-name"><code>augmentation_level</code></div>
+          <div class="param-desc">Plage : 0,0–1,0. Contrôle la quantité de bruit ajoutée à l'image de conditionnement. À 0, la sortie correspond étroitement à votre image de référence. Des valeurs plus élevées donnent au modèle plus de liberté pour s'écarter des détails visuels de l'image d'entrée. Utilisez 0,02–0,05 pour des résultats fidèles ; 0,1+ pour des variations créatives.</div>
+        </div>
+      </div>
+
+      <h2>Points forts de SVD</h2>
+      <ul class="tips-list">
+        <li><strong>Open source / auto-hébergé :</strong> Contrôle total, pas de coûts API, capable de fonctionner hors ligne et préservant la confidentialité pour les contenus sensibles.</li>
+        <li><strong>Personnalisable par fine-tuning :</strong> SVD peut être fine-tuné sur des jeux de données personnalisés pour des styles d'animation spécifiques à un domaine — utilisé dans les pipelines VFX et les outils créatifs.</li>
+        <li><strong>Fonctionne bien avec le conditionnement par image :</strong> Parce qu'il est conçu autour d'une image de référence, vous savez toujours exactement quel sera votre visuel de départ.</li>
+        <li><strong>Intégration ComfyUI et SD WebUI :</strong> Écosystème mature avec des nœuds, extensions et workflows communautaires étendus pour SVD.</li>
+        <li><strong>Mouvement contrôlable :</strong> <code>motion_bucket_id</code> offre un contrôle déterministe sur l'intensité du mouvement que la plupart des modèles commerciaux n'exposent pas.</li>
+      </ul>
+
+      <h2>Exemples de structures de prompts SVD</h2>
+
+      <h3>Scène naturelle — Sentier forestier</h3>
+      <div class="code-example">
+        <code>Reference frame: forest path in morning. Motion: gentle camera push-in along path, leaves swaying, light shifting through canopy. motion_bucket_id: 80, fps: 8, 3 seconds</code>
+      </div>
+      <p>Un <code>motion_bucket_id</code> modéré de 80 produit un mouvement ambiant naturel. Le déplacement de caméra combiné au mouvement environnemental (feuilles, lumière) crée un résultat cinématographique sans dramatiser excessivement la scène simple.</p>
+
+      <h3>Portrait — Animation subtile</h3>
+      <div class="code-example">
+        <code>Reference frame: portrait of woman. Motion: subtle head turn right, hair movement, eyes blink naturally. motion_bucket_id: 40, fps: 12, 2 seconds</code>
+      </div>
+      <p>Un <code>motion_bucket_id</code> bas (40) est approprié pour les animations de portrait où vous souhaitez une subtilité réaliste plutôt qu'un mouvement exagéré. Des FPS plus élevés (12) rendent le mouvement facial et des cheveux fluide et naturel.</p>
+
+      <h3>Paysage — Horizon océanique</h3>
+      <div class="code-example">
+        <code>Reference frame: ocean horizon. Motion: waves advancing and retreating, camera static, horizon stable. motion_bucket_id: 100, fps: 8, 4 seconds</code>
+      </div>
+      <p>Un <code>motion_bucket_id</code> plus élevé (100) est approprié pour le mouvement dynamique de l'eau. Indiquer explicitement « camera static, horizon stable » guide SVD pour concentrer l'énergie du mouvement sur les vagues plutôt que sur l'ensemble de l'image.</p>
+
+      <h2>Conseils pour exécuter SVD localement</h2>
+      <ul class="tips-list">
+        <li><strong>ComfyUI est l'interface recommandée :</strong> Le nœud SVD dans ComfyUI donne accès direct à tous les paramètres. Utilisez le workflow SVD officiel de ComfyUI du dépôt Stability AI comme point de départ.</li>
+        <li><strong>Commencez avec <code>motion_bucket_id : 100–127</code> :</strong> Cette plage équilibrée produit de bons résultats pour la plupart des scènes. Ajustez vers le haut pour plus de dynamisme, vers le bas pour une sortie plus calme.</li>
+        <li><strong>Utilisez des images de conditionnement de haute qualité :</strong> SVD tentera de maintenir la fidélité à votre image de référence. Les images d'entrée floues ou basse résolution produisent des vidéos de sortie floues.</li>
+        <li><strong>Définissez <code>augmentation_level</code> bas (0,02) :</strong> Sauf si vous souhaitez une déviation créative de votre image de référence, gardez-le près de zéro pour des résultats fidèles.</li>
+        <li><strong>SVD-XT pour les clips plus longs :</strong> Si votre GPU dispose de 16 Go+ de VRAM, préférez SVD-XT pour les images supplémentaires et les arcs de mouvement plus fluides qu'il fournit.</li>
+        <li><strong>Expérimentez par lots avec motion_bucket_id :</strong> De petits changements incrémentiels (p. ex., 80 vs 100 vs 120) peuvent produire des résultats significativement différents. Exécutez plusieurs générations pour trouver le réglage idéal pour chaque scène.</li>
+      </ul>
+
+      <div class="related-blog">
+        <span class="related-label">Guide associé</span>
+        <a href="/blog/video-prompt-guide-2026/">Guide des Prompts Vidéo IA 2026 : Rédigez de Meilleurs Prompts pour Chaque Modèle &#8594;</a>
+      </div>
+
+      <!-- FAQ -->
+      <h2>Questions Fréquentes</h2>
+      <div class="faq-list">
+        <details class="faq-item">
+          <summary>Qu'est-ce que Stable Video Diffusion ?</summary>
+          <p>Stable Video Diffusion (SVD) est le modèle de génération vidéo open source de Stability AI. Il fonctionne principalement comme un modèle image-vers-vidéo : vous fournissez une image de conditionnement comme première image, et SVD génère les images suivantes en fonction du type de mouvement, des FPS et de la quantité de mouvement que vous spécifiez. Sa nature open source signifie que vous pouvez télécharger les poids, l'exécuter localement sur votre propre matériel et le fine-tuner pour des cas d'usage spécifiques.</p>
+        </details>
+        <details class="faq-item">
+          <summary>Comment exécuter SVD localement ?</summary>
+          <p>Les moyens les plus populaires pour exécuter SVD localement sont ComfyUI et le SD WebUI d'Automatic1111 avec l'extension SVD. Vous aurez besoin des poids de modèle SVD ou SVD-XT depuis Hugging Face, et d'un GPU avec au moins 8 Go de VRAM (16 Go recommandés pour SVD-XT en pleine résolution). ComfyUI est recommandé pour sa flexibilité de workflow basé sur les nœuds et son écosystème communautaire actif.</p>
+        </details>
+        <details class="faq-item">
+          <summary>Que contrôle motion_bucket_id ?</summary>
+          <p><code>motion_bucket_id</code> est le paramètre principal pour contrôler la quantité de mouvement dans votre sortie SVD. Il accepte des valeurs de 0 à 255. Les valeurs basses (0–40) produisent un mouvement subtil et minimal — idéal pour les animations ambiantes douces. Les valeurs moyennes (60–120) produisent un mouvement naturel et modéré approprié pour la plupart des scènes. Les valeurs élevées (150–255) produisent une sortie dramatique et très mouvementée.</p>
+        </details>
+        <details class="faq-item">
+          <summary>Quelle est la différence entre SVD et SVD-XT ?</summary>
+          <p>SVD génère 14 images à une résolution maximale de 576x1024 pixels. SVD-XT (Extended) génère 25 images à la même résolution, produisant des clips plus longs et plus fluides. SVD-XT nécessite plus de VRAM et de temps de calcul. Les deux modèles acceptent les mêmes paramètres <code>motion_bucket_id</code>, <code>fps_id</code> et <code>augmentation_level</code>. SVD-XT est généralement préféré lorsque le matériel suffisant est disponible.</p>
+        </details>
+      </div>
+
+      <!-- Articles de blog associés -->
+      <div class="model-related-section">
+        <h2>Guides et Ressources sur les Prompts Vidéo</h2>
+        <div class="model-related-grid">
+          <a href="/blog/video-prompt-guide-2026/" class="model-related-card">
+            <picture><source srcset="/images/ai-prompt-cinematic-portrait-style.webp" type="image/webp"><img src="/images/ai-prompt-cinematic-portrait-style.jpeg" alt="Guide des Prompts Vidéo IA 2026" loading="lazy"></picture>
+            <div class="model-related-text">
+              <span class="model-related-category">Guide</span>
+              <h4>Guide des Prompts Vidéo IA 2026 : Rédigez de Meilleurs Prompts pour Chaque Modèle</h4>
+            </div>
+          </a>
+          <a href="/blog/veo-vs-kling-vs-runway/" class="model-related-card">
+            <picture><source srcset="/images/ai-model-comparison-midjourney-vs-stable-diffusion.webp" type="image/webp"><img src="/images/ai-model-comparison-midjourney-vs-stable-diffusion.jpeg" alt="Veo vs Kling vs Runway vs Sora Comparaison" loading="lazy"></picture>
+            <div class="model-related-text">
+              <span class="model-related-category">Comparaison</span>
+              <h4>Veo vs Kling vs Runway vs Sora : Comparaison Complète des Générateurs Vidéo IA</h4>
+            </div>
+          </a>
+          <a href="/stable-diffusion-prompt-generator/" class="model-related-card">
+            <picture><source srcset="/images/compare1-sd.webp" type="image/webp"><img src="/images/compare1-sd.jpeg" alt="Stable Diffusion Prompt Generator" loading="lazy"></picture>
+            <div class="model-related-text">
+              <span class="model-related-category">Outil</span>
+              <h4>Générateur de Prompts Stable Diffusion</h4>
+            </div>
+          </a>
+        </div>
+      </div>
+
+      <!-- Autres modèles vidéo -->
+      <div class="other-models-section">
+        <h2>Essayez d'autres générateurs de prompts vidéo</h2>
+        <div class="other-models-grid">
+          <a href="/fr/veo-prompt-generator/" class="other-model-card" style="--c:#4285F4">&#127909;<span>Veo</span></a>
+          <a href="/fr/kling-prompt-generator/" class="other-model-card" style="--c:#FF6B35">&#127910;<span>Kling</span></a>
+          <a href="/fr/runway-prompt-generator/" class="other-model-card" style="--c:#E91E8C">&#127911;<span>Runway Gen-3</span></a>
+          <a href="/fr/pika-prompt-generator/" class="other-model-card" style="--c:#6C63FF">&#9889;<span>Pika</span></a>
+          <a href="/fr/luma-prompt-generator/" class="other-model-card" style="--c:#FFD700">&#127914;<span>Luma</span></a>
+          <a href="/fr/sora-prompt-generator/" class="other-model-card" style="--c:#10A37F">&#127775;<span>Sora</span></a>
+          <a href="/fr/minimax-prompt-generator/" class="other-model-card" style="--c:#845EF7">&#127935;<span>Minimax / Hailuo</span></a>
+        </div>
+      </div>
+
+    </article>
+  </div>
+
+  <footer class="footer-4col">
+    <div class="f4-inner">
+      <div class="f4-brand">
+        <img src="/favicon.svg" alt="ImageToPrompt" width="28" height="28">
+        <span class="f4-brand-name">ImageTo<span class="accent">Prompt</span></span>
+        <span class="f4-brand-sub">&mdash; Free AI Prompt Generator</span>
+      </div>
+      <div class="f4-grid">
+        <div class="f4-section">
+          <h4 class="f4-heading">Image Prompt Tools</h4>
+          <a href="/">Image to Prompt</a>
+          <a href="/text-to-prompt/">Text to Prompt</a>
+          <a href="/midjourney-prompt-generator/">Midjourney</a>
+          <a href="/stable-diffusion-prompt-generator/">Stable Diffusion</a>
+          <a href="/flux-prompt-generator/">Flux</a>
+          <a href="/dall-e-prompt-generator/">DALL-E 3</a>
+          <a href="/adobe-firefly-prompt-generator/">Adobe Firefly</a>
+          <a href="/leonardo-ai-prompt-generator/">Leonardo AI</a>
+          <a href="/ideogram-prompt-generator/">Ideogram</a>
+        </div>
+        <div class="f4-section">
+          <h4 class="f4-heading">Video Prompt Tools</h4>
+          <a href="/image-to-video-prompt/">Image to Video Prompt</a>
+          <a href="/text-to-video-prompt/">Text to Video Prompt</a>
+          <a href="/veo-prompt-generator/">Veo / Flow Studio</a>
+          <a href="/kling-prompt-generator/">Kling AI</a>
+          <a href="/runway-prompt-generator/">Runway Gen-3</a>
+          <a href="/pika-prompt-generator/">Pika</a>
+          <a href="/luma-prompt-generator/">Luma Dream Machine</a>
+          <a href="/sora-prompt-generator/">Sora</a>
+          <a href="/minimax-prompt-generator/">Minimax</a>
+          <a href="/stable-video-prompt-generator/">Stable Video</a>
+        </div>
+        <div class="f4-section">
+          <h4 class="f4-heading">Resources</h4>
+          <a href="/blog/">Blog</a>
+          <a href="/about/">About</a>
+          <a href="/pricing/">Pricing</a>
+          <a href="/contact/">Contact</a>
+          <a href="/privacy-policy/">Privacy Policy</a>
+          <a href="/terms-of-service/">Terms of Service</a>
+        </div>
+        <div class="f4-section">
+          <h4 class="f4-heading">Languages</h4>
+          <a href="/">English</a>
+          <a href="/fr/">Fran&#231;ais</a>
+          <a href="/ar/">&#1575;&#1604;&#1593;&#1585;&#1576;&#1610;&#1577;</a>
+          <a href="/es/">Espa&#241;ol</a>
+          <a href="/ko/">&#54620;&#44397;&#50612;</a>
+          <a href="/ja/">&#26085;&#26412;&#35486;</a>
+        </div>
+      </div>
+      <div class="f4-bottom">
+        <p>&#169; 2026 ImageToPrompt.dev &#8212; Free AI Prompt Generator</p>
+        <p>Your images are never stored. All analysis is ephemeral and private.</p>
+      </div>
+    </div>
+  </footer>
+
+<script src="/nav.js" defer></script>
+  <script>
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', function() {
+    navigator.serviceWorker.register('/sw.js')
+      .catch(function(err) { console.warn('SW registration failed:', err); });
+  });
+}
+</script>
+</body>
+</html>
