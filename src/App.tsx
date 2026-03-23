@@ -378,13 +378,8 @@ export default function App() {
                   <>
                     {t('hero.titleVideo')}{t('hero.titleVideo') ? ' ' : ''}
                     <span
-                      style={{
-                        background: 'linear-gradient(135deg, #a855f7, #06b6d4)',
-                        WebkitBackgroundClip: 'text',
-                        backgroundClip: 'text',
-                        WebkitTextFillColor: 'transparent',
-                        color: 'transparent',
-                      }}
+                      className="gradient-clip"
+                      style={{ background: 'linear-gradient(135deg, #a855f7, #06b6d4)' }}
                     >
                       {t('hero.titleVideoHighlight')}
                     </span>
@@ -393,14 +388,8 @@ export default function App() {
                   <>
                     {t('hero.title')}{' '}
                     <span
-                      className="ml-2"
-                      style={{
-                        background: 'linear-gradient(135deg, var(--accent-lens), var(--accent-cyan))',
-                        WebkitBackgroundClip: 'text',
-                        backgroundClip: 'text',
-                        WebkitTextFillColor: 'transparent',
-                        color: 'transparent',
-                      }}
+                      className="ml-2 gradient-clip"
+                      style={{ background: 'linear-gradient(135deg, var(--accent-lens), var(--accent-cyan))' }}
                     >
                       {t('hero.titleHighlight')}
                     </span>

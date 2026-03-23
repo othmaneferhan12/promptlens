@@ -145,7 +145,7 @@ export default function Header({ onHistoryOpen, hasHistory }: HeaderProps) {
           <img src="/favicon.svg" alt="ImageToPrompt" width="40" height="40" className="rounded-xl flex-shrink-0" />
           <div className="flex flex-col leading-tight">
             <span className="font-grotesk text-[1.0625rem] font-700 text-[var(--text-primary)] tracking-tight whitespace-nowrap">
-              ImageTo<span style={{ background: 'linear-gradient(135deg, #e040fb, #f06292)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>Prompt</span>
+              ImageTo<span className="gradient-clip" style={{ background: 'linear-gradient(135deg, #e040fb, #f06292)' }}>Prompt</span>
             </span>
             <span className="hidden sm:block font-inter text-[0.625rem] text-[var(--text-secondary)] mt-0.5 whitespace-nowrap">
               {t('hero.tagline')}

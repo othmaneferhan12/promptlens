@@ -262,9 +262,20 @@ body {
 
   .text-gradient-lens {
     background: linear-gradient(135deg, var(--accent-lens), var(--accent-cyan));
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
+    -webkit-background-clip: text !important;
+    -webkit-text-fill-color: transparent !important;
+    background-clip: text !important;
+    color: transparent !important;
+    transition: none !important;
+  }
+
+  /* Generic gradient-clip helper — pair with inline style={{ background: '...' }} */
+  .gradient-clip {
+    -webkit-background-clip: text !important;
+    -webkit-text-fill-color: transparent !important;
+    background-clip: text !important;
+    color: transparent !important;
+    transition: none !important;
   }
 
   .border-accent {

@@ -57,7 +57,7 @@ export default function SEOFooter() {
         <div className="flex items-center gap-2.5 mb-8">
           <img src="/favicon.svg" alt="" width="28" height="28" className="rounded-lg opacity-75 flex-shrink-0" />
           <span className="font-grotesk text-sm font-700 text-[var(--text-primary)] whitespace-nowrap">
-            ImageTo<span style={{ background: 'linear-gradient(135deg, #e040fb, #f06292)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>Prompt</span>
+            ImageTo<span className="gradient-clip" style={{ background: 'linear-gradient(135deg, #e040fb, #f06292)' }}>Prompt</span>
           </span>
           <span className="font-inter text-[0.6875rem] text-[var(--text-secondary)]/35 whitespace-nowrap hidden sm:block">
             — {t('footer.tagline')}
