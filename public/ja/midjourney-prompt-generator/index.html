@@ -1,0 +1,466 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <script src="/theme-toggle.js"></script>
+  <meta charset="UTF-8" />
+  <link rel="dns-prefetch" href="https://www.googletagmanager.com">
+<link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0" />
+  <meta name="robots" content="max-image-preview:large, index, follow">
+  <meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="ImageToPrompt">
+  <title>Midjourneyプロンプトジェネレーター｜画像からプロンプトを無料生成 | ImageToPrompt</title>
+  <meta name="description" content="画像をアップロードするだけで、--ar、--v 6.1、--style rawパラメータ付きの最適化されたMidjourneyプロンプトを即座に取得できます。無料・登録不要。" />
+  <link rel="canonical" href="https://www.imagetoprompt.dev/ja/midjourney-prompt-generator/" />
+  <link rel="alternate" hreflang="en" href="https://www.imagetoprompt.dev/midjourney-prompt-generator/" />
+  <link rel="alternate" hreflang="fr" href="https://www.imagetoprompt.dev/fr/midjourney-prompt-generator/" />
+  <link rel="alternate" hreflang="ar" href="https://www.imagetoprompt.dev/ar/midjourney-prompt-generator/" />
+  <link rel="alternate" hreflang="es" href="https://www.imagetoprompt.dev/es/midjourney-prompt-generator/" />
+  <link rel="alternate" hreflang="ja" href="https://www.imagetoprompt.dev/ja/midjourney-prompt-generator/" />
+  <link rel="alternate" hreflang="ko" href="https://www.imagetoprompt.dev/ko/midjourney-prompt-generator/" />
+  <link rel="alternate" hreflang="ru" href="https://www.imagetoprompt.dev/ru/midjourney-prompt-generator/" />
+  <link rel="alternate" hreflang="x-default" href="https://www.imagetoprompt.dev/midjourney-prompt-generator/" />
+  <meta property="og:title" content="Midjourneyプロンプトジェネレーター｜画像からプロンプトを無料生成 | ImageToPrompt" />
+  <meta property="og:description" content="画像をアップロードするだけで、--ar、--v 6.1、--style rawパラメータ付きの最適化されたMidjourneyプロンプトを即座に取得。無料・登録不要。" />
+  <meta property="og:url" content="https://www.imagetoprompt.dev/ja/midjourney-prompt-generator/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="https://www.imagetoprompt.dev/og-image.png" />
+  <meta property="og:site_name" content="ImageToPrompt" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Midjourneyプロンプトジェネレーター｜画像からプロンプトを無料生成 | ImageToPrompt" />
+  <meta name="twitter:description" content="画像をアップロードするだけで、--ar、--v 6.1、--style rawパラメータ付きの最適化されたMidjourneyプロンプトを即座に取得。無料・登録不要。" />
+  <meta name="twitter:image" content="https://www.imagetoprompt.dev/og-image.png" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="48x48" href="/favicon-48.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+  <link rel="manifest" href="/site.webmanifest" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="/fonts/space-grotesk-700.woff2" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="/fonts/inter-400.woff2" />
+  <link rel="stylesheet" href="/theme.css">
+  <link rel="preload" href="/blog.css" as="style" onload="this.onload=null;this.rel='stylesheet'"><noscript><link rel="stylesheet" href="/blog.css"></noscript>
+  <link rel="preload" href="/model-pages.css" as="style" onload="this.onload=null;this.rel='stylesheet'"><noscript><link rel="stylesheet" href="/model-pages.css"></noscript>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "Midjourneyプロンプトジェネレーター",
+    "applicationCategory": "DesignApplication",
+    "operatingSystem": "Web",
+    "url": "https://www.imagetoprompt.dev/ja/midjourney-prompt-generator/",
+    "description": "画像をアップロードするだけで、--ar、--v 6.1、--style rawパラメータ付きの最適化されたMidjourneyプロンプトを即座に取得できます。無料・登録不要。",
+    "inLanguage": "ja",
+    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "JPY" },
+    "publisher": {
+      "@type": "Organization",
+      "name": "ImageToPrompt",
+      "url": "https://www.imagetoprompt.dev/"
+    }
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "ホーム", "item": "https://www.imagetoprompt.dev/ja/" },
+      { "@type": "ListItem", "position": 2, "name": "Midjourneyプロンプトジェネレーター", "item": "https://www.imagetoprompt.dev/ja/midjourney-prompt-generator/" }
+    ]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "inLanguage": "ja",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "ジェネレーターにはどのMidjourneyパラメータが含まれていますか？",
+        "acceptedAnswer": { "@type": "Answer", "text": "本ジェネレーターは、Midjourneyの主要パラメータを含むプロンプトを出力します。--ar（アスペクト比）、--v 6.1（最新バージョン）、--style raw（フォトリアリスティック出力用）、--chaos（バリエーション用）、--stylize値が含まれます。これらは画像の構図とスタイルから自動的に算出されます。" }
+      },
+      {
+        "@type": "Question",
+        "name": "Midjourney V6.1に対応していますか？",
+        "acceptedAnswer": { "@type": "Answer", "text": "はい。本ジェネレーターはMidjourney V6.1（現在のデフォルトバージョン）に最適化されています。プロンプトにはデフォルトで --v 6.1 が含まれ、V6.1で最高の結果を生む最新の語彙と構文を使用しています。詳細な記述や自然言語の処理も改善されています。" }
+      },
+      {
+        "@type": "Question",
+        "name": "Midjourneyの /describe コマンドとの違いは何ですか？",
+        "acceptedAnswer": { "@type": "Answer", "text": "Midjourneyの /describe コマンドはMidjourney独自の内部モデルを使ってプロンプトをリバースエンジニアリングしますが、MidjourneyのDiscord Botにアクセスする必要があります。当ツールはDiscordアカウント不要で、ブラウザから即座にご利用いただけます。スタイルやトーンを自由に調整でき、10言語での出力に対応しています。" }
+      },
+      {
+        "@type": "Question",
+        "name": "生成されたプロンプトはMidjourneyのDiscord Botで使えますか？",
+        "acceptedAnswer": { "@type": "Answer", "text": "もちろんです。生成されたプロンプトをコピーして、MidjourneyのDiscord Botまたはmidjourney.comで /imagine の後に貼り付けるだけです。カンマ区切りの記述子と --ar 16:9 --v 6.1 などの末尾パラメータが適切にフォーマットされた状態で出力されるため、そのままご利用いただけます。" }
+      }
+    ]
+  }
+  </script>
+  <!-- Google AdSense -->
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4499206373485728" crossorigin="anonymous"></script>
+  <!-- Web Push Notifications -->
+<script src="https://cdn.onesignal.com/sdks/web/v16/OneSignalSDK.page.js" defer></script>
+<script>
+  window.OneSignalDeferred = window.OneSignalDeferred || [];
+  OneSignalDeferred.push(async function(OneSignal) {
+    await OneSignal.init({
+      appId: "REPLACE_WITH_ONESIGNAL_APP_ID",
+      notifyButton: { enable: false }
+    });
+  });
+</script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "VideoObject",
+    "name": "Midjourney Prompt Generator Demo — Free Image to Prompt Tool",
+    "description": "Watch how to generate optimized Midjourney prompts from any image using ImageToPrompt. Free AI tool demo with real V6.1 prompt output.",
+    "thumbnailUrl": "https://img.youtube.com/vi/5lcSaYcMuq8/maxresdefault.jpg",
+    "uploadDate": "2026-03-18",
+    "contentUrl": "https://www.youtube.com/watch?v=5lcSaYcMuq8",
+    "embedUrl": "https://www.youtube.com/embed/5lcSaYcMuq8",
+    "duration": "PT3M",
+    "publisher": {
+      "@type": "Organization",
+      "name": "ImageToPrompt",
+      "logo": { "@type": "ImageObject", "url": "https://www.imagetoprompt.dev/favicon.svg" }
+    }
+  }
+  </script>
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="inner">
+      <a href="/ja/" class="site-logo"><img src="/favicon.svg" alt="ImageToPrompt" width="48" height="48"><div class="site-logo-text">ImageTo<span class="accent">Prompt</span><span class="site-logo-sub">無料AIプロンプトジェネレーター</span></div></a>
+      <nav class="site-nav" aria-label="メインナビゲーション">
+        <div class="nav-dropdown">
+          <button class="nav-dropdown-trigger" aria-haspopup="true" aria-expanded="false">Tools <span class="nav-chevron" aria-hidden="true">&#9660;</span></button>
+          <div class="nav-dropdown-menu" role="menu">
+            <div class="nav-mega-grid">
+              <div class="nav-mega-col">
+                <div class="nav-mega-heading">&#128444; IMAGE TOOLS</div>
+                <a href="/" role="menuitem" class="nav-mega-tool">Image to Prompt <span class="nav-mega-arrow">&#8594;</span></a>
+                <a href="/text-to-prompt/" role="menuitem" class="nav-mega-tool">Text to Prompt <span class="nav-mega-arrow">&#8594;</span></a>
+                <a href="/describe-image/" role="menuitem" class="nav-mega-tool">Describe Image <span class="nav-new-badge">NEW</span> <span class="nav-mega-arrow">&#8594;</span></a>
+                <div class="nav-mega-models-label">Models</div>
+                <div class="nav-mega-models"><a href="/midjourney-prompt-generator/">Midjourney</a><span class="nav-dot">&#xB7;</span><a href="/stable-diffusion-prompt-generator/">SD</a></div>
+                <div class="nav-mega-models"><a href="/flux-prompt-generator/">Flux</a><span class="nav-dot">&#xB7;</span><a href="/dall-e-prompt-generator/">DALL&#xB7;E&#xA0;3</a></div>
+                <div class="nav-mega-models"><a href="/adobe-firefly-prompt-generator/">Firefly</a><span class="nav-dot">&#xB7;</span><a href="/leonardo-ai-prompt-generator/">Leonardo</a></div>
+                <div class="nav-mega-models"><a href="/ideogram-prompt-generator/">Ideogram</a></div>
+              </div>
+              <div class="nav-mega-divider" aria-hidden="true"></div>
+              <div class="nav-mega-col">
+                <div class="nav-mega-heading">&#127909; VIDEO TOOLS</div>
+                <a href="/?tab=image-to-video" role="menuitem" class="nav-mega-tool">Image to Video <span class="nav-mega-arrow">&#8594;</span></a>
+                <a href="/?tab=text-to-video" role="menuitem" class="nav-mega-tool">Text to Video <span class="nav-mega-arrow">&#8594;</span></a>
+                <div class="nav-mega-models-label">Models</div>
+                <div class="nav-mega-models"><a href="/veo-prompt-generator/">Veo</a><span class="nav-dot">&#xB7;</span><a href="/kling-prompt-generator/">Kling</a></div>
+                <div class="nav-mega-models"><a href="/runway-prompt-generator/">Runway</a><span class="nav-dot">&#xB7;</span><a href="/pika-prompt-generator/">Pika</a></div>
+                <div class="nav-mega-models"><a href="/luma-prompt-generator/">Luma</a><span class="nav-dot">&#xB7;</span><a href="/sora-prompt-generator/">Sora</a></div>
+                <div class="nav-mega-models"><a href="/minimax-prompt-generator/">Minimax</a><span class="nav-dot">&#xB7;</span><a href="/stable-video-prompt-generator/">Stable</a></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <a href="/ja/blog/">Blog</a>
+        <a href="/pricing/" class="nav-pill-pricing">Pricing</a>
+        <a href="/about/" class="nav-pill-about">About</a>
+        <a href="/" class="nav-try-free">無料で試す &#8594;</a>
+        <button id="theme-toggle" onclick="toggleTheme()" aria-label="Switch theme" title="Switch theme">&#9728;&#xFE0F;</button>
+  </nav>
+    </div>
+  </header>
+
+  <nav class="breadcrumb" aria-label="パンくずリスト">
+    <a href="/ja/">ホーム</a><span class="sep">&#8250;</span>
+    <span>Midjourneyプロンプトジェネレーター</span>
+  </nav>
+
+  <div class="page-wrapper model-page-wrapper">
+
+    <header class="model-page-hero">
+      <div class="model-badge-hero" style="--model-color:#00b4d8">&#127912; アートに最適</div>
+      <h1>Midjourneyプロンプトジェネレーター｜画像から無料で生成</h1>
+      <p class="model-page-subtitle">画像をアップロードするだけで、<code>--ar</code>、<code>--v 6.1</code>、<code>--style raw</code>パラメータ付きの最適化されたMidjourneyプロンプトを即座に取得できます。登録不要・完全無料です。</p>
+    </header>
+
+    <!-- 埋め込みツール -->
+    <div class="tool-embed-container">
+      <iframe
+        src="/?model=midjourney&lang=ja&embed=true"
+        title="Midjourneyプロンプトジェネレーターツール"
+        class="tool-embed-frame"
+        loading="eager"
+        allow="clipboard-write; clipboard-read"
+      ></iframe>
+    </div>
+
+    <!-- YouTubeデモ動画 -->
+    <div class="video-demo-section" style="margin:2.5rem 0;">
+      <h2 style="font-family:'Space Grotesk',sans-serif;font-size:1.25rem;font-weight:700;color:var(--text-primary);margin:0 0 0.5rem;">使い方を動画で見る</h2>
+      <p style="color:var(--text-muted);font-size:0.9rem;margin:0 0 1.25rem;">ツールの実際の動作をご覧ください。AIが生成したプロンプト出力の実例です。</p>
+      <div style="position:relative;padding-bottom:56.25%;height:0;overflow:hidden;border-radius:12px;border:1px solid var(--border-subtle);">
+        <iframe
+          src="https://www.youtube.com/embed/5lcSaYcMuq8"
+          title="Midjourney Prompt Generator Demo — Free Image to Prompt Tool"
+          frameborder="0"
+          style="position:absolute;top:0;left:0;width:100%;height:100%;border:0;"
+          loading="lazy"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          allowfullscreen>
+        </iframe>
+      </div>
+    </div>
+
+    <!-- セクション：なぜ使うべきか -->
+    <section class="model-features-section">
+      <h2>なぜMidjourneyプロンプトを使うべきなのか</h2>
+      <div class="model-features-grid">
+        <div class="model-feature-card" style="--card-accent:#A78BFA">
+          <div class="feature-icon">&#9889;</div>
+          <h3>モデル専用の構文</h3>
+          <p>すべてのプロンプトにMidjourney固有のフラグが含まれます。<code>--ar</code>、<code>--v 6.1</code>、<code>--stylize</code>が<code>/imagine</code>コマンドの正確な書式でフォーマットされています。</p>
+        </div>
+        <div class="model-feature-card" style="--card-accent:#A78BFA">
+          <div class="feature-icon">&#127919;</div>
+          <h3>最適化されたパラメータ</h3>
+          <p>アスペクト比は画像の実際の寸法から自動抽出されます。stylizeやchaosの値は、検出されたアートスタイルと構図の複雑さに基づいて調整されます。</p>
+        </div>
+        <div class="model-feature-card" style="--card-accent:#A78BFA">
+          <div class="feature-icon">&#128203;</div>
+          <h3>コピーしてすぐ使える</h3>
+          <p>ワンクリックでコピー完了。MidjourneyのDiscord Botまたはmidjourney.comで<code>/imagine</code>の後に直接貼り付けるだけです。</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- セクション：実際の動作例 -->
+    <section class="model-showcase-section">
+      <h2>実際の動作例</h2>
+      <div class="model-showcase-grid">
+        <div class="showcase-col">
+          <span class="showcase-label">元の画像</span>
+          <figure class="img-figure">
+            <picture><source srcset="/images/ai-prompt-image-model-comparison-grid.webp" type="image/webp"><img src="/images/ai-prompt-image-model-comparison-grid.jpeg" alt="ImageToPromptにアップロードされた元の画像" width="600" height="400" loading="lazy"></picture>
+            <figcaption>アップロードされた元の画像</figcaption>
+          </figure>
+        </div>
+        <div class="showcase-arrow">&#8594;</div>
+        <div class="showcase-col">
+          <span class="showcase-label generated" style="--model-color:#A78BFA">Midjourney出力結果</span>
+          <figure class="img-figure">
+            <picture><source srcset="/images/ai-prompt-generator-cyberpunk-midjourney.webp" type="image/webp"><img src="/images/ai-prompt-generator-cyberpunk-midjourney.jpeg" alt="Midjourney v6.1で生成された出力" width="600" height="400" loading="lazy"></picture>
+            <figcaption>Midjourney v6.1で生成</figcaption>
+          </figure>
+        </div>
+      </div>
+      <div class="showcase-prompt-box">
+        <div class="showcase-prompt-header">
+          <span class="showcase-prompt-badge" style="background:rgba(167,139,250,0.12);color:#A78BFA;border-color:rgba(167,139,250,0.25)">&#127912; Midjourneyプロンプト</span>
+        </div>
+        <code class="showcase-prompt-code">neon-lit cyberpunk cityscape at night, rain-slicked streets reflecting holographic advertisements, atmospheric volumetric fog, cinematic wide angle --ar 16:9 --v 6.1 --style raw --stylize 750</code>
+      </div>
+    </section>
+
+    <!-- コンテンツ -->
+    <article class="model-page-content">
+
+      <h2>Midjourneyプロンプトの仕組み</h2>
+      <p>Midjourneyは、他のAI画像生成ツールとは大きく異なる独自のプロンプト構文を採用しています。完全な文章ではなく、<strong>カンマで区切られた記述子</strong>の後にパラメータフラグを付ける形式が最も効果的です。よく練られたMidjourneyプロンプトは次のような構成になります：</p>
+      <div class="code-example">
+        <code>a lone samurai on a misty mountain peak, golden hour lighting, cinematic composition, volumetric fog, ultra-detailed, 8k --ar 16:9 --v 6.1 --style raw --stylize 750</code>
+      </div>
+      <p>各要素にはそれぞれ役割があります。被写体の記述がシーンを設定し、雰囲気の記述子がムードを加え、技術的な品質タグが忠実度を高め、末尾のパラメータが出力形式とモデルの挙動を制御します。</p>
+
+      <h2>Midjourneyパラメータの解説</h2>
+      <p>当ジェネレーターは、画像分析に基づいて最も効果的なパラメータを自動的に設定します：</p>
+      <div class="params-grid">
+        <div class="param-card" style="--c:#00b4d8">
+          <div class="param-name"><code>--ar</code></div>
+          <div class="param-desc">アスペクト比。画像の実際の寸法から抽出されます（例：<code>--ar 16:9</code>、<code>--ar 4:5</code>）。適切な比率を指定することで、トリミングによるアーティファクトを防ぎます。</div>
+        </div>
+        <div class="param-card" style="--c:#00b4d8">
+          <div class="param-name"><code>--v 6.1</code></div>
+          <div class="param-desc">Midjourney V6.1を指定します。現在のデフォルトバージョンで、リアリズムの向上、プロンプトへの忠実度の改善、手の描画精度の向上が特徴です。</div>
+        </div>
+        <div class="param-card" style="--c:#00b4d8">
+          <div class="param-name"><code>--style raw</code></div>
+          <div class="param-desc">Midjourneyの美的バイアスを無効にし、より文字通りの解釈を行います。画像の正確な雰囲気をAIに忠実に再現させたい場合に最適です。</div>
+        </div>
+        <div class="param-card" style="--c:#00b4d8">
+          <div class="param-name"><code>--stylize</code></div>
+          <div class="param-desc">Midjourneyの芸術的トレーニングの適用強度を制御します（0～1000）。値が高いほどスタイリッシュな仕上がりになります。当ジェネレーターでは、検出されたアートスタイルに基づいてこの値を設定します。</div>
+        </div>
+        <div class="param-card" style="--c:#00b4d8">
+          <div class="param-name"><code>--chaos</code></div>
+          <div class="param-desc">生成される4枚の画像間のバリエーションを追加します（0～100）。コンセプトのバリエーションを探る際に有用です。画像の構図が複雑な場合に自動的に含まれます。</div>
+        </div>
+        <div class="param-card" style="--c:#00b4d8">
+          <div class="param-name"><code>--no</code></div>
+          <div class="param-desc">Midjourneyのネガティブプロンプトです。画像の美的雰囲気を損なう要素を除外するために使用されます（例：<code>--no text, watermark, blur</code>）。</div>
+        </div>
+      </div>
+
+      <h2>優れたMidjourneyプロンプトの条件とは</h2>
+      <p>最も効果的なMidjourneyプロンプトには3つの共通点があります：<strong>被写体の具体性</strong>、<strong>雰囲気の明確さ</strong>、そして<strong>適切なパラメータ設定</strong>です。曖昧なプロンプトでは汎用的な結果しか得られません。ライティング、構図、カラーパレット、ムードをより正確に記述すればするほど、Midjourneyはあなたの画像をより忠実に再現またはリイマジネーションすることができます。</p>
+      <p>当AIは、アップロードされた画像を8つの次元で分析します。被写体、構図、ライティング、カラーパレット、ムード、スタイル、品質指標、最適なアスペクト比を解析し、それらを1つの最適化されたMidjourney文字列に統合します。手動でゼロからプロンプトを作成するのに通常10～20分かかるところを、瞬時に完了します。</p>
+
+      <h2>Midjourneyで最高の結果を得るためのヒント</h2>
+      <ul class="tips-list">
+        <li><strong>写真には --style raw を使用してください：</strong>Midjourneyのデフォルト設定では絵画的なスタイリゼーションが加わります。リアルな写真の再現には、必ず<code>--style raw</code>を追加してください。</li>
+        <li><strong>ライティングの記述子が最も重要です：</strong>「golden hour」「dramatic side lighting」「overcast diffused light」などの用語は、他のモデルと比較してMidjourneyの出力に大きな影響を与えます。</li>
+        <li><strong>品質タグを重ねましょう：</strong>記述子の末尾に「ultra-detailed」「sharp focus」「8k」「professional photography」を追加すると、一貫して高品質な出力が得られます。</li>
+        <li><strong>スタイル参照には --sref を使用してください：</strong>V6.1では、<code>--sref [URL]</code>を追加することで、テキストプロンプトと併せて参照画像からスタイルを取り込むことができます。</li>
+        <li><strong>--stylize の値を試してみましょう：</strong>バランスの取れた結果には250から始めてください。強くスタイリッシュなアート作品には750以上に設定します。</li>
+      </ul>
+
+      <div class="related-blog">
+        <span class="related-label">関連ガイド</span>
+        <a href="/blog/midjourney-prompt-guide-2026/">Midjourneyプロンプト完全ガイド 2026年版 &#8594;</a>
+      </div>
+
+      <!-- よくある質問 -->
+      <h2>よくある質問</h2>
+      <div class="faq-list">
+        <details class="faq-item">
+          <summary>ジェネレーターにはどのMidjourneyパラメータが含まれていますか？</summary>
+          <p>本ジェネレーターは、Midjourneyの主要パラメータを含むプロンプトを出力します。<code>--ar</code>（アスペクト比）、<code>--v 6.1</code>（最新バージョン）、<code>--style raw</code>（フォトリアリスティック出力用）、<code>--chaos</code>（バリエーション用）、<code>--stylize</code>値が含まれます。これらは画像の構図とスタイルから自動的に算出されます。</p>
+        </details>
+        <details class="faq-item">
+          <summary>Midjourney V6.1に対応していますか？</summary>
+          <p>はい。本ジェネレーターはMidjourney V6.1（現在のデフォルトバージョン）に最適化されています。プロンプトにはデフォルトで<code>--v 6.1</code>が含まれ、V6.1で最高の結果を生む最新の語彙と構文を使用しています。詳細な記述や自然言語の処理も改善されています。</p>
+        </details>
+        <details class="faq-item">
+          <summary>Midjourneyの /describe コマンドとの違いは何ですか？</summary>
+          <p>Midjourneyの /describe コマンドはMidjourney独自の内部モデルを使ってプロンプトをリバースエンジニアリングしますが、MidjourneyのDiscord Botにアクセスする必要があります。当ツールはDiscordアカウント不要で、ブラウザから即座にご利用いただけます。スタイルやトーンを自由に調整でき、10言語での出力に対応しています。</p>
+        </details>
+        <details class="faq-item">
+          <summary>生成されたプロンプトはMidjourneyのDiscord Botで使えますか？</summary>
+          <p>もちろんです。生成されたプロンプトをコピーして、MidjourneyのDiscord Botまたはmidjourney.comで<code>/imagine</code>の後に貼り付けるだけです。カンマ区切りの記述子と<code>--ar 16:9 --v 6.1</code>などの末尾パラメータが適切にフォーマットされた状態で出力されるため、そのままご利用いただけます。</p>
+        </details>
+      </div>
+
+      <!-- ガイドとリソース -->
+      <div class="model-related-section">
+        <h2>プロンプトガイドとリソース</h2>
+        <div class="model-related-grid">
+          <a href="/blog/midjourney-prompt-guide-2026/" class="model-related-card">
+            <picture><source srcset="/images/free-image-url-generator-midjourney-v6-samurai.webp" type="image/webp"><img src="/images/free-image-url-generator-midjourney-v6-samurai.jpeg" alt="Midjourneyプロンプト完全ガイド 2026年版" loading="lazy"></picture>
+            <div class="model-related-text">
+              <span class="model-related-category">ガイド</span>
+              <h4>Midjourneyプロンプト完全ガイド 2026年版</h4>
+            </div>
+          </a>
+          <a href="/blog/reverse-engineer-ai-art-prompts/" class="model-related-card">
+            <picture><source srcset="/images/explain-this-image-astronaut-alien-planet.webp" type="image/webp"><img src="/images/explain-this-image-astronaut-alien-planet.jpeg" alt="AIアートプロンプトのリバースエンジニアリング方法" loading="lazy"></picture>
+            <div class="model-related-text">
+              <span class="model-related-category">チュートリアル</span>
+              <h4>AIアートプロンプトのリバースエンジニアリング方法</h4>
+            </div>
+          </a>
+          <a href="/blog/midjourney-vs-flux/" class="model-related-card">
+            <picture><source srcset="/images/ai-prompt-generator-cyberpunk-flux.webp" type="image/webp"><img src="/images/ai-prompt-generator-cyberpunk-flux.jpeg" alt="Midjourney vs Flux AI：どちらが優れたプロンプトを生成するか" loading="lazy"></picture>
+            <div class="model-related-text">
+              <span class="model-related-category">比較</span>
+              <h4>Midjourney vs Flux AI：どちらが優れたプロンプトを生成するか</h4>
+            </div>
+          </a>
+        </div>
+      </div>
+
+      <!-- 他のモデル -->
+      <div class="other-models-section">
+        <h2>他のモデルのプロンプトジェネレーターを試す</h2>
+        <div class="other-models-grid">
+          <a href="/stable-diffusion-prompt-generator/" class="other-model-card" style="--c:#ff6b35">&#9881;&#65039;<span>Stable Diffusion</span></a>
+          <a href="/flux-prompt-generator/" class="other-model-card" style="--c:#7c3aed">&#9889;<span>Flux AI</span></a>
+          <a href="/dall-e-prompt-generator/" class="other-model-card" style="--c:#10a37f">&#129504;<span>DALL&#xB7;E 3</span></a>
+          <a href="/adobe-firefly-prompt-generator/" class="other-model-card" style="--c:#ff0000">&#129419;<span>Adobe Firefly</span></a>
+          <a href="/leonardo-ai-prompt-generator/" class="other-model-card" style="--c:#f59e0b">&#127918;<span>Leonardo AI</span></a>
+          <a href="/ideogram-prompt-generator/" class="other-model-card" style="--c:#06b6d4">&#9997;&#65039;<span>Ideogram</span></a>
+        </div>
+      </div>
+
+      <div style="margin-top:2rem;text-align:center">
+        <a href="/?lang=ja" class="cta-btn">無料で試す &#8594;</a>
+      </div>
+
+    </article>
+  </div>
+
+  <footer class="footer-4col">
+    <div class="f4-inner">
+      <div class="f4-brand">
+        <img src="/favicon.svg" alt="ImageToPrompt" width="28" height="28">
+        <span class="f4-brand-name">ImageTo<span class="accent">Prompt</span></span>
+        <span class="f4-brand-sub">&mdash; Free AI Prompt Generator</span>
+      </div>
+      <div class="f4-grid">
+        <div class="f4-section">
+          <h4 class="f4-heading">Image Prompt Tools</h4>
+          <a href="/">Image to Prompt</a>
+          <a href="/text-to-prompt/">Text to Prompt</a>
+      <a href="/describe-image/">Describe Image</a>
+          <a href="/midjourney-prompt-generator/">Midjourney</a>
+          <a href="/stable-diffusion-prompt-generator/">Stable Diffusion</a>
+          <a href="/flux-prompt-generator/">Flux</a>
+          <a href="/dall-e-prompt-generator/">DALL-E 3</a>
+          <a href="/adobe-firefly-prompt-generator/">Adobe Firefly</a>
+          <a href="/leonardo-ai-prompt-generator/">Leonardo AI</a>
+          <a href="/ideogram-prompt-generator/">Ideogram</a>
+        </div>
+        <div class="f4-section">
+          <h4 class="f4-heading">Video Prompt Tools</h4>
+          <a href="/image-to-video-prompt/">Image to Video Prompt</a>
+          <a href="/text-to-video-prompt/">Text to Video Prompt</a>
+          <a href="/veo-prompt-generator/">Veo / Flow Studio</a>
+          <a href="/kling-prompt-generator/">Kling AI</a>
+          <a href="/runway-prompt-generator/">Runway Gen-3</a>
+          <a href="/pika-prompt-generator/">Pika</a>
+          <a href="/luma-prompt-generator/">Luma Dream Machine</a>
+          <a href="/sora-prompt-generator/">Sora</a>
+          <a href="/minimax-prompt-generator/">Minimax</a>
+          <a href="/stable-video-prompt-generator/">Stable Video</a>
+        </div>
+        <div class="f4-section">
+          <h4 class="f4-heading">Resources</h4>
+          <a href="/blog/">Blog</a>
+          <a href="/about/">About</a>
+          <a href="/pricing/">Pricing</a>
+          <a href="/contact/">Contact</a>
+          <a href="/privacy-policy/">Privacy Policy</a>
+          <a href="/terms-of-service/">Terms of Service</a>
+        </div>
+        <div class="f4-section">
+          <h4 class="f4-heading">Languages</h4>
+          <a href="/">English</a>
+          <a href="/fr/">Fran&#231;ais</a>
+          <a href="/ar/">&#1575;&#1604;&#1593;&#1585;&#1576;&#1610;&#1577;</a>
+          <a href="/es/">Espa&#241;ol</a>
+          <a href="/ko/">&#54620;&#44397;&#50612;</a>
+          <a href="/ja/">&#26085;&#26412;&#35486;</a>
+          <a href="/ru/">&#1056;&#1091;&#1089;&#1089;&#1082;&#1080;&#1081;</a>
+        </div>
+      </div>
+      <div class="f4-bottom">
+        <p>&#169; 2026 ImageToPrompt.dev &#8212; Free AI Prompt Generator</p>
+        <p>Your images are never stored. All analysis is ephemeral and private.</p>
+      </div>
+    </div>
+  </footer>
+
+<script src="/nav.js" defer></script>
+  <script>
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', function() {
+    navigator.serviceWorker.register('/sw.js')
+      .catch(function(err) { console.warn('SW registration failed:', err); });
+  });
+}
+</script>
+</body>
+</html>

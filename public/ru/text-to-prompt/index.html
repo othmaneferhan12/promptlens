@@ -1,0 +1,395 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <script src="/theme-toggle.js"></script>
+  <meta charset="UTF-8" />
+  <link rel="dns-prefetch" href="https://www.googletagmanager.com">
+<link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0" />
+  <meta name="robots" content="max-image-preview:large, index, follow">
+  <meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="ImageToPrompt">
+  <title>Генератор промптов из текста — Бесплатный ИИ-инструмент | ImageToPrompt</title>
+  <meta name="description" content="Бесплатный генератор промптов из текста. Превратите любую идею в профессиональный промпт для Midjourney, Stable Diffusion, Flux, DALL-E 3 и других — мгновенно, без регистрации." />
+  <link rel="canonical" href="https://www.imagetoprompt.dev/ru/text-to-prompt/" />
+  <link rel="alternate" hreflang="en" href="https://www.imagetoprompt.dev/text-to-prompt/" />
+  <link rel="alternate" hreflang="fr" href="https://www.imagetoprompt.dev/fr/text-to-prompt/" />
+  <link rel="alternate" hreflang="ar" href="https://www.imagetoprompt.dev/ar/text-to-prompt/" />
+  <link rel="alternate" hreflang="es" href="https://www.imagetoprompt.dev/es/text-to-prompt/" />
+  <link rel="alternate" hreflang="ja" href="https://www.imagetoprompt.dev/ja/text-to-prompt/" />
+  <link rel="alternate" hreflang="ko" href="https://www.imagetoprompt.dev/ko/text-to-prompt/" />
+  <link rel="alternate" hreflang="ru" href="https://www.imagetoprompt.dev/ru/text-to-prompt/" />
+  <link rel="alternate" hreflang="x-default" href="https://www.imagetoprompt.dev/text-to-prompt/" />
+  <meta property="og:title" content="Генератор промптов из текста — Бесплатный ИИ-инструмент | ImageToPrompt" />
+  <meta property="og:description" content="Превратите любую идею в профессиональный ИИ-промпт за секунды. Бесплатно, без регистрации. Midjourney, Stable Diffusion, Flux, DALL-E 3 и другие." />
+  <meta property="og:url" content="https://www.imagetoprompt.dev/ru/text-to-prompt/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="https://www.imagetoprompt.dev/og-image.png" />
+  <meta property="og:site_name" content="ImageToPrompt" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Генератор промптов из текста — Бесплатный ИИ-инструмент | ImageToPrompt" />
+  <meta name="twitter:description" content="Превратите любую идею в профессиональный ИИ-промпт за секунды. Бесплатно, без регистрации." />
+  <meta name="twitter:image" content="https://www.imagetoprompt.dev/og-image.png" />
+  <meta name="twitter:site" content="@imagetoprompt" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="48x48" href="/favicon-48.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+  <link rel="manifest" href="/site.webmanifest" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="/fonts/space-grotesk-700.woff2" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="/fonts/inter-400.woff2" />
+  <link rel="stylesheet" href="/theme.css">
+  <link rel="preload" href="/blog.css" as="style" onload="this.onload=null;this.rel='stylesheet'"><noscript><link rel="stylesheet" href="/blog.css"></noscript>
+  <link rel="preload" href="/model-pages.css" as="style" onload="this.onload=null;this.rel='stylesheet'"><noscript><link rel="stylesheet" href="/model-pages.css"></noscript>
+  <script type="application/ld+json">
+  [
+    {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "Генератор промптов из текста",
+      "url": "https://www.imagetoprompt.dev/ru/text-to-prompt/",
+      "description": "Бесплатный ИИ-инструмент, который превращает простые текстовые описания в профессиональные промпты для Midjourney, Stable Diffusion, Flux, DALL-E 3, Adobe Firefly, Leonardo AI и Ideogram.",
+      "applicationCategory": "UtilitiesApplication",
+      "operatingSystem": "Any",
+      "inLanguage": "ru",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      }
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "inLanguage": "ru",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "В чём разница между «текст в промпт» и «изображение в промпт»?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "«Изображение в промпт» анализирует существующее изображение и восстанавливает промпт, который позволил бы его воссоздать. «Текст в промпт» берёт вашу черновую идею и разворачивает её в детализированный, оптимизированный промпт. Используйте «изображение в промпт», когда у вас есть визуальный ориентир; используйте «текст в промпт», когда идея существует только в вашей голове."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Можно ли использовать этот инструмент для улучшения существующих промптов?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Да. Вставьте ваш текущий промпт в текстовое поле, и наш ИИ обогатит его улучшенной структурой, синтаксисом для конкретной модели, тегами качества, описаниями освещения и многим другим. Инструмент работает и как расширитель идей, и как улучшитель промптов."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Какую ИИ-модель выбрать?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Выбирайте ту модель, в которой вы собираетесь генерировать изображения. Midjourney использует теги через запятую с синтаксисом --параметр. Stable Diffusion использует синтаксис (слово:вес). DALL-E 3 предпочитает предложения на естественном языке. Flux хорошо воспринимает подробный описательный текст. Выбирайте модель, которую будете реально использовать, чтобы результат соответствовал её формату."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Функция «текст в промпт» бесплатна?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Да, полностью бесплатна. Не нужен аккаунт, не требуется банковская карта, нет водяных знаков. Вы получаете 10 бесплатных запросов в день, общих для «изображение в промпт» и «текст в промпт». Счётчик сбрасывается в полночь по UTC."
+          }
+        }
+      ]
+    }
+  ]
+  </script>
+  <!-- Google AdSense -->
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4499206373485728" crossorigin="anonymous"></script>
+  <!-- Web Push Notifications -->
+<script src="https://cdn.onesignal.com/sdks/web/v16/OneSignalSDK.page.js" defer></script>
+<script>
+  window.OneSignalDeferred = window.OneSignalDeferred || [];
+  OneSignalDeferred.push(async function(OneSignal) {
+    await OneSignal.init({
+      appId: "REPLACE_WITH_ONESIGNAL_APP_ID",
+      notifyButton: { enable: false }
+    });
+  });
+</script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "VideoObject",
+    "name": "Text to Image Prompt Generator Demo — Free AI Prompt Tool",
+    "description": "See how to turn any description into optimized AI image prompts for Midjourney, Flux, DALL-E 3 and more using ImageToPrompt.",
+    "thumbnailUrl": "https://img.youtube.com/vi/5lcSaYcMuq8/maxresdefault.jpg",
+    "uploadDate": "2026-03-18",
+    "contentUrl": "https://www.youtube.com/watch?v=5lcSaYcMuq8",
+    "embedUrl": "https://www.youtube.com/embed/5lcSaYcMuq8",
+    "duration": "PT3M",
+    "publisher": {
+      "@type": "Organization",
+      "name": "ImageToPrompt",
+      "logo": { "@type": "ImageObject", "url": "https://www.imagetoprompt.dev/favicon.svg" }
+    }
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Главная", "item": "https://www.imagetoprompt.dev/ru/" },
+      { "@type": "ListItem", "position": 2, "name": "Генератор промптов из текста", "item": "https://www.imagetoprompt.dev/ru/text-to-prompt/" }
+    ]
+  }
+  </script>
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="inner">
+      <a href="/ru/" class="site-logo"><img src="/favicon.svg" alt="ImageToPrompt" width="48" height="48"><div class="site-logo-text">ImageTo<span class="accent">Prompt</span><span class="site-logo-sub">Бесплатный генератор ИИ-промптов</span></div></a>
+      <nav class="site-nav" aria-label="Main navigation">
+        <div class="nav-dropdown">
+          <button class="nav-dropdown-trigger" aria-haspopup="true" aria-expanded="false">Tools <span class="nav-chevron" aria-hidden="true">&#9660;</span></button>
+          <div class="nav-dropdown-menu" role="menu">
+            <div class="nav-mega-grid">
+              <div class="nav-mega-col">
+                <div class="nav-mega-heading">&#128444; IMAGE TOOLS</div>
+                <a href="/" role="menuitem" class="nav-mega-tool">Image to Prompt <span class="nav-mega-arrow">&#8594;</span></a>
+                <a href="/text-to-prompt/" role="menuitem" class="nav-mega-tool">Text to Prompt <span class="nav-mega-arrow">&#8594;</span></a>
+                <a href="/describe-image/" role="menuitem" class="nav-mega-tool">Describe Image <span class="nav-new-badge">NEW</span> <span class="nav-mega-arrow">&#8594;</span></a>
+                <div class="nav-mega-models-label">Models</div>
+                <div class="nav-mega-models"><a href="/midjourney-prompt-generator/">Midjourney</a><span class="nav-dot">&#xB7;</span><a href="/stable-diffusion-prompt-generator/">SD</a></div>
+                <div class="nav-mega-models"><a href="/flux-prompt-generator/">Flux</a><span class="nav-dot">&#xB7;</span><a href="/dall-e-prompt-generator/">DALL&#xB7;E&#xA0;3</a></div>
+                <div class="nav-mega-models"><a href="/adobe-firefly-prompt-generator/">Firefly</a><span class="nav-dot">&#xB7;</span><a href="/leonardo-ai-prompt-generator/">Leonardo</a></div>
+                <div class="nav-mega-models"><a href="/ideogram-prompt-generator/">Ideogram</a></div>
+              </div>
+              <div class="nav-mega-divider" aria-hidden="true"></div>
+              <div class="nav-mega-col">
+                <div class="nav-mega-heading">&#127909; VIDEO TOOLS</div>
+                <a href="/?tab=image-to-video" role="menuitem" class="nav-mega-tool">Image to Video <span class="nav-mega-arrow">&#8594;</span></a>
+                <a href="/?tab=text-to-video" role="menuitem" class="nav-mega-tool">Text to Video <span class="nav-mega-arrow">&#8594;</span></a>
+                <div class="nav-mega-models-label">Models</div>
+                <div class="nav-mega-models"><a href="/veo-prompt-generator/">Veo</a><span class="nav-dot">&#xB7;</span><a href="/kling-prompt-generator/">Kling</a></div>
+                <div class="nav-mega-models"><a href="/runway-prompt-generator/">Runway</a><span class="nav-dot">&#xB7;</span><a href="/pika-prompt-generator/">Pika</a></div>
+                <div class="nav-mega-models"><a href="/luma-prompt-generator/">Luma</a><span class="nav-dot">&#xB7;</span><a href="/sora-prompt-generator/">Sora</a></div>
+                <div class="nav-mega-models"><a href="/minimax-prompt-generator/">Minimax</a><span class="nav-dot">&#xB7;</span><a href="/stable-video-prompt-generator/">Stable</a></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <a href="/ru/blog/">Blog</a>
+        <a href="/pricing/" class="nav-pill-pricing">Pricing</a>
+        <a href="/about/" class="nav-pill-about">About</a>
+        <a href="/ru/" class="nav-try-free">Попробовать &#8594;</a>
+        <button id="theme-toggle" onclick="toggleTheme()" aria-label="Switch theme" title="Switch theme">&#9728;&#xFE0F;</button>
+  </nav>
+    </div>
+  </header>
+
+  <nav class="breadcrumb" aria-label="Навигация">
+    <a href="/ru/">Главная</a><span class="sep">&#8250;</span>
+    <span>Генератор промптов из текста</span>
+  </nav>
+
+  <div class="page-wrapper">
+
+    <header class="article-header">
+      <p class="article-tag">Бесплатный ИИ-инструмент</p>
+      <h1>Генератор промптов из текста — Бесплатный ИИ-инструмент</h1>
+      <p class="article-subtitle" style="font-size:1.125rem;color:var(--text-secondary,#9999bb);margin-top:0.75rem;line-height:1.6;">Превратите любую черновую идею в профессиональный ИИ-промпт за считанные секунды</p>
+    </header>
+
+    <div class="article-body">
+
+      <h2>Что такое преобразование текста в промпт?</h2>
+      <p>
+        Преобразование текста в промпт — это процесс трансформации простого, черновогоописания (например, «кот в саду») в детализированный, оптимизированный под конкретную модель ИИ-промпт. Вместо того чтобы часами изучать различия в синтаксисе параметров Midjourney, весов Stable Diffusion и требований DALL-E к естественному языку, вы просто описываете то, что хотите получить, на русском языке, а ИИ берёт на себя техническое форматирование. Результат — промпт профессионального уровня с описанием освещения, композиции, настроения, цветовой палитры, тегов качества и параметров для конкретной модели — всё настроено под выбранный вами генератор.
+      </p>
+
+      <h2>Как это работает</h2>
+      <ol>
+        <li><strong>Опишите свою идею</strong> — Напишите что угодно: от одной фразы до подробного описания сцены (до 500 символов). Будьте настолько размытыми или конкретными, насколько хотите: «одинокий маяк в шторме» или развёрнутый абзац — подойдёт и то, и другое.</li>
+        <li><strong>Выберите модель и стиль</strong> — Укажите генератор изображений, который планируете использовать (Midjourney, Stable Diffusion, Flux, DALL-E 3, Adobe Firefly, Leonardo AI или Ideogram), и желаемый визуальный стиль (кинематографический, художественный, фотографический, эпический, технический или минималистичный).</li>
+        <li><strong>Получите улучшенный промпт</strong> — Наш ИИ разворачивает ваше описание в полноценный профессиональный промпт с деталями объекта, освещением, атмосферой, цветовой палитрой, тегами качества и синтаксисом для конкретной модели. Скопируйте и вставьте напрямую в ваш генератор.</li>
+      </ol>
+
+      <h2>Пример «до и после»</h2>
+      <p>Вот реальный пример того, как инструмент преобразует простое описание:</p>
+
+      <p><strong>До (ваш ввод):</strong></p>
+      <pre class="prompt-block">a cat in a garden</pre>
+
+      <p><strong>После (улучшенный промпт для Midjourney):</strong></p>
+      <pre class="prompt-block">elegant tabby cat resting on moss-covered stone wall in lush English cottage garden, golden hour sunlight filtering through climbing roses, shallow depth of field, bokeh background of wildflowers, serene and peaceful atmosphere, professional nature photography, Canon EOS R5, 85mm lens, f/2.8 --ar 4:3 --v 6.1 --style raw --q 2</pre>
+
+      <p>
+        Улучшенный промпт конкретизирует внешний вид кота, тип сада, время суток, качество освещения, настройки камеры, глубину резкости и эмоциональную атмосферу — все эти детали направляют ИИ к красивому, осмысленному результату, а не к случайной интерпретации.
+      </p>
+
+      <h2>Почему простые описания дают плохие результаты</h2>
+      <p>
+        Генераторы изображений на основе ИИ крайне буквальны и вероятностны. Когда вы вводите «кот в саду», вы получаете усреднённый результат из всех обучающих изображений, соответствующих этим токенам — как правило, это обобщённая, плоская композиция с непоследовательным освещением и без какого-либо художественного замысла. Профессиональные промпт-инженеры знают, что ключ к успеху — конкретика: указание породы и позы кота, стиля сада, времени суток, источника и качества света, угла камеры и настроения полностью преображает результат. «Текст в промпт» автоматизирует эту экспертизу, давая начинающим такие же результаты, каких добиваются профессионалы — без многолетнего обучения.
+      </p>
+
+      <h2>Поддерживаемые ИИ-модели</h2>
+      <ul>
+        <li><strong>Midjourney</strong> — Самый популярный инструмент для ИИ-арта. Наши промпты используют дескрипторы через запятую с актуальными параметрами --v 6.1. Идеально для художественных и стилизованных результатов.</li>
+        <li><strong>Stable Diffusion XL</strong> — Открытый исходный код, максимальная настраиваемость. Наши промпты используют синтаксис (в скобках:вес) для точного контроля над акцентами элементов.</li>
+        <li><strong>Flux.1 [dev]</strong> — Превосходен в фотореалистичных результатах. Наши промпты делают акцент на точном освещении, текстурах поверхностей, свойствах материалов и описаниях глубины резкости.</li>
+        <li><strong>DALL-E 3</strong> — Модель OpenAI лучше всего работает с естественным языком. Наши промпты используют описательные предложения вместо тегов через запятую.</li>
+        <li><strong>Adobe Firefly</strong> — ИИ-арт корпоративного уровня, безопасный для коммерческого использования. Наши промпты используют чистые, юридически корректные описания без отсылок к защищённым авторским правом объектам.</li>
+        <li><strong>Leonardo AI</strong> — Оптимизирован для игрового арта и дизайна персонажей. Наши промпты используют лексику игрового арта и термины фэнтезийного освещения.</li>
+        <li><strong>Ideogram</strong> — Специализируется на рендеринге текста. Наши промпты включают рекомендации по типографике и компоновке, когда это уместно.</li>
+      </ul>
+
+      <div style="margin:2.5rem 0;text-align:center;">
+        <a href="/?tab=text-to-prompt&lang=ru&embed=true" class="cta-btn" style="display:inline-block;background:linear-gradient(135deg,#e040fb,#00e5ff);color:#000;font-weight:700;padding:1rem 2.5rem;border-radius:1rem;font-size:1.1rem;text-decoration:none;">Попробовать бесплатно &#8594;</a>
+        <p style="margin-top:0.75rem;font-size:0.875rem;color:var(--text-muted);">Без регистрации · 10 бесплатных запросов в день · 7 моделей</p>
+      </div>
+
+      <h2>Для кого этот инструмент?</h2>
+
+      <h3>Новички</h3>
+      <p>
+        Если вы только начинаете работать с генерацией изображений на ИИ, самая большая преграда — изучение специфического синтаксиса и словаря, который ожидает каждая модель. «Текст в промпт» полностью устраняет этот барьер. Вам не нужно знать, что означает --stylize в Midjourney или как CFG scale влияет на Stable Diffusion. Опишите свою идею на естественном языке и получите профессиональный промпт, который работает.
+      </p>
+
+      <h3>Профессионалы, переключающиеся между моделями</h3>
+      <p>
+        Даже опытные промпт-инженеры испытывают трудности при переходе от Midjourney (который использует лаконичные теги через запятую) к DALL-E 3 (который предпочитает плавные предложения) или Stable Diffusion (который использует взвешенные скобки). «Текст в промпт» автоматически переформатирует ваш творческий замысел под ту модель, с которой вы работаете, устраняя умственную нагрузку синтаксического перевода.
+      </p>
+
+      <h3>Создатели контента и художники</h3>
+      <p>
+        Если у вас есть чёткая визуальная концепция, но мало времени на доработку промптов, «текст в промпт» ускоряет ваш рабочий процесс. Опишите сцену, получите доработанный промпт, сгенерируйте изображение, затем уточните промпт на основе результата. Итерируйте быстрее с надёжной отправной точкой, а не создавайте всё с нуля каждый раз.
+      </p>
+
+      <h2>Часто задаваемые вопросы</h2>
+
+      <h3>В чём разница между «текст в промпт» и «изображение в промпт»?</h3>
+      <p>
+        «Изображение в промпт» анализирует существующее изображение и восстанавливает промпт, который позволил бы его воссоздать. «Текст в промпт» берёт вашу черновую идею и разворачивает её в детализированный, оптимизированный промпт. Используйте «изображение в промпт», когда у вас есть визуальный ориентир, который вы хотите воспроизвести или развить. Используйте «текст в промпт», когда идея существует только в вашей голове и нет референсного изображения.
+      </p>
+
+      <h3>Можно ли использовать этот инструмент для улучшения существующих промптов?</h3>
+      <p>
+        Да. Вставьте ваш текущий промпт в текстовое поле, и наш ИИ обогатит его улучшенной структурой, синтаксисом для конкретной модели, тегами качества, описаниями освещения и многим другим. Инструмент работает и как расширитель идей, и как улучшитель промптов. Это полезно, когда ваш промпт частично работает, но результат не совсем соответствует задуманному.
+      </p>
+
+      <h3>Какую ИИ-модель выбрать?</h3>
+      <p>
+        Выбирайте ту модель, в которой вы собираетесь генерировать изображения. У каждой модели свои требования к синтаксису: Midjourney использует теги через запятую с синтаксисом --параметр; Stable Diffusion использует нотацию (слово:вес); DALL-E 3 предпочитает предложения на естественном языке; Flux хорошо воспринимает подробный описательный текст. Выбирайте модель, которую будете реально использовать, чтобы результат соответствовал ожидаемому формату.
+      </p>
+
+      <h3>Функция «текст в промпт» бесплатна?</h3>
+      <p>
+        Да, полностью бесплатна. Не нужен аккаунт, не требуется банковская карта, нет водяных знаков. Вы получаете 10 бесплатных запросов в день, общих для «изображение в промпт» и «текст в промпт». Счётчик сбрасывается в полночь по UTC. Для большинства пользователей 10 генераций в день более чем достаточно для повседневной творческой работы.
+      </p>
+
+      <h2>Похожие инструменты</h2>
+      <div class="related-posts">
+        <div class="related-grid">
+          <a href="/ru/midjourney-prompt-generator/" class="related-card">
+            <p class="tag">Генератор</p>
+            <h3>Генератор промптов Midjourney</h3>
+          </a>
+          <a href="/ru/stable-diffusion-prompt-generator/" class="related-card">
+            <p class="tag">Генератор</p>
+            <h3>Генератор промптов Stable Diffusion</h3>
+          </a>
+          <a href="/ru/flux-prompt-generator/" class="related-card">
+            <p class="tag">Генератор</p>
+            <h3>Генератор промптов Flux AI</h3>
+          </a>
+          <a href="/ru/dall-e-prompt-generator/" class="related-card">
+            <p class="tag">Генератор</p>
+            <h3>Генератор промптов DALL-E 3</h3>
+          </a>
+          <a href="/ru/blog/" class="related-card">
+            <p class="tag">Блог</p>
+            <h3>Все руководства по промпт-инженерии</h3>
+          </a>
+          <a href="/ru/" class="related-card">
+            <p class="tag">ИИ-инструмент</p>
+            <h3>Изображение в промпт — Основной инструмент</h3>
+          </a>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+
+  <footer class="footer-4col">
+    <div class="f4-inner">
+      <div class="f4-brand">
+        <img src="/favicon.svg" alt="ImageToPrompt" width="28" height="28">
+        <span class="f4-brand-name">ImageTo<span class="accent">Prompt</span></span>
+        <span class="f4-brand-sub">&mdash; Free AI Prompt Generator</span>
+      </div>
+      <div class="f4-grid">
+        <div class="f4-section">
+          <h4 class="f4-heading">Image Prompt Tools</h4>
+          <a href="/">Image to Prompt</a>
+          <a href="/text-to-prompt/">Text to Prompt</a>
+      <a href="/describe-image/">Describe Image</a>
+          <a href="/midjourney-prompt-generator/">Midjourney</a>
+          <a href="/stable-diffusion-prompt-generator/">Stable Diffusion</a>
+          <a href="/flux-prompt-generator/">Flux</a>
+          <a href="/dall-e-prompt-generator/">DALL-E 3</a>
+          <a href="/adobe-firefly-prompt-generator/">Adobe Firefly</a>
+          <a href="/leonardo-ai-prompt-generator/">Leonardo AI</a>
+          <a href="/ideogram-prompt-generator/">Ideogram</a>
+        </div>
+        <div class="f4-section">
+          <h4 class="f4-heading">Video Prompt Tools</h4>
+          <a href="/image-to-video-prompt/">Image to Video Prompt</a>
+          <a href="/text-to-video-prompt/">Text to Video Prompt</a>
+          <a href="/veo-prompt-generator/">Veo / Flow Studio</a>
+          <a href="/kling-prompt-generator/">Kling AI</a>
+          <a href="/runway-prompt-generator/">Runway Gen-3</a>
+          <a href="/pika-prompt-generator/">Pika</a>
+          <a href="/luma-prompt-generator/">Luma Dream Machine</a>
+          <a href="/sora-prompt-generator/">Sora</a>
+          <a href="/minimax-prompt-generator/">Minimax</a>
+          <a href="/stable-video-prompt-generator/">Stable Video</a>
+        </div>
+        <div class="f4-section">
+          <h4 class="f4-heading">Resources</h4>
+          <a href="/blog/">Blog</a>
+          <a href="/about/">About</a>
+          <a href="/pricing/">Pricing</a>
+          <a href="/contact/">Contact</a>
+          <a href="/privacy-policy/">Privacy Policy</a>
+          <a href="/terms-of-service/">Terms of Service</a>
+        </div>
+        <div class="f4-section">
+          <h4 class="f4-heading">Languages</h4>
+          <a href="/">English</a>
+          <a href="/fr/">Fran&#231;ais</a>
+          <a href="/ar/">&#1575;&#1604;&#1593;&#1585;&#1576;&#1610;&#1577;</a>
+          <a href="/es/">Espa&#241;ol</a>
+          <a href="/ko/">&#54620;&#44397;&#50612;</a>
+          <a href="/ja/">&#26085;&#26412;&#35486;</a>
+          <a href="/ru/">&#1056;&#1091;&#1089;&#1089;&#1082;&#1080;&#1081;</a>
+        </div>
+      </div>
+      <div class="f4-bottom">
+        <p>&#169; 2026 ImageToPrompt.dev &#8212; Free AI Prompt Generator</p>
+        <p>Your images are never stored. All analysis is ephemeral and private.</p>
+      </div>
+    </div>
+  </footer>
+
+<script src="/nav.js" defer></script>
+  <script>
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', function() {
+    navigator.serviceWorker.register('/sw.js')
+      .catch(function(err) { console.warn('SW registration failed:', err); });
+  });
+}
+</script>
+</body>
+</html>

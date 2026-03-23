@@ -1,0 +1,447 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <script src="/theme-toggle.js"></script>
+  <meta charset="UTF-8" />
+  <link rel="dns-prefetch" href="https://www.googletagmanager.com">
+<link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0" />
+  <meta name="robots" content="max-image-preview:large, index, follow">
+  <meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="ImageToPrompt">
+  <title>DALL-E 3 프롬프트 생성기 — 이미지에서 무료 변환 도구 | ImageToPrompt</title>
+  <meta name="description" content="이미지를 자연어 DALL-E 3 프롬프트로 변환하세요. OpenAI ChatGPT 이미지 생성에 최적화되어 스타일, 분위기, 구도를 정확히 재현합니다. 무료, 로그인 불필요." />
+  <link rel="canonical" href="https://www.imagetoprompt.dev/ko/dall-e-prompt-generator/" />
+  <link rel="alternate" hreflang="en" href="https://www.imagetoprompt.dev/dall-e-prompt-generator/" />
+  <link rel="alternate" hreflang="fr" href="https://www.imagetoprompt.dev/fr/dall-e-prompt-generator/" />
+  <link rel="alternate" hreflang="ar" href="https://www.imagetoprompt.dev/ar/dall-e-prompt-generator/" />
+  <link rel="alternate" hreflang="es" href="https://www.imagetoprompt.dev/es/dall-e-prompt-generator/" />
+  <link rel="alternate" hreflang="ja" href="https://www.imagetoprompt.dev/ja/dall-e-prompt-generator/" />
+  <link rel="alternate" hreflang="ko" href="https://www.imagetoprompt.dev/ko/dall-e-prompt-generator/" />
+  <link rel="alternate" hreflang="ru" href="https://www.imagetoprompt.dev/ru/dall-e-prompt-generator/" />
+  <link rel="alternate" hreflang="x-default" href="https://www.imagetoprompt.dev/dall-e-prompt-generator/" />
+  <meta property="og:title" content="DALL-E 3 프롬프트 생성기 — 이미지에서 무료 변환 도구 | ImageToPrompt" />
+  <meta property="og:description" content="이미지를 자연어 DALL-E 3 프롬프트로 변환합니다. ChatGPT 이미지 생성에 최적화. 무료, 로그인 불필요." />
+  <meta property="og:url" content="https://www.imagetoprompt.dev/ko/dall-e-prompt-generator/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="https://www.imagetoprompt.dev/og-image.png" />
+  <meta property="og:site_name" content="ImageToPrompt" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="DALL-E 3 프롬프트 생성기 — 이미지에서 무료 변환 도구 | ImageToPrompt" />
+  <meta name="twitter:description" content="이미지를 자연어 DALL-E 3 프롬프트로 변환합니다. ChatGPT용 무료 도구, 로그인 불필요." />
+  <meta name="twitter:image" content="https://www.imagetoprompt.dev/og-image.png" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="48x48" href="/favicon-48.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+  <link rel="manifest" href="/site.webmanifest" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="/fonts/space-grotesk-700.woff2" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="/fonts/inter-400.woff2" />
+  <link rel="stylesheet" href="/theme.css">
+  <link rel="preload" href="/blog.css" as="style" onload="this.onload=null;this.rel='stylesheet'"><noscript><link rel="stylesheet" href="/blog.css"></noscript>
+  <link rel="preload" href="/model-pages.css" as="style" onload="this.onload=null;this.rel='stylesheet'"><noscript><link rel="stylesheet" href="/model-pages.css"></noscript>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "DALL-E 3 프롬프트 생성기",
+    "applicationCategory": "DesignApplication",
+    "operatingSystem": "Web",
+    "url": "https://www.imagetoprompt.dev/ko/dall-e-prompt-generator/",
+    "description": "이미지를 자연어 DALL-E 3 프롬프트로 변환합니다. OpenAI ChatGPT 이미지 생성에 최적화되었습니다.",
+    "inLanguage": "ko",
+    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "KRW" },
+    "publisher": { "@type": "Organization", "name": "ImageToPrompt", "url": "https://www.imagetoprompt.dev/" }
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "홈", "item": "https://www.imagetoprompt.dev/ko/" },
+      { "@type": "ListItem", "position": 2, "name": "DALL-E 3 프롬프트 생성기", "item": "https://www.imagetoprompt.dev/ko/dall-e-prompt-generator/" }
+    ]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "inLanguage": "ko",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "DALL-E 3 프롬프트는 다른 모델과 어떻게 다른가요?",
+        "acceptedAnswer": { "@type": "Answer", "text": "DALL-E 3는 쉼표로 구분된 키워드 목록이 아닌 완전한 자연어 문장에 최적화되어 있습니다. 주요 모델 중 가장 뛰어난 프롬프트 준수력을 보유하고 있으며, 상세한 지시를 매우 충실하게 따릅니다. 프롬프트는 키워드 나열이 아니라 장면을 설명하는 캡션처럼 작성해야 합니다." }
+      },
+      {
+        "@type": "Question",
+        "name": "이 프롬프트를 ChatGPT에 바로 붙여넣기 할 수 있나요?",
+        "acceptedAnswer": { "@type": "Answer", "text": "네. GPT-4o 또는 DALL-E 3가 활성화된 ChatGPT에서 생성된 프롬프트를 사용하여 이미지를 만들 수 있습니다. 채팅창에 직접 붙여넣기만 하면 됩니다. 최상의 결과를 위해 '다음 이미지를 생성해 줘:'를 앞에 붙이거나 설명을 그대로 붙여넣으면 됩니다." }
+      },
+      {
+        "@type": "Question",
+        "name": "DALL-E 3는 왜 태그 대신 문장을 사용하나요?",
+        "acceptedAnswer": { "@type": "Answer", "text": "DALL-E 3는 프롬프트 업샘플링이라는 기술로 훈련되었습니다. OpenAI의 모델이 짧은 프롬프트를 자동으로 상세한 설명으로 확장한 후 이미지를 생성합니다. 이 때문에 DALL-E 3는 서로 연결되지 않은 키워드 목록보다 완전하고 잘 구조화된 문장에서 더 좋은 성능을 발휘합니다." }
+      },
+      {
+        "@type": "Question",
+        "name": "DALL-E 3는 네거티브 프롬프트를 지원하나요?",
+        "acceptedAnswer": { "@type": "Answer", "text": "DALL-E 3는 Stable Diffusion과 같은 명시적 네거티브 프롬프트를 지원하지 않습니다. 대신 자연어를 사용하여 요소를 제외할 수 있습니다: '텍스트 없이', '워터마크 없이', '복잡한 배경 피하기'. 저희 생성기는 이러한 회피 지시사항을 포지티브 프롬프트에 직접 통합합니다." }
+      }
+    ]
+  }
+  </script>
+  <!-- Google AdSense -->
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4499206373485728" crossorigin="anonymous"></script>
+  <!-- Web Push Notifications -->
+<script src="https://cdn.onesignal.com/sdks/web/v16/OneSignalSDK.page.js" defer></script>
+<script>
+  window.OneSignalDeferred = window.OneSignalDeferred || [];
+  OneSignalDeferred.push(async function(OneSignal) {
+    await OneSignal.init({
+      appId: "REPLACE_WITH_ONESIGNAL_APP_ID",
+      notifyButton: { enable: false }
+    });
+  });
+</script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "VideoObject",
+    "name": "DALL-E 3 Prompt Generator Demo — Free Image to Prompt Tool",
+    "description": "See how to create DALL-E 3 prompts from images using ImageToPrompt. Free tool demo with descriptive prompt output.",
+    "thumbnailUrl": "https://img.youtube.com/vi/5lcSaYcMuq8/maxresdefault.jpg",
+    "uploadDate": "2026-03-18",
+    "contentUrl": "https://www.youtube.com/watch?v=5lcSaYcMuq8",
+    "embedUrl": "https://www.youtube.com/embed/5lcSaYcMuq8",
+    "duration": "PT3M",
+    "publisher": {
+      "@type": "Organization",
+      "name": "ImageToPrompt",
+      "logo": { "@type": "ImageObject", "url": "https://www.imagetoprompt.dev/favicon.svg" }
+    }
+  }
+  </script>
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="inner">
+      <a href="/ko/" class="site-logo"><img src="/favicon.svg" alt="ImageToPrompt" width="48" height="48"><div class="site-logo-text">ImageTo<span class="accent">Prompt</span><span class="site-logo-sub">Free AI Prompt Generator</span></div></a>
+      <nav class="site-nav" aria-label="Main navigation">
+        <div class="nav-dropdown">
+          <button class="nav-dropdown-trigger" aria-haspopup="true" aria-expanded="false">Tools <span class="nav-chevron" aria-hidden="true">&#9660;</span></button>
+          <div class="nav-dropdown-menu" role="menu">
+            <div class="nav-mega-grid">
+              <div class="nav-mega-col">
+                <div class="nav-mega-heading">&#128444; IMAGE TOOLS</div>
+                <a href="/" role="menuitem" class="nav-mega-tool">Image to Prompt <span class="nav-mega-arrow">&#8594;</span></a>
+                <a href="/text-to-prompt/" role="menuitem" class="nav-mega-tool">Text to Prompt <span class="nav-mega-arrow">&#8594;</span></a>
+                <a href="/describe-image/" role="menuitem" class="nav-mega-tool">Describe Image <span class="nav-new-badge">NEW</span> <span class="nav-mega-arrow">&#8594;</span></a>
+                <div class="nav-mega-models-label">Models</div>
+                <div class="nav-mega-models"><a href="/midjourney-prompt-generator/">Midjourney</a><span class="nav-dot">&#xB7;</span><a href="/stable-diffusion-prompt-generator/">SD</a></div>
+                <div class="nav-mega-models"><a href="/flux-prompt-generator/">Flux</a><span class="nav-dot">&#xB7;</span><a href="/dall-e-prompt-generator/">DALL&#xB7;E&#xA0;3</a></div>
+                <div class="nav-mega-models"><a href="/adobe-firefly-prompt-generator/">Firefly</a><span class="nav-dot">&#xB7;</span><a href="/leonardo-ai-prompt-generator/">Leonardo</a></div>
+                <div class="nav-mega-models"><a href="/ideogram-prompt-generator/">Ideogram</a></div>
+              </div>
+              <div class="nav-mega-divider" aria-hidden="true"></div>
+              <div class="nav-mega-col">
+                <div class="nav-mega-heading">&#127909; VIDEO TOOLS</div>
+                <a href="/?tab=image-to-video" role="menuitem" class="nav-mega-tool">Image to Video <span class="nav-mega-arrow">&#8594;</span></a>
+                <a href="/?tab=text-to-video" role="menuitem" class="nav-mega-tool">Text to Video <span class="nav-mega-arrow">&#8594;</span></a>
+                <div class="nav-mega-models-label">Models</div>
+                <div class="nav-mega-models"><a href="/veo-prompt-generator/">Veo</a><span class="nav-dot">&#xB7;</span><a href="/kling-prompt-generator/">Kling</a></div>
+                <div class="nav-mega-models"><a href="/runway-prompt-generator/">Runway</a><span class="nav-dot">&#xB7;</span><a href="/pika-prompt-generator/">Pika</a></div>
+                <div class="nav-mega-models"><a href="/luma-prompt-generator/">Luma</a><span class="nav-dot">&#xB7;</span><a href="/sora-prompt-generator/">Sora</a></div>
+                <div class="nav-mega-models"><a href="/minimax-prompt-generator/">Minimax</a><span class="nav-dot">&#xB7;</span><a href="/stable-video-prompt-generator/">Stable</a></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <a href="/ko/blog/">Blog</a>
+        <a href="/pricing/" class="nav-pill-pricing">Pricing</a>
+        <a href="/about/" class="nav-pill-about">About</a>
+        <a href="/" class="nav-try-free">Try Free &#8594;</a>
+        <button id="theme-toggle" onclick="toggleTheme()" aria-label="Switch theme" title="Switch theme">&#9728;&#xFE0F;</button>
+  </nav>
+    </div>
+  </header>
+
+  <nav class="breadcrumb" aria-label="경로">
+    <a href="/ko/">홈</a><span class="sep">&#8250;</span>
+    <span>DALL&#xB7;E 3 프롬프트 생성기</span>
+  </nav>
+
+  <div class="page-wrapper model-page-wrapper">
+
+    <header class="model-page-hero">
+      <div class="model-badge-hero" style="--model-color:#10a37f">&#129504; 컨셉 표현에 최적</div>
+      <h1>DALL&#xB7;E 3 이미지 프롬프트 생성기 &#8212; 무료</h1>
+      <p class="model-page-subtitle">어떤 이미지든 자연어 DALL&#xB7;E 3 프롬프트로 변환하세요. OpenAI 모델이 뛰어난 정확도로 따르는 완전한 문장 구조로 생성됩니다. ChatGPT에서 바로 사용할 수 있습니다.</p>
+    </header>
+
+    <!-- 임베디드 도구 -->
+    <div class="tool-embed-container">
+      <iframe
+        src="/?model=dalle3&lang=ko&embed=true"
+        title="DALL-E 3 프롬프트 생성기"
+        class="tool-embed-frame"
+        loading="eager"
+        allow="clipboard-write; clipboard-read"
+      ></iframe>
+    </div>
+
+    <!-- YouTube 데모 영상 -->
+    <div class="video-demo-section" style="margin:2.5rem 0;">
+      <h2 style="font-family:'Space Grotesk',sans-serif;font-size:1.25rem;font-weight:700;color:var(--text-primary);margin:0 0 0.5rem;">사용 방법 보기</h2>
+      <p style="color:var(--text-muted);font-size:0.9rem;margin:0 0 1.25rem;">도구 실사용 예시 &#8212; AI가 생성한 프롬프트 출력을 확인하세요.</p>
+      <div style="position:relative;padding-bottom:56.25%;height:0;overflow:hidden;border-radius:12px;border:1px solid var(--border-subtle);">
+        <iframe
+          src="https://www.youtube.com/embed/5lcSaYcMuq8"
+          title="DALL-E 3 Prompt Generator Demo — Free Image to Prompt Tool"
+          frameborder="0"
+          style="position:absolute;top:0;left:0;width:100%;height:100%;border:0;"
+          loading="lazy"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          allowfullscreen>
+        </iframe>
+      </div>
+    </div>
+
+    <!-- 섹션: DALL-E 3 프롬프트를 사용해야 하는 이유 -->
+    <section class="model-features-section">
+      <h2>DALL&#xB7;E 3 프롬프트를 사용해야 하는 이유</h2>
+      <div class="model-features-grid">
+        <div class="model-feature-card" style="--card-accent:#FB923C">
+          <div class="feature-icon">&#9889;</div>
+          <h3>모델 전용 구문</h3>
+          <p>DALL&#xB7;E 3는 완전한 서술형 문장에 최적화되어 있습니다. 프롬프트는 자연스러운 산문으로 작성되며, OpenAI 모델은 키워드 목록이 아닌 의미와 맥락을 해석합니다.</p>
+        </div>
+        <div class="model-feature-card" style="--card-accent:#FB923C">
+          <div class="feature-icon">&#127919;</div>
+          <h3>최적화된 파라미터</h3>
+          <p>스타일, 분위기, 색상 팔레트, 구도 프레이밍이 명시적으로 기술됩니다. 안전을 고려한 표현으로 콘텐츠 검열을 안정적으로 통과합니다.</p>
+        </div>
+        <div class="model-feature-card" style="--card-accent:#FB923C">
+          <div class="feature-icon">&#128203;</div>
+          <h3>바로 붙여넣기</h3>
+          <p>ChatGPT 이미지 생성기, OpenAI API, Bing Image Creator에 바로 붙여넣으세요. DALL&#xB7;E 3 HD 모드에서도 최대 디테일로 작동합니다.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 섹션: 실제 사용 예시 -->
+    <section class="model-showcase-section">
+      <h2>실제 사용 예시</h2>
+      <div class="model-showcase-grid">
+        <div class="showcase-col">
+          <span class="showcase-label">원본 이미지</span>
+          <figure class="img-figure">
+            <picture><source srcset="/images/ai-image-to-prompt-luxury-watch-original.webp" type="image/webp"><img src="/images/ai-image-to-prompt-luxury-watch-original.jpeg" alt="ImageToPrompt에 업로드된 원본 이미지" width="600" height="400" loading="lazy"></picture>
+            <figcaption>원본 참고 이미지</figcaption>
+          </figure>
+        </div>
+        <div class="showcase-arrow">&#8594;</div>
+        <div class="showcase-col">
+          <span class="showcase-label generated" style="--model-color:#FB923C">DALL&#xB7;E 3 결과</span>
+          <figure class="img-figure">
+            <picture><source srcset="/images/ai-image-to-prompt-luxury-watch-recreated.webp" type="image/webp"><img src="/images/ai-image-to-prompt-luxury-watch-recreated.jpeg" alt="우리 도구의 DALL·E 3 프롬프트로 재현된 이미지" width="600" height="400" loading="lazy"></picture>
+            <figcaption>DALL&#xB7;E 3 프롬프트로 재현</figcaption>
+          </figure>
+        </div>
+      </div>
+      <div class="showcase-prompt-box">
+        <div class="showcase-prompt-header">
+          <span class="showcase-prompt-badge" style="background:rgba(167,139,250,0.12);color:#FB923C;border-color:rgba(167,139,250,0.25)">&#129504; DALL&#xB7;E 3 프롬프트</span>
+        </div>
+        <code class="showcase-prompt-code">An ultra-detailed luxury Swiss chronograph watch on matte obsidian, dramatic studio lighting with soft specular highlights, hyperrealistic macro product photography, shallow depth of field with smooth bokeh background, no text or watermarks</code>
+      </div>
+    </section>
+
+    <!-- 본문 콘텐츠 -->
+    <article class="model-page-content">
+
+      <h2>DALL&#xB7;E 3의 독특한 프롬프트 철학</h2>
+      <p>OpenAI가 개발한 DALL&#xB7;E 3는 기존 AI 이미지 생성 프롬프트 설계 방식에서 완전히 벗어났습니다. Midjourney가 쉼표로 구분된 키워드를 사용하고 Stable Diffusion이 가중치 토큰을 사용하는 반면, DALL&#xB7;E 3는 <strong>자연스럽고 완전한 문장</strong>을 이해하도록 설계되었습니다 &#8212; 마치 한 사람이 다른 사람에게 장면을 설명하듯이 작성하는 것입니다.</p>
+      <div class="code-example">
+        <code>A lone astronaut stands on the surface of a barren, rust-colored planet, gazing up at a vast starfield. The scene is lit by the soft glow of a distant binary star system, casting long, dramatic shadows across the rocky terrain. The astronaut's reflective visor catches the light, showing a faint reflection of the stars above. The composition is cinematic, shot from a low angle to emphasize the vastness of space. Photorealistic quality, ultra-detailed, 8K resolution.</code>
+      </div>
+
+      <h2>DALL&#xB7;E 3의 핵심 강점</h2>
+      <div class="params-grid">
+        <div class="param-card" style="--c:#10a37f">
+          <div class="param-name">텍스트 렌더링</div>
+          <div class="param-desc">DALL&#xB7;E 3는 이미지 내에 읽을 수 있는 텍스트를 정확하게 렌더링할 수 있습니다 &#8212; 간판, 라벨, 제목, 로고 등 대부분의 다른 모델이 어려워하는 영역입니다. 최상의 결과를 위해 프롬프트에서 텍스트를 따옴표로 지정하세요.</div>
+        </div>
+        <div class="param-card" style="--c:#10a37f">
+          <div class="param-name">프롬프트 준수력</div>
+          <div class="param-desc">DALL&#xB7;E 3는 Midjourney나 SD보다 상세한 프롬프트를 더 충실하게 따릅니다. 여러 특정 요소를 포함한 복잡한 구도도 더 안정적으로 렌더링됩니다.</div>
+        </div>
+        <div class="param-card" style="--c:#10a37f">
+          <div class="param-name">개념 일러스트레이션</div>
+          <div class="param-desc">추상적 개념, 은유, 에디토리얼 일러스트레이션에서 DALL&#xB7;E 3는 다른 모델이 잘못 해석하는 아이디어를 정확히 해석하고 시각화하는 데 탁월합니다.</div>
+        </div>
+        <div class="param-card" style="--c:#10a37f">
+          <div class="param-name">ChatGPT 통합</div>
+          <div class="param-desc">DALL&#xB7;E 3는 ChatGPT에 기본 내장되어 있어 대화형으로 반복 작업이 가능합니다: "더 극적으로 만들어 줘", "배경을 숲으로 바꿔 줘" 등 전체 프롬프트를 다시 작성할 필요 없이 수정할 수 있습니다.</div>
+        </div>
+      </div>
+
+      <h2>DALL&#xB7;E 3의 프롬프트 처리 방식</h2>
+      <p>DALL&#xB7;E 3는 <strong>프롬프트 업샘플링</strong>이라는 기술을 사용합니다. 이미지를 생성하기 전에 OpenAI 모델이 프롬프트를 더 상세한 내부 설명으로 확장합니다. 이는 적당히 상세한 프롬프트로도 풍부한 결과를 얻을 수 있다는 뜻입니다. 하지만 이미 매우 상세한 저희 생성 프롬프트를 사용할 경우, 이 업샘플링은 콘텐츠에 역행하지 않고 함께 작동하여 매우 정확한 재현 결과를 만들어냅니다.</p>
+      <p>중요한 주의사항: DALL&#xB7;E 3는 Midjourney나 SD보다 보수적인 콘텐츠 안전 필터를 가지고 있습니다. 저희 생성기는 업로드된 이미지의 전체 미학을 캡처하면서도 이러한 필터를 트리거할 수 있는 프롬프트를 자동으로 회피합니다.</p>
+
+      <h2>ChatGPT에서 DALL&#xB7;E 3 프롬프트 사용하기</h2>
+      <p>생성된 프롬프트를 복사한 후 ChatGPT(GPT-4o 또는 이미지 생성 기능 활성화)를 열고 붙여넣으면 됩니다. 초기 생성 후 "더 극적으로 만들어 줘"나 "색상 팔레트를 차가운 블루 톤으로 변경해 줘"와 같은 대화형 수정 요청을 추가할 수 있습니다. 대화 컨텍스트를 통한 반복적 개선은 Midjourney나 SD의 독립 인터페이스에서는 쉽게 할 수 없는 장점입니다.</p>
+      <p>DALL&#xB7;E 3는 OpenAI API에서 <code>model: "dall-e-3"</code>으로도 사용할 수 있어, 이미지 생성 기능을 애플리케이션에 통합하는 개발자들에게 인기 있는 선택입니다.</p>
+
+      <div class="related-blog">
+        <span class="related-label">관련 가이드</span>
+        <a href="/blog/convert-image-to-ai-prompt/">이미지를 AI 프롬프트로 변환하는 방법 &#8594;</a>
+      </div>
+
+      <!-- FAQ -->
+      <h2>자주 묻는 질문</h2>
+      <div class="faq-list">
+        <details class="faq-item">
+          <summary>DALL&#xB7;E 3 프롬프트는 다른 모델과 어떻게 다른가요?</summary>
+          <p>DALL&#xB7;E 3는 쉼표로 구분된 키워드 목록이 아닌 완전한 자연어 문장에 최적화되어 있습니다. 주요 모델 중 가장 뛰어난 프롬프트 준수력을 보유하고 있으며, 상세한 지시를 매우 충실하게 따릅니다. 프롬프트는 키워드 나열이 아니라 캡션을 작성하듯이 장면을 묘사해야 합니다.</p>
+        </details>
+        <details class="faq-item">
+          <summary>이 프롬프트를 ChatGPT에 바로 붙여넣기 할 수 있나요?</summary>
+          <p>네. GPT-4o 또는 DALL&#xB7;E 3가 활성화된 ChatGPT에서 생성된 프롬프트를 사용해 이미지를 만들 수 있습니다. 채팅창에 직접 붙여넣기만 하면 됩니다. 최상의 결과를 위해 "다음 이미지를 생성해 줘:"를 앞에 붙이거나 설명을 그대로 붙여넣으세요.</p>
+        </details>
+        <details class="faq-item">
+          <summary>DALL&#xB7;E 3는 왜 태그 대신 문장을 사용하나요?</summary>
+          <p>DALL&#xB7;E 3는 프롬프트 업샘플링이라는 기술로 훈련되었습니다. OpenAI 모델이 짧은 프롬프트를 자동으로 상세한 설명으로 확장한 후 이미지를 생성합니다. 이 때문에 DALL&#xB7;E 3는 서로 연결되지 않은 키워드 목록보다 완전하고 잘 구조화된 문장에서 더 우수한 성능을 발휘합니다.</p>
+        </details>
+        <details class="faq-item">
+          <summary>DALL&#xB7;E 3는 네거티브 프롬프트를 지원하나요?</summary>
+          <p>DALL&#xB7;E 3는 Stable Diffusion과 같은 명시적 네거티브 프롬프트를 지원하지 않습니다. 대신 자연어를 사용합니다: "텍스트 없이", "워터마크 없이", "복잡한 배경 피하기". 저희 생성기는 이러한 회피 지시사항을 포지티브 프롬프트에 직접 통합합니다.</p>
+        </details>
+      </div>
+
+      <!-- 가이드 및 리소스 -->
+      <div class="model-related-section">
+        <h2>가이드 및 리소스</h2>
+        <div class="model-related-grid">
+          <a href="/blog/dall-e-3-prompt-guide/" class="model-related-card">
+            <picture><source srcset="/images/ai-prompt-generator-cyberpunk-dalle3.webp" type="image/webp"><img src="/images/ai-prompt-generator-cyberpunk-dalle3.jpeg" alt="DALL·E 3 프롬프트 가이드: 자연어 프롬프팅" loading="lazy"></picture>
+            <div class="model-related-text">
+              <span class="model-related-category">가이드</span>
+              <h4>DALL&#xB7;E 3 프롬프트 가이드: 자연어 프롬프팅</h4>
+            </div>
+          </a>
+          <a href="/blog/convert-image-to-ai-prompt/" class="model-related-card">
+            <picture><source srcset="/images/image-to-prompt-shibuya-tool-output.webp" type="image/webp"><img src="/images/image-to-prompt-shibuya-tool-output.jpeg" alt="이미지를 AI 프롬프트로 변환하는 방법" loading="lazy"></picture>
+            <div class="model-related-text">
+              <span class="model-related-category">튜토리얼</span>
+              <h4>이미지를 AI 프롬프트로 변환하는 방법</h4>
+            </div>
+          </a>
+          <a href="/blog/stable-diffusion-vs-midjourney-vs-dalle3/" class="model-related-card">
+            <picture><source srcset="/images/prompt-generator-from-image-temple-dalle3.webp" type="image/webp"><img src="/images/prompt-generator-from-image-temple-dalle3.jpeg" alt="Stable Diffusion vs Midjourney vs DALL·E 3 비교" loading="lazy"></picture>
+            <div class="model-related-text">
+              <span class="model-related-category">비교</span>
+              <h4>Stable Diffusion vs Midjourney vs DALL&#xB7;E 3</h4>
+            </div>
+          </a>
+        </div>
+      </div>
+
+      <!-- 다른 모델 -->
+      <div class="other-models-section">
+        <h2>다른 프롬프트 생성기 사용해 보기</h2>
+        <div class="other-models-grid">
+          <a href="/midjourney-prompt-generator/" class="other-model-card" style="--c:#00b4d8">&#127912;<span>Midjourney</span></a>
+          <a href="/stable-diffusion-prompt-generator/" class="other-model-card" style="--c:#ff6b35">&#9881;&#65039;<span>Stable Diffusion</span></a>
+          <a href="/flux-prompt-generator/" class="other-model-card" style="--c:#7c3aed">&#9889;<span>Flux AI</span></a>
+          <a href="/adobe-firefly-prompt-generator/" class="other-model-card" style="--c:#ff0000">&#129419;<span>Adobe Firefly</span></a>
+          <a href="/leonardo-ai-prompt-generator/" class="other-model-card" style="--c:#f59e0b">&#127918;<span>Leonardo AI</span></a>
+          <a href="/ideogram-prompt-generator/" class="other-model-card" style="--c:#06b6d4">&#9997;&#65039;<span>Ideogram</span></a>
+        </div>
+      </div>
+
+      <div style="margin-top:2rem;text-align:center">
+        <a href="/?lang=ko" class="cta-btn">무료로 사용해 보기 &#8594;</a>
+      </div>
+
+    </article>
+  </div>
+
+  <footer class="footer-4col">
+    <div class="f4-inner">
+      <div class="f4-brand">
+        <img src="/favicon.svg" alt="ImageToPrompt" width="28" height="28">
+        <span class="f4-brand-name">ImageTo<span class="accent">Prompt</span></span>
+        <span class="f4-brand-sub">&mdash; Free AI Prompt Generator</span>
+      </div>
+      <div class="f4-grid">
+        <div class="f4-section">
+          <h4 class="f4-heading">Image Prompt Tools</h4>
+          <a href="/">Image to Prompt</a>
+          <a href="/text-to-prompt/">Text to Prompt</a>
+      <a href="/describe-image/">Describe Image</a>
+          <a href="/midjourney-prompt-generator/">Midjourney</a>
+          <a href="/stable-diffusion-prompt-generator/">Stable Diffusion</a>
+          <a href="/flux-prompt-generator/">Flux</a>
+          <a href="/dall-e-prompt-generator/">DALL-E 3</a>
+          <a href="/adobe-firefly-prompt-generator/">Adobe Firefly</a>
+          <a href="/leonardo-ai-prompt-generator/">Leonardo AI</a>
+          <a href="/ideogram-prompt-generator/">Ideogram</a>
+        </div>
+        <div class="f4-section">
+          <h4 class="f4-heading">Video Prompt Tools</h4>
+          <a href="/image-to-video-prompt/">Image to Video Prompt</a>
+          <a href="/text-to-video-prompt/">Text to Video Prompt</a>
+          <a href="/veo-prompt-generator/">Veo / Flow Studio</a>
+          <a href="/kling-prompt-generator/">Kling AI</a>
+          <a href="/runway-prompt-generator/">Runway Gen-3</a>
+          <a href="/pika-prompt-generator/">Pika</a>
+          <a href="/luma-prompt-generator/">Luma Dream Machine</a>
+          <a href="/sora-prompt-generator/">Sora</a>
+          <a href="/minimax-prompt-generator/">Minimax</a>
+          <a href="/stable-video-prompt-generator/">Stable Video</a>
+        </div>
+        <div class="f4-section">
+          <h4 class="f4-heading">Resources</h4>
+          <a href="/blog/">Blog</a>
+          <a href="/about/">About</a>
+          <a href="/pricing/">Pricing</a>
+          <a href="/contact/">Contact</a>
+          <a href="/privacy-policy/">Privacy Policy</a>
+          <a href="/terms-of-service/">Terms of Service</a>
+        </div>
+        <div class="f4-section">
+          <h4 class="f4-heading">Languages</h4>
+          <a href="/">English</a>
+          <a href="/fr/">Fran&#231;ais</a>
+          <a href="/ar/">&#1575;&#1604;&#1593;&#1585;&#1576;&#1610;&#1577;</a>
+          <a href="/es/">Espa&#241;ol</a>
+          <a href="/ko/">&#54620;&#44397;&#50612;</a>
+          <a href="/ja/">&#26085;&#26412;&#35486;</a>
+          <a href="/ru/">&#1056;&#1091;&#1089;&#1089;&#1082;&#1080;&#1081;</a>
+        </div>
+      </div>
+      <div class="f4-bottom">
+        <p>&#169; 2026 ImageToPrompt.dev &#8212; Free AI Prompt Generator</p>
+        <p>Your images are never stored. All analysis is ephemeral and private.</p>
+      </div>
+    </div>
+  </footer>
+
+<script src="/nav.js" defer></script>
+  <script>
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', function() {
+    navigator.serviceWorker.register('/sw.js')
+      .catch(function(err) { console.warn('SW registration failed:', err); });
+  });
+}
+</script>
+</body>
+</html>

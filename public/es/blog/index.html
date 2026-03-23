@@ -1,0 +1,424 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <script src="/theme-toggle.js"></script>
+  <meta charset="UTF-8" />
+  <link rel="dns-prefetch" href="https://www.googletagmanager.com">
+<link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="max-image-preview:large, index, follow">
+  <meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="ImageToPrompt">
+  <title>Gu&#237;as de Prompt Engineering para IA &#8212; Midjourney, Flux y M&#225;s | ImageToPrompt</title>
+  <meta name="description" content="Gu&#237;as pr&#225;cticas sobre prompt engineering para arte con IA. Aprende a escribir mejores prompts para Midjourney, convertir im&#225;genes en prompts y dominar las herramientas de generaci&#243;n de im&#225;genes con IA." />
+  <link rel="canonical" href="https://www.imagetoprompt.dev/es/blog/" />
+  <link rel="alternate" hreflang="es" href="https://www.imagetoprompt.dev/es/blog/" />
+  <link rel="alternate" hreflang="en" href="https://www.imagetoprompt.dev/blog/" />
+  <link rel="alternate" hreflang="fr" href="https://www.imagetoprompt.dev/fr/blog/" />
+  <link rel="alternate" hreflang="ar" href="https://www.imagetoprompt.dev/ar/blog/" />
+  <link rel="alternate" hreflang="ja" href="https://www.imagetoprompt.dev/ja/blog/" />
+  <link rel="alternate" hreflang="ko" href="https://www.imagetoprompt.dev/ko/blog/" />
+  <link rel="alternate" hreflang="ru" href="https://www.imagetoprompt.dev/ru/blog/" />
+  <link rel="alternate" hreflang="x-default" href="https://www.imagetoprompt.dev/blog/" />
+  <meta property="og:title" content="Blog de Prompt Engineering para IA | ImageToPrompt" />
+  <meta property="og:description" content="Gu&#237;as pr&#225;cticas sobre prompt engineering para arte con IA. Aprende Midjourney, Stable Diffusion, DALL-E 3 y Flux." />
+  <meta property="og:url" content="https://www.imagetoprompt.dev/es/blog/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="https://www.imagetoprompt.dev/og-image.png" />
+  <meta property="og:site_name" content="ImageToPrompt" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Blog de Prompt Engineering para IA | ImageToPrompt" />
+  <meta name="twitter:description" content="Gu&#237;as pr&#225;cticas sobre prompt engineering para arte con IA." />
+  <meta name="twitter:image" content="https://www.imagetoprompt.dev/og-image.png" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="48x48" href="/favicon-48.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+  <link rel="manifest" href="/site.webmanifest" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="/fonts/space-grotesk-700.woff2" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="/fonts/inter-400.woff2" />
+  <link rel="stylesheet" href="/theme.css">
+  <link rel="preload" href="/blog.css" as="style" onload="this.onload=null;this.rel='stylesheet'"><noscript><link rel="stylesheet" href="/blog.css"></noscript>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Blog",
+    "name": "Blog ImageToPrompt",
+    "url": "https://www.imagetoprompt.dev/es/blog/",
+    "description": "Gu\u00edas pr\u00e1cticas sobre prompt engineering para arte con IA con Midjourney, Stable Diffusion, DALL-E 3 y Flux.",
+    "inLanguage": "es",
+    "publisher": {
+      "@type": "Organization",
+      "name": "ImageToPrompt",
+      "url": "https://www.imagetoprompt.dev/"
+    }
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Inicio",
+        "item": "https://www.imagetoprompt.dev/es/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Blog",
+        "item": "https://www.imagetoprompt.dev/es/blog/"
+      }
+    ]
+  }
+  </script>
+    <!-- Google AdSense -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4499206373485728" crossorigin="anonymous"></script>
+    <!-- Web Push Notifications -->
+<script src="https://cdn.onesignal.com/sdks/web/v16/OneSignalSDK.page.js" defer></script>
+<script>
+  window.OneSignalDeferred = window.OneSignalDeferred || [];
+  OneSignalDeferred.push(async function(OneSignal) {
+    await OneSignal.init({
+      appId: "REPLACE_WITH_ONESIGNAL_APP_ID",
+      notifyButton: { enable: false }
+    });
+  });
+</script>
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="inner">
+      <a href="/es/" class="site-logo"><img src="/favicon.svg" alt="ImageToPrompt" width="48" height="48"><div class="site-logo-text">ImageTo<span class="accent">Prompt</span><span class="site-logo-sub">Generador de Prompts IA Gratuito</span></div></a>
+      <nav class="site-nav" aria-label="Main navigation">
+        <div class="nav-dropdown">
+          <button class="nav-dropdown-trigger" aria-haspopup="true" aria-expanded="false">Tools <span class="nav-chevron" aria-hidden="true">&#9660;</span></button>
+          <div class="nav-dropdown-menu" role="menu">
+            <div class="nav-mega-grid">
+              <div class="nav-mega-col">
+                <div class="nav-mega-heading">&#128444; IMAGE TOOLS</div>
+                <a href="/" role="menuitem" class="nav-mega-tool">Image to Prompt <span class="nav-mega-arrow">&#8594;</span></a>
+                <a href="/text-to-prompt/" role="menuitem" class="nav-mega-tool">Text to Prompt <span class="nav-mega-arrow">&#8594;</span></a>
+                <a href="/describe-image/" role="menuitem" class="nav-mega-tool">Describe Image <span class="nav-new-badge">NEW</span> <span class="nav-mega-arrow">&#8594;</span></a>
+                <div class="nav-mega-models-label">Models</div>
+                <div class="nav-mega-models"><a href="/midjourney-prompt-generator/">Midjourney</a><span class="nav-dot">&#xB7;</span><a href="/stable-diffusion-prompt-generator/">SD</a></div>
+                <div class="nav-mega-models"><a href="/flux-prompt-generator/">Flux</a><span class="nav-dot">&#xB7;</span><a href="/dall-e-prompt-generator/">DALL&#xB7;E&#xA0;3</a></div>
+                <div class="nav-mega-models"><a href="/adobe-firefly-prompt-generator/">Firefly</a><span class="nav-dot">&#xB7;</span><a href="/leonardo-ai-prompt-generator/">Leonardo</a></div>
+                <div class="nav-mega-models"><a href="/ideogram-prompt-generator/">Ideogram</a></div>
+              </div>
+              <div class="nav-mega-divider" aria-hidden="true"></div>
+              <div class="nav-mega-col">
+                <div class="nav-mega-heading">&#127909; VIDEO TOOLS</div>
+                <a href="/?tab=image-to-video" role="menuitem" class="nav-mega-tool">Image to Video <span class="nav-mega-arrow">&#8594;</span></a>
+                <a href="/?tab=text-to-video" role="menuitem" class="nav-mega-tool">Text to Video <span class="nav-mega-arrow">&#8594;</span></a>
+                <div class="nav-mega-models-label">Models</div>
+                <div class="nav-mega-models"><a href="/veo-prompt-generator/">Veo</a><span class="nav-dot">&#xB7;</span><a href="/kling-prompt-generator/">Kling</a></div>
+                <div class="nav-mega-models"><a href="/runway-prompt-generator/">Runway</a><span class="nav-dot">&#xB7;</span><a href="/pika-prompt-generator/">Pika</a></div>
+                <div class="nav-mega-models"><a href="/luma-prompt-generator/">Luma</a><span class="nav-dot">&#xB7;</span><a href="/sora-prompt-generator/">Sora</a></div>
+                <div class="nav-mega-models"><a href="/minimax-prompt-generator/">Minimax</a><span class="nav-dot">&#xB7;</span><a href="/stable-video-prompt-generator/">Stable</a></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <a href="/es/blog/" class="active">Blog</a>
+        <a href="/es/pricing/" class="nav-pill-pricing">Pricing</a>
+        <a href="/es/about/" class="nav-pill-about">About</a>
+        <a href="/es/" class="nav-try-free">Try Free &#8594;</a>
+        <button id="theme-toggle" onclick="toggleTheme()" aria-label="Switch theme" title="Switch theme">&#9728;&#xFE0F;</button>
+  </nav>
+    </div>
+  </header>
+
+  <div class="page-wrapper">
+
+    <div style="margin-bottom:2.5rem">
+      <p class="article-tag">Blog y Gu&#237;as</p>
+      <h1 style="font-family:'Space Grotesk',Inter,system-ui,sans-serif;font-size:clamp(1.75rem,4vw,2.25rem);font-weight:700;background:linear-gradient(135deg,#e040fb,#00e5ff);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;line-height:1.2;margin-bottom:0.75rem">Gu&#237;as de Prompt Engineering para IA</h1>
+      <p style="color:var(--text-muted);font-size:1rem;max-width:36rem;line-height:1.6">Gu&#237;as pr&#225;cticas para escribir mejores prompts para Midjourney, Stable Diffusion, DALL&#183;E 3 y Flux. Aprende a convertir im&#225;genes en prompts y domina la generaci&#243;n de arte con IA.</p>
+    </div>
+
+    <div class="post-list">
+
+      <a href="/blog/convert-image-to-ai-prompt/" class="post-card">
+        <p class="tag">Gu&#237;a Paso a Paso</p>
+        <h2>C&#243;mo Convertir Cualquier Imagen en un Prompt de IA (Gu&#237;a Paso a Paso)</h2>
+        <p>Aprende exactamente c&#243;mo usar las herramientas de conversi&#243;n de imagen a prompt para obtener prompts de IA de alta calidad a partir de cualquier foto, ilustraci&#243;n o captura de pantalla.</p>
+        <p class="meta">Marzo 2026 &#183; 8 min de lectura</p>
+      </a>
+
+      <a href="/blog/reverse-engineer-ai-art-prompts/" class="post-card">
+        <p class="tag">Tutorial</p>
+        <h2>C&#243;mo Descifrar los Prompts de una Imagen de IA (Ingenier&#237;a Inversa)</h2>
+        <p>Descubre las t&#233;cnicas que usan los artistas profesionales de IA para extraer, adaptar y mejorar prompts a partir de obras de arte generadas con IA.</p>
+        <p class="meta">Marzo 2026 &#183; 9 min de lectura</p>
+      </a>
+
+      <a href="/blog/midjourney-prompt-guide-2026/" class="post-card">
+        <p class="tag">Gu&#237;a Midjourney</p>
+        <h2>Gu&#237;a Completa de Prompts para Midjourney 2026: Par&#225;metros, Ejemplos y Consejos</h2>
+        <p>Todo lo que necesitas saber sobre la estructura de prompts en Midjourney, par&#225;metros (--ar, --v, --style, --chaos) y t&#233;cnicas avanzadas para obtener resultados consistentes.</p>
+        <p class="meta">Marzo 2026 &#183; 11 min de lectura</p>
+      </a>
+
+      <a href="/blog/stable-diffusion-vs-midjourney-vs-dalle3/" class="post-card">
+        <p class="tag">Comparaci&#243;n</p>
+        <h2>Stable Diffusion vs Midjourney vs DALL-E 3 vs Flux: Diferencias en los Prompts</h2>
+        <p>C&#243;mo difieren la sintaxis, el estilo y la estructura de los prompts en los cuatro principales generadores de im&#225;genes con IA. Entiende por qu&#233; el mismo prompt produce resultados diferentes.</p>
+        <p class="meta">Marzo 2026 &#183; 10 min de lectura</p>
+      </a>
+
+      <a href="/blog/prompt-engineering-for-ai-art/" class="post-card">
+        <p class="tag">Gu&#237;a para Principiantes</p>
+        <h2>Prompt Engineering para Arte con IA: Gu&#237;a para Principiantes</h2>
+        <p>Empieza desde cero y aprende los fundamentos para escribir prompts de IA efectivos. Cubre tema, estilo, composici&#243;n, iluminaci&#243;n y par&#225;metros t&#233;cnicos.</p>
+        <p class="meta">Marzo 2026 &#183; 10 min de lectura</p>
+      </a>
+
+      <a href="/blog/best-image-to-prompt-tools-2026/" class="post-card">
+        <p class="tag">Comparativa de Herramientas</p>
+        <h2>Los 7 Mejores Generadores de Imagen a Prompt en 2026 (Comparativa Honesta)</h2>
+        <p>Compara las 7 mejores herramientas de imagen a prompt en 2026. Rese&#241;as honestas de ImageToPrompt, CLIP Interrogator, WD14 Tagger, Midjourney /describe y m&#225;s.</p>
+        <p class="meta">Marzo 2026 &#183; 12 min de lectura</p>
+      </a>
+
+      <a href="/blog/image-to-prompt-for-anime/" class="post-card">
+        <p class="tag">Arte Anime con IA</p>
+        <h2>Imagen a Prompt para Anime: Convierte Arte Anime en Prompts de IA</h2>
+        <p>Aprende a convertir im&#225;genes de anime en prompts de IA para Stable Diffusion, NovelAI y Midjourney. Cubre tags booru, tokens de calidad y est&#233;ticas de estilo.</p>
+        <p class="meta">Marzo 2026 &#183; 10 min de lectura</p>
+      </a>
+
+      <a href="/blog/flux-ai-prompt-guide/" class="post-card">
+        <p class="tag">Flux AI</p>
+        <h2>Gu&#237;a Completa de Prompts para Flux AI 2026: Par&#225;metros, Ejemplos y Consejos</h2>
+        <p>Domina los prompts de Flux AI en 2026. Aprende prompts en lenguaje natural, ajustes de c&#225;mara, t&#233;rminos de iluminaci&#243;n y descriptores de estilo.</p>
+        <p class="meta">Marzo 2026 &#183; 13 min de lectura</p>
+      </a>
+
+      <a href="/blog/negative-prompts-stable-diffusion/" class="post-card">
+        <p class="tag">Stable Diffusion</p>
+        <h2>C&#243;mo Usar Prompts Negativos en Stable Diffusion (Gu&#237;a Completa)</h2>
+        <p>Domina los prompts negativos en Stable Diffusion. Obt&#233;n prompts negativos universales, espec&#237;ficos para SD 1.5/SDXL/SD 3.5, y aprende el impacto del CFG scale.</p>
+        <p class="meta">Marzo 2026 &#183; 11 min de lectura</p>
+      </a>
+
+      <a href="/blog/midjourney-vs-flux/" class="post-card">
+        <p class="tag">Comparaci&#243;n</p>
+        <h2>Midjourney vs Flux: &#191;Cu&#225;l Generador de IA es Mejor en 2026?</h2>
+        <p>Midjourney vs Flux AI comparados en calidad de imagen, estilo de prompt, velocidad, precios y casos de uso.</p>
+        <p class="meta">Marzo 2026 &#183; 11 min de lectura</p>
+      </a>
+
+      <a href="/blog/image-to-prompt-product-photography/" class="post-card">
+        <p class="tag">E-Commerce</p>
+        <h2>Imagen a Prompt para Fotograf&#237;a de Producto: Gu&#237;a de E-Commerce</h2>
+        <p>Usa herramientas de imagen a prompt para recrear y mejorar la fotograf&#237;a de productos con IA. Plantillas de prompts para joyer&#237;a, ropa, electr&#243;nica y cosm&#233;ticos.</p>
+        <p class="meta">Marzo 2026 &#183; 9 min de lectura</p>
+      </a>
+
+      <a href="/blog/dall-e-3-prompt-guide/" class="post-card">
+        <p class="tag">Gu&#237;a DALL&#183;E 3</p>
+        <h2>Gu&#237;a de Prompts para DALL-E 3: C&#243;mo Escribir Prompts para ChatGPT</h2>
+        <p>Domina los prompts de DALL&#183;E 3 con prompts basados en frases, renderizado de texto, descriptores de estilo y consejos para ChatGPT vs API vs Bing Image Creator.</p>
+        <p class="meta">Marzo 2026 &#183; 10 min de lectura</p>
+      </a>
+
+      <a href="/blog/image-to-prompt-logo-design/" class="post-card">
+        <p class="tag">Dise&#241;o de Logos</p>
+        <h2>Imagen a Prompt para Dise&#241;o de Logos: Convierte Logos en Prompts de IA</h2>
+        <p>Aprende a usar herramientas de imagen a prompt para crear logos con IA. Mejores herramientas, plantillas de prompts y consejos para Midjourney, DALL&#183;E 3, Ideogram y Adobe Firefly.</p>
+        <p class="meta">Marzo 2026 &#183; 9 min de lectura</p>
+      </a>
+
+      <a href="/blog/adobe-firefly-prompt-tips/" class="post-card">
+        <p class="tag">Adobe Firefly</p>
+        <h2>Consejos de Prompts para Adobe Firefly: Uso Comercial y Profesional</h2>
+        <p>Domina los prompts de Adobe Firefly con consejos de expertos sobre modificadores de estilo, credenciales de contenido y t&#233;cnicas de relleno generativo.</p>
+        <p class="meta">Marzo 2026 &#183; 9 min de lectura</p>
+      </a>
+
+      <a href="/blog/ai-art-styles-glossary/" class="post-card">
+        <p class="tag">Gu&#237;a de Referencia</p>
+        <h2>Glosario de Estilos de Arte con IA: 50 Estilos Explicados con Ejemplos</h2>
+        <p>El glosario definitivo de 50 estilos de arte con IA &#8212; del impresionismo al cyberpunk. Aprende qu&#233; significa cada t&#233;rmino de estilo y qu&#233; modelos de IA lo renderizan mejor.</p>
+        <p class="meta">Marzo 2026 &#183; 15 min de lectura</p>
+      </a>
+
+      <a href="/blog/how-to-write-ai-prompts-beginners/" class="post-card">
+        <p class="tag">Tutorial para Principiantes</p>
+        <h2>C&#243;mo Escribir Prompts de IA: Tutorial para Principiantes</h2>
+        <p>Empieza desde cero y domina el prompting de im&#225;genes con IA. Tutorial paso a paso que cubre tema, estilo, composici&#243;n, iluminaci&#243;n y par&#225;metros t&#233;cnicos.</p>
+        <p class="meta">Marzo 2026 &#183; 10 min de lectura</p>
+      </a>
+
+      <a href="/blog/image-to-prompt-for-social-media/" class="post-card">
+        <p class="tag">Redes Sociales</p>
+        <h2>Imagen a Prompt para Redes Sociales: Crea Contenido Viral con IA</h2>
+        <p>Usa generadores de im&#225;genes con IA para crear contenido atractivo para redes sociales. Plantillas de prompts para Instagram, TikTok, Pinterest y LinkedIn.</p>
+        <p class="meta">Marzo 2026 &#183; 9 min de lectura</p>
+      </a>
+
+      <a href="/blog/stable-diffusion-prompt-guide/" class="post-card">
+        <p class="tag">Stable Diffusion</p>
+        <h2>Gu&#237;a Completa de Prompts para Stable Diffusion 2026</h2>
+        <p>La gu&#237;a completa de prompting en Stable Diffusion. Domina los prompts ponderados, prompts negativos, CFG scale, selecci&#243;n de sampler y diferencias entre modelos.</p>
+        <p class="meta">Marzo 2026 &#183; 13 min de lectura</p>
+      </a>
+
+      <a href="/blog/image-to-prompt-for-game-art/" class="post-card">
+        <p class="tag">Desarrollo de Videojuegos</p>
+        <h2>Imagen a Prompt para Arte de Videojuegos: Gu&#237;a del Concept Artist</h2>
+        <p>C&#243;mo los desarrolladores indie usan la IA para generar conceptos de personajes, entornos, elementos de interfaz y texturas.</p>
+        <p class="meta">Marzo 2026 &#183; 9 min de lectura</p>
+      </a>
+
+      <a href="/blog/ai-prompt-from-photo/" class="post-card">
+        <p class="tag">Gu&#237;a Pr&#225;ctica</p>
+        <h2>Crear un Prompt de IA a Partir de una Foto Real: Gu&#237;a Completa</h2>
+        <p>Transforma cualquier fotograf&#237;a real en un prompt de generaci&#243;n con IA usando tres m&#233;todos probados: extracci&#243;n autom&#225;tica, an&#225;lisis manual y enfoques h&#237;bridos.</p>
+        <p class="meta">Marzo 2026 &#183; 9 min de lectura</p>
+      </a>
+
+      <a href="/blog/ideogram-prompt-guide/" class="post-card">
+        <p class="tag">Gu&#237;a Ideogram</p>
+        <h2>Gu&#237;a de Prompts para Ideogram: Texto, Tipograf&#237;a y Dise&#241;o Gr&#225;fico</h2>
+        <p>Gu&#237;a completa para escribir prompts en Ideogram. Aprende la sintaxis de renderizado de texto, estilos tipogr&#225;ficos, creaci&#243;n de p&#243;sters y logos.</p>
+        <p class="meta">Marzo 2026 &#183; 9 min de lectura</p>
+      </a>
+
+      <a href="/blog/leonardo-ai-prompt-guide/" class="post-card">
+        <p class="tag">Leonardo AI</p>
+        <h2>Gu&#237;a de Prompts para Leonardo AI: Arte de Juegos y Dise&#241;o de Personajes</h2>
+        <p>Gu&#237;a completa de prompting en Leonardo AI que cubre Phoenix, AlbedoBase XL, modo Alchemy, gu&#237;a por imagen y plantillas de prompts profesionales para arte de juegos.</p>
+        <p class="meta">Marzo 2026 &#183; 9 min de lectura</p>
+      </a>
+
+      <a href="/blog/image-to-prompt-api/" class="post-card">
+        <p class="tag">Gu&#237;a para Desarrolladores</p>
+        <h2>API Imagen a Prompt: Integra la Conversi&#243;n en tus Aplicaciones</h2>
+        <p>C&#243;mo integrar la funcionalidad de imagen a prompt con las APIs de Claude Vision, GPT-4V y Gemini. Incluye ejemplos de c&#243;digo en Python y JavaScript.</p>
+        <p class="meta">Marzo 2026 &#183; 9 min de lectura</p>
+      </a>
+
+      <a href="/blog/image-to-prompt-for-interior-design/" class="post-card">
+        <p class="tag">Dise&#241;o de Interiores</p>
+        <h2>Imagen a Prompt para Dise&#241;o de Interiores: Recrea Cualquier Estilo con IA</h2>
+        <p>Genera visualizaciones de dise&#241;o de interiores con IA a partir de fotos de referencia. Plantillas de prompts para salas, dormitorios, cocinas y oficinas.</p>
+        <p class="meta">Marzo 2026 &#183; 9 min de lectura</p>
+      </a>
+
+      <a href="/blog/prompt-engineering-mistakes/" class="post-card">
+        <p class="tag">Consejos y Errores</p>
+        <h2>15 Errores de Prompt Engineering que Debes Evitar en 2026</h2>
+        <p>Evita los 15 errores m&#225;s comunes en prompt engineering para arte con IA. Desde descripciones vagas hasta sintaxis incorrecta &#8212; con comparaciones antes y despu&#233;s.</p>
+        <p class="meta">Marzo 2026 &#183; 10 min de lectura</p>
+      </a>
+
+      <a href="/blog/text-to-prompt-generator/" class="post-card">
+        <p class="tag">Herramienta Texto a Prompt</p>
+        <h2>Texto a Prompt: Transforma tus Descripciones en Prompts de IA Profesionales</h2>
+        <p>Escribe una idea simple y obt&#233;n un prompt profesional optimizado para el modelo de IA que elijas. Gu&#237;a completa del generador de texto a prompt.</p>
+        <p class="meta">Marzo 2026 &#183; 8 min de lectura</p>
+      </a>
+
+      <a href="/blog/video-prompt-guide-2026/" class="post-card">
+        <p class="tag">Gu&#237;a de V&#237;deo con IA</p>
+        <h2>Gu&#237;a de Prompts de V&#237;deo con IA 2026: Veo, Kling, Runway y Sora</h2>
+        <p>Domina la escritura de prompts de v&#237;deo para Veo, Kling, Runway, Pika, Luma y Sora. Aprende descripci&#243;n de movimiento, direcci&#243;n de c&#225;mara y sintaxis espec&#237;fica de cada modelo.</p>
+        <p class="meta">Marzo 2026 &#183; 12 min de lectura</p>
+      </a>
+
+      <a href="/blog/veo-vs-kling-vs-runway/" class="post-card">
+        <p class="tag">Comparaci&#243;n de V&#237;deo IA</p>
+        <h2>Veo vs Kling vs Runway vs Sora: Mejor Generador de V&#237;deo con IA en 2026</h2>
+        <p>Comparaci&#243;n honesta de los mejores generadores de v&#237;deo con IA &#8212; Veo 2, Kling AI y Runway Gen-3. Cubre realismo, calidad de movimiento, precios y mejores casos de uso.</p>
+        <p class="meta">Marzo 2026 &#183; 11 min de lectura</p>
+      </a>
+
+    </div>
+
+    <div class="cta-box" style="margin-top:3rem">
+      <h3>&#191;Listo para probarlo?</h3>
+      <p>Sube cualquier imagen y obt&#233;n un prompt de IA optimizado en segundos &#8212; completamente gratis.</p>
+      <a href="/es/" class="cta-btn">Probar el Generador de Prompts Gratis &#8594;</a>
+    </div>
+
+  </div>
+
+  <footer class="footer-4col">
+    <div class="f4-inner">
+      <div class="f4-brand">
+        <img src="/favicon.svg" alt="ImageToPrompt" width="28" height="28">
+        <span class="f4-brand-name">ImageTo<span class="accent">Prompt</span></span>
+        <span class="f4-brand-sub">&mdash; Free AI Prompt Generator</span>
+      </div>
+      <div class="f4-grid">
+        <div class="f4-section">
+          <h4 class="f4-heading">Image Prompt Tools</h4>
+          <a href="/">Image to Prompt</a>
+          <a href="/text-to-prompt/">Text to Prompt</a>
+      <a href="/describe-image/">Describe Image</a>
+          <a href="/midjourney-prompt-generator/">Midjourney</a>
+          <a href="/stable-diffusion-prompt-generator/">Stable Diffusion</a>
+          <a href="/flux-prompt-generator/">Flux</a>
+          <a href="/dall-e-prompt-generator/">DALL-E 3</a>
+          <a href="/adobe-firefly-prompt-generator/">Adobe Firefly</a>
+          <a href="/leonardo-ai-prompt-generator/">Leonardo AI</a>
+          <a href="/ideogram-prompt-generator/">Ideogram</a>
+        </div>
+        <div class="f4-section">
+          <h4 class="f4-heading">Video Prompt Tools</h4>
+          <a href="/image-to-video-prompt/">Image to Video Prompt</a>
+          <a href="/text-to-video-prompt/">Text to Video Prompt</a>
+          <a href="/veo-prompt-generator/">Veo / Flow Studio</a>
+          <a href="/kling-prompt-generator/">Kling AI</a>
+          <a href="/runway-prompt-generator/">Runway Gen-3</a>
+          <a href="/pika-prompt-generator/">Pika</a>
+          <a href="/luma-prompt-generator/">Luma Dream Machine</a>
+          <a href="/sora-prompt-generator/">Sora</a>
+          <a href="/minimax-prompt-generator/">Minimax</a>
+          <a href="/stable-video-prompt-generator/">Stable Video</a>
+        </div>
+        <div class="f4-section">
+          <h4 class="f4-heading">Resources</h4>
+          <a href="/es/blog/" class="active">Blog</a>
+          <a href="/es/about/">About</a>
+          <a href="/es/pricing/">Pricing</a>
+          <a href="/contact/">Contact</a>
+          <a href="/privacy-policy/">Privacy Policy</a>
+          <a href="/terms-of-service/">Terms of Service</a>
+        </div>
+        <div class="f4-section">
+          <h4 class="f4-heading">Languages</h4>
+          <a href="/">English</a>
+          <a href="/fr/">Fran&#231;ais</a>
+          <a href="/ar/">&#1575;&#1604;&#1593;&#1585;&#1576;&#1610;&#1577;</a>
+          <a href="/es/">Espa&#241;ol</a>
+          <a href="/ko/">&#54620;&#44397;&#50612;</a>
+          <a href="/ja/">&#26085;&#26412;&#35486;</a>
+          <a href="/ru/">&#1056;&#1091;&#1089;&#1089;&#1082;&#1080;&#1081;</a>
+        </div>
+      </div>
+      <div class="f4-bottom">
+        <p>&#169; 2026 ImageToPrompt.dev &#8212; Free AI Prompt Generator</p>
+        <p>Your images are never stored. All analysis is ephemeral and private.</p>
+      </div>
+    </div>
+  </footer>
+
+<script src="/nav.js" defer></script>
+  <script>
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', function() {
+    navigator.serviceWorker.register('/sw.js')
+      .catch(function(err) { console.warn('SW registration failed:', err); });
+  });
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,445 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <script src="/theme-toggle.js"></script>
+  <meta charset="UTF-8" />
+  <link rel="dns-prefetch" href="https://www.googletagmanager.com">
+<link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0" />
+  <meta name="robots" content="max-image-preview:large, index, follow">
+  <meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="ImageToPrompt">
+  <title>Runway Gen-3 프롬프트 생성기 — 무료 AI 비디오 도구 | ImageToPrompt</title>
+  <meta name="description" content="Runway Gen-3 Alpha용 시네마틱 비디오 프롬프트를 생성하세요. 카메라 움직임, 전환 효과, 시각 효과까지. 무료 프롬프트 생성기." />
+  <link rel="canonical" href="https://www.imagetoprompt.dev/ko/runway-prompt-generator/" />
+  <link rel="alternate" hreflang="en" href="https://www.imagetoprompt.dev/runway-prompt-generator/" />
+  <link rel="alternate" hreflang="fr" href="https://www.imagetoprompt.dev/fr/runway-prompt-generator/" />
+  <link rel="alternate" hreflang="ar" href="https://www.imagetoprompt.dev/ar/runway-prompt-generator/" />
+  <link rel="alternate" hreflang="es" href="https://www.imagetoprompt.dev/es/runway-prompt-generator/" />
+  <link rel="alternate" hreflang="ja" href="https://www.imagetoprompt.dev/ja/runway-prompt-generator/" />
+  <link rel="alternate" hreflang="ko" href="https://www.imagetoprompt.dev/ko/runway-prompt-generator/" />
+  <link rel="alternate" hreflang="ru" href="https://www.imagetoprompt.dev/ru/runway-prompt-generator/" />
+  <link rel="alternate" hreflang="x-default" href="https://www.imagetoprompt.dev/runway-prompt-generator/" />
+  <meta property="og:title" content="Runway Gen-3 프롬프트 생성기 — 무료 AI 비디오 도구 | ImageToPrompt" />
+  <meta property="og:description" content="Runway Gen-3 Alpha용 시네마틱 비디오 프롬프트를 생성하세요. 카메라 움직임, 전환 효과, 시각 효과까지. 무료 프롬프트 생성기." />
+  <meta property="og:url" content="https://www.imagetoprompt.dev/ko/runway-prompt-generator/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="https://www.imagetoprompt.dev/og-image.png" />
+  <meta property="og:site_name" content="ImageToPrompt" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Runway Gen-3 프롬프트 생성기 — 무료 AI 비디오 도구 | ImageToPrompt" />
+  <meta name="twitter:description" content="Runway Gen-3 Alpha용 시네마틱 비디오 프롬프트를 생성하세요. 카메라 움직임, 전환 효과, 시각 효과까지. 무료 프롬프트 생성기." />
+  <meta name="twitter:image" content="https://www.imagetoprompt.dev/og-image.png" />
+  <meta name="twitter:site" content="@imagetoprompt" />
+  <link rel="icon" type="image/svg+xml" href="/favicon-video.svg" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="48x48" href="/favicon-48.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+  <link rel="manifest" href="/site.webmanifest" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="/fonts/space-grotesk-700.woff2" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="/fonts/inter-400.woff2" />
+  <link rel="stylesheet" href="/theme.css">
+  <link rel="preload" href="/blog.css" as="style" onload="this.onload=null;this.rel='stylesheet'"><noscript><link rel="stylesheet" href="/blog.css"></noscript>
+  <link rel="preload" href="/model-pages.css" as="style" onload="this.onload=null;this.rel='stylesheet'"><noscript><link rel="stylesheet" href="/model-pages.css"></noscript>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "Runway Gen-3 Alpha 비디오 프롬프트 생성기",
+    "applicationCategory": "MultimediaApplication",
+    "operatingSystem": "Web",
+    "url": "https://www.imagetoprompt.dev/ko/runway-prompt-generator/",
+    "description": "Runway Gen-3 Alpha용 시네마틱 비디오 프롬프트를 생성하세요. 카메라 움직임, 전환 효과, 시각 효과까지. 무료, 회원가입 불필요.",
+    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "KRW" },
+    "inLanguage": "ko",
+    "publisher": {
+      "@type": "Organization",
+      "name": "ImageToPrompt",
+      "url": "https://www.imagetoprompt.dev/"
+    }
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "홈", "item": "https://www.imagetoprompt.dev/ko/" },
+      { "@type": "ListItem", "position": 2, "name": "Runway Gen-3 프롬프트 생성기", "item": "https://www.imagetoprompt.dev/ko/runway-prompt-generator/" }
+    ]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "inLanguage": "ko",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Gen-3 Alpha의 새로운 기능은 무엇인가요?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Gen-3 Alpha는 카메라 제어 기능이 크게 향상되었으며, 시간 경과에 따른 움직임 일관성이 개선되었고, 오빗이나 크레인 같은 복잡한 카메라 움직임 처리가 강화되었으며, 비디오 프레임 내 텍스트 렌더링도 개선되었습니다." }
+      },
+      {
+        "@type": "Question",
+        "name": "Runway에서 카메라 움직임을 어떻게 제어하나요?",
+        "acceptedAnswer": { "@type": "Answer", "text": "특정 촬영 용어를 사용하세요: 돌리, 크레인, 오빗, 팬, 틸트, 푸시인, 풀아웃. Runway Gen-3는 이러한 용어를 프롬프트의 시작이나 끝에 배치할 때 잘 반응합니다." }
+      },
+      {
+        "@type": "Question",
+        "name": "모션 브러시를 텍스트 프롬프트와 함께 사용할 수 있나요?",
+        "acceptedAnswer": { "@type": "Answer", "text": "모션 브러시는 주로 Runway 인터페이스의 이미지-투-비디오 기능입니다. 텍스트 프롬프트의 경우, 프롬프트에 움직임 벡터를 명시적으로 기술하여 방향성 있는 움직임을 구현할 수 있습니다." }
+      },
+      {
+        "@type": "Question",
+        "name": "Runway의 출력 해상도는 어떻게 되나요?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Runway Gen-3는 1280×768(가로), 768×1280(세로) 또는 1104×624로 출력합니다. 화면 비율은 프롬프트나 프로젝트 설정에 의해 결정됩니다." }
+      }
+    ]
+  }
+  </script>
+    <!-- Google AdSense -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4499206373485728" crossorigin="anonymous"></script>
+    <!-- Web Push Notifications -->
+<script src="https://cdn.onesignal.com/sdks/web/v16/OneSignalSDK.page.js" defer></script>
+<script>
+  window.OneSignalDeferred = window.OneSignalDeferred || [];
+  OneSignalDeferred.push(async function(OneSignal) {
+    await OneSignal.init({
+      appId: "REPLACE_WITH_ONESIGNAL_APP_ID",
+      notifyButton: { enable: false }
+    });
+  });
+</script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "VideoObject",
+    "name": "Runway Gen-3 Prompt Generator Demo — Free AI Video Prompt Tool",
+    "description": "Watch how to create cinematic Runway Gen-3 Alpha prompts with ImageToPrompt. Real demo with motion, camera, and style descriptors.",
+    "thumbnailUrl": "https://img.youtube.com/vi/5lcSaYcMuq8/maxresdefault.jpg",
+    "uploadDate": "2026-03-18",
+    "contentUrl": "https://www.youtube.com/watch?v=5lcSaYcMuq8",
+    "embedUrl": "https://www.youtube.com/embed/5lcSaYcMuq8",
+    "duration": "PT3M",
+    "publisher": {
+      "@type": "Organization",
+      "name": "ImageToPrompt",
+      "logo": { "@type": "ImageObject", "url": "https://www.imagetoprompt.dev/favicon.svg" }
+    }
+  }
+  </script>
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="inner">
+      <a href="/ko/" class="site-logo"><img src="/favicon.svg" alt="ImageToPrompt" width="48" height="48"><div class="site-logo-text">ImageTo<span class="accent">Prompt</span><span class="site-logo-sub">&#47924;&#47308; AI &#54532;&#47212;&#54532;&#53944; &#49373;&#49457;&#44592;</span></div></a>
+      <nav class="site-nav" aria-label="Main navigation">
+        <div class="nav-dropdown">
+          <button class="nav-dropdown-trigger" aria-haspopup="true" aria-expanded="false">Tools <span class="nav-chevron" aria-hidden="true">&#9660;</span></button>
+          <div class="nav-dropdown-menu" role="menu">
+            <div class="nav-mega-grid">
+              <div class="nav-mega-col">
+                <div class="nav-mega-heading">&#128444; IMAGE TOOLS</div>
+                <a href="/" role="menuitem" class="nav-mega-tool">Image to Prompt <span class="nav-mega-arrow">&#8594;</span></a>
+                <a href="/text-to-prompt/" role="menuitem" class="nav-mega-tool">Text to Prompt <span class="nav-mega-arrow">&#8594;</span></a>
+                <a href="/describe-image/" role="menuitem" class="nav-mega-tool">Describe Image <span class="nav-new-badge">NEW</span> <span class="nav-mega-arrow">&#8594;</span></a>
+                <div class="nav-mega-models-label">Models</div>
+                <div class="nav-mega-models"><a href="/midjourney-prompt-generator/">Midjourney</a><span class="nav-dot">&#xB7;</span><a href="/stable-diffusion-prompt-generator/">SD</a></div>
+                <div class="nav-mega-models"><a href="/flux-prompt-generator/">Flux</a><span class="nav-dot">&#xB7;</span><a href="/dall-e-prompt-generator/">DALL&#xB7;E&#xA0;3</a></div>
+                <div class="nav-mega-models"><a href="/adobe-firefly-prompt-generator/">Firefly</a><span class="nav-dot">&#xB7;</span><a href="/leonardo-ai-prompt-generator/">Leonardo</a></div>
+                <div class="nav-mega-models"><a href="/ideogram-prompt-generator/">Ideogram</a></div>
+              </div>
+              <div class="nav-mega-divider" aria-hidden="true"></div>
+              <div class="nav-mega-col">
+                <div class="nav-mega-heading">&#127909; VIDEO TOOLS</div>
+                <a href="/?tab=image-to-video" role="menuitem" class="nav-mega-tool">Image to Video <span class="nav-mega-arrow">&#8594;</span></a>
+                <a href="/?tab=text-to-video" role="menuitem" class="nav-mega-tool">Text to Video <span class="nav-mega-arrow">&#8594;</span></a>
+                <div class="nav-mega-models-label">Models</div>
+                <div class="nav-mega-models"><a href="/veo-prompt-generator/">Veo</a><span class="nav-dot">&#xB7;</span><a href="/kling-prompt-generator/">Kling</a></div>
+                <div class="nav-mega-models"><a href="/runway-prompt-generator/">Runway</a><span class="nav-dot">&#xB7;</span><a href="/pika-prompt-generator/">Pika</a></div>
+                <div class="nav-mega-models"><a href="/luma-prompt-generator/">Luma</a><span class="nav-dot">&#xB7;</span><a href="/sora-prompt-generator/">Sora</a></div>
+                <div class="nav-mega-models"><a href="/minimax-prompt-generator/">Minimax</a><span class="nav-dot">&#xB7;</span><a href="/stable-video-prompt-generator/">Stable</a></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <a href="/ko/blog/">Blog</a>
+        <a href="/pricing/" class="nav-pill-pricing">Pricing</a>
+        <a href="/about/" class="nav-pill-about">About</a>
+        <a href="/ko/" class="nav-try-free">&#49324;&#50857;&#54644; &#48372;&#44592; &#8594;</a>
+        <button id="theme-toggle" onclick="toggleTheme()" aria-label="Switch theme" title="Switch theme">&#9728;&#xFE0F;</button>
+  </nav>
+    </div>
+  </header>
+
+  <nav class="breadcrumb" aria-label="&#48652;&#47112;&#46300;&#53356;&#47100;">
+    <a href="/ko/">&#54856;</a><span class="sep">&#8250;</span>
+    <span>Runway Gen-3 &#54532;&#47212;&#54532;&#53944; &#49373;&#49457;&#44592;</span>
+  </nav>
+
+  <div class="page-wrapper model-page-wrapper">
+
+    <header class="model-page-hero">
+      <div class="model-badge-hero" style="--model-color:#00D4AA">&#127910; &#49884;&#45348;&#47560;&#54001; &#50689;&#49345;&#50640; &#52572;&#51201;</div>
+      <h1>&#47924;&#47308; Runway Gen-3 Alpha &#48708;&#46356;&#50724; &#54532;&#47212;&#54532;&#53944; &#49373;&#49457;&#44592;</h1>
+      <p class="model-page-subtitle">&#51221;&#48128;&#54620; &#52852;&#47700;&#46972; &#50880;&#51649;&#51076;, &#54532;&#47196;&#54168;&#49492;&#45328; &#51204;&#54872; &#54952;&#44284;, &#49884;&#44033; &#54952;&#44284;&#47484; &#44054;&#52632; Runway Gen-3 Alpha &#49884;&#45348;&#47560;&#54001; &#48708;&#46356;&#50724; &#54532;&#47212;&#54532;&#53944;&#47484; &#49373;&#49457;&#54616;&#49464;&#50836;. &#47196;&#44536;&#51064; &#48520;&#54596;&#50836;.</p>
+    </header>
+
+    <!-- &#45236;&#51109;&#46108; &#46020;&#44396; -->
+    <div class="tool-embed-container">
+      <iframe
+        src="/?tab=video&model=runway&lang=ko&embed=true"
+        title="Runway Gen-3 Alpha &#48708;&#46356;&#50724; &#54532;&#47212;&#54532;&#53944; &#49373;&#49457;&#44592;"
+        class="tool-embed-frame"
+        loading="eager"
+        allow="clipboard-write; clipboard-read"
+      ></iframe>
+    </div>
+
+    <!-- YouTube &#45936;&#47784; &#50689;&#49345; -->
+    <div class="video-demo-section" style="margin:2.5rem 0;">
+      <h2 style="font-family:'Space Grotesk',sans-serif;font-size:1.25rem;font-weight:700;color:var(--text-primary);margin:0 0 0.5rem;">&#49884;&#52397;: &#49324;&#50857; &#48169;&#48277;</h2>
+      <p style="color:var(--text-muted);font-size:0.9rem;margin:0 0 1.25rem;">AI&#44032; &#49373;&#49457;&#54620; &#54532;&#47212;&#54532;&#53944; &#52636;&#47141; &#49892;&#51228; &#50696;&#49884;&#47484; &#54869;&#51064;&#54616;&#49464;&#50836;.</p>
+      <div style="position:relative;padding-bottom:56.25%;height:0;overflow:hidden;border-radius:12px;border:1px solid var(--border-subtle);">
+        <iframe
+          src="https://www.youtube.com/embed/5lcSaYcMuq8"
+          title="Runway Gen-3 Prompt Generator Demo — Free AI Video Prompt Tool"
+          frameborder="0"
+          style="position:absolute;top:0;left:0;width:100%;height:100%;border:0;"
+          loading="lazy"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          allowfullscreen>
+        </iframe>
+      </div>
+    </div>
+
+    <!-- Runway Gen-3 Alpha&#47484; &#49324;&#50857;&#54644;&#50556; &#54616;&#45716; &#51060;&#50976; -->
+    <section class="model-features-section">
+      <h2>Runway Gen-3 Alpha&#47484; &#49324;&#50857;&#54644;&#50556; &#54616;&#45716; &#51060;&#50976;</h2>
+      <div class="model-features-grid">
+        <div class="model-feature-card" style="--card-accent:#00D4AA">
+          <div class="feature-icon">&#127910;</div>
+          <h3>&#51221;&#48128;&#54620; &#52852;&#47700;&#46972; &#51228;&#50612;</h3>
+          <p>Runway Gen-3 Alpha&#45716; &#46028;&#47532;, &#53356;&#47112;&#51064;, &#50724;&#48711;, &#54060; &#46321; &#47749;&#49884;&#51201;&#51064; &#52524;&#50689; &#50857;&#50612;&#50640; &#45796;&#47480; &#50612;&#46500; &#49548;&#48708;&#51088;&#50857; &#48708;&#46356;&#50724; &#47784;&#45944;&#46020; &#46384;&#46972;&#50732; &#49688; &#50630;&#45716; &#51221;&#48128;&#46020;&#47196; &#48152;&#51025;&#54633;&#45768;&#45796;.</p>
+        </div>
+        <div class="model-feature-card" style="--card-accent:#00D4AA">
+          <div class="feature-icon">&#127916;</div>
+          <h3>&#54532;&#47196;&#54168;&#49492;&#45328; &#51204;&#54872; &#54952;&#44284;</h3>
+          <p>&#47784;&#49496; &#48652;&#47084;&#49884;, &#49884;&#44036;&#51201; &#47560;&#49828;&#53433;, &#47588;&#44540;&#47084;&#50868; &#51204;&#54872; &#54952;&#44284;&#47196; &#49345;&#50629;&#51201; &#50857;&#46020;&#50752; &#45800;&#54200; &#50689;&#54868; &#51228;&#51089;&#50640; &#51201;&#54633;&#54620; &#48169;&#49569; &#54408;&#51656;&#51032; &#44208;&#44284;&#47932;&#51012; &#47564;&#46308;&#50612;&#45253;&#45768;&#45796;.</p>
+        </div>
+        <div class="model-feature-card" style="--card-accent:#00D4AA">
+          <div class="feature-icon">&#10024;</div>
+          <h3>&#49884;&#44036;&#51201; &#51068;&#44288;&#49457;</h3>
+          <p>&#54588;&#49324;&#52404;, &#51312;&#47749;, &#51109;&#47732; &#44396;&#46020;&#44032; &#53364;&#47549; &#51204;&#52404;&#50640; &#44152;&#52432; &#50504;&#51221;&#51201;&#51004;&#47196; &#50976;&#51648;&#46104;&#50612; &#51060;&#51204; &#48708;&#46356;&#50724; &#47784;&#45944;&#50640;&#49436; &#55124;&#54620; &#44620;&#48757;&#44144;&#47548; &#50500;&#54000;&#54057;&#53944;&#47484; &#48169;&#51648;&#54633;&#45768;&#45796;.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- &#53080;&#53584;&#52768; -->
+    <article class="model-page-content">
+
+      <h2>Runway Gen-3 Alpha&#46976;?</h2>
+      <p>Runway Gen-3 Alpha&#45716; Runway AI&#51032; &#44032;&#51109; &#51652;&#48372;&#46108; &#48708;&#46356;&#50724; &#49373;&#49457; &#47784;&#45944;&#47196;, &#49884;&#45348;&#47560;&#54001; AI &#48708;&#46356;&#50724;&#51032; &#50629;&#44228; &#54364;&#51456;&#51077;&#45768;&#45796;. Runway&#45716; &#53581;&#49828;&#53944;-&#53804;-&#48708;&#46356;&#50724; &#48516;&#50556;&#47484; &#44060;&#52377;&#54620; &#51060;&#47000;&#47196; &#50689;&#54868; &#44048;&#46021;, VFX &#50500;&#54000;&#49828;&#53944;, &#49345;&#50629; &#49828;&#53888;&#46356;&#50724;&#44032; &#49440;&#54840;&#54616;&#45716; &#46020;&#44396;&#50688;&#51004;&#47728;, Gen-3 Alpha&#45716; &#52852;&#47700;&#46972; &#51228;&#50612;, &#47784;&#49496; &#54408;&#51656;, &#49884;&#44036;&#51201; &#51068;&#44288;&#49457;&#50640;&#49436; &#49345;&#45817;&#54620; &#46020;&#50557;&#51012; &#51060;&#47336;&#50632;&#49845;&#45768;&#45796;.</p>
+      <p>Veo&#44032; &#49324;&#49892;&#51201;&#51064; &#51088;&#50672;&#49828;&#47084;&#50868; &#50880;&#51649;&#51076;&#50640; &#46832;&#50612;&#45208;&#44256; Kling&#51060; &#48373;&#51105;&#54620; &#45796;&#51473; &#54588;&#49324;&#52404; &#51109;&#47732;&#51012; &#51096; &#52376;&#47532;&#54616;&#45716; &#48152;&#47732;, Runway Gen-3 Alpha&#45716; <strong>&#49884;&#45348;&#47560;&#54001; &#51221;&#48128;&#46020;</strong>&#44032; &#52572;&#50864;&#49440; &#50836;&#44396;&#49324;&#54637;&#51068; &#46412; &#54869;&#49892;&#54620; &#49440;&#53469;&#51077;&#45768;&#45796;. &#51060; &#47784;&#45944;&#51008; &#51221;&#54869;&#54620; &#50880;&#51649;&#51076; &#50976;&#54805;, &#49549;&#46020;, &#54532;&#47112;&#51060;&#48141; &#51204;&#54872;&#51012; &#51648;&#51221;&#54624; &#49688; &#51080;&#45716; &#49688;&#51456;&#51004;&#47196; &#52852;&#47700;&#46972; &#50616;&#50612;&#47484; &#51060;&#54644;&#54633;&#45768;&#45796;.</p>
+
+      <h2>&#54952;&#44284;&#51201;&#51064; Runway &#54532;&#47212;&#54532;&#53944; &#51089;&#49457;&#48277;</h2>
+      <p>Runway Gen-3 Alpha&#45716; <strong>&#49884;&#45348;&#47560;&#54001; &#50616;&#50612;</strong> &#8212; &#52524;&#50689; &#44048;&#46021;&#51060; &#54788;&#51109;&#50640;&#49436; &#49324;&#50857;&#54616;&#45716; &#50612;&#55765; &#8212; &#47484; &#49324;&#50857;&#54616;&#45716; &#54532;&#47212;&#54532;&#53944;&#50640; &#44032;&#51109; &#51096; &#48152;&#51025;&#54633;&#45768;&#45796;. &#52852;&#47700;&#46972; &#50880;&#51649;&#51076; &#51648;&#49884;&#47484; &#54532;&#47212;&#54532;&#53944; &#49884;&#51089; &#48512;&#48516;&#50640; &#48176;&#52824;&#54616;&#44256;, &#51109;&#47732; &#49444;&#47749;&#44284; &#49884;&#44033; &#54952;&#44284; &#49464;&#48512; &#49324;&#54637;&#51012; &#44536; &#46244;&#50640; &#48176;&#52824;&#54616;&#49464;&#50836;:</p>
+      <div class="code-example">
+        <code>Slow crane shot rising above foggy harbor at dawn, fishing boats visible below, city emerging from mist, golden light cresting horizon, 8 seconds, widescreen</code>
+      </div>
+      <p>&#48708;, &#50504;&#44060;, &#47676;&#51648; &#51077;&#51088;, &#47116;&#51592; &#54540;&#47112;&#50612; &#46321;&#51032; &#49884;&#44033; &#54952;&#44284;&#50752; &#48516;&#50948;&#44592;&#46020; Gen-3 Alpha&#44032; &#53945;&#55176; &#51096; &#52376;&#47532;&#54633;&#45768;&#45796;. &#49828;&#53440;&#51068; &#53468;&#44536;&#44032; &#50500;&#45772; &#51109;&#47732;&#51032; &#51068;&#48512;&#47196;&#49436; &#48516;&#50948;&#44592; &#51312;&#44148;&#51012; &#49444;&#47749;&#54616;&#49464;&#50836;.</p>
+
+      <h2>Runway&#50857; &#52852;&#47700;&#46972; &#50880;&#51649;&#51076; &#50857;&#50612;</h2>
+      <div class="params-grid">
+        <div class="param-card" style="--c:#00D4AA">
+          <div class="param-name">&#46028;&#47532; / &#54392;&#49884;&#51064; / &#54400;&#50500;&#50883;</div>
+          <div class="param-desc">&#52852;&#47700;&#46972;&#44032; &#47116;&#51592; &#52629;&#51012; &#46384;&#46972; &#47932;&#47532;&#51201;&#51004;&#47196; &#50526;&#46244;&#47196; &#51060;&#46041;&#54633;&#45768;&#45796;. &#8220;&#46028;&#47532; &#54252;&#50892;&#46300;&#8221;&#45716; &#47788;&#51077;&#44048; &#51080;&#45716; &#51652;&#51077; &#54952;&#44284;&#47484; &#47564;&#46308;&#44256;, &#8220;&#54400;&#50500;&#50883;&#8221;&#51008; &#51109;&#47732;&#51032; &#45331;&#51008; &#47589;&#46973;&#51012; &#46300;&#47084;&#45253;&#45768;&#45796;.</div>
+        </div>
+        <div class="param-card" style="--c:#00D4AA">
+          <div class="param-name">&#53356;&#47112;&#51064; &#49399;</div>
+          <div class="param-desc">&#52852;&#47700;&#46972;&#44032; &#49688;&#51649;&#51004;&#47196; &#49345;&#49849;&#54616;&#44144;&#45208; &#54616;&#44053;&#54616;&#47728;, &#51452;&#47196; &#49828;&#52992;&#51068;&#51012; &#46300;&#47084;&#45253;&#45768;&#45796;. &#8220;&#53356;&#47112;&#51064; &#50948;&#47196; &#49345;&#49849;&#8221;&#51008; &#44537;&#51201;&#51064; &#47532;&#48716;&#51012; &#47564;&#46308;&#50612;&#45253;&#45768;&#45796;. &#50504;&#44060;&#45208; &#54872;&#44221; &#46356;&#53580;&#51068;&#44284; &#54632;&#44760; &#49324;&#50857;&#54616;&#47732; &#52572;&#45824; &#54952;&#44284;&#47484; &#50619;&#51012; &#49688; &#51080;&#49845;&#45768;&#45796;.</div>
+        </div>
+        <div class="param-card" style="--c:#00D4AA">
+          <div class="param-name">&#50724;&#48711; / &#50500;&#53356; &#49399;</div>
+          <div class="param-desc">&#52852;&#47700;&#46972;&#44032; &#54588;&#49324;&#52404; &#51452;&#50948;&#47484; &#50896;&#54805;&#51004;&#47196; &#46037;&#45768;&#45796;. &#8220;&#52852;&#47700;&#46972; 180&#46020; &#50724;&#48711;&#8221;&#51008; Runway Gen-3&#51032; &#45824;&#54364;&#51201;&#51064; &#44592;&#45733; &#51473; &#54616;&#45208;&#47196;, &#48512;&#46300;&#47101;&#44256; &#54532;&#47196;&#54168;&#49492;&#45328;&#54620; &#50896;&#54805; &#50880;&#51649;&#51076;&#51012; &#47564;&#46308;&#50612;&#45253;&#45768;&#45796;.</div>
+        </div>
+        <div class="param-card" style="--c:#00D4AA">
+          <div class="param-name">&#54060; / &#53560;&#53944;</div>
+          <div class="param-desc">&#52852;&#47700;&#46972;&#44032; &#44256;&#51221;&#46108; &#50948;&#52824;&#50640;&#49436; &#49688;&#54217;(&#54060;) &#46608;&#45716; &#49688;&#51649;(&#53560;&#53944;)&#51004;&#47196; &#54924;&#51204;&#54633;&#45768;&#45796;. &#54872;&#44221;&#51012; &#46300;&#47084;&#45236;&#44144;&#45208; &#49688;&#54217; &#50880;&#51649;&#51076;&#51012; &#52628;&#51201;&#54624; &#46412; &#50976;&#50857;&#54633;&#45768;&#45796;.</div>
+        </div>
+        <div class="param-card" style="--c:#00D4AA">
+          <div class="param-name">&#53944;&#47000;&#53433; &#49399;</div>
+          <div class="param-desc">&#52852;&#47700;&#46972;&#44032; &#54588;&#49324;&#52404;&#50752; &#45208;&#46976;&#55176; &#51060;&#46041;&#54616;&#47728; &#54532;&#47112;&#51076; &#50504;&#50640; &#50976;&#51648;&#54633;&#45768;&#45796;. &#44152;&#44592;, &#45804;&#47532;&#44592;, &#50868;&#51204; &#51109;&#47732; &#46321; &#50880;&#51649;&#51060;&#45716; &#54588;&#49324;&#52404;&#47484; &#8220;&#52852;&#47700;&#46972;&#44032; &#50526;&#50640;&#49436; &#52628;&#51201;&#8221;&#54633;&#45768;&#45796;.</div>
+        </div>
+        <div class="param-card" style="--c:#00D4AA">
+          <div class="param-name">&#54648;&#46300;&#54764;&#46300; / &#49828;&#53580;&#46356;&#52896;</div>
+          <div class="param-desc">&#8220;&#54648;&#46300;&#54764;&#46300;&#8221;&#45716; &#45796;&#53328;&#47704;&#53552;&#47532; &#49324;&#49892;&#44048;&#51012; &#50948;&#54620; &#48120;&#49464;&#54620; &#50976;&#44592;&#51201; &#55124;&#46308;&#47548;&#51012; &#52628;&#44032;&#54633;&#45768;&#45796;. &#8220;&#49828;&#53580;&#46356;&#52896;&#8221;&#51008; &#46028;&#47532; &#53944;&#47001;&#51032; &#44221;&#51649;&#46104; &#50630;&#51060; &#48512;&#46300;&#47101;&#44256; &#50976;&#47140;&#54620; &#50880;&#51649;&#51076;&#51012; &#47564;&#46308;&#50612;&#45253;&#45768;&#45796;.</div>
+        </div>
+      </div>
+
+      <h2>Runway Gen-3 &#54532;&#47212;&#54532;&#53944; &#50696;&#49884;</h2>
+      <div class="code-example">
+        <code>Dolly forward through empty cathedral, shafts of colored light streaming through stained glass, dust particles floating in beams, cinematic 24fps, 6 seconds</code>
+      </div>
+      <div class="code-example">
+        <code>Slow crane shot rising above foggy harbor at dawn, fishing boats visible below, city emerging from mist, golden light cresting horizon, 8 seconds, widescreen</code>
+      </div>
+      <div class="code-example">
+        <code>Subject in neon-lit alley, camera orbits 180 degrees from front to behind, rain falling in slow motion, light reflections on wet ground, 5 seconds, neo-noir</code>
+      </div>
+
+      <h2>&#47784;&#49496; &#48652;&#47084;&#49884; &#54021; (&#51060;&#48120;&#51648;-&#53804;-&#48708;&#46356;&#50724;)</h2>
+      <p>Runway&#51032; <strong>&#47784;&#49496; &#48652;&#47084;&#49884;</strong> &#44592;&#45733;&#51012; &#49324;&#50857;&#54616;&#47732; &#50629;&#47196;&#46300;&#54620; &#51060;&#48120;&#51648;&#50640; &#51649;&#51217; &#50880;&#51649;&#51076; &#48169;&#54693;&#51012; &#44536;&#47540; &#49688; &#51080;&#51004;&#47728;, &#44536;&#47088; &#45796;&#51020; &#53581;&#49828;&#53944;&#47196; &#51204;&#52404; &#51109;&#47732;&#51032; &#50880;&#51649;&#51076;&#51012; &#49444;&#47749;&#54624; &#49688; &#51080;&#49845;&#45768;&#45796;. &#51060;&#48120;&#51648;-&#53804;-&#48708;&#46356;&#50724; &#50892;&#53356;&#54540;&#47196;&#50864;&#50640;&#49436; &#52572;&#49345;&#51032; &#44208;&#44284;&#47484; &#50619;&#51004;&#47140;&#47732;:</p>
+      <ul class="tips-list">
+        <li><strong>&#51204;&#44221;&#44284; &#48176;&#44221;&#51012; &#48324;&#46020;&#47196; &#44536;&#47532;&#49464;&#50836;:</strong> &#44032;&#44620;&#50868; &#50836;&#49548;&#50752; &#47676; &#50836;&#49548;&#50640; &#49436;&#47196; &#45796;&#47480; &#47784;&#49496; &#48289;&#53552;&#47484; &#49324;&#50857;&#54616;&#50668; &#54056;&#47092;&#47001;&#49828; &#44618;&#51060;&#44048; &#54952;&#44284;&#47484; &#47564;&#46308;&#49464;&#50836;. &#51060;&#44163;&#51008; Runway&#44032; &#47564;&#46308;&#50612;&#45244; &#49688; &#51080;&#45716; &#44032;&#51109; &#49884;&#45348;&#47560;&#54001;&#54620; &#44208;&#44284; &#51473; &#54616;&#45208;&#51077;&#45768;&#45796;.</li>
+        <li><strong>&#48652;&#47084;&#49884; &#48169;&#54693;&#51012; &#53581;&#49828;&#53944; &#54532;&#47212;&#54532;&#53944;&#50752; &#51068;&#52824;&#49884;&#53412;&#49464;&#50836;:</strong> &#54532;&#47212;&#54532;&#53944;&#50640; &#8220;&#48708;&#44032; &#45236;&#47532;&#45716;&#8221;&#51060;&#46972;&#44256; &#50416;&#47732;, &#54616;&#45720;&#44284; &#51204;&#44221;&#51032; &#48652;&#47084;&#49884; &#49828;&#53944;&#47196;&#53356;&#45716; &#50500;&#47000;&#47196; &#51060;&#46041;&#54644;&#50556; &#54633;&#45768;&#45796;. &#49345;&#52649;&#46104;&#45716; &#48169;&#54693;&#51008; &#50500;&#54000;&#54057;&#53944;&#47484; &#47564;&#46308;&#50612;&#45253;&#45768;&#45796;.</li>
+        <li><strong>&#48652;&#47084;&#49884; &#48276;&#50948;&#47484; &#49548;&#47049;&#51004;&#47196; &#50976;&#51648;&#54616;&#49464;&#50836;:</strong> Runway&#45716; &#51204;&#52404; &#54532;&#47112;&#51076;&#51012; &#52292;&#50864;&#45716; &#44163;&#48372;&#45796; &#48512;&#48516;&#51201;&#51064; &#48652;&#47084;&#49884;&#47484; &#45908; &#51096; &#52376;&#47532;&#54633;&#45768;&#45796;. &#51060;&#48120;&#51648;&#51032; 30~40%&#45716; &#47749;&#49884;&#51201;&#51064; &#47784;&#49496; &#51648;&#49884; &#50630;&#51060; &#45224;&#44200;&#46160;&#49464;&#50836;.</li>
+        <li><strong>&#54952;&#44284; &#49399;&#50640;&#45716; &#49836;&#47196;&#50864; &#47784;&#49496;&#51012; &#49324;&#50857;&#54616;&#49464;&#50836;:</strong> &#53581;&#49828;&#53944; &#54532;&#47212;&#54532;&#53944;&#50640; &#8220;&#49836;&#47196;&#50864; &#47784;&#49496;&#8221;&#51012; &#52628;&#44032;&#54616;&#44256; &#48652;&#47084;&#49884; &#44053;&#46020;&#47484; &#51473;&#44036;&#51004;&#47196; &#50976;&#51648;&#54616;&#47732; &#44256;&#54408;&#51656;&#51032; &#49836;&#47196;&#50864; &#47784;&#49496; &#48516;&#50948;&#44592; &#51109;&#47732;&#51060; &#47564;&#46308;&#50612;&#51665;&#45768;&#45796;.</li>
+      </ul>
+
+      <div class="related-blog">
+        <span class="related-label">&#44288;&#47144; &#44032;&#51060;&#46300;</span>
+        <a href="/blog/veo-vs-kling-vs-runway/">Veo vs Kling vs Runway: &#50612;&#46500; AI &#48708;&#46356;&#50724; &#47784;&#45944;&#51060; &#49849;&#47532;&#54624;&#44620;? &#8594;</a>
+      </div>
+      <!-- FAQ -->
+      <h2>&#51088;&#51452; &#47931;&#45716; &#51656;&#47928;</h2>
+      <div class="faq-list">
+        <details class="faq-item">
+          <summary>Gen-3 Alpha&#51032; &#49352;&#47196;&#50868; &#44592;&#45733;&#51008; &#47924;&#50631;&#51064;&#44032;&#50836;?</summary>
+          <p>Gen-3 Alpha&#45716; &#52852;&#47700;&#46972; &#51228;&#50612; &#44592;&#45733;&#51060; &#53356;&#44172; &#54693;&#49345;&#46104;&#50632;&#51004;&#47728;, &#49884;&#44036; &#44221;&#44284;&#50640; &#46384;&#47480; &#50880;&#51649;&#51076; &#51068;&#44288;&#49457;&#51060; &#44060;&#49440;&#46104;&#50632;&#44256;, &#50724;&#48711;&#51060;&#45208; &#53356;&#47112;&#51064; &#44057;&#51008; &#48373;&#51105;&#54620; &#52852;&#47700;&#46972; &#50880;&#51649;&#51076; &#52376;&#47532;&#44032; &#44053;&#54868;&#46104;&#50632;&#51004;&#47728;, &#48708;&#46356;&#50724; &#54532;&#47112;&#51076; &#45236; &#53581;&#49828;&#53944; &#47116;&#45908;&#47553;&#46020; &#44060;&#49440;&#46104;&#50632;&#49845;&#45768;&#45796;.</p>
+        </details>
+        <details class="faq-item">
+          <summary>Runway&#50640;&#49436; &#52852;&#47700;&#46972; &#50880;&#51649;&#51076;&#51012; &#50612;&#46523;&#44172; &#51228;&#50612;&#54616;&#45208;&#50836;?</summary>
+          <p>&#53945;&#51221; &#52524;&#50689; &#50857;&#50612;&#47484; &#49324;&#50857;&#54616;&#49464;&#50836;: &#46028;&#47532;, &#53356;&#47112;&#51064;, &#50724;&#48711;, &#54060;, &#53560;&#53944;, &#54392;&#49884;&#51064;, &#54400;&#50500;&#50883;. Runway Gen-3&#45716; &#51060;&#47084;&#54620; &#50857;&#50612;&#47484; &#54532;&#47212;&#54532;&#53944;&#51032; &#49884;&#51089;&#51060;&#45208; &#45149;&#50640; &#48176;&#52824;&#54624; &#46412; &#51096; &#48152;&#51025;&#54633;&#45768;&#45796;.</p>
+        </details>
+        <details class="faq-item">
+          <summary>&#47784;&#49496; &#48652;&#47084;&#49884;&#47484; &#53581;&#49828;&#53944; &#54532;&#47212;&#54532;&#53944;&#50752; &#54632;&#44760; &#49324;&#50857;&#54624; &#49688; &#51080;&#45208;&#50836;?</summary>
+          <p>&#47784;&#49496; &#48652;&#47084;&#49884;&#45716; &#51452;&#47196; Runway &#51064;&#53552;&#54168;&#51060;&#49828;&#51032; &#51060;&#48120;&#51648;-&#53804;-&#48708;&#46356;&#50724; &#44592;&#45733;&#51077;&#45768;&#45796;. &#53581;&#49828;&#53944; &#54532;&#47212;&#54532;&#53944;&#51032; &#44221;&#50864;, &#54532;&#47212;&#54532;&#53944;&#50640; &#50880;&#51649;&#51076; &#48289;&#53552;&#47484; &#47749;&#49884;&#51201;&#51004;&#47196; &#44592;&#49696;&#54616;&#50668; &#48169;&#54693;&#49457; &#51080;&#45716; &#50880;&#51649;&#51076;&#51012; &#44396;&#54788;&#54624; &#49688; &#51080;&#49845;&#45768;&#45796;.</p>
+        </details>
+        <details class="faq-item">
+          <summary>Runway&#51032; &#52636;&#47141; &#54644;&#49345;&#46020;&#45716; &#50612;&#46523;&#44172; &#46104;&#45208;&#50836;?</summary>
+          <p>Runway Gen-3&#45716; 1280&#215;768(&#44032;&#47196;), 768&#215;1280(&#49464;&#47196;) &#46608;&#45716; 1104&#215;624&#47196; &#52636;&#47141;&#54633;&#45768;&#45796;. &#54868;&#47732; &#48708;&#50984;&#51008; &#54532;&#47212;&#54532;&#53944; &#46608;&#45716; &#54532;&#47196;&#51229;&#53944; &#49444;&#51221;&#50640; &#51032;&#54644; &#44208;&#51221;&#46121;&#45768;&#45796;.</p>
+        </details>
+      </div>
+
+      <!-- &#44288;&#47144; &#48660;&#47196;&#44536; &#44172;&#49884;&#47932; -->
+      <div class="model-related-section">
+        <h2>&#44032;&#51060;&#46300; &#48143; &#47532;&#49548;&#49828;</h2>
+        <div class="model-related-grid">
+          <a href="/blog/video-prompt-guide-2026/" class="model-related-card">
+            <picture><source srcset="/images/explain-this-image-astronaut-alien-planet.webp" type="image/webp"><img src="/images/explain-this-image-astronaut-alien-planet.jpeg" alt="2026 &#50756;&#48317; &#48708;&#46356;&#50724; &#54532;&#47212;&#54532;&#53944; &#44032;&#51060;&#46300;" loading="lazy"></picture>
+            <div class="model-related-text">
+              <span class="model-related-category">&#44032;&#51060;&#46300;</span>
+              <h4>2026 &#50756;&#48317; &#48708;&#46356;&#50724; &#54532;&#47212;&#54532;&#53944; &#44032;&#51060;&#46300;</h4>
+            </div>
+          </a>
+          <a href="/blog/veo-vs-kling-vs-runway/" class="model-related-card">
+            <picture><source srcset="/images/ai-prompt-generator-cyberpunk-midjourney.webp" type="image/webp"><img src="/images/ai-prompt-generator-cyberpunk-midjourney.jpeg" alt="Veo vs Kling vs Runway: &#50612;&#46500; AI &#48708;&#46356;&#50724; &#47784;&#45944;&#51060; &#49849;&#47532;&#54624;&#44620;?" loading="lazy"></picture>
+            <div class="model-related-text">
+              <span class="model-related-category">&#48708;&#44368;</span>
+              <h4>Veo vs Kling vs Runway: &#50612;&#46500; AI &#48708;&#46356;&#50724; &#47784;&#45944;&#51060; &#49849;&#47532;&#54624;&#44620;?</h4>
+            </div>
+          </a>
+          <a href="/blog/reverse-engineer-ai-art-prompts/" class="model-related-card">
+            <picture><source srcset="/images/ai-prompt-image-model-comparison-grid.webp" type="image/webp"><img src="/images/ai-prompt-image-model-comparison-grid.jpeg" alt="AI &#54532;&#47212;&#54532;&#53944; &#50669;&#48516;&#49437; &#48169;&#48277;" loading="lazy"></picture>
+            <div class="model-related-text">
+              <span class="model-related-category">&#53916;&#53664;&#47532;&#50620;</span>
+              <h4>&#47784;&#46304; &#51109;&#47732;&#50640;&#49436; AI &#54532;&#47212;&#54532;&#53944;&#47484; &#50669;&#48516;&#49437;&#54616;&#45716; &#48169;&#48277;</h4>
+            </div>
+          </a>
+        </div>
+      </div>
+
+      <!-- &#45796;&#47480; &#48708;&#46356;&#50724; &#47784;&#45944; -->
+      <div class="other-models-section">
+        <h2>&#45796;&#47480; &#48708;&#46356;&#50724; &#54532;&#47212;&#54532;&#53944; &#49373;&#49457;&#44592; &#49324;&#50857;&#54644; &#48372;&#44592;</h2>
+        <div class="other-models-grid">
+          <a href="/ko/veo-prompt-generator/" class="other-model-card" style="--c:#4285F4">&#127909;<span>Veo / Flow</span></a>
+          <a href="/ko/kling-prompt-generator/" class="other-model-card" style="--c:#FF6B35">&#127916;<span>Kling AI</span></a>
+          <a href="/ko/pika-prompt-generator/" class="other-model-card" style="--c:#FF4081">&#9889;<span>Pika</span></a>
+          <a href="/ko/luma-prompt-generator/" class="other-model-card" style="--c:#7C3AED">&#127774;<span>Luma</span></a>
+          <a href="/ko/sora-prompt-generator/" class="other-model-card" style="--c:#10A37F">&#127775;<span>Sora</span></a>
+          <a href="/ko/minimax-prompt-generator/" class="other-model-card" style="--c:#F59E0B">&#127803;<span>Minimax</span></a>
+          <a href="/ko/stable-video-prompt-generator/" class="other-model-card" style="--c:#FF6B35">&#9881;&#65039;<span>Stable Video</span></a>
+        </div>
+      </div>
+
+    </article>
+  </div>
+
+  <footer class="footer-4col">
+    <div class="f4-inner">
+      <div class="f4-brand">
+        <img src="/favicon.svg" alt="ImageToPrompt" width="28" height="28">
+        <span class="f4-brand-name">ImageTo<span class="accent">Prompt</span></span>
+        <span class="f4-brand-sub">&mdash; Free AI Prompt Generator</span>
+      </div>
+      <div class="f4-grid">
+        <div class="f4-section">
+          <h4 class="f4-heading">Image Prompt Tools</h4>
+          <a href="/">Image to Prompt</a>
+          <a href="/text-to-prompt/">Text to Prompt</a>
+      <a href="/describe-image/">Describe Image</a>
+          <a href="/midjourney-prompt-generator/">Midjourney</a>
+          <a href="/stable-diffusion-prompt-generator/">Stable Diffusion</a>
+          <a href="/flux-prompt-generator/">Flux</a>
+          <a href="/dall-e-prompt-generator/">DALL-E 3</a>
+          <a href="/adobe-firefly-prompt-generator/">Adobe Firefly</a>
+          <a href="/leonardo-ai-prompt-generator/">Leonardo AI</a>
+          <a href="/ideogram-prompt-generator/">Ideogram</a>
+        </div>
+        <div class="f4-section">
+          <h4 class="f4-heading">Video Prompt Tools</h4>
+          <a href="/image-to-video-prompt/">Image to Video Prompt</a>
+          <a href="/text-to-video-prompt/">Text to Video Prompt</a>
+          <a href="/veo-prompt-generator/">Veo / Flow Studio</a>
+          <a href="/kling-prompt-generator/">Kling AI</a>
+          <a href="/runway-prompt-generator/">Runway Gen-3</a>
+          <a href="/pika-prompt-generator/">Pika</a>
+          <a href="/luma-prompt-generator/">Luma Dream Machine</a>
+          <a href="/sora-prompt-generator/">Sora</a>
+          <a href="/minimax-prompt-generator/">Minimax</a>
+          <a href="/stable-video-prompt-generator/">Stable Video</a>
+        </div>
+        <div class="f4-section">
+          <h4 class="f4-heading">Resources</h4>
+          <a href="/blog/">Blog</a>
+          <a href="/about/">About</a>
+          <a href="/pricing/">Pricing</a>
+          <a href="/contact/">Contact</a>
+          <a href="/privacy-policy/">Privacy Policy</a>
+          <a href="/terms-of-service/">Terms of Service</a>
+        </div>
+        <div class="f4-section">
+          <h4 class="f4-heading">Languages</h4>
+          <a href="/">English</a>
+          <a href="/fr/">Fran&#231;ais</a>
+          <a href="/ar/">&#1575;&#1604;&#1593;&#1585;&#1576;&#1610;&#1577;</a>
+          <a href="/es/">Espa&#241;ol</a>
+          <a href="/ko/">&#54620;&#44397;&#50612;</a>
+          <a href="/ja/">&#26085;&#26412;&#35486;</a>
+          <a href="/ru/">&#1056;&#1091;&#1089;&#1089;&#1082;&#1080;&#1081;</a>
+        </div>
+      </div>
+      <div class="f4-bottom">
+        <p>&#169; 2026 ImageToPrompt.dev &#8212; Free AI Prompt Generator</p>
+        <p>Your images are never stored. All analysis is ephemeral and private.</p>
+      </div>
+    </div>
+  </footer>
+
+<script src="/nav.js" defer></script>
+  <script>
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', function() {
+    navigator.serviceWorker.register('/sw.js')
+      .catch(function(err) { console.warn('SW registration failed:', err); });
+  });
+}
+</script>
+</body>
+</html>
