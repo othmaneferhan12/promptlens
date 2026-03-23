@@ -1,0 +1,475 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <script src="/theme-toggle.js"></script>
+  <meta charset="UTF-8" />
+  <link rel="dns-prefetch" href="https://www.googletagmanager.com">
+<link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="max-image-preview:large, index, follow">
+  <meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="ImageToPrompt">
+  <title>Comment &#201;crire des Prompts IA : Tutoriel pour D&#233;butants</title>
+  <meta name="description" content="Guide du débutant pour écrire des prompts IA efficaces pour Midjourney, Stable Diffusion et DALL-E 3." />
+  <link rel="canonical" href="https://www.imagetoprompt.dev/fr/blog/ecrire-prompts-ia-debutants/" />
+  <link rel="alternate" hreflang="fr" href="https://www.imagetoprompt.dev/fr/blog/ecrire-prompts-ia-debutants/" />
+  <link rel="alternate" hreflang="en" href="https://www.imagetoprompt.dev/blog/how-to-write-ai-prompts-beginners/" />
+  <link rel="alternate" hreflang="ar" href="https://www.imagetoprompt.dev/ar/blog/kitabat-prompts-ia-lilmubtadiin/" />
+  <link rel="alternate" hreflang="x-default" href="https://www.imagetoprompt.dev/blog/how-to-write-ai-prompts-beginners/" />
+  <meta property="og:title" content="Comment Écrire des Prompts IA : Tutoriel pour Débutants" />
+  <meta property="og:description" content="Guide du débutant pour écrire des prompts IA efficaces pour Midjourney, Stable Diffusion et DALL-E 3." />
+  <meta property="og:url" content="https://www.imagetoprompt.dev/fr/blog/ecrire-prompts-ia-debutants/" />
+  <meta property="og:type" content="article" />
+  <meta property="og:image" content="https://www.imagetoprompt.dev/og-image.png" />
+  <meta property="og:site_name" content="ImageToPrompt" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Comment Écrire des Prompts IA : Tutoriel pour Débutants" />
+  <meta name="twitter:description" content="Guide du débutant pour écrire des prompts IA efficaces pour Midjourney, Stable Diffusion et DALL-E 3." />
+  <meta name="twitter:image" content="https://www.imagetoprompt.dev/og-image.png" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="48x48" href="/favicon-48.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+  <link rel="manifest" href="/site.webmanifest" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="/fonts/space-grotesk-700.woff2" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="/fonts/inter-400.woff2" />
+  <link rel="stylesheet" href="/theme.css">
+  <link rel="preload" href="/blog.css" as="style" onload="this.onload=null;this.rel='stylesheet'"><noscript><link rel="stylesheet" href="/blog.css"></noscript>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Comment Écrire des Prompts IA : Tutoriel pour Débutants",
+    "description": "Guide du débutant pour écrire des prompts IA efficaces pour Midjourney, Stable Diffusion et DALL-E 3.",
+    "image": "https://www.imagetoprompt.dev/og-image.png",
+    "datePublished": "2026-03-10",
+    "dateModified": "2026-03-22",
+    "inLanguage": "fr",
+    "author": {
+      "@type": "Person",
+      "name": "ImageToPrompt Team",
+      "url": "https://www.imagetoprompt.dev/"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "ImageToPrompt",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://www.imagetoprompt.dev/favicon.svg"
+      }
+    },
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https://www.imagetoprompt.dev/fr/blog/ecrire-prompts-ia-debutants/"
+    }
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Quelle est la longueur idéale pour un prompt IA ?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "La longueur idéale dépend du modèle. Pour Midjourney, 20 à 60 mots fonctionnent bien. Pour Stable Diffusion, restez sous 75 tokens (environ 60 mots) pour éviter la troncation. Pour Flux et DALL-E 3, des descriptions plus longues de 50 à 100 mots sont bien gérées. En général, commencez court et ajoutez des détails progressivement."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Faut-il écrire les prompts en anglais ou en français ?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "L'anglais est recommandé pour tous les générateurs d'images IA majeurs. Les modèles sont principalement entraînés sur des données en anglais, ce qui signifie que les prompts en anglais produisent des résultats plus précis et plus cohérents. Même si DALL-E 3 et Midjourney comprennent le français, les termes techniques d'art et de photographie sont mieux reconnus en anglais."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Comment améliorer un prompt qui donne de mauvais résultats ?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Trois stratégies principales : 1) Ajoutez de la spécificité — remplacez les termes vagues par des descriptions précises (au lieu de 'belle maison', essayez 'modern minimalist house with floor-to-ceiling windows'). 2) Ajustez l'éclairage et l'ambiance — ces éléments transforment radicalement le résultat. 3) Utilisez des prompts négatifs dans Stable Diffusion pour exclure les éléments indésirables."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Quel générateur d'images IA est le meilleur pour les débutants ?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "DALL-E 3 (via ChatGPT) est le plus accessible car il comprend le langage naturel sans syntaxe spéciale. Midjourney offre d'excellents résultats avec des prompts simples mais nécessite Discord. Stable Diffusion offre le plus de contrôle mais a la courbe d'apprentissage la plus raide. Flux est un bon compromis avec des prompts en langage naturel et des résultats photoréalistes."
+        }
+      }
+    ]
+  }
+  </script>
+    <!-- Google AdSense -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4499206373485728" crossorigin="anonymous"></script>
+    <!-- Web Push Notifications -->
+<script src="https://cdn.onesignal.com/sdks/web/v16/OneSignalSDK.page.js" defer></script>
+<script>
+  window.OneSignalDeferred = window.OneSignalDeferred || [];
+  OneSignalDeferred.push(async function(OneSignal) {
+    await OneSignal.init({
+      appId: "REPLACE_WITH_ONESIGNAL_APP_ID",
+      notifyButton: { enable: false }
+    });
+  });
+</script>
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="inner">
+      <a href="/fr/" class="site-logo"><img src="/favicon.svg" alt="ImageToPrompt" width="48" height="48"><div class="site-logo-text">ImageTo<span class="accent">Prompt</span><span class="site-logo-sub">G&#233;n&#233;rateur de Prompts IA Gratuit</span></div></a>
+      <nav class="site-nav" aria-label="Navigation principale">
+        <div class="nav-dropdown">
+          <button class="nav-dropdown-trigger" aria-haspopup="true" aria-expanded="false">Tools <span class="nav-chevron" aria-hidden="true">&#9660;</span></button>
+          <div class="nav-dropdown-menu" role="menu">
+            <div class="nav-mega-grid">
+              <div class="nav-mega-col">
+                <div class="nav-mega-heading">&#128444; IMAGE TOOLS</div>
+                <a href="/" role="menuitem" class="nav-mega-tool">Image to Prompt <span class="nav-mega-arrow">&#8594;</span></a>
+                <a href="/text-to-prompt/" role="menuitem" class="nav-mega-tool">Text to Prompt <span class="nav-mega-arrow">&#8594;</span></a>
+                <div class="nav-mega-models-label">Models</div>
+                <div class="nav-mega-models"><a href="/midjourney-prompt-generator/">Midjourney</a><span class="nav-dot">&#xB7;</span><a href="/stable-diffusion-prompt-generator/">SD</a></div>
+                <div class="nav-mega-models"><a href="/flux-prompt-generator/">Flux</a><span class="nav-dot">&#xB7;</span><a href="/dall-e-prompt-generator/">DALL&#xB7;E&#xA0;3</a></div>
+                <div class="nav-mega-models"><a href="/adobe-firefly-prompt-generator/">Firefly</a><span class="nav-dot">&#xB7;</span><a href="/leonardo-ai-prompt-generator/">Leonardo</a></div>
+                <div class="nav-mega-models"><a href="/ideogram-prompt-generator/">Ideogram</a></div>
+              </div>
+              <div class="nav-mega-divider" aria-hidden="true"></div>
+              <div class="nav-mega-col">
+                <div class="nav-mega-heading">&#127909; VIDEO TOOLS</div>
+                <a href="/?tab=image-to-video" role="menuitem" class="nav-mega-tool">Image to Video <span class="nav-mega-arrow">&#8594;</span></a>
+                <a href="/?tab=text-to-video" role="menuitem" class="nav-mega-tool">Text to Video <span class="nav-mega-arrow">&#8594;</span></a>
+                <div class="nav-mega-models-label">Models</div>
+                <div class="nav-mega-models"><a href="/veo-prompt-generator/">Veo</a><span class="nav-dot">&#xB7;</span><a href="/kling-prompt-generator/">Kling</a></div>
+                <div class="nav-mega-models"><a href="/runway-prompt-generator/">Runway</a><span class="nav-dot">&#xB7;</span><a href="/pika-prompt-generator/">Pika</a></div>
+                <div class="nav-mega-models"><a href="/luma-prompt-generator/">Luma</a><span class="nav-dot">&#xB7;</span><a href="/sora-prompt-generator/">Sora</a></div>
+                <div class="nav-mega-models"><a href="/minimax-prompt-generator/">Minimax</a><span class="nav-dot">&#xB7;</span><a href="/stable-video-prompt-generator/">Stable</a></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <a href="/fr/blog/" >Blog</a>
+        <a href="/pricing/" class="nav-pill-pricing">Pricing</a>
+        <a href="/about/" class="nav-pill-about">About</a>
+        <a href="/fr/" class="nav-try-free">Essayer &#8594;</a>
+        <button id="theme-toggle" onclick="toggleTheme()" aria-label="Switch theme" title="Switch theme">&#9728;&#xFE0F;</button>
+  </nav>
+    </div>
+  </header>
+
+  <nav class="breadcrumb" aria-label="Fil d'Ariane">
+    <a href="/fr/">Accueil</a><span class="sep">›</span>
+    <a href="/fr/blog/">Blog</a><span class="sep">›</span>
+    <span>Écrire des Prompts IA pour Débutants</span>
+  </nav>
+
+  <div class="page-wrapper">
+
+    <header class="article-header">
+      <p class="article-tag">Débutant</p>
+      <h1>Comment &#201;crire des Prompts IA — Guide D&#233;butant</h1>
+      <div class="article-meta">
+        <span>Mars 2026</span>
+        <span class="dot">·</span>
+        <span>10 min de lecture</span>
+        <span class="dot">·</span>
+        <span>Midjourney · Stable Diffusion · DALL·E 3 · Flux</span>
+        <span class="dot">·</span>
+        <span>Mis à jour mars 2026</span>
+      </div>
+    </header>
+
+    <div class="article-body">
+
+      <p>Vous voulez créer des images avec l'IA, mais vos résultats ne ressemblent jamais à ce que vous aviez en tête ? Le problème n'est probablement pas le modèle que vous utilisez — c'est la façon dont vous formulez vos prompts. L'écriture de prompts IA est une compétence qui s'apprend, et ce guide va vous donner les bases nécessaires pour obtenir des résultats remarquables dès aujourd'hui.</p>
+
+      <nav class="toc" aria-label="Sommaire">
+        <details open>
+          <summary>Dans ce guide</summary>
+          <ol>
+            <li><a href="#quest-ce-quun-prompt">Qu'est-ce qu'un Prompt IA ?</a></li>
+            <li><a href="#anatomie-prompt">L'Anatomie d'un Bon Prompt</a></li>
+            <li><a href="#elements-essentiels">Les 6 Éléments Essentiels</a></li>
+            <li><a href="#syntaxe-par-modele">Syntaxe Spécifique par Modèle</a></li>
+            <li><a href="#templates-debutant">Templates pour Débutants</a></li>
+            <li><a href="#erreurs-debutants">Erreurs les Plus Courantes</a></li>
+            <li><a href="#exercices-pratiques">Exercices Pratiques</a></li>
+            <li><a href="#questions-frequentes">Questions Fréquentes</a></li>
+          </ol>
+        </details>
+      </nav>
+
+      <div class="callout">
+        <p><strong>Raccourci :</strong> Si vous n'êtes pas encore à l'aise avec l'écriture de prompts, notre <a href="/text-to-prompt/">générateur Text to Prompt</a> peut transformer une idée simple en prompt optimisé pour n'importe quel modèle. Décrivez simplement ce que vous voulez en quelques mots.</p>
+      </div>
+
+      <h2 id="quest-ce-quun-prompt">Qu'est-ce qu'un Prompt IA ?</h2>
+
+      <p>Un prompt est une instruction textuelle que vous donnez à un générateur d'images IA pour lui indiquer ce que vous voulez créer. C'est votre moyen de communication avec le modèle. Plus votre prompt est clair et détaillé, plus le résultat sera proche de votre vision.</p>
+
+      <p>Pensez au prompt comme à une commande que vous passeriez à un artiste extrêmement talentueux mais très littéral. Il fera exactement ce que vous lui demandez — ni plus, ni moins. Si vous demandez « un chat », vous obtiendrez un chat générique. Si vous demandez « an orange tabby cat sitting on a windowsill, golden hour sunlight, watercolor style, soft warm tones », vous obtiendrez quelque chose de bien plus spécifique et attrayant.</p>
+
+      <h2 id="anatomie-prompt">L'Anatomie d'un Bon Prompt</h2>
+
+      <p>Un prompt efficace n'est pas simplement une description. C'est une série d'instructions structurées qui guident le modèle dans chaque aspect de l'image. Voici la formule de base :</p>
+
+      <p><strong>Sujet + Détails + Environnement + Style + Éclairage + Paramètres techniques</strong></p>
+
+      <p>Exemple simple : <code>a cat in a garden</code> — résultat générique et imprévisible.</p>
+
+      <p>Exemple structuré : <code>a fluffy orange tabby cat sitting among blooming lavender in a cottage garden, soft golden hour sunlight, shallow depth of field, oil painting style, warm color palette</code> — résultat spécifique et contrôlé.</p>
+
+      <p>La différence est considérable. Le deuxième prompt donne au modèle des informations précises sur le sujet (fluffy orange tabby cat), l'action (sitting), l'environnement (blooming lavender, cottage garden), l'éclairage (golden hour), la technique (shallow depth of field) et le style (oil painting).</p>
+
+      <h2 id="elements-essentiels">Les 6 Éléments Essentiels</h2>
+
+      <h3>1. Le Sujet</h3>
+      <p>Le sujet est le cœur de votre image. Soyez aussi spécifique que possible. Au lieu de « a woman », essayez « a young woman with curly red hair wearing a vintage dress ». La spécificité élimine l'ambiguïté et donne au modèle une direction claire.</p>
+
+      <h3>2. L'Environnement</h3>
+      <p>Où se trouve votre sujet ? Un studio, une forêt enchantée, une ville futuriste ? L'environnement définit le contexte et influence profondément l'atmosphère de l'image. Exemples de mots-clés : <code>in a misty forest</code>, <code>on a busy city street</code>, <code>inside a cozy cabin</code>, <code>floating in deep space</code>.</p>
+
+      <h3>3. Le Style</h3>
+      <p>Le style détermine l'esthétique globale. Les générateurs IA reconnaissent des centaines de styles, des plus classiques aux plus modernes. Quelques styles populaires pour débuter :</p>
+      <ul>
+        <li><code>cinematic photography</code> — qualité film de cinéma</li>
+        <li><code>oil painting</code> — peinture à l'huile traditionnelle</li>
+        <li><code>digital art</code> — illustration numérique</li>
+        <li><code>watercolor</code> — aquarelle</li>
+        <li><code>anime style</code> — style d'animation japonaise</li>
+        <li><code>concept art</code> — design de jeu vidéo ou de film</li>
+      </ul>
+
+      <h3>4. L'Éclairage</h3>
+      <p>L'éclairage est souvent ce qui fait la différence entre un résultat amateur et un résultat professionnel. Les termes d'éclairage les plus utiles :</p>
+      <ul>
+        <li><code>golden hour</code> — lumière dorée chaude du lever ou coucher de soleil</li>
+        <li><code>dramatic lighting</code> — contrastes forts entre ombre et lumière</li>
+        <li><code>soft diffused light</code> — lumière douce et uniforme</li>
+        <li><code>neon lighting</code> — éclairage néon coloré</li>
+        <li><code>backlit</code> — éclairage par l'arrière créant des silhouettes</li>
+        <li><code>studio lighting</code> — éclairage professionnel contrôlé</li>
+      </ul>
+
+      <h3>5. La Composition</h3>
+      <p>La composition influence le cadrage et la perspective de l'image. Termes utiles :</p>
+      <ul>
+        <li><code>close-up portrait</code> — portrait en gros plan</li>
+        <li><code>wide angle shot</code> — plan large</li>
+        <li><code>bird's eye view</code> — vue aérienne</li>
+        <li><code>low angle shot</code> — contre-plongée</li>
+        <li><code>shallow depth of field</code> — arrière-plan flou</li>
+        <li><code>symmetrical composition</code> — composition symétrique</li>
+      </ul>
+
+      <h3>6. La Palette de Couleurs</h3>
+      <p>Définir les couleurs dominantes aide le modèle à créer une ambiance cohérente. Exemples : <code>warm earth tones</code>, <code>cool blue palette</code>, <code>muted pastel colors</code>, <code>vibrant saturated colors</code>, <code>monochromatic</code>.</p>
+
+      <h2 id="syntaxe-par-modele">Syntaxe Spécifique par Modèle</h2>
+
+      <p>Chaque générateur d'images IA a sa propre syntaxe. Utiliser le bon format est essentiel pour obtenir de bons résultats.</p>
+
+      <h3>Midjourney</h3>
+      <p>Midjourney utilise des descriptions séparées par des virgules, suivies de paramètres après <code>--</code>. Pas besoin de syntaxe spéciale — le langage naturel fonctionne bien.</p>
+      <p>Exemple : <code>a majestic eagle soaring over snow-capped mountains, dramatic sky, golden hour lighting, cinematic --ar 16:9 --v 6.1 --style raw</code></p>
+      <p>Paramètres clés : <code>--ar</code> (ratio d'aspect), <code>--v</code> (version du modèle), <code>--style raw</code> (interprétation littérale), <code>--stylize</code> (niveau artistique), <code>--chaos</code> (variabilité).</p>
+
+      <h3>Stable Diffusion</h3>
+      <p>Stable Diffusion utilise une syntaxe pondérée avec des parenthèses. Vous pouvez augmenter ou diminuer l'importance d'un élément.</p>
+      <p>Exemple : <code>(masterpiece:1.2), (best quality:1.1), majestic eagle soaring over mountains, (dramatic sky:1.3), golden hour, (cinematic lighting:1.2)</code></p>
+      <p>Prompt négatif : <code>(worst quality:1.4), (low quality:1.4), blurry, deformed, extra limbs</code></p>
+
+      <h3>Flux</h3>
+      <p>Flux de Black Forest Labs préfère des descriptions longues et détaillées en langage naturel. Pas de syntaxe spéciale nécessaire.</p>
+      <p>Exemple : <code>A majestic bald eagle with wings fully spread soaring high above a dramatic mountain range capped with fresh snow. The scene is bathed in warm golden hour light with dramatic clouds stretching across the sky. Shot with a telephoto lens, shallow depth of field, cinematic quality.</code></p>
+
+      <h3>DALL-E 3</h3>
+      <p>DALL-E 3 comprend le langage naturel et les phrases complètes. Il excelle dans le suivi d'instructions précises et la génération de texte dans les images.</p>
+      <p>Exemple : <code>A photorealistic image of a majestic eagle soaring above snow-covered mountains during golden hour, with dramatic cloud formations and warm light illuminating its wings</code></p>
+
+      <h2 id="templates-debutant">Templates pour Débutants</h2>
+
+      <p>Voici des templates que vous pouvez adapter immédiatement pour obtenir de bons résultats :</p>
+
+      <h3>Portrait</h3>
+      <p><code>portrait of [description du sujet], [expression], [vêtements], [éclairage], [style], [couleurs]</code></p>
+      <p>Exemple : <code>portrait of an elderly fisherman with weathered skin, thoughtful expression, wearing a knit sweater, golden hour side lighting, cinematic photography, warm earth tones</code></p>
+
+      <h3>Paysage</h3>
+      <p><code>[type de paysage], [saison/heure], [conditions météo], [éclairage], [style], [ambiance]</code></p>
+      <p>Exemple : <code>misty mountain valley at dawn, autumn colors, light fog rolling through pine trees, soft diffused light, landscape photography, peaceful serene mood</code></p>
+
+      <h3>Concept Art</h3>
+      <p><code>[type de scène], [genre], [détails architecturaux/design], [ambiance], concept art, [artiste ou studio inspirant]</code></p>
+      <p>Exemple : <code>ancient floating temple above the clouds, high fantasy, ornate stone carvings, mystical atmosphere, concept art, volumetric lighting, epic scale</code></p>
+
+      <h2 id="erreurs-debutants">Erreurs les Plus Courantes</h2>
+
+      <ol class="mistakes-list">
+        <li><strong>Être trop vague.</strong> « A beautiful landscape » ne donne presque aucune direction au modèle. Précisez quel type de paysage, quelle heure, quel éclairage, quel style. Chaque détail ajouté améliore le résultat.</li>
+        <li><strong>Surcharger le prompt.</strong> L'inverse est aussi un problème. Un prompt de 200 mots avec des instructions contradictoires va confondre le modèle. Commencez avec 30-50 mots bien choisis et ajoutez progressivement.</li>
+        <li><strong>Ignorer le ratio d'aspect.</strong> Un portrait en format paysage ou un paysage en format carré produira des compositions étranges. Utilisez <code>--ar 2:3</code> pour les portraits et <code>--ar 16:9</code> pour les paysages dans Midjourney.</li>
+        <li><strong>Ne pas itérer.</strong> Votre premier prompt ne sera presque jamais parfait. Générez, évaluez, ajustez un élément à la fois, et régénérez. C'est un processus itératif.</li>
+        <li><strong>Copier des prompts sans les comprendre.</strong> Les prompts partagés en ligne sont un bon point de départ pour apprendre, mais si vous ne comprenez pas chaque terme, vous ne pourrez pas les adapter à vos besoins spécifiques.</li>
+      </ol>
+
+      <h2 id="exercices-pratiques">Exercices Pratiques</h2>
+
+      <p>La meilleure façon d'apprendre est de pratiquer. Voici trois exercices progressifs :</p>
+
+      <h3>Exercice 1 : Le Prompt Progressif</h3>
+      <p>Commencez avec un prompt minimal et ajoutez un élément à chaque génération. Observez comment chaque ajout influence le résultat.</p>
+      <ol>
+        <li><code>a cat</code></li>
+        <li><code>a fluffy orange cat sitting on a windowsill</code></li>
+        <li><code>a fluffy orange cat sitting on a windowsill, golden hour sunlight</code></li>
+        <li><code>a fluffy orange cat sitting on a windowsill, golden hour sunlight, oil painting style</code></li>
+        <li><code>a fluffy orange cat sitting on a windowsill, golden hour sunlight, oil painting style, warm amber and cream tones</code></li>
+      </ol>
+
+      <h3>Exercice 2 : Le Style Swap</h3>
+      <p>Prenez un sujet fixe et changez uniquement le style. Cela vous montre l'impact des mots-clés de style.</p>
+      <ul>
+        <li><code>a medieval castle on a cliff — cinematic photography</code></li>
+        <li><code>a medieval castle on a cliff — watercolor painting</code></li>
+        <li><code>a medieval castle on a cliff — anime style</code></li>
+        <li><code>a medieval castle on a cliff — cyberpunk reimagining</code></li>
+      </ul>
+
+      <h3>Exercice 3 : L'Éclairage Transform</h3>
+      <p>Gardez le même sujet et le même style, changez uniquement l'éclairage. Vous verrez à quel point la lumière transforme une image.</p>
+      <ul>
+        <li><code>portrait of a woman — golden hour lighting</code></li>
+        <li><code>portrait of a woman — dramatic rim lighting</code></li>
+        <li><code>portrait of a woman — neon lighting, blue and pink</code></li>
+        <li><code>portrait of a woman — soft overcast diffused light</code></li>
+      </ul>
+
+      <div class="cta-box">
+        <h3>Commencez à Créer Maintenant</h3>
+        <p>Utilisez notre outil Text to Prompt pour transformer vos idées simples en prompts optimisés, ou téléchargez une image de référence pour obtenir un prompt prêt à l'emploi.</p>
+        <a href="/text-to-prompt/" class="cta-btn">Essayer Text to Prompt →</a>
+      </div>
+
+      <h2 id="questions-frequentes">Questions Fréquentes</h2>
+
+      <h3>Quelle est la longueur idéale pour un prompt IA ?</h3>
+      <p>La longueur idéale dépend du modèle. Pour Midjourney, 20 à 60 mots fonctionnent bien. Pour Stable Diffusion, restez sous 75 tokens (environ 60 mots) pour éviter la troncation. Pour Flux et DALL-E 3, des descriptions plus longues de 50 à 100 mots sont bien gérées. En général, commencez court et ajoutez des détails progressivement.</p>
+
+      <h3>Faut-il écrire les prompts en anglais ou en français ?</h3>
+      <p>L'anglais est recommandé pour tous les générateurs d'images IA majeurs. Les modèles sont principalement entraînés sur des données en anglais, ce qui signifie que les prompts en anglais produisent des résultats plus précis et plus cohérents. Même si DALL-E 3 et Midjourney comprennent le français, les termes techniques d'art et de photographie sont mieux reconnus en anglais.</p>
+
+      <h3>Comment améliorer un prompt qui donne de mauvais résultats ?</h3>
+      <p>Trois stratégies principales : 1) Ajoutez de la spécificité — remplacez les termes vagues par des descriptions précises. 2) Ajustez l'éclairage et l'ambiance — ces éléments transforment radicalement le résultat. 3) Utilisez des prompts négatifs dans Stable Diffusion pour exclure les éléments indésirables comme <code>blurry, deformed, low quality</code>.</p>
+
+      <h3>Quel générateur d'images IA est le meilleur pour les débutants ?</h3>
+      <p>DALL-E 3 (via ChatGPT) est le plus accessible car il comprend le langage naturel sans syntaxe spéciale. Midjourney offre d'excellents résultats avec des prompts simples mais nécessite Discord. Stable Diffusion offre le plus de contrôle mais a la courbe d'apprentissage la plus raide. Flux est un bon compromis avec des prompts en langage naturel et des résultats photoréalistes.</p>
+
+    </div>
+
+    <div class="author-bio">
+      <svg class="author-photo" width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="Avatar de l'auteur"><circle cx="32" cy="32" r="32" fill="#2a1f4e"/><circle cx="32" cy="26" r="11" fill="#7c6bc4"/><ellipse cx="32" cy="52" rx="18" ry="11" fill="#7c6bc4"/></svg>
+      <div class="author-info">
+        <p class="author-name">ImageToPrompt Team</p>
+        <p class="author-desc">Ingénieurs de prompts et artistes IA spécialisés dans Midjourney, Stable Diffusion et Flux. Nous construisons ImageToPrompt pour rendre la génération d'images IA accessible à tous.</p>
+        <a href="https://x.com/Ilyass14286541" class="author-link">Suivre sur X →</a>
+      </div>
+    </div>
+
+    <div class="related-posts">
+      <h2>Guides Associés</h2>
+      <div class="related-grid">
+        <a href="/fr/blog/glossaire-styles-art-ia/" class="related-card">
+          <p class="tag">Glossaire</p>
+          <h3>Glossaire des Styles d'Art IA : 50 Styles Expliqués</h3>
+        </a>
+        <a href="/fr/blog/guide-prompts-stable-diffusion/" class="related-card">
+          <p class="tag">Stable Diffusion</p>
+          <h3>Guide Complet des Prompts Stable Diffusion 2026</h3>
+        </a>
+        <a href="/fr/blog/guide-prompts-ideogram/" class="related-card">
+          <p class="tag">Ideogram</p>
+          <h3>Guide Complet des Prompts Ideogram</h3>
+        </a>
+      </div>
+    </div>
+
+  </div>
+
+  <footer class="footer-4col">
+    <div class="f4-inner">
+      <div class="f4-brand">
+        <img src="/favicon.svg" alt="ImageToPrompt" width="28" height="28">
+        <span class="f4-brand-name">ImageTo<span class="accent">Prompt</span></span>
+        <span class="f4-brand-sub">&mdash; Free AI Prompt Generator</span>
+      </div>
+      <div class="f4-grid">
+        <div class="f4-section">
+          <h4 class="f4-heading">Image Prompt Tools</h4>
+          <a href="/">Image to Prompt</a>
+          <a href="/text-to-prompt/">Text to Prompt</a>
+          <a href="/midjourney-prompt-generator/">Midjourney</a>
+          <a href="/stable-diffusion-prompt-generator/">Stable Diffusion</a>
+          <a href="/flux-prompt-generator/">Flux</a>
+          <a href="/dall-e-prompt-generator/">DALL-E 3</a>
+          <a href="/adobe-firefly-prompt-generator/">Adobe Firefly</a>
+          <a href="/leonardo-ai-prompt-generator/">Leonardo AI</a>
+          <a href="/ideogram-prompt-generator/">Ideogram</a>
+        </div>
+        <div class="f4-section">
+          <h4 class="f4-heading">Video Prompt Tools</h4>
+          <a href="/image-to-video-prompt/">Image to Video Prompt</a>
+          <a href="/text-to-video-prompt/">Text to Video Prompt</a>
+          <a href="/veo-prompt-generator/">Veo / Flow Studio</a>
+          <a href="/kling-prompt-generator/">Kling AI</a>
+          <a href="/runway-prompt-generator/">Runway Gen-3</a>
+          <a href="/pika-prompt-generator/">Pika</a>
+          <a href="/luma-prompt-generator/">Luma Dream Machine</a>
+          <a href="/sora-prompt-generator/">Sora</a>
+          <a href="/minimax-prompt-generator/">Minimax</a>
+          <a href="/stable-video-prompt-generator/">Stable Video</a>
+        </div>
+        <div class="f4-section">
+          <h4 class="f4-heading">Resources</h4>
+          <a href="/blog/">Blog</a>
+          <a href="/about/">About</a>
+          <a href="/pricing/">Pricing</a>
+          <a href="/contact/">Contact</a>
+          <a href="/privacy-policy/">Privacy Policy</a>
+          <a href="/terms-of-service/">Terms of Service</a>
+        </div>
+        <div class="f4-section">
+          <h4 class="f4-heading">Languages</h4>
+          <a href="/">English</a>
+          <a href="/fr/">Fran&#231;ais</a>
+          <a href="/ar/">&#1575;&#1604;&#1593;&#1585;&#1576;&#1610;&#1577;</a>
+          <a href="/es/">Espa&#241;ol</a>
+          <a href="/ko/">&#54620;&#44397;&#50612;</a>
+          <a href="/ja/">&#26085;&#26412;&#35486;</a>
+        </div>
+      </div>
+      <div class="f4-bottom">
+        <p>&#169; 2026 ImageToPrompt.dev &#8212; Free AI Prompt Generator</p>
+        <p>Your images are never stored. All analysis is ephemeral and private.</p>
+      </div>
+    </div>
+  </footer>
+
+<script src="/newsletter-inject.js" defer></script>
+<script src="/nav.js" defer></script>
+  <script>
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', function() {
+    navigator.serviceWorker.register('/sw.js')
+      .catch(function(err) { console.warn('SW registration failed:', err); });
+  });
+}
+</script>
+</body>
+</html>

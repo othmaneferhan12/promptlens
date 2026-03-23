@@ -1,0 +1,506 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <script src="/theme-toggle.js"></script>
+  <meta charset="UTF-8" />
+  <link rel="dns-prefetch" href="https://www.googletagmanager.com">
+<link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="max-image-preview:large, index, follow">
+  <meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="ImageToPrompt">
+  <title>Guide des Prompts Vidéo IA 2026 : Veo, Kling, Runway et Sora</title>
+  <meta name="description" content="Guide complet pour écrire des prompts vidéo IA en 2026. Couvre tous les modèles vidéo : Veo, Kling, Runway, Sora, Pika, Luma et plus." />
+  <link rel="canonical" href="https://www.imagetoprompt.dev/fr/blog/guide-prompts-video-ia-2026/" />
+  <link rel="alternate" hreflang="fr" href="https://www.imagetoprompt.dev/fr/blog/guide-prompts-video-ia-2026/" />
+  <link rel="alternate" hreflang="en" href="https://www.imagetoprompt.dev/blog/video-prompt-guide-2026/" />
+  <link rel="alternate" hreflang="ar" href="https://www.imagetoprompt.dev/ar/blog/dalil-prompts-video-ia-2026/" />
+  <link rel="alternate" hreflang="x-default" href="https://www.imagetoprompt.dev/blog/video-prompt-guide-2026/" />
+  <meta property="og:title" content="Guide des Prompts Vidéo IA 2026 : Veo, Kling, Runway et Sora" />
+  <meta property="og:description" content="Guide complet pour écrire des prompts vidéo IA en 2026. Couvre Veo, Kling, Runway, Sora et plus." />
+  <meta property="og:url" content="https://www.imagetoprompt.dev/fr/blog/guide-prompts-video-ia-2026/" />
+  <meta property="og:type" content="article" />
+  <meta property="og:image" content="https://www.imagetoprompt.dev/og-image.png" />
+  <meta property="og:site_name" content="ImageToPrompt" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Guide des Prompts Vidéo IA 2026 : Veo, Kling, Runway et Sora" />
+  <meta name="twitter:description" content="Guide complet pour écrire des prompts vidéo IA en 2026." />
+  <meta name="twitter:image" content="https://www.imagetoprompt.dev/og-image.png" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="48x48" href="/favicon-48.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+  <link rel="manifest" href="/site.webmanifest" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="/fonts/space-grotesk-700.woff2" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="/fonts/inter-400.woff2" />
+  <link rel="stylesheet" href="/theme.css">
+  <link rel="preload" href="/blog.css" as="style" onload="this.onload=null;this.rel='stylesheet'"><noscript><link rel="stylesheet" href="/blog.css"></noscript>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Guide des Prompts Vidéo IA 2026 : Veo, Kling, Runway et Sora",
+    "description": "Guide complet pour écrire des prompts vidéo IA en 2026. Couvre tous les modèles vidéo.",
+    "image": "https://www.imagetoprompt.dev/og-image.png",
+    "datePublished": "2026-03-12",
+    "dateModified": "2026-03-22",
+    "inLanguage": "fr",
+    "author": {
+      "@type": "Person",
+      "name": "ImageToPrompt Team",
+      "url": "https://www.imagetoprompt.dev/"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "ImageToPrompt",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://www.imagetoprompt.dev/favicon.svg"
+      }
+    },
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https://www.imagetoprompt.dev/fr/blog/guide-prompts-video-ia-2026/"
+    }
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Quelle est la différence entre les prompts image et les prompts vidéo ?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Les prompts vidéo ajoutent une dimension temporelle absente des prompts image. Vous devez décrire non seulement l'apparence visuelle mais aussi le mouvement des sujets, les mouvements de caméra (pan, tilt, zoom, tracking), la durée souhaitée et les transitions. La structure typique est : scène + action/mouvement + mouvement de caméra + ambiance + durée." }
+      },
+      {
+        "@type": "Question",
+        "name": "Comment décrire les mouvements de caméra dans un prompt vidéo IA ?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Utilisez des termes cinématographiques précis : 'slow dolly forward' pour un mouvement vers l'avant, 'smooth tracking shot following the subject' pour un suivi latéral, 'crane shot rising from ground level' pour une élévation, 'handheld camera with subtle shake' pour un effet documentaire. Plus le mouvement est précis dans le prompt, meilleur sera le résultat." }
+      },
+      {
+        "@type": "Question",
+        "name": "Quelle durée de vidéo puis-je générer avec l'IA en 2026 ?",
+        "acceptedAnswer": { "@type": "Answer", "text": "La durée varie selon le modèle : Veo génère jusqu'à 8 secondes de vidéo, Kling jusqu'à 10 secondes, Runway Gen-3 jusqu'à 10 secondes, Sora jusqu'à 20 secondes, et Pika jusqu'à 4 secondes. Les vidéos plus longues peuvent être créées en chaînant plusieurs clips avec des transitions cohérentes." }
+      },
+      {
+        "@type": "Question",
+        "name": "Quel modèle vidéo IA est le meilleur pour les débutants ?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Runway Gen-3 est le plus accessible pour les débutants grâce à son interface intuitive et ses résultats cohérents. Pika est aussi un bon choix pour débuter avec des clips courts et stylisés. Veo de Google offre un bon équilibre entre qualité et facilité d'utilisation. Pour les utilisateurs plus avancés, Kling offre le plus de contrôle sur le mouvement." }
+      }
+    ]
+  }
+  </script>
+    <!-- Google AdSense -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4499206373485728" crossorigin="anonymous"></script>
+    <!-- Web Push Notifications -->
+<script src="https://cdn.onesignal.com/sdks/web/v16/OneSignalSDK.page.js" defer></script>
+<script>
+  window.OneSignalDeferred = window.OneSignalDeferred || [];
+  OneSignalDeferred.push(async function(OneSignal) {
+    await OneSignal.init({
+      appId: "REPLACE_WITH_ONESIGNAL_APP_ID",
+      notifyButton: { enable: false }
+    });
+  });
+</script>
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="inner">
+      <a href="/fr/" class="site-logo"><img src="/favicon.svg" alt="ImageToPrompt" width="48" height="48"><div class="site-logo-text">ImageTo<span class="accent">Prompt</span><span class="site-logo-sub">G&#233;n&#233;rateur de Prompts IA Gratuit</span></div></a>
+      <nav class="site-nav" aria-label="Navigation principale">
+        <div class="nav-dropdown">
+          <button class="nav-dropdown-trigger" aria-haspopup="true" aria-expanded="false">Tools <span class="nav-chevron" aria-hidden="true">&#9660;</span></button>
+          <div class="nav-dropdown-menu" role="menu">
+            <div class="nav-mega-grid">
+              <div class="nav-mega-col">
+                <div class="nav-mega-heading">&#128444; IMAGE TOOLS</div>
+                <a href="/" role="menuitem" class="nav-mega-tool">Image to Prompt <span class="nav-mega-arrow">&#8594;</span></a>
+                <a href="/text-to-prompt/" role="menuitem" class="nav-mega-tool">Text to Prompt <span class="nav-mega-arrow">&#8594;</span></a>
+                <div class="nav-mega-models-label">Models</div>
+                <div class="nav-mega-models"><a href="/midjourney-prompt-generator/">Midjourney</a><span class="nav-dot">&#xB7;</span><a href="/stable-diffusion-prompt-generator/">SD</a></div>
+                <div class="nav-mega-models"><a href="/flux-prompt-generator/">Flux</a><span class="nav-dot">&#xB7;</span><a href="/dall-e-prompt-generator/">DALL&#xB7;E&#xA0;3</a></div>
+                <div class="nav-mega-models"><a href="/adobe-firefly-prompt-generator/">Firefly</a><span class="nav-dot">&#xB7;</span><a href="/leonardo-ai-prompt-generator/">Leonardo</a></div>
+                <div class="nav-mega-models"><a href="/ideogram-prompt-generator/">Ideogram</a></div>
+              </div>
+              <div class="nav-mega-divider" aria-hidden="true"></div>
+              <div class="nav-mega-col">
+                <div class="nav-mega-heading">&#127909; VIDEO TOOLS</div>
+                <a href="/?tab=image-to-video" role="menuitem" class="nav-mega-tool">Image to Video <span class="nav-mega-arrow">&#8594;</span></a>
+                <a href="/?tab=text-to-video" role="menuitem" class="nav-mega-tool">Text to Video <span class="nav-mega-arrow">&#8594;</span></a>
+                <div class="nav-mega-models-label">Models</div>
+                <div class="nav-mega-models"><a href="/veo-prompt-generator/">Veo</a><span class="nav-dot">&#xB7;</span><a href="/kling-prompt-generator/">Kling</a></div>
+                <div class="nav-mega-models"><a href="/runway-prompt-generator/">Runway</a><span class="nav-dot">&#xB7;</span><a href="/pika-prompt-generator/">Pika</a></div>
+                <div class="nav-mega-models"><a href="/luma-prompt-generator/">Luma</a><span class="nav-dot">&#xB7;</span><a href="/sora-prompt-generator/">Sora</a></div>
+                <div class="nav-mega-models"><a href="/minimax-prompt-generator/">Minimax</a><span class="nav-dot">&#xB7;</span><a href="/stable-video-prompt-generator/">Stable</a></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <a href="/fr/blog/" >Blog</a>
+        <a href="/pricing/" class="nav-pill-pricing">Pricing</a>
+        <a href="/about/" class="nav-pill-about">About</a>
+        <a href="/fr/" class="nav-try-free">Essayer &#8594;</a>
+        <button id="theme-toggle" onclick="toggleTheme()" aria-label="Switch theme" title="Switch theme">&#9728;&#xFE0F;</button>
+  </nav>
+    </div>
+  </header>
+
+  <nav class="breadcrumb" aria-label="Fil d'Ariane">
+    <a href="/fr/">Accueil</a><span class="sep">›</span>
+    <a href="/fr/blog/">Blog</a><span class="sep">›</span>
+    <span>Guide Prompts Vidéo IA 2026</span>
+  </nav>
+
+  <div class="page-wrapper">
+
+    <header class="article-header">
+      <p class="article-tag">Vidéo IA</p>
+      <h1>Guide des Prompts Vidéo IA 2026</h1>
+      <div class="article-meta">
+        <span>Mars 2026</span>
+        <span class="dot">·</span>
+        <span>12 min de lecture</span>
+        <span class="dot">·</span>
+        <span>Veo · Kling · Runway · Sora · Pika · Luma</span>
+        <span class="dot">·</span>
+        <span>Mis à jour mars 2026</span>
+      </div>
+    </header>
+
+    <div class="article-body">
+
+      <p>La génération de vidéo par IA a fait un bond considérable en 2026. Des modèles comme Veo de Google, Kling AI, Runway Gen-3 Alpha Turbo et Sora d'OpenAI produisent des clips vidéo d'une qualité impressionnante à partir de simples descriptions textuelles. Mais la qualité du résultat dépend entièrement de la qualité du prompt. Ce guide couvre tout ce que vous devez savoir pour écrire des prompts vidéo IA efficaces en 2026.</p>
+
+      <nav class="toc" aria-label="Sommaire">
+        <details open>
+          <summary>Dans ce guide</summary>
+          <ol>
+            <li><a href="#structure-prompt-video">Structure d'un Prompt Vidéo IA</a></li>
+            <li><a href="#mouvement-sujet">Décrire le Mouvement du Sujet</a></li>
+            <li><a href="#mouvements-camera">Mouvements de Caméra</a></li>
+            <li><a href="#duree-temporalite">Durée et Temporalité</a></li>
+            <li><a href="#conseils-par-modele">Conseils par Modèle</a></li>
+            <li><a href="#exemples-prompts">Exemples de Prompts Complets</a></li>
+            <li><a href="#erreurs-courantes">Erreurs Courantes en Vidéo IA</a></li>
+            <li><a href="#questions-frequentes">Questions Fréquentes</a></li>
+          </ol>
+        </details>
+      </nav>
+
+      <div class="callout">
+        <p><strong>Génération rapide :</strong> Utilisez notre <a href="/?tab=text-to-video">outil Text to Video Prompt</a> pour générer des prompts vidéo optimisés pour n'importe quel modèle, ou notre <a href="/?tab=image-to-video">outil Image to Video Prompt</a> pour animer une image existante.</p>
+      </div>
+
+      <h2 id="structure-prompt-video">Structure d'un Prompt Vidéo IA</h2>
+
+      <p>Contrairement aux prompts d'image qui décrivent un instant figé, les prompts vidéo doivent capturer une dimension temporelle. La structure recommandée suit un schéma en cinq couches :</p>
+
+      <ol>
+        <li><strong>La scène :</strong> Le décor, l'environnement et les conditions d'éclairage</li>
+        <li><strong>Le sujet :</strong> Ce qui apparaît dans la vidéo et son apparence</li>
+        <li><strong>L'action :</strong> Ce que le sujet fait, comment il se déplace</li>
+        <li><strong>Le mouvement de caméra :</strong> Comment la caméra se déplace par rapport à la scène</li>
+        <li><strong>L'ambiance et le style :</strong> Le ton émotionnel, le style cinématique, la palette de couleurs</li>
+      </ol>
+
+      <h3>Exemple de structure complète</h3>
+      <div class="code-block"><code>A golden retriever runs joyfully along a sandy beach at sunset. Waves crash gently in the background. The camera tracks alongside the dog at ground level, creating a dynamic low-angle shot. Warm golden hour light, cinematic color grading, shallow depth of field, slow motion 120fps look.</code></div>
+
+      <p>Ce prompt couvre les cinq couches : scène (plage au coucher du soleil), sujet (golden retriever), action (court joyeusement), caméra (tracking latéral au ras du sol), et ambiance (golden hour, cinématique, ralenti).</p>
+
+      <h2 id="mouvement-sujet">Décrire le Mouvement du Sujet</h2>
+
+      <p>Le mouvement est la composante la plus importante et la plus délicate des prompts vidéo. Les modèles IA actuels comprennent une large gamme de mouvements, mais la précision du vocabulaire est essentielle.</p>
+
+      <h3>Mouvements de personnages</h3>
+      <ul>
+        <li><code>walking slowly through</code> — marche lente à travers un lieu</li>
+        <li><code>turning to face the camera</code> — se tourne vers la caméra</li>
+        <li><code>gently brushing hair from face</code> — geste délicat et naturel</li>
+        <li><code>running and leaping over obstacles</code> — action dynamique</li>
+        <li><code>standing still, wind blowing through clothes</code> — mouvement subtil avec sujet statique</li>
+      </ul>
+
+      <h3>Mouvements naturels</h3>
+      <ul>
+        <li><code>clouds drifting slowly across the sky</code> — nuages en time-lapse</li>
+        <li><code>leaves falling gently in autumn wind</code> — chute de feuilles</li>
+        <li><code>waves rolling toward shore</code> — mouvement de vagues</li>
+        <li><code>flame flickering in darkness</code> — flamme vacillante</li>
+        <li><code>rain droplets hitting puddle surface</code> — gouttes sur une flaque</li>
+      </ul>
+
+      <h3>Mouvements d'objets</h3>
+      <ul>
+        <li><code>coffee steam rising from mug</code> — vapeur montante</li>
+        <li><code>car driving along winding mountain road</code> — véhicule sur route sinueuse</li>
+        <li><code>rotating slowly on display platform</code> — rotation pour présentation produit</li>
+      </ul>
+
+      <h2 id="mouvements-camera">Mouvements de Caméra</h2>
+
+      <p>Les mouvements de caméra donnent du dynamisme et de la profondeur à la vidéo. Chaque modèle interprète différemment ces instructions, mais le vocabulaire cinématographique est universellement compris.</p>
+
+      <div class="table-wrap">
+      <table class="comparison-table">
+        <thead>
+          <tr>
+            <th>Mouvement</th>
+            <th>Terme en prompt</th>
+            <th>Effet</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Panoramique horizontal</td>
+            <td><code>slow pan left/right</code></td>
+            <td>La caméra pivote horizontalement sur son axe</td>
+          </tr>
+          <tr>
+            <td>Travelling avant</td>
+            <td><code>dolly forward / push in</code></td>
+            <td>La caméra avance vers le sujet</td>
+          </tr>
+          <tr>
+            <td>Travelling latéral</td>
+            <td><code>tracking shot following subject</code></td>
+            <td>La caméra suit le sujet latéralement</td>
+          </tr>
+          <tr>
+            <td>Plongée/contre-plongée</td>
+            <td><code>tilt up/down</code></td>
+            <td>La caméra pivote verticalement</td>
+          </tr>
+          <tr>
+            <td>Grue</td>
+            <td><code>crane shot rising upward</code></td>
+            <td>La caméra s'élève verticalement</td>
+          </tr>
+          <tr>
+            <td>Orbite</td>
+            <td><code>orbiting around subject</code></td>
+            <td>La caméra tourne autour du sujet</td>
+          </tr>
+          <tr>
+            <td>Zoom</td>
+            <td><code>slow zoom in / zoom out</code></td>
+            <td>Changement de focale progressive</td>
+          </tr>
+          <tr>
+            <td>Caméra fixe</td>
+            <td><code>static camera, locked tripod</code></td>
+            <td>Caméra immobile, seul le sujet bouge</td>
+          </tr>
+        </tbody>
+      </table>
+      </div>
+
+      <h2 id="duree-temporalite">Durée et Temporalité</h2>
+
+      <p>La gestion du temps dans les prompts vidéo influence le rythme et la densité de l'action. Voici les durées maximales par modèle en 2026 :</p>
+
+      <div class="table-wrap">
+      <table class="comparison-table">
+        <thead>
+          <tr>
+            <th>Modèle</th>
+            <th>Durée max</th>
+            <th>Résolution max</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>Veo (Google)</td><td>8 secondes</td><td>1080p</td></tr>
+          <tr><td>Kling AI</td><td>10 secondes</td><td>1080p</td></tr>
+          <tr><td>Runway Gen-3</td><td>10 secondes</td><td>1080p</td></tr>
+          <tr><td>Sora (OpenAI)</td><td>20 secondes</td><td>1080p</td></tr>
+          <tr><td>Pika</td><td>4 secondes</td><td>1080p</td></tr>
+          <tr><td>Luma Dream Machine</td><td>5 secondes</td><td>1080p</td></tr>
+          <tr><td>Minimax</td><td>6 secondes</td><td>1080p</td></tr>
+          <tr><td>Stable Video</td><td>4 secondes</td><td>1024x576</td></tr>
+        </tbody>
+      </table>
+      </div>
+
+      <p>Pour des clips courts (3-5 secondes), concentrez-vous sur un seul mouvement ou une seule action. Pour les clips plus longs (8-20 secondes), vous pouvez décrire une séquence avec un début et une fin distincte.</p>
+
+      <h2 id="conseils-par-modele">Conseils par Modèle</h2>
+
+      <h3>Veo (Google)</h3>
+      <p>Veo répond bien au langage naturel descriptif. Privilégiez des descriptions complètes de la scène avec des références cinématographiques. Incluez des indications de qualité comme <code>cinematic quality, professional color grading, 4K look</code>.</p>
+
+      <h3>Kling AI</h3>
+      <p>Kling excelle dans le mouvement humain et les expressions faciales. Soyez précis sur les actions physiques : <code>woman slowly raises her hand and waves</code> plutôt que <code>woman waving</code>. Kling gère bien les mouvements complexes avec plusieurs sujets.</p>
+
+      <h3>Runway Gen-3 Alpha Turbo</h3>
+      <p>Runway est très performant en mode image-to-video. Fournissez une image source de haute qualité et un prompt décrivant uniquement le mouvement souhaité. En mode text-to-video, Runway préfère des prompts concis et directs.</p>
+
+      <h3>Sora</h3>
+      <p>Sora d'OpenAI comprend les prompts longs et complexes avec plusieurs actions enchaînées. C'est le modèle qui gère le mieux les scènes narratives avec une progression temporelle. Utilisez des phrases comme <code>first... then... finally...</code> pour structurer la séquence.</p>
+
+      <h3>Pika</h3>
+      <p>Pika est idéal pour les clips courts et stylisés. Il excelle dans les effets visuels créatifs et les transformations de style. Utilisez des termes comme <code>3D rotate</code>, <code>inflate</code>, <code>melt</code> pour des effets spéciaux uniques.</p>
+
+      <h3>Luma Dream Machine</h3>
+      <p>Luma fonctionne bien avec des descriptions atmosphériques. Mettez l'accent sur l'ambiance et l'éclairage plutôt que sur les actions complexes. Parfait pour les paysages animés et les scènes contemplatives.</p>
+
+      <h2 id="exemples-prompts">Exemples de Prompts Complets</h2>
+
+      <h3>Scène cinématique urbaine</h3>
+      <div class="code-block"><code>Aerial drone shot over a futuristic city at dusk. Neon lights reflect off wet streets below. The camera slowly descends through the skyline, weaving between glass skyscrapers. Cyberpunk atmosphere, volumetric fog, teal and orange color palette, cinematic widescreen, Blade Runner aesthetic.</code></div>
+
+      <h3>Portrait émotionnel</h3>
+      <div class="code-block"><code>Close-up portrait of an elderly man sitting by a window. Soft afternoon light illuminates one side of his weathered face. He slowly turns toward the camera with a gentle, knowing smile. Shallow depth of field, warm golden tones, intimate documentary style, 85mm lens look.</code></div>
+
+      <h3>Nature et time-lapse</h3>
+      <div class="code-block"><code>Time-lapse of wildflowers blooming in an alpine meadow. Clouds race overhead casting moving shadows across the landscape. The camera is positioned low among the flowers, tilting upward toward snow-capped peaks. Vivid saturated colors, National Geographic style, golden hour to blue hour transition.</code></div>
+
+      <h3>Produit commercial</h3>
+      <div class="code-block"><code>Luxury perfume bottle rotating slowly on a reflective black surface. Soft studio lighting creating elegant highlights on the glass. Golden liquid catches the light as the bottle turns 360 degrees. Minimalist black background, premium product photography, smooth continuous rotation.</code></div>
+
+      <div class="cta-inline">
+        <p>Générez des prompts vidéo optimisés pour n'importe quel modèle avec nos outils gratuits.</p>
+        <a href="/?tab=text-to-video" class="cta-btn-sm">Text to Video Prompt →</a>
+      </div>
+
+      <h2 id="erreurs-courantes">Erreurs Courantes en Vidéo IA</h2>
+
+      <ol class="mistakes-list">
+        <li><strong>Décrire trop d'actions dans un court clip.</strong> Un clip de 4 secondes ne peut contenir qu'un seul mouvement principal. Si vous décrivez trois actions différentes, le modèle tentera de toutes les compresser, produisant un résultat confus et saccadé.</li>
+        <li><strong>Ignorer le mouvement de caméra.</strong> Sans indication de caméra, le modèle choisit un angle par défaut souvent statique et ennuyeux. Précisez toujours le mouvement de caméra souhaité pour donner du dynamisme à votre vidéo.</li>
+        <li><strong>Utiliser des prompts d'image pour la vidéo.</strong> Les prompts image se concentrent sur l'apparence statique. Les prompts vidéo nécessitent des descriptions de mouvement, de temporalité et de séquence que les prompts image n'incluent pas.</li>
+        <li><strong>Ne pas adapter au modèle cible.</strong> Chaque modèle vidéo a ses forces. Utiliser un prompt de scène d'action complexe sur Pika (clips courts) ou un prompt minimaliste sur Sora (capable de séquences longues) est un gaspillage du potentiel du modèle.</li>
+        <li><strong>Oublier les conditions d'éclairage.</strong> L'éclairage est encore plus important en vidéo qu'en image car il influence la cohérence de chaque frame. Un éclairage mal défini peut créer des incohérences visuelles gênantes entre les frames.</li>
+      </ol>
+
+      <div class="cta-box">
+        <h3>Créez Votre Premier Prompt Vidéo IA</h3>
+        <p>Utilisez notre outil gratuit pour générer des prompts vidéo optimisés pour Veo, Kling, Runway, Sora et tous les modèles vidéo IA.</p>
+        <a href="/?tab=text-to-video" class="cta-btn">Essayer Text to Video Prompt →</a>
+      </div>
+
+      <h2 id="questions-frequentes">Questions Fréquentes</h2>
+
+      <h3>Quelle est la différence entre les prompts image et les prompts vidéo ?</h3>
+      <p>Les prompts vidéo ajoutent une dimension temporelle absente des prompts image. Vous devez décrire non seulement l'apparence visuelle mais aussi le mouvement des sujets, les mouvements de caméra (pan, tilt, zoom, tracking), la durée souhaitée et les transitions. La structure typique est : scène + action/mouvement + mouvement de caméra + ambiance + durée.</p>
+
+      <h3>Comment décrire les mouvements de caméra dans un prompt vidéo IA ?</h3>
+      <p>Utilisez des termes cinématographiques précis : <code>slow dolly forward</code> pour un mouvement vers l'avant, <code>smooth tracking shot following the subject</code> pour un suivi latéral, <code>crane shot rising from ground level</code> pour une élévation, <code>handheld camera with subtle shake</code> pour un effet documentaire. Plus le mouvement est précis dans le prompt, meilleur sera le résultat.</p>
+
+      <h3>Quelle durée de vidéo puis-je générer avec l'IA en 2026 ?</h3>
+      <p>La durée varie selon le modèle : Veo génère jusqu'à 8 secondes de vidéo, Kling jusqu'à 10 secondes, Runway Gen-3 jusqu'à 10 secondes, Sora jusqu'à 20 secondes, et Pika jusqu'à 4 secondes. Les vidéos plus longues peuvent être créées en chaînant plusieurs clips avec des transitions cohérentes.</p>
+
+      <h3>Quel modèle vidéo IA est le meilleur pour les débutants ?</h3>
+      <p>Runway Gen-3 est le plus accessible pour les débutants grâce à son interface intuitive et ses résultats cohérents. Pika est aussi un bon choix pour débuter avec des clips courts et stylisés. Veo de Google offre un bon équilibre entre qualité et facilité d'utilisation. Pour les utilisateurs plus avancés, Kling offre le plus de contrôle sur le mouvement.</p>
+
+    </div>
+
+    <div class="author-bio">
+      <svg class="author-photo" width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="Avatar de l'auteur"><circle cx="32" cy="32" r="32" fill="#2a1f4e"/><circle cx="32" cy="26" r="11" fill="#7c6bc4"/><ellipse cx="32" cy="52" rx="18" ry="11" fill="#7c6bc4"/></svg>
+      <div class="author-info">
+        <p class="author-name">ImageToPrompt Team</p>
+        <p class="author-desc">Ingénieurs de prompts et artistes IA spécialisés dans Midjourney, Stable Diffusion et Flux. Nous construisons ImageToPrompt pour rendre la génération d'images IA accessible à tous.</p>
+        <a href="https://x.com/Ilyass14286541" class="author-link">Suivre sur X →</a>
+      </div>
+    </div>
+
+    <div class="related-posts">
+      <h2>Guides Associés</h2>
+      <div class="related-grid">
+        <a href="/fr/blog/veo-vs-kling-vs-runway/" class="related-card">
+          <p class="tag">Comparatif</p>
+          <h3>Veo vs Kling vs Runway vs Sora</h3>
+        </a>
+        <a href="/fr/blog/generateur-texte-vers-prompt/" class="related-card">
+          <p class="tag">Outil</p>
+          <h3>Texte vers Prompt : Guide Complet</h3>
+        </a>
+        <a href="/fr/blog/prompt-engineering-art-ia-debutants/" class="related-card">
+          <p class="tag">Débutant</p>
+          <h3>Le Prompt Engineering pour l'Art IA</h3>
+        </a>
+        <a href="/fr/blog/erreurs-prompt-engineering/" class="related-card">
+          <p class="tag">Erreurs</p>
+          <h3>15 Erreurs de Prompt Engineering à Éviter</h3>
+        </a>
+      </div>
+    </div>
+
+  </div>
+
+  <footer class="footer-4col">
+    <div class="f4-inner">
+      <div class="f4-brand">
+        <img src="/favicon.svg" alt="ImageToPrompt" width="28" height="28">
+        <span class="f4-brand-name">ImageTo<span class="accent">Prompt</span></span>
+        <span class="f4-brand-sub">&mdash; Free AI Prompt Generator</span>
+      </div>
+      <div class="f4-grid">
+        <div class="f4-section">
+          <h4 class="f4-heading">Image Prompt Tools</h4>
+          <a href="/">Image to Prompt</a>
+          <a href="/text-to-prompt/">Text to Prompt</a>
+          <a href="/midjourney-prompt-generator/">Midjourney</a>
+          <a href="/stable-diffusion-prompt-generator/">Stable Diffusion</a>
+          <a href="/flux-prompt-generator/">Flux</a>
+          <a href="/dall-e-prompt-generator/">DALL-E 3</a>
+          <a href="/adobe-firefly-prompt-generator/">Adobe Firefly</a>
+          <a href="/leonardo-ai-prompt-generator/">Leonardo AI</a>
+          <a href="/ideogram-prompt-generator/">Ideogram</a>
+        </div>
+        <div class="f4-section">
+          <h4 class="f4-heading">Video Prompt Tools</h4>
+          <a href="/image-to-video-prompt/">Image to Video Prompt</a>
+          <a href="/text-to-video-prompt/">Text to Video Prompt</a>
+          <a href="/veo-prompt-generator/">Veo / Flow Studio</a>
+          <a href="/kling-prompt-generator/">Kling AI</a>
+          <a href="/runway-prompt-generator/">Runway Gen-3</a>
+          <a href="/pika-prompt-generator/">Pika</a>
+          <a href="/luma-prompt-generator/">Luma Dream Machine</a>
+          <a href="/sora-prompt-generator/">Sora</a>
+          <a href="/minimax-prompt-generator/">Minimax</a>
+          <a href="/stable-video-prompt-generator/">Stable Video</a>
+        </div>
+        <div class="f4-section">
+          <h4 class="f4-heading">Resources</h4>
+          <a href="/blog/">Blog</a>
+          <a href="/about/">About</a>
+          <a href="/pricing/">Pricing</a>
+          <a href="/contact/">Contact</a>
+          <a href="/privacy-policy/">Privacy Policy</a>
+          <a href="/terms-of-service/">Terms of Service</a>
+        </div>
+        <div class="f4-section">
+          <h4 class="f4-heading">Languages</h4>
+          <a href="/">English</a>
+          <a href="/fr/">Fran&#231;ais</a>
+          <a href="/ar/">&#1575;&#1604;&#1593;&#1585;&#1576;&#1610;&#1577;</a>
+          <a href="/es/">Espa&#241;ol</a>
+          <a href="/ko/">&#54620;&#44397;&#50612;</a>
+          <a href="/ja/">&#26085;&#26412;&#35486;</a>
+        </div>
+      </div>
+      <div class="f4-bottom">
+        <p>&#169; 2026 ImageToPrompt.dev &#8212; Free AI Prompt Generator</p>
+        <p>Your images are never stored. All analysis is ephemeral and private.</p>
+      </div>
+    </div>
+  </footer>
+
+<script src="/newsletter-inject.js" defer></script>
+<script src="/nav.js" defer></script>
+  <script>
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', function() {
+    navigator.serviceWorker.register('/sw.js')
+      .catch(function(err) { console.warn('SW registration failed:', err); });
+  });
+}
+</script>
+</body>
+</html>

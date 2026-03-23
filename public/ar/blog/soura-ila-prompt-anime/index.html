@@ -1,0 +1,443 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+  <script src="/theme-toggle.js"></script>
+  <meta charset="UTF-8" />
+  <link rel="dns-prefetch" href="https://www.googletagmanager.com">
+<link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0" />
+  <meta name="robots" content="max-image-preview:large, index, follow">
+  <meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="ImageToPrompt">
+  <title>تحويل صور الأنيمي إلى برومبت ذكاء اصطناعي : دليل شامل | ImageToPrompt</title>
+  <meta name="description" content="تعلم تحويل رسومات الأنيمي إلى برومبتات محسنة لـ Midjourney و Stable Diffusion و Flux." />
+  <link rel="canonical" href="https://www.imagetoprompt.dev/ar/blog/soura-ila-prompt-anime/" />
+  <link rel="alternate" hreflang="ar" href="https://www.imagetoprompt.dev/ar/blog/soura-ila-prompt-anime/" />
+  <link rel="alternate" hreflang="en" href="https://www.imagetoprompt.dev/blog/image-to-prompt-for-anime/" />
+  <link rel="alternate" hreflang="fr" href="https://www.imagetoprompt.dev/fr/blog/image-vers-prompt-anime/" />
+  <link rel="alternate" hreflang="x-default" href="https://www.imagetoprompt.dev/blog/image-to-prompt-for-anime/" />
+  <meta property="og:title" content="تحويل صور الأنيمي إلى برومبت ذكاء اصطناعي : دليل شامل" />
+  <meta property="og:description" content="تعلم تحويل رسومات الأنيمي إلى برومبتات محسنة لـ Midjourney و Stable Diffusion و Flux." />
+  <meta property="og:url" content="https://www.imagetoprompt.dev/ar/blog/soura-ila-prompt-anime/" />
+  <meta property="og:type" content="article" />
+  <meta property="og:image" content="https://www.imagetoprompt.dev/og-image.png" />
+  <meta property="og:site_name" content="ImageToPrompt" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="تحويل صور الأنيمي إلى برومبت ذكاء اصطناعي" />
+  <meta name="twitter:description" content="تعلم تحويل رسومات الأنيمي إلى برومبتات محسنة لـ Midjourney و Stable Diffusion و Flux." />
+  <meta name="twitter:image" content="https://www.imagetoprompt.dev/og-image.png" />
+  <meta name="twitter:site" content="@imagetoprompt" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="48x48" href="/favicon-48.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+  <link rel="manifest" href="/site.webmanifest" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="/fonts/space-grotesk-700.woff2" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="/fonts/inter-400.woff2" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Arabic:wght@400;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/theme.css">
+  <link rel="preload" href="/blog.css" as="style" onload="this.onload=null;this.rel='stylesheet'"><noscript><link rel="stylesheet" href="/blog.css"></noscript>
+  <style>
+    body { font-family: 'Noto Sans Arabic', 'Space Grotesk', sans-serif; }
+    .article-body { direction: rtl; text-align: right; }
+    code, pre { direction: ltr; text-align: left; display: inline-block; }
+    .toc ol, .toc ul { padding-right: 1.5rem; padding-left: 0; }
+    .article-body ul, .article-body ol { margin-right: 1.5rem; margin-left: 0; }
+    .breadcrumb { direction: rtl; }
+  </style>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "تحويل صور الأنيمي إلى برومبت ذكاء اصطناعي : دليل شامل",
+    "description": "تعلم تحويل رسومات الأنيمي إلى برومبتات محسنة لـ Midjourney و Stable Diffusion و Flux.",
+    "image": "https://www.imagetoprompt.dev/og-image.png",
+    "datePublished": "2026-03-15",
+    "dateModified": "2026-03-22",
+    "inLanguage": "ar",
+    "author": {
+      "@type": "Person",
+      "name": "ImageToPrompt Team",
+      "url": "https://www.imagetoprompt.dev/"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "ImageToPrompt",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://www.imagetoprompt.dev/favicon.svg"
+      }
+    },
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https://www.imagetoprompt.dev/ar/blog/soura-ila-prompt-anime/"
+    }
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "ما أفضل نموذج AI لتوليد صور أنيمي؟",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Stable Diffusion مع نماذج أنيمي مخصصة مثل Anything V5 أو Counterfeit هو الأفضل للأنيمي التقليدي. Midjourney Niji Mode ممتاز أيضاً لأسلوب أنيمي عالي الجودة."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "هل يمكن تحويل صورة أنيمي حقيقية إلى برومبت؟",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "نعم، أدوات مثل ImageToPrompt تحلل أسلوب الرسم ولوحة الألوان وتركيب المشهد وتُنشئ برومبتاً محسّناً يلتقط جوهر الأسلوب البصري."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "ما الكلمات المفتاحية الأهم في برومبتات الأنيمي؟",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "الكلمات المفتاحية الأساسية تشمل: anime style, cel shading, vibrant colors, detailed eyes, dynamic pose. ولكل نموذج كلمات إضافية خاصة به."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "كيف أحدد أسلوب أنيمي معين في البرومبت؟",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "استخدم مراجع محددة مثل اسم الاستوديو (Studio Ghibli style) أو وصف تقني (cel shaded, flat colors, thick outlines) أو عصر محدد (90s anime aesthetic)."
+        }
+      }
+    ]
+  }
+  </script>
+    <!-- Google AdSense -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4499206373485728" crossorigin="anonymous"></script>
+    <!-- Web Push Notifications -->
+<script src="https://cdn.onesignal.com/sdks/web/v16/OneSignalSDK.page.js" defer></script>
+<script>
+  window.OneSignalDeferred = window.OneSignalDeferred || [];
+  OneSignalDeferred.push(async function(OneSignal) {
+    await OneSignal.init({
+      appId: "REPLACE_WITH_ONESIGNAL_APP_ID",
+      notifyButton: { enable: false }
+    });
+  });
+</script>
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="inner">
+      <a href="/ar/" class="site-logo"><img src="/favicon.svg" alt="ImageToPrompt" width="48" height="48"><div class="site-logo-text">ImageTo<span class="accent">Prompt</span><span class="site-logo-sub">&#1605;&#1608;&#1604;&#1617;&#1583; &#1576;&#1585;&#1608;&#1605;&#1576;&#1578; &#1605;&#1580;&#1575;&#1606;&#1610;</span></div></a>
+      <nav class="site-nav" aria-label="&#1575;&#1604;&#1578;&#1606;&#1602;&#1604; &#1575;&#1604;&#1585;&#1574;&#1610;&#1587;&#1610;">
+        <div class="nav-dropdown">
+          <button class="nav-dropdown-trigger" aria-haspopup="true" aria-expanded="false">Tools <span class="nav-chevron" aria-hidden="true">&#9660;</span></button>
+          <div class="nav-dropdown-menu" role="menu">
+            <div class="nav-mega-grid">
+              <div class="nav-mega-col">
+                <div class="nav-mega-heading">&#128444; IMAGE TOOLS</div>
+                <a href="/" role="menuitem" class="nav-mega-tool">Image to Prompt <span class="nav-mega-arrow">&#8594;</span></a>
+                <a href="/text-to-prompt/" role="menuitem" class="nav-mega-tool">Text to Prompt <span class="nav-mega-arrow">&#8594;</span></a>
+                <div class="nav-mega-models-label">Models</div>
+                <div class="nav-mega-models"><a href="/midjourney-prompt-generator/">Midjourney</a><span class="nav-dot">&#xB7;</span><a href="/stable-diffusion-prompt-generator/">SD</a></div>
+                <div class="nav-mega-models"><a href="/flux-prompt-generator/">Flux</a><span class="nav-dot">&#xB7;</span><a href="/dall-e-prompt-generator/">DALL&#xB7;E&#xA0;3</a></div>
+                <div class="nav-mega-models"><a href="/adobe-firefly-prompt-generator/">Firefly</a><span class="nav-dot">&#xB7;</span><a href="/leonardo-ai-prompt-generator/">Leonardo</a></div>
+                <div class="nav-mega-models"><a href="/ideogram-prompt-generator/">Ideogram</a></div>
+              </div>
+              <div class="nav-mega-divider" aria-hidden="true"></div>
+              <div class="nav-mega-col">
+                <div class="nav-mega-heading">&#127909; VIDEO TOOLS</div>
+                <a href="/?tab=image-to-video" role="menuitem" class="nav-mega-tool">Image to Video <span class="nav-mega-arrow">&#8594;</span></a>
+                <a href="/?tab=text-to-video" role="menuitem" class="nav-mega-tool">Text to Video <span class="nav-mega-arrow">&#8594;</span></a>
+                <div class="nav-mega-models-label">Models</div>
+                <div class="nav-mega-models"><a href="/veo-prompt-generator/">Veo</a><span class="nav-dot">&#xB7;</span><a href="/kling-prompt-generator/">Kling</a></div>
+                <div class="nav-mega-models"><a href="/runway-prompt-generator/">Runway</a><span class="nav-dot">&#xB7;</span><a href="/pika-prompt-generator/">Pika</a></div>
+                <div class="nav-mega-models"><a href="/luma-prompt-generator/">Luma</a><span class="nav-dot">&#xB7;</span><a href="/sora-prompt-generator/">Sora</a></div>
+                <div class="nav-mega-models"><a href="/minimax-prompt-generator/">Minimax</a><span class="nav-dot">&#xB7;</span><a href="/stable-video-prompt-generator/">Stable</a></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <a href="/ar/blog/">المدونة</a>#1575;>&#1575;&#1604;&#1605;&#1583;&#1608;&#1606;&#1577;</a>#1604;>&#1575;&#1604;&#1605;&#1583;&#1608;&#1606;&#1577;</a>#1605;>&#1575;&#1604;&#1605;&#1583;&#1608;&#1606;&#1577;</a>#1583;>&#1575;&#1604;&#1605;&#1583;&#1608;&#1606;&#1577;</a>#1608;>&#1575;&#1604;&#1605;&#1583;&#1608;&#1606;&#1577;</a>#1606;>&#1575;&#1604;&#1605;&#1583;&#1608;&#1606;&#1577;</a>#1577;</a>
+        <a href="/pricing/" class="nav-pill-pricing">Pricing</a>
+        <a href="/about/" class="nav-pill-about">About</a>
+        <a href="/ar/" class="nav-try-free">&#1580;&#1585;&#1617;&#1576; &#8594;</a>
+        <button id="theme-toggle" onclick="toggleTheme()" aria-label="Switch theme" title="Switch theme">&#9728;&#xFE0F;</button>
+  </nav>
+    </div>
+  </header>
+
+  <nav class="breadcrumb" aria-label="مسار التنقل">
+    <a href="/ar/">الرئيسية</a><span class="sep">›</span>
+    <a href="/ar/blog/">المدونة</a><span class="sep">›</span>
+    <span>تحويل صور الأنيمي إلى برومبت</span>
+  </nav>
+
+  <div class="page-wrapper">
+
+    <header class="article-header">
+      <p class="article-tag">أنيمي · دليل متخصص</p>
+      <h1>تحويل صور الأنيمي إلى برومبت : دليل شامل</h1>
+      <div class="article-meta">
+        <span>مارس 2026</span>
+        <span class="dot">·</span>
+        <span>10 دقائق قراءة</span>
+        <span class="dot">·</span>
+        <span>Midjourney · Stable Diffusion · Flux</span>
+        <span class="dot">·</span>
+        <span>محدّث مارس 2026</span>
+      </div>
+    </header>
+
+    <div class="article-body">
+
+      <p>فن الأنيمي له خصائص بصرية فريدة تجعل تحويله إلى برومبت تحدياً مختلفاً عن الصور الفوتوغرافية أو الفن الرقمي العام. العيون الكبيرة المعبّرة، والألوان الزاهية المسطحة، والخطوط الحادة، والتظليل المميز — كل هذه العناصر تحتاج إلى وصف دقيق في البرومبت لإعادة إنشائها بنجاح.</p>
+
+      <nav class="toc" aria-label="محتويات المقال">
+        <details open>
+          <summary>في هذا الدليل</summary>
+          <ol>
+            <li><a href="#anime-styles">أساليب الأنيمي الرئيسية</a></li>
+            <li><a href="#key-elements">العناصر البصرية المميزة للأنيمي</a></li>
+            <li><a href="#models-for-anime">أفضل النماذج لتوليد أنيمي</a></li>
+            <li><a href="#conversion-process">عملية التحويل خطوة بخطوة</a></li>
+            <li><a href="#prompt-keywords">الكلمات المفتاحية الأساسية</a></li>
+            <li><a href="#examples">أمثلة عملية</a></li>
+            <li><a href="#common-issues">مشاكل شائعة وحلولها</a></li>
+            <li><a href="#faq">أسئلة شائعة</a></li>
+          </ol>
+        </details>
+      </nav>
+
+      <div class="callout">
+        <p><strong>بداية سريعة:</strong> لتحويل صورة أنيمي إلى برومبت الآن، <a href="/">ارفع صورتك على ImageToPrompt</a>، اختر Midjourney أو Stable Diffusion كنموذج هدف، واختر الوضع الفني. ستحصل على برومبت مُحسّن لأسلوب الأنيمي في ثوانٍ.</p>
+      </div>
+
+      <h2 id="anime-styles">أساليب الأنيمي الرئيسية</h2>
+
+      <p>قبل تحويل صورة أنيمي إلى برومبت، من المهم فهم الأساليب المختلفة لأن كل أسلوب يحتاج إلى كلمات مفتاحية مختلفة في البرومبت:</p>
+
+      <h3>أسلوب Cel Shading التقليدي</h3>
+      <p>هذا هو الأسلوب الكلاسيكي للأنيمي الياباني — ألوان مسطحة مع حدود واضحة وتظليل بسيط من مستويين أو ثلاثة. يتميز بالبساطة والوضوح. في البرومبت، تُستخدم مصطلحات مثل <code dir="ltr">cel shading, flat colors, clean lines, anime style</code>.</p>
+
+      <h3>أسلوب الواقعية المحسّنة</h3>
+      <p>أسلوب أحدث يمزج بين خصائص الأنيمي والتفاصيل الواقعية. تجده في أعمال مثل Violet Evergarden وMakoto Shinkai. يتميز بإضاءة معقدة وخلفيات مفصّلة مع الحفاظ على تصميم الشخصيات بأسلوب أنيمي. الكلمات المفتاحية: <code dir="ltr">semi-realistic anime, detailed lighting, atmospheric, Makoto Shinkai style</code>.</p>
+
+      <h3>أسلوب Chibi</h3>
+      <p>شخصيات مصغّرة بنسب مبالغ فيها — رؤوس كبيرة وأجسام صغيرة وتعبيرات مبسّطة لطيفة. الكلمات المفتاحية: <code dir="ltr">chibi, super deformed, cute, big head small body</code>.</p>
+
+      <h3>أسلوب Shonen Action</h3>
+      <p>أسلوب ديناميكي يتميز بوضعيات حركية مبالغ فيها وتأثيرات طاقة وخطوط حركة. مثل Dragon Ball وNaruto وOne Piece. الكلمات المفتاحية: <code dir="ltr">dynamic pose, action lines, energy effects, shonen anime</code>.</p>
+
+      <h2 id="key-elements">العناصر البصرية المميزة للأنيمي</h2>
+
+      <p>عند تحليل صورة أنيمي لتحويلها إلى برومبت، ركّز على هذه العناصر:</p>
+
+      <ul>
+        <li><strong>العيون:</strong> حجمها ولونها وشكلها وانعكاسات الضوء فيها — هي أهم عنصر تعبيري في الأنيمي</li>
+        <li><strong>الشعر:</strong> اللون (غالباً غير واقعي)، والحركة، والتفاصيل، وطريقة التظليل</li>
+        <li><strong>الخطوط الخارجية:</strong> سمكها ولونها وثباتها — بعض الأساليب تستخدم خطوطاً سميكة وأخرى رفيعة</li>
+        <li><strong>التظليل:</strong> مسطّح (cel shading) أم تدريجي ناعم أم مزيج بينهما</li>
+        <li><strong>لوحة الألوان:</strong> زاهية ومشبعة أم باستيلية ناعمة أم داكنة ومتباينة</li>
+        <li><strong>الخلفية:</strong> مفصّلة وواقعية أم مبسّطة أم مجردة بألوان وتأثيرات</li>
+        <li><strong>التعبيرات:</strong> أنيمي يعتمد على تعبيرات مبالغ فيها وإيموجي بصرية</li>
+      </ul>
+
+      <h2 id="models-for-anime">أفضل النماذج لتوليد صور أنيمي</h2>
+
+      <h3>Stable Diffusion مع نماذج أنيمي مخصصة</h3>
+      <p>هذا هو الخيار الأول لمعظم فناني الأنيمي الرقمي. نماذج مثل <code dir="ltr">Anything V5</code> و<code dir="ltr">Counterfeit-V3</code> و<code dir="ltr">MeinaMix</code> مدرّبة خصيصاً على فن الأنيمي وتُنتج نتائج ممتازة. ميزتها الكبرى هي التحكم الدقيق عبر الأوزان والبرومبتات السلبية.</p>
+
+      <h3>Midjourney Niji Mode</h3>
+      <p>وضع Niji في Midjourney مصمم خصيصاً لأسلوب الأنيمي والمانغا. يُنشئ صوراً عالية الجودة بأسلوب أنيمي دون الحاجة لكلمات مفتاحية كثيرة. استخدم المعامل <code dir="ltr">--niji 6</code> لتفعيله.</p>
+
+      <h3>Flux</h3>
+      <p>يستطيع Flux إنتاج صور بأسلوب أنيمي عالي الجودة عند استخدام أوصاف تفصيلية باللغة الطبيعية. يتميز بدقة عالية في اتباع الأوصاف المعقدة.</p>
+
+      <h2 id="conversion-process">عملية التحويل خطوة بخطوة</h2>
+
+      <ol>
+        <li><strong>حدد أسلوب الأنيمي:</strong> قبل الرفع، حدد هل الصورة cel shading تقليدي أم واقعي محسّن أم chibi أم shonen. هذا يحدد الكلمات المفتاحية الأساسية.</li>
+        <li><strong>ارفع الصورة على ImageToPrompt:</strong> اختر Stable Diffusion إذا كنت تستخدم نماذج أنيمي مخصصة، أو Midjourney لوضع Niji.</li>
+        <li><strong>اختر الوضع الفني:</strong> الوضع الفني يركّز على الأسلوب البصري بدلاً من التفاصيل التقنية.</li>
+        <li><strong>راجع البرومبت الناتج:</strong> تأكد من وجود الكلمات المفتاحية الأساسية للأنيمي.</li>
+        <li><strong>أضف كلمات مفتاحية خاصة بالأنيمي:</strong> إذا لم يتضمن البرومبت مصطلحات مثل <code dir="ltr">anime style</code> أو <code dir="ltr">cel shading</code>، أضفها يدوياً.</li>
+      </ol>
+
+      <h2 id="prompt-keywords">الكلمات المفتاحية الأساسية لبرومبتات الأنيمي</h2>
+
+      <h3>كلمات الجودة</h3>
+      <p>لـ Stable Diffusion: <code dir="ltr">(masterpiece:1.2), best quality, highly detailed, anime</code></p>
+      <p>لـ Midjourney: <code dir="ltr">anime illustration, detailed --niji 6 --style expressive</code></p>
+
+      <h3>كلمات الأسلوب</h3>
+      <ul>
+        <li><code dir="ltr">cel shading</code> — تظليل مسطّح كلاسيكي</li>
+        <li><code dir="ltr">soft shading</code> — تظليل ناعم تدريجي</li>
+        <li><code dir="ltr">flat colors</code> — ألوان مسطّحة بدون تدرج</li>
+        <li><code dir="ltr">vibrant colors</code> — ألوان زاهية ومشبعة</li>
+        <li><code dir="ltr">pastel palette</code> — ألوان باستيلية ناعمة</li>
+        <li><code dir="ltr">thick outlines</code> — خطوط خارجية سميكة</li>
+        <li><code dir="ltr">detailed eyes</code> — عيون مفصّلة بانعكاسات ضوئية</li>
+      </ul>
+
+      <h3>البرومبت السلبي للأنيمي (Stable Diffusion)</h3>
+      <p>البرومبت السلبي ضروري لتجنب العيوب الشائعة في توليد صور الأنيمي:</p>
+      <p><code dir="ltr">(worst quality:1.4), (low quality:1.4), bad anatomy, extra fingers, deformed hands, blurry, watermark, text, realistic, 3d render, photo</code></p>
+
+      <h2 id="examples">أمثلة عملية</h2>
+
+      <h3>مثال 1: بورتريه أنيمي كلاسيكي</h3>
+      <p>صورة مرجعية: شخصية أنيمي أنثوية بشعر أزرق طويل وعيون كبيرة لامعة في مشهد غروب.</p>
+      <p>البرومبت الناتج لـ Stable Diffusion:</p>
+      <p><code dir="ltr">(masterpiece:1.2), best quality, 1girl, long blue hair, flowing hair, large detailed eyes, sunset background, warm lighting, cel shading, vibrant colors, anime style, beautiful sky, golden hour</code></p>
+
+      <h3>مثال 2: مشهد حركي Shonen</h3>
+      <p>صورة مرجعية: محارب يقفز في الهواء مع سيف متوهج وتأثيرات طاقة.</p>
+      <p>البرومبت الناتج لـ Midjourney:</p>
+      <p><code dir="ltr">anime warrior leaping through the air wielding a glowing sword, energy effects swirling around the blade, dynamic action pose, speed lines, dramatic angle from below, shonen anime style, vibrant blue and orange energy, detailed armor --niji 6 --ar 2:3</code></p>
+
+      <h2 id="common-issues">مشاكل شائعة وحلولها</h2>
+
+      <ul>
+        <li><strong>النتائج واقعية جداً:</strong> أضف <code dir="ltr">anime style, 2d, illustration</code> وفي البرومبت السلبي أضف <code dir="ltr">realistic, photo, 3d</code></li>
+        <li><strong>اليدين مشوّهة:</strong> أضف <code dir="ltr">(detailed hands:1.2)</code> في البرومبت الإيجابي و<code dir="ltr">bad hands, extra fingers</code> في السلبي</li>
+        <li><strong>العيون غير متسقة:</strong> حدد نوع العيون بوضوح مثل <code dir="ltr">large anime eyes, detailed iris, light reflections in eyes</code></li>
+        <li><strong>الأسلوب غير متسق:</strong> استخدم مرجع أسلوب محدد مثل اسم الاستوديو أو العمل لتثبيت الأسلوب</li>
+        <li><strong>الخلفية فارغة أو مشوّشة:</strong> صِف الخلفية بتفصيل منفصل عن الشخصية</li>
+      </ul>
+
+      <div class="cta-box">
+        <h3>حوّل صورة أنيمي إلى برومبت الآن</h3>
+        <p>ارفع أي صورة أنيمي واحصل على برومبت محسّن لـ Midjourney Niji أو Stable Diffusion — مجاناً.</p>
+        <a href="/?lang=ar" class="cta-btn">جرّب ImageToPrompt مجاناً ←</a>
+      </div>
+
+      <h2 id="faq">أسئلة شائعة</h2>
+
+      <h3>ما أفضل نموذج AI لتوليد صور أنيمي؟</h3>
+      <p>Stable Diffusion مع نماذج أنيمي مخصصة مثل Anything V5 أو Counterfeit هو الأفضل للأنيمي التقليدي بفضل التحكم الدقيق. Midjourney Niji Mode ممتاز أيضاً لأسلوب أنيمي عالي الجودة بدون الحاجة لنماذج مخصصة.</p>
+
+      <h3>هل يمكن تحويل صورة أنيمي حقيقية إلى برومبت؟</h3>
+      <p>نعم بالتأكيد. أدوات مثل ImageToPrompt تحلل أسلوب الرسم ولوحة الألوان وتركيب المشهد والإضاءة وتُنشئ برومبتاً محسّناً يلتقط جوهر الأسلوب البصري. النتيجة لن تكون نسخة طبق الأصل لكنها ستحمل نفس الروح البصرية.</p>
+
+      <h3>ما الكلمات المفتاحية الأهم في برومبتات الأنيمي؟</h3>
+      <p>الكلمات المفتاحية الأساسية تشمل: <code dir="ltr">anime style</code> و<code dir="ltr">cel shading</code> و<code dir="ltr">vibrant colors</code> و<code dir="ltr">detailed eyes</code> و<code dir="ltr">dynamic pose</code>. ولكل نموذج كلمات إضافية خاصة به — مثل <code dir="ltr">--niji 6</code> لـ Midjourney و<code dir="ltr">(masterpiece:1.2)</code> لـ Stable Diffusion.</p>
+
+      <h3>كيف أحدد أسلوب أنيمي معين في البرومبت؟</h3>
+      <p>هناك عدة طرق: استخدم مراجع محددة مثل اسم الاستوديو (<code dir="ltr">Studio Ghibli style</code>)، أو وصف تقني (<code dir="ltr">cel shaded, flat colors, thick outlines</code>)، أو عصر محدد (<code dir="ltr">90s anime aesthetic</code>). كلما كان الوصف أكثر تحديداً، كانت النتيجة أقرب لما تريد.</p>
+
+    </div>
+
+    <div class="author-bio">
+      <svg class="author-photo" width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="صورة المؤلف"><circle cx="32" cy="32" r="32" fill="#2a1f4e"/><circle cx="32" cy="26" r="11" fill="#7c6bc4"/><ellipse cx="32" cy="52" rx="18" ry="11" fill="#7c6bc4"/></svg>
+      <div class="author-info">
+        <p class="author-name">فريق ImageToPrompt</p>
+        <p class="author-desc">مهندسو برومبتات وفنانو ذكاء اصطناعي متخصصون في Midjourney و Stable Diffusion و Flux. نبني ImageToPrompt لجعل توليد الصور بالذكاء الاصطناعي في متناول الجميع.</p>
+        <a href="https://x.com/Ilyass14286541" class="author-link">تابعنا على X ←</a>
+      </div>
+    </div>
+
+    <div class="related-posts">
+      <h2>أدلة ذات صلة</h2>
+      <div class="related-grid">
+        <a href="/ar/blog/tahwil-soura-ila-prompt/" class="related-card">
+          <p class="tag">دليل</p>
+          <h3>كيفية تحويل أي صورة إلى برومبت</h3>
+        </a>
+        <a href="/ar/blog/dalil-prompts-midjourney-2026/" class="related-card">
+          <p class="tag">Midjourney</p>
+          <h3>دليل برومبتات Midjourney الشامل 2026</h3>
+        </a>
+        <a href="/ar/blog/handasa-prompts-fan-ia/" class="related-card">
+          <p class="tag">مبتدئون</p>
+          <h3>هندسة البرومبتات لفن الذكاء الاصطناعي</h3>
+        </a>
+        <a href="/ar/blog/afdal-adawat-soura-ila-prompt-2026/" class="related-card">
+          <p class="tag">مقارنة</p>
+          <h3>أفضل أدوات تحويل الصور إلى برومبت 2026</h3>
+        </a>
+      </div>
+    </div>
+
+  </div>
+
+  <footer class="footer-4col">
+    <div class="f4-inner">
+      <div class="f4-brand">
+        <img src="/favicon.svg" alt="ImageToPrompt" width="28" height="28">
+        <span class="f4-brand-name">ImageTo<span class="accent">Prompt</span></span>
+        <span class="f4-brand-sub">&mdash; Free AI Prompt Generator</span>
+      </div>
+      <div class="f4-grid">
+        <div class="f4-section">
+          <h4 class="f4-heading">Image Prompt Tools</h4>
+          <a href="/">Image to Prompt</a>
+          <a href="/text-to-prompt/">Text to Prompt</a>
+          <a href="/midjourney-prompt-generator/">Midjourney</a>
+          <a href="/stable-diffusion-prompt-generator/">Stable Diffusion</a>
+          <a href="/flux-prompt-generator/">Flux</a>
+          <a href="/dall-e-prompt-generator/">DALL-E 3</a>
+          <a href="/adobe-firefly-prompt-generator/">Adobe Firefly</a>
+          <a href="/leonardo-ai-prompt-generator/">Leonardo AI</a>
+          <a href="/ideogram-prompt-generator/">Ideogram</a>
+        </div>
+        <div class="f4-section">
+          <h4 class="f4-heading">Video Prompt Tools</h4>
+          <a href="/image-to-video-prompt/">Image to Video Prompt</a>
+          <a href="/text-to-video-prompt/">Text to Video Prompt</a>
+          <a href="/veo-prompt-generator/">Veo / Flow Studio</a>
+          <a href="/kling-prompt-generator/">Kling AI</a>
+          <a href="/runway-prompt-generator/">Runway Gen-3</a>
+          <a href="/pika-prompt-generator/">Pika</a>
+          <a href="/luma-prompt-generator/">Luma Dream Machine</a>
+          <a href="/sora-prompt-generator/">Sora</a>
+          <a href="/minimax-prompt-generator/">Minimax</a>
+          <a href="/stable-video-prompt-generator/">Stable Video</a>
+        </div>
+        <div class="f4-section">
+          <h4 class="f4-heading">Resources</h4>
+          <a href="/blog/">Blog</a>
+          <a href="/about/">About</a>
+          <a href="/pricing/">Pricing</a>
+          <a href="/contact/">Contact</a>
+          <a href="/privacy-policy/">Privacy Policy</a>
+          <a href="/terms-of-service/">Terms of Service</a>
+        </div>
+        <div class="f4-section">
+          <h4 class="f4-heading">Languages</h4>
+          <a href="/">English</a>
+          <a href="/fr/">Fran&#231;ais</a>
+          <a href="/ar/">&#1575;&#1604;&#1593;&#1585;&#1576;&#1610;&#1577;</a>
+          <a href="/es/">Espa&#241;ol</a>
+          <a href="/ko/">&#54620;&#44397;&#50612;</a>
+          <a href="/ja/">&#26085;&#26412;&#35486;</a>
+        </div>
+      </div>
+      <div class="f4-bottom">
+        <p>&#169; 2026 ImageToPrompt.dev &#8212; Free AI Prompt Generator</p>
+        <p>Your images are never stored. All analysis is ephemeral and private.</p>
+      </div>
+    </div>
+  </footer>
+
+<script src="/newsletter-inject.js" defer></script>
+<script src="/nav.js" defer></script>
+  <script>
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', function() {
+    navigator.serviceWorker.register('/sw.js')
+      .catch(function(err) { console.warn('SW registration failed:', err); });
+  });
+}
+</script>
+</body>
+</html>

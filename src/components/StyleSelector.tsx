@@ -1,3 +1,4 @@
+import { useTranslation } from 'react-i18next';
 import { STYLE_CONFIGS } from '../utils/imageUtils';
 import type { PromptStyle } from '../types';
 
@@ -7,10 +8,12 @@ interface StyleSelectorProps {
 }
 
 export default function StyleSelector({ selected, onChange }: StyleSelectorProps) {
+  const { t } = useTranslation();
+
   return (
     <div>
       <p className="mb-2 font-inter text-xs font-600 uppercase tracking-widest text-[var(--text-secondary)]">
-        Prompt Style
+        {t('controls.promptStyle')}
       </p>
       <div className="flex flex-wrap gap-2">
         {STYLE_CONFIGS.map((s) => {

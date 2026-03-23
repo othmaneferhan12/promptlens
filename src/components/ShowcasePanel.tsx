@@ -1,33 +1,34 @@
 import { useState, useEffect, useCallback, useRef } from 'react';
+import { useTranslation } from 'react-i18next';
 import { motion } from 'framer-motion';
 
 const EXAMPLES = [
   {
-    image: '/images/ai-prompt-golden-hour-lighting-example.webp',
+    image: '/images/ai-prompt-generator-golden-hour-lighting.webp',
     label: 'Golden Hour',
     prompt:
       'Cinematic portrait, golden hour rim lighting, shallow depth of field, warm amber tones, film grain, soft bokeh background --ar 2:3 --v 6.1 --style raw',
   },
   {
-    image: '/images/ai-prompt-oil-painting-style-example.webp',
+    image: '/images/ai-image-to-prompt-oil-painting-style.webp',
     label: 'Oil Painting',
     prompt:
       'Classical oil painting style, rich impasto brushstrokes, Renaissance-inspired composition, warm earth tones, dramatic chiaroscuro lighting, gallery-quality fine art',
   },
   {
-    image: '/images/compare1-mj.webp',
+    image: '/images/ai-prompt-generator-cyberpunk-midjourney.webp',
     label: 'Digital Art',
     prompt:
       '(masterpiece:1.2), highly detailed digital art, cinematic composition, volumetric lighting, vibrant color palette, epic atmosphere, 8k ultra HD',
   },
   {
-    image: '/images/ex3-recreated.webp',
+    image: '/images/ai-image-to-prompt-luxury-watch-recreated.webp',
     label: 'Retro Illustration',
     prompt:
       'Retro mid-century modern scene, pastel color palette, dreamy nostalgic atmosphere, soft gradients, stylized illustration, vintage travel poster aesthetic',
   },
   {
-    image: '/images/prompt-engineering-basic-cat-garden.webp',
+    image: '/images/image-to-prompt-basic-cat-garden.webp',
     label: 'Watercolor',
     prompt:
       'Fluffy orange tabby cat sitting among wildflowers in an English cottage garden, watercolor illustration, golden hour sunlight, dappled light through trees',
@@ -49,6 +50,7 @@ function getCardAnimate(dist: number, isExiting: boolean) {
 }
 
 export default function ShowcasePanel() {
+  const { t } = useTranslation();
   const [active, setActive] = useState(0);
   const [exiting, setExiting] = useState<number | null>(null);
   const [paused, setPaused] = useState(false);
@@ -114,7 +116,7 @@ export default function ShowcasePanel() {
           style={{ background: 'rgba(224,64,251,0.12)', color: '#e040fb', border: '1px solid rgba(224,64,251,0.25)' }}
         >
           <span>✨</span>
-          <span>Showcase Examples</span>
+          <span>{t('showcase.title')}</span>
         </div>
       </div>
 
@@ -173,7 +175,7 @@ export default function ShowcasePanel() {
                       {ex.label}
                     </span>
                     <span className="font-inter text-xs" style={{ color: 'var(--text-muted)' }}>
-                      Generated prompt ↓
+                      {t('showcase.generatedPrompt')}
                     </span>
                   </div>
 
@@ -197,7 +199,7 @@ export default function ShowcasePanel() {
           <button
             key={i}
             onClick={() => handleDotClick(i)}
-            aria-label={`Show example ${i + 1}: ${EXAMPLES[i].label}`}
+            aria-label={t('showcase.showExample', { number: i + 1, label: EXAMPLES[i].label })}
             className="rounded-full transition-all duration-300"
             style={{
               width: i === active ? '20px' : '6px',

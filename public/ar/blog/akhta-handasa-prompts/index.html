@@ -1,0 +1,446 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+  <script src="/theme-toggle.js"></script>
+  <meta charset="UTF-8" />
+  <link rel="dns-prefetch" href="https://www.googletagmanager.com">
+<link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0" />
+  <meta name="robots" content="max-image-preview:large, index, follow">
+  <meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="ImageToPrompt">
+  <title>15 خطأ شائعاً في هندسة البرومبتات يجب تجنبها | ImageToPrompt</title>
+  <meta name="description" content="أكثر 15 خطأ شيوعاً في هندسة البرومبتات لفن الذكاء الاصطناعي." />
+  <link rel="canonical" href="https://www.imagetoprompt.dev/ar/blog/akhta-handasa-prompts/" />
+  <link rel="alternate" hreflang="ar" href="https://www.imagetoprompt.dev/ar/blog/akhta-handasa-prompts/" />
+  <link rel="alternate" hreflang="en" href="https://www.imagetoprompt.dev/blog/prompt-engineering-mistakes/" />
+  <link rel="alternate" hreflang="fr" href="https://www.imagetoprompt.dev/fr/blog/erreurs-prompt-engineering/" />
+  <link rel="alternate" hreflang="x-default" href="https://www.imagetoprompt.dev/blog/prompt-engineering-mistakes/" />
+  <meta property="og:title" content="15 خطأ شائعاً في هندسة البرومبتات يجب تجنبها" />
+  <meta property="og:description" content="أكثر 15 خطأ شيوعاً في هندسة البرومبتات لفن الذكاء الاصطناعي." />
+  <meta property="og:url" content="https://www.imagetoprompt.dev/ar/blog/akhta-handasa-prompts/" />
+  <meta property="og:type" content="article" />
+  <meta property="og:image" content="https://www.imagetoprompt.dev/og-image.png" />
+  <meta property="og:site_name" content="ImageToPrompt" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="15 خطأ شائعاً في هندسة البرومبتات يجب تجنبها" />
+  <meta name="twitter:description" content="أكثر 15 خطأ شيوعاً في هندسة البرومبتات لفن الذكاء الاصطناعي." />
+  <meta name="twitter:image" content="https://www.imagetoprompt.dev/og-image.png" />
+  <meta name="twitter:site" content="@imagetoprompt" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="48x48" href="/favicon-48.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+  <link rel="manifest" href="/site.webmanifest" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="/fonts/space-grotesk-700.woff2" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="/fonts/inter-400.woff2" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Arabic:wght@400;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/theme.css">
+  <link rel="preload" href="/blog.css" as="style" onload="this.onload=null;this.rel='stylesheet'"><noscript><link rel="stylesheet" href="/blog.css"></noscript>
+  <style>
+    body { font-family: 'Noto Sans Arabic', 'Space Grotesk', sans-serif; }
+    .article-body { direction: rtl; text-align: right; }
+    code, pre { direction: ltr; text-align: left; display: inline-block; }
+    .toc ol, .toc ul { padding-right: 1.5rem; padding-left: 0; }
+    .article-body ul, .article-body ol { margin-right: 1.5rem; margin-left: 0; }
+    .breadcrumb { direction: rtl; }
+  </style>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "15 خطأ في هندسة البرومبتات يجب تجنبها",
+    "description": "أكثر 15 خطأ شيوعاً في هندسة البرومبتات لفن الذكاء الاصطناعي.",
+    "image": "https://www.imagetoprompt.dev/og-image.png",
+    "datePublished": "2026-03-18",
+    "dateModified": "2026-03-22",
+    "inLanguage": "ar",
+    "author": {
+      "@type": "Person",
+      "name": "ImageToPrompt Team",
+      "url": "https://www.imagetoprompt.dev/"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "ImageToPrompt",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://www.imagetoprompt.dev/favicon.svg"
+      }
+    },
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https://www.imagetoprompt.dev/ar/blog/akhta-handasa-prompts/"
+    }
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "ما هو الخطأ الأكثر شيوعاً في هندسة البرومبتات؟",
+        "acceptedAnswer": { "@type": "Answer", "text": "الخطأ الأكثر شيوعاً هو كتابة برومبتات غامضة وعامة جداً مثل beautiful landscape. بدلاً من ذلك، كن محدداً: حدد نوع المشهد والإضاءة والأسلوب والمزاج والتفاصيل التقنية. كلما كان البرومبت أكثر تحديداً، كانت النتيجة أقرب لما تريده." }
+      },
+      {
+        "@type": "Question",
+        "name": "هل البرومبتات الطويلة أفضل دائماً؟",
+        "acceptedAnswer": { "@type": "Answer", "text": "ليس بالضرورة. البرومبتات الطويلة جداً قد تُربك النموذج وتُضعف تأثير العناصر المهمة. المفتاح هو الجودة وليس الكمية. ركّز على 5-8 عناصر وصفية محددة بدلاً من 20 عنصراً عاماً. كل كلمة يجب أن تُضيف معلومة بصرية واضحة." }
+      },
+      {
+        "@type": "Question",
+        "name": "لماذا لا تعمل نفس البرومبتات في كل النماذج؟",
+        "acceptedAnswer": { "@type": "Answer", "text": "كل نموذج AI مُدرَّب بشكل مختلف ويفهم الصياغة بطريقته. Midjourney يستخدم عبارات مفصولة بفاصلة مع معاملات خاصة، Stable Diffusion يستخدم أوزاناً وأقواساً، Flux يفضل اللغة الطبيعية، وDALL-E 3 يفهم الجمل الكاملة. استخدم دائماً الصياغة المناسبة لنموذجك." }
+      },
+      {
+        "@type": "Question",
+        "name": "كيف أتجنب الأيدي المشوهة في صور AI؟",
+        "acceptedAnswer": { "@type": "Answer", "text": "استخدم برومبتات سلبية تتضمن deformed hands وextra fingers وbad anatomy. في Midjourney، جرّب إخفاء الأيدي بوضعيات مثل hands in pockets أو hands behind back. استخدم أحدث إصدار من النموذج حيث تتحسن جودة الأيدي مع كل تحديث. وعند الحاجة، استخدم inpainting لإصلاح الأيدي." }
+      }
+    ]
+  }
+  </script>
+    <!-- Google AdSense -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4499206373485728" crossorigin="anonymous"></script>
+    <!-- Web Push Notifications -->
+<script src="https://cdn.onesignal.com/sdks/web/v16/OneSignalSDK.page.js" defer></script>
+<script>
+  window.OneSignalDeferred = window.OneSignalDeferred || [];
+  OneSignalDeferred.push(async function(OneSignal) {
+    await OneSignal.init({
+      appId: "REPLACE_WITH_ONESIGNAL_APP_ID",
+      notifyButton: { enable: false }
+    });
+  });
+</script>
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="inner">
+      <a href="/ar/" class="site-logo"><img src="/favicon.svg" alt="ImageToPrompt" width="48" height="48"><div class="site-logo-text">ImageTo<span class="accent">Prompt</span><span class="site-logo-sub">&#1605;&#1608;&#1604;&#1617;&#1583; &#1576;&#1585;&#1608;&#1605;&#1576;&#1578; &#1605;&#1580;&#1575;&#1606;&#1610;</span></div></a>
+      <nav class="site-nav" aria-label="&#1575;&#1604;&#1578;&#1606;&#1602;&#1604; &#1575;&#1604;&#1585;&#1574;&#1610;&#1587;&#1610;">
+        <div class="nav-dropdown">
+          <button class="nav-dropdown-trigger" aria-haspopup="true" aria-expanded="false">Tools <span class="nav-chevron" aria-hidden="true">&#9660;</span></button>
+          <div class="nav-dropdown-menu" role="menu">
+            <div class="nav-mega-grid">
+              <div class="nav-mega-col">
+                <div class="nav-mega-heading">&#128444; IMAGE TOOLS</div>
+                <a href="/" role="menuitem" class="nav-mega-tool">Image to Prompt <span class="nav-mega-arrow">&#8594;</span></a>
+                <a href="/text-to-prompt/" role="menuitem" class="nav-mega-tool">Text to Prompt <span class="nav-mega-arrow">&#8594;</span></a>
+                <div class="nav-mega-models-label">Models</div>
+                <div class="nav-mega-models"><a href="/midjourney-prompt-generator/">Midjourney</a><span class="nav-dot">&#xB7;</span><a href="/stable-diffusion-prompt-generator/">SD</a></div>
+                <div class="nav-mega-models"><a href="/flux-prompt-generator/">Flux</a><span class="nav-dot">&#xB7;</span><a href="/dall-e-prompt-generator/">DALL&#xB7;E&#xA0;3</a></div>
+                <div class="nav-mega-models"><a href="/adobe-firefly-prompt-generator/">Firefly</a><span class="nav-dot">&#xB7;</span><a href="/leonardo-ai-prompt-generator/">Leonardo</a></div>
+                <div class="nav-mega-models"><a href="/ideogram-prompt-generator/">Ideogram</a></div>
+              </div>
+              <div class="nav-mega-divider" aria-hidden="true"></div>
+              <div class="nav-mega-col">
+                <div class="nav-mega-heading">&#127909; VIDEO TOOLS</div>
+                <a href="/?tab=image-to-video" role="menuitem" class="nav-mega-tool">Image to Video <span class="nav-mega-arrow">&#8594;</span></a>
+                <a href="/?tab=text-to-video" role="menuitem" class="nav-mega-tool">Text to Video <span class="nav-mega-arrow">&#8594;</span></a>
+                <div class="nav-mega-models-label">Models</div>
+                <div class="nav-mega-models"><a href="/veo-prompt-generator/">Veo</a><span class="nav-dot">&#xB7;</span><a href="/kling-prompt-generator/">Kling</a></div>
+                <div class="nav-mega-models"><a href="/runway-prompt-generator/">Runway</a><span class="nav-dot">&#xB7;</span><a href="/pika-prompt-generator/">Pika</a></div>
+                <div class="nav-mega-models"><a href="/luma-prompt-generator/">Luma</a><span class="nav-dot">&#xB7;</span><a href="/sora-prompt-generator/">Sora</a></div>
+                <div class="nav-mega-models"><a href="/minimax-prompt-generator/">Minimax</a><span class="nav-dot">&#xB7;</span><a href="/stable-video-prompt-generator/">Stable</a></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <a href="/ar/blog/">المدونة</a>#1575;>&#1575;&#1604;&#1605;&#1583;&#1608;&#1606;&#1577;</a>#1604;>&#1575;&#1604;&#1605;&#1583;&#1608;&#1606;&#1577;</a>#1605;>&#1575;&#1604;&#1605;&#1583;&#1608;&#1606;&#1577;</a>#1583;>&#1575;&#1604;&#1605;&#1583;&#1608;&#1606;&#1577;</a>#1608;>&#1575;&#1604;&#1605;&#1583;&#1608;&#1606;&#1577;</a>#1606;>&#1575;&#1604;&#1605;&#1583;&#1608;&#1606;&#1577;</a>#1577;</a>
+        <a href="/pricing/" class="nav-pill-pricing">Pricing</a>
+        <a href="/about/" class="nav-pill-about">About</a>
+        <a href="/ar/" class="nav-try-free">&#1580;&#1585;&#1617;&#1576; &#8594;</a>
+        <button id="theme-toggle" onclick="toggleTheme()" aria-label="Switch theme" title="Switch theme">&#9728;&#xFE0F;</button>
+  </nav>
+    </div>
+  </header>
+
+  <nav class="breadcrumb" aria-label="مسار التنقل">
+    <a href="/ar/">الرئيسية</a><span class="sep">›</span>
+    <a href="/ar/blog/">المدونة</a><span class="sep">›</span>
+    <span>15 خطأ في هندسة البرومبتات</span>
+  </nav>
+
+  <div class="page-wrapper">
+
+    <header class="article-header">
+      <p class="article-tag">هندسة البرومبتات</p>
+      <h1>15 خطأ في هندسة البرومبتات يجب تجنبها</h1>
+      <div class="article-meta">
+        <span>مارس 2026</span>
+        <span class="dot">·</span>
+        <span>11 دقائق قراءة</span>
+        <span class="dot">·</span>
+        <span>Midjourney · Stable Diffusion · Flux · DALL-E 3</span>
+        <span class="dot">·</span>
+        <span>محدّث مارس 2026</span>
+      </div>
+    </header>
+
+    <div class="article-body">
+
+      <p>هندسة البرومبتات هي مهارة تتطلب ممارسة وفهماً عميقاً لكيفية تفسير نماذج الذكاء الاصطناعي للأوامر النصية. حتى المستخدمون ذوو الخبرة يقعون في أخطاء شائعة تؤدي إلى نتائج مخيبة للآمال. في هذا الدليل، نستعرض أكثر 15 خطأ شيوعاً في هندسة البرومبتات لفن الذكاء الاصطناعي، ونوضح كيفية إصلاح كل منها بأمثلة عملية.</p>
+
+      <nav class="toc" aria-label="محتويات المقال">
+        <details open>
+          <summary>في هذا الدليل</summary>
+          <ol>
+            <li><a href="#mistake1">الغموض المفرط</a></li>
+            <li><a href="#mistake2">تجاهل النموذج الهدف</a></li>
+            <li><a href="#mistake3">البرومبتات الطويلة جداً</a></li>
+            <li><a href="#mistake4">إهمال البرومبت السلبي</a></li>
+            <li><a href="#mistake5">تضارب العناصر</a></li>
+            <li><a href="#mistake6">نسخ البرومبتات بدون فهم</a></li>
+            <li><a href="#mistake7">تجاهل نسبة الأبعاد</a></li>
+            <li><a href="#mistake8">الإفراط في وسوم الجودة</a></li>
+            <li><a href="#mistake9">إهمال الإضاءة</a></li>
+            <li><a href="#mistake10">التحديد الزائد للموضوع</a></li>
+            <li><a href="#mistake11">عدم التجريب</a></li>
+            <li><a href="#mistake12">تجاهل التركيب</a></li>
+            <li><a href="#mistake13">خلط الأساليب</a></li>
+            <li><a href="#mistake14">نسيان السياق</a></li>
+            <li><a href="#mistake15">عدم التعلم من النتائج</a></li>
+            <li><a href="#faq">أسئلة شائعة</a></li>
+          </ol>
+        </details>
+      </nav>
+
+      <h2 id="mistake1">1. الغموض المفرط في الوصف</h2>
+
+      <p>هذا هو الخطأ الأكثر شيوعاً على الإطلاق. كتابة برومبتات عامة مثل <code dir="ltr">beautiful landscape</code> أو <code dir="ltr">cool portrait</code> تترك للنموذج حرية مفرطة في التفسير، مما يُنتج صوراً عادية وغير مميزة.</p>
+
+      <p><strong>بدلاً من:</strong></p>
+      <pre dir="ltr"><code>beautiful landscape</code></pre>
+
+      <p><strong>اكتب:</strong></p>
+      <pre dir="ltr"><code>misty mountain valley at dawn, towering pine trees, crystal clear river reflecting pink and orange sky, volumetric fog, cinematic landscape photography --ar 16:9 --v 6.1</code></pre>
+
+      <p>كل كلمة إضافية تُضيف بُعداً بصرياً: الوقت (الفجر)، العناصر (جبال، أشجار صنوبر، نهر)، المزاج (الضباب)، الأسلوب (تصوير سينمائي). النتيجة تكون صورة ذات هوية بصرية واضحة.</p>
+
+      <h2 id="mistake2">2. تجاهل النموذج الهدف</h2>
+
+      <p>استخدام نفس البرومبت لجميع النماذج هو وصفة لنتائج متواضعة. كل نموذج له لغته الخاصة:</p>
+
+      <ul>
+        <li><strong>Midjourney:</strong> يفضل العبارات الوصفية المفصولة بفاصلة مع معاملات مثل <code dir="ltr">--ar</code> و<code dir="ltr">--v</code> و<code dir="ltr">--style</code></li>
+        <li><strong>Stable Diffusion:</strong> يعمل بشكل أفضل مع أوزان <code dir="ltr">(keyword:1.2)</code> وبرومبتات سلبية مفصّلة</li>
+        <li><strong>Flux:</strong> يستجيب للغة الطبيعية التفصيلية والأوصاف الفوتوغرافية التقنية</li>
+        <li><strong>DALL-E 3:</strong> يفهم الجمل الكاملة والسياق السردي بشكل ممتاز</li>
+      </ul>
+
+      <h2 id="mistake3">3. البرومبتات الطويلة جداً</h2>
+
+      <p>يعتقد البعض أن المزيد من الكلمات يعني نتائج أفضل. الحقيقة أن البرومبتات الطويلة جداً تُربك النموذج وتُضعف تأثير العناصر المهمة. لدى Stable Diffusion حد 75 رمزاً تقريباً قبل الاقتطاع. حتى في النماذج التي تدعم برومبتات أطول، التركيز على 5-8 عناصر وصفية قوية أفضل من 20 عنصراً ضعيفاً.</p>
+
+      <p>القاعدة الذهبية: كل كلمة في برومبتك يجب أن تُضيف معلومة بصرية واضحة ومحددة. إذا لم تستطع تخيّل ما تُغيّره كلمة ما في الصورة النهائية، فاحذفها.</p>
+
+      <h2 id="mistake4">4. إهمال البرومبت السلبي</h2>
+
+      <p>البرومبت السلبي هو أداة قوية بشكل مدهش، خاصة في Stable Diffusion. يُخبر النموذج بما لا تريد رؤيته. بدون برومبت سلبي، قد تحصل على تشوهات في الأيدي، وعلامات مائية، ونص عشوائي، ووجوه مشوهة.</p>
+
+      <p>برومبت سلبي أساسي فعّال:</p>
+      <pre dir="ltr"><code>blurry, low quality, distorted, deformed, watermark, text, logo, bad anatomy, extra fingers, missing limbs, ugly, duplicate</code></pre>
+
+      <h2 id="mistake5">5. تضارب العناصر في البرومبت</h2>
+
+      <p>عندما تطلب عناصر متناقضة في نفس البرومبت، يُحاول النموذج التوفيق بينها بنتائج فوضوية. مثال:</p>
+
+      <pre dir="ltr"><code>dark moody scene, bright cheerful colors, minimalist, highly detailed, simple, complex</code></pre>
+
+      <p>هنا يتناقض "مشهد مظلم كئيب" مع "ألوان مشرقة مبهجة"، و"بسيط" مع "معقد". كن متسقاً في الرؤية البصرية التي تريدها.</p>
+
+      <h2 id="mistake6">6. نسخ البرومبتات بدون فهمها</h2>
+
+      <p>نسخ برومبتات من الإنترنت بدون فهم ما يفعله كل عنصر يمنعك من التحسين عند الحاجة. إذا حصلت على نتيجة قريبة مما تريد لكن ليست مثالية، فلن تعرف أي جزء تُعدّل. خذ وقتاً لفهم تأثير كل مصطلح — ستصبح كاتب برومبتات أفضل بكثير على المدى الطويل.</p>
+
+      <h2 id="mistake7">7. تجاهل نسبة الأبعاد</h2>
+
+      <p>نسبة الأبعاد تؤثر بشكل كبير على التركيب. البورتريهات تعمل بشكل أفضل بنسبة عمودية مثل <code dir="ltr">--ar 2:3</code> أو <code dir="ltr">--ar 4:5</code>. المناظر الطبيعية البانورامية تحتاج <code dir="ltr">--ar 16:9</code> أو <code dir="ltr">--ar 21:9</code>. النسبة المربعة الافتراضية <code dir="ltr">1:1</code> ليست دائماً الخيار الأمثل.</p>
+
+      <h2 id="mistake8">8. الإفراط في وسوم الجودة</h2>
+
+      <p>إضافة عشرات وسوم الجودة مثل <code dir="ltr">masterpiece, best quality, ultra detailed, 8k, ultra high resolution, photorealistic, hyper realistic</code> ليست ضرورية دائماً وقد تأتي بنتائج عكسية. اختر 2-3 وسوم جودة ذات صلة بنوع الصورة التي تريدها. <code dir="ltr">8k</code> مفيد للمناظر الطبيعية لكنه غير ضروري لرسم توضيحي بسيط.</p>
+
+      <h2 id="mistake9">9. إهمال وصف الإضاءة</h2>
+
+      <p>الإضاءة هي العنصر الوحيد الأكثر تأثيراً على جو ومزاج الصورة، ومع ذلك يتجاهلها كثيرون تماماً. نفس المشهد بإضاءة مختلفة يُنتج مزاجاً مختلفاً تماماً:</p>
+
+      <ul>
+        <li><code dir="ltr">golden hour lighting</code> — دافئ ورومانسي</li>
+        <li><code dir="ltr">blue hour lighting</code> — هادئ وغامض</li>
+        <li><code dir="ltr">harsh midday sun</code> — قوي ومباشر</li>
+        <li><code dir="ltr">soft diffused overcast</code> — ناعم ومتساوٍ</li>
+        <li><code dir="ltr">dramatic rim lighting</code> — درامي وسينمائي</li>
+        <li><code dir="ltr">neon lighting</code> — حضري ومستقبلي</li>
+      </ul>
+
+      <h2 id="mistake10">10. التحديد الزائد للموضوع</h2>
+
+      <p>وصف كل تفصيلة دقيقة في الموضوع يُقيّد النموذج ويمنعه من إنتاج نتائج إبداعية. بدلاً من وصف 15 تفصيلة عن ملابس شخصية، حدد 3-4 عناصر مميزة واترك للنموذج حرية إكمال الباقي.</p>
+
+      <h2 id="mistake11">11. عدم التجريب بتنويعات متعددة</h2>
+
+      <p>توليد صورة واحدة والحكم على البرومبت بناءً عليها خطأ كبير. توليد صور الذكاء الاصطناعي احتمالي بطبيعته — نفس البرومبت يُنتج نتائج مختلفة في كل مرة. ولّد 4-8 تنويعات على الأقل قبل تعديل البرومبت. ربما تكون النتيجة المثالية في التوليد الخامس.</p>
+
+      <h2 id="mistake12">12. تجاهل التركيب البصري</h2>
+
+      <p>الكثيرون يصفون ما يريدون في الصورة لكنهم يتجاهلون كيف يجب ترتيبه. أضف أوصاف التركيب:</p>
+
+      <ul>
+        <li><code dir="ltr">rule of thirds composition</code> — التركيب وفق قاعدة الأثلاث</li>
+        <li><code dir="ltr">centered symmetrical</code> — تركيب متماثل</li>
+        <li><code dir="ltr">leading lines</code> — خطوط إرشادية</li>
+        <li><code dir="ltr">close-up</code>، <code dir="ltr">medium shot</code>، <code dir="ltr">wide establishing shot</code> — المسافة من الموضوع</li>
+        <li><code dir="ltr">bird's eye view</code>، <code dir="ltr">worm's eye view</code>، <code dir="ltr">eye level</code> — زاوية الكاميرا</li>
+      </ul>
+
+      <h2 id="mistake13">13. خلط أساليب فنية غير متوافقة</h2>
+
+      <p>الجمع بين أساليب فنية مختلفة جذرياً يُنتج نتائج مشوشة. <code dir="ltr">watercolor painting, photorealistic, pixel art</code> — هذه ثلاثة أساليب مختلفة تماماً. اختر أسلوباً واحداً والتزم به. يمكنك الجمع بين أساليب متقاربة مثل <code dir="ltr">oil painting, classical, renaissance style</code>.</p>
+
+      <h2 id="mistake14">14. نسيان السياق والبيئة</h2>
+
+      <p>وصف الموضوع الرئيسي بدقة مع ترك الخلفية والبيئة فارغة يُنتج شخصيات أو عناصر معلّقة في فراغ. أضف سياقاً بيئياً: أين الموضوع؟ ما الوقت من اليوم؟ ما الموسم؟ ما العناصر المحيطة؟</p>
+
+      <h2 id="mistake15">15. عدم التعلم من النتائج السابقة</h2>
+
+      <p>كثيرون يكتبون برومبتات جديدة من الصفر في كل مرة بدلاً من البناء على ما نجح سابقاً. احتفظ بسجل لبرومبتاتك الناجحة مع النتائج. لاحظ الأنماط: أي كلمات مفتاحية تُنتج باستمرار نتائج جيدة؟ أي تركيبات عبارات تعمل معاً؟ ابنِ مكتبة شخصية من "وحدات البناء" التي أثبتت فعاليتها.</p>
+
+      <div class="callout">
+        <p><strong>نصيحة سريعة:</strong> استخدم <a href="/">ImageToPrompt</a> لتحليل صور تعجبك وفهم البنية المثالية للبرومبت. ارفع صورة واحصل على برومبت محسّن يُظهر لك كيف يُترجم المحترفون العناصر البصرية إلى نص.</p>
+      </div>
+
+      <div class="cta-box">
+        <h3>حسّن برومبتاتك الآن</h3>
+        <p>ارفع صورة تعجبك واكتشف البرومبت المثالي لإعادة إنشائها — مجاناً.</p>
+        <a href="/?lang=ar" class="cta-btn">جرّب ImageToPrompt مجاناً ←</a>
+      </div>
+
+      <h2 id="faq">أسئلة شائعة</h2>
+
+      <h3>ما هو الخطأ الأكثر شيوعاً في هندسة البرومبتات؟</h3>
+      <p>الخطأ الأكثر شيوعاً هو كتابة برومبتات غامضة وعامة جداً مثل <code dir="ltr">beautiful landscape</code>. بدلاً من ذلك، كن محدداً: حدد نوع المشهد والإضاءة والأسلوب والمزاج والتفاصيل التقنية. كلما كان البرومبت أكثر تحديداً، كانت النتيجة أقرب لما تريده.</p>
+
+      <h3>هل البرومبتات الطويلة أفضل دائماً؟</h3>
+      <p>ليس بالضرورة. البرومبتات الطويلة جداً قد تُربك النموذج وتُضعف تأثير العناصر المهمة. المفتاح هو الجودة وليس الكمية. ركّز على 5-8 عناصر وصفية محددة بدلاً من 20 عنصراً عاماً. كل كلمة يجب أن تُضيف معلومة بصرية واضحة.</p>
+
+      <h3>لماذا لا تعمل نفس البرومبتات في كل النماذج؟</h3>
+      <p>كل نموذج AI مُدرَّب بشكل مختلف ويفهم الصياغة بطريقته. Midjourney يستخدم عبارات مفصولة بفاصلة مع معاملات خاصة، Stable Diffusion يستخدم أوزاناً وأقواساً، Flux يفضل اللغة الطبيعية، وDALL-E 3 يفهم الجمل الكاملة. استخدم دائماً الصياغة المناسبة لنموذجك.</p>
+
+      <h3>كيف أتجنب الأيدي المشوهة في صور AI؟</h3>
+      <p>استخدم برومبتات سلبية تتضمن <code dir="ltr">deformed hands</code> و<code dir="ltr">extra fingers</code> و<code dir="ltr">bad anatomy</code>. في Midjourney، جرّب إخفاء الأيدي بوضعيات مثل <code dir="ltr">hands in pockets</code> أو <code dir="ltr">hands behind back</code>. استخدم أحدث إصدار من النموذج حيث تتحسن جودة الأيدي مع كل تحديث. وعند الحاجة، استخدم inpainting لإصلاح الأيدي.</p>
+
+    </div>
+
+    <div class="author-bio">
+      <svg class="author-photo" width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="صورة المؤلف"><circle cx="32" cy="32" r="32" fill="#2a1f4e"/><circle cx="32" cy="26" r="11" fill="#7c6bc4"/><ellipse cx="32" cy="52" rx="18" ry="11" fill="#7c6bc4"/></svg>
+      <div class="author-info">
+        <p class="author-name">فريق ImageToPrompt</p>
+        <p class="author-desc">مهندسو برومبتات وفنانو ذكاء اصطناعي متخصصون في Midjourney و Stable Diffusion و Flux. نبني ImageToPrompt لجعل توليد الصور بالذكاء الاصطناعي في متناول الجميع.</p>
+        <a href="https://x.com/Ilyass14286541" class="author-link">تابعنا على X ←</a>
+      </div>
+    </div>
+
+    <div class="related-posts">
+      <h2>أدلة ذات صلة</h2>
+      <div class="related-grid">
+        <a href="/ar/blog/handasa-prompts-fan-ia/" class="related-card">
+          <p class="tag">مبتدئون</p>
+          <h3>هندسة البرومبتات لفن الذكاء الاصطناعي</h3>
+        </a>
+        <a href="/ar/blog/kitabat-prompts-ia-lilmubtadiin/" class="related-card">
+          <p class="tag">دليل</p>
+          <h3>كتابة برومبتات AI للمبتدئين</h3>
+        </a>
+        <a href="/ar/blog/prompts-salbiya-stable-diffusion/" class="related-card">
+          <p class="tag">Stable Diffusion</p>
+          <h3>البرومبتات السلبية في Stable Diffusion</h3>
+        </a>
+        <a href="/ar/blog/dalil-prompts-midjourney-2026/" class="related-card">
+          <p class="tag">Midjourney</p>
+          <h3>دليل برومبتات Midjourney 2026</h3>
+        </a>
+      </div>
+    </div>
+
+  </div>
+
+  <footer class="footer-4col">
+    <div class="f4-inner">
+      <div class="f4-brand">
+        <img src="/favicon.svg" alt="ImageToPrompt" width="28" height="28">
+        <span class="f4-brand-name">ImageTo<span class="accent">Prompt</span></span>
+        <span class="f4-brand-sub">&mdash; Free AI Prompt Generator</span>
+      </div>
+      <div class="f4-grid">
+        <div class="f4-section">
+          <h4 class="f4-heading">Image Prompt Tools</h4>
+          <a href="/">Image to Prompt</a>
+          <a href="/text-to-prompt/">Text to Prompt</a>
+          <a href="/midjourney-prompt-generator/">Midjourney</a>
+          <a href="/stable-diffusion-prompt-generator/">Stable Diffusion</a>
+          <a href="/flux-prompt-generator/">Flux</a>
+          <a href="/dall-e-prompt-generator/">DALL-E 3</a>
+          <a href="/adobe-firefly-prompt-generator/">Adobe Firefly</a>
+          <a href="/leonardo-ai-prompt-generator/">Leonardo AI</a>
+          <a href="/ideogram-prompt-generator/">Ideogram</a>
+        </div>
+        <div class="f4-section">
+          <h4 class="f4-heading">Video Prompt Tools</h4>
+          <a href="/image-to-video-prompt/">Image to Video Prompt</a>
+          <a href="/text-to-video-prompt/">Text to Video Prompt</a>
+          <a href="/veo-prompt-generator/">Veo / Flow Studio</a>
+          <a href="/kling-prompt-generator/">Kling AI</a>
+          <a href="/runway-prompt-generator/">Runway Gen-3</a>
+          <a href="/pika-prompt-generator/">Pika</a>
+          <a href="/luma-prompt-generator/">Luma Dream Machine</a>
+          <a href="/sora-prompt-generator/">Sora</a>
+          <a href="/minimax-prompt-generator/">Minimax</a>
+          <a href="/stable-video-prompt-generator/">Stable Video</a>
+        </div>
+        <div class="f4-section">
+          <h4 class="f4-heading">Resources</h4>
+          <a href="/blog/">Blog</a>
+          <a href="/about/">About</a>
+          <a href="/pricing/">Pricing</a>
+          <a href="/contact/">Contact</a>
+          <a href="/privacy-policy/">Privacy Policy</a>
+          <a href="/terms-of-service/">Terms of Service</a>
+        </div>
+        <div class="f4-section">
+          <h4 class="f4-heading">Languages</h4>
+          <a href="/">English</a>
+          <a href="/fr/">Fran&#231;ais</a>
+          <a href="/ar/">&#1575;&#1604;&#1593;&#1585;&#1576;&#1610;&#1577;</a>
+          <a href="/es/">Espa&#241;ol</a>
+          <a href="/ko/">&#54620;&#44397;&#50612;</a>
+          <a href="/ja/">&#26085;&#26412;&#35486;</a>
+        </div>
+      </div>
+      <div class="f4-bottom">
+        <p>&#169; 2026 ImageToPrompt.dev &#8212; Free AI Prompt Generator</p>
+        <p>Your images are never stored. All analysis is ephemeral and private.</p>
+      </div>
+    </div>
+  </footer>
+
+<script src="/newsletter-inject.js" defer></script>
+<script src="/nav.js" defer></script>
+  <script>
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', function() {
+    navigator.serviceWorker.register('/sw.js')
+      .catch(function(err) { console.warn('SW registration failed:', err); });
+  });
+}
+</script>
+</body>
+</html>

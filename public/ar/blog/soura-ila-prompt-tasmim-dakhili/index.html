@@ -1,0 +1,453 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+  <script src="/theme-toggle.js"></script>
+  <meta charset="UTF-8" />
+  <link rel="dns-prefetch" href="https://www.googletagmanager.com">
+<link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0" />
+  <meta name="robots" content="max-image-preview:large, index, follow">
+  <meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="ImageToPrompt">
+  <title>تحويل صور التصميم الداخلي إلى برومبت | ImageToPrompt</title>
+  <meta name="description" content="حوّل صور الديكور إلى برومبتات مع Midjourney و Stable Diffusion." />
+  <link rel="canonical" href="https://www.imagetoprompt.dev/ar/blog/soura-ila-prompt-tasmim-dakhili/" />
+  <link rel="alternate" hreflang="ar" href="https://www.imagetoprompt.dev/ar/blog/soura-ila-prompt-tasmim-dakhili/" />
+  <link rel="alternate" hreflang="en" href="https://www.imagetoprompt.dev/blog/image-to-prompt-for-interior-design/" />
+  <link rel="alternate" hreflang="fr" href="https://www.imagetoprompt.dev/fr/blog/image-vers-prompt-decoration-interieur/" />
+  <link rel="alternate" hreflang="x-default" href="https://www.imagetoprompt.dev/blog/image-to-prompt-for-interior-design/" />
+  <meta property="og:title" content="تحويل صور التصميم الداخلي إلى برومبت" />
+  <meta property="og:description" content="حوّل صور الديكور إلى برومبتات مع Midjourney و Stable Diffusion." />
+  <meta property="og:url" content="https://www.imagetoprompt.dev/ar/blog/soura-ila-prompt-tasmim-dakhili/" />
+  <meta property="og:type" content="article" />
+  <meta property="og:image" content="https://www.imagetoprompt.dev/og-image.png" />
+  <meta property="og:site_name" content="ImageToPrompt" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="تحويل صور التصميم الداخلي إلى برومبت" />
+  <meta name="twitter:description" content="حوّل صور الديكور إلى برومبتات مع Midjourney و Stable Diffusion." />
+  <meta name="twitter:image" content="https://www.imagetoprompt.dev/og-image.png" />
+  <meta name="twitter:site" content="@imagetoprompt" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="48x48" href="/favicon-48.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+  <link rel="manifest" href="/site.webmanifest" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="/fonts/space-grotesk-700.woff2" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="/fonts/inter-400.woff2" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Arabic:wght@400;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/theme.css">
+  <link rel="preload" href="/blog.css" as="style" onload="this.onload=null;this.rel='stylesheet'"><noscript><link rel="stylesheet" href="/blog.css"></noscript>
+  <style>
+    body { font-family: 'Noto Sans Arabic', 'Space Grotesk', sans-serif; }
+    .article-body { direction: rtl; text-align: right; }
+    code, pre { direction: ltr; text-align: left; display: inline-block; }
+    .toc ol, .toc ul { padding-right: 1.5rem; padding-left: 0; }
+    .article-body ul, .article-body ol { margin-right: 1.5rem; margin-left: 0; }
+    .breadcrumb { direction: rtl; }
+  </style>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "تحويل صور التصميم الداخلي إلى برومبت",
+    "description": "حوّل صور الديكور إلى برومبتات مع Midjourney و Stable Diffusion.",
+    "image": "https://www.imagetoprompt.dev/og-image.png",
+    "datePublished": "2026-03-18",
+    "dateModified": "2026-03-22",
+    "inLanguage": "ar",
+    "author": {
+      "@type": "Person",
+      "name": "ImageToPrompt Team",
+      "url": "https://www.imagetoprompt.dev/"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "ImageToPrompt",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://www.imagetoprompt.dev/favicon.svg"
+      }
+    },
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https://www.imagetoprompt.dev/ar/blog/soura-ila-prompt-tasmim-dakhili/"
+    }
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "كيف أحوّل صورة غرفة إلى برومبت تصميم داخلي؟",
+        "acceptedAnswer": { "@type": "Answer", "text": "ارفع صورة الغرفة إلى ImageToPrompt واختر النموذج المناسب مثل Midjourney أو Flux. ستحلل الأداة عناصر التصميم كالأثاث والإضاءة والألوان والمواد وتحوّلها إلى برومبت مفصّل يمكنك استخدامه لإنشاء تصاميم مشابهة أو تنويعات جديدة." }
+      },
+      {
+        "@type": "Question",
+        "name": "أي نموذج AI هو الأفضل للتصميم الداخلي؟",
+        "acceptedAnswer": { "@type": "Answer", "text": "Midjourney هو الأفضل للتصوير المعماري والتصميم الداخلي الراقي بفضل جودته الفوتوغرافية. Flux ممتاز للواقعية الفوتوغرافية الدقيقة. Stable Diffusion يمنحك تحكماً أكبر مع ControlNet لتعديل التخطيط. DALL-E 3 جيد لتصاميم مفاهيمية سريعة." }
+      },
+      {
+        "@type": "Question",
+        "name": "هل يمكنني تغيير أسلوب التصميم مع الحفاظ على نفس التخطيط؟",
+        "acceptedAnswer": { "@type": "Answer", "text": "نعم، حوّل صورتك إلى برومبت ثم استبدل أوصاف الأسلوب. مثلاً، بدّل modern minimalist إلى art deco أو japandi مع الإبقاء على وصف التخطيط والأبعاد كما هو. في Stable Diffusion، يمكنك استخدام ControlNet للحفاظ على البنية مع تغيير الأسلوب." }
+      },
+      {
+        "@type": "Question",
+        "name": "ما هي الكلمات المفتاحية الأهم في برومبتات التصميم الداخلي؟",
+        "acceptedAnswer": { "@type": "Answer", "text": "الكلمات المفتاحية الأساسية تشمل: interior design photography لتحديد النوع، اسم الأسلوب مثل scandinavian أو industrial، المواد مثل marble أو natural wood، نوع الإضاءة مثل natural light أو warm ambient، والمنظور مثل wide angle أو eye level. أضف architectural digest quality للجودة الاحترافية." }
+      }
+    ]
+  }
+  </script>
+    <!-- Google AdSense -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4499206373485728" crossorigin="anonymous"></script>
+    <!-- Web Push Notifications -->
+<script src="https://cdn.onesignal.com/sdks/web/v16/OneSignalSDK.page.js" defer></script>
+<script>
+  window.OneSignalDeferred = window.OneSignalDeferred || [];
+  OneSignalDeferred.push(async function(OneSignal) {
+    await OneSignal.init({
+      appId: "REPLACE_WITH_ONESIGNAL_APP_ID",
+      notifyButton: { enable: false }
+    });
+  });
+</script>
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="inner">
+      <a href="/ar/" class="site-logo"><img src="/favicon.svg" alt="ImageToPrompt" width="48" height="48"><div class="site-logo-text">ImageTo<span class="accent">Prompt</span><span class="site-logo-sub">&#1605;&#1608;&#1604;&#1617;&#1583; &#1576;&#1585;&#1608;&#1605;&#1576;&#1578; &#1605;&#1580;&#1575;&#1606;&#1610;</span></div></a>
+      <nav class="site-nav" aria-label="&#1575;&#1604;&#1578;&#1606;&#1602;&#1604; &#1575;&#1604;&#1585;&#1574;&#1610;&#1587;&#1610;">
+        <div class="nav-dropdown">
+          <button class="nav-dropdown-trigger" aria-haspopup="true" aria-expanded="false">Tools <span class="nav-chevron" aria-hidden="true">&#9660;</span></button>
+          <div class="nav-dropdown-menu" role="menu">
+            <div class="nav-mega-grid">
+              <div class="nav-mega-col">
+                <div class="nav-mega-heading">&#128444; IMAGE TOOLS</div>
+                <a href="/" role="menuitem" class="nav-mega-tool">Image to Prompt <span class="nav-mega-arrow">&#8594;</span></a>
+                <a href="/text-to-prompt/" role="menuitem" class="nav-mega-tool">Text to Prompt <span class="nav-mega-arrow">&#8594;</span></a>
+                <div class="nav-mega-models-label">Models</div>
+                <div class="nav-mega-models"><a href="/midjourney-prompt-generator/">Midjourney</a><span class="nav-dot">&#xB7;</span><a href="/stable-diffusion-prompt-generator/">SD</a></div>
+                <div class="nav-mega-models"><a href="/flux-prompt-generator/">Flux</a><span class="nav-dot">&#xB7;</span><a href="/dall-e-prompt-generator/">DALL&#xB7;E&#xA0;3</a></div>
+                <div class="nav-mega-models"><a href="/adobe-firefly-prompt-generator/">Firefly</a><span class="nav-dot">&#xB7;</span><a href="/leonardo-ai-prompt-generator/">Leonardo</a></div>
+                <div class="nav-mega-models"><a href="/ideogram-prompt-generator/">Ideogram</a></div>
+              </div>
+              <div class="nav-mega-divider" aria-hidden="true"></div>
+              <div class="nav-mega-col">
+                <div class="nav-mega-heading">&#127909; VIDEO TOOLS</div>
+                <a href="/?tab=image-to-video" role="menuitem" class="nav-mega-tool">Image to Video <span class="nav-mega-arrow">&#8594;</span></a>
+                <a href="/?tab=text-to-video" role="menuitem" class="nav-mega-tool">Text to Video <span class="nav-mega-arrow">&#8594;</span></a>
+                <div class="nav-mega-models-label">Models</div>
+                <div class="nav-mega-models"><a href="/veo-prompt-generator/">Veo</a><span class="nav-dot">&#xB7;</span><a href="/kling-prompt-generator/">Kling</a></div>
+                <div class="nav-mega-models"><a href="/runway-prompt-generator/">Runway</a><span class="nav-dot">&#xB7;</span><a href="/pika-prompt-generator/">Pika</a></div>
+                <div class="nav-mega-models"><a href="/luma-prompt-generator/">Luma</a><span class="nav-dot">&#xB7;</span><a href="/sora-prompt-generator/">Sora</a></div>
+                <div class="nav-mega-models"><a href="/minimax-prompt-generator/">Minimax</a><span class="nav-dot">&#xB7;</span><a href="/stable-video-prompt-generator/">Stable</a></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <a href="/ar/blog/">المدونة</a>#1575;>&#1575;&#1604;&#1605;&#1583;&#1608;&#1606;&#1577;</a>#1604;>&#1575;&#1604;&#1605;&#1583;&#1608;&#1606;&#1577;</a>#1605;>&#1575;&#1604;&#1605;&#1583;&#1608;&#1606;&#1577;</a>#1583;>&#1575;&#1604;&#1605;&#1583;&#1608;&#1606;&#1577;</a>#1608;>&#1575;&#1604;&#1605;&#1583;&#1608;&#1606;&#1577;</a>#1606;>&#1575;&#1604;&#1605;&#1583;&#1608;&#1606;&#1577;</a>#1577;</a>
+        <a href="/pricing/" class="nav-pill-pricing">Pricing</a>
+        <a href="/about/" class="nav-pill-about">About</a>
+        <a href="/ar/" class="nav-try-free">&#1580;&#1585;&#1617;&#1576; &#8594;</a>
+        <button id="theme-toggle" onclick="toggleTheme()" aria-label="Switch theme" title="Switch theme">&#9728;&#xFE0F;</button>
+  </nav>
+    </div>
+  </header>
+
+  <nav class="breadcrumb" aria-label="مسار التنقل">
+    <a href="/ar/">الرئيسية</a><span class="sep">›</span>
+    <a href="/ar/blog/">المدونة</a><span class="sep">›</span>
+    <span>تحويل صور التصميم الداخلي إلى برومبت</span>
+  </nav>
+
+  <div class="page-wrapper">
+
+    <header class="article-header">
+      <p class="article-tag">تصميم داخلي</p>
+      <h1>تحويل صور التصميم الداخلي إلى برومبت</h1>
+      <div class="article-meta">
+        <span>مارس 2026</span>
+        <span class="dot">·</span>
+        <span>9 دقائق قراءة</span>
+        <span class="dot">·</span>
+        <span>Midjourney · Stable Diffusion · Flux</span>
+        <span class="dot">·</span>
+        <span>محدّث مارس 2026</span>
+      </div>
+    </header>
+
+    <div class="article-body">
+
+      <p>أصبح الذكاء الاصطناعي أداة لا غنى عنها لمصممي الديكور الداخلي والمهندسين المعماريين وأصحاب المنازل الذين يبحثون عن الإلهام. تخيّل أنك وجدت صورة لغرفة معيشة مذهلة على Pinterest أو في مجلة تصميم — الإضاءة مثالية والألوان متناسقة والأثاث منسجم تماماً. والآن تريد إنشاء تنويعات لهذا التصميم أو تطبيق نفس الأسلوب على غرفة مختلفة. هنا يأتي دور تحويل الصورة إلى برومبت.</p>
+
+      <nav class="toc" aria-label="محتويات المقال">
+        <details open>
+          <summary>في هذا الدليل</summary>
+          <ol>
+            <li><a href="#why-interior">لماذا التصميم الداخلي مع AI؟</a></li>
+            <li><a href="#how-it-works">كيف يعمل التحويل</a></li>
+            <li><a href="#design-styles">أساليب التصميم الشائعة</a></li>
+            <li><a href="#key-elements">العناصر المفتاحية في البرومبت</a></li>
+            <li><a href="#examples">أمثلة عملية</a></li>
+            <li><a href="#tips">نصائح احترافية</a></li>
+            <li><a href="#model-comparison">مقارنة النماذج</a></li>
+            <li><a href="#faq">أسئلة شائعة</a></li>
+          </ol>
+        </details>
+      </nav>
+
+      <h2 id="why-interior">لماذا التصميم الداخلي مع الذكاء الاصطناعي؟</h2>
+
+      <p>يُحدث الذكاء الاصطناعي ثورة في مجال التصميم الداخلي من عدة زوايا:</p>
+
+      <ul>
+        <li><strong>تصوّر سريع للأفكار:</strong> بدلاً من رسم اسكتشات يدوية أو إنشاء تصييرات ثلاثية الأبعاد مكلفة، يمكنك توليد صور واقعية لتصاميمك في ثوانٍ</li>
+        <li><strong>استكشاف الأساليب:</strong> جرّب أسلوباً إسكندنافياً أو صناعياً أو يابانياً على نفس المساحة بتعديل بضع كلمات</li>
+        <li><strong>التواصل مع العملاء:</strong> أظهر للعملاء عدة اقتراحات تصميمية قبل البدء بالتنفيذ الفعلي</li>
+        <li><strong>الإلهام من صور موجودة:</strong> حوّل صوراً من المجلات أو Pinterest إلى برومبتات قابلة للتعديل</li>
+      </ul>
+
+      <h2 id="how-it-works">كيف يعمل تحويل صور التصميم الداخلي</h2>
+
+      <p>عندما ترفع صورة تصميم داخلي إلى <a href="/">ImageToPrompt</a>، يحلل الذكاء الاصطناعي عناصر متعددة في المشهد:</p>
+
+      <ul>
+        <li><strong>المواد والأسطح:</strong> الرخام والخشب الطبيعي والمعدن المصقول والقماش المخملي والجلد</li>
+        <li><strong>لوحة الألوان:</strong> الألوان السائدة ودرجات التناسق والتباين بين الجدران والأثاث والإكسسوارات</li>
+        <li><strong>الإضاءة:</strong> الإضاءة الطبيعية عبر النوافذ أو الاصطناعية من الثريات أو الأضواء المخفية</li>
+        <li><strong>الأثاث وترتيبه:</strong> نوع القطع وأسلوبها ووضعيتها في الفراغ</li>
+        <li><strong>المنظور المعماري:</strong> الزوايا والارتفاعات والنسب</li>
+        <li><strong>الأسلوب العام:</strong> حديث بسيط أو كلاسيكي فاخر أو بوهيمي دافئ أو صناعي خام</li>
+      </ul>
+
+      <h2 id="design-styles">أساليب التصميم الشائعة وكلماتها المفتاحية</h2>
+
+      <h3>الأسلوب الإسكندنافي (Scandinavian)</h3>
+      <p>يتميز بالبساطة والوظيفية والألوان المحايدة. كلمات البرومبت الأساسية:</p>
+      <pre dir="ltr"><code>scandinavian interior design, minimalist, natural light, white walls, light oak furniture, hygge atmosphere, clean lines, neutral color palette, cozy textiles</code></pre>
+
+      <h3>الأسلوب الصناعي (Industrial)</h3>
+      <p>يستلهم من المصانع والمستودعات القديمة مع مواد خام مكشوفة:</p>
+      <pre dir="ltr"><code>industrial loft interior, exposed brick walls, steel beams, concrete floor, edison bulb lighting, raw materials, open floor plan, vintage furniture, urban aesthetic</code></pre>
+
+      <h3>الأسلوب الياباني (Japandi)</h3>
+      <p>مزيج بين البساطة اليابانية والدفء الإسكندنافي:</p>
+      <pre dir="ltr"><code>japandi interior design, wabi-sabi aesthetic, natural materials, low furniture, paper screens, indoor plants, earth tones, zen atmosphere, minimal decoration</code></pre>
+
+      <h3>الأسلوب الحديث الفاخر (Modern Luxury)</h3>
+      <pre dir="ltr"><code>modern luxury interior, marble surfaces, gold accents, velvet upholstery, statement chandelier, high ceilings, panoramic windows, designer furniture, sophisticated color palette</code></pre>
+
+      <h3>البوهيمي (Bohemian)</h3>
+      <pre dir="ltr"><code>bohemian interior design, eclectic decor, layered textiles, macrame wall hangings, vintage rugs, warm earth tones, indoor plants, collected art pieces, relaxed atmosphere</code></pre>
+
+      <h2 id="key-elements">العناصر المفتاحية في برومبت التصميم الداخلي</h2>
+
+      <p>لإنشاء برومبت تصميم داخلي فعّال، تأكد من تضمين هذه العناصر الأساسية:</p>
+
+      <h3>1. نوع الغرفة</h3>
+      <p>حدد نوع المساحة بدقة: <code dir="ltr">living room</code>، <code dir="ltr">master bedroom</code>، <code dir="ltr">open kitchen</code>، <code dir="ltr">bathroom spa</code>، <code dir="ltr">home office</code>. كل نوع غرفة له عناصر ومتطلبات مختلفة.</p>
+
+      <h3>2. المنظور والزاوية</h3>
+      <p>اختر المنظور المناسب لعرض التصميم: <code dir="ltr">wide angle shot</code> لعرض الغرفة كاملة، <code dir="ltr">eye level perspective</code> للواقعية، <code dir="ltr">bird's eye view</code> لإظهار التخطيط.</p>
+
+      <h3>3. الإضاءة</h3>
+      <p>الإضاءة تُحدث فرقاً كبيراً في جو التصميم. استخدم <code dir="ltr">natural light streaming through large windows</code> للإضاءة الطبيعية، أو <code dir="ltr">warm ambient lighting</code> للأجواء المسائية الدافئة، أو <code dir="ltr">dramatic accent lighting</code> للتأثيرات المعمارية.</p>
+
+      <h3>4. المواد والملمس</h3>
+      <p>المواد تُعطي الشخصية للتصميم. كن محدداً: <code dir="ltr">calacatta marble countertop</code> بدلاً من مجرد <code dir="ltr">marble</code>، أو <code dir="ltr">live edge walnut dining table</code> بدلاً من <code dir="ltr">wooden table</code>.</p>
+
+      <h3>5. كلمات الجودة</h3>
+      <p>أضف كلمات تضمن جودة عالية: <code dir="ltr">architectural digest quality</code>، <code dir="ltr">interior design magazine photo</code>، <code dir="ltr">professionally staged</code>، <code dir="ltr">8k resolution</code>.</p>
+
+      <h2 id="examples">أمثلة عملية</h2>
+
+      <h3>غرفة معيشة حديثة</h3>
+      <pre dir="ltr"><code>modern minimalist living room, floor-to-ceiling windows with city view, L-shaped sectional sofa in cream bouclé fabric, walnut coffee table, abstract art on wall, natural light, warm neutral tones, architectural digest quality photography, wide angle shot --ar 16:9 --v 6.1</code></pre>
+
+      <h3>مطبخ فاخر</h3>
+      <pre dir="ltr"><code>luxury open kitchen, waterfall calacatta marble island, custom walnut cabinetry, brass hardware, pendant lights over island, professional appliances, herringbone tile backsplash, warm evening lighting, interior design magazine quality --ar 3:2 --v 6.1</code></pre>
+
+      <h3>غرفة نوم هادئة</h3>
+      <pre dir="ltr"><code>serene master bedroom, japandi style, platform bed with linen bedding in sage green, paper pendant light, indoor olive tree, sheer curtains with soft morning light, tatami mat, minimal nightstand, zen atmosphere, warm earth tones --ar 4:3 --v 6.1</code></pre>
+
+      <h2 id="tips">نصائح احترافية لتصميمات داخلية أفضل</h2>
+
+      <ul>
+        <li><strong>استخدم صوراً مرجعية عالية الجودة:</strong> صور المجلات المعمارية مثل Architectural Digest وElle Decor تُنتج برومبتات أدق لأنها مُصوَّرة بشكل احترافي</li>
+        <li><strong>حدد الوقت من اليوم:</strong> <code dir="ltr">morning light</code> يعطي إضاءة مختلفة تماماً عن <code dir="ltr">golden hour</code> أو <code dir="ltr">evening ambient</code></li>
+        <li><strong>اذكر المصممين أو العلامات التجارية:</strong> عبارات مثل <code dir="ltr">Kelly Wearstler style</code> أو <code dir="ltr">Restoration Hardware aesthetic</code> تُنتج أساليب محددة ومعروفة</li>
+        <li><strong>استخدم نسب الأبعاد المناسبة:</strong> <code dir="ltr">--ar 16:9</code> للمشاهد البانورامية و<code dir="ltr">--ar 4:5</code> للعرض العمودي المناسب لـ Instagram</li>
+        <li><strong>أضف عناصر الحياة:</strong> <code dir="ltr">styled coffee table books</code>، <code dir="ltr">fresh flowers in vase</code>، <code dir="ltr">casually draped throw blanket</code> — هذه التفاصيل تجعل المشهد واقعياً ومعاشاً</li>
+      </ul>
+
+      <h2 id="model-comparison">أي نموذج تختار لتصميمك الداخلي؟</h2>
+
+      <div class="table-wrap">
+      <table class="comparison-table">
+        <thead>
+          <tr>
+            <th>النموذج</th>
+            <th>القوة</th>
+            <th>الأفضل لـ</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Midjourney</td>
+            <td>جودة فوتوغرافية استثنائية</td>
+            <td>عروض التقديم للعملاء ومنشورات المجلات</td>
+          </tr>
+          <tr>
+            <td>Flux</td>
+            <td>واقعية فوتوغرافية دقيقة</td>
+            <td>محاكاة فوتوغرافية واقعية للمساحات</td>
+          </tr>
+          <tr>
+            <td>Stable Diffusion</td>
+            <td>تحكم دقيق مع ControlNet</td>
+            <td>تعديل تصاميم موجودة مع الحفاظ على التخطيط</td>
+          </tr>
+          <tr>
+            <td>DALL-E 3</td>
+            <td>فهم ممتاز للتعليمات</td>
+            <td>اسكتشات مفاهيمية سريعة</td>
+          </tr>
+        </tbody>
+      </table>
+      </div>
+
+      <div class="cta-box">
+        <h3>حوّل صور تصميمك الداخلي إلى برومبتات</h3>
+        <p>ارفع أي صورة ديكور واحصل على برومبت مُحسَّن لـ Midjourney أو Stable Diffusion أو Flux — مجاناً.</p>
+        <a href="/?lang=ar" class="cta-btn">جرّب ImageToPrompt مجاناً ←</a>
+      </div>
+
+      <h2 id="faq">أسئلة شائعة</h2>
+
+      <h3>كيف أحوّل صورة غرفة إلى برومبت تصميم داخلي؟</h3>
+      <p>ارفع صورة الغرفة إلى <a href="/">ImageToPrompt</a> واختر النموذج المناسب مثل Midjourney أو Flux. ستحلل الأداة عناصر التصميم كالأثاث والإضاءة والألوان والمواد وتحوّلها إلى برومبت مفصّل يمكنك استخدامه لإنشاء تصاميم مشابهة أو تنويعات جديدة.</p>
+
+      <h3>أي نموذج AI هو الأفضل للتصميم الداخلي؟</h3>
+      <p>Midjourney هو الأفضل للتصوير المعماري والتصميم الداخلي الراقي بفضل جودته الفوتوغرافية. Flux ممتاز للواقعية الفوتوغرافية الدقيقة. Stable Diffusion يمنحك تحكماً أكبر مع ControlNet لتعديل التخطيط. DALL-E 3 جيد لتصاميم مفاهيمية سريعة.</p>
+
+      <h3>هل يمكنني تغيير أسلوب التصميم مع الحفاظ على نفس التخطيط؟</h3>
+      <p>نعم، حوّل صورتك إلى برومبت ثم استبدل أوصاف الأسلوب. مثلاً، بدّل <code dir="ltr">modern minimalist</code> إلى <code dir="ltr">art deco</code> أو <code dir="ltr">japandi</code> مع الإبقاء على وصف التخطيط والأبعاد كما هو. في Stable Diffusion، يمكنك استخدام ControlNet للحفاظ على البنية مع تغيير الأسلوب.</p>
+
+      <h3>ما هي الكلمات المفتاحية الأهم في برومبتات التصميم الداخلي؟</h3>
+      <p>الكلمات المفتاحية الأساسية تشمل: <code dir="ltr">interior design photography</code> لتحديد النوع، اسم الأسلوب مثل <code dir="ltr">scandinavian</code> أو <code dir="ltr">industrial</code>، المواد مثل <code dir="ltr">marble</code> أو <code dir="ltr">natural wood</code>، نوع الإضاءة مثل <code dir="ltr">natural light</code> أو <code dir="ltr">warm ambient</code>، والمنظور مثل <code dir="ltr">wide angle</code> أو <code dir="ltr">eye level</code>. أضف <code dir="ltr">architectural digest quality</code> للجودة الاحترافية.</p>
+
+    </div>
+
+    <div class="author-bio">
+      <svg class="author-photo" width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="صورة المؤلف"><circle cx="32" cy="32" r="32" fill="#2a1f4e"/><circle cx="32" cy="26" r="11" fill="#7c6bc4"/><ellipse cx="32" cy="52" rx="18" ry="11" fill="#7c6bc4"/></svg>
+      <div class="author-info">
+        <p class="author-name">فريق ImageToPrompt</p>
+        <p class="author-desc">مهندسو برومبتات وفنانو ذكاء اصطناعي متخصصون في Midjourney و Stable Diffusion و Flux. نبني ImageToPrompt لجعل توليد الصور بالذكاء الاصطناعي في متناول الجميع.</p>
+        <a href="https://x.com/Ilyass14286541" class="author-link">تابعنا على X ←</a>
+      </div>
+    </div>
+
+    <div class="related-posts">
+      <h2>أدلة ذات صلة</h2>
+      <div class="related-grid">
+        <a href="/ar/blog/tahwil-soura-ila-prompt/" class="related-card">
+          <p class="tag">دليل</p>
+          <h3>كيفية تحويل أي صورة إلى برومبت</h3>
+        </a>
+        <a href="/ar/blog/dalil-prompts-midjourney-2026/" class="related-card">
+          <p class="tag">Midjourney</p>
+          <h3>دليل برومبتات Midjourney 2026</h3>
+        </a>
+        <a href="/ar/blog/soura-ila-prompt-taswir-muntajat/" class="related-card">
+          <p class="tag">تصوير المنتجات</p>
+          <h3>تحويل صور المنتجات إلى برومبت</h3>
+        </a>
+        <a href="/ar/blog/handasa-prompts-fan-ia/" class="related-card">
+          <p class="tag">مبتدئون</p>
+          <h3>هندسة البرومبتات لفن الذكاء الاصطناعي</h3>
+        </a>
+      </div>
+    </div>
+
+  </div>
+
+  <footer class="footer-4col">
+    <div class="f4-inner">
+      <div class="f4-brand">
+        <img src="/favicon.svg" alt="ImageToPrompt" width="28" height="28">
+        <span class="f4-brand-name">ImageTo<span class="accent">Prompt</span></span>
+        <span class="f4-brand-sub">&mdash; Free AI Prompt Generator</span>
+      </div>
+      <div class="f4-grid">
+        <div class="f4-section">
+          <h4 class="f4-heading">Image Prompt Tools</h4>
+          <a href="/">Image to Prompt</a>
+          <a href="/text-to-prompt/">Text to Prompt</a>
+          <a href="/midjourney-prompt-generator/">Midjourney</a>
+          <a href="/stable-diffusion-prompt-generator/">Stable Diffusion</a>
+          <a href="/flux-prompt-generator/">Flux</a>
+          <a href="/dall-e-prompt-generator/">DALL-E 3</a>
+          <a href="/adobe-firefly-prompt-generator/">Adobe Firefly</a>
+          <a href="/leonardo-ai-prompt-generator/">Leonardo AI</a>
+          <a href="/ideogram-prompt-generator/">Ideogram</a>
+        </div>
+        <div class="f4-section">
+          <h4 class="f4-heading">Video Prompt Tools</h4>
+          <a href="/image-to-video-prompt/">Image to Video Prompt</a>
+          <a href="/text-to-video-prompt/">Text to Video Prompt</a>
+          <a href="/veo-prompt-generator/">Veo / Flow Studio</a>
+          <a href="/kling-prompt-generator/">Kling AI</a>
+          <a href="/runway-prompt-generator/">Runway Gen-3</a>
+          <a href="/pika-prompt-generator/">Pika</a>
+          <a href="/luma-prompt-generator/">Luma Dream Machine</a>
+          <a href="/sora-prompt-generator/">Sora</a>
+          <a href="/minimax-prompt-generator/">Minimax</a>
+          <a href="/stable-video-prompt-generator/">Stable Video</a>
+        </div>
+        <div class="f4-section">
+          <h4 class="f4-heading">Resources</h4>
+          <a href="/blog/">Blog</a>
+          <a href="/about/">About</a>
+          <a href="/pricing/">Pricing</a>
+          <a href="/contact/">Contact</a>
+          <a href="/privacy-policy/">Privacy Policy</a>
+          <a href="/terms-of-service/">Terms of Service</a>
+        </div>
+        <div class="f4-section">
+          <h4 class="f4-heading">Languages</h4>
+          <a href="/">English</a>
+          <a href="/fr/">Fran&#231;ais</a>
+          <a href="/ar/">&#1575;&#1604;&#1593;&#1585;&#1576;&#1610;&#1577;</a>
+          <a href="/es/">Espa&#241;ol</a>
+          <a href="/ko/">&#54620;&#44397;&#50612;</a>
+          <a href="/ja/">&#26085;&#26412;&#35486;</a>
+        </div>
+      </div>
+      <div class="f4-bottom">
+        <p>&#169; 2026 ImageToPrompt.dev &#8212; Free AI Prompt Generator</p>
+        <p>Your images are never stored. All analysis is ephemeral and private.</p>
+      </div>
+    </div>
+  </footer>
+
+<script src="/newsletter-inject.js" defer></script>
+<script src="/nav.js" defer></script>
+  <script>
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', function() {
+    navigator.serviceWorker.register('/sw.js')
+      .catch(function(err) { console.warn('SW registration failed:', err); });
+  });
+}
+</script>
+</body>
+</html>

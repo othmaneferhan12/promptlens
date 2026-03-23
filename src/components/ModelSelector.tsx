@@ -1,3 +1,4 @@
+import { useTranslation } from 'react-i18next';
 import { MODEL_CONFIGS } from '../utils/imageUtils';
 import type { AIModel } from '../types';
 
@@ -7,10 +8,12 @@ interface ModelSelectorProps {
 }
 
 export default function ModelSelector({ selected, onChange }: ModelSelectorProps) {
+  const { t } = useTranslation();
+
   return (
     <div>
       <p className="mb-2 font-inter text-xs font-600 uppercase tracking-widest text-[var(--text-secondary)]">
-        Target Model
+        {t('controls.targetModel')}
       </p>
       <div className="grid grid-cols-2 sm:grid-cols-3 gap-2">
         {MODEL_CONFIGS.map((model) => {

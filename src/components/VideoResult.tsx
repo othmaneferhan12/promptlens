@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { useTranslation } from 'react-i18next';
 import { motion, AnimatePresence } from 'framer-motion';
 import { RotateCcw, Download, Sparkles, ChevronDown, ChevronUp } from 'lucide-react';
 import type { VideoResult as VideoResultType, VideoModel, VideoMotionStyle } from '../types';
@@ -16,6 +17,7 @@ interface VideoResultProps {
 }
 
 function CopyButton({ text }: { text: string }) {
+  const { t } = useTranslation();
   const [copied, setCopied] = useState(false);
   const handleCopy = () => {
     navigator.clipboard.writeText(text);
@@ -27,7 +29,7 @@ function CopyButton({ text }: { text: string }) {
       onClick={handleCopy}
       className="flex items-center gap-1 rounded-lg px-2.5 py-1 font-mono text-xs text-[var(--text-secondary)] transition-all hover:text-[var(--text-primary)]"
     >
-      {copied ? '✓ Copied' : 'Copy'}
+      {copied ? t('result.copied') : t('result.copy')}
     </button>
   );
 }
@@ -40,13 +42,16 @@ export default function VideoResult({
   cameraMovement,
   onReset,
   onRegenerate,
-  resetLabel = 'Generate Another',
+  resetLabel,
 }: VideoResultProps) {
+  const { t } = useTranslation();
   const [detailsOpen, setDetailsOpen] = useState(false);
   const modelConfig = getVideoModelConfig(model);
   const motionLabel = MOTION_STYLE_CONFIGS.find((m) => m.id === motionStyle)?.label ?? motionStyle;
   const durationLabel = DURATION_CONFIGS.find((d) => d.id === duration)?.label ?? duration;
   const cameraLabel = CAMERA_MOVEMENT_CONFIGS.find((c) => c.id === cameraMovement)?.label ?? cameraMovement;
+
+  const effectiveResetLabel = resetLabel ?? t('videoResult.generateAnother');
 
   const handleExport = () => {
     const content = [
@@ -102,7 +107,7 @@ export default function VideoResult({
       <motion.div variants={item} className="flex items-center justify-between flex-wrap gap-3">
         <div>
           <h2 className="font-grotesk text-2xl font-700 text-[var(--text-primary)]">
-            Your Video Prompt is Ready{' '}
+            {t('videoResult.promptReady')}{' '}
             <span style={{ color: 'var(--accent-lens)' }}>✨</span>
           </h2>
           <div className="mt-1 flex items-center gap-2 flex-wrap">
@@ -133,14 +138,14 @@ export default function VideoResult({
             className="flex items-center gap-1.5 rounded-xl border border-[var(--border-subtle)] px-3 py-2 font-inter text-xs text-[var(--text-secondary)] transition-all hover:border-[var(--border-accent)] hover:text-[var(--text-primary)]"
           >
             <Download size={13} />
-            Export
+            {t('result.export')}
           </button>
           <button
             onClick={onReset}
             className="flex items-center gap-1.5 rounded-xl border border-[var(--border-subtle)] px-3 py-2 font-inter text-xs text-[var(--text-secondary)] transition-all hover:border-[var(--error)]/50 hover:text-[var(--error)]"
           >
             <RotateCcw size={13} />
-            New
+            {t('result.new')}
           </button>
         </div>
       </motion.div>
@@ -152,7 +157,7 @@ export default function VideoResult({
             <div className="flex items-center gap-2">
               <span>🎬</span>
               <span className="font-mono text-xs font-600 uppercase tracking-wider text-[var(--text-secondary)]">
-                Main Video Prompt
+                {t('videoResult.mainVideoPrompt')}
               </span>
             </div>
             <div className="flex items-center gap-2">
@@ -161,7 +166,7 @@ export default function VideoResult({
                 className="flex items-center gap-1 rounded-lg px-2.5 py-1 font-mono text-xs text-[var(--accent-lens)]/70 transition-all hover:text-[var(--accent-lens)]"
               >
                 <Sparkles size={11} />
-                Regenerate
+                {t('videoResult.regenerate')}
               </button>
               <CopyButton text={result.mainPrompt} />
             </div>
@@ -181,7 +186,7 @@ export default function VideoResult({
           className="flex w-full items-center justify-between px-5 py-4 font-grotesk text-sm font-600 text-[var(--text-secondary)] transition-colors hover:text-[var(--text-primary)]"
         >
           <span className="flex items-center gap-2">
-            <span>🎥</span> Motion & Camera Details
+            <span>🎥</span> {t('videoResult.motionCameraDetails')}
           </span>
           {detailsOpen ? <ChevronUp size={16} /> : <ChevronDown size={16} />}
         </button>
@@ -197,7 +202,7 @@ export default function VideoResult({
               <div className="grid grid-cols-1 gap-3 px-5 pb-5 sm:grid-cols-2">
                 <div className="flex flex-col gap-1 rounded-xl border border-[var(--border-subtle)] bg-[var(--bg-elevated)] p-4">
                   <span className="font-grotesk text-xs font-600 uppercase tracking-wider text-[var(--text-secondary)]">
-                    🏃 Motion Description
+                    🏃 {t('videoResult.motionDescription')}
                   </span>
                   <p className="font-inter text-sm text-[var(--text-primary)] leading-relaxed mt-1">
                     {result.motionDescription}
@@ -205,7 +210,7 @@ export default function VideoResult({
                 </div>
                 <div className="flex flex-col gap-1 rounded-xl border border-[var(--border-subtle)] bg-[var(--bg-elevated)] p-4">
                   <span className="font-grotesk text-xs font-600 uppercase tracking-wider text-[var(--text-secondary)]">
-                    📷 Camera Direction
+                    📷 {t('videoResult.cameraDirection')}
                   </span>
                   <p className="font-inter text-sm text-[var(--text-primary)] leading-relaxed mt-1">
                     {result.cameraDirection}
@@ -221,7 +226,7 @@ export default function VideoResult({
       {result.motionTags.length > 0 && (
         <motion.div variants={item} className="rounded-2xl border border-[var(--border-subtle)] bg-[var(--bg-card)] p-5">
           <span className="font-grotesk text-xs font-600 uppercase tracking-wider text-[var(--text-secondary)]">
-            🏷 Motion Tags
+            🏷 {t('videoResult.motionTags')}
           </span>
           <div className="mt-3 flex flex-wrap gap-2">
             {result.motionTags.map((tag) => (
@@ -251,7 +256,7 @@ export default function VideoResult({
             <div className="flex items-center gap-2">
               <Sparkles size={14} style={{ color: 'var(--accent-cyan)' }} />
               <span className="font-mono text-xs font-500" style={{ color: 'var(--accent-cyan)' }}>
-                CREATIVE VARIANT
+                {t('videoResult.creativeVariant')}
               </span>
             </div>
             <CopyButton text={result.creativeVariant} />
@@ -273,7 +278,7 @@ export default function VideoResult({
           >
             <div className="px-4 py-2.5 border-b" style={{ borderColor: 'rgba(251,191,36,0.2)' }}>
               <span className="font-mono text-xs font-500" style={{ color: '#FBBF24' }}>
-                💡 MODEL TIPS
+                💡 {t('videoResult.modelTips')}
               </span>
             </div>
             <div className="p-4">
@@ -297,7 +302,7 @@ export default function VideoResult({
         >
           <span className="relative z-10 flex items-center gap-2">
             <RotateCcw size={18} />
-            {resetLabel}
+            {effectiveResetLabel}
           </span>
           <div className="absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-white/20 to-transparent transition-transform duration-700 group-hover:translate-x-full" />
         </button>

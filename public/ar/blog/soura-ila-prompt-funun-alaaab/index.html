@@ -1,0 +1,458 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+  <script src="/theme-toggle.js"></script>
+  <meta charset="UTF-8" />
+  <link rel="dns-prefetch" href="https://www.googletagmanager.com">
+<link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0" />
+  <meta name="robots" content="max-image-preview:large, index, follow">
+  <meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="ImageToPrompt">
+  <title>تحويل الصور إلى برومبت لفنون ألعاب الفيديو | ImageToPrompt</title>
+  <meta name="description" content="حوّل رسومات concept art إلى برومبتات لـ Leonardo AI و Midjourney." />
+  <link rel="canonical" href="https://www.imagetoprompt.dev/ar/blog/soura-ila-prompt-funun-alaaab/" />
+  <link rel="alternate" hreflang="ar" href="https://www.imagetoprompt.dev/ar/blog/soura-ila-prompt-funun-alaaab/" />
+  <link rel="alternate" hreflang="en" href="https://www.imagetoprompt.dev/blog/image-to-prompt-for-game-art/" />
+  <link rel="alternate" hreflang="fr" href="https://www.imagetoprompt.dev/fr/blog/image-vers-prompt-jeux-video/" />
+  <link rel="alternate" hreflang="x-default" href="https://www.imagetoprompt.dev/blog/image-to-prompt-for-game-art/" />
+  <meta property="og:title" content="تحويل الصور إلى برومبت لفنون ألعاب الفيديو" />
+  <meta property="og:description" content="حوّل رسومات concept art إلى برومبتات لـ Leonardo AI و Midjourney." />
+  <meta property="og:url" content="https://www.imagetoprompt.dev/ar/blog/soura-ila-prompt-funun-alaaab/" />
+  <meta property="og:type" content="article" />
+  <meta property="og:image" content="https://www.imagetoprompt.dev/og-image.png" />
+  <meta property="og:site_name" content="ImageToPrompt" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="تحويل الصور إلى برومبت لفنون ألعاب الفيديو" />
+  <meta name="twitter:description" content="حوّل رسومات concept art إلى برومبتات لـ Leonardo AI و Midjourney." />
+  <meta name="twitter:image" content="https://www.imagetoprompt.dev/og-image.png" />
+  <meta name="twitter:site" content="@imagetoprompt" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="48x48" href="/favicon-48.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+  <link rel="manifest" href="/site.webmanifest" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="/fonts/space-grotesk-700.woff2" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="/fonts/inter-400.woff2" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Arabic:wght@400;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/theme.css">
+  <link rel="preload" href="/blog.css" as="style" onload="this.onload=null;this.rel='stylesheet'"><noscript><link rel="stylesheet" href="/blog.css"></noscript>
+  <style>
+    body { font-family: 'Noto Sans Arabic', 'Space Grotesk', sans-serif; }
+    .article-body { direction: rtl; text-align: right; }
+    code, pre { direction: ltr; text-align: left; display: inline-block; }
+    .toc ol, .toc ul { padding-right: 1.5rem; padding-left: 0; }
+    .article-body ul, .article-body ol { margin-right: 1.5rem; margin-left: 0; }
+    .breadcrumb { direction: rtl; }
+  </style>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "تحويل الصور إلى برومبت لفنون ألعاب الفيديو",
+    "description": "حوّل رسومات concept art إلى برومبتات لـ Leonardo AI و Midjourney.",
+    "image": "https://www.imagetoprompt.dev/og-image.png",
+    "datePublished": "2026-03-18",
+    "dateModified": "2026-03-22",
+    "inLanguage": "ar",
+    "author": {
+      "@type": "Person",
+      "name": "ImageToPrompt Team",
+      "url": "https://www.imagetoprompt.dev/"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "ImageToPrompt",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://www.imagetoprompt.dev/favicon.svg"
+      }
+    },
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https://www.imagetoprompt.dev/ar/blog/soura-ila-prompt-funun-alaaab/"
+    }
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "أي نموذج AI هو الأفضل لفنون ألعاب الفيديو؟",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Leonardo AI هو الأفضل لفنون الألعاب بفضل نماذجه المتخصصة مثل Leonardo Kino و Leonardo Diffusion. Midjourney ممتاز لفن المفاهيم العام. Stable Diffusion مع Checkpoints مخصصة مثل DreamShaper يوفر مرونة عالية. اختر النموذج حسب نوع الفن المطلوب."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "كيف أحافظ على اتساق أسلوب الشخصيات عبر صور متعددة؟",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "استخرج البرومبت من صورة الشخصية الأساسية واحفظ الأوصاف الأسلوبية كقالب. استخدم نفس وصف الملامح والألوان في كل توليد. في Midjourney استخدم --sref لمرجع الأسلوب. في Stable Diffusion استخدم نفس Checkpoint والبذرة."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "هل يمكنني استخدام صور AI في تطوير ألعاب حقيقية؟",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "نعم، لكن مع تحفظات. صور AI ممتازة كمراجع ونماذج أولية وفن مفاهيمي. للاستخدام النهائي في اللعبة، استخدم Adobe Firefly للسلامة التجارية أو عدّل الصور المُنشأة يدوياً. تحقق دائماً من شروط الترخيص للنموذج المستخدم."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "ما هي أهم الكلمات المفتاحية لفنون الألعاب؟",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "أهم الكلمات: concept art, game art, character design, environment design, prop design, stylized, PBR texture, isometric view, low poly, pixel art, hand-painted texture. أضف اسم نوع اللعبة مثل RPG أو FPS للحصول على أسلوب مناسب."
+        }
+      }
+    ]
+  }
+  </script>
+    <!-- Google AdSense -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4499206373485728" crossorigin="anonymous"></script>
+    <!-- Web Push Notifications -->
+<script src="https://cdn.onesignal.com/sdks/web/v16/OneSignalSDK.page.js" defer></script>
+<script>
+  window.OneSignalDeferred = window.OneSignalDeferred || [];
+  OneSignalDeferred.push(async function(OneSignal) {
+    await OneSignal.init({
+      appId: "REPLACE_WITH_ONESIGNAL_APP_ID",
+      notifyButton: { enable: false }
+    });
+  });
+</script>
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="inner">
+      <a href="/ar/" class="site-logo"><img src="/favicon.svg" alt="ImageToPrompt" width="48" height="48"><div class="site-logo-text">ImageTo<span class="accent">Prompt</span><span class="site-logo-sub">&#1605;&#1608;&#1604;&#1617;&#1583; &#1576;&#1585;&#1608;&#1605;&#1576;&#1578; &#1605;&#1580;&#1575;&#1606;&#1610;</span></div></a>
+      <nav class="site-nav" aria-label="&#1575;&#1604;&#1578;&#1606;&#1602;&#1604; &#1575;&#1604;&#1585;&#1574;&#1610;&#1587;&#1610;">
+        <div class="nav-dropdown">
+          <button class="nav-dropdown-trigger" aria-haspopup="true" aria-expanded="false">Tools <span class="nav-chevron" aria-hidden="true">&#9660;</span></button>
+          <div class="nav-dropdown-menu" role="menu">
+            <div class="nav-mega-grid">
+              <div class="nav-mega-col">
+                <div class="nav-mega-heading">&#128444; IMAGE TOOLS</div>
+                <a href="/" role="menuitem" class="nav-mega-tool">Image to Prompt <span class="nav-mega-arrow">&#8594;</span></a>
+                <a href="/text-to-prompt/" role="menuitem" class="nav-mega-tool">Text to Prompt <span class="nav-mega-arrow">&#8594;</span></a>
+                <div class="nav-mega-models-label">Models</div>
+                <div class="nav-mega-models"><a href="/midjourney-prompt-generator/">Midjourney</a><span class="nav-dot">&#xB7;</span><a href="/stable-diffusion-prompt-generator/">SD</a></div>
+                <div class="nav-mega-models"><a href="/flux-prompt-generator/">Flux</a><span class="nav-dot">&#xB7;</span><a href="/dall-e-prompt-generator/">DALL&#xB7;E&#xA0;3</a></div>
+                <div class="nav-mega-models"><a href="/adobe-firefly-prompt-generator/">Firefly</a><span class="nav-dot">&#xB7;</span><a href="/leonardo-ai-prompt-generator/">Leonardo</a></div>
+                <div class="nav-mega-models"><a href="/ideogram-prompt-generator/">Ideogram</a></div>
+              </div>
+              <div class="nav-mega-divider" aria-hidden="true"></div>
+              <div class="nav-mega-col">
+                <div class="nav-mega-heading">&#127909; VIDEO TOOLS</div>
+                <a href="/?tab=image-to-video" role="menuitem" class="nav-mega-tool">Image to Video <span class="nav-mega-arrow">&#8594;</span></a>
+                <a href="/?tab=text-to-video" role="menuitem" class="nav-mega-tool">Text to Video <span class="nav-mega-arrow">&#8594;</span></a>
+                <div class="nav-mega-models-label">Models</div>
+                <div class="nav-mega-models"><a href="/veo-prompt-generator/">Veo</a><span class="nav-dot">&#xB7;</span><a href="/kling-prompt-generator/">Kling</a></div>
+                <div class="nav-mega-models"><a href="/runway-prompt-generator/">Runway</a><span class="nav-dot">&#xB7;</span><a href="/pika-prompt-generator/">Pika</a></div>
+                <div class="nav-mega-models"><a href="/luma-prompt-generator/">Luma</a><span class="nav-dot">&#xB7;</span><a href="/sora-prompt-generator/">Sora</a></div>
+                <div class="nav-mega-models"><a href="/minimax-prompt-generator/">Minimax</a><span class="nav-dot">&#xB7;</span><a href="/stable-video-prompt-generator/">Stable</a></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <a href="/ar/blog/">المدونة</a>#1575;>&#1575;&#1604;&#1605;&#1583;&#1608;&#1606;&#1577;</a>#1604;>&#1575;&#1604;&#1605;&#1583;&#1608;&#1606;&#1577;</a>#1605;>&#1575;&#1604;&#1605;&#1583;&#1608;&#1606;&#1577;</a>#1583;>&#1575;&#1604;&#1605;&#1583;&#1608;&#1606;&#1577;</a>#1608;>&#1575;&#1604;&#1605;&#1583;&#1608;&#1606;&#1577;</a>#1606;>&#1575;&#1604;&#1605;&#1583;&#1608;&#1606;&#1577;</a>#1577;</a>
+        <a href="/pricing/" class="nav-pill-pricing">Pricing</a>
+        <a href="/about/" class="nav-pill-about">About</a>
+        <a href="/ar/" class="nav-try-free">&#1580;&#1585;&#1617;&#1576; &#8594;</a>
+        <button id="theme-toggle" onclick="toggleTheme()" aria-label="Switch theme" title="Switch theme">&#9728;&#xFE0F;</button>
+  </nav>
+    </div>
+  </header>
+
+  <nav class="breadcrumb" aria-label="مسار التنقل">
+    <a href="/ar/">الرئيسية</a><span class="sep">›</span>
+    <a href="/ar/blog/">المدونة</a><span class="sep">›</span>
+    <span>تحويل الصور إلى برومبت لفنون الألعاب</span>
+  </nav>
+
+  <div class="page-wrapper">
+
+    <header class="article-header">
+      <p class="article-tag">فنون الألعاب</p>
+      <h1>تحويل الصور إلى برومبت لفنون ألعاب الفيديو</h1>
+      <div class="article-meta">
+        <span>مارس 2026</span>
+        <span class="dot">·</span>
+        <span>8 دقائق قراءة</span>
+        <span class="dot">·</span>
+        <span>Leonardo AI · Midjourney · Stable Diffusion</span>
+        <span class="dot">·</span>
+        <span>محدّث مارس 2026</span>
+      </div>
+    </header>
+
+    <div class="article-body">
+
+      <p>صناعة ألعاب الفيديو تستهلك كميات هائلة من الفن البصري — تصميم شخصيات وبيئات وأسلحة وعناصر وأيقونات وخرائط. الذكاء الاصطناعي يُسرّع هذه العملية بشكل كبير، خاصة في مراحل النمذجة الأولية وفن المفاهيم. لكن التحدي يكمن في الحصول على نتائج تتناسب مع أسلوب اللعبة المطلوب.</p>
+
+      <nav class="toc" aria-label="محتويات المقال">
+        <details open>
+          <summary>في هذا الدليل</summary>
+          <ol>
+            <li><a href="#game-art-types">أنواع فنون الألعاب</a></li>
+            <li><a href="#character-design">تصميم الشخصيات</a></li>
+            <li><a href="#environment-design">تصميم البيئات</a></li>
+            <li><a href="#prop-design">تصميم العناصر والأسلحة</a></li>
+            <li><a href="#art-styles">أساليب فن الألعاب</a></li>
+            <li><a href="#best-models">أفضل النماذج لفنون الألعاب</a></li>
+            <li><a href="#workflow">سير العمل الاحترافي</a></li>
+            <li><a href="#faq">أسئلة شائعة</a></li>
+          </ol>
+        </details>
+      </nav>
+
+      <p>في هذا الدليل، ستتعلم كيف تحوّل أي صورة فنية من لعبة إلى برومبت قابل لإعادة الاستخدام، وكيف تكتب برومبتات فعالة لكل نوع من فنون الألعاب.</p>
+
+      <h2 id="game-art-types">أنواع فنون الألعاب</h2>
+
+      <p>فنون ألعاب الفيديو تنقسم إلى عدة فئات رئيسية، كل منها يحتاج أسلوباً مختلفاً في كتابة البرومبتات:</p>
+
+      <ul>
+        <li><strong>فن المفاهيم (<span dir="ltr">Concept Art</span>):</strong> الرسومات الأولية التي تُحدد الاتجاه الفني للعبة</li>
+        <li><strong>تصميم الشخصيات (<span dir="ltr">Character Design</span>):</strong> تصاميم الأبطال والأعداء والشخصيات غير القابلة للعب</li>
+        <li><strong>تصميم البيئات (<span dir="ltr">Environment Design</span>):</strong> المراحل والعوالم والخلفيات</li>
+        <li><strong>تصميم العناصر (<span dir="ltr">Prop Design</span>):</strong> الأسلحة والأدوات والعناصر القابلة للجمع</li>
+        <li><strong>فن واجهة المستخدم (<span dir="ltr">UI Art</span>):</strong> الأيقونات والأزرار والقوائم</li>
+        <li><strong>الأنماط الملمسية (<span dir="ltr">Textures</span>):</strong> خامات الأسطح ثلاثية الأبعاد</li>
+      </ul>
+
+      <h2 id="character-design">تصميم الشخصيات</h2>
+
+      <p>تصميم الشخصيات هو أكثر أنواع فنون الألعاب طلباً. البرومبت الجيد لشخصية لعبة يتضمن:</p>
+
+      <h3>صفحة تصميم الشخصية</h3>
+      <pre dir="ltr">character design sheet, RPG warrior woman, full body front and side view, detailed armor design, leather and steel plates, red cape, battle-worn, fantasy art style, concept art, clean white background, multiple angles</pre>
+
+      <h3>بورتريه الشخصية</h3>
+      <pre dir="ltr">character portrait, elven ranger, pointed ears, green hood, weathered face with scars, forest green eyes, concept art style, dramatic lighting, painterly, detailed, artstation quality</pre>
+
+      <div class="callout">
+        <p><strong>نصيحة:</strong> لتوليد صفحة تصميم كاملة (Character Sheet)، أضف <code dir="ltr">character design sheet, multiple views, turnaround, clean background</code> إلى برومبتك. هذا يُوجّه النموذج لعرض الشخصية من زوايا متعددة.</p>
+      </div>
+
+      <h3>اتساق الشخصية عبر صور متعددة</h3>
+      <p>الحفاظ على اتساق شكل الشخصية عبر مشاهد مختلفة هو تحدٍّ رئيسي. إليك الحل:</p>
+      <ol>
+        <li>ارفع الصورة الأصلية للشخصية على <a href="/">ImageToPrompt</a></li>
+        <li>احفظ البرومبت المُستخرج — خاصة الأوصاف الجسدية</li>
+        <li>استخدم نفس الأوصاف الجسدية في كل مشهد جديد</li>
+        <li>غيّر البيئة والوضعية فقط مع الحفاظ على وصف الشخصية</li>
+      </ol>
+
+      <h2 id="environment-design">تصميم البيئات</h2>
+
+      <p>بيئات الألعاب تحتاج مقياساً ضخماً وأجواءً غامرة. الكلمات المفتاحية الأساسية:</p>
+
+      <pre dir="ltr">game environment concept art, massive underground cavern with bioluminescent crystals, ancient dwarven architecture, flowing lava rivers, misty atmosphere, volumetric lighting, epic scale, detailed, painterly style, trending on artstation</pre>
+
+      <h3>أنواع البيئات الشائعة في الألعاب</h3>
+      <ul>
+        <li><strong>الغابة الساحرة:</strong> أضف <code dir="ltr">enchanted forest, ancient trees, mystical fog, fairy lights, overgrown ruins</code></li>
+        <li><strong>المدينة المستقبلية:</strong> أضف <code dir="ltr">cyberpunk cityscape, neon lights, flying vehicles, towering skyscrapers, holographic billboards</code></li>
+        <li><strong>الصحراء:</strong> أضف <code dir="ltr">vast desert landscape, ancient ruins half-buried in sand, sandstorm in distance, warm golden light</code></li>
+        <li><strong>البحر العميق:</strong> أضف <code dir="ltr">underwater city, coral architecture, bioluminescent creatures, light rays penetrating water, mysterious depths</code></li>
+      </ul>
+
+      <h2 id="prop-design">تصميم العناصر والأسلحة</h2>
+
+      <p>تصميم العناصر يحتاج خلفية نظيفة وزوايا واضحة. البنية الأساسية:</p>
+
+      <pre dir="ltr">game prop design, legendary sword with glowing blue runes, ornate golden hilt, crystal embedded in guard, fantasy RPG weapon, clean white background, concept art, multiple angles, highly detailed</pre>
+
+      <h3>نصائح لتصميم العناصر</h3>
+      <ul>
+        <li>استخدم <code dir="ltr">clean background</code> أو <code dir="ltr">white background</code> للحصول على عنصر مفصول عن الخلفية</li>
+        <li>أضف <code dir="ltr">multiple angles</code> أو <code dir="ltr">orthographic view</code> لزوايا مختلفة</li>
+        <li>حدد المواد: <code dir="ltr">steel, leather, crystal, wood, bone</code></li>
+        <li>أضف تأثيرات سحرية: <code dir="ltr">glowing runes, magical aura, enchanted</code></li>
+      </ul>
+
+      <div class="cta-inline">
+        <p>حوّل أي رسمة concept art إلى برومبت في ثوانٍ.</p>
+        <a href="/" class="cta-btn-sm">جرّب مجاناً ←</a>
+      </div>
+
+      <h2 id="art-styles">أساليب فن الألعاب</h2>
+
+      <p>كل لعبة لها أسلوب فني مميز. إليك الأساليب الرئيسية وكلماتها المفتاحية:</p>
+
+      <ul>
+        <li><strong>واقعي (<span dir="ltr">Realistic</span>):</strong> <code dir="ltr">photorealistic, PBR, ray tracing, AAA game quality</code> — مثل The Last of Us وRed Dead Redemption</li>
+        <li><strong>مُنمَّق (<span dir="ltr">Stylized</span>):</strong> <code dir="ltr">stylized, hand-painted, vibrant colors, exaggerated proportions</code> — مثل Fortnite وOverwatch</li>
+        <li><strong>سيل شيدنج (<span dir="ltr">Cel-Shaded</span>):</strong> <code dir="ltr">cel shaded, flat colors, bold outlines, cartoon style</code> — مثل Zelda: Breath of the Wild</li>
+        <li><strong>بكسل آرت (<span dir="ltr">Pixel Art</span>):</strong> <code dir="ltr">pixel art, 16-bit, retro game style, limited color palette</code> — مثل Celeste وStardew Valley</li>
+        <li><strong>مائي (<span dir="ltr">Watercolor</span>):</strong> <code dir="ltr">watercolor painting, soft washes, bleeding edges, storybook quality</code> — مثل Okami</li>
+      </ul>
+
+      <h2 id="best-models">أفضل النماذج لفنون الألعاب</h2>
+
+      <div class="table-wrap">
+      <table class="comparison-table">
+        <thead>
+          <tr><th>النموذج</th><th>الأفضل لـ</th><th>الميزة الرئيسية</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Leonardo AI</td><td>تصميم الشخصيات والبيئات</td><td>نماذج متخصصة للألعاب</td></tr>
+          <tr><td>Midjourney</td><td>فن المفاهيم العام</td><td>جماليات عالية تلقائياً</td></tr>
+          <tr><td>Stable Diffusion</td><td>أساليب مخصصة</td><td>Checkpoints متخصصة</td></tr>
+          <tr><td>DALL-E 3</td><td>تصاميم واجهة المستخدم</td><td>نصوص مقروءة داخل الصور</td></tr>
+          <tr><td>Flux</td><td>مراجع واقعية</td><td>واقعية فوتوغرافية</td></tr>
+        </tbody>
+      </table>
+      </div>
+
+      <h2 id="workflow">سير العمل الاحترافي</h2>
+
+      <p>إليك كيف يستخدم مطورو الألعاب المحترفون تحويل الصور إلى برومبتات في سير عملهم:</p>
+
+      <ol>
+        <li><strong>جمع المراجع:</strong> اجمع صوراً من ألعاب بأسلوب مشابه لما تريده</li>
+        <li><strong>استخراج الأسلوب:</strong> ارفع كل صورة على ImageToPrompt لفهم مكوناتها</li>
+        <li><strong>بناء مكتبة برومبتات:</strong> نظّم البرومبتات المُستخرجة حسب الفئة (شخصيات، بيئات، عناصر)</li>
+        <li><strong>توليد التنويعات:</strong> استخدم البرومبتات لتوليد عشرات الخيارات لكل عنصر</li>
+        <li><strong>التنقيح:</strong> اختر الأفضل وعدّله يدوياً في Photoshop أو برنامج الرسم</li>
+        <li><strong>التوثيق:</strong> احفظ البرومبت النهائي مع الصورة المعتمدة كمرجع أسلوبي</li>
+      </ol>
+
+      <div class="cta-box">
+        <h3>حوّل أي فن لعبة إلى برومبت</h3>
+        <p>ارفع concept art أو لقطة شاشة من لعبة واحصل على برومبت مُحسَّن لـ Leonardo AI أو Midjourney أو SD.</p>
+        <a href="/?lang=ar" class="cta-btn">جرّب ImageToPrompt مجاناً ←</a>
+      </div>
+
+      <h2 id="faq">أسئلة شائعة</h2>
+
+      <h3>أي نموذج AI هو الأفضل لفنون ألعاب الفيديو؟</h3>
+      <p>Leonardo AI هو الأفضل لفنون الألعاب بفضل نماذجه المتخصصة مثل Leonardo Kino وLeonardo Diffusion. Midjourney ممتاز لفن المفاهيم العام بفضل جمالياته العالية. Stable Diffusion مع Checkpoints مخصصة مثل DreamShaper يوفر مرونة عالية وتحكماً تقنياً دقيقاً. اختر النموذج حسب نوع الفن المطلوب ومستوى التحكم الذي تحتاجه.</p>
+
+      <h3>كيف أحافظ على اتساق أسلوب الشخصيات عبر صور متعددة؟</h3>
+      <p>استخرج البرومبت من صورة الشخصية الأساسية باستخدام <a href="/">ImageToPrompt</a> واحفظ الأوصاف الأسلوبية كقالب. استخدم نفس وصف الملامح والألوان والملابس في كل توليد. في Midjourney استخدم <code dir="ltr">--sref</code> لمرجع الأسلوب. في Stable Diffusion استخدم نفس Checkpoint والبذرة (Seed) للحصول على نتائج متسقة.</p>
+
+      <h3>هل يمكنني استخدام صور AI في تطوير ألعاب حقيقية؟</h3>
+      <p>نعم، لكن مع تحفظات. صور AI ممتازة كمراجع ونماذج أولية وفن مفاهيمي في المراحل المبكرة من التطوير. للاستخدام النهائي في اللعبة المنشورة، استخدم Adobe Firefly للسلامة التجارية أو عدّل الصور المُنشأة يدوياً لتصبح أصلية. تحقق دائماً من شروط ترخيص النموذج المستخدم.</p>
+
+      <h3>ما هي أهم الكلمات المفتاحية لفنون الألعاب؟</h3>
+      <p>أهم الكلمات المفتاحية تشمل: <code dir="ltr">concept art</code>، <code dir="ltr">game art</code>، <code dir="ltr">character design</code>، <code dir="ltr">environment design</code>، <code dir="ltr">prop design</code>، <code dir="ltr">stylized</code>، <code dir="ltr">PBR texture</code>، <code dir="ltr">isometric view</code>، <code dir="ltr">low poly</code>، <code dir="ltr">pixel art</code>، <code dir="ltr">hand-painted texture</code>. أضف اسم نوع اللعبة مثل RPG أو FPS للحصول على أسلوب مناسب.</p>
+
+    </div>
+
+    <div class="author-bio">
+      <svg class="author-photo" width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="صورة المؤلف"><circle cx="32" cy="32" r="32" fill="#2a1f4e"/><circle cx="32" cy="26" r="11" fill="#7c6bc4"/><ellipse cx="32" cy="52" rx="18" ry="11" fill="#7c6bc4"/></svg>
+      <div class="author-info">
+        <p class="author-name">فريق ImageToPrompt</p>
+        <p class="author-desc">مهندسو برومبتات وفنانو ذكاء اصطناعي متخصصون في Midjourney و Stable Diffusion و Flux. نبني ImageToPrompt لجعل توليد الصور بالذكاء الاصطناعي في متناول الجميع.</p>
+        <a href="https://x.com/Ilyass14286541" class="author-link">تابعنا على X ←</a>
+      </div>
+    </div>
+
+    <div class="related-posts">
+      <h2>أدلة ذات صلة</h2>
+      <div class="related-grid">
+        <a href="/ar/blog/qamus-asalib-fan-ia/" class="related-card">
+          <p class="tag">مرجع</p>
+          <h3>قاموس أساليب فن الذكاء الاصطناعي</h3>
+        </a>
+        <a href="/ar/blog/soura-ila-prompt-anime/" class="related-card">
+          <p class="tag">أنيمي</p>
+          <h3>تحويل الصور إلى برومبت لفن الأنيمي</h3>
+        </a>
+        <a href="/ar/blog/dalil-prompts-midjourney-2026/" class="related-card">
+          <p class="tag">Midjourney</p>
+          <h3>دليل برومبتات Midjourney 2026</h3>
+        </a>
+        <a href="/ar/blog/handasa-prompts-fan-ia/" class="related-card">
+          <p class="tag">هندسة البرومبتات</p>
+          <h3>هندسة البرومبتات لفن الذكاء الاصطناعي</h3>
+        </a>
+      </div>
+    </div>
+
+  </div>
+
+  <footer class="footer-4col">
+    <div class="f4-inner">
+      <div class="f4-brand">
+        <img src="/favicon.svg" alt="ImageToPrompt" width="28" height="28">
+        <span class="f4-brand-name">ImageTo<span class="accent">Prompt</span></span>
+        <span class="f4-brand-sub">&mdash; Free AI Prompt Generator</span>
+      </div>
+      <div class="f4-grid">
+        <div class="f4-section">
+          <h4 class="f4-heading">Image Prompt Tools</h4>
+          <a href="/">Image to Prompt</a>
+          <a href="/text-to-prompt/">Text to Prompt</a>
+          <a href="/midjourney-prompt-generator/">Midjourney</a>
+          <a href="/stable-diffusion-prompt-generator/">Stable Diffusion</a>
+          <a href="/flux-prompt-generator/">Flux</a>
+          <a href="/dall-e-prompt-generator/">DALL-E 3</a>
+          <a href="/adobe-firefly-prompt-generator/">Adobe Firefly</a>
+          <a href="/leonardo-ai-prompt-generator/">Leonardo AI</a>
+          <a href="/ideogram-prompt-generator/">Ideogram</a>
+        </div>
+        <div class="f4-section">
+          <h4 class="f4-heading">Video Prompt Tools</h4>
+          <a href="/image-to-video-prompt/">Image to Video Prompt</a>
+          <a href="/text-to-video-prompt/">Text to Video Prompt</a>
+          <a href="/veo-prompt-generator/">Veo / Flow Studio</a>
+          <a href="/kling-prompt-generator/">Kling AI</a>
+          <a href="/runway-prompt-generator/">Runway Gen-3</a>
+          <a href="/pika-prompt-generator/">Pika</a>
+          <a href="/luma-prompt-generator/">Luma Dream Machine</a>
+          <a href="/sora-prompt-generator/">Sora</a>
+          <a href="/minimax-prompt-generator/">Minimax</a>
+          <a href="/stable-video-prompt-generator/">Stable Video</a>
+        </div>
+        <div class="f4-section">
+          <h4 class="f4-heading">Resources</h4>
+          <a href="/blog/">Blog</a>
+          <a href="/about/">About</a>
+          <a href="/pricing/">Pricing</a>
+          <a href="/contact/">Contact</a>
+          <a href="/privacy-policy/">Privacy Policy</a>
+          <a href="/terms-of-service/">Terms of Service</a>
+        </div>
+        <div class="f4-section">
+          <h4 class="f4-heading">Languages</h4>
+          <a href="/">English</a>
+          <a href="/fr/">Fran&#231;ais</a>
+          <a href="/ar/">&#1575;&#1604;&#1593;&#1585;&#1576;&#1610;&#1577;</a>
+          <a href="/es/">Espa&#241;ol</a>
+          <a href="/ko/">&#54620;&#44397;&#50612;</a>
+          <a href="/ja/">&#26085;&#26412;&#35486;</a>
+        </div>
+      </div>
+      <div class="f4-bottom">
+        <p>&#169; 2026 ImageToPrompt.dev &#8212; Free AI Prompt Generator</p>
+        <p>Your images are never stored. All analysis is ephemeral and private.</p>
+      </div>
+    </div>
+  </footer>
+
+<script src="/newsletter-inject.js" defer></script>
+<script src="/nav.js" defer></script>
+  <script>
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', function() {
+    navigator.serviceWorker.register('/sw.js')
+      .catch(function(err) { console.warn('SW registration failed:', err); });
+  });
+}
+</script>
+</body>
+</html>

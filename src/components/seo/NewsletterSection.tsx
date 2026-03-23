@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { useTranslation } from 'react-i18next';
 
 const STORAGE_KEY = 'imagetoprompt_newsletter_email';
 
@@ -7,6 +8,7 @@ function isValidEmail(email: string): boolean {
 }
 
 export default function NewsletterSection() {
+  const { t } = useTranslation();
   const [email, setEmail] = useState('');
   const [error, setError] = useState('');
   const [submitted, setSubmitted] = useState(() => {
@@ -20,7 +22,7 @@ export default function NewsletterSection() {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     if (!isValidEmail(email)) {
-      setError('Please enter a valid email address.');
+      setError(t('seo.newsletter.errorInvalid'));
       return;
     }
     setError('');
@@ -46,17 +48,17 @@ export default function NewsletterSection() {
           {submitted ? (
             <div className="space-y-2">
               <p className="font-grotesk text-2xl font-700 text-[var(--text-primary)]">
-                You&apos;re in! 🎉
+                {t('seo.newsletter.successTitle')} 🎉
               </p>
               <p className="font-inter text-sm text-[var(--text-secondary)]">
-                Check your inbox for your first prompt templates.
+                {t('seo.newsletter.successMessage')}
               </p>
             </div>
           ) : (
             <>
               <div className="mb-6 space-y-2">
                 <h2 className="font-grotesk text-2xl font-700 text-[var(--text-primary)] sm:text-3xl">
-                  Get{' '}
+                  {t('seo.newsletter.titlePrefix')}{' '}
                   <span
                     style={{
                       background: 'linear-gradient(135deg, var(--accent-lens), var(--accent-cyan))',
@@ -64,18 +66,18 @@ export default function NewsletterSection() {
                       WebkitTextFillColor: 'transparent',
                     }}
                   >
-                    10 Pro Prompt Templates
+                    {t('seo.newsletter.titleHighlight')}
                   </span>{' '}
-                  Every Week
+                  {t('seo.newsletter.titleSuffix')}
                 </h2>
                 <p className="font-inter text-sm text-[var(--text-secondary)]">
-                  Free. No spam. Unsubscribe anytime.
+                  {t('seo.newsletter.subtitle')}
                 </p>
               </div>
 
               <form onSubmit={handleSubmit} className="flex flex-col gap-3 sm:flex-row" noValidate>
                 <label htmlFor="newsletter-email" className="sr-only">
-                  Email address
+                  {t('seo.newsletter.emailLabel')}
                 </label>
                 <input
                   id="newsletter-email"
@@ -85,7 +87,7 @@ export default function NewsletterSection() {
                     setEmail(e.target.value);
                     if (error) setError('');
                   }}
-                  placeholder="your@email.com"
+                  placeholder={t('seo.newsletter.emailPlaceholder')}
                   autoComplete="email"
                   aria-describedby={error ? 'newsletter-error' : undefined}
                   className="flex-1 rounded-xl border border-[var(--border-subtle)] bg-[var(--bg-void)] px-4 py-3 font-inter text-sm text-[var(--text-primary)] placeholder-[var(--text-secondary)] outline-none transition-colors focus:border-[var(--accent-lens)]"
@@ -97,7 +99,7 @@ export default function NewsletterSection() {
                     background: 'linear-gradient(135deg, var(--accent-lens), var(--accent-cyan))',
                   }}
                 >
-                  Subscribe Free
+                  {t('seo.newsletter.subscribe')}
                 </button>
               </form>
 

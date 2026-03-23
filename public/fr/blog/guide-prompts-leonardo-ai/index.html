@@ -1,0 +1,500 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <script src="/theme-toggle.js"></script>
+  <meta charset="UTF-8" />
+  <link rel="dns-prefetch" href="https://www.googletagmanager.com">
+<link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="max-image-preview:large, index, follow">
+  <meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="ImageToPrompt">
+  <title>Guide des Prompts Leonardo AI : Art de Jeu et Design de Personnages</title>
+  <meta name="description" content="Maîtrisez Leonardo AI pour l'art de jeu et le design de personnages. Guide complet avec exemples de prompts, modèles personnalisés et vocabulaire artistique." />
+  <link rel="canonical" href="https://www.imagetoprompt.dev/fr/blog/guide-prompts-leonardo-ai/" />
+  <link rel="alternate" hreflang="fr" href="https://www.imagetoprompt.dev/fr/blog/guide-prompts-leonardo-ai/" />
+  <link rel="alternate" hreflang="en" href="https://www.imagetoprompt.dev/blog/leonardo-ai-prompt-guide/" />
+  <link rel="alternate" hreflang="ar" href="https://www.imagetoprompt.dev/ar/blog/dalil-prompts-leonardo-ai/" />
+  <link rel="alternate" hreflang="x-default" href="https://www.imagetoprompt.dev/blog/leonardo-ai-prompt-guide/" />
+  <meta property="og:title" content="Guide des Prompts Leonardo AI : Art de Jeu et Design de Personnages" />
+  <meta property="og:description" content="Maîtrisez Leonardo AI pour l'art de jeu et le design de personnages avec des prompts optimisés." />
+  <meta property="og:url" content="https://www.imagetoprompt.dev/fr/blog/guide-prompts-leonardo-ai/" />
+  <meta property="og:type" content="article" />
+  <meta property="og:image" content="https://www.imagetoprompt.dev/og-image.png" />
+  <meta property="og:site_name" content="ImageToPrompt" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Guide des Prompts Leonardo AI : Art de Jeu et Design de Personnages" />
+  <meta name="twitter:description" content="Maîtrisez Leonardo AI pour l'art de jeu et le design de personnages." />
+  <meta name="twitter:image" content="https://www.imagetoprompt.dev/og-image.png" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="48x48" href="/favicon-48.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+  <link rel="manifest" href="/site.webmanifest" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="/fonts/space-grotesk-700.woff2" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="/fonts/inter-400.woff2" />
+  <link rel="stylesheet" href="/theme.css">
+  <link rel="preload" href="/blog.css" as="style" onload="this.onload=null;this.rel='stylesheet'"><noscript><link rel="stylesheet" href="/blog.css"></noscript>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Guide des Prompts Leonardo AI : Art de Jeu et Design de Personnages",
+    "description": "Maîtrisez Leonardo AI pour l'art de jeu et le design de personnages avec des prompts optimisés.",
+    "image": "https://www.imagetoprompt.dev/og-image.png",
+    "datePublished": "2026-03-15",
+    "dateModified": "2026-03-22",
+    "inLanguage": "fr",
+    "author": {
+      "@type": "Person",
+      "name": "ImageToPrompt Team",
+      "url": "https://www.imagetoprompt.dev/"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "ImageToPrompt",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://www.imagetoprompt.dev/favicon.svg"
+      }
+    },
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https://www.imagetoprompt.dev/fr/blog/guide-prompts-leonardo-ai/"
+    }
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Quels sont les meilleurs modèles Leonardo AI pour l'art de jeu ?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Pour l'art de jeu, les modèles les plus performants sont Leonardo Diffusion XL pour les environnements réalistes, DreamShaper pour le concept art stylisé, et RPG v5 pour les personnages fantastiques. Le choix dépend du style visuel recherché : réaliste, semi-réaliste ou cartoon." }
+      },
+      {
+        "@type": "Question",
+        "name": "Comment créer des personnages cohérents avec Leonardo AI ?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Pour maintenir la cohérence d'un personnage, utilisez des descriptions détaillées incluant les traits physiques, les vêtements et les accessoires dans chaque prompt. Combinez cela avec le même modèle personnalisé et un seed fixe. La fonctionnalité de finetuning de Leonardo AI permet aussi d'entraîner un modèle sur votre personnage spécifique." }
+      },
+      {
+        "@type": "Question",
+        "name": "Quelle est la différence entre Leonardo AI et Midjourney pour le game art ?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Leonardo AI offre plus de contrôle technique avec ses modèles personnalisés, ses outils de finetuning et son API intégrée, ce qui le rend idéal pour les pipelines de production de jeux. Midjourney excelle dans la qualité artistique et l'esthétique cinématique, mais offre moins de contrôle granulaire sur le style." }
+      },
+      {
+        "@type": "Question",
+        "name": "Comment optimiser les prompts Leonardo AI pour le concept art ?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Structurez vos prompts en couches : commencez par le sujet principal, ajoutez le style artistique (concept art, digital painting), précisez l'éclairage et l'ambiance, puis terminez par les détails techniques comme la résolution et le ratio. Utilisez des termes comme environment concept, character design sheet ou prop design pour guider le modèle." }
+      }
+    ]
+  }
+  </script>
+    <!-- Google AdSense -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4499206373485728" crossorigin="anonymous"></script>
+    <!-- Web Push Notifications -->
+<script src="https://cdn.onesignal.com/sdks/web/v16/OneSignalSDK.page.js" defer></script>
+<script>
+  window.OneSignalDeferred = window.OneSignalDeferred || [];
+  OneSignalDeferred.push(async function(OneSignal) {
+    await OneSignal.init({
+      appId: "REPLACE_WITH_ONESIGNAL_APP_ID",
+      notifyButton: { enable: false }
+    });
+  });
+</script>
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="inner">
+      <a href="/fr/" class="site-logo"><img src="/favicon.svg" alt="ImageToPrompt" width="48" height="48"><div class="site-logo-text">ImageTo<span class="accent">Prompt</span><span class="site-logo-sub">G&#233;n&#233;rateur de Prompts IA Gratuit</span></div></a>
+      <nav class="site-nav" aria-label="Navigation principale">
+        <div class="nav-dropdown">
+          <button class="nav-dropdown-trigger" aria-haspopup="true" aria-expanded="false">Tools <span class="nav-chevron" aria-hidden="true">&#9660;</span></button>
+          <div class="nav-dropdown-menu" role="menu">
+            <div class="nav-mega-grid">
+              <div class="nav-mega-col">
+                <div class="nav-mega-heading">&#128444; IMAGE TOOLS</div>
+                <a href="/" role="menuitem" class="nav-mega-tool">Image to Prompt <span class="nav-mega-arrow">&#8594;</span></a>
+                <a href="/text-to-prompt/" role="menuitem" class="nav-mega-tool">Text to Prompt <span class="nav-mega-arrow">&#8594;</span></a>
+                <div class="nav-mega-models-label">Models</div>
+                <div class="nav-mega-models"><a href="/midjourney-prompt-generator/">Midjourney</a><span class="nav-dot">&#xB7;</span><a href="/stable-diffusion-prompt-generator/">SD</a></div>
+                <div class="nav-mega-models"><a href="/flux-prompt-generator/">Flux</a><span class="nav-dot">&#xB7;</span><a href="/dall-e-prompt-generator/">DALL&#xB7;E&#xA0;3</a></div>
+                <div class="nav-mega-models"><a href="/adobe-firefly-prompt-generator/">Firefly</a><span class="nav-dot">&#xB7;</span><a href="/leonardo-ai-prompt-generator/">Leonardo</a></div>
+                <div class="nav-mega-models"><a href="/ideogram-prompt-generator/">Ideogram</a></div>
+              </div>
+              <div class="nav-mega-divider" aria-hidden="true"></div>
+              <div class="nav-mega-col">
+                <div class="nav-mega-heading">&#127909; VIDEO TOOLS</div>
+                <a href="/?tab=image-to-video" role="menuitem" class="nav-mega-tool">Image to Video <span class="nav-mega-arrow">&#8594;</span></a>
+                <a href="/?tab=text-to-video" role="menuitem" class="nav-mega-tool">Text to Video <span class="nav-mega-arrow">&#8594;</span></a>
+                <div class="nav-mega-models-label">Models</div>
+                <div class="nav-mega-models"><a href="/veo-prompt-generator/">Veo</a><span class="nav-dot">&#xB7;</span><a href="/kling-prompt-generator/">Kling</a></div>
+                <div class="nav-mega-models"><a href="/runway-prompt-generator/">Runway</a><span class="nav-dot">&#xB7;</span><a href="/pika-prompt-generator/">Pika</a></div>
+                <div class="nav-mega-models"><a href="/luma-prompt-generator/">Luma</a><span class="nav-dot">&#xB7;</span><a href="/sora-prompt-generator/">Sora</a></div>
+                <div class="nav-mega-models"><a href="/minimax-prompt-generator/">Minimax</a><span class="nav-dot">&#xB7;</span><a href="/stable-video-prompt-generator/">Stable</a></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <a href="/fr/blog/" >Blog</a>
+        <a href="/pricing/" class="nav-pill-pricing">Pricing</a>
+        <a href="/about/" class="nav-pill-about">About</a>
+        <a href="/fr/" class="nav-try-free">Essayer &#8594;</a>
+        <button id="theme-toggle" onclick="toggleTheme()" aria-label="Switch theme" title="Switch theme">&#9728;&#xFE0F;</button>
+  </nav>
+    </div>
+  </header>
+
+  <nav class="breadcrumb" aria-label="Fil d'Ariane">
+    <a href="/fr/">Accueil</a><span class="sep">›</span>
+    <a href="/fr/blog/">Blog</a><span class="sep">›</span>
+    <span>Guide Prompts Leonardo AI</span>
+  </nav>
+
+  <div class="page-wrapper">
+
+    <header class="article-header">
+      <p class="article-tag">Leonardo AI</p>
+      <h1>Guide Complet des Prompts Leonardo AI</h1>
+      <div class="article-meta">
+        <span>Mars 2026</span>
+        <span class="dot">·</span>
+        <span>10 min de lecture</span>
+        <span class="dot">·</span>
+        <span>Leonardo AI · Game Art · Character Design</span>
+        <span class="dot">·</span>
+        <span>Mis à jour mars 2026</span>
+      </div>
+    </header>
+
+    <div class="article-body">
+
+      <p>Leonardo AI s'est rapidement imposé comme l'un des générateurs d'images IA les plus puissants pour l'art de jeu et le design de personnages. Contrairement à d'autres outils comme Midjourney ou DALL-E 3, Leonardo AI offre un contrôle granulaire sur les modèles, les styles et les paramètres de génération, ce qui en fait un choix privilégié pour les artistes de jeux vidéo et les designers de personnages professionnels.</p>
+
+      <nav class="toc" aria-label="Sommaire">
+        <details open>
+          <summary>Dans ce guide</summary>
+          <ol>
+            <li><a href="#pourquoi-leonardo-ai">Pourquoi Choisir Leonardo AI pour l'Art de Jeu ?</a></li>
+            <li><a href="#structure-prompts">Structure des Prompts Leonardo AI</a></li>
+            <li><a href="#modeles-personnalises">Modèles Personnalisés et Finetuning</a></li>
+            <li><a href="#game-art">Prompts pour l'Art de Jeu</a></li>
+            <li><a href="#character-design">Design de Personnages</a></li>
+            <li><a href="#vocabulaire-artistique">Vocabulaire Artistique Essentiel</a></li>
+            <li><a href="#parametres-avances">Paramètres Avancés</a></li>
+            <li><a href="#erreurs-a-eviter">Erreurs à Éviter</a></li>
+            <li><a href="#questions-frequentes">Questions Fréquentes</a></li>
+          </ol>
+        </details>
+      </nav>
+
+      <p>Dans ce guide, vous découvrirez comment structurer vos prompts Leonardo AI pour obtenir des résultats professionnels en art de jeu et en design de personnages. Nous couvrirons les modèles personnalisés, le vocabulaire artistique spécifique et les techniques avancées que les studios de développement utilisent au quotidien.</p>
+
+      <div class="callout">
+        <p><strong>Astuce rapide :</strong> Vous pouvez générer des prompts Leonardo AI optimisés automatiquement avec notre <a href="/leonardo-ai-prompt-generator/">Générateur de Prompts Leonardo AI</a>. Téléchargez une image de référence et obtenez un prompt prêt à l'emploi en quelques secondes.</p>
+      </div>
+
+      <h2 id="pourquoi-leonardo-ai">Pourquoi Choisir Leonardo AI pour l'Art de Jeu ?</h2>
+
+      <p>Leonardo AI se distingue des autres générateurs d'images IA par plusieurs caractéristiques essentielles pour la production de jeux vidéo :</p>
+
+      <ul>
+        <li><strong>Modèles spécialisés :</strong> Des modèles comme RPG v5, DreamShaper et Leonardo Diffusion XL sont spécifiquement entraînés sur l'art fantastique, le concept art et les assets de jeu</li>
+        <li><strong>Finetuning personnalisé :</strong> Entraînez vos propres modèles sur votre style artistique pour maintenir la cohérence visuelle de votre projet</li>
+        <li><strong>API intégrée :</strong> Automatisez la génération d'assets directement dans votre pipeline de production</li>
+        <li><strong>Contrôle de la guidance :</strong> Ajustez finement le CFG scale et le nombre de steps pour équilibrer créativité et fidélité au prompt</li>
+        <li><strong>Alchemy et PhotoReal :</strong> Des modes avancés qui améliorent considérablement la qualité de sortie pour les cas d'utilisation professionnels</li>
+      </ul>
+
+      <h2 id="structure-prompts">Structure des Prompts Leonardo AI</h2>
+
+      <p>Un prompt Leonardo AI efficace suit une structure en couches. Chaque couche ajoute de la spécificité sans introduire d'ambiguïté :</p>
+
+      <h3>Couche 1 : Le sujet principal</h3>
+      <p>Commencez toujours par le sujet principal de votre image. Soyez précis et descriptif.</p>
+      <div class="code-block"><code>a fierce dragon knight standing on a cliff edge, full body view, dynamic pose</code></div>
+
+      <h3>Couche 2 : Le style artistique</h3>
+      <p>Ajoutez le style visuel souhaité. Leonardo AI répond particulièrement bien aux termes de concept art et de game art.</p>
+      <div class="code-block"><code>concept art style, digital painting, artstation trending, highly detailed</code></div>
+
+      <h3>Couche 3 : L'éclairage et l'ambiance</h3>
+      <p>L'éclairage transforme radicalement l'impact d'une image. Précisez la direction, l'intensité et la température de la lumière.</p>
+      <div class="code-block"><code>dramatic rim lighting, volumetric fog, golden hour atmosphere, cinematic lighting</code></div>
+
+      <h3>Couche 4 : Les détails techniques</h3>
+      <p>Terminez avec les spécifications techniques qui influencent la qualité de rendu.</p>
+      <div class="code-block"><code>8k resolution, ultra detailed, sharp focus, professional illustration</code></div>
+
+      <h3>Prompt complet assemblé</h3>
+      <div class="code-block"><code>a fierce dragon knight standing on a cliff edge, full body view, dynamic pose, concept art style, digital painting, artstation trending, highly detailed, dramatic rim lighting, volumetric fog, golden hour atmosphere, cinematic lighting, 8k resolution, ultra detailed, sharp focus, professional illustration</code></div>
+
+      <h2 id="modeles-personnalises">Modèles Personnalisés et Finetuning</h2>
+
+      <p>L'un des atouts majeurs de Leonardo AI est la possibilité d'entraîner des modèles personnalisés. Cette fonctionnalité est particulièrement utile pour les studios de jeux qui ont besoin de maintenir une direction artistique cohérente sur des centaines d'assets.</p>
+
+      <h3>Choisir le bon modèle de base</h3>
+
+      <div class="table-wrap">
+      <table class="comparison-table">
+        <thead>
+          <tr>
+            <th>Modèle</th>
+            <th>Meilleur pour</th>
+            <th>Style</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Leonardo Diffusion XL</td>
+            <td>Environnements réalistes, textures</td>
+            <td>Photoréaliste</td>
+          </tr>
+          <tr>
+            <td>DreamShaper v7</td>
+            <td>Concept art, illustrations</td>
+            <td>Semi-réaliste</td>
+          </tr>
+          <tr>
+            <td>RPG v5</td>
+            <td>Personnages fantastiques, créatures</td>
+            <td>Fantasy/RPG</td>
+          </tr>
+          <tr>
+            <td>Absolute Reality</td>
+            <td>Portraits réalistes, photographies</td>
+            <td>Ultra-réaliste</td>
+          </tr>
+          <tr>
+            <td>Anime Pastel Dream</td>
+            <td>Art anime, illustrations manga</td>
+            <td>Anime/Manga</td>
+          </tr>
+        </tbody>
+      </table>
+      </div>
+
+      <p>Le finetuning nécessite entre 10 et 30 images de haute qualité dans le style souhaité. Utilisez des images cohérentes en termes de style, de palette de couleurs et de composition pour obtenir les meilleurs résultats.</p>
+
+      <h2 id="game-art">Prompts pour l'Art de Jeu</h2>
+
+      <p>L'art de jeu couvre un large éventail d'assets : environnements, personnages, objets, interfaces, textures et effets visuels. Voici des structures de prompts optimisées pour chaque type.</p>
+
+      <h3>Environnements et décors</h3>
+      <div class="code-block"><code>mystical enchanted forest clearing with ancient stone ruins, bioluminescent mushrooms and floating particles, lush vegetation, game environment concept art, top-down isometric view, vibrant color palette, hand-painted style, detailed foliage</code></div>
+
+      <h3>Props et objets de jeu</h3>
+      <div class="code-block"><code>legendary enchanted sword with glowing blue runes, ornate golden hilt with dragon motif, magical aura effect, game item icon, centered composition, dark background, clean edges, RPG weapon design, highly detailed metalwork</code></div>
+
+      <h3>Textures et matériaux</h3>
+      <div class="code-block"><code>seamless tileable stone wall texture, medieval castle brick pattern, moss and weathering details, PBR material, diffuse map style, even lighting, no shadows, game texture asset, 2048x2048</code></div>
+
+      <h2 id="character-design">Design de Personnages</h2>
+
+      <p>Le design de personnages avec Leonardo AI demande une attention particulière à la cohérence et au détail. Voici les techniques utilisées par les professionnels.</p>
+
+      <h3>Feuilles de personnages (character sheets)</h3>
+      <p>Les character sheets sont essentielles pour définir un personnage sous plusieurs angles. Utilisez cette structure de prompt :</p>
+      <div class="code-block"><code>character design sheet, multiple views, front view, side view, back view, 3/4 view, female elf ranger, leather armor with emerald accents, braided silver hair, pointed ears, athletic build, full body, white background, clean lines, concept art style, consistent design</code></div>
+
+      <h3>Portraits de personnages</h3>
+      <div class="code-block"><code>portrait of a battle-scarred orc warlord, fierce expression, tribal war paint, tusks, heavy plate armor with tribal engravings, dramatic chiaroscuro lighting, fantasy character portrait, oil painting style, rich color palette, highly detailed skin texture</code></div>
+
+      <h3>Personnages en action</h3>
+      <div class="code-block"><code>dynamic action pose, cyberpunk street samurai leaping through neon-lit rain, katana drawn, cybernetic arm glowing, motion blur on background, dramatic low angle shot, sci-fi character illustration, anime-influenced style</code></div>
+
+      <div class="cta-inline">
+        <p>Besoin d'un prompt Leonardo AI pour reproduire un style existant ? Téléchargez votre image de référence et obtenez un prompt optimisé.</p>
+        <a href="/leonardo-ai-prompt-generator/" class="cta-btn-sm">Générateur Leonardo AI →</a>
+      </div>
+
+      <h2 id="vocabulaire-artistique">Vocabulaire Artistique Essentiel</h2>
+
+      <p>Maîtriser le vocabulaire artistique est la clé pour obtenir des résultats précis avec Leonardo AI. Voici les termes les plus utiles organisés par catégorie.</p>
+
+      <h3>Styles de rendu</h3>
+      <ul>
+        <li><strong>Concept art :</strong> Style de pré-production utilisé dans les studios de jeux et de films</li>
+        <li><strong>Digital painting :</strong> Peinture numérique avec des coups de pinceau visibles</li>
+        <li><strong>Cel-shading :</strong> Rendu plat avec des contours marqués, style bande dessinée</li>
+        <li><strong>Photorealistic render :</strong> Rendu indiscernable d'une photographie</li>
+        <li><strong>Low poly :</strong> Style géométrique simplifié, populaire dans les jeux indie</li>
+        <li><strong>Pixel art :</strong> Style rétro en pixels, parfait pour les jeux 2D</li>
+      </ul>
+
+      <h3>Termes d'éclairage</h3>
+      <ul>
+        <li><strong>Rim lighting :</strong> Lumière qui souligne les contours du sujet</li>
+        <li><strong>Volumetric lighting :</strong> Rayons de lumière visibles traversant l'atmosphère</li>
+        <li><strong>Ambient occlusion :</strong> Ombres douces dans les creux et les coins</li>
+        <li><strong>Subsurface scattering :</strong> Lumière qui traverse des matériaux translucides comme la peau</li>
+        <li><strong>Global illumination :</strong> Éclairage réaliste avec rebonds de lumière</li>
+      </ul>
+
+      <h3>Termes de composition</h3>
+      <ul>
+        <li><strong>Dynamic pose :</strong> Personnage en mouvement ou en action</li>
+        <li><strong>Hero shot :</strong> Angle bas qui donne un aspect imposant au sujet</li>
+        <li><strong>Establishing shot :</strong> Vue large qui présente l'environnement complet</li>
+        <li><strong>Close-up :</strong> Cadrage serré sur le visage ou un détail spécifique</li>
+      </ul>
+
+      <h2 id="parametres-avances">Paramètres Avancés</h2>
+
+      <p>Au-delà du prompt textuel, Leonardo AI offre plusieurs paramètres qui influencent directement la qualité et le style des images générées.</p>
+
+      <h3>Guidance Scale (CFG)</h3>
+      <p>Le Guidance Scale contrôle la fidélité de l'image au prompt. Une valeur basse (3-5) donne plus de liberté créative au modèle, tandis qu'une valeur élevée (10-15) suit le prompt plus littéralement. Pour l'art de jeu, une valeur entre 7 et 9 offre généralement le meilleur équilibre.</p>
+
+      <h3>Nombre de steps</h3>
+      <p>Plus de steps signifie plus de détails mais aussi plus de temps de génération. Pour les brouillons rapides, 20-30 steps suffisent. Pour les assets finaux, montez à 40-60 steps pour obtenir un maximum de détails.</p>
+
+      <h3>Alchemy et PhotoReal</h3>
+      <p>Le mode Alchemy améliore significativement la cohérence anatomique et les détails fins. PhotoReal ajoute un réalisme photographique aux sorties. Ces deux modes consomment plus de tokens mais produisent des résultats nettement supérieurs pour les cas d'utilisation professionnels.</p>
+
+      <h3>Prompt négatif</h3>
+      <p>Le prompt négatif est aussi important que le prompt principal dans Leonardo AI. Utilisez-le pour éliminer les artefacts courants :</p>
+      <div class="code-block"><code>blurry, low quality, deformed, bad anatomy, extra limbs, watermark, text, signature, cropped, out of frame, worst quality, low resolution, ugly, duplicate</code></div>
+
+      <h2 id="erreurs-a-eviter">Erreurs à Éviter</h2>
+
+      <ol class="mistakes-list">
+        <li><strong>Utiliser le mauvais modèle pour le style souhaité.</strong> Un modèle réaliste ne produira pas de bon pixel art, et inversement. Choisissez le modèle de base adapté à votre direction artistique avant de rédiger le prompt.</li>
+        <li><strong>Surcharger le prompt avec trop de descripteurs.</strong> Un prompt de 200 mots noie les éléments importants. Limitez-vous à 50-80 mots bien choisis et utilisez le prompt négatif pour exclure ce que vous ne voulez pas.</li>
+        <li><strong>Ignorer les paramètres de guidance.</strong> Le CFG scale par défaut n'est pas toujours optimal pour votre cas d'utilisation. Expérimentez avec différentes valeurs pour trouver le point idéal entre fidélité et créativité.</li>
+        <li><strong>Ne pas utiliser le prompt négatif.</strong> Sans prompt négatif, vous laissez le modèle libre de produire des artefacts, des déformations et des éléments non souhaités. Toujours inclure au minimum les exclusions de base pour la qualité.</li>
+        <li><strong>Oublier la composition et l'angle de vue.</strong> Un personnage sans indication de pose ou de cadrage sera rendu de manière imprévisible. Précisez toujours full body, portrait, close-up ou l'angle souhaité.</li>
+      </ol>
+
+      <div class="cta-box">
+        <h3>Générez des Prompts Leonardo AI Optimisés</h3>
+        <p>Téléchargez une image de référence et obtenez un prompt Leonardo AI prêt à l'emploi, formaté avec le vocabulaire artistique adapté.</p>
+        <a href="/leonardo-ai-prompt-generator/" class="cta-btn">Essayer le Générateur Leonardo AI →</a>
+      </div>
+
+      <h2 id="questions-frequentes">Questions Fréquentes</h2>
+
+      <h3>Quels sont les meilleurs modèles Leonardo AI pour l'art de jeu ?</h3>
+      <p>Pour l'art de jeu, les modèles les plus performants sont Leonardo Diffusion XL pour les environnements réalistes, DreamShaper pour le concept art stylisé, et RPG v5 pour les personnages fantastiques. Le choix dépend du style visuel recherché : réaliste, semi-réaliste ou cartoon.</p>
+
+      <h3>Comment créer des personnages cohérents avec Leonardo AI ?</h3>
+      <p>Pour maintenir la cohérence d'un personnage, utilisez des descriptions détaillées incluant les traits physiques, les vêtements et les accessoires dans chaque prompt. Combinez cela avec le même modèle personnalisé et un seed fixe. La fonctionnalité de finetuning de Leonardo AI permet aussi d'entraîner un modèle sur votre personnage spécifique.</p>
+
+      <h3>Quelle est la différence entre Leonardo AI et Midjourney pour le game art ?</h3>
+      <p>Leonardo AI offre plus de contrôle technique avec ses modèles personnalisés, ses outils de finetuning et son API intégrée, ce qui le rend idéal pour les pipelines de production de jeux. Midjourney excelle dans la qualité artistique et l'esthétique cinématique, mais offre moins de contrôle granulaire sur le style.</p>
+
+      <h3>Comment optimiser les prompts Leonardo AI pour le concept art ?</h3>
+      <p>Structurez vos prompts en couches : commencez par le sujet principal, ajoutez le style artistique (concept art, digital painting), précisez l'éclairage et l'ambiance, puis terminez par les détails techniques comme la résolution et le ratio. Utilisez des termes comme <code>environment concept</code>, <code>character design sheet</code> ou <code>prop design</code> pour guider le modèle.</p>
+
+    </div>
+
+    <div class="author-bio">
+      <svg class="author-photo" width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="Avatar de l'auteur"><circle cx="32" cy="32" r="32" fill="#2a1f4e"/><circle cx="32" cy="26" r="11" fill="#7c6bc4"/><ellipse cx="32" cy="52" rx="18" ry="11" fill="#7c6bc4"/></svg>
+      <div class="author-info">
+        <p class="author-name">ImageToPrompt Team</p>
+        <p class="author-desc">Ingénieurs de prompts et artistes IA spécialisés dans Midjourney, Stable Diffusion et Flux. Nous construisons ImageToPrompt pour rendre la génération d'images IA accessible à tous.</p>
+        <a href="https://x.com/Ilyass14286541" class="author-link">Suivre sur X →</a>
+      </div>
+    </div>
+
+    <div class="related-posts">
+      <h2>Guides Associés</h2>
+      <div class="related-grid">
+        <a href="/fr/blog/guide-prompts-midjourney-2026/" class="related-card">
+          <p class="tag">Midjourney</p>
+          <h3>Guide Complet des Prompts Midjourney 2026</h3>
+        </a>
+        <a href="/fr/blog/guide-prompts-stable-diffusion/" class="related-card">
+          <p class="tag">Stable Diffusion</p>
+          <h3>Guide des Prompts Stable Diffusion</h3>
+        </a>
+        <a href="/fr/blog/prompt-engineering-art-ia-debutants/" class="related-card">
+          <p class="tag">Débutant</p>
+          <h3>Le Prompt Engineering pour l'Art IA</h3>
+        </a>
+        <a href="/fr/blog/erreurs-prompt-engineering/" class="related-card">
+          <p class="tag">Erreurs</p>
+          <h3>15 Erreurs de Prompt Engineering à Éviter</h3>
+        </a>
+      </div>
+    </div>
+
+  </div>
+
+  <footer class="footer-4col">
+    <div class="f4-inner">
+      <div class="f4-brand">
+        <img src="/favicon.svg" alt="ImageToPrompt" width="28" height="28">
+        <span class="f4-brand-name">ImageTo<span class="accent">Prompt</span></span>
+        <span class="f4-brand-sub">&mdash; Free AI Prompt Generator</span>
+      </div>
+      <div class="f4-grid">
+        <div class="f4-section">
+          <h4 class="f4-heading">Image Prompt Tools</h4>
+          <a href="/">Image to Prompt</a>
+          <a href="/text-to-prompt/">Text to Prompt</a>
+          <a href="/midjourney-prompt-generator/">Midjourney</a>
+          <a href="/stable-diffusion-prompt-generator/">Stable Diffusion</a>
+          <a href="/flux-prompt-generator/">Flux</a>
+          <a href="/dall-e-prompt-generator/">DALL-E 3</a>
+          <a href="/adobe-firefly-prompt-generator/">Adobe Firefly</a>
+          <a href="/leonardo-ai-prompt-generator/">Leonardo AI</a>
+          <a href="/ideogram-prompt-generator/">Ideogram</a>
+        </div>
+        <div class="f4-section">
+          <h4 class="f4-heading">Video Prompt Tools</h4>
+          <a href="/image-to-video-prompt/">Image to Video Prompt</a>
+          <a href="/text-to-video-prompt/">Text to Video Prompt</a>
+          <a href="/veo-prompt-generator/">Veo / Flow Studio</a>
+          <a href="/kling-prompt-generator/">Kling AI</a>
+          <a href="/runway-prompt-generator/">Runway Gen-3</a>
+          <a href="/pika-prompt-generator/">Pika</a>
+          <a href="/luma-prompt-generator/">Luma Dream Machine</a>
+          <a href="/sora-prompt-generator/">Sora</a>
+          <a href="/minimax-prompt-generator/">Minimax</a>
+          <a href="/stable-video-prompt-generator/">Stable Video</a>
+        </div>
+        <div class="f4-section">
+          <h4 class="f4-heading">Resources</h4>
+          <a href="/blog/">Blog</a>
+          <a href="/about/">About</a>
+          <a href="/pricing/">Pricing</a>
+          <a href="/contact/">Contact</a>
+          <a href="/privacy-policy/">Privacy Policy</a>
+          <a href="/terms-of-service/">Terms of Service</a>
+        </div>
+        <div class="f4-section">
+          <h4 class="f4-heading">Languages</h4>
+          <a href="/">English</a>
+          <a href="/fr/">Fran&#231;ais</a>
+          <a href="/ar/">&#1575;&#1604;&#1593;&#1585;&#1576;&#1610;&#1577;</a>
+          <a href="/es/">Espa&#241;ol</a>
+          <a href="/ko/">&#54620;&#44397;&#50612;</a>
+          <a href="/ja/">&#26085;&#26412;&#35486;</a>
+        </div>
+      </div>
+      <div class="f4-bottom">
+        <p>&#169; 2026 ImageToPrompt.dev &#8212; Free AI Prompt Generator</p>
+        <p>Your images are never stored. All analysis is ephemeral and private.</p>
+      </div>
+    </div>
+  </footer>
+
+<script src="/newsletter-inject.js" defer></script>
+<script src="/nav.js" defer></script>
+  <script>
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', function() {
+    navigator.serviceWorker.register('/sw.js')
+      .catch(function(err) { console.warn('SW registration failed:', err); });
+  });
+}
+</script>
+</body>
+</html>

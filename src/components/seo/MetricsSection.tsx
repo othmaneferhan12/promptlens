@@ -1,10 +1,11 @@
 import { useEffect, useRef, useState } from 'react';
+import { useTranslation } from 'react-i18next';
 
 // ── Update these numbers manually as your site grows ──────────────────────────
 const METRICS = [
-  { value: 15000, suffix: '+', label: 'Prompts Generated' },
-  { value: 7,     suffix: '',  label: 'AI Models Supported' },
-  { value: 4200,  suffix: '+', label: 'Creators Served' },
+  { value: 15000, suffix: '+', labelKey: 'seo.metrics.promptsGenerated' },
+  { value: 7,     suffix: '',  labelKey: 'seo.metrics.modelsSupported' },
+  { value: 4200,  suffix: '+', labelKey: 'seo.metrics.creatorsServed' },
 ] as const;
 // ─────────────────────────────────────────────────────────────────────────────
 
@@ -72,6 +73,7 @@ function MetricCard({ value, suffix, label, active, index }: MetricCardProps) {
 }
 
 export default function MetricsSection() {
+  const { t } = useTranslation();
   const ref = useRef<HTMLDivElement>(null);
   const [active, setActive] = useState(false);
 
@@ -95,7 +97,7 @@ export default function MetricsSection() {
     <section ref={ref} aria-label="Usage statistics" className="relative mx-auto max-w-5xl px-4 pb-8 sm:px-6">
       <div className="flex flex-col gap-4 sm:flex-row">
         {METRICS.map((m, i) => (
-          <MetricCard key={m.label} value={m.value} suffix={m.suffix} label={m.label} active={active} index={i} />
+          <MetricCard key={m.labelKey} value={m.value} suffix={m.suffix} label={t(m.labelKey)} active={active} index={i} />
         ))}
       </div>
     </section>

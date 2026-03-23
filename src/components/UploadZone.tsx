@@ -1,4 +1,5 @@
 import { useState, useCallback } from 'react';
+import { useTranslation } from 'react-i18next';
 import { useDropzone } from 'react-dropzone';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Upload, Link, Clipboard, X, RefreshCw, AlertCircle } from 'lucide-react';
@@ -15,6 +16,7 @@ interface UploadZoneProps {
 }
 
 export default function UploadZone({ onImageReady, onClear, currentImage }: UploadZoneProps) {
+  const { t } = useTranslation();
   const [activeTab, setActiveTab] = useState<Tab>('file');
   const [urlInput, setUrlInput] = useState('');
   const [isProcessing, setIsProcessing] = useState(false);
@@ -27,7 +29,7 @@ export default function UploadZone({ onImageReady, onClear, currentImage }: Uplo
       try {
         const validation = await validateImageFile(file);
         if (!validation.valid) {
-          setError(validation.error ?? 'Invalid file.');
+          setError(validation.error ?? t('upload.invalidFile'));
           return;
         }
         const compressed = await compressImage(file);
@@ -45,12 +47,12 @@ export default function UploadZone({ onImageReady, onClear, currentImage }: Uplo
           source,
         });
       } catch (e) {
-        setError(e instanceof Error ? e.message : 'Failed to process image.');
+        setError(e instanceof Error ? e.message : t('upload.processError'));
       } finally {
         setIsProcessing(false);
       }
     },
-    [onImageReady]
+    [onImageReady, t]
   );
 
   const onDrop = useCallback(
@@ -95,7 +97,7 @@ export default function UploadZone({ onImageReady, onClear, currentImage }: Uplo
       });
       setUrlInput('');
     } catch {
-      setError('Failed to load image from URL. Check the URL and try again.');
+      setError(t('upload.urlError'));
     } finally {
       setIsProcessing(false);
     }
@@ -115,18 +117,18 @@ export default function UploadZone({ onImageReady, onClear, currentImage }: Uplo
           return;
         }
       }
-      setError('No image found in clipboard. Copy an image first.');
+      setError(t('upload.noClipboard'));
     } catch {
-      setError('Could not access clipboard. Use Ctrl+V to paste an image.');
+      setError(t('upload.clipboardError'));
     } finally {
       setIsProcessing(false);
     }
-  }, [processFile]);
+  }, [processFile, t]);
 
   const TABS = [
-    { id: 'file' as Tab, label: 'File Upload', icon: Upload },
-    { id: 'url' as Tab, label: 'Image URL', icon: Link },
-    { id: 'clipboard' as Tab, label: 'Clipboard', icon: Clipboard },
+    { id: 'file' as Tab, label: t('upload.fileUpload'), icon: Upload },
+    { id: 'url' as Tab, label: t('upload.imageUrl'), icon: Link },
+    { id: 'clipboard' as Tab, label: t('upload.clipboard'), icon: Clipboard },
   ];
 
   if (currentImage) {
@@ -168,14 +170,14 @@ export default function UploadZone({ onImageReady, onClear, currentImage }: Uplo
         </div>
         <div className="flex items-center justify-between border-t border-[var(--border-subtle)] px-4 py-2">
           <span className="font-inter text-xs text-[var(--text-secondary)]">
-            Source: <span className="text-[var(--text-primary)]">{currentImage.source}</span>
+            {t('upload.source')}: <span className="text-[var(--text-primary)]">{currentImage.source}</span>
           </span>
           <button
             onClick={onClear}
             className="flex items-center gap-1.5 rounded-lg px-3 py-1.5 text-xs font-inter text-[var(--text-secondary)] transition-all hover:bg-[var(--bg-elevated)] hover:text-[var(--error)]"
           >
             <RefreshCw size={12} />
-            Change Image
+            {t('upload.changeImage')}
           </button>
         </div>
       </motion.div>
@@ -245,10 +247,10 @@ export default function UploadZone({ onImageReady, onClear, currentImage }: Uplo
           </motion.div>
           <div>
             <p className="font-grotesk text-base font-600 text-[var(--text-primary)]">
-              {isDragActive ? 'Drop image here' : 'Drop image or click to browse'}
+              {isDragActive ? t('upload.dropHere') : t('upload.dropOrClick')}
             </p>
             <p className="mt-1 font-inter text-xs text-[var(--text-secondary)]">
-              JPG · PNG · WEBP · GIF · TIFF · BMP · Max 2MB
+              {t('upload.formats')}
             </p>
           </div>
           {isProcessing && (
@@ -260,7 +262,7 @@ export default function UploadZone({ onImageReady, onClear, currentImage }: Uplo
                 >
                   <RefreshCw size={18} />
                 </motion.div>
-                <span className="font-mono text-sm">Processing...</span>
+                <span className="font-mono text-sm">{t('upload.processing')}</span>
               </div>
             </div>
           )}
@@ -274,7 +276,7 @@ export default function UploadZone({ onImageReady, onClear, currentImage }: Uplo
           </div>
           <div className="w-full max-w-md">
             <p className="mb-3 text-center font-grotesk text-base font-600 text-[var(--text-primary)]">
-              Enter Image URL
+              {t('upload.enterUrl')}
             </p>
             <div className="flex gap-2">
               <input
@@ -291,7 +293,7 @@ export default function UploadZone({ onImageReady, onClear, currentImage }: Uplo
                 disabled={isProcessing || !urlInput.trim()}
                 className="rounded-xl bg-[var(--accent-lens)] px-4 py-2.5 font-grotesk text-sm font-600 text-black transition-opacity disabled:opacity-50"
               >
-                Load
+                {t('upload.load')}
               </button>
             </div>
           </div>
@@ -305,10 +307,10 @@ export default function UploadZone({ onImageReady, onClear, currentImage }: Uplo
           </div>
           <div className="text-center">
             <p className="font-grotesk text-base font-600 text-[var(--text-primary)]">
-              Paste from Clipboard
+              {t('upload.pasteFromClipboard')}
             </p>
             <p className="mt-1 font-inter text-xs text-[var(--text-secondary)]">
-              Press <kbd className="rounded bg-[var(--bg-elevated)] px-1.5 py-0.5 font-mono text-[10px] border border-[var(--border-subtle)]">Ctrl+V</kbd> anywhere or click below
+              {t('upload.pasteHint')}
             </p>
           </div>
           <button
@@ -317,7 +319,7 @@ export default function UploadZone({ onImageReady, onClear, currentImage }: Uplo
             className="flex items-center gap-2 rounded-xl border border-[var(--border-accent)] bg-[var(--accent-lens-dim)] px-6 py-2.5 font-grotesk text-sm font-600 text-[var(--accent-lens)] transition-all hover:bg-[var(--accent-lens)] hover:text-black disabled:opacity-50"
           >
             <Clipboard size={15} />
-            Paste Image
+            {t('upload.pasteImage')}
           </button>
         </div>
       )}

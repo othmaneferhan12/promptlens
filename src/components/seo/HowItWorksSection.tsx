@@ -1,19 +1,23 @@
+import { useTranslation } from 'react-i18next';
+
 export default function HowItWorksSection() {
+  const { t } = useTranslation();
+
   const steps = [
     {
       number: '1',
-      title: 'Upload Your Image',
-      body: 'Drag and drop any image, paste from clipboard with Ctrl+V, or click to browse. ImageToPrompt accepts JPG, PNG, WEBP, and GIF files up to 5MB. Our AI analyzes your image instantly — no account required.',
+      title: t('seo.howItWorks.step1Title'),
+      body: t('seo.howItWorks.step1Body'),
     },
     {
       number: '2',
-      title: 'Select Your AI Model',
-      body: 'Choose from 7 major AI image generators: Midjourney, Stable Diffusion, Flux, DALL-E 3, Adobe Firefly, Leonardo AI, or Ideogram. Each model gets a prompt written specifically in its syntax and style.',
+      title: t('seo.howItWorks.step2Title'),
+      body: t('seo.howItWorks.step2Body'),
     },
     {
       number: '3',
-      title: 'Get Your Perfect Prompt',
-      body: 'Powered by Claude AI vision, ImageToPrompt generates a complete prompt including the main description, negative prompt, style tags, color palette, lighting analysis, and model-specific parameters — ready to copy and paste.',
+      title: t('seo.howItWorks.step3Title'),
+      body: t('seo.howItWorks.step3Body'),
     },
   ];
 
@@ -27,10 +31,10 @@ export default function HowItWorksSection() {
         id="how-it-works-heading"
         className="font-grotesk text-2xl font-700 text-[var(--text-primary)] mb-2"
       >
-        How ImageToPrompt Works
+        {t('seo.howItWorks.title')}
       </h2>
       <p className="font-inter text-sm text-[var(--text-secondary)] mb-10">
-        Turn any image into a ready-to-use AI generation prompt in three steps.
+        {t('seo.howItWorks.subtitle')}
       </p>
       <div className="grid grid-cols-1 gap-6 sm:grid-cols-3">
         {steps.map((step) => (

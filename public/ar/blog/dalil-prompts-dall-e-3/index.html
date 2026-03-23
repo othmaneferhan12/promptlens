@@ -1,0 +1,471 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+  <script src="/theme-toggle.js"></script>
+  <meta charset="UTF-8" />
+  <link rel="dns-prefetch" href="https://www.googletagmanager.com">
+<link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0" />
+  <meta name="robots" content="max-image-preview:large, index, follow">
+  <meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="ImageToPrompt">
+  <title>دليل برومبتات DALL-E 3 : كيف تكتب برومبتات لـ ChatGPT | ImageToPrompt</title>
+  <meta name="description" content="أتقن برومبتات DALL-E 3. الصياغة بلغة طبيعية والتكامل مع ChatGPT وأمثلة مفصلة." />
+  <link rel="canonical" href="https://www.imagetoprompt.dev/ar/blog/dalil-prompts-dall-e-3/" />
+  <link rel="alternate" hreflang="ar" href="https://www.imagetoprompt.dev/ar/blog/dalil-prompts-dall-e-3/" />
+  <link rel="alternate" hreflang="en" href="https://www.imagetoprompt.dev/blog/dall-e-3-prompt-guide/" />
+  <link rel="alternate" hreflang="fr" href="https://www.imagetoprompt.dev/fr/blog/guide-prompts-dall-e-3/" />
+  <link rel="alternate" hreflang="x-default" href="https://www.imagetoprompt.dev/blog/dall-e-3-prompt-guide/" />
+  <meta property="og:title" content="دليل برومبتات DALL-E 3 : كيف تكتب برومبتات لـ ChatGPT" />
+  <meta property="og:description" content="أتقن برومبتات DALL-E 3. الصياغة بلغة طبيعية والتكامل مع ChatGPT وأمثلة مفصلة." />
+  <meta property="og:url" content="https://www.imagetoprompt.dev/ar/blog/dalil-prompts-dall-e-3/" />
+  <meta property="og:type" content="article" />
+  <meta property="og:image" content="https://www.imagetoprompt.dev/og-image.png" />
+  <meta property="og:site_name" content="ImageToPrompt" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="دليل برومبتات DALL-E 3 الشامل" />
+  <meta name="twitter:description" content="أتقن برومبتات DALL-E 3. الصياغة بلغة طبيعية والتكامل مع ChatGPT وأمثلة مفصلة." />
+  <meta name="twitter:image" content="https://www.imagetoprompt.dev/og-image.png" />
+  <meta name="twitter:site" content="@imagetoprompt" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="48x48" href="/favicon-48.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+  <link rel="manifest" href="/site.webmanifest" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="/fonts/space-grotesk-700.woff2" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="/fonts/inter-400.woff2" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Arabic:wght@400;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/theme.css">
+  <link rel="preload" href="/blog.css" as="style" onload="this.onload=null;this.rel='stylesheet'"><noscript><link rel="stylesheet" href="/blog.css"></noscript>
+  <style>
+    body { font-family: 'Noto Sans Arabic', 'Space Grotesk', sans-serif; }
+    .article-body { direction: rtl; text-align: right; }
+    code, pre { direction: ltr; text-align: left; display: inline-block; }
+    .toc ol, .toc ul { padding-right: 1.5rem; padding-left: 0; }
+    .article-body ul, .article-body ol { margin-right: 1.5rem; margin-left: 0; }
+    .breadcrumb { direction: rtl; }
+  </style>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "دليل برومبتات DALL-E 3 : كيف تكتب برومبتات لـ ChatGPT",
+    "description": "أتقن برومبتات DALL-E 3. الصياغة بلغة طبيعية والتكامل مع ChatGPT وأمثلة مفصلة.",
+    "image": "https://www.imagetoprompt.dev/og-image.png",
+    "datePublished": "2026-03-15",
+    "dateModified": "2026-03-22",
+    "inLanguage": "ar",
+    "author": {
+      "@type": "Person",
+      "name": "ImageToPrompt Team",
+      "url": "https://www.imagetoprompt.dev/"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "ImageToPrompt",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://www.imagetoprompt.dev/favicon.svg"
+      }
+    },
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https://www.imagetoprompt.dev/ar/blog/dalil-prompts-dall-e-3/"
+    }
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "ما الفرق بين DALL-E 3 عبر ChatGPT وعبر API؟",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "عبر ChatGPT، يُعيد ChatGPT صياغة برومبتك قبل إرساله لـ DALL-E 3 مما قد يُحسّن النتائج لكنه يُغيّر البرومبت. عبر API، يمكنك إرسال البرومبت مباشرةً بدون إعادة صياغة."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "هل يدعم DALL-E 3 البرومبتات بالعربية؟",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "نعم عبر ChatGPT، يمكنك كتابة برومبتك بالعربية وسيترجمه ChatGPT ويُحسّنه تلقائياً. عبر API مباشرة، الإنجليزية تعطي نتائج أفضل وأكثر دقة."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "كم صورة يمكن توليدها بـ DALL-E 3 يومياً؟",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "مشتركو ChatGPT Plus يحصلون على حد يومي يتغير حسب سياسات OpenAI. عبر API، لا يوجد حد يومي لكن هناك تسعير لكل صورة بحسب الدقة المطلوبة."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "ما أفضل طريقة لكتابة برومبت DALL-E 3 للحصول على نتائج دقيقة؟",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "اكتب جملاً كاملة بوصف تفصيلي. حدد الأسلوب الفني والإضاءة والتركيب والمزاج. DALL-E 3 يفهم السياق والنية أفضل من النماذج الأخرى."
+        }
+      }
+    ]
+  }
+  </script>
+    <!-- Google AdSense -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4499206373485728" crossorigin="anonymous"></script>
+    <!-- Web Push Notifications -->
+<script src="https://cdn.onesignal.com/sdks/web/v16/OneSignalSDK.page.js" defer></script>
+<script>
+  window.OneSignalDeferred = window.OneSignalDeferred || [];
+  OneSignalDeferred.push(async function(OneSignal) {
+    await OneSignal.init({
+      appId: "REPLACE_WITH_ONESIGNAL_APP_ID",
+      notifyButton: { enable: false }
+    });
+  });
+</script>
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="inner">
+      <a href="/ar/" class="site-logo"><img src="/favicon.svg" alt="ImageToPrompt" width="48" height="48"><div class="site-logo-text">ImageTo<span class="accent">Prompt</span><span class="site-logo-sub">&#1605;&#1608;&#1604;&#1617;&#1583; &#1576;&#1585;&#1608;&#1605;&#1576;&#1578; &#1605;&#1580;&#1575;&#1606;&#1610;</span></div></a>
+      <nav class="site-nav" aria-label="&#1575;&#1604;&#1578;&#1606;&#1602;&#1604; &#1575;&#1604;&#1585;&#1574;&#1610;&#1587;&#1610;">
+        <div class="nav-dropdown">
+          <button class="nav-dropdown-trigger" aria-haspopup="true" aria-expanded="false">Tools <span class="nav-chevron" aria-hidden="true">&#9660;</span></button>
+          <div class="nav-dropdown-menu" role="menu">
+            <div class="nav-mega-grid">
+              <div class="nav-mega-col">
+                <div class="nav-mega-heading">&#128444; IMAGE TOOLS</div>
+                <a href="/" role="menuitem" class="nav-mega-tool">Image to Prompt <span class="nav-mega-arrow">&#8594;</span></a>
+                <a href="/text-to-prompt/" role="menuitem" class="nav-mega-tool">Text to Prompt <span class="nav-mega-arrow">&#8594;</span></a>
+                <div class="nav-mega-models-label">Models</div>
+                <div class="nav-mega-models"><a href="/midjourney-prompt-generator/">Midjourney</a><span class="nav-dot">&#xB7;</span><a href="/stable-diffusion-prompt-generator/">SD</a></div>
+                <div class="nav-mega-models"><a href="/flux-prompt-generator/">Flux</a><span class="nav-dot">&#xB7;</span><a href="/dall-e-prompt-generator/">DALL&#xB7;E&#xA0;3</a></div>
+                <div class="nav-mega-models"><a href="/adobe-firefly-prompt-generator/">Firefly</a><span class="nav-dot">&#xB7;</span><a href="/leonardo-ai-prompt-generator/">Leonardo</a></div>
+                <div class="nav-mega-models"><a href="/ideogram-prompt-generator/">Ideogram</a></div>
+              </div>
+              <div class="nav-mega-divider" aria-hidden="true"></div>
+              <div class="nav-mega-col">
+                <div class="nav-mega-heading">&#127909; VIDEO TOOLS</div>
+                <a href="/?tab=image-to-video" role="menuitem" class="nav-mega-tool">Image to Video <span class="nav-mega-arrow">&#8594;</span></a>
+                <a href="/?tab=text-to-video" role="menuitem" class="nav-mega-tool">Text to Video <span class="nav-mega-arrow">&#8594;</span></a>
+                <div class="nav-mega-models-label">Models</div>
+                <div class="nav-mega-models"><a href="/veo-prompt-generator/">Veo</a><span class="nav-dot">&#xB7;</span><a href="/kling-prompt-generator/">Kling</a></div>
+                <div class="nav-mega-models"><a href="/runway-prompt-generator/">Runway</a><span class="nav-dot">&#xB7;</span><a href="/pika-prompt-generator/">Pika</a></div>
+                <div class="nav-mega-models"><a href="/luma-prompt-generator/">Luma</a><span class="nav-dot">&#xB7;</span><a href="/sora-prompt-generator/">Sora</a></div>
+                <div class="nav-mega-models"><a href="/minimax-prompt-generator/">Minimax</a><span class="nav-dot">&#xB7;</span><a href="/stable-video-prompt-generator/">Stable</a></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <a href="/ar/blog/">المدونة</a>#1575;>&#1575;&#1604;&#1605;&#1583;&#1608;&#1606;&#1577;</a>#1604;>&#1575;&#1604;&#1605;&#1583;&#1608;&#1606;&#1577;</a>#1605;>&#1575;&#1604;&#1605;&#1583;&#1608;&#1606;&#1577;</a>#1583;>&#1575;&#1604;&#1605;&#1583;&#1608;&#1606;&#1577;</a>#1608;>&#1575;&#1604;&#1605;&#1583;&#1608;&#1606;&#1577;</a>#1606;>&#1575;&#1604;&#1605;&#1583;&#1608;&#1606;&#1577;</a>#1577;</a>
+        <a href="/pricing/" class="nav-pill-pricing">Pricing</a>
+        <a href="/about/" class="nav-pill-about">About</a>
+        <a href="/ar/" class="nav-try-free">&#1580;&#1585;&#1617;&#1576; &#8594;</a>
+        <button id="theme-toggle" onclick="toggleTheme()" aria-label="Switch theme" title="Switch theme">&#9728;&#xFE0F;</button>
+  </nav>
+    </div>
+  </header>
+
+  <nav class="breadcrumb" aria-label="مسار التنقل">
+    <a href="/ar/">الرئيسية</a><span class="sep">›</span>
+    <a href="/ar/blog/">المدونة</a><span class="sep">›</span>
+    <span>دليل برومبتات DALL-E 3</span>
+  </nav>
+
+  <div class="page-wrapper">
+
+    <header class="article-header">
+      <p class="article-tag">DALL-E 3 · ChatGPT · دليل شامل</p>
+      <h1>دليل برومبتات DALL-E 3 الشامل</h1>
+      <div class="article-meta">
+        <span>مارس 2026</span>
+        <span class="dot">·</span>
+        <span>10 دقائق قراءة</span>
+        <span class="dot">·</span>
+        <span>DALL-E 3 · ChatGPT · OpenAI</span>
+        <span class="dot">·</span>
+        <span>محدّث مارس 2026</span>
+      </div>
+    </header>
+
+    <div class="article-body">
+
+      <p>DALL-E 3 من OpenAI يختلف عن كل مولد صور AI آخر بطريقة جوهرية: إنه مدمج مباشرةً في ChatGPT. هذا يعني أنك تتحدث مع ChatGPT بلغة طبيعية وتصف ما تريد، ويتولى ChatGPT تحويل وصفك إلى برومبت مُحسّن لـ DALL-E 3. هذا التكامل يجعله الأسهل استخداماً بين جميع نماذج توليد الصور — لكنه يعني أيضاً أن هناك فناً في كيفية التواصل معه.</p>
+
+      <nav class="toc" aria-label="محتويات المقال">
+        <details open>
+          <summary>في هذا الدليل</summary>
+          <ol>
+            <li><a href="#how-dalle3-works">كيف يعمل DALL-E 3؟</a></li>
+            <li><a href="#chatgpt-vs-api">ChatGPT مقابل API مباشر</a></li>
+            <li><a href="#prompt-structure">بنية البرومبت المثالية</a></li>
+            <li><a href="#text-in-images">النصوص داخل الصور</a></li>
+            <li><a href="#style-control">التحكم بالأسلوب</a></li>
+            <li><a href="#examples">أمثلة جاهزة</a></li>
+            <li><a href="#limitations">القيود وكيفية التعامل معها</a></li>
+            <li><a href="#faq">أسئلة شائعة</a></li>
+          </ol>
+        </details>
+      </nav>
+
+      <div class="callout">
+        <p><strong>نصيحة:</strong> لتحويل صورة إلى برومبت DALL-E 3، <a href="/">ارفع صورتك على ImageToPrompt</a> واختر DALL-E 3 كنموذج هدف. ستحصل على برومبت بلغة طبيعية مُحسّن لـ DALL-E 3 يمكنك لصقه مباشرة في ChatGPT.</p>
+      </div>
+
+      <h2 id="how-dalle3-works">كيف يعمل DALL-E 3 مع ChatGPT؟</h2>
+
+      <p>عندما تطلب صورة من ChatGPT، تحدث عملية من خطوتين:</p>
+
+      <ol>
+        <li><strong>ChatGPT يُعيد صياغة برومبتك:</strong> يأخذ وصفك العام ويُحوّله إلى برومبت مفصّل ومحسّن لـ DALL-E 3. هذا يعني أن برومبتك الأصلي ليس ما يراه DALL-E 3 — ChatGPT يُضيف تفاصيل ويُعيد الصياغة.</li>
+        <li><strong>DALL-E 3 يُولّد الصورة:</strong> يستقبل البرومبت المُعاد صياغته ويُنشئ الصورة بناءً عليه.</li>
+      </ol>
+
+      <p>هذا التكامل ميزة ونقطة ضعف في آنٍ واحد. الميزة: يمكنك الكتابة بأي لغة وبأي مستوى من التفصيل وChatGPT سيُحسّن طلبك. نقطة الضعف: أحياناً يُغيّر ChatGPT نيّتك الأصلية ويُضيف عناصر لم تطلبها.</p>
+
+      <h2 id="chatgpt-vs-api">ChatGPT مقابل DALL-E 3 API مباشر</h2>
+
+      <h3>عبر ChatGPT (الأسهل)</h3>
+      <ul>
+        <li>اكتب بأي لغة — عربي أو إنجليزي أو فرنسي</li>
+        <li>ChatGPT يُحسّن البرومبت تلقائياً</li>
+        <li>يمكنك المحادثة وطلب تعديلات ("اجعل الإضاءة أكثر دفئاً" أو "أزل الخلفية")</li>
+        <li>متاح لمشتركي ChatGPT Plus وTeam وEnterprise</li>
+      </ul>
+
+      <h3>عبر API (أكثر تحكماً)</h3>
+      <ul>
+        <li>برومبتك يذهب مباشرة لـ DALL-E 3 بدون إعادة صياغة</li>
+        <li>تحكم كامل في نسبة الأبعاد والجودة</li>
+        <li>أفضل للتطبيقات والأتمتة</li>
+        <li>تسعير لكل صورة: 0.04$ (1024x1024) إلى 0.12$ (1792x1024)</li>
+      </ul>
+
+      <h2 id="prompt-structure">بنية البرومبت المثالية لـ DALL-E 3</h2>
+
+      <p>DALL-E 3 يفهم اللغة الطبيعية أفضل من أي نموذج آخر. لا تحتاج لكلمات مفتاحية أو صياغة خاصة — اكتب كأنك تصف صورة لشخص بجانبك:</p>
+
+      <h3>البنية المقترحة</h3>
+      <ol>
+        <li><strong>نوع الصورة:</strong> "صورة فوتوغرافية" أو "رسم توضيحي" أو "لوحة زيتية" أو "رسم بالألوان المائية"</li>
+        <li><strong>الموضوع:</strong> ما يوجد في الصورة بتفصيل</li>
+        <li><strong>البيئة:</strong> أين يحدث المشهد</li>
+        <li><strong>الإضاءة والمزاج:</strong> نوع الضوء والجو العاطفي</li>
+        <li><strong>الأسلوب الفني:</strong> مرجع فني أو تقني</li>
+      </ol>
+
+      <p>مثال مُحسّن:</p>
+      <p><code dir="ltr">A watercolor illustration of a cozy bookshop on a rainy evening, warm golden light spilling from the windows onto the wet cobblestone street, a cat sitting in the window display among stacked books, autumn leaves caught in small puddles, soft impressionistic style with visible brushstrokes</code></p>
+
+      <h2 id="text-in-images">النصوص داخل الصور — نقطة قوة DALL-E 3</h2>
+
+      <p>DALL-E 3 هو الأفضل بين نماذج AI الرئيسية في رسم نصوص مقروءة داخل الصور. هذا يجعله مثالياً لـ:</p>
+
+      <ul>
+        <li><strong>الملصقات والإعلانات:</strong> ملصق فيلم بعنوان واضح</li>
+        <li><strong>أغلفة الكتب:</strong> غلاف كتاب بعنوان ومؤلف مقروءين</li>
+        <li><strong>اللافتات:</strong> لافتة متجر أو لافتة شارع بنص واضح</li>
+        <li><strong>شعارات بسيطة:</strong> شعار نصي بتصميم مميز</li>
+      </ul>
+
+      <p>نصيحة: ضع النص المطلوب بين علامات اقتباس في البرومبت لتوضيح ما يجب كتابته بالضبط:</p>
+      <p><code dir="ltr">A vintage movie poster for a film called "The Last Library", featuring a mysterious figure standing before an enormous ancient library, dramatic lighting, art deco style typography</code></p>
+
+      <h2 id="style-control">التحكم بالأسلوب الفني</h2>
+
+      <p>DALL-E 3 يفهم مجموعة واسعة من الأساليب الفنية. إليك الأكثر فعالية:</p>
+
+      <h3>أساليب فوتوغرافية</h3>
+      <ul>
+        <li><code dir="ltr">professional photograph</code> — صورة فوتوغرافية احترافية</li>
+        <li><code dir="ltr">candid street photography</code> — تصوير شوارع عفوي</li>
+        <li><code dir="ltr">editorial fashion photograph</code> — تصوير أزياء تحريري</li>
+        <li><code dir="ltr">macro photograph</code> — تصوير مقرّب للتفاصيل الدقيقة</li>
+      </ul>
+
+      <h3>أساليب رسم وتوضيح</h3>
+      <ul>
+        <li><code dir="ltr">watercolor painting</code> — ألوان مائية</li>
+        <li><code dir="ltr">oil painting</code> — لوحة زيتية</li>
+        <li><code dir="ltr">digital illustration</code> — رسم توضيحي رقمي</li>
+        <li><code dir="ltr">pencil sketch</code> — رسم بالرصاص</li>
+        <li><code dir="ltr">flat vector illustration</code> — رسم متجه مسطّح</li>
+        <li><code dir="ltr">isometric illustration</code> — رسم أيزومتري ثلاثي الأبعاد</li>
+      </ul>
+
+      <h3>أساليب خاصة</h3>
+      <ul>
+        <li><code dir="ltr">pixel art</code> — فن البكسل</li>
+        <li><code dir="ltr">stained glass window design</code> — تصميم زجاج ملوّن</li>
+        <li><code dir="ltr">paper cut illustration</code> — قصاصات ورقية</li>
+        <li><code dir="ltr">retro 80s poster style</code> — أسلوب ملصقات الثمانينيات</li>
+      </ul>
+
+      <h2 id="examples">أمثلة جاهزة للنسخ</h2>
+
+      <h3>1. غلاف كتاب</h3>
+      <p><code dir="ltr">A book cover design for a science fiction novel called "Signal from Proxima". The cover shows a lone astronaut standing on a barren alien landscape, looking up at a massive ringed planet dominating the sky, with mysterious glowing symbols floating in the atmosphere. Deep space color palette of midnight blue, violet, and warm amber highlights. Clean modern typography for the title at the top.</code></p>
+
+      <h3>2. رسم توضيحي للأطفال</h3>
+      <p><code dir="ltr">A charming children's book illustration of a small fox wearing a blue scarf, sitting beside a friendly owl on a mushroom, reading a tiny book together under the warm glow of fireflies in an enchanted forest. Soft watercolor style with warm muted colors and gentle brushstrokes, whimsical and cozy atmosphere.</code></p>
+
+      <h3>3. ملصق حدث</h3>
+      <p><code dir="ltr">A modern minimalist event poster for a jazz festival called "Blue Note Sessions 2026". Features an abstract silhouette of a saxophone player composed of flowing musical notes and sound waves. Color palette of deep navy blue and warm gold on a cream background. Elegant sans-serif typography with the event date "March 15-17, 2026" at the bottom.</code></p>
+
+      <h3>4. تصوير طعام</h3>
+      <p><code dir="ltr">An appetizing overhead photograph of a traditional Middle Eastern breakfast spread on a large round copper tray. Fresh flatbread, hummus with olive oil drizzle, colorful salads, sliced tomatoes and cucumbers, labneh with za'atar, olives, and small glasses of mint tea. Warm natural morning light from a nearby window, rustic wooden table surface, vibrant fresh colors.</code></p>
+
+      <h3>5. تصميم واجهة تطبيق</h3>
+      <p><code dir="ltr">A clean modern UI mockup of a meditation app displayed on an iPhone 15 Pro, showing a serene home screen with a large circular breathing animation in soft gradient from teal to lavender, daily streak counter, and minimal navigation at the bottom. Dark mode with subtle glassmorphism elements. Professional product shot on a light gray gradient background.</code></p>
+
+      <h2 id="limitations">القيود وكيفية التعامل معها</h2>
+
+      <h3>إعادة صياغة ChatGPT</h3>
+      <p>عندما يُعيد ChatGPT صياغة برومبتك، قد يُضيف تفاصيل لم تطلبها أو يُغيّر عناصر. للتحكم أكثر:</p>
+      <ul>
+        <li>اطلب من ChatGPT أن يُظهر لك البرومبت قبل التوليد: "اعرض لي البرومبت الذي ستستخدمه قبل التوليد"</li>
+        <li>كن محدداً جداً في ما تريد وما لا تريد</li>
+        <li>استخدم عبارة "I NEED exactly this without any changes" عبر API</li>
+      </ul>
+
+      <h3>لا يوجد برومبت سلبي</h3>
+      <p>DALL-E 3 لا يدعم البرومبتات السلبية مثل Stable Diffusion. بدلاً من ذلك، صِف ما تريد بوضوح. بدلاً من "بدون أشخاص"، اكتب "مشهد فارغ بدون أي شخصيات بشرية".</p>
+
+      <h3>قيود المحتوى</h3>
+      <p>DALL-E 3 له قيود صارمة على أنواع المحتوى. لا يُنشئ صوراً واقعية لأشخاص حقيقيين بالاسم، ولا يُنشئ محتوى عنيفاً أو غير ملائم.</p>
+
+      <div class="cta-box">
+        <h3>حوّل أي صورة إلى برومبت DALL-E 3</h3>
+        <p>ارفع صورة واحصل على برومبت مُحسّن لـ DALL-E 3 — الصقه مباشرة في ChatGPT.</p>
+        <a href="/?lang=ar" class="cta-btn">جرّب ImageToPrompt مجاناً ←</a>
+      </div>
+
+      <h2 id="faq">أسئلة شائعة</h2>
+
+      <h3>ما الفرق بين DALL-E 3 عبر ChatGPT وعبر API؟</h3>
+      <p>عبر ChatGPT، يُعيد ChatGPT صياغة برومبتك وتحسينه قبل إرساله لـ DALL-E 3 مما قد يُحسّن النتائج لكنه يُغيّر البرومبت الأصلي. عبر API المباشر، يمكنك إرسال البرومبت كما كتبته بالضبط بدون أي إعادة صياغة، مما يمنحك تحكماً أكبر.</p>
+
+      <h3>هل يدعم DALL-E 3 البرومبتات بالعربية؟</h3>
+      <p>نعم، عبر ChatGPT يمكنك كتابة برومبتك بالعربية بالكامل وسيترجمه ChatGPT ويُحسّنه تلقائياً قبل إرساله لـ DALL-E 3. عبر API مباشرة، الإنجليزية تعطي نتائج أفضل وأكثر دقة لأن النموذج مدرّب بشكل أساسي على بيانات إنجليزية.</p>
+
+      <h3>كم صورة يمكن توليدها بـ DALL-E 3 يومياً؟</h3>
+      <p>مشتركو ChatGPT Plus يحصلون على حد يومي يتغير حسب سياسات OpenAI وقد يختلف حسب الحمل على الخوادم. عبر API، لا يوجد حد يومي ثابت لكن هناك تسعير لكل صورة بحسب الدقة المطلوبة (من 0.04$ إلى 0.12$ للصورة).</p>
+
+      <h3>ما أفضل طريقة لكتابة برومبت DALL-E 3 للحصول على نتائج دقيقة؟</h3>
+      <p>اكتب جملاً كاملة بوصف تفصيلي كأنك تشرح الصورة لشخص. حدد بوضوح الأسلوب الفني والإضاءة والتركيب والمزاج والألوان. DALL-E 3 يفهم السياق والنية أفضل من النماذج الأخرى، لذا اللغة الطبيعية الواضحة هي الأكثر فعالية.</p>
+
+    </div>
+
+    <div class="author-bio">
+      <svg class="author-photo" width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="صورة المؤلف"><circle cx="32" cy="32" r="32" fill="#2a1f4e"/><circle cx="32" cy="26" r="11" fill="#7c6bc4"/><ellipse cx="32" cy="52" rx="18" ry="11" fill="#7c6bc4"/></svg>
+      <div class="author-info">
+        <p class="author-name">فريق ImageToPrompt</p>
+        <p class="author-desc">مهندسو برومبتات وفنانو ذكاء اصطناعي متخصصون في Midjourney و Stable Diffusion و Flux. نبني ImageToPrompt لجعل توليد الصور بالذكاء الاصطناعي في متناول الجميع.</p>
+        <a href="https://x.com/Ilyass14286541" class="author-link">تابعنا على X ←</a>
+      </div>
+    </div>
+
+    <div class="related-posts">
+      <h2>أدلة ذات صلة</h2>
+      <div class="related-grid">
+        <a href="/ar/blog/stable-diffusion-vs-midjourney-vs-dalle3/" class="related-card">
+          <p class="tag">مقارنة</p>
+          <h3>SD مقابل Midjourney مقابل DALL-E 3 مقابل Flux</h3>
+        </a>
+        <a href="/ar/blog/dalil-prompts-midjourney-2026/" class="related-card">
+          <p class="tag">Midjourney</p>
+          <h3>دليل برومبتات Midjourney الشامل 2026</h3>
+        </a>
+        <a href="/ar/blog/tahwil-soura-ila-prompt/" class="related-card">
+          <p class="tag">دليل</p>
+          <h3>كيفية تحويل أي صورة إلى برومبت</h3>
+        </a>
+        <a href="/ar/blog/dalil-prompts-flux-ai/" class="related-card">
+          <p class="tag">Flux</p>
+          <h3>دليل برومبتات Flux AI الشامل 2026</h3>
+        </a>
+      </div>
+    </div>
+
+  </div>
+
+  <footer class="footer-4col">
+    <div class="f4-inner">
+      <div class="f4-brand">
+        <img src="/favicon.svg" alt="ImageToPrompt" width="28" height="28">
+        <span class="f4-brand-name">ImageTo<span class="accent">Prompt</span></span>
+        <span class="f4-brand-sub">&mdash; Free AI Prompt Generator</span>
+      </div>
+      <div class="f4-grid">
+        <div class="f4-section">
+          <h4 class="f4-heading">Image Prompt Tools</h4>
+          <a href="/">Image to Prompt</a>
+          <a href="/text-to-prompt/">Text to Prompt</a>
+          <a href="/midjourney-prompt-generator/">Midjourney</a>
+          <a href="/stable-diffusion-prompt-generator/">Stable Diffusion</a>
+          <a href="/flux-prompt-generator/">Flux</a>
+          <a href="/dall-e-prompt-generator/">DALL-E 3</a>
+          <a href="/adobe-firefly-prompt-generator/">Adobe Firefly</a>
+          <a href="/leonardo-ai-prompt-generator/">Leonardo AI</a>
+          <a href="/ideogram-prompt-generator/">Ideogram</a>
+        </div>
+        <div class="f4-section">
+          <h4 class="f4-heading">Video Prompt Tools</h4>
+          <a href="/image-to-video-prompt/">Image to Video Prompt</a>
+          <a href="/text-to-video-prompt/">Text to Video Prompt</a>
+          <a href="/veo-prompt-generator/">Veo / Flow Studio</a>
+          <a href="/kling-prompt-generator/">Kling AI</a>
+          <a href="/runway-prompt-generator/">Runway Gen-3</a>
+          <a href="/pika-prompt-generator/">Pika</a>
+          <a href="/luma-prompt-generator/">Luma Dream Machine</a>
+          <a href="/sora-prompt-generator/">Sora</a>
+          <a href="/minimax-prompt-generator/">Minimax</a>
+          <a href="/stable-video-prompt-generator/">Stable Video</a>
+        </div>
+        <div class="f4-section">
+          <h4 class="f4-heading">Resources</h4>
+          <a href="/blog/">Blog</a>
+          <a href="/about/">About</a>
+          <a href="/pricing/">Pricing</a>
+          <a href="/contact/">Contact</a>
+          <a href="/privacy-policy/">Privacy Policy</a>
+          <a href="/terms-of-service/">Terms of Service</a>
+        </div>
+        <div class="f4-section">
+          <h4 class="f4-heading">Languages</h4>
+          <a href="/">English</a>
+          <a href="/fr/">Fran&#231;ais</a>
+          <a href="/ar/">&#1575;&#1604;&#1593;&#1585;&#1576;&#1610;&#1577;</a>
+          <a href="/es/">Espa&#241;ol</a>
+          <a href="/ko/">&#54620;&#44397;&#50612;</a>
+          <a href="/ja/">&#26085;&#26412;&#35486;</a>
+        </div>
+      </div>
+      <div class="f4-bottom">
+        <p>&#169; 2026 ImageToPrompt.dev &#8212; Free AI Prompt Generator</p>
+        <p>Your images are never stored. All analysis is ephemeral and private.</p>
+      </div>
+    </div>
+  </footer>
+
+<script src="/newsletter-inject.js" defer></script>
+<script src="/nav.js" defer></script>
+  <script>
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', function() {
+    navigator.serviceWorker.register('/sw.js')
+      .catch(function(err) { console.warn('SW registration failed:', err); });
+  });
+}
+</script>
+</body>
+</html>

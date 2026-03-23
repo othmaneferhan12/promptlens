@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { useTranslation } from 'react-i18next';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ChevronDown, ChevronUp, Download, RotateCcw, Sparkles } from 'lucide-react';
 import type { AnalysisResult as AnalysisResultType, AIModel, PromptStyle } from '../types';
@@ -46,11 +47,14 @@ export default function AnalysisResult({
   style,
   onReset,
   onRegenerate,
-  resetLabel = 'Analyze Another Image',
+  resetLabel,
 }: AnalysisResultProps) {
+  const { t } = useTranslation();
   const [breakdownOpen, setBreakdownOpen] = useState(false);
   const modelConfig = getModelConfig(model);
   const styleConfig = getStyleConfig(style);
+
+  const effectiveResetLabel = resetLabel ?? t('result.analyzeAnother');
 
   const handleExport = () => {
     const content = [
@@ -122,7 +126,7 @@ export default function AnalysisResult({
       >
         <div>
           <h2 className="font-grotesk text-2xl font-700 text-[var(--text-primary)]">
-            Your Prompt is Ready{' '}
+            {t('result.promptReady')}{' '}
             <span style={{ color: 'var(--accent-lens)' }}>✦</span>
           </h2>
           <div className="mt-1 flex items-center gap-2 flex-wrap">
@@ -140,7 +144,7 @@ export default function AnalysisResult({
               {styleConfig.emoji} {styleConfig.label}
             </span>
             <span className="rounded-full px-2.5 py-1 font-mono text-[11px] font-600 border border-[var(--success)]/30 bg-[var(--success)]/10 text-[var(--success)]">
-              {result.confidence}% confidence
+              {t('result.confidence', { value: result.confidence })}
             </span>
             <span className="rounded-full px-2.5 py-1 font-mono text-[11px] border border-[var(--border-subtle)] text-[var(--text-secondary)]">
               {result.suggestedAspectRatio}
@@ -153,14 +157,14 @@ export default function AnalysisResult({
             className="flex items-center gap-1.5 rounded-xl border border-[var(--border-subtle)] px-3 py-2 font-inter text-xs text-[var(--text-secondary)] transition-all hover:border-[var(--border-accent)] hover:text-[var(--text-primary)]"
           >
             <Download size={13} />
-            Export
+            {t('result.export')}
           </button>
           <button
             onClick={onReset}
             className="flex items-center gap-1.5 rounded-xl border border-[var(--border-subtle)] px-3 py-2 font-inter text-xs text-[var(--text-secondary)] transition-all hover:border-[var(--error)]/50 hover:text-[var(--error)]"
           >
             <RotateCcw size={13} />
-            New
+            {t('result.new')}
           </button>
         </div>
       </motion.div>
@@ -168,7 +172,7 @@ export default function AnalysisResult({
       {/* Section 1: Main Prompt */}
       <motion.div variants={item}>
         <PromptCard
-          label="MAIN PROMPT"
+          label={t('result.mainPrompt')}
           content={result.mainPrompt}
           accent="var(--accent-lens)"
           showLineNumbers={true}
@@ -185,7 +189,7 @@ export default function AnalysisResult({
           className="flex w-full items-center justify-between px-5 py-4 font-grotesk text-sm font-600 text-[var(--text-secondary)] transition-colors hover:text-[var(--text-primary)]"
         >
           <span className="flex items-center gap-2">
-            <span>🔍</span> Visual Breakdown
+            <span>🔍</span> {t('result.visualBreakdown')}
           </span>
           {breakdownOpen ? <ChevronUp size={16} /> : <ChevronDown size={16} />}
         </button>
@@ -199,10 +203,10 @@ export default function AnalysisResult({
               className="overflow-hidden"
             >
               <div className="grid grid-cols-1 gap-3 px-5 pb-5 sm:grid-cols-2">
-                <InfoCard icon="🎯" label="Subject" value={result.subject} />
-                <InfoCard icon="📐" label="Composition" value={result.composition} />
-                <InfoCard icon="💡" label="Lighting" value={result.lighting} />
-                <InfoCard icon="🌊" label="Mood" value={result.mood} />
+                <InfoCard icon="🎯" label={t('result.subject')} value={result.subject} />
+                <InfoCard icon="📐" label={t('result.composition')} value={result.composition} />
+                <InfoCard icon="💡" label={t('result.lighting')} value={result.lighting} />
+                <InfoCard icon="🌊" label={t('result.mood')} value={result.mood} />
               </div>
             </motion.div>
           )}
@@ -215,17 +219,17 @@ export default function AnalysisResult({
           <div className="flex items-center justify-between border-b px-4 py-2.5" style={{ borderColor: 'rgba(255,107,107,0.2)' }}>
             <div className="flex items-center gap-2">
               <span className="text-sm">🚫</span>
-              <span className="font-mono text-xs font-500 text-[var(--error)]">NEGATIVE PROMPT</span>
+              <span className="font-mono text-xs font-500 text-[var(--error)]">{t('result.negativePrompt')}</span>
             </div>
             <div className="group relative">
               <button
                 onClick={() => navigator.clipboard.writeText(result.negativePrompt)}
                 className="flex items-center gap-1 rounded-lg px-2.5 py-1 font-mono text-xs text-[var(--error)]/70 transition-all hover:text-[var(--error)]"
               >
-                Copy
+                {t('result.copy')}
               </button>
               <div className="pointer-events-none absolute right-0 top-8 z-10 w-52 rounded-xl border border-[var(--border-subtle)] bg-[var(--bg-elevated)] p-3 text-xs font-inter text-[var(--text-secondary)] opacity-0 transition-opacity group-hover:opacity-100 shadow-xl">
-                Paste this into the negative prompt field to exclude unwanted elements
+                {t('result.negativeTooltip')}
               </div>
             </div>
           </div>
@@ -251,7 +255,7 @@ export default function AnalysisResult({
       {result.modelSpecificParams && MODELSWITHTECHNOLOGY.includes(model) && (
         <motion.div variants={item}>
           <PromptCard
-            label="MODEL PARAMETERS"
+            label={t('result.modelParameters')}
             content={result.modelSpecificParams}
             accent="var(--accent-gold)"
             icon="⚙️"
@@ -269,7 +273,7 @@ export default function AnalysisResult({
             <div className="flex items-center gap-2">
               <Sparkles size={14} style={{ color: 'var(--accent-cyan)' }} />
               <span className="font-mono text-xs font-500" style={{ color: 'var(--accent-cyan)' }}>
-                CREATIVE REMIX
+                {t('result.creativeRemix')}
               </span>
               <span
                 className="rounded-full px-2 py-0.5 font-mono text-[9px] font-600 uppercase"
@@ -279,14 +283,14 @@ export default function AnalysisResult({
                   border: '1px solid rgba(0,229,255,0.3)',
                 }}
               >
-                ✨ Variant
+                ✨ {t('result.variant')}
               </span>
             </div>
             <button
               onClick={() => navigator.clipboard.writeText(result.remixPrompt)}
               className="flex items-center gap-1 rounded-lg px-2.5 py-1 font-mono text-xs text-[var(--accent-cyan)]/70 transition-all hover:text-[var(--accent-cyan)]"
             >
-              Copy
+              {t('result.copy')}
             </button>
           </div>
           <div className="p-4">
@@ -309,7 +313,7 @@ export default function AnalysisResult({
         >
           <span className="relative z-10 flex items-center gap-2">
             <RotateCcw size={18} />
-            {resetLabel}
+            {effectiveResetLabel}
           </span>
           <div className="absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-white/20 to-transparent transition-transform duration-700 group-hover:translate-x-full" />
         </button>

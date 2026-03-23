@@ -1,40 +1,44 @@
+import { useTranslation } from 'react-i18next';
+
 const EXAMPLES = [
   {
-    original: '/images/ex1-original-photo.webp',
+    original: '/images/image-to-prompt-shibuya-crossing-original.webp',
     originalAlt: 'Original photograph — source image uploaded to ImageToPrompt',
-    recreated: '/images/ex1-recreated.webp',
+    recreated: '/images/image-to-prompt-shibuya-recreated.webp',
     recreatedAlt: 'AI-recreated image generated from the extracted Midjourney prompt',
     model: 'Midjourney',
     modelColor: '#00b4d8',
     prompt:
       'documentary portrait, elderly fisherman at harbor at dawn, weathered skin texture, golden hour rim lighting, shallow depth of field, film grain, Kodak Portra tones --ar 2:3 --v 6.1 --style raw --stylize 350',
-    subject: 'Portrait photograph',
+    subjectKey: 'seo.beforeAfter.subject1',
   },
   {
-    original: '/images/ex2-original-illustration.webp',
+    original: '/images/describe-a-picture-dragon-illustration-original.webp',
     originalAlt: 'Original digital illustration — fantasy character source image',
-    recreated: '/images/ex2-recreated.webp',
+    recreated: '/images/describe-a-picture-dragon-recreated.webp',
     recreatedAlt: 'AI-recreated fantasy illustration from the extracted Stable Diffusion prompt',
     model: 'Stable Diffusion',
     modelColor: '#ff6b35',
     prompt:
       '(masterpiece:1.2), (ultra-detailed:1.1), fantasy character illustration, elven warrior in enchanted forest, bioluminescent flora, ethereal blue-green lighting, dynamic pose\nNegative: (worst quality:1.4), blurry, watermark',
-    subject: 'Fantasy illustration',
+    subjectKey: 'seo.beforeAfter.subject2',
   },
   {
-    original: '/images/ex3-original-ai-art.webp',
+    original: '/images/ai-image-to-prompt-luxury-watch-original.webp',
     originalAlt: 'Original AI-generated sci-fi artwork used as reference image',
-    recreated: '/images/ex3-recreated.webp',
+    recreated: '/images/ai-image-to-prompt-luxury-watch-recreated.webp',
     recreatedAlt: 'Flux AI recreation from the reverse-engineered prompt',
     model: 'Flux AI',
     modelColor: '#7c3aed',
     prompt:
       'A lone astronaut stands on a rust-colored alien plateau beneath a vast binary star system. Shot with a Sony A7R V, 24mm f/2.8, deep focus. Teal and amber color grade, cinematic quality, photorealistic.',
-    subject: 'Sci-fi concept art',
+    subjectKey: 'seo.beforeAfter.subject3',
   },
 ];
 
 export default function BeforeAfterSection() {
+  const { t } = useTranslation();
+
   return (
     <section
       id="examples-before-after"
@@ -45,10 +49,10 @@ export default function BeforeAfterSection() {
         id="before-after-heading"
         className="font-grotesk text-2xl font-700 text-[var(--text-primary)] mb-2"
       >
-        See It in Action
+        {t('seo.beforeAfter.title')}
       </h2>
       <p className="font-inter text-sm text-[var(--text-secondary)] mb-10">
-        Real examples of images converted to AI prompts — and the results.
+        {t('seo.beforeAfter.subtitle')}
       </p>
 
       <div className="flex flex-col gap-5">
@@ -60,7 +64,7 @@ export default function BeforeAfterSection() {
           >
             {/* Subject label */}
             <p className="font-inter text-xs text-[var(--text-secondary)] mb-4 uppercase tracking-widest font-600">
-              {ex.subject}
+              {t(ex.subjectKey)}
             </p>
 
             {/* Three-column layout */}
@@ -72,7 +76,7 @@ export default function BeforeAfterSection() {
                   className="font-inter text-[10px] font-700 uppercase tracking-widest"
                   style={{ color: 'var(--text-muted)' }}
                 >
-                  Original
+                  {t('seo.beforeAfter.original')}
                 </span>
                 <picture>
                   <source srcSet={ex.original} type="image/webp" />
@@ -107,7 +111,7 @@ export default function BeforeAfterSection() {
                     className="font-inter text-[10px] font-700 uppercase tracking-widest"
                     style={{ color: ex.modelColor }}
                   >
-                    AI Prompt
+                    {t('seo.beforeAfter.aiPrompt')}
                   </span>
                   <span
                     className="rounded-full px-2 py-0.5 font-inter text-[9px] font-700 uppercase tracking-wider"
@@ -151,7 +155,7 @@ export default function BeforeAfterSection() {
                   className="font-inter text-[10px] font-700 uppercase tracking-widest"
                   style={{ color: '#34d399' }}
                 >
-                  Recreated
+                  {t('seo.beforeAfter.recreated')}
                 </span>
                 <picture>
                   <source srcSet={ex.recreated} type="image/webp" />
@@ -183,7 +187,7 @@ export default function BeforeAfterSection() {
           className="inline-flex items-center gap-2 rounded-xl px-6 py-3 font-grotesk text-sm font-700 text-black transition-all duration-200 hover:opacity-90 hover:scale-[1.02]"
           style={{ background: 'linear-gradient(135deg, var(--accent-lens), var(--accent-cyan))' }}
         >
-          Try It Free — Upload Your Image →
+          {t('seo.beforeAfter.cta')}
         </a>
       </div>
     </section>

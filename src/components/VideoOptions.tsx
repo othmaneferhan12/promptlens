@@ -1,3 +1,4 @@
+import { useTranslation } from 'react-i18next';
 import { MOTION_STYLE_CONFIGS, DURATION_CONFIGS, CAMERA_MOVEMENT_CONFIGS } from '../utils/videoUtils';
 import type { VideoMotionStyle, VideoDuration, VideoCameraMovement } from '../types';
 
@@ -65,24 +66,26 @@ export default function VideoOptions({
   onCameraMovementChange,
   disabled,
 }: VideoOptionsProps) {
+  const { t } = useTranslation();
+
   return (
     <div className="flex flex-col gap-4">
       <PillSelector
-        label="Motion Style"
+        label={t('controls.motionStyle')}
         options={MOTION_STYLE_CONFIGS}
         selected={motionStyle}
         onChange={onMotionStyleChange}
         disabled={disabled}
       />
       <PillSelector
-        label="Duration"
+        label={t('controls.duration')}
         options={DURATION_CONFIGS}
         selected={duration}
         onChange={onDurationChange}
         disabled={disabled}
       />
       <PillSelector
-        label="Camera Movement"
+        label={t('controls.cameraMovement')}
         options={CAMERA_MOVEMENT_CONFIGS}
         selected={cameraMovement}
         onChange={onCameraMovementChange}

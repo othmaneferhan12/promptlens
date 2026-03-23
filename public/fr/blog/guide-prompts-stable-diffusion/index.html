@@ -1,0 +1,503 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <script src="/theme-toggle.js"></script>
+  <meta charset="UTF-8" />
+  <link rel="dns-prefetch" href="https://www.googletagmanager.com">
+<link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="max-image-preview:large, index, follow">
+  <meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="ImageToPrompt">
+  <title>Guide Complet des Prompts Stable Diffusion 2026</title>
+  <meta name="description" content="Maîtrisez les prompts Stable Diffusion. Syntaxe pondérée, prompts négatifs, tags de qualité pour SD 1.5, SDXL et SD 3.5." />
+  <link rel="canonical" href="https://www.imagetoprompt.dev/fr/blog/guide-prompts-stable-diffusion/" />
+  <link rel="alternate" hreflang="fr" href="https://www.imagetoprompt.dev/fr/blog/guide-prompts-stable-diffusion/" />
+  <link rel="alternate" hreflang="en" href="https://www.imagetoprompt.dev/blog/stable-diffusion-prompt-guide/" />
+  <link rel="alternate" hreflang="ar" href="https://www.imagetoprompt.dev/ar/blog/dalil-prompts-stable-diffusion/" />
+  <link rel="alternate" hreflang="x-default" href="https://www.imagetoprompt.dev/blog/stable-diffusion-prompt-guide/" />
+  <meta property="og:title" content="Guide Complet des Prompts Stable Diffusion 2026" />
+  <meta property="og:description" content="Maîtrisez les prompts Stable Diffusion. Syntaxe pondérée, prompts négatifs, tags de qualité pour SD 1.5, SDXL et SD 3.5." />
+  <meta property="og:url" content="https://www.imagetoprompt.dev/fr/blog/guide-prompts-stable-diffusion/" />
+  <meta property="og:type" content="article" />
+  <meta property="og:image" content="https://www.imagetoprompt.dev/og-image.png" />
+  <meta property="og:site_name" content="ImageToPrompt" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Guide Complet des Prompts Stable Diffusion 2026" />
+  <meta name="twitter:description" content="Maîtrisez les prompts Stable Diffusion. Syntaxe pondérée, prompts négatifs et tags de qualité." />
+  <meta name="twitter:image" content="https://www.imagetoprompt.dev/og-image.png" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="48x48" href="/favicon-48.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+  <link rel="manifest" href="/site.webmanifest" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="/fonts/space-grotesk-700.woff2" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="/fonts/inter-400.woff2" />
+  <link rel="stylesheet" href="/theme.css">
+  <link rel="preload" href="/blog.css" as="style" onload="this.onload=null;this.rel='stylesheet'"><noscript><link rel="stylesheet" href="/blog.css"></noscript>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Guide Complet des Prompts Stable Diffusion 2026",
+    "description": "Maîtrisez les prompts Stable Diffusion. Syntaxe pondérée, prompts négatifs, tags de qualité pour SD 1.5, SDXL et SD 3.5.",
+    "image": "https://www.imagetoprompt.dev/og-image.png",
+    "datePublished": "2026-03-08",
+    "dateModified": "2026-03-22",
+    "inLanguage": "fr",
+    "author": {
+      "@type": "Person",
+      "name": "ImageToPrompt Team",
+      "url": "https://www.imagetoprompt.dev/"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "ImageToPrompt",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://www.imagetoprompt.dev/favicon.svg"
+      }
+    },
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https://www.imagetoprompt.dev/fr/blog/guide-prompts-stable-diffusion/"
+    }
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Comment fonctionne la syntaxe pondérée dans Stable Diffusion ?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "La syntaxe pondérée utilise des parenthèses et des deux-points pour augmenter ou diminuer l'importance d'un terme. (terme:1.3) augmente le poids de 30%, (terme:0.7) le réduit de 30%. La valeur par défaut est 1.0. Vous pouvez aussi utiliser des parenthèses simples : (terme) équivaut à (terme:1.1), ((terme)) à (terme:1.21). Évitez les poids supérieurs à 1.5 qui causent des artefacts."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Quels sont les meilleurs prompts négatifs pour Stable Diffusion ?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Un bon prompt négatif universel : '(worst quality:1.4), (low quality:1.4), (normal quality:1.2), lowres, bad anatomy, bad hands, extra digits, fewer digits, cropped, watermark, signature, blurry, deformed'. Pour les portraits, ajoutez : 'extra fingers, mutated hands, poorly drawn face, ugly, disfigured'. Adaptez selon le checkpoint utilisé."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Quelle est la différence entre SD 1.5, SDXL et SD 3.5 pour les prompts ?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "SD 1.5 nécessite des prompts très structurés avec des quality tags (masterpiece, best quality) et répond bien à la syntaxe pondérée. SDXL comprend mieux le langage naturel et nécessite moins de quality tags, mais la pondération reste utile. SD 3.5 utilise un nouveau système qui favorise les descriptions naturelles détaillées, similaire à Flux, avec moins de dépendance aux tags techniques."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Comment choisir le bon CFG Scale pour mes prompts Stable Diffusion ?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Le CFG Scale contrôle à quel point le modèle suit votre prompt. Valeurs basses (3-5) : résultats créatifs mais moins fidèles au prompt. Valeurs moyennes (7-9) : bon équilibre entre créativité et fidélité — c'est le sweet spot pour la plupart des usages. Valeurs élevées (10-15) : très fidèle au prompt mais risque de sur-saturation et d'artefacts. Commencez à 7 et ajustez."
+        }
+      }
+    ]
+  }
+  </script>
+    <!-- Google AdSense -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4499206373485728" crossorigin="anonymous"></script>
+    <!-- Web Push Notifications -->
+<script src="https://cdn.onesignal.com/sdks/web/v16/OneSignalSDK.page.js" defer></script>
+<script>
+  window.OneSignalDeferred = window.OneSignalDeferred || [];
+  OneSignalDeferred.push(async function(OneSignal) {
+    await OneSignal.init({
+      appId: "REPLACE_WITH_ONESIGNAL_APP_ID",
+      notifyButton: { enable: false }
+    });
+  });
+</script>
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="inner">
+      <a href="/fr/" class="site-logo"><img src="/favicon.svg" alt="ImageToPrompt" width="48" height="48"><div class="site-logo-text">ImageTo<span class="accent">Prompt</span><span class="site-logo-sub">G&#233;n&#233;rateur de Prompts IA Gratuit</span></div></a>
+      <nav class="site-nav" aria-label="Navigation principale">
+        <div class="nav-dropdown">
+          <button class="nav-dropdown-trigger" aria-haspopup="true" aria-expanded="false">Tools <span class="nav-chevron" aria-hidden="true">&#9660;</span></button>
+          <div class="nav-dropdown-menu" role="menu">
+            <div class="nav-mega-grid">
+              <div class="nav-mega-col">
+                <div class="nav-mega-heading">&#128444; IMAGE TOOLS</div>
+                <a href="/" role="menuitem" class="nav-mega-tool">Image to Prompt <span class="nav-mega-arrow">&#8594;</span></a>
+                <a href="/text-to-prompt/" role="menuitem" class="nav-mega-tool">Text to Prompt <span class="nav-mega-arrow">&#8594;</span></a>
+                <div class="nav-mega-models-label">Models</div>
+                <div class="nav-mega-models"><a href="/midjourney-prompt-generator/">Midjourney</a><span class="nav-dot">&#xB7;</span><a href="/stable-diffusion-prompt-generator/">SD</a></div>
+                <div class="nav-mega-models"><a href="/flux-prompt-generator/">Flux</a><span class="nav-dot">&#xB7;</span><a href="/dall-e-prompt-generator/">DALL&#xB7;E&#xA0;3</a></div>
+                <div class="nav-mega-models"><a href="/adobe-firefly-prompt-generator/">Firefly</a><span class="nav-dot">&#xB7;</span><a href="/leonardo-ai-prompt-generator/">Leonardo</a></div>
+                <div class="nav-mega-models"><a href="/ideogram-prompt-generator/">Ideogram</a></div>
+              </div>
+              <div class="nav-mega-divider" aria-hidden="true"></div>
+              <div class="nav-mega-col">
+                <div class="nav-mega-heading">&#127909; VIDEO TOOLS</div>
+                <a href="/?tab=image-to-video" role="menuitem" class="nav-mega-tool">Image to Video <span class="nav-mega-arrow">&#8594;</span></a>
+                <a href="/?tab=text-to-video" role="menuitem" class="nav-mega-tool">Text to Video <span class="nav-mega-arrow">&#8594;</span></a>
+                <div class="nav-mega-models-label">Models</div>
+                <div class="nav-mega-models"><a href="/veo-prompt-generator/">Veo</a><span class="nav-dot">&#xB7;</span><a href="/kling-prompt-generator/">Kling</a></div>
+                <div class="nav-mega-models"><a href="/runway-prompt-generator/">Runway</a><span class="nav-dot">&#xB7;</span><a href="/pika-prompt-generator/">Pika</a></div>
+                <div class="nav-mega-models"><a href="/luma-prompt-generator/">Luma</a><span class="nav-dot">&#xB7;</span><a href="/sora-prompt-generator/">Sora</a></div>
+                <div class="nav-mega-models"><a href="/minimax-prompt-generator/">Minimax</a><span class="nav-dot">&#xB7;</span><a href="/stable-video-prompt-generator/">Stable</a></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <a href="/fr/blog/" >Blog</a>
+        <a href="/pricing/" class="nav-pill-pricing">Pricing</a>
+        <a href="/about/" class="nav-pill-about">About</a>
+        <a href="/fr/" class="nav-try-free">Essayer &#8594;</a>
+        <button id="theme-toggle" onclick="toggleTheme()" aria-label="Switch theme" title="Switch theme">&#9728;&#xFE0F;</button>
+  </nav>
+    </div>
+  </header>
+
+  <nav class="breadcrumb" aria-label="Fil d'Ariane">
+    <a href="/fr/">Accueil</a><span class="sep">›</span>
+    <a href="/fr/blog/">Blog</a><span class="sep">›</span>
+    <span>Guide Prompts Stable Diffusion</span>
+  </nav>
+
+  <div class="page-wrapper">
+
+    <header class="article-header">
+      <p class="article-tag">Stable Diffusion</p>
+      <h1>Guide des Prompts Stable Diffusion 2026</h1>
+      <div class="article-meta">
+        <span>Mars 2026</span>
+        <span class="dot">·</span>
+        <span>11 min de lecture</span>
+        <span class="dot">·</span>
+        <span>SD 1.5 · SDXL · SD 3.5 · ComfyUI</span>
+        <span class="dot">·</span>
+        <span>Mis à jour mars 2026</span>
+      </div>
+    </header>
+
+    <div class="article-body">
+
+      <p>Stable Diffusion est le générateur d'images IA le plus flexible et le plus technique. Contrairement à Midjourney ou DALL-E 3 qui simplifient l'expérience utilisateur, Stable Diffusion vous donne un contrôle granulaire sur chaque aspect de la génération — mais cela nécessite de maîtriser une syntaxe de prompt spécifique et des paramètres techniques que les autres modèles n'utilisent pas.</p>
+
+      <nav class="toc" aria-label="Sommaire">
+        <details open>
+          <summary>Dans ce guide</summary>
+          <ol>
+            <li><a href="#syntaxe-ponderee">La Syntaxe Pondérée Expliquée</a></li>
+            <li><a href="#prompts-negatifs">Maîtriser les Prompts Négatifs</a></li>
+            <li><a href="#quality-tags">Tags de Qualité Essentiels</a></li>
+            <li><a href="#versions-sd">Différences entre SD 1.5, SDXL et SD 3.5</a></li>
+            <li><a href="#checkpoints">Compatibilité avec les Checkpoints</a></li>
+            <li><a href="#parametres-techniques">CFG Scale, Steps et Samplers</a></li>
+            <li><a href="#templates-avances">Templates de Prompts Avancés</a></li>
+            <li><a href="#questions-frequentes">Questions Fréquentes</a></li>
+          </ol>
+        </details>
+      </nav>
+
+      <div class="callout">
+        <p><strong>Générateur automatique :</strong> Notre <a href="/stable-diffusion-prompt-generator/">générateur de prompts Stable Diffusion</a> crée des prompts optimisés avec la syntaxe pondérée, les quality tags et les prompts négatifs adaptés à votre version de SD. Téléchargez une image de référence pour commencer.</p>
+      </div>
+
+      <h2 id="syntaxe-ponderee">La Syntaxe Pondérée Expliquée</h2>
+
+      <p>La syntaxe pondérée est ce qui rend Stable Diffusion unique parmi les générateurs d'images IA. Elle vous permet d'augmenter ou de diminuer l'importance relative de chaque terme dans votre prompt.</p>
+
+      <h3>Syntaxe de Base</h3>
+      <p>Le format est <code>(terme:poids)</code> où le poids est un nombre décimal. La valeur par défaut est 1.0.</p>
+      <ul>
+        <li><code>(golden hour:1.3)</code> — augmente l'importance de « golden hour » de 30%</li>
+        <li><code>(bokeh:0.7)</code> — réduit l'importance de « bokeh » de 30%</li>
+        <li><code>(masterpiece:1.2), (best quality:1.1)</code> — quality tags avec pondération</li>
+      </ul>
+
+      <h3>Raccourcis de Pondération</h3>
+      <p>Stable Diffusion supporte aussi des raccourcis avec des parenthèses multiples :</p>
+      <ul>
+        <li><code>(terme)</code> = <code>(terme:1.1)</code></li>
+        <li><code>((terme))</code> = <code>(terme:1.21)</code></li>
+        <li><code>(((terme)))</code> = <code>(terme:1.33)</code></li>
+        <li><code>[terme]</code> = <code>(terme:0.9)</code> — réduit le poids</li>
+      </ul>
+
+      <h3>Règles de Pondération</h3>
+      <p>La pondération est un outil puissant, mais il faut l'utiliser avec discernement :</p>
+      <ul>
+        <li><strong>Restez entre 0.5 et 1.5 :</strong> Au-delà, vous risquez des artefacts visuels et des distorsions</li>
+        <li><strong>Pondérez peu de termes :</strong> Si tout est pondéré à 1.3, rien n'est vraiment mis en avant</li>
+        <li><strong>Utilisez la pondération pour résoudre des problèmes :</strong> Si un élément n'apparaît pas, augmentez son poids. S'il domine trop, réduisez-le</li>
+      </ul>
+
+      <h3>Exemple Complet</h3>
+      <p><code>(masterpiece:1.2), (best quality:1.1), 1girl, (flowing red hair:1.2), green eyes, (medieval dress:1.1), standing in a (enchanted forest:1.3), (golden hour lighting:1.2), (bokeh:0.8), detailed face, soft shadows</code></p>
+
+      <h2 id="prompts-negatifs">Maîtriser les Prompts Négatifs</h2>
+
+      <p>Les prompts négatifs sont une fonctionnalité exclusive à Stable Diffusion (et aux modèles dérivés). Ils indiquent au modèle ce que vous ne voulez PAS voir dans l'image. C'est souvent la différence entre un résultat amateur et un résultat professionnel.</p>
+
+      <h3>Prompt Négatif Universel</h3>
+      <p>Ce prompt négatif fonctionne bien comme base pour la plupart des générations :</p>
+      <p><code>(worst quality:1.4), (low quality:1.4), (normal quality:1.2), lowres, bad anatomy, bad hands, extra digits, fewer digits, cropped, watermark, signature, username, blurry, deformed, jpeg artifacts</code></p>
+
+      <h3>Prompts Négatifs Spécialisés</h3>
+
+      <p><strong>Pour les portraits :</strong></p>
+      <p><code>(worst quality:1.4), (low quality:1.4), bad anatomy, bad hands, extra fingers, mutated hands, poorly drawn face, ugly, disfigured, cross-eyed, asymmetric face, extra limbs, fused fingers</code></p>
+
+      <p><strong>Pour les paysages :</strong></p>
+      <p><code>(worst quality:1.4), (low quality:1.4), blurry, watermark, text, logo, oversaturated, distorted horizon, unnatural colors</code></p>
+
+      <p><strong>Pour l'anime :</strong></p>
+      <p><code>(worst quality:1.4), (low quality:1.4), bad anatomy, bad hands, extra digits, missing fingers, poorly drawn face, simple background, flat colors, bad proportions</code></p>
+
+      <h2 id="quality-tags">Tags de Qualité Essentiels</h2>
+
+      <p>Les quality tags sont des mots-clés qui améliorent la qualité générale de l'image. Leur efficacité varie selon la version de Stable Diffusion et le checkpoint utilisé.</p>
+
+      <h3>Tags les Plus Efficaces</h3>
+      <div class="table-wrap">
+      <table class="comparison-table">
+        <thead>
+          <tr>
+            <th>Tag</th>
+            <th>Effet</th>
+            <th>Efficace sur</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><code>masterpiece</code></td>
+            <td>Qualité maximale, composition soignée</td>
+            <td>SD 1.5, certains SDXL</td>
+          </tr>
+          <tr>
+            <td><code>best quality</code></td>
+            <td>Détails fins, rendu propre</td>
+            <td>SD 1.5, SDXL</td>
+          </tr>
+          <tr>
+            <td><code>highly detailed</code></td>
+            <td>Augmente le niveau de détail</td>
+            <td>Tous</td>
+          </tr>
+          <tr>
+            <td><code>sharp focus</code></td>
+            <td>Netteté accrue</td>
+            <td>Tous</td>
+          </tr>
+          <tr>
+            <td><code>8k uhd</code></td>
+            <td>Haute résolution apparente</td>
+            <td>SD 1.5, variable sur SDXL</td>
+          </tr>
+          <tr>
+            <td><code>intricate details</code></td>
+            <td>Détails complexes et fins</td>
+            <td>Tous</td>
+          </tr>
+        </tbody>
+      </table>
+      </div>
+
+      <h2 id="versions-sd">Différences entre SD 1.5, SDXL et SD 3.5</h2>
+
+      <h3>SD 1.5</h3>
+      <p>La version la plus mature avec le plus grand écosystème de checkpoints et LoRAs. Les prompts SD 1.5 dépendent fortement des quality tags et de la syntaxe pondérée. Résolution native : 512x512.</p>
+      <p>Prompt type : <code>(masterpiece:1.2), (best quality:1.1), highly detailed, 1girl, long blonde hair, blue eyes, white dress, standing in flower field, golden hour, (bokeh:0.8), sharp focus</code></p>
+
+      <h3>SDXL</h3>
+      <p>Résolution native de 1024x1024 avec une compréhension améliorée du langage naturel. SDXL nécessite moins de quality tags mais bénéficie toujours de la pondération pour le contrôle précis. Le système de deux encodeurs de texte (CLIP ViT-L et OpenCLIP ViT-bigG) donne une meilleure compréhension sémantique.</p>
+      <p>Prompt type : <code>beautiful young woman with long blonde hair, wearing an elegant white dress, standing in a sunlit wildflower meadow, (golden hour:1.2), soft bokeh background, detailed skin texture, professional photography</code></p>
+
+      <h3>SD 3.5</h3>
+      <p>La dernière version utilise une architecture MMDiT (Multi-Modal Diffusion Transformer) qui comprend beaucoup mieux le langage naturel. Les quality tags traditionnels ont moins d'impact. Les descriptions détaillées en langage naturel fonctionnent le mieux.</p>
+      <p>Prompt type : <code>A beautiful young woman with flowing blonde hair and bright blue eyes stands in a vast field of wildflowers during golden hour. She wears an elegant white summer dress that catches the warm breeze. The background is softly blurred with warm amber tones. Professional portrait photography with detailed skin texture and natural soft lighting.</code></p>
+
+      <h2 id="checkpoints">Compatibilité avec les Checkpoints</h2>
+
+      <p>Les checkpoints (modèles personnalisés) sont une force majeure de Stable Diffusion. Chaque checkpoint a été entraîné avec des préférences de prompt spécifiques.</p>
+
+      <ul>
+        <li><strong>Realistic Vision :</strong> Excelle avec des prompts photographiques détaillés et des termes de caméra (<code>Canon EOS R5, 85mm f/1.4, RAW photo</code>)</li>
+        <li><strong>DreamShaper :</strong> Polyvalent, fonctionne bien avec des prompts mixtes art/photo</li>
+        <li><strong>Anything V5 :</strong> Optimisé pour l'anime, utilise des tags danbooru (<code>1girl, long_hair, blue_eyes, school_uniform</code>)</li>
+        <li><strong>Juggernaut XL :</strong> Checkpoint SDXL populaire, favorise le langage naturel avec des quality tags modérés</li>
+      </ul>
+
+      <p>Conseil clé : lisez toujours la page du checkpoint sur CivitAI pour connaître les prompts recommandés et les quality tags préférés. Un prompt parfait pour un checkpoint peut être inefficace pour un autre.</p>
+
+      <h2 id="parametres-techniques">CFG Scale, Steps et Samplers</h2>
+
+      <h3>CFG Scale (Classifier-Free Guidance)</h3>
+      <p>Le CFG Scale contrôle la fidélité au prompt. C'est un paramètre fondamental que beaucoup de débutants négligent.</p>
+      <ul>
+        <li><strong>CFG 3-5 :</strong> Créatif, libre — le modèle prend des libertés avec votre prompt</li>
+        <li><strong>CFG 7-9 :</strong> Équilibré — bon compromis entre créativité et fidélité (recommandé)</li>
+        <li><strong>CFG 10-15 :</strong> Strict — suit le prompt de près mais peut sur-saturer</li>
+        <li><strong>CFG 15+ :</strong> Déconseillé — artefacts fréquents et couleurs artificielles</li>
+      </ul>
+
+      <h3>Steps (Étapes de diffusion)</h3>
+      <p>Le nombre de steps influence le temps de génération et la qualité du résultat :</p>
+      <ul>
+        <li><strong>15-20 steps :</strong> Rapide, qualité acceptable pour les tests</li>
+        <li><strong>25-35 steps :</strong> Bon équilibre qualité/vitesse (recommandé)</li>
+        <li><strong>40-50 steps :</strong> Haute qualité, temps de génération plus long</li>
+        <li><strong>50+ steps :</strong> Rendements décroissants — rarement nécessaire</li>
+      </ul>
+
+      <h3>Samplers</h3>
+      <p>Le choix du sampler affecte la qualité et le style du résultat. Les plus populaires en 2026 :</p>
+      <ul>
+        <li><strong>DPM++ 2M Karras :</strong> Le standard — rapide et de bonne qualité</li>
+        <li><strong>Euler a :</strong> Créatif, bon pour les compositions artistiques</li>
+        <li><strong>DPM++ SDE Karras :</strong> Excellent pour les détails fins et les textures</li>
+        <li><strong>UniPC :</strong> Rapide et efficace, bon pour le prototypage</li>
+      </ul>
+
+      <h2 id="templates-avances">Templates de Prompts Avancés</h2>
+
+      <h3>Portrait Photoréaliste (SD 1.5)</h3>
+      <p>Prompt : <code>(masterpiece:1.2), (best quality:1.1), (RAW photo:1.2), portrait of a 30 year old woman, (detailed skin texture:1.2), natural skin, freckles, green eyes, auburn hair, (natural lighting:1.1), f/2.8, Canon EOS R5, 85mm lens, shallow depth of field</code></p>
+      <p>Négatif : <code>(worst quality:1.4), (low quality:1.4), bad anatomy, deformed iris, extra fingers, poorly drawn face, airbrushed skin, plastic skin, doll-like</code></p>
+
+      <h3>Paysage Fantasy (SDXL)</h3>
+      <p>Prompt : <code>majestic fantasy landscape, ancient ruins overgrown with luminescent plants, (floating islands:1.2) in a purple twilight sky, waterfalls cascading into mist, (volumetric lighting:1.3), ethereal atmosphere, concept art quality, highly detailed, 8k</code></p>
+      <p>Négatif : <code>(worst quality:1.4), blurry, watermark, text, oversaturated, flat lighting</code></p>
+
+      <h3>Anime (Anything V5)</h3>
+      <p>Prompt : <code>(masterpiece:1.2), (best quality:1.1), 1girl, long silver hair, violet eyes, detailed eyes, (fantasy armor:1.2), glowing runes, dynamic pose, magical particles, night sky background, (bloom:0.8), detailed face</code></p>
+      <p>Négatif : <code>(worst quality:1.4), (low quality:1.4), bad anatomy, extra limbs, poorly drawn hands, simple background, flat shading</code></p>
+
+      <div class="cta-box">
+        <h3>Générez des Prompts Stable Diffusion Optimisés</h3>
+        <p>Téléchargez une image de référence et obtenez un prompt Stable Diffusion complet avec syntaxe pondérée, quality tags et prompt négatif.</p>
+        <a href="/stable-diffusion-prompt-generator/" class="cta-btn">Essayer le Générateur SD →</a>
+      </div>
+
+      <h2 id="questions-frequentes">Questions Fréquentes</h2>
+
+      <h3>Comment fonctionne la syntaxe pondérée dans Stable Diffusion ?</h3>
+      <p>La syntaxe pondérée utilise des parenthèses et des deux-points pour augmenter ou diminuer l'importance d'un terme. <code>(terme:1.3)</code> augmente le poids de 30%, <code>(terme:0.7)</code> le réduit de 30%. La valeur par défaut est 1.0. Évitez les poids supérieurs à 1.5 qui causent des artefacts visuels et des distorsions.</p>
+
+      <h3>Quels sont les meilleurs prompts négatifs pour Stable Diffusion ?</h3>
+      <p>Un bon prompt négatif universel : <code>(worst quality:1.4), (low quality:1.4), (normal quality:1.2), lowres, bad anatomy, bad hands, extra digits, fewer digits, cropped, watermark, signature, blurry, deformed</code>. Pour les portraits, ajoutez des termes spécifiques comme <code>extra fingers, mutated hands, poorly drawn face</code>. Adaptez selon le checkpoint utilisé.</p>
+
+      <h3>Quelle est la différence entre SD 1.5, SDXL et SD 3.5 pour les prompts ?</h3>
+      <p>SD 1.5 nécessite des prompts très structurés avec des quality tags et répond bien à la syntaxe pondérée. SDXL comprend mieux le langage naturel et nécessite moins de quality tags. SD 3.5 utilise un nouveau système qui favorise les descriptions naturelles détaillées, similaire à Flux, avec moins de dépendance aux tags techniques.</p>
+
+      <h3>Comment choisir le bon CFG Scale pour mes prompts Stable Diffusion ?</h3>
+      <p>Le CFG Scale contrôle la fidélité au prompt. Les valeurs basses (3-5) donnent des résultats créatifs mais moins fidèles. Les valeurs moyennes (7-9) offrent le meilleur équilibre — c'est le sweet spot pour la plupart des usages. Les valeurs élevées (10-15) suivent très fidèlement le prompt mais risquent la sur-saturation. Commencez à 7 et ajustez selon vos résultats.</p>
+
+    </div>
+
+    <div class="author-bio">
+      <svg class="author-photo" width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="Avatar de l'auteur"><circle cx="32" cy="32" r="32" fill="#2a1f4e"/><circle cx="32" cy="26" r="11" fill="#7c6bc4"/><ellipse cx="32" cy="52" rx="18" ry="11" fill="#7c6bc4"/></svg>
+      <div class="author-info">
+        <p class="author-name">ImageToPrompt Team</p>
+        <p class="author-desc">Ingénieurs de prompts et artistes IA spécialisés dans Midjourney, Stable Diffusion et Flux. Nous construisons ImageToPrompt pour rendre la génération d'images IA accessible à tous.</p>
+        <a href="https://x.com/Ilyass14286541" class="author-link">Suivre sur X →</a>
+      </div>
+    </div>
+
+    <div class="related-posts">
+      <h2>Guides Associés</h2>
+      <div class="related-grid">
+        <a href="/fr/blog/glossaire-styles-art-ia/" class="related-card">
+          <p class="tag">Glossaire</p>
+          <h3>Glossaire des Styles d'Art IA : 50 Styles Expliqués</h3>
+        </a>
+        <a href="/fr/blog/ecrire-prompts-ia-debutants/" class="related-card">
+          <p class="tag">Débutant</p>
+          <h3>Comment Écrire des Prompts IA : Tutoriel pour Débutants</h3>
+        </a>
+        <a href="/fr/blog/guide-prompts-ideogram/" class="related-card">
+          <p class="tag">Ideogram</p>
+          <h3>Guide Complet des Prompts Ideogram</h3>
+        </a>
+      </div>
+    </div>
+
+  </div>
+
+  <footer class="footer-4col">
+    <div class="f4-inner">
+      <div class="f4-brand">
+        <img src="/favicon.svg" alt="ImageToPrompt" width="28" height="28">
+        <span class="f4-brand-name">ImageTo<span class="accent">Prompt</span></span>
+        <span class="f4-brand-sub">&mdash; Free AI Prompt Generator</span>
+      </div>
+      <div class="f4-grid">
+        <div class="f4-section">
+          <h4 class="f4-heading">Image Prompt Tools</h4>
+          <a href="/">Image to Prompt</a>
+          <a href="/text-to-prompt/">Text to Prompt</a>
+          <a href="/midjourney-prompt-generator/">Midjourney</a>
+          <a href="/stable-diffusion-prompt-generator/">Stable Diffusion</a>
+          <a href="/flux-prompt-generator/">Flux</a>
+          <a href="/dall-e-prompt-generator/">DALL-E 3</a>
+          <a href="/adobe-firefly-prompt-generator/">Adobe Firefly</a>
+          <a href="/leonardo-ai-prompt-generator/">Leonardo AI</a>
+          <a href="/ideogram-prompt-generator/">Ideogram</a>
+        </div>
+        <div class="f4-section">
+          <h4 class="f4-heading">Video Prompt Tools</h4>
+          <a href="/image-to-video-prompt/">Image to Video Prompt</a>
+          <a href="/text-to-video-prompt/">Text to Video Prompt</a>
+          <a href="/veo-prompt-generator/">Veo / Flow Studio</a>
+          <a href="/kling-prompt-generator/">Kling AI</a>
+          <a href="/runway-prompt-generator/">Runway Gen-3</a>
+          <a href="/pika-prompt-generator/">Pika</a>
+          <a href="/luma-prompt-generator/">Luma Dream Machine</a>
+          <a href="/sora-prompt-generator/">Sora</a>
+          <a href="/minimax-prompt-generator/">Minimax</a>
+          <a href="/stable-video-prompt-generator/">Stable Video</a>
+        </div>
+        <div class="f4-section">
+          <h4 class="f4-heading">Resources</h4>
+          <a href="/blog/">Blog</a>
+          <a href="/about/">About</a>
+          <a href="/pricing/">Pricing</a>
+          <a href="/contact/">Contact</a>
+          <a href="/privacy-policy/">Privacy Policy</a>
+          <a href="/terms-of-service/">Terms of Service</a>
+        </div>
+        <div class="f4-section">
+          <h4 class="f4-heading">Languages</h4>
+          <a href="/">English</a>
+          <a href="/fr/">Fran&#231;ais</a>
+          <a href="/ar/">&#1575;&#1604;&#1593;&#1585;&#1576;&#1610;&#1577;</a>
+          <a href="/es/">Espa&#241;ol</a>
+          <a href="/ko/">&#54620;&#44397;&#50612;</a>
+          <a href="/ja/">&#26085;&#26412;&#35486;</a>
+        </div>
+      </div>
+      <div class="f4-bottom">
+        <p>&#169; 2026 ImageToPrompt.dev &#8212; Free AI Prompt Generator</p>
+        <p>Your images are never stored. All analysis is ephemeral and private.</p>
+      </div>
+    </div>
+  </footer>
+
+<script src="/newsletter-inject.js" defer></script>
+<script src="/nav.js" defer></script>
+  <script>
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', function() {
+    navigator.serviceWorker.register('/sw.js')
+      .catch(function(err) { console.warn('SW registration failed:', err); });
+  });
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,472 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+  <script src="/theme-toggle.js"></script>
+  <meta charset="UTF-8" />
+  <link rel="dns-prefetch" href="https://www.googletagmanager.com">
+<link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0" />
+  <meta name="robots" content="max-image-preview:large, index, follow">
+  <meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="ImageToPrompt">
+  <title>إنشاء برومبت ذكاء اصطناعي من صورة حقيقية | ImageToPrompt</title>
+  <meta name="description" content="تعلم تحويل الصور الحقيقية إلى برومبتات. تقنيات الإضاءة والتكوين." />
+  <link rel="canonical" href="https://www.imagetoprompt.dev/ar/blog/prompt-ia-min-soura-haqiqiya/" />
+  <link rel="alternate" hreflang="ar" href="https://www.imagetoprompt.dev/ar/blog/prompt-ia-min-soura-haqiqiya/" />
+  <link rel="alternate" hreflang="en" href="https://www.imagetoprompt.dev/blog/ai-prompt-from-photo/" />
+  <link rel="alternate" hreflang="fr" href="https://www.imagetoprompt.dev/fr/blog/prompt-ia-depuis-photo/" />
+  <link rel="alternate" hreflang="x-default" href="https://www.imagetoprompt.dev/blog/ai-prompt-from-photo/" />
+  <meta property="og:title" content="إنشاء برومبت ذكاء اصطناعي من صورة حقيقية" />
+  <meta property="og:description" content="تعلم تحويل الصور الحقيقية إلى برومبتات. تقنيات الإضاءة والتكوين." />
+  <meta property="og:url" content="https://www.imagetoprompt.dev/ar/blog/prompt-ia-min-soura-haqiqiya/" />
+  <meta property="og:type" content="article" />
+  <meta property="og:image" content="https://www.imagetoprompt.dev/og-image.png" />
+  <meta property="og:site_name" content="ImageToPrompt" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="إنشاء برومبت ذكاء اصطناعي من صورة حقيقية" />
+  <meta name="twitter:description" content="تعلم تحويل الصور الحقيقية إلى برومبتات AI." />
+  <meta name="twitter:image" content="https://www.imagetoprompt.dev/og-image.png" />
+  <meta name="twitter:site" content="@imagetoprompt" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="48x48" href="/favicon-48.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+  <link rel="manifest" href="/site.webmanifest" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="/fonts/space-grotesk-700.woff2" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="/fonts/inter-400.woff2" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Arabic:wght@400;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/theme.css">
+  <link rel="preload" href="/blog.css" as="style" onload="this.onload=null;this.rel='stylesheet'"><noscript><link rel="stylesheet" href="/blog.css"></noscript>
+  <style>
+    body { font-family: 'Noto Sans Arabic', 'Space Grotesk', sans-serif; }
+    .article-body { direction: rtl; text-align: right; }
+    code, pre { direction: ltr; text-align: left; display: inline-block; }
+    .toc ol, .toc ul { padding-right: 1.5rem; padding-left: 0; }
+    .article-body ul, .article-body ol { margin-right: 1.5rem; margin-left: 0; }
+    .breadcrumb { direction: rtl; }
+  </style>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "إنشاء برومبت ذكاء اصطناعي من صورة حقيقية",
+    "description": "تعلم تحويل الصور الحقيقية إلى برومبتات. تقنيات الإضاءة والتكوين.",
+    "image": "https://www.imagetoprompt.dev/og-image.png",
+    "datePublished": "2026-03-18",
+    "dateModified": "2026-03-22",
+    "inLanguage": "ar",
+    "author": {
+      "@type": "Person",
+      "name": "ImageToPrompt Team",
+      "url": "https://www.imagetoprompt.dev/"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "ImageToPrompt",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://www.imagetoprompt.dev/favicon.svg"
+      }
+    },
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https://www.imagetoprompt.dev/ar/blog/prompt-ia-min-soura-haqiqiya/"
+    }
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "هل يمكن للذكاء الاصطناعي تحليل صورة فوتوغرافية حقيقية؟",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "نعم، نماذج الرؤية الحاسوبية مثل Claude تستطيع تحليل الصور الحقيقية واستخراج معلومات عن الإضاءة والتركيب والألوان والأسلوب. ImageToPrompt يستخدم هذه التقنية لتحويل أي صورة فوتوغرافية إلى برومبت مُحسَّن لنموذج AI محدد."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "ما الفرق بين تحويل صورة حقيقية وصورة AI إلى برومبت؟",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "الصور الحقيقية تحتوي على تعقيدات طبيعية مثل عيوب الإضاءة وعناصر عشوائية. البرومبت المُستخرج يُركّز على العناصر الرئيسية ويُبسّط التعقيد. صور AI أسهل تحويلاً لأنها أصلاً مُنشأة من برومبت وتحتوي توقيعات أسلوبية أوضح."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "أي نموذج AI يُنتج أفضل النتائج من صور فوتوغرافية حقيقية؟",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Flux هو الأفضل لإعادة إنتاج الصور الفوتوغرافية الواقعية بفضل تفوقه في الواقعية. Midjourney جيد لإضافة لمسة فنية. Stable Diffusion مع Realistic Vision ممتاز للتحكم التقني الدقيق في الصور الواقعية."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "كيف أستخرج إعدادات الكاميرا من صورة حقيقية؟",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "ImageToPrompt يُحلل الصورة بصرياً ويستنتج إعدادات الكاميرا من العناصر المرئية: عمق الميدان يشير إلى فتحة العدسة، ضغط المنظور يشير إلى البعد البؤري، حبيبات الفيلم تشير إلى ISO العالي. هذه المعلومات تُدمج في البرومبت المُنشأ."
+        }
+      }
+    ]
+  }
+  </script>
+    <!-- Google AdSense -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4499206373485728" crossorigin="anonymous"></script>
+    <!-- Web Push Notifications -->
+<script src="https://cdn.onesignal.com/sdks/web/v16/OneSignalSDK.page.js" defer></script>
+<script>
+  window.OneSignalDeferred = window.OneSignalDeferred || [];
+  OneSignalDeferred.push(async function(OneSignal) {
+    await OneSignal.init({
+      appId: "REPLACE_WITH_ONESIGNAL_APP_ID",
+      notifyButton: { enable: false }
+    });
+  });
+</script>
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="inner">
+      <a href="/ar/" class="site-logo"><img src="/favicon.svg" alt="ImageToPrompt" width="48" height="48"><div class="site-logo-text">ImageTo<span class="accent">Prompt</span><span class="site-logo-sub">&#1605;&#1608;&#1604;&#1617;&#1583; &#1576;&#1585;&#1608;&#1605;&#1576;&#1578; &#1605;&#1580;&#1575;&#1606;&#1610;</span></div></a>
+      <nav class="site-nav" aria-label="&#1575;&#1604;&#1578;&#1606;&#1602;&#1604; &#1575;&#1604;&#1585;&#1574;&#1610;&#1587;&#1610;">
+        <div class="nav-dropdown">
+          <button class="nav-dropdown-trigger" aria-haspopup="true" aria-expanded="false">Tools <span class="nav-chevron" aria-hidden="true">&#9660;</span></button>
+          <div class="nav-dropdown-menu" role="menu">
+            <div class="nav-mega-grid">
+              <div class="nav-mega-col">
+                <div class="nav-mega-heading">&#128444; IMAGE TOOLS</div>
+                <a href="/" role="menuitem" class="nav-mega-tool">Image to Prompt <span class="nav-mega-arrow">&#8594;</span></a>
+                <a href="/text-to-prompt/" role="menuitem" class="nav-mega-tool">Text to Prompt <span class="nav-mega-arrow">&#8594;</span></a>
+                <div class="nav-mega-models-label">Models</div>
+                <div class="nav-mega-models"><a href="/midjourney-prompt-generator/">Midjourney</a><span class="nav-dot">&#xB7;</span><a href="/stable-diffusion-prompt-generator/">SD</a></div>
+                <div class="nav-mega-models"><a href="/flux-prompt-generator/">Flux</a><span class="nav-dot">&#xB7;</span><a href="/dall-e-prompt-generator/">DALL&#xB7;E&#xA0;3</a></div>
+                <div class="nav-mega-models"><a href="/adobe-firefly-prompt-generator/">Firefly</a><span class="nav-dot">&#xB7;</span><a href="/leonardo-ai-prompt-generator/">Leonardo</a></div>
+                <div class="nav-mega-models"><a href="/ideogram-prompt-generator/">Ideogram</a></div>
+              </div>
+              <div class="nav-mega-divider" aria-hidden="true"></div>
+              <div class="nav-mega-col">
+                <div class="nav-mega-heading">&#127909; VIDEO TOOLS</div>
+                <a href="/?tab=image-to-video" role="menuitem" class="nav-mega-tool">Image to Video <span class="nav-mega-arrow">&#8594;</span></a>
+                <a href="/?tab=text-to-video" role="menuitem" class="nav-mega-tool">Text to Video <span class="nav-mega-arrow">&#8594;</span></a>
+                <div class="nav-mega-models-label">Models</div>
+                <div class="nav-mega-models"><a href="/veo-prompt-generator/">Veo</a><span class="nav-dot">&#xB7;</span><a href="/kling-prompt-generator/">Kling</a></div>
+                <div class="nav-mega-models"><a href="/runway-prompt-generator/">Runway</a><span class="nav-dot">&#xB7;</span><a href="/pika-prompt-generator/">Pika</a></div>
+                <div class="nav-mega-models"><a href="/luma-prompt-generator/">Luma</a><span class="nav-dot">&#xB7;</span><a href="/sora-prompt-generator/">Sora</a></div>
+                <div class="nav-mega-models"><a href="/minimax-prompt-generator/">Minimax</a><span class="nav-dot">&#xB7;</span><a href="/stable-video-prompt-generator/">Stable</a></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <a href="/ar/blog/">المدونة</a>#1575;>&#1575;&#1604;&#1605;&#1583;&#1608;&#1606;&#1577;</a>#1604;>&#1575;&#1604;&#1605;&#1583;&#1608;&#1606;&#1577;</a>#1605;>&#1575;&#1604;&#1605;&#1583;&#1608;&#1606;&#1577;</a>#1583;>&#1575;&#1604;&#1605;&#1583;&#1608;&#1606;&#1577;</a>#1608;>&#1575;&#1604;&#1605;&#1583;&#1608;&#1606;&#1577;</a>#1606;>&#1575;&#1604;&#1605;&#1583;&#1608;&#1606;&#1577;</a>#1577;</a>
+        <a href="/pricing/" class="nav-pill-pricing">Pricing</a>
+        <a href="/about/" class="nav-pill-about">About</a>
+        <a href="/ar/" class="nav-try-free">&#1580;&#1585;&#1617;&#1576; &#8594;</a>
+        <button id="theme-toggle" onclick="toggleTheme()" aria-label="Switch theme" title="Switch theme">&#9728;&#xFE0F;</button>
+  </nav>
+    </div>
+  </header>
+
+  <nav class="breadcrumb" aria-label="مسار التنقل">
+    <a href="/ar/">الرئيسية</a><span class="sep">›</span>
+    <a href="/ar/blog/">المدونة</a><span class="sep">›</span>
+    <span>إنشاء برومبت من صورة حقيقية</span>
+  </nav>
+
+  <div class="page-wrapper">
+
+    <header class="article-header">
+      <p class="article-tag">تصوير فوتوغرافي</p>
+      <h1>إنشاء برومبت ذكاء اصطناعي من صورة حقيقية</h1>
+      <div class="article-meta">
+        <span>مارس 2026</span>
+        <span class="dot">·</span>
+        <span>8 دقائق قراءة</span>
+        <span class="dot">·</span>
+        <span>Flux · Midjourney · Stable Diffusion</span>
+        <span class="dot">·</span>
+        <span>محدّث مارس 2026</span>
+      </div>
+    </header>
+
+    <div class="article-body">
+
+      <p>تصوير فوتوغرافي رائع — إضاءة ساعة ذهبية مثالية، تركيب بصري مدروس، ألوان دافئة تمنح الصورة إحساساً سينمائياً. تريد إنشاء صور بنفس الأسلوب باستخدام الذكاء الاصطناعي، لكن الصور الفوتوغرافية الحقيقية تختلف جوهرياً عن الصور المُنشأة بالـ AI. كيف تحوّل صورة حقيقية إلى برومبت فعّال؟</p>
+
+      <nav class="toc" aria-label="محتويات المقال">
+        <details open>
+          <summary>في هذا الدليل</summary>
+          <ol>
+            <li><a href="#real-vs-ai">الصور الحقيقية مقابل صور AI</a></li>
+            <li><a href="#lighting-analysis">تحليل الإضاءة</a></li>
+            <li><a href="#composition">تحليل التركيب</a></li>
+            <li><a href="#color-palette">لوحة الألوان</a></li>
+            <li><a href="#camera-settings">استنتاج إعدادات الكاميرا</a></li>
+            <li><a href="#mood">المزاج والجو</a></li>
+            <li><a href="#practical-examples">أمثلة عملية</a></li>
+            <li><a href="#faq">أسئلة شائعة</a></li>
+          </ol>
+        </details>
+      </nav>
+
+      <h2 id="real-vs-ai">الصور الحقيقية مقابل صور AI</h2>
+
+      <p>تحويل صورة فوتوغرافية حقيقية إلى برومبت يختلف عن تحويل صورة مُنشأة بالذكاء الاصطناعي. الصور الحقيقية تحتوي على:</p>
+
+      <ul>
+        <li><strong>تعقيدات طبيعية:</strong> عناصر عشوائية في الخلفية وعيوب طبيعية في الإضاءة وتفاصيل غير مقصودة</li>
+        <li><strong>خصائص الكاميرا:</strong> عمق ميدان حقيقي وتشوه العدسة وحبيبات الفيلم الطبيعية</li>
+        <li><strong>واقعية غير مثالية:</strong> الواقع ليس "مثالياً" كصور AI — وهذا جزء من جاذبيته</li>
+        <li><strong>سياق بيئي:</strong> عناصر لم تُختَر بعناية لكنها جزء من المشهد الحقيقي</li>
+      </ul>
+
+      <p>التحدي هو استخراج الجوهر البصري — الإضاءة والمزاج والأسلوب — مع تجاهل التفاصيل العشوائية التي لا تُساهم في الأسلوب.</p>
+
+      <h2 id="lighting-analysis">تحليل الإضاءة</h2>
+
+      <p>الإضاءة هي أهم عنصر في أي صورة فوتوغرافية. عندما تنظر إلى صورة حقيقية، اسأل نفسك:</p>
+
+      <h3>مصدر الضوء</h3>
+      <ul>
+        <li><strong>ضوء طبيعي:</strong> شمس مباشرة أو غيوم أو ضوء منتشر من نافذة</li>
+        <li><strong>ضوء اصطناعي:</strong> إضاءة استوديو أو شموع أو نيون أو مصابيح شارع</li>
+        <li><strong>إضاءة مختلطة:</strong> مزيج من الطبيعي والاصطناعي</li>
+      </ul>
+
+      <h3>اتجاه الضوء</h3>
+      <ul>
+        <li><code dir="ltr">front lighting</code> — إضاءة أمامية: تُقلل الظلال</li>
+        <li><code dir="ltr">side lighting</code> — إضاءة جانبية: تُبرز الملمس والعمق</li>
+        <li><code dir="ltr">backlighting</code> — إضاءة خلفية: تُنشئ هالات ضوئية وصور ظلية</li>
+        <li><code dir="ltr">Rembrandt lighting</code> — إضاءة رامبرانت: مثلث ضوء على الخد المظلل</li>
+        <li><code dir="ltr">rim lighting</code> — إضاءة حافة: خط ضوئي حول حواف الموضوع</li>
+      </ul>
+
+      <h3>جودة الضوء</h3>
+      <ul>
+        <li><code dir="ltr">soft diffused light</code> — ناعم ومنتشر (يوم غائم أو مع ناشر)</li>
+        <li><code dir="ltr">hard light</code> — قاسٍ ومباشر (شمس الظهيرة أو فلاش مباشر)</li>
+        <li><code dir="ltr">dappled light</code> — ضوء مبقّع (يتسرب عبر أوراق الأشجار)</li>
+      </ul>
+
+      <h2 id="composition">تحليل التركيب</h2>
+
+      <p>التركيب يُحدد كيف يقرأ المشاهد الصورة. المصطلحات الأساسية:</p>
+
+      <ul>
+        <li><code dir="ltr">rule of thirds</code> — قاعدة الثلثات: الموضوع عند تقاطع خطوط الشبكة</li>
+        <li><code dir="ltr">centered composition</code> — تركيب مركزي: الموضوع في الوسط تماماً</li>
+        <li><code dir="ltr">leading lines</code> — خطوط قائدة: خطوط تُوجّه العين نحو الموضوع</li>
+        <li><code dir="ltr">frame within frame</code> — إطار داخل إطار: عنصر يُؤطر الموضوع</li>
+        <li><code dir="ltr">negative space</code> — مساحة سلبية: فراغ مقصود حول الموضوع</li>
+      </ul>
+
+      <h3>زوايا الكاميرا</h3>
+      <ul>
+        <li><code dir="ltr">eye level</code> — مستوى العين (الأكثر طبيعية)</li>
+        <li><code dir="ltr">low angle</code> — زاوية منخفضة (تعظيم وقوة)</li>
+        <li><code dir="ltr">high angle</code> — زاوية مرتفعة (ضعف وهشاشة)</li>
+        <li><code dir="ltr">dutch angle</code> — زاوية هولندية (توتر وديناميكية)</li>
+        <li><code dir="ltr">bird's eye view</code> — منظر علوي</li>
+      </ul>
+
+      <div class="cta-inline">
+        <p>حوّل أي صورة فوتوغرافية إلى برومبت AI — تحليل تلقائي للإضاءة والتركيب.</p>
+        <a href="/" class="cta-btn-sm">جرّب مجاناً ←</a>
+      </div>
+
+      <h2 id="color-palette">لوحة الألوان</h2>
+
+      <p>الألوان في الصور الفوتوغرافية الحقيقية لها خصائص تختلف عن الألوان الرقمية البحتة:</p>
+
+      <ul>
+        <li><strong>درجة حرارة اللون:</strong> <code dir="ltr">warm tones</code> (ذهبي، عنبري) مقابل <code dir="ltr">cool tones</code> (أزرق، رمادي)</li>
+        <li><strong>التشبع:</strong> <code dir="ltr">muted colors</code> (ألوان خافتة) مقابل <code dir="ltr">vibrant saturated colors</code> (ألوان مشبعة حية)</li>
+        <li><strong>التباين:</strong> <code dir="ltr">high contrast</code> (تباين عالٍ) مقابل <code dir="ltr">low contrast</code> (تباين منخفض)</li>
+        <li><strong>اللون السائد:</strong> صف اللون الغالب — "لوحة ألوان دافئة يسيطر عليها البرتقالي والذهبي"</li>
+      </ul>
+
+      <h2 id="camera-settings">استنتاج إعدادات الكاميرا</h2>
+
+      <p>مولدات AI تستجيب جيداً لمصطلحات التصوير الفوتوغرافي. من الصورة الحقيقية يمكنك استنتاج:</p>
+
+      <h3>البعد البؤري</h3>
+      <ul>
+        <li>خلفية مضغوطة بشكل كبير = <code dir="ltr">telephoto lens, 200mm</code></li>
+        <li>عمق ميدان ضحل مع بوكيه جميل = <code dir="ltr">85mm f/1.4, shallow depth of field</code></li>
+        <li>منظور واسع مع تشوه طفيف = <code dir="ltr">wide angle 24mm</code></li>
+        <li>تشوه شديد وزاوية واسعة = <code dir="ltr">ultra wide 14mm, fisheye</code></li>
+      </ul>
+
+      <h3>إعدادات أخرى</h3>
+      <ul>
+        <li>حبيبات مرئية = <code dir="ltr">film grain, high ISO, Kodak Portra 400</code></li>
+        <li>حركة ضبابية = <code dir="ltr">motion blur, slow shutter speed</code></li>
+        <li>كل شيء حاد = <code dir="ltr">f/11, deep focus, landscape photography</code></li>
+      </ul>
+
+      <h2 id="mood">المزاج والجو</h2>
+
+      <p>المزاج هو الشعور العاطفي الذي تُثيره الصورة. المصطلحات الأساسية:</p>
+
+      <ul>
+        <li><code dir="ltr">serene, peaceful, tranquil</code> — هادئ وسكيني</li>
+        <li><code dir="ltr">moody, dramatic, intense</code> — درامي ومكثّف</li>
+        <li><code dir="ltr">nostalgic, vintage, retro</code> — حنيني وقديم</li>
+        <li><code dir="ltr">ethereal, dreamy, otherworldly</code> — حالم وأثيري</li>
+        <li><code dir="ltr">gritty, raw, documentary</code> — خام وتوثيقي</li>
+        <li><code dir="ltr">romantic, intimate, tender</code> — رومانسي وحميمي</li>
+      </ul>
+
+      <h2 id="practical-examples">أمثلة عملية</h2>
+
+      <h3>مثال 1: بورتريه بالساعة الذهبية</h3>
+      <p>صورة فوتوغرافية لشخص أمام غروب الشمس بإضاءة دافئة وعمق ميدان ضحل:</p>
+      <pre dir="ltr">Portrait photograph of a person at golden hour, warm sunlight from behind, lens flare, shallow depth of field, 85mm f/1.4, bokeh background, warm amber tones, peaceful expression, natural skin texture, editorial style, Canon EOS R5 --ar 2:3</pre>
+
+      <h3>مثال 2: تصوير شارع ليلي</h3>
+      <p>صورة شارع في مدينة آسيوية ليلاً مع انعكاسات المطر:</p>
+      <pre dir="ltr">Street photography at night, narrow Tokyo alley, neon signs reflecting on wet pavement, rain, a lone figure with umbrella, cinematic atmosphere, high contrast, warm and cool tones, Fuji X100V, 35mm, film grain --ar 2:3</pre>
+
+      <h3>مثال 3: منظر طبيعي</h3>
+      <p>صورة بحيرة جبلية هادئة عند الفجر:</p>
+      <pre dir="ltr">Landscape photograph of a pristine mountain lake at dawn, mirror-like water reflections, misty mountains in background, soft pink and blue sky, foreground wildflowers, deep focus f/11, 24mm wide angle, long exposure water smoothing, serene and peaceful mood --ar 16:9</pre>
+
+      <h3>مثال 4: تصوير طعام</h3>
+      <p>صورة طعام احترافية بإضاءة طبيعية:</p>
+      <pre dir="ltr">Food photography, artisan sourdough bread on rustic wooden board, steam rising, butter melting, natural side window light, warm earth tones, shallow depth of field, 50mm macro, overhead angle, editorial food styling --ar 4:5</pre>
+
+      <div class="cta-box">
+        <h3>حوّل أي صورة فوتوغرافية إلى برومبت</h3>
+        <p>ارفع صورتك الحقيقية واحصل على برومبت AI يلتقط الإضاءة والتركيب والمزاج — مجاناً.</p>
+        <a href="/?lang=ar" class="cta-btn">جرّب ImageToPrompt مجاناً ←</a>
+      </div>
+
+      <h2 id="faq">أسئلة شائعة</h2>
+
+      <h3>هل يمكن للذكاء الاصطناعي تحليل صورة فوتوغرافية حقيقية؟</h3>
+      <p>نعم، نماذج الرؤية الحاسوبية المتقدمة مثل Claude تستطيع تحليل الصور الحقيقية واستخراج معلومات مفصلة عن الإضاءة والتركيب والألوان والأسلوب وحتى إعدادات الكاميرا المُستنتَجة. <a href="/">ImageToPrompt</a> يستخدم هذه التقنية لتحويل أي صورة فوتوغرافية إلى برومبت مُحسَّن لنموذج AI محدد.</p>
+
+      <h3>ما الفرق بين تحويل صورة حقيقية وصورة AI إلى برومبت؟</h3>
+      <p>الصور الحقيقية تحتوي على تعقيدات طبيعية مثل عيوب الإضاءة العفوية وعناصر خلفية عشوائية. البرومبت المُستخرج يُركّز على العناصر الرئيسية المهمة ويُبسّط التعقيد الطبيعي. صور AI أسهل في التحويل لأنها أصلاً مُنشأة من برومبت وتحتوي توقيعات أسلوبية أوضح وأكثر تحديداً.</p>
+
+      <h3>أي نموذج AI يُنتج أفضل النتائج من صور فوتوغرافية حقيقية؟</h3>
+      <p>Flux هو الأفضل لإعادة إنتاج الصور الفوتوغرافية الواقعية بفضل تفوقه الاستثنائي في الواقعية. يتعامل جيداً مع الأوصاف الطويلة ومصطلحات التصوير التقنية. Midjourney جيد لإضافة لمسة فنية أو سينمائية على الصورة. Stable Diffusion مع نماذج مثل Realistic Vision ممتاز للتحكم التقني الدقيق.</p>
+
+      <h3>كيف أستخرج إعدادات الكاميرا من صورة حقيقية؟</h3>
+      <p>ImageToPrompt يُحلل الصورة بصرياً ويستنتج إعدادات الكاميرا من العناصر المرئية: عمق الميدان الضحل يشير إلى فتحة عدسة كبيرة (مثل <code dir="ltr">f/1.4</code>)، ضغط المنظور يشير إلى بعد بؤري طويل (مثل <code dir="ltr">200mm</code>)، حبيبات الفيلم المرئية تشير إلى ISO العالي. هذه المعلومات تُدمج تلقائياً في البرومبت المُنشأ.</p>
+
+    </div>
+
+    <div class="author-bio">
+      <svg class="author-photo" width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="صورة المؤلف"><circle cx="32" cy="32" r="32" fill="#2a1f4e"/><circle cx="32" cy="26" r="11" fill="#7c6bc4"/><ellipse cx="32" cy="52" rx="18" ry="11" fill="#7c6bc4"/></svg>
+      <div class="author-info">
+        <p class="author-name">فريق ImageToPrompt</p>
+        <p class="author-desc">مهندسو برومبتات وفنانو ذكاء اصطناعي متخصصون في Midjourney و Stable Diffusion و Flux. نبني ImageToPrompt لجعل توليد الصور بالذكاء الاصطناعي في متناول الجميع.</p>
+        <a href="https://x.com/Ilyass14286541" class="author-link">تابعنا على X ←</a>
+      </div>
+    </div>
+
+    <div class="related-posts">
+      <h2>أدلة ذات صلة</h2>
+      <div class="related-grid">
+        <a href="/ar/blog/tahwil-soura-ila-prompt/" class="related-card">
+          <p class="tag">دليل</p>
+          <h3>كيفية تحويل أي صورة إلى برومبت</h3>
+        </a>
+        <a href="/ar/blog/iada-handasa-prompts-souar-ia/" class="related-card">
+          <p class="tag">هندسة عكسية</p>
+          <h3>كيفية استخراج برومبتات صور AI</h3>
+        </a>
+        <a href="/ar/blog/dalil-prompts-flux-ai/" class="related-card">
+          <p class="tag">Flux</p>
+          <h3>دليل برومبتات Flux AI</h3>
+        </a>
+        <a href="/ar/blog/soura-ila-prompt-taswir-muntajat/" class="related-card">
+          <p class="tag">تصوير المنتجات</p>
+          <h3>تحويل الصور إلى برومبت لتصوير المنتجات</h3>
+        </a>
+      </div>
+    </div>
+
+  </div>
+
+  <footer class="footer-4col">
+    <div class="f4-inner">
+      <div class="f4-brand">
+        <img src="/favicon.svg" alt="ImageToPrompt" width="28" height="28">
+        <span class="f4-brand-name">ImageTo<span class="accent">Prompt</span></span>
+        <span class="f4-brand-sub">&mdash; Free AI Prompt Generator</span>
+      </div>
+      <div class="f4-grid">
+        <div class="f4-section">
+          <h4 class="f4-heading">Image Prompt Tools</h4>
+          <a href="/">Image to Prompt</a>
+          <a href="/text-to-prompt/">Text to Prompt</a>
+          <a href="/midjourney-prompt-generator/">Midjourney</a>
+          <a href="/stable-diffusion-prompt-generator/">Stable Diffusion</a>
+          <a href="/flux-prompt-generator/">Flux</a>
+          <a href="/dall-e-prompt-generator/">DALL-E 3</a>
+          <a href="/adobe-firefly-prompt-generator/">Adobe Firefly</a>
+          <a href="/leonardo-ai-prompt-generator/">Leonardo AI</a>
+          <a href="/ideogram-prompt-generator/">Ideogram</a>
+        </div>
+        <div class="f4-section">
+          <h4 class="f4-heading">Video Prompt Tools</h4>
+          <a href="/image-to-video-prompt/">Image to Video Prompt</a>
+          <a href="/text-to-video-prompt/">Text to Video Prompt</a>
+          <a href="/veo-prompt-generator/">Veo / Flow Studio</a>
+          <a href="/kling-prompt-generator/">Kling AI</a>
+          <a href="/runway-prompt-generator/">Runway Gen-3</a>
+          <a href="/pika-prompt-generator/">Pika</a>
+          <a href="/luma-prompt-generator/">Luma Dream Machine</a>
+          <a href="/sora-prompt-generator/">Sora</a>
+          <a href="/minimax-prompt-generator/">Minimax</a>
+          <a href="/stable-video-prompt-generator/">Stable Video</a>
+        </div>
+        <div class="f4-section">
+          <h4 class="f4-heading">Resources</h4>
+          <a href="/blog/">Blog</a>
+          <a href="/about/">About</a>
+          <a href="/pricing/">Pricing</a>
+          <a href="/contact/">Contact</a>
+          <a href="/privacy-policy/">Privacy Policy</a>
+          <a href="/terms-of-service/">Terms of Service</a>
+        </div>
+        <div class="f4-section">
+          <h4 class="f4-heading">Languages</h4>
+          <a href="/">English</a>
+          <a href="/fr/">Fran&#231;ais</a>
+          <a href="/ar/">&#1575;&#1604;&#1593;&#1585;&#1576;&#1610;&#1577;</a>
+          <a href="/es/">Espa&#241;ol</a>
+          <a href="/ko/">&#54620;&#44397;&#50612;</a>
+          <a href="/ja/">&#26085;&#26412;&#35486;</a>
+        </div>
+      </div>
+      <div class="f4-bottom">
+        <p>&#169; 2026 ImageToPrompt.dev &#8212; Free AI Prompt Generator</p>
+        <p>Your images are never stored. All analysis is ephemeral and private.</p>
+      </div>
+    </div>
+  </footer>
+
+<script src="/newsletter-inject.js" defer></script>
+<script src="/nav.js" defer></script>
+  <script>
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', function() {
+    navigator.serviceWorker.register('/sw.js')
+      .catch(function(err) { console.warn('SW registration failed:', err); });
+  });
+}
+</script>
+</body>
+</html>

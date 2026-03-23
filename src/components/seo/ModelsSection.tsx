@@ -1,3 +1,5 @@
+import { useTranslation } from 'react-i18next';
+
 const models = [
   {
     id: 'midjourney',
@@ -6,8 +8,7 @@ const models = [
     color: '#e040fb',
     keyword: 'Midjourney Prompt Generator',
     href: '/midjourney-prompt-generator/',
-    description:
-      'Generate Midjourney prompts from any image instantly. Our AI creates prompts with proper --ar aspect ratio, --v 6.1 version, --style raw parameters and artistic descriptors that Midjourney understands. Perfect for artists wanting to recreate or remix reference images.',
+    descKey: 'seo.models.midjourney',
   },
   {
     id: 'stable-diffusion',
@@ -16,8 +17,7 @@ const models = [
     color: '#ff7043',
     keyword: 'Stable Diffusion Prompt Generator',
     href: '/stable-diffusion-prompt-generator/',
-    description:
-      'Create Stable Diffusion prompts with proper (weighted:syntax) formatting. Includes negative prompts optimized for SD models to eliminate unwanted artifacts. Works with SD 1.5, SD XL, and SD 3.5.',
+    descKey: 'seo.models.stableDiffusion',
   },
   {
     id: 'flux',
@@ -26,8 +26,7 @@ const models = [
     color: '#00e5ff',
     keyword: 'Flux AI Prompt Generator',
     href: '/flux-prompt-generator/',
-    description:
-      'Generate highly detailed Flux AI prompts that maximize the model\'s photorealistic capabilities. Our prompts include precise lighting, texture, and composition descriptors that Flux responds to best.',
+    descKey: 'seo.models.flux',
   },
   {
     id: 'dalle3',
@@ -36,8 +35,7 @@ const models = [
     color: '#00c853',
     keyword: 'DALL-E 3 Prompt Generator',
     href: '/dall-e-prompt-generator/',
-    description:
-      'Convert any image into natural language DALL-E 3 prompts. We format prompts as descriptive sentences that OpenAI\'s model interprets accurately, preserving style, mood, and composition.',
+    descKey: 'seo.models.dalle3',
   },
   {
     id: 'firefly',
@@ -46,8 +44,7 @@ const models = [
     color: '#ff6d00',
     keyword: 'Adobe Firefly Prompt Generator',
     href: '/adobe-firefly-prompt-generator/',
-    description:
-      'Generate commercially safe Adobe Firefly prompts from reference images. Our prompts avoid copyrighted styles and use Firefly-compatible language perfect for professional and commercial use.',
+    descKey: 'seo.models.firefly',
   },
   {
     id: 'leonardo',
@@ -56,8 +53,7 @@ const models = [
     color: '#ffd600',
     keyword: 'Leonardo AI Prompt Generator',
     href: '/leonardo-ai-prompt-generator/',
-    description:
-      'Create Leonardo AI prompts optimized for game art, fantasy scenes, and character design. Our AI extracts artistic style elements and translates them into Leonardo-specific vocabulary.',
+    descKey: 'seo.models.leonardo',
   },
   {
     id: 'ideogram',
@@ -66,12 +62,13 @@ const models = [
     color: '#7c4dff',
     keyword: 'Ideogram Prompt Generator',
     href: '/ideogram-prompt-generator/',
-    description:
-      'Generate Ideogram prompts that preserve text elements, typography style, and graphic design components from your reference image. Ideal for designers working with text-in-image generation.',
+    descKey: 'seo.models.ideogram',
   },
 ];
 
 export default function ModelsSection() {
+  const { t } = useTranslation();
+
   return (
     <section
       id="models"
@@ -82,10 +79,10 @@ export default function ModelsSection() {
         id="models-heading"
         className="font-grotesk text-2xl font-700 text-[var(--text-primary)] mb-2"
       >
-        Supported AI Image Models
+        {t('seo.models.title')}
       </h2>
       <p className="font-inter text-sm text-[var(--text-secondary)] mb-10">
-        Every model gets a prompt written in its specific syntax — not a generic description.
+        {t('seo.models.subtitle')}
       </p>
       <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
         {models.map((model) => (
@@ -104,14 +101,14 @@ export default function ModelsSection() {
               </h3>
             </div>
             <p className="font-inter text-sm text-[var(--text-secondary)] leading-relaxed mb-3">
-              {model.description}
+              {t(model.descKey)}
             </p>
             <a
               href={model.href}
               className="inline-flex items-center gap-1 font-inter text-xs font-600 transition-colors duration-150"
               style={{ color: model.color }}
             >
-              Try {model.name} Prompt Generator →
+              {t('seo.models.tryGenerator', { model: model.name })}
             </a>
           </div>
         ))}

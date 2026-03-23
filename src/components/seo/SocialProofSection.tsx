@@ -1,19 +1,20 @@
 import { useRef, useState, useEffect } from 'react';
+import { useTranslation } from 'react-i18next';
 
 interface Testimonial {
-  quote: string;
-  user: string;
+  quoteKey: string;
+  userKey: string;
   platform: 'Reddit' | 'Product Hunt' | 'Twitter';
   stars: number;
 }
 
 const TESTIMONIALS: Testimonial[] = [
-  { quote: 'Finally a tool that gets Midjourney syntax right', user: 'u/mjartist', platform: 'Reddit', stars: 5 },
-  { quote: 'Generated better prompts than I write manually', user: 'Product Hunt User', platform: 'Product Hunt', stars: 5 },
-  { quote: 'The negative prompt feature alone is worth it', user: '@designer_x', platform: 'Twitter', stars: 5 },
-  { quote: 'Saved me hours of prompt engineering every week', user: 'u/sdcreator', platform: 'Reddit', stars: 5 },
-  { quote: 'Best free AI tool I\'ve found this year', user: 'Product Hunt User', platform: 'Product Hunt', stars: 5 },
-  { quote: 'Supports every model I use — incredible', user: '@aiartist', platform: 'Twitter', stars: 5 },
+  { quoteKey: 'seo.social.t1.text', userKey: 'seo.social.t1.author', platform: 'Reddit', stars: 5 },
+  { quoteKey: 'seo.social.t2.text', userKey: 'seo.social.t2.author', platform: 'Product Hunt', stars: 5 },
+  { quoteKey: 'seo.social.t3.text', userKey: 'seo.social.t3.author', platform: 'Twitter', stars: 5 },
+  { quoteKey: 'seo.social.t4.text', userKey: 'seo.social.t4.author', platform: 'Reddit', stars: 5 },
+  { quoteKey: 'seo.social.t5.text', userKey: 'seo.social.t5.author', platform: 'Product Hunt', stars: 5 },
+  { quoteKey: 'seo.social.t6.text', userKey: 'seo.social.t6.author', platform: 'Twitter', stars: 5 },
 ];
 
 const PLATFORM_COLORS: Record<Testimonial['platform'], string> = {
@@ -28,7 +29,7 @@ const PLATFORM_LABELS: Record<Testimonial['platform'], string> = {
   Twitter: 'Twitter / X',
 };
 
-function TestimonialCard({ testimonial }: { testimonial: Testimonial }) {
+function TestimonialCard({ testimonial }: { testimonial: Testimonial & { quote: string; user: string } }) {
   const color = PLATFORM_COLORS[testimonial.platform];
   return (
     <div
@@ -60,11 +61,19 @@ function TestimonialCard({ testimonial }: { testimonial: Testimonial }) {
 }
 
 export default function SocialProofSection() {
+  const { t } = useTranslation();
   const trackRef = useRef<HTMLDivElement>(null);
   const sectionRef = useRef<HTMLElement>(null);
   const [inView, setInView] = useState(false);
+
+  const resolvedTestimonials = TESTIMONIALS.map((tm) => ({
+    ...tm,
+    quote: t(tm.quoteKey),
+    user: t(tm.userKey),
+  }));
+
   // Duplicate for seamless loop
-  const items = [...TESTIMONIALS, ...TESTIMONIALS];
+  const items = [...resolvedTestimonials, ...resolvedTestimonials];
 
   useEffect(() => {
     const el = sectionRef.current;
@@ -86,7 +95,7 @@ export default function SocialProofSection() {
     >
       <div className="mx-auto max-w-5xl px-4 sm:px-6 mb-10">
         <h2 className="font-grotesk text-2xl font-700 text-center text-[var(--text-primary)] sm:text-3xl">
-          Loved by{' '}
+          {t('seo.social.lovedBy')}{' '}
           <span
             style={{
               background: 'linear-gradient(135deg, var(--accent-lens), var(--accent-cyan))',
@@ -94,9 +103,9 @@ export default function SocialProofSection() {
               WebkitTextFillColor: 'transparent',
             }}
           >
-            AI Creators
+            {t('seo.social.highlight')}
           </span>{' '}
-          Worldwide
+          {t('seo.social.worldwide')}
         </h2>
       </div>
 

@@ -1,4 +1,5 @@
 import { useState, useCallback, useEffect, lazy, Suspense } from 'react';
+import { useTranslation } from 'react-i18next';
 import Header from './components/Header';
 import UploadZone from './components/UploadZone';
 import ModelSelector from './components/ModelSelector';
@@ -63,6 +64,7 @@ const TAB_MAP: Record<string, ActiveTab> = {
 const initialTab: ActiveTab = (_urlTab && TAB_MAP[_urlTab]) ? TAB_MAP[_urlTab] : 'image-to-prompt';
 
 export default function App() {
+  const { t } = useTranslation();
   const [currentImage, setCurrentImage] = useState<UploadedImage | null>(null);
   const [selectedModel, setSelectedModel] = useState<AIModel>(initialModel);
   const [selectedStyle, setSelectedStyle] = useState<PromptStyle>('cinematic');
@@ -372,46 +374,47 @@ export default function App() {
               <h1 className="font-grotesk text-4xl font-700 text-[var(--text-primary)] sm:text-5xl">
                 {category === 'video' ? (
                   <>
-                    Free{' '}
+                    {t('hero.titleVideo')}{t('hero.titleVideo') ? ' ' : ''}
                     <span
                       style={{
                         background: 'linear-gradient(135deg, #a855f7, #06b6d4)',
                         WebkitBackgroundClip: 'text',
+                        backgroundClip: 'text',
                         WebkitTextFillColor: 'transparent',
+                        color: 'transparent',
                       }}
                     >
-                      Video Prompt
-                    </span>{' '}
-                    Generator
+                      {t('hero.titleVideoHighlight')}
+                    </span>
                   </>
                 ) : (
                   <>
-                    Free Image to
+                    {t('hero.title')}{' '}
                     <span
                       className="ml-2"
                       style={{
                         background: 'linear-gradient(135deg, var(--accent-lens), var(--accent-cyan))',
                         WebkitBackgroundClip: 'text',
+                        backgroundClip: 'text',
                         WebkitTextFillColor: 'transparent',
+                        color: 'transparent',
                       }}
                     >
-                      Prompt Generator
+                      {t('hero.titleHighlight')}
                     </span>
                   </>
                 )}
               </h1>
               <p className="mt-3 font-inter text-base text-[var(--text-secondary)] max-w-xl mx-auto">
-                {category === 'video'
-                  ? 'Upload an image or describe a scene. Get optimized video prompts for Veo, Kling, Runway, Pika, Luma, Sora, and more.'
-                  : 'Upload any image. Get optimized prompts for Midjourney, Stable Diffusion, DALL·E, Flux, and more — instantly.'}
+                {category === 'video' ? t('hero.subtitleVideo') : t('hero.subtitleImage')}
               </p>
 
               {/* Trust badges */}
               <div className="mt-4 flex flex-wrap items-center justify-center gap-3">
                 {[
-                  { label: '100% FREE',         color: '#60A5FA' },
-                  { label: 'NO LOGIN REQUIRED', color: '#4ADE80' },
-                  { label: '10 FREE DAILY',     color: '#FBBF24' },
+                  { label: t('hero.badgeFree'),    color: '#60A5FA' },
+                  { label: t('hero.badgeNoLogin'), color: '#4ADE80' },
+                  { label: t('hero.badgeDaily'),   color: '#FBBF24' },
                 ].map(({ label, color }) => (
                   <span
                     key={label}
@@ -429,12 +432,12 @@ export default function App() {
 
               {/* Prompt counter */}
               <p className="text-center font-inter mt-2" style={{ color: 'var(--text-muted)', fontSize: '0.875rem' }}>
-                🔥 <strong style={{ color: 'var(--text-primary)' }}>2,500+</strong> prompts generated today
+                🔥 <strong style={{ color: 'var(--text-primary)' }}>2,500+</strong> {t('hero.promptsToday')}
               </p>
 
               {/* Featured on */}
               <div className="flex items-center justify-center gap-6 mt-3" style={{ opacity: 0.45 }}>
-                <span className="font-inter text-xs" style={{ color: 'var(--text-muted)' }}>Featured on</span>
+                <span className="font-inter text-xs" style={{ color: 'var(--text-muted)' }}>{t('hero.featuredOn')}</span>
                 <span className="font-inter text-xs font-600" style={{ color: 'var(--text-muted)' }}>DEV.to</span>
                 <span className="font-inter text-xs font-600" style={{ color: 'var(--text-muted)' }}>Medium</span>
                 <span className="font-inter text-xs font-600" style={{ color: 'var(--text-muted)' }}>Hashnode</span>
@@ -452,8 +455,8 @@ export default function App() {
                 {/* Category pills */}
                 <div className="flex gap-2">
                   {([
-                    ['image', '🖼', 'Image Prompts'],
-                    ['video', '🎬', 'Video Prompts'],
+                    ['image', '🖼️', t('tabs.imagePrompts')],
+                    ['video', '🎬', t('tabs.videoPrompts')],
                   ] as const).map(([cat, icon, label]) => (
                     <button
                       key={cat}
@@ -461,10 +464,10 @@ export default function App() {
                       className="flex items-center gap-1.5 px-4 py-1.5 rounded-full font-inter text-sm font-600 transition-all duration-200"
                       style={{
                         background: category === cat
-                          ? (cat === 'video' ? 'linear-gradient(135deg, #7c3aed33, #0891b233)' : 'linear-gradient(135deg, var(--accent-lens)33, var(--accent-cyan)33)')
+                          ? (cat === 'video' ? 'linear-gradient(135deg, #7c3aed33, #0891b233)' : 'linear-gradient(135deg, #e040fb33, #00e5ff33)')
                           : 'transparent',
                         color: category === cat ? 'var(--text-primary)' : 'var(--text-secondary)',
-                        border: `1px solid ${category === cat ? 'var(--accent-lens)' : 'var(--border-subtle)'}`,
+                        border: `1px solid ${category === cat ? (cat === 'video' ? '#7c3aed' : '#e040fb') : 'var(--border-subtle)'}`,
                       }}
                     >
                       <span>{icon}</span>
@@ -477,8 +480,8 @@ export default function App() {
                 <div className="flex gap-2 p-1 rounded-xl border border-[var(--border-subtle)] bg-[var(--bg-elevated)]">
                   {category === 'image' ? (
                     ([
-                      ['image-to-prompt', '🖼', 'Image to Prompt'],
-                      ['text-to-prompt', '✏️', 'Text to Prompt'],
+                      ['image-to-prompt', '🖼️', t('tabs.imageToPrompt')],
+                      ['text-to-prompt', '✏️', t('tabs.textToPrompt')],
                     ] as const).map(([tab, icon, label]) => (
                       <button
                         key={tab}
@@ -496,8 +499,8 @@ export default function App() {
                     ))
                   ) : (
                     ([
-                      ['image-to-video', '🖼', 'Image to Video'],
-                      ['text-to-video', '✏️', 'Text to Video'],
+                      ['image-to-video', '🎥', t('tabs.imageToVideo')],
+                      ['text-to-video', '✏️', t('tabs.textToVideo')],
                     ] as const).map(([tab, icon, label]) => (
                       <button
                         key={tab}
@@ -553,7 +556,7 @@ export default function App() {
                 {/* Language row */}
                 <div className="flex items-center justify-between gap-3">
                   <span className="font-inter text-xs font-600 uppercase tracking-widest text-[var(--text-secondary)]">
-                    Output Language
+                    {t('controls.outputLanguage')}
                   </span>
                   <LanguageSelector selected={selectedLanguage} onChange={setSelectedLanguage} />
                 </div>
@@ -572,7 +575,7 @@ export default function App() {
                 {/* Usage counter */}
                 <div className="flex items-center justify-between gap-3">
                   <span className="font-inter text-xs text-[var(--text-secondary)]/60">
-                    Daily analyses
+                    {t('hero.dailyAnalyses')}
                   </span>
                   <UsageCounter rateLimit={rateLimit} onLimitClick={() => setShowRateLimitModal(true)} />
                 </div>
@@ -591,7 +594,7 @@ export default function App() {
                   >
                     <span className="relative z-10 flex items-center justify-center gap-2">
                       <span aria-hidden="true">✦</span>
-                      {!currentImage ? 'Upload an image first' : !rateLimit.canAnalyze ? 'Daily limit reached' : 'Generate Prompt'}
+                      {!currentImage ? t('buttons.uploadFirst') : !rateLimit.canAnalyze ? t('buttons.dailyLimitReached') : t('buttons.generatePrompt')}
                       <span className="hidden sm:inline font-mono text-sm opacity-60" aria-hidden="true">Ctrl+↵</span>
                     </span>
                     <div className="absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-white/20 to-transparent transition-transform duration-700 group-hover:translate-x-full" aria-hidden="true" />
@@ -610,7 +613,7 @@ export default function App() {
                   >
                     <span className="relative z-10 flex items-center justify-center gap-2">
                       <span aria-hidden="true">✨</span>
-                      {!textInput.trim() ? 'Enter a description first' : !rateLimit.canAnalyze ? 'Daily limit reached' : '✨ Enhance Prompt'}
+                      {!textInput.trim() ? t('buttons.enterDescription') : !rateLimit.canAnalyze ? t('buttons.dailyLimitReached') : t('buttons.enhancePrompt')}
                       <span className="hidden sm:inline font-mono text-sm opacity-60" aria-hidden="true">Ctrl+↵</span>
                     </span>
                     <div className="absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-white/20 to-transparent transition-transform duration-700 group-hover:translate-x-full" aria-hidden="true" />
@@ -629,7 +632,7 @@ export default function App() {
                   >
                     <span className="relative z-10 flex items-center justify-center gap-2">
                       <span aria-hidden="true">🎬</span>
-                      {!currentImage ? 'Upload an image first' : !rateLimit.canAnalyze ? 'Daily limit reached' : 'Generate Video Prompt'}
+                      {!currentImage ? t('buttons.uploadFirst') : !rateLimit.canAnalyze ? t('buttons.dailyLimitReached') : t('buttons.generateVideoPrompt')}
                       <span className="hidden sm:inline font-mono text-sm opacity-60" aria-hidden="true">Ctrl+↵</span>
                     </span>
                     <div className="absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-white/20 to-transparent transition-transform duration-700 group-hover:translate-x-full" aria-hidden="true" />
@@ -648,7 +651,7 @@ export default function App() {
                   >
                     <span className="relative z-10 flex items-center justify-center gap-2">
                       <span aria-hidden="true">🎬</span>
-                      {!videoTextInput.trim() ? 'Enter a description first' : !rateLimit.canAnalyze ? 'Daily limit reached' : 'Generate Video Prompt'}
+                      {!videoTextInput.trim() ? t('buttons.enterDescription') : !rateLimit.canAnalyze ? t('buttons.dailyLimitReached') : t('buttons.generateVideoPrompt')}
                       <span className="hidden sm:inline font-mono text-sm opacity-60" aria-hidden="true">Ctrl+↵</span>
                     </span>
                     <div className="absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-white/20 to-transparent transition-transform duration-700 group-hover:translate-x-full" aria-hidden="true" />
@@ -695,7 +698,7 @@ export default function App() {
                 style={selectedStyle}
                 onReset={handleReset}
                 onRegenerate={activeTab === 'image-to-prompt' ? handleAnalyze : handleEnhanceText}
-                resetLabel={activeTab === 'text-to-prompt' ? 'Enhance Another Description' : undefined}
+                resetLabel={activeTab === 'text-to-prompt' ? t('buttons.enhanceAnother') : undefined}
               />
             </Suspense>
           </div>
@@ -725,7 +728,7 @@ export default function App() {
                 cameraMovement={selectedCameraMovement}
                 onReset={handleReset}
                 onRegenerate={activeTab === 'image-to-video' ? handleGenerateImgVideo : handleGenerateTextVideo}
-                resetLabel={activeTab === 'text-to-video' ? 'Generate Another Video Prompt' : undefined}
+                resetLabel={activeTab === 'text-to-video' ? t('buttons.generateAnother') : undefined}
               />
             </Suspense>
           </div>

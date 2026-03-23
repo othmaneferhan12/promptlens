@@ -1,4 +1,5 @@
 import { useRef, useEffect } from 'react';
+import { useTranslation } from 'react-i18next';
 import { motion, AnimatePresence } from 'framer-motion';
 import { X, Trash2, Clock } from 'lucide-react';
 import type { HistoryItem, AnalysisResult } from '../types';
@@ -21,6 +22,7 @@ export default function PromptHistory({
   onClear,
   onRemove,
 }: PromptHistoryProps) {
+  const { t } = useTranslation();
   const drawerRef = useRef<HTMLDivElement>(null);
 
   // Close on outside click
@@ -59,10 +61,10 @@ export default function PromptHistory({
             <div className="flex items-center justify-between border-b border-[var(--border-subtle)] px-5 py-4">
               <div>
                 <h2 className="font-grotesk text-base font-600 text-[var(--text-primary)]">
-                  Prompt History
+                  {t('history.title')}
                 </h2>
                 <p className="font-inter text-xs text-[var(--text-secondary)]">
-                  {history.length} / 20 saved
+                  {t('history.saved', { count: history.length })}
                 </p>
               </div>
               <div className="flex items-center gap-2">
@@ -72,7 +74,7 @@ export default function PromptHistory({
                     className="flex items-center gap-1 rounded-lg px-2.5 py-1.5 font-inter text-xs text-[var(--error)]/70 transition-all hover:bg-[var(--error)]/10 hover:text-[var(--error)]"
                   >
                     <Trash2 size={12} />
-                    Clear All
+                    {t('history.clearAll')}
                   </button>
                 )}
                 <button
@@ -93,10 +95,10 @@ export default function PromptHistory({
                   </div>
                   <div>
                     <p className="font-grotesk text-base font-600 text-[var(--text-primary)]">
-                      No history yet
+                      {t('history.emptyTitle')}
                     </p>
                     <p className="mt-1 font-inter text-xs text-[var(--text-secondary)]">
-                      Analyze an image to start building your history
+                      {t('history.emptyMessage')}
                     </p>
                   </div>
                 </div>

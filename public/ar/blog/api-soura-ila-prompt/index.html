@@ -1,0 +1,549 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+  <script src="/theme-toggle.js"></script>
+  <meta charset="UTF-8" />
+  <link rel="dns-prefetch" href="https://www.googletagmanager.com">
+<link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0" />
+  <meta name="robots" content="max-image-preview:large, index, follow">
+  <meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="ImageToPrompt">
+  <title>واجهة برمجة تطبيقات تحويل الصور إلى برومبت | ImageToPrompt</title>
+  <meta name="description" content="وثائق واجهة ImageToPrompt البرمجية. أمثلة كود وتكامل." />
+  <link rel="canonical" href="https://www.imagetoprompt.dev/ar/blog/api-soura-ila-prompt/" />
+  <link rel="alternate" hreflang="ar" href="https://www.imagetoprompt.dev/ar/blog/api-soura-ila-prompt/" />
+  <link rel="alternate" hreflang="en" href="https://www.imagetoprompt.dev/blog/image-to-prompt-api/" />
+  <link rel="alternate" hreflang="fr" href="https://www.imagetoprompt.dev/fr/blog/api-image-vers-prompt/" />
+  <link rel="alternate" hreflang="x-default" href="https://www.imagetoprompt.dev/blog/image-to-prompt-api/" />
+  <meta property="og:title" content="واجهة برمجة تطبيقات تحويل الصور إلى برومبت" />
+  <meta property="og:description" content="وثائق واجهة ImageToPrompt البرمجية. أمثلة كود وتكامل." />
+  <meta property="og:url" content="https://www.imagetoprompt.dev/ar/blog/api-soura-ila-prompt/" />
+  <meta property="og:type" content="article" />
+  <meta property="og:image" content="https://www.imagetoprompt.dev/og-image.png" />
+  <meta property="og:site_name" content="ImageToPrompt" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="واجهة برمجة تطبيقات تحويل الصور إلى برومبت" />
+  <meta name="twitter:description" content="وثائق واجهة ImageToPrompt البرمجية. أمثلة كود وتكامل." />
+  <meta name="twitter:image" content="https://www.imagetoprompt.dev/og-image.png" />
+  <meta name="twitter:site" content="@imagetoprompt" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="48x48" href="/favicon-48.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+  <link rel="manifest" href="/site.webmanifest" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="/fonts/space-grotesk-700.woff2" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="/fonts/inter-400.woff2" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Arabic:wght@400;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/theme.css">
+  <link rel="preload" href="/blog.css" as="style" onload="this.onload=null;this.rel='stylesheet'"><noscript><link rel="stylesheet" href="/blog.css"></noscript>
+  <style>
+    body { font-family: 'Noto Sans Arabic', 'Space Grotesk', sans-serif; }
+    .article-body { direction: rtl; text-align: right; }
+    code, pre { direction: ltr; text-align: left; display: inline-block; }
+    .toc ol, .toc ul { padding-right: 1.5rem; padding-left: 0; }
+    .article-body ul, .article-body ol { margin-right: 1.5rem; margin-left: 0; }
+    .breadcrumb { direction: rtl; }
+  </style>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "واجهة برمجة تطبيقات تحويل الصور إلى برومبت",
+    "description": "وثائق واجهة ImageToPrompt البرمجية. أمثلة كود وتكامل.",
+    "image": "https://www.imagetoprompt.dev/og-image.png",
+    "datePublished": "2026-03-18",
+    "dateModified": "2026-03-22",
+    "inLanguage": "ar",
+    "author": {
+      "@type": "Person",
+      "name": "ImageToPrompt Team",
+      "url": "https://www.imagetoprompt.dev/"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "ImageToPrompt",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://www.imagetoprompt.dev/favicon.svg"
+      }
+    },
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https://www.imagetoprompt.dev/ar/blog/api-soura-ila-prompt/"
+    }
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "ما هي واجهة برمجة تطبيقات ImageToPrompt؟",
+        "acceptedAnswer": { "@type": "Answer", "text": "واجهة برمجة تطبيقات ImageToPrompt هي API تتيح للمطورين تحويل الصور إلى برومبتات AI برمجياً. ترسل صورة بترميز base64 وتحصل على برومبت محسّن للنموذج الذي تختاره مثل Midjourney أو Stable Diffusion أو Flux أو DALL-E 3." }
+      },
+      {
+        "@type": "Question",
+        "name": "ما هي حدود استخدام الواجهة البرمجية؟",
+        "acceptedAnswer": { "@type": "Answer", "text": "الخطة المجانية تسمح بـ 10 طلبات يومياً لكل عنوان IP. تشمل حدود الصورة حجماً أقصى 10 ميغابايت وصيغ JPEG وPNG وWebP. وقت الاستجابة يتراوح بين 5-15 ثانية حسب تعقيد الصورة. خطط الأعمال تقدم حدوداً أعلى." }
+      },
+      {
+        "@type": "Question",
+        "name": "هل يمكنني دمج الواجهة البرمجية في تطبيقي؟",
+        "acceptedAnswer": { "@type": "Answer", "text": "نعم، الواجهة البرمجية مصممة للتكامل مع أي تطبيق. تدعم طلبات REST عبر HTTP POST مع جسم JSON. يمكنك استخدامها من أي لغة برمجة تدعم طلبات HTTP مثل Python وJavaScript وRuby وPHP وغيرها." }
+      },
+      {
+        "@type": "Question",
+        "name": "هل الصور التي أرسلها للواجهة البرمجية محفوظة؟",
+        "acceptedAnswer": { "@type": "Answer", "text": "لا، جميع الصور المُرسلة للواجهة البرمجية تُعالج بشكل مؤقت ولا تُخزَّن على خوادمنا. التحليل سريع الزوال وخاص تماماً. لا نحتفظ بأي بيانات صور بعد إتمام التحليل وإرجاع النتيجة." }
+      }
+    ]
+  }
+  </script>
+    <!-- Google AdSense -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4499206373485728" crossorigin="anonymous"></script>
+    <!-- Web Push Notifications -->
+<script src="https://cdn.onesignal.com/sdks/web/v16/OneSignalSDK.page.js" defer></script>
+<script>
+  window.OneSignalDeferred = window.OneSignalDeferred || [];
+  OneSignalDeferred.push(async function(OneSignal) {
+    await OneSignal.init({
+      appId: "REPLACE_WITH_ONESIGNAL_APP_ID",
+      notifyButton: { enable: false }
+    });
+  });
+</script>
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="inner">
+      <a href="/ar/" class="site-logo"><img src="/favicon.svg" alt="ImageToPrompt" width="48" height="48"><div class="site-logo-text">ImageTo<span class="accent">Prompt</span><span class="site-logo-sub">&#1605;&#1608;&#1604;&#1617;&#1583; &#1576;&#1585;&#1608;&#1605;&#1576;&#1578; &#1605;&#1580;&#1575;&#1606;&#1610;</span></div></a>
+      <nav class="site-nav" aria-label="&#1575;&#1604;&#1578;&#1606;&#1602;&#1604; &#1575;&#1604;&#1585;&#1574;&#1610;&#1587;&#1610;">
+        <div class="nav-dropdown">
+          <button class="nav-dropdown-trigger" aria-haspopup="true" aria-expanded="false">Tools <span class="nav-chevron" aria-hidden="true">&#9660;</span></button>
+          <div class="nav-dropdown-menu" role="menu">
+            <div class="nav-mega-grid">
+              <div class="nav-mega-col">
+                <div class="nav-mega-heading">&#128444; IMAGE TOOLS</div>
+                <a href="/" role="menuitem" class="nav-mega-tool">Image to Prompt <span class="nav-mega-arrow">&#8594;</span></a>
+                <a href="/text-to-prompt/" role="menuitem" class="nav-mega-tool">Text to Prompt <span class="nav-mega-arrow">&#8594;</span></a>
+                <div class="nav-mega-models-label">Models</div>
+                <div class="nav-mega-models"><a href="/midjourney-prompt-generator/">Midjourney</a><span class="nav-dot">&#xB7;</span><a href="/stable-diffusion-prompt-generator/">SD</a></div>
+                <div class="nav-mega-models"><a href="/flux-prompt-generator/">Flux</a><span class="nav-dot">&#xB7;</span><a href="/dall-e-prompt-generator/">DALL&#xB7;E&#xA0;3</a></div>
+                <div class="nav-mega-models"><a href="/adobe-firefly-prompt-generator/">Firefly</a><span class="nav-dot">&#xB7;</span><a href="/leonardo-ai-prompt-generator/">Leonardo</a></div>
+                <div class="nav-mega-models"><a href="/ideogram-prompt-generator/">Ideogram</a></div>
+              </div>
+              <div class="nav-mega-divider" aria-hidden="true"></div>
+              <div class="nav-mega-col">
+                <div class="nav-mega-heading">&#127909; VIDEO TOOLS</div>
+                <a href="/?tab=image-to-video" role="menuitem" class="nav-mega-tool">Image to Video <span class="nav-mega-arrow">&#8594;</span></a>
+                <a href="/?tab=text-to-video" role="menuitem" class="nav-mega-tool">Text to Video <span class="nav-mega-arrow">&#8594;</span></a>
+                <div class="nav-mega-models-label">Models</div>
+                <div class="nav-mega-models"><a href="/veo-prompt-generator/">Veo</a><span class="nav-dot">&#xB7;</span><a href="/kling-prompt-generator/">Kling</a></div>
+                <div class="nav-mega-models"><a href="/runway-prompt-generator/">Runway</a><span class="nav-dot">&#xB7;</span><a href="/pika-prompt-generator/">Pika</a></div>
+                <div class="nav-mega-models"><a href="/luma-prompt-generator/">Luma</a><span class="nav-dot">&#xB7;</span><a href="/sora-prompt-generator/">Sora</a></div>
+                <div class="nav-mega-models"><a href="/minimax-prompt-generator/">Minimax</a><span class="nav-dot">&#xB7;</span><a href="/stable-video-prompt-generator/">Stable</a></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <a href="/ar/blog/">المدونة</a>#1575;>&#1575;&#1604;&#1605;&#1583;&#1608;&#1606;&#1577;</a>#1604;>&#1575;&#1604;&#1605;&#1583;&#1608;&#1606;&#1577;</a>#1605;>&#1575;&#1604;&#1605;&#1583;&#1608;&#1606;&#1577;</a>#1583;>&#1575;&#1604;&#1605;&#1583;&#1608;&#1606;&#1577;</a>#1608;>&#1575;&#1604;&#1605;&#1583;&#1608;&#1606;&#1577;</a>#1606;>&#1575;&#1604;&#1605;&#1583;&#1608;&#1606;&#1577;</a>#1577;</a>
+        <a href="/pricing/" class="nav-pill-pricing">Pricing</a>
+        <a href="/about/" class="nav-pill-about">About</a>
+        <a href="/ar/" class="nav-try-free">&#1580;&#1585;&#1617;&#1576; &#8594;</a>
+        <button id="theme-toggle" onclick="toggleTheme()" aria-label="Switch theme" title="Switch theme">&#9728;&#xFE0F;</button>
+  </nav>
+    </div>
+  </header>
+
+  <nav class="breadcrumb" aria-label="مسار التنقل">
+    <a href="/ar/">الرئيسية</a><span class="sep">›</span>
+    <a href="/ar/blog/">المدونة</a><span class="sep">›</span>
+    <span>واجهة برمجة تطبيقات تحويل الصور إلى برومبت</span>
+  </nav>
+
+  <div class="page-wrapper">
+
+    <header class="article-header">
+      <p class="article-tag">وثائق تقنية</p>
+      <h1>واجهة برمجة تطبيقات تحويل الصور إلى برومبت</h1>
+      <div class="article-meta">
+        <span>مارس 2026</span>
+        <span class="dot">·</span>
+        <span>9 دقائق قراءة</span>
+        <span class="dot">·</span>
+        <span>API · REST · Integration</span>
+        <span class="dot">·</span>
+        <span>محدّث مارس 2026</span>
+      </div>
+    </header>
+
+    <div class="article-body">
+
+      <p>إذا كنت مطوراً وتريد دمج قدرات تحويل الصور إلى برومبتات AI في تطبيقك أو منصتك، فإن واجهة ImageToPrompt البرمجية توفر لك طريقة بسيطة وفعالة لتحقيق ذلك. في هذا الدليل، سنشرح كيفية استخدام الواجهة البرمجية، ونقدم أمثلة كود عملية بعدة لغات برمجة، ونوضح أفضل الممارسات للتكامل.</p>
+
+      <nav class="toc" aria-label="محتويات المقال">
+        <details open>
+          <summary>في هذا الدليل</summary>
+          <ol>
+            <li><a href="#overview">نظرة عامة على الواجهة البرمجية</a></li>
+            <li><a href="#endpoints">نقاط النهاية المتاحة</a></li>
+            <li><a href="#authentication">المصادقة والأمان</a></li>
+            <li><a href="#request-format">صيغة الطلب</a></li>
+            <li><a href="#response-format">صيغة الاستجابة</a></li>
+            <li><a href="#code-examples">أمثلة الكود</a></li>
+            <li><a href="#rate-limits">حدود الاستخدام</a></li>
+            <li><a href="#error-handling">معالجة الأخطاء</a></li>
+            <li><a href="#best-practices">أفضل الممارسات</a></li>
+            <li><a href="#faq">أسئلة شائعة</a></li>
+          </ol>
+        </details>
+      </nav>
+
+      <h2 id="overview">نظرة عامة على الواجهة البرمجية</h2>
+
+      <p>واجهة ImageToPrompt البرمجية هي خدمة REST API تستقبل صوراً وتُرجع برومبتات AI محسّنة لنماذج توليد الصور المختلفة. تعتمد على نموذج Claude Haiku من Anthropic لتحليل الصور بدقة عالية واستخراج عناصرها البصرية وتحويلها إلى أوصاف نصية مُنسَّقة.</p>
+
+      <p>تدعم الواجهة البرمجية أربع وظائف رئيسية:</p>
+
+      <ul>
+        <li><strong>تحويل صورة إلى برومبت صورة:</strong> تحليل صورة وتوليد برومبت مُحسَّن لنموذج AI محدد</li>
+        <li><strong>تحويل نص إلى برومبت:</strong> تحويل وصف نصي بسيط إلى برومبت احترافي مفصّل</li>
+        <li><strong>تحويل صورة إلى برومبت فيديو:</strong> تحليل صورة وتوليد برومبت لنماذج توليد الفيديو</li>
+        <li><strong>تحويل نص إلى برومبت فيديو:</strong> تحويل وصف نصي إلى برومبت فيديو احترافي</li>
+      </ul>
+
+      <h2 id="endpoints">نقاط النهاية المتاحة</h2>
+
+      <div class="table-wrap">
+      <table class="comparison-table">
+        <thead>
+          <tr>
+            <th>النقطة</th>
+            <th>الطريقة</th>
+            <th>الوصف</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><code dir="ltr">/api/analyze</code></td>
+            <td><code dir="ltr">POST</code></td>
+            <td>تحويل صورة إلى برومبت صورة</td>
+          </tr>
+          <tr>
+            <td><code dir="ltr">/api/text-to-prompt</code></td>
+            <td><code dir="ltr">POST</code></td>
+            <td>تحويل نص إلى برومبت صورة</td>
+          </tr>
+          <tr>
+            <td><code dir="ltr">/api/image-to-video-prompt</code></td>
+            <td><code dir="ltr">POST</code></td>
+            <td>تحويل صورة إلى برومبت فيديو</td>
+          </tr>
+          <tr>
+            <td><code dir="ltr">/api/text-to-video-prompt</code></td>
+            <td><code dir="ltr">POST</code></td>
+            <td>تحويل نص إلى برومبت فيديو</td>
+          </tr>
+        </tbody>
+      </table>
+      </div>
+
+      <h2 id="authentication">المصادقة والأمان</h2>
+
+      <p>تستخدم الواجهة البرمجية مفتاح سري (APP_SECRET) يُرسل في رأس الطلب للمصادقة. هذا يضمن أن الطلبات تأتي من مصادر مُصرَّح لها فقط. كل طلب يجب أن يتضمن الرأس التالي:</p>
+
+      <pre dir="ltr"><code>x-app-secret: YOUR_APP_SECRET</code></pre>
+
+      <p>بدون هذا الرأس أو بمفتاح غير صالح، سيُرجع الخادم خطأ 401 Unauthorized. لا تُشارك مفتاحك السري أبداً في كود الواجهة الأمامية أو المستودعات العامة.</p>
+
+      <h2 id="request-format">صيغة الطلب</h2>
+
+      <p>لنقطة النهاية <code dir="ltr">/api/analyze</code>، أرسل طلب POST بجسم JSON يتضمن:</p>
+
+      <pre dir="ltr"><code>{
+  "image": "data:image/jpeg;base64,/9j/4AAQ...",
+  "model": "midjourney",
+  "style": "cinematic"
+}</code></pre>
+
+      <p>الحقول المطلوبة:</p>
+
+      <ul>
+        <li><strong><code dir="ltr">image</code></strong> (مطلوب): الصورة بترميز base64 مع بادئة data URI</li>
+        <li><strong><code dir="ltr">model</code></strong> (مطلوب): النموذج الهدف — القيم المقبولة: <code dir="ltr">midjourney</code>، <code dir="ltr">stable-diffusion</code>، <code dir="ltr">flux</code>، <code dir="ltr">dall-e-3</code>، <code dir="ltr">firefly</code>، <code dir="ltr">leonardo</code>، <code dir="ltr">ideogram</code></li>
+        <li><strong><code dir="ltr">style</code></strong> (اختياري): أسلوب البرومبت — القيم: <code dir="ltr">cinematic</code>، <code dir="ltr">technical</code>، <code dir="ltr">artistic</code>، <code dir="ltr">minimal</code>، <code dir="ltr">epic</code>، <code dir="ltr">photographic</code></li>
+      </ul>
+
+      <h2 id="response-format">صيغة الاستجابة</h2>
+
+      <p>تُرجع الواجهة البرمجية استجابة JSON تتضمن البرومبت المُنشأ مع بيانات وصفية إضافية:</p>
+
+      <pre dir="ltr"><code>{
+  "prompt": "cinematic portrait of a woman...",
+  "negativePrompt": "blurry, low quality...",
+  "creativePrompt": "An ethereal vision of...",
+  "colorPalette": ["#2a1f4e", "#7c6bc4", ...],
+  "styleTags": ["cinematic", "dramatic"],
+  "qualityTags": ["highly detailed", "4k"],
+  "aspectRatio": "3:2"
+}</code></pre>
+
+      <h2 id="code-examples">أمثلة الكود</h2>
+
+      <h3>Python</h3>
+
+      <pre dir="ltr"><code>import requests
+import base64
+
+# Read and encode the image
+with open("photo.jpg", "rb") as f:
+    image_data = base64.b64encode(f.read()).decode()
+
+response = requests.post(
+    "https://www.imagetoprompt.dev/api/analyze",
+    json={
+        "image": f"data:image/jpeg;base64,{image_data}",
+        "model": "midjourney",
+        "style": "cinematic"
+    },
+    headers={
+        "Content-Type": "application/json",
+        "x-app-secret": "YOUR_APP_SECRET"
+    }
+)
+
+result = response.json()
+print(result["prompt"])</code></pre>
+
+      <h3>JavaScript (Node.js)</h3>
+
+      <pre dir="ltr"><code>const fs = require('fs');
+
+const imageData = fs.readFileSync('photo.jpg').toString('base64');
+
+const response = await fetch('https://www.imagetoprompt.dev/api/analyze', {
+  method: 'POST',
+  headers: {
+    'Content-Type': 'application/json',
+    'x-app-secret': 'YOUR_APP_SECRET'
+  },
+  body: JSON.stringify({
+    image: `data:image/jpeg;base64,${imageData}`,
+    model: 'stable-diffusion',
+    style: 'technical'
+  })
+});
+
+const result = await response.json();
+console.log(result.prompt);</code></pre>
+
+      <h3>cURL</h3>
+
+      <pre dir="ltr"><code>curl -X POST https://www.imagetoprompt.dev/api/analyze \
+  -H "Content-Type: application/json" \
+  -H "x-app-secret: YOUR_APP_SECRET" \
+  -d '{
+    "image": "data:image/jpeg;base64,/9j/4AAQ...",
+    "model": "flux",
+    "style": "photographic"
+  }'</code></pre>
+
+      <h2 id="rate-limits">حدود الاستخدام</h2>
+
+      <p>تعتمد حدود الاستخدام على عنوان IP وتُشارك عبر جميع نقاط النهاية. هذا يعني أن طلبات تحليل الصور وتحويل النصوص وتوليد برومبتات الفيديو تُحسب جميعها من نفس الحصة اليومية.</p>
+
+      <ul>
+        <li><strong>الخطة المجانية:</strong> 10 طلبات يومياً لكل عنوان IP</li>
+        <li><strong>إعادة التعيين:</strong> يُعاد تعيين العداد عند منتصف الليل بتوقيت UTC</li>
+        <li><strong>الحد الأقصى لحجم الصورة:</strong> 10 ميغابايت</li>
+        <li><strong>الصيغ المدعومة:</strong> JPEG، PNG، WebP</li>
+      </ul>
+
+      <p>عند تجاوز الحد، يُرجع الخادم استجابة <code dir="ltr">429 Too Many Requests</code> مع رسالة توضح وقت إعادة التعيين.</p>
+
+      <h2 id="error-handling">معالجة الأخطاء</h2>
+
+      <p>تُرجع الواجهة البرمجية رموز حالة HTTP قياسية مع رسائل خطأ وصفية بصيغة JSON:</p>
+
+      <div class="table-wrap">
+      <table class="comparison-table">
+        <thead>
+          <tr>
+            <th>الرمز</th>
+            <th>الوصف</th>
+            <th>الحل</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><code dir="ltr">400</code></td>
+            <td>طلب غير صالح (صورة مفقودة أو صيغة غير مدعومة)</td>
+            <td>تحقق من صيغة الصورة وحقول الطلب</td>
+          </tr>
+          <tr>
+            <td><code dir="ltr">401</code></td>
+            <td>غير مُصرَّح (مفتاح سري غير صالح)</td>
+            <td>تحقق من رأس x-app-secret</td>
+          </tr>
+          <tr>
+            <td><code dir="ltr">429</code></td>
+            <td>تجاوز حد الاستخدام</td>
+            <td>انتظر حتى إعادة التعيين أو ترقية الخطة</td>
+          </tr>
+          <tr>
+            <td><code dir="ltr">500</code></td>
+            <td>خطأ في الخادم</td>
+            <td>أعد المحاولة بعد بضع ثوانٍ</td>
+          </tr>
+        </tbody>
+      </table>
+      </div>
+
+      <h2 id="best-practices">أفضل الممارسات للتكامل</h2>
+
+      <ul>
+        <li><strong>ضغط الصور قبل الإرسال:</strong> قلّل حجم الصورة إلى أقل من 2 ميغابايت لأوقات استجابة أسرع. الجودة 85% في JPEG كافية تماماً للتحليل الدقيق</li>
+        <li><strong>تخزين النتائج مؤقتاً:</strong> إذا كنت تُحلل نفس الصورة لنماذج متعددة، خزّن النتائج مؤقتاً لتقليل الطلبات المكررة</li>
+        <li><strong>معالجة الأخطاء بأناقة:</strong> نفّذ آلية إعادة محاولة تلقائية مع تأخير تصاعدي للأخطاء 500</li>
+        <li><strong>لا تُضمّن المفتاح السري في كود الواجهة:</strong> استخدم خادماً وسيطاً (proxy) لإخفاء مفتاحك عن المستخدمين النهائيين</li>
+        <li><strong>تحقق من صيغة الصورة:</strong> تأكد من أن الصورة بصيغة مدعومة (JPEG أو PNG أو WebP) قبل ترميزها بـ base64</li>
+      </ul>
+
+      <div class="callout">
+        <p><strong>ملاحظة أمنية:</strong> لا تُخزَّن أي صور على خوادم ImageToPrompt. جميع التحليلات سريعة الزوال — تُعالج الصورة في الذاكرة وتُحذف فور إرجاع النتيجة. هذا يضمن خصوصية تامة لمستخدميك.</p>
+      </div>
+
+      <div class="cta-box">
+        <h3>جرّب الواجهة البرمجية مجاناً</h3>
+        <p>ابدأ بتحليل الصور برمجياً — 10 طلبات مجانية يومياً. لا تسجيل مطلوب.</p>
+        <a href="/?lang=ar" class="cta-btn">جرّب ImageToPrompt ←</a>
+      </div>
+
+      <h2 id="faq">أسئلة شائعة</h2>
+
+      <h3>ما هي واجهة برمجة تطبيقات ImageToPrompt؟</h3>
+      <p>واجهة برمجة تطبيقات ImageToPrompt هي API تتيح للمطورين تحويل الصور إلى برومبتات AI برمجياً. ترسل صورة بترميز base64 وتحصل على برومبت محسّن للنموذج الذي تختاره مثل Midjourney أو Stable Diffusion أو Flux أو DALL-E 3.</p>
+
+      <h3>ما هي حدود استخدام الواجهة البرمجية؟</h3>
+      <p>الخطة المجانية تسمح بـ 10 طلبات يومياً لكل عنوان IP. تشمل حدود الصورة حجماً أقصى 10 ميغابايت وصيغ JPEG وPNG وWebP. وقت الاستجابة يتراوح بين 5-15 ثانية حسب تعقيد الصورة.</p>
+
+      <h3>هل يمكنني دمج الواجهة البرمجية في تطبيقي؟</h3>
+      <p>نعم، الواجهة البرمجية مصممة للتكامل مع أي تطبيق. تدعم طلبات REST عبر HTTP POST مع جسم JSON. يمكنك استخدامها من أي لغة برمجة تدعم طلبات HTTP مثل Python وJavaScript وRuby وPHP وغيرها.</p>
+
+      <h3>هل الصور التي أرسلها للواجهة البرمجية محفوظة؟</h3>
+      <p>لا، جميع الصور المُرسلة للواجهة البرمجية تُعالج بشكل مؤقت ولا تُخزَّن على خوادمنا. التحليل سريع الزوال وخاص تماماً. لا نحتفظ بأي بيانات صور بعد إتمام التحليل وإرجاع النتيجة.</p>
+
+    </div>
+
+    <div class="author-bio">
+      <svg class="author-photo" width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="صورة المؤلف"><circle cx="32" cy="32" r="32" fill="#2a1f4e"/><circle cx="32" cy="26" r="11" fill="#7c6bc4"/><ellipse cx="32" cy="52" rx="18" ry="11" fill="#7c6bc4"/></svg>
+      <div class="author-info">
+        <p class="author-name">فريق ImageToPrompt</p>
+        <p class="author-desc">مهندسو برومبتات وفنانو ذكاء اصطناعي متخصصون في Midjourney و Stable Diffusion و Flux. نبني ImageToPrompt لجعل توليد الصور بالذكاء الاصطناعي في متناول الجميع.</p>
+        <a href="https://x.com/Ilyass14286541" class="author-link">تابعنا على X ←</a>
+      </div>
+    </div>
+
+    <div class="related-posts">
+      <h2>أدلة ذات صلة</h2>
+      <div class="related-grid">
+        <a href="/ar/blog/tahwil-soura-ila-prompt/" class="related-card">
+          <p class="tag">دليل</p>
+          <h3>كيفية تحويل أي صورة إلى برومبت</h3>
+        </a>
+        <a href="/ar/blog/afdal-adawat-soura-ila-prompt-2026/" class="related-card">
+          <p class="tag">أدوات</p>
+          <h3>أفضل أدوات تحويل الصور إلى برومبت 2026</h3>
+        </a>
+        <a href="/ar/blog/kitabat-prompts-ia-lilmubtadiin/" class="related-card">
+          <p class="tag">مبتدئون</p>
+          <h3>كتابة برومبتات AI للمبتدئين</h3>
+        </a>
+        <a href="/ar/blog/handasa-prompts-fan-ia/" class="related-card">
+          <p class="tag">هندسة البرومبتات</p>
+          <h3>هندسة البرومبتات لفن الذكاء الاصطناعي</h3>
+        </a>
+      </div>
+    </div>
+
+  </div>
+
+  <footer class="footer-4col">
+    <div class="f4-inner">
+      <div class="f4-brand">
+        <img src="/favicon.svg" alt="ImageToPrompt" width="28" height="28">
+        <span class="f4-brand-name">ImageTo<span class="accent">Prompt</span></span>
+        <span class="f4-brand-sub">&mdash; Free AI Prompt Generator</span>
+      </div>
+      <div class="f4-grid">
+        <div class="f4-section">
+          <h4 class="f4-heading">Image Prompt Tools</h4>
+          <a href="/">Image to Prompt</a>
+          <a href="/text-to-prompt/">Text to Prompt</a>
+          <a href="/midjourney-prompt-generator/">Midjourney</a>
+          <a href="/stable-diffusion-prompt-generator/">Stable Diffusion</a>
+          <a href="/flux-prompt-generator/">Flux</a>
+          <a href="/dall-e-prompt-generator/">DALL-E 3</a>
+          <a href="/adobe-firefly-prompt-generator/">Adobe Firefly</a>
+          <a href="/leonardo-ai-prompt-generator/">Leonardo AI</a>
+          <a href="/ideogram-prompt-generator/">Ideogram</a>
+        </div>
+        <div class="f4-section">
+          <h4 class="f4-heading">Video Prompt Tools</h4>
+          <a href="/image-to-video-prompt/">Image to Video Prompt</a>
+          <a href="/text-to-video-prompt/">Text to Video Prompt</a>
+          <a href="/veo-prompt-generator/">Veo / Flow Studio</a>
+          <a href="/kling-prompt-generator/">Kling AI</a>
+          <a href="/runway-prompt-generator/">Runway Gen-3</a>
+          <a href="/pika-prompt-generator/">Pika</a>
+          <a href="/luma-prompt-generator/">Luma Dream Machine</a>
+          <a href="/sora-prompt-generator/">Sora</a>
+          <a href="/minimax-prompt-generator/">Minimax</a>
+          <a href="/stable-video-prompt-generator/">Stable Video</a>
+        </div>
+        <div class="f4-section">
+          <h4 class="f4-heading">Resources</h4>
+          <a href="/blog/">Blog</a>
+          <a href="/about/">About</a>
+          <a href="/pricing/">Pricing</a>
+          <a href="/contact/">Contact</a>
+          <a href="/privacy-policy/">Privacy Policy</a>
+          <a href="/terms-of-service/">Terms of Service</a>
+        </div>
+        <div class="f4-section">
+          <h4 class="f4-heading">Languages</h4>
+          <a href="/">English</a>
+          <a href="/fr/">Fran&#231;ais</a>
+          <a href="/ar/">&#1575;&#1604;&#1593;&#1585;&#1576;&#1610;&#1577;</a>
+          <a href="/es/">Espa&#241;ol</a>
+          <a href="/ko/">&#54620;&#44397;&#50612;</a>
+          <a href="/ja/">&#26085;&#26412;&#35486;</a>
+        </div>
+      </div>
+      <div class="f4-bottom">
+        <p>&#169; 2026 ImageToPrompt.dev &#8212; Free AI Prompt Generator</p>
+        <p>Your images are never stored. All analysis is ephemeral and private.</p>
+      </div>
+    </div>
+  </footer>
+
+<script src="/newsletter-inject.js" defer></script>
+<script src="/nav.js" defer></script>
+  <script>
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', function() {
+    navigator.serviceWorker.register('/sw.js')
+      .catch(function(err) { console.warn('SW registration failed:', err); });
+  });
+}
+</script>
+</body>
+</html>

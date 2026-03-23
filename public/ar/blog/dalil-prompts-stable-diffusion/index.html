@@ -1,0 +1,481 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+  <script src="/theme-toggle.js"></script>
+  <meta charset="UTF-8" />
+  <link rel="dns-prefetch" href="https://www.googletagmanager.com">
+<link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0" />
+  <meta name="robots" content="max-image-preview:large, index, follow">
+  <meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="ImageToPrompt">
+  <title>دليل برومبتات Stable Diffusion الشامل 2026 | ImageToPrompt</title>
+  <meta name="description" content="أتقن برومبتات Stable Diffusion. الصياغة المرجحة والبرومبتات السلبية والأمثلة." />
+  <link rel="canonical" href="https://www.imagetoprompt.dev/ar/blog/dalil-prompts-stable-diffusion/" />
+  <link rel="alternate" hreflang="ar" href="https://www.imagetoprompt.dev/ar/blog/dalil-prompts-stable-diffusion/" />
+  <link rel="alternate" hreflang="en" href="https://www.imagetoprompt.dev/blog/stable-diffusion-prompt-guide/" />
+  <link rel="alternate" hreflang="fr" href="https://www.imagetoprompt.dev/fr/blog/guide-prompts-stable-diffusion/" />
+  <link rel="alternate" hreflang="x-default" href="https://www.imagetoprompt.dev/blog/stable-diffusion-prompt-guide/" />
+  <meta property="og:title" content="دليل برومبتات Stable Diffusion الشامل 2026" />
+  <meta property="og:description" content="أتقن برومبتات Stable Diffusion. الصياغة المرجحة والبرومبتات السلبية والأمثلة." />
+  <meta property="og:url" content="https://www.imagetoprompt.dev/ar/blog/dalil-prompts-stable-diffusion/" />
+  <meta property="og:type" content="article" />
+  <meta property="og:image" content="https://www.imagetoprompt.dev/og-image.png" />
+  <meta property="og:site_name" content="ImageToPrompt" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="دليل برومبتات Stable Diffusion 2026" />
+  <meta name="twitter:description" content="أتقن برومبتات Stable Diffusion مع الصياغة المرجحة والبرومبتات السلبية." />
+  <meta name="twitter:image" content="https://www.imagetoprompt.dev/og-image.png" />
+  <meta name="twitter:site" content="@imagetoprompt" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="48x48" href="/favicon-48.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+  <link rel="manifest" href="/site.webmanifest" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="/fonts/space-grotesk-700.woff2" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="/fonts/inter-400.woff2" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Arabic:wght@400;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/theme.css">
+  <link rel="preload" href="/blog.css" as="style" onload="this.onload=null;this.rel='stylesheet'"><noscript><link rel="stylesheet" href="/blog.css"></noscript>
+  <style>
+    body { font-family: 'Noto Sans Arabic', 'Space Grotesk', sans-serif; }
+    .article-body { direction: rtl; text-align: right; }
+    code, pre { direction: ltr; text-align: left; display: inline-block; }
+    .toc ol, .toc ul { padding-right: 1.5rem; padding-left: 0; }
+    .article-body ul, .article-body ol { margin-right: 1.5rem; margin-left: 0; }
+    .breadcrumb { direction: rtl; }
+  </style>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "دليل برومبتات Stable Diffusion 2026",
+    "description": "أتقن برومبتات Stable Diffusion. الصياغة المرجحة والبرومبتات السلبية والأمثلة.",
+    "image": "https://www.imagetoprompt.dev/og-image.png",
+    "datePublished": "2026-03-18",
+    "dateModified": "2026-03-22",
+    "inLanguage": "ar",
+    "author": {
+      "@type": "Person",
+      "name": "ImageToPrompt Team",
+      "url": "https://www.imagetoprompt.dev/"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "ImageToPrompt",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://www.imagetoprompt.dev/favicon.svg"
+      }
+    },
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https://www.imagetoprompt.dev/ar/blog/dalil-prompts-stable-diffusion/"
+    }
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "ما هو نظام الأوزان في Stable Diffusion؟",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "نظام الأوزان يتيح تعزيز أو تقليل تأثير كلمات معينة في البرومبت. استخدم (keyword:1.3) لتعزيز عنصر أو (keyword:0.7) لتقليله. الوزن الافتراضي هو 1.0. تجنب أوزاناً أعلى من 1.5 لأنها قد تُشوّه الصورة."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "ما هو البرومبت السلبي ولماذا هو مهم؟",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "البرومبت السلبي يحدد ما لا تريده في الصورة. هو ضروري في Stable Diffusion لتجنب العيوب الشائعة مثل التشوهات والأيدي السيئة والنص غير المقروء. برومبت سلبي أساسي جيد: ugly, deformed, blurry, low quality, bad anatomy, extra fingers."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "ما هو CFG Scale وكيف يؤثر على النتائج؟",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "CFG Scale (Classifier Free Guidance) يتحكم في مدى التزام النموذج بالبرومبت. قيم منخفضة (3-5) تعطي حرية إبداعية أكبر. قيم متوسطة (7-9) توازن بين الإبداع والالتزام. قيم عالية (12-15) تلتزم بالبرومبت بشكل صارم لكن قد تُنتج صوراً متشبعة أو غير طبيعية."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "أي Checkpoint يجب أن أستخدم؟",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "يعتمد على هدفك. SDXL هو النموذج الأساسي الأقوى للاستخدام العام. Realistic Vision للواقعية الفوتوغرافية. DreamShaper للفن الرقمي. Anything V5 للأنيمي. اختر Checkpoint يناسب الأسلوب المطلوب ثم اكتب البرومبت وفقاً لنقاط قوته."
+        }
+      }
+    ]
+  }
+  </script>
+    <!-- Google AdSense -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4499206373485728" crossorigin="anonymous"></script>
+    <!-- Web Push Notifications -->
+<script src="https://cdn.onesignal.com/sdks/web/v16/OneSignalSDK.page.js" defer></script>
+<script>
+  window.OneSignalDeferred = window.OneSignalDeferred || [];
+  OneSignalDeferred.push(async function(OneSignal) {
+    await OneSignal.init({
+      appId: "REPLACE_WITH_ONESIGNAL_APP_ID",
+      notifyButton: { enable: false }
+    });
+  });
+</script>
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="inner">
+      <a href="/ar/" class="site-logo"><img src="/favicon.svg" alt="ImageToPrompt" width="48" height="48"><div class="site-logo-text">ImageTo<span class="accent">Prompt</span><span class="site-logo-sub">&#1605;&#1608;&#1604;&#1617;&#1583; &#1576;&#1585;&#1608;&#1605;&#1576;&#1578; &#1605;&#1580;&#1575;&#1606;&#1610;</span></div></a>
+      <nav class="site-nav" aria-label="&#1575;&#1604;&#1578;&#1606;&#1602;&#1604; &#1575;&#1604;&#1585;&#1574;&#1610;&#1587;&#1610;">
+        <div class="nav-dropdown">
+          <button class="nav-dropdown-trigger" aria-haspopup="true" aria-expanded="false">Tools <span class="nav-chevron" aria-hidden="true">&#9660;</span></button>
+          <div class="nav-dropdown-menu" role="menu">
+            <div class="nav-mega-grid">
+              <div class="nav-mega-col">
+                <div class="nav-mega-heading">&#128444; IMAGE TOOLS</div>
+                <a href="/" role="menuitem" class="nav-mega-tool">Image to Prompt <span class="nav-mega-arrow">&#8594;</span></a>
+                <a href="/text-to-prompt/" role="menuitem" class="nav-mega-tool">Text to Prompt <span class="nav-mega-arrow">&#8594;</span></a>
+                <div class="nav-mega-models-label">Models</div>
+                <div class="nav-mega-models"><a href="/midjourney-prompt-generator/">Midjourney</a><span class="nav-dot">&#xB7;</span><a href="/stable-diffusion-prompt-generator/">SD</a></div>
+                <div class="nav-mega-models"><a href="/flux-prompt-generator/">Flux</a><span class="nav-dot">&#xB7;</span><a href="/dall-e-prompt-generator/">DALL&#xB7;E&#xA0;3</a></div>
+                <div class="nav-mega-models"><a href="/adobe-firefly-prompt-generator/">Firefly</a><span class="nav-dot">&#xB7;</span><a href="/leonardo-ai-prompt-generator/">Leonardo</a></div>
+                <div class="nav-mega-models"><a href="/ideogram-prompt-generator/">Ideogram</a></div>
+              </div>
+              <div class="nav-mega-divider" aria-hidden="true"></div>
+              <div class="nav-mega-col">
+                <div class="nav-mega-heading">&#127909; VIDEO TOOLS</div>
+                <a href="/?tab=image-to-video" role="menuitem" class="nav-mega-tool">Image to Video <span class="nav-mega-arrow">&#8594;</span></a>
+                <a href="/?tab=text-to-video" role="menuitem" class="nav-mega-tool">Text to Video <span class="nav-mega-arrow">&#8594;</span></a>
+                <div class="nav-mega-models-label">Models</div>
+                <div class="nav-mega-models"><a href="/veo-prompt-generator/">Veo</a><span class="nav-dot">&#xB7;</span><a href="/kling-prompt-generator/">Kling</a></div>
+                <div class="nav-mega-models"><a href="/runway-prompt-generator/">Runway</a><span class="nav-dot">&#xB7;</span><a href="/pika-prompt-generator/">Pika</a></div>
+                <div class="nav-mega-models"><a href="/luma-prompt-generator/">Luma</a><span class="nav-dot">&#xB7;</span><a href="/sora-prompt-generator/">Sora</a></div>
+                <div class="nav-mega-models"><a href="/minimax-prompt-generator/">Minimax</a><span class="nav-dot">&#xB7;</span><a href="/stable-video-prompt-generator/">Stable</a></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <a href="/ar/blog/">المدونة</a>#1575;>&#1575;&#1604;&#1605;&#1583;&#1608;&#1606;&#1577;</a>#1604;>&#1575;&#1604;&#1605;&#1583;&#1608;&#1606;&#1577;</a>#1605;>&#1575;&#1604;&#1605;&#1583;&#1608;&#1606;&#1577;</a>#1583;>&#1575;&#1604;&#1605;&#1583;&#1608;&#1606;&#1577;</a>#1608;>&#1575;&#1604;&#1605;&#1583;&#1608;&#1606;&#1577;</a>#1606;>&#1575;&#1604;&#1605;&#1583;&#1608;&#1606;&#1577;</a>#1577;</a>
+        <a href="/pricing/" class="nav-pill-pricing">Pricing</a>
+        <a href="/about/" class="nav-pill-about">About</a>
+        <a href="/ar/" class="nav-try-free">&#1580;&#1585;&#1617;&#1576; &#8594;</a>
+        <button id="theme-toggle" onclick="toggleTheme()" aria-label="Switch theme" title="Switch theme">&#9728;&#xFE0F;</button>
+  </nav>
+    </div>
+  </header>
+
+  <nav class="breadcrumb" aria-label="مسار التنقل">
+    <a href="/ar/">الرئيسية</a><span class="sep">›</span>
+    <a href="/ar/blog/">المدونة</a><span class="sep">›</span>
+    <span>دليل برومبتات Stable Diffusion</span>
+  </nav>
+
+  <div class="page-wrapper">
+
+    <header class="article-header">
+      <p class="article-tag">Stable Diffusion</p>
+      <h1>دليل برومبتات Stable Diffusion 2026</h1>
+      <div class="article-meta">
+        <span>مارس 2026</span>
+        <span class="dot">·</span>
+        <span>9 دقائق قراءة</span>
+        <span class="dot">·</span>
+        <span>SDXL · ComfyUI · A1111 · WebUI</span>
+        <span class="dot">·</span>
+        <span>محدّث مارس 2026</span>
+      </div>
+    </header>
+
+    <div class="article-body">
+
+      <p>Stable Diffusion يتميز عن باقي مولدات الصور بالذكاء الاصطناعي بمستوى التحكم التقني العالي الذي يمنحه للمستخدم. من نظام الأوزان إلى البرومبتات السلبية إلى اختيار النماذج المخصصة (Checkpoints)، يمنحك SD أدوات لا تتوفر في أي مولد آخر. لكن هذه القوة تأتي بمنحنى تعلم أكثر حدة.</p>
+
+      <nav class="toc" aria-label="محتويات المقال">
+        <details open>
+          <summary>في هذا الدليل</summary>
+          <ol>
+            <li><a href="#prompt-structure">بنية برومبت SD</a></li>
+            <li><a href="#weights">نظام الأوزان</a></li>
+            <li><a href="#negative-prompts">البرومبتات السلبية</a></li>
+            <li><a href="#quality-tags">وسوم الجودة</a></li>
+            <li><a href="#cfg-scale">CFG Scale والخطوات</a></li>
+            <li><a href="#checkpoints">اختيار Checkpoint المناسب</a></li>
+            <li><a href="#sdxl">نصائح خاصة بـ SDXL</a></li>
+            <li><a href="#examples">أمثلة عملية</a></li>
+            <li><a href="#faq">أسئلة شائعة</a></li>
+          </ol>
+        </details>
+      </nav>
+
+      <h2 id="prompt-structure">بنية برومبت Stable Diffusion</h2>
+
+      <p>برومبت SD يتكون من عدة أجزاء مُنظَّمة بعناية. الترتيب مهم — الكلمات في بداية البرومبت تحصل على اهتمام أكبر من النموذج. إليك البنية الموصى بها:</p>
+
+      <ol>
+        <li><strong>وسوم الجودة:</strong> <code dir="ltr">masterpiece, best quality, highly detailed</code></li>
+        <li><strong>الموضوع الرئيسي:</strong> <code dir="ltr">portrait of a young woman with red hair</code></li>
+        <li><strong>البيئة:</strong> <code dir="ltr">in a sunlit garden</code></li>
+        <li><strong>الأسلوب:</strong> <code dir="ltr">oil painting style, impressionist</code></li>
+        <li><strong>الإضاءة:</strong> <code dir="ltr">golden hour, warm sunlight</code></li>
+        <li><strong>التفاصيل التقنية:</strong> <code dir="ltr">8k, ultra detailed, sharp focus</code></li>
+      </ol>
+
+      <p>مثال كامل:</p>
+      <pre dir="ltr">(masterpiece:1.2), best quality, highly detailed portrait of a young woman with flowing red hair, sitting in a sunlit garden, oil painting style, impressionist brushstrokes, golden hour lighting, warm colors, 8k, ultra detailed</pre>
+
+      <h2 id="weights">نظام الأوزان</h2>
+
+      <p>الميزة الأقوى والأكثر تفرداً في Stable Diffusion هي نظام الأوزان. يتيح لك التحكم في مدى تأثير كل مصطلح على الصورة النهائية:</p>
+
+      <h3>صياغة الأوزان</h3>
+      <ul>
+        <li><code dir="ltr">(keyword:1.3)</code> — تعزيز بنسبة 30% (أقوى تأثير)</li>
+        <li><code dir="ltr">(keyword:1.0)</code> — الوزن الافتراضي (بدون تغيير)</li>
+        <li><code dir="ltr">(keyword:0.7)</code> — تقليل بنسبة 30% (تأثير أضعف)</li>
+        <li><code dir="ltr">((keyword))</code> — تعزيز تلقائي (يعادل تقريباً 1.1 لكل قوس إضافي)</li>
+      </ul>
+
+      <div class="callout">
+        <p><strong>تحذير:</strong> تجنب أوزاناً أعلى من 1.5 لأنها تُسبب تشوهات وألواناً مشبعة بشكل مفرط. النطاق المثالي هو 0.6 إلى 1.4.</p>
+      </div>
+
+      <h3>أمثلة عملية للأوزان</h3>
+      <pre dir="ltr">(cinematic lighting:1.3), (bokeh:0.8), portrait, (film grain:0.6)</pre>
+      <p>هذا البرومبت يُعزز الإضاءة السينمائية بقوة، ويُقلل تأثير البوكيه قليلاً، ويُبقي تأثير حبيبات الفيلم خفيفاً.</p>
+
+      <h2 id="negative-prompts">البرومبتات السلبية</h2>
+
+      <p>البرومبت السلبي يُخبر النموذج بما يجب تجنبه. هو ضروري في SD لتجنب العيوب الشائعة. إليك برومبتاً سلبياً أساسياً شاملاً:</p>
+
+      <pre dir="ltr">ugly, deformed, noisy, blurry, low quality, bad anatomy, extra fingers, mutated hands, poorly drawn face, mutation, disfigured, worst quality, low quality, normal quality, jpeg artifacts, watermark, text, signature</pre>
+
+      <h3>برومبتات سلبية متخصصة</h3>
+
+      <p><strong>للصور الواقعية:</strong></p>
+      <pre dir="ltr">cartoon, anime, illustration, painting, drawing, unrealistic, 3d render, CGI</pre>
+
+      <p><strong>للأنيمي:</strong></p>
+      <pre dir="ltr">realistic, photo, 3d, western, ugly, bad proportions, extra limbs</pre>
+
+      <p><strong>للمناظر الطبيعية:</strong></p>
+      <pre dir="ltr">people, humans, figures, text, watermark, frame, border, ugly, distorted</pre>
+
+      <h2 id="quality-tags">وسوم الجودة</h2>
+
+      <p>وسوم الجودة تُحسّن الناتج العام. أضفها في بداية البرومبت:</p>
+
+      <ul>
+        <li><code dir="ltr">masterpiece</code> — يُوجّه النموذج نحو أعلى جودة</li>
+        <li><code dir="ltr">best quality</code> — يُعزز التفاصيل والوضوح</li>
+        <li><code dir="ltr">highly detailed</code> — يزيد التفاصيل الدقيقة</li>
+        <li><code dir="ltr">8k, ultra HD</code> — يُحسّن الحدة والدقة</li>
+        <li><code dir="ltr">sharp focus</code> — يضمن وضوح الموضوع الرئيسي</li>
+        <li><code dir="ltr">professional</code> — يُعطي طابعاً احترافياً</li>
+      </ul>
+
+      <h2 id="cfg-scale">CFG Scale والخطوات</h2>
+
+      <p>CFG Scale يتحكم في مدى التزام النموذج بالبرومبت:</p>
+
+      <div class="table-wrap">
+      <table class="comparison-table">
+        <thead>
+          <tr><th>CFG Scale</th><th>السلوك</th><th>الاستخدام الأمثل</th></tr>
+        </thead>
+        <tbody>
+          <tr><td><code dir="ltr">3-5</code></td><td>إبداعي، تفسير حر</td><td>استكشاف أفكار جديدة</td></tr>
+          <tr><td><code dir="ltr">7-9</code></td><td>متوازن (موصى به)</td><td>الاستخدام العام</td></tr>
+          <tr><td><code dir="ltr">12-15</code></td><td>التزام صارم بالبرومبت</td><td>عندما تريد نتيجة محددة جداً</td></tr>
+          <tr><td><code dir="ltr">15+</code></td><td>مفرط — ألوان مشبعة وتشوهات</td><td>غير موصى به</td></tr>
+        </tbody>
+      </table>
+      </div>
+
+      <p>عدد الخطوات (Steps) يؤثر على جودة التفاصيل. 20-30 خطوة كافية لمعظم الاستخدامات. 40-50 خطوة للصور عالية التفاصيل. أكثر من 50 نادراً ما يُحسّن النتيجة.</p>
+
+      <h2 id="checkpoints">اختيار Checkpoint المناسب</h2>
+
+      <p>Checkpoint هو النموذج المُدرَّب الذي يُحدد أسلوب المخرجات. اختيار Checkpoint المناسب أهم من كتابة البرومبت المثالي:</p>
+
+      <ul>
+        <li><strong>SDXL Base:</strong> النموذج الرسمي — متعدد الاستخدامات وقوي</li>
+        <li><strong>Realistic Vision:</strong> واقعية فوتوغرافية استثنائية</li>
+        <li><strong>DreamShaper:</strong> فن رقمي وخيالي</li>
+        <li><strong>Anything V5:</strong> أنيمي وأسلوب ياباني</li>
+        <li><strong>Deliberate:</strong> متعدد الأساليب مع جودة عالية</li>
+        <li><strong>CyberRealistic:</strong> صور واقعية بأسلوب سينمائي</li>
+      </ul>
+
+      <div class="cta-inline">
+        <p>حوّل أي صورة إلى برومبت Stable Diffusion مع أوزان وبرومبت سلبي.</p>
+        <a href="/" class="cta-btn-sm">جرّب مجاناً ←</a>
+      </div>
+
+      <h2 id="sdxl">نصائح خاصة بـ SDXL</h2>
+
+      <p>SDXL يختلف عن SD 1.5 في عدة نقاط مهمة:</p>
+
+      <ul>
+        <li><strong>البرومبتات الأطول أفضل:</strong> SDXL يتعامل مع نصوص أطول ويفهمها بشكل أعمق</li>
+        <li><strong>وسوم الجودة أقل أهمية:</strong> SDXL يُنتج جودة عالية بدون الحاجة لحشو وسوم الجودة</li>
+        <li><strong>الدقة الأعلى:</strong> يعمل بدقة 1024x1024 أصلياً بدلاً من 512x512</li>
+        <li><strong>نظام الرسائل المزدوج:</strong> يدعم برومبتين — إيجابي وسلبي — مع تحكم أدق</li>
+      </ul>
+
+      <p>مثال برومبت SDXL:</p>
+      <pre dir="ltr">A weathered lighthouse on a rocky cliff during a dramatic thunderstorm, crashing waves below, lightning illuminating the scene, cinematic photography, moody atmosphere, dark teal and orange color palette, 8k resolution</pre>
+
+      <h2 id="examples">أمثلة عملية</h2>
+
+      <h3>بورتريه واقعي</h3>
+      <pre dir="ltr">(masterpiece:1.2), (best quality:1.1), RAW photo, portrait of a 30 year old man, salt and pepper beard, wearing a denim jacket, (sharp focus:1.1), natural skin texture, (golden hour lighting:1.2), bokeh background, Canon EOS R5, 85mm f/1.4</pre>
+      <p>البرومبت السلبي:</p>
+      <pre dir="ltr">cartoon, illustration, painting, anime, ugly, deformed, bad anatomy, blurry, low quality, oversaturated</pre>
+
+      <h3>فن مفاهيمي خيالي</h3>
+      <pre dir="ltr">(masterpiece:1.3), concept art, epic fantasy castle floating in the sky, (dramatic lighting:1.2), volumetric fog, crystal spires, waterfalls cascading into clouds, golden hour, digital painting, highly detailed, artstation trending</pre>
+      <p>البرومبت السلبي:</p>
+      <pre dir="ltr">photo, realistic, blurry, low quality, ugly, deformed, text, watermark</pre>
+
+      <h3>أنيمي</h3>
+      <pre dir="ltr">(masterpiece:1.2), best quality, 1girl, long silver hair, blue eyes, wearing a white dress, standing in a flower field, cherry blossoms falling, (soft lighting:1.1), pastel colors, detailed face, beautiful eyes</pre>
+      <p>البرومبت السلبي:</p>
+      <pre dir="ltr">realistic, photo, 3d, western, ugly, bad proportions, extra limbs, bad anatomy, worst quality</pre>
+
+      <div class="cta-box">
+        <h3>احصل على برومبت SD من أي صورة</h3>
+        <p>ارفع صورتك واحصل على برومبت Stable Diffusion كامل مع أوزان وبرومبت سلبي — مجاناً.</p>
+        <a href="/?lang=ar" class="cta-btn">جرّب ImageToPrompt مجاناً ←</a>
+      </div>
+
+      <h2 id="faq">أسئلة شائعة</h2>
+
+      <h3>ما هو نظام الأوزان في Stable Diffusion؟</h3>
+      <p>نظام الأوزان يتيح تعزيز أو تقليل تأثير كلمات معينة في البرومبت. استخدم <code dir="ltr">(keyword:1.3)</code> لتعزيز عنصر أو <code dir="ltr">(keyword:0.7)</code> لتقليله. الوزن الافتراضي هو 1.0. تجنب أوزاناً أعلى من 1.5 لأنها قد تُشوّه الصورة وتُنتج ألواناً مشبعة بشكل مفرط.</p>
+
+      <h3>ما هو البرومبت السلبي ولماذا هو مهم؟</h3>
+      <p>البرومبت السلبي يحدد ما لا تريده في الصورة. هو ضروري في Stable Diffusion لتجنب العيوب الشائعة مثل التشوهات والأيدي السيئة والنص غير المقروء. برومبت سلبي أساسي جيد: <code dir="ltr">ugly, deformed, blurry, low quality, bad anatomy, extra fingers</code>. خصص البرومبت السلبي حسب نوع الصورة المطلوبة.</p>
+
+      <h3>ما هو CFG Scale وكيف يؤثر على النتائج؟</h3>
+      <p>CFG Scale (Classifier Free Guidance) يتحكم في مدى التزام النموذج بالبرومبت. قيم منخفضة (3-5) تعطي حرية إبداعية أكبر. قيم متوسطة (7-9) توازن بين الإبداع والالتزام وهي الموصى بها. قيم عالية (12-15) تلتزم بالبرومبت بشكل صارم لكن قد تُنتج صوراً متشبعة أو غير طبيعية.</p>
+
+      <h3>أي Checkpoint يجب أن أستخدم؟</h3>
+      <p>يعتمد على هدفك. SDXL هو النموذج الأساسي الأقوى للاستخدام العام. Realistic Vision للواقعية الفوتوغرافية. DreamShaper للفن الرقمي. Anything V5 للأنيمي. اختر Checkpoint يناسب الأسلوب المطلوب ثم اكتب البرومبت وفقاً لنقاط قوته. يمكنك استخدام <a href="/">ImageToPrompt</a> لتحليل صورة واختيار SD كنموذج هدف للحصول على برومبت بالصياغة الصحيحة.</p>
+
+    </div>
+
+    <div class="author-bio">
+      <svg class="author-photo" width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="صورة المؤلف"><circle cx="32" cy="32" r="32" fill="#2a1f4e"/><circle cx="32" cy="26" r="11" fill="#7c6bc4"/><ellipse cx="32" cy="52" rx="18" ry="11" fill="#7c6bc4"/></svg>
+      <div class="author-info">
+        <p class="author-name">فريق ImageToPrompt</p>
+        <p class="author-desc">مهندسو برومبتات وفنانو ذكاء اصطناعي متخصصون في Midjourney و Stable Diffusion و Flux. نبني ImageToPrompt لجعل توليد الصور بالذكاء الاصطناعي في متناول الجميع.</p>
+        <a href="https://x.com/Ilyass14286541" class="author-link">تابعنا على X ←</a>
+      </div>
+    </div>
+
+    <div class="related-posts">
+      <h2>أدلة ذات صلة</h2>
+      <div class="related-grid">
+        <a href="/ar/blog/prompts-salbiya-stable-diffusion/" class="related-card">
+          <p class="tag">Stable Diffusion</p>
+          <h3>البرومبتات السلبية في Stable Diffusion</h3>
+        </a>
+        <a href="/ar/blog/dalil-prompts-midjourney-2026/" class="related-card">
+          <p class="tag">Midjourney</p>
+          <h3>دليل برومبتات Midjourney 2026</h3>
+        </a>
+        <a href="/ar/blog/stable-diffusion-vs-midjourney-vs-dalle3/" class="related-card">
+          <p class="tag">مقارنة</p>
+          <h3>مقارنة SD مقابل Midjourney مقابل DALL-E 3</h3>
+        </a>
+        <a href="/ar/blog/kitabat-prompts-ia-lilmubtadiin/" class="related-card">
+          <p class="tag">مبتدئون</p>
+          <h3>كيف تكتب برومبتات ذكاء اصطناعي — دليل المبتدئين</h3>
+        </a>
+      </div>
+    </div>
+
+  </div>
+
+  <footer class="footer-4col">
+    <div class="f4-inner">
+      <div class="f4-brand">
+        <img src="/favicon.svg" alt="ImageToPrompt" width="28" height="28">
+        <span class="f4-brand-name">ImageTo<span class="accent">Prompt</span></span>
+        <span class="f4-brand-sub">&mdash; Free AI Prompt Generator</span>
+      </div>
+      <div class="f4-grid">
+        <div class="f4-section">
+          <h4 class="f4-heading">Image Prompt Tools</h4>
+          <a href="/">Image to Prompt</a>
+          <a href="/text-to-prompt/">Text to Prompt</a>
+          <a href="/midjourney-prompt-generator/">Midjourney</a>
+          <a href="/stable-diffusion-prompt-generator/">Stable Diffusion</a>
+          <a href="/flux-prompt-generator/">Flux</a>
+          <a href="/dall-e-prompt-generator/">DALL-E 3</a>
+          <a href="/adobe-firefly-prompt-generator/">Adobe Firefly</a>
+          <a href="/leonardo-ai-prompt-generator/">Leonardo AI</a>
+          <a href="/ideogram-prompt-generator/">Ideogram</a>
+        </div>
+        <div class="f4-section">
+          <h4 class="f4-heading">Video Prompt Tools</h4>
+          <a href="/image-to-video-prompt/">Image to Video Prompt</a>
+          <a href="/text-to-video-prompt/">Text to Video Prompt</a>
+          <a href="/veo-prompt-generator/">Veo / Flow Studio</a>
+          <a href="/kling-prompt-generator/">Kling AI</a>
+          <a href="/runway-prompt-generator/">Runway Gen-3</a>
+          <a href="/pika-prompt-generator/">Pika</a>
+          <a href="/luma-prompt-generator/">Luma Dream Machine</a>
+          <a href="/sora-prompt-generator/">Sora</a>
+          <a href="/minimax-prompt-generator/">Minimax</a>
+          <a href="/stable-video-prompt-generator/">Stable Video</a>
+        </div>
+        <div class="f4-section">
+          <h4 class="f4-heading">Resources</h4>
+          <a href="/blog/">Blog</a>
+          <a href="/about/">About</a>
+          <a href="/pricing/">Pricing</a>
+          <a href="/contact/">Contact</a>
+          <a href="/privacy-policy/">Privacy Policy</a>
+          <a href="/terms-of-service/">Terms of Service</a>
+        </div>
+        <div class="f4-section">
+          <h4 class="f4-heading">Languages</h4>
+          <a href="/">English</a>
+          <a href="/fr/">Fran&#231;ais</a>
+          <a href="/ar/">&#1575;&#1604;&#1593;&#1585;&#1576;&#1610;&#1577;</a>
+          <a href="/es/">Espa&#241;ol</a>
+          <a href="/ko/">&#54620;&#44397;&#50612;</a>
+          <a href="/ja/">&#26085;&#26412;&#35486;</a>
+        </div>
+      </div>
+      <div class="f4-bottom">
+        <p>&#169; 2026 ImageToPrompt.dev &#8212; Free AI Prompt Generator</p>
+        <p>Your images are never stored. All analysis is ephemeral and private.</p>
+      </div>
+    </div>
+  </footer>
+
+<script src="/newsletter-inject.js" defer></script>
+<script src="/nav.js" defer></script>
+  <script>
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', function() {
+    navigator.serviceWorker.register('/sw.js')
+      .catch(function(err) { console.warn('SW registration failed:', err); });
+  });
+}
+</script>
+</body>
+</html>

@@ -1,3 +1,4 @@
+import { useTranslation } from 'react-i18next';
 import { VIDEO_MODEL_CONFIGS } from '../utils/videoUtils';
 import type { VideoModel } from '../types';
 
@@ -7,10 +8,12 @@ interface VideoModelSelectorProps {
 }
 
 export default function VideoModelSelector({ selected, onChange }: VideoModelSelectorProps) {
+  const { t } = useTranslation();
+
   return (
     <div className="flex flex-col gap-2">
       <span className="font-inter text-xs font-600 uppercase tracking-widest text-[var(--text-secondary)]">
-        Target Video Model
+        {t('controls.targetVideoModel')}
       </span>
       <div className="grid grid-cols-2 sm:grid-cols-3 gap-2">
         {VIDEO_MODEL_CONFIGS.map((model) => {

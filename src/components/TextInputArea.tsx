@@ -1,3 +1,5 @@
+import { useTranslation } from 'react-i18next';
+
 interface TextInputAreaProps {
   text: string;
   onChange: (v: string) => void;
@@ -5,6 +7,7 @@ interface TextInputAreaProps {
 }
 
 export default function TextInputArea({ text, onChange, disabled = false }: TextInputAreaProps) {
+  const { t } = useTranslation();
   const nearLimit = text.length > 400;
   const atLimit = text.length >= 500;
 
@@ -15,7 +18,7 @@ export default function TextInputArea({ text, onChange, disabled = false }: Text
         onChange={(e) => onChange(e.target.value)}
         disabled={disabled}
         maxLength={500}
-        placeholder="Describe what you want to create... e.g., 'a cat sitting in a magical garden at sunset'"
+        placeholder={t('textInput.placeholder')}
         className="w-full rounded-xl px-4 py-3 font-inter text-base text-[var(--text-primary)] placeholder-[var(--text-secondary)] border transition-colors duration-150 disabled:opacity-50 disabled:cursor-not-allowed focus:outline-none"
         style={{
           minHeight: '120px',

@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { useTranslation } from 'react-i18next';
 import { motion } from 'framer-motion';
 import { X, Share2, Clock } from 'lucide-react';
 
@@ -8,6 +9,7 @@ interface RateLimitModalProps {
 }
 
 export default function RateLimitModal({ onClose, timeUntilReset }: RateLimitModalProps) {
+  const { t } = useTranslation();
   const [email, setEmail] = useState('');
   const [subscribed, setSubscribed] = useState(false);
 
@@ -55,12 +57,10 @@ export default function RateLimitModal({ onClose, timeUntilReset }: RateLimitMod
           <div className="text-center">
             <div className="mb-4 text-5xl">🎉</div>
             <h2 className="font-grotesk text-2xl font-700 text-[var(--text-primary)]">
-              You're on a roll!
+              {t('rateLimit.title')}
             </h2>
             <p className="mt-2 font-inter text-sm text-[var(--text-secondary)]">
-              You've used all{' '}
-              <span className="font-600 text-[var(--text-primary)]">10 free analyses</span> for
-              today. Come back tomorrow for another round!
+              {t('rateLimit.message')}
             </p>
           </div>
 
@@ -68,7 +68,7 @@ export default function RateLimitModal({ onClose, timeUntilReset }: RateLimitMod
           <div className="mt-6 flex items-center justify-center gap-3 rounded-xl border border-[var(--border-subtle)] bg-[var(--bg-card)] p-4">
             <Clock size={18} className="text-[var(--accent-lens)]" />
             <div>
-              <p className="font-mono text-xs text-[var(--text-secondary)]">Resets in</p>
+              <p className="font-mono text-xs text-[var(--text-secondary)]">{t('rateLimit.resetsIn')}</p>
               <p className="font-grotesk text-xl font-700 text-[var(--accent-lens)]">
                 {timeUntilReset}
               </p>
@@ -78,7 +78,7 @@ export default function RateLimitModal({ onClose, timeUntilReset }: RateLimitMod
           {/* Email notification (UI only) */}
           <div className="mt-5">
             <p className="mb-2 font-inter text-xs text-[var(--text-secondary)]">
-              Get notified when your limit resets:
+              {t('rateLimit.notifyLabel')}
             </p>
             {!subscribed ? (
               <div className="flex gap-2">
@@ -86,7 +86,7 @@ export default function RateLimitModal({ onClose, timeUntilReset }: RateLimitMod
                   type="email"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
-                  placeholder="you@example.com"
+                  placeholder={t('rateLimit.notifyPlaceholder')}
                   className="flex-1 rounded-xl border border-[var(--border-subtle)] bg-[var(--bg-card)] px-3 py-2 font-inter text-sm text-[var(--text-primary)] placeholder-[var(--text-secondary)] outline-none focus:border-[var(--border-accent)]"
                 />
                 <button
@@ -94,13 +94,13 @@ export default function RateLimitModal({ onClose, timeUntilReset }: RateLimitMod
                   disabled={!email}
                   className="rounded-xl bg-[var(--accent-lens)] px-4 py-2 font-grotesk text-sm font-600 text-black disabled:opacity-50"
                 >
-                  Notify
+                  {t('rateLimit.notifyButton')}
                 </button>
               </div>
             ) : (
               <div className="flex items-center gap-2 rounded-xl border border-[var(--success)]/30 bg-[var(--success)]/10 px-3 py-2">
                 <span className="text-[var(--success)]">✓</span>
-                <span className="font-inter text-sm text-[var(--success)]">We'll let you know!</span>
+                <span className="font-inter text-sm text-[var(--success)]">{t('rateLimit.notifySuccess')}</span>
               </div>
             )}
           </div>
@@ -112,13 +112,13 @@ export default function RateLimitModal({ onClose, timeUntilReset }: RateLimitMod
               className="flex flex-1 items-center justify-center gap-2 rounded-xl border border-[var(--border-accent)] bg-[var(--accent-lens-dim)] py-2.5 font-grotesk text-sm font-600 text-[var(--accent-lens)] transition-all hover:bg-[var(--accent-lens)] hover:text-black"
             >
               <Share2 size={14} />
-              Share ImageToPrompt
+              {t('rateLimit.share')}
             </button>
             <button
               onClick={onClose}
               className="rounded-xl border border-[var(--border-subtle)] px-4 py-2.5 font-inter text-sm text-[var(--text-secondary)] transition-all hover:bg-[var(--bg-card)]"
             >
-              Close
+              {t('rateLimit.close')}
             </button>
           </div>
         </div>

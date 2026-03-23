@@ -1,16 +1,22 @@
 import { useState, useRef, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { History, ChevronDown, Image as ImageIcon, Type as TypeIcon, Video as VideoIcon, Film as FilmIcon } from 'lucide-react';
+import { History, ChevronDown, Globe, Image as ImageIcon, Type as TypeIcon, Video as VideoIcon, Film as FilmIcon } from 'lucide-react';
+import { useTranslation } from 'react-i18next';
 import type { RateLimitState } from '../types';
+import { UI_LANGUAGES, type UILanguage } from '../i18n';
 
-const IMG_MAIN = [
-  { href: '/',                label: 'Image to Prompt', Icon: ImageIcon },
-  { href: '/text-to-prompt/', label: 'Text to Prompt',  Icon: TypeIcon  },
-];
-const VID_MAIN = [
-  { href: '/?tab=image-to-video', label: 'Image to Video', Icon: VideoIcon },
-  { href: '/?tab=text-to-video',  label: 'Text to Video',  Icon: FilmIcon  },
-];
+const LANG_META: Record<UILanguage, { flag: string; native: string }> = {
+  en: { flag: '🇬🇧', native: 'English' },
+  fr: { flag: '🇫🇷', native: 'Français' },
+  ar: { flag: '🇸🇦', native: 'العربية' },
+  es: { flag: '🇪🇸', native: 'Español' },
+  de: { flag: '🇩🇪', native: 'Deutsch' },
+  pt: { flag: '🇵🇹', native: 'Português' },
+  ja: { flag: '🇯🇵', native: '日本語' },
+  zh: { flag: '🇨🇳', native: '中文' },
+  ko: { flag: '🇰🇷', native: '한국어' },
+};
+
 const IMG_MODELS = [
   ['Midjourney', '/midjourney-prompt-generator/'],
   ['SD',         '/stable-diffusion-prompt-generator/'],
@@ -50,9 +56,43 @@ const vidPillCls =
   'text-[0.6875rem] text-[#8888bb] no-underline rounded-full px-2.5 py-0.5 border border-[rgba(136,136,187,0.15)] transition-all duration-150 hover:text-[#00e5ff] hover:border-[rgba(0,229,255,0.45)] hover:bg-[rgba(0,229,255,0.09)] hover:shadow-[0_0_8px_rgba(0,229,255,0.12)] font-inter whitespace-nowrap';
 
 export default function Header({ onHistoryOpen, hasHistory }: HeaderProps) {
+  const { t, i18n } = useTranslation();
   const [showTools, setShowTools] = useState(false);
+  const [showLang, setShowLang] = useState(false);
   const toolsRef = useRef<HTMLDivElement>(null);
+  const langRef = useRef<HTMLDivElement>(null);
   const [theme, setTheme] = useState<'dark' | 'light'>(() => (localStorage.getItem('theme') || 'dark') as 'dark' | 'light');
+
+  const currentLang = (i18n.language?.substring(0, 2) || 'en') as UILanguage;
+  const pathname = window.location.pathname;
+  const isActive = (path: string) => pathname === path || pathname.startsWith(path) && path !== '/';
+
+  const pillStyle = (path: string): React.CSSProperties => ({
+    color: isActive(lp(path)) ? '#e040fb' : '#8888bb',
+    padding: '0.3rem 0.75rem',
+    borderRadius: '20px',
+    border: `1px solid ${isActive(lp(path)) ? 'rgba(224,64,251,0.35)' : 'var(--border-subtle)'}`,
+    background: isActive(lp(path)) ? 'rgba(224,64,251,0.10)' : 'transparent',
+  });
+  const onEnter = (e: React.MouseEvent<HTMLAnchorElement | HTMLButtonElement>) => {
+    (e.currentTarget as HTMLElement).style.background = 'rgba(224,64,251,0.10)';
+    (e.currentTarget as HTMLElement).style.borderColor = 'rgba(224,64,251,0.35)';
+    (e.currentTarget as HTMLElement).style.color = '#e040fb';
+  };
+  const onLeave = (path: string) => (e: React.MouseEvent<HTMLAnchorElement | HTMLButtonElement>) => {
+    const active = isActive(lp(path));
+    (e.currentTarget as HTMLElement).style.background = active ? 'rgba(224,64,251,0.10)' : 'transparent';
+    (e.currentTarget as HTMLElement).style.borderColor = active ? 'rgba(224,64,251,0.35)' : 'var(--border-subtle)';
+    (e.currentTarget as HTMLElement).style.color = active ? '#e040fb' : '#8888bb';
+  };
+
+  /** Prefix a path with the language slug. English stays at root. */
+  const lp = (path: string) => {
+    if (currentLang === 'en') return path;
+    // For SPA tool routes (/ and /?tab=...) stay at root — the SPA handles its own i18n
+    if (path === '/' || path.startsWith('/?')) return path;
+    return `/${currentLang}${path}`;
+  };
 
   const toggleTheme = () => {
     const next = theme === 'dark' ? 'light' : 'dark';
@@ -61,24 +101,35 @@ export default function Header({ onHistoryOpen, hasHistory }: HeaderProps) {
     localStorage.setItem('theme', next);
   };
 
+  const switchLanguage = (lng: UILanguage) => {
+    i18n.changeLanguage(lng);
+    setShowLang(false);
+  };
+
   useEffect(() => {
     function handleClick(e: MouseEvent) {
-      if (toolsRef.current && !toolsRef.current.contains(e.target as Node)) {
-        setShowTools(false);
-      }
+      if (toolsRef.current && !toolsRef.current.contains(e.target as Node)) setShowTools(false);
+      if (langRef.current && !langRef.current.contains(e.target as Node)) setShowLang(false);
     }
     function handleKey(e: KeyboardEvent) {
-      if (e.key === 'Escape') setShowTools(false);
+      if (e.key === 'Escape') { setShowTools(false); setShowLang(false); }
     }
-    if (showTools) {
-      document.addEventListener('mousedown', handleClick);
-      document.addEventListener('keydown', handleKey);
-    }
+    document.addEventListener('mousedown', handleClick);
+    document.addEventListener('keydown', handleKey);
     return () => {
       document.removeEventListener('mousedown', handleClick);
       document.removeEventListener('keydown', handleKey);
     };
-  }, [showTools]);
+  }, []);
+
+  const IMG_MAIN = [
+    { href: lp('/'),                label: t('nav.imageToPrompt'), Icon: ImageIcon },
+    { href: lp('/text-to-prompt/'), label: t('nav.textToPrompt'),  Icon: TypeIcon  },
+  ];
+  const VID_MAIN = [
+    { href: lp('/?tab=image-to-video'), label: t('nav.imageToVideo'), Icon: VideoIcon },
+    { href: lp('/?tab=text-to-video'),  label: t('nav.textToVideo'),  Icon: FilmIcon  },
+  ];
 
   return (
     <header className="sticky top-0 z-40 border-b border-[var(--border-subtle)] bg-[var(--bg-void)]/80 backdrop-blur-xl h-[57px] flex items-center">
@@ -97,7 +148,7 @@ export default function Header({ onHistoryOpen, hasHistory }: HeaderProps) {
               ImageTo<span style={{ background: 'linear-gradient(135deg, #e040fb, #f06292)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>Prompt</span>
             </span>
             <span className="hidden sm:block font-inter text-[0.625rem] text-[var(--text-secondary)] mt-0.5 whitespace-nowrap">
-              Free AI Prompt Generator
+              {t('hero.tagline')}
             </span>
           </div>
         </motion.a>
@@ -115,9 +166,12 @@ export default function Header({ onHistoryOpen, hasHistory }: HeaderProps) {
               onClick={() => setShowTools((v) => !v)}
               aria-expanded={showTools}
               aria-haspopup="menu"
-              className="flex items-center gap-1 rounded-lg border border-[var(--border-subtle)] px-3 py-1.5 font-inter text-sm text-[var(--text-secondary)] transition-all duration-200 hover:border-[var(--border-accent)] hover:text-[var(--text-primary)]"
+              className="flex items-center gap-1 font-grotesk text-[0.8125rem] font-600 whitespace-nowrap transition-all duration-200"
+              style={{ color: showTools ? '#e040fb' : '#8888bb', padding: '0.3rem 0.75rem', borderRadius: '20px', border: `1px solid ${showTools ? 'rgba(224,64,251,0.35)' : 'var(--border-subtle)'}`, background: showTools ? 'rgba(224,64,251,0.10)' : 'transparent' }}
+              onMouseEnter={onEnter}
+              onMouseLeave={e => { if (!showTools) { (e.currentTarget as HTMLButtonElement).style.background = 'transparent'; (e.currentTarget as HTMLButtonElement).style.borderColor = 'var(--border-subtle)'; (e.currentTarget as HTMLButtonElement).style.color = '#8888bb'; } }}
             >
-              Tools
+              {t('nav.tools')}
               <ChevronDown size={12} className={`transition-transform duration-200 ${showTools ? 'rotate-180' : ''}`} />
             </button>
 
@@ -140,16 +194,14 @@ export default function Header({ onHistoryOpen, hasHistory }: HeaderProps) {
                 >
                   <div className="grid p-4" style={{ gridTemplateColumns: '1fr auto 1fr', gap: 0 }}>
 
-                    {/* ── Left: Image Tools ── */}
+                    {/* Image Tools */}
                     <div className={colBase}>
-                      {/* Heading */}
                       <div className="flex items-center gap-1.5 px-1.5 pb-2.5">
                         <span className="text-[0.5625rem] font-700 tracking-[0.12em] uppercase" style={{ color: 'rgba(224,100,251,0.8)' }}>
-                          🖼 Image Tools
+                          🖼 {t('nav.imageTools')}
                         </span>
                         <span className="flex-1 h-px" style={{ background: 'var(--border-subtle)' }} />
                       </div>
-                      {/* Main tools */}
                       {IMG_MAIN.map(({ href, label, Icon }) => (
                         <a key={href} href={href} role="menuitem" onClick={() => setShowTools(false)} className={imgToolCls} style={{ color: 'var(--text-secondary)' }}>
                           <span className="flex items-center gap-2">
@@ -159,28 +211,25 @@ export default function Header({ onHistoryOpen, hasHistory }: HeaderProps) {
                           <span style={{ color: 'var(--text-muted)', fontSize: '0.75rem' }}>→</span>
                         </a>
                       ))}
-                      {/* Models */}
-                      <div className={modelsLabelCls} style={{ color: 'var(--text-dim)', borderTop: '1px solid var(--border-subtle)' }}>Models</div>
+                      <div className={modelsLabelCls} style={{ color: 'var(--text-dim)', borderTop: '1px solid var(--border-subtle)' }}>{t('nav.models')}</div>
                       <div className="flex flex-wrap gap-1 px-1 pb-1">
                         {IMG_MODELS.map(([name, href]) => (
-                          <a key={href} href={href} onClick={() => setShowTools(false)} className={imgPillCls}>{name}</a>
+                          <a key={href} href={lp(href)} onClick={() => setShowTools(false)} className={imgPillCls}>{name}</a>
                         ))}
                       </div>
                     </div>
 
-                    {/* ── Divider ── */}
+                    {/* Divider */}
                     <div style={{ width: '1px', background: 'var(--border-subtle)', margin: '0 8px', alignSelf: 'stretch' }} />
 
-                    {/* ── Right: Video Tools ── */}
+                    {/* Video Tools */}
                     <div className={colBase}>
-                      {/* Heading */}
                       <div className="flex items-center gap-1.5 px-1.5 pb-2.5">
                         <span className="text-[0.5625rem] font-700 tracking-[0.12em] uppercase" style={{ color: 'rgba(0,210,255,0.8)' }}>
-                          🎬 Video Tools
+                          🎬 {t('nav.videoTools')}
                         </span>
                         <span className="flex-1 h-px" style={{ background: 'var(--border-subtle)' }} />
                       </div>
-                      {/* Main tools */}
                       {VID_MAIN.map(({ href, label, Icon }) => (
                         <a key={href} href={href} role="menuitem" onClick={() => setShowTools(false)} className={vidToolCls} style={{ color: 'var(--text-secondary)' }}>
                           <span className="flex items-center gap-2">
@@ -190,11 +239,10 @@ export default function Header({ onHistoryOpen, hasHistory }: HeaderProps) {
                           <span style={{ color: 'var(--text-muted)', fontSize: '0.75rem' }}>→</span>
                         </a>
                       ))}
-                      {/* Models */}
-                      <div className={modelsLabelCls} style={{ color: 'var(--text-dim)', borderTop: '1px solid var(--border-subtle)' }}>Models</div>
+                      <div className={modelsLabelCls} style={{ color: 'var(--text-dim)', borderTop: '1px solid var(--border-subtle)' }}>{t('nav.models')}</div>
                       <div className="flex flex-wrap gap-1 px-1 pb-1">
                         {VID_MODELS.map(([name, href]) => (
-                          <a key={href} href={href} onClick={() => setShowTools(false)} className={vidPillCls}>{name}</a>
+                          <a key={href} href={lp(href)} onClick={() => setShowTools(false)} className={vidPillCls}>{name}</a>
                         ))}
                       </div>
                     </div>
@@ -207,51 +255,87 @@ export default function Header({ onHistoryOpen, hasHistory }: HeaderProps) {
 
           {/* Blog */}
           <a
-            href="/blog/"
-            className="hidden sm:flex items-center rounded-lg px-3 py-1.5 font-inter text-sm text-[var(--text-secondary)] transition-all duration-200 hover:text-[var(--text-primary)]"
+            href={lp('/blog/')}
+            className="hidden sm:flex items-center font-grotesk text-[0.8125rem] font-600 whitespace-nowrap transition-all duration-200"
+            style={pillStyle('/blog/')}
+            onMouseEnter={onEnter}
+            onMouseLeave={onLeave('/blog/')}
           >
-            Blog
+            {t('nav.blog')}
           </a>
 
-          {/* Pricing pill */}
+          {/* Pricing */}
           <a
-            href="/pricing/"
+            href={lp('/pricing/')}
             className="hidden sm:flex items-center font-grotesk text-[0.8125rem] font-600 whitespace-nowrap transition-all duration-200"
-            style={{
-              color: '#e040fb',
-              padding: '0.3rem 0.75rem',
-              borderRadius: '20px',
-              border: '1px solid transparent',
-              background: 'transparent',
-            }}
-            onMouseEnter={e => { (e.currentTarget as HTMLAnchorElement).style.background = 'rgba(224,64,251,0.10)'; (e.currentTarget as HTMLAnchorElement).style.borderColor = 'rgba(224,64,251,0.35)'; }}
-            onMouseLeave={e => { (e.currentTarget as HTMLAnchorElement).style.background = 'transparent'; (e.currentTarget as HTMLAnchorElement).style.borderColor = 'transparent'; }}
+            style={pillStyle('/pricing/')}
+            onMouseEnter={onEnter}
+            onMouseLeave={onLeave('/pricing/')}
           >
-            Pricing
+            {t('nav.pricing')}
           </a>
 
-          {/* About pill */}
+          {/* About */}
           <a
-            href="/about/"
+            href={lp('/about/')}
             className="hidden sm:flex items-center font-grotesk text-[0.8125rem] font-600 whitespace-nowrap transition-all duration-200"
-            style={{
-              color: '#8888bb',
-              padding: '0.3rem 0.75rem',
-              borderRadius: '20px',
-              border: '1px solid var(--border-subtle)',
-              background: 'transparent',
-            }}
-            onMouseEnter={e => { (e.currentTarget as HTMLAnchorElement).style.background = 'rgba(0,229,255,0.08)'; (e.currentTarget as HTMLAnchorElement).style.borderColor = 'rgba(0,229,255,0.3)'; (e.currentTarget as HTMLAnchorElement).style.color = '#00e5ff'; }}
-            onMouseLeave={e => { (e.currentTarget as HTMLAnchorElement).style.background = 'transparent'; (e.currentTarget as HTMLAnchorElement).style.borderColor = 'var(--border-subtle)'; (e.currentTarget as HTMLAnchorElement).style.color = '#8888bb'; }}
+            style={pillStyle('/about/')}
+            onMouseEnter={onEnter}
+            onMouseLeave={onLeave('/about/')}
           >
-            About
+            {t('nav.about')}
           </a>
+
+          {/* Language Switcher */}
+          <div ref={langRef} className="relative">
+            <button
+              onClick={() => setShowLang((v) => !v)}
+              aria-expanded={showLang}
+              aria-haspopup="listbox"
+              aria-label={t('language.selectLanguage')}
+              className="flex items-center gap-1.5 rounded-lg border border-[var(--border-subtle)] px-2 py-1.5 font-inter text-sm text-[var(--text-secondary)] transition-all duration-200 hover:border-[var(--border-accent)] hover:text-[var(--text-primary)]"
+            >
+              <Globe size={14} />
+              <span className="hidden sm:inline text-xs font-600 uppercase">{currentLang}</span>
+              <ChevronDown size={10} className={`transition-transform duration-200 ${showLang ? 'rotate-180' : ''}`} />
+            </button>
+
+            <AnimatePresence>
+              {showLang && (
+                <motion.div
+                  initial={{ opacity: 0, y: -6, scale: 0.97 }}
+                  animate={{ opacity: 1, y: 0, scale: 1 }}
+                  exit={{ opacity: 0, y: -6, scale: 0.97 }}
+                  transition={{ duration: 0.12 }}
+                  role="listbox"
+                  aria-label={t('language.selectLanguage')}
+                  className="absolute right-0 top-full z-50 mt-2 w-44 overflow-hidden rounded-xl border border-[var(--border-subtle)] shadow-2xl"
+                  style={{ backdropFilter: 'blur(16px)', background: 'var(--bg-elevated)' }}
+                >
+                  {UI_LANGUAGES.map((lng) => (
+                    <button
+                      key={lng}
+                      role="option"
+                      aria-selected={lng === currentLang}
+                      onClick={() => switchLanguage(lng)}
+                      className="flex w-full items-center gap-3 px-4 py-2.5 font-inter text-sm transition-colors hover:bg-[var(--bg-card)]"
+                      style={{ color: lng === currentLang ? 'var(--accent-lens)' : 'var(--text-secondary)' }}
+                    >
+                      <span className="text-base">{LANG_META[lng].flag}</span>
+                      <span>{LANG_META[lng].native}</span>
+                      {lng === currentLang && <span className="ml-auto text-xs">✓</span>}
+                    </button>
+                  ))}
+                </motion.div>
+              )}
+            </AnimatePresence>
+          </div>
 
           {/* History */}
           {hasHistory && (
             <button
               onClick={onHistoryOpen}
-              aria-label="Open prompt history"
+              aria-label={t('nav.history')}
               className="hidden sm:flex items-center gap-1.5 rounded-lg border border-[var(--border-subtle)] px-2.5 py-1.5 text-sm font-inter text-[var(--text-secondary)] transition-all duration-200 hover:border-[var(--border-accent)] hover:text-[var(--text-primary)]"
             >
               <History size={14} />
@@ -261,8 +345,8 @@ export default function Header({ onHistoryOpen, hasHistory }: HeaderProps) {
           {/* Theme toggle */}
           <button
             onClick={toggleTheme}
-            aria-label={theme === 'dark' ? 'Switch to light mode' : 'Switch to dark mode'}
-            title={theme === 'dark' ? 'Switch to light mode' : 'Switch to dark mode'}
+            aria-label={theme === 'dark' ? t('theme.switchToLight') : t('theme.switchToDark')}
+            title={theme === 'dark' ? t('theme.switchToLight') : t('theme.switchToDark')}
             className="flex items-center justify-center rounded-full border transition-all duration-200 hover:scale-110"
             style={{
               width: '34px',
@@ -286,7 +370,7 @@ export default function Header({ onHistoryOpen, hasHistory }: HeaderProps) {
               color: '#000',
             }}
           >
-            Try Free →
+            {t('nav.tryFree')}
           </a>
         </motion.div>
       </div>
