@@ -46,8 +46,11 @@ const STATIC_PAGES = [
   { path: '/imagetoprompt-vs-dalle3/',            changefreq: 'monthly', priority: '0.7' },
   // International homepages
   { path: '/ja/', changefreq: 'monthly', priority: '0.8' },
+  { path: '/ja/describe-image/',  changefreq: 'monthly', priority: '0.8' },
   { path: '/es/', changefreq: 'monthly', priority: '0.8' },
+  { path: '/es/describe-image/',  changefreq: 'monthly', priority: '0.8' },
   { path: '/ko/', changefreq: 'monthly', priority: '0.8' },
+  { path: '/ko/describe-image/',  changefreq: 'monthly', priority: '0.8' },
   { path: '/ar/', changefreq: 'monthly', priority: '0.8' },
   { path: '/fr/', changefreq: 'monthly', priority: '0.8' },
   // French blog index + posts
@@ -81,6 +84,7 @@ const STATIC_PAGES = [
   { path: '/fr/blog/prompts-negatifs-stable-diffusion/',            changefreq: 'monthly', priority: '0.7' },
   { path: '/fr/blog/veo-vs-kling-vs-runway/',                       changefreq: 'monthly', priority: '0.7' },
   // French model/tool pages
+  { path: '/fr/describe-image/',                        changefreq: 'monthly', priority: '0.8' },
   { path: '/fr/text-to-prompt/',                        changefreq: 'monthly', priority: '0.8' },
   { path: '/fr/image-to-video-prompt/',                 changefreq: 'monthly', priority: '0.8' },
   { path: '/fr/text-to-video-prompt/',                  changefreq: 'monthly', priority: '0.8' },
@@ -133,6 +137,7 @@ const STATIC_PAGES = [
   { path: '/ar/blog/soura-ila-prompt-wasael-tawassl/',                    changefreq: 'monthly', priority: '0.7' },
   { path: '/ar/blog/veo-vs-kling-vs-runway/',                             changefreq: 'monthly', priority: '0.7' },
   // Arabic model/tool pages
+  { path: '/ar/describe-image/',                        changefreq: 'monthly', priority: '0.8' },
   { path: '/ar/text-to-prompt/',                        changefreq: 'monthly', priority: '0.8' },
   { path: '/ar/image-to-video-prompt/',                 changefreq: 'monthly', priority: '0.8' },
   { path: '/ar/text-to-video-prompt/',                  changefreq: 'monthly', priority: '0.8' },
