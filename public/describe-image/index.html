@@ -1,0 +1,362 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <script src="/theme-toggle.js"></script>
+  <meta charset="UTF-8" />
+  <link rel="dns-prefetch" href="https://www.googletagmanager.com">
+<link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0" />
+  <meta name="robots" content="max-image-preview:large, index, follow">
+  <meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="ImageToPrompt">
+  <title>Free AI Image Describer - Describe Any Picture Instantly | ImageToPrompt</title>
+  <meta name="description" content="Upload any image and get a detailed AI-powered description. Perfect for accessibility alt-text, content creation, and understanding images. Free, no login required." />
+  <link rel="canonical" href="https://www.imagetoprompt.dev/describe-image/" />
+  <meta property="og:title" content="Free AI Image Describer - Describe Any Picture Instantly | ImageToPrompt" />
+  <meta property="og:description" content="Upload any image and get a detailed AI-powered description. Perfect for accessibility alt-text, content creation, and understanding images. Free, no login required." />
+  <meta property="og:url" content="https://www.imagetoprompt.dev/describe-image/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="https://www.imagetoprompt.dev/og-image.png" />
+  <meta property="og:site_name" content="ImageToPrompt" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Free AI Image Describer - Describe Any Picture Instantly | ImageToPrompt" />
+  <meta name="twitter:description" content="Upload any image and get a detailed AI-powered description. Perfect for accessibility alt-text, content creation, and understanding images. Free, no login required." />
+  <meta name="twitter:image" content="https://www.imagetoprompt.dev/og-image.png" />
+  <meta name="twitter:site" content="@imagetoprompt" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="48x48" href="/favicon-48.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+  <link rel="manifest" href="/site.webmanifest" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="/fonts/space-grotesk-700.woff2" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="/fonts/inter-400.woff2" />
+  <link rel="stylesheet" href="/theme.css">
+  <link rel="preload" href="/blog.css" as="style" onload="this.onload=null;this.rel='stylesheet'"><noscript><link rel="stylesheet" href="/blog.css"></noscript>
+  <link rel="preload" href="/model-pages.css" as="style" onload="this.onload=null;this.rel='stylesheet'"><noscript><link rel="stylesheet" href="/model-pages.css"></noscript>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "AI Image Describer",
+    "applicationCategory": "UtilitiesApplication",
+    "operatingSystem": "Web",
+    "url": "https://www.imagetoprompt.dev/describe-image/",
+    "description": "Upload any image and get a detailed AI-powered description. Perfect for accessibility alt-text, content creation, and understanding images. Free, no login required.",
+    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+    "publisher": {
+      "@type": "Organization",
+      "name": "ImageToPrompt",
+      "url": "https://www.imagetoprompt.dev/"
+    }
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.imagetoprompt.dev/" },
+      { "@type": "ListItem", "position": 2, "name": "Describe Image", "item": "https://www.imagetoprompt.dev/describe-image/" }
+    ]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What's the difference between describing an image and generating a prompt?",
+        "acceptedAnswer": { "@type": "Answer", "text": "An image description is a human-readable text explaining what is IN the image — the subject, setting, colors, mood, and composition. A prompt is a set of instructions designed to recreate that image in an AI generator like Midjourney or DALL-E. Descriptions are for people; prompts are for AI models." }
+      },
+      {
+        "@type": "Question",
+        "name": "Can I use this for website accessibility alt-text?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Yes. Every description generated by our AI image describer includes a concise alt-text suggestion suitable for HTML alt attributes. This makes your website more accessible to screen readers and visually impaired users, while also improving your SEO with meaningful image descriptions." }
+      },
+      {
+        "@type": "Question",
+        "name": "How detailed are the descriptions?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Each AI-generated description is 200-400 words and covers the main subject, setting and background, dominant colors and color palette, lighting conditions, mood and atmosphere, composition and framing, and any notable text or objects in the image." }
+      },
+      {
+        "@type": "Question",
+        "name": "Is the image description tool free?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Yes, the image describer is completely free. You get 10 free analyses per day with no login or account required. The daily limit resets at midnight UTC and is shared across all tools on the platform." }
+      }
+    ]
+  }
+  </script>
+    <!-- Google AdSense -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4499206373485728" crossorigin="anonymous"></script>
+    <!-- Web Push Notifications -->
+<script src="https://cdn.onesignal.com/sdks/web/v16/OneSignalSDK.page.js" defer></script>
+<script>
+  window.OneSignalDeferred = window.OneSignalDeferred || [];
+  OneSignalDeferred.push(async function(OneSignal) {
+    await OneSignal.init({
+      appId: "REPLACE_WITH_ONESIGNAL_APP_ID",
+      notifyButton: { enable: false }
+    });
+  });
+</script>
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="inner">
+      <a href="/" class="site-logo"><img src="/favicon.svg" alt="ImageToPrompt" width="48" height="48"><div class="site-logo-text">ImageTo<span class="accent">Prompt</span><span class="site-logo-sub">Free AI Prompt Generator</span></div></a>
+      <nav class="site-nav" aria-label="Main navigation">
+        <div class="nav-dropdown">
+          <button class="nav-dropdown-trigger" aria-haspopup="true" aria-expanded="false">Tools <span class="nav-chevron" aria-hidden="true">&#9660;</span></button>
+          <div class="nav-dropdown-menu" role="menu">
+            <div class="nav-mega-grid">
+              <div class="nav-mega-col">
+                <div class="nav-mega-heading">&#128444; IMAGE TOOLS</div>
+                <a href="/" role="menuitem" class="nav-mega-tool">Image to Prompt <span class="nav-mega-arrow">&#8594;</span></a>
+                <a href="/text-to-prompt/" role="menuitem" class="nav-mega-tool">Text to Prompt <span class="nav-mega-arrow">&#8594;</span></a>
+                <a href="/describe-image/" role="menuitem" class="nav-mega-tool">Describe Image <span class="nav-badge-new">NEW</span> <span class="nav-mega-arrow">&#8594;</span></a>
+                <div class="nav-mega-models-label">Models</div>
+                <div class="nav-mega-models"><a href="/midjourney-prompt-generator/">Midjourney</a><span class="nav-dot">&#xB7;</span><a href="/stable-diffusion-prompt-generator/">SD</a></div>
+                <div class="nav-mega-models"><a href="/flux-prompt-generator/">Flux</a><span class="nav-dot">&#xB7;</span><a href="/dall-e-prompt-generator/">DALL&#xB7;E&#xA0;3</a></div>
+                <div class="nav-mega-models"><a href="/adobe-firefly-prompt-generator/">Firefly</a><span class="nav-dot">&#xB7;</span><a href="/leonardo-ai-prompt-generator/">Leonardo</a></div>
+                <div class="nav-mega-models"><a href="/ideogram-prompt-generator/">Ideogram</a></div>
+              </div>
+              <div class="nav-mega-divider" aria-hidden="true"></div>
+              <div class="nav-mega-col">
+                <div class="nav-mega-heading">&#127909; VIDEO TOOLS</div>
+                <a href="/?tab=image-to-video" role="menuitem" class="nav-mega-tool">Image to Video <span class="nav-mega-arrow">&#8594;</span></a>
+                <a href="/?tab=text-to-video" role="menuitem" class="nav-mega-tool">Text to Video <span class="nav-mega-arrow">&#8594;</span></a>
+                <div class="nav-mega-models-label">Models</div>
+                <div class="nav-mega-models"><a href="/veo-prompt-generator/">Veo</a><span class="nav-dot">&#xB7;</span><a href="/kling-prompt-generator/">Kling</a></div>
+                <div class="nav-mega-models"><a href="/runway-prompt-generator/">Runway</a><span class="nav-dot">&#xB7;</span><a href="/pika-prompt-generator/">Pika</a></div>
+                <div class="nav-mega-models"><a href="/luma-prompt-generator/">Luma</a><span class="nav-dot">&#xB7;</span><a href="/sora-prompt-generator/">Sora</a></div>
+                <div class="nav-mega-models"><a href="/minimax-prompt-generator/">Minimax</a><span class="nav-dot">&#xB7;</span><a href="/stable-video-prompt-generator/">Stable</a></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <a href="/blog/">Blog</a>
+        <a href="/pricing/" class="nav-pill-pricing">Pricing</a>
+        <a href="/about/" class="nav-pill-about">About</a>
+        <a href="/" class="nav-try-free">Try Free &#8594;</a>
+        <button id="theme-toggle" onclick="toggleTheme()" aria-label="Switch theme" title="Switch theme">&#9728;&#xFE0F;</button>
+  </nav>
+    </div>
+  </header>
+
+  <nav class="breadcrumb" aria-label="Breadcrumb">
+    <a href="/">Home</a><span class="sep">&#8250;</span>
+    <span>Describe Image</span>
+  </nav>
+
+  <div class="page-wrapper model-page-wrapper">
+
+    <header class="model-page-hero">
+      <div class="model-badge-hero" style="--model-color:#34d399">&#128221; Image Description</div>
+      <h1>Free AI Image Describer - Describe Any Picture</h1>
+      <p class="model-page-subtitle">Upload any photo or image and instantly receive a detailed, human-readable description of what's in it. Perfect for accessibility alt-text, content writing, education, and SEO. No login, no subscription.</p>
+    </header>
+
+    <!-- Embedded Tool -->
+    <div class="tool-embed-container">
+      <iframe
+        src="/?tab=describe-image&embed=true"
+        title="AI Image Describer Tool"
+        class="tool-embed-frame"
+        loading="eager"
+        allow="clipboard-write; clipboard-read"
+      ></iframe>
+    </div>
+
+    <!-- Section: Features -->
+    <section class="model-features-section">
+      <h2>Why Use Our AI Image Describer?</h2>
+      <div class="model-features-grid">
+        <div class="model-feature-card" style="--card-accent:#34d399">
+          <div class="feature-icon">&#9851;&#65039;</div>
+          <h3>Accessibility First</h3>
+          <p>Every description includes a concise alt-text suggestion ready for your HTML. Make your website accessible to screen readers and visually impaired users instantly.</p>
+        </div>
+        <div class="model-feature-card" style="--card-accent:#34d399">
+          <div class="feature-icon">&#128270;</div>
+          <h3>Rich Detail</h3>
+          <p>Our AI identifies subjects, settings, colors, lighting, mood, composition, and text within images — delivering 200-400 word descriptions that capture every important element.</p>
+        </div>
+        <div class="model-feature-card" style="--card-accent:#34d399">
+          <div class="feature-icon">&#9889;</div>
+          <h3>Instant Results</h3>
+          <p>Upload a photo and get your description in seconds. No login, no account creation, no waiting. Just drag, drop, and read.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Content -->
+    <article class="model-page-content">
+
+      <h2>What Is AI Image Description?</h2>
+      <p>AI image description is the process of using artificial intelligence to analyze a photograph or image and produce a detailed, human-readable text that explains what the image contains. Unlike an AI prompt generator — which creates instructions to <em>recreate</em> an image — an image describer tells you what is already <em>in</em> the image. Think of it as having an expert art critic, accessibility consultant, and content writer analyze your picture all at once.</p>
+      <p>When you upload an image to our free AI image describer, the system examines every visual element: the main subject, the background setting, the dominant color palette, the quality and direction of light, the overall mood and atmosphere, the compositional framing, and any visible text or notable objects. The result is a comprehensive description that you can use for website alt-text, social media captions, educational materials, content briefs, or simply to better understand an image you've encountered online.</p>
+      <p>Whether you need to describe a picture for a visually impaired colleague, write SEO-friendly image descriptions for your blog, or quickly explain an image in a report, this tool gives you an accurate, detailed answer in seconds. It works with photographs, illustrations, screenshots, charts, artwork, and virtually any visual content.</p>
+
+      <h2>How It Works</h2>
+      <p>Using our picture describer is straightforward and takes just three steps:</p>
+      <ol>
+        <li><strong>Upload your image</strong> — Drag and drop any photo, screenshot, illustration, or graphic into the upload zone. We support JPEG, PNG, WebP, and GIF formats up to 20 MB.</li>
+        <li><strong>AI analyzes the visual content</strong> — Our AI model scans the image pixel by pixel, identifying objects, people, text, colors, spatial relationships, lighting conditions, artistic style, and emotional tone. This happens in 2-5 seconds.</li>
+        <li><strong>Get your detailed description</strong> — You receive a 200-400 word description covering every important aspect of the image, plus a concise alt-text suggestion. Copy it with one click and use it anywhere.</li>
+      </ol>
+      <p>The entire process is private — your images are analyzed in real-time and never stored on our servers. Every analysis is ephemeral.</p>
+
+      <h2>Use Cases for AI Image Description</h2>
+
+      <h3>Website Accessibility and Alt-Text</h3>
+      <p>Web accessibility guidelines (WCAG 2.2) require meaningful alt-text for every non-decorative image on your website. Writing accurate, descriptive alt-text manually is time-consuming, especially for image-heavy blogs, e-commerce stores, and portfolios. Our AI image describer generates concise alt-text suggestions that describe the image content for screen readers, helping you meet accessibility standards and support visually impaired users. This is one of the most common reasons people search for an app that describes pictures — and our tool delivers exactly that.</p>
+
+      <h3>Content Writing and Blogging</h3>
+      <p>Content creators often need to describe images within articles, product reviews, or social media posts. Instead of staring at a photo trying to find the right words, use the AI to describe the photo instantly. The generated description gives you a detailed starting point that you can edit, quote, or paraphrase in your writing. It's especially useful when working with stock photos where you need to explain the scene to readers.</p>
+
+      <h3>Education and Research</h3>
+      <p>Teachers, students, and researchers frequently need to explain images in presentations, papers, and study materials. Our image explanation tool provides structured, factual descriptions that identify key elements, spatial relationships, and visual context — making it easy to reference images in academic work without subjective interpretation.</p>
+
+      <h3>Visual Impairment Support</h3>
+      <p>For people with low vision or blindness, understanding images shared on social media, in emails, or on websites can be challenging. Our free picture explainer bridges that gap by converting any image into a clear, detailed text description. Friends, family, and caregivers can use this tool to quickly describe photos and share the text with visually impaired individuals.</p>
+
+      <h3>SEO Image Descriptions</h3>
+      <p>Search engines rely on alt-text, captions, and surrounding text to understand image content. Meaningful image descriptions help your pages rank in Google Image Search and improve your overall SEO. Our AI generates keyword-rich, accurate descriptions that search engines can index — far better than generic filenames like "IMG_4523.jpg" or empty alt attributes.</p>
+
+      <h2>Image Description vs. Image-to-Prompt: What's the Difference?</h2>
+      <p>These are two fundamentally different tools that serve different purposes, and understanding the distinction is important:</p>
+      <ul>
+        <li><strong>Describe Image (this tool)</strong> — Produces a human-readable text that tells you what is in the image. The output reads like natural language: "A golden retriever sits on a wooden dock overlooking a calm lake at sunset. The sky is painted in warm orange and pink tones..." This is useful for accessibility, content writing, and understanding images.</li>
+        <li><strong>Image to Prompt</strong> — Produces an AI instruction set designed to recreate the image in a generator like Midjourney or DALL-E. The output reads like technical directives: "golden retriever on wooden dock, calm lake, sunset, warm orange and pink sky, cinematic composition --ar 16:9 --v 6.1" This is useful for AI art generation and prompt engineering.</li>
+      </ul>
+      <p>In short: descriptions are for people, prompts are for AI models. If you want to tell someone what a picture looks like, use this image describer. If you want to recreate an image using AI, use our <a href="/">Image to Prompt</a> tool.</p>
+
+      <h2>How the AI Identifies Image Elements</h2>
+      <p>Our AI image describer uses a multimodal vision model to analyze images across several dimensions simultaneously:</p>
+      <ul>
+        <li><strong>Subject identification</strong> — The AI recognizes people, animals, objects, vehicles, buildings, food, plants, and thousands of other categories. It describes what they are, their position in the frame, and their relationship to each other.</li>
+        <li><strong>Color and palette analysis</strong> — Dominant colors, color temperature (warm vs. cool), saturation levels, and overall palette harmony are all identified and described in natural language.</li>
+        <li><strong>Lighting assessment</strong> — The AI detects whether the scene uses natural or artificial light, identifies the direction and quality of light (soft, harsh, diffused, backlit), and recognizes specific conditions like golden hour, overcast, or studio lighting.</li>
+        <li><strong>Composition and framing</strong> — Rule of thirds, leading lines, symmetry, depth layers, foreground/background separation, and camera angle are all part of the analysis.</li>
+        <li><strong>Mood and atmosphere</strong> — Based on the combined visual elements, the AI characterizes the emotional tone: serene, dramatic, playful, melancholic, energetic, mysterious, and more.</li>
+        <li><strong>Text recognition</strong> — Any visible text, signs, labels, or typography in the image is identified and included in the description.</li>
+      </ul>
+
+      <h2>Why Choose ImageToPrompt for Image Descriptions?</h2>
+      <p>There are many reasons to use our free image describer over alternatives. Our tool requires no registration, no downloads, and no API keys. It works directly in your browser on any device — desktop, tablet, or phone. Your images are processed in real-time and never stored, ensuring complete privacy. The AI model powering our descriptions is the same advanced multimodal system used by our prompt generation tools, meaning you get state-of-the-art accuracy in every analysis.</p>
+      <p>With 10 free descriptions per day and no account required, it's the fastest way to describe an image, explain a picture, or generate alt-text for your website. Whether you're a web developer improving accessibility, a blogger writing image captions, a teacher creating educational materials, or someone who simply wants to understand what an image shows — this AI image describer has you covered.</p>
+
+      <!-- FAQs -->
+      <h2>Frequently Asked Questions</h2>
+      <div class="faq-list">
+        <details class="faq-item">
+          <summary>What's the difference between describing an image and generating a prompt?</summary>
+          <p>An image description is a human-readable text explaining what is <em>in</em> the image — the subject, setting, colors, mood, and composition. A prompt is a set of instructions designed to <em>recreate</em> that image in an AI generator like Midjourney or DALL-E. Descriptions are for people; prompts are for AI models. Use this tool when you need to explain what a picture shows. Use our <a href="/">Image to Prompt</a> tool when you want to recreate an image with AI.</p>
+        </details>
+        <details class="faq-item">
+          <summary>Can I use this for website accessibility alt-text?</summary>
+          <p>Yes. Every description generated by our AI image describer includes a concise alt-text suggestion suitable for HTML <code>alt</code> attributes. This makes your website more accessible to screen readers and visually impaired users while also improving your SEO with meaningful image descriptions. The alt-text follows WCAG 2.2 guidelines for conciseness and accuracy.</p>
+        </details>
+        <details class="faq-item">
+          <summary>How detailed are the descriptions?</summary>
+          <p>Each AI-generated description is 200-400 words and covers the main subject, setting and background, dominant colors and color palette, lighting conditions, mood and atmosphere, composition and framing, and any notable text or objects in the image. You also receive a shorter alt-text suggestion for quick use.</p>
+        </details>
+        <details class="faq-item">
+          <summary>Is the image description tool free?</summary>
+          <p>Yes, the image describer is completely free. You get 10 free analyses per day with no login or account required. The daily limit resets at midnight UTC and is shared across all tools on the platform. No credit card, no watermarks, no hidden costs.</p>
+        </details>
+      </div>
+
+      <!-- Related Tools -->
+      <div class="other-models-section">
+        <h2>Try Other Tools</h2>
+        <div class="other-models-grid">
+          <a href="/" class="other-model-card" style="--c:#e040fb">&#128444;&#65039;<span>Image to Prompt</span></a>
+          <a href="/text-to-prompt/" class="other-model-card" style="--c:#00e5ff">&#128221;<span>Text to Prompt</span></a>
+          <a href="/midjourney-prompt-generator/" class="other-model-card" style="--c:#00b4d8">&#127912;<span>Midjourney</span></a>
+          <a href="/stable-diffusion-prompt-generator/" class="other-model-card" style="--c:#ff6b35">&#9881;&#65039;<span>Stable Diffusion</span></a>
+          <a href="/dall-e-prompt-generator/" class="other-model-card" style="--c:#10a37f">&#129504;<span>DALL-E 3</span></a>
+          <a href="/flux-prompt-generator/" class="other-model-card" style="--c:#7c3aed">&#9889;<span>Flux AI</span></a>
+        </div>
+      </div>
+
+    </article>
+  </div>
+
+  <footer class="footer-4col">
+    <div class="f4-inner">
+      <div class="f4-brand">
+        <img src="/favicon.svg" alt="ImageToPrompt" width="28" height="28">
+        <span class="f4-brand-name">ImageTo<span class="accent">Prompt</span></span>
+        <span class="f4-brand-sub">&mdash; Free AI Prompt Generator</span>
+      </div>
+      <div class="f4-grid">
+        <div class="f4-section">
+          <h4 class="f4-heading">Image Prompt Tools</h4>
+          <a href="/">Image to Prompt</a>
+          <a href="/text-to-prompt/">Text to Prompt</a>
+          <a href="/describe-image/">Describe Image</a>
+          <a href="/midjourney-prompt-generator/">Midjourney</a>
+          <a href="/stable-diffusion-prompt-generator/">Stable Diffusion</a>
+          <a href="/flux-prompt-generator/">Flux</a>
+          <a href="/dall-e-prompt-generator/">DALL-E 3</a>
+          <a href="/adobe-firefly-prompt-generator/">Adobe Firefly</a>
+          <a href="/leonardo-ai-prompt-generator/">Leonardo AI</a>
+          <a href="/ideogram-prompt-generator/">Ideogram</a>
+        </div>
+        <div class="f4-section">
+          <h4 class="f4-heading">Video Prompt Tools</h4>
+          <a href="/image-to-video-prompt/">Image to Video Prompt</a>
+          <a href="/text-to-video-prompt/">Text to Video Prompt</a>
+          <a href="/veo-prompt-generator/">Veo / Flow Studio</a>
+          <a href="/kling-prompt-generator/">Kling AI</a>
+          <a href="/runway-prompt-generator/">Runway Gen-3</a>
+          <a href="/pika-prompt-generator/">Pika</a>
+          <a href="/luma-prompt-generator/">Luma Dream Machine</a>
+          <a href="/sora-prompt-generator/">Sora</a>
+          <a href="/minimax-prompt-generator/">Minimax</a>
+          <a href="/stable-video-prompt-generator/">Stable Video</a>
+        </div>
+        <div class="f4-section">
+          <h4 class="f4-heading">Resources</h4>
+          <a href="/blog/">Blog</a>
+          <a href="/about/">About</a>
+          <a href="/pricing/">Pricing</a>
+          <a href="/contact/">Contact</a>
+          <a href="/privacy-policy/">Privacy Policy</a>
+          <a href="/terms-of-service/">Terms of Service</a>
+        </div>
+        <div class="f4-section">
+          <h4 class="f4-heading">Languages</h4>
+          <a href="/">English</a>
+          <a href="/fr/">Fran&#231;ais</a>
+          <a href="/ar/">&#1575;&#1604;&#1593;&#1585;&#1576;&#1610;&#1577;</a>
+          <a href="/es/">Espa&#241;ol</a>
+          <a href="/ko/">&#54620;&#44397;&#50612;</a>
+          <a href="/ja/">&#26085;&#26412;&#35486;</a>
+          <a href="/ru/">&#1056;&#1091;&#1089;&#1089;&#1082;&#1080;&#1081;</a>
+        </div>
+      </div>
+      <div class="f4-bottom">
+        <p>&#169; 2026 ImageToPrompt.dev &#8212; Free AI Prompt Generator</p>
+        <p>Your images are never stored. All analysis is ephemeral and private.</p>
+      </div>
+    </div>
+  </footer>
+
+<script src="/nav.js" defer></script>
+  <script>
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', function() {
+    navigator.serviceWorker.register('/sw.js')
+      .catch(function(err) { console.warn('SW registration failed:', err); });
+  });
+}
+</script>
+</body>
+</html>

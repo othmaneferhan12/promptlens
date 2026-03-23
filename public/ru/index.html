@@ -1,0 +1,465 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <script src="/theme-toggle.js"></script>
+  <meta charset="UTF-8" />
+  <link rel="dns-prefetch" href="https://www.googletagmanager.com">
+<link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0" />
+  <meta name="robots" content="max-image-preview:large, index, follow">
+  <meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="ImageToPrompt">
+  <title>Бесплатный генератор промптов из изображений - Midjourney, Stable Diffusion | ImageToPrompt</title>
+  <meta name="description" content="Конвертируйте любое изображение в оптимизированный промпт для Midjourney, Stable Diffusion, Flux, DALL-E 3 и других. Бесплатно, без регистрации." />
+  <link rel="canonical" href="https://www.imagetoprompt.dev/ru/" />
+  <link rel="alternate" hreflang="en" href="https://www.imagetoprompt.dev/" />
+  <link rel="alternate" hreflang="ru" href="https://www.imagetoprompt.dev/ru/" />
+  <link rel="alternate" hreflang="fr" href="https://www.imagetoprompt.dev/fr/" />
+  <link rel="alternate" hreflang="ar" href="https://www.imagetoprompt.dev/ar/" />
+  <link rel="alternate" hreflang="x-default" href="https://www.imagetoprompt.dev/" />
+  <meta property="og:title" content="Бесплатный генератор промптов из изображений | ImageToPrompt" />
+  <meta property="og:description" content="Конвертируйте любое изображение в оптимизированный промпт для Midjourney, Stable Diffusion, Flux и DALL-E 3. Бесплатно, 7 моделей." />
+  <meta property="og:url" content="https://www.imagetoprompt.dev/ru/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="https://www.imagetoprompt.dev/og-image.png" />
+  <meta property="og:site_name" content="ImageToPrompt" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Бесплатный генератор промптов из изображений | ImageToPrompt" />
+  <meta name="twitter:description" content="Конвертируйте любое изображение в оптимизированный промпт для ИИ. Бесплатно, 7 моделей." />
+  <meta name="twitter:image" content="https://www.imagetoprompt.dev/og-image.png" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="48x48" href="/favicon-48.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+  <link rel="manifest" href="/site.webmanifest" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="/fonts/space-grotesk-700.woff2" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="/fonts/inter-400.woff2" />
+  <link rel="stylesheet" href="/theme.css">
+  <link rel="preload" href="/blog.css" as="style" onload="this.onload=null;this.rel='stylesheet'"><noscript><link rel="stylesheet" href="/blog.css"></noscript>
+  <link rel="preload" href="/model-pages.css" as="style" onload="this.onload=null;this.rel='stylesheet'"><noscript><link rel="stylesheet" href="/model-pages.css"></noscript>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "ImageToPrompt",
+    "description": "Бесплатный инструмент для конвертации любого изображения в оптимизированный промпт для ИИ. Поддержка Midjourney, Stable Diffusion, Flux, DALL-E 3 и 7 моделей. Без регистрации.",
+    "url": "https://www.imagetoprompt.dev/ru/",
+    "applicationCategory": "DesignApplication",
+    "operatingSystem": "Web",
+    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+    "inLanguage": "ru"
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "inLanguage": "ru",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Инструмент действительно бесплатный?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Да, полностью бесплатный. Вы получаете 10 анализов в день без банковской карты и регистрации. Счётчик сбрасывается каждые 24 часа." }
+      },
+      {
+        "@type": "Question",
+        "name": "Мои изображения хранятся на ваших серверах?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Нет. Изображения передаются ИИ для анализа и никогда не сохраняются. Каждый анализ эфемерный и полностью конфиденциальный." }
+      },
+      {
+        "@type": "Question",
+        "name": "Какие форматы изображений поддерживаются?",
+        "acceptedAnswer": { "@type": "Answer", "text": "JPG, PNG и WEBP до 5 МБ. Можно также вставить изображение из буфера обмена с помощью Ctrl+V — удобно для скриншотов." }
+      },
+      {
+        "@type": "Question",
+        "name": "Можно ли получить промпты на русском языке?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Да. Выберите русский язык в селекторе перед генерацией. Учтите, что модели вроде Midjourney лучше работают с промптами на английском, так как обучались преимущественно на англоязычных данных." }
+      },
+      {
+        "@type": "Question",
+        "name": "Чем отличаются 7 доступных моделей?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Каждая модель имеет свой синтаксис. Midjourney использует дескрипторы через запятую с параметрами. Stable Diffusion — взвешенные теги и негативные промпты. Flux и DALL-E 3 предпочитают естественный язык. Инструмент автоматически форматирует промпт для выбранной модели." }
+      },
+      {
+        "@type": "Question",
+        "name": "ImageToPrompt создаёт изображения?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Нет. ImageToPrompt генерирует текстовые промпты из ваших изображений. Затем вы копируете промпт и вставляете его в Midjourney, Stable Diffusion, Flux или другой инструмент для создания новых изображений." }
+      }
+    ]
+  }
+  </script>
+    <!-- Google AdSense -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4499206373485728" crossorigin="anonymous"></script>
+    <!-- Web Push Notifications -->
+<script src="https://cdn.onesignal.com/sdks/web/v16/OneSignalSDK.page.js" defer></script>
+<script>
+  window.OneSignalDeferred = window.OneSignalDeferred || [];
+  OneSignalDeferred.push(async function(OneSignal) {
+    await OneSignal.init({
+      appId: "REPLACE_WITH_ONESIGNAL_APP_ID",
+      notifyButton: { enable: false }
+    });
+  });
+</script>
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="inner">
+      <a href="/" class="site-logo"><img src="/favicon.svg" alt="ImageToPrompt" width="48" height="48"><div class="site-logo-text">ImageTo<span class="accent">Prompt</span><span class="site-logo-sub">Free AI Prompt Generator</span></div></a>
+      <nav class="site-nav" aria-label="Main navigation">
+        <div class="nav-dropdown">
+          <button class="nav-dropdown-trigger" aria-haspopup="true" aria-expanded="false">Tools <span class="nav-chevron" aria-hidden="true">&#9660;</span></button>
+          <div class="nav-dropdown-menu" role="menu">
+            <div class="nav-mega-grid">
+              <div class="nav-mega-col">
+                <div class="nav-mega-heading">&#128444; IMAGE TOOLS</div>
+                <a href="/" role="menuitem" class="nav-mega-tool">Image to Prompt <span class="nav-mega-arrow">&#8594;</span></a>
+                <a href="/text-to-prompt/" role="menuitem" class="nav-mega-tool">Text to Prompt <span class="nav-mega-arrow">&#8594;</span></a>
+                <a href="/describe-image/" role="menuitem" class="nav-mega-tool">Describe Image <span class="nav-new-badge">NEW</span> <span class="nav-mega-arrow">&#8594;</span></a>
+                <div class="nav-mega-models-label">Models</div>
+                <div class="nav-mega-models"><a href="/midjourney-prompt-generator/">Midjourney</a><span class="nav-dot">&#xB7;</span><a href="/stable-diffusion-prompt-generator/">SD</a></div>
+                <div class="nav-mega-models"><a href="/flux-prompt-generator/">Flux</a><span class="nav-dot">&#xB7;</span><a href="/dall-e-prompt-generator/">DALL&#xB7;E&#xA0;3</a></div>
+                <div class="nav-mega-models"><a href="/adobe-firefly-prompt-generator/">Firefly</a><span class="nav-dot">&#xB7;</span><a href="/leonardo-ai-prompt-generator/">Leonardo</a></div>
+                <div class="nav-mega-models"><a href="/ideogram-prompt-generator/">Ideogram</a></div>
+              </div>
+              <div class="nav-mega-divider" aria-hidden="true"></div>
+              <div class="nav-mega-col">
+                <div class="nav-mega-heading">&#127909; VIDEO TOOLS</div>
+                <a href="/?tab=image-to-video" role="menuitem" class="nav-mega-tool">Image to Video <span class="nav-mega-arrow">&#8594;</span></a>
+                <a href="/?tab=text-to-video" role="menuitem" class="nav-mega-tool">Text to Video <span class="nav-mega-arrow">&#8594;</span></a>
+                <div class="nav-mega-models-label">Models</div>
+                <div class="nav-mega-models"><a href="/veo-prompt-generator/">Veo</a><span class="nav-dot">&#xB7;</span><a href="/kling-prompt-generator/">Kling</a></div>
+                <div class="nav-mega-models"><a href="/runway-prompt-generator/">Runway</a><span class="nav-dot">&#xB7;</span><a href="/pika-prompt-generator/">Pika</a></div>
+                <div class="nav-mega-models"><a href="/luma-prompt-generator/">Luma</a><span class="nav-dot">&#xB7;</span><a href="/sora-prompt-generator/">Sora</a></div>
+                <div class="nav-mega-models"><a href="/minimax-prompt-generator/">Minimax</a><span class="nav-dot">&#xB7;</span><a href="/stable-video-prompt-generator/">Stable</a></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <a href="/blog/">Blog</a>
+        <a href="/pricing/" class="nav-pill-pricing">Pricing</a>
+        <a href="/about/" class="nav-pill-about">About</a>
+        <a href="/" class="nav-try-free">Try Free &#8594;</a>
+        <button id="theme-toggle" onclick="toggleTheme()" aria-label="Switch theme" title="Switch theme">&#9728;&#xFE0F;</button>
+  </nav>
+    </div>
+  </header>
+
+  <nav class="breadcrumb" aria-label="Навигация">
+    <a href="/ru/">Главная</a><span class="sep">&#8250;</span>
+    <span>Генератор промптов из изображений</span>
+  </nav>
+
+  <div class="page-wrapper">
+    <article>
+      <header class="article-header">
+        <p class="article-tag">Бесплатный ИИ-инструмент</p>
+        <h1>Генератор промптов из изображений &mdash; бесплатно</h1>
+        <p style="color:var(--text-muted);font-size:1.05rem;line-height:1.8;margin-top:0.75rem">Загрузите любое изображение и получите оптимизированный промпт для 7 главных ИИ-генераторов изображений за считанные секунды. Бесплатно, без регистрации, без банковской карты.</p>
+      </header>
+
+      <div class="cta-box">
+        <h3>Начните прямо сейчас &mdash; это бесплатно</h3>
+        <p>Без банковской карты. Без регистрации. Просто перетащите изображение.</p>
+        <a href="/?lang=ru" class="cta-btn">Сгенерировать промпт бесплатно &rarr;</a>
+      </div>
+
+      <div class="comparison-flow" style="margin:2rem 0">
+        <div class="comparison-card">
+          <span class="comparison-badge badge-original">Исходное изображение</span>
+          <picture><source srcset="/images/describe-a-picture-dragon-illustration-original.webp" type="image/webp"><img src="/images/describe-a-picture-dragon-illustration-original.jpeg" alt="Оригинальная иллюстрация, загруженная в ImageToPrompt" width="800" height="600" loading="lazy"></picture>
+        </div>
+        <span class="comparison-arrow">&rarr;</span>
+        <div class="comparison-card">
+          <span class="comparison-badge badge-tool">Сгенерированный промпт</span>
+          <picture><source srcset="/images/describe-a-picture-dragon-tool-output.webp" type="image/webp"><img src="/images/describe-a-picture-dragon-tool-output.jpeg" alt="ИИ-промпт, сгенерированный ImageToPrompt из иллюстрации" width="800" height="600" loading="lazy"></picture>
+        </div>
+        <span class="comparison-arrow">&rarr;</span>
+        <div class="comparison-card">
+          <span class="comparison-badge badge-recreation">Результат ИИ</span>
+          <picture><source srcset="/images/describe-a-picture-dragon-recreated.webp" type="image/webp"><img src="/images/describe-a-picture-dragon-recreated.jpeg" alt="Изображение ИИ, воссозданное по промпту ImageToPrompt" width="800" height="600" loading="lazy"></picture>
+        </div>
+      </div>
+      <p class="img-caption">От изображения к промпту и к воссозданию &mdash; менее чем за 10 секунд.</p>
+
+      <div class="article-body">
+
+        <h2 id="chto-takoe-imagetoprompt">Что такое ImageToPrompt?</h2>
+
+        <p>ImageToPrompt &mdash; это бесплатный веб-инструмент, который анализирует любое изображение и автоматически генерирует высококачественный ИИ-промпт, готовый к использованию в вашем любимом генераторе изображений. Инструмент работает на основе модели Claude AI от Anthropic и разбирает каждое изображение до мельчайших деталей: основной объект, композиция, освещение, цветовая палитра, художественный стиль и общее настроение.</p>
+
+        <p>Создание впечатляющих ИИ-изображений требует точных и детальных промптов. Но писать такие промпты вручную долго и требует опыта, которого у большинства пользователей просто нет. С ImageToPrompt достаточно загрузить референсное изображение, чтобы мгновенно получить профессиональный промпт, откалиброванный под выбранную модель.</p>
+
+        <p>Главное преимущество ImageToPrompt перед другими инструментами &mdash; способность адаптировать формат промпта под каждую модель. Промпты для Midjourney автоматически включают правильные параметры, промпты для Stable Diffusion содержат веса и негативные промпты, а промпты для Flux следуют описательному стилю на естественном языке.</p>
+
+        <h2 id="kak-eto-rabotaet">Как это работает</h2>
+
+        <ol>
+          <li>
+            <strong>Загрузите изображение</strong> &mdash; перетащите изображение, выберите файл на компьютере или вставьте из буфера обмена нажатием <kbd>Ctrl+V</kbd>. Поддерживаются форматы JPG, PNG и WEBP до 5 МБ.
+          </li>
+          <li>
+            <strong>Выберите ИИ-модель</strong> &mdash; выберите из 7 доступных моделей: Midjourney, Stable Diffusion, Flux AI, DALL-E 3, Adobe Firefly, Leonardo AI или Ideogram. Промпт будет отформатирован специально для выбранной модели.
+          </li>
+          <li>
+            <strong>Получите и используйте промпт</strong> &mdash; Claude AI анализирует изображение и генерирует ваш промпт за 5&ndash;10 секунд. Скопируйте его и вставьте в ваш любимый ИИ-инструмент для создания новых изображений в том же стиле.
+          </li>
+        </ol>
+
+        <div class="callout">
+          <p><strong>Полезно знать:</strong> Инструмент также генерирует креативный альтернативный промпт (&laquo;ремикс&raquo;), извлечённую из изображения цветовую палитру, теги стиля и рекомендуемое соотношение сторон для Midjourney.</p>
+        </div>
+
+        <h2 id="podderzhivaemye-modeli">Поддерживаемые модели</h2>
+
+        <p>ImageToPrompt поддерживает 7 моделей для генерации изображений и 8 моделей для генерации видео. Каждая модель получает промпт, оптимизированный под её уникальный синтаксис и сильные стороны.</p>
+
+        <h3>Модели для изображений</h3>
+
+        <div class="related-grid" style="margin-top:1rem">
+          <a href="/midjourney-prompt-generator/" class="related-card">
+            <p class="tag">Художественный и кинематографический</p>
+            <h3>Midjourney</h3>
+            <p style="color:var(--text-muted);font-size:0.875rem;margin-top:0.5rem">Самый популярный генератор в мире. Промпты автоматически включают параметры <code>--ar</code>, <code>--v 6.1</code>, <code>--stylize</code> и <code>--chaos</code>. Идеален для фэнтези-арта, кинематографических портретов и пейзажей.</p>
+          </a>
+          <a href="/stable-diffusion-prompt-generator/" class="related-card">
+            <p class="tag">Open Source и полный контроль</p>
+            <h3>Stable Diffusion</h3>
+            <p style="color:var(--text-muted);font-size:0.875rem;margin-top:0.5rem">Полностью бесплатное решение с открытым кодом. Промпты включают веса <code>(термин:1.2)</code> и полный негативный промпт. Идеален для пользователей, которым нужен максимальный контроль.</p>
+          </a>
+          <a href="/flux-prompt-generator/" class="related-card">
+            <p class="tag">Фотореализм</p>
+            <h3>Flux AI</h3>
+            <p style="color:var(--text-muted);font-size:0.875rem;margin-top:0.5rem">Разработан Black Forest Labs. Flux превосходно создаёт фотореалистичные изображения. Промпты используют описательный естественный язык с фотографической терминологией.</p>
+          </a>
+          <a href="/dall-e-prompt-generator/" class="related-card">
+            <p class="tag">Текст на изображениях</p>
+            <h3>DALL-E 3</h3>
+            <p style="color:var(--text-muted);font-size:0.875rem;margin-top:0.5rem">Модель от OpenAI, интегрированная в ChatGPT. Превосходно выполняет сложные инструкции и отрисовывает текст на изображениях. Промпты составлены полными и естественными предложениями.</p>
+          </a>
+          <a href="/adobe-firefly-prompt-generator/" class="related-card">
+            <p class="tag">Профессиональный креативный процесс</p>
+            <h3>Adobe Firefly</h3>
+            <p style="color:var(--text-muted);font-size:0.875rem;margin-top:0.5rem">Интегрирован в Adobe Creative Cloud. Создан для коммерческого использования со строгими правилами контента. Промпты отформатированы для движка Firefly.</p>
+          </a>
+          <a href="/leonardo-ai-prompt-generator/" class="related-card">
+            <p class="tag">Фотореализм и концепт-арт</p>
+            <h3>Leonardo AI</h3>
+            <p style="color:var(--text-muted);font-size:0.875rem;margin-top:0.5rem">Универсальная платформа с множеством специализированных моделей. Промпты оптимизированы для фотореалистичных изображений и высококачественного концепт-арта.</p>
+          </a>
+          <a href="/ideogram-prompt-generator/" class="related-card">
+            <p class="tag">Типографика и дизайн</p>
+            <h3>Ideogram</h3>
+            <p style="color:var(--text-muted);font-size:0.875rem;margin-top:0.5rem">Специализируется на композициях с интегрированным текстом. Идеален для логотипов, постеров и типографических визуалов. Промпты используют уникальные возможности рендеринга текста.</p>
+          </a>
+        </div>
+
+        <h3>Модели для видео</h3>
+
+        <div class="related-grid" style="margin-top:1rem">
+          <a href="/veo-prompt-generator/" class="related-card">
+            <p class="tag">Google</p>
+            <h3>Veo</h3>
+          </a>
+          <a href="/kling-prompt-generator/" class="related-card">
+            <p class="tag">Kuaishou</p>
+            <h3>Kling AI</h3>
+          </a>
+          <a href="/runway-prompt-generator/" class="related-card">
+            <p class="tag">Runway</p>
+            <h3>Runway Gen-3</h3>
+          </a>
+          <a href="/pika-prompt-generator/" class="related-card">
+            <p class="tag">Pika Labs</p>
+            <h3>Pika</h3>
+          </a>
+          <a href="/luma-prompt-generator/" class="related-card">
+            <p class="tag">Luma AI</p>
+            <h3>Luma Dream Machine</h3>
+          </a>
+          <a href="/sora-prompt-generator/" class="related-card">
+            <p class="tag">OpenAI</p>
+            <h3>Sora</h3>
+          </a>
+          <a href="/minimax-prompt-generator/" class="related-card">
+            <p class="tag">Minimax</p>
+            <h3>Minimax</h3>
+          </a>
+          <a href="/stable-video-prompt-generator/" class="related-card">
+            <p class="tag">Stability AI</p>
+            <h3>Stable Video</h3>
+          </a>
+        </div>
+
+        <h2 id="pochemu-imagetoprompt">Почему ImageToPrompt?</h2>
+
+        <ul>
+          <li><strong>100% бесплатно</strong> &mdash; 10 анализов в день без банковской карты и без регистрации. Лимит автоматически обновляется каждый день.</li>
+          <li><strong>Не нужен аккаунт</strong> &mdash; откройте сайт, загрузите изображение, получите промпт. Никакой регистрации, никаких e-mail.</li>
+          <li><strong>Точный и детальный анализ</strong> &mdash; на базе Claude AI от Anthropic. Инструмент распознаёт тонкие нюансы композиции, освещения и стиля, которые другие инструменты часто упускают.</li>
+          <li><strong>Промпты на русском языке</strong> &mdash; выберите русский в языковом селекторе, чтобы получить промпты на нужном языке из 10 поддерживаемых.</li>
+          <li><strong>История сеанса</strong> &mdash; все сгенерированные промпты сохраняются в истории сеанса для удобного доступа без необходимости входа в систему.</li>
+          <li><strong>7 моделей, 1 инструмент</strong> &mdash; не нужно использовать разные инструменты для каждого генератора ИИ. ImageToPrompt правильно форматирует промпт для каждой модели одним кликом.</li>
+          <li><strong>Извлечённая цветовая палитра</strong> &mdash; инструмент автоматически извлекает доминирующие цвета изображения в виде HEX-кодов и естественных описаний.</li>
+        </ul>
+
+        <h2 id="kto-ispolzuet">Кто использует ImageToPrompt?</h2>
+
+        <p>Тысячи креативных профессионалов по всему миру используют ImageToPrompt каждый день:</p>
+
+        <ul>
+          <li><strong>Цифровые художники</strong> &mdash; анализируют референсные работы, чтобы извлечь стиль и воспроизвести его с собственными творческими доработками в новых композициях.</li>
+          <li><strong>Маркетинговые команды</strong> &mdash; поддерживают визуальную согласованность кампаний, генерируемых ИИ, повторно используя стили, извлечённые из фирменного стиля бренда.</li>
+          <li><strong>Фотографы</strong> &mdash; конвертируют свои фотографии в промпты для создания художественных вариаций или иллюстраций в том же фотографическом стиле.</li>
+          <li><strong>Гейм-дизайнеры и иллюстраторы</strong> &mdash; ускоряют процесс создания концепт-арта, извлекая стили из визуальных референсов и применяя их к новым сюжетам.</li>
+          <li><strong>Студенты и новички</strong> &mdash; изучают промпт-инженерию, анализируя, как визуальные качества изображения переводятся в язык промптов.</li>
+        </ul>
+
+        <h2 id="faq">Часто задаваемые вопросы</h2>
+
+        <details style="margin-bottom:1rem;border:1px solid var(--border-card);border-radius:0.75rem;padding:1rem">
+          <summary style="font-weight:600;color:var(--text-primary);cursor:pointer">Инструмент действительно бесплатный?</summary>
+          <p style="margin-top:0.75rem;color:var(--text-muted)">Да, полностью бесплатный. Вы получаете 10 анализов в день без банковской карты и без регистрации. Счётчик автоматически сбрасывается каждые 24 часа. Никаких платных планов или премиум-подписок не существует.</p>
+        </details>
+
+        <details style="margin-bottom:1rem;border:1px solid var(--border-card);border-radius:0.75rem;padding:1rem">
+          <summary style="font-weight:600;color:var(--text-primary);cursor:pointer">Мои изображения хранятся на ваших серверах?</summary>
+          <p style="margin-top:0.75rem;color:var(--text-muted)">Нет. Загруженные изображения передаются ИИ для анализа и никогда не сохраняются на наших серверах. Каждый анализ эфемерный. Мы полностью уважаем вашу конфиденциальность.</p>
+        </details>
+
+        <details style="margin-bottom:1rem;border:1px solid var(--border-card);border-radius:0.75rem;padding:1rem">
+          <summary style="font-weight:600;color:var(--text-primary);cursor:pointer">Какие форматы изображений поддерживаются?</summary>
+          <p style="margin-top:0.75rem;color:var(--text-muted)">Поддерживаются JPG, PNG и WEBP до 5 МБ. Можно перетащить файл, выбрать его на компьютере или вставить изображение из буфера обмена нажатием <kbd>Ctrl+V</kbd> &mdash; удобно для скриншотов и изображений, скопированных из интернета.</p>
+        </details>
+
+        <details style="margin-bottom:1rem;border:1px solid var(--border-card);border-radius:0.75rem;padding:1rem">
+          <summary style="font-weight:600;color:var(--text-primary);cursor:pointer">Можно ли получить промпты на русском языке?</summary>
+          <p style="margin-top:0.75rem;color:var(--text-muted)">Да. Перед генерацией выберите &laquo;Русский&raquo; в языковом селекторе инструмента. Промпт будет сгенерирован на русском языке. Однако учтите, что некоторые модели, такие как Midjourney, дают лучшие результаты с промптами на английском языке в силу преимущественно англоязычных обучающих данных.</p>
+        </details>
+
+        <details style="margin-bottom:1rem;border:1px solid var(--border-card);border-radius:0.75rem;padding:1rem">
+          <summary style="font-weight:600;color:var(--text-primary);cursor:pointer">Чем отличаются 7 доступных моделей?</summary>
+          <p style="margin-top:0.75rem;color:var(--text-muted)">У каждой модели свой синтаксис и свои сильные стороны. Midjourney использует дескрипторы через запятую с параметрами вроде <code>--v 6.1</code> и <code>--ar</code>. Stable Diffusion использует взвешенные теги с негативными промптами. Flux и DALL-E 3 предпочитают естественный язык в полных предложениях. ImageToPrompt автоматически форматирует промпт для выбранной модели.</p>
+        </details>
+
+        <details style="margin-bottom:1rem;border:1px solid var(--border-card);border-radius:0.75rem;padding:1rem">
+          <summary style="font-weight:600;color:var(--text-primary);cursor:pointer">ImageToPrompt создаёт изображения?</summary>
+          <p style="margin-top:0.75rem;color:var(--text-muted)">Нет. ImageToPrompt &mdash; это генератор промптов, а не генератор изображений. Он анализирует ваше референсное изображение и выдаёт текстовый промпт. Затем вы копируете этот промпт и вставляете его в Midjourney, Stable Diffusion, Flux, DALL-E 3 или ваш любимый инструмент для создания новых изображений.</p>
+        </details>
+
+        <h2 id="rukovodstva">Руководства и ресурсы на русском</h2>
+
+        <div class="related-grid">
+          <a href="/ru/blog/konverter-izobrazheniya-v-prompt/" class="related-card">
+            <p class="tag">Пошаговое руководство</p>
+            <h3>Как конвертировать изображение в промпт для ИИ</h3>
+            <p style="color:var(--text-muted);font-size:0.875rem;margin-top:0.5rem">Полное руководство по превращению любого изображения в оптимизированный промпт для Midjourney, Stable Diffusion или Flux.</p>
+          </a>
+          <a href="/ru/blog/rukovodstvo-po-promptam-midjourney-2026/" class="related-card">
+            <p class="tag">Midjourney</p>
+            <h3>Полное руководство по промптам Midjourney 2026</h3>
+            <p style="color:var(--text-muted);font-size:0.875rem;margin-top:0.5rem">Параметры, структура промптов, 10 готовых примеров и продвинутые советы для Midjourney v6.1.</p>
+          </a>
+          <a href="/ru/blog/stable-diffusion-vs-midjourney-vs-dalle3/" class="related-card">
+            <p class="tag">Сравнение</p>
+            <h3>Stable Diffusion vs Midjourney vs DALL-E 3 vs Flux</h3>
+            <p style="color:var(--text-muted);font-size:0.875rem;margin-top:0.5rem">Подробное сравнение 4 основных ИИ-генераторов для выбора подходящего инструмента.</p>
+          </a>
+          <a href="/ru/blog/obratnaya-inzheneriya-promptov/" class="related-card">
+            <p class="tag">Продвинутый туториал</p>
+            <h3>Обратная инженерия промптов из ИИ-изображений</h3>
+            <p style="color:var(--text-muted);font-size:0.875rem;margin-top:0.5rem">Техники реверс-инжиниринга для извлечения стиля, освещения и композиции из любого изображения.</p>
+          </a>
+          <a href="/ru/blog/inzhenering-promptov-dlya-ii-arta/" class="related-card">
+            <p class="tag">Для новичков</p>
+            <h3>Промпт-инженерия для ИИ-арта: руководство для начинающих</h3>
+            <p style="color:var(--text-muted);font-size:0.875rem;margin-top:0.5rem">5 столпов хорошего промпта, базовый словарь, практические упражнения для быстрого прогресса.</p>
+          </a>
+        </div>
+
+        <div class="cta-box" style="margin-top:3rem">
+          <h3>Готовы конвертировать первое изображение?</h3>
+          <p>Присоединяйтесь к тысячам художников и креативщиков, которые используют ImageToPrompt каждый день. Бесплатно, без регистрации, результат за 10 секунд.</p>
+          <a href="/?lang=ru" class="cta-btn">Попробовать ImageToPrompt бесплатно &rarr;</a>
+        </div>
+
+      </div>
+    </article>
+  </div>
+
+  <footer class="footer-4col">
+    <div class="f4-inner">
+      <div class="f4-brand">
+        <img src="/favicon.svg" alt="ImageToPrompt" width="28" height="28">
+        <span class="f4-brand-name">ImageTo<span class="accent">Prompt</span></span>
+        <span class="f4-brand-sub">&mdash; Free AI Prompt Generator</span>
+      </div>
+      <div class="f4-grid">
+        <div class="f4-section">
+          <h4 class="f4-heading">Image Prompt Tools</h4>
+          <a href="/">Image to Prompt</a>
+          <a href="/text-to-prompt/">Text to Prompt</a>
+          <a href="/describe-image/">Describe Image</a>
+          <a href="/midjourney-prompt-generator/">Midjourney</a>
+          <a href="/stable-diffusion-prompt-generator/">Stable Diffusion</a>
+          <a href="/flux-prompt-generator/">Flux</a>
+          <a href="/dall-e-prompt-generator/">DALL-E 3</a>
+          <a href="/adobe-firefly-prompt-generator/">Adobe Firefly</a>
+          <a href="/leonardo-ai-prompt-generator/">Leonardo AI</a>
+          <a href="/ideogram-prompt-generator/">Ideogram</a>
+        </div>
+        <div class="f4-section">
+          <h4 class="f4-heading">Video Prompt Tools</h4>
+          <a href="/image-to-video-prompt/">Image to Video Prompt</a>
+          <a href="/text-to-video-prompt/">Text to Video Prompt</a>
+          <a href="/veo-prompt-generator/">Veo / Flow Studio</a>
+          <a href="/kling-prompt-generator/">Kling AI</a>
+          <a href="/runway-prompt-generator/">Runway Gen-3</a>
+          <a href="/pika-prompt-generator/">Pika</a>
+          <a href="/luma-prompt-generator/">Luma Dream Machine</a>
+          <a href="/sora-prompt-generator/">Sora</a>
+          <a href="/minimax-prompt-generator/">Minimax</a>
+          <a href="/stable-video-prompt-generator/">Stable Video</a>
+        </div>
+        <div class="f4-section">
+          <h4 class="f4-heading">Resources</h4>
+          <a href="/blog/">Blog</a>
+          <a href="/about/">About</a>
+          <a href="/pricing/">Pricing</a>
+          <a href="/contact/">Contact</a>
+          <a href="/privacy-policy/">Privacy Policy</a>
+          <a href="/terms-of-service/">Terms of Service</a>
+        </div>
+        <div class="f4-section">
+          <h4 class="f4-heading">Languages</h4>
+          <a href="/">English</a>
+          <a href="/fr/">Fran&#231;ais</a>
+          <a href="/ar/">&#1575;&#1604;&#1593;&#1585;&#1576;&#1610;&#1577;</a>
+          <a href="/es/">Espa&#241;ol</a>
+          <a href="/ko/">&#54620;&#44397;&#50612;</a>
+          <a href="/ja/">&#26085;&#26412;&#35486;</a>
+          <a href="/ru/">&#1056;&#1091;&#1089;&#1089;&#1082;&#1080;&#1081;</a>
+        </div>
+      </div>
+      <div class="f4-bottom">
+        <p>&#169; 2026 ImageToPrompt.dev &#8212; Free AI Prompt Generator</p>
+        <p>Your images are never stored. All analysis is ephemeral and private.</p>
+      </div>
+    </div>
+  </footer>
+
+<script src="/nav.js" defer></script>
+  <script>
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', function() {
+    navigator.serviceWorker.register('/sw.js')
+      .catch(function(err) { console.warn('SW registration failed:', err); });
+  });
+}
+</script>
+</body>
+</html>

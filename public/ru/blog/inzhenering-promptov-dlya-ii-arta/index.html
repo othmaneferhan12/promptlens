@@ -1,0 +1,478 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <script src="/theme-toggle.js"></script>
+  <meta charset="UTF-8" />
+  <link rel="dns-prefetch" href="https://www.googletagmanager.com">
+<link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="max-image-preview:large, index, follow">
+  <meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="ImageToPrompt">
+  <title>Промпт-инженерия для ИИ-арта: руководство для начинающих</title>
+  <meta name="description" content="Научитесь писать эффективные промпты для Midjourney, Stable Diffusion, Flux и DALL-E 3. 5 столпов хорошего промпта, словарь стилей, практические упражнения." />
+  <link rel="canonical" href="https://www.imagetoprompt.dev/ru/blog/inzhenering-promptov-dlya-ii-arta/" />
+  <link rel="alternate" hreflang="ru" href="https://www.imagetoprompt.dev/ru/blog/inzhenering-promptov-dlya-ii-arta/" />
+  <link rel="alternate" hreflang="en" href="https://www.imagetoprompt.dev/blog/prompt-engineering-for-ai-art/" />
+  <link rel="alternate" hreflang="fr" href="https://www.imagetoprompt.dev/fr/blog/prompt-engineering-art-ia-debutants/" />
+  <link rel="alternate" hreflang="x-default" href="https://www.imagetoprompt.dev/blog/prompt-engineering-for-ai-art/" />
+  <meta property="og:title" content="Промпт-инженерия для ИИ-арта: руководство для начинающих" />
+  <meta property="og:description" content="5 столпов хорошего промпта, словарь стилей, практические упражнения для начинающих." />
+  <meta property="og:url" content="https://www.imagetoprompt.dev/ru/blog/inzhenering-promptov-dlya-ii-arta/" />
+  <meta property="og:type" content="article" />
+  <meta property="og:image" content="https://www.imagetoprompt.dev/og-image.png" />
+  <meta property="og:site_name" content="ImageToPrompt" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Промпт-инженерия для ИИ-арта: руководство для начинающих" />
+  <meta name="twitter:description" content="5 столпов хорошего промпта, словарь стилей, практические упражнения." />
+  <meta name="twitter:image" content="https://www.imagetoprompt.dev/og-image.png" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="48x48" href="/favicon-48.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+  <link rel="manifest" href="/site.webmanifest" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="/fonts/space-grotesk-700.woff2" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="/fonts/inter-400.woff2" />
+  <link rel="stylesheet" href="/theme.css">
+  <link rel="preload" href="/blog.css" as="style" onload="this.onload=null;this.rel='stylesheet'"><noscript><link rel="stylesheet" href="/blog.css"></noscript>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Промпт-инженерия для ИИ-арта: руководство для начинающих",
+    "description": "Научитесь писать эффективные промпты для Midjourney, Stable Diffusion, Flux и DALL-E 3.",
+    "image": "https://www.imagetoprompt.dev/og-image.png",
+    "datePublished": "2026-03-23",
+    "dateModified": "2026-03-23",
+    "inLanguage": "ru",
+    "author": { "@type": "Person", "name": "ImageToPrompt Team", "url": "https://www.imagetoprompt.dev/" },
+    "publisher": { "@type": "Organization", "name": "ImageToPrompt", "logo": { "@type": "ImageObject", "url": "https://www.imagetoprompt.dev/favicon.svg" } },
+    "mainEntityOfPage": { "@type": "WebPage", "@id": "https://www.imagetoprompt.dev/ru/blog/inzhenering-promptov-dlya-ii-arta/" }
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Главная", "item": "https://www.imagetoprompt.dev/ru/" },
+      { "@type": "ListItem", "position": 2, "name": "Промпт-инженерия для начинающих", "item": "https://www.imagetoprompt.dev/ru/blog/inzhenering-promptov-dlya-ii-arta/" }
+    ]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "inLanguage": "ru",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Что такое промпт-инженерия?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Промпт-инженерия — это искусство и наука написания текстовых инструкций (промптов) для ИИ-генераторов изображений. Хороший промпт точно описывает желаемый результат, включая объект, стиль, освещение, композицию и настроение, в формате, понятном конкретной модели." }
+      },
+      {
+        "@type": "Question",
+        "name": "Сколько времени нужно, чтобы научиться писать хорошие промпты?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Базовые навыки можно освоить за несколько часов практики. Но мастерство приходит с опытом — через 2-4 недели регулярной практики вы будете уверенно писать промпты для любого стиля. Анализ сгенерированных промптов через ImageToPrompt значительно ускоряет обучение." }
+      },
+      {
+        "@type": "Question",
+        "name": "Нужно ли знать английский для написания промптов?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Знание английского помогает, так как большинство ИИ-генераторов обучались на англоязычных данных и лучше понимают промпты на английском. Однако ImageToPrompt автоматически генерирует промпты на английском из любого загруженного изображения, что решает эту проблему." }
+      },
+      {
+        "@type": "Question",
+        "name": "Какой элемент промпта самый важный?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Освещение — самый влиятельный элемент после основного объекта. Правильно описанное освещение может кардинально изменить настроение, атмосферу и реалистичность результата. Разница между 'portrait' и 'portrait, golden hour rim lighting, soft shadows' — колоссальна." }
+      }
+    ]
+  }
+  </script>
+    <!-- Google AdSense -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4499206373485728" crossorigin="anonymous"></script>
+    <!-- Web Push Notifications -->
+<script src="https://cdn.onesignal.com/sdks/web/v16/OneSignalSDK.page.js" defer></script>
+<script>
+  window.OneSignalDeferred = window.OneSignalDeferred || [];
+  OneSignalDeferred.push(async function(OneSignal) {
+    await OneSignal.init({
+      appId: "REPLACE_WITH_ONESIGNAL_APP_ID",
+      notifyButton: { enable: false }
+    });
+  });
+</script>
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="inner">
+      <a href="/" class="site-logo"><img src="/favicon.svg" alt="ImageToPrompt" width="48" height="48"><div class="site-logo-text">ImageTo<span class="accent">Prompt</span><span class="site-logo-sub">Free AI Prompt Generator</span></div></a>
+      <nav class="site-nav" aria-label="Main navigation">
+        <div class="nav-dropdown">
+          <button class="nav-dropdown-trigger" aria-haspopup="true" aria-expanded="false">Tools <span class="nav-chevron" aria-hidden="true">&#9660;</span></button>
+          <div class="nav-dropdown-menu" role="menu">
+            <div class="nav-mega-grid">
+              <div class="nav-mega-col">
+                <div class="nav-mega-heading">&#128444; IMAGE TOOLS</div>
+                <a href="/" role="menuitem" class="nav-mega-tool">Image to Prompt <span class="nav-mega-arrow">&#8594;</span></a>
+                <a href="/text-to-prompt/" role="menuitem" class="nav-mega-tool">Text to Prompt <span class="nav-mega-arrow">&#8594;</span></a>
+                <a href="/describe-image/" role="menuitem" class="nav-mega-tool">Describe Image <span class="nav-new-badge">NEW</span> <span class="nav-mega-arrow">&#8594;</span></a>
+                <div class="nav-mega-models-label">Models</div>
+                <div class="nav-mega-models"><a href="/midjourney-prompt-generator/">Midjourney</a><span class="nav-dot">&#xB7;</span><a href="/stable-diffusion-prompt-generator/">SD</a></div>
+                <div class="nav-mega-models"><a href="/flux-prompt-generator/">Flux</a><span class="nav-dot">&#xB7;</span><a href="/dall-e-prompt-generator/">DALL&#xB7;E&#xA0;3</a></div>
+                <div class="nav-mega-models"><a href="/adobe-firefly-prompt-generator/">Firefly</a><span class="nav-dot">&#xB7;</span><a href="/leonardo-ai-prompt-generator/">Leonardo</a></div>
+                <div class="nav-mega-models"><a href="/ideogram-prompt-generator/">Ideogram</a></div>
+              </div>
+              <div class="nav-mega-divider" aria-hidden="true"></div>
+              <div class="nav-mega-col">
+                <div class="nav-mega-heading">&#127909; VIDEO TOOLS</div>
+                <a href="/?tab=image-to-video" role="menuitem" class="nav-mega-tool">Image to Video <span class="nav-mega-arrow">&#8594;</span></a>
+                <a href="/?tab=text-to-video" role="menuitem" class="nav-mega-tool">Text to Video <span class="nav-mega-arrow">&#8594;</span></a>
+                <div class="nav-mega-models-label">Models</div>
+                <div class="nav-mega-models"><a href="/veo-prompt-generator/">Veo</a><span class="nav-dot">&#xB7;</span><a href="/kling-prompt-generator/">Kling</a></div>
+                <div class="nav-mega-models"><a href="/runway-prompt-generator/">Runway</a><span class="nav-dot">&#xB7;</span><a href="/pika-prompt-generator/">Pika</a></div>
+                <div class="nav-mega-models"><a href="/luma-prompt-generator/">Luma</a><span class="nav-dot">&#xB7;</span><a href="/sora-prompt-generator/">Sora</a></div>
+                <div class="nav-mega-models"><a href="/minimax-prompt-generator/">Minimax</a><span class="nav-dot">&#xB7;</span><a href="/stable-video-prompt-generator/">Stable</a></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <a href="/blog/">Blog</a>
+        <a href="/pricing/" class="nav-pill-pricing">Pricing</a>
+        <a href="/about/" class="nav-pill-about">About</a>
+        <a href="/" class="nav-try-free">Try Free &#8594;</a>
+        <button id="theme-toggle" onclick="toggleTheme()" aria-label="Switch theme" title="Switch theme">&#9728;&#xFE0F;</button>
+  </nav>
+    </div>
+  </header>
+
+  <nav class="breadcrumb" aria-label="Навигация">
+    <a href="/ru/">Главная</a><span class="sep">&#8250;</span>
+    <span>Промпт-инженерия для начинающих</span>
+  </nav>
+
+  <div class="page-wrapper">
+
+    <header class="article-header">
+      <p class="article-tag">Для начинающих</p>
+      <h1>Промпт-инженерия для ИИ-арта: руководство для начинающих</h1>
+      <div class="article-meta">
+        <span>Март 2026</span>
+        <span class="dot">&middot;</span>
+        <span>11 мин чтения</span>
+        <span class="dot">&middot;</span>
+        <span>Midjourney &middot; Stable Diffusion &middot; Flux &middot; DALL-E 3</span>
+      </div>
+    </header>
+
+    <div class="article-body">
+
+      <p>Промпт-инженерия &mdash; это навык, который превращает обычные результаты ИИ-генерации в впечатляющие произведения искусства. Разница между &laquo;cat&raquo; и тщательно составленным промптом с описанием освещения, стиля, настроения и композиции &mdash; как разница между наброском карандашом и картиной мастера. В этом руководстве вы научитесь писать промпты, которые дают именно тот результат, который вы задумали.</p>
+
+      <nav class="toc" aria-label="Содержание">
+        <details open>
+          <summary>Содержание</summary>
+          <ol>
+            <li><a href="#chto-takoe">Что такое промпт-инженерия?</a></li>
+            <li><a href="#pyat-stolpov">5 столпов хорошего промпта</a></li>
+            <li><a href="#slovar-stiley">Словарь стилей для ИИ-арта</a></li>
+            <li><a href="#osveshchenie">Магия освещения</a></li>
+            <li><a href="#kompoziciya">Композиция и кадрирование</a></li>
+            <li><a href="#modifikatory">Модификаторы качества</a></li>
+            <li><a href="#uprazhneniya">Практические упражнения</a></li>
+            <li><a href="#instrumenty">Инструменты для ускорения обучения</a></li>
+            <li><a href="#faq">Часто задаваемые вопросы</a></li>
+          </ol>
+        </details>
+      </nav>
+
+      <h2 id="chto-takoe">Что такое промпт-инженерия?</h2>
+
+      <p>Промпт-инженерия &mdash; это искусство и наука написания текстовых инструкций для ИИ-генераторов изображений. Каждое слово в вашем промпте влияет на конечный результат: объект, стиль, освещение, цветовая палитра, настроение, композиция &mdash; всё это определяется тем, как вы формулируете свою идею.</p>
+
+      <p>В отличие от традиционного рисования, где художник контролирует каждый штрих, в ИИ-генерации вы управляете результатом через слова. Это требует нового набора навыков: умения думать визуально и выражать визуальные концепции текстом. Хорошая новость &mdash; этому можно научиться, и этот навык значительно улучшается с практикой.</p>
+
+      <h2 id="pyat-stolpov">5 столпов хорошего промпта</h2>
+
+      <p>Каждый эффективный промпт для ИИ-генерации строится на пяти фундаментальных элементах:</p>
+
+      <h3>1. Объект (Subject)</h3>
+      <p>Центральный элемент вашего изображения. Будьте конкретны: не &laquo;woman&raquo;, а &laquo;elderly Japanese woman with silver hair&raquo;. Чем точнее описан объект, тем ближе результат к вашему замыслу.</p>
+      <pre><code>Слабо: a dog
+Лучше: a golden retriever puppy
+Отлично: a fluffy golden retriever puppy with big brown eyes, sitting on a mossy log</code></pre>
+
+      <h3>2. Стиль (Style)</h3>
+      <p>Визуальный подход к отрисовке. Стиль определяет общий вид изображения и может кардинально изменить один и тот же объект.</p>
+      <pre><code>cinematic photography
+oil painting, impasto technique
+anime style, Studio Ghibli
+watercolor illustration
+concept art, digital painting
+vaporwave aesthetic
+film noir, high contrast black and white</code></pre>
+
+      <h3>3. Освещение (Lighting)</h3>
+      <p>Освещение &mdash; самый мощный модификатор после объекта. Оно определяет настроение, атмосферу и реалистичность результата.</p>
+      <pre><code>golden hour light &mdash; тёплый свет закатного/рассветного часа
+dramatic side lighting &mdash; драматичное боковое освещение
+soft diffused light &mdash; мягкий рассеянный свет
+neon glow &mdash; неоновое свечение
+moonlight &mdash; лунный свет
+volumetric lighting &mdash; объёмное освещение с видимыми лучами
+backlit silhouette &mdash; контровой свет с силуэтом</code></pre>
+
+      <h3>4. Композиция (Composition)</h3>
+      <p>Как элементы расположены в кадре. Композиция влияет на визуальный фокус и динамику изображения.</p>
+      <pre><code>close-up portrait &mdash; портрет крупным планом
+wide-angle establishing shot &mdash; широкоугольный панорамный план
+bird's eye view &mdash; вид сверху
+low angle looking up &mdash; ракурс снизу вверх
+rule of thirds &mdash; правило третей
+symmetrical composition &mdash; симметричная композиция
+shallow depth of field &mdash; малая глубина резкости</code></pre>
+
+      <h3>5. Настроение (Mood)</h3>
+      <p>Эмоциональная тональность изображения. Настроение связывает все остальные элементы в единое целое.</p>
+      <pre><code>ethereal &mdash; воздушный, неземной
+moody &mdash; мрачный, атмосферный
+vibrant &mdash; яркий, живой
+melancholic &mdash; меланхоличный
+serene &mdash; безмятежный
+mysterious &mdash; таинственный
+energetic &mdash; энергичный
+nostalgic &mdash; ностальгический</code></pre>
+
+      <h2 id="slovar-stiley">Словарь стилей для ИИ-арта</h2>
+
+      <p>Знание ключевых стилевых терминов &mdash; ваш главный инструмент. Вот основные категории:</p>
+
+      <h3>Фотографические стили</h3>
+      <ul>
+        <li><code>editorial photography</code> &mdash; глянцевый журнальный стиль</li>
+        <li><code>documentary photography</code> &mdash; документальная фотография</li>
+        <li><code>macro photography</code> &mdash; макросъёмка с экстремальной детализацией</li>
+        <li><code>street photography</code> &mdash; уличная фотография</li>
+        <li><code>aerial photography</code> &mdash; аэрофотосъёмка</li>
+        <li><code>long exposure</code> &mdash; длинная выдержка (размытие движения, световые следы)</li>
+      </ul>
+
+      <h3>Художественные стили</h3>
+      <ul>
+        <li><code>Art Nouveau</code> &mdash; модерн, органические формы и орнаменты</li>
+        <li><code>Art Deco</code> &mdash; ар-деко, геометрические формы и роскошь</li>
+        <li><code>Impressionism</code> &mdash; импрессионизм, мазки и игра света</li>
+        <li><code>Surrealism</code> &mdash; сюрреализм, сновидческие образы</li>
+        <li><code>Cyberpunk</code> &mdash; киберпанк, неон и высокие технологии</li>
+        <li><code>Steampunk</code> &mdash; стимпанк, викторианская эстетика с механизмами</li>
+      </ul>
+
+      <h3>Техники рендеринга</h3>
+      <ul>
+        <li><code>photorealistic</code> &mdash; фотореалистичный</li>
+        <li><code>hyperdetailed</code> &mdash; с экстремальной детализацией</li>
+        <li><code>minimalist</code> &mdash; минималистичный</li>
+        <li><code>flat design</code> &mdash; плоский дизайн</li>
+        <li><code>isometric</code> &mdash; изометрический</li>
+        <li><code>low poly</code> &mdash; low poly 3D</li>
+      </ul>
+
+      <h2 id="osveshchenie">Магия освещения</h2>
+
+      <p>Освещение &mdash; это то, что отделяет хорошие промпты от великих. Рассмотрим, как один и тот же объект меняется при разном освещении:</p>
+
+      <pre><code>Базовый: portrait of a woman
++ Golden hour: portrait of a woman, golden hour sunlight, warm tones
++ Dramatic: portrait of a woman, dramatic chiaroscuro lighting, deep shadows
++ Neon: portrait of a woman, neon lights reflecting on skin, cyberpunk
++ Studio: portrait of a woman, Rembrandt lighting, studio setup</code></pre>
+
+      <p>Каждый вариант создаёт совершенно разное настроение и атмосферу из одного и того же объекта. Научитесь описывать освещение &mdash; и ваши промпты поднимутся на качественно новый уровень.</p>
+
+      <h3>Типы освещения и их эффект</h3>
+      <div class="table-wrap">
+      <table class="comparison-table">
+        <thead>
+          <tr><th>Тип освещения</th><th>Эффект</th><th>Лучше всего для</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Golden hour</td><td>Тёплый, мягкий, романтичный</td><td>Портреты, пейзажи</td></tr>
+          <tr><td>Blue hour</td><td>Холодный, таинственный, спокойный</td><td>Городские пейзажи, атмосферные сцены</td></tr>
+          <tr><td>Rembrandt lighting</td><td>Классический, драматичный</td><td>Портреты, характерные лица</td></tr>
+          <tr><td>Rim lighting</td><td>Выделяет контуры, создаёт глубину</td><td>Силуэты, героические позы</td></tr>
+          <tr><td>Volumetric light</td><td>Видимые лучи, атмосфера</td><td>Фэнтези, мистические сцены</td></tr>
+          <tr><td>Flat lighting</td><td>Равномерный, без теней</td><td>Продуктовая фотография, мода</td></tr>
+        </tbody>
+      </table>
+      </div>
+
+      <h2 id="kompoziciya">Композиция и кадрирование</h2>
+
+      <p>Композиция определяет, куда зритель смотрит в первую очередь и как его взгляд перемещается по изображению.</p>
+
+      <ul>
+        <li><strong>Extreme close-up:</strong> заполняет кадр деталью &mdash; глаз, цветок, текстура. Создаёт интимность и выделяет детали.</li>
+        <li><strong>Medium shot:</strong> показывает объект от пояса &mdash; баланс между деталями и контекстом.</li>
+        <li><strong>Wide establishing shot:</strong> показывает масштаб и окружение. Идеален для пейзажей и архитектуры.</li>
+        <li><strong>Over-the-shoulder:</strong> создаёт ощущение присутствия и вовлечённости.</li>
+        <li><strong>Dutch angle:</strong> наклонённый кадр для напряжения и динамики.</li>
+      </ul>
+
+      <h2 id="modifikatory">Модификаторы качества</h2>
+
+      <p>Некоторые слова и фразы существенно повышают качество результата. Вот самые эффективные:</p>
+
+      <ul>
+        <li><code>masterpiece, best quality</code> &mdash; особенно эффективно для Stable Diffusion</li>
+        <li><code>8K, ultra-detailed</code> &mdash; повышает детализацию</li>
+        <li><code>award-winning photography</code> &mdash; подталкивает к профессиональному качеству</li>
+        <li><code>shot on [камера]</code> &mdash; задаёт фотографические характеристики</li>
+        <li><code>by [художник]</code> &mdash; задаёт стиль конкретного художника (работает по-разному в разных моделях)</li>
+      </ul>
+
+      <div class="callout">
+        <p><strong>Важно:</strong> не перегружайте промпт модификаторами качества. 2-3 релевантных модификатора эффективнее, чем 10 случайных. Каждое слово должно нести смысловую нагрузку.</p>
+      </div>
+
+      <h2 id="uprazhneniya">Практические упражнения</h2>
+
+      <h3>Упражнение 1: От простого к сложному</h3>
+      <p>Возьмите простой объект и постепенно добавляйте детали:</p>
+      <ol>
+        <li>Начните с одного слова: <code>lighthouse</code></li>
+        <li>Добавьте обстановку: <code>lighthouse on a rocky cliff</code></li>
+        <li>Добавьте время: <code>lighthouse on a rocky cliff at sunset</code></li>
+        <li>Добавьте погоду: <code>lighthouse on a rocky cliff at sunset, stormy seas</code></li>
+        <li>Добавьте стиль: <code>lighthouse on a rocky cliff at sunset, stormy seas, dramatic oil painting</code></li>
+        <li>Добавьте освещение: <code>lighthouse on a rocky cliff at sunset, stormy seas, dramatic oil painting, golden light breaking through clouds</code></li>
+      </ol>
+      <p>Генерируйте изображение на каждом шаге и наблюдайте, как каждое добавление влияет на результат.</p>
+
+      <h3>Упражнение 2: Один объект &mdash; разные стили</h3>
+      <p>Выберите объект (например, &laquo;ancient temple&raquo;) и сгенерируйте его в 5 разных стилях:</p>
+      <ul>
+        <li>Фотореалистичный: <code>ancient temple, National Geographic photography, golden hour, drone shot</code></li>
+        <li>Аниме: <code>ancient temple, anime style, Studio Ghibli, lush vegetation</code></li>
+        <li>Киберпанк: <code>ancient temple, cyberpunk, neon lights, futuristic city around it</code></li>
+        <li>Акварель: <code>ancient temple, watercolor painting, soft washes, delicate brushwork</code></li>
+        <li>Минимализм: <code>ancient temple, minimalist line drawing, white background, simple geometry</code></li>
+      </ul>
+
+      <h3>Упражнение 3: Анализ через реверс-инжиниринг</h3>
+      <p>Найдите ИИ-изображение, которое вам нравится, и загрузите его в <a href="/ru/">ImageToPrompt</a>. Изучите сгенерированный промпт: какие элементы ИИ выделил? Какие слова использовал для описания стиля и освещения? Это один из самых быстрых способов научиться промпт-инженерии.</p>
+
+      <h2 id="instrumenty">Инструменты для ускорения обучения</h2>
+
+      <ul>
+        <li><strong><a href="/ru/">ImageToPrompt</a></strong> &mdash; загрузите любое изображение и получите профессиональный промпт. Анализируйте структуру и учитесь составлять собственные.</li>
+        <li><strong><a href="/text-to-prompt/">Text to Prompt</a></strong> &mdash; опишите идею своими словами и получите оптимизированный промпт для выбранной модели.</li>
+        <li><strong><a href="/ru/blog/rukovodstvo-po-promptam-midjourney-2026/">Руководство по Midjourney</a></strong> &mdash; подробный разбор параметров и примеров для самого популярного генератора.</li>
+        <li><strong><a href="/ru/blog/stable-diffusion-vs-midjourney-vs-dalle3/">Сравнение генераторов</a></strong> &mdash; поймите различия между моделями, чтобы выбрать подходящую.</li>
+      </ul>
+
+      <h2 id="faq">Часто задаваемые вопросы</h2>
+
+      <details style="margin-bottom:1rem;border:1px solid var(--border-card);border-radius:0.75rem;padding:1rem">
+        <summary style="font-weight:600;color:var(--text-primary);cursor:pointer">Что такое промпт-инженерия?</summary>
+        <p style="margin-top:0.75rem;color:var(--text-muted)">Промпт-инженерия &mdash; это искусство и наука написания текстовых инструкций (промптов) для ИИ-генераторов изображений. Хороший промпт точно описывает желаемый результат, включая объект, стиль, освещение, композицию и настроение, в формате, понятном конкретной модели.</p>
+      </details>
+
+      <details style="margin-bottom:1rem;border:1px solid var(--border-card);border-radius:0.75rem;padding:1rem">
+        <summary style="font-weight:600;color:var(--text-primary);cursor:pointer">Сколько времени нужно, чтобы научиться писать хорошие промпты?</summary>
+        <p style="margin-top:0.75rem;color:var(--text-muted)">Базовые навыки можно освоить за несколько часов практики. Мастерство приходит через 2-4 недели регулярной практики. Анализ сгенерированных промптов через <a href="/ru/">ImageToPrompt</a> значительно ускоряет обучение &mdash; вы видите, как профессиональный ИИ описывает визуальные элементы, и учитесь на его примере.</p>
+      </details>
+
+      <details style="margin-bottom:1rem;border:1px solid var(--border-card);border-radius:0.75rem;padding:1rem">
+        <summary style="font-weight:600;color:var(--text-primary);cursor:pointer">Нужно ли знать английский для написания промптов?</summary>
+        <p style="margin-top:0.75rem;color:var(--text-muted)">Знание английского помогает, так как большинство ИИ-генераторов обучались на англоязычных данных и лучше понимают промпты на английском. Однако ImageToPrompt автоматически генерирует промпты на правильном английском из любого загруженного изображения. Вы также можете выбрать русский язык в настройках для получения промптов на русском.</p>
+      </details>
+
+      <details style="margin-bottom:1rem;border:1px solid var(--border-card);border-radius:0.75rem;padding:1rem">
+        <summary style="font-weight:600;color:var(--text-primary);cursor:pointer">Какой элемент промпта самый важный?</summary>
+        <p style="margin-top:0.75rem;color:var(--text-muted)">После основного объекта самый влиятельный элемент &mdash; освещение. Правильно описанное освещение кардинально меняет настроение, атмосферу и реалистичность результата. Разница между &laquo;portrait&raquo; и &laquo;portrait, golden hour rim lighting, soft shadows&raquo; колоссальна. Освойте описание освещения &mdash; и качество ваших промптов вырастет на порядок.</p>
+      </details>
+
+      <div class="cta-box" style="margin-top:3rem">
+        <h3>Начните изучать промпт-инженерию прямо сейчас</h3>
+        <p>Загрузите любое понравившееся изображение и изучите его промпт. Лучший способ научиться &mdash; анализировать примеры.</p>
+        <a href="/ru/" class="cta-btn">Открыть ImageToPrompt &rarr;</a>
+      </div>
+
+    </div>
+  </div>
+
+  <footer class="footer-4col">
+    <div class="f4-inner">
+      <div class="f4-brand">
+        <img src="/favicon.svg" alt="ImageToPrompt" width="28" height="28">
+        <span class="f4-brand-name">ImageTo<span class="accent">Prompt</span></span>
+        <span class="f4-brand-sub">&mdash; Free AI Prompt Generator</span>
+      </div>
+      <div class="f4-grid">
+        <div class="f4-section">
+          <h4 class="f4-heading">Image Prompt Tools</h4>
+          <a href="/">Image to Prompt</a>
+          <a href="/text-to-prompt/">Text to Prompt</a>
+          <a href="/describe-image/">Describe Image</a>
+          <a href="/midjourney-prompt-generator/">Midjourney</a>
+          <a href="/stable-diffusion-prompt-generator/">Stable Diffusion</a>
+          <a href="/flux-prompt-generator/">Flux</a>
+          <a href="/dall-e-prompt-generator/">DALL-E 3</a>
+          <a href="/adobe-firefly-prompt-generator/">Adobe Firefly</a>
+          <a href="/leonardo-ai-prompt-generator/">Leonardo AI</a>
+          <a href="/ideogram-prompt-generator/">Ideogram</a>
+        </div>
+        <div class="f4-section">
+          <h4 class="f4-heading">Video Prompt Tools</h4>
+          <a href="/image-to-video-prompt/">Image to Video Prompt</a>
+          <a href="/text-to-video-prompt/">Text to Video Prompt</a>
+          <a href="/veo-prompt-generator/">Veo / Flow Studio</a>
+          <a href="/kling-prompt-generator/">Kling AI</a>
+          <a href="/runway-prompt-generator/">Runway Gen-3</a>
+          <a href="/pika-prompt-generator/">Pika</a>
+          <a href="/luma-prompt-generator/">Luma Dream Machine</a>
+          <a href="/sora-prompt-generator/">Sora</a>
+          <a href="/minimax-prompt-generator/">Minimax</a>
+          <a href="/stable-video-prompt-generator/">Stable Video</a>
+        </div>
+        <div class="f4-section">
+          <h4 class="f4-heading">Resources</h4>
+          <a href="/blog/">Blog</a>
+          <a href="/about/">About</a>
+          <a href="/pricing/">Pricing</a>
+          <a href="/contact/">Contact</a>
+          <a href="/privacy-policy/">Privacy Policy</a>
+          <a href="/terms-of-service/">Terms of Service</a>
+        </div>
+        <div class="f4-section">
+          <h4 class="f4-heading">Languages</h4>
+          <a href="/">English</a>
+          <a href="/fr/">Fran&#231;ais</a>
+          <a href="/ar/">&#1575;&#1604;&#1593;&#1585;&#1576;&#1610;&#1577;</a>
+          <a href="/es/">Espa&#241;ol</a>
+          <a href="/ko/">&#54620;&#44397;&#50612;</a>
+          <a href="/ja/">&#26085;&#26412;&#35486;</a>
+          <a href="/ru/">&#1056;&#1091;&#1089;&#1089;&#1082;&#1080;&#1081;</a>
+        </div>
+      </div>
+      <div class="f4-bottom">
+        <p>&#169; 2026 ImageToPrompt.dev &#8212; Free AI Prompt Generator</p>
+        <p>Your images are never stored. All analysis is ephemeral and private.</p>
+      </div>
+    </div>
+  </footer>
+
+<script src="/nav.js" defer></script>
+  <script>
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', function() {
+    navigator.serviceWorker.register('/sw.js')
+      .catch(function(err) { console.warn('SW registration failed:', err); });
+  });
+}
+</script>
+</body>
+</html>

@@ -158,6 +158,23 @@ export interface VideoResult {
   confidence: number;
 }
 
+export interface DescribeImageResult {
+  fullDescription: string;
+  keyElements: {
+    subjects: string[];
+    objects: string[];
+    setting: string;
+    people: string;
+  };
+  visualAnalysis: {
+    dominantColors: string[];
+    lighting: string;
+    composition: string;
+    mood: string;
+  };
+  altText: string;
+}
+
 export interface LanguageConfig {
   code: SupportedLanguage;
   label: string;

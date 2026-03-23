@@ -12,6 +12,7 @@ import { useImageAnalysis } from './hooks/useImageAnalysis';
 import { useTextToPrompt } from './hooks/useTextToPrompt';
 import { useImageToVideoPrompt } from './hooks/useImageToVideoPrompt';
 import { useTextToVideoPrompt } from './hooks/useTextToVideoPrompt';
+import { useDescribeImage } from './hooks/useDescribeImage';
 import { useRateLimit } from './hooks/useRateLimit';
 import { usePromptHistory } from './hooks/usePromptHistory';
 import type {
@@ -19,6 +20,7 @@ import type {
   AnalysisResult as AnalysisResultType, HistoryItem,
   VideoModel, VideoMotionStyle, VideoDuration, VideoCameraMovement,
   VideoResult as VideoResultType,
+  DescribeImageResult as DescribeResultType,
 } from './types';
 
 // Lazy-load heavy components
@@ -38,8 +40,9 @@ const NewsletterSection = lazy(() => import('./components/seo/NewsletterSection'
 const SEOFooter = lazy(() => import('./components/seo/SEOFooter'));
 const VideoModelSelector = lazy(() => import('./components/VideoModelSelector'));
 const VideoOptions = lazy(() => import('./components/VideoOptions'));
+const DescribeImageResultDisplay = lazy(() => import('./components/DescribeImageResult'));
 
-type ActiveTab = 'image-to-prompt' | 'text-to-prompt' | 'image-to-video' | 'text-to-video';
+type ActiveTab = 'image-to-prompt' | 'text-to-prompt' | 'image-to-video' | 'text-to-video' | 'describe-image';
 
 // Detect embed mode and pre-selected options from URL params
 const _urlParams = new URLSearchParams(window.location.search);
@@ -57,6 +60,8 @@ const TAB_MAP: Record<string, ActiveTab> = {
   'text-to-prompt': 'text-to-prompt',
   'image-to-video': 'image-to-video',
   'text-to-video': 'text-to-video',
+  'describe-image': 'describe-image',
+  describe: 'describe-image',
   // Aliases used by video model pages
   video: 'image-to-video',
   'text-video': 'text-to-video',
@@ -82,21 +87,26 @@ export default function App() {
   const [selectedDuration, setSelectedDuration] = useState<VideoDuration>('4s');
   const [selectedCameraMovement, setSelectedCameraMovement] = useState<VideoCameraMovement>('static');
   const [activeVideoResult, setActiveVideoResult] = useState<VideoResultType | null>(null);
+  const [activeDescribeResult, setActiveDescribeResult] = useState<DescribeResultType | null>(null);
 
   const { result, isLoading, error, analyze, reset: resetAnalysis } = useImageAnalysis();
   const { result: textResult, isLoading: textIsLoading, error: textError, enhance: enhanceText, reset: resetTextAnalysis } = useTextToPrompt();
   const { result: imgVideoResult, isLoading: imgVideoIsLoading, error: imgVideoError, generate: generateImgVideo, reset: resetImgVideo } = useImageToVideoPrompt();
   const { result: textVideoResult, isLoading: textVideoIsLoading, error: textVideoError, generate: generateTextVideo, reset: resetTextVideo } = useTextToVideoPrompt();
+  const { result: describeResult, isLoading: describeIsLoading, error: describeError, describe: describeImage, reset: resetDescribe } = useDescribeImage();
   const rateLimit = useRateLimit();
   const { history, addToHistory, clearHistory, removeItem } = usePromptHistory();
 
   // Derived values
-  const category: 'image' | 'video' = (activeTab === 'image-to-video' || activeTab === 'text-to-video') ? 'video' : 'image';
-  const combinedIsLoading = isLoading || textIsLoading || imgVideoIsLoading || textVideoIsLoading;
+  const category: 'image' | 'video' | 'describe' =
+    activeTab === 'describe-image' ? 'describe' :
+    (activeTab === 'image-to-video' || activeTab === 'text-to-video') ? 'video' : 'image';
+  const combinedIsLoading = isLoading || textIsLoading || imgVideoIsLoading || textVideoIsLoading || describeIsLoading;
   const activeTabError =
     activeTab === 'image-to-prompt' ? error :
     activeTab === 'text-to-prompt' ? textError :
     activeTab === 'image-to-video' ? imgVideoError :
+    activeTab === 'describe-image' ? describeError :
     textVideoError;
 
   // Initialize theme from localStorage
@@ -122,11 +132,15 @@ export default function App() {
   }, [textVideoResult]);
 
   useEffect(() => {
-    if (activeResult || activeVideoResult) {
+    if (describeResult) setActiveDescribeResult(describeResult);
+  }, [describeResult]);
+
+  useEffect(() => {
+    if (activeResult || activeVideoResult || activeDescribeResult) {
       const el = document.getElementById('prompt-result');
       if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
     }
-  }, [activeResult, activeVideoResult]);
+  }, [activeResult, activeVideoResult, activeDescribeResult]);
 
   useEffect(() => {
     const handleKeyDown = async (e: KeyboardEvent) => {
@@ -146,6 +160,7 @@ export default function App() {
         if (activeTab === 'text-to-prompt' && textInput.trim() && !combinedIsLoading && !activeResult) handleEnhanceText();
         if (activeTab === 'image-to-video' && currentImage && !combinedIsLoading && !activeVideoResult) handleGenerateImgVideo();
         if (activeTab === 'text-to-video' && videoTextInput.trim() && !combinedIsLoading && !activeVideoResult) handleGenerateTextVideo();
+        if (activeTab === 'describe-image' && currentImage && !combinedIsLoading && !activeDescribeResult) handleDescribeImage();
       }
       if (e.key === 'Escape' && !showHistory && !showRateLimitModal) {
         handleReset();
@@ -209,15 +224,27 @@ export default function App() {
     });
   }, [videoTextInput, textVideoIsLoading, rateLimit, generateTextVideo, selectedVideoModel, selectedMotionStyle, selectedDuration, selectedCameraMovement, selectedLanguage]);
 
+  const handleDescribeImage = useCallback(async () => {
+    if (!currentImage || describeIsLoading) return;
+    if (!rateLimit.canAnalyze) { setShowRateLimitModal(true); return; }
+    rateLimit.incrementUsage();
+    await describeImage({
+      base64: currentImage.base64,
+      mediaType: currentImage.mediaType,
+    });
+  }, [currentImage, describeIsLoading, rateLimit, describeImage]);
+
   const handleReset = useCallback(() => {
     setCurrentImage(null);
     setActiveResult(null);
     setActiveVideoResult(null);
+    setActiveDescribeResult(null);
     resetAnalysis();
     resetTextAnalysis();
     resetImgVideo();
     resetTextVideo();
-  }, [resetAnalysis, resetTextAnalysis, resetImgVideo, resetTextVideo]);
+    resetDescribe();
+  }, [resetAnalysis, resetTextAnalysis, resetImgVideo, resetTextVideo, resetDescribe]);
 
   const handleTabChange = useCallback((tab: ActiveTab) => {
     setActiveTab(tab);
@@ -235,8 +262,10 @@ export default function App() {
 
   const showImageTools = !activeResult && !combinedIsLoading && category === 'image';
   const showVideoTools = !activeVideoResult && !combinedIsLoading && category === 'video';
+  const showDescribeTools = !activeDescribeResult && !combinedIsLoading && category === 'describe';
   const showImageResult = !!activeResult && !combinedIsLoading && category === 'image';
   const showVideoResult = !!activeVideoResult && !combinedIsLoading && category === 'video';
+  const showDescribeResult = !!activeDescribeResult && !combinedIsLoading && category === 'describe';
 
   // ── Embed mode ──────────────────────────────────────────────────────────────
   if (isEmbed) {
@@ -302,6 +331,27 @@ export default function App() {
               </div>
             </div>
           )}
+          {category === 'describe' && showDescribeTools && (
+            <div className="space-y-6">
+              <UploadZone onImageReady={setCurrentImage} onClear={handleReset} currentImage={currentImage} />
+              {activeTabError && !combinedIsLoading && (
+                <div className="flex items-center gap-3 rounded-xl border border-[var(--error)]/30 bg-[var(--error)]/10 px-4 py-3" role="alert" aria-live="polite">
+                  <span className="text-[var(--error)]" aria-hidden="true">⚠</span>
+                  <p className="font-inter text-sm text-[var(--error)]">{activeTabError}</p>
+                </div>
+              )}
+              <div className="flex justify-center">
+                <button
+                  onClick={handleDescribeImage}
+                  disabled={!currentImage || combinedIsLoading || !rateLimit.canAnalyze}
+                  className="rounded-2xl px-8 py-3 font-grotesk text-base font-700 text-black disabled:opacity-50 disabled:cursor-not-allowed"
+                  style={{ background: 'linear-gradient(135deg, #34d399, #06b6d4)' }}
+                >
+                  Describe Image
+                </button>
+              </div>
+            </div>
+          )}
           <Suspense fallback={null}>
             {combinedIsLoading && <LoadingState previewUrl={currentImage?.previewUrl} />}
           </Suspense>
@@ -318,6 +368,13 @@ export default function App() {
                 cameraMovement={selectedCameraMovement}
                 onReset={handleReset}
                 onRegenerate={activeTab === 'image-to-video' ? handleGenerateImgVideo : handleGenerateTextVideo}
+              />
+            )}
+            {showDescribeResult && activeDescribeResult && (
+              <DescribeImageResultDisplay
+                result={activeDescribeResult}
+                onReset={handleReset}
+                onRegenerate={handleDescribeImage}
               />
             )}
           </Suspense>
@@ -369,7 +426,7 @@ export default function App() {
       />
 
       <main id="tool" className="relative mx-auto max-w-6xl px-4 pb-10 sm:px-6" role="main">
-        {(showImageTools || showVideoTools) && (
+        {(showImageTools || showVideoTools || showDescribeTools) && (
           <>
             {/* ── Page hero ── */}
             <div className="pt-5 pb-4 sm:pt-8 sm:pb-7 text-center">
@@ -382,6 +439,16 @@ export default function App() {
                       style={{ background: 'linear-gradient(135deg, #a855f7, #06b6d4)' }}
                     >
                       {t('hero.titleVideoHighlight')}
+                    </span>
+                  </>
+                ) : category === 'describe' ? (
+                  <>
+                    {t('hero.titleDescribe', 'Free AI')}{' '}
+                    <span
+                      className="gradient-clip"
+                      style={{ background: 'linear-gradient(135deg, #34d399, #06b6d4)' }}
+                    >
+                      {t('hero.titleDescribeHighlight', 'Image Describer')}
                     </span>
                   </>
                 ) : (
@@ -397,7 +464,7 @@ export default function App() {
                 )}
               </h1>
               <p className="mt-3 font-inter text-base text-[var(--text-secondary)] max-w-xl mx-auto">
-                {category === 'video' ? t('hero.subtitleVideo') : t('hero.subtitleImage')}
+                {category === 'video' ? t('hero.subtitleVideo') : category === 'describe' ? t('hero.subtitleDescribe', 'Upload any image and get a detailed AI-powered description. Perfect for accessibility alt-text, content creation, and SEO.') : t('hero.subtitleImage')}
               </p>
 
               {/* Trust badges */}
@@ -446,19 +513,20 @@ export default function App() {
                 {/* Category pills */}
                 <div className="flex gap-2">
                   {([
-                    ['image', '🖼️', t('tabs.imagePrompts')],
-                    ['video', '🎬', t('tabs.videoPrompts')],
-                  ] as const).map(([cat, icon, label]) => (
+                    ['image', '🖼️', t('tabs.imagePrompts'), 'image-to-prompt', '#e040fb33', '#00e5ff33', '#e040fb'],
+                    ['video', '🎬', t('tabs.videoPrompts'), 'image-to-video', '#7c3aed33', '#0891b233', '#7c3aed'],
+                    ['describe', '📝', t('tabs.describeImage', 'Describe Image'), 'describe-image', '#34d39933', '#06b6d433', '#34d399'],
+                  ] as const).map(([cat, icon, label, defaultTab, gradFrom, gradTo, borderColor]) => (
                     <button
                       key={cat}
-                      onClick={() => handleTabChange(cat === 'image' ? 'image-to-prompt' : 'image-to-video')}
+                      onClick={() => handleTabChange(defaultTab as ActiveTab)}
                       className="flex items-center gap-1.5 px-4 py-1.5 rounded-full font-inter text-sm font-600 transition-all duration-200"
                       style={{
                         background: category === cat
-                          ? (cat === 'video' ? 'linear-gradient(135deg, #7c3aed33, #0891b233)' : 'linear-gradient(135deg, #e040fb33, #00e5ff33)')
+                          ? `linear-gradient(135deg, ${gradFrom}, ${gradTo})`
                           : 'transparent',
                         color: category === cat ? 'var(--text-primary)' : 'var(--text-secondary)',
-                        border: `1px solid ${category === cat ? (cat === 'video' ? '#7c3aed' : '#e040fb') : 'var(--border-subtle)'}`,
+                        border: `1px solid ${category === cat ? borderColor : 'var(--border-subtle)'}`,
                       }}
                     >
                       <span>{icon}</span>
@@ -467,7 +535,8 @@ export default function App() {
                   ))}
                 </div>
 
-                {/* Sub-tab switcher */}
+                {/* Sub-tab switcher (image/video only) */}
+                {category !== 'describe' && (
                 <div className="flex gap-2 p-1 rounded-xl border border-[var(--border-subtle)] bg-[var(--bg-elevated)]">
                   {category === 'image' ? (
                     ([
@@ -509,8 +578,12 @@ export default function App() {
                     ))
                   )}
                 </div>
+                )}
 
                 {/* Input area */}
+                {activeTab === 'describe-image' && (
+                  <UploadZone onImageReady={setCurrentImage} onClear={handleReset} currentImage={currentImage} />
+                )}
                 {activeTab === 'image-to-prompt' && (
                   <UploadZone onImageReady={setCurrentImage} onClear={handleReset} currentImage={currentImage} />
                 )}
@@ -524,35 +597,36 @@ export default function App() {
                   <TextInputArea text={videoTextInput} onChange={setVideoTextInput} disabled={textVideoIsLoading} />
                 )}
 
-                {/* Model / style selectors */}
-                {category === 'image' ? (
+                {/* Model / style selectors (not for describe) */}
+                {category === 'image' && (
                   <>
                     <ModelSelector selected={selectedModel} onChange={setSelectedModel} />
                     <StyleSelector selected={selectedStyle} onChange={setSelectedStyle} />
                   </>
-                ) : (
-                  <>
-                    <Suspense fallback={null}>
-                      <VideoModelSelector selected={selectedVideoModel} onChange={setSelectedVideoModel} />
-                      <VideoOptions
-                        motionStyle={selectedMotionStyle}
-                        onMotionStyleChange={setSelectedMotionStyle}
-                        duration={selectedDuration}
-                        onDurationChange={setSelectedDuration}
-                        cameraMovement={selectedCameraMovement}
-                        onCameraMovementChange={setSelectedCameraMovement}
-                      />
-                    </Suspense>
-                  </>
+                )}
+                {category === 'video' && (
+                  <Suspense fallback={null}>
+                    <VideoModelSelector selected={selectedVideoModel} onChange={setSelectedVideoModel} />
+                    <VideoOptions
+                      motionStyle={selectedMotionStyle}
+                      onMotionStyleChange={setSelectedMotionStyle}
+                      duration={selectedDuration}
+                      onDurationChange={setSelectedDuration}
+                      cameraMovement={selectedCameraMovement}
+                      onCameraMovementChange={setSelectedCameraMovement}
+                    />
+                  </Suspense>
                 )}
 
-                {/* Language row */}
+                {/* Language row (not for describe) */}
+                {category !== 'describe' && (
                 <div className="flex items-center justify-between gap-3">
                   <span className="font-inter text-xs font-600 uppercase tracking-widest text-[var(--text-secondary)]">
                     {t('controls.outputLanguage')}
                   </span>
                   <LanguageSelector selected={selectedLanguage} onChange={setSelectedLanguage} />
                 </div>
+                )}
 
                 {activeTabError && !combinedIsLoading && (
                   <div
@@ -626,6 +700,25 @@ export default function App() {
                     <span className="relative z-10 flex items-center justify-center gap-2">
                       <span aria-hidden="true">🎬</span>
                       {!currentImage ? t('buttons.uploadFirst') : !rateLimit.canAnalyze ? t('buttons.dailyLimitReached') : t('buttons.generateVideoPrompt')}
+                      <span className="hidden sm:inline font-mono text-sm opacity-60" aria-hidden="true">Ctrl+↵</span>
+                    </span>
+                    <div className="absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-white/20 to-transparent transition-transform duration-700 group-hover:translate-x-full" aria-hidden="true" />
+                  </button>
+                )}
+                {activeTab === 'describe-image' && (
+                  <button
+                    onClick={handleDescribeImage}
+                    disabled={!currentImage || combinedIsLoading || !rateLimit.canAnalyze}
+                    aria-disabled={!currentImage || combinedIsLoading || !rateLimit.canAnalyze}
+                    className="group relative w-full overflow-hidden rounded-2xl py-4 font-grotesk text-lg font-700 text-black transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed mt-auto"
+                    style={{
+                      background: 'linear-gradient(135deg, #34d399, #06b6d4)',
+                      boxShadow: currentImage ? '0 0 20px rgba(52,211,153,0.4)' : 'none',
+                    }}
+                  >
+                    <span className="relative z-10 flex items-center justify-center gap-2">
+                      <span aria-hidden="true">📝</span>
+                      {!currentImage ? t('buttons.uploadFirst') : !rateLimit.canAnalyze ? t('buttons.dailyLimitReached') : t('buttons.describeImage', 'Describe Image')}
                       <span className="hidden sm:inline font-mono text-sm opacity-60" aria-hidden="true">Ctrl+↵</span>
                     </span>
                     <div className="absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-white/20 to-transparent transition-transform duration-700 group-hover:translate-x-full" aria-hidden="true" />
@@ -719,6 +812,31 @@ export default function App() {
                 onReset={handleReset}
                 onRegenerate={activeTab === 'image-to-video' ? handleGenerateImgVideo : handleGenerateTextVideo}
                 resetLabel={activeTab === 'text-to-video' ? t('buttons.generateAnother') : undefined}
+              />
+            </Suspense>
+          </div>
+        )}
+
+        {showDescribeResult && activeDescribeResult && (
+          <div id="prompt-result" className="space-y-8" style={{ scrollMarginTop: '100px' }} aria-live="polite" aria-label="Image description ready">
+            {currentImage && (
+              <div className="flex items-center gap-4 rounded-2xl border border-[var(--border-subtle)] bg-[var(--bg-card)] p-4">
+                <img
+                  src={currentImage.previewUrl}
+                  alt={`Preview of uploaded image: ${currentImage.name}`}
+                  className="h-16 w-16 rounded-xl object-cover border border-[var(--border-subtle)]"
+                />
+                <div>
+                  <p className="font-inter text-xs text-[var(--text-secondary)]">Described</p>
+                  <p className="font-grotesk text-sm font-600 text-[var(--text-primary)]">{currentImage.name}</p>
+                </div>
+              </div>
+            )}
+            <Suspense fallback={null}>
+              <DescribeImageResultDisplay
+                result={activeDescribeResult}
+                onReset={handleReset}
+                onRegenerate={handleDescribeImage}
               />
             </Suspense>
           </div>

@@ -1,0 +1,435 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <script src="/theme-toggle.js"></script>
+  <meta charset="UTF-8" />
+  <link rel="dns-prefetch" href="https://www.googletagmanager.com">
+<link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="max-image-preview:large, index, follow">
+  <meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="ImageToPrompt">
+  <title>Stable Diffusion vs Midjourney vs DALL-E 3 vs Flux: сравнение промптов</title>
+  <meta name="description" content="Подробное сравнение 4 главных ИИ-генераторов изображений в 2026 году: синтаксис промптов, качество результатов, стоимость и лучшие сценарии использования." />
+  <link rel="canonical" href="https://www.imagetoprompt.dev/ru/blog/stable-diffusion-vs-midjourney-vs-dalle3/" />
+  <link rel="alternate" hreflang="ru" href="https://www.imagetoprompt.dev/ru/blog/stable-diffusion-vs-midjourney-vs-dalle3/" />
+  <link rel="alternate" hreflang="en" href="https://www.imagetoprompt.dev/blog/stable-diffusion-vs-midjourney-vs-dalle3/" />
+  <link rel="alternate" hreflang="fr" href="https://www.imagetoprompt.dev/fr/blog/stable-diffusion-vs-midjourney-vs-dalle3/" />
+  <link rel="alternate" hreflang="x-default" href="https://www.imagetoprompt.dev/blog/stable-diffusion-vs-midjourney-vs-dalle3/" />
+  <meta property="og:title" content="Stable Diffusion vs Midjourney vs DALL-E 3 vs Flux: сравнение промптов" />
+  <meta property="og:description" content="Подробное сравнение 4 главных ИИ-генераторов изображений в 2026 году." />
+  <meta property="og:url" content="https://www.imagetoprompt.dev/ru/blog/stable-diffusion-vs-midjourney-vs-dalle3/" />
+  <meta property="og:type" content="article" />
+  <meta property="og:image" content="https://www.imagetoprompt.dev/og-image.png" />
+  <meta property="og:site_name" content="ImageToPrompt" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Stable Diffusion vs Midjourney vs DALL-E 3 vs Flux" />
+  <meta name="twitter:description" content="Сравнение синтаксиса промптов, качества и стоимости 4 генераторов." />
+  <meta name="twitter:image" content="https://www.imagetoprompt.dev/og-image.png" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="48x48" href="/favicon-48.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+  <link rel="manifest" href="/site.webmanifest" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="/fonts/space-grotesk-700.woff2" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="/fonts/inter-400.woff2" />
+  <link rel="stylesheet" href="/theme.css">
+  <link rel="preload" href="/blog.css" as="style" onload="this.onload=null;this.rel='stylesheet'"><noscript><link rel="stylesheet" href="/blog.css"></noscript>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Stable Diffusion vs Midjourney vs DALL-E 3 vs Flux: сравнение промптов",
+    "description": "Подробное сравнение 4 главных ИИ-генераторов изображений в 2026 году.",
+    "image": "https://www.imagetoprompt.dev/og-image.png",
+    "datePublished": "2026-03-23",
+    "dateModified": "2026-03-23",
+    "inLanguage": "ru",
+    "author": { "@type": "Person", "name": "ImageToPrompt Team", "url": "https://www.imagetoprompt.dev/" },
+    "publisher": { "@type": "Organization", "name": "ImageToPrompt", "logo": { "@type": "ImageObject", "url": "https://www.imagetoprompt.dev/favicon.svg" } },
+    "mainEntityOfPage": { "@type": "WebPage", "@id": "https://www.imagetoprompt.dev/ru/blog/stable-diffusion-vs-midjourney-vs-dalle3/" }
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Главная", "item": "https://www.imagetoprompt.dev/ru/" },
+      { "@type": "ListItem", "position": 2, "name": "Сравнение генераторов", "item": "https://www.imagetoprompt.dev/ru/blog/stable-diffusion-vs-midjourney-vs-dalle3/" }
+    ]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "inLanguage": "ru",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Какой ИИ-генератор лучше для новичков?",
+        "acceptedAnswer": { "@type": "Answer", "text": "DALL-E 3 — лучший выбор для новичков благодаря простому синтаксису на естественном языке и интеграции с ChatGPT. Не требует изучения специальных параметров. Просто опишите, что хотите увидеть, полными предложениями." }
+      },
+      {
+        "@type": "Question",
+        "name": "Какой генератор лучше для фотореализма?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Flux AI от Black Forest Labs в настоящее время лидирует в фотореализме. Midjourney v6.1 с параметром --style raw — сильный конкурент. Stable Diffusion с SDXL и правильными LoRA также даёт отличные фотореалистичные результаты при тонкой настройке." }
+      },
+      {
+        "@type": "Question",
+        "name": "Можно ли использовать один промпт для всех генераторов?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Нет, это одна из самых распространённых ошибок. У каждого генератора свой синтаксис: Midjourney использует параметры (--ar, --v), Stable Diffusion — взвешенные теги и негативные промпты, Flux — описательный естественный язык. ImageToPrompt автоматически форматирует промпт под выбранную модель." }
+      },
+      {
+        "@type": "Question",
+        "name": "Какой генератор полностью бесплатный?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Stable Diffusion — единственный полностью бесплатный генератор с открытым исходным кодом. Его можно запустить локально на своём компьютере без каких-либо ограничений и подписок. Для этого нужна видеокарта с минимум 8 ГБ VRAM." }
+      }
+    ]
+  }
+  </script>
+    <!-- Google AdSense -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4499206373485728" crossorigin="anonymous"></script>
+    <!-- Web Push Notifications -->
+<script src="https://cdn.onesignal.com/sdks/web/v16/OneSignalSDK.page.js" defer></script>
+<script>
+  window.OneSignalDeferred = window.OneSignalDeferred || [];
+  OneSignalDeferred.push(async function(OneSignal) {
+    await OneSignal.init({
+      appId: "REPLACE_WITH_ONESIGNAL_APP_ID",
+      notifyButton: { enable: false }
+    });
+  });
+</script>
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="inner">
+      <a href="/" class="site-logo"><img src="/favicon.svg" alt="ImageToPrompt" width="48" height="48"><div class="site-logo-text">ImageTo<span class="accent">Prompt</span><span class="site-logo-sub">Free AI Prompt Generator</span></div></a>
+      <nav class="site-nav" aria-label="Main navigation">
+        <div class="nav-dropdown">
+          <button class="nav-dropdown-trigger" aria-haspopup="true" aria-expanded="false">Tools <span class="nav-chevron" aria-hidden="true">&#9660;</span></button>
+          <div class="nav-dropdown-menu" role="menu">
+            <div class="nav-mega-grid">
+              <div class="nav-mega-col">
+                <div class="nav-mega-heading">&#128444; IMAGE TOOLS</div>
+                <a href="/" role="menuitem" class="nav-mega-tool">Image to Prompt <span class="nav-mega-arrow">&#8594;</span></a>
+                <a href="/text-to-prompt/" role="menuitem" class="nav-mega-tool">Text to Prompt <span class="nav-mega-arrow">&#8594;</span></a>
+                <a href="/describe-image/" role="menuitem" class="nav-mega-tool">Describe Image <span class="nav-new-badge">NEW</span> <span class="nav-mega-arrow">&#8594;</span></a>
+                <div class="nav-mega-models-label">Models</div>
+                <div class="nav-mega-models"><a href="/midjourney-prompt-generator/">Midjourney</a><span class="nav-dot">&#xB7;</span><a href="/stable-diffusion-prompt-generator/">SD</a></div>
+                <div class="nav-mega-models"><a href="/flux-prompt-generator/">Flux</a><span class="nav-dot">&#xB7;</span><a href="/dall-e-prompt-generator/">DALL&#xB7;E&#xA0;3</a></div>
+                <div class="nav-mega-models"><a href="/adobe-firefly-prompt-generator/">Firefly</a><span class="nav-dot">&#xB7;</span><a href="/leonardo-ai-prompt-generator/">Leonardo</a></div>
+                <div class="nav-mega-models"><a href="/ideogram-prompt-generator/">Ideogram</a></div>
+              </div>
+              <div class="nav-mega-divider" aria-hidden="true"></div>
+              <div class="nav-mega-col">
+                <div class="nav-mega-heading">&#127909; VIDEO TOOLS</div>
+                <a href="/?tab=image-to-video" role="menuitem" class="nav-mega-tool">Image to Video <span class="nav-mega-arrow">&#8594;</span></a>
+                <a href="/?tab=text-to-video" role="menuitem" class="nav-mega-tool">Text to Video <span class="nav-mega-arrow">&#8594;</span></a>
+                <div class="nav-mega-models-label">Models</div>
+                <div class="nav-mega-models"><a href="/veo-prompt-generator/">Veo</a><span class="nav-dot">&#xB7;</span><a href="/kling-prompt-generator/">Kling</a></div>
+                <div class="nav-mega-models"><a href="/runway-prompt-generator/">Runway</a><span class="nav-dot">&#xB7;</span><a href="/pika-prompt-generator/">Pika</a></div>
+                <div class="nav-mega-models"><a href="/luma-prompt-generator/">Luma</a><span class="nav-dot">&#xB7;</span><a href="/sora-prompt-generator/">Sora</a></div>
+                <div class="nav-mega-models"><a href="/minimax-prompt-generator/">Minimax</a><span class="nav-dot">&#xB7;</span><a href="/stable-video-prompt-generator/">Stable</a></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <a href="/blog/">Blog</a>
+        <a href="/pricing/" class="nav-pill-pricing">Pricing</a>
+        <a href="/about/" class="nav-pill-about">About</a>
+        <a href="/" class="nav-try-free">Try Free &#8594;</a>
+        <button id="theme-toggle" onclick="toggleTheme()" aria-label="Switch theme" title="Switch theme">&#9728;&#xFE0F;</button>
+  </nav>
+    </div>
+  </header>
+
+  <nav class="breadcrumb" aria-label="Навигация">
+    <a href="/ru/">Главная</a><span class="sep">&#8250;</span>
+    <span>SD vs Midjourney vs DALL-E 3 vs Flux</span>
+  </nav>
+
+  <div class="page-wrapper">
+
+    <header class="article-header">
+      <p class="article-tag">Сравнение</p>
+      <h1>Stable Diffusion vs Midjourney vs DALL-E 3 vs Flux: сравнение промптов</h1>
+      <div class="article-meta">
+        <span>Март 2026</span>
+        <span class="dot">&middot;</span>
+        <span>14 мин чтения</span>
+        <span class="dot">&middot;</span>
+        <span>Обновлено март 2026</span>
+      </div>
+    </header>
+
+    <div class="article-body">
+
+      <p>В 2026 году четыре генератора ИИ-изображений доминируют на рынке: Stable Diffusion, Midjourney, DALL-E 3 и Flux. Каждый из них имеет свои уникальные сильные стороны, собственный синтаксис промптов и специфические случаи использования. В этом руководстве мы подробно сравним их по всем ключевым критериям, чтобы помочь вам выбрать идеальный инструмент.</p>
+
+      <nav class="toc" aria-label="Содержание">
+        <details open>
+          <summary>Содержание</summary>
+          <ol>
+            <li><a href="#obzor">Обзор генераторов</a></li>
+            <li><a href="#sintaksis">Сравнение синтаксиса промптов</a></li>
+            <li><a href="#kachestvo">Качество результатов</a></li>
+            <li><a href="#stoimost">Стоимость и доступность</a></li>
+            <li><a href="#scenarii">Лучшие сценарии использования</a></li>
+            <li><a href="#primery-promptov">Один сюжет &mdash; четыре промпта</a></li>
+            <li><a href="#vyvod">Какой генератор выбрать?</a></li>
+            <li><a href="#faq">Часто задаваемые вопросы</a></li>
+          </ol>
+        </details>
+      </nav>
+
+      <h2 id="obzor">Обзор генераторов</h2>
+
+      <h3>Midjourney</h3>
+      <p>Midjourney &mdash; самый популярный коммерческий генератор изображений, известный своим художественным стилем и кинематографическим качеством. Работает через Discord и веб-интерфейс. Версия v6.1, вышедшая в 2025 году, значительно улучшила понимание промптов и детализацию. Midjourney остаётся лидером в области художественной генерации, фэнтези-арта и кинематографических сцен.</p>
+
+      <h3>Stable Diffusion</h3>
+      <p>Stable Diffusion &mdash; единственный генератор с полностью открытым исходным кодом в этом списке. Разработан Stability AI, может быть запущен локально на вашем компьютере без каких-либо ограничений и подписок. SDXL и последующие версии принесли значительные улучшения в качестве. Главное преимущество &mdash; полный контроль над каждым аспектом генерации и возможность использования кастомных моделей (LoRA, checkpoints).</p>
+
+      <h3>DALL-E 3</h3>
+      <p>DALL-E 3 от OpenAI интегрирован в ChatGPT и выделяется простотой использования. Он лучше всех понимает сложные инструкции на естественном языке и является лидером в отрисовке текста на изображениях. Идеален для новичков благодаря отсутствию специальных параметров &mdash; просто описывайте желаемый результат полными предложениями.</p>
+
+      <h3>Flux AI</h3>
+      <p>Flux от Black Forest Labs &mdash; относительно новый игрок, быстро завоевавший репутацию лидера в фотореализме. Основатели компании &mdash; создатели оригинальной архитектуры Stable Diffusion. Flux использует описательный естественный язык и фотографическую терминологию, минимально полагаясь на специальные параметры.</p>
+
+      <h2 id="sintaksis">Сравнение синтаксиса промптов</h2>
+
+      <p>Это ключевое различие, которое делает невозможным использование одного промпта для всех генераторов.</p>
+
+      <div class="table-wrap">
+      <table class="comparison-table">
+        <thead>
+          <tr><th>Аспект</th><th>Midjourney</th><th>Stable Diffusion</th><th>Flux</th><th>DALL-E 3</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Формат промпта</td><td>Дескрипторы через запятую + параметры</td><td>Взвешенные теги (термин:вес)</td><td>Описательный естественный язык</td><td>Полные предложения</td></tr>
+          <tr><td>Негативные промпты</td><td><code>--no элемент</code></td><td>Отдельное текстовое поле</td><td>Не поддерживается</td><td>Не поддерживается</td></tr>
+          <tr><td>Управление соотношением</td><td><code>--ar 16:9</code></td><td>В настройках UI</td><td>В описании</td><td>В описании</td></tr>
+          <tr><td>Стиль контроля</td><td><code>--stylize, --style raw</code></td><td>CFG scale, sampler</td><td>Через текст</td><td>Через текст</td></tr>
+          <tr><td>Оптимальная длина</td><td>40-80 слов</td><td>30-60 тегов</td><td>100-200 слов</td><td>50-150 слов</td></tr>
+        </tbody>
+      </table>
+      </div>
+
+      <h3>Пример: один и тот же сюжет</h3>
+      <p>Представим, что мы хотим сгенерировать &laquo;портрет самурая на закате&raquo;:</p>
+
+      <p><strong>Midjourney:</strong></p>
+      <pre><code>portrait of a samurai warrior, golden sunset behind, wind blowing hair, dramatic rim lighting, cinematic composition, detailed armor --ar 2:3 --v 6.1 --s 300</code></pre>
+
+      <p><strong>Stable Diffusion:</strong></p>
+      <pre><code>(samurai warrior portrait:1.3), (golden sunset:1.2), wind-blown hair, (dramatic rim lighting:1.1), cinematic, (detailed armor:1.2), masterpiece, best quality, 8k
+Negative: blurry, low quality, deformed, bad anatomy, watermark, text</code></pre>
+
+      <p><strong>Flux:</strong></p>
+      <pre><code>A striking portrait photograph of a samurai warrior standing against a brilliant golden sunset. The wind blows through his hair as dramatic rim lighting outlines his silhouette. His traditional armor is rendered in exquisite detail, with each plate catching the warm light. Shot on a medium format camera with a 135mm lens, shallow depth of field, the background melting into warm bokeh.</code></pre>
+
+      <p><strong>DALL-E 3:</strong></p>
+      <pre><code>Create a cinematic portrait of a samurai warrior at sunset. He stands with wind blowing through his hair, backlit by a golden sky. His traditional armor is highly detailed with individual plates visible. The lighting is dramatic with warm rim light outlining his figure. The composition uses a 2:3 portrait ratio with shallow depth of field.</code></pre>
+
+      <h2 id="kachestvo">Качество результатов</h2>
+
+      <div class="table-wrap">
+      <table class="comparison-table">
+        <thead>
+          <tr><th>Категория</th><th>Лидер</th><th>Комментарий</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Фотореализм</td><td>Flux</td><td>Наиболее реалистичные фотографические результаты с естественным освещением и текстурами</td></tr>
+          <tr><td>Художественный стиль</td><td>Midjourney</td><td>Непревзойдённый кинематографический и фэнтези-стиль с богатой атмосферой</td></tr>
+          <tr><td>Текст в изображениях</td><td>DALL-E 3</td><td>Единственный генератор, стабильно корректно отрисовывающий текст</td></tr>
+          <tr><td>Технический контроль</td><td>Stable Diffusion</td><td>Полный контроль над каждым аспектом: sampler, CFG, LoRA, ControlNet</td></tr>
+          <tr><td>Следование инструкциям</td><td>DALL-E 3</td><td>Лучше всех понимает сложные, многоэлементные описания</td></tr>
+          <tr><td>Анатомия и руки</td><td>Midjourney v6.1</td><td>Значительные улучшения в v6.1, минимум артефактов</td></tr>
+          <tr><td>Стоимость запуска</td><td>Stable Diffusion</td><td>Бесплатно при локальном запуске, требуется GPU</td></tr>
+        </tbody>
+      </table>
+      </div>
+
+      <h2 id="stoimost">Стоимость и доступность</h2>
+
+      <div class="table-wrap">
+      <table class="comparison-table">
+        <thead>
+          <tr><th>Генератор</th><th>Бесплатный план</th><th>Платный план</th><th>Доступ</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Midjourney</td><td>Нет (пробный период)</td><td>от $10/мес</td><td>Discord / Web</td></tr>
+          <tr><td>Stable Diffusion</td><td>Полностью бесплатно (локально)</td><td>Облачные сервисы отдельно</td><td>Локально / API</td></tr>
+          <tr><td>DALL-E 3</td><td>Через ChatGPT Free</td><td>ChatGPT Plus $20/мес</td><td>ChatGPT / API</td></tr>
+          <tr><td>Flux</td><td>Ограниченный</td><td>Через API-провайдеры</td><td>Web / API</td></tr>
+        </tbody>
+      </table>
+      </div>
+
+      <h2 id="scenarii">Лучшие сценарии использования</h2>
+
+      <h3>Выбирайте Midjourney, если:</h3>
+      <ul>
+        <li>Вам нужен художественный, кинематографический стиль &laquo;из коробки&raquo;</li>
+        <li>Вы создаёте фэнтези-арт, концепт-арт или иллюстрации</li>
+        <li>Важна скорость и простота без технической настройки</li>
+        <li>Вы хотите стабильно высокое качество с минимальными усилиями</li>
+      </ul>
+
+      <h3>Выбирайте Stable Diffusion, если:</h3>
+      <ul>
+        <li>Вам нужен полный контроль над процессом генерации</li>
+        <li>Вы хотите использовать кастомные модели, LoRA и ControlNet</li>
+        <li>Бюджет ограничен &mdash; локальный запуск полностью бесплатен</li>
+        <li>Вы разрабатываете продукт или сервис поверх ИИ-генерации</li>
+        <li>Конфиденциальность критична &mdash; все данные остаются на вашем компьютере</li>
+      </ul>
+
+      <h3>Выбирайте DALL-E 3, если:</h3>
+      <ul>
+        <li>Вы новичок в ИИ-генерации и хотите простой интерфейс</li>
+        <li>Вам нужен текст внутри изображений (логотипы, постеры, вывески)</li>
+        <li>Важно точное следование сложным, многоэлементным описаниям</li>
+        <li>Вы уже используете ChatGPT и хотите интеграцию</li>
+      </ul>
+
+      <h3>Выбирайте Flux, если:</h3>
+      <ul>
+        <li>Фотореализм &mdash; ваш главный приоритет</li>
+        <li>Вы работаете с фотографическим контентом и визуализациями продуктов</li>
+        <li>Предпочитаете описательный стиль промптов на естественном языке</li>
+        <li>Хотите реалистичное освещение и натуральные текстуры</li>
+      </ul>
+
+      <h2 id="primery-promptov">Один сюжет &mdash; четыре промпта</h2>
+
+      <p>Чтобы наглядно показать различия, вот промпты для одного и того же сюжета &mdash; &laquo;уютная кофейня зимним утром&raquo;:</p>
+
+      <h3>Midjourney</h3>
+      <pre><code>cozy coffee shop interior, winter morning, frost on windows, warm light from Edison bulbs, steam rising from coffee cups, rustic wooden tables, hygge atmosphere --ar 16:9 --v 6.1 --s 350</code></pre>
+
+      <h3>Stable Diffusion</h3>
+      <pre><code>(cozy coffee shop interior:1.3), (winter morning:1.1), frost on windows, (warm Edison bulb lighting:1.2), steam from coffee, rustic wooden tables, (hygge:1.1), masterpiece, high detail, 8k
+Negative: blurry, low quality, cartoon, anime, watermark, text, people</code></pre>
+
+      <h3>Flux</h3>
+      <pre><code>Interior photograph of a cozy, intimate coffee shop on a winter morning. Frost patterns decorate the large windows while warm golden light from Edison bulbs fills the space. Steam curls upward from ceramic coffee cups on rustic wooden tables. The atmosphere is deeply hygge — warm knit textures, worn leather seats, and the soft glow of morning light filtering through frosted glass. Shot on Fujifilm GFX100S, 32mm f/2.8, natural light mixed with warm artificial lighting.</code></pre>
+
+      <h3>DALL-E 3</h3>
+      <pre><code>Create a warm, inviting photograph of a cozy coffee shop interior on a winter morning. The windows have beautiful frost patterns, and warm golden light from Edison-style bulbs fills the space. Steam rises from ceramic coffee cups sitting on rustic wooden tables. The scene should feel deeply comfortable and hygge, with knit textures, worn leather seats, and soft morning light filtering through the frosted windows. The composition should be wide-angle to capture the full atmosphere of the space.</code></pre>
+
+      <h2 id="vyvod">Какой генератор выбрать?</h2>
+
+      <p>Нет единственно правильного ответа &mdash; каждый генератор превосходит в своей нише. Многие профессионалы используют 2-3 генератора в зависимости от задачи.</p>
+
+      <p>Если вы не уверены, какой генератор подойдёт для вашего проекта, воспользуйтесь <a href="/ru/">ImageToPrompt</a> &mdash; загрузите референсное изображение и сгенерируйте промпты для всех моделей одновременно. Это самый быстрый способ увидеть, как каждый генератор интерпретирует одну и ту же визуальную идею.</p>
+
+      <h2 id="faq">Часто задаваемые вопросы</h2>
+
+      <details style="margin-bottom:1rem;border:1px solid var(--border-card);border-radius:0.75rem;padding:1rem">
+        <summary style="font-weight:600;color:var(--text-primary);cursor:pointer">Какой ИИ-генератор лучше для новичков?</summary>
+        <p style="margin-top:0.75rem;color:var(--text-muted)">DALL-E 3 &mdash; лучший выбор для новичков. Он интегрирован в ChatGPT, использует простой синтаксис на естественном языке и не требует изучения специальных параметров. Просто опишите, что хотите увидеть, полными предложениями, и модель поймёт вас.</p>
+      </details>
+
+      <details style="margin-bottom:1rem;border:1px solid var(--border-card);border-radius:0.75rem;padding:1rem">
+        <summary style="font-weight:600;color:var(--text-primary);cursor:pointer">Какой генератор лучше для фотореализма?</summary>
+        <p style="margin-top:0.75rem;color:var(--text-muted)">Flux AI в настоящее время лидирует в фотореализме. Midjourney v6.1 с параметром <code>--style raw</code> &mdash; сильный конкурент. Stable Diffusion с SDXL и правильными LoRA также даёт превосходные фотореалистичные результаты, но требует больше технических настроек.</p>
+      </details>
+
+      <details style="margin-bottom:1rem;border:1px solid var(--border-card);border-radius:0.75rem;padding:1rem">
+        <summary style="font-weight:600;color:var(--text-primary);cursor:pointer">Можно ли использовать один промпт для всех генераторов?</summary>
+        <p style="margin-top:0.75rem;color:var(--text-muted)">Нет, это одна из самых распространённых ошибок. У каждого генератора свой синтаксис промптов. <a href="/ru/">ImageToPrompt</a> автоматически форматирует промпт под выбранную модель, что экономит время и даёт лучшие результаты.</p>
+      </details>
+
+      <details style="margin-bottom:1rem;border:1px solid var(--border-card);border-radius:0.75rem;padding:1rem">
+        <summary style="font-weight:600;color:var(--text-primary);cursor:pointer">Какой генератор полностью бесплатный?</summary>
+        <p style="margin-top:0.75rem;color:var(--text-muted)">Stable Diffusion &mdash; единственный полностью бесплатный генератор с открытым исходным кодом. Его можно запустить локально на своём компьютере без ограничений и подписок. Для комфортной работы нужна видеокарта с минимум 8 ГБ видеопамяти (VRAM).</p>
+      </details>
+
+      <div class="cta-box" style="margin-top:3rem">
+        <h3>Попробуйте все 7 моделей в одном инструменте</h3>
+        <p>Загрузите изображение и получите промпт для любой модели за 10 секунд.</p>
+        <a href="/ru/" class="cta-btn">Открыть ImageToPrompt &rarr;</a>
+      </div>
+
+    </div>
+  </div>
+
+  <footer class="footer-4col">
+    <div class="f4-inner">
+      <div class="f4-brand">
+        <img src="/favicon.svg" alt="ImageToPrompt" width="28" height="28">
+        <span class="f4-brand-name">ImageTo<span class="accent">Prompt</span></span>
+        <span class="f4-brand-sub">&mdash; Free AI Prompt Generator</span>
+      </div>
+      <div class="f4-grid">
+        <div class="f4-section">
+          <h4 class="f4-heading">Image Prompt Tools</h4>
+          <a href="/">Image to Prompt</a>
+          <a href="/text-to-prompt/">Text to Prompt</a>
+          <a href="/describe-image/">Describe Image</a>
+          <a href="/midjourney-prompt-generator/">Midjourney</a>
+          <a href="/stable-diffusion-prompt-generator/">Stable Diffusion</a>
+          <a href="/flux-prompt-generator/">Flux</a>
+          <a href="/dall-e-prompt-generator/">DALL-E 3</a>
+          <a href="/adobe-firefly-prompt-generator/">Adobe Firefly</a>
+          <a href="/leonardo-ai-prompt-generator/">Leonardo AI</a>
+          <a href="/ideogram-prompt-generator/">Ideogram</a>
+        </div>
+        <div class="f4-section">
+          <h4 class="f4-heading">Video Prompt Tools</h4>
+          <a href="/image-to-video-prompt/">Image to Video Prompt</a>
+          <a href="/text-to-video-prompt/">Text to Video Prompt</a>
+          <a href="/veo-prompt-generator/">Veo / Flow Studio</a>
+          <a href="/kling-prompt-generator/">Kling AI</a>
+          <a href="/runway-prompt-generator/">Runway Gen-3</a>
+          <a href="/pika-prompt-generator/">Pika</a>
+          <a href="/luma-prompt-generator/">Luma Dream Machine</a>
+          <a href="/sora-prompt-generator/">Sora</a>
+          <a href="/minimax-prompt-generator/">Minimax</a>
+          <a href="/stable-video-prompt-generator/">Stable Video</a>
+        </div>
+        <div class="f4-section">
+          <h4 class="f4-heading">Resources</h4>
+          <a href="/blog/">Blog</a>
+          <a href="/about/">About</a>
+          <a href="/pricing/">Pricing</a>
+          <a href="/contact/">Contact</a>
+          <a href="/privacy-policy/">Privacy Policy</a>
+          <a href="/terms-of-service/">Terms of Service</a>
+        </div>
+        <div class="f4-section">
+          <h4 class="f4-heading">Languages</h4>
+          <a href="/">English</a>
+          <a href="/fr/">Fran&#231;ais</a>
+          <a href="/ar/">&#1575;&#1604;&#1593;&#1585;&#1576;&#1610;&#1577;</a>
+          <a href="/es/">Espa&#241;ol</a>
+          <a href="/ko/">&#54620;&#44397;&#50612;</a>
+          <a href="/ja/">&#26085;&#26412;&#35486;</a>
+          <a href="/ru/">&#1056;&#1091;&#1089;&#1089;&#1082;&#1080;&#1081;</a>
+        </div>
+      </div>
+      <div class="f4-bottom">
+        <p>&#169; 2026 ImageToPrompt.dev &#8212; Free AI Prompt Generator</p>
+        <p>Your images are never stored. All analysis is ephemeral and private.</p>
+      </div>
+    </div>
+  </footer>
+
+<script src="/nav.js" defer></script>
+  <script>
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', function() {
+    navigator.serviceWorker.register('/sw.js')
+      .catch(function(err) { console.warn('SW registration failed:', err); });
+  });
+}
+</script>
+</body>
+</html>

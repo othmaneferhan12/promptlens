@@ -14,6 +14,9 @@
     },
     "api/text-to-video-prompt.ts": {
       "maxDuration": 30
+    },
+    "api/describe-image.ts": {
+      "maxDuration": 30
     }
   },
   "rewrites": [
@@ -152,6 +155,26 @@
     {
       "source": "/text-to-prompt/(.*)",
       "destination": "/text-to-prompt/$1"
+    },
+    {
+      "source": "/describe-image/(.*)",
+      "destination": "/describe-image/$1"
+    },
+    {
+      "source": "/batch-image-to-prompt/(.*)",
+      "destination": "/batch-image-to-prompt/$1"
+    },
+    {
+      "source": "/image-to-image/(.*)",
+      "destination": "/image-to-image/$1"
+    },
+    {
+      "source": "/inspiration/(.*)",
+      "destination": "/inspiration/$1"
+    },
+    {
+      "source": "/ru/(.*)",
+      "destination": "/ru/$1"
     },
     {
       "source": "/(.*)",

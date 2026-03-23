@@ -1,0 +1,412 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <script src="/theme-toggle.js"></script>
+  <meta charset="UTF-8" />
+  <link rel="dns-prefetch" href="https://www.googletagmanager.com">
+<link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0" />
+  <meta name="robots" content="max-image-preview:large, index, follow">
+  <meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="ImageToPrompt">
+  <title>Руководство по Промптам Midjourney 2026 — Полный Гайд | ImageToPrompt</title>
+  <meta name="description" content="Полное руководство по промптам Midjourney v6 в 2026 году. Синтаксис, параметры --ar, --s, --c, --w, стилистические ключевые слова и готовые примеры." />
+  <link rel="canonical" href="https://www.imagetoprompt.dev/ru/blog/rukovodstvo-po-promptam-midjourney-2026/" />
+  <link rel="alternate" hreflang="ru" href="https://www.imagetoprompt.dev/ru/blog/rukovodstvo-po-promptam-midjourney-2026/" />
+  <link rel="alternate" hreflang="x-default" href="https://www.imagetoprompt.dev/" />
+  <meta property="og:title" content="Руководство по Промптам Midjourney 2026 — Полный Гайд" />
+  <meta property="og:description" content="Все параметры, структура промптов, готовые примеры и продвинутые советы для Midjourney v6." />
+  <meta property="og:url" content="https://www.imagetoprompt.dev/ru/blog/rukovodstvo-po-promptam-midjourney-2026/" />
+  <meta property="og:type" content="article" />
+  <meta property="og:image" content="https://www.imagetoprompt.dev/og-image.png" />
+  <meta property="og:site_name" content="ImageToPrompt" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Руководство по Промптам Midjourney 2026" />
+  <meta name="twitter:description" content="Полный гайд по промптам Midjourney v6. Параметры, стили, примеры." />
+  <meta name="twitter:image" content="https://www.imagetoprompt.dev/og-image.png" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="48x48" href="/favicon-48.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+  <link rel="manifest" href="/site.webmanifest" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="/fonts/space-grotesk-700.woff2" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="/fonts/inter-400.woff2" />
+  <link rel="stylesheet" href="/theme.css">
+  <link rel="preload" href="/blog.css" as="style" onload="this.onload=null;this.rel='stylesheet'"><noscript><link rel="stylesheet" href="/blog.css"></noscript>
+  <link rel="preload" href="/model-pages.css" as="style" onload="this.onload=null;this.rel='stylesheet'"><noscript><link rel="stylesheet" href="/model-pages.css"></noscript>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Полное Руководство по Промптам Midjourney в 2026 году",
+    "description": "Полное руководство по промптам Midjourney v6 в 2026 году. Синтаксис, параметры, стилистические ключевые слова и готовые примеры.",
+    "image": "https://www.imagetoprompt.dev/og-image.png",
+    "datePublished": "2026-03-23",
+    "dateModified": "2026-03-23",
+    "inLanguage": "ru",
+    "author": { "@type": "Person", "name": "ImageToPrompt Team", "url": "https://www.imagetoprompt.dev/" },
+    "publisher": { "@type": "Organization", "name": "ImageToPrompt", "logo": { "@type": "ImageObject", "url": "https://www.imagetoprompt.dev/favicon.svg" } },
+    "mainEntityOfPage": { "@type": "WebPage", "@id": "https://www.imagetoprompt.dev/ru/blog/rukovodstvo-po-promptam-midjourney-2026/" }
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Главная", "item": "https://www.imagetoprompt.dev/ru/" },
+      { "@type": "ListItem", "position": 2, "name": "Блог", "item": "https://www.imagetoprompt.dev/ru/" },
+      { "@type": "ListItem", "position": 3, "name": "Руководство по промптам Midjourney 2026", "item": "https://www.imagetoprompt.dev/ru/blog/rukovodstvo-po-promptam-midjourney-2026/" }
+    ]
+  }
+  </script>
+  <!-- Google AdSense -->
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4499206373485728" crossorigin="anonymous"></script>
+  <!-- Web Push Notifications -->
+<script src="https://cdn.onesignal.com/sdks/web/v16/OneSignalSDK.page.js" defer></script>
+<script>
+  window.OneSignalDeferred = window.OneSignalDeferred || [];
+  OneSignalDeferred.push(async function(OneSignal) {
+    await OneSignal.init({ appId: "REPLACE_WITH_ONESIGNAL_APP_ID", notifyButton: { enable: false } });
+  });
+</script>
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="inner">
+      <a href="/" class="site-logo"><img src="/favicon.svg" alt="ImageToPrompt" width="48" height="48"><div class="site-logo-text">ImageTo<span class="accent">Prompt</span><span class="site-logo-sub">Free AI Prompt Generator</span></div></a>
+      <nav class="site-nav" aria-label="Main navigation">
+        <div class="nav-dropdown">
+          <button class="nav-dropdown-trigger" aria-haspopup="true" aria-expanded="false">Tools <span class="nav-chevron" aria-hidden="true">&#9660;</span></button>
+          <div class="nav-dropdown-menu" role="menu">
+            <div class="nav-mega-grid">
+              <div class="nav-mega-col">
+                <div class="nav-mega-heading">&#128444; IMAGE TOOLS</div>
+                <a href="/" role="menuitem" class="nav-mega-tool">Image to Prompt <span class="nav-mega-arrow">&#8594;</span></a>
+                <a href="/text-to-prompt/" role="menuitem" class="nav-mega-tool">Text to Prompt <span class="nav-mega-arrow">&#8594;</span></a>
+                <a href="/describe-image/" role="menuitem" class="nav-mega-tool">Describe Image <span class="nav-new-badge">NEW</span> <span class="nav-mega-arrow">&#8594;</span></a>
+                <div class="nav-mega-models-label">Models</div>
+                <div class="nav-mega-models"><a href="/midjourney-prompt-generator/">Midjourney</a><span class="nav-dot">&#xB7;</span><a href="/stable-diffusion-prompt-generator/">SD</a></div>
+                <div class="nav-mega-models"><a href="/flux-prompt-generator/">Flux</a><span class="nav-dot">&#xB7;</span><a href="/dall-e-prompt-generator/">DALL&#xB7;E&#xA0;3</a></div>
+                <div class="nav-mega-models"><a href="/adobe-firefly-prompt-generator/">Firefly</a><span class="nav-dot">&#xB7;</span><a href="/leonardo-ai-prompt-generator/">Leonardo</a></div>
+                <div class="nav-mega-models"><a href="/ideogram-prompt-generator/">Ideogram</a></div>
+              </div>
+              <div class="nav-mega-divider" aria-hidden="true"></div>
+              <div class="nav-mega-col">
+                <div class="nav-mega-heading">&#127909; VIDEO TOOLS</div>
+                <a href="/?tab=image-to-video" role="menuitem" class="nav-mega-tool">Image to Video <span class="nav-mega-arrow">&#8594;</span></a>
+                <a href="/?tab=text-to-video" role="menuitem" class="nav-mega-tool">Text to Video <span class="nav-mega-arrow">&#8594;</span></a>
+                <div class="nav-mega-models-label">Models</div>
+                <div class="nav-mega-models"><a href="/veo-prompt-generator/">Veo</a><span class="nav-dot">&#xB7;</span><a href="/kling-prompt-generator/">Kling</a></div>
+                <div class="nav-mega-models"><a href="/runway-prompt-generator/">Runway</a><span class="nav-dot">&#xB7;</span><a href="/pika-prompt-generator/">Pika</a></div>
+                <div class="nav-mega-models"><a href="/luma-prompt-generator/">Luma</a><span class="nav-dot">&#xB7;</span><a href="/sora-prompt-generator/">Sora</a></div>
+                <div class="nav-mega-models"><a href="/minimax-prompt-generator/">Minimax</a><span class="nav-dot">&#xB7;</span><a href="/stable-video-prompt-generator/">Stable</a></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <a href="/blog/">Blog</a>
+        <a href="/pricing/" class="nav-pill-pricing">Pricing</a>
+        <a href="/about/" class="nav-pill-about">About</a>
+        <a href="/" class="nav-try-free">Try Free &#8594;</a>
+        <button id="theme-toggle" onclick="toggleTheme()" aria-label="Switch theme" title="Switch theme">&#9728;&#xFE0F;</button>
+  </nav>
+    </div>
+  </header>
+
+  <nav class="breadcrumb" aria-label="Навигация">
+    <a href="/ru/">Главная</a><span class="sep">&#8250;</span>
+    <a href="/ru/">Блог</a><span class="sep">&#8250;</span>
+    <span>Руководство по промптам Midjourney 2026</span>
+  </nav>
+
+  <div class="page-wrapper">
+
+    <header class="article-header">
+      <p class="article-tag">Midjourney</p>
+      <h1>Полное Руководство по Промптам Midjourney в 2026 году</h1>
+      <div class="article-meta">
+        <span>Март 2026</span>
+        <span class="dot">&middot;</span>
+        <span>14 мин чтения</span>
+        <span class="dot">&middot;</span>
+        <span>Midjourney &middot; Промпт-инженеринг</span>
+        <span class="dot">&middot;</span>
+        <span>Опубликовано 23 марта 2026</span>
+      </div>
+    </header>
+
+    <div class="article-body">
+
+      <p>Midjourney остаётся одним из самых популярных ИИ-генераторов изображений в мире в 2026 году. Но качество результата напрямую зависит от качества промпта. В этом руководстве мы разберём всё: от базового синтаксиса до продвинутых техник, которые помогут вам создавать изображения профессионального уровня.</p>
+
+      <nav class="toc" aria-label="Содержание">
+        <details open>
+          <summary>Содержание</summary>
+          <ol>
+            <li><a href="#struktura">Структура промпта Midjourney</a></li>
+            <li><a href="#parametry">Все параметры Midjourney v6</a></li>
+            <li><a href="#klyuchevye-slova">Стилистические ключевые слова</a></li>
+            <li><a href="#primery">10 готовых примеров промптов</a></li>
+            <li><a href="#prodvinutye">Продвинутые техники</a></li>
+            <li><a href="#oshibki">Частые ошибки</a></li>
+            <li><a href="#imagetoprompt">Автоматическая генерация промптов</a></li>
+            <li><a href="#faq">FAQ</a></li>
+          </ol>
+        </details>
+      </nav>
+
+      <div class="callout">
+        <p><strong>Совет:</strong> Не хотите писать промпты вручную? <a href="/midjourney-prompt-generator/">Генератор промптов для Midjourney</a> автоматически создаёт оптимизированные промпты из любого изображения. Бесплатно.</p>
+      </div>
+
+      <h2 id="struktura">Структура промпта Midjourney</h2>
+
+      <p>Каждый промпт Midjourney состоит из двух частей: <strong>текстовое описание</strong> и <strong>параметры</strong>. Текстовая часть описывает, что вы хотите увидеть, а параметры управляют техническими аспектами генерации.</p>
+
+      <p>Общая схема:</p>
+      <pre><code>/imagine [объект], [описание сцены], [стилистические модификаторы], [освещение], [цветовая палитра] --параметры</code></pre>
+
+      <h3>Пять компонентов эффективного промпта</h3>
+      <ol>
+        <li><strong>Основной объект:</strong> Главный элемент изображения. Указывайте его в начале промпта, так как Midjourney придаёт наибольший вес первым словам.</li>
+        <li><strong>Описание сцены:</strong> Окружение, фон, действие. &laquo;Кафе в Париже&raquo;, &laquo;космическая станция&raquo;, &laquo;ночной город&raquo;.</li>
+        <li><strong>Стилистические модификаторы:</strong> Медиум (фотография, масло, цифровой арт) и стиль (кинематографический, аниме, фотореализм).</li>
+        <li><strong>Освещение:</strong> Один из самых влиятельных элементов. &laquo;Golden hour&raquo;, &laquo;dramatic lighting&raquo;, &laquo;neon glow&raquo;, &laquo;soft diffused light&raquo;.</li>
+        <li><strong>Параметры:</strong> Технические настройки, управляющие генерацией.</li>
+      </ol>
+
+      <h2 id="parametry">Все параметры Midjourney v6</h2>
+
+      <h3><code>--ar</code> (Aspect Ratio) &mdash; Соотношение сторон</h3>
+      <p>Управляет пропорциями изображения. По умолчанию &mdash; <code>1:1</code> (квадрат).</p>
+      <ul>
+        <li><code>--ar 16:9</code> &mdash; широкий формат, идеален для пейзажей и кинематографических кадров</li>
+        <li><code>--ar 9:16</code> &mdash; вертикальный, подходит для портретов и мобильных обоев</li>
+        <li><code>--ar 2:3</code> &mdash; классический портретный формат</li>
+        <li><code>--ar 3:2</code> &mdash; стандартный фотографический кадр</li>
+      </ul>
+
+      <h3><code>--stylize</code> (или <code>--s</code>) &mdash; Стилизация</h3>
+      <p>Управляет тем, насколько художественно Midjourney интерпретирует промпт. Диапазон: 0&ndash;1000, по умолчанию 100.</p>
+      <ul>
+        <li><code>--s 0</code> &mdash; минимальная стилизация, максимальное следование промпту</li>
+        <li><code>--s 100</code> &mdash; баланс между точностью и красотой</li>
+        <li><code>--s 250&ndash;500</code> &mdash; высокая художественность, отлично для арта</li>
+        <li><code>--s 750&ndash;1000</code> &mdash; максимальная художественность, может отклоняться от промпта</li>
+      </ul>
+
+      <h3><code>--chaos</code> (или <code>--c</code>) &mdash; Хаос</h3>
+      <p>Управляет разнообразием результатов. Диапазон: 0&ndash;100.</p>
+      <ul>
+        <li><code>--c 0</code> &mdash; все 4 варианта будут похожи друг на друга</li>
+        <li><code>--c 15&ndash;30</code> &mdash; умеренное разнообразие, рекомендуется для большинства случаев</li>
+        <li><code>--c 50&ndash;100</code> &mdash; сильное разнообразие, отлично для поиска неожиданных решений</li>
+      </ul>
+
+      <h3><code>--weird</code> (или <code>--w</code>) &mdash; Странность</h3>
+      <p>Добавляет необычные, сюрреалистические элементы. Диапазон: 0&ndash;3000.</p>
+      <ul>
+        <li><code>--w 0</code> &mdash; стандартный результат</li>
+        <li><code>--w 250&ndash;500</code> &mdash; лёгкая сюрреалистичность</li>
+        <li><code>--w 1000&ndash;3000</code> &mdash; сильная абстракция и сюрреализм</li>
+      </ul>
+
+      <h3>Другие важные параметры</h3>
+      <ul>
+        <li><code>--v 6.1</code> &mdash; версия модели (рекомендуется v6.1 для лучшего качества)</li>
+        <li><code>--no [элемент]</code> &mdash; негативный промпт (например, <code>--no text, watermark</code>)</li>
+        <li><code>--q 2</code> &mdash; повышенное качество (занимает больше времени)</li>
+        <li><code>--seed [число]</code> &mdash; фиксированный сид для воспроизводимости результатов</li>
+        <li><code>--tile</code> &mdash; создаёт бесшовный паттерн (для фонов и текстур)</li>
+        <li><code>--stop [число]</code> &mdash; останавливает генерацию на определённом проценте (10&ndash;100)</li>
+      </ul>
+
+      <h2 id="klyuchevye-slova">Стилистические ключевые слова</h2>
+
+      <p>Правильные ключевые слова могут кардинально изменить результат. Вот наиболее эффективные категории:</p>
+
+      <h3>Освещение</h3>
+      <p><code>golden hour</code>, <code>dramatic lighting</code>, <code>volumetric light</code>, <code>rim lighting</code>, <code>soft diffused light</code>, <code>neon glow</code>, <code>backlit</code>, <code>chiaroscuro</code>, <code>studio lighting</code>, <code>overcast</code></p>
+
+      <h3>Фотографические термины</h3>
+      <p><code>shot on Canon EOS R5</code>, <code>85mm f/1.4</code>, <code>shallow depth of field</code>, <code>bokeh</code>, <code>macro photography</code>, <code>long exposure</code>, <code>tilt-shift</code>, <code>wide angle</code>, <code>telephoto lens</code></p>
+
+      <h3>Художественные стили</h3>
+      <p><code>oil painting</code>, <code>watercolor</code>, <code>digital art</code>, <code>concept art</code>, <code>anime</code>, <code>pixel art</code>, <code>art nouveau</code>, <code>impressionist</code>, <code>ukiyo-e</code>, <code>pop art</code></p>
+
+      <h3>Атмосфера и настроение</h3>
+      <p><code>ethereal</code>, <code>moody</code>, <code>cinematic</code>, <code>dreamy</code>, <code>dark fantasy</code>, <code>whimsical</code>, <code>epic</code>, <code>serene</code>, <code>nostalgic</code>, <code>cyberpunk</code></p>
+
+      <h3>Качество и детализация</h3>
+      <p><code>highly detailed</code>, <code>intricate</code>, <code>8k</code>, <code>photorealistic</code>, <code>hyperrealistic</code>, <code>octane render</code>, <code>unreal engine</code>, <code>ray tracing</code></p>
+
+      <h2 id="primery">10 готовых примеров промптов</h2>
+
+      <h3>1. Кинематографический портрет</h3>
+      <pre><code>portrait of a woman in a rainy Tokyo street at night, neon reflections on wet pavement, shallow depth of field, cinematic color grading, shot on Leica 50mm, moody atmosphere --ar 2:3 --v 6.1 --s 250</code></pre>
+
+      <h3>2. Фэнтези-пейзаж</h3>
+      <pre><code>massive floating crystal palace above a sea of clouds, bioluminescent gardens, twin moons in a twilight sky, epic fantasy landscape, volumetric lighting, highly detailed --ar 16:9 --v 6.1 --s 500 --c 20</code></pre>
+
+      <h3>3. Фотореалистичный продукт</h3>
+      <pre><code>luxury perfume bottle on black marble surface, dramatic side lighting, golden liquid, glass refractions, product photography, studio shot, 8k --ar 3:4 --v 6.1 --s 100</code></pre>
+
+      <h3>4. Аниме</h3>
+      <pre><code>anime girl standing on a rooftop at sunset, cherry blossoms falling, city skyline in background, warm golden light, Studio Ghibli style, detailed anime art --ar 2:3 --v 6.1 --s 300 --niji 6</code></pre>
+
+      <h3>5. Концепт-арт</h3>
+      <pre><code>abandoned space station overgrown with alien vegetation, bioluminescent plants, shafts of light through broken hull, sci-fi concept art, matte painting style --ar 16:9 --v 6.1 --s 400</code></pre>
+
+      <h3>6. Минимализм</h3>
+      <pre><code>single red umbrella on a vast white snow field, aerial view, minimalist composition, negative space, high contrast --ar 1:1 --v 6.1 --s 200</code></pre>
+
+      <h3>7. Макро-фотография</h3>
+      <pre><code>extreme macro shot of a water droplet on a rose petal, morning dew, refracting the garden behind, Canon EF 100mm macro, f/2.8, natural light, photorealistic --ar 1:1 --v 6.1 --s 150</code></pre>
+
+      <h3>8. Ретро-стиль</h3>
+      <pre><code>1970s vintage photograph of a Mustang convertible on Route 66, warm film grain, Kodachrome colors, golden hour, dust particles in the air, nostalgic Americana --ar 3:2 --v 6.1 --s 350</code></pre>
+
+      <h3>9. Дарк-фэнтези</h3>
+      <pre><code>ancient necromancer in a gothic cathedral, green ethereal energy swirling around skeletal hands, stained glass windows casting colored light, dark fantasy art, dramatic chiaroscuro --ar 2:3 --v 6.1 --s 600 --c 25</code></pre>
+
+      <h3>10. Архитектурная визуализация</h3>
+      <pre><code>futuristic eco-friendly skyscraper covered in vertical gardens and solar panels, blue sky, photorealistic architectural rendering, octane render, award-winning design --ar 9:16 --v 6.1 --s 200</code></pre>
+
+      <h2 id="prodvinutye">Продвинутые техники</h2>
+
+      <h3>Мульти-промпты (Multi-prompts)</h3>
+      <p>Используйте двойное двоеточие <code>::</code> для разделения концепций и назначения им весов:</p>
+      <pre><code>cyberpunk city::2 rainy night::1.5 neon signs::1 --ar 16:9 --v 6.1</code></pre>
+      <p>Здесь &laquo;cyberpunk city&raquo; получает вес 2, &laquo;rainy night&raquo; &mdash; 1.5, а &laquo;neon signs&raquo; &mdash; 1. Это даёт тонкий контроль над композицией.</p>
+
+      <h3>Пермутации (Permutations)</h3>
+      <p>Генерируйте несколько вариантов одним командой с помощью фигурных скобок:</p>
+      <pre><code>/imagine a {red, blue, golden} dragon in a {forest, cave, sky} --ar 16:9</code></pre>
+      <p>Это создаст 9 разных заданий со всеми комбинациями.</p>
+
+      <h3>Использование референсных изображений</h3>
+      <p>Вставьте URL изображения перед текстовым промптом. Midjourney будет использовать его как стилистическую основу. Чтобы найти идеальный промпт для референсного изображения, используйте <a href="/">ImageToPrompt</a> для автоматического анализа.</p>
+
+      <h2 id="oshibki">Частые ошибки</h2>
+
+      <ol>
+        <li><strong>Слишком длинные промпты.</strong> Midjourney v6 лучше работает с концентрированными описаниями. 40&ndash;80 слов &mdash; оптимально.</li>
+        <li><strong>Игнорирование <code>--ar</code>.</strong> Квадратный формат редко подходит. Всегда указывайте нужное соотношение сторон.</li>
+        <li><strong>Использование &laquo;не делай&raquo; вместо <code>--no</code>.</strong> Midjourney лучше понимает официальный параметр <code>--no</code>.</li>
+        <li><strong>Отсутствие освещения.</strong> Указание типа освещения &mdash; один из самых влиятельных элементов промпта.</li>
+        <li><strong>Использование промптов от Stable Diffusion.</strong> Синтаксис <code>(термин:1.2)</code> не работает в Midjourney. Используйте <code>::</code> для весов.</li>
+      </ol>
+
+      <h2 id="imagetoprompt">Автоматическая генерация промптов для Midjourney</h2>
+
+      <p>Если вы не хотите писать промпты вручную, <a href="/midjourney-prompt-generator/">Генератор промптов для Midjourney</a> от ImageToPrompt автоматически создаёт оптимизированные промпты из любого референсного изображения.</p>
+
+      <p>Как это работает:</p>
+      <ol>
+        <li>Загрузите референсное изображение</li>
+        <li>Выберите &laquo;Midjourney&raquo; в селекторе модели</li>
+        <li>Получите промпт с правильными параметрами (<code>--ar</code>, <code>--v</code>, <code>--s</code>, <code>--c</code>)</li>
+        <li>Скопируйте и вставьте в Midjourney</li>
+      </ol>
+
+      <div class="cta-box">
+        <h3>Сгенерировать промпт для Midjourney</h3>
+        <p>Загрузите изображение и получите готовый промпт для Midjourney за 10 секунд. Бесплатно, без регистрации.</p>
+        <a href="/midjourney-prompt-generator/" class="cta-btn">Генератор промптов Midjourney &rarr;</a>
+      </div>
+
+      <h2 id="faq">Часто задаваемые вопросы</h2>
+
+      <details style="margin-bottom:1rem;border:1px solid var(--border-card);border-radius:0.75rem;padding:1rem">
+        <summary style="font-weight:600;color:var(--text-primary);cursor:pointer">Какая версия Midjourney лучшая в 2026 году?</summary>
+        <p style="margin-top:0.75rem;color:var(--text-muted)">Midjourney v6.1 &mdash; рекомендуемая версия. Она обеспечивает лучшее качество, более точное следование промпту и улучшенную генерацию текста на изображениях. Используйте <code>--v 6.1</code>.</p>
+      </details>
+
+      <details style="margin-bottom:1rem;border:1px solid var(--border-card);border-radius:0.75rem;padding:1rem">
+        <summary style="font-weight:600;color:var(--text-primary);cursor:pointer">Можно ли писать промпты на русском?</summary>
+        <p style="margin-top:0.75rem;color:var(--text-muted)">Технически да, но результаты будут хуже. Midjourney обучался преимущественно на англоязычных данных. Рекомендуется писать промпты на английском. ImageToPrompt может автоматически сгенерировать англоязычный промпт из вашего изображения.</p>
+      </details>
+
+      <details style="margin-bottom:1rem;border:1px solid var(--border-card);border-radius:0.75rem;padding:1rem">
+        <summary style="font-weight:600;color:var(--text-primary);cursor:pointer">Чем отличается --stylize от --chaos?</summary>
+        <p style="margin-top:0.75rem;color:var(--text-muted)"><code>--stylize</code> управляет художественностью интерпретации &mdash; насколько &laquo;красиво&raquo; Midjourney пытается сделать изображение. <code>--chaos</code> управляет разнообразием между 4 вариантами в сетке. Они независимы и могут использоваться вместе.</p>
+      </details>
+
+      <div class="cta-box" style="margin-top:3rem">
+        <h3>Начните создавать промпты прямо сейчас</h3>
+        <p>Используйте ImageToPrompt для автоматической генерации промптов для Midjourney из любого изображения. Бесплатно.</p>
+        <a href="/ru/" class="cta-btn">Попробовать ImageToPrompt &rarr;</a>
+      </div>
+
+    </div>
+
+    <div class="related-posts">
+      <h2>Статьи по теме</h2>
+      <div class="related-grid">
+        <a href="/ru/blog/konverter-izobrazheniya-v-prompt/" class="related-card">
+          <p class="tag">Руководство</p>
+          <h3>Конвертер изображения в промпт</h3>
+        </a>
+        <a href="/ru/blog/stable-diffusion-vs-midjourney-vs-dalle3/" class="related-card">
+          <p class="tag">Сравнение</p>
+          <h3>SD vs Midjourney vs DALL-E 3</h3>
+        </a>
+        <a href="/ru/blog/inzhenering-promptov-dlya-ii-arta/" class="related-card">
+          <p class="tag">Продвинутый</p>
+          <h3>Инженеринг промптов для AI арта</h3>
+        </a>
+      </div>
+    </div>
+
+  </div>
+
+  <footer class="footer-4col">
+    <div class="f4-inner">
+      <div class="f4-brand">
+        <img src="/favicon.svg" alt="ImageToPrompt" width="28" height="28">
+        <span class="f4-brand-name">ImageTo<span class="accent">Prompt</span></span>
+        <span class="f4-brand-sub">&mdash; Free AI Prompt Generator</span>
+      </div>
+      <div class="f4-grid">
+        <div class="f4-section">
+          <h4 class="f4-heading">Image Prompt Tools</h4>
+          <a href="/">Image to Prompt</a><a href="/text-to-prompt/">Text to Prompt</a><a href="/describe-image/">Describe Image</a>
+          <a href="/midjourney-prompt-generator/">Midjourney</a><a href="/stable-diffusion-prompt-generator/">Stable Diffusion</a><a href="/flux-prompt-generator/">Flux</a><a href="/dall-e-prompt-generator/">DALL-E 3</a><a href="/adobe-firefly-prompt-generator/">Adobe Firefly</a><a href="/leonardo-ai-prompt-generator/">Leonardo AI</a><a href="/ideogram-prompt-generator/">Ideogram</a>
+        </div>
+        <div class="f4-section">
+          <h4 class="f4-heading">Video Prompt Tools</h4>
+          <a href="/image-to-video-prompt/">Image to Video Prompt</a><a href="/text-to-video-prompt/">Text to Video Prompt</a>
+          <a href="/veo-prompt-generator/">Veo / Flow Studio</a><a href="/kling-prompt-generator/">Kling AI</a><a href="/runway-prompt-generator/">Runway Gen-3</a><a href="/pika-prompt-generator/">Pika</a><a href="/luma-prompt-generator/">Luma Dream Machine</a><a href="/sora-prompt-generator/">Sora</a><a href="/minimax-prompt-generator/">Minimax</a><a href="/stable-video-prompt-generator/">Stable Video</a>
+        </div>
+        <div class="f4-section">
+          <h4 class="f4-heading">Resources</h4>
+          <a href="/blog/">Blog</a><a href="/about/">About</a><a href="/pricing/">Pricing</a><a href="/contact/">Contact</a><a href="/privacy-policy/">Privacy Policy</a><a href="/terms-of-service/">Terms of Service</a>
+        </div>
+        <div class="f4-section">
+          <h4 class="f4-heading">Languages</h4>
+          <a href="/">English</a><a href="/fr/">Fran&#231;ais</a><a href="/ar/">&#1575;&#1604;&#1593;&#1585;&#1576;&#1610;&#1577;</a><a href="/es/">Espa&#241;ol</a><a href="/ko/">&#54620;&#44397;&#50612;</a><a href="/ja/">&#26085;&#26412;&#35486;</a><a href="/ru/">&#1056;&#1091;&#1089;&#1089;&#1082;&#1080;&#1081;</a>
+        </div>
+      </div>
+      <div class="f4-bottom">
+        <p>&#169; 2026 ImageToPrompt.dev &#8212; Free AI Prompt Generator</p>
+        <p>Your images are never stored. All analysis is ephemeral and private.</p>
+      </div>
+    </div>
+  </footer>
+
+<script src="/newsletter-inject.js" defer></script>
+<script src="/nav.js" defer></script>
+  <script>
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', function() {
+    navigator.serviceWorker.register('/sw.js')
+      .catch(function(err) { console.warn('SW registration failed:', err); });
+  });
+}
+</script>
+</body>
+</html>

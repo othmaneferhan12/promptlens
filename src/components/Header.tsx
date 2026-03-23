@@ -1,6 +1,6 @@
 import { useState, useRef, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { History, ChevronDown, Globe, Image as ImageIcon, Type as TypeIcon, Video as VideoIcon, Film as FilmIcon } from 'lucide-react';
+import { History, ChevronDown, Globe, Image as ImageIcon, Type as TypeIcon, Video as VideoIcon, Film as FilmIcon, FileText as DescribeIcon } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
 import type { RateLimitState } from '../types';
 import { UI_LANGUAGES, type UILanguage } from '../i18n';
@@ -125,6 +125,7 @@ export default function Header({ onHistoryOpen, hasHistory }: HeaderProps) {
   const IMG_MAIN = [
     { href: lp('/'),                label: t('nav.imageToPrompt'), Icon: ImageIcon },
     { href: lp('/text-to-prompt/'), label: t('nav.textToPrompt'),  Icon: TypeIcon  },
+    { href: '/?tab=describe-image', label: t('nav.describeImage', 'Describe Image'), Icon: DescribeIcon, isNew: true },
   ];
   const VID_MAIN = [
     { href: lp('/?tab=image-to-video'), label: t('nav.imageToVideo'), Icon: VideoIcon },
@@ -202,11 +203,12 @@ export default function Header({ onHistoryOpen, hasHistory }: HeaderProps) {
                         </span>
                         <span className="flex-1 h-px" style={{ background: 'var(--border-subtle)' }} />
                       </div>
-                      {IMG_MAIN.map(({ href, label, Icon }) => (
+                      {IMG_MAIN.map(({ href, label, Icon, isNew }) => (
                         <a key={href} href={href} role="menuitem" onClick={() => setShowTools(false)} className={imgToolCls} style={{ color: 'var(--text-secondary)' }}>
                           <span className="flex items-center gap-2">
                             <Icon size={13} style={{ color: 'rgba(224,100,251,0.55)', flexShrink: 0 }} />
                             {label}
+                            {isNew && <span className="rounded-full px-1.5 py-0.5 text-[0.5625rem] font-700 uppercase tracking-wider" style={{ background: 'rgba(52,211,153,0.15)', color: '#34d399', border: '1px solid rgba(52,211,153,0.3)' }}>NEW</span>}
                           </span>
                           <span style={{ color: 'var(--text-muted)', fontSize: '0.75rem' }}>→</span>
                         </a>

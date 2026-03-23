@@ -162,6 +162,22 @@ const STATIC_PAGES = [
   { path: '/about/',   changefreq: 'monthly', priority: '0.7' },
   { path: '/pricing/', changefreq: 'monthly', priority: '0.8' },
   { path: '/contact/', changefreq: 'monthly', priority: '0.6' },
+  // New tool pages
+  { path: '/describe-image/',          changefreq: 'weekly',  priority: '0.9' },
+  { path: '/batch-image-to-prompt/',   changefreq: 'monthly', priority: '0.8' },
+  { path: '/image-to-image/',          changefreq: 'monthly', priority: '0.8' },
+  // Inspiration pages
+  { path: '/inspiration/',                changefreq: 'monthly', priority: '0.7' },
+  { path: '/inspiration/art-styles/',     changefreq: 'monthly', priority: '0.7' },
+  { path: '/inspiration/perspectives/',   changefreq: 'monthly', priority: '0.7' },
+  // Russian pages
+  { path: '/ru/',                                                    changefreq: 'monthly', priority: '0.8' },
+  { path: '/ru/describe-image/',                                     changefreq: 'monthly', priority: '0.8' },
+  { path: '/ru/blog/konverter-izobrazheniya-v-prompt/',              changefreq: 'monthly', priority: '0.7' },
+  { path: '/ru/blog/rukovodstvo-po-promptam-midjourney-2026/',       changefreq: 'monthly', priority: '0.7' },
+  { path: '/ru/blog/stable-diffusion-vs-midjourney-vs-dalle3/',      changefreq: 'monthly', priority: '0.7' },
+  { path: '/ru/blog/inzhenering-promptov-dlya-ii-arta/',             changefreq: 'monthly', priority: '0.7' },
+  { path: '/ru/blog/obratnaya-inzheneriya-promptov/',                changefreq: 'monthly', priority: '0.7' },
 ];
 
 // ── Image sitemap pages ──────────────────────────────────────────────────────

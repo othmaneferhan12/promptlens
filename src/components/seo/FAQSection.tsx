@@ -41,6 +41,11 @@ export default function FAQSection() {
     { q: t('seo.faq.q8'), a: t('seo.faq.a8') },
     { q: t('seo.faq.q9'), a: t('seo.faq.a9') },
     { q: t('seo.faq.q10'), a: t('seo.faq.a10') },
+    { q: t('seo.faq.q11', 'How do I get a prompt from an image?'), a: t('seo.faq.a11', 'Upload any image to ImageToPrompt and select your AI model. Our Claude AI Vision analyzes the image and generates a model-specific prompt in seconds. Free, no login required.') },
+    { q: t('seo.faq.q12', 'What is the best free image to prompt tool?'), a: t('seo.faq.a12', 'ImageToPrompt is a free image-to-prompt tool supporting 7 AI image models and 8 video models. Unlike competitors, we offer 10 free analyses per day with no login, support model-specific syntax, and provide negative prompts.') },
+    { q: t('seo.faq.q13', 'Can I generate a prompt from a photo?'), a: t('seo.faq.a13', 'Yes. ImageToPrompt converts any photo into an AI-ready prompt. Upload a photograph and get optimized prompts for Midjourney, Stable Diffusion, Flux, or DALL-E 3 — complete with lighting, composition, and style details.') },
+    { q: t('seo.faq.q14', 'How does reverse image prompting work?'), a: t('seo.faq.a14', 'Reverse image prompting (also called image-to-prompt) analyzes a reference image using AI vision to extract visual elements like style, lighting, composition, and subject — then formats them into a prompt you can paste into any AI image generator.') },
+    { q: t('seo.faq.q15', 'What AI models does ImageToPrompt support?'), a: t('seo.faq.a15', 'ImageToPrompt supports 15 AI models: 7 image generators (Midjourney, Stable Diffusion, Flux, DALL-E 3, Adobe Firefly, Leonardo AI, Ideogram) and 8 video generators (Veo, Kling, Runway Gen-3, Pika, Luma, Sora, Minimax, Stable Video).') },
   ];
 
   return (

@@ -1,0 +1,584 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <script src="/theme-toggle.js"></script>
+  <meta charset="UTF-8" />
+  <link rel="dns-prefetch" href="https://www.googletagmanager.com">
+  <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0" />
+  <meta name="robots" content="max-image-preview:large, index, follow">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="ImageToPrompt">
+  <title>How to Write AI Image Prompts - Beginner to Advanced Guide</title>
+  <meta name="description" content="Master the art of writing AI image prompts. Learn prompt structure, keywords, parameters, and techniques for Midjourney, Stable Diffusion, Flux, and DALL-E 3." />
+  <link rel="canonical" href="https://www.imagetoprompt.dev/blog/how-to-write-ai-image-prompts/" />
+  <link rel="alternate" hreflang="en" href="https://www.imagetoprompt.dev/blog/how-to-write-ai-image-prompts/" />
+  <link rel="alternate" hreflang="x-default" href="https://www.imagetoprompt.dev/blog/how-to-write-ai-image-prompts/" />
+  <meta property="og:title" content="How to Write AI Image Prompts - Beginner to Advanced Guide" />
+  <meta property="og:description" content="Master the art of writing AI image prompts. Learn prompt structure, keywords, parameters, and techniques for Midjourney, Stable Diffusion, Flux, and DALL-E 3." />
+  <meta property="og:url" content="https://www.imagetoprompt.dev/blog/how-to-write-ai-image-prompts/" />
+  <meta property="og:type" content="article" />
+  <meta property="og:image" content="https://www.imagetoprompt.dev/og-image.png" />
+  <meta property="og:site_name" content="ImageToPrompt" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="How to Write AI Image Prompts - Beginner to Advanced Guide" />
+  <meta name="twitter:description" content="Master the art of writing AI image prompts. Learn prompt structure, keywords, parameters, and techniques for Midjourney, Stable Diffusion, Flux, and DALL-E 3." />
+  <meta name="twitter:image" content="https://www.imagetoprompt.dev/og-image.png" />
+  <meta name="twitter:site" content="@imagetoprompt" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="48x48" href="/favicon-48.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+  <link rel="manifest" href="/site.webmanifest" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="/fonts/space-grotesk-700.woff2" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="/fonts/inter-400.woff2" />
+  <link rel="stylesheet" href="/theme.css">
+  <link rel="preload" href="/blog.css" as="style" onload="this.onload=null;this.rel='stylesheet'"><noscript><link rel="stylesheet" href="/blog.css"></noscript>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "How to Write AI Image Prompts - Beginner to Advanced Guide",
+    "description": "Master the art of writing AI image prompts. Learn prompt structure, keywords, parameters, and techniques for Midjourney, Stable Diffusion, Flux, and DALL-E 3.",
+    "image": "https://www.imagetoprompt.dev/og-image.png",
+    "datePublished": "2026-03-23",
+    "dateModified": "2026-03-23",
+    "author": {
+      "@type": "Person",
+      "name": "ImageToPrompt Team",
+      "url": "https://www.imagetoprompt.dev/"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "ImageToPrompt",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://www.imagetoprompt.dev/favicon.svg"
+      }
+    },
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https://www.imagetoprompt.dev/blog/how-to-write-ai-image-prompts/"
+    }
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.imagetoprompt.dev/" },
+      { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://www.imagetoprompt.dev/blog/" },
+      { "@type": "ListItem", "position": 3, "name": "How to Write AI Image Prompts", "item": "https://www.imagetoprompt.dev/blog/how-to-write-ai-image-prompts/" }
+    ]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What makes a good AI image prompt?",
+        "acceptedAnswer": { "@type": "Answer", "text": "A good AI image prompt has five elements: a clear subject, a defined style or medium, lighting description, composition details, and mood or atmosphere. The most important factor is specificity — 'a golden retriever running through autumn leaves in a forest, soft morning light, shallow depth of field, warm color palette' produces dramatically better results than 'a dog in nature'. Each detail gives the AI more information to work with, reducing randomness and increasing the chance of getting what you envision." }
+      },
+      {
+        "@type": "Question",
+        "name": "How long should an AI image prompt be?",
+        "acceptedAnswer": { "@type": "Answer", "text": "It depends on the model. For Midjourney, 20-60 words is the sweet spot — it handles medium-length comma-separated descriptions well. Stable Diffusion has a 75-token limit (roughly 60 words) before truncation, so concise weighted tags work best. Flux thrives on detailed natural language and can effectively use 100+ words. DALL-E 3 prefers full sentences and paragraphs, handling up to several hundred words. As a rule: write enough to fully describe your vision, but don't pad with redundant terms." }
+      },
+      {
+        "@type": "Question",
+        "name": "Do I need to learn different prompt formats for each AI model?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Yes. Each major AI image generator has its own prompt syntax and vocabulary. Midjourney uses comma-separated descriptors with parameters like --ar 16:9 and --v 6.1. Stable Diffusion uses weighted tags with syntax like (keyword:1.3) and separate negative prompts. Flux prefers detailed natural language without special syntax. DALL-E 3 works best with complete, descriptive sentences. A prompt optimized for one model will produce mediocre results in another. Tools like ImageToPrompt automatically format prompts for your chosen model." }
+      },
+      {
+        "@type": "Question",
+        "name": "Can AI write image prompts for me?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Yes. You can use an image-to-prompt tool like ImageToPrompt to upload a reference image and get an AI-generated prompt optimized for your target model. You can also use text-to-prompt tools that take a simple description and expand it into a detailed, model-specific prompt. These tools are excellent for learning prompt structure — study the prompts they generate to understand what descriptors produce which effects, then apply that knowledge to your own prompts." }
+      }
+    ]
+  }
+  </script>
+  <!-- Google AdSense -->
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4499206373485728" crossorigin="anonymous"></script>
+  <!-- Web Push Notifications -->
+  <script src="https://cdn.onesignal.com/sdks/web/v16/OneSignalSDK.page.js" defer></script>
+  <script>
+    window.OneSignalDeferred = window.OneSignalDeferred || [];
+    OneSignalDeferred.push(async function(OneSignal) {
+      await OneSignal.init({
+        appId: "REPLACE_WITH_ONESIGNAL_APP_ID",
+        notifyButton: { enable: false }
+      });
+    });
+  </script>
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="inner">
+      <a href="/" class="site-logo"><img src="/favicon.svg" alt="ImageToPrompt" width="48" height="48"><div class="site-logo-text">ImageTo<span class="accent">Prompt</span><span class="site-logo-sub">Free AI Prompt Generator</span></div></a>
+      <nav class="site-nav" aria-label="Main navigation">
+        <div class="nav-dropdown">
+          <button class="nav-dropdown-trigger" aria-haspopup="true" aria-expanded="false">Tools <span class="nav-chevron" aria-hidden="true">&#9660;</span></button>
+          <div class="nav-dropdown-menu" role="menu">
+            <div class="nav-mega-grid">
+              <div class="nav-mega-col">
+                <div class="nav-mega-heading">&#128444; IMAGE TOOLS</div>
+                <a href="/" role="menuitem" class="nav-mega-tool">Image to Prompt <span class="nav-mega-arrow">&#8594;</span></a>
+                <a href="/text-to-prompt/" role="menuitem" class="nav-mega-tool">Text to Prompt <span class="nav-mega-arrow">&#8594;</span></a>
+                <a href="/describe-image/" role="menuitem" class="nav-mega-tool">Describe Image <span class="nav-new-badge">NEW</span> <span class="nav-mega-arrow">&#8594;</span></a>
+                <div class="nav-mega-models-label">Models</div>
+                <div class="nav-mega-models"><a href="/midjourney-prompt-generator/">Midjourney</a><span class="nav-dot">&#xB7;</span><a href="/stable-diffusion-prompt-generator/">SD</a></div>
+                <div class="nav-mega-models"><a href="/flux-prompt-generator/">Flux</a><span class="nav-dot">&#xB7;</span><a href="/dall-e-prompt-generator/">DALL&#xB7;E&#xA0;3</a></div>
+                <div class="nav-mega-models"><a href="/adobe-firefly-prompt-generator/">Firefly</a><span class="nav-dot">&#xB7;</span><a href="/leonardo-ai-prompt-generator/">Leonardo</a></div>
+                <div class="nav-mega-models"><a href="/ideogram-prompt-generator/">Ideogram</a></div>
+              </div>
+              <div class="nav-mega-divider" aria-hidden="true"></div>
+              <div class="nav-mega-col">
+                <div class="nav-mega-heading">&#127909; VIDEO TOOLS</div>
+                <a href="/?tab=image-to-video" role="menuitem" class="nav-mega-tool">Image to Video <span class="nav-mega-arrow">&#8594;</span></a>
+                <a href="/?tab=text-to-video" role="menuitem" class="nav-mega-tool">Text to Video <span class="nav-mega-arrow">&#8594;</span></a>
+                <div class="nav-mega-models-label">Models</div>
+                <div class="nav-mega-models"><a href="/veo-prompt-generator/">Veo</a><span class="nav-dot">&#xB7;</span><a href="/kling-prompt-generator/">Kling</a></div>
+                <div class="nav-mega-models"><a href="/runway-prompt-generator/">Runway</a><span class="nav-dot">&#xB7;</span><a href="/pika-prompt-generator/">Pika</a></div>
+                <div class="nav-mega-models"><a href="/luma-prompt-generator/">Luma</a><span class="nav-dot">&#xB7;</span><a href="/sora-prompt-generator/">Sora</a></div>
+                <div class="nav-mega-models"><a href="/minimax-prompt-generator/">Minimax</a><span class="nav-dot">&#xB7;</span><a href="/stable-video-prompt-generator/">Stable</a></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <a href="/blog/" class="active">Blog</a>
+        <a href="/pricing/" class="nav-pill-pricing">Pricing</a>
+        <a href="/about/" class="nav-pill-about">About</a>
+        <a href="/" class="nav-try-free">Try Free &#8594;</a>
+        <button id="theme-toggle" onclick="toggleTheme()" aria-label="Switch theme" title="Switch theme">&#9728;&#xFE0F;</button>
+      </nav>
+    </div>
+  </header>
+
+  <nav class="breadcrumb" aria-label="Breadcrumb">
+    <a href="/">Home</a><span class="sep">&#8250;</span>
+    <a href="/blog/">Blog</a><span class="sep">&#8250;</span>
+    <span>How to Write AI Image Prompts</span>
+  </nav>
+
+  <div class="page-wrapper">
+
+    <header class="article-header">
+      <p class="article-tag">Prompt Engineering</p>
+      <h1>How to Write AI Image Prompts - Complete Guide</h1>
+      <div class="snippet-answer">
+        <p><strong>How do I write a good AI image prompt?</strong></p>
+        <p>A great AI image prompt follows this structure: (1) Subject &mdash; what is in the image, (2) Style &mdash; the artistic medium or aesthetic, (3) Lighting &mdash; how the scene is lit, (4) Composition &mdash; camera angle and framing, (5) Mood &mdash; the emotional atmosphere, (6) Parameters &mdash; model-specific flags like aspect ratio and version. Being specific at each layer produces dramatically better results than vague descriptions.</p>
+      </div>
+      <div class="article-meta">
+        <span>March 2026</span>
+        <span class="dot">&middot;</span>
+        <span>15 min read</span>
+        <span class="dot">&middot;</span>
+        <span>Midjourney &middot; Stable Diffusion &middot; Flux &middot; DALL-E 3</span>
+        <span class="dot">&middot;</span>
+        <span>Updated March 2026</span>
+      </div>
+    </header>
+
+    <div class="article-body">
+
+      <p>Writing AI image prompts is the single most important skill in AI art. The same model that produces mediocre, generic output from a vague prompt can create stunning, gallery-worthy images when given precise, well-structured instructions. The difference is not the tool &mdash; it is the prompt.</p>
+
+      <p>This guide covers everything from the fundamental anatomy of a prompt to advanced techniques like weighted syntax, negative prompts, and multi-concept composition. Whether you are writing your first prompt or refining your thousandth, you will find actionable techniques you can use immediately.</p>
+
+      <nav class="toc" aria-label="Table of contents">
+        <details open>
+          <summary>In this guide</summary>
+          <ol>
+            <li><a href="#anatomy-of-a-great-prompt">Anatomy of a Great AI Image Prompt</a></li>
+            <li><a href="#prompt-structure-differences">Prompt Structure Differences Across Models</a></li>
+            <li><a href="#power-words">20 Power Words That Improve Any Prompt</a></li>
+            <li><a href="#common-mistakes">Common Mistakes and How to Fix Them</a></li>
+            <li><a href="#advanced-techniques">Advanced Techniques</a></li>
+            <li><a href="#before-after-examples">10 Before/After Prompt Examples</a></li>
+            <li><a href="#learn-from-images">Using ImageToPrompt to Learn from Great Images</a></li>
+            <li><a href="#common-questions">Common Questions</a></li>
+          </ol>
+        </details>
+      </nav>
+
+      <h2 id="anatomy-of-a-great-prompt">1. Anatomy of a Great AI Image Prompt</h2>
+
+      <p>Every effective AI image prompt consists of six layers. Not every prompt needs all six, but understanding them gives you a complete toolkit for controlling the output. Think of each layer as a dial you can turn up or down depending on what matters most for your particular image.</p>
+
+      <h3>Layer 1: Subject</h3>
+      <p>The subject is what is in the image. This is the foundation of every prompt. Be specific about what you want to see: "a woman" is weaker than "a young woman in her 20s with short silver hair and round glasses." The more precise your subject description, the less the AI has to guess &mdash; and guessing is where unwanted randomness enters.</p>
+      <p>Effective subject descriptions include:</p>
+      <ul>
+        <li>Physical characteristics (age, build, hair, clothing)</li>
+        <li>Action or pose (running, sitting cross-legged, looking over shoulder)</li>
+        <li>Environment (in a neon-lit alleyway, on a cliff overlooking the ocean)</li>
+        <li>Objects and details (holding a vintage camera, surrounded by floating lanterns)</li>
+      </ul>
+
+      <h3>Layer 2: Style and Medium</h3>
+      <p>The style layer tells the AI what the image should look like artistically. This is often the most impactful single element in a prompt. The same subject described in different styles produces completely different images:</p>
+      <ul>
+        <li><strong>Photographic styles:</strong> portrait photography, street photography, fashion editorial, documentary photography</li>
+        <li><strong>Art mediums:</strong> oil painting, watercolor, charcoal drawing, digital illustration, vector art</li>
+        <li><strong>Aesthetic movements:</strong> art nouveau, cyberpunk, vaporwave, brutalism, cottagecore</li>
+        <li><strong>Artist references:</strong> "in the style of Studio Ghibli", "Wes Anderson color palette" (use carefully &mdash; some models handle this better than others)</li>
+      </ul>
+
+      <h3>Layer 3: Lighting</h3>
+      <p>Lighting is what separates amateur prompts from professional ones. Most beginners never mention lighting. Specifying it gives you dramatic control over the mood and realism of the output:</p>
+      <ul>
+        <li><strong>Natural light:</strong> golden hour, blue hour, overcast diffused light, harsh midday sun, dappled forest light</li>
+        <li><strong>Artificial light:</strong> neon glow, studio softbox, candlelight, fluorescent, RGB backlighting</li>
+        <li><strong>Direction:</strong> backlit, side-lit, rim lighting, Rembrandt lighting, split lighting</li>
+        <li><strong>Quality:</strong> soft diffused, hard dramatic shadows, volumetric rays, god rays through windows</li>
+      </ul>
+
+      <h3>Layer 4: Composition</h3>
+      <p>Composition describes how the image is framed. This is the layer most AI art beginners overlook entirely, yet it has enormous impact:</p>
+      <ul>
+        <li><strong>Camera angle:</strong> low angle, bird's eye view, eye level, Dutch angle, worm's eye view</li>
+        <li><strong>Shot type:</strong> extreme close-up, medium shot, wide establishing shot, over-the-shoulder</li>
+        <li><strong>Depth:</strong> shallow depth of field (blurred background), deep focus (everything sharp), tilt-shift miniature effect</li>
+        <li><strong>Framing:</strong> rule of thirds, centered symmetry, leading lines, frame within a frame</li>
+      </ul>
+
+      <h3>Layer 5: Mood and Atmosphere</h3>
+      <p>The mood layer adds emotional context. It influences color grading, tonal range, and the overall feel of the image:</p>
+      <ul>
+        <li><strong>Emotional tones:</strong> serene, melancholic, joyful, ominous, whimsical, nostalgic</li>
+        <li><strong>Color temperature:</strong> warm golden tones, cool blue palette, muted desaturated, vibrant saturated</li>
+        <li><strong>Atmosphere:</strong> foggy, misty, rainy, dusty, ethereal, dreamlike</li>
+      </ul>
+
+      <h3>Layer 6: Model-Specific Parameters</h3>
+      <p>Each AI model has its own parameter syntax that controls technical aspects of the generation:</p>
+      <ul>
+        <li><strong>Midjourney:</strong> <code>--ar 16:9</code> (aspect ratio), <code>--v 6.1</code> (version), <code>--style raw</code> (photorealistic), <code>--stylize 250</code> (artistic intensity), <code>--chaos 30</code> (variation)</li>
+        <li><strong>Stable Diffusion:</strong> CFG scale, sampling steps, sampler (Euler, DPM++), seed, model checkpoint</li>
+        <li><strong>Flux:</strong> Aspect ratio in natural language, guidance scale</li>
+        <li><strong>DALL-E 3:</strong> Size (1024x1024, 1792x1024, 1024x1792), quality (standard, hd)</li>
+      </ul>
+
+      <h2 id="prompt-structure-differences">2. Prompt Structure Differences Across Models</h2>
+
+      <p>The same creative vision requires different prompt syntax depending on which model you use. Understanding these differences is essential &mdash; a prompt optimized for Midjourney will underperform in Stable Diffusion, and vice versa.</p>
+
+      <h3>Midjourney Prompt Structure</h3>
+      <p>Midjourney responds best to comma-separated descriptors followed by parameter flags. The model interprets natural language well but also responds to specific vocabulary that has been "trained in" by the community.</p>
+      <pre><code>a lone samurai standing on a hilltop at sunset, cinematic lighting, volumetric fog, dramatic sky, wide angle shot, hyper detailed, 8k --ar 16:9 --v 6.1 --style raw</code></pre>
+      <p>Key traits: Midjourney excels at artistic interpretation. It adds visual flair even to simple prompts. Use <code>--style raw</code> for more literal interpretation, or higher <code>--stylize</code> values for more creative liberty.</p>
+
+      <h3>Stable Diffusion Prompt Structure</h3>
+      <p>Stable Diffusion uses a weighted tag system. Important concepts can be emphasized with parenthetical weighting, and a separate negative prompt field tells the model what to avoid.</p>
+      <pre><code>Positive: (lone samurai:1.2) standing on hilltop, (sunset:1.1), cinematic lighting, volumetric fog, (dramatic sky:1.3), wide angle, hyper detailed, 8k resolution, masterpiece, best quality
+
+Negative: blurry, low quality, deformed, watermark, text, extra limbs, bad anatomy</code></pre>
+      <p>Key traits: Stable Diffusion gives you the most granular control of any model. Weighted tags, negative prompts, LoRA models, and checkpoint selection let you dial in exactly the output you want &mdash; at the cost of a steeper learning curve.</p>
+
+      <h3>Flux Prompt Structure</h3>
+      <p>Flux prefers detailed, natural language descriptions. It handles long, descriptive prompts well and does not use special syntax or parameter flags within the prompt itself.</p>
+      <pre><code>A lone samurai stands motionless on a grassy hilltop as the sun sets behind distant mountains. The scene is bathed in warm golden light with volumetric fog rolling through the valley below. The sky is dramatic with deep oranges and purples streaking across the clouds. Shot from a low angle with a wide-angle lens, the samurai's silhouette is sharp against the blazing sky. Every detail of the armor is visible, from individual lacquer plates to the silk cord wrapping on the katana hilt.</code></pre>
+      <p>Key traits: Flux excels at understanding complex spatial relationships and following detailed descriptions faithfully. Write prompts as if you are describing the image to a skilled artist. More detail generally produces better results.</p>
+
+      <h3>DALL-E 3 Prompt Structure</h3>
+      <p>DALL-E 3 works best with complete, grammatically correct sentences. It interprets natural language extremely well and handles multi-sentence descriptions effectively.</p>
+      <pre><code>Create a cinematic wide-angle photograph of a lone samurai standing on a grassy hilltop at sunset. The sky should be dramatic with deep orange and purple clouds. Volumetric fog rolls through the valley below. The samurai is backlit by the setting sun, creating a striking silhouette. The image should be hyper-detailed with the texture of the samurai's armor clearly visible.</code></pre>
+      <p>Key traits: DALL-E 3 is the most instruction-following model. It interprets prompts very literally and handles compositional requests well. It also adds safety modifications to prompts automatically, which means some subject matter may be adjusted.</p>
+
+      <h2 id="power-words">3. 20 Power Words That Improve Any Prompt</h2>
+
+      <p>These keywords consistently improve output quality across all major AI image generators. They have been tested extensively by the AI art community and produce measurably better results than their absence.</p>
+
+      <div class="table-wrap">
+        <table class="comparison-table">
+          <thead>
+            <tr>
+              <th>Power Word</th>
+              <th>What It Does</th>
+              <th>Best For</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td><strong>cinematic</strong></td><td>Adds film-quality lighting, color grading, and depth of field</td><td>Any scene, portraits, landscapes</td></tr>
+            <tr><td><strong>ethereal</strong></td><td>Creates soft, dreamlike, otherworldly atmosphere</td><td>Fantasy, portraits, nature</td></tr>
+            <tr><td><strong>volumetric lighting</strong></td><td>Adds visible light rays and atmospheric depth</td><td>Interiors, forests, moody scenes</td></tr>
+            <tr><td><strong>hyperrealistic</strong></td><td>Pushes output toward photographic realism</td><td>Portraits, products, architecture</td></tr>
+            <tr><td><strong>moody</strong></td><td>Deepens shadows, desaturates slightly, adds emotional weight</td><td>Portraits, landscapes, noir</td></tr>
+            <tr><td><strong>intricate details</strong></td><td>Adds fine texture and micro-detail across the image</td><td>Fantasy, sci-fi, ornamental designs</td></tr>
+            <tr><td><strong>golden hour</strong></td><td>Warm directional light with long shadows</td><td>Landscapes, portraits, outdoor scenes</td></tr>
+            <tr><td><strong>dramatic</strong></td><td>Increases contrast, adds tension to composition</td><td>Action scenes, weather, portraits</td></tr>
+            <tr><td><strong>bokeh</strong></td><td>Creates beautiful out-of-focus background blur</td><td>Portraits, close-ups, night scenes</td></tr>
+            <tr><td><strong>masterpiece</strong></td><td>General quality booster (especially in SD)</td><td>Any subject (strongest in SD)</td></tr>
+            <tr><td><strong>concept art</strong></td><td>Clean, professional illustration style</td><td>Characters, environments, vehicles</td></tr>
+            <tr><td><strong>matte painting</strong></td><td>Grand, sweeping environment with painterly quality</td><td>Landscapes, fantasy worlds, sci-fi</td></tr>
+            <tr><td><strong>tilt-shift</strong></td><td>Miniature effect with selective focus</td><td>Cityscapes, overhead views, dioramas</td></tr>
+            <tr><td><strong>chiaroscuro</strong></td><td>Strong contrast between light and dark</td><td>Portraits, still life, dramatic scenes</td></tr>
+            <tr><td><strong>iridescent</strong></td><td>Rainbow-like color shifts on surfaces</td><td>Sci-fi, fantasy, abstract, fashion</td></tr>
+            <tr><td><strong>octane render</strong></td><td>Clean, high-quality 3D rendering look</td><td>Product design, architecture, sci-fi</td></tr>
+            <tr><td><strong>double exposure</strong></td><td>Two images blended within one silhouette</td><td>Portraits, conceptual art, posters</td></tr>
+            <tr><td><strong>macro photography</strong></td><td>Extreme close-up with tiny subject detail</td><td>Insects, flowers, textures, jewelry</td></tr>
+            <tr><td><strong>award-winning</strong></td><td>Signals high production value and composition</td><td>Any professional-quality output</td></tr>
+            <tr><td><strong>surreal</strong></td><td>Dreamlike distortions, impossible geometry, Dali-esque</td><td>Fantasy, conceptual, artistic</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <p>These words work because AI models have seen them associated with high-quality images in their training data. "Cinematic" is associated with professional film stills. "Volumetric lighting" is associated with high-end 3D renders and photography. The model draws on these associations to elevate the output.</p>
+
+      <h2 id="common-mistakes">4. Common Mistakes and How to Fix Them</h2>
+
+      <h3>Mistake 1: Being Too Vague</h3>
+      <p><strong>Bad:</strong> <code>a cat</code></p>
+      <p><strong>Better:</strong> <code>a fluffy orange tabby cat sitting on a windowsill, afternoon sunlight, cozy interior, shallow depth of field, warm tones</code></p>
+      <p>Vague prompts give the AI maximum freedom to interpret &mdash; and that freedom usually means generic, forgettable output. The fix is always more specificity. Describe what you see in your mind's eye: what does the cat look like? Where is it? What is the light doing?</p>
+
+      <h3>Mistake 2: Contradictory Descriptions</h3>
+      <p><strong>Bad:</strong> <code>a dark moody scene, bright and cheerful, neon lights, natural sunlight</code></p>
+      <p>AI models average contradictory instructions rather than choosing one. The result is muddy, confused output that satisfies neither direction. Pick one mood, one lighting scheme, one style. If you want to explore alternatives, generate separate images with different prompts.</p>
+
+      <h3>Mistake 3: Ignoring Negative Prompts (Stable Diffusion)</h3>
+      <p>In Stable Diffusion, the negative prompt is not optional &mdash; it is half of your instruction set. Without negative prompts, you will consistently get watermarks, text overlays, deformed hands, blurry backgrounds, and low-quality artifacts. A solid baseline negative prompt:</p>
+      <pre><code>blurry, low quality, watermark, text, signature, deformed, bad anatomy, extra fingers, mutated hands, poorly drawn face, jpeg artifacts</code></pre>
+
+      <h3>Mistake 4: Prompt Stuffing</h3>
+      <p>Adding every quality keyword you can think of &mdash; "8k, ultra HD, hyper detailed, masterpiece, best quality, award-winning, professional, magazine quality" &mdash; has diminishing returns. One or two quality boosters are sufficient. Beyond that, the extra keywords compete for the model's attention and dilute your actual content descriptors.</p>
+
+      <h3>Mistake 5: Wrong Prompt Format for the Model</h3>
+      <p>Using Stable Diffusion's weighted tag syntax <code>(subject:1.3)</code> in Midjourney does nothing. Using Midjourney's <code>--ar 16:9</code> flags in DALL-E 3 is ignored. Always format your prompt for the specific model you are using. This is one area where <a href="/">ImageToPrompt</a> helps enormously &mdash; it automatically generates prompts in the correct syntax for your selected model.</p>
+
+      <h3>Mistake 6: Neglecting Composition</h3>
+      <p>Many prompts describe the subject in detail but say nothing about how the image is composed. Adding camera angle, shot type, and framing gives the AI critical spatial information. "Wide establishing shot from a low angle" produces a fundamentally different image than "close-up portrait at eye level" &mdash; even with the same subject and style descriptors.</p>
+
+      <h2 id="advanced-techniques">5. Advanced Techniques</h2>
+
+      <h3>Weighted Syntax (Stable Diffusion)</h3>
+      <p>In Stable Diffusion, you can assign numerical weights to emphasize or de-emphasize specific concepts:</p>
+      <pre><code>(beautiful sunset:1.4), mountain landscape, (snow-capped peaks:1.2), alpine meadow, (wildflowers:0.8), cinematic, masterpiece</code></pre>
+      <p>Values above 1.0 increase emphasis. Values below 1.0 decrease it. The default weight for unweighted terms is 1.0. Keep weights between 0.5 and 1.5 &mdash; extreme values cause artifacts. Use emphasis on the 2&ndash;3 most important elements, not everything.</p>
+
+      <h3>Negative Prompts (Stable Diffusion &amp; Midjourney)</h3>
+      <p>Negative prompts tell the AI what to avoid. In Stable Diffusion, there is a dedicated negative prompt field. In Midjourney, use the <code>--no</code> flag:</p>
+      <pre><code>Midjourney: beautiful forest landscape, misty morning --no people, text, watermark
+SD Negative: blurry, low quality, deformed hands, watermark, text, ugly, duplicate</code></pre>
+      <p>Effective negative prompts focus on common failure modes for your subject. Portrait negative prompts should target anatomical issues. Landscape negatives should target artifacts and unwanted elements.</p>
+
+      <h3>Aspect Ratios</h3>
+      <p>Aspect ratio has a surprising impact on composition. Wide ratios (16:9, 21:9) naturally produce cinematic landscapes. Tall ratios (9:16, 2:3) produce portrait-oriented compositions. Square (1:1) centers the subject symmetrically.</p>
+      <pre><code>Midjourney: --ar 16:9 (cinematic), --ar 9:16 (portrait/mobile), --ar 3:2 (photography standard)
+DALL-E 3: 1792x1024 (landscape), 1024x1792 (portrait), 1024x1024 (square)</code></pre>
+
+      <h3>Seed Control</h3>
+      <p>Seeds let you reproduce or iterate on specific results. In Midjourney, use <code>--seed 12345</code> to lock the random seed. In Stable Diffusion, set the seed value in the UI. Same prompt + same seed = same image. Change one element while keeping the seed to see how that specific change affects the output.</p>
+
+      <h3>Multi-Prompt Syntax (Midjourney)</h3>
+      <p>Midjourney supports multi-prompt with the <code>::</code> separator, letting you weight different concepts independently:</p>
+      <pre><code>cyberpunk city::2 rainy night::1.5 neon reflections::1 --ar 16:9</code></pre>
+      <p>Higher numbers after <code>::</code> give more weight to that concept. This is more precise than comma separation because each segment is interpreted independently.</p>
+
+      <h3>Prompt Blending</h3>
+      <p>Combine two distinct concepts to create hybrid results. This works in both Midjourney and Stable Diffusion:</p>
+      <pre><code>Midjourney: a portrait of a woman --style raw --sref [url1] --sref [url2]
+SD (prompt mixing): [cat:dog:0.5] sitting in a garden</code></pre>
+
+      <h2 id="before-after-examples">6. 10 Before/After Prompt Examples</h2>
+
+      <p>These examples demonstrate how adding specificity, structure, and the right keywords transforms mediocre prompts into effective ones. Each "before" prompt is the kind of thing a beginner would write. Each "after" prompt applies the principles from this guide.</p>
+
+      <h3>Example 1: Portrait</h3>
+      <p><strong>Before:</strong> <code>a woman with flowers</code></p>
+      <p><strong>After:</strong> <code>a young woman with long auburn hair wearing a white linen dress, standing in a field of lavender, golden hour sunlight, soft bokeh background, warm color palette, shallow depth of field, editorial fashion photography --ar 2:3 --v 6.1</code></p>
+
+      <h3>Example 2: Landscape</h3>
+      <p><strong>Before:</strong> <code>a mountain scene</code></p>
+      <p><strong>After:</strong> <code>a vast alpine valley at dawn, snow-capped peaks reflecting pink and orange sunrise light, a winding river through emerald meadows, low morning fog, panoramic wide angle, Ansel Adams style black and white with subtle warm toning --ar 21:9 --v 6.1</code></p>
+
+      <h3>Example 3: Product Shot</h3>
+      <p><strong>Before:</strong> <code>a watch on a table</code></p>
+      <p><strong>After:</strong> <code>a luxury chronograph watch with a midnight blue dial on a dark slate surface, studio lighting with a single softbox from the upper left, reflections on the polished bezel, shallow depth of field, clean minimal background, commercial product photography, 4K --ar 1:1 --v 6.1 --style raw</code></p>
+
+      <h3>Example 4: Fantasy Character</h3>
+      <p><strong>Before:</strong> <code>a wizard</code></p>
+      <p><strong>After:</strong> <code>an elderly wizard with a long silver beard and weathered face, wearing dark robes embroidered with glowing arcane runes, holding a gnarled oak staff topped with a faintly glowing blue crystal, standing in the doorway of an ancient stone tower, dramatic backlight from a stormy sky, concept art, intricate details --ar 2:3 --v 6.1</code></p>
+
+      <h3>Example 5: Interior Design</h3>
+      <p><strong>Before:</strong> <code>a modern living room</code></p>
+      <p><strong>After:</strong> <code>a Scandinavian minimalist living room with floor-to-ceiling windows overlooking a pine forest, warm oak flooring, a low-profile beige linen sofa, a round marble coffee table, a single monstera plant in a ceramic pot, soft diffused natural light, neutral color palette with warm undertones, architectural photography --ar 16:9 --v 6.1 --style raw</code></p>
+
+      <h3>Example 6: Food Photography</h3>
+      <p><strong>Before:</strong> <code>pasta on a plate</code></p>
+      <p><strong>After:</strong> <code>a rustic ceramic bowl of handmade pappardelle with slow-braised lamb ragu, fresh basil leaves and shaved parmesan on top, olive oil glistening, on a weathered wooden table, warm side lighting from a window, shallow depth of field, overhead angle, food editorial photography, Bon Appetit style --ar 4:5 --v 6.1</code></p>
+
+      <h3>Example 7: Sci-Fi Environment</h3>
+      <p><strong>Before:</strong> <code>a space station</code></p>
+      <p><strong>After:</strong> <code>the interior of a massive orbital space station, curved glass walls revealing Earth below, bioluminescent plants growing in hydroponic columns, people in sleek jumpsuits walking along a wide promenade, warm artificial lighting mixed with blue earth-glow, volumetric haze, concept art, Chris Foss inspired architecture --ar 21:9 --v 6.1</code></p>
+
+      <h3>Example 8: Animal Portrait</h3>
+      <p><strong>Before:</strong> <code>a cat</code></p>
+      <p><strong>After:</strong> <code>a Bengal cat with vivid rosette markings, sitting regally on a velvet cushion, sharp green eyes staring directly at the camera, soft studio lighting with a dark background, shallow depth of field, every whisker visible, professional pet portrait photography --ar 1:1 --v 6.1 --style raw</code></p>
+
+      <h3>Example 9: Abstract Art</h3>
+      <p><strong>Before:</strong> <code>abstract colorful art</code></p>
+      <p><strong>After:</strong> <code>an abstract expressionist painting with bold sweeping brushstrokes of deep cobalt blue, cadmium red, and burnt sienna on a large canvas, thick impasto texture visible, paint drips and splatters, raw emotional energy, inspired by Franz Kline and Willem de Kooning, gallery-quality, high resolution --ar 3:4 --v 6.1</code></p>
+
+      <h3>Example 10: Urban Photography</h3>
+      <p><strong>Before:</strong> <code>a city at night</code></p>
+      <p><strong>After:</strong> <code>a rain-soaked Tokyo street at midnight, neon signs reflecting in puddles on the pavement, a lone figure with an umbrella walking away from camera, steam rising from a ramen shop entrance, shallow depth of field, cinematic color grading with teal and orange tones, street photography, 35mm lens --ar 9:16 --v 6.1</code></p>
+
+      <h2 id="learn-from-images">7. Using ImageToPrompt to Learn from Great Images</h2>
+
+      <p>One of the fastest ways to improve your prompt writing is to study what makes existing great images work &mdash; at the prompt level. When you see an AI-generated image that impresses you, or a photograph with a style you want to replicate, the visual elements that make it work are encoded in describable attributes: the lighting direction, the color palette, the composition, the texture.</p>
+
+      <p><a href="/">ImageToPrompt</a> extracts these attributes automatically. Upload any image and the AI identifies every visual element that matters for prompt writing: subject details, artistic style, lighting setup, composition technique, color palette, mood, and medium. The output is a ready-to-use prompt formatted for your chosen model.</p>
+
+      <p>But beyond generating usable prompts, this is a powerful learning tool. Compare the generated prompt against the source image and ask yourself: which descriptors correspond to which visual elements? What keywords did the AI use to capture the lighting? How did it describe the composition? Over time, this builds your intuition for which words produce which visual effects.</p>
+
+      <p>You can also use our <a href="/describe-image/">Describe Image</a> tool for a detailed natural language analysis of any image, or visit the model-specific prompt generators for <a href="/midjourney-prompt-generator/">Midjourney</a> and <a href="/stable-diffusion-prompt-generator/">Stable Diffusion</a> to see how the same image is described differently for each model.</p>
+
+      <div class="cta-box">
+        <h3>Learn by Example: Generate Prompts from Any Image</h3>
+        <p>Upload a reference image and see exactly how the AI describes it as a prompt for Midjourney, Stable Diffusion, Flux, or DALL-E 3. The fastest way to learn prompt writing is to study great examples.</p>
+        <a href="/" class="cta-btn">Try ImageToPrompt Free &rarr;</a>
+      </div>
+
+      <h2 id="common-questions">Common Questions</h2>
+
+      <details class="faq-item">
+        <summary>What makes a good AI image prompt?</summary>
+        <p>A good AI image prompt has five elements: a clear subject, a defined style or medium, lighting description, composition details, and mood or atmosphere. The most important factor is specificity &mdash; "a golden retriever running through autumn leaves in a forest, soft morning light, shallow depth of field, warm color palette" produces dramatically better results than "a dog in nature". Each detail reduces randomness and increases the chance of getting what you envision.</p>
+      </details>
+
+      <details class="faq-item">
+        <summary>How long should an AI image prompt be?</summary>
+        <p>It depends on the model. For Midjourney, 20&ndash;60 words is the sweet spot. Stable Diffusion has a 75-token limit (roughly 60 words) before truncation, so concise weighted tags work best. Flux thrives on detailed natural language and can effectively use 100+ words. DALL-E 3 prefers full sentences and handles up to several hundred words. Write enough to fully describe your vision, but do not pad with redundant terms.</p>
+      </details>
+
+      <details class="faq-item">
+        <summary>Do I need to learn different prompt formats for each AI model?</summary>
+        <p>Yes. Midjourney uses comma-separated descriptors with parameter flags. Stable Diffusion uses weighted tags with separate negative prompts. Flux prefers detailed natural language. DALL-E 3 works best with complete sentences. A prompt optimized for one model will produce mediocre results in another. Tools like <a href="/">ImageToPrompt</a> automatically format prompts for your chosen model.</p>
+      </details>
+
+      <details class="faq-item">
+        <summary>Can AI write image prompts for me?</summary>
+        <p>Yes. Use an image-to-prompt tool like <a href="/">ImageToPrompt</a> to upload a reference image and get a prompt optimized for your target model. You can also use text-to-prompt tools that expand simple descriptions into detailed, model-specific prompts. These tools are excellent for learning prompt structure &mdash; study the prompts they generate to understand what descriptors produce which effects.</p>
+      </details>
+
+    </div>
+
+    <div class="author-bio">
+      <svg class="author-photo" width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="Author avatar"><circle cx="32" cy="32" r="32" fill="#2a1f4e"/><circle cx="32" cy="26" r="11" fill="#7c6bc4"/><ellipse cx="32" cy="52" rx="18" ry="11" fill="#7c6bc4"/></svg>
+      <div class="author-info">
+        <p class="author-name">ImageToPrompt Team</p>
+        <p class="author-desc">Prompt engineers and AI artists specializing in Midjourney, Stable Diffusion, and Flux. Building ImageToPrompt to make AI image generation accessible to everyone.</p>
+        <a href="https://twitter.com/imagetoprompt" class="author-link">Follow on X &rarr;</a>
+      </div>
+    </div>
+
+    <div class="related-posts">
+      <h2>Related Guides</h2>
+      <div class="related-grid">
+        <a href="/blog/convert-image-to-ai-prompt/" class="related-card">
+          <p class="tag">Step-by-Step</p>
+          <h3>How to Convert Any Image to an AI Prompt</h3>
+        </a>
+        <a href="/blog/midjourney-prompt-guide-2026/" class="related-card">
+          <p class="tag">Midjourney</p>
+          <h3>The Complete Midjourney Prompt Guide for 2026</h3>
+        </a>
+        <a href="/blog/stable-diffusion-prompt-guide/" class="related-card">
+          <p class="tag">Stable Diffusion</p>
+          <h3>Stable Diffusion Prompt Guide</h3>
+        </a>
+        <a href="/blog/prompt-engineering-mistakes/" class="related-card">
+          <p class="tag">Tips</p>
+          <h3>Common Prompt Engineering Mistakes</h3>
+        </a>
+        <a href="/blog/ai-art-styles-glossary/" class="related-card">
+          <p class="tag">Reference</p>
+          <h3>AI Art Styles Glossary</h3>
+        </a>
+      </div>
+    </div>
+
+  </div>
+
+  <footer class="footer-4col">
+    <div class="f4-inner">
+      <div class="f4-brand">
+        <img src="/favicon.svg" alt="ImageToPrompt" width="28" height="28">
+        <span class="f4-brand-name">ImageTo<span class="accent">Prompt</span></span>
+        <span class="f4-brand-sub">&mdash; Free AI Prompt Generator</span>
+      </div>
+      <div class="f4-grid">
+        <div class="f4-section">
+          <h4 class="f4-heading">Image Prompt Tools</h4>
+          <a href="/">Image to Prompt</a>
+          <a href="/text-to-prompt/">Text to Prompt</a>
+          <a href="/describe-image/">Describe Image</a>
+          <a href="/midjourney-prompt-generator/">Midjourney</a>
+          <a href="/stable-diffusion-prompt-generator/">Stable Diffusion</a>
+          <a href="/flux-prompt-generator/">Flux</a>
+          <a href="/dall-e-prompt-generator/">DALL-E 3</a>
+          <a href="/adobe-firefly-prompt-generator/">Adobe Firefly</a>
+          <a href="/leonardo-ai-prompt-generator/">Leonardo AI</a>
+          <a href="/ideogram-prompt-generator/">Ideogram</a>
+        </div>
+        <div class="f4-section">
+          <h4 class="f4-heading">Video Prompt Tools</h4>
+          <a href="/image-to-video-prompt/">Image to Video Prompt</a>
+          <a href="/text-to-video-prompt/">Text to Video Prompt</a>
+          <a href="/veo-prompt-generator/">Veo / Flow Studio</a>
+          <a href="/kling-prompt-generator/">Kling AI</a>
+          <a href="/runway-prompt-generator/">Runway Gen-3</a>
+          <a href="/pika-prompt-generator/">Pika</a>
+          <a href="/luma-prompt-generator/">Luma Dream Machine</a>
+          <a href="/sora-prompt-generator/">Sora</a>
+          <a href="/minimax-prompt-generator/">Minimax</a>
+          <a href="/stable-video-prompt-generator/">Stable Video</a>
+        </div>
+        <div class="f4-section">
+          <h4 class="f4-heading">Resources</h4>
+          <a href="/blog/" class="active">Blog</a>
+          <a href="/about/">About</a>
+          <a href="/pricing/">Pricing</a>
+          <a href="/contact/">Contact</a>
+          <a href="/privacy-policy/">Privacy Policy</a>
+          <a href="/terms-of-service/">Terms of Service</a>
+        </div>
+        <div class="f4-section">
+          <h4 class="f4-heading">Languages</h4>
+          <a href="/">English</a>
+          <a href="/fr/">Fran&#231;ais</a>
+          <a href="/ar/">&#1575;&#1604;&#1593;&#1585;&#1576;&#1610;&#1577;</a>
+          <a href="/es/">Espa&#241;ol</a>
+          <a href="/ko/">&#54620;&#44397;&#50612;</a>
+          <a href="/ja/">&#26085;&#26412;&#35486;</a>
+          <a href="/ru/">&#1056;&#1091;&#1089;&#1089;&#1082;&#1080;&#1081;</a>
+        </div>
+      </div>
+      <div class="f4-bottom">
+        <p>&#169; 2026 ImageToPrompt.dev &#8212; Free AI Prompt Generator</p>
+        <p>Your images are never stored. All analysis is ephemeral and private.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="/newsletter-inject.js" defer></script>
+  <script src="/nav.js" defer></script>
+  <script>
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', function() {
+    navigator.serviceWorker.register('/sw.js')
+      .catch(function(err) { console.warn('SW registration failed:', err); });
+  });
+}
+</script>
+</body>
+</html>

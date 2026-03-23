@@ -1,0 +1,477 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <script src="/theme-toggle.js"></script>
+  <meta charset="UTF-8" />
+  <link rel="dns-prefetch" href="https://www.googletagmanager.com">
+<link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="max-image-preview:large, index, follow">
+  <meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="ImageToPrompt">
+  <title>Обратная инженерия промптов из ИИ-изображений</title>
+  <meta name="description" content="Научитесь извлекать промпты из любого ИИ-изображения. Техники реверс-инжиниринга стиля, освещения и композиции для Midjourney, Stable Diffusion и Flux." />
+  <link rel="canonical" href="https://www.imagetoprompt.dev/ru/blog/obratnaya-inzheneriya-promptov/" />
+  <link rel="alternate" hreflang="ru" href="https://www.imagetoprompt.dev/ru/blog/obratnaya-inzheneriya-promptov/" />
+  <link rel="alternate" hreflang="en" href="https://www.imagetoprompt.dev/blog/reverse-engineer-ai-art-prompts/" />
+  <link rel="alternate" hreflang="fr" href="https://www.imagetoprompt.dev/fr/blog/reverse-engineering-prompts-ia/" />
+  <link rel="alternate" hreflang="x-default" href="https://www.imagetoprompt.dev/blog/reverse-engineer-ai-art-prompts/" />
+  <meta property="og:title" content="Обратная инженерия промптов из ИИ-изображений" />
+  <meta property="og:description" content="Техники реверс-инжиниринга промптов из ИИ-изображений для Midjourney, Stable Diffusion и Flux." />
+  <meta property="og:url" content="https://www.imagetoprompt.dev/ru/blog/obratnaya-inzheneriya-promptov/" />
+  <meta property="og:type" content="article" />
+  <meta property="og:image" content="https://www.imagetoprompt.dev/og-image.png" />
+  <meta property="og:site_name" content="ImageToPrompt" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Обратная инженерия промптов из ИИ-изображений" />
+  <meta name="twitter:description" content="Техники реверс-инжиниринга промптов из ИИ-изображений." />
+  <meta name="twitter:image" content="https://www.imagetoprompt.dev/og-image.png" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="48x48" href="/favicon-48.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+  <link rel="manifest" href="/site.webmanifest" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="/fonts/space-grotesk-700.woff2" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="/fonts/inter-400.woff2" />
+  <link rel="stylesheet" href="/theme.css">
+  <link rel="preload" href="/blog.css" as="style" onload="this.onload=null;this.rel='stylesheet'"><noscript><link rel="stylesheet" href="/blog.css"></noscript>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Обратная инженерия промптов из ИИ-изображений",
+    "description": "Научитесь извлекать промпты из любого ИИ-изображения. Техники реверс-инжиниринга стиля, освещения и композиции.",
+    "image": "https://www.imagetoprompt.dev/og-image.png",
+    "datePublished": "2026-03-23",
+    "dateModified": "2026-03-23",
+    "inLanguage": "ru",
+    "author": { "@type": "Person", "name": "ImageToPrompt Team", "url": "https://www.imagetoprompt.dev/" },
+    "publisher": { "@type": "Organization", "name": "ImageToPrompt", "logo": { "@type": "ImageObject", "url": "https://www.imagetoprompt.dev/favicon.svg" } },
+    "mainEntityOfPage": { "@type": "WebPage", "@id": "https://www.imagetoprompt.dev/ru/blog/obratnaya-inzheneriya-promptov/" }
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Главная", "item": "https://www.imagetoprompt.dev/ru/" },
+      { "@type": "ListItem", "position": 2, "name": "Обратная инженерия промптов", "item": "https://www.imagetoprompt.dev/ru/blog/obratnaya-inzheneriya-promptov/" }
+    ]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "inLanguage": "ru",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Что такое обратная инженерия промптов?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Обратная инженерия (реверс-инжиниринг) промптов — это процесс анализа готового ИИ-изображения для воссоздания текстового промпта, который мог быть использован для его генерации. Это включает определение объекта, стиля, освещения, композиции, настроения и технических параметров." }
+      },
+      {
+        "@type": "Question",
+        "name": "Можно ли точно восстановить оригинальный промпт?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Нет, точное восстановление оригинального промпта невозможно — один и тот же визуальный результат может быть получен множеством разных промптов. Однако можно создать промпт, который воспроизведёт ключевые визуальные характеристики: стиль, освещение, композицию и атмосферу оригинала." }
+      },
+      {
+        "@type": "Question",
+        "name": "Какие инструменты помогают в реверс-инжиниринге промптов?",
+        "acceptedAnswer": { "@type": "Answer", "text": "ImageToPrompt — самый удобный инструмент: загрузите изображение и получите готовый промпт за 10 секунд. Для ручного анализа полезны такие расширения, как metadata-читалки PNG (для Stable Diffusion) и внутренние команды Midjourney для просмотра промптов чужих работ." }
+      },
+      {
+        "@type": "Question",
+        "name": "Работает ли реверс-инжиниринг с фотографиями, а не только с ИИ-артом?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Да, и это одно из самых ценных применений. Загрузите любую фотографию в ImageToPrompt, и ИИ проанализирует её стиль, освещение и композицию, создав промпт, который поможет сгенерировать подобное изображение. Это особенно полезно для воспроизведения фотографических стилей." }
+      }
+    ]
+  }
+  </script>
+    <!-- Google AdSense -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4499206373485728" crossorigin="anonymous"></script>
+    <!-- Web Push Notifications -->
+<script src="https://cdn.onesignal.com/sdks/web/v16/OneSignalSDK.page.js" defer></script>
+<script>
+  window.OneSignalDeferred = window.OneSignalDeferred || [];
+  OneSignalDeferred.push(async function(OneSignal) {
+    await OneSignal.init({
+      appId: "REPLACE_WITH_ONESIGNAL_APP_ID",
+      notifyButton: { enable: false }
+    });
+  });
+</script>
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="inner">
+      <a href="/" class="site-logo"><img src="/favicon.svg" alt="ImageToPrompt" width="48" height="48"><div class="site-logo-text">ImageTo<span class="accent">Prompt</span><span class="site-logo-sub">Free AI Prompt Generator</span></div></a>
+      <nav class="site-nav" aria-label="Main navigation">
+        <div class="nav-dropdown">
+          <button class="nav-dropdown-trigger" aria-haspopup="true" aria-expanded="false">Tools <span class="nav-chevron" aria-hidden="true">&#9660;</span></button>
+          <div class="nav-dropdown-menu" role="menu">
+            <div class="nav-mega-grid">
+              <div class="nav-mega-col">
+                <div class="nav-mega-heading">&#128444; IMAGE TOOLS</div>
+                <a href="/" role="menuitem" class="nav-mega-tool">Image to Prompt <span class="nav-mega-arrow">&#8594;</span></a>
+                <a href="/text-to-prompt/" role="menuitem" class="nav-mega-tool">Text to Prompt <span class="nav-mega-arrow">&#8594;</span></a>
+                <a href="/describe-image/" role="menuitem" class="nav-mega-tool">Describe Image <span class="nav-new-badge">NEW</span> <span class="nav-mega-arrow">&#8594;</span></a>
+                <div class="nav-mega-models-label">Models</div>
+                <div class="nav-mega-models"><a href="/midjourney-prompt-generator/">Midjourney</a><span class="nav-dot">&#xB7;</span><a href="/stable-diffusion-prompt-generator/">SD</a></div>
+                <div class="nav-mega-models"><a href="/flux-prompt-generator/">Flux</a><span class="nav-dot">&#xB7;</span><a href="/dall-e-prompt-generator/">DALL&#xB7;E&#xA0;3</a></div>
+                <div class="nav-mega-models"><a href="/adobe-firefly-prompt-generator/">Firefly</a><span class="nav-dot">&#xB7;</span><a href="/leonardo-ai-prompt-generator/">Leonardo</a></div>
+                <div class="nav-mega-models"><a href="/ideogram-prompt-generator/">Ideogram</a></div>
+              </div>
+              <div class="nav-mega-divider" aria-hidden="true"></div>
+              <div class="nav-mega-col">
+                <div class="nav-mega-heading">&#127909; VIDEO TOOLS</div>
+                <a href="/?tab=image-to-video" role="menuitem" class="nav-mega-tool">Image to Video <span class="nav-mega-arrow">&#8594;</span></a>
+                <a href="/?tab=text-to-video" role="menuitem" class="nav-mega-tool">Text to Video <span class="nav-mega-arrow">&#8594;</span></a>
+                <div class="nav-mega-models-label">Models</div>
+                <div class="nav-mega-models"><a href="/veo-prompt-generator/">Veo</a><span class="nav-dot">&#xB7;</span><a href="/kling-prompt-generator/">Kling</a></div>
+                <div class="nav-mega-models"><a href="/runway-prompt-generator/">Runway</a><span class="nav-dot">&#xB7;</span><a href="/pika-prompt-generator/">Pika</a></div>
+                <div class="nav-mega-models"><a href="/luma-prompt-generator/">Luma</a><span class="nav-dot">&#xB7;</span><a href="/sora-prompt-generator/">Sora</a></div>
+                <div class="nav-mega-models"><a href="/minimax-prompt-generator/">Minimax</a><span class="nav-dot">&#xB7;</span><a href="/stable-video-prompt-generator/">Stable</a></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <a href="/blog/">Blog</a>
+        <a href="/pricing/" class="nav-pill-pricing">Pricing</a>
+        <a href="/about/" class="nav-pill-about">About</a>
+        <a href="/" class="nav-try-free">Try Free &#8594;</a>
+        <button id="theme-toggle" onclick="toggleTheme()" aria-label="Switch theme" title="Switch theme">&#9728;&#xFE0F;</button>
+  </nav>
+    </div>
+  </header>
+
+  <nav class="breadcrumb" aria-label="Навигация">
+    <a href="/ru/">Главная</a><span class="sep">&#8250;</span>
+    <span>Обратная инженерия промптов</span>
+  </nav>
+
+  <div class="page-wrapper">
+
+    <header class="article-header">
+      <p class="article-tag">Продвинутый туториал</p>
+      <h1>Обратная инженерия промптов из ИИ-изображений</h1>
+      <div class="article-meta">
+        <span>Март 2026</span>
+        <span class="dot">&middot;</span>
+        <span>12 мин чтения</span>
+        <span class="dot">&middot;</span>
+        <span>Midjourney &middot; Stable Diffusion &middot; Flux &middot; DALL-E 3</span>
+      </div>
+    </header>
+
+    <div class="article-body">
+
+      <p>Вы наверняка видели в интернете потрясающие ИИ-изображения и задавались вопросом: &laquo;Какой промпт был использован для создания этого?&raquo; Обратная инженерия промптов &mdash; это навык, позволяющий &laquo;прочитать&raquo; визуальные элементы изображения и перевести их обратно в текстовое описание. Это один из самых эффективных способов улучшить свои навыки промпт-инженерии.</p>
+
+      <nav class="toc" aria-label="Содержание">
+        <details open>
+          <summary>Содержание</summary>
+          <ol>
+            <li><a href="#zachem">Зачем нужна обратная инженерия промптов?</a></li>
+            <li><a href="#ruchnoj-analiz">Ручной анализ: пошаговый метод</a></li>
+            <li><a href="#avtomatizaciya">Автоматизация с помощью ИИ</a></li>
+            <li><a href="#opredelenie-stilya">Определение стиля и модели</a></li>
+            <li><a href="#izvlechenie-osveshcheniya">Извлечение параметров освещения</a></li>
+            <li><a href="#czvetovaya-palitra">Анализ цветовой палитры</a></li>
+            <li><a href="#primery">Практические примеры разбора</a></li>
+            <li><a href="#metadata">Извлечение метаданных</a></li>
+            <li><a href="#sozdanie-variacij">Создание вариаций</a></li>
+            <li><a href="#faq">Часто задаваемые вопросы</a></li>
+          </ol>
+        </details>
+      </nav>
+
+      <h2 id="zachem">Зачем нужна обратная инженерия промптов?</h2>
+
+      <p>Обратная инженерия &mdash; это не просто копирование чужих работ. Это мощный образовательный инструмент с множеством практических применений:</p>
+
+      <ul>
+        <li><strong>Обучение промпт-инженерии:</strong> анализ того, как визуальные элементы переводятся в текстовые описания, развивает ваш &laquo;промптовый словарь&raquo; быстрее любого другого метода</li>
+        <li><strong>Создание единого визуального стиля:</strong> извлеките стиль из референсного изображения и применяйте его к новым сюжетам для создания согласованных серий</li>
+        <li><strong>Профессиональное портфолио:</strong> воспроизведите стиль понравившегося изображения с новым контентом для своего проекта</li>
+        <li><strong>Понимание ИИ-моделей:</strong> видя, какие промпты приводят к каким результатам, вы лучше понимаете, как работают генераторы</li>
+        <li><strong>Экономия времени:</strong> вместо часов экспериментов начните с промпта, близкого к желаемому результату</li>
+      </ul>
+
+      <h2 id="ruchnoj-analiz">Ручной анализ: пошаговый метод</h2>
+
+      <p>Даже без автоматизированных инструментов вы можете научиться &laquo;читать&raquo; изображения. Вот систематический подход из 7 шагов:</p>
+
+      <h3>Шаг 1: Определите основной объект</h3>
+      <p>Что является центральным элементом изображения? Человек, животное, здание, пейзаж, абстрактная форма? Опишите его максимально конкретно: не &laquo;женщина&raquo;, а &laquo;young woman with red hair and freckles&raquo;.</p>
+
+      <h3>Шаг 2: Определите стиль</h3>
+      <p>Это фотография? Картина маслом? Цифровая иллюстрация? Аниме? Для каждого стиля существуют свои ключевые слова. Обратите внимание на текстуры, мазки, степень детализации и общий &laquo;вид&raquo; изображения.</p>
+
+      <h3>Шаг 3: Проанализируйте освещение</h3>
+      <p>Откуда идёт свет? Он мягкий или жёсткий? Тёплый или холодный? Есть ли видимые лучи, блики, тени? Освещение &mdash; один из самых сильных индикаторов стиля промпта.</p>
+
+      <h3>Шаг 4: Определите цветовую палитру</h3>
+      <p>Какие цвета доминируют? Палитра тёплая или холодная? Насыщенная или приглушённая? Есть ли характерные цветовые акценты? Запишите 3-5 основных цветов.</p>
+
+      <h3>Шаг 5: Изучите композицию</h3>
+      <p>Какой ракурс? Крупный план, средний или дальний? Используется ли правило третей? Есть ли малая глубина резкости (боке)? Где расположен объект в кадре?</p>
+
+      <h3>Шаг 6: Уловите настроение</h3>
+      <p>Какие эмоции вызывает изображение? Спокойствие, напряжение, радость, меланхолию, мистику? Настроение &mdash; это совокупный эффект всех предыдущих элементов.</p>
+
+      <h3>Шаг 7: Соберите промпт</h3>
+      <p>Объедините все наблюдения в промпт, соблюдая синтаксис целевой модели. Начните с объекта, добавьте обстановку, стиль, освещение, цвета и настроение.</p>
+
+      <h2 id="avtomatizaciya">Автоматизация с помощью ИИ</h2>
+
+      <p>Ручной анализ &mdash; ценный навык, но он требует опыта и времени. ИИ-инструменты позволяют автоматизировать этот процесс и получить профессиональный промпт за секунды.</p>
+
+      <p><a href="/ru/">ImageToPrompt</a> &mdash; самый быстрый способ выполнить обратную инженерию. Загрузите изображение, выберите целевую модель, и за 5-10 секунд вы получите:</p>
+
+      <ul>
+        <li><strong>Основной промпт</strong> &mdash; полный, отформатированный для выбранной модели промпт с правильными параметрами</li>
+        <li><strong>Креативный ремикс</strong> &mdash; альтернативный промпт, вдохновлённый оригиналом, но с творческим переосмыслением</li>
+        <li><strong>Цветовая палитра</strong> &mdash; извлечённые доминирующие цвета с HEX-кодами</li>
+        <li><strong>Теги стиля</strong> &mdash; определённые ИИ стилевые характеристики</li>
+        <li><strong>Соотношение сторон</strong> &mdash; рекомендуемый формат для Midjourney</li>
+      </ul>
+
+      <h2 id="opredelenie-stilya">Определение стиля и модели</h2>
+
+      <p>Опытные пользователи могут часто определить, какая модель использовалась для генерации, по характерным визуальным признакам:</p>
+
+      <h3>Признаки Midjourney</h3>
+      <ul>
+        <li>Богатые, насыщенные цвета с &laquo;кинематографическим&raquo; качеством</li>
+        <li>Характерный &laquo;painterly&raquo; (живописный) вид даже в фотореалистичных работах</li>
+        <li>Сильная атмосферность и драматичное освещение</li>
+        <li>Иногда чрезмерная стилизация, особенно при высоких значениях --stylize</li>
+      </ul>
+
+      <h3>Признаки Stable Diffusion</h3>
+      <ul>
+        <li>Высокая детализация текстур, особенно с SDXL</li>
+        <li>Более &laquo;чистый&raquo; и технический вид при использовании специализированных моделей</li>
+        <li>Возможные артефакты при неоптимальных настройках (размытые руки, нечёткие лица)</li>
+        <li>Очевидное влияние LoRA &mdash; характерные стилистические отпечатки</li>
+      </ul>
+
+      <h3>Признаки DALL-E 3</h3>
+      <ul>
+        <li>Корректно отрисованный текст внутри изображений</li>
+        <li>Точное следование сложным инструкциям с множеством элементов</li>
+        <li>Характерный &laquo;чистый&raquo; стиль без чрезмерной стилизации</li>
+        <li>Хорошая анатомия и пропорции</li>
+      </ul>
+
+      <h3>Признаки Flux</h3>
+      <ul>
+        <li>Впечатляющий фотореализм, особенно в текстурах кожи и тканей</li>
+        <li>Натуральное, правдоподобное освещение</li>
+        <li>Менее &laquo;обработанный&raquo; вид по сравнению с Midjourney</li>
+        <li>Отличная детализация мелких элементов</li>
+      </ul>
+
+      <h2 id="izvlechenie-osveshcheniya">Извлечение параметров освещения</h2>
+
+      <p>Освещение &mdash; критически важный элемент для точного реверс-инжиниринга. Вот как его определить:</p>
+
+      <div class="table-wrap">
+      <table class="comparison-table">
+        <thead>
+          <tr><th>Визуальный признак</th><th>Тип освещения</th><th>Ключевые слова для промпта</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Тёплые золотистые тона, длинные тени</td><td>Золотой час</td><td><code>golden hour, warm sunlight, long shadows</code></td></tr>
+          <tr><td>Одна половина лица освещена, другая в тени</td><td>Рембрандтовское</td><td><code>Rembrandt lighting, dramatic side light</code></td></tr>
+          <tr><td>Яркий контур вокруг объекта</td><td>Контровой</td><td><code>rim lighting, backlit, halo effect</code></td></tr>
+          <tr><td>Мягкие тени, ровное освещение</td><td>Рассеянный</td><td><code>soft diffused light, overcast sky</code></td></tr>
+          <tr><td>Видимые лучи в воздухе</td><td>Объёмный</td><td><code>volumetric lighting, god rays, light shafts</code></td></tr>
+          <tr><td>Цветные отражения на объекте</td><td>Неоновое</td><td><code>neon lighting, colored glow, cyberpunk lights</code></td></tr>
+          <tr><td>Холодные голубые тона, мягкость</td><td>Голубой час</td><td><code>blue hour, twilight, cool tones</code></td></tr>
+        </tbody>
+      </table>
+      </div>
+
+      <h2 id="czvetovaya-palitra">Анализ цветовой палитры</h2>
+
+      <p>Цвета задают общее настроение и могут быть ключом к воспроизведению визуального стиля:</p>
+
+      <ul>
+        <li><strong>Тёплая палитра</strong> (оранжевые, красные, золотые) &mdash; используйте <code>warm color palette, warm earth tones, golden hues</code></li>
+        <li><strong>Холодная палитра</strong> (синие, фиолетовые, серые) &mdash; используйте <code>cool color palette, blue tones, desaturated</code></li>
+        <li><strong>Высокий контраст</strong> &mdash; <code>high contrast, dramatic shadows, stark blacks</code></li>
+        <li><strong>Пастельные тона</strong> &mdash; <code>pastel colors, soft hues, muted palette</code></li>
+        <li><strong>Монохромный</strong> &mdash; <code>monochromatic, black and white, single color accent</code></li>
+        <li><strong>Неоновый</strong> &mdash; <code>neon colors, vibrant, electric blue and pink</code></li>
+      </ul>
+
+      <p>ImageToPrompt автоматически извлекает доминирующие цвета из изображения и предоставляет HEX-коды, что позволяет точно воспроизвести палитру.</p>
+
+      <h2 id="primery">Практические примеры разбора</h2>
+
+      <h3>Пример 1: Кинематографический пейзаж</h3>
+      <p>Представим изображение: горная долина с туманом, лучи солнца пробиваются через облака, зелёные сосны на переднем плане, птицы в небе.</p>
+
+      <p><strong>Ручной анализ:</strong></p>
+      <ul>
+        <li>Объект: горная долина</li>
+        <li>Стиль: кинематографическая фотография</li>
+        <li>Освещение: объёмное, лучи сквозь облака</li>
+        <li>Цвета: зелёные, золотые, голубые</li>
+        <li>Композиция: широкоугольный план, послойная глубина</li>
+        <li>Настроение: величественное, умиротворённое</li>
+      </ul>
+
+      <p><strong>Результирующий промпт (Midjourney):</strong></p>
+      <pre><code>vast mountain valley covered in morning mist, rays of sunlight breaking through clouds, lush green pine trees in foreground, birds soaring in the sky, volumetric lighting, cinematic landscape photography, majestic and serene atmosphere, rich green and gold color palette --ar 21:9 --v 6.1 --s 300</code></pre>
+
+      <h3>Пример 2: Портрет в стиле аниме</h3>
+      <p>Изображение: девушка с голубыми волосами, большие выразительные глаза, развевающийся шарф, фон с цветущей сакурой.</p>
+
+      <p><strong>Промпт (Midjourney):</strong></p>
+      <pre><code>anime portrait of a girl with flowing blue hair, large expressive eyes, red scarf blowing in wind, cherry blossom trees in background, soft pink petals falling, Studio Ghibli art style, delicate watercolor textures, warm spring lighting --ar 2:3 --v 6.1 --s 400 --niji 6</code></pre>
+
+      <h3>Пример 3: Архитектурная визуализация</h3>
+      <p>Изображение: футуристическое здание из стекла и бетона, отражения неба, минималистичный ландшафт.</p>
+
+      <p><strong>Промпт (Flux):</strong></p>
+      <pre><code>A striking piece of futuristic architecture rising from a minimalist desert landscape. The building features flowing organic curves made of glass and raw concrete, with the clear blue sky reflected in its surfaces. Shot during golden hour with warm light catching the glass panels, creating brilliant reflections. Architectural photography on a Phase One IQ4, 24mm tilt-shift lens, pristine clarity, the building standing alone against a vast empty horizon.</code></pre>
+
+      <h2 id="metadata">Извлечение метаданных</h2>
+
+      <p>Некоторые ИИ-генераторы сохраняют промпт и параметры в метаданных файла:</p>
+
+      <ul>
+        <li><strong>Stable Diffusion (Automatic1111, ComfyUI):</strong> промпт, негативный промпт, seed, CFG scale и sampler сохраняются в PNG metadata. Используйте любую утилиту для чтения EXIF/PNG info.</li>
+        <li><strong>Midjourney:</strong> оригинальный промпт не сохраняется в файле, но можно найти его на сервере Discord или через команду <code>/describe</code>.</li>
+        <li><strong>DALL-E 3:</strong> ChatGPT часто модифицирует ваш промпт перед генерацией. Модифицированный промпт можно увидеть в истории чата.</li>
+        <li><strong>Flux:</strong> зависит от интерфейса. Некоторые веб-приложения сохраняют промпт в метаданных.</li>
+      </ul>
+
+      <div class="callout">
+        <p><strong>Совет:</strong> если метаданные недоступны, <a href="/ru/">ImageToPrompt</a> &mdash; ваш лучший вариант. ИИ проанализирует изображение визуально и создаст промпт, не зависящий от метаданных файла.</p>
+      </div>
+
+      <h2 id="sozdanie-variacij">Создание вариаций</h2>
+
+      <p>После извлечения промпта из изображения вы можете создавать бесконечные вариации, изменяя отдельные элементы:</p>
+
+      <ul>
+        <li><strong>Смена объекта:</strong> замените главного персонажа, сохранив стиль и атмосферу</li>
+        <li><strong>Смена обстановки:</strong> перенесите тот же объект в другое окружение</li>
+        <li><strong>Смена времени суток:</strong> замените &laquo;golden hour&raquo; на &laquo;blue hour&raquo; или &laquo;midnight&raquo;</li>
+        <li><strong>Смена стиля:</strong> перерисуйте фотореалистичную сцену в стиле акварели или аниме</li>
+        <li><strong>Смена настроения:</strong> превратите &laquo;serene&raquo; в &laquo;dramatic&raquo; или &laquo;mysterious&raquo;</li>
+      </ul>
+
+      <p>Этот подход &mdash; один из самых продуктивных рабочих процессов в ИИ-генерации. Вы начинаете с проверенной основы и итеративно развиваете её в нужном направлении.</p>
+
+      <h2 id="faq">Часто задаваемые вопросы</h2>
+
+      <details style="margin-bottom:1rem;border:1px solid var(--border-card);border-radius:0.75rem;padding:1rem">
+        <summary style="font-weight:600;color:var(--text-primary);cursor:pointer">Что такое обратная инженерия промптов?</summary>
+        <p style="margin-top:0.75rem;color:var(--text-muted)">Обратная инженерия (реверс-инжиниринг) промптов &mdash; это процесс анализа готового ИИ-изображения для воссоздания текстового промпта, который мог быть использован для его генерации. Это включает определение объекта, стиля, освещения, композиции, настроения и технических параметров.</p>
+      </details>
+
+      <details style="margin-bottom:1rem;border:1px solid var(--border-card);border-radius:0.75rem;padding:1rem">
+        <summary style="font-weight:600;color:var(--text-primary);cursor:pointer">Можно ли точно восстановить оригинальный промпт?</summary>
+        <p style="margin-top:0.75rem;color:var(--text-muted)">Нет, точное восстановление оригинального промпта невозможно &mdash; один и тот же визуальный результат может быть получен множеством разных промптов. Но можно создать промпт, который воспроизведёт ключевые визуальные характеристики: стиль, освещение, композицию и атмосферу оригинала. Часто такой &laquo;восстановленный&raquo; промпт оказывается даже лучше оригинала.</p>
+      </details>
+
+      <details style="margin-bottom:1rem;border:1px solid var(--border-card);border-radius:0.75rem;padding:1rem">
+        <summary style="font-weight:600;color:var(--text-primary);cursor:pointer">Какие инструменты помогают в реверс-инжиниринге?</summary>
+        <p style="margin-top:0.75rem;color:var(--text-muted)"><a href="/ru/">ImageToPrompt</a> &mdash; самый удобный инструмент: загрузите изображение и получите готовый промпт за 10 секунд. Для ручного анализа полезны metadata-читалки для PNG-файлов (для извлечения данных Stable Diffusion) и внутренние команды Midjourney, такие как <code>/describe</code>.</p>
+      </details>
+
+      <details style="margin-bottom:1rem;border:1px solid var(--border-card);border-radius:0.75rem;padding:1rem">
+        <summary style="font-weight:600;color:var(--text-primary);cursor:pointer">Работает ли это с обычными фотографиями?</summary>
+        <p style="margin-top:0.75rem;color:var(--text-muted)">Да, и это одно из самых ценных применений. Загрузите любую фотографию в ImageToPrompt, и ИИ проанализирует её стиль, освещение, композицию и цветовую палитру, создав промпт для генерации подобного изображения. Это особенно полезно для воспроизведения фотографических стилей, которые вы хотите применить к другим сюжетам.</p>
+      </details>
+
+      <div class="cta-box" style="margin-top:3rem">
+        <h3>Попробуйте реверс-инжиниринг прямо сейчас</h3>
+        <p>Загрузите любое ИИ-изображение или фотографию и получите промпт за 10 секунд.</p>
+        <a href="/ru/" class="cta-btn">Открыть ImageToPrompt &rarr;</a>
+      </div>
+
+    </div>
+  </div>
+
+  <footer class="footer-4col">
+    <div class="f4-inner">
+      <div class="f4-brand">
+        <img src="/favicon.svg" alt="ImageToPrompt" width="28" height="28">
+        <span class="f4-brand-name">ImageTo<span class="accent">Prompt</span></span>
+        <span class="f4-brand-sub">&mdash; Free AI Prompt Generator</span>
+      </div>
+      <div class="f4-grid">
+        <div class="f4-section">
+          <h4 class="f4-heading">Image Prompt Tools</h4>
+          <a href="/">Image to Prompt</a>
+          <a href="/text-to-prompt/">Text to Prompt</a>
+          <a href="/describe-image/">Describe Image</a>
+          <a href="/midjourney-prompt-generator/">Midjourney</a>
+          <a href="/stable-diffusion-prompt-generator/">Stable Diffusion</a>
+          <a href="/flux-prompt-generator/">Flux</a>
+          <a href="/dall-e-prompt-generator/">DALL-E 3</a>
+          <a href="/adobe-firefly-prompt-generator/">Adobe Firefly</a>
+          <a href="/leonardo-ai-prompt-generator/">Leonardo AI</a>
+          <a href="/ideogram-prompt-generator/">Ideogram</a>
+        </div>
+        <div class="f4-section">
+          <h4 class="f4-heading">Video Prompt Tools</h4>
+          <a href="/image-to-video-prompt/">Image to Video Prompt</a>
+          <a href="/text-to-video-prompt/">Text to Video Prompt</a>
+          <a href="/veo-prompt-generator/">Veo / Flow Studio</a>
+          <a href="/kling-prompt-generator/">Kling AI</a>
+          <a href="/runway-prompt-generator/">Runway Gen-3</a>
+          <a href="/pika-prompt-generator/">Pika</a>
+          <a href="/luma-prompt-generator/">Luma Dream Machine</a>
+          <a href="/sora-prompt-generator/">Sora</a>
+          <a href="/minimax-prompt-generator/">Minimax</a>
+          <a href="/stable-video-prompt-generator/">Stable Video</a>
+        </div>
+        <div class="f4-section">
+          <h4 class="f4-heading">Resources</h4>
+          <a href="/blog/">Blog</a>
+          <a href="/about/">About</a>
+          <a href="/pricing/">Pricing</a>
+          <a href="/contact/">Contact</a>
+          <a href="/privacy-policy/">Privacy Policy</a>
+          <a href="/terms-of-service/">Terms of Service</a>
+        </div>
+        <div class="f4-section">
+          <h4 class="f4-heading">Languages</h4>
+          <a href="/">English</a>
+          <a href="/fr/">Fran&#231;ais</a>
+          <a href="/ar/">&#1575;&#1604;&#1593;&#1585;&#1576;&#1610;&#1577;</a>
+          <a href="/es/">Espa&#241;ol</a>
+          <a href="/ko/">&#54620;&#44397;&#50612;</a>
+          <a href="/ja/">&#26085;&#26412;&#35486;</a>
+          <a href="/ru/">&#1056;&#1091;&#1089;&#1089;&#1082;&#1080;&#1081;</a>
+        </div>
+      </div>
+      <div class="f4-bottom">
+        <p>&#169; 2026 ImageToPrompt.dev &#8212; Free AI Prompt Generator</p>
+        <p>Your images are never stored. All analysis is ephemeral and private.</p>
+      </div>
+    </div>
+  </footer>
+
+<script src="/nav.js" defer></script>
+  <script>
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', function() {
+    navigator.serviceWorker.register('/sw.js')
+      .catch(function(err) { console.warn('SW registration failed:', err); });
+  });
+}
+</script>
+</body>
+</html>
