@@ -88,16 +88,13 @@ export default function ShowcasePanel() {
   };
 
   return (
-    <motion.div
+    <div
       className="rounded-2xl flex flex-col h-full"
       style={{
         background: 'var(--bg-card)',
         border: '1px solid var(--border-subtle)',
         backdropFilter: 'blur(12px)',
       }}
-      initial={{ opacity: 0, y: 24 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.5, delay: 0.35, ease: 'easeOut' }}
       onMouseEnter={() => setPaused(true)}
       onMouseLeave={() => setPaused(false)}
     >
@@ -211,6 +208,6 @@ export default function ShowcasePanel() {
           />
         ))}
       </div>
-    </motion.div>
+    </div>
   );
 }
