@@ -64,7 +64,7 @@ export default function SEOFooter() {
           </span>
         </div>
 
-        <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-4 mb-8" style={{ gap: '2rem 1.5rem', marginBottom: '2rem' }}>
+        <div className="grid grid-cols-2 gap-8 sm:grid-cols-2 lg:grid-cols-4 mb-8" style={{ gap: '2rem 1.5rem', marginBottom: '2rem' }}>
           <FooterCol
             heading={t('footer.imageTools')}
             icon={<span style={{ fontSize: '0.625rem', lineHeight: 1 }}>🖼</span>}
@@ -82,24 +82,7 @@ export default function SEOFooter() {
               { href: lp('/ideogram-prompt-generator/'),          label: 'Ideogram'                },
             ]}
           />
-          <FooterCol
-            heading={t('footer.videoTools')}
-            icon={<span style={{ fontSize: '0.625rem', lineHeight: 1 }}>🎬</span>}
-            headingColor="rgba(0,210,255,0.75)"
-            linkCls={vidLinkCls}
-            links={[
-              { href: lp('/image-to-video-prompt/'),              label: t('footer.imageToVideo')  },
-              { href: lp('/text-to-video-prompt/'),               label: t('footer.textToVideo')   },
-              { href: lp('/veo-prompt-generator/'),               label: 'Veo / Flow Studio'       },
-              { href: lp('/kling-prompt-generator/'),             label: 'Kling AI'                },
-              { href: lp('/runway-prompt-generator/'),            label: 'Runway Gen-3'            },
-              { href: lp('/pika-prompt-generator/'),              label: 'Pika'                    },
-              { href: lp('/luma-prompt-generator/'),              label: 'Luma Dream Machine'      },
-              { href: lp('/sora-prompt-generator/'),              label: 'Sora'                    },
-              { href: lp('/minimax-prompt-generator/'),           label: 'Minimax'                 },
-              { href: lp('/stable-video-prompt-generator/'),      label: 'Stable Video'            },
-            ]}
-          />
+          {/* Resources visible on mobile too (Blog, About, Pricing) */}
           <FooterCol
             heading={t('footer.resources')}
             icon={<span style={{ fontSize: '0.625rem', lineHeight: 1 }}>📚</span>}
@@ -114,20 +97,44 @@ export default function SEOFooter() {
               { href: '/terms-of-service/',     label: t('footer.terms')   },
             ]}
           />
-          <FooterCol
-            heading={t('footer.languages')}
-            icon={<span style={{ fontSize: '0.625rem', lineHeight: 1 }}>🌐</span>}
-            headingColor="rgba(136,136,187,0.65)"
-            linkCls={defLinkCls}
-            links={[
-              { href: '/',    label: 'English'   },
-              { href: '/fr/', label: 'Français'  },
-              { href: '/ar/', label: 'العربية'   },
-              { href: '/es/', label: 'Español'   },
-              { href: '/ja/', label: '日本語'     },
-              { href: '/ko/', label: '한국어'     },
-            ]}
-          />
+          {/* Video Tools — hidden on mobile to reduce DOM size */}
+          <div className="hidden sm:block">
+            <FooterCol
+              heading={t('footer.videoTools')}
+              icon={<span style={{ fontSize: '0.625rem', lineHeight: 1 }}>🎬</span>}
+              headingColor="rgba(0,210,255,0.75)"
+              linkCls={vidLinkCls}
+              links={[
+                { href: lp('/image-to-video-prompt/'),              label: t('footer.imageToVideo')  },
+                { href: lp('/text-to-video-prompt/'),               label: t('footer.textToVideo')   },
+                { href: lp('/veo-prompt-generator/'),               label: 'Veo / Flow Studio'       },
+                { href: lp('/kling-prompt-generator/'),             label: 'Kling AI'                },
+                { href: lp('/runway-prompt-generator/'),            label: 'Runway Gen-3'            },
+                { href: lp('/pika-prompt-generator/'),              label: 'Pika'                    },
+                { href: lp('/luma-prompt-generator/'),              label: 'Luma Dream Machine'      },
+                { href: lp('/sora-prompt-generator/'),              label: 'Sora'                    },
+                { href: lp('/minimax-prompt-generator/'),           label: 'Minimax'                 },
+                { href: lp('/stable-video-prompt-generator/'),      label: 'Stable Video'            },
+              ]}
+            />
+          </div>
+          {/* Languages — hidden on mobile */}
+          <div className="hidden sm:block">
+            <FooterCol
+              heading={t('footer.languages')}
+              icon={<span style={{ fontSize: '0.625rem', lineHeight: 1 }}>🌐</span>}
+              headingColor="rgba(136,136,187,0.65)"
+              linkCls={defLinkCls}
+              links={[
+                { href: '/',    label: 'English'   },
+                { href: '/fr/', label: 'Français'  },
+                { href: '/ar/', label: 'العربية'   },
+                { href: '/es/', label: 'Español'   },
+                { href: '/ja/', label: '日本語'     },
+                { href: '/ko/', label: '한국어'     },
+              ]}
+            />
+          </div>
         </div>
 
         <div className="flex flex-col sm:flex-row justify-between gap-2" style={{ borderTop: '1px solid var(--border-subtle)', paddingTop: '1.25rem' }}>

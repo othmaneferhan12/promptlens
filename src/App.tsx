@@ -659,14 +659,11 @@ export default function App() {
                 )}
               </div>
 
-              {/* ── Showcase panel — right column ── */}
+              {/* ── Showcase panel — desktop only (xl+), never loads on mobile/tablet ── */}
               <div className="hidden xl:flex items-center justify-center h-full py-6">
                 <div className="w-full h-full">
                   <ShowcasePanel />
                 </div>
-              </div>
-              <div className="hidden sm:block xl:hidden">
-                <ShowcasePanel />
               </div>
             </div>
           </>

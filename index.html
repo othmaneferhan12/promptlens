@@ -151,8 +151,8 @@
     }
     </script>
 
-    <!-- LCP image preload — first showcase card, loads immediately -->
-    <link rel="preload" as="image" type="image/webp" fetchpriority="high" href="/images/ai-prompt-generator-golden-hour-lighting.webp" />
+    <!-- LCP image preload — showcase card, desktop only (xl: 1280px+) -->
+    <link rel="preload" as="image" type="image/webp" fetchpriority="high" href="/images/ai-prompt-generator-golden-hour-lighting.webp" media="(min-width: 1280px)" />
 
     <!-- Self-hosted font preloads (same-origin, starts downloading immediately) -->
     <link rel="preload" as="font" type="font/woff2" crossorigin href="/fonts/space-grotesk-700.woff2" />
@@ -187,8 +187,38 @@
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
     <meta name="apple-mobile-web-app-title" content="ImgToPrompt" />
 
-    <!-- Google AdSense -->
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4499206373485728" crossorigin="anonymous"></script>
+    <!-- Google AdSense — load after interaction on mobile, immediately on desktop -->
+    <script>
+      (function() {
+        function loadAdsense() {
+          var s = document.createElement('script');
+          s.async = true;
+          s.crossOrigin = 'anonymous';
+          s.src = 'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4499206373485728';
+          document.head.appendChild(s);
+        }
+        if (window.innerWidth >= 1024) {
+          // Desktop: load immediately
+          loadAdsense();
+        } else {
+          // Mobile/tablet: defer until first user interaction
+          var fired = false;
+          function onInteract() {
+            if (fired) return;
+            fired = true;
+            loadAdsense();
+            ['touchstart','scroll','click'].forEach(function(e) {
+              document.removeEventListener(e, onInteract, { passive: true });
+            });
+          }
+          ['touchstart','scroll','click'].forEach(function(e) {
+            document.addEventListener(e, onInteract, { passive: true });
+          });
+          // Fallback: load after 5s even without interaction
+          setTimeout(loadAdsense, 5000);
+        }
+      })();
+    </script>
 
     <!-- WebSite Schema with SearchAction -->
     <script type="application/ld+json">
@@ -207,18 +237,6 @@
         "query-input": "required name=search_term_string"
       }
     }
-    </script>
-
-    <!-- Web Push Notifications -->
-    <script src="https://cdn.onesignal.com/sdks/web/v16/OneSignalSDK.page.js" defer></script>
-    <script>
-      window.OneSignalDeferred = window.OneSignalDeferred || [];
-      OneSignalDeferred.push(async function(OneSignal) {
-        await OneSignal.init({
-          appId: "REPLACE_WITH_ONESIGNAL_APP_ID",
-          notifyButton: { enable: false }
-        });
-      });
     </script>
 
     <!-- max-image-preview for Google Discover -->

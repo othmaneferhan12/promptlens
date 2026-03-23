@@ -155,8 +155,8 @@ export default function ShowcasePanel() {
                         src={ex.image.replace('.webp', '.jpeg')}
                         alt={`Example: ${ex.label}`}
                         className="w-full h-full object-cover rounded-xl"
-                        loading={idx === 0 && dist === 0 ? 'eager' : 'lazy'}
-                        fetchPriority={idx === 0 && dist === 0 ? 'high' : 'auto'}
+                        loading={dist === 0 ? 'eager' : 'lazy'}
+                        fetchPriority={dist === 0 ? 'high' : 'auto'}
                         width="400"
                         height="300"
                       />
