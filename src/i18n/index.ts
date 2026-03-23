@@ -3,7 +3,7 @@ import { initReactI18next } from 'react-i18next';
 import LanguageDetector from 'i18next-browser-languagedetector';
 import en from './en.json';
 
-export const UI_LANGUAGES = ['en', 'fr', 'ar', 'es', 'de', 'pt', 'ja', 'zh', 'ko'] as const;
+export const UI_LANGUAGES = ['en', 'fr', 'ar', 'es', 'de', 'pt', 'ja', 'zh', 'ko', 'ru'] as const;
 export type UILanguage = (typeof UI_LANGUAGES)[number];
 
 // Detect language synchronously before init — same priority as LanguageDetector
@@ -47,6 +47,7 @@ const LANG_IMPORTS: Record<string, () => Promise<{ default: Record<string, unkno
   ja: () => import('./ja.json'),
   zh: () => import('./zh.json'),
   ko: () => import('./ko.json'),
+  ru: () => import('./ru.json'),
 };
 
 function loadLang(lng: string) {

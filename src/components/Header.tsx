@@ -15,6 +15,7 @@ const LANG_META: Record<UILanguage, { flag: string; native: string }> = {
   ja: { flag: '🇯🇵', native: '日本語' },
   zh: { flag: '🇨🇳', native: '中文' },
   ko: { flag: '🇰🇷', native: '한국어' },
+  ru: { flag: '🇷🇺', native: 'Русский' },
 };
 
 const IMG_MODELS = [

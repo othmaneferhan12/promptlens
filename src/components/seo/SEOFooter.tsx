@@ -132,6 +132,7 @@ export default function SEOFooter() {
                 { href: '/es/', label: 'Español'   },
                 { href: '/ja/', label: '日本語'     },
                 { href: '/ko/', label: '한국어'     },
+                { href: '/ru/', label: 'Русский'   },
               ]}
             />
           </div>
