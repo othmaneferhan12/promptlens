@@ -17,15 +17,15 @@ const EXAMPLES = [
   },
   {
     image: '/images/ai-prompt-generator-cyberpunk-midjourney.webp',
-    label: 'Digital Art',
+    label: 'Cyberpunk',
     prompt:
-      '(masterpiece:1.2), highly detailed digital art, cinematic composition, volumetric lighting, vibrant color palette, epic atmosphere, 8k ultra HD',
+      'Neon-lit cyberpunk cityscape at night, rain-slicked streets reflecting holographic advertisements, atmospheric volumetric fog, cinematic wide angle --ar 16:9 --v 6.1 --style raw --stylize 750',
   },
   {
     image: '/images/ai-image-to-prompt-luxury-watch-recreated.webp',
-    label: 'Retro Illustration',
+    label: 'Product Shot',
     prompt:
-      'Retro mid-century modern scene, pastel color palette, dreamy nostalgic atmosphere, soft gradients, stylized illustration, vintage travel poster aesthetic',
+      'Luxury Swiss chronograph on matte obsidian surface, dramatic studio lighting with soft specular highlights, macro lens, hyperrealistic product photography, shallow depth of field',
   },
   {
     image: '/images/image-to-prompt-basic-cat-garden.webp',
