@@ -6,13 +6,8 @@
     <meta name="mobile-web-app-capable" content="yes" />
     <meta name="format-detection" content="telephone=no" />
 
-    <!-- Critical inline CSS: prevents FOUC before bundle loads -->
-    <style>
-      *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-      html{-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}
-      body{background-color:#080810;color:#f5f5ff;font-family:Inter,system-ui,sans-serif;min-height:100vh;overflow-x:hidden}
-      #root{min-height:100vh}
-    </style>
+    <!-- Critical CSS: prevents FOUC before bundle loads -->
+    <link rel="stylesheet" href="/critical.css" />
 
     <!-- Primary SEO -->
     <title>Free Image to Prompt Generator — AI Prompts for Midjourney, Flux, DALL·E & More | ImageToPrompt</title>
