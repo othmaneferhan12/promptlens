@@ -8,8 +8,6 @@ import ShowcasePanel from './components/ShowcasePanel';
 import LanguageSelector from './components/LanguageSelector';
 import UsageCounter from './components/UsageCounter';
 import TextInputArea from './components/TextInputArea';
-import VideoModelSelector from './components/VideoModelSelector';
-import VideoOptions from './components/VideoOptions';
 import { useImageAnalysis } from './hooks/useImageAnalysis';
 import { useTextToPrompt } from './hooks/useTextToPrompt';
 import { useImageToVideoPrompt } from './hooks/useImageToVideoPrompt';
@@ -38,6 +36,8 @@ const FAQSection = lazy(() => import('./components/seo/FAQSection'));
 const ExamplesSection = lazy(() => import('./components/seo/ExamplesSection'));
 const NewsletterSection = lazy(() => import('./components/seo/NewsletterSection'));
 const SEOFooter = lazy(() => import('./components/seo/SEOFooter'));
+const VideoModelSelector = lazy(() => import('./components/VideoModelSelector'));
+const VideoOptions = lazy(() => import('./components/VideoOptions'));
 
 type ActiveTab = 'image-to-prompt' | 'text-to-prompt' | 'image-to-video' | 'text-to-video';
 
@@ -273,15 +273,17 @@ export default function App() {
               ) : (
                 <TextInputArea text={videoTextInput} onChange={setVideoTextInput} disabled={textVideoIsLoading} />
               )}
-              <VideoModelSelector selected={selectedVideoModel} onChange={setSelectedVideoModel} />
-              <VideoOptions
-                motionStyle={selectedMotionStyle}
-                onMotionStyleChange={setSelectedMotionStyle}
-                duration={selectedDuration}
-                onDurationChange={setSelectedDuration}
-                cameraMovement={selectedCameraMovement}
-                onCameraMovementChange={setSelectedCameraMovement}
-              />
+              <Suspense fallback={null}>
+                <VideoModelSelector selected={selectedVideoModel} onChange={setSelectedVideoModel} />
+                <VideoOptions
+                  motionStyle={selectedMotionStyle}
+                  onMotionStyleChange={setSelectedMotionStyle}
+                  duration={selectedDuration}
+                  onDurationChange={setSelectedDuration}
+                  cameraMovement={selectedCameraMovement}
+                  onCameraMovementChange={setSelectedCameraMovement}
+                />
+              </Suspense>
               {activeTabError && !combinedIsLoading && (
                 <div className="flex items-center gap-3 rounded-xl border border-[var(--error)]/30 bg-[var(--error)]/10 px-4 py-3" role="alert" aria-live="polite">
                   <span className="text-[var(--error)]" aria-hidden="true">⚠</span>
@@ -541,15 +543,17 @@ export default function App() {
                   </>
                 ) : (
                   <>
-                    <VideoModelSelector selected={selectedVideoModel} onChange={setSelectedVideoModel} />
-                    <VideoOptions
-                      motionStyle={selectedMotionStyle}
-                      onMotionStyleChange={setSelectedMotionStyle}
-                      duration={selectedDuration}
-                      onDurationChange={setSelectedDuration}
-                      cameraMovement={selectedCameraMovement}
-                      onCameraMovementChange={setSelectedCameraMovement}
-                    />
+                    <Suspense fallback={null}>
+                      <VideoModelSelector selected={selectedVideoModel} onChange={setSelectedVideoModel} />
+                      <VideoOptions
+                        motionStyle={selectedMotionStyle}
+                        onMotionStyleChange={setSelectedMotionStyle}
+                        duration={selectedDuration}
+                        onDurationChange={setSelectedDuration}
+                        cameraMovement={selectedCameraMovement}
+                        onCameraMovementChange={setSelectedCameraMovement}
+                      />
+                    </Suspense>
                   </>
                 )}
 

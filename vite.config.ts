@@ -3,6 +3,19 @@ import react from '@vitejs/plugin-react';
 import fs from 'fs';
 import path from 'path';
 
+const inlineCriticalCSSPlugin = {
+  name: 'inline-critical-css',
+  transformIndexHtml(html: string) {
+    const cssPath = path.join(process.cwd(), 'public', 'critical.css');
+    if (!fs.existsSync(cssPath)) return html;
+    const css = fs.readFileSync(cssPath, 'utf-8').replace(/\n/g, '').trim();
+    return html.replace(
+      '<link rel="stylesheet" href="/critical.css" />',
+      `<style>${css}</style>`
+    );
+  },
+};
+
 const staticPagesPlugin = {
   name: 'static-html-pages',
   configureServer(server: any) {
@@ -26,7 +39,7 @@ const staticPagesPlugin = {
 };
 
 export default defineConfig({
-  plugins: [react(), staticPagesPlugin],
+  plugins: [inlineCriticalCSSPlugin, react(), staticPagesPlugin],
   server: {
     port: 5173,
     proxy: {
