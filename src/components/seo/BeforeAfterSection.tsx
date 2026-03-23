@@ -9,7 +9,7 @@ const EXAMPLES = [
     model: 'Midjourney',
     modelColor: '#00b4d8',
     prompt:
-      'documentary portrait, elderly fisherman at harbor at dawn, weathered skin texture, golden hour rim lighting, shallow depth of field, film grain, Kodak Portra tones --ar 2:3 --v 6.1 --style raw --stylize 350',
+      'Shibuya crossing at rush hour, aerial perspective, dense crowds of pedestrians, glowing neon signs reflecting on rain-wet pavement, atmospheric evening light --ar 16:9 --v 6.1 --style raw --stylize 500',
     subjectKey: 'seo.beforeAfter.subject1',
   },
   {
@@ -20,7 +20,7 @@ const EXAMPLES = [
     model: 'Stable Diffusion',
     modelColor: '#ff6b35',
     prompt:
-      '(masterpiece:1.2), (ultra-detailed:1.1), fantasy character illustration, elven warrior in enchanted forest, bioluminescent flora, ethereal blue-green lighting, dynamic pose\nNegative: (worst quality:1.4), blurry, watermark',
+      '(masterpiece:1.2), (ultra-detailed:1.1), fantasy dragon illustration, fearsome dragon with iridescent scales, bioluminescent flora, ethereal blue-green lighting, dynamic pose\nNegative: (worst quality:1.4), blurry, watermark',
     subjectKey: 'seo.beforeAfter.subject2',
   },
   {
@@ -31,7 +31,7 @@ const EXAMPLES = [
     model: 'Flux AI',
     modelColor: '#7c3aed',
     prompt:
-      'A lone astronaut stands on a rust-colored alien plateau beneath a vast binary star system. Shot with a Sony A7R V, 24mm f/2.8, deep focus. Teal and amber color grade, cinematic quality, photorealistic.',
+      'Luxury Swiss chronograph watch on matte obsidian surface, dramatic studio lighting with soft specular highlights, macro lens, hyperrealistic product photography, shallow depth of field, Hasselblad X2D, f/4.',
     subjectKey: 'seo.beforeAfter.subject3',
   },
 ];
