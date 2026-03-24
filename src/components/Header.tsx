@@ -145,11 +145,11 @@ export default function Header({ onHistoryOpen, hasHistory }: HeaderProps) {
           transition={{ duration: 0.4 }}
         >
           <img src="/favicon.svg" alt="ImageToPrompt" width="40" height="40" className="rounded-xl flex-shrink-0" />
-          <div className="flex flex-col" style={{ gap: '2px' }}>
-            <span className="font-grotesk text-[1.0625rem] font-700 text-[var(--text-primary)] tracking-tight whitespace-nowrap" style={{ lineHeight: '1.1' }}>
+          <div className="flex flex-col" style={{ gap: '0px' }}>
+            <span className="font-grotesk text-[1.0625rem] font-700 text-[var(--text-primary)] tracking-tight whitespace-nowrap" style={{ lineHeight: '1.0', margin: 0, padding: 0 }}>
               ImageTo<span className="gradient-clip" style={{ background: 'linear-gradient(135deg, #e040fb, #f06292)' }}>Prompt</span>
             </span>
-            <span className="hidden sm:block font-inter text-[0.75rem] text-[var(--text-secondary)] whitespace-nowrap">
+            <span className="hidden sm:block font-inter text-[var(--text-secondary)] whitespace-nowrap" style={{ lineHeight: '1.0', margin: 0, padding: 0, marginTop: '1px', fontSize: '11px' }}>
               {t('hero.tagline')}
             </span>
           </div>
