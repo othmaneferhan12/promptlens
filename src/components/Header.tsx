@@ -134,7 +134,7 @@ export default function Header({ onHistoryOpen, hasHistory }: HeaderProps) {
   ];
 
   return (
-    <header className="sticky top-0 z-40 border-b border-[var(--border-subtle)] bg-[var(--bg-void)]/80 backdrop-blur-xl h-[57px] flex items-center">
+    <header className="sticky top-0 z-50 border-b border-[var(--border-subtle)] bg-[var(--bg-void)]/80 backdrop-blur-xl h-[57px] flex items-center" style={{ position: 'relative' }}>
       <div className="mx-auto flex w-full max-w-7xl items-center justify-between px-4 sm:px-6">
         {/* Logo */}
         <motion.a
@@ -185,13 +185,15 @@ export default function Header({ onHistoryOpen, hasHistory }: HeaderProps) {
                   exit={{ opacity: 0, y: -8, scale: 0.97 }}
                   transition={{ duration: 0.15 }}
                   role="menu"
-                  className="absolute right-0 top-full mt-2 rounded-2xl border border-[var(--border-subtle)] shadow-2xl z-50 overflow-hidden"
+                  className="absolute right-0 top-full mt-2 rounded-2xl overflow-hidden"
                   style={{
-                    backdropFilter: 'blur(20px)',
-                    background: 'var(--bg-elevated)',
+                    position: 'absolute',
+                    zIndex: 9999,
                     width: '480px',
-                    boxShadow: 'var(--shadow-dropdown, 0 20px 60px rgba(0,0,0,0.6))',
-                    border: '1px solid var(--border-subtle)',
+                    backdropFilter: 'blur(20px)',
+                    background: 'rgba(15, 15, 25, 0.98)',
+                    border: '1px solid rgba(255,255,255,0.1)',
+                    boxShadow: '0 12px 40px rgba(0,0,0,0.4)',
                   }}
                 >
                   <div className="grid p-4" style={{ gridTemplateColumns: '1fr auto 1fr', gap: 0 }}>
@@ -313,8 +315,16 @@ export default function Header({ onHistoryOpen, hasHistory }: HeaderProps) {
                   transition={{ duration: 0.12 }}
                   role="listbox"
                   aria-label={t('language.selectLanguage')}
-                  className="absolute right-0 top-full z-50 mt-2 w-44 overflow-hidden rounded-xl border border-[var(--border-subtle)] shadow-2xl"
-                  style={{ backdropFilter: 'blur(16px)', background: 'var(--bg-elevated)' }}
+                  className="absolute right-0 top-full overflow-hidden rounded-xl"
+                  style={{
+                    position: 'absolute',
+                    zIndex: 9999,
+                    width: '176px',
+                    backdropFilter: 'blur(20px)',
+                    background: 'rgba(15, 15, 25, 0.98)',
+                    border: '1px solid rgba(255,255,255,0.1)',
+                    boxShadow: '0 12px 40px rgba(0,0,0,0.4)',
+                  }}
                 >
                   {UI_LANGUAGES.map((lng) => (
                     <button
