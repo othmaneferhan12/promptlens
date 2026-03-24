@@ -270,7 +270,7 @@ export default function App() {
   // ── Embed mode ──────────────────────────────────────────────────────────────
   if (isEmbed) {
     return (
-      <div className="min-h-screen bg-[var(--bg-void)]">
+      <div className="min-h-screen bg-transparent">
         <main className="relative mx-auto max-w-3xl px-4 py-8 sm:px-6" role="main">
           {category === 'image' && showImageTools && (
             <div className="space-y-6">
@@ -391,7 +391,7 @@ export default function App() {
 
   // ── Full app ────────────────────────────────────────────────────────────────
   return (
-    <div className="min-h-screen bg-[var(--bg-void)]">
+    <div className="min-h-screen bg-transparent">
       {/* Skip nav */}
       <a
         href="#tool"
