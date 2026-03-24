@@ -149,7 +149,7 @@ export default function Header({ onHistoryOpen, hasHistory }: HeaderProps) {
             <span className="font-grotesk text-[1.0625rem] font-700 text-[var(--text-primary)] tracking-tight whitespace-nowrap" style={{ lineHeight: '1.1' }}>
               ImageTo<span className="gradient-clip" style={{ background: 'linear-gradient(135deg, #e040fb, #f06292)' }}>Prompt</span>
             </span>
-            <span className="hidden sm:block font-inter text-[0.8125rem] text-[var(--text-secondary)] whitespace-nowrap">
+            <span className="hidden sm:block font-inter text-[0.75rem] text-[var(--text-secondary)] whitespace-nowrap">
               {t('hero.tagline')}
             </span>
           </div>

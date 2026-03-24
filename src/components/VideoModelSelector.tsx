@@ -51,9 +51,6 @@ export default function VideoModelSelector({ selected, onChange }: VideoModelSel
               <span className="font-inter text-[10px] text-[var(--text-secondary)] leading-tight">
                 {model.badge}
               </span>
-              <span className="font-inter text-[9px] text-[var(--text-secondary)]/50 leading-tight">
-                {model.company}
-              </span>
             </button>
           );
         })}

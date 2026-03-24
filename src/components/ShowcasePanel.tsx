@@ -119,7 +119,7 @@ export default function ShowcasePanel() {
       </div>
 
       {/* Card stack area — fixed dimensions to prevent layout shift */}
-      <div className="relative overflow-hidden p-4" style={{ width: '100%', height: '480px', minHeight: '480px' }}>
+      <div className="relative overflow-hidden p-4" style={{ width: '100%', height: '520px', minHeight: '520px' }}>
         {EXAMPLES.map((ex, idx) => {
           const dist = (idx - active + N) % N;
           const isExiting = idx === exiting;

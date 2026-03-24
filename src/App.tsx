@@ -497,7 +497,7 @@ export default function App() {
 
               {/* Featured on */}
               <div className="flex items-center justify-center gap-6 mt-3" style={{ opacity: 0.4 }}>
-                <span className="font-inter text-[0.8125rem]" style={{ color: 'var(--text-muted)', letterSpacing: '0.5px' }}>{t('hero.featuredOn')}</span>
+                <span className="font-inter text-[0.8125rem]" style={{ color: 'var(--text-muted)', letterSpacing: '1px' }}>{t('hero.featuredOn')}</span>
                 <span className="font-inter text-[0.8125rem] font-600" style={{ color: 'var(--text-muted)' }}>DEV.to</span>
                 <span className="font-inter text-[0.8125rem] font-600" style={{ color: 'var(--text-muted)' }}>Medium</span>
                 <span className="font-inter text-[0.8125rem] font-600" style={{ color: 'var(--text-muted)' }}>Hashnode</span>
@@ -510,7 +510,7 @@ export default function App() {
               {/* ── ONE unified tool container ── */}
               <div
                 className="flex flex-col gap-5 rounded-2xl border p-5 sm:p-6"
-                style={{ borderColor: 'var(--border-subtle)', background: 'var(--bg-card)' }}
+                style={{ borderColor: 'var(--border-subtle)', background: 'var(--bg-card)', minHeight: '680px' }}
               >
                 {/* Category pills */}
                 <div className="flex gap-2">
