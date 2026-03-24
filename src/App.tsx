@@ -1,5 +1,6 @@
 import { useState, useCallback, useEffect, lazy, Suspense } from 'react';
 import { useTranslation } from 'react-i18next';
+import { Image, Video, FileText, TrendingUp, ImageIcon, Pencil, Film, PenTool } from 'lucide-react';
 import Header from './components/Header';
 import UploadZone from './components/UploadZone';
 import ModelSelector from './components/ModelSelector';
@@ -489,16 +490,17 @@ export default function App() {
               </div>
 
               {/* Prompt counter */}
-              <p className="text-center font-inter mt-2" style={{ color: 'var(--text-muted)', fontSize: '0.875rem' }}>
-                🔥 <strong style={{ color: 'var(--text-primary)' }}>2,500+</strong> {t('hero.promptsToday')}
+              <p className="text-center font-inter mt-2 flex items-center justify-center gap-1.5" style={{ color: 'var(--text-muted)', fontSize: '0.875rem' }}>
+                <TrendingUp size={16} style={{ color: 'var(--text-primary)' }} />
+                <strong style={{ color: 'var(--text-primary)' }}>2,500+</strong> {t('hero.promptsToday')}
               </p>
 
               {/* Featured on */}
-              <div className="flex items-center justify-center gap-6 mt-3" style={{ opacity: 0.45 }}>
-                <span className="font-inter text-xs" style={{ color: 'var(--text-muted)' }}>{t('hero.featuredOn')}</span>
-                <span className="font-inter text-xs font-600" style={{ color: 'var(--text-muted)' }}>DEV.to</span>
-                <span className="font-inter text-xs font-600" style={{ color: 'var(--text-muted)' }}>Medium</span>
-                <span className="font-inter text-xs font-600" style={{ color: 'var(--text-muted)' }}>Hashnode</span>
+              <div className="flex items-center justify-center gap-6 mt-3" style={{ opacity: 0.4 }}>
+                <span className="font-inter text-[0.8125rem]" style={{ color: 'var(--text-muted)', letterSpacing: '0.5px' }}>{t('hero.featuredOn')}</span>
+                <span className="font-inter text-[0.8125rem] font-600" style={{ color: 'var(--text-muted)' }}>DEV.to</span>
+                <span className="font-inter text-[0.8125rem] font-600" style={{ color: 'var(--text-muted)' }}>Medium</span>
+                <span className="font-inter text-[0.8125rem] font-600" style={{ color: 'var(--text-muted)' }}>Hashnode</span>
               </div>
             </div>
 
@@ -513,10 +515,10 @@ export default function App() {
                 {/* Category pills */}
                 <div className="flex gap-2">
                   {([
-                    ['image', '🖼️', t('tabs.imagePrompts'), 'image-to-prompt', '#e040fb33', '#00e5ff33', '#e040fb'],
-                    ['video', '🎬', t('tabs.videoPrompts'), 'image-to-video', '#7c3aed33', '#0891b233', '#7c3aed'],
-                    ['describe', '📝', t('tabs.describeImage', 'Describe Image'), 'describe-image', '#34d39933', '#06b6d433', '#34d399'],
-                  ] as const).map(([cat, icon, label, defaultTab, gradFrom, gradTo, borderColor]) => (
+                    ['image', Image, t('tabs.imagePrompts'), 'image-to-prompt', '#e040fb33', '#00e5ff33', '#e040fb'],
+                    ['video', Video, t('tabs.videoPrompts'), 'image-to-video', '#7c3aed33', '#0891b233', '#7c3aed'],
+                    ['describe', FileText, t('tabs.describeImage', 'Describe Image'), 'describe-image', '#34d39933', '#06b6d433', '#34d399'],
+                  ] as const).map(([cat, IconComponent, label, defaultTab, gradFrom, gradTo, borderColor]) => (
                     <button
                       key={cat}
                       onClick={() => handleTabChange(defaultTab as ActiveTab)}
@@ -529,7 +531,7 @@ export default function App() {
                         border: `1px solid ${category === cat ? borderColor : 'var(--border-subtle)'}`,
                       }}
                     >
-                      <span>{icon}</span>
+                      <IconComponent size={18} strokeWidth={2} style={{ flexShrink: 0 }} />
                       <span>{label}</span>
                     </button>
                   ))}
@@ -540,9 +542,9 @@ export default function App() {
                 <div className="flex gap-2 p-1 rounded-xl border border-[var(--border-subtle)] bg-[var(--bg-elevated)]">
                   {category === 'image' ? (
                     ([
-                      ['image-to-prompt', '🖼️', t('tabs.imageToPrompt')],
-                      ['text-to-prompt', '✏️', t('tabs.textToPrompt')],
-                    ] as const).map(([tab, icon, label]) => (
+                      ['image-to-prompt', ImageIcon, t('tabs.imageToPrompt')],
+                      ['text-to-prompt', Pencil, t('tabs.textToPrompt')],
+                    ] as const).map(([tab, IconComponent, label]) => (
                       <button
                         key={tab}
                         onClick={() => handleTabChange(tab)}
@@ -553,15 +555,15 @@ export default function App() {
                           boxShadow: activeTab === tab ? 'var(--shadow-tab, 0 1px 4px rgba(0,0,0,0.2))' : 'none',
                         }}
                       >
-                        <span>{icon}</span>
+                        <IconComponent size={16} strokeWidth={2} style={{ flexShrink: 0 }} />
                         <span>{label}</span>
                       </button>
                     ))
                   ) : (
                     ([
-                      ['image-to-video', '🎥', t('tabs.imageToVideo')],
-                      ['text-to-video', '✏️', t('tabs.textToVideo')],
-                    ] as const).map(([tab, icon, label]) => (
+                      ['image-to-video', Film, t('tabs.imageToVideo')],
+                      ['text-to-video', PenTool, t('tabs.textToVideo')],
+                    ] as const).map(([tab, IconComponent, label]) => (
                       <button
                         key={tab}
                         onClick={() => handleTabChange(tab)}
@@ -572,7 +574,7 @@ export default function App() {
                           boxShadow: activeTab === tab ? 'var(--shadow-tab, 0 1px 4px rgba(0,0,0,0.2))' : 'none',
                         }}
                       >
-                        <span>{icon}</span>
+                        <IconComponent size={16} strokeWidth={2} style={{ flexShrink: 0 }} />
                         <span>{label}</span>
                       </button>
                     ))

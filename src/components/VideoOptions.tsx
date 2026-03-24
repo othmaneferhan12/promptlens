@@ -1,6 +1,28 @@
 import { useTranslation } from 'react-i18next';
 import { MOTION_STYLE_CONFIGS, DURATION_CONFIGS, CAMERA_MOVEMENT_CONFIGS } from '../utils/videoUtils';
 import type { VideoMotionStyle, VideoDuration, VideoCameraMovement } from '../types';
+import { Clapperboard, Zap, Clock, Timer, Waves, Drama, Square, ArrowLeft, ArrowRight, ZoomIn, ZoomOut, RotateCcw, MoveHorizontal, ArrowUp, ArrowDown } from 'lucide-react';
+
+const MOTION_ICON_MAP: Record<string, React.ReactNode> = {
+  'cinematic': <Clapperboard size={14} strokeWidth={2} />,
+  'dynamic': <Zap size={14} strokeWidth={2} />,
+  'slow-motion': <Clock size={14} strokeWidth={2} />,
+  'timelapse': <Timer size={14} strokeWidth={2} />,
+  'smooth': <Waves size={14} strokeWidth={2} />,
+  'dramatic': <Drama size={14} strokeWidth={2} />,
+};
+
+const CAMERA_ICON_MAP: Record<string, React.ReactNode> = {
+  'static': <Square size={14} strokeWidth={2} />,
+  'pan-left': <ArrowLeft size={14} strokeWidth={2} />,
+  'pan-right': <ArrowRight size={14} strokeWidth={2} />,
+  'zoom-in': <ZoomIn size={14} strokeWidth={2} />,
+  'zoom-out': <ZoomOut size={14} strokeWidth={2} />,
+  'orbit': <RotateCcw size={14} strokeWidth={2} />,
+  'dolly': <MoveHorizontal size={14} strokeWidth={2} />,
+  'tilt-up': <ArrowUp size={14} strokeWidth={2} />,
+  'tilt-down': <ArrowDown size={14} strokeWidth={2} />,
+};
 
 interface VideoOptionsProps {
   motionStyle: VideoMotionStyle;
@@ -18,12 +40,14 @@ function PillSelector<T extends string>({
   selected,
   onChange,
   disabled,
+  iconMap,
 }: {
   label: string;
   options: { id: T; label: string; emoji?: string }[];
   selected: T;
   onChange: (v: T) => void;
   disabled?: boolean;
+  iconMap?: Record<string, React.ReactNode>;
 }) {
   return (
     <div className="flex flex-col gap-1.5">
@@ -33,6 +57,7 @@ function PillSelector<T extends string>({
       <div className="flex flex-wrap gap-1.5">
         {options.map((opt) => {
           const isSelected = selected === opt.id;
+          const icon = iconMap?.[opt.id];
           return (
             <button
               key={opt.id}
@@ -47,7 +72,7 @@ function PillSelector<T extends string>({
                 color: isSelected ? 'var(--accent-lens)' : 'var(--text-secondary)',
               }}
             >
-              {opt.emoji && <span>{opt.emoji}</span>}
+              {icon ? <span className="flex items-center justify-center text-current">{icon}</span> : (opt.emoji && <span>{opt.emoji}</span>)}
               <span>{opt.label}</span>
             </button>
           );
@@ -76,6 +101,7 @@ export default function VideoOptions({
         selected={motionStyle}
         onChange={onMotionStyleChange}
         disabled={disabled}
+        iconMap={MOTION_ICON_MAP}
       />
       <PillSelector
         label={t('controls.duration')}
@@ -90,6 +116,7 @@ export default function VideoOptions({
         selected={cameraMovement}
         onChange={onCameraMovementChange}
         disabled={disabled}
+        iconMap={CAMERA_ICON_MAP}
       />
     </div>
   );

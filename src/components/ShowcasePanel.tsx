@@ -1,6 +1,7 @@
 import { useState, useEffect, useCallback, useRef } from 'react';
 import { useTranslation } from 'react-i18next';
 import { motion } from 'framer-motion';
+import { Sparkles } from 'lucide-react';
 
 const EXAMPLES = [
   {
@@ -112,13 +113,13 @@ export default function ShowcasePanel() {
           className="flex items-center gap-1.5 rounded-full px-3 py-1 font-inter text-xs font-500"
           style={{ background: 'rgba(224,64,251,0.12)', color: '#e040fb', border: '1px solid rgba(224,64,251,0.25)' }}
         >
-          <span>✨</span>
+          <Sparkles size={14} strokeWidth={2} style={{ flexShrink: 0 }} />
           <span>{t('showcase.title')}</span>
         </div>
       </div>
 
-      {/* Card stack area */}
-      <div className="relative flex-1 overflow-hidden p-4">
+      {/* Card stack area — fixed dimensions to prevent layout shift */}
+      <div className="relative overflow-hidden p-4" style={{ width: '100%', height: '480px', minHeight: '480px' }}>
         {EXAMPLES.map((ex, idx) => {
           const dist = (idx - active + N) % N;
           const isExiting = idx === exiting;
@@ -134,10 +135,13 @@ export default function ShowcasePanel() {
               key={idx}
               style={{
                 position: 'absolute',
-                inset: 16,
-                borderRadius: 12,
-                border: '1px solid var(--border-subtle)',
-                background: 'var(--bg-elevated)',
+                top: 0,
+                left: 0,
+                right: 0,
+                bottom: 0,
+                borderRadius: '16px',
+                border: '1px solid rgba(255,255,255,0.08)',
+                background: 'rgba(255,255,255,0.02)',
                 zIndex: isExiting ? 20 : 13 - dist,
                 transformOrigin: 'top left',
                 overflow: 'hidden',
@@ -148,13 +152,13 @@ export default function ShowcasePanel() {
               {showContent && (
                 <div className="flex flex-col h-full p-3">
                   {/* Image */}
-                  <div className="overflow-hidden rounded-xl flex-1 min-h-[160px]">
+                  <div className="overflow-hidden flex-1 min-h-[160px]" style={{ borderRadius: '12px' }}>
                     <picture>
                       <source srcSet={ex.image} type="image/webp" />
                       <img
                         src={ex.image.replace('.webp', '.jpeg')}
                         alt={`Example: ${ex.label}`}
-                        className="w-full h-full object-cover rounded-xl"
+                        className="w-full h-full object-cover"
                         loading={dist === 0 ? 'eager' : 'lazy'}
                         fetchPriority={dist === 0 ? 'high' : 'auto'}
                         width="400"

@@ -1,11 +1,23 @@
 import { useTranslation } from 'react-i18next';
 import { VIDEO_MODEL_CONFIGS } from '../utils/videoUtils';
 import type { VideoModel } from '../types';
+import { MonitorPlay, Clapperboard, Film, Zap, Sun, Eye, Users, Code } from 'lucide-react';
 
 interface VideoModelSelectorProps {
   selected: VideoModel;
   onChange: (model: VideoModel) => void;
 }
+
+const ICON_MAP: Record<VideoModel, React.ReactNode> = {
+  'veo': <MonitorPlay size={20} strokeWidth={2} />,
+  'kling': <Clapperboard size={20} strokeWidth={2} />,
+  'runway': <Film size={20} strokeWidth={2} />,
+  'pika': <Zap size={20} strokeWidth={2} />,
+  'luma': <Sun size={20} strokeWidth={2} />,
+  'sora': <Eye size={20} strokeWidth={2} />,
+  'minimax': <Users size={20} strokeWidth={2} />,
+  'stable-video': <Code size={20} strokeWidth={2} />,
+};
 
 export default function VideoModelSelector({ selected, onChange }: VideoModelSelectorProps) {
   const { t } = useTranslation();
@@ -29,7 +41,7 @@ export default function VideoModelSelector({ selected, onChange }: VideoModelSel
                 boxShadow: isSelected ? `0 0 0 1px ${model.color}40` : 'none',
               }}
             >
-              <span className="text-lg leading-none">{model.icon}</span>
+              <span className="flex items-center justify-center text-current">{ICON_MAP[model.id]}</span>
               <span
                 className="font-grotesk text-xs font-700 leading-tight"
                 style={{ color: isSelected ? model.color : 'var(--text-primary)' }}

@@ -1,11 +1,21 @@
 import { useTranslation } from 'react-i18next';
 import { STYLE_CONFIGS } from '../utils/imageUtils';
 import type { PromptStyle } from '../types';
+import { Clapperboard, Ruler, Brush, Minus, Mountain, Camera } from 'lucide-react';
 
 interface StyleSelectorProps {
   selected: PromptStyle;
   onChange: (style: PromptStyle) => void;
 }
+
+const ICON_MAP: Record<PromptStyle, React.ReactNode> = {
+  'cinematic': <Clapperboard size={14} strokeWidth={2} />,
+  'technical': <Ruler size={14} strokeWidth={2} />,
+  'artistic': <Brush size={14} strokeWidth={2} />,
+  'minimal': <Minus size={14} strokeWidth={2} />,
+  'epic': <Mountain size={14} strokeWidth={2} />,
+  'photographic': <Camera size={14} strokeWidth={2} />,
+};
 
 export default function StyleSelector({ selected, onChange }: StyleSelectorProps) {
   const { t } = useTranslation();
@@ -29,7 +39,7 @@ export default function StyleSelector({ selected, onChange }: StyleSelectorProps
                 boxShadow: isSelected ? 'var(--glow-sm)' : 'none',
               }}
             >
-              <span className="text-sm leading-none">{s.emoji}</span>
+              <span className="flex items-center justify-center text-current">{ICON_MAP[s.id]}</span>
               <span
                 className="font-grotesk text-xs font-600"
                 style={{ color: isSelected ? 'var(--accent-lens)' : 'var(--text-primary)' }}

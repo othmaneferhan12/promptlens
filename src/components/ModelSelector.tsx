@@ -1,11 +1,22 @@
 import { useTranslation } from 'react-i18next';
 import { MODEL_CONFIGS } from '../utils/imageUtils';
 import type { AIModel } from '../types';
+import { Palette, Settings, Zap, Sparkles, Flame, Gamepad2, Type } from 'lucide-react';
 
 interface ModelSelectorProps {
   selected: AIModel;
   onChange: (model: AIModel) => void;
 }
+
+const ICON_MAP: Record<AIModel, React.ReactNode> = {
+  'midjourney': <Palette size={20} strokeWidth={2} />,
+  'stable-diffusion': <Settings size={20} strokeWidth={2} />,
+  'flux': <Zap size={20} strokeWidth={2} />,
+  'dalle3': <Sparkles size={20} strokeWidth={2} />,
+  'firefly': <Flame size={20} strokeWidth={2} />,
+  'leonardo': <Gamepad2 size={20} strokeWidth={2} />,
+  'ideogram': <Type size={20} strokeWidth={2} />,
+};
 
 export default function ModelSelector({ selected, onChange }: ModelSelectorProps) {
   const { t } = useTranslation();
@@ -29,7 +40,7 @@ export default function ModelSelector({ selected, onChange }: ModelSelectorProps
                 boxShadow: isSelected ? `0 0 12px ${model.color}28` : 'none',
               }}
             >
-              <span className="text-base leading-none shrink-0">{model.icon}</span>
+              <span className="flex-shrink-0 flex items-center justify-center text-current">{ICON_MAP[model.id]}</span>
               <div className="min-w-0 flex-1">
                 <div
                   className="font-grotesk text-xs font-600 leading-tight truncate"
