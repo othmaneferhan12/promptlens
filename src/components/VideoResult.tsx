@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { motion, AnimatePresence } from 'framer-motion';
-import { RotateCcw, Download, Sparkles, ChevronDown, ChevronUp } from 'lucide-react';
+import { RotateCcw, Download, Sparkles, ChevronDown, ChevronUp, Film } from 'lucide-react';
 import type { VideoResult as VideoResultType, VideoModel, VideoMotionStyle } from '../types';
 import { getVideoModelConfig, MOTION_STYLE_CONFIGS, DURATION_CONFIGS, CAMERA_MOVEMENT_CONFIGS } from '../utils/videoUtils';
 
@@ -108,7 +108,7 @@ export default function VideoResult({
         <div>
           <h2 className="font-grotesk text-2xl font-700 text-[var(--text-primary)]">
             {t('videoResult.promptReady')}{' '}
-            <span style={{ color: 'var(--accent-lens)' }}>✨</span>
+            <Sparkles size={24} strokeWidth={2} style={{ color: 'var(--accent-lens)', display: 'inline-block', verticalAlign: 'middle' }} />
           </h2>
           <div className="mt-1 flex items-center gap-2 flex-wrap">
             <span
@@ -121,8 +121,9 @@ export default function VideoResult({
             >
               {modelConfig.icon} {modelConfig.name}
             </span>
-            <span className="rounded-full px-2.5 py-1 font-mono text-[11px] font-600 border border-[var(--border-subtle)] text-[var(--text-secondary)]">
-              🎬 {motionLabel}
+            <span className="rounded-full px-2.5 py-1 font-mono text-[11px] font-600 border border-[var(--border-subtle)] text-[var(--text-secondary)] flex items-center gap-1">
+              <Film size={12} strokeWidth={2} style={{ flexShrink: 0 }} />
+              {motionLabel}
             </span>
             <span className="rounded-full px-2.5 py-1 font-mono text-[11px] font-600 border border-[var(--border-subtle)] text-[var(--text-secondary)]">
               ⏱ {durationLabel}
@@ -155,7 +156,7 @@ export default function VideoResult({
         <div className="overflow-hidden rounded-2xl border border-[var(--border-subtle)] bg-[var(--bg-card)]">
           <div className="flex items-center justify-between border-b border-[var(--border-subtle)] px-4 py-2.5">
             <div className="flex items-center gap-2">
-              <span>🎬</span>
+              <Film size={16} strokeWidth={2} style={{ color: 'var(--text-secondary)' }} />
               <span className="font-mono text-xs font-600 uppercase tracking-wider text-[var(--text-secondary)]">
                 {t('videoResult.mainVideoPrompt')}
               </span>

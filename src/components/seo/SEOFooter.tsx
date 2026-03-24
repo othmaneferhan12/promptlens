@@ -1,5 +1,6 @@
 import type { ReactNode } from 'react';
 import { useTranslation } from 'react-i18next';
+import { Film } from 'lucide-react';
 import type { UILanguage } from '../../i18n';
 
 const imgLinkCls = 'font-inter text-[0.8125rem] text-[var(--text-muted)] hover:text-[#e040fb] transition-colors duration-150 leading-snug';
@@ -101,7 +102,7 @@ export default function SEOFooter() {
           <div className="hidden sm:block">
             <FooterCol
               heading={t('footer.videoTools')}
-              icon={<span style={{ fontSize: '0.625rem', lineHeight: 1 }}>🎬</span>}
+              icon={<Film size={14} strokeWidth={2} style={{ flexShrink: 0, color: 'rgba(0,210,255,0.75)' }} />}
               headingColor="rgba(0,210,255,0.75)"
               linkCls={vidLinkCls}
               links={[

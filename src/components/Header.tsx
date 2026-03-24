@@ -228,8 +228,9 @@ export default function Header({ onHistoryOpen, hasHistory }: HeaderProps) {
                     {/* Video Tools */}
                     <div className={colBase}>
                       <div className="flex items-center gap-1.5 px-1.5 pb-2.5">
-                        <span className="text-[0.5625rem] font-700 tracking-[0.12em] uppercase" style={{ color: 'rgba(0,210,255,0.8)' }}>
-                          🎬 {t('nav.videoTools')}
+                        <span className="text-[0.5625rem] font-700 tracking-[0.12em] uppercase flex items-center gap-1.5" style={{ color: 'rgba(0,210,255,0.8)' }}>
+                          <FilmIcon size={10} strokeWidth={2.5} style={{ flexShrink: 0 }} />
+                          {t('nav.videoTools')}
                         </span>
                         <span className="flex-1 h-px" style={{ background: 'var(--border-subtle)' }} />
                       </div>

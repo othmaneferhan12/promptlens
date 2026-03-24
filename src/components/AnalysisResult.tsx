@@ -283,7 +283,8 @@ export default function AnalysisResult({
                   border: '1px solid rgba(0,229,255,0.3)',
                 }}
               >
-                ✨ {t('result.variant')}
+                <Sparkles size={14} strokeWidth={2} style={{ display: 'inline', marginRight: '4px', verticalAlign: 'middle' }} />
+                {t('result.variant')}
               </span>
             </div>
             <button

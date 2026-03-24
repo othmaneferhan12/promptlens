@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { motion } from 'framer-motion';
-import { Copy, Check, Download, RotateCcw } from 'lucide-react';
+import { Copy, Check, Download, RotateCcw, FileText } from 'lucide-react';
 import type { DescribeImageResult as DescribeResultType } from '../types';
 
 interface Props {
@@ -100,7 +100,7 @@ export default function DescribeImageResult({ result, onReset, onRegenerate }: P
         className="flex flex-wrap items-center justify-between gap-3 rounded-2xl border border-[var(--border-subtle)] bg-[var(--bg-card)] p-4"
       >
         <div className="flex items-center gap-3">
-          <span className="text-xl" aria-hidden="true">📝</span>
+          <FileText size={24} strokeWidth={2} className="flex-shrink-0" style={{ color: 'var(--text-primary)' }} />
           <h2 className="font-grotesk text-lg font-700 text-[var(--text-primary)]">
             {t('describe.resultTitle', 'Image Description Ready')}
           </h2>

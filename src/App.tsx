@@ -1,6 +1,6 @@
 import { useState, useCallback, useEffect, lazy, Suspense } from 'react';
 import { useTranslation } from 'react-i18next';
-import { Image, Video, FileText, TrendingUp, ImageIcon, Pencil, Film, PenTool } from 'lucide-react';
+import { Image, Video, FileText, TrendingUp, ImageIcon, Pencil, Film, PenTool, Sparkles } from 'lucide-react';
 import Header from './components/Header';
 import UploadZone from './components/UploadZone';
 import ModelSelector from './components/ModelSelector';
@@ -681,7 +681,7 @@ export default function App() {
                     }}
                   >
                     <span className="relative z-10 flex items-center justify-center gap-2">
-                      <span aria-hidden="true">✨</span>
+                      <Sparkles size={18} strokeWidth={2} style={{ flexShrink: 0 }} />
                       {!textInput.trim() ? t('buttons.enterDescription') : !rateLimit.canAnalyze ? t('buttons.dailyLimitReached') : t('buttons.enhancePrompt')}
                       <span className="hidden sm:inline font-mono text-sm opacity-60" aria-hidden="true">Ctrl+↵</span>
                     </span>
@@ -700,7 +700,7 @@ export default function App() {
                     }}
                   >
                     <span className="relative z-10 flex items-center justify-center gap-2">
-                      <span aria-hidden="true">🎬</span>
+                      <Film size={18} strokeWidth={2} style={{ flexShrink: 0 }} />
                       {!currentImage ? t('buttons.uploadFirst') : !rateLimit.canAnalyze ? t('buttons.dailyLimitReached') : t('buttons.generateVideoPrompt')}
                       <span className="hidden sm:inline font-mono text-sm opacity-60" aria-hidden="true">Ctrl+↵</span>
                     </span>
@@ -719,7 +719,7 @@ export default function App() {
                     }}
                   >
                     <span className="relative z-10 flex items-center justify-center gap-2">
-                      <span aria-hidden="true">📝</span>
+                      <FileText size={18} strokeWidth={2} style={{ flexShrink: 0 }} />
                       {!currentImage ? t('buttons.uploadFirst') : !rateLimit.canAnalyze ? t('buttons.dailyLimitReached') : t('buttons.describeImage', 'Describe Image')}
                       <span className="hidden sm:inline font-mono text-sm opacity-60" aria-hidden="true">Ctrl+↵</span>
                     </span>
@@ -738,7 +738,7 @@ export default function App() {
                     }}
                   >
                     <span className="relative z-10 flex items-center justify-center gap-2">
-                      <span aria-hidden="true">🎬</span>
+                      <Film size={18} strokeWidth={2} style={{ flexShrink: 0 }} />
                       {!videoTextInput.trim() ? t('buttons.enterDescription') : !rateLimit.canAnalyze ? t('buttons.dailyLimitReached') : t('buttons.generateVideoPrompt')}
                       <span className="hidden sm:inline font-mono text-sm opacity-60" aria-hidden="true">Ctrl+↵</span>
                     </span>
