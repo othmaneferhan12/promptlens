@@ -191,9 +191,9 @@ export default function Header({ onHistoryOpen, hasHistory }: HeaderProps) {
                     zIndex: 9999,
                     width: '480px',
                     backdropFilter: 'blur(20px)',
-                    background: 'rgba(15, 15, 25, 0.98)',
-                    border: '1px solid rgba(255,255,255,0.1)',
-                    boxShadow: '0 12px 40px rgba(0,0,0,0.4)',
+                    background: 'var(--bg-dropdown)',
+                    border: '1px solid var(--border-subtle)',
+                    boxShadow: 'var(--shadow-dropdown)',
                   }}
                 >
                   <div className="grid p-4" style={{ gridTemplateColumns: '1fr auto 1fr', gap: 0 }}>
@@ -321,9 +321,9 @@ export default function Header({ onHistoryOpen, hasHistory }: HeaderProps) {
                     zIndex: 9999,
                     width: '176px',
                     backdropFilter: 'blur(20px)',
-                    background: 'rgba(15, 15, 25, 0.98)',
-                    border: '1px solid rgba(255,255,255,0.1)',
-                    boxShadow: '0 12px 40px rgba(0,0,0,0.4)',
+                    background: 'var(--bg-dropdown)',
+                    border: '1px solid var(--border-subtle)',
+                    boxShadow: 'var(--shadow-dropdown)',
                   }}
                 >
                   {UI_LANGUAGES.map((lng) => (
