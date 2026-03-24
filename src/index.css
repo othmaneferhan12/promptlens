@@ -125,7 +125,14 @@
 
 [data-theme="light"] ::-webkit-scrollbar-track { background: #f1f5f9; }
 [data-theme="light"] ::-webkit-scrollbar-thumb { background: rgba(192,32,216,0.20); }
-[data-theme="light"] body { background-color: var(--bg-void); }
+[data-theme="light"] body {
+  background-color: var(--bg-void);
+  background-image:
+    radial-gradient(ellipse at 20% 50%, rgba(124, 58, 237, 0.04) 0%, transparent 50%),
+    radial-gradient(ellipse at 80% 20%, rgba(236, 72, 153, 0.03) 0%, transparent 50%),
+    radial-gradient(ellipse at 50% 80%, rgba(59, 130, 246, 0.03) 0%, transparent 50%);
+  background-attachment: fixed;
+}
 
 /* ── Base Resets ────────────────────────────────────────────── */
 *,
@@ -143,12 +150,46 @@ html {
 }
 
 body {
-  background-color: var(--bg-void);
+  background-color: #0A0A0F;
+  background-image:
+    radial-gradient(ellipse at 20% 50%, rgba(124, 58, 237, 0.08) 0%, transparent 50%),
+    radial-gradient(ellipse at 80% 20%, rgba(236, 72, 153, 0.06) 0%, transparent 50%),
+    radial-gradient(ellipse at 50% 80%, rgba(59, 130, 246, 0.05) 0%, transparent 50%);
+  background-attachment: fixed;
   color: var(--text-primary);
   font-family: 'Sora', system-ui, sans-serif;
   min-height: 100vh;
   overflow-x: hidden;
   line-height: 1.65;
+}
+
+body::after {
+  content: '';
+  position: fixed;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background:
+    radial-gradient(circle at 30% 40%, rgba(124, 58, 237, 0.07) 0%, transparent 40%),
+    radial-gradient(circle at 70% 60%, rgba(236, 72, 153, 0.05) 0%, transparent 40%);
+  animation: mesh-drift 20s ease-in-out infinite alternate;
+  pointer-events: none;
+  z-index: -1;
+  will-change: transform;
+}
+
+[data-theme="light"] body::after {
+  background:
+    radial-gradient(circle at 30% 40%, rgba(124, 58, 237, 0.03) 0%, transparent 40%),
+    radial-gradient(circle at 70% 60%, rgba(236, 72, 153, 0.02) 0%, transparent 40%);
+}
+
+@keyframes mesh-drift {
+  0% { transform: translate(0%, 0%) rotate(0deg); }
+  33% { transform: translate(2%, -2%) rotate(1deg); }
+  66% { transform: translate(-1%, 1%) rotate(-0.5deg); }
+  100% { transform: translate(1%, -1%) rotate(0.5deg); }
 }
 
 h1 {
