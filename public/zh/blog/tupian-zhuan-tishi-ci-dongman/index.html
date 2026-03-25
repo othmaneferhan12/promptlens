@@ -1,0 +1,636 @@
+<!doctype html>
+<html lang="zh">
+<head>
+  <script src="/theme-toggle.js"></script>
+  <meta charset="UTF-8" />
+  <link rel="dns-prefetch" href="https://www.googletagmanager.com">
+<link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="max-image-preview:large, index, follow">
+  <meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="ImageToPrompt">
+  <title>图片转提示词用于动漫艺术：AI动漫生成完整指南</title>
+  <meta name="description" content="学习如何将动漫图片转换为适用于Stable Diffusion、NovelAI和Midjourney的AI提示词。涵盖Booru标签、质量令牌、角色特征和风格指南。" />
+  <link rel="canonical" href="https://www.imagetoprompt.dev/zh/blog/tupian-zhuan-tishi-ci-dongman/" />
+  <link rel="alternate" hreflang="zh" href="https://www.imagetoprompt.dev/zh/blog/tupian-zhuan-tishi-ci-dongman/" />
+  <link rel="alternate" hreflang="en" href="https://www.imagetoprompt.dev/blog/image-to-prompt-for-anime/" />
+  <link rel="alternate" hreflang="x-default" href="https://www.imagetoprompt.dev/blog/image-to-prompt-for-anime/" />
+  <meta property="og:title" content="图片转提示词用于动漫艺术：AI动漫生成完整指南" />
+  <meta property="og:description" content="学习如何将动漫图片转换为适用于Stable Diffusion、NovelAI和Midjourney的AI提示词。涵盖Booru标签、质量令牌、角色特征和风格指南。" />
+  <meta property="og:url" content="https://www.imagetoprompt.dev/zh/blog/tupian-zhuan-tishi-ci-dongman/" />
+  <meta property="og:type" content="article" />
+  <meta property="og:image" content="https://www.imagetoprompt.dev/og-image.png" />
+  <meta property="og:site_name" content="ImageToPrompt" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="图片转提示词用于动漫艺术：AI动漫生成完整指南" />
+  <meta name="twitter:description" content="学习如何将动漫图片转换为适用于Stable Diffusion、NovelAI和Midjourney的AI提示词。涵盖Booru标签、质量令牌、角色特征和风格指南。" />
+  <meta name="twitter:image" content="https://www.imagetoprompt.dev/og-image.png" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="48x48" href="/favicon-48.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+  <link rel="manifest" href="/site.webmanifest" />
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="/fonts/space-grotesk-700.woff2" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="/fonts/inter-400.woff2" />
+  <link rel="stylesheet" href="/theme.css">
+  <link rel="preload" href="/blog.css" as="style" onload="this.onload=null;this.rel='stylesheet'"><noscript><link rel="stylesheet" href="/blog.css"></noscript>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "图片转提示词用于动漫艺术：AI动漫生成完整指南",
+    "description": "学习如何将动漫图片转换为适用于Stable Diffusion、NovelAI和Midjourney的AI提示词。涵盖Booru标签、质量令牌、角色特征和风格指南。",
+    "image": "https://www.imagetoprompt.dev/og-image.png",
+    "datePublished": "2026-03-12",
+    "dateModified": "2026-03-25",
+    "inLanguage": "zh",
+    "author": {
+      "@type": "Person",
+      "name": "ImageToPrompt Team",
+      "url": "https://www.imagetoprompt.dev/"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "ImageToPrompt",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://www.imagetoprompt.dev/favicon.svg"
+      }
+    },
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https://www.imagetoprompt.dev/zh/blog/tupian-zhuan-tishi-ci-dongman/"
+    }
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "在Stable Diffusion中生成动漫风格应使用哪些关键词？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "对于Stable Diffusion，请使用以下标签：anime、manga style、cel shading、vibrant colors、detailed eyes、sakura petals、dynamic pose。添加质量令牌如(masterpiece:1.2)、(best quality:1.1)，并使用专门针对动漫的负面提示词。"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Midjourney能生成真正的动漫风格吗？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "可以，Midjourney v6+能很好地处理动漫风格。使用如anime illustration、Studio Ghibli style、cel-shaded、manga aesthetic等提示词。添加--niji可激活Midjourney专门针对动漫优化的模式，这是一个完全不同的模型。"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "动漫艺术应使用哪些负面提示词？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "在Stable Diffusion中生成动漫时，请使用以下负面提示词：realistic, photorealistic, 3d render, deformed hands, extra fingers, bad anatomy, blurry, low quality, ugly, watermark, signature, cropped。包含realistic对避免不必要的风格混合至关重要。"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "如何将现有的动漫插图转换为AI提示词？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "使用ImageToPrompt上传您的动漫插图。该工具会自动识别风格（少年、少女、青年），设计特征和配色方案，并为您的目标模型生成优化的提示词。"
+        }
+      }
+    ]
+  }
+  </script>
+    <!-- Google AdSense -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4499206373485728" crossorigin="anonymous"></script>
+    <!-- Web Push Notifications -->
+<script src="https://cdn.onesignal.com/sdks/web/v16/OneSignalSDK.page.js" defer></script>
+<script>
+  window.OneSignalDeferred = window.OneSignalDeferred || [];
+  OneSignalDeferred.push(async function(OneSignal) {
+    await OneSignal.init({
+      appId: "REPLACE_WITH_ONESIGNAL_APP_ID",
+      notifyButton: { enable: false }
+    });
+  });
+</script>
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="inner">
+      <a href="/zh/" class="site-logo"><img src="/favicon.svg" alt="ImageToPrompt" width="48" height="48"><div class="site-logo-text">ImageTo<span class="accent">Prompt</span><span class="site-logo-sub">免费AI提示词生成器</span></div></a>
+      <nav class="site-nav" aria-label="主导航">
+        <div class="nav-dropdown">
+          <button class="nav-dropdown-trigger" aria-haspopup="true" aria-expanded="false">Tools <span class="nav-chevron" aria-hidden="true">&#9660;</span></button>
+          <div class="nav-dropdown-menu" role="menu">
+            <div class="nav-mega-grid">
+              <div class="nav-mega-col">
+                <div class="nav-mega-heading">&#128444; IMAGE TOOLS</div>
+                <a href="/" role="menuitem" class="nav-mega-tool">Image to Prompt <span class="nav-mega-arrow">&#8594;</span></a>
+                <a href="/text-to-prompt/" role="menuitem" class="nav-mega-tool">Text to Prompt <span class="nav-mega-arrow">&#8594;</span></a>
+                <a href="/describe-image/" role="menuitem" class="nav-mega-tool">Describe Image <span class="nav-new-badge">NEW</span> <span class="nav-mega-arrow">&#8594;</span></a>
+                <div class="nav-mega-models-label">Models</div>
+                <div class="nav-mega-models"><a href="/midjourney-prompt-generator/">Midjourney</a><span class="nav-dot">&#xB7;</span><a href="/stable-diffusion-prompt-generator/">SD</a></div>
+                <div class="nav-mega-models"><a href="/flux-prompt-generator/">Flux</a><span class="nav-dot">&#xB7;</span><a href="/dall-e-prompt-generator/">DALL&#xB7;E&#xA0;3</a></div>
+                <div class="nav-mega-models"><a href="/adobe-firefly-prompt-generator/">Firefly</a><span class="nav-dot">&#xB7;</span><a href="/leonardo-ai-prompt-generator/">Leonardo</a></div>
+                <div class="nav-mega-models"><a href="/ideogram-prompt-generator/">Ideogram</a></div>
+              </div>
+              <div class="nav-mega-divider" aria-hidden="true"></div>
+              <div class="nav-mega-col">
+                <div class="nav-mega-heading">&#127909; VIDEO TOOLS</div>
+                <a href="/?tab=image-to-video" role="menuitem" class="nav-mega-tool">Image to Video <span class="nav-mega-arrow">&#8594;</span></a>
+                <a href="/?tab=text-to-video" role="menuitem" class="nav-mega-tool">Text to Video <span class="nav-mega-arrow">&#8594;</span></a>
+                <div class="nav-mega-models-label">Models</div>
+                <div class="nav-mega-models"><a href="/veo-prompt-generator/">Veo</a><span class="nav-dot">&#xB7;</span><a href="/kling-prompt-generator/">Kling</a></div>
+                <div class="nav-mega-models"><a href="/runway-prompt-generator/">Runway</a><span class="nav-dot">&#xB7;</span><a href="/pika-prompt-generator/">Pika</a></div>
+                <div class="nav-mega-models"><a href="/luma-prompt-generator/">Luma</a><span class="nav-dot">&#xB7;</span><a href="/sora-prompt-generator/">Sora</a></div>
+                <div class="nav-mega-models"><a href="/minimax-prompt-generator/">Minimax</a><span class="nav-dot">&#xB7;</span><a href="/stable-video-prompt-generator/">Stable</a></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <a href="/zh/blog/">博客</a>
+        <a href="/zh/pricing/" class="nav-pill-pricing">价格</a>
+        <a href="/zh/about/" class="nav-pill-about">关于</a>
+        <a href="/zh/" class="nav-try-free">免费试用 &#8594;</a>
+        <button id="theme-toggle" onclick="toggleTheme()" aria-label="切换主题" title="切换主题">&#9728;&#xFE0F;</button>
+  </nav>
+    </div>
+  </header>
+
+  <nav class="breadcrumb" aria-label="面包屑导航">
+    <a href="/zh/">首页</a><span class="sep">&#8250;</span>
+    <a href="/zh/blog/">博客</a><span class="sep">&#8250;</span>
+    <span>图片转提示词用于动漫艺术</span>
+  </nav>
+
+  <div class="page-wrapper">
+
+    <header class="article-header">
+      <p class="article-tag">动漫与漫画</p>
+      <h1>图片转提示词用于动漫艺术：AI动漫生成完整指南</h1>
+      <div class="article-meta">
+        <span>2026年3月</span>
+        <span class="dot">&#183;</span>
+        <span>阅读约10分钟</span>
+        <span class="dot">&#183;</span>
+        <span>Anime &#183; Stable Diffusion &#183; NovelAI &#183; Booru Tags</span>
+        <span class="dot">&#183;</span>
+        <span>更新于2026年3月</span>
+      </div>
+    </header>
+
+    <div class="article-body">
+
+      <p>AI动漫图像生成的运作规则与写实图像生成完全不同。这些模型在不同的数据上训练，对不同的词汇做出响应，在Midjourney中效果出色的质量修饰符在专注于动漫的Stable Diffusion模型中可能毫无作用——甚至产生奇怪的结果。如果你一直在用通用工具从动漫参考图中提取提示词，却得到平庸的结果，本指南将解释原因并告诉你正确的做法。</p>
+
+      <p>我们将涵盖支撑动漫AI模型的Booru标签系统、区分平庸与惊艳输出的质量令牌、如何将ImageToPrompt用于动漫参考图，以及主要动漫美学的完整示例提示词。</p>
+
+      <nav class="toc" aria-label="目录">
+        <details open>
+          <summary>本指南内容</summary>
+          <ol>
+            <li><a href="#why-different">为什么动漫提示词写法根本不同</a></li>
+            <li><a href="#sd-anime-models">Stable Diffusion动漫模型</a></li>
+            <li><a href="#booru-tags">理解Booru标签</a></li>
+            <li><a href="#quality-tokens">真正有效的质量令牌</a></li>
+            <li><a href="#negative-prompts">动漫专用负面提示词</a></li>
+            <li><a href="#using-imagetoprompt">使用ImageToPrompt处理动漫参考图</a></li>
+            <li><a href="#aesthetic-styles">少年、少女和青年美学风格</a></li>
+            <li><a href="#mj-vs-sd">Midjourney动漫 vs SD动漫</a></li>
+            <li><a href="#example-prompts">附解析的示例提示词</a></li>
+          </ol>
+        </details>
+      </nav>
+
+      <div class="callout">
+        <p><strong>提示：</strong>要将任何动漫插图即时转换为AI提示词，请<a href="/">使用ImageToPrompt</a>。该工具会自动检测动漫风格、设计特征，并为您的目标模型生成优化的提示词。</p>
+      </div>
+
+      <h2 id="why-different">为什么动漫提示词写法根本不同</h2>
+
+      <p>大多数AI图像生成器——包括Midjourney、DALL·E 3和Flux——主要基于来自互联网的摄影和绘画内容进行训练。它们的词汇自然倾向于摄影概念：光圈、ISO、胶片乳剂、灯光布局。</p>
+
+      <p>专注于动漫的Stable Diffusion模型，如Anything V5、Counterfeit-V3和Waifu Diffusion，则是在来自Danbooru、Gelbooru和Safebooru等网站的动漫和漫画数据集上进行微调的。这些网站使用<strong>结构化标签分类法</strong>而非自然语言描述。Danbooru上的一张图片不会被描述为"一个长着银色长发的开朗女孩站在阳光明媚的田野里"——而是用独立的离散属性来标记：<code>1girl</code>、<code>silver hair</code>、<code>long hair</code>、<code>smile</code>、<code>field</code>、<code>sunlight</code>、<code>outdoors</code>。</p>
+
+      <p>因为这些模型学会了将图像特征与标签格式的文本相关联，而不是与流畅的散文相关联，所以在生成时使用相同的标签格式会得到明显更好的响应。在Anything V5的提示词中使用自然语言通常会产生比等效标签格式提示词更柔和、更不精确的结果。</p>
+
+      <p>这在从动漫图像逆向工程提示词时造成了一个挑战：大多数通用视觉工具输出的是自然语言描述，而非Booru格式标签。你需要一个专门的工具（如WD14 Tagger）或一个专门设置为产生标签格式输出的通用工具（如ImageToPrompt的动漫风格预设）。</p>
+
+      <h2 id="sd-anime-models">主要Stable Diffusion动漫模型（2026）</h2>
+
+      <div class="table-wrap">
+        <table class="comparison-table">
+          <thead>
+            <tr>
+              <th>模型</th>
+              <th>基础</th>
+              <th>风格</th>
+              <th>最佳用途</th>
+              <th>标签敏感度</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Anything V5 / V5.1</td>
+              <td>SD 1.5</td>
+              <td>干净动漫，通用</td>
+              <td>通用动漫角色</td>
+              <td>高——对Booru标签响应强</td>
+            </tr>
+            <tr>
+              <td>Counterfeit-V3.0</td>
+              <td>SD 1.5</td>
+              <td>柔和，绘画风格动漫</td>
+              <td>插图，风景场景</td>
+              <td>高——偏好质量令牌</td>
+            </tr>
+            <tr>
+              <td>Waifu Diffusion 1.5</td>
+              <td>SD 1.5</td>
+              <td>经典动漫风格</td>
+              <td>角色肖像</td>
+              <td>非常高——原生Booru</td>
+            </tr>
+            <tr>
+              <td>NovelAI (Anime v3)</td>
+              <td>NAIFU（专有）</td>
+              <td>高度精细，一致</td>
+              <td>角色美术，小说插图</td>
+              <td>非常高——使用自有标签系统</td>
+            </tr>
+            <tr>
+              <td>SDXL + Animagine XL 3.1</td>
+              <td>SDXL</td>
+              <td>高分辨率现代动漫</td>
+              <td>高质量渲染，细节</td>
+              <td>中等——同时支持标签和散文</td>
+            </tr>
+            <tr>
+              <td>Pony Diffusion V6 XL</td>
+              <td>SDXL</td>
+              <td>通用，风格化</td>
+              <td>多样风格，兽设，动漫</td>
+              <td>中等——使用评分标签</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <p>将动漫图像转换为提示词时，第一步是了解你将使用哪个模型。不同的模型有不同的标签词汇、质量标记和风格敏感度。</p>
+
+      <h2 id="booru-tags">理解Booru标签：动漫提示词的结构剖析</h2>
+
+      <p>Booru标签系统将视觉属性组织成层级分类。理解这些分类有助于你构建精确描述需求的提示词，也有助于你解读图片转提示词工具的输出结果。</p>
+
+      <h3>角色数量标签</h3>
+      <p>这些几乎总是动漫提示词中的第一批标签，用于建立基本的场景结构：</p>
+      <ul>
+        <li><code>1girl</code> — 单个女性角色</li>
+        <li><code>1boy</code> — 单个男性角色</li>
+        <li><code>2girls</code>、<code>3girls</code> — 多个角色</li>
+        <li><code>solo</code> — 明确画面中没有其他角色</li>
+        <li><code>couple</code>、<code>hetero</code> — 角色之间的互动</li>
+      </ul>
+
+      <h3>外貌特征</h3>
+      <p>头发是动漫艺术中最重要的外貌特征，因为它是视觉上区分角色的主要方式：</p>
+      <ul>
+        <li><strong>颜色：</strong><code>blonde hair</code>、<code>white hair</code>、<code>silver hair</code>、<code>pink hair</code>、<code>gradient hair</code>、<code>multicolored hair</code></li>
+        <li><strong>长度：</strong><code>short hair</code>、<code>medium hair</code>、<code>long hair</code>、<code>very long hair</code></li>
+        <li><strong>发型：</strong><code>twintails</code>、<code>ponytail</code>、<code>braid</code>、<code>ahoge</code>（动漫标志性的单根翘发）、<code>hair bun</code></li>
+        <li><strong>眼睛：</strong><code>blue eyes</code>、<code>red eyes</code>、<code>heterochromia</code>、<code>closed eyes</code>、<code>half-closed eyes</code>、<code>starry eyes</code></li>
+      </ul>
+
+      <h3>服装和配饰</h3>
+      <p>Booru系统中的服装标签非常细致和具体：</p>
+      <ul>
+        <li><code>school uniform</code>、<code>sailor uniform</code>、<code>blazer</code> 用于校园场景</li>
+        <li><code>maid outfit</code>、<code>maid apron</code> 用于女仆主题角色</li>
+        <li><code>kimono</code>、<code>yukata</code>、<code>hakama</code> 用于传统日本服饰</li>
+        <li><code>casual clothes</code>、<code>hoodie</code>、<code>jeans</code> 用于现代日常场景</li>
+        <li><code>fantasy armor</code>、<code>plate armor</code>、<code>leather armor</code> 用于RPG美学</li>
+      </ul>
+
+      <h3>姿势与表情</h3>
+      <ul>
+        <li><strong>表情：</strong><code>smile</code>、<code>grin</code>、<code>blush</code>、<code>crying</code>、<code>embarrassed</code>、<code>determined</code>、<code>shy</code></li>
+        <li><strong>目光：</strong><code>looking at viewer</code>、<code>looking away</code>、<code>looking up</code>、<code>eye contact</code></li>
+        <li><strong>姿势：</strong><code>standing</code>、<code>sitting</code>、<code>lying</code>、<code>running</code>、<code>arms behind back</code>、<code>hand on hip</code></li>
+      </ul>
+
+      <h3>背景与场景</h3>
+      <ul>
+        <li><code>outdoors</code>、<code>indoors</code>、<code>classroom</code>、<code>city</code>、<code>forest</code>、<code>beach</code></li>
+        <li><code>simple background</code>、<code>white background</code> 用于干净的角色设定图</li>
+        <li><code>cherry blossoms</code>、<code>autumn leaves</code> 用于季节氛围</li>
+      </ul>
+
+      <h2 id="quality-tokens">真正有效的质量令牌</h2>
+
+      <p>质量令牌是特殊标签，告诉动漫SD模型优先考虑渲染质量。与上面描述视觉内容的主题标签不同，质量令牌不描述视觉内容——它们描述输出中预期的精细程度。它们是动漫提示词中影响最大的元素之一。</p>
+
+      <h3>标准质量令牌（SD 1.5模型）</h3>
+
+      <pre><code class="prompt-example">(masterpiece:1.2), (best quality:1.1), (ultra-detailed:1.1), (highres:1.0)</code></pre>
+
+      <p>冒号后的数字是权重修饰符。大于1.0的值增加强调；小于1.0的值减少强调。对于质量令牌，1.1到1.3之间的值效果最好——超过1.4可能会产生伪影。</p>
+
+      <h3>额外质量增强器</h3>
+      <ul>
+        <li><code>(extremely detailed CG unity 8k wallpaper)</code> — 用于高度渲染的场景</li>
+        <li><code>(amazing fine detail)</code> — 用于精细的纹理和细节</li>
+        <li><code>(beautiful detailed face)</code> — 专门改善面部渲染</li>
+        <li><code>(beautiful detailed eyes)</code> — 改善眼睛渲染质量</li>
+        <li><code>sharp focus</code> — 减少整体图像的柔化感</li>
+      </ul>
+
+      <h3>SDXL / Animagine XL令牌</h3>
+      <p>基于SDXL的模型使用不同的质量令牌系统：</p>
+
+      <pre><code class="prompt-example">score_9, score_8_up, score_7_up, masterpiece, best quality, absurdres</code></pre>
+
+      <p>对于Animagine XL，始终以此开头：<code>masterpiece, best quality, 1girl (or 1boy), ...</code></p>
+
+      <h3>NovelAI令牌</h3>
+      <p>NovelAI的专有模型有自己的质量系统。NovelAI Anime v3最可靠的质量令牌是：</p>
+
+      <pre><code class="prompt-example">masterpiece, best quality, very aesthetic, absurdres</code></pre>
+
+      <h2 id="negative-prompts">动漫专用负面提示词</h2>
+
+      <p>在动漫生成中，负面提示词比在写实生成中更为重要，因为动漫模型容易出现特定的失败模式：手指和手部解剖不正确、面部特征融合以及低质量的美学令牌。</p>
+
+      <h3>通用动漫负面提示词</h3>
+
+      <pre><code class="prompt-example">(worst quality:1.4), (low quality:1.4), (normal quality:1.2), lowres, bad anatomy, bad hands, ((missing fingers)), extra digit, fewer digits, bad proportions, poorly drawn face, mutation, deformed, ugly, blurry, bad eyes, cross-eyed, watermark, signature, text</code></pre>
+
+      <h3>肖像专用补充</h3>
+
+      <pre><code class="prompt-example">asymmetrical eyes, uneven eyes, floating head, disconnected limbs, extra limbs, cloned face, long neck, too many fingers</code></pre>
+
+      <h3>全身像补充</h3>
+
+      <pre><code class="prompt-example">bad legs, bad feet, missing legs, extra legs, floating limbs, disconnected body, awkward pose, stiff pose</code></pre>
+
+      <div class="callout">
+        <p><strong>关于EasyNegative的说明：</strong>EasyNegative是一个文本反转嵌入，将数百个负面概念编码到一个令牌中。对于SD 1.5动漫模型，在负面提示词中添加<code>EasyNegative</code>（或<code>easynegative</code>）相当于包含一长串质量降低描述符。使用前请确保已下载并安装该嵌入。</p>
+      </div>
+
+      <h2 id="using-imagetoprompt">使用ImageToPrompt处理动漫参考图</h2>
+
+      <p>当你将动漫图像上传到ImageToPrompt.dev并选择"Anime"风格预设时，该工具会将其分析词汇从摄影/绘画语言切换为Booru兼容的标签格式。这就是为什么它对动漫工作流程真正有用，而不仅仅是产生通用描述。</p>
+
+      <p>使用动漫图像获得最佳效果的方法：</p>
+
+      <ol>
+        <li><strong>选择目标模型。</strong>选择Stable Diffusion获取标签格式输出，或选择Midjourney获取MJ风格的散文式动漫提示词。</li>
+        <li><strong>选择"Anime"风格预设。</strong>这会将输出格式从散文切换为结构化标签，并添加适当的质量令牌。</li>
+        <li><strong>上传干净的高分辨率裁剪图。</strong>将图片裁剪到只包含角色可以消除背景噪声，避免稀释输出中角色特定的标签。</li>
+        <li><strong>审查并补充输出。</strong>ImageToPrompt会识别主要的视觉特征，但你可能需要手动添加模型已知的特定角色特征（例如，如果你要生成Re:Zero中的蕾姆，请明确添加她的名字）。</li>
+      </ol>
+
+      <p>ImageToPrompt为动漫角色肖像（SD目标，Anime风格）的输出示例：</p>
+
+      <pre><code class="prompt-example">(masterpiece:1.2), (best quality:1.1), (ultra-detailed:1.0), 1girl, solo, long white hair, blue eyes, maid outfit, white apron, blush, slight smile, looking at viewer, indoors, soft lighting, detailed face, beautiful detailed eyes
+Negative: (worst quality:1.4), (low quality:1.3), bad anatomy, bad hands, missing fingers, watermark</code></pre>
+
+      <h2 id="aesthetic-styles">少年、少女和青年美学在AI提示词中的应用</h2>
+
+      <p>动漫并非单一风格。主要的受众分类——少年、少女、青年、女性——各有独特的视觉语言，对应不同的提示词策略。</p>
+
+      <h3>少年美学</h3>
+      <p>少年（目标受众：年轻男性）艺术强调粗犷的线条、动态姿势、富有表现力的情感和以动作为导向的构图。角色设计通常健壮而充满活力。</p>
+
+      <pre><code class="prompt-example">(masterpiece:1.2), (best quality:1.1), 1boy, spiky black hair, determined expression, battle stance, torn clothes, dynamic pose, dramatic lighting, energy aura, motion lines, detailed background, intense atmosphere, shounen style</code></pre>
+
+      <h3>少女美学</h3>
+      <p>少女（目标受众：年轻女性）艺术偏好柔和的线条、大而富有表现力的眼睛、精致的细节、花卉图案以及浪漫或情感化的氛围。配色方案倾向于柔和的粉彩和暖色调。</p>
+
+      <pre><code class="prompt-example">(masterpiece:1.2), (best quality:1.1), 1girl, long flowing hair, sparkly large eyes, delicate features, soft smile, flower petals, pastel colors, romantic atmosphere, shojo style, detailed hair accessories, dreamy background, gentle lighting</code></pre>
+
+      <h3>青年美学</h3>
+      <p>青年（目标受众：成年男性）艺术在比例上更加写实，色调更暗，通常包含复杂的环境设计和成熟主题。视觉上可以参考《进击的巨人》、《剑风传奇》或《冰海战记》。</p>
+
+      <pre><code class="prompt-example">(masterpiece:1.2), (best quality:1.1), 1man, realistic proportions, weathered face, detailed armor, grim expression, dark atmosphere, complex environment, muted color palette, seinen style, cinematic composition, dramatic shadows, high detail</code></pre>
+
+      <h2 id="mj-vs-sd">Midjourney动漫提示词 vs Stable Diffusion动漫提示词</h2>
+
+      <p>如果你想从Midjourney而不是Stable Diffusion获得动漫风格的输出，方法完全不同。Midjourney对Booru标签的响应不佳——你需要通过风格引用来用自然语言描述动漫美学。</p>
+
+      <div class="table-wrap">
+        <table class="comparison-table">
+          <thead>
+            <tr>
+              <th>方面</th>
+              <th>Stable Diffusion（动漫模型）</th>
+              <th>Midjourney</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>格式</td>
+              <td>逗号分隔的Booru标签</td>
+              <td>自然语言句子</td>
+            </tr>
+            <tr>
+              <td>质量令牌</td>
+              <td>(masterpiece:1.2), (best quality:1.1)</td>
+              <td>不需要/无效</td>
+            </tr>
+            <tr>
+              <td>风格引用</td>
+              <td>由模型检查点处理风格</td>
+              <td>"anime style," "Studio Ghibli," "by Makoto Shinkai"</td>
+            </tr>
+            <tr>
+              <td>负面提示词</td>
+              <td>必不可少</td>
+              <td>不支持（使用--no）</td>
+            </tr>
+            <tr>
+              <td>宽高比</td>
+              <td>在设置中调整宽度/高度</td>
+              <td>--ar 9:16</td>
+            </tr>
+            <tr>
+              <td>动漫精确度</td>
+              <td>优秀（使用正确模型时）</td>
+              <td>良好但精确度较低</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <p>同一角色概念的Midjourney动漫提示词示例：</p>
+
+      <pre><code class="prompt-example">a young woman with long white hair and bright blue eyes wearing a maid outfit, anime art style, soft indoor lighting, gentle expression, highly detailed illustration, by Ilya Kuvshinov, clean lines, vibrant colors --ar 2:3 --style raw --v 6.1</code></pre>
+
+      <div class="img-grid-2" style="margin:2rem 0">
+        <figure style="margin:0">
+          <picture><source srcset="/images/image-to-prompt-ai-cinematic-portrait-style.webp" type="image/webp"><img src="/images/image-to-prompt-ai-cinematic-portrait-style.jpeg" alt="风格化电影插图展示艺术风格描述符如何影响AI输出——具有强烈视觉特征的绘画质感" width="800" height="800" loading="lazy" style="width:100%;border-radius:0.5rem;display:block"></picture>
+          <figcaption style="color:var(--text-muted);font-size:0.8rem;text-align:center;margin-top:0.5rem">风格一致性：正确的模型和标签创造出统一的美学</figcaption>
+        </figure>
+        <figure style="margin:0">
+          <picture><source srcset="/images/describe-a-picture-editorial-portrait-style.webp" type="image/webp"><img src="/images/describe-a-picture-editorial-portrait-style.jpeg" alt="编辑插图风格输出——展示同一主题使用不同风格提示词时的对比效果" width="800" height="800" loading="lazy" style="width:100%;border-radius:0.5rem;display:block"></picture>
+          <figcaption style="color:var(--text-muted);font-size:0.8rem;text-align:center;margin-top:0.5rem">同一主题，不同风格令牌：视觉效果差异巨大</figcaption>
+        </figure>
+      </div>
+
+      <h2 id="example-prompts">附解析的完整示例提示词</h2>
+
+      <h3>示例1：魔法少女（SD — Anything V5）</h3>
+
+      <pre><code class="prompt-example">(masterpiece:1.2), (best quality:1.1), (ultra-detailed:1.0), 1girl, solo, twin tails, pink hair, gradient hair, pink to white, large eyes, blue eyes, magical girl outfit, white dress, pink ribbons, magical staff, glowing particles, cherry blossoms, night sky, full moon, sparkles, dynamic pose, wind in hair, smile, looking at viewer
+
+Negative: (worst quality:1.4), (low quality:1.3), bad anatomy, bad hands, extra fingers, missing fingers, ugly, blurry, watermark, text</code></pre>
+
+      <p>解析：以质量令牌开头，确定角色数量和关键外貌特征，转到服装描述，添加环境背景，最后以构图和表情收尾。负面提示词针对此角色类型最常见的失败模式。</p>
+
+      <h3>示例2：幻想战士（SDXL — Animagine XL）</h3>
+
+      <pre><code class="prompt-example">masterpiece, best quality, absurdres, 1girl, solo, silver hair, short hair, red eyes, fantasy knight armor, detailed pauldrons, sword, battle stance, dramatic lighting, castle interior, stone floor, torchlight, determined expression, looking at viewer, dynamic pose, highly detailed armor
+
+Negative: worst quality, low quality, bad anatomy, bad hands, ugly, blurry, missing limbs</code></pre>
+
+      <h3>示例3：日常生活场景（SD — Counterfeit-V3）</h3>
+
+      <pre><code class="prompt-example">(masterpiece:1.2), (best quality:1.1), 2girls, school uniforms, blazer, one with brown hair short, one with black hair long, sitting at cafe, afternoon sunlight, warm tones, laughing together, coffee cups on table, city window background, casual atmosphere, soft lighting, slice of life, detailed background
+
+Negative: (worst quality:1.4), (low quality:1.3), bad anatomy, deformed, ugly, watermark</code></pre>
+
+      <div class="callout">
+        <p><strong>关键洞察：</strong>注意每个示例中外貌属性的具体程度。动漫AI模型对精确的特征描述高度敏感——"hair"和"twin tails, pink hair, gradient from pink to white"之间的差异在输出中是巨大的。更高的具体性几乎总能产生更好的结果。</p>
+      </div>
+
+      <div class="cta-box">
+        <h3>将您的动漫插图转换为提示词</h3>
+        <p>上传任何动漫插图，即可获得针对Stable Diffusion、Midjourney或Flux优化的提示词——无需注册。</p>
+        <a href="/zh/" class="cta-btn">免费试用ImageToPrompt &#8594;</a>
+      </div>
+
+      <div class="related-guides">
+        <h3>相关指南</h3>
+        <ul>
+          <li><a href="/blog/negative-prompts-stable-diffusion/">Stable Diffusion负面提示词完整指南</a></li>
+          <li><a href="/blog/convert-image-to-ai-prompt/">如何将任何图片转换为AI提示词</a></li>
+          <li><a href="/stable-diffusion-prompt-generator/">Stable Diffusion提示词生成器</a></li>
+          <li><a href="/midjourney-prompt-generator/">Midjourney提示词生成器</a></li>
+          <li><a href="/blog/best-image-to-prompt-tools-2026/">2026年7大图片转提示词工具</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="author-bio">
+      <svg class="author-photo" width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="作者头像"><circle cx="32" cy="32" r="32" fill="#2a1f4e"/><circle cx="32" cy="26" r="11" fill="#7c6bc4"/><ellipse cx="32" cy="52" rx="18" ry="11" fill="#7c6bc4"/></svg>
+      <div class="author-info">
+        <p class="author-name">ImageToPrompt Team</p>
+        <p class="author-desc">我们是一支专业团队，致力于帮助创作者掌握AI图像生成技术。通过图像转提示词工具和AI提示词工程指南，我们为全球艺术家的创作提供支持。</p>
+        <a href="https://x.com/Ilyass14286541" class="author-link">在X上关注 &#8594;</a>
+      </div>
+    </div>
+
+    <div class="related-posts">
+      <h2>相关指南</h2>
+      <div class="related-grid">
+        <a href="/zh/blog/tupian-zhuanhuan-ai-tishi-ci/" class="related-card">
+          <p class="tag">指南</p>
+          <h3>如何将图片转换为AI提示词</h3>
+        </a>
+        <a href="/zh/blog/stable-diffusion-fumian-tishi-ci/" class="related-card">
+          <p class="tag">Stable Diffusion</p>
+          <h3>Stable Diffusion负面提示词指南</h3>
+        </a>
+        <a href="/zh/blog/midjourney-tishi-ci-zhinan-2026/" class="related-card">
+          <p class="tag">Midjourney</p>
+          <h3>Midjourney提示词完整指南2026</h3>
+        </a>
+        <a href="/zh/blog/zuijia-tupian-zhuan-tishi-ci-gongju-2026/" class="related-card">
+          <p class="tag">工具对比</p>
+          <h3>2026年最佳图片转提示词工具</h3>
+        </a>
+      </div>
+    </div>
+
+  </div>
+
+  <footer class="footer-4col">
+    <div class="f4-inner">
+      <div class="f4-brand">
+        <img src="/favicon.svg" alt="ImageToPrompt" width="28" height="28">
+        <span class="f4-brand-name">ImageTo<span class="accent">Prompt</span></span>
+        <span class="f4-brand-sub">&mdash; Free AI Prompt Generator</span>
+      </div>
+      <div class="f4-grid">
+        <div class="f4-section">
+          <h4 class="f4-heading">Image Prompt Tools</h4>
+          <a href="/">Image to Prompt</a>
+          <a href="/text-to-prompt/">Text to Prompt</a>
+      <a href="/describe-image/">Describe Image</a>
+          <a href="/midjourney-prompt-generator/">Midjourney</a>
+          <a href="/stable-diffusion-prompt-generator/">Stable Diffusion</a>
+          <a href="/flux-prompt-generator/">Flux</a>
+          <a href="/dall-e-prompt-generator/">DALL-E 3</a>
+          <a href="/adobe-firefly-prompt-generator/">Adobe Firefly</a>
+          <a href="/leonardo-ai-prompt-generator/">Leonardo AI</a>
+          <a href="/ideogram-prompt-generator/">Ideogram</a>
+        </div>
+        <div class="f4-section">
+          <h4 class="f4-heading">Video Prompt Tools</h4>
+          <a href="/image-to-video-prompt/">Image to Video Prompt</a>
+          <a href="/text-to-video-prompt/">Text to Video Prompt</a>
+          <a href="/veo-prompt-generator/">Veo / Flow Studio</a>
+          <a href="/kling-prompt-generator/">Kling AI</a>
+          <a href="/runway-prompt-generator/">Runway Gen-3</a>
+          <a href="/pika-prompt-generator/">Pika</a>
+          <a href="/luma-prompt-generator/">Luma Dream Machine</a>
+          <a href="/sora-prompt-generator/">Sora</a>
+          <a href="/minimax-prompt-generator/">Minimax</a>
+          <a href="/stable-video-prompt-generator/">Stable Video</a>
+        </div>
+        <div class="f4-section">
+          <h4 class="f4-heading">Resources</h4>
+          <a href="/zh/blog/">博客</a>
+          <a href="/zh/about/">关于</a>
+          <a href="/zh/pricing/">价格</a>
+          <a href="/contact/">Contact</a>
+          <a href="/privacy-policy/">Privacy Policy</a>
+          <a href="/terms-of-service/">Terms of Service</a>
+        </div>
+        <div class="f4-section">
+          <h4 class="f4-heading">Languages</h4>
+          <a href="/">English</a>
+          <a href="/fr/">Fran&#231;ais</a>
+          <a href="/ar/">&#1575;&#1604;&#1593;&#1585;&#1576;&#1610;&#1577;</a>
+          <a href="/es/">Espa&#241;ol</a>
+          <a href="/ko/">&#54620;&#44397;&#50612;</a>
+          <a href="/ja/">&#26085;&#26412;&#35486;</a>
+          <a href="/ru/">&#1056;&#1091;&#1089;&#1089;&#1082;&#1080;&#1081;</a>
+          <a href="/zh/">中文</a>
+        </div>
+      </div>
+      <div class="f4-bottom">
+        <p>&#169; 2026 ImageToPrompt.dev &#8212; Free AI Prompt Generator</p>
+        <p>Your images are never stored. All analysis is ephemeral and private.</p>
+      </div>
+    </div>
+  </footer>
+
+<script src="/newsletter-inject.js" defer></script>
+<script src="/nav.js" defer></script>
+  <script>
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', function() {
+    navigator.serviceWorker.register('/sw.js')
+      .catch(function(err) { console.warn('SW registration failed:', err); });
+  });
+}
+</script>
+</body>
+</html>

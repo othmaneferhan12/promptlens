@@ -1,0 +1,418 @@
+<!doctype html>
+<html lang="zh">
+<head>
+  <script src="/theme-toggle.js"></script>
+  <meta charset="UTF-8" />
+  <link rel="dns-prefetch" href="https://www.googletagmanager.com">
+<link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="max-image-preview:large, index, follow">
+  <meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="ImageToPrompt">
+  <title>如何从任何照片获取AI提示词（3种切实有效的方法）</title>
+  <meta name="description" content="将任何真实照片转化为AI生成提示词。三种经过验证的从照片中提取提示词的方法——包括自动工具、手动分析和混合方法。" />
+  <link rel="canonical" href="https://www.imagetoprompt.dev/zh/blog/zhaopian-shengcheng-ai-tishi-ci/" />
+  <link rel="alternate" hreflang="zh" href="https://www.imagetoprompt.dev/zh/blog/zhaopian-shengcheng-ai-tishi-ci/" />
+  <link rel="alternate" hreflang="en" href="https://www.imagetoprompt.dev/blog/ai-prompt-from-photo/" />
+  <link rel="alternate" hreflang="x-default" href="https://www.imagetoprompt.dev/blog/ai-prompt-from-photo/" />
+  <meta property="og:title" content="如何从任何照片获取AI提示词（3种切实有效的方法）" />
+  <meta property="og:description" content="将任何真实照片转化为AI生成提示词。三种经过验证的从照片中提取提示词的方法。" />
+  <meta property="og:url" content="https://www.imagetoprompt.dev/zh/blog/zhaopian-shengcheng-ai-tishi-ci/" />
+  <meta property="og:type" content="article" />
+  <meta property="og:image" content="https://www.imagetoprompt.dev/og-image.png" />
+  <meta property="og:site_name" content="ImageToPrompt" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="如何从任何照片获取AI提示词（3种切实有效的方法）" />
+  <meta name="twitter:description" content="将任何真实照片转化为AI生成提示词。三种经过验证的方法。" />
+  <meta name="twitter:image" content="https://www.imagetoprompt.dev/og-image.png" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="48x48" href="/favicon-48.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+  <link rel="manifest" href="/site.webmanifest" />
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="/fonts/space-grotesk-700.woff2" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="/fonts/inter-400.woff2" />
+  <link rel="stylesheet" href="/theme.css">
+  <link rel="preload" href="/blog.css" as="style" onload="this.onload=null;this.rel='stylesheet'"><noscript><link rel="stylesheet" href="/blog.css"></noscript>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "如何从任何照片获取AI提示词（3种切实有效的方法）",
+    "description": "将任何真实照片转化为AI生成提示词。三种经过验证的从照片中提取提示词的方法——包括自动工具、手动分析和混合方法。",
+    "image": "https://www.imagetoprompt.dev/og-image.png",
+    "datePublished": "2026-03-13",
+    "dateModified": "2026-03-24",
+    "inLanguage": "zh",
+    "author": {
+      "@type": "Person",
+      "name": "ImageToPrompt Team",
+      "url": "https://www.imagetoprompt.dev/"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "ImageToPrompt",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://www.imagetoprompt.dev/favicon.svg"
+      }
+    },
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https://www.imagetoprompt.dev/zh/blog/zhaopian-shengcheng-ai-tishi-ci/"
+    }
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "从照片提取的提示词能精确复制原始图片吗？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "不能——AI图像生成是概率性的。即使使用完美的提示词，您也会得到原始图片的变体而非精确复制品。目标是捕捉视觉精髓——风格、光照、氛围和构图——而非逐像素复制。"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "哪种方法适合从照片提取AI提示词？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "推荐使用混合方法：首先使用ImageToPrompt等自动工具获取初始提示词，然后手动检查并完善结果。这种方法通常比纯自动提取准确30-40%，同时比完全手动分析快得多。"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "使用他人照片作为AI参考是否有隐私和道德问题？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "使用自己的照片作为参考始终是合适的。对于包含可识别个人的照片，应获得其知情同意。不要使用提取的提示词生成冒充特定真人的逼真图像——这在许多司法管辖区越来越多地被认定为违法。"
+        }
+      }
+    ]
+  }
+  </script>
+    <!-- Google AdSense -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4499206373485728" crossorigin="anonymous"></script>
+    <!-- Web Push Notifications -->
+<script src="https://cdn.onesignal.com/sdks/web/v16/OneSignalSDK.page.js" defer></script>
+<script>
+  window.OneSignalDeferred = window.OneSignalDeferred || [];
+  OneSignalDeferred.push(async function(OneSignal) {
+    await OneSignal.init({
+      appId: "REPLACE_WITH_ONESIGNAL_APP_ID",
+      notifyButton: { enable: false }
+    });
+  });
+</script>
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="inner">
+      <a href="/zh/" class="site-logo"><img src="/favicon.svg" alt="ImageToPrompt" width="48" height="48"><div class="site-logo-text">ImageTo<span class="accent">Prompt</span><span class="site-logo-sub">免费AI提示词生成器</span></div></a>
+      <nav class="site-nav" aria-label="主导航">
+        <div class="nav-dropdown">
+          <button class="nav-dropdown-trigger" aria-haspopup="true" aria-expanded="false">Tools <span class="nav-chevron" aria-hidden="true">&#9660;</span></button>
+          <div class="nav-dropdown-menu" role="menu">
+            <div class="nav-mega-grid">
+              <div class="nav-mega-col">
+                <div class="nav-mega-heading">&#128444; IMAGE TOOLS</div>
+                <a href="/" role="menuitem" class="nav-mega-tool">Image to Prompt <span class="nav-mega-arrow">&#8594;</span></a>
+                <a href="/text-to-prompt/" role="menuitem" class="nav-mega-tool">Text to Prompt <span class="nav-mega-arrow">&#8594;</span></a>
+                <a href="/describe-image/" role="menuitem" class="nav-mega-tool">Describe Image <span class="nav-new-badge">NEW</span> <span class="nav-mega-arrow">&#8594;</span></a>
+                <div class="nav-mega-models-label">Models</div>
+                <div class="nav-mega-models"><a href="/midjourney-prompt-generator/">Midjourney</a><span class="nav-dot">&#xB7;</span><a href="/stable-diffusion-prompt-generator/">SD</a></div>
+                <div class="nav-mega-models"><a href="/flux-prompt-generator/">Flux</a><span class="nav-dot">&#xB7;</span><a href="/dall-e-prompt-generator/">DALL&#xB7;E&#xA0;3</a></div>
+                <div class="nav-mega-models"><a href="/adobe-firefly-prompt-generator/">Firefly</a><span class="nav-dot">&#xB7;</span><a href="/leonardo-ai-prompt-generator/">Leonardo</a></div>
+                <div class="nav-mega-models"><a href="/ideogram-prompt-generator/">Ideogram</a></div>
+              </div>
+              <div class="nav-mega-divider" aria-hidden="true"></div>
+              <div class="nav-mega-col">
+                <div class="nav-mega-heading">&#127909; VIDEO TOOLS</div>
+                <a href="/?tab=image-to-video" role="menuitem" class="nav-mega-tool">Image to Video <span class="nav-mega-arrow">&#8594;</span></a>
+                <a href="/?tab=text-to-video" role="menuitem" class="nav-mega-tool">Text to Video <span class="nav-mega-arrow">&#8594;</span></a>
+                <div class="nav-mega-models-label">Models</div>
+                <div class="nav-mega-models"><a href="/veo-prompt-generator/">Veo</a><span class="nav-dot">&#xB7;</span><a href="/kling-prompt-generator/">Kling</a></div>
+                <div class="nav-mega-models"><a href="/runway-prompt-generator/">Runway</a><span class="nav-dot">&#xB7;</span><a href="/pika-prompt-generator/">Pika</a></div>
+                <div class="nav-mega-models"><a href="/luma-prompt-generator/">Luma</a><span class="nav-dot">&#xB7;</span><a href="/sora-prompt-generator/">Sora</a></div>
+                <div class="nav-mega-models"><a href="/minimax-prompt-generator/">Minimax</a><span class="nav-dot">&#xB7;</span><a href="/stable-video-prompt-generator/">Stable</a></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <a href="/zh/blog/">博客</a>
+        <a href="/zh/pricing/" class="nav-pill-pricing">价格</a>
+        <a href="/zh/about/" class="nav-pill-about">关于</a>
+        <a href="/zh/" class="nav-try-free">免费试用 &#8594;</a>
+        <button id="theme-toggle" onclick="toggleTheme()" aria-label="切换主题" title="切换主题">&#9728;&#xFE0F;</button>
+  </nav>
+    </div>
+  </header>
+
+  <nav class="breadcrumb" aria-label="面包屑导航">
+    <a href="/zh/">首页</a><span class="sep">›</span>
+    <a href="/zh/blog/">博客</a><span class="sep">›</span>
+    <span>从照片生成AI提示词</span>
+  </nav>
+
+  <div class="page-wrapper">
+    <header class="article-header">
+      <p class="article-tag">操作指南</p>
+      <h1>如何从任何照片获取AI提示词（3种切实有效的方法）</h1>
+      <div class="article-meta">
+        <span>2026年3月</span><span class="dot">·</span><span>阅读时间11分钟</span><span class="dot">·</span><span>图像分析 · 提示词撰写 · 摄影</span>
+      </div>
+    </header>
+
+    <div class="article-body">
+
+      <p>您有一张照片——度假时拍摄的风景、光线完美的人像、竞争对手的产品图、或电影截图。您希望生成类似的图像，或以该照片的美学作为AI生成图像的基础。但您不知道什么提示词能产生那种效果。</p>
+
+      <p>这是任何认真使用AI图像生成的人最常遇到的问题之一，有三种不同的方法可以解决。本指南涵盖了全部三种方法——自动提取、手动分析和混合方法——并针对不同类型的照片提供具体指导。</p>
+
+      <h2>为什么真实照片是AI生成的绝佳参考</h2>
+
+      <p>照片包含仅凭想象难以指定的信息：</p>
+
+      <ul>
+        <li><strong>精确的光照：</strong>照片展示了场景中光线的确切质量、方向、色温和表现。用文字描述要困难得多。</li>
+        <li><strong>具体的构图：</strong>元素之间的确切关系、焦距感、景深——都在参考照片中一目了然。</li>
+        <li><strong>调色：</strong>照片的特定色彩处理——胶片模拟、氛围调色、饱和度选择——很难抽象指定，但从图像本身提取很容易。</li>
+        <li><strong>风格真实性：</strong>真实摄影有一种真实感。以它为参考往往能让AI生成扎根于视觉现实，而非产出通用的"AI感"图片。</li>
+      </ul>
+
+      <p>目标不是复制照片——而是提取视觉语言，以便将其应用于新的主题。</p>
+
+      <h2>方法一：使用ImageToPrompt自动提取</h2>
+
+      <p>最快的方法：将照片上传到<a href="/">ImageToPrompt</a>，让Claude Vision进行分析。该工具会检查图像的每个视觉元素，返回捕捉关键特征的结构化提示词。</p>
+
+      <h3>分步操作</h3>
+
+      <ol>
+        <li><strong>准备您的照片。</strong>支持任何常见图像格式（JPEG、PNG、WebP）。工具可处理从手机照片到高分辨率单反的任何图片。清晰的图像比模糊或高度压缩的图像能产生更好的提示词。</li>
+        <li><strong>访问<a href="/">imagetoprompt.dev</a>。</strong>该工具免费使用，无需注册账户。</li>
+        <li><strong>上传图像。</strong>拖放或使用文件选择器。上传处理只需几秒钟。</li>
+        <li><strong>选择目标模型。</strong>选择您计划使用的AI生成器——不同模型的提示词格式各不相同。工具会相应调整输出。</li>
+        <li><strong>查看生成的提示词。</strong>输出按视觉元素组织：主体、光照、风格、构图和技术特征。</li>
+        <li><strong>复制并调整。</strong>直接使用提示词生成类似图像，或修改主体同时保留风格、光照和构图元素来创作新内容。</li>
+      </ol>
+
+      <h3>工具擅长提取的内容</h3>
+      <ul>
+        <li>光照类型、方向和质量</li>
+        <li>色彩搭配和色调（冷暖、饱和度）</li>
+        <li>摄影风格（编辑、纪实、商业等）</li>
+        <li>构图和取景</li>
+        <li>景深和焦点特征</li>
+        <li>氛围和情绪</li>
+        <li>主体描述</li>
+      </ul>
+
+      <h2>方法二：手动照片分析</h2>
+
+      <p>手动分析需要更长时间，但能教会您视觉阅读的技能——这最终会让您在提示词撰写和摄影方面都变得更好。</p>
+
+      <h3>系统分析框架</h3>
+
+      <p>按以下六个维度依次分析，边分析边记录——最终提示词由这些笔记构建。</p>
+
+      <h3>1. 主体</h3>
+      <p>主要主体是什么？在不假设背景的情况下描述它：类型、具体视觉特征、正在做什么、强调了哪些细节。</p>
+
+      <h3>2. 环境</h3>
+      <p>主体在哪里？背景中可见什么？主体与环境的关系如何？暗示什么季节或时期？</p>
+
+      <h3>3. 光照分析</h3>
+      <p>这是最重要的维度。训练自己识别：</p>
+      <ul>
+        <li><strong>方向：</strong>正面光（平坦均匀）、侧光（一侧有阴影）、逆光（剪影）、顶光、伦勃朗光（三角高光）</li>
+        <li><strong>质量：</strong>硬光（锐利阴影、高对比度）还是柔光（渐变过渡、低对比度）？</li>
+        <li><strong>色温：</strong>暖调（橙/黄）= 下午/黄金时段/钨丝灯。冷调（蓝）= 阴影/阴天/蓝色时段/荧光灯。中性 = 闪光灯/正午。</li>
+        <li><strong>光源：</strong>自然光（阳光、阴天、窗光）或人造光（影棚、霓虹灯、蜡烛、台灯）</li>
+      </ul>
+
+      <h3>4. 色彩分析</h3>
+      <p>主色系、饱和度、色调范围（高调 = 明亮通透；低调 = 黑暗深沉）、调色特征。</p>
+
+      <h3>5. 相机与技术</h3>
+      <p>焦距感、景深、拍摄角度、颗粒/噪点、运动模糊。</p>
+
+      <h3>6. 风格与媒介评估</h3>
+      <p>最接近什么摄影流派？是否有特定时代感？整体情绪如何？</p>
+
+      <h3>构建手动提示词</h3>
+      <p>完成六个维度的分析后，将笔记组装成提示词：</p>
+      <div class="code-block">
+        <code>[风格/媒介] + [主体描述] + [环境] + [光照] + [相机/技术] + [情绪]</code>
+      </div>
+
+      <h2>方法三：混合法——先自动提取再手动完善</h2>
+
+      <p>这种方法结合了自动提取的速度和手动分析的准确性。对于大多数用例来说，这是推荐的方法，因为它既快速又能产出最高质量的提示词。</p>
+
+      <h3>混合工作流</h3>
+      <ol>
+        <li>将照片上传到<a href="/">ImageToPrompt</a>并生成初始提示词</li>
+        <li>仔细阅读提取的提示词——识别哪些准确、哪些遗漏或描述错误</li>
+        <li>对同一图像应用手动分析框架，重点关注自动提取表现较弱的维度</li>
+        <li>合并：保留看起来准确的自动提取元素，用手动观察替换或补充</li>
+        <li>测试组合提示词，评估输出，迭代优化</li>
+      </ol>
+
+      <p>这种混合方法通常比纯自动提取准确30-40%，同时只需完全手动分析的一小部分时间。</p>
+
+      <h2>照片类别：每种类型的具体技巧</h2>
+
+      <h3>人像照片 → 角色提示词</h3>
+      <p>人像携带大量AI可用信息。关键要素：光照设置（最有价值）、镜头/焦距感、调色（定义"感觉"）、表情和情绪。</p>
+
+      <h3>风景照片 → 环境提示词</h3>
+      <p>风景提供丰富的环境词汇。关注：时间和光线特质、天气和氛围、规模和取景、前景/中景/背景关系。</p>
+
+      <h3>建筑照片 → 建筑和场景提示词</h3>
+      <p>建筑风格和时代、材质和纹理词汇、光影在表面上的变化、人物比例参考。</p>
+
+      <h3>美食照片 → 产品和美食摄影提示词</h3>
+      <p>拍摄角度、摆盘风格、光源质量和方向、道具和表面、焦平面和景深处理。</p>
+
+      <div class="img-grid-2" style="margin:2rem 0">
+        <figure style="margin:0">
+          <picture><source srcset="/images/image-to-prompt-shibuya-crossing-original.webp" type="image/webp"><img src="/images/image-to-prompt-shibuya-crossing-original.jpeg" alt="用作ImageToPrompt工具输入的原始参考照片——AI提示词提取工作流的源图像" width="800" height="600" loading="lazy" style="width:100%;border-radius:0.5rem;display:block"></picture>
+          <figcaption style="color:var(--text-muted);font-size:0.8rem;text-align:center;margin-top:0.5rem">步骤1：上传到ImageToPrompt的原始照片</figcaption>
+        </figure>
+        <figure style="margin:0">
+          <picture><source srcset="/images/image-to-prompt-shibuya-recreated.webp" type="image/webp"><img src="/images/image-to-prompt-shibuya-recreated.jpeg" alt="使用从原始照片提取的提示词生成的AI重新创作图像" width="800" height="600" loading="lazy" style="width:100%;border-radius:0.5rem;display:block"></picture>
+          <figcaption style="color:var(--text-muted);font-size:0.8rem;text-align:center;margin-top:0.5rem">步骤3：使用提取的提示词AI重新创作的版本</figcaption>
+        </figure>
+      </div>
+
+      <h2>翻译中的损失</h2>
+
+      <p>没有任何提示词——无论是手写还是自动提取——能完美捕捉照片中的一切。了解局限性有助于弥补：</p>
+
+      <ul>
+        <li><strong>情感与人物存在感：</strong>真人照片承载着真实情感的分量。AI提示词描述的是视觉表面。</li>
+        <li><strong>特定人物：</strong>AI无法从提示词复制特定个人（除非使用LoRA或参考图像工作流）。</li>
+        <li><strong>受版权保护的元素：</strong>照片中可见的品牌标志和商标不应包含在提示词中。</li>
+        <li><strong>特定地点的独特性：</strong>真实地点的特定特征可以近似但无法精确复制。</li>
+      </ul>
+
+      <h2>隐私和使用真人照片的道德问题</h2>
+
+      <p>在上传包含可识别人物的照片之前：使用自己的照片作为参考始终是合适的。使用私人个人的照片应获得其知情同意。不要使用提取的提示词生成使特定真人看似做了他们未做之事的逼真图像——这种行为不道德且在许多司法管辖区越来越多地被认定为违法。</p>
+
+      <p>从照片到提示词工具最道德、最有效的使用方式是提取美学词汇——光照、风格、构图——并将该词汇应用于新的虚构主题。</p>
+
+    </div>
+
+    <div class="author-bio">
+      <svg class="author-photo" width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="作者头像"><circle cx="32" cy="32" r="32" fill="#2a1f4e"/><circle cx="32" cy="26" r="11" fill="#7c6bc4"/><ellipse cx="32" cy="52" rx="18" ry="11" fill="#7c6bc4"/></svg>
+      <div class="author-info">
+        <p class="author-name">ImageToPrompt Team</p>
+        <p class="author-desc">我们是一支专业团队，致力于帮助创作者掌握AI图像生成技术。通过图像转提示词工具和AI提示词工程指南，我们为全球艺术家的创作提供支持。</p>
+        <a href="https://x.com/Ilyass14286541" class="author-link">在X上关注 &#8594;</a>
+      </div>
+    </div>
+
+    <div class="related-posts">
+      <h2>相关指南</h2>
+      <div class="related-grid">
+        <a href="/zh/blog/tupian-zhuanhuan-ai-tishi-ci/" class="related-card">
+          <p class="tag">分步指南</p>
+          <h3>如何将任何图片转换为AI提示词</h3>
+        </a>
+        <a href="/zh/blog/zuijia-tupian-zhuan-tishi-ci-gongju-2026/" class="related-card">
+          <p class="tag">工具对比</p>
+          <h3>2026年最佳图片转提示词工具</h3>
+        </a>
+        <a href="/zh/blog/ai-yishu-fengge-cihui/" class="related-card">
+          <p class="tag">词汇表</p>
+          <h3>AI艺术风格词汇表：50种风格详解</h3>
+        </a>
+      </div>
+    </div>
+
+  </div>
+
+  <footer class="footer-4col">
+    <div class="f4-inner">
+      <div class="f4-brand">
+        <img src="/favicon.svg" alt="ImageToPrompt" width="28" height="28">
+        <span class="f4-brand-name">ImageTo<span class="accent">Prompt</span></span>
+        <span class="f4-brand-sub">&mdash; Free AI Prompt Generator</span>
+      </div>
+      <div class="f4-grid">
+        <div class="f4-section">
+          <h4 class="f4-heading">Image Prompt Tools</h4>
+          <a href="/">Image to Prompt</a>
+          <a href="/text-to-prompt/">Text to Prompt</a>
+      <a href="/describe-image/">Describe Image</a>
+          <a href="/midjourney-prompt-generator/">Midjourney</a>
+          <a href="/stable-diffusion-prompt-generator/">Stable Diffusion</a>
+          <a href="/flux-prompt-generator/">Flux</a>
+          <a href="/dall-e-prompt-generator/">DALL-E 3</a>
+          <a href="/adobe-firefly-prompt-generator/">Adobe Firefly</a>
+          <a href="/leonardo-ai-prompt-generator/">Leonardo AI</a>
+          <a href="/ideogram-prompt-generator/">Ideogram</a>
+        </div>
+        <div class="f4-section">
+          <h4 class="f4-heading">Video Prompt Tools</h4>
+          <a href="/image-to-video-prompt/">Image to Video Prompt</a>
+          <a href="/text-to-video-prompt/">Text to Video Prompt</a>
+          <a href="/veo-prompt-generator/">Veo / Flow Studio</a>
+          <a href="/kling-prompt-generator/">Kling AI</a>
+          <a href="/runway-prompt-generator/">Runway Gen-3</a>
+          <a href="/pika-prompt-generator/">Pika</a>
+          <a href="/luma-prompt-generator/">Luma Dream Machine</a>
+          <a href="/sora-prompt-generator/">Sora</a>
+          <a href="/minimax-prompt-generator/">Minimax</a>
+          <a href="/stable-video-prompt-generator/">Stable Video</a>
+        </div>
+        <div class="f4-section">
+          <h4 class="f4-heading">Resources</h4>
+          <a href="/zh/blog/">博客</a>
+          <a href="/zh/about/">关于</a>
+          <a href="/zh/pricing/">价格</a>
+          <a href="/contact/">Contact</a>
+          <a href="/privacy-policy/">Privacy Policy</a>
+          <a href="/terms-of-service/">Terms of Service</a>
+        </div>
+        <div class="f4-section">
+          <h4 class="f4-heading">Languages</h4>
+          <a href="/">English</a>
+          <a href="/fr/">Fran&#231;ais</a>
+          <a href="/ar/">&#1575;&#1604;&#1593;&#1585;&#1576;&#1610;&#1577;</a>
+          <a href="/es/">Espa&#241;ol</a>
+          <a href="/ko/">&#54620;&#44397;&#50612;</a>
+          <a href="/ja/">&#26085;&#26412;&#35486;</a>
+          <a href="/ru/">&#1056;&#1091;&#1089;&#1089;&#1082;&#1080;&#1081;</a>
+          <a href="/zh/">中文</a>
+        </div>
+      </div>
+      <div class="f4-bottom">
+        <p>&#169; 2026 ImageToPrompt.dev &#8212; Free AI Prompt Generator</p>
+        <p>Your images are never stored. All analysis is ephemeral and private.</p>
+      </div>
+    </div>
+  </footer>
+
+<script src="/newsletter-inject.js" defer></script>
+<script src="/nav.js" defer></script>
+  <script>
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', function() {
+    navigator.serviceWorker.register('/sw.js')
+      .catch(function(err) { console.warn('SW registration failed:', err); });
+  });
+}
+</script>
+</body>
+</html>

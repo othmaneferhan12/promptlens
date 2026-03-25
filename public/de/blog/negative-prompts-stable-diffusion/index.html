@@ -1,0 +1,394 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <script src="/theme-toggle.js"></script>
+  <meta charset="UTF-8" />
+  <link rel="dns-prefetch" href="https://www.googletagmanager.com">
+<link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="max-image-preview:large, index, follow">
+  <meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="ImageToPrompt">
+  <title>Negative Prompts f&#252;r Stable Diffusion: Der vollst&#228;ndige Leitfaden (2026)</title>
+  <meta name="description" content="Meistern Sie Negative Prompts in Stable Diffusion. Universelle Negativ-Prompts, Syntax, Gewichtung, CFG Scale und fertige Listen zum Kopieren." />
+  <link rel="canonical" href="https://www.imagetoprompt.dev/de/blog/negative-prompts-stable-diffusion/" />
+  <link rel="alternate" hreflang="de" href="https://www.imagetoprompt.dev/de/blog/negative-prompts-stable-diffusion/" />
+  <link rel="alternate" hreflang="en" href="https://www.imagetoprompt.dev/blog/negative-prompts-stable-diffusion/" />
+  <link rel="alternate" hreflang="x-default" href="https://www.imagetoprompt.dev/blog/negative-prompts-stable-diffusion/" />
+  <meta property="og:title" content="Negative Prompts f&#252;r Stable Diffusion: Der vollst&#228;ndige Leitfaden" />
+  <meta property="og:description" content="Kompletter Leitfaden zu Negativen Prompts f&#252;r Stable Diffusion. Syntax, Beispiele, h&#228;ufige Fehler und fertige Listen." />
+  <meta property="og:url" content="https://www.imagetoprompt.dev/de/blog/negative-prompts-stable-diffusion/" />
+  <meta property="og:type" content="article" />
+  <meta property="og:image" content="https://www.imagetoprompt.dev/og-image.png" />
+  <meta property="og:site_name" content="ImageToPrompt" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Negative Prompts Stable Diffusion: Kompletter Leitfaden" />
+  <meta name="twitter:description" content="Kompletter Leitfaden zu Negativen Prompts f&#252;r Stable Diffusion. Syntax, Beispiele und fertige Listen." />
+  <meta name="twitter:image" content="https://www.imagetoprompt.dev/og-image.png" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="48x48" href="/favicon-48.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+  <link rel="manifest" href="/site.webmanifest" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="/fonts/space-grotesk-700.woff2" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="/fonts/inter-400.woff2" />
+  <link rel="stylesheet" href="/theme.css">
+  <link rel="preload" href="/blog.css" as="style" onload="this.onload=null;this.rel='stylesheet'"><noscript><link rel="stylesheet" href="/blog.css"></noscript>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Negative Prompts f\u00fcr Stable Diffusion: Der vollst\u00e4ndige Leitfaden (2026)",
+    "description": "Meistern Sie Negative Prompts in Stable Diffusion. Universelle Negativ-Prompts, Syntax, Gewichtung, CFG Scale und fertige Listen zum Kopieren.",
+    "image": "https://www.imagetoprompt.dev/og-image.png",
+    "datePublished": "2026-03-09",
+    "dateModified": "2026-03-25",
+    "inLanguage": "de",
+    "author": { "@type": "Person", "name": "ImageToPrompt Team", "url": "https://www.imagetoprompt.dev/" },
+    "publisher": { "@type": "Organization", "name": "ImageToPrompt", "logo": { "@type": "ImageObject", "url": "https://www.imagetoprompt.dev/favicon.svg" } },
+    "mainEntityOfPage": { "@type": "WebPage", "@id": "https://www.imagetoprompt.dev/de/blog/negative-prompts-stable-diffusion/" }
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      { "@type": "Question", "name": "Was ist ein Negativer Prompt in Stable Diffusion?", "acceptedAnswer": { "@type": "Answer", "text": "Ein Negativer Prompt ist ein separates Textfeld, in dem Sie Elemente angeben, die Sie NICHT im generierten Bild sehen m\u00f6chten. Das Modell weicht bei der Generierung aktiv von diesen Konzepten ab, was die Qualit\u00e4t verbessert und Artefakte reduziert." } },
+      { "@type": "Question", "name": "Beeinflusst der CFG Scale die Negativen Prompts?", "acceptedAnswer": { "@type": "Answer", "text": "Ja, der CFG Scale (Classifier-Free Guidance) bestimmt, wie stark das Modell Ihren positiven UND negativen Prompts folgt. Ein CFG von 7 ist ein guter Ausgleich. Ein zu hoher CFG (15+) kann Artefakte erzeugen, w\u00e4hrend ein zu niedriger CFG (3-4) Ihre negativen Prompts teilweise ignoriert." } },
+      { "@type": "Question", "name": "Welche universellen Negativen Prompts sind am n\u00fctzlichsten?", "acceptedAnswer": { "@type": "Answer", "text": "Die wirksamsten universellen Negativen Prompts sind: (worst quality:1.4), (low quality:1.4), blurry, watermark, signature, text, deformed, bad anatomy, bad hands, extra fingers, missing fingers, extra limbs, duplicate, cropped, out of frame, ugly." } },
+      { "@type": "Question", "name": "Unterst\u00fctzen Midjourney und Flux Negative Prompts?", "acceptedAnswer": { "@type": "Answer", "text": "Midjourney bietet eingeschr\u00e4nkte Unterst\u00fctzung \u00fcber den Parameter --no (z.B. --no text, watermark). Flux unterst\u00fctzt Negative Prompts \u00fcberhaupt nicht. Nur Stable Diffusion bietet ein vollst\u00e4ndiges dediziertes Feld mit Gewichtungssyntax." } }
+    ]
+  }
+  </script>
+    <!-- Google AdSense -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4499206373485728" crossorigin="anonymous"></script>
+    <!-- Web Push Notifications -->
+<script src="https://cdn.onesignal.com/sdks/web/v16/OneSignalSDK.page.js" defer></script>
+<script>
+  window.OneSignalDeferred = window.OneSignalDeferred || [];
+  OneSignalDeferred.push(async function(OneSignal) {
+    await OneSignal.init({
+      appId: "REPLACE_WITH_ONESIGNAL_APP_ID",
+      notifyButton: { enable: false }
+    });
+  });
+</script>
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="inner">
+      <a href="/de/" class="site-logo"><img src="/favicon.svg" alt="ImageToPrompt" width="48" height="48"><div class="site-logo-text">ImageTo<span class="accent">Prompt</span><span class="site-logo-sub">Kostenloser KI-Prompt-Generator</span></div></a>
+      <nav class="site-nav" aria-label="Hauptnavigation">
+        <div class="nav-dropdown">
+          <button class="nav-dropdown-trigger" aria-haspopup="true" aria-expanded="false">Tools <span class="nav-chevron" aria-hidden="true">&#9660;</span></button>
+          <div class="nav-dropdown-menu" role="menu">
+            <div class="nav-mega-grid">
+              <div class="nav-mega-col">
+                <div class="nav-mega-heading">&#128444; IMAGE TOOLS</div>
+                <a href="/" role="menuitem" class="nav-mega-tool">Image to Prompt <span class="nav-mega-arrow">&#8594;</span></a>
+                <a href="/text-to-prompt/" role="menuitem" class="nav-mega-tool">Text to Prompt <span class="nav-mega-arrow">&#8594;</span></a>
+                <a href="/describe-image/" role="menuitem" class="nav-mega-tool">Describe Image <span class="nav-new-badge">NEW</span> <span class="nav-mega-arrow">&#8594;</span></a>
+                <div class="nav-mega-models-label">Models</div>
+                <div class="nav-mega-models"><a href="/midjourney-prompt-generator/">Midjourney</a><span class="nav-dot">&#xB7;</span><a href="/stable-diffusion-prompt-generator/">SD</a></div>
+                <div class="nav-mega-models"><a href="/flux-prompt-generator/">Flux</a><span class="nav-dot">&#xB7;</span><a href="/dall-e-prompt-generator/">DALL&#xB7;E&#xA0;3</a></div>
+                <div class="nav-mega-models"><a href="/adobe-firefly-prompt-generator/">Firefly</a><span class="nav-dot">&#xB7;</span><a href="/leonardo-ai-prompt-generator/">Leonardo</a></div>
+                <div class="nav-mega-models"><a href="/ideogram-prompt-generator/">Ideogram</a></div>
+              </div>
+              <div class="nav-mega-divider" aria-hidden="true"></div>
+              <div class="nav-mega-col">
+                <div class="nav-mega-heading">&#127909; VIDEO TOOLS</div>
+                <a href="/?tab=image-to-video" role="menuitem" class="nav-mega-tool">Image to Video <span class="nav-mega-arrow">&#8594;</span></a>
+                <a href="/?tab=text-to-video" role="menuitem" class="nav-mega-tool">Text to Video <span class="nav-mega-arrow">&#8594;</span></a>
+                <div class="nav-mega-models-label">Models</div>
+                <div class="nav-mega-models"><a href="/veo-prompt-generator/">Veo</a><span class="nav-dot">&#xB7;</span><a href="/kling-prompt-generator/">Kling</a></div>
+                <div class="nav-mega-models"><a href="/runway-prompt-generator/">Runway</a><span class="nav-dot">&#xB7;</span><a href="/pika-prompt-generator/">Pika</a></div>
+                <div class="nav-mega-models"><a href="/luma-prompt-generator/">Luma</a><span class="nav-dot">&#xB7;</span><a href="/sora-prompt-generator/">Sora</a></div>
+                <div class="nav-mega-models"><a href="/minimax-prompt-generator/">Minimax</a><span class="nav-dot">&#xB7;</span><a href="/stable-video-prompt-generator/">Stable</a></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <a href="/de/blog/">Blog</a>
+        <a href="/de/pricing/" class="nav-pill-pricing">Preise</a>
+        <a href="/de/about/" class="nav-pill-about">&#220;ber uns</a>
+        <a href="/de/" class="nav-try-free">Kostenlos testen &#8594;</a>
+        <button id="theme-toggle" onclick="toggleTheme()" aria-label="Design wechseln" title="Design wechseln">&#9728;&#xFE0F;</button>
+  </nav>
+    </div>
+  </header>
+
+  <nav class="breadcrumb" aria-label="Brotkr&#252;mel">
+    <a href="/de/">Startseite</a><span class="sep">&#8250;</span>
+    <a href="/de/blog/">Blog</a><span class="sep">&#8250;</span>
+    <span>Negative Prompts Stable Diffusion</span>
+  </nav>
+
+  <div class="page-wrapper">
+
+    <header class="article-header">
+      <p class="article-tag">Stable Diffusion</p>
+      <h1>Negative Prompts in Stable Diffusion: Der vollst&#228;ndige Leitfaden</h1>
+      <div class="article-meta">
+        <span>M&#228;rz 2026</span>
+        <span class="dot">&#183;</span>
+        <span>9 Min. Lesezeit</span>
+        <span class="dot">&#183;</span>
+        <span>Stable Diffusion &#183; SDXL &#183; Automatic1111</span>
+        <span class="dot">&#183;</span>
+        <span>Aktualisiert M&#228;rz 2026</span>
+      </div>
+    </header>
+
+    <div class="article-body">
+
+      <p>Negative Prompts geh&#246;ren zu den leistungsst&#228;rksten und am wenigsten verstandenen Werkzeugen in Stable Diffusion. Sie erm&#246;glichen es, dem Modell mitzuteilen, was Sie im generierten Bild nicht sehen m&#246;chten &#8212; von deformierten H&#228;nden &#252;ber Wasserzeichen bis hin zu Kompressionsartefakten. Richtig eingesetzt, verbessern sie die Qualit&#228;t jeder Generierung erheblich.</p>
+
+      <nav class="toc" aria-label="Inhaltsverzeichnis">
+        <details open>
+          <summary>In diesem Leitfaden</summary>
+          <ol>
+            <li><a href="#was-ist-ein-negativer-prompt">Was ist ein Negativer Prompt?</a></li>
+            <li><a href="#technische-funktionsweise">Technische Funktionsweise</a></li>
+            <li><a href="#cfg-scale">Die Wechselwirkung mit dem CFG Scale</a></li>
+            <li><a href="#universelle-liste">Universelle Liste Negativer Prompts</a></li>
+            <li><a href="#nach-anwendungsfall">Negative Prompts nach Anwendungsfall</a></li>
+            <li><a href="#syntax-und-gewichtung">Syntax und Gewichtung</a></li>
+            <li><a href="#haeufige-fehler">H&#228;ufige Fehler</a></li>
+            <li><a href="#haeufige-fragen">H&#228;ufige Fragen</a></li>
+          </ol>
+        </details>
+      </nav>
+
+      <div class="callout">
+        <p><strong>Tipp:</strong> <a href="/">ImageToPrompt</a> generiert automatisch optimierte Negative Prompts, wenn Sie Stable Diffusion als Zielmodell ausw&#228;hlen. Laden Sie ein Bild hoch, um sowohl einen positiven ALS AUCH einen negativen Prompt in einer einzigen Analyse zu erhalten.</p>
+      </div>
+
+      <h2 id="was-ist-ein-negativer-prompt">Was ist ein Negativer Prompt?</h2>
+
+      <p>In Stable Diffusion ist der Negative Prompt ein separates Textfeld, in dem Sie Elemente, Qualit&#228;ten oder Stile angeben, die Sie im generierten Bild vermeiden m&#246;chten. W&#228;hrend des Entrauschungsprozesses weicht das Modell aktiv von diesen Konzepten ab, was sauberere und pr&#228;zisere Bilder erzeugt.</p>
+
+      <p>Stellen Sie es sich wie einen Kompass vor: Der positive Prompt zeigt die gew&#252;nschte Richtung an, und der Negative Prompt definiert die Richtungen, die zu vermeiden sind. Zusammen kanalisieren sie die Generierung hin zu einem pr&#228;zisen Ergebnis.</p>
+
+      <h2 id="technische-funktionsweise">Technische Funktionsweise</h2>
+
+      <p>Stable Diffusion verwendet einen Prozess namens Classifier-Free Guidance (CFG), um den positiven und negativen Prompt auszubalancieren. Bei jedem Entrauschungsschritt berechnet das Modell zwei Vorhersagen:</p>
+
+      <ol>
+        <li>Eine Vorhersage, die durch Ihren <strong>positiven</strong> Prompt geleitet wird</li>
+        <li>Eine Vorhersage, die durch Ihren <strong>negativen</strong> Prompt geleitet wird (oder unbedingt, wenn kein Negativer Prompt angegeben ist)</li>
+      </ol>
+
+      <p>Das endg&#252;ltige Ergebnis wird berechnet, indem sich das Modell von der negativen Vorhersage entfernt und der positiven Vorhersage ann&#228;hert, gem&#228;&#223; der durch den CFG Scale definierten Intensit&#228;t.</p>
+
+      <h2 id="cfg-scale">Die Wechselwirkung mit dem CFG Scale</h2>
+
+      <p>Der CFG Scale bestimmt, wie stark das Modell Ihren Prompts folgt. Dieser Wert wirkt sich sowohl auf den positiven als auch den negativen Prompt aus:</p>
+
+      <div class="table-wrap">
+      <table class="comparison-table">
+        <thead><tr><th>CFG Scale</th><th>Wirkung</th><th>Empfehlung</th></tr></thead>
+        <tbody>
+          <tr><td>1 &#8211; 3</td><td>Kreativ, ignoriert Prompts teilweise</td><td>Freie Exploration</td></tr>
+          <tr><td>5 &#8211; 7</td><td>Gleichgewicht Qualit&#228;t/Kreativit&#228;t</td><td>Allgemeine Nutzung (empfohlen)</td></tr>
+          <tr><td>8 &#8211; 12</td><td>Folgt Prompts genau</td><td>Wenn Pr&#228;zision z&#228;hlt</td></tr>
+          <tr><td>13+</td><td>Zu streng, Artefakte wahrscheinlich</td><td>Generell zu vermeiden</td></tr>
+        </tbody>
+      </table>
+      </div>
+
+      <p>Ein wichtiger Punkt: Ein hoher CFG verst&#228;rkt auch die Wirkung der Negativen Prompts. Wenn Ihr Negativer Prompt mit einem CFG von 12+ zu aggressiv ist, riskieren Sie seltsame Ergebnisse, bei denen das Modell sich zu weit von bestimmten Konzepten entfernt.</p>
+
+      <h2 id="universelle-liste">Universelle Liste Negativer Prompts</h2>
+
+      <p>Hier ist die Liste universeller Negativer Prompts, die wir als Ausgangsbasis f&#252;r die meisten Generierungen empfehlen:</p>
+
+      <h3>Bildqualit&#228;t</h3>
+      <pre><code>(worst quality:1.4), (low quality:1.4), normal quality, jpeg artifacts, blurry, noisy, grainy, pixelated, low resolution</code></pre>
+
+      <h3>Anatomie und Proportionen</h3>
+      <pre><code>bad anatomy, bad hands, extra fingers, missing fingers, extra limbs, missing limbs, fused fingers, too many fingers, deformed, mutated, disfigured, malformed</code></pre>
+
+      <h3>Komposition</h3>
+      <pre><code>cropped, out of frame, cut off, duplicate, clone, copy, watermark, signature, text, logo, username, artist name</code></pre>
+
+      <h3>Komplette Liste zum Kopieren</h3>
+      <pre><code>(worst quality:1.4), (low quality:1.4), blurry, noisy, watermark, signature, text, logo, bad anatomy, bad hands, extra fingers, missing fingers, extra limbs, deformed, disfigured, duplicate, cropped, out of frame, ugly, poorly drawn face, poorly drawn hands</code></pre>
+
+      <h2 id="nach-anwendungsfall">Negative Prompts nach Anwendungsfall</h2>
+
+      <h3>Fotorealistische Portraits</h3>
+      <pre><code>(worst quality:1.4), (low quality:1.4), bad anatomy, bad hands, deformed face, deformed eyes, asymmetric eyes, cross-eyed, extra fingers, missing fingers, blurry, watermark, signature, 3d render, cartoon, anime, illustration, painting, drawing</code></pre>
+
+      <h3>Anime / Manga Kunst</h3>
+      <pre><code>(worst quality:1.4), (low quality:1.4), realistic, photorealistic, 3d render, bad anatomy, bad hands, extra fingers, deformed, blurry, watermark, signature, text, duplicate, cropped, ugly</code></pre>
+
+      <h3>Landschaften und Umgebungen</h3>
+      <pre><code>(worst quality:1.4), (low quality:1.4), blurry, noisy, watermark, text, logo, people, person, human, figures, cars, vehicles, modern objects, power lines, telephone poles</code></pre>
+
+      <h3>Produktfotografie</h3>
+      <pre><code>(worst quality:1.4), (low quality:1.4), blurry, noisy, watermark, text, logo, cluttered background, distracting elements, poor lighting, shadows on product, reflections, distortion</code></pre>
+
+      <h2 id="syntax-und-gewichtung">Syntax und Gewichtung</h2>
+
+      <p>Negative Prompts unterst&#252;tzen dieselbe Gewichtungssyntax wie positive Prompts in Stable Diffusion:</p>
+
+      <ul>
+        <li><code>(Begriff:1.4)</code> &#8212; starke Gewichtung, das Modell vermeidet dieses Konzept aktiv</li>
+        <li><code>(Begriff:1.0)</code> &#8212; normale Gewichtung (Standard)</li>
+        <li><code>(Begriff:0.6)</code> &#8212; schwache Gewichtung, leichter Einfluss</li>
+        <li><code>[Begriff]</code> &#8212; reduziert die Gewichtung um 10%</li>
+        <li><code>(Begriff)</code> &#8212; erh&#246;ht die Gewichtung um 10%</li>
+      </ul>
+
+      <p>Wir empfehlen, Qualit&#228;tsbegriffe mit 1.4 zu gewichten (<code>(worst quality:1.4)</code>), da sie den st&#228;rksten Einfluss auf die Gesamtqualit&#228;t haben, w&#228;hrend inhaltsspezifische Begriffe bei 1.0 bleiben sollten.</p>
+
+      <h2 id="haeufige-fehler">H&#228;ufige Fehler</h2>
+
+      <ol class="mistakes-list">
+        <li>
+          <strong>Negativer Prompt zu lang.</strong> Wie der positive Prompt hat auch der Negative Prompt ein Token-Limit (77 Tokens f&#252;r SDXL). Dar&#252;ber hinaus werden zus&#228;tzliche Begriffe ignoriert. Priorisieren Sie die wichtigsten Elemente.
+        </li>
+        <li>
+          <strong>Positive Beschreibungen im Negativen.</strong> Schreiben Sie nicht <code>not blurry</code> &#8212; schreiben Sie einfach <code>blurry</code>. Das Negativ-Feld wird bereits als &#171;vermeide dies&#187; interpretiert.
+        </li>
+        <li>
+          <strong>Widerspr&#252;che zwischen Positiv und Negativ.</strong> Wenn Ihr positiver Prompt <code>painting</code> verlangt und Ihr Negativer Prompt <code>painting</code> enth&#228;lt, erh&#228;lt das Modell widerspr&#252;chliche Signale. Das Ergebnis wird inkonsistent.
+        </li>
+        <li>
+          <strong>Listen kopieren, ohne sie anzupassen.</strong> Universelle Negative Prompts sind ein guter Ausgangspunkt, m&#252;ssen aber an Ihren spezifischen Anwendungsfall angepasst werden. Ein Negativer Prompt f&#252;r Portraits ist nicht derselbe wie f&#252;r Landschaften.
+        </li>
+      </ol>
+
+      <div class="cta-box">
+        <h3>Negative Prompts automatisch generieren</h3>
+        <p>Laden Sie Ihr Referenzbild hoch und w&#228;hlen Sie Stable Diffusion. ImageToPrompt generiert den positiven UND den optimierten Negativen Prompt.</p>
+        <a href="/?lang=de" class="cta-btn">ImageToPrompt testen &#8594;</a>
+      </div>
+
+      <h2 id="haeufige-fragen">H&#228;ufige Fragen</h2>
+
+      <h3>Was ist ein Negativer Prompt in Stable Diffusion?</h3>
+      <p>Ein Negativer Prompt ist ein separates Textfeld, in dem Sie Elemente angeben, die Sie NICHT im generierten Bild sehen m&#246;chten. Das Modell weicht bei der Generierung aktiv von diesen Konzepten ab, was die Qualit&#228;t verbessert und Artefakte reduziert.</p>
+
+      <h3>Beeinflusst der CFG Scale die Negativen Prompts?</h3>
+      <p>Ja, der CFG Scale (Classifier-Free Guidance) bestimmt, wie stark das Modell Ihren positiven UND negativen Prompts folgt. Ein CFG von 7 ist ein guter Ausgleich. Ein zu hoher CFG (15+) kann Artefakte erzeugen, w&#228;hrend ein zu niedriger CFG (3&#8211;4) Ihre Negativen Prompts teilweise ignoriert.</p>
+
+      <h3>Welche universellen Negativen Prompts sind am n&#252;tzlichsten?</h3>
+      <p>Die wirksamsten universellen Negativen Prompts sind: <code>(worst quality:1.4), (low quality:1.4), blurry, watermark, signature, text, deformed, bad anatomy, bad hands, extra fingers, missing fingers, extra limbs, duplicate, cropped, out of frame, ugly</code>.</p>
+
+      <h3>Unterst&#252;tzen Midjourney und Flux Negative Prompts?</h3>
+      <p>Midjourney bietet eingeschr&#228;nkte Unterst&#252;tzung &#252;ber den Parameter <code>--no</code> (z.B. <code>--no text, watermark</code>). Flux unterst&#252;tzt Negative Prompts &#252;berhaupt nicht. Nur Stable Diffusion bietet ein vollst&#228;ndiges dediziertes Feld mit Gewichtungssyntax.</p>
+
+    </div>
+
+    <div class="author-bio">
+      <svg class="author-photo" width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="Autoren-Avatar"><circle cx="32" cy="32" r="32" fill="#2a1f4e"/><circle cx="32" cy="26" r="11" fill="#7c6bc4"/><ellipse cx="32" cy="52" rx="18" ry="11" fill="#7c6bc4"/></svg>
+      <div class="author-info">
+        <p class="author-name">ImageToPrompt Team</p>
+        <p class="author-desc">Wir sind ein Expertenteam, das Kreativen hilft, die KI-Bildgenerierung zu meistern. Mit unseren Bild-zu-Prompt-Tools und KI-Prompt-Engineering-Leitf&#228;den unterst&#252;tzen wir K&#252;nstler weltweit.</p>
+        <a href="https://x.com/Ilyass14286541" class="author-link">Auf X folgen &#8594;</a>
+      </div>
+    </div>
+
+    <div class="related-posts">
+      <h2>Verwandte Leitf&#228;den</h2>
+      <div class="related-grid">
+        <a href="/de/blog/midjourney-prompt-leitfaden-2026/" class="related-card">
+          <p class="tag">Midjourney</p>
+          <h3>Midjourney Prompt-Leitfaden 2026</h3>
+        </a>
+        <a href="/de/blog/midjourney-vs-flux/" class="related-card">
+          <p class="tag">Vergleich</p>
+          <h3>Midjourney vs Flux 2026</h3>
+        </a>
+        <a href="/de/blog/prompt-engineering-ai-kunst/" class="related-card">
+          <p class="tag">Einsteiger</p>
+          <h3>Prompt Engineering f&#252;r KI-Kunst</h3>
+        </a>
+        <a href="/de/blog/prompt-engineering-fehler/" class="related-card">
+          <p class="tag">Tipps</p>
+          <h3>15 Prompt-Engineering-Fehler vermeiden</h3>
+        </a>
+      </div>
+    </div>
+
+  </div>
+
+  <footer class="footer-4col">
+    <div class="f4-inner">
+      <div class="f4-brand">
+        <img src="/favicon.svg" alt="ImageToPrompt" width="28" height="28">
+        <span class="f4-brand-name">ImageTo<span class="accent">Prompt</span></span>
+        <span class="f4-brand-sub">&mdash; Free AI Prompt Generator</span>
+      </div>
+      <div class="f4-grid">
+        <div class="f4-section">
+          <h4 class="f4-heading">Image Prompt Tools</h4>
+          <a href="/">Image to Prompt</a>
+          <a href="/text-to-prompt/">Text to Prompt</a>
+      <a href="/describe-image/">Describe Image</a>
+          <a href="/midjourney-prompt-generator/">Midjourney</a>
+          <a href="/stable-diffusion-prompt-generator/">Stable Diffusion</a>
+          <a href="/flux-prompt-generator/">Flux</a>
+          <a href="/dall-e-prompt-generator/">DALL-E 3</a>
+          <a href="/adobe-firefly-prompt-generator/">Adobe Firefly</a>
+          <a href="/leonardo-ai-prompt-generator/">Leonardo AI</a>
+          <a href="/ideogram-prompt-generator/">Ideogram</a>
+        </div>
+        <div class="f4-section">
+          <h4 class="f4-heading">Video Prompt Tools</h4>
+          <a href="/image-to-video-prompt/">Image to Video Prompt</a>
+          <a href="/text-to-video-prompt/">Text to Video Prompt</a>
+          <a href="/veo-prompt-generator/">Veo / Flow Studio</a>
+          <a href="/kling-prompt-generator/">Kling AI</a>
+          <a href="/runway-prompt-generator/">Runway Gen-3</a>
+          <a href="/pika-prompt-generator/">Pika</a>
+          <a href="/luma-prompt-generator/">Luma Dream Machine</a>
+          <a href="/sora-prompt-generator/">Sora</a>
+          <a href="/minimax-prompt-generator/">Minimax</a>
+          <a href="/stable-video-prompt-generator/">Stable Video</a>
+        </div>
+        <div class="f4-section">
+          <h4 class="f4-heading">Resources</h4>
+          <a href="/de/blog/">Blog</a>
+          <a href="/de/about/">&#220;ber uns</a>
+          <a href="/de/pricing/">Preise</a>
+          <a href="/contact/">Contact</a>
+          <a href="/privacy-policy/">Privacy Policy</a>
+          <a href="/terms-of-service/">Terms of Service</a>
+        </div>
+        <div class="f4-section">
+          <h4 class="f4-heading">Languages</h4>
+          <a href="/">English</a>
+          <a href="/fr/">Fran&#231;ais</a>
+          <a href="/de/">Deutsch</a>
+          <a href="/ar/">&#1575;&#1604;&#1593;&#1585;&#1576;&#1610;&#1577;</a>
+          <a href="/es/">Espa&#241;ol</a>
+          <a href="/ko/">&#54620;&#44397;&#50612;</a>
+          <a href="/ja/">&#26085;&#26412;&#35486;</a>
+          <a href="/ru/">&#1056;&#1091;&#1089;&#1089;&#1082;&#1080;&#1081;</a>
+        </div>
+      </div>
+      <div class="f4-bottom">
+        <p>&#169; 2026 ImageToPrompt.dev &#8212; Free AI Prompt Generator</p>
+        <p>Your images are never stored. All analysis is ephemeral and private.</p>
+      </div>
+    </div>
+  </footer>
+
+<script src="/newsletter-inject.js" defer></script>
+<script src="/nav.js" defer></script>
+  <script>
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', function() {
+    navigator.serviceWorker.register('/sw.js')
+      .catch(function(err) { console.warn('SW registration failed:', err); });
+  });
+}
+</script>
+</body>
+</html>

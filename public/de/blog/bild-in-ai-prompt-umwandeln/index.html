@@ -1,0 +1,420 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <script src="/theme-toggle.js"></script>
+  <meta charset="UTF-8" />
+  <link rel="dns-prefetch" href="https://www.googletagmanager.com">
+<link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="max-image-preview:large, index, follow">
+  <meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="ImageToPrompt">
+  <title>Jedes Bild in einen KI-Prompt umwandeln (Schritt-f&#252;r-Schritt-Anleitung)</title>
+  <meta name="description" content="Lernen Sie, wie Sie jedes Bild in einen optimierten KI-Prompt f&#252;r Midjourney, Stable Diffusion, DALL&#183;E 3 und Flux umwandeln. Schritt-f&#252;r-Schritt-Anleitung mit praktischen Tipps." />
+  <link rel="canonical" href="https://www.imagetoprompt.dev/de/blog/bild-in-ai-prompt-umwandeln/" />
+  <link rel="alternate" hreflang="de" href="https://www.imagetoprompt.dev/de/blog/bild-in-ai-prompt-umwandeln/" />
+  <link rel="alternate" hreflang="en" href="https://www.imagetoprompt.dev/blog/convert-image-to-ai-prompt/" />
+  <link rel="alternate" hreflang="x-default" href="https://www.imagetoprompt.dev/blog/convert-image-to-ai-prompt/" />
+  <meta property="og:title" content="Jedes Bild in einen KI-Prompt umwandeln (Schritt-f&#252;r-Schritt-Anleitung)" />
+  <meta property="og:description" content="Lernen Sie, wie Sie jedes Bild in einen optimierten KI-Prompt f&#252;r Midjourney, Stable Diffusion und Flux umwandeln." />
+  <meta property="og:url" content="https://www.imagetoprompt.dev/de/blog/bild-in-ai-prompt-umwandeln/" />
+  <meta property="og:type" content="article" />
+  <meta property="og:image" content="https://www.imagetoprompt.dev/og-image.png" />
+  <meta property="og:site_name" content="ImageToPrompt" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Bild in KI-Prompt umwandeln: Schritt-f&#252;r-Schritt" />
+  <meta name="twitter:description" content="Komplettanleitung zum Umwandeln von Bildern in optimierte KI-Prompts f&#252;r Midjourney, Stable Diffusion und Flux." />
+  <meta name="twitter:image" content="https://www.imagetoprompt.dev/og-image.png" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="48x48" href="/favicon-48.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+  <link rel="manifest" href="/site.webmanifest" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="/fonts/space-grotesk-700.woff2" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="/fonts/inter-400.woff2" />
+  <link rel="stylesheet" href="/theme.css">
+  <link rel="preload" href="/blog.css" as="style" onload="this.onload=null;this.rel='stylesheet'"><noscript><link rel="stylesheet" href="/blog.css"></noscript>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Jedes Bild in einen KI-Prompt umwandeln (Schritt-f\u00fcr-Schritt-Anleitung)",
+    "description": "Lernen Sie, wie Sie jedes Bild in einen optimierten KI-Prompt f\u00fcr Midjourney, Stable Diffusion, DALL\u00b7E 3 und Flux umwandeln.",
+    "image": "https://www.imagetoprompt.dev/og-image.png",
+    "datePublished": "2026-03-10",
+    "dateModified": "2026-03-24",
+    "inLanguage": "de",
+    "author": {
+      "@type": "Person",
+      "name": "ImageToPrompt Team",
+      "url": "https://www.imagetoprompt.dev/"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "ImageToPrompt",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://www.imagetoprompt.dev/favicon.svg"
+      }
+    },
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https://www.imagetoprompt.dev/de/blog/bild-in-ai-prompt-umwandeln/"
+    }
+  }
+  </script>
+    <!-- Google AdSense -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4499206373485728" crossorigin="anonymous"></script>
+    <!-- Web Push Notifications -->
+<script src="https://cdn.onesignal.com/sdks/web/v16/OneSignalSDK.page.js" defer></script>
+<script>
+  window.OneSignalDeferred = window.OneSignalDeferred || [];
+  OneSignalDeferred.push(async function(OneSignal) {
+    await OneSignal.init({
+      appId: "REPLACE_WITH_ONESIGNAL_APP_ID",
+      notifyButton: { enable: false }
+    });
+  });
+</script>
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="inner">
+      <a href="/de/" class="site-logo"><img src="/favicon.svg" alt="ImageToPrompt" width="48" height="48"><div class="site-logo-text">ImageTo<span class="accent">Prompt</span><span class="site-logo-sub">Kostenloser KI-Prompt-Generator</span></div></a>
+      <nav class="site-nav" aria-label="Hauptnavigation">
+        <div class="nav-dropdown">
+          <button class="nav-dropdown-trigger" aria-haspopup="true" aria-expanded="false">Tools <span class="nav-chevron" aria-hidden="true">&#9660;</span></button>
+          <div class="nav-dropdown-menu" role="menu">
+            <div class="nav-mega-grid">
+              <div class="nav-mega-col">
+                <div class="nav-mega-heading">&#128444; IMAGE TOOLS</div>
+                <a href="/" role="menuitem" class="nav-mega-tool">Image to Prompt <span class="nav-mega-arrow">&#8594;</span></a>
+                <a href="/text-to-prompt/" role="menuitem" class="nav-mega-tool">Text to Prompt <span class="nav-mega-arrow">&#8594;</span></a>
+                <a href="/describe-image/" role="menuitem" class="nav-mega-tool">Describe Image <span class="nav-new-badge">NEW</span> <span class="nav-mega-arrow">&#8594;</span></a>
+                <div class="nav-mega-models-label">Models</div>
+                <div class="nav-mega-models"><a href="/midjourney-prompt-generator/">Midjourney</a><span class="nav-dot">&#xB7;</span><a href="/stable-diffusion-prompt-generator/">SD</a></div>
+                <div class="nav-mega-models"><a href="/flux-prompt-generator/">Flux</a><span class="nav-dot">&#xB7;</span><a href="/dall-e-prompt-generator/">DALL&#xB7;E&#xA0;3</a></div>
+                <div class="nav-mega-models"><a href="/adobe-firefly-prompt-generator/">Firefly</a><span class="nav-dot">&#xB7;</span><a href="/leonardo-ai-prompt-generator/">Leonardo</a></div>
+                <div class="nav-mega-models"><a href="/ideogram-prompt-generator/">Ideogram</a></div>
+              </div>
+              <div class="nav-mega-divider" aria-hidden="true"></div>
+              <div class="nav-mega-col">
+                <div class="nav-mega-heading">&#127909; VIDEO TOOLS</div>
+                <a href="/?tab=image-to-video" role="menuitem" class="nav-mega-tool">Image to Video <span class="nav-mega-arrow">&#8594;</span></a>
+                <a href="/?tab=text-to-video" role="menuitem" class="nav-mega-tool">Text to Video <span class="nav-mega-arrow">&#8594;</span></a>
+                <div class="nav-mega-models-label">Models</div>
+                <div class="nav-mega-models"><a href="/veo-prompt-generator/">Veo</a><span class="nav-dot">&#xB7;</span><a href="/kling-prompt-generator/">Kling</a></div>
+                <div class="nav-mega-models"><a href="/runway-prompt-generator/">Runway</a><span class="nav-dot">&#xB7;</span><a href="/pika-prompt-generator/">Pika</a></div>
+                <div class="nav-mega-models"><a href="/luma-prompt-generator/">Luma</a><span class="nav-dot">&#xB7;</span><a href="/sora-prompt-generator/">Sora</a></div>
+                <div class="nav-mega-models"><a href="/minimax-prompt-generator/">Minimax</a><span class="nav-dot">&#xB7;</span><a href="/stable-video-prompt-generator/">Stable</a></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <a href="/de/blog/">Blog</a>
+        <a href="/de/pricing/" class="nav-pill-pricing">Preise</a>
+        <a href="/de/about/" class="nav-pill-about">&#220;ber uns</a>
+        <a href="/de/" class="nav-try-free">Kostenlos testen &#8594;</a>
+        <button id="theme-toggle" onclick="toggleTheme()" aria-label="Design wechseln" title="Design wechseln">&#9728;&#xFE0F;</button>
+  </nav>
+    </div>
+  </header>
+
+  <nav class="breadcrumb" aria-label="Brotkr&#252;mel">
+    <a href="/de/">Startseite</a><span class="sep">&#8250;</span>
+    <a href="/de/blog/">Blog</a><span class="sep">&#8250;</span>
+    <span>Bild in KI-Prompt umwandeln</span>
+  </nav>
+
+  <div class="page-wrapper">
+
+    <header class="article-header">
+      <p class="article-tag">Schritt-f&#252;r-Schritt-Anleitung</p>
+      <h1>Jedes Bild in einen KI-Prompt umwandeln (Schritt-f&#252;r-Schritt-Anleitung)</h1>
+      <div class="article-meta">
+        <span>M&#228;rz 2026</span>
+        <span class="dot">&#183;</span>
+        <span>8 Min. Lesezeit</span>
+        <span class="dot">&#183;</span>
+        <span>Midjourney &#183; Stable Diffusion &#183; Flux &#183; DALL&#183;E 3</span>
+        <span class="dot">&#183;</span>
+        <span>Aktualisiert M&#228;rz 2026</span>
+      </div>
+    </header>
+
+    <div class="article-body">
+
+      <p>Sie haben ein Bild gefunden, das Ihnen gef&#228;llt &#8212; vielleicht ein St&#252;ck KI-Kunst, ein Foto mit atemberaubender Beleuchtung oder eine Illustration mit einem unverwechselbaren Stil. Jetzt m&#246;chten Sie etwas &#196;hnliches in Midjourney, Stable Diffusion oder Flux nachbilden. Das Problem: Sie wissen nicht, welcher Prompt es erzeugt hat.</p>
+
+      <nav class="toc" aria-label="Inhaltsverzeichnis">
+        <details open>
+          <summary>In diesem Leitfaden</summary>
+          <ol>
+            <li><a href="#was-ist-bild-zu-prompt">Was ist Bild-zu-Prompt-Umwandlung?</a></li>
+            <li><a href="#wie-tools-funktionieren">Wie funktionieren Bild-zu-Prompt-Tools?</a></li>
+            <li><a href="#schritt-1-richtiges-bild">Schritt 1: Das richtige Bild w&#228;hlen</a></li>
+            <li><a href="#schritt-2-modell-waehlen">Schritt 2: Ihr KI-Zielmodell w&#228;hlen</a></li>
+            <li><a href="#schritt-3-hochladen">Schritt 3: Hochladen und analysieren</a></li>
+            <li><a href="#praxisbeispiele">Praxisbeispiele: Die Umwandlung in Aktion</a></li>
+            <li><a href="#schritt-4-verfeinern">Schritt 4: Den generierten Prompt verfeinern</a></li>
+            <li><a href="#schritt-5-testen">Schritt 5: Testen und iterieren</a></li>
+            <li><a href="#haeufige-fehler">5 h&#228;ufige Fehler, die Sie vermeiden sollten</a></li>
+            <li><a href="#tipps-fuer-bessere-ergebnisse">Tipps f&#252;r bessere Ergebnisse</a></li>
+          </ol>
+        </details>
+      </nav>
+
+      <p>Genau das l&#246;st die Bild-zu-Prompt-Umwandlung. In diesem Leitfaden erfahren Sie pr&#228;zise, wie Sie jedes Bild in einen sofort einsetzbaren KI-Prompt umwandeln, welche Tools Sie verwenden sollten und wie Sie die besten Ergebnisse f&#252;r jeden gro&#223;en KI-Bildgenerator erzielen.</p>
+
+      <figure class="img-figure">
+        <picture><source srcset="/images/image-prompt-tool-interface-annotated.webp" type="image/webp"><img src="/images/image-prompt-tool-interface-annotated.jpeg" alt="ImageToPrompt-Tool-Oberfl&#228;che mit Upload-Bereich, Modellw&#228;hler, Stiloptionen und generiertem Prompt" width="1200" height="700" loading="eager"></picture>
+        <figcaption>ImageToPrompt-Oberfl&#228;che &#8212; laden Sie Ihr Bild hoch, w&#228;hlen Sie ein Modell und erhalten Sie Ihren Prompt in unter 10 Sekunden.</figcaption>
+      </figure>
+
+      <div class="callout">
+        <p><strong>Schnellstart:</strong> Wenn Sie sofort ein Bild umwandeln m&#246;chten, <a href="/">nutzen Sie unseren kostenlosen KI-Prompt-Generator</a>. Laden Sie Ihr Bild hoch, w&#228;hlen Sie ein Modell und erhalten Sie Ihren Prompt in unter 10 Sekunden. Kein Konto erforderlich.</p>
+      </div>
+
+      <h2 id="was-ist-bild-zu-prompt">Was ist Bild-zu-Prompt-Umwandlung?</h2>
+
+      <p>Die Bild-zu-Prompt-Umwandlung ist der Prozess der Analyse eines visuellen Bildes, um eine Textbeschreibung (einen "Prompt") zu generieren, die, wenn sie an einen KI-Bildgenerator &#252;bermittelt wird, ein visuell &#228;hnliches Ergebnis erzeugt. Es ist im Wesentlichen Reverse Engineering &#8212; vom Bild zur&#252;ck zur Textanweisung.</p>
+
+      <p>Dieser Prozess ist in mehreren Situationen n&#252;tzlich:</p>
+      <ul>
+        <li>Sie haben ein KI-generiertes Bild online gefunden und m&#246;chten den Stil nachbilden</li>
+        <li>Sie haben ein Referenzfoto und m&#246;chten, dass die KI etwas mit derselben Stimmung oder &#196;sthetik generiert</li>
+        <li>Sie m&#246;chten verstehen, was einen bestimmten visuellen Stil ausmacht, um bessere Prompts zu schreiben</li>
+        <li>Sie bauen eine konsistente visuelle Identit&#228;t auf und brauchen einen wiederverwendbaren Prompt-Stil</li>
+      </ul>
+
+      <h2 id="wie-tools-funktionieren">Wie funktionieren Bild-zu-Prompt-Tools?</h2>
+
+      <p>Moderne Bild-zu-Prompt-Konverter nutzen Computer Vision KI &#8212; typischerweise gro&#223;e multimodale Modelle wie Claude, GPT-4V oder Gemini &#8212; um ein Bild zu analysieren. Die KI untersucht gleichzeitig mehrere Dimensionen:</p>
+
+      <ul>
+        <li><strong>Motiv und Inhalt:</strong> Was tats&#228;chlich im Bild ist &#8212; Objekte, Personen, Szenen, Tiere</li>
+        <li><strong>Komposition:</strong> Drittelregel, Symmetrie, Perspektive, Sch&#228;rfentiefe, Bildausschnitt</li>
+        <li><strong>Beleuchtung:</strong> Nat&#252;rlich vs. k&#252;nstlich, weich vs. hart, Richtung, Farbtemperatur, Schatten</li>
+        <li><strong>Farbpalette:</strong> Dominante Farben, S&#228;ttigungsniveaus, warme vs. k&#252;hle T&#246;ne, Kontrast</li>
+        <li><strong>Stil und Medium:</strong> Fotografisch, malerisch, digital, illustrativ, cinematisch</li>
+        <li><strong>Stimmung und Atmosph&#228;re:</strong> Emotionaler Ton, Tageszeit, Umgebungsbedingungen</li>
+        <li><strong>Technische Details:</strong> Scheinbare Brennweite, Kamerawinkel, Rendering-Stil</li>
+      </ul>
+
+      <h2 id="schritt-1-richtiges-bild">Schritt 1: Das richtige Bild w&#228;hlen</h2>
+
+      <p>Nicht alle Bilder erzeugen gleich n&#252;tzliche Prompts. Hier ist, was am besten funktioniert:</p>
+
+      <h3>Bilder, die sich gut umwandeln lassen</h3>
+      <ul>
+        <li><strong>Klare Motive mit unverwechselbarem Stil:</strong> Bilder mit bewusstem visuellem Stil &#8212; cinematische Fotografie, Fantasy-Illustration, Concept Art</li>
+        <li><strong>KI-generierte Bilder:</strong> Sie haben bereits eine "promptnahe" Qualit&#228;t &#8212; die &#196;sthetik ist beabsichtigt</li>
+        <li><strong>Professionelle Fotografie:</strong> Studiofotos, Landschaftsfotografie und redaktionelle Fotografie</li>
+        <li><strong>Digitale Illustrationen:</strong> Anime, Comics, Concept Art &#8212; Stile, die KI-Generatoren gut verstehen</li>
+      </ul>
+
+      <h3>Schwierigere Bilder</h3>
+      <ul>
+        <li>Schnappsch&#252;sse mit gemischten Motiven und keinem klaren visuellen Thema</li>
+        <li>Bilder mit viel Text (Logos, Buchcover)</li>
+        <li>Sehr abstrakte oder nicht-repr&#228;sentative Bilder</li>
+        <li>Niedrigaufl&#246;sende oder stark komprimierte Bilder</li>
+      </ul>
+
+      <h2 id="schritt-2-modell-waehlen">Schritt 2: Ihr KI-Zielmodell w&#228;hlen</h2>
+
+      <p>Dies ist der wichtigste Schritt, den die meisten Anf&#228;nger &#252;berspringen. Jeder KI-Bildgenerator hat eine v&#246;llig andere Prompt-Sprache.</p>
+
+      <div class="table-wrap">
+      <table class="comparison-table">
+        <thead>
+          <tr>
+            <th>Merkmal</th>
+            <th>Midjourney</th>
+            <th>Stable Diffusion</th>
+            <th>Flux</th>
+            <th>DALL&#183;E 3</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Prompt-Stil</td>
+            <td>Deskriptoren + Parameter</td>
+            <td>Gewichtete Tags (syntax:1.2)</td>
+            <td>Detaillierte nat&#252;rliche Sprache</td>
+            <td>Konversationelle S&#228;tze</td>
+          </tr>
+          <tr>
+            <td>Negativer Prompt</td>
+            <td>--no Parameter</td>
+            <td>Dediziertes Feld</td>
+            <td>Nicht unterst&#252;tzt</td>
+            <td>Nicht unterst&#252;tzt</td>
+          </tr>
+          <tr>
+            <td>St&#228;rke</td>
+            <td>&#196;sthetik, Konzeptkunst</td>
+            <td>Anime, technische Kontrolle</td>
+            <td>Fotorealismus</td>
+            <td>Text in Bildern, Illustration</td>
+          </tr>
+        </tbody>
+      </table>
+      </div>
+
+      <h2 id="schritt-3-hochladen">Schritt 3: Hochladen und analysieren</h2>
+
+      <ol>
+        <li>&#214;ffnen Sie <a href="/">imagetoprompt.dev</a></li>
+        <li>Laden Sie Ihr Bild per Drag &amp; Drop oder Dateiauswahl hoch</li>
+        <li>W&#228;hlen Sie Ihr Zielmodell aus der Modellauswahl</li>
+        <li>W&#228;hlen Sie optional einen Stilmodus (Cinematisch, Fotografisch usw.)</li>
+        <li>Klicken Sie auf Analysieren und warten Sie einige Sekunden</li>
+      </ol>
+
+      <h2 id="praxisbeispiele">Praxisbeispiele: Die Umwandlung in Aktion</h2>
+
+      <p>Bei Portr&#228;tfotos extrahiert das Tool typischerweise Beleuchtungssetup, Sch&#228;rfentiefe, Farbgebung und Stimmung. Bei Illustrationen erkennt es den k&#252;nstlerischen Stil, die Farbpalette und die Kompositionstechnik.</p>
+
+      <h2 id="schritt-4-verfeinern">Schritt 4: Den generierten Prompt verfeinern</h2>
+
+      <p>Der automatisch generierte Prompt ist ein ausgezeichneter Startpunkt, aber manuelle Anpassungen verbessern die Ergebnisse oft:</p>
+      <ul>
+        <li>&#196;ndern Sie das Motiv, w&#228;hrend Sie den Stil beibehalten</li>
+        <li>Verst&#228;rken oder schw&#228;chen Sie bestimmte Aspekte</li>
+        <li>F&#252;gen Sie modellspezifische Parameter hinzu</li>
+        <li>Passen Sie die Beleuchtungsbeschreibung an</li>
+      </ul>
+
+      <h2 id="schritt-5-testen">Schritt 5: Testen und iterieren</h2>
+
+      <p>Generieren Sie mit dem Prompt, vergleichen Sie das Ergebnis mit dem Original und passen Sie den Prompt iterativ an. Typischerweise sind 2&#8211;3 Iterationen f&#252;r ein zufriedenstellendes Ergebnis ausreichend.</p>
+
+      <h2 id="haeufige-fehler">5 h&#228;ufige Fehler, die Sie vermeiden sollten</h2>
+
+      <ol>
+        <li><strong>Falsche Modellsyntax verwenden:</strong> Ein Midjourney-Prompt funktioniert nicht in Stable Diffusion</li>
+        <li><strong>Das gesamte Bild beschreiben wollen:</strong> Konzentrieren Sie sich auf die wichtigsten visuellen Elemente</li>
+        <li><strong>Beleuchtung ignorieren:</strong> Beleuchtung ist oft das wirkungsvollste Element des Prompts</li>
+        <li><strong>Zu viele Details anh&#228;ufen:</strong> Weniger ist oft mehr &#8212; &#252;berfrachtete Prompts liefern schlechtere Ergebnisse</li>
+        <li><strong>Nicht iterieren:</strong> Der erste Versuch ist selten perfekt</li>
+      </ol>
+
+      <h2 id="tipps-fuer-bessere-ergebnisse">Tipps f&#252;r bessere Ergebnisse</h2>
+
+      <ul>
+        <li>Verwenden Sie hochaufl&#246;sende Referenzbilder f&#252;r bessere Analysen</li>
+        <li>W&#228;hlen Sie das richtige Zielmodell vor der Analyse</li>
+        <li>Nutzen Sie den Stilmodus, der am besten zu Ihrem Referenzbild passt</li>
+        <li>Kombinieren Sie automatische Extraktion mit manueller Verfeinerung</li>
+        <li>Speichern Sie erfolgreiche Prompts f&#252;r sp&#228;tere Wiederverwendung</li>
+      </ul>
+
+    </div>
+
+    <div class="author-bio">
+      <svg class="author-photo" width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="Autoren-Avatar"><circle cx="32" cy="32" r="32" fill="#2a1f4e"/><circle cx="32" cy="26" r="11" fill="#7c6bc4"/><ellipse cx="32" cy="52" rx="18" ry="11" fill="#7c6bc4"/></svg>
+      <div class="author-info">
+        <p class="author-name">ImageToPrompt Team</p>
+        <p class="author-desc">Wir sind ein Expertenteam, das Kreativen hilft, die KI-Bildgenerierung zu meistern. Mit unseren Bild-zu-Prompt-Tools und KI-Prompt-Engineering-Leitf&#228;den unterst&#252;tzen wir K&#252;nstler weltweit.</p>
+        <a href="https://x.com/Ilyass14286541" class="author-link">Auf X folgen &#8594;</a>
+      </div>
+    </div>
+
+    <div class="related-posts">
+      <h2>Verwandte Leitf&#228;den</h2>
+      <div class="related-grid">
+        <a href="/de/blog/beste-bild-zu-prompt-tools-2026/" class="related-card">
+          <p class="tag">Vergleich</p>
+          <h3>Beste Bild-zu-Prompt-Tools 2026</h3>
+        </a>
+        <a href="/de/blog/ai-prompt-aus-foto/" class="related-card">
+          <p class="tag">Fotografie</p>
+          <h3>KI-Prompt aus einem echten Foto erstellen</h3>
+        </a>
+        <a href="/de/blog/dall-e-3-prompt-leitfaden/" class="related-card">
+          <p class="tag">DALL-E 3</p>
+          <h3>DALL&#183;E 3 Prompt-Leitfaden 2026</h3>
+        </a>
+      </div>
+    </div>
+
+  </div>
+
+  <footer class="footer-4col">
+    <div class="f4-inner">
+      <div class="f4-brand">
+        <img src="/favicon.svg" alt="ImageToPrompt" width="28" height="28">
+        <span class="f4-brand-name">ImageTo<span class="accent">Prompt</span></span>
+        <span class="f4-brand-sub">&mdash; Kostenloser KI-Prompt-Generator</span>
+      </div>
+      <div class="f4-grid">
+        <div class="f4-section">
+          <h4 class="f4-heading">Image Prompt Tools</h4>
+          <a href="/">Image to Prompt</a>
+          <a href="/text-to-prompt/">Text to Prompt</a>
+      <a href="/describe-image/">Describe Image</a>
+          <a href="/midjourney-prompt-generator/">Midjourney</a>
+          <a href="/stable-diffusion-prompt-generator/">Stable Diffusion</a>
+          <a href="/flux-prompt-generator/">Flux</a>
+          <a href="/dall-e-prompt-generator/">DALL-E 3</a>
+          <a href="/adobe-firefly-prompt-generator/">Adobe Firefly</a>
+          <a href="/leonardo-ai-prompt-generator/">Leonardo AI</a>
+          <a href="/ideogram-prompt-generator/">Ideogram</a>
+        </div>
+        <div class="f4-section">
+          <h4 class="f4-heading">Video Prompt Tools</h4>
+          <a href="/image-to-video-prompt/">Image to Video Prompt</a>
+          <a href="/text-to-video-prompt/">Text to Video Prompt</a>
+          <a href="/veo-prompt-generator/">Veo / Flow Studio</a>
+          <a href="/kling-prompt-generator/">Kling AI</a>
+          <a href="/runway-prompt-generator/">Runway Gen-3</a>
+          <a href="/pika-prompt-generator/">Pika</a>
+          <a href="/luma-prompt-generator/">Luma Dream Machine</a>
+          <a href="/sora-prompt-generator/">Sora</a>
+          <a href="/minimax-prompt-generator/">Minimax</a>
+          <a href="/stable-video-prompt-generator/">Stable Video</a>
+        </div>
+        <div class="f4-section">
+          <h4 class="f4-heading">Resources</h4>
+          <a href="/de/blog/">Blog</a>
+          <a href="/de/about/">&#220;ber uns</a>
+          <a href="/de/pricing/">Preise</a>
+          <a href="/contact/">Contact</a>
+          <a href="/privacy-policy/">Privacy Policy</a>
+          <a href="/terms-of-service/">Terms of Service</a>
+        </div>
+        <div class="f4-section">
+          <h4 class="f4-heading">Languages</h4>
+          <a href="/">English</a>
+          <a href="/fr/">Fran&#231;ais</a>
+          <a href="/de/">Deutsch</a>
+          <a href="/ar/">&#1575;&#1604;&#1593;&#1585;&#1576;&#1610;&#1577;</a>
+          <a href="/es/">Espa&#241;ol</a>
+          <a href="/ko/">&#54620;&#44397;&#50612;</a>
+          <a href="/ja/">&#26085;&#26412;&#35486;</a>
+          <a href="/ru/">&#1056;&#1091;&#1089;&#1089;&#1082;&#1080;&#1081;</a>
+        </div>
+      </div>
+      <div class="f4-bottom">
+        <p>&#169; 2026 ImageToPrompt.dev &#8212; Kostenloser KI-Prompt-Generator</p>
+        <p>Ihre Bilder werden nie gespeichert. Alle Analysen sind fl&#252;chtig und privat.</p>
+      </div>
+    </div>
+  </footer>
+
+<script src="/newsletter-inject.js" defer></script>
+<script src="/nav.js" defer></script>
+  <script>
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', function() {
+    navigator.serviceWorker.register('/sw.js')
+      .catch(function(err) { console.warn('SW registration failed:', err); });
+  });
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,649 @@
+<!doctype html>
+<html lang="zh">
+<head>
+  <script src="/theme-toggle.js"></script>
+  <meta charset="UTF-8" />
+  <link rel="dns-prefetch" href="https://www.googletagmanager.com">
+<link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="max-image-preview:large, index, follow">
+  <meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="ImageToPrompt">
+  <title>Midjourney提示词指南2026：最新版本参数、提示词结构与即用示例</title>
+  <meta name="description" content="2026年Midjourney完整提示词指南。当前版本 --v 6.1，参数速查表（--ar --stylize --chaos --q），10个即用提示词和专业技巧。更新于2026年3月。" />
+  <link rel="canonical" href="https://www.imagetoprompt.dev/zh/blog/midjourney-tishi-ci-zhinan-2026/" />
+  <link rel="alternate" hreflang="zh" href="https://www.imagetoprompt.dev/zh/blog/midjourney-tishi-ci-zhinan-2026/" />
+  <link rel="alternate" hreflang="en" href="https://www.imagetoprompt.dev/blog/midjourney-prompt-guide-2026/" />
+  <link rel="alternate" hreflang="x-default" href="https://www.imagetoprompt.dev/blog/midjourney-prompt-guide-2026/" />
+  <meta property="og:title" content="Midjourney提示词指南2026：最新版本参数、提示词结构与即用示例" />
+  <meta property="og:description" content="Midjourney完整提示词指南。版本 --v 6.1，参数详解，10个即用提示词示例。" />
+  <meta property="og:url" content="https://www.imagetoprompt.dev/zh/blog/midjourney-tishi-ci-zhinan-2026/" />
+  <meta property="og:type" content="article" />
+  <meta property="og:image" content="https://www.imagetoprompt.dev/og-image.png" />
+  <meta property="og:site_name" content="ImageToPrompt" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Midjourney提示词指南2026：参数、结构与示例" />
+  <meta name="twitter:description" content="Midjourney完整指南。--v 6.1参数，提示词结构，10个即用示例。" />
+  <meta name="twitter:image" content="https://www.imagetoprompt.dev/og-image.png" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="48x48" href="/favicon-48.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+  <link rel="manifest" href="/site.webmanifest" />
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="/fonts/space-grotesk-700.woff2" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="/fonts/inter-400.woff2" />
+  <link rel="stylesheet" href="/theme.css">
+  <link rel="preload" href="/blog.css" as="style" onload="this.onload=null;this.rel='stylesheet'"><noscript><link rel="stylesheet" href="/blog.css"></noscript>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Midjourney提示词指南2026：最新版本参数、提示词结构与即用示例",
+    "description": "2026年Midjourney完整提示词指南。当前版本 --v 6.1，参数速查表，10个即用提示词和专业技巧。",
+    "image": "https://www.imagetoprompt.dev/og-image.png",
+    "datePublished": "2026-03-10",
+    "dateModified": "2026-03-24",
+    "inLanguage": "zh",
+    "author": {
+      "@type": "Person",
+      "name": "ImageToPrompt Team",
+      "url": "https://www.imagetoprompt.dev/"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "ImageToPrompt",
+      "logo": { "@type": "ImageObject", "url": "https://www.imagetoprompt.dev/favicon.svg" }
+    },
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https://www.imagetoprompt.dev/zh/blog/midjourney-tishi-ci-zhinan-2026/"
+    }
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "2026年Midjourney当前版本是什么？",
+        "acceptedAnswer": { "@type": "Answer", "text": "截至2026年3月，Midjourney当前默认版本为V6.1，使用 --v 6.1 参数。V6.1提供改进的照片写实感、更好的文字渲染、增强的提示词遵循度和更高的细节水平。" }
+      },
+      {
+        "@type": "Question",
+        "name": "最佳的Midjourney提示词结构是什么？",
+        "acceptedAnswer": { "@type": "Answer", "text": "最佳结构为：[主体], [艺术风格], [灯光], [色彩], [构图], [氛围] --ar [比例] --v 6.1 --style raw。以最重要的视觉元素开头，始终设置宽高比。顺序很重要——靠前的词获得更多权重。" }
+      },
+      {
+        "@type": "Question",
+        "name": "Midjourney的 --style raw 有什么作用？",
+        "acceptedAnswer": { "@type": "Answer", "text": "--style raw 减少Midjourney的默认艺术化处理，产生更贴近提示词描述的结果。当您需要精确控制而非Midjourney标志性的美化效果时使用。" }
+      },
+      {
+        "@type": "Question",
+        "name": "Midjourney、Flux和Stable Diffusion的提示词结构有什么区别？",
+        "acceptedAnswer": { "@type": "Answer", "text": "Midjourney偏好逗号分隔的描述词序列加 --参数。Flux使用自然语言完整句子，不支持参数。Stable Diffusion使用加权标签列表和独立的负面提示词字段。各自有完全不同的提示词语言。" }
+      }
+    ]
+  }
+  </script>
+    <!-- Google AdSense -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4499206373485728" crossorigin="anonymous"></script>
+    <!-- Web Push Notifications -->
+<script src="https://cdn.onesignal.com/sdks/web/v16/OneSignalSDK.page.js" defer></script>
+<script>
+  window.OneSignalDeferred = window.OneSignalDeferred || [];
+  OneSignalDeferred.push(async function(OneSignal) {
+    await OneSignal.init({
+      appId: "REPLACE_WITH_ONESIGNAL_APP_ID",
+      notifyButton: { enable: false }
+    });
+  });
+</script>
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="inner">
+      <a href="/zh/" class="site-logo"><img src="/favicon.svg" alt="ImageToPrompt" width="48" height="48"><div class="site-logo-text">ImageTo<span class="accent">Prompt</span><span class="site-logo-sub">免费AI提示词生成器</span></div></a>
+      <nav class="site-nav" aria-label="主导航">
+        <div class="nav-dropdown">
+          <button class="nav-dropdown-trigger" aria-haspopup="true" aria-expanded="false">Tools <span class="nav-chevron" aria-hidden="true">&#9660;</span></button>
+          <div class="nav-dropdown-menu" role="menu">
+            <div class="nav-mega-grid">
+              <div class="nav-mega-col">
+                <div class="nav-mega-heading">&#128444; IMAGE TOOLS</div>
+                <a href="/" role="menuitem" class="nav-mega-tool">Image to Prompt <span class="nav-mega-arrow">&#8594;</span></a>
+                <a href="/text-to-prompt/" role="menuitem" class="nav-mega-tool">Text to Prompt <span class="nav-mega-arrow">&#8594;</span></a>
+                <a href="/describe-image/" role="menuitem" class="nav-mega-tool">Describe Image <span class="nav-new-badge">NEW</span> <span class="nav-mega-arrow">&#8594;</span></a>
+                <div class="nav-mega-models-label">Models</div>
+                <div class="nav-mega-models"><a href="/midjourney-prompt-generator/">Midjourney</a><span class="nav-dot">&#xB7;</span><a href="/stable-diffusion-prompt-generator/">SD</a></div>
+                <div class="nav-mega-models"><a href="/flux-prompt-generator/">Flux</a><span class="nav-dot">&#xB7;</span><a href="/dall-e-prompt-generator/">DALL&#xB7;E&#xA0;3</a></div>
+                <div class="nav-mega-models"><a href="/adobe-firefly-prompt-generator/">Firefly</a><span class="nav-dot">&#xB7;</span><a href="/leonardo-ai-prompt-generator/">Leonardo</a></div>
+                <div class="nav-mega-models"><a href="/ideogram-prompt-generator/">Ideogram</a></div>
+              </div>
+              <div class="nav-mega-divider" aria-hidden="true"></div>
+              <div class="nav-mega-col">
+                <div class="nav-mega-heading">&#127909; VIDEO TOOLS</div>
+                <a href="/?tab=image-to-video" role="menuitem" class="nav-mega-tool">Image to Video <span class="nav-mega-arrow">&#8594;</span></a>
+                <a href="/?tab=text-to-video" role="menuitem" class="nav-mega-tool">Text to Video <span class="nav-mega-arrow">&#8594;</span></a>
+                <div class="nav-mega-models-label">Models</div>
+                <div class="nav-mega-models"><a href="/veo-prompt-generator/">Veo</a><span class="nav-dot">&#xB7;</span><a href="/kling-prompt-generator/">Kling</a></div>
+                <div class="nav-mega-models"><a href="/runway-prompt-generator/">Runway</a><span class="nav-dot">&#xB7;</span><a href="/pika-prompt-generator/">Pika</a></div>
+                <div class="nav-mega-models"><a href="/luma-prompt-generator/">Luma</a><span class="nav-dot">&#xB7;</span><a href="/sora-prompt-generator/">Sora</a></div>
+                <div class="nav-mega-models"><a href="/minimax-prompt-generator/">Minimax</a><span class="nav-dot">&#xB7;</span><a href="/stable-video-prompt-generator/">Stable</a></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <a href="/zh/blog/">博客</a>
+        <a href="/zh/pricing/" class="nav-pill-pricing">价格</a>
+        <a href="/zh/about/" class="nav-pill-about">关于</a>
+        <a href="/zh/" class="nav-try-free">免费试用 &#8594;</a>
+        <button id="theme-toggle" onclick="toggleTheme()" aria-label="切换主题" title="切换主题">&#9728;&#xFE0F;</button>
+  </nav>
+    </div>
+  </header>
+
+  <nav class="breadcrumb" aria-label="面包屑导航">
+    <a href="/zh/">首页</a><span class="sep">&#8250;</span>
+    <a href="/zh/blog/">博客</a><span class="sep">&#8250;</span>
+    <span>Midjourney提示词指南 2026</span>
+  </nav>
+
+  <div class="page-wrapper">
+
+    <header class="article-header">
+      <p class="article-tag">Midjourney 指南</p>
+      <h1>Midjourney提示词完全指南 2026：参数、结构与即用示例</h1>
+      <div class="article-meta">
+        <span>2026年3月</span>
+        <span class="dot">&#183;</span>
+        <span>11分钟阅读</span>
+        <span class="dot">&#183;</span>
+        <span>Midjourney v6.1</span>
+        <span class="dot">&#183;</span>
+        <span>更新于2026年3月</span>
+      </div>
+    </header>
+
+    <div class="article-body">
+
+      <p>Midjourney是世界上最受欢迎的AI图像生成器——这是有充分理由的。当你给它正确的提示词时，它能产出真正令人惊叹的图像。当你给它错误的提示词时，你得到的只是通用、模糊或完全偏离目标的结果。</p>
+
+      <p>平庸的Midjourney结果和卓越的结果之间的差异，通常归结于提示词的质量。本指南涵盖了你在2026年撰写优秀Midjourney提示词所需的一切。</p>
+
+      <nav class="toc" aria-label="目录">
+        <details open>
+          <summary>本指南内容</summary>
+          <ol>
+            <li><a href="#dangqian-banben">2026年Midjourney当前版本（--v 6.1）</a></li>
+            <li><a href="#tishi-ci-jiegou">Midjourney提示词结构</a></li>
+            <li><a href="#tishi-ci-gongshi">Midjourney提示词公式</a></li>
+            <li><a href="#zhuti-miaoshu">撰写有力的主体描述</a></li>
+            <li><a href="#fengge-meijie">风格与媒介描述符</a></li>
+            <li><a href="#dengguang">灯光就是一切</a></li>
+            <li><a href="#hexin-canshu">Midjourney核心参数</a></li>
+            <li><a href="#shige-tishi-ci">10个即用Midjourney提示词</a></li>
+            <li><a href="#jiegou-duibi">提示词结构对比：Midjourney vs Flux vs SD</a></li>
+            <li><a href="#banben-duibi">版本对比</a></li>
+            <li><a href="#quanzhong-kongzhi">提示词权重控制</a></li>
+            <li><a href="#changjian-cuowu">常见提示词错误</a></li>
+            <li><a href="#yizhi-jieguo">获得一致的结果</a></li>
+            <li><a href="#tupian-canzhao">有效使用图片参考</a></li>
+            <li><a href="#guzhang-paichu">常见问题排除</a></li>
+          </ol>
+        </details>
+      </nav>
+
+      <div class="callout">
+        <p><strong>有想要重新创建的图片？</strong>不必从零开始写提示词，<a href="/">将它上传到ImageToPrompt</a>即可自动获得Midjourney专用提示词。然后用本指南进行优化调整。</p>
+      </div>
+
+      <h2 id="dangqian-banben">2026年Midjourney当前版本（--v 6.1）</h2>
+
+      <p>截至2026年3月，Midjourney当前默认版本为<strong>--v 6.1</strong>。这是在不指定版本时自动运行的版本——它比前代产品有显著改进，直接影响你编写提示词的方式。</p>
+
+      <p>从<strong>v6到v6.1</strong>的升级带来了三项重大改进。首先是<strong>连贯性</strong>：v6.1更忠实地遵循多部分提示词，复杂场景中的多个描述元素能被更准确地渲染。其次是<strong>手部和解剖</strong>：Midjourney长期存在的手部变形问题在v6.1中得到显著改善，但对于人物特写添加<code>--no deformed hands</code>仍然有帮助。最后是<strong>文字渲染</strong>：虽然仍不如Ideogram或DALL-E 3的排版能力，但v6.1可以可靠地在图像中渲染短词和简单短语——只需在提示词中使用引号。</p>
+
+      <p>要明确使用当前版本，请始终在提示词末尾添加<code>--v 6.1</code>。这能确保您保存的提示词在未来不会因版本更新而改变行为。您可以在Midjourney设置中将v6.1设为默认版本（<code>/settings</code> -> 选择版本）。</p>
+
+      <div class="callout">
+        <p><strong>快速参考：</strong>始终在提示词末尾包含<code>--v 6.1</code>以锁定当前最佳版本。示例：<code>your prompt here --ar 16:9 --v 6.1 --style raw</code></p>
+      </div>
+
+      <h2 id="tishi-ci-jiegou">Midjourney提示词结构</h2>
+
+      <p>完整的Midjourney提示词遵循以下结构：</p>
+
+      <p><code>[主体描述], [风格和媒介], [灯光], [构图], [氛围], [技术细节] --参数 值 --参数 值</code></p>
+
+      <p>例如：</p>
+      <p><code>ancient stone temple overgrown with vines and glowing bioluminescent moss, cinematic concept art, dramatic rim lighting with deep shadows, wide angle shot, mysterious and otherworldly atmosphere --ar 16:9 --v 6.1 --style raw --q 2</code></p>
+
+      <h2 id="tishi-ci-gongshi">Midjourney提示词公式</h2>
+
+      <div class="formula-box">
+        <p class="formula-line"><span class="formula-tag subject">主体 + 细节</span> + <span class="formula-tag setting">环境/场景</span> + <span class="formula-tag style">风格/媒介</span> + <span class="formula-tag lighting">灯光</span> + <span class="formula-tag color">色彩</span> + <span class="formula-tag mood">氛围</span> + <span class="formula-tag composition">构图</span> + <span class="formula-tag params">--参数</span></p>
+      </div>
+
+      <h3>肖像示例</h3>
+      <p><code><span class="formula-inline subject">elderly Japanese craftsman, weathered hands, focused expression</span>, <span class="formula-inline setting">seated at a traditional woodworking bench covered in tools</span>, <span class="formula-inline style">editorial photography</span>, <span class="formula-inline lighting">soft window light from the left</span>, <span class="formula-inline color">warm wood tones with cool shadow areas</span>, <span class="formula-inline mood">contemplative, dignified</span>, <span class="formula-inline composition">medium shot, shallow depth of field</span> <span class="formula-inline params">--ar 2:3 --v 6.1 --style raw</span></code></p>
+
+      <h3>风景示例</h3>
+      <p><code><span class="formula-inline subject">ancient stone ruins half-submerged in still water</span>, <span class="formula-inline setting">flooded valley surrounded by dense jungle</span>, <span class="formula-inline style">cinematic photography</span>, <span class="formula-inline lighting">blue hour, mist rising off the water</span>, <span class="formula-inline color">cool blue-greens with warm torch light reflections</span>, <span class="formula-inline mood">mysterious, lost civilization atmosphere</span>, <span class="formula-inline composition">wide establishing shot, symmetrical reflection</span> <span class="formula-inline params">--ar 21:9 --v 6.1 --q 2</span></code></p>
+
+      <h3>商业/产品示例</h3>
+      <p><code><span class="formula-inline subject">minimalist ceramic coffee mug, steam rising</span>, <span class="formula-inline setting">on a clean marble surface with morning light</span>, <span class="formula-inline style">commercial product photography</span>, <span class="formula-inline lighting">soft diffused natural light, subtle rim highlight</span>, <span class="formula-inline color">white and cream palette with warm coffee tones</span>, <span class="formula-inline mood">calm, premium, aspirational</span>, <span class="formula-inline composition">close-up, 45-degree angle, negative space above</span> <span class="formula-inline params">--ar 4:5 --v 6.1 --style raw</span></code></p>
+
+      <h2 id="zhuti-miaoshu">撰写有力的主体描述</h2>
+
+      <p>主体是提示词的基础。最常见的错误是过于模糊。"一条龙"会生成一条通用的龙。"一条古老的战斗伤痕累累的龙，有着虹彩翠绿鳞片，蹲伏在洪水淹没的地下密室中坍塌的石头王座上"——这会产生更具体、更有趣的结果。</p>
+
+      <p>有效的主体要素：</p>
+      <ul>
+        <li><strong>物理特征：</strong>大小、年龄、状态、显著特征</li>
+        <li><strong>环境背景：</strong>主体在哪里、在做什么、周围有什么</li>
+        <li><strong>情绪状态：</strong>表情、姿态、能量</li>
+        <li><strong>与环境的关系：</strong>主体如何与场景互动</li>
+      </ul>
+
+      <h2 id="fengge-meijie">风格与媒介描述符</h2>
+
+      <p>在主体之后，指定你想要的视觉风格。Midjourney理解广泛的风格词汇：</p>
+
+      <h3>摄影风格</h3>
+      <ul>
+        <li><code>cinematic photography</code> &#8212; 电影级质感，具有深度和戏剧性</li>
+        <li><code>editorial photography</code> &#8212; 干净、专业、杂志级</li>
+        <li><code>documentary photography</code> &#8212; 纪实、原始、真实</li>
+        <li><code>studio portrait</code> &#8212; 控制灯光、干净背景</li>
+      </ul>
+
+      <h3>艺术风格</h3>
+      <ul>
+        <li><code>concept art</code> &#8212; 详细的叙事性插画</li>
+        <li><code>digital painting</code> &#8212; 具有数字精度的绘画质感</li>
+        <li><code>oil painting</code> &#8212; 纹理丰富、色彩浓郁、古典</li>
+        <li><code>watercolor illustration</code> &#8212; 柔和边缘、透明层次</li>
+        <li><code>anime style</code> &#8212; 日本动画美学</li>
+      </ul>
+
+      <h3>渲染风格</h3>
+      <ul>
+        <li><code>octane render</code> / <code>unreal engine</code> &#8212; 照片写实3D渲染</li>
+        <li><code>isometric illustration</code> &#8212; 俯视3D视角</li>
+        <li><code>pixel art</code> &#8212; 复古游戏美学</li>
+      </ul>
+
+      <h2 id="dengguang">灯光就是一切</h2>
+
+      <p>灯光比几乎任何其他元素更能定义图像的氛围。Midjourney特别擅长解读灯光描述。</p>
+
+      <h3>自然灯光</h3>
+      <ul>
+        <li><code>golden hour lighting</code> &#8212; 温暖、水平、长阴影（日出/日落）</li>
+        <li><code>blue hour</code> &#8212; 冷调、黄昏、柔和环境光</li>
+        <li><code>overcast soft lighting</code> &#8212; 漫射、均匀、无硬阴影</li>
+        <li><code>harsh midday sunlight</code> &#8212; 高对比、强阴影</li>
+        <li><code>moonlight</code> &#8212; 冷蓝白色、神秘感</li>
+      </ul>
+
+      <h3>影棚与人造灯光</h3>
+      <ul>
+        <li><code>Rembrandt lighting</code> &#8212; 经典肖像灯光，三角形高光</li>
+        <li><code>rim lighting</code> / <code>backlit</code> &#8212; 轮廓光勾勒主体</li>
+        <li><code>neon lighting</code> &#8212; 鲜艳彩色光，赛博朋克美学</li>
+        <li><code>dramatic chiaroscuro</code> &#8212; 极端明暗对比</li>
+        <li><code>volumetric lighting</code> &#8212; 可见光线，大气深度</li>
+      </ul>
+
+      <h2 id="hexin-canshu">Midjourney核心参数</h2>
+
+      <p>参数添加在提示词末尾，用双横线开头。它们提供对输出的精确控制。</p>
+
+      <div class="table-wrap">
+      <table class="comparison-table">
+        <thead>
+          <tr>
+            <th>参数</th>
+            <th>语法</th>
+            <th>范围/值</th>
+            <th>作用</th>
+            <th>默认值</th>
+            <th>示例</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>宽高比</td><td><code>--ar W:H</code></td><td>任意比例</td><td>设置图像比例</td><td>1:1</td><td><code>--ar 16:9</code></td></tr>
+          <tr><td>版本</td><td><code>--v N</code></td><td>4, 5, 5.1, 5.2, 6, 6.1</td><td>模型版本</td><td>6.1</td><td><code>--v 6.1</code></td></tr>
+          <tr><td>Style Raw</td><td><code>--style raw</code></td><td>开/关</td><td>减少美化，更忠实于提示词</td><td>关</td><td><code>--style raw</code></td></tr>
+          <tr><td>Stylize</td><td><code>--s N</code></td><td>0&#8211;1000</td><td>艺术化处理强度</td><td>100</td><td><code>--s 750</code></td></tr>
+          <tr><td>Chaos</td><td><code>--c N</code></td><td>0&#8211;100</td><td>网格结果间的变化程度</td><td>0</td><td><code>--c 30</code></td></tr>
+          <tr><td>Quality</td><td><code>--q N</code></td><td>0.25, 0.5, 1, 2</td><td>渲染质量和计算时间</td><td>1</td><td><code>--q 2</code></td></tr>
+          <tr><td>No</td><td><code>--no [词]</code></td><td>任意词</td><td>排除指定元素</td><td>&#8212;</td><td><code>--no blur, text</code></td></tr>
+          <tr><td>Seed</td><td><code>--seed N</code></td><td>0&#8211;4294967295</td><td>可复现的起点</td><td>随机</td><td><code>--seed 12345</code></td></tr>
+          <tr><td>Tile</td><td><code>--tile</code></td><td>开/关</td><td>创建无缝平铺图案</td><td>关</td><td><code>--tile</code></td></tr>
+          <tr><td>Image Weight</td><td><code>--iw N</code></td><td>0.5&#8211;2</td><td>图片参考影响强度</td><td>1</td><td><code>--iw 1.5</code></td></tr>
+        </tbody>
+      </table>
+      </div>
+
+      <h2 id="shige-tishi-ci">10个即用Midjourney提示词</h2>
+
+      <p>以下10个提示词可直接用于Midjourney v6.1。直接复制使用，或作为起始模板进行自定义。</p>
+
+      <h3>1. 电影级肖像</h3>
+      <p>生成戏剧性的电影级特写肖像，专业灯光和浅景深。</p>
+      <pre><code class="prompt-example">young woman with sharp features and silver-streaked hair, intense gaze, wearing a weathered leather jacket, shot on Sony A7R V with 85mm f/1.4, shallow depth of field, dramatic Rembrandt lighting, cinematic color grade with teal shadows and warm highlights --ar 2:3 --v 6.1 --style raw --q 2</code></pre>
+
+      <h3>2. 奇幻风景</h3>
+      <p>生成史诗级广角奇幻环境，大气深度和超凡色彩。</p>
+      <pre><code class="prompt-example">floating sky islands covered in ancient ruins and waterfalls cascading into clouds below, twin moons on the horizon, bioluminescent flora glowing at twilight, vast epic scale, fantasy concept art, matte painting style, volumetric god rays --ar 21:9 --v 6.1 --q 2 --s 400</code></pre>
+
+      <h3>3. 产品摄影</h3>
+      <p>创建干净的高端商业产品图，适合电商或广告。</p>
+      <pre><code class="prompt-example">minimalist glass perfume bottle with gold cap on white marble surface, water droplets condensation, soft diffused natural light from left window, subtle reflections, premium commercial product photography, razor-sharp focus, negative space --ar 4:5 --v 6.1 --style raw</code></pre>
+
+      <h3>4. 动漫角色</h3>
+      <p>输出具有表现力和风格化设计的详细动漫风格角色插画。</p>
+      <pre><code class="prompt-example">female mage character with flowing silver hair and glowing violet eyes, ornate blue and gold robes with celestial embroidery, casting a spell with trails of light, dramatic upward angle, highly detailed anime illustration, soft cel shading, dynamic pose --ar 2:3 --v 6.1 --q 2</code></pre>
+
+      <h3>5. 建筑可视化</h3>
+      <p>渲染具有精确材质和专业灯光的照片写实建筑外观。</p>
+      <pre><code class="prompt-example">modern minimalist villa at twilight, floor-to-ceiling glass walls revealing warm interior light, infinity pool reflecting orange sky, concrete and dark wood facade, surrounded by curated desert landscaping, architectural photography, wide angle exterior shot --ar 16:9 --v 6.1 --style raw --q 2</code></pre>
+
+      <h3>6. 抽象艺术</h3>
+      <pre><code class="prompt-example">fluid simulation of molten gold and deep cobalt blue colliding in slow motion, macro photography, high-speed capture frozen in time, swirling organic forms, extreme detail in surface tension and droplet formation, studio lighting, abstract fine art --ar 1:1 --v 6.1 --q 2 --s 600</code></pre>
+
+      <h3>7. 美食摄影</h3>
+      <pre><code class="prompt-example">rustic sourdough loaf just pulled from oven, steam rising, golden-brown crust, cracked top revealing open crumb, on a worn wooden board with scattered flour and a linen cloth, warm kitchen window light, food photography, close-up overhead angle --ar 4:5 --v 6.1 --style raw</code></pre>
+
+      <h3>8. 科幻概念艺术</h3>
+      <pre><code class="prompt-example">abandoned alien megastructure half-buried in red desert sand, towering monolithic slabs of dark metal covered in cryptic geometric engravings, dramatic low sun casting long shadows, lone explorer figure for scale, sci-fi concept art, matte painting, cinematic wide shot --ar 21:9 --v 6.1 --q 2</code></pre>
+
+      <h3>9. 复古风格</h3>
+      <pre><code class="prompt-example">1970s road trip across American Southwest, vintage station wagon on Route 66, dust clouds behind, vast red canyon landscape, analog film grain, Kodachrome color palette, warm faded tones, cinematic 16mm aesthetic, wide angle --ar 16:9 --v 6.1 --style raw --s 200</code></pre>
+
+      <h3>10. 极简设计</h3>
+      <pre><code class="prompt-example">single red tulip in a clear glass vase on a white table, high-key even lighting, long shadow cast to the right, minimal composition with intentional negative space, Japanese minimalist aesthetic, commercial photography --ar 4:5 --v 6.1 --style raw</code></pre>
+
+      <div class="callout">
+        <p><strong>提示：</strong>使用<a href="/">ImageToPrompt</a>从任何参考图片自动生成类似的提示词——然后用这些模板理解结构并优化结果。</p>
+      </div>
+
+      <h2 id="jiegou-duibi">提示词结构对比：Midjourney vs Flux vs Stable Diffusion</h2>
+
+      <p>AI艺术家最常犯的错误之一是用错误的格式为所使用的模型编写提示词。Midjourney、Flux和Stable Diffusion有着根本不同的提示词语言——在一个模型中效果极佳的提示词在另一个模型中可能产生平庸的结果。</p>
+
+      <p><strong>Midjourney</strong>偏好按视觉重要性排列的逗号分隔描述词序列。以主体开头，然后是风格/媒介、灯光、构图、氛围——后跟<code>--参数</code>。Midjourney按比例分配注意力，所以排在前面的内容获得最多视觉权重。</p>
+
+      <p><strong>Flux</strong>（Flux.1 Dev/Pro/Schnell）使用大型T5-XXL语言模型解读提示词，意味着它比Midjourney的CLIP方法更好地理解自然语言。用完整的描述性句子编写Flux提示词。Flux不支持<code>--参数</code>、负面提示词或权重语法。</p>
+
+      <p><strong>Stable Diffusion</strong>使用基于token的CLIP编码，意味着它响应加权标签列表。质量token放在开头（<code>masterpiece, best quality, ultra-detailed</code>），然后是主体和风格token，再加上独立的负面提示词字段。权重语法如<code>(重要概念:1.3)</code>可精确调节强调程度。</p>
+
+      <div class="table-wrap">
+      <table class="comparison-table">
+        <thead>
+          <tr>
+            <th>方面</th>
+            <th>Midjourney v6.1</th>
+            <th>Flux.1 Dev/Pro</th>
+            <th>Stable Diffusion XL</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>提示词格式</td>
+            <td>逗号分隔描述词</td>
+            <td>自然语言完整句子</td>
+            <td>加权标签列表</td>
+          </tr>
+          <tr>
+            <td>参数</td>
+            <td><code>--ar --v --s --c --q</code></td>
+            <td>无（在UI/API中设置）</td>
+            <td>CFG scale, steps, sampler</td>
+          </tr>
+          <tr>
+            <td>负面提示词</td>
+            <td><code>--no [词]</code></td>
+            <td>不支持</td>
+            <td>独立负面提示词字段</td>
+          </tr>
+          <tr>
+            <td>提示词长度</td>
+            <td>中等（50&#8211;150词）</td>
+            <td>长（1&#8211;4个句子）</td>
+            <td>短&#8211;中等（标签列表）</td>
+          </tr>
+          <tr>
+            <td>权重控制</td>
+            <td><code>subject::2</code>语法</td>
+            <td>仅通过句子强调</td>
+            <td><code>(term:1.3)</code>语法</td>
+          </tr>
+          <tr>
+            <td>最适合</td>
+            <td>艺术性、风格化、一致美学</td>
+            <td>照片写实、开源、自托管</td>
+            <td>微调模型、动漫、自定义工作流</td>
+          </tr>
+        </tbody>
+      </table>
+      </div>
+
+      <h2 id="banben-duibi">Midjourney版本对比</h2>
+
+      <div class="image-row">
+        <div>
+          <span class="comparison-badge badge-original" style="margin-bottom:0.375rem;">V5.2</span>
+          <picture><source srcset="/images/ai-prompt-image-midjourney-v52-samurai.webp" type="image/webp"><img src="/images/ai-prompt-image-midjourney-v52-samurai.jpeg" alt="Midjourney V5.2输出——版本对比中使用相同提示词" width="800" height="800" loading="lazy"></picture>
+        </div>
+        <div>
+          <span class="comparison-badge badge-tool" style="margin-bottom:0.375rem;">V6</span>
+          <picture><source srcset="/images/free-image-url-generator-midjourney-v6-samurai.webp" type="image/webp"><img src="/images/free-image-url-generator-midjourney-v6-samurai.jpeg" alt="Midjourney V6输出——展示增强的写实感" width="800" height="800" loading="lazy"></picture>
+        </div>
+        <div>
+          <span class="comparison-badge badge-recreation" style="margin-bottom:0.375rem;">V6.1</span>
+          <picture><source srcset="/images/image-to-prompt-midjourney-v61-jazz-musician.webp" type="image/webp"><img src="/images/image-to-prompt-midjourney-v61-jazz-musician.jpeg" alt="Midjourney V6.1输出——最新版本展示改进的细节和连贯性" width="800" height="800" loading="lazy"></picture>
+        </div>
+      </div>
+
+      <div class="table-wrap">
+      <table class="comparison-table">
+        <thead>
+          <tr><th>方面</th><th>V5.2</th><th>V6</th><th>V6.1</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>照片写实</td><td>好</td><td>非常好</td><td>最佳</td></tr>
+          <tr><td>文字渲染</td><td>差</td><td>改进</td><td>好</td></tr>
+          <tr><td>细节水平</td><td>高</td><td>很高</td><td>很高</td></tr>
+          <tr><td>提示词遵循度</td><td>中等</td><td>好</td><td>非常好</td></tr>
+          <tr><td>美学风格</td><td>标志性MJ风格</td><td>更自然</td><td>最自然</td></tr>
+        </tbody>
+      </table>
+      </div>
+
+      <h2 id="quanzhong-kongzhi">提示词权重控制</h2>
+
+      <p>您可以使用<code>::</code>语法控制Midjourney对提示词特定部分的重视程度：</p>
+
+      <p><code>a surreal landscape::2 with tiny clockwork figures::1</code></p>
+
+      <p><code>::2</code>告诉Midjourney风景的重要性是小人偶的两倍。您还可以使用负权重：<code>forest::2 buildings::-1</code>强调森林并排除建筑物。</p>
+
+      <h2 id="changjian-cuowu">常见Midjourney提示词错误</h2>
+
+      <h3>在不重要的部分花费太多描述</h3>
+      <p>Midjourney在整个提示词中分配注意力。如果你用50个词描述背景元素，它们会与主体竞争。先写最重要的内容。</p>
+
+      <h3>矛盾的指令</h3>
+      <p>"明亮阳光" + "黑暗阴郁氛围"会造成混乱。保持内部一致。如果你想要一个整体明亮但有戏剧性阴影的场景，请具体描述。</p>
+
+      <h3>遗漏构图</h3>
+      <p>没有构图指导，Midjourney会自行选择。添加明确的构图："close-up portrait"、"wide establishing shot"、"bird's eye view"。这会显著改变结果。</p>
+
+      <h3>忘记宽高比</h3>
+      <p>默认的1:1方形格式很少是你想要的。始终添加<code>--ar</code>以匹配预期用途。</p>
+
+      <h2 id="yizhi-jieguo">获得一致的结果</h2>
+
+      <p>找到满意的结果后，使用<strong>seed值</strong>来重现类似结果。对Midjourney消息添加表情反应获取seed，然后在未来的提示词中使用<code>--seed [数字]</code>获得相似的构图起点。</p>
+
+      <h2 id="tupian-canzhao">有效使用图片参考</h2>
+
+      <p>Midjourney接受在提示词开头的图片URL。<code>--iw</code>（image weight）参数控制参考图的影响强度：</p>
+
+      <ul>
+        <li><code>--iw 0.5</code>：微妙影响——参考图模糊地引导风格和氛围</li>
+        <li><code>--iw 1</code>：中等影响——默认值，平衡参考图与文本提示词</li>
+        <li><code>--iw 2</code>：强影响——结果会与参考图非常相似</li>
+      </ul>
+
+      <p>这正是<a href="/">ImageToPrompt等图片转提示词工具</a>与Midjourney互补的方式——从参考图提取文本提示词，同时提供图片URL作为视觉锚点，实现更强的风格迁移。</p>
+
+      <h2 id="guzhang-paichu">常见问题排除</h2>
+
+      <div class="troubleshooting-grid">
+        <div class="trouble-item">
+          <p class="trouble-q">图像太暗</p>
+          <p class="trouble-a">添加明确的灯光描述：<code>bright ambient lighting</code>、<code>well-lit scene</code>或特定光源。删除所有暗示黑暗的氛围词。</p>
+        </div>
+        <div class="trouble-item">
+          <p class="trouble-q">手部变形</p>
+          <p class="trouble-a">使用<code>--no deformed hands, extra fingers, fused fingers</code>并在正面提示词中包含<code>detailed hands, accurate anatomy</code>。V6.1比之前版本更擅长处理手部。</p>
+        </div>
+        <div class="trouble-item">
+          <p class="trouble-q">4个网格结果看起来都一样</p>
+          <p class="trouble-a">添加<code>--chaos 30</code>或更高。低chaos（默认0）产生非常相似的变体。探索时使用20-50，确定方向后降回0。</p>
+        </div>
+        <div class="trouble-item">
+          <p class="trouble-q">图像中的文字模糊</p>
+          <p class="trouble-a">使用V6或V6.1（不要用更早版本）。将想要的文字用引号括起来：<code>"OPEN" sign on the door</code>。保持文字简短——单词或2-3词短语效果最好。</p>
+        </div>
+      </div>
+
+      <div class="cta-box">
+        <h3>从您的图片生成Midjourney提示词</h3>
+        <p>上传任何参考图片，获取包含 --ar、--v 和风格参数的完整Midjourney提示词。</p>
+        <a href="/?lang=zh" class="cta-btn">免费试用Midjourney提示词生成器 &#8594;</a>
+      </div>
+
+    </div>
+
+    <div class="author-bio">
+      <svg class="author-photo" width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="作者头像"><circle cx="32" cy="32" r="32" fill="#2a1f4e"/><circle cx="32" cy="26" r="11" fill="#7c6bc4"/><ellipse cx="32" cy="52" rx="18" ry="11" fill="#7c6bc4"/></svg>
+      <div class="author-info">
+        <p class="author-name">ImageToPrompt Team</p>
+        <p class="author-desc">我们是一支专业团队，致力于帮助创作者掌握AI图像生成技术。通过图像转提示词工具和AI提示词工程指南，我们为全球艺术家的创作提供支持。</p>
+        <a href="https://x.com/Ilyass14286541" class="author-link">在X上关注 &#8594;</a>
+      </div>
+    </div>
+
+    <div class="related-posts">
+      <h2>相关指南</h2>
+      <div class="related-grid">
+        <a href="/zh/blog/leonardo-ai-tishi-ci-zhinan/" class="related-card">
+          <p class="tag">Leonardo AI</p>
+          <h3>Leonardo AI提示词完全指南</h3>
+        </a>
+        <a href="/zh/blog/tupian-zhuan-tishi-ci-chanpin-sheying/" class="related-card">
+          <p class="tag">产品摄影</p>
+          <h3>图片转提示词用于产品摄影</h3>
+        </a>
+        <a href="/zh/blog/tupian-zhuan-tishi-ci-shinei-sheji/" class="related-card">
+          <p class="tag">室内设计</p>
+          <h3>图片转提示词用于室内设计</h3>
+        </a>
+        <a href="/zh/blog/tupian-zhuan-tishi-ci-logo-sheji/" class="related-card">
+          <p class="tag">Logo设计</p>
+          <h3>图片转提示词用于Logo设计</h3>
+        </a>
+        <a href="/zh/blog/tupian-zhuan-tishi-ci-shejiao-meiti/" class="related-card">
+          <p class="tag">社交媒体</p>
+          <h3>图片转提示词用于社交媒体</h3>
+        </a>
+      </div>
+    </div>
+
+  </div>
+
+  <footer class="footer-4col">
+    <div class="f4-inner">
+      <div class="f4-brand">
+        <img src="/favicon.svg" alt="ImageToPrompt" width="28" height="28">
+        <span class="f4-brand-name">ImageTo<span class="accent">Prompt</span></span>
+        <span class="f4-brand-sub">&mdash; Free AI Prompt Generator</span>
+      </div>
+      <div class="f4-grid">
+        <div class="f4-section">
+          <h4 class="f4-heading">Image Prompt Tools</h4>
+          <a href="/">Image to Prompt</a>
+          <a href="/text-to-prompt/">Text to Prompt</a>
+      <a href="/describe-image/">Describe Image</a>
+          <a href="/midjourney-prompt-generator/">Midjourney</a>
+          <a href="/stable-diffusion-prompt-generator/">Stable Diffusion</a>
+          <a href="/flux-prompt-generator/">Flux</a>
+          <a href="/dall-e-prompt-generator/">DALL-E 3</a>
+          <a href="/adobe-firefly-prompt-generator/">Adobe Firefly</a>
+          <a href="/leonardo-ai-prompt-generator/">Leonardo AI</a>
+          <a href="/ideogram-prompt-generator/">Ideogram</a>
+        </div>
+        <div class="f4-section">
+          <h4 class="f4-heading">Video Prompt Tools</h4>
+          <a href="/image-to-video-prompt/">Image to Video Prompt</a>
+          <a href="/text-to-video-prompt/">Text to Video Prompt</a>
+          <a href="/veo-prompt-generator/">Veo / Flow Studio</a>
+          <a href="/kling-prompt-generator/">Kling AI</a>
+          <a href="/runway-prompt-generator/">Runway Gen-3</a>
+          <a href="/pika-prompt-generator/">Pika</a>
+          <a href="/luma-prompt-generator/">Luma Dream Machine</a>
+          <a href="/sora-prompt-generator/">Sora</a>
+          <a href="/minimax-prompt-generator/">Minimax</a>
+          <a href="/stable-video-prompt-generator/">Stable Video</a>
+        </div>
+        <div class="f4-section">
+          <h4 class="f4-heading">Resources</h4>
+          <a href="/zh/blog/">博客</a>
+          <a href="/zh/about/">关于</a>
+          <a href="/zh/pricing/">价格</a>
+          <a href="/contact/">Contact</a>
+          <a href="/privacy-policy/">Privacy Policy</a>
+          <a href="/terms-of-service/">Terms of Service</a>
+        </div>
+        <div class="f4-section">
+          <h4 class="f4-heading">Languages</h4>
+          <a href="/">English</a>
+          <a href="/fr/">Fran&#231;ais</a>
+          <a href="/ar/">&#1575;&#1604;&#1593;&#1585;&#1576;&#1610;&#1577;</a>
+          <a href="/es/">Espa&#241;ol</a>
+          <a href="/ko/">&#54620;&#44397;&#50612;</a>
+          <a href="/ja/">&#26085;&#26412;&#35486;</a>
+          <a href="/ru/">&#1056;&#1091;&#1089;&#1089;&#1082;&#1080;&#1081;</a>
+          <a href="/zh/">中文</a>
+        </div>
+      </div>
+      <div class="f4-bottom">
+        <p>&#169; 2026 ImageToPrompt.dev &#8212; Free AI Prompt Generator</p>
+        <p>Your images are never stored. All analysis is ephemeral and private.</p>
+      </div>
+    </div>
+  </footer>
+
+<script src="/newsletter-inject.js" defer></script>
+<script src="/nav.js" defer></script>
+  <script>
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', function() {
+    navigator.serviceWorker.register('/sw.js')
+      .catch(function(err) { console.warn('SW registration failed:', err); });
+  });
+}
+</script>
+</body>
+</html>

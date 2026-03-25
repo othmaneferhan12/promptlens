@@ -1,0 +1,891 @@
+<!doctype html>
+<html lang="zh">
+<head>
+  <script src="/theme-toggle.js"></script>
+  <meta charset="UTF-8" />
+  <link rel="dns-prefetch" href="https://www.googletagmanager.com">
+<link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="max-image-preview:large, index, follow">
+  <meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="ImageToPrompt">
+  <title>图片转提示词API：将AI图像分析集成到你的应用中（2026指南）</title>
+  <meta name="description" content="如何使用Claude Vision API、GPT-4V和Gemini将图片转提示词功能集成到你的应用中。包含代码示例、提示词模板和集成模式。" />
+  <link rel="canonical" href="https://www.imagetoprompt.dev/zh/blog/tupian-zhuan-tishi-ci-api/" />
+  <link rel="alternate" hreflang="zh" href="https://www.imagetoprompt.dev/zh/blog/tupian-zhuan-tishi-ci-api/" />
+  <link rel="alternate" hreflang="en" href="https://www.imagetoprompt.dev/blog/image-to-prompt-api/" />
+  <link rel="alternate" hreflang="x-default" href="https://www.imagetoprompt.dev/blog/image-to-prompt-api/" />
+  <meta property="og:title" content="图片转提示词API：将AI图像分析集成到你的应用中（2026指南）" />
+  <meta property="og:description" content="如何使用Claude Vision API、GPT-4V和Gemini将图片转提示词功能集成到你的应用中。包含代码示例、提示词模板和集成模式。" />
+  <meta property="og:url" content="https://www.imagetoprompt.dev/zh/blog/tupian-zhuan-tishi-ci-api/" />
+  <meta property="og:type" content="article" />
+  <meta property="og:image" content="https://www.imagetoprompt.dev/og-image.png" />
+  <meta property="og:site_name" content="ImageToPrompt" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="图片转提示词API：将AI图像分析集成到你的应用中（2026指南）" />
+  <meta name="twitter:description" content="使用Claude Vision、GPT-4V和Gemini构建图片转提示词功能。含代码示例和集成模式。" />
+  <meta name="twitter:image" content="https://www.imagetoprompt.dev/og-image.png" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="48x48" href="/favicon-48.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+  <link rel="manifest" href="/site.webmanifest" />
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="/fonts/space-grotesk-700.woff2" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="/fonts/inter-400.woff2" />
+  <link rel="stylesheet" href="/theme.css">
+  <link rel="preload" href="/blog.css" as="style" onload="this.onload=null;this.rel='stylesheet'"><noscript><link rel="stylesheet" href="/blog.css"></noscript>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "\u56fe\u7247\u8f6c\u63d0\u793a\u8bcdAPI\uff1a\u5c06AI\u56fe\u50cf\u5206\u6790\u96c6\u6210\u5230\u4f60\u7684\u5e94\u7528\u4e2d\uff082026\u6307\u5357\uff09",
+    "description": "\u5982\u4f55\u4f7f\u7528Claude Vision API\u3001GPT-4V\u548cGemini\u5c06\u56fe\u7247\u8f6c\u63d0\u793a\u8bcd\u529f\u80fd\u96c6\u6210\u5230\u4f60\u7684\u5e94\u7528\u4e2d\u3002\u5305\u542b\u4ee3\u7801\u793a\u4f8b\u3001\u63d0\u793a\u8bcd\u6a21\u677f\u548c\u96c6\u6210\u6a21\u5f0f\u3002",
+    "image": "https://www.imagetoprompt.dev/og-image.png",
+    "datePublished": "2026-03-13",
+    "dateModified": "2026-03-24",
+    "inLanguage": "zh",
+    "author": {
+      "@type": "Person",
+      "name": "ImageToPrompt Team",
+      "url": "https://www.imagetoprompt.dev/"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "ImageToPrompt",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://www.imagetoprompt.dev/favicon.svg"
+      }
+    },
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https://www.imagetoprompt.dev/zh/blog/tupian-zhuan-tishi-ci-api/"
+    }
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "\u56fe\u7247\u8f6c\u63d0\u793a\u8bcd\u6700\u597d\u7684API\u662f\u54ea\u4e2a\uff1f",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "\u5bf9\u4e8e\u56fe\u7247\u8f6c\u63d0\u793a\u8bcd\uff0cClaude Vision\u901a\u5e38\u751f\u6210\u6700\u7ed3\u6784\u5316\u3001\u6700\u5177\u827a\u672f\u6307\u5bfc\u610f\u8bc6\u7684\u8f93\u51fa\u3002GPT-4o\u5728OpenAI\u751f\u6001\u7cfb\u7edf\u4e2d\u6700\u901a\u7528\u3002Gemini 1.5 Flash\u662f\u9ad8\u5439\u91cf\u7ba1\u9053\u4e2d\u6700\u7ecf\u6d4e\u7684\u9009\u62e9\u3002"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "\u56fe\u7247\u8f6c\u63d0\u793a\u8bcd\u6bcf\u5f20\u56fe\u7247\u7684API\u8c03\u7528\u6210\u672c\u662f\u591a\u5c11\uff1f",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "\u6210\u672c\u56e0\u63d0\u4f9b\u5546\u800c\u5f02\u3002Claude Haiku\u5927\u7ea6\u6bcf1000\u5f20\u56fe\u7247$0.40\uff0cGPT-4o mini\u7ea6$0.23\uff0cGemini 1.5 Flash\u6700\u4fbf\u5b9c\uff0c\u7ea6$0.08\u3002\u8fd9\u4e9b\u662f\u5178\u578b1024x1024 JPEG\u7684\u4f30\u7b97\u503c\u3002"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "\u5e94\u8be5\u4f7f\u7528Base64\u8fd8\u662fURL\u53d1\u9001\u56fe\u7247\u7ed9API\uff1f",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Base64\u63a8\u8350\u7528\u4e8e\u751f\u4ea7\u73af\u5883\uff0c\u56e0\u4e3a\u5ef6\u8fdf\u66f4\u53ef\u9884\u6d4b\u3002URL\u66f4\u9002\u5408\u539f\u578b\u5f00\u53d1\u548c\u5feb\u901f\u6d4b\u8bd5\u3002\u6bcf\u5f20\u56fe\u7247\u6700\u5927\u9650\u52365MB\u3002"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "\u5982\u4f55\u964d\u4f4e\u56fe\u7247\u8f6c\u63d0\u793a\u8bcdAPI\u7684\u6210\u672c\uff1f",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "\u4f7f\u7528\u57fa\u4e8e\u56fe\u7247\u5185\u5bb9\u54c8\u5e0c\u7684\u7f13\u5b58\u7b56\u7565\uff0c\u907f\u514d\u91cd\u590d\u5206\u6790\u540c\u4e00\u5f20\u56fe\u7247\u3002\u5bf9\u4e8e\u9ad8\u5439\u91cf\u573a\u666f\uff0c\u53ef\u4ee5\u9009\u62e9Gemini Flash\u6216GPT-4o mini\u3002\u5bf9\u4e8e\u8d28\u91cf\u4f18\u5148\u7684\u573a\u666f\uff0cClaude Haiku\u63d0\u4f9b\u4e86\u6700\u4f73\u7684\u6027\u4ef7\u6bd4\u3002"
+        }
+      }
+    ]
+  }
+  </script>
+    <!-- Google AdSense -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4499206373485728" crossorigin="anonymous"></script>
+    <!-- Web Push Notifications -->
+<script src="https://cdn.onesignal.com/sdks/web/v16/OneSignalSDK.page.js" defer></script>
+<script>
+  window.OneSignalDeferred = window.OneSignalDeferred || [];
+  OneSignalDeferred.push(async function(OneSignal) {
+    await OneSignal.init({
+      appId: "REPLACE_WITH_ONESIGNAL_APP_ID",
+      notifyButton: { enable: false }
+    });
+  });
+</script>
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="inner">
+      <a href="/zh/" class="site-logo"><img src="/favicon.svg" alt="ImageToPrompt" width="48" height="48"><div class="site-logo-text">ImageTo<span class="accent">Prompt</span><span class="site-logo-sub">&#20813;&#36153;AI&#25552;&#31034;&#35789;&#29983;&#25104;&#22120;</span></div></a>
+      <nav class="site-nav" aria-label="&#20027;&#23548;&#33322;">
+        <div class="nav-dropdown">
+          <button class="nav-dropdown-trigger" aria-haspopup="true" aria-expanded="false">Tools <span class="nav-chevron" aria-hidden="true">&#9660;</span></button>
+          <div class="nav-dropdown-menu" role="menu">
+            <div class="nav-mega-grid">
+              <div class="nav-mega-col">
+                <div class="nav-mega-heading">&#128444; IMAGE TOOLS</div>
+                <a href="/" role="menuitem" class="nav-mega-tool">Image to Prompt <span class="nav-mega-arrow">&#8594;</span></a>
+                <a href="/text-to-prompt/" role="menuitem" class="nav-mega-tool">Text to Prompt <span class="nav-mega-arrow">&#8594;</span></a>
+                <a href="/describe-image/" role="menuitem" class="nav-mega-tool">Describe Image <span class="nav-new-badge">NEW</span> <span class="nav-mega-arrow">&#8594;</span></a>
+                <div class="nav-mega-models-label">Models</div>
+                <div class="nav-mega-models"><a href="/midjourney-prompt-generator/">Midjourney</a><span class="nav-dot">&#xB7;</span><a href="/stable-diffusion-prompt-generator/">SD</a></div>
+                <div class="nav-mega-models"><a href="/flux-prompt-generator/">Flux</a><span class="nav-dot">&#xB7;</span><a href="/dall-e-prompt-generator/">DALL&#xB7;E&#xA0;3</a></div>
+                <div class="nav-mega-models"><a href="/adobe-firefly-prompt-generator/">Firefly</a><span class="nav-dot">&#xB7;</span><a href="/leonardo-ai-prompt-generator/">Leonardo</a></div>
+                <div class="nav-mega-models"><a href="/ideogram-prompt-generator/">Ideogram</a></div>
+              </div>
+              <div class="nav-mega-divider" aria-hidden="true"></div>
+              <div class="nav-mega-col">
+                <div class="nav-mega-heading">&#127909; VIDEO TOOLS</div>
+                <a href="/?tab=image-to-video" role="menuitem" class="nav-mega-tool">Image to Video <span class="nav-mega-arrow">&#8594;</span></a>
+                <a href="/?tab=text-to-video" role="menuitem" class="nav-mega-tool">Text to Video <span class="nav-mega-arrow">&#8594;</span></a>
+                <div class="nav-mega-models-label">Models</div>
+                <div class="nav-mega-models"><a href="/veo-prompt-generator/">Veo</a><span class="nav-dot">&#xB7;</span><a href="/kling-prompt-generator/">Kling</a></div>
+                <div class="nav-mega-models"><a href="/runway-prompt-generator/">Runway</a><span class="nav-dot">&#xB7;</span><a href="/pika-prompt-generator/">Pika</a></div>
+                <div class="nav-mega-models"><a href="/luma-prompt-generator/">Luma</a><span class="nav-dot">&#xB7;</span><a href="/sora-prompt-generator/">Sora</a></div>
+                <div class="nav-mega-models"><a href="/minimax-prompt-generator/">Minimax</a><span class="nav-dot">&#xB7;</span><a href="/stable-video-prompt-generator/">Stable</a></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <a href="/zh/blog/">&#21338;&#23458;</a>
+        <a href="/zh/pricing/" class="nav-pill-pricing">&#20215;&#26684;</a>
+        <a href="/zh/about/" class="nav-pill-about">&#20851;&#20110;</a>
+        <a href="/zh/" class="nav-try-free">&#20813;&#36153;&#35797;&#29992; &#8594;</a>
+        <button id="theme-toggle" onclick="toggleTheme()" aria-label="&#20999;&#25442;&#20027;&#39064;" title="&#20999;&#25442;&#20027;&#39064;">&#9728;&#xFE0F;</button>
+  </nav>
+    </div>
+  </header>
+
+  <nav class="breadcrumb" aria-label="&#38754;&#21253;&#23633;&#23548;&#33322;">
+    <a href="/zh/">&#39318;&#39029;</a><span class="sep">&#8250;</span>
+    <a href="/zh/blog/">&#21338;&#23458;</a><span class="sep">&#8250;</span>
+    <span>&#22270;&#29255;&#36716;&#25552;&#31034;&#35789;API</span>
+  </nav>
+
+  <div class="page-wrapper">
+
+    <header class="article-header">
+      <p class="article-tag">&#24320;&#21457;&#32773;&#25351;&#21335;</p>
+      <h1>&#22270;&#29255;&#36716;&#25552;&#31034;&#35789;API&#65306;&#23558;AI&#22270;&#20687;&#20998;&#26512;&#38598;&#25104;&#21040;&#20320;&#30340;&#24212;&#29992;&#20013;&#65288;2026&#25351;&#21335;&#65289;</h1>
+      <div class="article-meta">
+        <span>2026&#24180;3&#26376;</span>
+        <span class="dot">&#183;</span>
+        <span>&#38405;&#35835;&#26102;&#38388;14&#20998;&#38047;</span>
+        <span class="dot">&#183;</span>
+        <span>API &#183; Claude Vision &#183; GPT-4V &#183; &#24320;&#21457;&#32773;</span>
+      </div>
+    </header>
+
+    <div class="article-body">
+
+      <p>&#22270;&#29255;&#36716;&#25552;&#31034;&#35789;&#21151;&#33021;&#8212;&#8212;&#20998;&#26512;&#22270;&#20687;&#24182;&#29983;&#25104;AI&#23601;&#32490;&#30340;&#25991;&#26412;&#25552;&#31034;&#35789;&#30340;&#33021;&#21147;&#8212;&#8212;&#24050;&#32463;&#20174;&#26032;&#22855;&#21151;&#33021;&#21464;&#25104;&#20102;&#25968;&#21313;&#20010;&#21019;&#24847;&#24037;&#20855;&#30340;&#26680;&#24515;&#29305;&#24615;&#12290;&#35774;&#35745;&#24212;&#29992;&#29992;&#23427;&#36827;&#34892;&#39118;&#26684;&#21305;&#37197;&#12290;&#27983;&#35272;&#22120;&#25193;&#23637;&#29992;&#23427;&#20998;&#26512;&#29992;&#25143;&#27491;&#22312;&#26597;&#30475;&#30340;&#22270;&#20687;&#12290;&#20869;&#23481;&#31649;&#36947;&#29992;&#23427;&#25209;&#37327;&#22788;&#29702;&#35270;&#35273;&#36164;&#20135;&#12290;</p>
+
+      <p>&#22914;&#26524;&#20320;&#24819;&#23558;&#36825;&#31181;&#33021;&#21147;&#28155;&#21152;&#21040;&#33258;&#24049;&#30340;&#24212;&#29992;&#20013;&#65292;&#20320;&#26377;&#19977;&#20010;&#20005;&#32899;&#30340;&#36873;&#25321;&#65306;Claude Vision&#65288;Anthropic&#65289;&#12289;GPT-4V&#65288;OpenAI&#65289;&#21644;Gemini Vision&#65288;Google&#65289;&#12290;&#26412;&#25351;&#21335;&#28085;&#30422;&#20102;&#27599;&#20010;&#30340;&#25216;&#26415;&#38598;&#25104;&#65292;&#21253;&#21547;&#23454;&#38469;&#21487;&#36816;&#34892;&#30340;&#20195;&#30721;&#65292;&#24182;&#25552;&#20379;&#33021;&#29983;&#25104;&#39640;&#36136;&#37327;&#32467;&#26500;&#21270;&#36755;&#20986;&#30340;&#25552;&#31034;&#35789;&#27169;&#26495;&#12290;</p>
+
+      <nav class="toc" aria-label="&#30446;&#24405;">
+        <details open>
+          <summary>&#26412;&#25351;&#21335;&#20869;&#23481;</summary>
+          <ol>
+            <li><a href="#why-need">&#20026;&#20160;&#20040;&#24320;&#21457;&#32773;&#38656;&#35201;&#22270;&#29255;&#36716;&#25552;&#31034;&#35789;API</a></li>
+            <li><a href="#three-options">&#19977;&#22823;&#20027;&#35201;API&#36873;&#25321;</a></li>
+            <li><a href="#claude-setup">Claude Vision API&#65306;&#35774;&#32622;&#21644;&#35748;&#35777;</a></li>
+            <li><a href="#image-encoding">&#22270;&#20687;&#32534;&#30721;&#65306;Base64 vs URL</a></li>
+            <li><a href="#system-prompt">&#29983;&#25104;AI&#23601;&#32490;&#25552;&#31034;&#35789;&#30340;&#31995;&#32479;&#25552;&#31034;&#35789;&#27169;&#26495;</a></li>
+            <li><a href="#python-impl">Python&#23454;&#29616;&#65306;Claude Vision</a></li>
+            <li><a href="#node-impl">JavaScript / Node.js&#23454;&#29616;</a></li>
+            <li><a href="#error-handling">&#38169;&#35823;&#22788;&#29702;</a></li>
+            <li><a href="#cost-comparison">&#25104;&#26412;&#23545;&#27604;</a></li>
+            <li><a href="#caching">&#32531;&#23384;&#31574;&#30053;</a></li>
+            <li><a href="#serverless">&#29983;&#20135;&#26550;&#26500;&#65306;Serverless&#27169;&#24335;</a></li>
+          </ol>
+        </details>
+      </nav>
+
+      <h2 id="why-need">&#20026;&#20160;&#20040;&#24320;&#21457;&#32773;&#38656;&#35201;&#22270;&#29255;&#36716;&#25552;&#31034;&#35789;API</h2>
+
+      <p>&#20351;&#29992;&#22330;&#26223;&#27604;&#20320;&#21021;&#27425;&#24819;&#35937;&#30340;&#35201;&#24191;&#27867;&#24471;&#22810;&#65306;</p>
+
+      <ul>
+        <li><strong>&#21019;&#24847;&#24037;&#20855;&#65306;</strong>&#35753;&#29992;&#25143;&#19978;&#20256;&#28789;&#24863;&#22270;&#20687;&#65292;&#33719;&#24471;&#36866;&#29992;&#20110;&#29983;&#25104;&#24037;&#20855;&#65288;Midjourney&#12289;Stable Diffusion&#12289;DALL&#183;E&#65289;&#30340;AI&#23601;&#32490;&#25552;&#31034;&#35789;</li>
+        <li><strong>&#35774;&#35745;&#24179;&#21488;&#65306;</strong>&#20998;&#26512;&#19978;&#20256;&#30340;&#24773;&#32490;&#26495;&#65292;&#25552;&#21462;&#39118;&#26684;&#25351;&#21335;</li>
+        <li><strong>&#30005;&#21830;&#65306;</strong>&#20174;&#20135;&#21697;&#29031;&#29255;&#29983;&#25104;&#20135;&#21697;&#25551;&#36848;</li>
+        <li><strong>&#20869;&#23481;&#23457;&#26680;&#31649;&#36947;&#65306;</strong>&#29702;&#35299;&#22270;&#20687;&#20869;&#23481;&#65292;&#36827;&#34892;&#20998;&#31867;&#21644;&#26631;&#35760;</li>
+        <li><strong>&#26080;&#38556;&#30861;&#24037;&#20855;&#65306;</strong>&#29983;&#25104;&#35814;&#32454;&#30340;alt&#25991;&#26412;&#21644;&#22270;&#20687;&#25551;&#36848;</li>
+        <li><strong>&#28216;&#25103;&#36164;&#20135;&#31649;&#36947;&#65306;</strong>&#22312;&#22823;&#22411;&#36164;&#20135;&#24211;&#20013;&#33258;&#21160;&#26631;&#35760;&#21644;&#25551;&#36848;&#36164;&#20135;</li>
+        <li><strong>&#31038;&#20132;&#23186;&#20307;&#24037;&#20855;&#65306;</strong>&#20174;&#19978;&#20256;&#22270;&#20687;&#29983;&#25104;&#26631;&#39064;&#21644;&#26631;&#31614;</li>
+        <li><strong>&#29031;&#29255;&#32452;&#32455;&#24212;&#29992;&#65306;</strong>&#23545;&#22270;&#20687;&#38598;&#21512;&#36827;&#34892;&#35821;&#20041;&#25628;&#32034;</li>
+      </ul>
+
+      <h2 id="three-options">&#19977;&#22823;&#20027;&#35201;API&#36873;&#25321;</h2>
+
+      <div class="table-wrap">
+      <table class="comparison-table">
+        <thead>
+          <tr><th>API</th><th>&#25552;&#20379;&#21830;</th><th>&#22270;&#20687;&#36755;&#20837;</th><th>&#20215;&#26684;&#65288;&#22823;&#32422;&#65289;</th><th>&#26368;&#36866;&#21512;</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Claude Vision (claude-haiku-4-5 / claude-sonnet)</td><td>Anthropic</td><td>Base64&#25110;URL</td><td>$0.25&#8211;$3 / 1M&#36755;&#20837;token</td><td>&#35814;&#32454;&#25552;&#31034;&#35789;&#12289;&#25351;&#20196;&#36319;&#38543;</td></tr>
+          <tr><td>GPT-4V / GPT-4o</td><td>OpenAI</td><td>Base64&#25110;URL</td><td>$2.50&#8211;$10 / 1M&#36755;&#20837;token</td><td>&#24191;&#27867;&#30693;&#35782;&#12289;&#23545;&#35805;&#38598;&#25104;</td></tr>
+          <tr><td>Gemini Vision (1.5 Flash/Pro)</td><td>Google</td><td>Base64&#12289;URL&#25110;GCS</td><td>$0.075&#8211;$3.50 / 1M&#36755;&#20837;token</td><td>&#39640;&#21534;&#21520;&#37327;&#12289;&#25104;&#26412;&#25935;&#24863;&#24037;&#20316;&#36127;</td></tr>
+        </tbody>
+      </table>
+      </div>
+
+      <p>&#23545;&#20110;&#22270;&#29255;&#36716;&#25552;&#31034;&#35789;&#20855;&#20307;&#26469;&#35828;&#65292;Claude Vision&#20542;&#21521;&#20110;&#29983;&#25104;&#26368;&#32467;&#26500;&#21270;&#12289;&#26368;&#20855;&#33402;&#26415;&#25351;&#23548;&#24847;&#35782;&#30340;&#36755;&#20986;&#12290;&#22914;&#26524;&#20320;&#24050;&#32463;&#22312;&#20351;&#29992;OpenAI&#29983;&#24577;&#31995;&#32479;&#65292;GPT-4o&#26159;&#26368;&#36890;&#29992;&#30340;&#36873;&#25321;&#12290;Gemini 1.5 Flash&#26159;&#39640;&#21534;&#21520;&#37327;&#31649;&#36947;&#20013;&#26368;&#32463;&#27982;&#30340;&#36873;&#39033;&#65292;&#36866;&#21512;&#25104;&#26412;&#27604;&#36136;&#37327;&#26356;&#37325;&#35201;&#30340;&#22330;&#26223;&#12290;</p>
+
+      <h2 id="claude-setup">Claude Vision API&#65306;&#35774;&#32622;&#21644;&#35748;&#35777;</h2>
+
+      <p>&#39318;&#20808;&#65292;&#23433;&#35013;Anthropic SDK&#65306;</p>
+
+      <pre><code>pip install anthropic</code></pre>
+
+      <p>&#25110;&#32773;&#23545;&#20110;Node.js&#65306;</p>
+
+      <pre><code>npm install @anthropic-ai/sdk</code></pre>
+
+      <p>&#20174;<a href="https://console.anthropic.com" target="_blank" rel="noopener">console.anthropic.com</a>&#33719;&#21462;API&#23494;&#38053;&#65292;&#24182;&#35774;&#32622;&#20026;&#29615;&#22659;&#21464;&#37327;&#65306;</p>
+
+      <pre><code>export ANTHROPIC_API_KEY="sk-ant-api03-..."</code></pre>
+
+      <h2 id="image-encoding">&#22270;&#20687;&#32534;&#30721;&#65306;Base64 vs URL</h2>
+
+      <p>Claude Vision&#25509;&#21463;&#20004;&#31181;&#26684;&#24335;&#30340;&#22270;&#20687;&#65306;</p>
+
+      <p><strong>Base64&#65288;&#25512;&#33616;&#29992;&#20110;&#26412;&#22320;&#25991;&#20214;&#65289;&#65306;</strong>&#23558;&#22270;&#20687;&#32534;&#30721;&#20026;Base64&#23383;&#31526;&#20018;&#65292;&#30452;&#25509;&#21253;&#21547;&#22312;API&#35831;&#27714;&#20013;&#12290;&#25903;&#25345;JPEG&#12289;PNG&#12289;GIF&#21644;WebP&#12290;&#27599;&#24352;&#22270;&#20687;&#26368;&#22823;5MB&#12290;</p>
+
+      <p><strong>URL&#65288;&#25512;&#33616;&#29992;&#20110;&#32593;&#32476;&#25176;&#31649;&#22270;&#20687;&#65289;&#65306;</strong>&#20256;&#20837;&#20844;&#24320;&#21487;&#35775;&#38382;&#30340;&#22270;&#20687;URL&#12290;Claude&#20250;&#22312;&#26381;&#21153;&#22120;&#31471;&#33719;&#21462;&#22270;&#20687;&#12290;URL&#24517;&#39035;&#26159;&#20844;&#24320;&#21487;&#35775;&#38382;&#30340;&#65288;&#19981;&#38656;&#35201;&#35748;&#35777;&#65289;&#12290;</p>
+
+      <div class="callout callout-tip">
+        <strong>&#24615;&#33021;&#25552;&#31034;&#65306;</strong>&#23545;&#20110;&#29983;&#20135;&#29615;&#22659;&#24037;&#20316;&#36127;&#36733;&#65292;Base64&#25552;&#20379;&#26356;&#21487;&#39044;&#27979;&#30340;&#24310;&#36831;&#65292;&#22240;&#20026;&#20320;&#19981;&#20381;&#36182;&#20110;&#19979;&#28216;URL&#30340;&#36895;&#24230;&#25110;&#21487;&#29992;&#24615;&#12290;&#23545;&#20110;&#21407;&#22411;&#24320;&#21457;&#65292;URL&#26356;&#31616;&#21333;&#12290;
+      </div>
+
+      <h2 id="system-prompt">&#29983;&#25104;AI&#23601;&#32490;&#25552;&#31034;&#35789;&#30340;&#31995;&#32479;&#25552;&#31034;&#35789;&#27169;&#26495;</h2>
+
+      <p>&#31995;&#32479;&#25552;&#31034;&#35789;&#26159;&#20320;&#30340;&#23454;&#29616;&#20013;&#26368;&#37325;&#35201;&#30340;&#37096;&#20998;&#12290;&#24369;&#30340;&#31995;&#32479;&#25552;&#31034;&#35789;&#20250;&#20135;&#29983;&#36890;&#29992;&#30340;&#22270;&#20687;&#25551;&#36848;&#12290;&#31934;&#24515;&#35774;&#35745;&#30340;&#31995;&#32479;&#25552;&#31034;&#35789;&#20250;&#20135;&#29983;&#32467;&#26500;&#21270;&#12289;&#21487;&#25805;&#20316;&#30340;&#25552;&#31034;&#35789;&#65292;&#33021;&#24456;&#22909;&#22320;&#19982;&#22270;&#20687;&#29983;&#25104;&#27169;&#22411;&#37197;&#21512;&#12290;</p>
+
+      <p>&#20197;&#19979;&#26159;&#33021;&#20135;&#29983;&#39640;&#36136;&#37327;Midjourney/Stable Diffusion&#20860;&#23481;&#36755;&#20986;&#30340;&#31995;&#32479;&#25552;&#31034;&#35789;&#27169;&#26495;&#65306;</p>
+
+      <pre><code>You are an expert AI art prompt engineer. When given an image, analyze it thoroughly and generate an optimized text prompt that would recreate a similar image using an AI image generation tool.
+
+Your output must follow this structure:
+
+PROMPT:
+[Single paragraph, comma-separated descriptors. Include: subject description, environment/setting, lighting conditions, color palette, mood/atmosphere, art style, rendering quality. Be specific and concrete. 60-120 words.]
+
+STYLE NOTES:
+[2-3 sentences describing the visual style, medium, and any distinctive aesthetic characteristics]
+
+NEGATIVE PROMPT:
+[Comma-separated list of elements to exclude for best results]
+
+MODEL RECOMMENDATION:
+[One of: Midjourney, Stable Diffusion, DALL&#183;E 3, Flux, Ideogram &#8212; based on the image style]
+
+Do not include any preamble, explanation, or text outside this structure.</code></pre>
+
+      <h2 id="python-impl">Python&#23454;&#29616;&#65306;Claude Vision</h2>
+
+      <pre><code>import anthropic
+import base64
+from pathlib import Path
+
+def image_to_prompt(image_path: str, target_model: str = "Midjourney") -> dict:
+    """
+    Analyze an image and generate an AI art prompt.
+
+    Args:
+        image_path: Path to local image file
+        target_model: Target AI model ("Midjourney", "Stable Diffusion", etc.)
+
+    Returns:
+        dict with 'prompt', 'style_notes', 'negative_prompt', 'model_recommendation'
+    """
+    client = anthropic.Anthropic()
+
+    # Read and encode image
+    image_data = Path(image_path).read_bytes()
+    base64_image = base64.standard_b64encode(image_data).decode("utf-8")
+
+    # Detect media type
+    suffix = Path(image_path).suffix.lower()
+    media_type_map = {
+        ".jpg": "image/jpeg",
+        ".jpeg": "image/jpeg",
+        ".png": "image/png",
+        ".gif": "image/gif",
+        ".webp": "image/webp"
+    }
+    media_type = media_type_map.get(suffix, "image/jpeg")
+
+    system_prompt = """You are an expert AI art prompt engineer. Analyze the provided image and generate an optimized prompt for AI image generation.
+
+Output this exact structure:
+
+PROMPT:
+[60-120 word comma-separated prompt covering subject, environment, lighting, colors, mood, style, quality tokens]
+
+STYLE NOTES:
+[2-3 sentences on visual style and distinctive characteristics]
+
+NEGATIVE PROMPT:
+[Comma-separated exclusion list]
+
+MODEL RECOMMENDATION:
+[Best model: Midjourney, Stable Diffusion, DALL&#183;E 3, Flux, or Ideogram]"""
+
+    message = client.messages.create(
+        model="claude-haiku-4-5",
+        max_tokens=1024,
+        system=system_prompt,
+        messages=[
+            {
+                "role": "user",
+                "content": [
+                    {
+                        "type": "image",
+                        "source": {
+                            "type": "base64",
+                            "media_type": media_type,
+                            "data": base64_image,
+                        },
+                    },
+                    {
+                        "type": "text",
+                        "text": f"Analyze this image and generate an AI art prompt optimized for {target_model}."
+                    }
+                ],
+            }
+        ],
+    )
+
+    # Parse response
+    response_text = message.content[0].text
+    return parse_prompt_response(response_text)
+
+
+def parse_prompt_response(text: str) -> dict:
+    """Parse structured response into a dictionary."""
+    result = {}
+    sections = {
+        "prompt": "PROMPT:",
+        "style_notes": "STYLE NOTES:",
+        "negative_prompt": "NEGATIVE PROMPT:",
+        "model_recommendation": "MODEL RECOMMENDATION:"
+    }
+
+    lines = text.split("\n")
+    current_section = None
+    current_content = []
+
+    for line in lines:
+        line = line.strip()
+        matched = False
+        for key, header in sections.items():
+            if line.startswith(header):
+                if current_section:
+                    result[current_section] = " ".join(current_content).strip()
+                current_section = key
+                remainder = line[len(header):].strip()
+                current_content = [remainder] if remainder else []
+                matched = True
+                break
+        if not matched and current_section and line:
+            current_content.append(line)
+
+    if current_section:
+        result[current_section] = " ".join(current_content).strip()
+
+    return result
+
+
+# Example usage
+if __name__ == "__main__":
+    result = image_to_prompt("reference_photo.jpg", target_model="Midjourney")
+    print("PROMPT:", result.get("prompt"))
+    print("NEGATIVE:", result.get("negative_prompt"))
+    print("RECOMMENDED MODEL:", result.get("model_recommendation"))</code></pre>
+
+      <h2 id="node-impl">JavaScript / Node.js&#23454;&#29616;</h2>
+
+      <pre><code>import Anthropic from "@anthropic-ai/sdk";
+import fs from "fs";
+import path from "path";
+
+const client = new Anthropic({
+  apiKey: process.env.ANTHROPIC_API_KEY,
+});
+
+const SYSTEM_PROMPT = `You are an expert AI art prompt engineer. Analyze the provided image and generate an optimized prompt for AI image generation.
+
+Output this exact structure:
+
+PROMPT:
+[60-120 word comma-separated prompt covering subject, environment, lighting, colors, mood, style, quality tokens]
+
+STYLE NOTES:
+[2-3 sentences on visual style and distinctive characteristics]
+
+NEGATIVE PROMPT:
+[Comma-separated exclusion list]
+
+MODEL RECOMMENDATION:
+[Best model: Midjourney, Stable Diffusion, DALL&#183;E 3, Flux, or Ideogram]`;
+
+async function imageToPrompt(imagePath, targetModel = "Midjourney") {
+  const imageBuffer = fs.readFileSync(imagePath);
+  const base64Image = imageBuffer.toString("base64");
+
+  const ext = path.extname(imagePath).toLowerCase();
+  const mediaTypeMap = {
+    ".jpg": "image/jpeg",
+    ".jpeg": "image/jpeg",
+    ".png": "image/png",
+    ".gif": "image/gif",
+    ".webp": "image/webp",
+  };
+  const mediaType = mediaTypeMap[ext] || "image/jpeg";
+
+  const message = await client.messages.create({
+    model: "claude-haiku-4-5",
+    max_tokens: 1024,
+    system: SYSTEM_PROMPT,
+    messages: [
+      {
+        role: "user",
+        content: [
+          {
+            type: "image",
+            source: {
+              type: "base64",
+              media_type: mediaType,
+              data: base64Image,
+            },
+          },
+          {
+            type: "text",
+            text: `Analyze this image and generate an AI art prompt optimized for ${targetModel}.`,
+          },
+        ],
+      },
+    ],
+  });
+
+  const responseText = message.content[0].text;
+  return parsePromptResponse(responseText);
+}
+
+function parsePromptResponse(text) {
+  const result = {};
+  const sections = {
+    prompt: "PROMPT:",
+    style_notes: "STYLE NOTES:",
+    negative_prompt: "NEGATIVE PROMPT:",
+    model_recommendation: "MODEL RECOMMENDATION:",
+  };
+
+  let currentSection = null;
+  let currentLines = [];
+
+  for (const rawLine of text.split("\n")) {
+    const line = rawLine.trim();
+    let matched = false;
+
+    for (const [key, header] of Object.entries(sections)) {
+      if (line.startsWith(header)) {
+        if (currentSection) {
+          result[currentSection] = currentLines.join(" ").trim();
+        }
+        currentSection = key;
+        const remainder = line.slice(header.length).trim();
+        currentLines = remainder ? [remainder] : [];
+        matched = true;
+        break;
+      }
+    }
+
+    if (!matched && currentSection && line) {
+      currentLines.push(line);
+    }
+  }
+
+  if (currentSection) {
+    result[currentSection] = currentLines.join(" ").trim();
+  }
+
+  return result;
+}
+
+// Example usage
+const result = await imageToPrompt("./reference.png", "Stable Diffusion");
+console.log("Prompt:", result.prompt);
+console.log("Negative:", result.negative_prompt);</code></pre>
+
+      <h2>&#20351;&#29992;URL&#32780;&#38750;Base64</h2>
+
+      <pre><code>async function imageToPromptFromUrl(imageUrl, targetModel = "Midjourney") {
+  const message = await client.messages.create({
+    model: "claude-haiku-4-5",
+    max_tokens: 1024,
+    system: SYSTEM_PROMPT,
+    messages: [
+      {
+        role: "user",
+        content: [
+          {
+            type: "image",
+            source: {
+              type: "url",
+              url: imageUrl,
+            },
+          },
+          {
+            type: "text",
+            text: `Analyze this image and generate an AI art prompt optimized for ${targetModel}.`,
+          },
+        ],
+      },
+    ],
+  });
+
+  return parsePromptResponse(message.content[0].text);
+}</code></pre>
+
+      <h2 id="error-handling">&#38169;&#35823;&#22788;&#29702;&#65306;&#36895;&#29575;&#38480;&#21046;&#12289;&#22270;&#20687;&#22823;&#23567;&#38480;&#21046;&#12289;&#19981;&#25903;&#25345;&#30340;&#26684;&#24335;</h2>
+
+      <p>&#29983;&#20135;&#29615;&#22659;&#23454;&#29616;&#24517;&#39035;&#20248;&#38597;&#22320;&#22788;&#29702;&#36825;&#20123;&#22833;&#36133;&#22330;&#26223;&#65306;</p>
+
+      <pre><code>async function imageToPromptSafe(imagePath, targetModel = "Midjourney") {
+  // Check file size before upload (5MB limit)
+  const stats = fs.statSync(imagePath);
+  const fileSizeMB = stats.size / (1024 * 1024);
+  if (fileSizeMB > 5) {
+    throw new Error(`Image too large: ${fileSizeMB.toFixed(1)}MB. Max 5MB.`);
+  }
+
+  // Check format
+  const ext = path.extname(imagePath).toLowerCase();
+  const supported = [".jpg", ".jpeg", ".png", ".gif", ".webp"];
+  if (!supported.includes(ext)) {
+    throw new Error(`Unsupported format: ${ext}. Use JPG, PNG, GIF, or WebP.`);
+  }
+
+  try {
+    return await imageToPrompt(imagePath, targetModel);
+  } catch (error) {
+    if (error.status === 429) {
+      // Rate limited &#8212; implement exponential backoff
+      const retryAfter = parseInt(error.headers?.["retry-after"] || "60");
+      console.warn(`Rate limited. Retry after ${retryAfter}s`);
+      await new Promise(resolve => setTimeout(resolve, retryAfter * 1000));
+      return await imageToPrompt(imagePath, targetModel); // single retry
+    }
+    if (error.status === 400) {
+      throw new Error(`Bad request &#8212; check image format and size: ${error.message}`);
+    }
+    throw error;
+  }
+}</code></pre>
+
+      <figure style="margin:2rem 0">
+        <picture><source srcset="/images/image-prompt-tool-interface-annotated.webp" type="image/webp"><img src="/images/image-prompt-tool-interface-annotated.jpeg" alt="ImageToPrompt&#24037;&#20855;&#30028;&#38754;&#8212;&#8212;&#23637;&#31034;&#19978;&#20256;&#21306;&#22495;&#12289;&#27169;&#22411;&#36873;&#25321;&#21644;&#29983;&#25104;&#30340;&#25552;&#31034;&#35789;&#36755;&#20986;" width="1200" height="700" loading="lazy" style="width:100%;border-radius:0.75rem;display:block"></picture>
+        <figcaption style="color:var(--text-muted);font-size:0.8rem;text-align:center;margin-top:0.75rem">ImageToPrompt Web&#30028;&#38754;&#8212;&#8212;&#22522;&#20110;&#26412;&#25351;&#21335;&#25551;&#36848;&#30340;&#30456;&#21516;Claude Vision API&#26041;&#27861;&#26500;&#24314;&#12290;</figcaption>
+      </figure>
+
+      <h2 id="cost-comparison">&#25104;&#26412;&#23545;&#27604;&#65306;Claude vs GPT-4V vs Gemini Vision</h2>
+
+      <p>&#22270;&#20687;token&#22312;&#19981;&#21516;&#25552;&#20379;&#21830;&#20043;&#38388;&#30340;&#35745;&#31639;&#26041;&#24335;&#19981;&#21516;&#12290;&#20197;&#19979;&#26159;&#20856;&#22411;1024x1024 JPEG&#65288;~300KB&#65289;&#30340;&#23454;&#38469;&#23545;&#27604;&#65306;</p>
+
+      <div class="table-wrap">
+      <table class="comparison-table">
+        <thead>
+          <tr><th>API</th><th>&#22270;&#20687;Token&#25104;&#26412;</th><th>&#25991;&#26412;&#36755;&#20986;&#25104;&#26412;</th><th>&#27599;1000&#24352;&#22270;&#20687;&#25104;&#26412;</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Claude Haiku 4.5</td><td>~1,600&#36755;&#20837;token</td><td>~300&#36755;&#20986;token</td><td>~$0.40</td></tr>
+          <tr><td>Claude Sonnet 3.5</td><td>~1,600&#36755;&#20837;token</td><td>~300&#36755;&#20986;token</td><td>~$3.60</td></tr>
+          <tr><td>GPT-4o mini</td><td>~765&#36755;&#20837;token&#65288;&#20302;&#35814;&#32454;&#24230;&#65289;</td><td>~300&#36755;&#20986;token</td><td>~$0.23</td></tr>
+          <tr><td>GPT-4o</td><td>~765&#36755;&#20837;token</td><td>~300&#36755;&#20986;token</td><td>~$2.70</td></tr>
+          <tr><td>Gemini 1.5 Flash</td><td>~258&#36755;&#20837;token</td><td>~300&#36755;&#20986;token</td><td>~$0.08</td></tr>
+          <tr><td>Gemini 1.5 Pro</td><td>~258&#36755;&#20837;token</td><td>~300&#36755;&#20986;token</td><td>~$0.90</td></tr>
+        </tbody>
+      </table>
+      </div>
+
+      <p><em>&#20215;&#26684;&#20026;2026&#24180;3&#26376;&#30340;&#20272;&#31639;&#20540;&#12290;&#35831;&#22312;&#21508;&#25552;&#20379;&#21830;&#32593;&#31449;&#26680;&#23454;&#24403;&#21069;&#20215;&#26684;&#12290;</em></p>
+
+      <p>&#23545;&#20110;&#27599;&#22825;&#22788;&#29702;&#25968;&#30334;&#24352;&#22270;&#20687;&#30340;&#28040;&#36153;&#32773;&#24212;&#29992;&#65292;Gemini Flash&#25110;GPT-4o mini&#26368;&#20855;&#25104;&#26412;&#25928;&#30410;&#12290;&#23545;&#20110;&#25552;&#31034;&#35789;&#20934;&#30830;&#24615;&#33267;&#20851;&#37325;&#35201;&#30340;&#39640;&#36136;&#37327;&#31649;&#36947;&#65292;Claude Haiku&#25552;&#20379;&#20102;&#26368;&#20339;&#30340;&#36136;&#37327;&#25104;&#26412;&#27604;&#12290;</p>
+
+      <h2 id="caching">&#32531;&#23384;&#31574;&#30053;&#20197;&#38477;&#20302;API&#25104;&#26412;</h2>
+
+      <p>&#23545;&#20110;&#29983;&#20135;&#37096;&#32626;&#65292;&#32531;&#23384;&#33267;&#20851;&#37325;&#35201;&#12290;&#21516;&#19968;&#24352;&#22270;&#20687;&#32477;&#19981;&#24212;&#34987;&#20998;&#26512;&#20004;&#27425;&#65306;</p>
+
+      <pre><code>import crypto from "crypto";
+import Redis from "ioredis";
+
+const redis = new Redis(process.env.REDIS_URL);
+const CACHE_TTL = 60 * 60 * 24 * 30; // 30 days
+
+async function imageToPromptCached(imageBuffer, targetModel = "Midjourney") {
+  // Create cache key from image content hash + model
+  const imageHash = crypto
+    .createHash("sha256")
+    .update(imageBuffer)
+    .digest("hex");
+  const cacheKey = `img2prompt:${imageHash}:${targetModel}`;
+
+  // Check cache
+  const cached = await redis.get(cacheKey);
+  if (cached) {
+    return JSON.parse(cached);
+  }
+
+  // Generate prompt
+  const base64Image = imageBuffer.toString("base64");
+  const result = await imageToPrompt(base64Image, targetModel);
+
+  // Cache result
+  await redis.setex(cacheKey, CACHE_TTL, JSON.stringify(result));
+
+  return result;
+}</code></pre>
+
+      <h2 id="serverless">&#29983;&#20135;&#26550;&#26500;&#65306;Serverless&#20989;&#25968;&#27169;&#24335;</h2>
+
+      <p>&#23545;&#20110;Web&#24212;&#29992;&#26469;&#35828;&#65292;&#26368;&#23454;&#29992;&#30340;&#29983;&#20135;&#27169;&#24335;&#26159;&#19968;&#20010;&#25509;&#21463;&#22270;&#20687;&#25968;&#25454;&#24182;&#36820;&#22238;&#25552;&#31034;&#35789;&#30340;serverless&#20989;&#25968;&#12290;&#36825;&#26159;ImageToPrompt&#26412;&#36523;&#20351;&#29992;&#30340;&#27169;&#24335;&#65292;&#37096;&#32626;&#22312;Vercel&#19978;&#65306;</p>
+
+      <pre><code>// api/analyze.ts (Vercel serverless function)
+import type { VercelRequest, VercelResponse } from "@vercel/node";
+import Anthropic from "@anthropic-ai/sdk";
+
+const client = new Anthropic({ apiKey: process.env.ANTHROPIC_API_KEY });
+
+export default async function handler(req: VercelRequest, res: VercelResponse) {
+  if (req.method !== "POST") {
+    return res.status(405).json({ error: "Method not allowed" });
+  }
+
+  // CORS
+  res.setHeader("Access-Control-Allow-Origin", process.env.ALLOWED_ORIGIN || "*");
+
+  const { image, mediaType, targetModel } = req.body;
+
+  if (!image || !mediaType) {
+    return res.status(400).json({ error: "image and mediaType are required" });
+  }
+
+  try {
+    const message = await client.messages.create({
+      model: "claude-haiku-4-5",
+      max_tokens: 1024,
+      system: SYSTEM_PROMPT,
+      messages: [
+        {
+          role: "user",
+          content: [
+            {
+              type: "image",
+              source: { type: "base64", media_type: mediaType, data: image },
+            },
+            {
+              type: "text",
+              text: `Generate an AI art prompt optimized for ${targetModel || "Midjourney"}.`,
+            },
+          ],
+        },
+      ],
+    });
+
+    const parsed = parsePromptResponse(message.content[0].text);
+    return res.status(200).json(parsed);
+  } catch (error: unknown) {
+    const err = error as { status?: number; message?: string };
+    if (err.status === 429) {
+      return res.status(429).json({ error: "Rate limit exceeded" });
+    }
+    return res.status(500).json({ error: "Analysis failed" });
+  }
+}</code></pre>
+
+      <h2>&#23454;&#38469;&#20351;&#29992;&#26696;&#20363;</h2>
+
+      <h3>&#25209;&#37327;&#22788;&#29702;&#22270;&#20687;&#30446;&#24405;</h3>
+
+      <pre><code>import { glob } from "glob";
+import { writeFileSync } from "fs";
+
+async function batchProcess(directory, targetModel = "Midjourney") {
+  const images = await glob(`${directory}/**/*.{jpg,jpeg,png,webp}`);
+  const results = [];
+
+  for (const imagePath of images) {
+    try {
+      console.log(`Processing: ${imagePath}`);
+      const result = await imageToPromptSafe(imagePath, targetModel);
+      results.push({ file: imagePath, ...result });
+
+      // Respectful rate limiting: 1 request per second
+      await new Promise(resolve => setTimeout(resolve, 1000));
+    } catch (error) {
+      console.error(`Failed: ${imagePath}`, error.message);
+      results.push({ file: imagePath, error: error.message });
+    }
+  }
+
+  writeFileSync("prompts.json", JSON.stringify(results, null, 2));
+  console.log(`Processed ${results.length} images`);
+}
+
+batchProcess("./assets/reference-images", "Stable Diffusion");</code></pre>
+
+      <h3>&#27983;&#35272;&#22120;&#25193;&#23637;&#27169;&#24335;</h3>
+      <p>&#23545;&#20110;&#20998;&#26512;&#29992;&#25143;&#27491;&#22312;&#26597;&#30475;&#30340;&#22270;&#20687;&#30340;&#27983;&#35272;&#22120;&#25193;&#23637;&#65292;&#20320;&#38656;&#35201;&#20174;&#39029;&#38754;&#33719;&#21462;&#22270;&#20687;&#65292;&#22312;&#20869;&#23481;&#33050;&#26412;&#20013;&#23558;&#20854;&#36716;&#25442;&#20026;Base64&#65292;&#21457;&#36865;&#21040;&#20320;&#30340;&#21518;&#31471;serverless&#20989;&#25968;&#65288;&#20197;&#20445;&#25345;API&#23494;&#38053;&#22312;&#26381;&#21153;&#22120;&#31471;&#65289;&#65292;&#28982;&#21518;&#22312;&#24377;&#31383;&#20013;&#26174;&#31034;&#36820;&#22238;&#30340;&#25552;&#31034;&#35789;&#12290;</p>
+
+      <p>&#20851;&#38190;&#27880;&#24847;&#20107;&#39033;&#65306;&#27704;&#36828;&#19981;&#35201;&#22312;&#23458;&#25143;&#31471;JavaScript&#20013;&#26292;&#38706;&#20320;&#30340;Anthropic API&#23494;&#38053;&#12290;&#22987;&#32456;&#36890;&#36807;&#21518;&#31471;&#20989;&#25968;&#20195;&#29702;&#65292;&#22312;&#36716;&#21457;&#21040;Anthropic API&#20043;&#21069;&#39564;&#35777;&#35831;&#27714;&#12290;</p>
+
+      <h2>ImageToPrompt&#20316;&#20026;&#21442;&#32771;&#23454;&#29616;</h2>
+
+      <p><a href="/">ImageToPrompt</a>&#65288;&#26412;&#31449;&#30340;&#24037;&#20855;&#65289;&#26159;&#36825;&#31181;&#27169;&#24335;&#30340;&#24037;&#20316;&#21442;&#32771;&#23454;&#29616;&#12290;&#23427;&#20351;&#29992;Claude Haiku&#36827;&#34892;&#22270;&#20687;&#20998;&#26512;&#65292;Vercel serverless&#20989;&#25968;&#20316;&#20026;&#21518;&#31471;&#65292;Upstash Redis&#36827;&#34892;&#36895;&#29575;&#38480;&#21046;&#65288;&#20813;&#36153;&#23618;&#27599;&#20010;IP&#27599;&#22825;10&#27425;&#35831;&#27714;&#65289;&#65292;&#20197;&#21450;React&#21069;&#31471;&#22788;&#29702;&#22270;&#20687;&#19978;&#20256;&#12289;&#39044;&#35272;&#21644;&#25552;&#31034;&#35789;&#26174;&#31034;&#12290;</p>
+
+      <p>&#23436;&#25972;&#30340;&#26550;&#26500;&#8212;&#8212;serverless&#20989;&#25968;&#12289;&#36895;&#29575;&#38480;&#21046;&#12289;CORS&#22788;&#29702;&#12289;&#38169;&#35823;&#21709;&#24212;&#8212;&#8212;&#20195;&#34920;&#20102;&#19968;&#20010;&#29983;&#20135;&#23601;&#32490;&#30340;&#27169;&#24335;&#65292;&#20320;&#21487;&#20197;&#26681;&#25454;&#33258;&#24049;&#30340;&#20351;&#29992;&#22330;&#26223;&#36827;&#34892;&#35843;&#25972;&#12290;&#22914;&#26524;&#20320;&#27491;&#22312;&#26500;&#24314;&#31867;&#20284;&#30340;&#19996;&#35199;&#65292;&#30740;&#31350;&#19968;&#20010;&#24037;&#20316;&#20013;&#30340;&#23454;&#29616;&#22914;&#20309;&#22788;&#29702;&#36793;&#32536;&#24773;&#20917;&#65288;&#22823;&#25991;&#20214;&#12289;&#19981;&#25903;&#25345;&#30340;&#26684;&#24335;&#12289;&#24182;&#21457;&#35831;&#27714;&#65289;&#27604;&#20219;&#20309;&#25945;&#31243;&#37117;&#26356;&#26377;&#20215;&#20540;&#12290;</p>
+
+      <h2>&#24120;&#35265;&#38382;&#39064;</h2>
+
+      <h3>&#22270;&#29255;&#36716;&#25552;&#31034;&#35789;&#26368;&#22909;&#30340;API&#26159;&#21738;&#20010;&#65311;</h3>
+      <p>&#23545;&#20110;&#22270;&#29255;&#36716;&#25552;&#31034;&#35789;&#65292;Claude Vision&#36890;&#24120;&#29983;&#25104;&#26368;&#32467;&#26500;&#21270;&#12289;&#26368;&#20855;&#33402;&#26415;&#25351;&#23548;&#24847;&#35782;&#30340;&#36755;&#20986;&#12290;GPT-4o&#22312;OpenAI&#29983;&#24577;&#31995;&#32479;&#20013;&#26368;&#36890;&#29992;&#12290;Gemini 1.5 Flash&#26159;&#39640;&#21534;&#21520;&#37327;&#31649;&#36947;&#20013;&#26368;&#32463;&#27982;&#30340;&#36873;&#25321;&#12290;</p>
+
+      <h3>&#22270;&#29255;&#36716;&#25552;&#31034;&#35789;&#27599;&#24352;&#22270;&#20687;&#30340;API&#35843;&#29992;&#25104;&#26412;&#26159;&#22810;&#23569;&#65311;</h3>
+      <p>&#25104;&#26412;&#22240;&#25552;&#20379;&#21830;&#32780;&#24322;&#12290;Claude Haiku&#22823;&#32422;&#27599;1000&#24352;&#22270;&#20687;$0.40&#65292;GPT-4o mini&#32422;$0.23&#65292;Gemini 1.5 Flash&#26368;&#20415;&#23452;&#65292;&#32422;$0.08&#12290;&#36825;&#20123;&#26159;&#20856;&#22411;1024x1024 JPEG&#30340;&#20272;&#31639;&#20540;&#12290;</p>
+
+      <h3>&#24212;&#35813;&#20351;&#29992;Base64&#36824;&#26159;URL&#21457;&#36865;&#22270;&#20687;&#32473;API&#65311;</h3>
+      <p>Base64&#25512;&#33616;&#29992;&#20110;&#29983;&#20135;&#29615;&#22659;&#65292;&#22240;&#20026;&#24310;&#36831;&#26356;&#21487;&#39044;&#27979;&#12290;URL&#26356;&#36866;&#21512;&#21407;&#22411;&#24320;&#21457;&#21644;&#24555;&#36895;&#27979;&#35797;&#12290;&#27599;&#24352;&#22270;&#20687;&#26368;&#22823;&#38480;&#21046;5MB&#12290;</p>
+
+      <h3>&#22914;&#20309;&#38477;&#20302;&#22270;&#29255;&#36716;&#25552;&#31034;&#35789;API&#30340;&#25104;&#26412;&#65311;</h3>
+      <p>&#20351;&#29992;&#22522;&#20110;&#22270;&#20687;&#20869;&#23481;&#21704;&#24076;&#30340;&#32531;&#23384;&#31574;&#30053;&#65292;&#36991;&#20813;&#37325;&#22797;&#20998;&#26512;&#21516;&#19968;&#24352;&#22270;&#20687;&#12290;&#23545;&#20110;&#39640;&#21534;&#21520;&#37327;&#22330;&#26223;&#65292;&#21487;&#20197;&#36873;&#25321;Gemini Flash&#25110;GPT-4o mini&#12290;&#23545;&#20110;&#36136;&#37327;&#20248;&#20808;&#30340;&#22330;&#26223;&#65292;Claude Haiku&#25552;&#20379;&#20102;&#26368;&#20339;&#30340;&#24615;&#20215;&#27604;&#12290;</p>
+
+      <div class="related-guides">
+        <h3>&#30456;&#20851;&#25351;&#21335;</h3>
+        <ul>
+          <li><a href="/blog/convert-image-to-ai-prompt/">How to Convert Any Image to an AI Prompt</a></li>
+          <li><a href="/blog/best-image-to-prompt-tools-2026/">Best Image-to-Prompt Tools 2026</a></li>
+          <li><a href="/blog/reverse-engineer-ai-art-prompts/">Reverse Engineer AI Art Prompts</a></li>
+          <li><a href="/blog/prompt-engineering-for-ai-art/">Prompt Engineering for AI Art</a></li>
+          <li><a href="/blog/midjourney-prompt-guide-2026/">Midjourney Prompt Guide 2026</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="author-bio">
+      <svg class="author-photo" width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="&#20316;&#32773;&#22836;&#20687;"><circle cx="32" cy="32" r="32" fill="#2a1f4e"/><circle cx="32" cy="26" r="11" fill="#7c6bc4"/><ellipse cx="32" cy="52" rx="18" ry="11" fill="#7c6bc4"/></svg>
+      <div class="author-info">
+        <p class="author-name">ImageToPrompt Team</p>
+        <p class="author-desc">&#25105;&#20204;&#26159;&#19968;&#25903;&#19987;&#19994;&#22242;&#38431;&#65292;&#33268;&#21147;&#20110;&#24110;&#21161;&#21019;&#20316;&#32773;&#25484;&#25569;AI&#22270;&#20687;&#29983;&#25104;&#25216;&#26415;&#12290;&#36890;&#36807;&#22270;&#20687;&#36716;&#25552;&#31034;&#35789;&#24037;&#20855;&#21644;AI&#25552;&#31034;&#35789;&#24037;&#31243;&#25351;&#21335;&#65292;&#25105;&#20204;&#20026;&#20840;&#29699;&#33402;&#26415;&#23478;&#30340;&#21019;&#20316;&#25552;&#20379;&#25903;&#25345;&#12290;</p>
+        <a href="https://x.com/Ilyass14286541" class="author-link">&#22312;X&#19978;&#20851;&#27880; &#8594;</a>
+      </div>
+    </div>
+
+    <div class="related-posts">
+      <h2>&#30456;&#20851;&#25351;&#21335;</h2>
+      <div class="related-grid">
+        <a href="/blog/convert-image-to-ai-prompt/" class="related-card">
+          <p class="tag">&#25351;&#21335;</p>
+          <h3>&#22914;&#20309;&#23558;&#22270;&#20687;&#36716;&#25442;&#20026;AI&#25552;&#31034;&#35789;</h3>
+        </a>
+        <a href="/blog/best-image-to-prompt-tools-2026/" class="related-card">
+          <p class="tag">&#23545;&#27604;</p>
+          <h3>2026&#24180;&#26368;&#20339;&#22270;&#20687;&#36716;&#25552;&#31034;&#35789;&#24037;&#20855;</h3>
+        </a>
+        <a href="/blog/reverse-engineer-ai-art-prompts/" class="related-card">
+          <p class="tag">&#25351;&#21335;</p>
+          <h3>&#22914;&#20309;&#36870;&#21521;&#24037;&#31243;AI&#33402;&#26415;&#25552;&#31034;&#35789;</h3>
+        </a>
+        <a href="/blog/prompt-engineering-for-ai-art/" class="related-card">
+          <p class="tag">&#20837;&#38376;</p>
+          <h3>AI&#33402;&#26415;&#30340;&#25552;&#31034;&#35789;&#24037;&#31243;</h3>
+        </a>
+      </div>
+    </div>
+
+  </div>
+
+  <footer class="footer-4col">
+    <div class="f4-inner">
+      <div class="f4-brand">
+        <img src="/favicon.svg" alt="ImageToPrompt" width="28" height="28">
+        <span class="f4-brand-name">ImageTo<span class="accent">Prompt</span></span>
+        <span class="f4-brand-sub">&mdash; Free AI Prompt Generator</span>
+      </div>
+      <div class="f4-grid">
+        <div class="f4-section">
+          <h4 class="f4-heading">Image Prompt Tools</h4>
+          <a href="/">Image to Prompt</a>
+          <a href="/text-to-prompt/">Text to Prompt</a>
+      <a href="/describe-image/">Describe Image</a>
+          <a href="/midjourney-prompt-generator/">Midjourney</a>
+          <a href="/stable-diffusion-prompt-generator/">Stable Diffusion</a>
+          <a href="/flux-prompt-generator/">Flux</a>
+          <a href="/dall-e-prompt-generator/">DALL-E 3</a>
+          <a href="/adobe-firefly-prompt-generator/">Adobe Firefly</a>
+          <a href="/leonardo-ai-prompt-generator/">Leonardo AI</a>
+          <a href="/ideogram-prompt-generator/">Ideogram</a>
+        </div>
+        <div class="f4-section">
+          <h4 class="f4-heading">Video Prompt Tools</h4>
+          <a href="/image-to-video-prompt/">Image to Video Prompt</a>
+          <a href="/text-to-video-prompt/">Text to Video Prompt</a>
+          <a href="/veo-prompt-generator/">Veo / Flow Studio</a>
+          <a href="/kling-prompt-generator/">Kling AI</a>
+          <a href="/runway-prompt-generator/">Runway Gen-3</a>
+          <a href="/pika-prompt-generator/">Pika</a>
+          <a href="/luma-prompt-generator/">Luma Dream Machine</a>
+          <a href="/sora-prompt-generator/">Sora</a>
+          <a href="/minimax-prompt-generator/">Minimax</a>
+          <a href="/stable-video-prompt-generator/">Stable Video</a>
+        </div>
+        <div class="f4-section">
+          <h4 class="f4-heading">Resources</h4>
+          <a href="/zh/blog/">&#21338;&#23458;</a>
+          <a href="/zh/about/">&#20851;&#20110;</a>
+          <a href="/zh/pricing/">&#20215;&#26684;</a>
+          <a href="/contact/">Contact</a>
+          <a href="/privacy-policy/">Privacy Policy</a>
+          <a href="/terms-of-service/">Terms of Service</a>
+        </div>
+        <div class="f4-section">
+          <h4 class="f4-heading">Languages</h4>
+          <a href="/">English</a>
+          <a href="/fr/">Fran&#231;ais</a>
+          <a href="/ar/">&#1575;&#1604;&#1593;&#1585;&#1576;&#1610;&#1577;</a>
+          <a href="/es/">Espa&#241;ol</a>
+          <a href="/ko/">&#54620;&#44397;&#50612;</a>
+          <a href="/ja/">&#26085;&#26412;&#35486;</a>
+          <a href="/ru/">&#1056;&#1091;&#1089;&#1089;&#1082;&#1080;&#1081;</a>
+          <a href="/zh/">&#20013;&#25991;</a>
+        </div>
+      </div>
+      <div class="f4-bottom">
+        <p>&#169; 2026 ImageToPrompt.dev &#8212; Free AI Prompt Generator</p>
+        <p>Your images are never stored. All analysis is ephemeral and private.</p>
+      </div>
+    </div>
+  </footer>
+
+<script src="/newsletter-inject.js" defer></script>
+<script src="/nav.js" defer></script>
+  <script>
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', function() {
+    navigator.serviceWorker.register('/sw.js')
+      .catch(function(err) { console.warn('SW registration failed:', err); });
+  });
+}
+</script>
+</body>
+</html>

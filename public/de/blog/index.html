@@ -1,0 +1,400 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <script src="/theme-toggle.js"></script>
+  <meta charset="UTF-8" />
+  <link rel="dns-prefetch" href="https://www.googletagmanager.com">
+<link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="max-image-preview:large, index, follow">
+  <meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="ImageToPrompt">
+  <title>KI-Prompt-Engineering Leitf&#228;den &#8212; Midjourney, Flux &amp; mehr | ImageToPrompt</title>
+  <meta name="description" content="Praktische Leitf&#228;den zum Schreiben besserer Prompts f&#252;r Midjourney, Stable Diffusion, DALL&#183;E 3 und Flux. Lernen Sie, Bilder in Prompts umzuwandeln und meistern Sie die KI-Kunst." />
+  <link rel="canonical" href="https://www.imagetoprompt.dev/de/blog/" />
+  <link rel="alternate" hreflang="de" href="https://www.imagetoprompt.dev/de/blog/" />
+  <link rel="alternate" hreflang="en" href="https://www.imagetoprompt.dev/blog/" />
+  <link rel="alternate" hreflang="x-default" href="https://www.imagetoprompt.dev/blog/" />
+  <meta property="og:title" content="KI-Prompt-Engineering Blog | ImageToPrompt" />
+  <meta property="og:description" content="Praktische Leitf&#228;den zum Schreiben besserer Prompts f&#252;r Midjourney, Stable Diffusion, DALL-E 3 und Flux." />
+  <meta property="og:url" content="https://www.imagetoprompt.dev/de/blog/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="https://www.imagetoprompt.dev/og-image.png" />
+  <meta property="og:site_name" content="ImageToPrompt" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="KI-Prompt-Engineering Blog | ImageToPrompt" />
+  <meta name="twitter:description" content="Praktische Leitf&#228;den zum Schreiben besserer KI-Kunst-Prompts." />
+  <meta name="twitter:image" content="https://www.imagetoprompt.dev/og-image.png" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="48x48" href="/favicon-48.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+  <link rel="manifest" href="/site.webmanifest" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="/fonts/space-grotesk-700.woff2" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="/fonts/inter-400.woff2" />
+  <link rel="stylesheet" href="/theme.css">
+  <link rel="preload" href="/blog.css" as="style" onload="this.onload=null;this.rel='stylesheet'"><noscript><link rel="stylesheet" href="/blog.css"></noscript>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Blog",
+    "name": "ImageToPrompt Blog",
+    "url": "https://www.imagetoprompt.dev/de/blog/",
+    "description": "Praktische Leitf&#228;den zum Schreiben besserer Prompts f&#252;r Midjourney, Stable Diffusion, DALL-E 3 und Flux.",
+    "inLanguage": "de",
+    "publisher": {
+      "@type": "Organization",
+      "name": "ImageToPrompt",
+      "url": "https://www.imagetoprompt.dev/"
+    }
+  }
+  </script>
+    <!-- Google AdSense -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4499206373485728" crossorigin="anonymous"></script>
+    <!-- Web Push Notifications -->
+<script src="https://cdn.onesignal.com/sdks/web/v16/OneSignalSDK.page.js" defer></script>
+<script>
+  window.OneSignalDeferred = window.OneSignalDeferred || [];
+  OneSignalDeferred.push(async function(OneSignal) {
+    await OneSignal.init({
+      appId: "REPLACE_WITH_ONESIGNAL_APP_ID",
+      notifyButton: { enable: false }
+    });
+  });
+</script>
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="inner">
+      <a href="/de/" class="site-logo"><img src="/favicon.svg" alt="ImageToPrompt" width="48" height="48"><div class="site-logo-text">ImageTo<span class="accent">Prompt</span><span class="site-logo-sub">Kostenloser KI-Prompt-Generator</span></div></a>
+      <nav class="site-nav" aria-label="Hauptnavigation">
+        <div class="nav-dropdown">
+          <button class="nav-dropdown-trigger" aria-haspopup="true" aria-expanded="false">Tools <span class="nav-chevron" aria-hidden="true">&#9660;</span></button>
+          <div class="nav-dropdown-menu" role="menu">
+            <div class="nav-mega-grid">
+              <div class="nav-mega-col">
+                <div class="nav-mega-heading">&#128444; IMAGE TOOLS</div>
+                <a href="/" role="menuitem" class="nav-mega-tool">Image to Prompt <span class="nav-mega-arrow">&#8594;</span></a>
+                <a href="/text-to-prompt/" role="menuitem" class="nav-mega-tool">Text to Prompt <span class="nav-mega-arrow">&#8594;</span></a>
+                <a href="/describe-image/" role="menuitem" class="nav-mega-tool">Describe Image <span class="nav-new-badge">NEW</span> <span class="nav-mega-arrow">&#8594;</span></a>
+                <div class="nav-mega-models-label">Models</div>
+                <div class="nav-mega-models"><a href="/midjourney-prompt-generator/">Midjourney</a><span class="nav-dot">&#xB7;</span><a href="/stable-diffusion-prompt-generator/">SD</a></div>
+                <div class="nav-mega-models"><a href="/flux-prompt-generator/">Flux</a><span class="nav-dot">&#xB7;</span><a href="/dall-e-prompt-generator/">DALL&#xB7;E&#xA0;3</a></div>
+                <div class="nav-mega-models"><a href="/adobe-firefly-prompt-generator/">Firefly</a><span class="nav-dot">&#xB7;</span><a href="/leonardo-ai-prompt-generator/">Leonardo</a></div>
+                <div class="nav-mega-models"><a href="/ideogram-prompt-generator/">Ideogram</a></div>
+              </div>
+              <div class="nav-mega-divider" aria-hidden="true"></div>
+              <div class="nav-mega-col">
+                <div class="nav-mega-heading">&#127909; VIDEO TOOLS</div>
+                <a href="/?tab=image-to-video" role="menuitem" class="nav-mega-tool">Image to Video <span class="nav-mega-arrow">&#8594;</span></a>
+                <a href="/?tab=text-to-video" role="menuitem" class="nav-mega-tool">Text to Video <span class="nav-mega-arrow">&#8594;</span></a>
+                <div class="nav-mega-models-label">Models</div>
+                <div class="nav-mega-models"><a href="/veo-prompt-generator/">Veo</a><span class="nav-dot">&#xB7;</span><a href="/kling-prompt-generator/">Kling</a></div>
+                <div class="nav-mega-models"><a href="/runway-prompt-generator/">Runway</a><span class="nav-dot">&#xB7;</span><a href="/pika-prompt-generator/">Pika</a></div>
+                <div class="nav-mega-models"><a href="/luma-prompt-generator/">Luma</a><span class="nav-dot">&#xB7;</span><a href="/sora-prompt-generator/">Sora</a></div>
+                <div class="nav-mega-models"><a href="/minimax-prompt-generator/">Minimax</a><span class="nav-dot">&#xB7;</span><a href="/stable-video-prompt-generator/">Stable</a></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <a href="/de/blog/" class="active">Blog</a>
+        <a href="/de/pricing/" class="nav-pill-pricing">Preise</a>
+        <a href="/de/about/" class="nav-pill-about">&#220;ber uns</a>
+        <a href="/de/" class="nav-try-free">Kostenlos testen &#8594;</a>
+        <button id="theme-toggle" onclick="toggleTheme()" aria-label="Design wechseln" title="Design wechseln">&#9728;&#xFE0F;</button>
+  </nav>
+    </div>
+  </header>
+
+  <div class="page-wrapper">
+
+    <div style="margin-bottom:2.5rem">
+      <p class="article-tag">Blog &amp; Leitf&#228;den</p>
+      <h1 style="font-family:'Space Grotesk',Inter,system-ui,sans-serif;font-size:clamp(1.75rem,4vw,2.25rem);font-weight:700;background:linear-gradient(135deg,#e040fb,#00e5ff);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;line-height:1.2;margin-bottom:0.75rem">KI-Prompt-Engineering Leitf&#228;den</h1>
+      <p style="color:var(--text-muted);font-size:1rem;max-width:36rem;line-height:1.6">Praktische Leitf&#228;den zum Schreiben besserer Prompts f&#252;r Midjourney, Stable Diffusion, DALL&#183;E 3 und Flux. Lernen Sie, Bilder in Prompts umzuwandeln und meistern Sie die KI-Kunst.</p>
+    </div>
+
+    <div class="post-list">
+
+      <a href="/de/blog/bild-in-ai-prompt-umwandeln/" class="post-card">
+        <p class="tag">Schritt-f&#252;r-Schritt-Anleitung</p>
+        <h2>So wandeln Sie jedes Bild in einen KI-Prompt um (Schritt-f&#252;r-Schritt-Anleitung)</h2>
+        <p>Erfahren Sie genau, wie Sie Bild-zu-Prompt-Tools nutzen, um hochwertige KI-Prompts aus jedem Foto, jeder Illustration oder jedem Screenshot zu erhalten.</p>
+        <p class="meta">M&#228;rz 2026 &#183; 8 Min. Lesezeit</p>
+      </a>
+
+      <a href="/de/blog/reverse-engineering-ai-prompts/" class="post-card">
+        <p class="tag">Tutorial</p>
+        <h2>Reverse Engineering von KI-Kunst-Prompts aus jedem Bild</h2>
+        <p>Entdecken Sie die Techniken, die professionelle KI-K&#252;nstler nutzen, um Prompts aus bestehenden KI-Kunstwerken zu extrahieren, anzupassen und zu verbessern.</p>
+        <p class="meta">M&#228;rz 2026 &#183; 9 Min. Lesezeit</p>
+      </a>
+
+      <a href="/de/blog/midjourney-prompt-leitfaden-2026/" class="post-card">
+        <p class="tag">Midjourney-Leitfaden</p>
+        <h2>Midjourney Prompts: Der vollst&#228;ndige Leitfaden f&#252;r bessere Prompts in 2026</h2>
+        <p>Alles, was Sie &#252;ber Midjourney-Prompt-Struktur, Parameter (--ar, --v, --style, --chaos) und fortgeschrittene Techniken f&#252;r konstant gro&#223;artige Ergebnisse wissen m&#252;ssen.</p>
+        <p class="meta">M&#228;rz 2026 &#183; 11 Min. Lesezeit</p>
+      </a>
+
+      <a href="/de/blog/stable-diffusion-vs-midjourney-vs-dalle3/" class="post-card">
+        <p class="tag">Vergleich</p>
+        <h2>Stable Diffusion vs Midjourney vs DALL-E 3 vs Flux: Prompt-Unterschiede erkl&#228;rt</h2>
+        <p>Wie sich Prompt-Syntax, Stil und Struktur bei den vier gro&#223;en KI-Bildgeneratoren unterscheiden. Verstehen Sie, warum derselbe Prompt unterschiedliche Ergebnisse liefert.</p>
+        <p class="meta">M&#228;rz 2026 &#183; 10 Min. Lesezeit</p>
+      </a>
+
+      <a href="/de/blog/prompt-engineering-ai-kunst/" class="post-card">
+        <p class="tag">Einsteiger-Leitfaden</p>
+        <h2>Was ist Prompt Engineering f&#252;r KI-Kunst? Ein Leitfaden f&#252;r Einsteiger</h2>
+        <p>Starten Sie bei Null und lernen Sie die Grundlagen effektiver KI-Bild-Prompts. Behandelt Motiv, Stil, Komposition, Beleuchtung und technische Parameter.</p>
+        <p class="meta">M&#228;rz 2026 &#183; 10 Min. Lesezeit</p>
+      </a>
+
+      <a href="/de/blog/beste-bild-zu-prompt-tools-2026/" class="post-card">
+        <p class="tag">Tool-Vergleich</p>
+        <h2>Die 7 besten Bild-zu-Prompt-Generatoren 2026 (ehrlicher Vergleich)</h2>
+        <p>Vergleichen Sie die 7 besten Bild-zu-Prompt-Tools 2026. Ehrliche Bewertungen von ImageToPrompt, CLIP Interrogator, WD14 Tagger, Midjourney /describe und mehr.</p>
+        <p class="meta">M&#228;rz 2026 &#183; 12 Min. Lesezeit</p>
+      </a>
+
+      <a href="/de/blog/dall-e-3-prompt-leitfaden/" class="post-card">
+        <p class="tag">DALL&#183;E 3-Leitfaden</p>
+        <h2>DALL-E 3 Prompt-Leitfaden 2026: Perfekte Prompts f&#252;r OpenAIs Bildgenerator</h2>
+        <p>Meistern Sie DALL&#183;E 3-Prompts mit satzbasierten Prompts, Textrendering, Stilbeschreibungen und Tipps f&#252;r ChatGPT, API und Bing Image Creator.</p>
+        <p class="meta">M&#228;rz 2026 &#183; 10 Min. Lesezeit</p>
+      </a>
+
+      <a href="/de/blog/stable-diffusion-prompt-leitfaden/" class="post-card">
+        <p class="tag">Stable Diffusion</p>
+        <h2>Stable Diffusion Prompt-Leitfaden 2026: Von Grundlagen bis Fortgeschritten</h2>
+        <p>Der vollst&#228;ndige Stable-Diffusion-Prompting-Leitfaden. Meistern Sie gewichtete Prompts, negative Prompts, CFG Scale, Sampler-Auswahl und Modellunterschiede f&#252;r SD 1.5, SDXL und SD 3.5.</p>
+        <p class="meta">M&#228;rz 2026 &#183; 13 Min. Lesezeit</p>
+      </a>
+
+      <a href="/de/blog/flux-ai-prompt-leitfaden/" class="post-card">
+        <p class="tag">Flux AI</p>
+        <h2>Flux AI Prompt-Leitfaden 2026: Perfekte Prompts f&#252;r Flux.1 Dev, Pro &amp; Schnell</h2>
+        <p>Meistern Sie Flux AI-Prompting in 2026. Lernen Sie nat&#252;rlichsprachliche Prompts, Kameraeinstellungen, Beleuchtungsbegriffe und Stilbeschreibungen f&#252;r alle drei Flux.1-Modellvarianten.</p>
+        <p class="meta">M&#228;rz 2026 &#183; 13 Min. Lesezeit</p>
+      </a>
+
+      <a href="/de/blog/ideogram-prompt-leitfaden/" class="post-card">
+        <p class="tag">Ideogram-Leitfaden</p>
+        <h2>Ideogram Prompt-Leitfaden 2026: Text-in-Bild-KI-Generierung meistern</h2>
+        <p>Vollst&#228;ndiger Leitfaden zum Schreiben von Ideogram-Prompts. Lernen Sie Textrendering-Syntax, Typografie-Stile, Poster-Design, Logo-Erstellung und Zitatgrafiken.</p>
+        <p class="meta">M&#228;rz 2026 &#183; 9 Min. Lesezeit</p>
+      </a>
+
+      <a href="/de/blog/leonardo-ai-prompt-leitfaden/" class="post-card">
+        <p class="tag">Leonardo AI</p>
+        <h2>Leonardo AI Prompt-Leitfaden 2026: Game Art, Charaktere &amp; Konzeptdesign meistern</h2>
+        <p>Vollst&#228;ndiger Leonardo AI-Prompting-Leitfaden mit Phoenix, AlbedoBase XL, Alchemy-Modus, Bildsteuerung und professionellen Prompt-Vorlagen f&#252;r Game Art.</p>
+        <p class="meta">M&#228;rz 2026 &#183; 9 Min. Lesezeit</p>
+      </a>
+
+      <a href="/de/blog/adobe-firefly-prompt-tipps/" class="post-card">
+        <p class="tag">Adobe Firefly</p>
+        <h2>Adobe Firefly Prompt-Tipps f&#252;r kommerzielle und professionelle Nutzung</h2>
+        <p>Meistern Sie Adobe Firefly-Prompts mit Expertentipps zu Stilmodifikatoren, Content Credentials, Generative-Fill-Techniken und kommerziell sichere KI-Kunst.</p>
+        <p class="meta">M&#228;rz 2026 &#183; 9 Min. Lesezeit</p>
+      </a>
+
+      <a href="/de/blog/ai-prompts-schreiben-anfaenger/" class="post-card">
+        <p class="tag">Einsteiger-Tutorial</p>
+        <h2>KI-Bild-Prompts schreiben f&#252;r Anf&#228;nger: Vollst&#228;ndiges Tutorial 2026</h2>
+        <p>Starten Sie bei Null und meistern Sie das KI-Bild-Prompting. Schritt-f&#252;r-Schritt-Tutorial zu Motiv, Stil, Komposition, Beleuchtung und technischen Parametern &#8212; mit &#220;bungen und Beispielen.</p>
+        <p class="meta">M&#228;rz 2026 &#183; 10 Min. Lesezeit</p>
+      </a>
+
+      <a href="/de/blog/ai-prompt-aus-foto/" class="post-card">
+        <p class="tag">Praxis-Leitfaden</p>
+        <h2>So erstellen Sie einen KI-Prompt aus jedem Foto (3 Methoden, die funktionieren)</h2>
+        <p>Verwandeln Sie jedes reale Foto in einen KI-Generierungsprompt mit drei erprobten Methoden: automatische Extraktion, manuelle Analyse und hybride Ans&#228;tze.</p>
+        <p class="meta">M&#228;rz 2026 &#183; 9 Min. Lesezeit</p>
+      </a>
+
+      <a href="/de/blog/bild-zu-prompt-api/" class="post-card">
+        <p class="tag">Entwickler-Leitfaden</p>
+        <h2>Bild-zu-Prompt-API: KI-Bildanalyse in Ihre App integrieren (Leitfaden 2026)</h2>
+        <p>So integrieren Sie Bild-zu-Prompt-Funktionalit&#228;t mit Claude Vision, GPT-4V und Gemini APIs. Inklusive Python- und JavaScript-Codebeispiele und Produktionsarchitektur.</p>
+        <p class="meta">M&#228;rz 2026 &#183; 9 Min. Lesezeit</p>
+      </a>
+
+      <a href="/de/blog/ai-kunststile-glossar/" class="post-card">
+        <p class="tag">Nachschlagewerk</p>
+        <h2>KI-Kunststile-Glossar: 50 Stile erkl&#228;rt mit Beispielen</h2>
+        <p>Das ultimative Glossar mit 50 KI-Kunststilen &#8212; von Impressionismus bis Cyberpunk. Erfahren Sie, was jeder Stilbegriff bedeutet und welche KI-Modelle ihn am besten umsetzen.</p>
+        <p class="meta">M&#228;rz 2026 &#183; 15 Min. Lesezeit</p>
+      </a>
+
+      <a href="/de/blog/bild-zu-prompt-produktfotografie/" class="post-card">
+        <p class="tag">E-Commerce</p>
+        <h2>Bild zu Prompt f&#252;r Produktfotografie: KI-E-Commerce-Bildleitfaden</h2>
+        <p>Nutzen Sie Bild-zu-Prompt-Tools, um Produktfotografie mit KI nachzubilden und zu verbessern. Prompt-Vorlagen f&#252;r Schmuck, Kleidung, Elektronik, Lebensmittel und Kosmetik.</p>
+        <p class="meta">M&#228;rz 2026 &#183; 9 Min. Lesezeit</p>
+      </a>
+
+      <a href="/de/blog/bild-zu-prompt-logo-design/" class="post-card">
+        <p class="tag">Logo-Design</p>
+        <h2>KI-Logo-Design mit Bild-zu-Prompt: Markenlogos mit KI erstellen (Leitfaden 2026)</h2>
+        <p>Erfahren Sie, wie Sie Bild-zu-Prompt-Tools f&#252;r KI-generierte Logos nutzen. Beste Tools, Prompt-Vorlagen und Tipps f&#252;r Midjourney, DALL&#183;E 3, Ideogram und Adobe Firefly.</p>
+        <p class="meta">M&#228;rz 2026 &#183; 9 Min. Lesezeit</p>
+      </a>
+
+      <a href="/de/blog/bild-zu-prompt-social-media/" class="post-card">
+        <p class="tag">Social Media</p>
+        <h2>Bild zu Prompt f&#252;r Social Media: Virale KI-Inhalte f&#252;r Instagram &amp; TikTok</h2>
+        <p>Nutzen Sie KI-Bildgeneratoren f&#252;r ansprechende Social-Media-Inhalte. Plattformspezifische Prompt-Vorlagen f&#252;r Instagram, TikTok, Pinterest und LinkedIn.</p>
+        <p class="meta">M&#228;rz 2026 &#183; 9 Min. Lesezeit</p>
+      </a>
+
+      <a href="/de/blog/bild-zu-prompt-inneneinrichtung/" class="post-card">
+        <p class="tag">Inneneinrichtung</p>
+        <h2>KI-Inneneinrichtung mit Bild-zu-Prompt: Jeden Raumstil mit KI visualisieren</h2>
+        <p>Erstellen Sie KI-Inneneinrichtungs-Visualisierungen aus Referenzfotos. Raumspezifische Prompt-Vorlagen f&#252;r Wohnzimmer, Schlafzimmer, K&#252;chen und B&#252;ros in verschiedenen Stilen.</p>
+        <p class="meta">M&#228;rz 2026 &#183; 9 Min. Lesezeit</p>
+      </a>
+
+      <a href="/de/blog/bild-zu-prompt-anime/" class="post-card">
+        <p class="tag">Anime-KI-Kunst</p>
+        <h2>Bild zu Prompt f&#252;r Anime: Anime-Kunst in KI-Prompts umwandeln</h2>
+        <p>Lernen Sie, Anime-Bilder in KI-Prompts f&#252;r Stable Diffusion, NovelAI und Midjourney umzuwandeln. Behandelt Booru-Tags, Qualit&#228;ts-Token, Charaktermerkmale und Stil-&#196;sthetik.</p>
+        <p class="meta">M&#228;rz 2026 &#183; 10 Min. Lesezeit</p>
+      </a>
+
+      <a href="/de/blog/bild-zu-prompt-game-art/" class="post-card">
+        <p class="tag">Spieleentwicklung</p>
+        <h2>KI-Game-Art mit Bild-zu-Prompt: Charaktere, Umgebungen &amp; UI generieren</h2>
+        <p>Wie Indie-Spieleentwickler KI nutzen, um Charakterkonzepte, Umgebungskunst, UI-Assets und Texturen zu erstellen. Mit Leonardo AI, Stable Diffusion und Stilkonsistenz-Techniken.</p>
+        <p class="meta">M&#228;rz 2026 &#183; 9 Min. Lesezeit</p>
+      </a>
+
+      <a href="/de/blog/negative-prompts-stable-diffusion/" class="post-card">
+        <p class="tag">Stable Diffusion</p>
+        <h2>Negative Prompts f&#252;r Stable Diffusion: Der vollst&#228;ndige Leitfaden (2026)</h2>
+        <p>Meistern Sie negative Prompts in Stable Diffusion. Universelle negative Prompts, modellspezifische f&#252;r SD 1.5/SDXL/SD 3.5, und wie der CFG Scale die St&#228;rke beeinflusst.</p>
+        <p class="meta">M&#228;rz 2026 &#183; 11 Min. Lesezeit</p>
+      </a>
+
+      <a href="/de/blog/prompt-engineering-fehler/" class="post-card">
+        <p class="tag">Tipps &amp; Fehler</p>
+        <h2>15 KI-Prompt-Engineering-Fehler (und wie Sie jeden beheben)</h2>
+        <p>Vermeiden Sie die 15 h&#228;ufigsten Fehler beim KI-Bild-Prompting. Von vagen Beschreibungen bis zur falschen Modell-Syntax &#8212; mit Vorher/Nachher-Vergleichen f&#252;r jeden Fehler.</p>
+        <p class="meta">M&#228;rz 2026 &#183; 10 Min. Lesezeit</p>
+      </a>
+
+      <a href="/de/blog/midjourney-vs-flux/" class="post-card">
+        <p class="tag">Vergleich</p>
+        <h2>Midjourney vs Flux AI: Welcher ist besser in 2026? (Seite-an-Seite-Vergleich)</h2>
+        <p>Midjourney vs Flux AI im Vergleich bei Bildqualit&#228;t, Prompt-Stil, Geschwindigkeit, Preisen und Anwendungsf&#228;llen. Eine ehrliche Analyse, die Ihnen bei der Entscheidung hilft.</p>
+        <p class="meta">M&#228;rz 2026 &#183; 11 Min. Lesezeit</p>
+      </a>
+
+      <a href="/de/blog/text-zu-prompt-generator/" class="post-card">
+        <p class="tag">Text-zu-Prompt-Tool</p>
+        <h2>Text zu Prompt: Verwandeln Sie Ihre Beschreibungen in professionelle KI-Prompts</h2>
+        <p>Geben Sie eine einfache Idee ein und erhalten Sie einen professionellen, f&#252;r Ihr gew&#228;hltes KI-Modell optimierten Prompt. Vollst&#228;ndiger Leitfaden zum Text-zu-Prompt-Generator.</p>
+        <p class="meta">M&#228;rz 2026 &#183; 8 Min. Lesezeit</p>
+      </a>
+
+      <a href="/de/blog/veo-vs-kling-vs-runway/" class="post-card">
+        <p class="tag">KI-Video-Vergleich</p>
+        <h2>Veo vs Kling vs Runway vs Sora: Bester KI-Videogenerator 2026</h2>
+        <p>Ehrlicher Seite-an-Seite-Vergleich der besten KI-Videogeneratoren &#8212; Veo 2, Kling AI und Runway Gen-3. Behandelt Realismus, Bewegungsqualit&#228;t, Preise und beste Anwendungsf&#228;lle.</p>
+        <p class="meta">M&#228;rz 2026 &#183; 11 Min. Lesezeit</p>
+      </a>
+
+      <a href="/de/blog/video-ai-prompt-leitfaden-2026/" class="post-card">
+        <p class="tag">KI-Video-Leitfaden</p>
+        <h2>Der vollst&#228;ndige KI-Video-Prompt-Leitfaden f&#252;r 2026</h2>
+        <p>Meistern Sie das Schreiben von Video-Prompts f&#252;r Veo, Kling, Runway, Pika, Luma und Sora. Lernen Sie Bewegungsbeschreibung, Kameraf&#252;hrung, Szenendynamik und modellspezifische Syntax.</p>
+        <p class="meta">M&#228;rz 2026 &#183; 12 Min. Lesezeit</p>
+      </a>
+
+    </div>
+
+    <div class="cta-box" style="margin-top:3rem">
+      <h3>Bereit es auszuprobieren?</h3>
+      <p>Laden Sie ein beliebiges Bild hoch und erhalten Sie in Sekunden einen optimierten KI-Prompt &#8212; v&#246;llig kostenlos.</p>
+      <a href="/de/" class="cta-btn">Kostenlosen Prompt-Generator testen &#8594;</a>
+    </div>
+
+  </div>
+
+  <footer class="footer-4col">
+    <div class="f4-inner">
+      <div class="f4-brand">
+        <img src="/favicon.svg" alt="ImageToPrompt" width="28" height="28">
+        <span class="f4-brand-name">ImageTo<span class="accent">Prompt</span></span>
+        <span class="f4-brand-sub">&mdash; Kostenloser KI-Prompt-Generator</span>
+      </div>
+      <div class="f4-grid">
+        <div class="f4-section">
+          <h4 class="f4-heading">Image Prompt Tools</h4>
+          <a href="/">Image to Prompt</a>
+          <a href="/text-to-prompt/">Text to Prompt</a>
+      <a href="/describe-image/">Describe Image</a>
+          <a href="/midjourney-prompt-generator/">Midjourney</a>
+          <a href="/stable-diffusion-prompt-generator/">Stable Diffusion</a>
+          <a href="/flux-prompt-generator/">Flux</a>
+          <a href="/dall-e-prompt-generator/">DALL-E 3</a>
+          <a href="/adobe-firefly-prompt-generator/">Adobe Firefly</a>
+          <a href="/leonardo-ai-prompt-generator/">Leonardo AI</a>
+          <a href="/ideogram-prompt-generator/">Ideogram</a>
+        </div>
+        <div class="f4-section">
+          <h4 class="f4-heading">Video Prompt Tools</h4>
+          <a href="/image-to-video-prompt/">Image to Video Prompt</a>
+          <a href="/text-to-video-prompt/">Text to Video Prompt</a>
+          <a href="/veo-prompt-generator/">Veo / Flow Studio</a>
+          <a href="/kling-prompt-generator/">Kling AI</a>
+          <a href="/runway-prompt-generator/">Runway Gen-3</a>
+          <a href="/pika-prompt-generator/">Pika</a>
+          <a href="/luma-prompt-generator/">Luma Dream Machine</a>
+          <a href="/sora-prompt-generator/">Sora</a>
+          <a href="/minimax-prompt-generator/">Minimax</a>
+          <a href="/stable-video-prompt-generator/">Stable Video</a>
+        </div>
+        <div class="f4-section">
+          <h4 class="f4-heading">Resources</h4>
+          <a href="/de/blog/" class="active">Blog</a>
+          <a href="/de/about/">&#220;ber uns</a>
+          <a href="/de/pricing/">Preise</a>
+          <a href="/contact/">Contact</a>
+          <a href="/privacy-policy/">Privacy Policy</a>
+          <a href="/terms-of-service/">Terms of Service</a>
+        </div>
+        <div class="f4-section">
+          <h4 class="f4-heading">Languages</h4>
+          <a href="/">English</a>
+          <a href="/fr/">Fran&#231;ais</a>
+          <a href="/ar/">&#1575;&#1604;&#1593;&#1585;&#1576;&#1610;&#1577;</a>
+          <a href="/es/">Espa&#241;ol</a>
+          <a href="/ko/">&#54620;&#44397;&#50612;</a>
+          <a href="/ja/">&#26085;&#26412;&#35486;</a>
+          <a href="/ru/">&#1056;&#1091;&#1089;&#1089;&#1082;&#1080;&#1081;</a>
+          <a href="/de/">Deutsch</a>
+        </div>
+      </div>
+      <div class="f4-bottom">
+        <p>&#169; 2026 ImageToPrompt.dev &#8212; Kostenloser KI-Prompt-Generator</p>
+        <p>Ihre Bilder werden niemals gespeichert. Alle Analysen sind fl&#252;chtig und privat.</p>
+      </div>
+    </div>
+  </footer>
+
+<script src="/nav.js" defer></script>
+  <script>
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', function() {
+    navigator.serviceWorker.register('/sw.js')
+      .catch(function(err) { console.warn('SW registration failed:', err); });
+  });
+}
+</script>
+</body>
+</html>

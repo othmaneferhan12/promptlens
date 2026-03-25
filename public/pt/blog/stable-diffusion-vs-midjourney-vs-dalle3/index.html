@@ -1,0 +1,595 @@
+<!doctype html>
+<html lang="pt">
+<head>
+  <script src="/theme-toggle.js"></script>
+  <meta charset="UTF-8" />
+  <link rel="dns-prefetch" href="https://www.googletagmanager.com">
+<link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="max-image-preview:large, index, follow">
+  <meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="ImageToPrompt">
+  <title>Stable Diffusion vs Midjourney vs DALL-E 3 vs Flux: Compara&#231;&#227;o de Prompts</title>
+  <meta name="description" content="Como Stable Diffusion, Midjourney, DALL-E 3 e Flux diferem em sintaxe e estilo de prompt? Compara&#231;&#227;o honesta para escolher o melhor gerador de imagens IA." />
+  <link rel="canonical" href="https://www.imagetoprompt.dev/pt/blog/stable-diffusion-vs-midjourney-vs-dalle3/" />
+  <link rel="alternate" hreflang="pt" href="https://www.imagetoprompt.dev/pt/blog/stable-diffusion-vs-midjourney-vs-dalle3/" />
+  <link rel="alternate" hreflang="en" href="https://www.imagetoprompt.dev/blog/stable-diffusion-vs-midjourney-vs-dalle3/" />
+  <link rel="alternate" hreflang="x-default" href="https://www.imagetoprompt.dev/blog/stable-diffusion-vs-midjourney-vs-dalle3/" />
+  <meta property="og:title" content="Stable Diffusion vs Midjourney vs DALL-E 3 vs Flux: Compara&#231;&#227;o de Prompts" />
+  <meta property="og:description" content="Compara&#231;&#227;o detalhada das diferen&#231;as de sintaxe e estilo de prompt entre os quatro principais geradores de imagens IA." />
+  <meta property="og:url" content="https://www.imagetoprompt.dev/pt/blog/stable-diffusion-vs-midjourney-vs-dalle3/" />
+  <meta property="og:type" content="article" />
+  <meta property="og:image" content="https://www.imagetoprompt.dev/og-image.png" />
+  <meta property="og:site_name" content="ImageToPrompt" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Stable Diffusion vs Midjourney vs DALL-E 3 vs Flux: Compara&#231;&#227;o de Prompts" />
+  <meta name="twitter:description" content="Compara&#231;&#227;o detalhada dos 4 principais geradores IA para escolher a ferramenta certa." />
+  <meta name="twitter:image" content="https://www.imagetoprompt.dev/og-image.png" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="48x48" href="/favicon-48.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+  <link rel="manifest" href="/site.webmanifest" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="/fonts/space-grotesk-700.woff2" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="/fonts/inter-400.woff2" />
+  <link rel="stylesheet" href="/theme.css">
+  <link rel="preload" href="/blog.css" as="style" onload="this.onload=null;this.rel='stylesheet'"><noscript><link rel="stylesheet" href="/blog.css"></noscript>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Stable Diffusion vs Midjourney vs DALL-E 3 vs Flux: Compara&#231;&#227;o de Prompts",
+    "description": "Como Stable Diffusion, Midjourney, DALL-E 3 e Flux diferem em sintaxe e estilo de prompt? Compara&#231;&#227;o honesta para escolher o melhor gerador de imagens IA.",
+    "image": "https://www.imagetoprompt.dev/og-image.png",
+    "datePublished": "2026-03-10",
+    "dateModified": "2026-03-24",
+    "inLanguage": "pt",
+    "author": {
+      "@type": "Person",
+      "name": "ImageToPrompt Team",
+      "url": "https://www.imagetoprompt.dev/"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "ImageToPrompt",
+      "logo": { "@type": "ImageObject", "url": "https://www.imagetoprompt.dev/favicon.svg" }
+    },
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https://www.imagetoprompt.dev/pt/blog/stable-diffusion-vs-midjourney-vs-dalle3/"
+    }
+  }
+  </script>
+    <!-- Google AdSense -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4499206373485728" crossorigin="anonymous"></script>
+    <!-- Web Push Notifications -->
+<script src="https://cdn.onesignal.com/sdks/web/v16/OneSignalSDK.page.js" defer></script>
+<script>
+  window.OneSignalDeferred = window.OneSignalDeferred || [];
+  OneSignalDeferred.push(async function(OneSignal) {
+    await OneSignal.init({
+      appId: "REPLACE_WITH_ONESIGNAL_APP_ID",
+      notifyButton: { enable: false }
+    });
+  });
+</script>
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="inner">
+      <a href="/pt/" class="site-logo"><img src="/favicon.svg" alt="ImageToPrompt" width="48" height="48"><div class="site-logo-text">ImageTo<span class="accent">Prompt</span><span class="site-logo-sub">Gerador de Prompts IA Gratuito</span></div></a>
+      <nav class="site-nav" aria-label="Navega&#231;&#227;o principal">
+        <div class="nav-dropdown">
+          <button class="nav-dropdown-trigger" aria-haspopup="true" aria-expanded="false">Tools <span class="nav-chevron" aria-hidden="true">&#9660;</span></button>
+          <div class="nav-dropdown-menu" role="menu">
+            <div class="nav-mega-grid">
+              <div class="nav-mega-col">
+                <div class="nav-mega-heading">&#128444; IMAGE TOOLS</div>
+                <a href="/" role="menuitem" class="nav-mega-tool">Image to Prompt <span class="nav-mega-arrow">&#8594;</span></a>
+                <a href="/text-to-prompt/" role="menuitem" class="nav-mega-tool">Text to Prompt <span class="nav-mega-arrow">&#8594;</span></a>
+                <a href="/describe-image/" role="menuitem" class="nav-mega-tool">Describe Image <span class="nav-new-badge">NEW</span> <span class="nav-mega-arrow">&#8594;</span></a>
+                <div class="nav-mega-models-label">Models</div>
+                <div class="nav-mega-models"><a href="/midjourney-prompt-generator/">Midjourney</a><span class="nav-dot">&#xB7;</span><a href="/stable-diffusion-prompt-generator/">SD</a></div>
+                <div class="nav-mega-models"><a href="/flux-prompt-generator/">Flux</a><span class="nav-dot">&#xB7;</span><a href="/dall-e-prompt-generator/">DALL&#xB7;E&#xA0;3</a></div>
+                <div class="nav-mega-models"><a href="/adobe-firefly-prompt-generator/">Firefly</a><span class="nav-dot">&#xB7;</span><a href="/leonardo-ai-prompt-generator/">Leonardo</a></div>
+                <div class="nav-mega-models"><a href="/ideogram-prompt-generator/">Ideogram</a></div>
+              </div>
+              <div class="nav-mega-divider" aria-hidden="true"></div>
+              <div class="nav-mega-col">
+                <div class="nav-mega-heading">&#127909; VIDEO TOOLS</div>
+                <a href="/?tab=image-to-video" role="menuitem" class="nav-mega-tool">Image to Video <span class="nav-mega-arrow">&#8594;</span></a>
+                <a href="/?tab=text-to-video" role="menuitem" class="nav-mega-tool">Text to Video <span class="nav-mega-arrow">&#8594;</span></a>
+                <div class="nav-mega-models-label">Models</div>
+                <div class="nav-mega-models"><a href="/veo-prompt-generator/">Veo</a><span class="nav-dot">&#xB7;</span><a href="/kling-prompt-generator/">Kling</a></div>
+                <div class="nav-mega-models"><a href="/runway-prompt-generator/">Runway</a><span class="nav-dot">&#xB7;</span><a href="/pika-prompt-generator/">Pika</a></div>
+                <div class="nav-mega-models"><a href="/luma-prompt-generator/">Luma</a><span class="nav-dot">&#xB7;</span><a href="/sora-prompt-generator/">Sora</a></div>
+                <div class="nav-mega-models"><a href="/minimax-prompt-generator/">Minimax</a><span class="nav-dot">&#xB7;</span><a href="/stable-video-prompt-generator/">Stable</a></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <a href="/pt/blog/" >Blog</a>
+        <a href="/pt/pricing/" class="nav-pill-pricing">Pre&#231;os</a>
+        <a href="/pt/about/" class="nav-pill-about">Sobre</a>
+        <a href="/pt/" class="nav-try-free">Experimentar &#8594;</a>
+        <button id="theme-toggle" onclick="toggleTheme()" aria-label="Alternar tema" title="Alternar tema">&#9728;&#xFE0F;</button>
+  </nav>
+    </div>
+  </header>
+
+  <nav class="breadcrumb" aria-label="Breadcrumb">
+    <a href="/pt/">In&#237;cio</a><span class="sep">&#8250;</span>
+    <a href="/pt/blog/">Blog</a><span class="sep">&#8250;</span>
+    <span>SD vs Midjourney vs DALL&#xB7;E 3 vs Flux</span>
+  </nav>
+
+  <div class="page-wrapper">
+
+    <header class="article-header">
+      <p class="article-tag">Comparativo</p>
+      <h1>Stable Diffusion vs Midjourney vs DALL&#xB7;E 3 vs Flux: Compara&#231;&#227;o de Prompts</h1>
+      <div class="article-meta">
+        <span>Mar&#231;o 2026</span>
+        <span class="dot">&#xB7;</span>
+        <span>10 min de leitura</span>
+        <span class="dot">&#xB7;</span>
+        <span>Todos os principais geradores de imagens IA</span>
+        <span class="dot">&#xB7;</span>
+        <span>Atualizado em mar&#231;o de 2026</span>
+      </div>
+    </header>
+
+    <div class="article-body">
+
+      <p>Voc&#234; j&#225; ouviu dizer que o mesmo prompt produz resultados diferentes dependendo do gerador de imagens IA. &#201; verdade &#8212; mas as diferen&#231;as v&#227;o muito al&#233;m do simples resultado visual. Cada gerador tem sua pr&#243;pria linguagem de prompt, suas pr&#243;prias for&#231;as, suas pr&#243;prias particularidades e seus pr&#243;prios casos de uso ideais.</p>
+
+      <nav class="toc" aria-label="Sum&#225;rio">
+        <details open>
+          <summary>Neste guia</summary>
+          <ol>
+            <li><a href="#midjourney-referencia-artistica">Midjourney: A Refer&#234;ncia Art&#237;stica</a></li>
+            <li><a href="#stable-diffusion-open-source">Stable Diffusion: O Poder Open Source</a></li>
+            <li><a href="#dalle3-linguagem-natural">DALL&#xB7;E 3: Linguagem Natural e Alta Fidelidade</a></li>
+            <li><a href="#flux-fotorrealismo">Flux: O Campe&#227;o do Fotorrealismo</a></li>
+            <li><a href="#comparacao-lado-a-lado">Compara&#231;&#227;o Lado a Lado: O Mesmo Conceito, Quatro Prompts</a></li>
+            <li><a href="#qual-escolher">Qual Gerador de Imagens IA Escolher?</a></li>
+            <li><a href="#comparacao-precos">Compara&#231;&#227;o de Pre&#231;os (Mar&#231;o 2026)</a></li>
+          </ol>
+        </details>
+      </nav>
+
+      <p>Este guia detalha como Stable Diffusion, Midjourney, DALL&#xB7;E 3 e Flux diferem em sintaxe de prompt, estilo e no que cada um faz de melhor. Entender essas diferen&#231;as &#233; essencial se voc&#234; quer resultados consistentemente bons em qualquer uma dessas ferramentas.</p>
+
+      <div class="callout">
+        <p><strong>Dica:</strong> O <a href="/">ImageToPrompt</a> gera prompts espec&#237;ficos para cada modelo para todos esses geradores. Fa&#231;a upload de qualquer imagem de refer&#234;ncia e selecione seu modelo-alvo para obter automaticamente um prompt corretamente formatado.</p>
+      </div>
+
+      <div class="table-wrap">
+      <table class="comparison-table">
+        <thead>
+          <tr>
+            <th>Categoria</th>
+            <th>Midjourney</th>
+            <th>Stable Diffusion</th>
+            <th>DALL&#xB7;E 3</th>
+            <th>Flux</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>Pre&#231;o</td><td>10&#8211;60 US$/m&#234;s</td><td>Gratuito (open source)</td><td>20 US$/m&#234;s (ChatGPT Plus)</td><td>Pagamento por imagem via API</td></tr>
+          <tr><td>Plano Gratuito</td><td>N&#227;o</td><td>Sim (totalmente gratuito)</td><td>Limitado no Bing</td><td>Limitado em algumas plataformas</td></tr>
+          <tr><td>Estilo de Prompt</td><td>Descritivo + par&#226;metros</td><td>Tags ponderadas + prompt negativo</td><td>Frases naturais</td><td>Linguagem natural detalhada</td></tr>
+          <tr><td>Melhor Para</td><td>Art&#237;stico/cinem&#225;tico</td><td>Controle m&#225;ximo, uso local</td><td>Texto em imagens</td><td>Fotorrealismo</td></tr>
+          <tr><td>Fotorrealismo</td><td>Muito bom</td><td>Depende do modelo</td><td>Bom</td><td>Melhor</td></tr>
+          <tr><td>Estilo Art&#237;stico</td><td>Melhor</td><td>Depende do modelo</td><td>Bom</td><td>Moderado</td></tr>
+          <tr><td>Texto em Imagens</td><td>Melhorando (V6+)</td><td>Ruim</td><td>Melhor</td><td>Bom</td></tr>
+          <tr><td>Velocidade</td><td>R&#225;pido (nuvem)</td><td>Depende do hardware</td><td>R&#225;pido (nuvem)</td><td>R&#225;pido (nuvem)</td></tr>
+          <tr><td>Personaliza&#231;&#227;o</td><td>Limitada (par&#226;metros)</td><td>Extensa (LoRAs, checkpoints)</td><td>M&#237;nima</td><td>Moderada</td></tr>
+          <tr><td>Acesso via API</td><td>Sem API oficial</td><td>Sim (v&#225;rias)</td><td>Sim (API OpenAI)</td><td>Sim (Replicate, fal.ai)</td></tr>
+          <tr><td>Privacidade</td><td>Apenas nuvem</td><td>Pode rodar localmente</td><td>Apenas nuvem</td><td>Principalmente nuvem</td></tr>
+          <tr><td>Curva de Aprendizado</td><td>Baixa</td><td>Alta</td><td>Muito Baixa</td><td>Baixa</td></tr>
+          <tr><td>Prompts Negativos</td><td><code>--no flag</code></td><td>Campo negativo completo</td><td>N&#227;o dispon&#237;vel</td><td>N&#227;o dispon&#237;vel</td></tr>
+        </tbody>
+      </table>
+      </div>
+
+      <div class="cta-inline">
+        <p>Experimente voc&#234; mesmo &#8212; fa&#231;a upload de qualquer imagem e obtenha um prompt IA otimizado em segundos.</p>
+        <a href="/" class="cta-btn-sm">Experimentar Gr&#225;tis &#8594;</a>
+      </div>
+
+      <h2 id="midjourney-referencia-artistica">Midjourney: A Refer&#234;ncia Art&#237;stica</h2>
+
+      <h3>Sintaxe do Prompt</h3>
+      <p>O Midjourney usa frases descritivas separadas por v&#237;rgulas, seguidas de par&#226;metros com tra&#231;os duplos:</p>
+      <p><code>ethereal forest spirit, bioluminescent flora, cinematic lighting, concept art --ar 3:2 --v 6.1 --style raw</code></p>
+
+      <h3>O que o Midjourney Faz de Melhor</h3>
+      <ul>
+        <li>Imagens art&#237;sticas, pict&#243;ricas e cinem&#225;ticas de alta qualidade est&#233;tica</li>
+        <li>Imagin&#225;rio fant&#225;stico, sci-fi e surrealista</li>
+        <li>Fotografia de retrato com pele e ilumina&#231;&#227;o naturais</li>
+        <li>Resultados consistentemente &#8220;bonitos&#8221; mesmo com prompts simples</li>
+        <li>Arquitetura e concept art de ambientes</li>
+      </ul>
+
+      <h3>Dicas de Escrita de Prompt para Midjourney</h3>
+      <ul>
+        <li>Comece pelo elemento visual mais importante</li>
+        <li>Use adjetivos descritivos em abund&#226;ncia &#8212; Midjourney adora linguagem visual rica</li>
+        <li>Defina sempre <code>--ar</code> para corresponder ao canvas planejado</li>
+        <li>Adicione <code>--style raw</code> para uma interpreta&#231;&#227;o mais literal</li>
+        <li>Use <code>--chaos 20-40</code> ao explorar novos conceitos</li>
+      </ul>
+
+      <h3>Fraquezas do Midjourney</h3>
+      <ul>
+        <li>A renderiza&#231;&#227;o de texto nas imagens &#233; pouco confi&#225;vel (embora esteja melhorando na v6)</li>
+        <li>Requer conta no Discord e assinatura &#8212; n&#227;o &#233; gratuito</li>
+        <li>Menos controle granular que o Stable Diffusion para usu&#225;rios t&#233;cnicos</li>
+        <li>Pode ser &#8220;bonito demais&#8221; &#8212; tende a est&#233;ticas polidas mesmo quando voc&#234; quer algo mais bruto</li>
+      </ul>
+
+      <h2 id="stable-diffusion-open-source">Stable Diffusion: O Poder Open Source</h2>
+
+      <h3>Sintaxe do Prompt</h3>
+      <p>O SD usa sintaxe ponderada com par&#234;nteses e suporta &#234;nfase de token CLIP:</p>
+      <p><code>(masterpiece:1.2), (photorealistic:1.1), ethereal forest spirit, glowing bioluminescent plants, (dramatic lighting:0.9), intricate details</code></p>
+      <p>Mais um campo de <strong>prompt negativo</strong> separado:</p>
+      <p><code>blurry, low quality, deformed, bad anatomy, watermark, text, ugly, amateur</code></p>
+
+      <h3>O que o Stable Diffusion Faz de Melhor</h3>
+      <ul>
+        <li>Controle fino via LoRAs, ControlNet e checkpoints personalizados</li>
+        <li>Workflows de inpainting e outpainting</li>
+        <li>Execu&#231;&#227;o local no seu pr&#243;prio hardware &#8212; totalmente privado</li>
+        <li>Consist&#234;ncia de personagens via LoRAs de personagens treinados</li>
+        <li>Combina&#231;&#227;o de m&#250;ltiplas t&#233;cnicas (img2img, upscaling, restaura&#231;&#227;o facial)</li>
+        <li>Gratuito e open-source (SDXL, SD 3.5 s&#227;o os modelos principais atuais)</li>
+      </ul>
+
+      <h3>Dicas de Escrita de Prompt para Stable Diffusion</h3>
+      <ul>
+        <li>Comece com tokens de qualidade: <code>(masterpiece:1.2), (best quality:1.1)</code></li>
+        <li>Use par&#234;nteses com n&#250;meros para aumentar o peso: <code>(lighting:1.4)</code></li>
+        <li>Use colchetes para diminuir o peso: <code>[background:0.7]</code></li>
+        <li>Sempre escreva um prompt negativo s&#243;lido &#8212; &#233; t&#227;o importante quanto o positivo</li>
+        <li>Mantenha os prompts abaixo de 75 tokens CLIP para SD 1.5; o SDXL lida melhor com prompts mais longos</li>
+        <li>Adapte seu estilo de prompt ao seu modelo checkpoint</li>
+      </ul>
+
+      <h3>Fraquezas do Stable Diffusion</h3>
+      <ul>
+        <li>Curva de aprendizado significativa &#8212; a configura&#231;&#227;o e sele&#231;&#227;o do modelo sozinhas levam horas</li>
+        <li>A qualidade depende fortemente do checkpoint utilizado</li>
+        <li>A sintaxe do prompt difere entre SD 1.5, SDXL e SD 3.5</li>
+        <li>A anatomia (especialmente m&#227;os) ainda &#233; um problema frequente sem LoRAs espec&#237;ficas</li>
+      </ul>
+
+      <h2 id="dalle3-linguagem-natural">DALL&#xB7;E 3: Linguagem Natural e Alta Fidelidade</h2>
+
+      <h3>Sintaxe do Prompt</h3>
+      <p>O DALL&#xB7;E 3 &#233; &#250;nico &#8212; ele prefere frases naturais completas em vez de prompts baseados em tags:</p>
+      <p><em>&#8220;Uma cena fotorrealista de um esp&#237;rito da floresta emergindo de um velho carvalho retorcido, cercado por plantas bioluminescentes que emitem um brilho suave azul-esverdeado. O esp&#237;rito parece et&#233;reo e transl&#250;cido, seus cabelos ondulando como fuma&#231;a. Plano geral cinem&#225;tico, luz dourada de golden hour filtrando atrav&#233;s da copa.&#8221;</em></p>
+
+      <h3>O que o DALL&#xB7;E 3 Faz de Melhor</h3>
+      <ul>
+        <li>Seguir fielmente instru&#231;&#245;es complexas em m&#250;ltiplas partes</li>
+        <li>Gerar imagens com texto leg&#237;vel &#8212; significativamente melhor que os outros modelos</li>
+        <li>Conte&#250;do seguro e utiliz&#225;vel comercialmente (pol&#237;ticas de conte&#250;do rigorosas)</li>
+        <li>Imagin&#225;rio conceitual e abstrato que requer compreens&#227;o da inten&#231;&#227;o</li>
+        <li>Estilos de ilustra&#231;&#227;o limpos e profissionais</li>
+      </ul>
+
+      <h3>Dicas de Escrita de Prompt para DALL&#xB7;E 3</h3>
+      <ul>
+        <li>Escreva em frases completas, n&#227;o em tags separadas por v&#237;rgulas</li>
+        <li>Seja expl&#237;cito sobre o que voc&#234; quer &#8212; o DALL&#xB7;E segue as instru&#231;&#245;es de forma muito literal</li>
+        <li>Descreva claramente a composi&#231;&#227;o: &#8220;um plano geral de cima&#8221; vs. &#8220;close-up retrato&#8221;</li>
+        <li>Inclua refer&#234;ncias de estilo: &#8220;no estilo de uma capa de fic&#231;&#227;o cient&#237;fica dos anos 1970&#8221;</li>
+        <li>Para texto nas imagens, coloque o texto exato entre aspas no seu prompt</li>
+      </ul>
+
+      <h3>Fraquezas do DALL&#xB7;E 3</h3>
+      <ul>
+        <li>Pol&#237;ticas de conte&#250;do mais restritivas que os outros modelos</li>
+        <li>Menos variedade estil&#237;stica &#8212; tende a um certo &#8220;visual DALL&#xB7;E&#8221;</li>
+        <li>Requer assinatura da OpenAI para os melhores resultados (ChatGPT Plus)</li>
+        <li>Menos controle sobre detalhes finos comparado ao Midjourney ou SD</li>
+      </ul>
+
+      <h2 id="flux-fotorrealismo">Flux: O Campe&#227;o do Fotorrealismo</h2>
+
+      <h3>Sintaxe do Prompt</h3>
+      <p>O Flux, desenvolvido pela Black Forest Labs, usa linguagem descritiva detalhada similar ao DALL&#xB7;E 3, mas responde particularmente bem &#224; terminologia fotogr&#225;fica e t&#233;cnica:</p>
+      <p><em>&#8220;Fotografia de alta resolu&#231;&#227;o de um esp&#237;rito da floresta em p&#233; em um bosque ancestral ao amanhecer. O esp&#237;rito &#233; parcialmente transl&#250;cido, cercado por cogumelos e plantas bioluminescentes que emitem um brilho azul-esverdeado. Capturado com Canon EOS R5 e lente 85mm f/1.4, profundidade de campo rasa, color grading cinem&#225;tico, raios de luz de golden hour filtrando atrav&#233;s da neblina.&#8221;</em></p>
+
+      <h3>O que o Flux Faz de Melhor</h3>
+      <ul>
+        <li>Imagens fotorrealistas dif&#237;ceis de distinguir de fotografias reais</li>
+        <li>Cenas complexas com m&#250;ltiplos elementos</li>
+        <li>Anatomia humana e propor&#231;&#245;es precisas</li>
+        <li>Cen&#225;rios de ilumina&#231;&#227;o precisos</li>
+        <li>Seguir descri&#231;&#245;es detalhadas e t&#233;cnicas</li>
+      </ul>
+
+      <h3>Dicas de Escrita de Prompt para Flux</h3>
+      <ul>
+        <li>Use linguagem fotogr&#225;fica: modelo da c&#226;mera, especifica&#231;&#245;es de lente, abertura, ISO</li>
+        <li>Descreva a ilumina&#231;&#227;o em termos t&#233;cnicos: &#8220;Rembrandt lighting&#8221;, &#8220;golden hour &#224;s 6h&#8221;</li>
+        <li>Seja muito espec&#237;fico &#8212; o Flux interpreta os detalhes com precis&#227;o</li>
+        <li>Prompts longos e detalhados tendem a funcionar melhor que os curtos</li>
+        <li>Inclua descri&#231;&#245;es de p&#243;s-processamento: &#8220;color graded, leve gr&#227;o de filme, leve vinheta&#8221;</li>
+      </ul>
+
+      <h3>Fraquezas do Flux</h3>
+      <ul>
+        <li>Estilos art&#237;sticos/n&#227;o-fotorrealistas s&#227;o menos distintos que o Midjourney</li>
+        <li>Menos personalidade &#8212; n&#227;o vai adicionar seu pr&#243;prio toque est&#233;tico</li>
+        <li>O acesso &#233; feito via plataformas terceirizadas (Replicate, fal.ai, etc.)</li>
+      </ul>
+
+      <h2 id="comparacao-lado-a-lado">Compara&#231;&#227;o Lado a Lado: O Mesmo Conceito, Quatro Prompts</h2>
+
+      <p>Para tornar as diferen&#231;as concretas, veja como voc&#234; formularia o mesmo conceito &#8212; &#8220;um astronauta solit&#225;rio em um planeta vermelho ao p&#244;r do sol&#8221; &#8212; para cada modelo:</p>
+
+      <h3>Vers&#227;o Midjourney</h3>
+      <p><code>lone astronaut standing on a desolate red planet at sunset, dramatic silhouette against twin moons, cinematic wide shot, dust storms in distance, golden and rust color palette --ar 21:9 --v 6.1 --style raw --q 2</code></p>
+
+      <h3>Vers&#227;o Stable Diffusion</h3>
+      <p><code>(masterpiece:1.2), (photorealistic:1.1), lone astronaut on red planet at sunset, dramatic silhouette, twin moons in sky, (dust storm:0.8), (golden hour lighting:1.3), cinematic, (wide angle shot:1.1), ultra detailed, 8k</code><br>
+      Negativo: <code>blurry, low quality, bad anatomy, deformed, watermark, cartoon, 2D</code></p>
+
+      <h3>Vers&#227;o DALL&#xB7;E 3</h3>
+      <p><em>&#8220;Uma fotografia grande angular cinem&#225;tica de um &#250;nico astronauta em p&#233; na superf&#237;cie des&#233;rtica de um planeta vermelho semelhante a Marte ao p&#244;r do sol. Duas luas s&#227;o vis&#237;veis no horizonte. O astronauta aparece como uma silhueta dram&#225;tica contra o c&#233;u laranja e ocre. Uma tempestade de poeira distante &#233; vis&#237;vel no horizonte. A cena &#233; ao mesmo tempo &#233;pica e solit&#225;ria.&#8221;</em></p>
+
+      <h3>Vers&#227;o Flux</h3>
+      <p><em>&#8220;Fotografia ultra alta resolu&#231;&#227;o de um astronauta solit&#225;rio em traje branco em p&#233; na superf&#237;cie de um planeta rochoso vermelho ao p&#244;r do sol. Duas luas em quarto crescente suspensas no c&#233;u laranja-avermelhado. Capturado com Hasselblad H6D, lente grande angular 24mm, f/8. N&#233;voa atmosf&#233;rica dram&#225;tica no horizonte, color grading dourado e ocre, composi&#231;&#227;o cinem&#225;tica com o sujeito no ter&#231;o inferior, sombras profundas na paisagem de crateras.&#8221;</em></p>
+
+      <h3>Resultados Visuais &#8212; Mesmo Conceito, Quatro Modelos</h3>
+      <div class="model-output-grid">
+        <div class="model-output">
+          <span class="model-badge badge-mj">Midjourney V6.1</span>
+          <picture><source srcset="/images/ai-prompt-generator-cyberpunk-midjourney.webp" type="image/webp"><img src="/images/ai-prompt-generator-cyberpunk-midjourney.jpeg" alt="Resultado Midjourney V6.1 &#8212; astronauta solit&#225;rio em planeta vermelho ao p&#244;r do sol com duas luas" width="800" height="457" loading="lazy"></picture>
+        </div>
+        <div class="model-output">
+          <span class="model-badge badge-sd">Stable Diffusion SDXL</span>
+          <picture><source srcset="/images/ai-prompt-generator-cyberpunk-stable-diffusion.webp" type="image/webp"><img src="/images/ai-prompt-generator-cyberpunk-stable-diffusion.jpeg" alt="Resultado Stable Diffusion SDXL &#8212; astronauta solit&#225;rio em planeta vermelho ao p&#244;r do sol" width="800" height="457" loading="lazy"></picture>
+        </div>
+        <div class="model-output">
+          <span class="model-badge badge-dalle">DALL&#xB7;E 3</span>
+          <picture><source srcset="/images/ai-prompt-generator-cyberpunk-dalle3.webp" type="image/webp"><img src="/images/ai-prompt-generator-cyberpunk-dalle3.jpeg" alt="Resultado DALL&#xB7;E 3 &#8212; astronauta solit&#225;rio em planeta vermelho ao p&#244;r do sol" width="800" height="457" loading="lazy"></picture>
+        </div>
+        <div class="model-output">
+          <span class="model-badge badge-flux">Flux</span>
+          <picture><source srcset="/images/ai-prompt-generator-cyberpunk-flux.webp" type="image/webp"><img src="/images/ai-prompt-generator-cyberpunk-flux.jpeg" alt="Resultado Flux &#8212; astronauta solit&#225;rio em planeta vermelho ao p&#244;r do sol" width="800" height="457" loading="lazy"></picture>
+        </div>
+      </div>
+
+      <h3>Conceito 2: Caf&#233; Aconchegante em Dia de Chuva</h3>
+
+      <h4>Vers&#227;o Midjourney</h4>
+      <p><code>cozy independent coffee shop interior on a rainy day, warm amber light, steam rising from cups, rain-streaked window, people reading books, rustic wood and leather decor --ar 16:9 --v 6.1 --style raw</code></p>
+
+      <h4>Vers&#227;o Stable Diffusion</h4>
+      <p><code>(cozy coffee shop:1.2), rainy day interior, (warm amber lighting:1.3), steam from coffee cups, rain on window, (rustic decor:0.9), bokeh background, photorealistic</code><br>
+      Negativo: <code>blurry, low quality, deformed, watermark, ugly</code></p>
+
+      <h4>Vers&#227;o DALL&#xB7;E 3</h4>
+      <p><em>&#8220;Uma cafeteria acolhedora e convidativa em uma tarde chuvosa. Lumin&#225;rias ambientais emitem um brilho dourado suave sobre mesas de madeira. Uma grande janela com gotas de chuva escorrendo d&#225; para a rua cinzenta. Clientes leem com livros e notebooks, vapor subindo de suas x&#237;caras. Aconchegante e atmosf&#233;rico.&#8221;</em></p>
+
+      <h4>Vers&#227;o Flux</h4>
+      <p><em>&#8220;Fotografia interna de uma cafeteria independente aconchegante em dia de chuva. Ilumina&#231;&#227;o quente com l&#226;mpadas Edison, temperatura de cor 2700K. Chuva vis&#237;vel em grandes vitrines dando para a rua. Profundidade de campo rasa com clientes em foco suave. Capturado com Sony A7R IV, 35mm f/1.8, mistura de luz natural e artificial, leve gr&#227;o de filme.&#8221;</em></p>
+
+      <div class="model-output-grid">
+        <div class="model-output">
+          <span class="model-badge badge-mj">Midjourney</span>
+          <picture><source srcset="/images/prompt-generator-from-image-temple-midjourney.webp" type="image/webp"><img src="/images/prompt-generator-from-image-temple-midjourney.jpeg" alt="Resultado Midjourney &#8212; interior de cafeteria aconchegante em dia de chuva" width="800" height="457" loading="lazy"></picture>
+        </div>
+        <div class="model-output">
+          <span class="model-badge badge-sd">Stable Diffusion</span>
+          <picture><source srcset="/images/prompt-generator-from-image-temple-stable-diffusion.webp" type="image/webp"><img src="/images/prompt-generator-from-image-temple-stable-diffusion.jpeg" alt="Resultado Stable Diffusion &#8212; interior de cafeteria aconchegante em dia de chuva" width="800" height="457" loading="lazy"></picture>
+        </div>
+        <div class="model-output">
+          <span class="model-badge badge-dalle">DALL&#xB7;E 3</span>
+          <picture><source srcset="/images/prompt-generator-from-image-temple-dalle3.webp" type="image/webp"><img src="/images/prompt-generator-from-image-temple-dalle3.jpeg" alt="Resultado DALL&#xB7;E 3 &#8212; interior de cafeteria aconchegante em dia de chuva" width="800" height="457" loading="lazy"></picture>
+        </div>
+        <div class="model-output">
+          <span class="model-badge badge-flux">Flux</span>
+          <picture><source srcset="/images/prompt-generator-from-image-temple-flux.webp" type="image/webp"><img src="/images/prompt-generator-from-image-temple-flux.jpeg" alt="Resultado Flux &#8212; interior de cafeteria aconchegante em dia de chuva" width="800" height="457" loading="lazy"></picture>
+        </div>
+      </div>
+
+      <h3>Conceito 3: Retrato de um Artes&#227;o Idoso</h3>
+
+      <h4>Vers&#227;o Midjourney</h4>
+      <p><code>portrait of elderly craftsman in his workshop, weathered hands, surrounded by tools of his trade, warm natural window light, deep wrinkles, proud dignified expression, documentary photography --ar 2:3 --v 6.1 --style raw --q 2</code></p>
+
+      <h4>Vers&#227;o Stable Diffusion</h4>
+      <p><code>(photorealistic:1.2), portrait of elderly craftsman, (weathered hands:1.1), workshop background with tools, (warm window light:1.3), deep facial wrinkles, dignified expression, professional documentary photography, highly detailed</code><br>
+      Negativo: <code>blurry, low quality, bad anatomy, deformed, watermark, young</code></p>
+
+      <h4>Vers&#227;o DALL&#xB7;E 3</h4>
+      <p><em>&#8220;Retrato fotogr&#225;fico de um artes&#227;o idoso em sua oficina lotada. Ele tem m&#227;os profundamente marcadas e um rosto sulcado por rugas que testemunham d&#233;cadas de trabalho qualificado. Luz natural quente entra por uma janela da oficina. Sua express&#227;o &#233; orgulhosa e concentrada. Estilo fotografia document&#225;ria.&#8221;</em></p>
+
+      <h4>Vers&#227;o Flux</h4>
+      <p><em>&#8220;Retrato fotogr&#225;fico de um artes&#227;o idoso em sua oficina, cerca de 75 anos. M&#227;os profundamente marcadas vis&#237;veis segurando uma ferramenta manual. Fundo de oficina com ferramentas antigas reais em painel perfurado. Capturado com Leica M11, 50mm Summilux f/1.4, luz de janela quente a f/2, leve subexposi&#231;&#227;o para sombras ricas, emula&#231;&#227;o de filme.&#8221;</em></p>
+
+      <div class="model-output-grid">
+        <div class="model-output">
+          <span class="model-badge badge-mj">Midjourney</span>
+          <picture><source srcset="/images/ai-image-generator-prompt-rose-midjourney.webp" type="image/webp"><img src="/images/ai-image-generator-prompt-rose-midjourney.jpeg" alt="Resultado Midjourney &#8212; retrato de artes&#227;o idoso em sua oficina" width="800" height="1000" loading="lazy"></picture>
+        </div>
+        <div class="model-output">
+          <span class="model-badge badge-sd">Stable Diffusion</span>
+          <picture><source srcset="/images/ai-image-generator-prompt-rose-stable-diffusion.webp" type="image/webp"><img src="/images/ai-image-generator-prompt-rose-stable-diffusion.jpeg" alt="Resultado Stable Diffusion &#8212; retrato de artes&#227;o idoso em sua oficina" width="800" height="1000" loading="lazy"></picture>
+        </div>
+        <div class="model-output">
+          <span class="model-badge badge-dalle">DALL&#xB7;E 3</span>
+          <picture><source srcset="/images/ai-image-generator-prompt-rose-dalle3.webp" type="image/webp"><img src="/images/ai-image-generator-prompt-rose-dalle3.jpeg" alt="Resultado DALL&#xB7;E 3 &#8212; retrato de artes&#227;o idoso em sua oficina" width="800" height="1000" loading="lazy"></picture>
+        </div>
+        <div class="model-output">
+          <span class="model-badge badge-flux">Flux</span>
+          <picture><source srcset="/images/ai-image-generator-prompt-rose-flux.webp" type="image/webp"><img src="/images/ai-image-generator-prompt-rose-flux.jpeg" alt="Resultado Flux &#8212; retrato de artes&#227;o idoso em sua oficina" width="800" height="1000" loading="lazy"></picture>
+        </div>
+      </div>
+
+      <h2 id="qual-escolher">Qual Gerador de Imagens IA Escolher?</h2>
+
+      <div class="decision-tree">
+        <p class="tree-question">Qual &#233; sua prioridade?</p>
+        <ul class="tree-options">
+          <li><span class="tree-arrow">&#8594;</span> <strong>M&#225;xima qualidade art&#237;stica</strong> &#8594; Midjourney</li>
+          <li><span class="tree-arrow">&#8594;</span> <strong>Fotorrealismo</strong> &#8594; Flux</li>
+          <li><span class="tree-arrow">&#8594;</span> <strong>Controle total &amp; personaliza&#231;&#227;o</strong> &#8594; Stable Diffusion</li>
+          <li><span class="tree-arrow">&#8594;</span> <strong>Texto nas imagens</strong> &#8594; DALL&#xB7;E 3</li>
+          <li><span class="tree-arrow">&#8594;</span> <strong>Gratuito / open source</strong> &#8594; Stable Diffusion</li>
+          <li><span class="tree-arrow">&#8594;</span> <strong>Mais f&#225;cil para come&#231;ar</strong> &#8594; DALL&#xB7;E 3 (via ChatGPT)</li>
+          <li><span class="tree-arrow">&#8594;</span> <strong>Seguran&#231;a comercial</strong> &#8594; DALL&#xB7;E 3 ou Adobe Firefly</li>
+          <li><span class="tree-arrow">&#8594;</span> <strong>Privacidade / processamento local</strong> &#8594; Stable Diffusion</li>
+        </ul>
+      </div>
+
+      <h2 id="comparacao-precos">Compara&#231;&#227;o de Pre&#231;os (Mar&#231;o 2026)</h2>
+
+      <div class="table-wrap">
+      <table class="comparison-table">
+        <thead>
+          <tr><th>Plano</th><th>Midjourney</th><th>Stable Diffusion</th><th>DALL&#xB7;E 3</th><th>Flux</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Gratuito</td><td>Sem plano gratuito</td><td>Sim (open source)</td><td>Limitado (Bing)</td><td>Limitado em algumas plataformas</td></tr>
+          <tr><td>B&#225;sico</td><td>10 US$/m&#234;s (~200 imagens r&#225;pidas)</td><td>Gratuito (auto-hospedado)</td><td>20 US$/m&#234;s (ChatGPT Plus)</td><td>~0,003&#8211;0,05 US$/imagem (API)</td></tr>
+          <tr><td>Pro</td><td>30 US$/m&#234;s (relax ilimitado)</td><td>Gratuito (auto-hospedado)</td><td>20 US$/m&#234;s (mesmo n&#237;vel)</td><td>Mesmo pre&#231;o API</td></tr>
+          <tr><td>Max</td><td>60 US$/m&#234;s (r&#225;pido + modo furtivo)</td><td>Apenas custos de hospedagem</td><td>Pre&#231;os empresariais</td><td>Empresarial via BFL</td></tr>
+        </tbody>
+      </table>
+      </div>
+      <p class="table-note"><em>Pre&#231;os vigentes em mar&#231;o de 2026. Verifique os valores atuais no site de cada plataforma antes de assinar.</em></p>
+
+      <div class="cta-box">
+        <h3>Obtenha Prompts Espec&#237;ficos para Cada Modelo a Partir de Qualquer Imagem</h3>
+        <p>O ImageToPrompt gera prompts corretamente formatados para os quatro modelos. Fa&#231;a upload de uma imagem de refer&#234;ncia, selecione seu gerador-alvo e obtenha um prompt pronto para uso em segundos.</p>
+        <a href="/?lang=pt" class="cta-btn">Experimentar o Gerador de Prompts IA Gr&#225;tis &#8594;</a>
+      </div>
+
+    </div>
+
+    <div class="author-bio">
+      <svg class="author-photo" width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="Avatar do autor"><circle cx="32" cy="32" r="32" fill="#2a1f4e"/><circle cx="32" cy="26" r="11" fill="#7c6bc4"/><ellipse cx="32" cy="52" rx="18" ry="11" fill="#7c6bc4"/></svg>
+      <div class="author-info">
+        <p class="author-name">ImageToPrompt Team</p>
+        <p class="author-desc">Somos uma equipe de especialistas dedicados a ajudar criadores a dominar a gera&#231;&#227;o de imagens com IA. Atrav&#233;s de ferramentas de convers&#227;o de imagem para prompt e guias de engenharia de prompts, apoiamos artistas em todo o mundo.</p>
+        <a href="https://x.com/Ilyass14286541" class="author-link">Seguir no X &#8594;</a>
+      </div>
+    </div>
+
+    <div class="related-posts">
+      <h2>Guias relacionados</h2>
+      <div class="related-grid">
+        <a href="/pt/blog/gerador-texto-para-prompt/" class="related-card">
+          <p class="tag">Ferramenta</p>
+          <h3>Texto para Prompt: Guia Completo</h3>
+        </a>
+        <a href="/pt/blog/veo-vs-kling-vs-runway/" class="related-card">
+          <p class="tag">Comparativo V&#237;deo</p>
+          <h3>Veo vs Kling vs Runway vs Sora</h3>
+        </a>
+        <a href="/pt/blog/guia-prompts-video-ia-2026/" class="related-card">
+          <p class="tag">V&#237;deo IA</p>
+          <h3>Guia de Prompts de V&#237;deo IA 2026</h3>
+        </a>
+        <a href="/blog/stable-diffusion-prompt-guide/" class="related-card">
+          <p class="tag">Stable Diffusion</p>
+          <h3>Guia Completo de Prompts Stable Diffusion 2026</h3>
+        </a>
+        <a href="/blog/midjourney-vs-flux/" class="related-card">
+          <p class="tag">Comparativo</p>
+          <h3>Midjourney vs Flux AI: Qual &#233; Melhor?</h3>
+        </a>
+        <a href="/blog/dall-e-3-prompt-guide/" class="related-card">
+          <p class="tag">DALL&#xB7;E 3</p>
+          <h3>Guia de Prompts DALL&#xB7;E 3 2026</h3>
+        </a>
+      </div>
+    </div>
+
+  </div>
+
+  <footer class="footer-4col">
+    <div class="f4-inner">
+      <div class="f4-brand">
+        <img src="/favicon.svg" alt="ImageToPrompt" width="28" height="28">
+        <span class="f4-brand-name">ImageTo<span class="accent">Prompt</span></span>
+        <span class="f4-brand-sub">&mdash; Free AI Prompt Generator</span>
+      </div>
+      <div class="f4-grid">
+        <div class="f4-section">
+          <h4 class="f4-heading">Image Prompt Tools</h4>
+          <a href="/">Image to Prompt</a>
+          <a href="/text-to-prompt/">Text to Prompt</a>
+      <a href="/describe-image/">Describe Image</a>
+          <a href="/midjourney-prompt-generator/">Midjourney</a>
+          <a href="/stable-diffusion-prompt-generator/">Stable Diffusion</a>
+          <a href="/flux-prompt-generator/">Flux</a>
+          <a href="/dall-e-prompt-generator/">DALL-E 3</a>
+          <a href="/adobe-firefly-prompt-generator/">Adobe Firefly</a>
+          <a href="/leonardo-ai-prompt-generator/">Leonardo AI</a>
+          <a href="/ideogram-prompt-generator/">Ideogram</a>
+        </div>
+        <div class="f4-section">
+          <h4 class="f4-heading">Video Prompt Tools</h4>
+          <a href="/image-to-video-prompt/">Image to Video Prompt</a>
+          <a href="/text-to-video-prompt/">Text to Video Prompt</a>
+          <a href="/veo-prompt-generator/">Veo / Flow Studio</a>
+          <a href="/kling-prompt-generator/">Kling AI</a>
+          <a href="/runway-prompt-generator/">Runway Gen-3</a>
+          <a href="/pika-prompt-generator/">Pika</a>
+          <a href="/luma-prompt-generator/">Luma Dream Machine</a>
+          <a href="/sora-prompt-generator/">Sora</a>
+          <a href="/minimax-prompt-generator/">Minimax</a>
+          <a href="/stable-video-prompt-generator/">Stable Video</a>
+        </div>
+        <div class="f4-section">
+          <h4 class="f4-heading">Resources</h4>
+          <a href="/pt/blog/">Blog</a>
+          <a href="/pt/about/">Sobre</a>
+          <a href="/pt/pricing/">Pre&#231;os</a>
+          <a href="/contact/">Contact</a>
+          <a href="/privacy-policy/">Privacy Policy</a>
+          <a href="/terms-of-service/">Terms of Service</a>
+        </div>
+        <div class="f4-section">
+          <h4 class="f4-heading">Languages</h4>
+          <a href="/">English</a>
+          <a href="/fr/">Fran&#231;ais</a>
+          <a href="/ar/">&#1575;&#1604;&#1593;&#1585;&#1576;&#1610;&#1577;</a>
+          <a href="/es/">Espa&#241;ol</a>
+          <a href="/ko/">&#54620;&#44397;&#50612;</a>
+          <a href="/ja/">&#26085;&#26412;&#35486;</a>
+          <a href="/ru/">&#1056;&#1091;&#1089;&#1089;&#1082;&#1080;&#1081;</a>
+          <a href="/pt/">Portugu&#234;s</a>
+        </div>
+      </div>
+      <div class="f4-bottom">
+        <p>&#169; 2026 ImageToPrompt.dev &#8212; Free AI Prompt Generator</p>
+        <p>Suas imagens nunca s&#227;o armazenadas. Toda an&#225;lise &#233; ef&#234;mera e privada.</p>
+      </div>
+    </div>
+  </footer>
+
+<script src="/newsletter-inject.js" defer></script>
+<script src="/nav.js" defer></script>
+  <script>
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', function() {
+    navigator.serviceWorker.register('/sw.js')
+      .catch(function(err) { console.warn('SW registration failed:', err); });
+  });
+}
+</script>
+</body>
+</html>

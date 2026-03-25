@@ -1,0 +1,585 @@
+<!doctype html>
+<html lang="zh">
+<head>
+  <script src="/theme-toggle.js"></script>
+  <meta charset="UTF-8" />
+  <link rel="dns-prefetch" href="https://www.googletagmanager.com">
+<link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="max-image-preview:large, index, follow">
+  <meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="ImageToPrompt">
+  <title>DALL·E 3提示词指南2026：为OpenAI图像生成器撰写完美提示词</title>
+  <meta name="description" content="掌握DALL·E 3提示词撰写技巧。学习基于句子的提示词、文字渲染、风格描述符，以及如何通过ChatGPT和API获得一致的生成结果。" />
+  <link rel="canonical" href="https://www.imagetoprompt.dev/zh/blog/dall-e-3-tishi-ci-zhinan/" />
+  <link rel="alternate" hreflang="zh" href="https://www.imagetoprompt.dev/zh/blog/dall-e-3-tishi-ci-zhinan/" />
+  <link rel="alternate" hreflang="en" href="https://www.imagetoprompt.dev/blog/dall-e-3-prompt-guide/" />
+  <link rel="alternate" hreflang="x-default" href="https://www.imagetoprompt.dev/blog/dall-e-3-prompt-guide/" />
+  <meta property="og:title" content="DALL·E 3提示词指南2026：为OpenAI图像生成器撰写完美提示词" />
+  <meta property="og:description" content="掌握DALL·E 3提示词撰写技巧。学习基于句子的提示词、文字渲染、风格描述符，以及如何通过ChatGPT和API获得一致的生成结果。" />
+  <meta property="og:url" content="https://www.imagetoprompt.dev/zh/blog/dall-e-3-tishi-ci-zhinan/" />
+  <meta property="og:type" content="article" />
+  <meta property="og:image" content="https://www.imagetoprompt.dev/og-image.png" />
+  <meta property="og:site_name" content="ImageToPrompt" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="DALL·E 3提示词指南2026：为OpenAI图像生成器撰写完美提示词" />
+  <meta name="twitter:description" content="掌握DALL·E 3提示词撰写技巧。学习基于句子的提示词、文字渲染、风格描述符，以及如何通过ChatGPT和API获得一致的生成结果。" />
+  <meta name="twitter:image" content="https://www.imagetoprompt.dev/og-image.png" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="48x48" href="/favicon-48.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+  <link rel="manifest" href="/site.webmanifest" />
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="/fonts/space-grotesk-700.woff2" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="/fonts/inter-400.woff2" />
+  <link rel="stylesheet" href="/theme.css">
+  <link rel="preload" href="/blog.css" as="style" onload="this.onload=null;this.rel='stylesheet'"><noscript><link rel="stylesheet" href="/blog.css"></noscript>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "DALL·E 3提示词指南2026：为OpenAI图像生成器撰写完美提示词",
+    "description": "掌握DALL·E 3提示词撰写技巧。学习基于句子的提示词、文字渲染、风格描述符，以及如何通过ChatGPT和API获得一致的生成结果。",
+    "image": "https://www.imagetoprompt.dev/og-image.png",
+    "datePublished": "2026-03-13",
+    "dateModified": "2026-03-24",
+    "inLanguage": "zh",
+    "author": {
+      "@type": "Person",
+      "name": "ImageToPrompt Team",
+      "url": "https://www.imagetoprompt.dev/"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "ImageToPrompt",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://www.imagetoprompt.dev/favicon.svg"
+      }
+    },
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https://www.imagetoprompt.dev/zh/blog/dall-e-3-tishi-ci-zhinan/"
+    }
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "DALL·E 3和DALL·E 2有什么区别？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "DALL·E 3在架构上进行了彻底的重新设计。它使用详细的图像描述进行训练，能够理解完整的句子而不仅仅是关键词。DALL·E 3能够准确遵循复杂的构图指令，在图像中渲染文字，并通过ChatGPT进行对话式图像生成。"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "如何在DALL·E 3中添加文字到图像？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "将要渲染的文字用引号括起来，保持在1-4个词以内，明确指定文字的位置和样式。例如：'一个咖啡店黑板上用白色粉笔大字写着\"每日特惠\"'。"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "ChatGPT中的提示词升级是什么意思？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "当您通过ChatGPT使用DALL·E 3时，ChatGPT会自动改写并扩展您的提示词（称为提示词升级），添加光照、构图和风格细节。这通常会改善模糊的输入，但也会引入您未指定的创意选择。您可以要求ChatGPT逐字传递您的提示词以绕过此功能。"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "DALL·E 3与Midjourney和Flux相比如何？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "DALL·E 3在指令遵循和文字渲染方面表现出色，适合概念艺术和标识设计。Midjourney在艺术风格和美学方面更出色。Flux 1.1 Pro在真实感方面最强。选择取决于您的具体需求：创意构图选DALL·E 3，艺术美感选Midjourney，照片级真实感选Flux。"
+        }
+      }
+    ]
+  }
+  </script>
+    <!-- Google AdSense -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4499206373485728" crossorigin="anonymous"></script>
+    <!-- Web Push Notifications -->
+<script src="https://cdn.onesignal.com/sdks/web/v16/OneSignalSDK.page.js" defer></script>
+<script>
+  window.OneSignalDeferred = window.OneSignalDeferred || [];
+  OneSignalDeferred.push(async function(OneSignal) {
+    await OneSignal.init({
+      appId: "REPLACE_WITH_ONESIGNAL_APP_ID",
+      notifyButton: { enable: false }
+    });
+  });
+</script>
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="inner">
+      <a href="/zh/" class="site-logo"><img src="/favicon.svg" alt="ImageToPrompt" width="48" height="48"><div class="site-logo-text">ImageTo<span class="accent">Prompt</span><span class="site-logo-sub">免费AI提示词生成器</span></div></a>
+      <nav class="site-nav" aria-label="主导航">
+        <div class="nav-dropdown">
+          <button class="nav-dropdown-trigger" aria-haspopup="true" aria-expanded="false">Tools <span class="nav-chevron" aria-hidden="true">&#9660;</span></button>
+          <div class="nav-dropdown-menu" role="menu">
+            <div class="nav-mega-grid">
+              <div class="nav-mega-col">
+                <div class="nav-mega-heading">&#128444; IMAGE TOOLS</div>
+                <a href="/" role="menuitem" class="nav-mega-tool">Image to Prompt <span class="nav-mega-arrow">&#8594;</span></a>
+                <a href="/text-to-prompt/" role="menuitem" class="nav-mega-tool">Text to Prompt <span class="nav-mega-arrow">&#8594;</span></a>
+                <a href="/describe-image/" role="menuitem" class="nav-mega-tool">Describe Image <span class="nav-new-badge">NEW</span> <span class="nav-mega-arrow">&#8594;</span></a>
+                <div class="nav-mega-models-label">Models</div>
+                <div class="nav-mega-models"><a href="/midjourney-prompt-generator/">Midjourney</a><span class="nav-dot">&#xB7;</span><a href="/stable-diffusion-prompt-generator/">SD</a></div>
+                <div class="nav-mega-models"><a href="/flux-prompt-generator/">Flux</a><span class="nav-dot">&#xB7;</span><a href="/dall-e-prompt-generator/">DALL&#xB7;E&#xA0;3</a></div>
+                <div class="nav-mega-models"><a href="/adobe-firefly-prompt-generator/">Firefly</a><span class="nav-dot">&#xB7;</span><a href="/leonardo-ai-prompt-generator/">Leonardo</a></div>
+                <div class="nav-mega-models"><a href="/ideogram-prompt-generator/">Ideogram</a></div>
+              </div>
+              <div class="nav-mega-divider" aria-hidden="true"></div>
+              <div class="nav-mega-col">
+                <div class="nav-mega-heading">&#127909; VIDEO TOOLS</div>
+                <a href="/?tab=image-to-video" role="menuitem" class="nav-mega-tool">Image to Video <span class="nav-mega-arrow">&#8594;</span></a>
+                <a href="/?tab=text-to-video" role="menuitem" class="nav-mega-tool">Text to Video <span class="nav-mega-arrow">&#8594;</span></a>
+                <div class="nav-mega-models-label">Models</div>
+                <div class="nav-mega-models"><a href="/veo-prompt-generator/">Veo</a><span class="nav-dot">&#xB7;</span><a href="/kling-prompt-generator/">Kling</a></div>
+                <div class="nav-mega-models"><a href="/runway-prompt-generator/">Runway</a><span class="nav-dot">&#xB7;</span><a href="/pika-prompt-generator/">Pika</a></div>
+                <div class="nav-mega-models"><a href="/luma-prompt-generator/">Luma</a><span class="nav-dot">&#xB7;</span><a href="/sora-prompt-generator/">Sora</a></div>
+                <div class="nav-mega-models"><a href="/minimax-prompt-generator/">Minimax</a><span class="nav-dot">&#xB7;</span><a href="/stable-video-prompt-generator/">Stable</a></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <a href="/zh/blog/">博客</a>
+        <a href="/zh/pricing/" class="nav-pill-pricing">价格</a>
+        <a href="/zh/about/" class="nav-pill-about">关于</a>
+        <a href="/zh/" class="nav-try-free">免费试用 &#8594;</a>
+        <button id="theme-toggle" onclick="toggleTheme()" aria-label="切换主题" title="切换主题">&#9728;&#xFE0F;</button>
+  </nav>
+    </div>
+  </header>
+
+  <nav class="breadcrumb" aria-label="面包屑导航">
+    <a href="/zh/">首页</a><span class="sep">›</span>
+    <a href="/zh/blog/">博客</a><span class="sep">›</span>
+    <span>DALL·E 3提示词指南</span>
+  </nav>
+
+  <div class="page-wrapper">
+
+    <header class="article-header">
+      <p class="article-tag">模型指南</p>
+      <h1>DALL·E 3提示词指南2026：为OpenAI图像生成器撰写完美提示词</h1>
+      <div class="article-meta">
+        <span>2026年3月</span>
+        <span class="dot">·</span>
+        <span>阅读时间10分钟</span>
+        <span class="dot">·</span>
+        <span>DALL·E 3 · OpenAI · 提示词工程</span>
+        <span class="dot">·</span>
+        <span>更新于2026年3月</span>
+      </div>
+    </header>
+
+    <div class="article-body">
+
+      <p>DALL·E 3是OpenAI开发的强大图像生成模型，它彻底改变了我们使用文字创造图像的方式。与之前的版本不同，DALL·E 3能够理解完整的描述性句子，准确遵循复杂的构图指令，甚至在图像中渲染文字。本指南将深入探讨如何撰写完美的DALL·E 3提示词，帮助您充分发挥这个模型的潜力。</p>
+
+      <nav class="toc" aria-label="本指南内容">
+        <details open>
+          <summary>本指南内容</summary>
+          <ol>
+            <li><a href="#dalle3-vs-dalle2">DALL·E 3与DALL·E 2的区别</a></li>
+            <li><a href="#how-it-processes">DALL·E 3如何处理提示词</a></li>
+            <li><a href="#strengths">DALL·E 3的优势</a></li>
+            <li><a href="#prompt-structure">提示词结构</a></li>
+            <li><a href="#style-modifiers">有效的风格修饰符</a></li>
+            <li><a href="#text-rendering">图像中的文字渲染</a></li>
+            <li><a href="#access-methods">ChatGPT vs API vs Bing Image Creator</a></li>
+            <li><a href="#prompt-upsampling">提示词升级</a></li>
+            <li><a href="#limitations">DALL·E 3的局限性</a></li>
+            <li><a href="#comparison">DALL·E 3 vs Midjourney vs Flux</a></li>
+            <li><a href="#examples">10个示例提示词</a></li>
+            <li><a href="#imagetoprompt">使用ImageToPrompt生成DALL·E 3提示词</a></li>
+            <li><a href="#faq">常见问题</a></li>
+          </ol>
+        </details>
+      </nav>
+
+      <div class="callout">
+        <p><strong>快速提示：</strong>您可以使用我们的<a href="/dall-e-prompt-generator/">DALL·E 3提示词生成器</a>，从任何参考图片创建优化的提示词。上传您的图片，几秒钟内即可获得适用于DALL·E 3的提示词。</p>
+      </div>
+
+      <h2 id="dalle3-vs-dalle2">DALL·E 3与DALL·E 2：发生了哪些变化</h2>
+
+      <p>当OpenAI在2023年底发布DALL·E 3时，这不仅仅是一次渐进式改进——而是对模型如何响应提示词的一次彻底的架构重新思考。DALL·E 2是一个基于相对简单文本嵌入的扩散模型。而DALL·E 3使用了更加详细的图像描述进行训练，这意味着它学会了将图像与描述性语言联系起来，而不仅仅是关键词列表。</p>
+
+      <p>实际差异是巨大的。DALL·E 2对简短、精炼的关键词组合响应良好，但经常忽略长提示词的部分内容。DALL·E 3能够处理复杂的多句指令，并以出色的准确度遵循详细的构图要求。DALL·E 2经常在图像中生成乱码文字——看起来像字母但无法辨认的字符。DALL·E 3则能够准确渲染短文字字符串，这为平面设计和营销开辟了全新的应用场景。</p>
+
+      <p>另一个重大变化是与ChatGPT的集成。当您通过ChatGPT使用DALL·E 3时，语言模型会在将提示词发送到图像生成模型之前，自动改写并扩展您的提示词。这种"提示词升级"意味着即使是模糊的输入也经常能产生出色的输出——但这也意味着与使用原始API相比，您对发送给模型的内容控制较少。</p>
+
+      <h2 id="how-it-processes">DALL·E 3如何以不同方式处理提示词</h2>
+
+      <p>关于DALL·E 3最重要的一点是：它是使用以完整句子编写的描述性图像说明进行训练的，而不是基于标签的提示词。这意味着您应该像向一个人描述图像那样编写提示词，而不是像在图库网站上标记照片那样。</p>
+
+      <p><strong>错误的方式（标签式，在DALL·E 3中效果差）：</strong><br>
+      <code>forest, morning, fog, deer, sunbeams, dramatic, cinematic, 4k</code></p>
+
+      <p><strong>正确的方式（描述性句子，在DALL·E 3中效果好）：</strong><br>
+      <code>A lone deer stands in a misty forest at dawn, with golden sunbeams filtering through the pine trees. The morning fog hangs low between the trunks, creating a serene and atmospheric scene. Cinematic wide-angle composition, golden hour lighting.</code></p>
+
+      <p>第二个提示词在DALL·E 3中会产生明显更好的结果，因为它匹配了训练数据的分布。该模型本质上已经学会了"阅读"描述性图像说明并重建它们所描述的场景。</p>
+
+      <p>DALL·E 3还会关注提示词的<em>所有</em>部分，而不仅仅是开头。如果您在长提示词中有详细的场景描述，DALL·E 3通常会尝试纳入所有指定的元素。这与旧模型不同，在旧模型中，前面的关键词占主导地位，后面的添加内容经常被忽略。</p>
+
+      <h2 id="strengths">DALL·E 3的优势</h2>
+
+      <p>了解DALL·E 3的擅长领域有助于您决定何时使用它而不是其他模型：</p>
+
+      <h3>指令遵循</h3>
+      <p>DALL·E 3遵循复杂构图指令的能力优于除GPT-4o最新图像生成之外的任何模型。如果您说"左边的人拿着红色雨伞，猫坐在右边的窗台上，背景中窗外下着雨"，DALL·E 3通常会将元素放置在您指定的位置。Midjourney和旧版Stable Diffusion模型在空间指令方面的可靠性要低得多。</p>
+
+      <h3>图像中的文字</h3>
+      <p>DALL·E 3在大多数情况下能够准确渲染短文字字符串。标牌、标签、物体上的简单文字——这些效果都不错。为获得最佳效果，每个元素的文字保持在1-4个词。这使得DALL·E 3成为包含文字的设计模型、社交媒体图形和标牌可视化的首选。请注意，Ideogram 2.0在文字渲染方面已经超过了DALL·E 3，但DALL·E 3仍然非常出色。</p>
+
+      <h3>创意诠释</h3>
+      <p>DALL·E 3具有强大的概念推理能力。包含隐喻、抽象概念或创意混搭的提示词往往能产生令人惊喜的诠释。"一家书店，书籍是通往其他世界的窗户"或"一个机器人体验怀旧之情"会产生深思熟虑、概念丰富的输出。</p>
+
+      <h3>主体渲染的一致性</h3>
+      <p>对于干净的图形风格图像——图标、简单插图、产品设计——DALL·E 3能产生干净、一致的结果，而不会出现Midjourney有时会出现的风格混乱。</p>
+
+      <h2 id="prompt-structure">提示词结构</h2>
+
+      <p>为了在DALL·E 3中获得持续良好的结果，使用以下五部分结构：</p>
+
+      <p><strong>1. 主体：</strong>谁或什么是主要焦点？<br>
+      <em>"一位维多利亚时代的天文学家"</em></p>
+
+      <p><strong>2. 动作或状态：</strong>主体在做什么或如何定位？<br>
+      <em>"透过一个大型黄铜望远镜观察"</em></p>
+
+      <p><strong>3. 场景：</strong>这个场景发生在哪里？<br>
+      <em>"从一座俯瞰夜间城市的石塔顶部"</em></p>
+
+      <p><strong>4. 风格和媒介：</strong>什么艺术风格、媒介或美学？<br>
+      <em>"19世纪学院派艺术风格的细致油画"</em></p>
+
+      <p><strong>5. 技术和氛围细节：</strong>光照、氛围、色调、摄影参数<br>
+      <em>"温暖的烛光从内部照亮场景，戏剧性的阴影，可见星星的深蓝色夜空"</em></p>
+
+      <p><strong>完整组合的提示词：</strong>"A Victorian-era astronomer peers through a large brass telescope from the top of a stone tower overlooking a gaslit city at night. Detailed oil painting in the style of 19th-century academic art, warm candlelight illuminating the scene from within, dramatic shadows, deep blue night sky filled with stars visible through the tower window."</p>
+
+      <h2 id="style-modifiers">在DALL·E 3中效果良好的风格修饰符</h2>
+
+      <p>与Midjourney使用晦涩的参数标签不同，DALL·E 3响应以自然语言编写的风格描述。以下是能持续产生优秀效果的修饰短语：</p>
+
+      <p><strong>摄影类：</strong>"professional photography"（专业摄影）, "DSLR photograph"（单反照片）, "shot on 35mm film"（35mm胶片拍摄）, "editorial photography"（编辑摄影）, "documentary photography"（纪实摄影）, "studio portrait"（工作室肖像）</p>
+
+      <p><strong>插图类：</strong>"detailed digital illustration"（细致的数字插画）, "children's book illustration style"（儿童书籍插画风格）, "vintage editorial illustration"（复古编辑插画）, "comic book art"（漫画艺术）, "graphic novel style"（图像小说风格）, "pen and ink illustration"（钢笔墨水插画）</p>
+
+      <p><strong>美术类：</strong>"oil painting"（油画）, "watercolor painting"（水彩画）, "charcoal sketch"（炭笔素描）, "impressionist painting style"（印象派绘画风格）, "expressionist oil painting"（表现主义油画）, "Renaissance fresco style"（文艺复兴壁画风格）</p>
+
+      <p><strong>3D和设计类：</strong>"3D render"（3D渲染）, "cinema 4D render"（Cinema 4D渲染）, "isometric 3D illustration"（等距3D插画）, "product visualization"（产品可视化）, "architectural visualization"（建筑可视化）</p>
+
+      <p><strong>氛围类：</strong>"moody and atmospheric"（阴郁而有氛围）, "bright and cheerful"（明亮欢快）, "dark and ominous"（黑暗不祥）, "dreamy and ethereal"（梦幻飘渺）, "gritty and realistic"（粗犷写实）</p>
+
+      <h2 id="text-rendering">文字渲染：如何在图像中添加文字</h2>
+
+      <p>DALL·E 3是目前广泛可用的模型中文字渲染能力最强的之一，但您需要正确使用才能获得干净的结果。以下是关键规则：</p>
+
+      <p><strong>保持简短。</strong>1-4个词的文字字符串渲染可靠。更长的字符串失败率越来越高。</p>
+      <p><strong>明确指定位置。</strong>"with the words 'OPEN' on a sign above the door"——精确指定文字应出现的位置和格式。</p>
+      <p><strong>使用引号。</strong>始终将您想要渲染的确切文字放在提示词中的引号内。这向DALL·E 3发出信号，表示该字符串应按原样渲染。</p>
+      <p><strong>指定文字样式。</strong>"bold sans-serif letters"（粗体无衬线字母）, "handwritten in chalk"（粉笔手写）, "neon sign lettering"（霓虹灯字体）, "engraved letters"（雕刻字母）——这些帮助DALL·E 3选择合适的排版风格。</p>
+
+      <div class="callout">
+        <strong>文字渲染示例提示词：</strong><br>
+        "A coffee shop chalkboard sign with the words 'DAILY SPECIAL' written in large white chalk letters at the top, and 'Lavender Latte — $6' in smaller script below. Warm cafe interior in the background, slightly blurred."（一个咖啡店的黑板标牌，顶部用白色粉笔大字写着"每日特惠"，下方用较小的手写体写着"薰衣草拿铁——$6"。背景是温馨的咖啡厅内部，略微模糊。）
+      </div>
+
+      <h2 id="access-methods">ChatGPT vs API vs Bing Image Creator</h2>
+
+      <p>DALL·E 3可以通过三个主要途径使用，它们的表现有明显差异：</p>
+
+      <h3>ChatGPT（ChatGPT Plus / GPT-4）</h3>
+      <p>最常见的使用方式。当您在ChatGPT中请求生成图像时，语言模型会在将提示词传递给DALL·E 3之前对其进行改写（提示词升级）。这通常会改善模糊的提示词，但降低了高级用户的控制力。您可以指示ChatGPT："Pass this prompt to DALL·E 3 verbatim without modification"（将此提示词逐字传递给DALL·E 3，不做修改）来绕过升级，虽然它并不总是完美遵守。</p>
+      <p>ChatGPT还允许关于图像的迭代对话——您可以说"让天空更有戏剧性"或"把帽子的颜色改成蓝色"，它会修改提示词并重新生成。</p>
+
+      <h3>OpenAI API</h3>
+      <p>直接API访问将您的提示词发送给DALL·E 3，无需语言模型中介。这是控制力最高的选项——您的提示词按原样使用。根据尺寸和质量设置，每张图片收费$0.04-$0.12。质量参数"hd"使用更多计算资源，产生更锐利、更详细的输出。尺寸选项包括1024x1024、1792x1024（横向）和1024x1792（纵向）。</p>
+
+      <h3>Microsoft Copilot / Bing Image Creator</h3>
+      <p>通过微软Copilot集成免费使用DALL·E 3。图像质量与API相当。内容过滤比直接API稍严格。对于不想付费使用ChatGPT Plus的用户来说是个好选择。界面在迭代优化方面不如ChatGPT灵活。</p>
+
+      <h2 id="prompt-upsampling">提示词升级：ChatGPT如何改写您的提示词</h2>
+
+      <p>提示词升级是通过ChatGPT使用DALL·E 3时最容易被误解的方面之一。当您输入一个简短的提示词如"a castle on a cliff at sunset"（悬崖上的城堡在日落时分），ChatGPT会将其转化为类似这样的内容："A dramatic medieval stone castle perched atop a rocky coastal cliff at golden hour. The sun is setting in the distance over the ocean, casting warm orange and red hues across the stone walls and the choppy waters below. The scene has a cinematic, epic quality with dramatic clouds in the sky."</p>
+
+      <p>这个升级后的提示词通常会比您的原始输入产生更好的图像——ChatGPT添加了光照上下文、构图细节和风格框架，这些本来需要您手动提供。然而，它也引入了您未作出的创意选择。如果您有特定的视觉构想，升级可能会将您引向不同的方向。</p>
+
+      <p>要查看实际发送给DALL·E 3的提示词，请查看ChatGPT在生成图像下方显示的图像说明——它通常会显示升级后的提示词。这是学习提示词措辞的有用方法：通过ChatGPT生成图像，查看升级后的提示词，然后将该语言作为您自己直接提示词的模板。</p>
+
+      <h2 id="limitations">DALL·E 3的局限性</h2>
+
+      <p>了解DALL·E 3的弱点有助于您设定合理的期望，并为每个任务选择合适的模型：</p>
+
+      <p><strong>人脸和照片级真实感：</strong>DALL·E 3能够可靠地生成风格化的插图质量人脸，但对于高保真的照片级真实肖像，Midjourney v6+或Flux 1.1 Pro能产生明显更逼真的结果。DALL·E 3的人脸具有特征性的"数字艺术"质感，在照片级真实的场景中一眼就能看出是AI生成的。</p>
+
+      <p><strong>重复图案：</strong>需要精确重复的纹理——瓷砖图案、网格、重复主题——经常会出现细微的错误和不一致。这不是DALL·E 3独有的问题，但在设计用途中值得注意。</p>
+
+      <p><strong>跨生成的角色一致性：</strong>DALL·E 3没有原生的角色一致性机制。每次生成都是独立的。如果您需要同一个角色出现在多个场景中，您需要使用非常详细的角色描述并接受变化，或者使用具有原生角色参考支持的工具，如Midjourney的--cref或Stable Diffusion的LoRA微调。</p>
+
+      <p><strong>宽高比：</strong>DALL·E 3仅支持三种宽高比：正方形、横向（类似16:9）和纵向。Midjourney的任意宽高比支持在特定格式要求方面更加灵活。</p>
+
+      <p><strong>内容政策：</strong>DALL·E 3在主要模型中拥有最保守的内容政策。它拒绝更广泛范围的涉及暴力、性内容、真实人物甚至一些艺术裸体场景的请求。对于涉及成熟主题的创意工作，Midjourney或Stable Diffusion提供更大的创作自由度。</p>
+
+      <h2 id="comparison">DALL·E 3 vs Midjourney vs Flux：提示词风格差异</h2>
+
+      <div class="table-wrap">
+        <table class="comparison-table">
+          <thead>
+            <tr>
+              <th>方面</th>
+              <th>DALL·E 3</th>
+              <th>Midjourney v7</th>
+              <th>Flux 1.1 Pro</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>提示词风格</td>
+              <td>完整句子，自然语言</td>
+              <td>逗号分隔的描述词 + 参数</td>
+              <td>描述性句子或标签——两者皆可</td>
+            </tr>
+            <tr>
+              <td>指令遵循</td>
+              <td>优秀</td>
+              <td>风格方面好，布局方面不稳定</td>
+              <td>非常好</td>
+            </tr>
+            <tr>
+              <td>照片级真实感</td>
+              <td>良好</td>
+              <td>非常好</td>
+              <td>最佳</td>
+            </tr>
+            <tr>
+              <td>图像中的文字</td>
+              <td>良好（Ideogram更好）</td>
+              <td>差</td>
+              <td>尚可</td>
+            </tr>
+            <tr>
+              <td>艺术风格</td>
+              <td>范围广</td>
+              <td>出色</td>
+              <td>良好</td>
+            </tr>
+            <tr>
+              <td>概念艺术</td>
+              <td>良好</td>
+              <td>优秀</td>
+              <td>非常好</td>
+            </tr>
+            <tr>
+              <td>免费层</td>
+              <td>有（通过Bing/Copilot）</td>
+              <td>有限</td>
+              <td>通过第三方工具</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="img-grid-2" style="margin:2rem 0">
+        <figure style="margin:0">
+          <picture><source srcset="/images/ai-prompt-generator-cyberpunk-dalle3.webp" type="image/webp"><img src="/images/ai-prompt-generator-cyberpunk-dalle3.jpeg" alt="DALL·E 3输出——肖像提示词展示了强大的指令遵循和干净的主体渲染" width="800" height="800" loading="lazy" style="width:100%;border-radius:0.5rem;display:block"></picture>
+          <figcaption style="color:var(--text-muted);font-size:0.8rem;text-align:center;margin-top:0.5rem">DALL·E 3：清晰、忠实于指令的渲染</figcaption>
+        </figure>
+        <figure style="margin:0">
+          <picture><source srcset="/images/ai-prompt-generator-cyberpunk-midjourney.webp" type="image/webp"><img src="/images/ai-prompt-generator-cyberpunk-midjourney.jpeg" alt="Midjourney输出——相同提示词展示了不同的美学方法和更多风格化增强" width="800" height="800" loading="lazy" style="width:100%;border-radius:0.5rem;display:block"></picture>
+          <figcaption style="color:var(--text-muted);font-size:0.8rem;text-align:center;margin-top:0.5rem">Midjourney：更具艺术性，美学增强更明显</figcaption>
+        </figure>
+      </div>
+
+      <h2 id="examples">10个示例提示词及分析</h2>
+
+      <h3>1. 照片级真实风景</h3>
+      <p><em>"A dramatic mountain lake in early morning, dense low-lying fog sitting between the pine-covered slopes and the glassy water surface. Snow-capped peaks in the background, first light of dawn casting a golden glow on the mountain tops. Wide-angle photograph, shot on a 24mm lens, long exposure giving the water a silky texture."</em></p>
+      <p><strong>为何有效：</strong>详细的氛围描述、具体的摄影术语、明确的时间和光照条件。</p>
+
+      <h3>2. 角色肖像</h3>
+      <p><em>"A weathered sea captain in his 60s with a grey beard and deep-set eyes, wearing a navy peacoat and holding a nautical chart. He stands at the helm of an old sailing vessel, ocean visible behind him. Dramatic portrait lighting, oil painting style reminiscent of 19th-century maritime art."</em></p>
+      <p><strong>为何有效：</strong>具体的角色细节、清晰的动作和场景、明确的风格参考。</p>
+
+      <h3>3. 室内设计可视化</h3>
+      <p><em>"A modern Japandi living room with natural linen sofas, a low wood coffee table, and large bonsai trees in ceramic pots. Floor-to-ceiling windows overlooking a bamboo garden. Soft diffused afternoon light, muted earth tones of beige, cream, and sage green. Architectural photography style, wide-angle interior shot."</em></p>
+      <p><strong>为何有效：</strong>具体的家具和装饰细节、命名的风格（Japandi）、精确的色彩方案、专业摄影参考。</p>
+
+      <h3>4. 标志和品牌设计</h3>
+      <p><em>"A circular badge logo for a craft brewery called 'Ironwood' featuring a stylized oak tree in the center. The words 'IRONWOOD BREWING CO.' curve around the top of the circle and 'EST. 2018' curves along the bottom. Dark green and gold color scheme, vintage distressed badge style. Vector illustration, clean lines."</em></p>
+      <p><strong>为何有效：</strong>用引号指定确切文字、清晰的设计风格、配色方案和布局指令。</p>
+
+      <h3>5. 奇幻场景</h3>
+      <p><em>"An ancient library built inside a living tree, with bookshelves carved into the bark of massive roots and trunks. Magical glowing lanterns float between the shelves, illuminating a small figure — a young scholar in green robes — reading at a mossy stone desk. Fantasy illustration, warm golden light, detailed and intricate, studio Ghibli-inspired atmosphere."</em></p>
+      <p><strong>为何有效：</strong>沉浸式的环境细节、人物比例参考、具体的动画工作室美学。</p>
+
+      <h3>6. 产品设计与文字</h3>
+      <p><em>"A coffee mug mockup on a white marble surface, the mug is matte sage green with the words 'SLOW MORNINGS' in small serif text on the side. Soft natural window light from the left, a few dried flower stems placed casually beside the mug. Lifestyle product photography, clean and minimal."</em></p>
+      <p><strong>为何有效：</strong>文字放在引号中、具体的产品细节、清晰的光照和造型背景。</p>
+
+      <h3>7. 抽象概念</h3>
+      <p><em>"A visual metaphor for the feeling of nostalgia: a child's bedroom seen through a glass door that is frosted with age, the warm light inside blurry and golden, toys and drawings visible but indistinct. The viewer's hand is pressed against the cold glass on the outside. Painterly style, muted colors with warm amber glow inside."</em></p>
+      <p><strong>为何有效：</strong>DALL·E 3善于处理概念性/情感性主题，尤其是当它们有具体的视觉锚点时。</p>
+
+      <h3>8. 信息图表插图</h3>
+      <p><em>"A flat design infographic illustration showing the water cycle: a mountain on the left with snow, arrows showing evaporation rising from a lake, clouds forming above, rain falling back down, rivers running back to the lake. Clean vector illustration style, blue and teal color palette, simple and educational, white background."</em></p>
+      <p><strong>为何有效：</strong>DALL·E 3能很好地遵循多元素布局指令，干净的图形风格是它的强项。</p>
+
+      <h3>9. 建筑可视化</h3>
+      <p><em>"A modern eco-home nestled into a hillside, with grass growing on the roof, large glass walls facing south, and a wooden deck cantilevered over a valley. Surrounded by mature oak trees. Architectural visualization rendering, golden hour lighting, photorealistic, wide establishing shot."</em></p>
+      <p><strong>为何有效：</strong>具体的建筑特征、环境背景、专业可视化术语。</p>
+
+      <h3>10. 书籍封面设计</h3>
+      <p><em>"A book cover for a psychological thriller titled 'THE QUIET HOUSE.' The design shows a lone Victorian house at the end of a long country lane at dusk, the windows glowing an unsettling yellow-green light. The title 'THE QUIET HOUSE' appears at the top in thin white serif letters. Dark, eerie atmosphere, deep blue-purple sky. Graphic design, professional book cover composition."</em></p>
+      <p><strong>为何有效：</strong>清晰的构图层次、指定了标题文字、恰当的类型美学。</p>
+
+      <h2 id="imagetoprompt">使用ImageToPrompt生成DALL·E 3提示词</h2>
+
+      <p>如果您有一张参考图片——照片、艺术作品或AI生成的图片——能够捕捉您想在DALL·E 3中实现的外观，最快的方法是将其上传到<a href="/">ImageToPrompt</a>并选择DALL·E 3输出格式。</p>
+
+      <p>ImageToPrompt使用Claude Vision分析您的参考图片，并提取详细的、针对DALL·E 3优化的提示词。由于DALL·E 3响应自然语言描述，提取的提示词以完整的描述性句子而非关键词标签编写——这正是此模型最佳的格式。</p>
+
+      <p>这个工作流对于风格匹配特别有用：找到一张具有您想要的确切美学（光照、调色、构图风格）的图片，通过<a href="/dall-e-prompt-generator/">ImageToPrompt的DALL·E 3提示词生成器</a>运行它，然后将提取的提示词作为您自己图像的基础。您无需知道触发每种外观的具体描述术语就能获得风格词汇。</p>
+
+      <div class="cta-box">
+        <h3>生成您的DALL·E 3提示词</h3>
+        <p>上传任何图片，在10秒内获得优化的DALL·E 3提示词。免费使用，无需注册。</p>
+        <a href="/dall-e-prompt-generator/" class="cta-btn">试用DALL·E 3提示词生成器 &#8594;</a>
+      </div>
+
+      <h2 id="faq">常见问题</h2>
+
+      <h3>DALL·E 3和DALL·E 2有什么区别？</h3>
+      <p>DALL·E 3在架构上进行了彻底的重新设计。它使用详细的图像描述进行训练，能够理解完整的句子而不仅仅是关键词。DALL·E 3能够准确遵循复杂的构图指令，在图像中渲染文字，并通过ChatGPT进行对话式图像生成。</p>
+
+      <h3>如何在DALL·E 3中添加文字到图像？</h3>
+      <p>将要渲染的文字用引号括起来，保持在1-4个词以内，明确指定文字的位置和样式。例如："一个咖啡店黑板上用白色粉笔大字写着'每日特惠'"。始终在提示词中用引号标记要渲染的确切文字。</p>
+
+      <h3>ChatGPT中的提示词升级是什么意思？</h3>
+      <p>当您通过ChatGPT使用DALL·E 3时，ChatGPT会自动改写并扩展您的提示词（称为提示词升级），添加光照、构图和风格细节。这通常会改善模糊的输入，但也会引入您未指定的创意选择。您可以要求ChatGPT逐字传递您的提示词以绕过此功能。</p>
+
+      <h3>DALL·E 3与Midjourney和Flux相比如何？</h3>
+      <p>DALL·E 3在指令遵循和文字渲染方面表现出色，适合概念艺术和标识设计。Midjourney在艺术风格和美学方面更出色。Flux 1.1 Pro在照片级真实感方面最强。选择取决于您的具体需求：创意构图选DALL·E 3，艺术美感选Midjourney，照片级真实感选Flux。</p>
+
+    </div>
+
+    <div class="author-bio">
+      <svg class="author-photo" width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="作者头像"><circle cx="32" cy="32" r="32" fill="#2a1f4e"/><circle cx="32" cy="26" r="11" fill="#7c6bc4"/><ellipse cx="32" cy="52" rx="18" ry="11" fill="#7c6bc4"/></svg>
+      <div class="author-info">
+        <p class="author-name">ImageToPrompt Team</p>
+        <p class="author-desc">我们是一支专业团队，致力于帮助创作者掌握AI图像生成技术。通过图像转提示词工具和AI提示词工程指南，我们为全球艺术家的创作提供支持。</p>
+        <a href="https://x.com/Ilyass14286541" class="author-link">在X上关注 &#8594;</a>
+      </div>
+    </div>
+
+    <div class="related-posts">
+      <h2>相关指南</h2>
+      <div class="related-grid">
+        <a href="/zh/blog/adobe-firefly-tishi-ci-jiqiao/" class="related-card">
+          <p class="tag">Adobe Firefly</p>
+          <h3>Adobe Firefly提示词技巧</h3>
+        </a>
+        <a href="/zh/blog/ai-yishu-fengge-cihui/" class="related-card">
+          <p class="tag">词汇表</p>
+          <h3>AI艺术风格词汇表：50种风格详解</h3>
+        </a>
+        <a href="/zh/blog/tupian-zhuanhuan-ai-tishi-ci/" class="related-card">
+          <p class="tag">教程</p>
+          <h3>如何将图片转换为AI提示词</h3>
+        </a>
+      </div>
+    </div>
+
+  </div>
+
+  <footer class="footer-4col">
+    <div class="f4-inner">
+      <div class="f4-brand">
+        <img src="/favicon.svg" alt="ImageToPrompt" width="28" height="28">
+        <span class="f4-brand-name">ImageTo<span class="accent">Prompt</span></span>
+        <span class="f4-brand-sub">&mdash; Free AI Prompt Generator</span>
+      </div>
+      <div class="f4-grid">
+        <div class="f4-section">
+          <h4 class="f4-heading">Image Prompt Tools</h4>
+          <a href="/">Image to Prompt</a>
+          <a href="/text-to-prompt/">Text to Prompt</a>
+      <a href="/describe-image/">Describe Image</a>
+          <a href="/midjourney-prompt-generator/">Midjourney</a>
+          <a href="/stable-diffusion-prompt-generator/">Stable Diffusion</a>
+          <a href="/flux-prompt-generator/">Flux</a>
+          <a href="/dall-e-prompt-generator/">DALL-E 3</a>
+          <a href="/adobe-firefly-prompt-generator/">Adobe Firefly</a>
+          <a href="/leonardo-ai-prompt-generator/">Leonardo AI</a>
+          <a href="/ideogram-prompt-generator/">Ideogram</a>
+        </div>
+        <div class="f4-section">
+          <h4 class="f4-heading">Video Prompt Tools</h4>
+          <a href="/image-to-video-prompt/">Image to Video Prompt</a>
+          <a href="/text-to-video-prompt/">Text to Video Prompt</a>
+          <a href="/veo-prompt-generator/">Veo / Flow Studio</a>
+          <a href="/kling-prompt-generator/">Kling AI</a>
+          <a href="/runway-prompt-generator/">Runway Gen-3</a>
+          <a href="/pika-prompt-generator/">Pika</a>
+          <a href="/luma-prompt-generator/">Luma Dream Machine</a>
+          <a href="/sora-prompt-generator/">Sora</a>
+          <a href="/minimax-prompt-generator/">Minimax</a>
+          <a href="/stable-video-prompt-generator/">Stable Video</a>
+        </div>
+        <div class="f4-section">
+          <h4 class="f4-heading">Resources</h4>
+          <a href="/zh/blog/">博客</a>
+          <a href="/zh/about/">关于</a>
+          <a href="/zh/pricing/">价格</a>
+          <a href="/contact/">Contact</a>
+          <a href="/privacy-policy/">Privacy Policy</a>
+          <a href="/terms-of-service/">Terms of Service</a>
+        </div>
+        <div class="f4-section">
+          <h4 class="f4-heading">Languages</h4>
+          <a href="/">English</a>
+          <a href="/fr/">Fran&#231;ais</a>
+          <a href="/ar/">&#1575;&#1604;&#1593;&#1585;&#1576;&#1610;&#1577;</a>
+          <a href="/es/">Espa&#241;ol</a>
+          <a href="/ko/">&#54620;&#44397;&#50612;</a>
+          <a href="/ja/">&#26085;&#26412;&#35486;</a>
+          <a href="/ru/">&#1056;&#1091;&#1089;&#1089;&#1082;&#1080;&#1081;</a>
+          <a href="/zh/">中文</a>
+        </div>
+      </div>
+      <div class="f4-bottom">
+        <p>&#169; 2026 ImageToPrompt.dev &#8212; Free AI Prompt Generator</p>
+        <p>Your images are never stored. All analysis is ephemeral and private.</p>
+      </div>
+    </div>
+  </footer>
+
+<script src="/newsletter-inject.js" defer></script>
+<script src="/nav.js" defer></script>
+  <script>
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', function() {
+    navigator.serviceWorker.register('/sw.js')
+      .catch(function(err) { console.warn('SW registration failed:', err); });
+  });
+}
+</script>
+</body>
+</html>

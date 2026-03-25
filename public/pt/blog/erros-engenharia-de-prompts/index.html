@@ -1,0 +1,398 @@
+<!doctype html>
+<html lang="pt">
+<head>
+  <script src="/theme-toggle.js"></script>
+  <meta charset="UTF-8" />
+  <link rel="dns-prefetch" href="https://www.googletagmanager.com">
+<link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="max-image-preview:large, index, follow">
+  <meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="ImageToPrompt">
+  <title>15 Erros de Engenharia de Prompts a Evitar em 2026</title>
+  <meta name="description" content="Os 15 erros mais comuns em engenharia de prompts para arte IA. Aprenda a identific&#225;-los e corrigi-los para obter melhores resultados." />
+  <link rel="canonical" href="https://www.imagetoprompt.dev/pt/blog/erros-engenharia-de-prompts/" />
+  <link rel="alternate" hreflang="pt" href="https://www.imagetoprompt.dev/pt/blog/erros-engenharia-de-prompts/" />
+  <link rel="alternate" hreflang="en" href="https://www.imagetoprompt.dev/blog/prompt-engineering-mistakes/" />
+  <link rel="alternate" hreflang="x-default" href="https://www.imagetoprompt.dev/blog/prompt-engineering-mistakes/" />
+  <meta property="og:title" content="15 Erros de Engenharia de Prompts a Evitar em 2026" />
+  <meta property="og:description" content="Os 15 erros mais comuns em engenharia de prompts para arte IA e como corrigi-los." />
+  <meta property="og:url" content="https://www.imagetoprompt.dev/pt/blog/erros-engenharia-de-prompts/" />
+  <meta property="og:type" content="article" />
+  <meta property="og:image" content="https://www.imagetoprompt.dev/og-image.png" />
+  <meta property="og:site_name" content="ImageToPrompt" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="15 Erros de Engenharia de Prompts a Evitar em 2026" />
+  <meta name="twitter:description" content="Os 15 erros mais comuns em engenharia de prompts para arte IA." />
+  <meta name="twitter:image" content="https://www.imagetoprompt.dev/og-image.png" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="48x48" href="/favicon-48.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+  <link rel="manifest" href="/site.webmanifest" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="/fonts/space-grotesk-700.woff2" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="/fonts/inter-400.woff2" />
+  <link rel="stylesheet" href="/theme.css">
+  <link rel="preload" href="/blog.css" as="style" onload="this.onload=null;this.rel='stylesheet'"><noscript><link rel="stylesheet" href="/blog.css"></noscript>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "15 Erros de Engenharia de Prompts a Evitar em 2026",
+    "description": "Os 15 erros mais comuns em engenharia de prompts para arte IA e como corrigi-los.",
+    "image": "https://www.imagetoprompt.dev/og-image.png",
+    "datePublished": "2026-03-10",
+    "dateModified": "2026-03-24",
+    "inLanguage": "pt",
+    "author": { "@type": "Person", "name": "ImageToPrompt Team", "url": "https://www.imagetoprompt.dev/" },
+    "publisher": { "@type": "Organization", "name": "ImageToPrompt", "logo": { "@type": "ImageObject", "url": "https://www.imagetoprompt.dev/favicon.svg" } },
+    "mainEntityOfPage": { "@type": "WebPage", "@id": "https://www.imagetoprompt.dev/pt/blog/erros-engenharia-de-prompts/" }
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Qual \u00e9 o erro de engenharia de prompts mais comum?",
+        "acceptedAnswer": { "@type": "Answer", "text": "O erro mais comum \u00e9 escrever prompts vagos demais. Um prompt como 'a beautiful landscape' n\u00e3o d\u00e1 nenhuma dire\u00e7\u00e3o espec\u00edfica ao modelo de IA. \u00c9 preciso especificar o tipo de paisagem, ilumina\u00e7\u00e3o, estilo art\u00edstico, esta\u00e7\u00e3o e clima para obter resultados previs\u00edveis e de qualidade." }
+      },
+      {
+        "@type": "Question",
+        "name": "Por que meus prompts n\u00e3o funcionam em todos os modelos de IA?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Cada modelo de IA tem sua pr\u00f3pria sintaxe de prompt. Midjourney usa descritores separados por v\u00edrgulas com par\u00e2metros (--ar, --v), Stable Diffusion usa pesos entre par\u00eanteses (keyword:1.2), Flux prefere linguagem natural detalhada, e DALL-E 3 funciona melhor com frases completas." }
+      },
+      {
+        "@type": "Question",
+        "name": "Um prompt mais longo d\u00e1 melhores resultados?",
+        "acceptedAnswer": { "@type": "Answer", "text": "N\u00e3o necessariamente. Um prompt longo demais pode diluir os elementos importantes e criar conflitos entre os descritores. A maioria dos modelos tem limite de tokens (75 para Stable Diffusion). Concentre-se na qualidade e especificidade dos termos." }
+      },
+      {
+        "@type": "Question",
+        "name": "Como aprender engenharia de prompts para arte IA?",
+        "acceptedAnswer": { "@type": "Answer", "text": "A melhor abordagem \u00e9 usar uma ferramenta imagem-para-prompt para analisar imagens que voc\u00ea gosta e entender os termos que as descrevem. Depois, modifique um \u00fanico elemento por vez para observar seu efeito." }
+      }
+    ]
+  }
+  </script>
+    <!-- Google AdSense -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4499206373485728" crossorigin="anonymous"></script>
+    <!-- Web Push Notifications -->
+<script src="https://cdn.onesignal.com/sdks/web/v16/OneSignalSDK.page.js" defer></script>
+<script>
+  window.OneSignalDeferred = window.OneSignalDeferred || [];
+  OneSignalDeferred.push(async function(OneSignal) {
+    await OneSignal.init({
+      appId: "REPLACE_WITH_ONESIGNAL_APP_ID",
+      notifyButton: { enable: false }
+    });
+  });
+</script>
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="inner">
+      <a href="/pt/" class="site-logo"><img src="/favicon.svg" alt="ImageToPrompt" width="48" height="48"><div class="site-logo-text">ImageTo<span class="accent">Prompt</span><span class="site-logo-sub">Gerador de Prompts IA Gratuito</span></div></a>
+      <nav class="site-nav" aria-label="Navega&#231;&#227;o principal">
+        <div class="nav-dropdown">
+          <button class="nav-dropdown-trigger" aria-haspopup="true" aria-expanded="false">Tools <span class="nav-chevron" aria-hidden="true">&#9660;</span></button>
+          <div class="nav-dropdown-menu" role="menu">
+            <div class="nav-mega-grid">
+              <div class="nav-mega-col">
+                <div class="nav-mega-heading">&#128444; IMAGE TOOLS</div>
+                <a href="/" role="menuitem" class="nav-mega-tool">Image to Prompt <span class="nav-mega-arrow">&#8594;</span></a>
+                <a href="/text-to-prompt/" role="menuitem" class="nav-mega-tool">Text to Prompt <span class="nav-mega-arrow">&#8594;</span></a>
+                <a href="/describe-image/" role="menuitem" class="nav-mega-tool">Describe Image <span class="nav-new-badge">NEW</span> <span class="nav-mega-arrow">&#8594;</span></a>
+                <div class="nav-mega-models-label">Models</div>
+                <div class="nav-mega-models"><a href="/midjourney-prompt-generator/">Midjourney</a><span class="nav-dot">&#xB7;</span><a href="/stable-diffusion-prompt-generator/">SD</a></div>
+                <div class="nav-mega-models"><a href="/flux-prompt-generator/">Flux</a><span class="nav-dot">&#xB7;</span><a href="/dall-e-prompt-generator/">DALL&#xB7;E&#xA0;3</a></div>
+                <div class="nav-mega-models"><a href="/adobe-firefly-prompt-generator/">Firefly</a><span class="nav-dot">&#xB7;</span><a href="/leonardo-ai-prompt-generator/">Leonardo</a></div>
+                <div class="nav-mega-models"><a href="/ideogram-prompt-generator/">Ideogram</a></div>
+              </div>
+              <div class="nav-mega-divider" aria-hidden="true"></div>
+              <div class="nav-mega-col">
+                <div class="nav-mega-heading">&#127909; VIDEO TOOLS</div>
+                <a href="/?tab=image-to-video" role="menuitem" class="nav-mega-tool">Image to Video <span class="nav-mega-arrow">&#8594;</span></a>
+                <a href="/?tab=text-to-video" role="menuitem" class="nav-mega-tool">Text to Video <span class="nav-mega-arrow">&#8594;</span></a>
+                <div class="nav-mega-models-label">Models</div>
+                <div class="nav-mega-models"><a href="/veo-prompt-generator/">Veo</a><span class="nav-dot">&#xB7;</span><a href="/kling-prompt-generator/">Kling</a></div>
+                <div class="nav-mega-models"><a href="/runway-prompt-generator/">Runway</a><span class="nav-dot">&#xB7;</span><a href="/pika-prompt-generator/">Pika</a></div>
+                <div class="nav-mega-models"><a href="/luma-prompt-generator/">Luma</a><span class="nav-dot">&#xB7;</span><a href="/sora-prompt-generator/">Sora</a></div>
+                <div class="nav-mega-models"><a href="/minimax-prompt-generator/">Minimax</a><span class="nav-dot">&#xB7;</span><a href="/stable-video-prompt-generator/">Stable</a></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <a href="/pt/blog/">Blog</a>
+        <a href="/pt/pricing/" class="nav-pill-pricing">Pre&#231;os</a>
+        <a href="/pt/about/" class="nav-pill-about">Sobre</a>
+        <a href="/pt/" class="nav-try-free">Experimentar &#8594;</a>
+        <button id="theme-toggle" onclick="toggleTheme()" aria-label="Alternar tema" title="Alternar tema">&#9728;&#xFE0F;</button>
+  </nav>
+    </div>
+  </header>
+
+  <nav class="breadcrumb" aria-label="Navega&#231;&#227;o estrutural">
+    <a href="/pt/">In&#237;cio</a><span class="sep">&#8250;</span>
+    <a href="/pt/blog/">Blog</a><span class="sep">&#8250;</span>
+    <span>Erros de Engenharia de Prompts</span>
+  </nav>
+
+  <div class="page-wrapper">
+
+    <header class="article-header">
+      <p class="article-tag">Prompt Engineering</p>
+      <h1>15 Erros de Engenharia de Prompts a Evitar</h1>
+      <div class="article-meta">
+        <span>Mar&#231;o 2026</span>
+        <span class="dot">&#183;</span>
+        <span>11 min de leitura</span>
+        <span class="dot">&#183;</span>
+        <span>Midjourney &#183; Stable Diffusion &#183; Flux &#183; DALL&#183;E 3</span>
+        <span class="dot">&#183;</span>
+        <span>Atualizado mar&#231;o 2026</span>
+      </div>
+    </header>
+
+    <div class="article-body">
+
+      <p>A engenharia de prompts para arte IA &#233; uma habilidade que se aprende por experimenta&#231;&#227;o. Mas certos erros se repetem sistematicamente entre iniciantes e usu&#225;rios intermedi&#225;rios. Identificar esses erros e corrigi-los pode transformar radicalmente a qualidade dos seus resultados, independentemente do modelo de IA que voc&#234; usa.</p>
+
+      <nav class="toc" aria-label="Sum&#225;rio">
+        <details open>
+          <summary>Neste guia</summary>
+          <ol>
+            <li><a href="#erro-1">Erro 1: Prompts vagos demais</a></li>
+            <li><a href="#erro-2">Erro 2: Prompts excessivamente longos</a></li>
+            <li><a href="#erro-3">Erro 3: Sintaxe errada do modelo</a></li>
+            <li><a href="#erro-4">Erro 4: Ignorar prompts negativos</a></li>
+            <li><a href="#erro-5">Erro 5: Ignorar a propor&#231;&#227;o</a></li>
+            <li><a href="#erros-6-10">Erros 6-10: Estrutura e composi&#231;&#227;o</a></li>
+            <li><a href="#erros-11-15">Erros 11-15: Otimiza&#231;&#227;o avan&#231;ada</a></li>
+            <li><a href="#como-corrigir">Como Corrigir esses Erros</a></li>
+            <li><a href="#perguntas-frequentes">Perguntas Frequentes</a></li>
+          </ol>
+        </details>
+      </nav>
+
+      <div class="callout">
+        <p><strong>Dica:</strong> Um jeito eficiente de aprender a evitar esses erros &#233; analisar imagens que voc&#234; gosta com nossa <a href="/">ferramenta Imagem para Prompt</a>. Voc&#234; ver&#225; exatamente quais termos e qual estrutura produzem bons resultados.</p>
+      </div>
+
+      <h2 id="erro-1">Erro 1: Prompts Vagos Demais</h2>
+      <p>&#201; o erro mais comum. Um prompt como <code>a beautiful landscape</code> n&#227;o d&#225; nenhuma dire&#231;&#227;o espec&#237;fica ao modelo. O resultado ser&#225; gen&#233;rico e imprevis&#237;vel.</p>
+      <h3>Antes (vago)</h3>
+      <div class="code-block"><code>a beautiful landscape</code></div>
+      <h3>Depois (espec&#237;fico)</h3>
+      <div class="code-block"><code>misty mountain valley at dawn, pine forests descending into fog-filled basin, golden sunrise breaking through clouds, aerial perspective, landscape photography, warm earth tones --ar 16:9 --v 6.1</code></div>
+
+      <h2 id="erro-2">Erro 2: Prompts Excessivamente Longos</h2>
+      <p>O excesso inverso &#233; igualmente problem&#225;tico. Um prompt de 200 palavras afoga os elementos importantes em uma massa de descritores que se contradizem. Solu&#231;&#227;o: limite-se a 40-80 palavras bem escolhidas.</p>
+
+      <h2 id="erro-3">Erro 3: Sintaxe Errada do Modelo</h2>
+      <p>Cada modelo de IA fala uma linguagem diferente. Usar a sintaxe do Midjourney no Stable Diffusion produz resultados mediocres.</p>
+      <div class="table-wrap">
+      <table class="comparison-table">
+        <thead><tr><th>Modelo</th><th>Sintaxe correta</th><th>Erro comum</th></tr></thead>
+        <tbody>
+          <tr><td>Midjourney</td><td><code>portrait, golden hour --ar 2:3 --v 6.1</code></td><td>Usar pesos <code>(portrait:1.2)</code></td></tr>
+          <tr><td>Stable Diffusion</td><td><code>(portrait:1.2), golden hour, (bokeh:0.8)</code></td><td>Usar <code>--ar</code> ou <code>--v</code></td></tr>
+          <tr><td>Flux</td><td><code>A portrait photograph taken during golden hour with warm light</code></td><td>Usar etiquetas em vez de frases</td></tr>
+          <tr><td>DALL-E 3</td><td><code>A warm portrait photograph with golden hour sunlight</code></td><td>Usar sintaxe t&#233;cnica</td></tr>
+        </tbody>
+      </table>
+      </div>
+
+      <h2 id="erro-4">Erro 4: Ignorar Prompts Negativos</h2>
+      <p>Prompts negativos s&#227;o essenciais no Stable Diffusion e &#250;teis no Midjourney (via <code>--no</code>). Sem eles, voc&#234; deixa o modelo livre para produzir artefatos e deforma&#231;&#245;es anat&#244;micas.</p>
+      <div class="code-block"><code>blurry, low quality, deformed, bad anatomy, extra limbs, extra fingers, watermark, text, signature, cropped, worst quality, low resolution, ugly, duplicate</code></div>
+
+      <h2 id="erro-5">Erro 5: Ignorar a Propor&#231;&#227;o</h2>
+      <p>A propor&#231;&#227;o influencia profundamente a composi&#231;&#227;o da imagem:</p>
+      <ul>
+        <li><strong>Retratos:</strong> <code>--ar 2:3</code> ou <code>--ar 3:4</code> (vertical)</li>
+        <li><strong>Paisagens:</strong> <code>--ar 16:9</code> ou <code>--ar 21:9</code> (horizontal largo)</li>
+        <li><strong>Composi&#231;&#245;es quadradas:</strong> <code>--ar 1:1</code> (redes sociais, &#237;cones)</li>
+        <li><strong>Fotografia cinem&#225;tica:</strong> <code>--ar 2.39:1</code> (formato anam&#243;rfico)</li>
+      </ul>
+
+      <h2 id="erros-6-10">Erros 6-10: Estrutura e Composi&#231;&#227;o</h2>
+
+      <h3>Erro 6: Nenhuma indica&#231;&#227;o de ilumina&#231;&#227;o</h3>
+      <p>A ilumina&#231;&#227;o &#233; um dos fatores mais determinantes em arte visual. Sempre adicione um descritor de ilumina&#231;&#227;o: <code>golden hour</code>, <code>dramatic side lighting</code>, <code>soft diffused light</code>, <code>neon-lit</code>.</p>
+
+      <h3>Erro 7: Esquecer a composi&#231;&#227;o</h3>
+      <p>Use termos como <code>rule of thirds</code>, <code>leading lines</code>, <code>bird's eye view</code>, <code>low angle shot</code>, <code>extreme close-up</code> para guiar a composi&#231;&#227;o.</p>
+
+      <h3>Erro 8: Misturar estilos contradit&#243;rios</h3>
+      <p>Combinar <code>photorealistic</code> com <code>anime style</code> no mesmo prompt cria confus&#227;o. O modelo tenta satisfazer ambas as diretivas e produz um resultado h&#237;brido pouco convincente.</p>
+
+      <h3>Erro 9: N&#227;o especificar a qualidade</h3>
+      <p>No Stable Diffusion, termos como <code>masterpiece</code>, <code>best quality</code>, <code>highly detailed</code> t&#234;m impacto real. No Midjourney, <code>--quality 2</code> ou <code>--style raw</code> oferecem mais detalhes.</p>
+
+      <h3>Erro 10: Ignorar a paleta de cores</h3>
+      <p>As cores definem o clima emocional da imagem. Especifique: <code>warm earth tones</code>, <code>cool blue and silver palette</code>, <code>monochromatic sepia</code>, <code>vibrant neon colors</code>.</p>
+
+      <h2 id="erros-11-15">Erros 11-15: Otimiza&#231;&#227;o Avan&#231;ada</h2>
+
+      <h3>Erro 11: Copiar prompts sem entend&#234;-los</h3>
+      <p>Copiar um prompt sem entender por que cada termo est&#225; l&#225; impede que voc&#234; itere de forma eficaz.</p>
+
+      <h3>Erro 12: N&#227;o iterar</h3>
+      <p>A gera&#231;&#227;o de imagens por IA &#233; probabil&#237;stica. Sempre gere 4 a 8 variantes antes de julgar um prompt.</p>
+
+      <h3>Erro 13: Usar o modelo errado para o caso de uso</h3>
+      <p>Midjourney se destaca no art&#237;stico, Stable Diffusion no controle t&#233;cnico, Flux no fotorrealismo e DALL-E 3 em texto nas imagens.</p>
+
+      <h3>Erro 14: N&#227;o usar par&#226;metros avan&#231;ados</h3>
+      <p>Par&#226;metros como <code>--chaos</code> (Midjourney), CFG scale (Stable Diffusion) e <code>--stylize</code> (Midjourney) permitem ajustar finamente o comportamento do modelo.</p>
+
+      <h3>Erro 15: Desistir cedo demais</h3>
+      <p>A compet&#234;ncia em engenharia de prompts se desenvolve com a pr&#225;tica. Cada gera&#231;&#227;o ensina algo sobre o funcionamento do modelo.</p>
+
+      <h2 id="como-corrigir">Como Corrigir esses Erros</h2>
+
+      <ol>
+        <li><strong>Analise imagens que voc&#234; gosta:</strong> Use uma ferramenta imagem-para-prompt para entender o vocabul&#225;rio que descreve os estilos visuais que voc&#234; busca</li>
+        <li><strong>Estruture seus prompts em camadas:</strong> Sujeito + Estilo + Ilumina&#231;&#227;o + Cores + Composi&#231;&#227;o + Par&#226;metros t&#233;cnicos</li>
+        <li><strong>Modifique um &#250;nico elemento por vez:</strong> Para entender o efeito de cada descritor</li>
+        <li><strong>Use o prompt negativo:</strong> Exclua ativamente artefatos e elementos indesejados</li>
+        <li><strong>Adapte a sintaxe ao modelo:</strong> Formate seu prompt conforme as conven&#231;&#245;es do modelo alvo</li>
+        <li><strong>Gere variantes:</strong> Nunca julgue um prompt com base em uma &#250;nica gera&#231;&#227;o</li>
+        <li><strong>Documente seus resultados:</strong> Mantenha um hist&#243;rico dos prompts que funcionam e dos que falham</li>
+      </ol>
+
+      <div class="cta-box">
+        <h3>Aprenda pelo Exemplo</h3>
+        <p>Fa&#231;a upload de qualquer imagem e obtenha um prompt profissional. Compare com seus pr&#243;prios prompts para identificar os elementos faltantes.</p>
+        <a href="/?lang=pt" class="cta-btn">Experimentar ImageToPrompt Gratuitamente &#8594;</a>
+      </div>
+
+      <h2 id="perguntas-frequentes">Perguntas Frequentes</h2>
+
+      <h3>Qual &#233; o erro de engenharia de prompts mais comum?</h3>
+      <p>O erro mais comum &#233; escrever prompts vagos demais. Um prompt como <code>a beautiful landscape</code> n&#227;o d&#225; nenhuma dire&#231;&#227;o espec&#237;fica ao modelo de IA. &#201; preciso especificar o tipo de paisagem, ilumina&#231;&#227;o, estilo art&#237;stico, esta&#231;&#227;o e clima para obter resultados previs&#237;veis e de qualidade.</p>
+
+      <h3>Por que meus prompts n&#227;o funcionam em todos os modelos de IA?</h3>
+      <p>Cada modelo de IA tem sua pr&#243;pria sintaxe. O Midjourney usa descritores separados por v&#237;rgulas com par&#226;metros (<code>--ar</code>, <code>--v</code>), o Stable Diffusion usa pesos entre par&#234;nteses (<code>keyword:1.2</code>), o Flux prefere linguagem natural detalhada, e o DALL-E 3 funciona melhor com frases completas.</p>
+
+      <h3>Um prompt mais longo d&#225; melhores resultados?</h3>
+      <p>N&#227;o necessariamente. Um prompt longo demais pode diluir os elementos importantes e criar conflitos entre os descritores. A maioria dos modelos tem um limite de tokens (75 para Stable Diffusion). Concentre-se na qualidade e especificidade dos termos.</p>
+
+      <h3>Como aprender engenharia de prompts para arte IA?</h3>
+      <p>A melhor abordagem &#233; usar uma ferramenta imagem-para-prompt para analisar imagens que voc&#234; gosta e entender os termos que as descrevem. Depois, modifique um &#250;nico elemento por vez para observar seu efeito. Consulte as galerias comunit&#225;rias (Midjourney Showcase, CivitAI) para estudar os prompts que produzem resultados not&#225;veis.</p>
+
+    </div>
+
+    <div class="author-bio">
+      <svg class="author-photo" width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="Avatar do autor"><circle cx="32" cy="32" r="32" fill="#2a1f4e"/><circle cx="32" cy="26" r="11" fill="#7c6bc4"/><ellipse cx="32" cy="52" rx="18" ry="11" fill="#7c6bc4"/></svg>
+      <div class="author-info">
+        <p class="author-name">ImageToPrompt Team</p>
+        <p class="author-desc">Somos uma equipe de engenheiros de prompts e artistas IA especializados em Midjourney, Stable Diffusion e Flux. Constru&#237;mos o ImageToPrompt para tornar a gera&#231;&#227;o de imagens por IA acess&#237;vel a todos.</p>
+        <a href="https://x.com/Ilyass14286541" class="author-link">Seguir no X &#8594;</a>
+      </div>
+    </div>
+
+    <div class="related-posts">
+      <h2>Guias Relacionados</h2>
+      <div class="related-grid">
+        <a href="/pt/blog/engenharia-de-prompts-arte-ia/" class="related-card">
+          <p class="tag">Iniciante</p>
+          <h3>Engenharia de Prompts para Arte IA</h3>
+        </a>
+        <a href="/pt/blog/prompts-negativos-stable-diffusion/" class="related-card">
+          <p class="tag">Stable Diffusion</p>
+          <h3>Prompts Negativos para Stable Diffusion</h3>
+        </a>
+        <a href="/pt/blog/guia-prompts-stable-diffusion/" class="related-card">
+          <p class="tag">Stable Diffusion</p>
+          <h3>Guia de Prompts Stable Diffusion 2026</h3>
+        </a>
+        <a href="/pt/blog/midjourney-vs-flux/" class="related-card">
+          <p class="tag">Comparativo</p>
+          <h3>Midjourney vs Flux: Compara&#231;&#227;o 2026</h3>
+        </a>
+      </div>
+    </div>
+
+  </div>
+
+  <footer class="footer-4col">
+    <div class="f4-inner">
+      <div class="f4-brand">
+        <img src="/favicon.svg" alt="ImageToPrompt" width="28" height="28">
+        <span class="f4-brand-name">ImageTo<span class="accent">Prompt</span></span>
+        <span class="f4-brand-sub">&mdash; Free AI Prompt Generator</span>
+      </div>
+      <div class="f4-grid">
+        <div class="f4-section">
+          <h4 class="f4-heading">Image Prompt Tools</h4>
+          <a href="/">Image to Prompt</a>
+          <a href="/text-to-prompt/">Text to Prompt</a>
+      <a href="/describe-image/">Describe Image</a>
+          <a href="/midjourney-prompt-generator/">Midjourney</a>
+          <a href="/stable-diffusion-prompt-generator/">Stable Diffusion</a>
+          <a href="/flux-prompt-generator/">Flux</a>
+          <a href="/dall-e-prompt-generator/">DALL-E 3</a>
+          <a href="/adobe-firefly-prompt-generator/">Adobe Firefly</a>
+          <a href="/leonardo-ai-prompt-generator/">Leonardo AI</a>
+          <a href="/ideogram-prompt-generator/">Ideogram</a>
+        </div>
+        <div class="f4-section">
+          <h4 class="f4-heading">Video Prompt Tools</h4>
+          <a href="/image-to-video-prompt/">Image to Video Prompt</a>
+          <a href="/text-to-video-prompt/">Text to Video Prompt</a>
+          <a href="/veo-prompt-generator/">Veo / Flow Studio</a>
+          <a href="/kling-prompt-generator/">Kling AI</a>
+          <a href="/runway-prompt-generator/">Runway Gen-3</a>
+          <a href="/pika-prompt-generator/">Pika</a>
+          <a href="/luma-prompt-generator/">Luma Dream Machine</a>
+          <a href="/sora-prompt-generator/">Sora</a>
+          <a href="/minimax-prompt-generator/">Minimax</a>
+          <a href="/stable-video-prompt-generator/">Stable Video</a>
+        </div>
+        <div class="f4-section">
+          <h4 class="f4-heading">Resources</h4>
+          <a href="/pt/blog/">Blog</a>
+          <a href="/pt/about/">Sobre</a>
+          <a href="/pt/pricing/">Pre&#231;os</a>
+          <a href="/contact/">Contact</a>
+          <a href="/privacy-policy/">Privacy Policy</a>
+          <a href="/terms-of-service/">Terms of Service</a>
+        </div>
+        <div class="f4-section">
+          <h4 class="f4-heading">Languages</h4>
+          <a href="/">English</a>
+          <a href="/fr/">Fran&#231;ais</a>
+          <a href="/ar/">&#1575;&#1604;&#1593;&#1585;&#1576;&#1610;&#1577;</a>
+          <a href="/es/">Espa&#241;ol</a>
+          <a href="/ko/">&#54620;&#44397;&#50612;</a>
+          <a href="/ja/">&#26085;&#26412;&#35486;</a>
+          <a href="/ru/">&#1056;&#1091;&#1089;&#1089;&#1082;&#1080;&#1081;</a>
+          <a href="/pt/">Portugu&#234;s</a>
+        </div>
+      </div>
+      <div class="f4-bottom">
+        <p>&#169; 2026 ImageToPrompt.dev &#8212; Free AI Prompt Generator</p>
+        <p>Your images are never stored. All analysis is ephemeral and private.</p>
+      </div>
+    </div>
+  </footer>
+
+<script src="/newsletter-inject.js" defer></script>
+<script src="/nav.js" defer></script>
+  <script>
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', function() {
+    navigator.serviceWorker.register('/sw.js')
+      .catch(function(err) { console.warn('SW registration failed:', err); });
+  });
+}
+</script>
+</body>
+</html>

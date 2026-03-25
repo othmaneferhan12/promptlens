@@ -1,0 +1,549 @@
+<!doctype html>
+<html lang="zh">
+<head>
+  <script src="/theme-toggle.js"></script>
+  <meta charset="UTF-8" />
+  <link rel="dns-prefetch" href="https://www.googletagmanager.com">
+<link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="max-image-preview:large, index, follow">
+  <meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="ImageToPrompt">
+  <title>Leonardo AI提示词指南2026：掌握游戏美术、角色与概念设计</title>
+  <meta name="description" content="2026年Leonardo AI完整提示词指南。学习Phoenix、AlbedoBase XL、DiffusionXL模型、Image Guidance、Alchemy模式和专业游戏美术提示词技巧。" />
+  <link rel="canonical" href="https://www.imagetoprompt.dev/zh/blog/leonardo-ai-tishi-ci-zhinan/" />
+  <link rel="alternate" hreflang="zh" href="https://www.imagetoprompt.dev/zh/blog/leonardo-ai-tishi-ci-zhinan/" />
+  <link rel="alternate" hreflang="en" href="https://www.imagetoprompt.dev/blog/leonardo-ai-prompt-guide/" />
+  <link rel="alternate" hreflang="x-default" href="https://www.imagetoprompt.dev/blog/leonardo-ai-prompt-guide/" />
+  <meta property="og:title" content="Leonardo AI提示词指南2026：掌握游戏美术、角色与概念设计" />
+  <meta property="og:description" content="Leonardo AI完整提示词指南。学习模型生态、Image Guidance、Alchemy模式和专业游戏美术提示词。" />
+  <meta property="og:url" content="https://www.imagetoprompt.dev/zh/blog/leonardo-ai-tishi-ci-zhinan/" />
+  <meta property="og:type" content="article" />
+  <meta property="og:image" content="https://www.imagetoprompt.dev/og-image.png" />
+  <meta property="og:site_name" content="ImageToPrompt" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Leonardo AI提示词指南2026：掌握游戏美术、角色与概念设计" />
+  <meta name="twitter:description" content="Leonardo AI完整提示词指南。学习模型、Alchemy模式和游戏美术提示词。" />
+  <meta name="twitter:image" content="https://www.imagetoprompt.dev/og-image.png" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="48x48" href="/favicon-48.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+  <link rel="manifest" href="/site.webmanifest" />
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="/fonts/space-grotesk-700.woff2" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="/fonts/inter-400.woff2" />
+  <link rel="stylesheet" href="/theme.css">
+  <link rel="preload" href="/blog.css" as="style" onload="this.onload=null;this.rel='stylesheet'"><noscript><link rel="stylesheet" href="/blog.css"></noscript>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Leonardo AI提示词指南2026：掌握游戏美术、角色与概念设计",
+    "description": "2026年Leonardo AI完整提示词指南。学习Phoenix、AlbedoBase XL、DiffusionXL模型、Image Guidance、Alchemy模式和专业游戏美术提示词技巧。",
+    "image": "https://www.imagetoprompt.dev/og-image.png",
+    "datePublished": "2026-03-15",
+    "dateModified": "2026-03-24",
+    "inLanguage": "zh",
+    "author": {
+      "@type": "Person",
+      "name": "ImageToPrompt Team",
+      "url": "https://www.imagetoprompt.dev/"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "ImageToPrompt",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://www.imagetoprompt.dev/favicon.svg"
+      }
+    },
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https://www.imagetoprompt.dev/zh/blog/leonardo-ai-tishi-ci-zhinan/"
+    }
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Leonardo AI中哪些模型最适合游戏美术？",
+        "acceptedAnswer": { "@type": "Answer", "text": "对于游戏美术，最佳模型包括：Leonardo Diffusion XL适合写实环境，DreamShaper适合风格化概念艺术，RPG v5适合奇幻角色。选择取决于您追求的视觉风格：写实、半写实还是卡通。" }
+      },
+      {
+        "@type": "Question",
+        "name": "如何用Leonardo AI创建风格一致的角色？",
+        "acceptedAnswer": { "@type": "Answer", "text": "为保持角色一致性，请在每个提示词中使用详细描述，包括体貌特征、服装和配饰。配合使用相同的自定义模型和固定的seed值。Leonardo AI的微调功能还允许您在特定角色上训练专属模型。" }
+      },
+      {
+        "@type": "Question",
+        "name": "Leonardo AI和Midjourney在游戏美术方面有什么区别？",
+        "acceptedAnswer": { "@type": "Answer", "text": "Leonardo AI提供更多技术控制，包括自定义模型、微调工具和集成API，非常适合游戏生产流水线。Midjourney在艺术质量和电影级美学方面表现出色，但对风格的精细控制较少。" }
+      },
+      {
+        "@type": "Question",
+        "name": "如何优化Leonardo AI的概念艺术提示词？",
+        "acceptedAnswer": { "@type": "Answer", "text": "将提示词分层构建：从主体开始，添加艺术风格（concept art, digital painting），指定灯光和氛围，最后加上技术细节如分辨率和比例。使用 environment concept、character design sheet 或 prop design 等术语引导模型。" }
+      }
+    ]
+  }
+  </script>
+    <!-- Google AdSense -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4499206373485728" crossorigin="anonymous"></script>
+    <!-- Web Push Notifications -->
+<script src="https://cdn.onesignal.com/sdks/web/v16/OneSignalSDK.page.js" defer></script>
+<script>
+  window.OneSignalDeferred = window.OneSignalDeferred || [];
+  OneSignalDeferred.push(async function(OneSignal) {
+    await OneSignal.init({
+      appId: "REPLACE_WITH_ONESIGNAL_APP_ID",
+      notifyButton: { enable: false }
+    });
+  });
+</script>
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="inner">
+      <a href="/zh/" class="site-logo"><img src="/favicon.svg" alt="ImageToPrompt" width="48" height="48"><div class="site-logo-text">ImageTo<span class="accent">Prompt</span><span class="site-logo-sub">免费AI提示词生成器</span></div></a>
+      <nav class="site-nav" aria-label="主导航">
+        <div class="nav-dropdown">
+          <button class="nav-dropdown-trigger" aria-haspopup="true" aria-expanded="false">Tools <span class="nav-chevron" aria-hidden="true">&#9660;</span></button>
+          <div class="nav-dropdown-menu" role="menu">
+            <div class="nav-mega-grid">
+              <div class="nav-mega-col">
+                <div class="nav-mega-heading">&#128444; IMAGE TOOLS</div>
+                <a href="/" role="menuitem" class="nav-mega-tool">Image to Prompt <span class="nav-mega-arrow">&#8594;</span></a>
+                <a href="/text-to-prompt/" role="menuitem" class="nav-mega-tool">Text to Prompt <span class="nav-mega-arrow">&#8594;</span></a>
+                <a href="/describe-image/" role="menuitem" class="nav-mega-tool">Describe Image <span class="nav-new-badge">NEW</span> <span class="nav-mega-arrow">&#8594;</span></a>
+                <div class="nav-mega-models-label">Models</div>
+                <div class="nav-mega-models"><a href="/midjourney-prompt-generator/">Midjourney</a><span class="nav-dot">&#xB7;</span><a href="/stable-diffusion-prompt-generator/">SD</a></div>
+                <div class="nav-mega-models"><a href="/flux-prompt-generator/">Flux</a><span class="nav-dot">&#xB7;</span><a href="/dall-e-prompt-generator/">DALL&#xB7;E&#xA0;3</a></div>
+                <div class="nav-mega-models"><a href="/adobe-firefly-prompt-generator/">Firefly</a><span class="nav-dot">&#xB7;</span><a href="/leonardo-ai-prompt-generator/">Leonardo</a></div>
+                <div class="nav-mega-models"><a href="/ideogram-prompt-generator/">Ideogram</a></div>
+              </div>
+              <div class="nav-mega-divider" aria-hidden="true"></div>
+              <div class="nav-mega-col">
+                <div class="nav-mega-heading">&#127909; VIDEO TOOLS</div>
+                <a href="/?tab=image-to-video" role="menuitem" class="nav-mega-tool">Image to Video <span class="nav-mega-arrow">&#8594;</span></a>
+                <a href="/?tab=text-to-video" role="menuitem" class="nav-mega-tool">Text to Video <span class="nav-mega-arrow">&#8594;</span></a>
+                <div class="nav-mega-models-label">Models</div>
+                <div class="nav-mega-models"><a href="/veo-prompt-generator/">Veo</a><span class="nav-dot">&#xB7;</span><a href="/kling-prompt-generator/">Kling</a></div>
+                <div class="nav-mega-models"><a href="/runway-prompt-generator/">Runway</a><span class="nav-dot">&#xB7;</span><a href="/pika-prompt-generator/">Pika</a></div>
+                <div class="nav-mega-models"><a href="/luma-prompt-generator/">Luma</a><span class="nav-dot">&#xB7;</span><a href="/sora-prompt-generator/">Sora</a></div>
+                <div class="nav-mega-models"><a href="/minimax-prompt-generator/">Minimax</a><span class="nav-dot">&#xB7;</span><a href="/stable-video-prompt-generator/">Stable</a></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <a href="/zh/blog/">博客</a>
+        <a href="/zh/pricing/" class="nav-pill-pricing">价格</a>
+        <a href="/zh/about/" class="nav-pill-about">关于</a>
+        <a href="/zh/" class="nav-try-free">免费试用 &#8594;</a>
+        <button id="theme-toggle" onclick="toggleTheme()" aria-label="切换主题" title="切换主题">&#9728;&#xFE0F;</button>
+  </nav>
+    </div>
+  </header>
+
+  <nav class="breadcrumb" aria-label="面包屑导航">
+    <a href="/zh/">首页</a><span class="sep">&#8250;</span>
+    <a href="/zh/blog/">博客</a><span class="sep">&#8250;</span>
+    <span>Leonardo AI提示词指南</span>
+  </nav>
+
+  <div class="page-wrapper">
+
+    <header class="article-header">
+      <p class="article-tag">Leonardo AI</p>
+      <h1>Leonardo AI提示词完全指南：游戏美术、角色与概念设计</h1>
+      <div class="article-meta">
+        <span>2026年3月</span>
+        <span class="dot">&#183;</span>
+        <span>12分钟阅读</span>
+        <span class="dot">&#183;</span>
+        <span>Leonardo AI &#183; Game Art &#183; Character Design</span>
+        <span class="dot">&#183;</span>
+        <span>更新于2026年3月</span>
+      </div>
+    </header>
+
+    <div class="article-body">
+
+      <p>当游戏工作室、独立开发者和概念艺术家需要快速生成制作级参考图时，他们会选择Leonardo AI。Midjourney擅长画廊级的精美图像，Flux在照片写实方面表现出色，而Leonardo AI占据着完全不同的细分市场：它围绕游戏生产流水线的实际需求而构建——角色表、环境概念图、道具设计和UI美术。</p>
+
+      <p>该平台的模型选择、Image Guidance系统、Alchemy渲染模式和深度自定义选项为专业人士提供了消费级工具无法比拟的控制力。本指南涵盖了如何在2026年有效使用这些功能。</p>
+
+      <nav class="toc" aria-label="目录">
+        <details open>
+          <summary>本指南内容</summary>
+          <ol>
+            <li><a href="#weishenme-xuanze">为什么游戏美术师选择Leonardo AI</a></li>
+            <li><a href="#tishi-ci-jiegou">Leonardo AI提示词结构</a></li>
+            <li><a href="#moxing-shengtai">模型生态系统</a></li>
+            <li><a href="#youxi-meishu">游戏美术提示词</a></li>
+            <li><a href="#juese-sheji">角色设计</a></li>
+            <li><a href="#yishu-cihui">艺术词汇表</a></li>
+            <li><a href="#gaoji-canshu">高级参数</a></li>
+            <li><a href="#changjian-cuowu">常见错误</a></li>
+            <li><a href="#chang-jian-wen-ti">常见问题</a></li>
+          </ol>
+        </details>
+      </nav>
+
+      <div class="callout">
+        <p><strong>快速提示：</strong>您可以使用我们的<a href="/leonardo-ai-prompt-generator/">Leonardo AI提示词生成器</a>自动生成优化的提示词。上传一张参考图片，几秒钟内即可获得可直接使用的提示词。</p>
+      </div>
+
+      <h2 id="weishenme-xuanze">为什么游戏美术师选择Leonardo AI</h2>
+
+      <p>选择Leonardo AI而非其他替代方案，通常取决于以下几个没有其他平台能如此好地组合在一起的特性：</p>
+
+      <ul>
+        <li><strong>按项目选择模型：</strong>在单一界面中切换写实、风格化、动漫和绘画风格模型</li>
+        <li><strong>Image Guidance（ControlNet）：</strong>使用参考图像控制姿势、构图、景深和角色一致性</li>
+        <li><strong>角色一致性：</strong>Style Lock和Character Reference功能帮助在多次生成中保持角色外观一致</li>
+        <li><strong>生产导向的输出：</strong>透明背景、放大和画布工具直接集成</li>
+        <li><strong>API访问：</strong>将Leonardo集成到自定义生产工具和流水线中</li>
+        <li><strong>免费层级：</strong>每日免费token额度，适合预算有限的独立开发者</li>
+      </ul>
+
+      <h2 id="tishi-ci-jiegou">Leonardo AI提示词结构</h2>
+
+      <p>Leonardo AI大多数模型使用Stable Diffusion架构（SDXL及衍生版本），这意味着提示词结构遵循SD规范，而非Midjourney的自然语言风格。最有效的结构是：</p>
+
+      <pre><code>[主体描述], [环境/场景], [灯光], [风格/美学], [质量标记], [媒介/渲染]</code></pre>
+
+      <p>示例：</p>
+      <pre><code>female warrior character, full body, detailed armor with crystal inlays, standing in ancient ruins at dusk, dramatic backlit silhouette, fantasy concept art, digital painting, highly detailed, 8k resolution, artstation quality</code></pre>
+
+      <p>分层构建提示词的方法：</p>
+
+      <h3>第一层：主体</h3>
+      <p>始终以图像的主体开始。要具体和描述性。</p>
+      <div class="code-block"><code>a fierce dragon knight standing on a cliff edge, full body view, dynamic pose</code></div>
+
+      <h3>第二层：艺术风格</h3>
+      <p>添加期望的视觉风格。Leonardo AI对概念艺术和游戏美术术语的响应特别好。</p>
+      <div class="code-block"><code>concept art style, digital painting, artstation trending, highly detailed</code></div>
+
+      <h3>第三层：灯光与氛围</h3>
+      <p>灯光能极大改变图像的冲击力。指定光线的方向、强度和色温。</p>
+      <div class="code-block"><code>dramatic rim lighting, volumetric fog, golden hour atmosphere, cinematic lighting</code></div>
+
+      <h3>第四层：技术细节</h3>
+      <p>以影响渲染质量的技术规格结束。</p>
+      <div class="code-block"><code>8k resolution, ultra detailed, sharp focus, professional illustration</code></div>
+
+      <h3>完整提示词组装</h3>
+      <div class="code-block"><code>a fierce dragon knight standing on a cliff edge, full body view, dynamic pose, concept art style, digital painting, artstation trending, highly detailed, dramatic rim lighting, volumetric fog, golden hour atmosphere, cinematic lighting, 8k resolution, ultra detailed, sharp focus, professional illustration</code></div>
+
+      <p>与Midjourney提示词的关键区别：</p>
+      <ul>
+        <li>质量标记很重要：<code>highly detailed</code>、<code>artstation quality</code>、<code>masterpiece</code>、<code>8k</code>等短语会提示模型增加细节密度</li>
+        <li>逗号分隔的标签效果好——完整句子也可以但非必需</li>
+        <li>负面提示词必不可少，应单独设置</li>
+        <li>模型特定的触发词存在——查看每个模型的文档了解可选的激活标记</li>
+      </ul>
+
+      <h2 id="moxing-shengtai">模型生态系统</h2>
+
+      <p>选择正确的模型是在写提示词之前最重要的决定。Leonardo托管了数十个社区微调模型以及其自研产品。</p>
+
+      <div class="table-wrap">
+      <table class="comparison-table">
+        <thead>
+          <tr>
+            <th>模型</th>
+            <th>最适合</th>
+            <th>风格</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Phoenix（旗舰）</td>
+            <td>概念艺术、电影级插画、需要强构图引导的场景</td>
+            <td>通用高质量</td>
+          </tr>
+          <tr>
+            <td>AlbedoBase XL</td>
+            <td>环境概念、建筑设计、写实肖像、道具细节</td>
+            <td>写实高细节</td>
+          </tr>
+          <tr>
+            <td>DiffusionXL</td>
+            <td>LoRA训练基础、风格探索、第三方ControlNet兼容</td>
+            <td>灵活通用</td>
+          </tr>
+          <tr>
+            <td>RPG v5</td>
+            <td>桌游和CRPG美学、奇幻角色</td>
+            <td>Fantasy/RPG</td>
+          </tr>
+          <tr>
+            <td>Anime Pastel Dream</td>
+            <td>JRPG角色设计、动漫肖像、Q版角色</td>
+            <td>Anime/Manga</td>
+          </tr>
+          <tr>
+            <td>DreamShaper XL</td>
+            <td>高幻想和科幻，绘画质感</td>
+            <td>半写实</td>
+          </tr>
+          <tr>
+            <td>Absolute Reality</td>
+            <td>超写实人像肖像</td>
+            <td>超写实</td>
+          </tr>
+        </tbody>
+      </table>
+      </div>
+
+      <h2 id="youxi-meishu">游戏美术提示词</h2>
+
+      <p>游戏美术涵盖广泛的资产类型：环境、角色、物品、界面、纹理和视觉效果。以下是每种类型的优化提示词结构。</p>
+
+      <h3>环境与场景</h3>
+      <div class="code-block"><code>mystical enchanted forest clearing with ancient stone ruins, bioluminescent mushrooms and floating particles, lush vegetation, game environment concept art, top-down isometric view, vibrant color palette, hand-painted style, detailed foliage</code></div>
+
+      <h3>室内环境</h3>
+      <pre><code>underground tavern interior concept art, low stone ceiling with hanging lanterns, long wooden tables, a large fireplace casting warm orange light, barrels along stone walls, several NPCs in the background, cozy and lived-in atmosphere, RPG game environment, detailed architectural features, warm color palette</code></pre>
+
+      <h3>科幻环境</h3>
+      <pre><code>futuristic space station interior corridor, long perspective hallway, metallic walls with glowing blue conduits, holographic displays, subtle ambient lighting, sci-fi game environment concept, clean and corporate aesthetic, cinematic composition, environment art, high detail</code></pre>
+
+      <h3>道具与游戏物品</h3>
+      <div class="code-block"><code>legendary enchanted sword with glowing blue runes, ornate golden hilt with dragon motif, magical aura effect, game item icon, centered composition, dark background, clean edges, RPG weapon design, highly detailed metalwork</code></div>
+
+      <h3>纹理与材质</h3>
+      <div class="code-block"><code>seamless tileable stone wall texture, medieval castle brick pattern, moss and weathering details, PBR material, diffuse map style, even lighting, no shadows, game texture asset, 2048x2048</code></div>
+
+      <h2 id="juese-sheji">角色设计</h2>
+
+      <p>角色设计是Leonardo AI最出色的领域。以下是游戏制作中最常见角色类型的提示词模板：</p>
+
+      <h3>角色设定表（Character Sheet）</h3>
+      <div class="code-block"><code>character design sheet, multiple views, front view, side view, back view, 3/4 view, female elf ranger, leather armor with emerald accents, braided silver hair, pointed ears, athletic build, full body, white background, clean lines, concept art style, consistent design</code></div>
+
+      <h3>英雄/主角</h3>
+      <pre><code>heroic male protagonist, late 20s, short dark hair, determined expression, wearing layered adventure gear with worn leather armor over a simple shirt, sturdy boots, carrying a weathered sword, full body character sheet front view, neutral pose, white background, concept art style, clean lines, highly detailed, digital illustration</code></pre>
+
+      <h3>反派/敌对角色</h3>
+      <pre><code>imposing female villain, sharp angular features, silver hair, cold expression, elaborate dark fantasy armor with gold accents and cape, magical energy emanating from her hands, standing pose, full body, dark dramatic background, menacing yet elegant, concept art, masterpiece quality</code></pre>
+
+      <h3>NPC/商人角色</h3>
+      <pre><code>friendly elderly male merchant NPC, warm smile, round spectacles, wearing a colorful vest over a linen shirt, carrying a large pack on his back, approachable and trustworthy, full body character design, fantasy RPG style, warm color palette, game concept art</code></pre>
+
+      <h3>生物/怪物设计</h3>
+      <pre><code>original creature design, quadruped predator, obsidian scales with bioluminescent blue markings, four eyes, elongated jaw with multiple rows of teeth, powerful build with blade-like dorsal spines, crouching ready to pounce, full body side view, creature concept sheet, detailed anatomy, fantasy creature art, dark atmospheric background</code></pre>
+
+      <div class="img-grid-2" style="margin:2rem 0">
+        <figure style="margin:0">
+          <picture><source srcset="/images/prompt-generator-from-image-extreme-closeup.webp" type="image/webp"><img src="/images/prompt-generator-from-image-extreme-closeup.jpeg" alt="AI角色概念艺术特写——展示Leonardo AI在游戏开发中擅长的高质量角色渲染" width="800" height="800" loading="lazy" style="width:100%;border-radius:0.5rem;display:block"></picture>
+          <figcaption style="color:var(--text-muted);font-size:0.8rem;text-align:center;margin-top:0.5rem">角色细节：Leonardo AI擅长一致性高质量角色美术</figcaption>
+        </figure>
+        <figure style="margin:0">
+          <picture><source srcset="/images/free-image-url-generator-wide-shot-composition.webp" type="image/webp"><img src="/images/free-image-url-generator-wide-shot-composition.jpeg" alt="AI环境概念艺术广角——展示场景构图和环境叙事" width="800" height="800" loading="lazy" style="width:100%;border-radius:0.5rem;display:block"></picture>
+          <figcaption style="color:var(--text-muted);font-size:0.8rem;text-align:center;margin-top:0.5rem">环境概念：用于游戏世界设计的氛围和规模感</figcaption>
+        </figure>
+      </div>
+
+      <h2 id="yishu-cihui">艺术词汇表</h2>
+
+      <p>掌握艺术词汇是用Leonardo AI获得精确结果的关键。以下是按类别组织的最有用术语。</p>
+
+      <h3>渲染风格</h3>
+      <ul>
+        <li><strong>Concept art：</strong>游戏和电影工作室使用的预制作风格</li>
+        <li><strong>Digital painting：</strong>可见笔触的数字绘画</li>
+        <li><strong>Cel-shading：</strong>带有明显轮廓的平面渲染，漫画风格</li>
+        <li><strong>Photorealistic render：</strong>与照片无法区分的渲染</li>
+        <li><strong>Low poly：</strong>简化的几何风格，在独立游戏中流行</li>
+        <li><strong>Pixel art：</strong>像素复古风格，适合2D游戏</li>
+      </ul>
+
+      <h3>灯光术语</h3>
+      <ul>
+        <li><strong>Rim lighting：</strong>勾勒主体轮廓的光线</li>
+        <li><strong>Volumetric lighting：</strong>穿透大气的可见光线</li>
+        <li><strong>Ambient occlusion：</strong>凹陷和角落中的柔和阴影</li>
+        <li><strong>Subsurface scattering：</strong>穿透半透明材料（如皮肤）的光线</li>
+        <li><strong>Global illumination：</strong>带有光线反弹的真实感照明</li>
+      </ul>
+
+      <h3>构图术语</h3>
+      <ul>
+        <li><strong>Dynamic pose：</strong>运动中或动作中的角色</li>
+        <li><strong>Hero shot：</strong>低角度使主体显得雄伟</li>
+        <li><strong>Establishing shot：</strong>展示完整环境的广角镜头</li>
+        <li><strong>Close-up：</strong>聚焦面部或特定细节的紧凑构图</li>
+      </ul>
+
+      <h2 id="gaoji-canshu">高级参数</h2>
+
+      <h3>Guidance Scale（CFG）</h3>
+      <p>控制图像对提示词的忠实程度。低值（3-5）给模型更多创作自由，高值（10-15）更严格地遵循提示词。对于游戏美术，7到9之间通常提供最佳平衡。</p>
+
+      <h3>Steps数量</h3>
+      <p>更多steps意味着更多细节但也需要更长的生成时间。快速草稿用20-30 steps即可，最终资产建议使用40-60 steps以获得最大细节。</p>
+
+      <h3>Alchemy模式</h3>
+      <p>Alchemy是Leonardo的增强渲染管线。启用时会改善解剖一致性、提示词遵循度、细节密度和色彩分级。它消耗更多token，但在确定方向后用于精炼时效果显著。快速探索阶段建议关闭以节省token。</p>
+
+      <h3>负面提示词</h3>
+      <p>在Leonardo AI中，负面提示词与正面提示词同等重要。用它来排除常见瑕疵：</p>
+      <div class="code-block"><code>blurry, low quality, deformed, bad anatomy, extra limbs, watermark, text, signature, cropped, out of frame, worst quality, low resolution, ugly, duplicate</code></div>
+
+      <h2 id="changjian-cuowu">常见错误</h2>
+
+      <ol class="mistakes-list">
+        <li><strong>使用错误的模型。</strong>写实模型不会产出好的像素艺术，反之亦然。在撰写提示词之前，先选择适合您艺术方向的基础模型。</li>
+        <li><strong>提示词过于冗长。</strong>200字的提示词会淹没重要元素。控制在50-80个精心选择的词，用负面提示词排除不想要的内容。</li>
+        <li><strong>忽略Guidance参数。</strong>默认的CFG值不一定适合您的用例。尝试不同值以找到忠实度和创造力之间的最佳点。</li>
+        <li><strong>不使用负面提示词。</strong>没有负面提示词，模型可能产生瑕疵、变形和不需要的元素。至少要包含基本的质量排除项。</li>
+        <li><strong>忘记构图和视角。</strong>没有姿势或构图指示的角色会被不可预测地渲染。始终指定full body、portrait、close-up或所需的角度。</li>
+      </ol>
+
+      <h2 id="imagetoprompt-yu-leonardo">将ImageToPrompt与Leonardo AI配合使用</h2>
+
+      <p>如果您有参考图像——您欣赏的游戏截图、已发布的概念艺术作品，或者捕捉了您所追求氛围的照片——<a href="/">ImageToPrompt</a>可以提取结构化提示词，您可以直接粘贴到Leonardo中。</p>
+
+      <p>这对风格匹配特别有效。上传您想要参考的游戏视觉风格的截图，ImageToPrompt会识别：</p>
+      <ul>
+        <li>渲染风格（绘画感、赛璐璐、照片写实、像素艺术）</li>
+        <li>灯光方法（高对比度、柔和环境光、戏剧性轮廓光）</li>
+        <li>色彩调色板和饱和度水平</li>
+        <li>细节级别和纹理密度</li>
+      </ul>
+
+      <div class="cta-box">
+        <h3>生成优化的Leonardo AI提示词</h3>
+        <p>上传参考图片，获取格式化的Leonardo AI提示词，包含适当的艺术词汇。</p>
+        <a href="/leonardo-ai-prompt-generator/" class="cta-btn">试用Leonardo AI提示词生成器 &#8594;</a>
+      </div>
+
+      <h2 id="chang-jian-wen-ti">常见问题</h2>
+
+      <h3>Leonardo AI中哪些模型最适合游戏美术？</h3>
+      <p>对于游戏美术，最佳模型包括：Leonardo Diffusion XL适合写实环境，DreamShaper适合风格化概念艺术，RPG v5适合奇幻角色。选择取决于您追求的视觉风格：写实、半写实还是卡通。</p>
+
+      <h3>如何用Leonardo AI创建风格一致的角色？</h3>
+      <p>为保持角色一致性，请在每个提示词中使用详细描述，包括体貌特征、服装和配饰。配合使用相同的自定义模型和固定的seed值。Leonardo AI的微调功能还允许您在特定角色上训练专属模型。</p>
+
+      <h3>Leonardo AI和Midjourney在游戏美术方面有什么区别？</h3>
+      <p>Leonardo AI提供更多技术控制，包括自定义模型、微调工具和集成API，非常适合游戏生产流水线。Midjourney在艺术质量和电影级美学方面表现出色，但对风格的精细控制较少。</p>
+
+      <h3>如何优化Leonardo AI的概念艺术提示词？</h3>
+      <p>将提示词分层构建：从主体开始，添加艺术风格（concept art, digital painting），指定灯光和氛围，最后加上技术细节如分辨率和比例。使用<code>environment concept</code>、<code>character design sheet</code>或<code>prop design</code>等术语引导模型。</p>
+
+    </div>
+
+    <div class="author-bio">
+      <svg class="author-photo" width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="作者头像"><circle cx="32" cy="32" r="32" fill="#2a1f4e"/><circle cx="32" cy="26" r="11" fill="#7c6bc4"/><ellipse cx="32" cy="52" rx="18" ry="11" fill="#7c6bc4"/></svg>
+      <div class="author-info">
+        <p class="author-name">ImageToPrompt Team</p>
+        <p class="author-desc">我们是一支专业团队，致力于帮助创作者掌握AI图像生成技术。通过图像转提示词工具和AI提示词工程指南，我们为全球艺术家的创作提供支持。</p>
+        <a href="https://x.com/Ilyass14286541" class="author-link">在X上关注 &#8594;</a>
+      </div>
+    </div>
+
+    <div class="related-posts">
+      <h2>相关指南</h2>
+      <div class="related-grid">
+        <a href="/zh/blog/midjourney-tishi-ci-zhinan-2026/" class="related-card">
+          <p class="tag">Midjourney</p>
+          <h3>Midjourney提示词完全指南 2026</h3>
+        </a>
+        <a href="/zh/blog/tupian-zhuan-tishi-ci-shinei-sheji/" class="related-card">
+          <p class="tag">室内设计</p>
+          <h3>图片转提示词用于室内设计</h3>
+        </a>
+        <a href="/zh/blog/tupian-zhuan-tishi-ci-logo-sheji/" class="related-card">
+          <p class="tag">Logo设计</p>
+          <h3>图片转提示词用于Logo设计</h3>
+        </a>
+      </div>
+    </div>
+
+  </div>
+
+  <footer class="footer-4col">
+    <div class="f4-inner">
+      <div class="f4-brand">
+        <img src="/favicon.svg" alt="ImageToPrompt" width="28" height="28">
+        <span class="f4-brand-name">ImageTo<span class="accent">Prompt</span></span>
+        <span class="f4-brand-sub">&mdash; Free AI Prompt Generator</span>
+      </div>
+      <div class="f4-grid">
+        <div class="f4-section">
+          <h4 class="f4-heading">Image Prompt Tools</h4>
+          <a href="/">Image to Prompt</a>
+          <a href="/text-to-prompt/">Text to Prompt</a>
+      <a href="/describe-image/">Describe Image</a>
+          <a href="/midjourney-prompt-generator/">Midjourney</a>
+          <a href="/stable-diffusion-prompt-generator/">Stable Diffusion</a>
+          <a href="/flux-prompt-generator/">Flux</a>
+          <a href="/dall-e-prompt-generator/">DALL-E 3</a>
+          <a href="/adobe-firefly-prompt-generator/">Adobe Firefly</a>
+          <a href="/leonardo-ai-prompt-generator/">Leonardo AI</a>
+          <a href="/ideogram-prompt-generator/">Ideogram</a>
+        </div>
+        <div class="f4-section">
+          <h4 class="f4-heading">Video Prompt Tools</h4>
+          <a href="/image-to-video-prompt/">Image to Video Prompt</a>
+          <a href="/text-to-video-prompt/">Text to Video Prompt</a>
+          <a href="/veo-prompt-generator/">Veo / Flow Studio</a>
+          <a href="/kling-prompt-generator/">Kling AI</a>
+          <a href="/runway-prompt-generator/">Runway Gen-3</a>
+          <a href="/pika-prompt-generator/">Pika</a>
+          <a href="/luma-prompt-generator/">Luma Dream Machine</a>
+          <a href="/sora-prompt-generator/">Sora</a>
+          <a href="/minimax-prompt-generator/">Minimax</a>
+          <a href="/stable-video-prompt-generator/">Stable Video</a>
+        </div>
+        <div class="f4-section">
+          <h4 class="f4-heading">Resources</h4>
+          <a href="/zh/blog/">博客</a>
+          <a href="/zh/about/">关于</a>
+          <a href="/zh/pricing/">价格</a>
+          <a href="/contact/">Contact</a>
+          <a href="/privacy-policy/">Privacy Policy</a>
+          <a href="/terms-of-service/">Terms of Service</a>
+        </div>
+        <div class="f4-section">
+          <h4 class="f4-heading">Languages</h4>
+          <a href="/">English</a>
+          <a href="/fr/">Fran&#231;ais</a>
+          <a href="/ar/">&#1575;&#1604;&#1593;&#1585;&#1576;&#1610;&#1577;</a>
+          <a href="/es/">Espa&#241;ol</a>
+          <a href="/ko/">&#54620;&#44397;&#50612;</a>
+          <a href="/ja/">&#26085;&#26412;&#35486;</a>
+          <a href="/ru/">&#1056;&#1091;&#1089;&#1089;&#1082;&#1080;&#1081;</a>
+          <a href="/zh/">中文</a>
+        </div>
+      </div>
+      <div class="f4-bottom">
+        <p>&#169; 2026 ImageToPrompt.dev &#8212; Free AI Prompt Generator</p>
+        <p>Your images are never stored. All analysis is ephemeral and private.</p>
+      </div>
+    </div>
+  </footer>
+
+<script src="/newsletter-inject.js" defer></script>
+<script src="/nav.js" defer></script>
+  <script>
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', function() {
+    navigator.serviceWorker.register('/sw.js')
+      .catch(function(err) { console.warn('SW registration failed:', err); });
+  });
+}
+</script>
+</body>
+</html>

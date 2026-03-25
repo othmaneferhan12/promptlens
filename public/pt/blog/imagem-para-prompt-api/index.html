@@ -1,0 +1,580 @@
+<!doctype html>
+<html lang="pt">
+<head>
+  <script src="/theme-toggle.js"></script>
+  <meta charset="UTF-8" />
+  <link rel="dns-prefetch" href="https://www.googletagmanager.com">
+<link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="max-image-preview:large, index, follow">
+  <meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="ImageToPrompt">
+  <title>API de Imagem para Prompt: Integre An&#225;lise de Imagens IA no Seu App (Guia 2026)</title>
+  <meta name="description" content="Como integrar funcionalidade de imagem para prompt no seu app usando Claude Vision API, GPT-4V e Gemini. Inclui exemplos de c&#243;digo, templates de prompts e padr&#245;es de integra&#231;&#227;o." />
+  <link rel="canonical" href="https://www.imagetoprompt.dev/pt/blog/imagem-para-prompt-api/" />
+  <link rel="alternate" hreflang="pt" href="https://www.imagetoprompt.dev/pt/blog/imagem-para-prompt-api/" />
+  <link rel="alternate" hreflang="en" href="https://www.imagetoprompt.dev/blog/image-to-prompt-api/" />
+  <link rel="alternate" hreflang="x-default" href="https://www.imagetoprompt.dev/blog/image-to-prompt-api/" />
+  <meta property="og:title" content="API de Imagem para Prompt: Integre An&#225;lise de Imagens IA no Seu App (Guia 2026)" />
+  <meta property="og:description" content="Como integrar funcionalidade de imagem para prompt no seu app usando Claude Vision API, GPT-4V e Gemini. Exemplos de c&#243;digo e padr&#245;es de integra&#231;&#227;o." />
+  <meta property="og:url" content="https://www.imagetoprompt.dev/pt/blog/imagem-para-prompt-api/" />
+  <meta property="og:type" content="article" />
+  <meta property="og:image" content="https://www.imagetoprompt.dev/og-image.png" />
+  <meta property="og:site_name" content="ImageToPrompt" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="API de Imagem para Prompt: Guia para Desenvolvedores 2026" />
+  <meta name="twitter:description" content="Integre imagem para prompt no seu app com Claude Vision, GPT-4V e Gemini. C&#243;digo e templates inclusos." />
+  <meta name="twitter:image" content="https://www.imagetoprompt.dev/og-image.png" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="48x48" href="/favicon-48.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+  <link rel="manifest" href="/site.webmanifest" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="/fonts/space-grotesk-700.woff2" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="/fonts/inter-400.woff2" />
+  <link rel="stylesheet" href="/theme.css">
+  <link rel="preload" href="/blog.css" as="style" onload="this.onload=null;this.rel='stylesheet'"><noscript><link rel="stylesheet" href="/blog.css"></noscript>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "API de Imagem para Prompt: Integre An\u00e1lise de Imagens IA no Seu App (Guia 2026)",
+    "description": "Como integrar funcionalidade de imagem para prompt no seu app usando Claude Vision API, GPT-4V e Gemini. Inclui exemplos de c\u00f3digo, templates de prompts e padr\u00f5es de integra\u00e7\u00e3o.",
+    "image": "https://www.imagetoprompt.dev/og-image.png",
+    "datePublished": "2026-03-13",
+    "dateModified": "2026-03-24",
+    "inLanguage": "pt",
+    "author": {
+      "@type": "Person",
+      "name": "ImageToPrompt Team",
+      "url": "https://www.imagetoprompt.dev/"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "ImageToPrompt",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://www.imagetoprompt.dev/favicon.svg"
+      }
+    },
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https://www.imagetoprompt.dev/pt/blog/imagem-para-prompt-api/"
+    }
+  }
+  </script>
+    <!-- Google AdSense -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4499206373485728" crossorigin="anonymous"></script>
+    <!-- Web Push Notifications -->
+<script src="https://cdn.onesignal.com/sdks/web/v16/OneSignalSDK.page.js" defer></script>
+<script>
+  window.OneSignalDeferred = window.OneSignalDeferred || [];
+  OneSignalDeferred.push(async function(OneSignal) {
+    await OneSignal.init({
+      appId: "REPLACE_WITH_ONESIGNAL_APP_ID",
+      notifyButton: { enable: false }
+    });
+  });
+</script>
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="inner">
+      <a href="/pt/" class="site-logo"><img src="/favicon.svg" alt="ImageToPrompt" width="48" height="48"><div class="site-logo-text">ImageTo<span class="accent">Prompt</span><span class="site-logo-sub">Gerador de Prompts IA Gratuito</span></div></a>
+      <nav class="site-nav" aria-label="Navega&#231;&#227;o principal">
+        <div class="nav-dropdown">
+          <button class="nav-dropdown-trigger" aria-haspopup="true" aria-expanded="false">Tools <span class="nav-chevron" aria-hidden="true">&#9660;</span></button>
+          <div class="nav-dropdown-menu" role="menu">
+            <div class="nav-mega-grid">
+              <div class="nav-mega-col">
+                <div class="nav-mega-heading">&#128444; IMAGE TOOLS</div>
+                <a href="/" role="menuitem" class="nav-mega-tool">Image to Prompt <span class="nav-mega-arrow">&#8594;</span></a>
+                <a href="/text-to-prompt/" role="menuitem" class="nav-mega-tool">Text to Prompt <span class="nav-mega-arrow">&#8594;</span></a>
+                <a href="/describe-image/" role="menuitem" class="nav-mega-tool">Describe Image <span class="nav-new-badge">NEW</span> <span class="nav-mega-arrow">&#8594;</span></a>
+                <div class="nav-mega-models-label">Models</div>
+                <div class="nav-mega-models"><a href="/midjourney-prompt-generator/">Midjourney</a><span class="nav-dot">&#xB7;</span><a href="/stable-diffusion-prompt-generator/">SD</a></div>
+                <div class="nav-mega-models"><a href="/flux-prompt-generator/">Flux</a><span class="nav-dot">&#xB7;</span><a href="/dall-e-prompt-generator/">DALL&#xB7;E&#xA0;3</a></div>
+                <div class="nav-mega-models"><a href="/adobe-firefly-prompt-generator/">Firefly</a><span class="nav-dot">&#xB7;</span><a href="/leonardo-ai-prompt-generator/">Leonardo</a></div>
+                <div class="nav-mega-models"><a href="/ideogram-prompt-generator/">Ideogram</a></div>
+              </div>
+              <div class="nav-mega-divider" aria-hidden="true"></div>
+              <div class="nav-mega-col">
+                <div class="nav-mega-heading">&#127909; VIDEO TOOLS</div>
+                <a href="/?tab=image-to-video" role="menuitem" class="nav-mega-tool">Image to Video <span class="nav-mega-arrow">&#8594;</span></a>
+                <a href="/?tab=text-to-video" role="menuitem" class="nav-mega-tool">Text to Video <span class="nav-mega-arrow">&#8594;</span></a>
+                <div class="nav-mega-models-label">Models</div>
+                <div class="nav-mega-models"><a href="/veo-prompt-generator/">Veo</a><span class="nav-dot">&#xB7;</span><a href="/kling-prompt-generator/">Kling</a></div>
+                <div class="nav-mega-models"><a href="/runway-prompt-generator/">Runway</a><span class="nav-dot">&#xB7;</span><a href="/pika-prompt-generator/">Pika</a></div>
+                <div class="nav-mega-models"><a href="/luma-prompt-generator/">Luma</a><span class="nav-dot">&#xB7;</span><a href="/sora-prompt-generator/">Sora</a></div>
+                <div class="nav-mega-models"><a href="/minimax-prompt-generator/">Minimax</a><span class="nav-dot">&#xB7;</span><a href="/stable-video-prompt-generator/">Stable</a></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <a href="/pt/blog/">Blog</a>
+        <a href="/pt/pricing/" class="nav-pill-pricing">Pre&#231;os</a>
+        <a href="/pt/about/" class="nav-pill-about">Sobre</a>
+        <a href="/pt/" class="nav-try-free">Experimentar &#8594;</a>
+        <button id="theme-toggle" onclick="toggleTheme()" aria-label="Alternar tema" title="Alternar tema">&#9728;&#xFE0F;</button>
+  </nav>
+    </div>
+  </header>
+
+  <nav class="breadcrumb" aria-label="Navega&#231;&#227;o estrutural">
+    <a href="/pt/">In&#237;cio</a><span class="sep">&#8250;</span>
+    <a href="/pt/blog/">Blog</a><span class="sep">&#8250;</span>
+    <span>API de Imagem para Prompt</span>
+  </nav>
+
+  <div class="page-wrapper">
+
+    <header class="article-header">
+      <p class="article-tag">Guia para Desenvolvedores</p>
+      <h1>API de Imagem para Prompt: Integre An&#225;lise de Imagens IA no Seu App (Guia 2026)</h1>
+      <div class="article-meta">
+        <span>Mar&#231;o 2026</span>
+        <span class="dot">&#183;</span>
+        <span>14 min de leitura</span>
+        <span class="dot">&#183;</span>
+        <span>API &#183; Claude Vision &#183; GPT-4V &#183; Desenvolvedores</span>
+      </div>
+    </header>
+
+    <div class="article-body">
+
+      <p>A funcionalidade de imagem para prompt &#8212; a capacidade de analisar uma imagem e gerar um prompt de texto pronto para IA descrevendo-a &#8212; passou de novidade a recurso essencial em dezenas de ferramentas criativas. Apps de design usam para correspond&#234;ncia de estilo. Extens&#245;es de navegador usam para analisar imagens que usu&#225;rios est&#227;o visualizando. Pipelines de conte&#250;do usam para processamento em lote de ativos visuais.</p>
+
+      <p>Se voc&#234; quer adicionar essa capacidade ao seu pr&#243;prio aplicativo, tem tr&#234;s op&#231;&#245;es s&#233;rias: Claude Vision (Anthropic), GPT-4V (OpenAI) e Gemini Vision (Google). Este guia cobre a integra&#231;&#227;o t&#233;cnica de cada um, com c&#243;digo funcional real, e fornece templates de prompts que produzem sa&#237;das estruturadas de alta qualidade.</p>
+
+      <nav class="toc" aria-label="Sum&#225;rio">
+        <details open>
+          <summary>Neste guia</summary>
+          <ol>
+            <li><a href="#por-que-devs">Por Que Desenvolvedores Precisam de APIs de Imagem para Prompt</a></li>
+            <li><a href="#tres-opcoes">As Tr&#234;s Principais Op&#231;&#245;es de API</a></li>
+            <li><a href="#claude-setup">Claude Vision API: Setup e Autentica&#231;&#227;o</a></li>
+            <li><a href="#codificacao-imagem">Codifica&#231;&#227;o de Imagem: Base64 vs URL</a></li>
+            <li><a href="#template-system-prompt">Template de System Prompt</a></li>
+            <li><a href="#implementacao-python">Implementa&#231;&#227;o em Python</a></li>
+            <li><a href="#implementacao-nodejs">Implementa&#231;&#227;o em Node.js</a></li>
+            <li><a href="#tratamento-erros">Tratamento de Erros</a></li>
+            <li><a href="#comparacao-custos">Compara&#231;&#227;o de Custos</a></li>
+            <li><a href="#cache">Estrat&#233;gias de Cache</a></li>
+            <li><a href="#arquitetura-producao">Arquitetura de Produ&#231;&#227;o</a></li>
+          </ol>
+        </details>
+      </nav>
+
+      <h2 id="por-que-devs">Por Que Desenvolvedores Precisam de APIs de Imagem para Prompt</h2>
+
+      <p>Os casos de uso s&#227;o mais amplos do que podem parecer inicialmente:</p>
+
+      <ul>
+        <li><strong>Ferramentas criativas:</strong> Permitir que usu&#225;rios enviem imagens de inspira&#231;&#227;o e obtenham prompts prontos para IA para ferramentas de gera&#231;&#227;o (Midjourney, Stable Diffusion, DALL&#183;E)</li>
+        <li><strong>Plataformas de design:</strong> Analisar mood boards enviados para extrair diretrizes de estilo</li>
+        <li><strong>E-commerce:</strong> Gerar descri&#231;&#245;es de produtos a partir de fotos</li>
+        <li><strong>Pipelines de modera&#231;&#227;o de conte&#250;do:</strong> Entender conte&#250;do de imagem para classifica&#231;&#227;o e tagueamento</li>
+        <li><strong>Ferramentas de acessibilidade:</strong> Gerar alt-text detalhado e descri&#231;&#245;es de imagem</li>
+        <li><strong>Pipelines de assets de jogos:</strong> Auto-taguear e descrever assets em grandes bibliotecas</li>
+        <li><strong>Ferramentas de redes sociais:</strong> Gerar legendas e hashtags a partir de imagens enviadas</li>
+        <li><strong>Apps de organiza&#231;&#227;o de fotos:</strong> Busca sem&#226;ntica em cole&#231;&#245;es de imagens</li>
+      </ul>
+
+      <h2 id="tres-opcoes">As Tr&#234;s Principais Op&#231;&#245;es de API</h2>
+
+      <div class="table-wrap">
+      <table class="comparison-table">
+        <thead>
+          <tr><th>API</th><th>Provedor</th><th>Entrada de Imagem</th><th>Pre&#231;o (aprox.)</th><th>Melhor Para</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Claude Vision (claude-haiku-4-5 / claude-sonnet)</td><td>Anthropic</td><td>Base64 ou URL</td><td>$0,25&#8211;$3 por 1M tokens de entrada</td><td>Prompts detalhados, seguimento de instru&#231;&#245;es</td></tr>
+          <tr><td>GPT-4V / GPT-4o</td><td>OpenAI</td><td>Base64 ou URL</td><td>$2,50&#8211;$10 por 1M tokens de entrada</td><td>Conhecimento amplo, integra&#231;&#227;o com chat</td></tr>
+          <tr><td>Gemini Vision (1.5 Flash/Pro)</td><td>Google</td><td>Base64, URL ou GCS</td><td>$0,075&#8211;$3,50 por 1M tokens de entrada</td><td>Alto volume, cargas sens&#237;veis a custo</td></tr>
+        </tbody>
+      </table>
+      </div>
+
+      <p>Para imagem-para-prompt especificamente, o Claude Vision tende a produzir sa&#237;das mais estruturadas e conscientes de dire&#231;&#227;o art&#237;stica. O GPT-4o &#233; o mais vers&#225;til se voc&#234; j&#225; est&#225; no ecossistema OpenAI. O Gemini 1.5 Flash &#233; a op&#231;&#227;o mais barata para pipelines de alto volume onde custo importa mais que qualidade m&#225;xima.</p>
+
+      <h2 id="claude-setup">Claude Vision API: Setup e Autentica&#231;&#227;o</h2>
+
+      <p>Primeiro, instale o SDK da Anthropic:</p>
+
+      <pre><code>pip install anthropic</code></pre>
+
+      <p>Ou para Node.js:</p>
+
+      <pre><code>npm install @anthropic-ai/sdk</code></pre>
+
+      <p>Obtenha sua chave de API em <a href="https://console.anthropic.com" target="_blank" rel="noopener">console.anthropic.com</a> e defina como vari&#225;vel de ambiente:</p>
+
+      <pre><code>export ANTHROPIC_API_KEY="sk-ant-api03-..."</code></pre>
+
+      <h2 id="codificacao-imagem">Codifica&#231;&#227;o de Imagem: Base64 vs URL</h2>
+
+      <p>O Claude Vision aceita imagens em dois formatos:</p>
+
+      <p><strong>Base64 (recomendado para arquivos locais):</strong> Codifique a imagem como string base64 e inclua diretamente na requisi&#231;&#227;o da API. Suporta JPEG, PNG, GIF e WebP. M&#225;ximo 5MB por imagem.</p>
+
+      <p><strong>URL (recomendado para imagens hospedadas na web):</strong> Passe uma URL de imagem publicamente acess&#237;vel. O Claude buscar&#225; a imagem do lado do servidor.</p>
+
+      <div class="callout callout-tip">
+        <strong>Dica de performance:</strong> Para cargas de trabalho de produ&#231;&#227;o, base64 d&#225; lat&#234;ncia mais previs&#237;vel j&#225; que voc&#234; n&#227;o depende da URL downstream ser r&#225;pida ou dispon&#237;vel. Para prototipagem, URLs s&#227;o mais simples.
+      </div>
+
+      <h2 id="template-system-prompt">Template de System Prompt para Gerar Prompts Prontos para IA</h2>
+
+      <p>O system prompt &#233; a parte mais importante da sua implementa&#231;&#227;o. Um system prompt fraco produz descri&#231;&#245;es gen&#233;ricas de imagem. Um bem elaborado produz prompts estruturados e acion&#225;veis que funcionam bem com modelos de gera&#231;&#227;o de imagem.</p>
+
+      <pre><code>You are an expert AI art prompt engineer. When given an image, analyze it thoroughly and generate an optimized text prompt that would recreate a similar image using an AI image generation tool.
+
+Your output must follow this structure:
+
+PROMPT:
+[Single paragraph, comma-separated descriptors. Include: subject description, environment/setting, lighting conditions, color palette, mood/atmosphere, art style, rendering quality. Be specific and concrete. 60-120 words.]
+
+STYLE NOTES:
+[2-3 sentences describing the visual style, medium, and any distinctive aesthetic characteristics]
+
+NEGATIVE PROMPT:
+[Comma-separated list of elements to exclude for best results]
+
+MODEL RECOMMENDATION:
+[One of: Midjourney, Stable Diffusion, DALL-E 3, Flux, Ideogram &#8212; based on the image style]
+
+Do not include any preamble, explanation, or text outside this structure.</code></pre>
+
+      <h2 id="implementacao-python">Implementa&#231;&#227;o em Python: Claude Vision</h2>
+
+      <pre><code>import anthropic
+import base64
+from pathlib import Path
+
+def image_to_prompt(image_path: str, target_model: str = "Midjourney") -> dict:
+    """
+    Analisa uma imagem e gera um prompt de arte IA.
+
+    Args:
+        image_path: Caminho para arquivo de imagem local
+        target_model: Modelo IA alvo ("Midjourney", "Stable Diffusion", etc.)
+
+    Returns:
+        dict com 'prompt', 'style_notes', 'negative_prompt', 'model_recommendation'
+    """
+    client = anthropic.Anthropic()
+
+    # Ler e codificar imagem
+    image_data = Path(image_path).read_bytes()
+    base64_image = base64.standard_b64encode(image_data).decode("utf-8")
+
+    # Detectar tipo de m&#237;dia
+    suffix = Path(image_path).suffix.lower()
+    media_type_map = {
+        ".jpg": "image/jpeg",
+        ".jpeg": "image/jpeg",
+        ".png": "image/png",
+        ".gif": "image/gif",
+        ".webp": "image/webp"
+    }
+    media_type = media_type_map.get(suffix, "image/jpeg")
+
+    message = client.messages.create(
+        model="claude-haiku-4-5",
+        max_tokens=1024,
+        system=SYSTEM_PROMPT,
+        messages=[
+            {
+                "role": "user",
+                "content": [
+                    {
+                        "type": "image",
+                        "source": {
+                            "type": "base64",
+                            "media_type": media_type,
+                            "data": base64_image,
+                        },
+                    },
+                    {
+                        "type": "text",
+                        "text": f"Analyze this image and generate an AI art prompt optimized for {target_model}."
+                    }
+                ],
+            }
+        ],
+    )
+
+    response_text = message.content[0].text
+    return parse_prompt_response(response_text)</code></pre>
+
+      <h2 id="implementacao-nodejs">Implementa&#231;&#227;o em JavaScript / Node.js</h2>
+
+      <pre><code>import Anthropic from "@anthropic-ai/sdk";
+import fs from "fs";
+import path from "path";
+
+const client = new Anthropic({
+  apiKey: process.env.ANTHROPIC_API_KEY,
+});
+
+async function imageToPrompt(imagePath, targetModel = "Midjourney") {
+  const imageBuffer = fs.readFileSync(imagePath);
+  const base64Image = imageBuffer.toString("base64");
+
+  const ext = path.extname(imagePath).toLowerCase();
+  const mediaTypeMap = {
+    ".jpg": "image/jpeg",
+    ".jpeg": "image/jpeg",
+    ".png": "image/png",
+    ".gif": "image/gif",
+    ".webp": "image/webp",
+  };
+  const mediaType = mediaTypeMap[ext] || "image/jpeg";
+
+  const message = await client.messages.create({
+    model: "claude-haiku-4-5",
+    max_tokens: 1024,
+    system: SYSTEM_PROMPT,
+    messages: [
+      {
+        role: "user",
+        content: [
+          {
+            type: "image",
+            source: { type: "base64", media_type: mediaType, data: base64Image },
+          },
+          {
+            type: "text",
+            text: `Analyze this image and generate an AI art prompt optimized for ${targetModel}.`,
+          },
+        ],
+      },
+    ],
+  });
+
+  return parsePromptResponse(message.content[0].text);
+}
+
+// Exemplo de uso
+const result = await imageToPrompt("./reference.png", "Stable Diffusion");
+console.log("Prompt:", result.prompt);</code></pre>
+
+      <h2 id="tratamento-erros">Tratamento de Erros: Rate Limits, Limites de Tamanho e Formatos N&#227;o Suportados</h2>
+
+      <p>Implementa&#231;&#245;es de produ&#231;&#227;o devem lidar com estes modos de falha de forma elegante:</p>
+
+      <pre><code>async function imageToPromptSafe(imagePath, targetModel = "Midjourney") {
+  // Verificar tamanho do arquivo antes do upload (limite de 5MB)
+  const stats = fs.statSync(imagePath);
+  const fileSizeMB = stats.size / (1024 * 1024);
+  if (fileSizeMB > 5) {
+    throw new Error(`Imagem muito grande: ${fileSizeMB.toFixed(1)}MB. M&#225;x 5MB.`);
+  }
+
+  // Verificar formato
+  const ext = path.extname(imagePath).toLowerCase();
+  const supported = [".jpg", ".jpeg", ".png", ".gif", ".webp"];
+  if (!supported.includes(ext)) {
+    throw new Error(`Formato n&#227;o suportado: ${ext}. Use JPG, PNG, GIF ou WebP.`);
+  }
+
+  try {
+    return await imageToPrompt(imagePath, targetModel);
+  } catch (error) {
+    if (error.status === 429) {
+      const retryAfter = parseInt(error.headers?.["retry-after"] || "60");
+      console.warn(`Rate limited. Tentar novamente em ${retryAfter}s`);
+      await new Promise(resolve => setTimeout(resolve, retryAfter * 1000));
+      return await imageToPrompt(imagePath, targetModel);
+    }
+    if (error.status === 400) {
+      throw new Error(`Requisi&#231;&#227;o inv&#225;lida &#8212; verifique formato e tamanho: ${error.message}`);
+    }
+    throw error;
+  }
+}</code></pre>
+
+      <h2 id="comparacao-custos">Compara&#231;&#227;o de Custos: Claude vs GPT-4V vs Gemini Vision</h2>
+
+      <p>Tokens de imagem s&#227;o calculados de forma diferente entre provedores. Aqui est&#225; uma compara&#231;&#227;o pr&#225;tica para um JPEG t&#237;pico de 1024x1024 (~300KB):</p>
+
+      <div class="table-wrap">
+      <table class="comparison-table">
+        <thead>
+          <tr><th>API</th><th>Custo Tokens Imagem</th><th>Custo Texto Sa&#237;da</th><th>Custo por 1000 imagens</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Claude Haiku 4.5</td><td>~1.600 tokens de entrada</td><td>~300 tokens de sa&#237;da</td><td>~$0,40</td></tr>
+          <tr><td>Claude Sonnet 3.5</td><td>~1.600 tokens de entrada</td><td>~300 tokens de sa&#237;da</td><td>~$3,60</td></tr>
+          <tr><td>GPT-4o mini</td><td>~765 tokens de entrada (low detail)</td><td>~300 tokens de sa&#237;da</td><td>~$0,23</td></tr>
+          <tr><td>GPT-4o</td><td>~765 tokens de entrada</td><td>~300 tokens de sa&#237;da</td><td>~$2,70</td></tr>
+          <tr><td>Gemini 1.5 Flash</td><td>~258 tokens de entrada</td><td>~300 tokens de sa&#237;da</td><td>~$0,08</td></tr>
+          <tr><td>Gemini 1.5 Pro</td><td>~258 tokens de entrada</td><td>~300 tokens de sa&#237;da</td><td>~$0,90</td></tr>
+        </tbody>
+      </table>
+      </div>
+
+      <p><em>Pre&#231;os aproximados de mar&#231;o de 2026. Verifique pre&#231;os atuais no site de cada provedor.</em></p>
+
+      <p>Para um app consumidor processando centenas de imagens por dia, Gemini Flash ou GPT-4o mini s&#227;o mais econ&#244;micos. Para pipelines cr&#237;ticos em qualidade onde precis&#227;o do prompt importa, o Claude Haiku oferece a melhor rela&#231;&#227;o qualidade-custo.</p>
+
+      <h2 id="cache">Estrat&#233;gias de Cache para Reduzir Custos de API</h2>
+
+      <p>Para deploys em produ&#231;&#227;o, cache &#233; essencial. A mesma imagem nunca deve ser analisada duas vezes:</p>
+
+      <pre><code>import crypto from "crypto";
+import Redis from "ioredis";
+
+const redis = new Redis(process.env.REDIS_URL);
+const CACHE_TTL = 60 * 60 * 24 * 30; // 30 dias
+
+async function imageToPromptCached(imageBuffer, targetModel = "Midjourney") {
+  // Criar chave de cache a partir do hash do conte&#250;do da imagem + modelo
+  const imageHash = crypto
+    .createHash("sha256")
+    .update(imageBuffer)
+    .digest("hex");
+  const cacheKey = `img2prompt:${imageHash}:${targetModel}`;
+
+  // Verificar cache
+  const cached = await redis.get(cacheKey);
+  if (cached) {
+    return JSON.parse(cached);
+  }
+
+  // Gerar prompt
+  const base64Image = imageBuffer.toString("base64");
+  const result = await imageToPrompt(base64Image, targetModel);
+
+  // Cachear resultado
+  await redis.setex(cacheKey, CACHE_TTL, JSON.stringify(result));
+
+  return result;
+}</code></pre>
+
+      <h2 id="arquitetura-producao">Arquitetura de Produ&#231;&#227;o: Padr&#227;o de Fun&#231;&#227;o Serverless</h2>
+
+      <p>O padr&#227;o de produ&#231;&#227;o mais pr&#225;tico para apps web &#233; uma fun&#231;&#227;o serverless que aceita dados de imagem e retorna o prompt. Este &#233; o padr&#227;o usado pelo pr&#243;prio ImageToPrompt, implantado na Vercel.</p>
+
+      <p>O <a href="/">ImageToPrompt</a> (a ferramenta neste site) &#233; uma implementa&#231;&#227;o de refer&#234;ncia funcional deste padr&#227;o. Usa Claude Haiku para an&#225;lise de imagem, uma fun&#231;&#227;o serverless Vercel como backend, Upstash Redis para rate limiting (10 requisi&#231;&#245;es por IP por dia no plano gratuito) e um frontend React que gerencia upload de imagem, preview e exibi&#231;&#227;o de prompt.</p>
+
+      <p>A arquitetura completa &#8212; fun&#231;&#227;o serverless, rate limiting, tratamento de CORS, respostas de erro &#8212; representa um padr&#227;o pronto para produ&#231;&#227;o que voc&#234; pode adaptar para seu pr&#243;prio caso de uso.</p>
+
+      <div class="cta-box">
+        <h3>Experimente Voc&#234; Mesmo</h3>
+        <p>Envie qualquer imagem e obtenha um prompt IA otimizado em menos de 10 segundos. Gratuito, sem necessidade de conta.</p>
+        <a href="/" class="cta-btn">Experimentar o Gerador de Imagem para Prompt &#8594;</a>
+      </div>
+
+    </div>
+
+    <div class="author-bio">
+      <svg class="author-photo" width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="Avatar do autor"><circle cx="32" cy="32" r="32" fill="#2a1f4e"/><circle cx="32" cy="26" r="11" fill="#7c6bc4"/><ellipse cx="32" cy="52" rx="18" ry="11" fill="#7c6bc4"/></svg>
+      <div class="author-info">
+        <p class="author-name">ImageToPrompt Team</p>
+        <p class="author-desc">Somos uma equipe de especialistas dedicados a ajudar criadores a dominar a gera&#231;&#227;o de imagens com IA. Atrav&#233;s de ferramentas de convers&#227;o de imagem para prompt e guias de engenharia de prompts, apoiamos artistas em todo o mundo.</p>
+        <a href="https://x.com/Ilyass14286541" class="author-link">Seguir no X &#8594;</a>
+      </div>
+    </div>
+
+    <div class="related-posts">
+      <h2>Guias relacionados</h2>
+      <div class="related-grid">
+        <a href="/pt/blog/guia-prompts-flux-ai/" class="related-card">
+          <p class="tag">Guia</p>
+          <h3>Guia de Prompts Flux AI 2026</h3>
+        </a>
+        <a href="/pt/blog/como-escrever-prompts-ia-iniciantes/" class="related-card">
+          <p class="tag">Iniciante</p>
+          <h3>Como Escrever Prompts de IA para Iniciantes</h3>
+        </a>
+        <a href="/pt/blog/imagem-para-prompt-anime/" class="related-card">
+          <p class="tag">Anime</p>
+          <h3>Imagem para Prompt para Anime</h3>
+        </a>
+        <a href="/pt/blog/imagem-para-prompt-game-art/" class="related-card">
+          <p class="tag">Game Dev</p>
+          <h3>Imagem para Prompt para Game Art</h3>
+        </a>
+      </div>
+    </div>
+
+  </div>
+
+  <footer class="footer-4col">
+    <div class="f4-inner">
+      <div class="f4-brand">
+        <img src="/favicon.svg" alt="ImageToPrompt" width="28" height="28">
+        <span class="f4-brand-name">ImageTo<span class="accent">Prompt</span></span>
+        <span class="f4-brand-sub">&mdash; Free AI Prompt Generator</span>
+      </div>
+      <div class="f4-grid">
+        <div class="f4-section">
+          <h4 class="f4-heading">Image Prompt Tools</h4>
+          <a href="/">Image to Prompt</a>
+          <a href="/text-to-prompt/">Text to Prompt</a>
+      <a href="/describe-image/">Describe Image</a>
+          <a href="/midjourney-prompt-generator/">Midjourney</a>
+          <a href="/stable-diffusion-prompt-generator/">Stable Diffusion</a>
+          <a href="/flux-prompt-generator/">Flux</a>
+          <a href="/dall-e-prompt-generator/">DALL-E 3</a>
+          <a href="/adobe-firefly-prompt-generator/">Adobe Firefly</a>
+          <a href="/leonardo-ai-prompt-generator/">Leonardo AI</a>
+          <a href="/ideogram-prompt-generator/">Ideogram</a>
+        </div>
+        <div class="f4-section">
+          <h4 class="f4-heading">Video Prompt Tools</h4>
+          <a href="/image-to-video-prompt/">Image to Video Prompt</a>
+          <a href="/text-to-video-prompt/">Text to Video Prompt</a>
+          <a href="/veo-prompt-generator/">Veo / Flow Studio</a>
+          <a href="/kling-prompt-generator/">Kling AI</a>
+          <a href="/runway-prompt-generator/">Runway Gen-3</a>
+          <a href="/pika-prompt-generator/">Pika</a>
+          <a href="/luma-prompt-generator/">Luma Dream Machine</a>
+          <a href="/sora-prompt-generator/">Sora</a>
+          <a href="/minimax-prompt-generator/">Minimax</a>
+          <a href="/stable-video-prompt-generator/">Stable Video</a>
+        </div>
+        <div class="f4-section">
+          <h4 class="f4-heading">Resources</h4>
+          <a href="/pt/blog/">Blog</a>
+          <a href="/pt/about/">Sobre</a>
+          <a href="/pt/pricing/">Pre&#231;os</a>
+          <a href="/contact/">Contact</a>
+          <a href="/privacy-policy/">Privacy Policy</a>
+          <a href="/terms-of-service/">Terms of Service</a>
+        </div>
+        <div class="f4-section">
+          <h4 class="f4-heading">Languages</h4>
+          <a href="/">English</a>
+          <a href="/fr/">Fran&#231;ais</a>
+          <a href="/ar/">&#1575;&#1604;&#1593;&#1585;&#1576;&#1610;&#1577;</a>
+          <a href="/es/">Espa&#241;ol</a>
+          <a href="/ko/">&#54620;&#44397;&#50612;</a>
+          <a href="/ja/">&#26085;&#26412;&#35486;</a>
+          <a href="/ru/">&#1056;&#1091;&#1089;&#1089;&#1082;&#1080;&#1081;</a>
+          <a href="/pt/">Portugu&#234;s</a>
+        </div>
+      </div>
+      <div class="f4-bottom">
+        <p>&#169; 2026 ImageToPrompt.dev &#8212; Free AI Prompt Generator</p>
+        <p>Your images are never stored. All analysis is ephemeral and private.</p>
+      </div>
+    </div>
+  </footer>
+
+<script src="/newsletter-inject.js" defer></script>
+<script src="/nav.js" defer></script>
+  <script>
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', function() {
+    navigator.serviceWorker.register('/sw.js')
+      .catch(function(err) { console.warn('SW registration failed:', err); });
+  });
+}
+</script>
+</body>
+</html>

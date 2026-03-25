@@ -1,0 +1,650 @@
+<!doctype html>
+<html lang="zh">
+<head>
+  <script src="/theme-toggle.js"></script>
+  <meta charset="UTF-8" />
+  <link rel="dns-prefetch" href="https://www.googletagmanager.com">
+<link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="max-image-preview:large, index, follow">
+  <meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="ImageToPrompt">
+  <title>Flux AI&#25552;&#31034;&#35789;&#25351;&#21335;2026&#65306;&#20026;Flux.1 Dev&#12289;Pro&#21644;Schnell&#25776;&#20889;&#23436;&#32654;&#25552;&#31034;&#35789;</title>
+  <meta name="description" content="&#25484;&#25569;2026&#24180;Flux AI&#25552;&#31034;&#35789;&#25216;&#24039;&#12290;&#23398;&#20064;&#33258;&#28982;&#35821;&#35328;&#25552;&#31034;&#35789;&#12289;&#30456;&#26426;&#35774;&#32622;&#12289;&#20809;&#32447;&#26415;&#35821;&#21644;&#39118;&#26684;&#25551;&#36848;&#31526;&#65292;&#36866;&#29992;&#20110;Flux.1 Dev&#12289;Pro&#21644;Schnell&#27169;&#22411;&#12290;" />
+  <link rel="canonical" href="https://www.imagetoprompt.dev/zh/blog/flux-ai-tishi-ci-zhinan/" />
+  <link rel="alternate" hreflang="zh" href="https://www.imagetoprompt.dev/zh/blog/flux-ai-tishi-ci-zhinan/" />
+  <link rel="alternate" hreflang="en" href="https://www.imagetoprompt.dev/blog/flux-ai-prompt-guide/" />
+  <link rel="alternate" hreflang="x-default" href="https://www.imagetoprompt.dev/blog/flux-ai-prompt-guide/" />
+  <meta property="og:title" content="Flux AI&#25552;&#31034;&#35789;&#25351;&#21335;2026&#65306;&#20026;Flux.1 Dev&#12289;Pro&#21644;Schnell&#25776;&#20889;&#23436;&#32654;&#25552;&#31034;&#35789;" />
+  <meta property="og:description" content="&#25484;&#25569;2026&#24180;Flux AI&#25552;&#31034;&#35789;&#25216;&#24039;&#12290;&#23398;&#20064;&#33258;&#28982;&#35821;&#35328;&#25552;&#31034;&#35789;&#12289;&#30456;&#26426;&#35774;&#32622;&#12289;&#20809;&#32447;&#26415;&#35821;&#21644;&#39118;&#26684;&#25551;&#36848;&#31526;&#12290;" />
+  <meta property="og:url" content="https://www.imagetoprompt.dev/zh/blog/flux-ai-tishi-ci-zhinan/" />
+  <meta property="og:type" content="article" />
+  <meta property="og:image" content="https://www.imagetoprompt.dev/og-image.png" />
+  <meta property="og:site_name" content="ImageToPrompt" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Flux AI&#25552;&#31034;&#35789;&#25351;&#21335;2026&#65306;Flux.1 Dev&#12289;Pro&#21644;Schnell" />
+  <meta name="twitter:description" content="&#25484;&#25569;Flux AI&#25552;&#31034;&#35789;&#25216;&#24039;&#12290;&#33258;&#28982;&#35821;&#35328;&#25552;&#31034;&#35789;&#12289;&#30456;&#26426;&#35774;&#32622;&#12289;&#20809;&#32447;&#21644;&#31034;&#20363;&#12290;" />
+  <meta name="twitter:image" content="https://www.imagetoprompt.dev/og-image.png" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="48x48" href="/favicon-48.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+  <link rel="manifest" href="/site.webmanifest" />
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="/fonts/space-grotesk-700.woff2" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="/fonts/inter-400.woff2" />
+  <link rel="stylesheet" href="/theme.css">
+  <link rel="preload" href="/blog.css" as="style" onload="this.onload=null;this.rel='stylesheet'"><noscript><link rel="stylesheet" href="/blog.css"></noscript>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Flux AI\u63d0\u793a\u8bcd\u6307\u53572026\uff1a\u4e3aFlux.1 Dev\u3001Pro\u548cSchnell\u64b0\u5199\u5b8c\u7f8e\u63d0\u793a\u8bcd",
+    "description": "\u638c\u63e12026\u5e74Flux AI\u63d0\u793a\u8bcd\u6280\u5de7\u3002\u5b66\u4e60\u81ea\u7136\u8bed\u8a00\u63d0\u793a\u8bcd\u3001\u76f8\u673a\u8bbe\u7f6e\u3001\u5149\u7ebf\u672f\u8bed\u548c\u98ce\u683c\u63cf\u8ff0\u7b26\uff0c\u9002\u7528\u4e8eFlux.1 Dev\u3001Pro\u548cSchnell\u6a21\u578b\u3002",
+    "image": "https://www.imagetoprompt.dev/og-image.png",
+    "datePublished": "2026-03-13",
+    "dateModified": "2026-03-24",
+    "inLanguage": "zh",
+    "author": {
+      "@type": "Person",
+      "name": "ImageToPrompt Team",
+      "url": "https://www.imagetoprompt.dev/"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "ImageToPrompt",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://www.imagetoprompt.dev/favicon.svg"
+      }
+    },
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https://www.imagetoprompt.dev/zh/blog/flux-ai-tishi-ci-zhinan/"
+    }
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "\u4e3aFlux AI\u64b0\u5199\u63d0\u793a\u8bcd\u7684\u6700\u4f73\u65b9\u5f0f\u662f\u4ec0\u4e48\uff1f",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Flux AI\u5bf9\u8be6\u7ec6\u7684\u81ea\u7136\u8bed\u8a00\u54cd\u5e94\u6700\u597d\uff0c\u800c\u975e\u7528\u9017\u53f7\u5206\u9694\u7684\u6807\u7b7e\u3002\u50cf\u5199\u6bb5\u843d\u4e00\u6837\u63cf\u8ff0\u4f60\u7684\u573a\u666f\uff0c\u5305\u62ec\u4e3b\u4f53\u3001\u6784\u56fe\u3001\u5149\u7ebf\u3001\u955c\u5934\uff08\u5982Canon 85mm f/1.4\uff09\u548c\u6c1b\u56f4\u3002"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Flux\u652f\u6301\u53cd\u5411\u63d0\u793a\u8bcd\u5417\uff1f",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "\u4e0d\u652f\u6301\uff0cFlux\u4e0d\u50cfStable Diffusion\u90a3\u6837\u652f\u6301\u53cd\u5411\u63d0\u793a\u8bcd\u3002\u8981\u907f\u514d\u4e0d\u60f3\u8981\u7684\u5143\u7d20\uff0c\u5e94\u7528\u79ef\u6781\u3001\u7cbe\u786e\u7684\u8bed\u8a00\u6765\u63cf\u8ff0\u4f60\u786e\u5207\u60f3\u770b\u5230\u7684\u5185\u5bb9\u3002"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Flux Dev\u548cFlux Pro\u6709\u4ec0\u4e48\u533a\u522b\uff1f",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Flux Dev\u662f\u514d\u8d39\u7684\u5f00\u6e90\u6a21\u578b\uff0c\u8d28\u91cf\u7565\u4f4e\u3002Flux Pro\u662f\u5546\u4e1a\u6a21\u578b\uff0c\u5177\u6709\u66f4\u597d\u7684\u4e00\u81f4\u6027\u3001\u66f4\u5f3a\u7684\u6307\u4ee4\u8ddf\u968f\u80fd\u529b\u548c\u66f4\u9ad8\u7684\u5206\u8fa8\u7387\u3002\u4e24\u8005\u7684\u63d0\u793a\u8bcd\u6280\u5de7\u662f\u76f8\u540c\u7684\u3002"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Flux\u63d0\u793a\u8bcd\u4e2d\u7684\u76f8\u673a\u53c2\u6570\u771f\u7684\u6709\u6548\u679c\u5417\uff1f",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "\u662f\u7684\uff0cFlux\u975e\u5e38\u64c5\u957f\u7406\u89e3\u76f8\u673a\u6280\u672f\u53c2\u6570\u3002\u6307\u5b9a\u50cfCanon 85mm f/1.4\u8fd9\u6837\u7684\u955c\u5934\u4f1a\u4ea7\u751f\u903c\u771f\u7684\u6563\u666f\u6548\u679c\uff0c\u800c24mm f/8\u5219\u4f1a\u751f\u6210\u66f4\u9510\u5229\u3001\u66f4\u5927\u666f\u6df1\u7684\u56fe\u50cf\u3002"
+        }
+      }
+    ]
+  }
+  </script>
+    <!-- Google AdSense -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4499206373485728" crossorigin="anonymous"></script>
+    <!-- Web Push Notifications -->
+<script src="https://cdn.onesignal.com/sdks/web/v16/OneSignalSDK.page.js" defer></script>
+<script>
+  window.OneSignalDeferred = window.OneSignalDeferred || [];
+  OneSignalDeferred.push(async function(OneSignal) {
+    await OneSignal.init({
+      appId: "REPLACE_WITH_ONESIGNAL_APP_ID",
+      notifyButton: { enable: false }
+    });
+  });
+</script>
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="inner">
+      <a href="/zh/" class="site-logo"><img src="/favicon.svg" alt="ImageToPrompt" width="48" height="48"><div class="site-logo-text">ImageTo<span class="accent">Prompt</span><span class="site-logo-sub">&#20813;&#36153;AI&#25552;&#31034;&#35789;&#29983;&#25104;&#22120;</span></div></a>
+      <nav class="site-nav" aria-label="&#20027;&#23548;&#33322;">
+        <div class="nav-dropdown">
+          <button class="nav-dropdown-trigger" aria-haspopup="true" aria-expanded="false">Tools <span class="nav-chevron" aria-hidden="true">&#9660;</span></button>
+          <div class="nav-dropdown-menu" role="menu">
+            <div class="nav-mega-grid">
+              <div class="nav-mega-col">
+                <div class="nav-mega-heading">&#128444; IMAGE TOOLS</div>
+                <a href="/" role="menuitem" class="nav-mega-tool">Image to Prompt <span class="nav-mega-arrow">&#8594;</span></a>
+                <a href="/text-to-prompt/" role="menuitem" class="nav-mega-tool">Text to Prompt <span class="nav-mega-arrow">&#8594;</span></a>
+                <a href="/describe-image/" role="menuitem" class="nav-mega-tool">Describe Image <span class="nav-new-badge">NEW</span> <span class="nav-mega-arrow">&#8594;</span></a>
+                <div class="nav-mega-models-label">Models</div>
+                <div class="nav-mega-models"><a href="/midjourney-prompt-generator/">Midjourney</a><span class="nav-dot">&#xB7;</span><a href="/stable-diffusion-prompt-generator/">SD</a></div>
+                <div class="nav-mega-models"><a href="/flux-prompt-generator/">Flux</a><span class="nav-dot">&#xB7;</span><a href="/dall-e-prompt-generator/">DALL&#xB7;E&#xA0;3</a></div>
+                <div class="nav-mega-models"><a href="/adobe-firefly-prompt-generator/">Firefly</a><span class="nav-dot">&#xB7;</span><a href="/leonardo-ai-prompt-generator/">Leonardo</a></div>
+                <div class="nav-mega-models"><a href="/ideogram-prompt-generator/">Ideogram</a></div>
+              </div>
+              <div class="nav-mega-divider" aria-hidden="true"></div>
+              <div class="nav-mega-col">
+                <div class="nav-mega-heading">&#127909; VIDEO TOOLS</div>
+                <a href="/?tab=image-to-video" role="menuitem" class="nav-mega-tool">Image to Video <span class="nav-mega-arrow">&#8594;</span></a>
+                <a href="/?tab=text-to-video" role="menuitem" class="nav-mega-tool">Text to Video <span class="nav-mega-arrow">&#8594;</span></a>
+                <div class="nav-mega-models-label">Models</div>
+                <div class="nav-mega-models"><a href="/veo-prompt-generator/">Veo</a><span class="nav-dot">&#xB7;</span><a href="/kling-prompt-generator/">Kling</a></div>
+                <div class="nav-mega-models"><a href="/runway-prompt-generator/">Runway</a><span class="nav-dot">&#xB7;</span><a href="/pika-prompt-generator/">Pika</a></div>
+                <div class="nav-mega-models"><a href="/luma-prompt-generator/">Luma</a><span class="nav-dot">&#xB7;</span><a href="/sora-prompt-generator/">Sora</a></div>
+                <div class="nav-mega-models"><a href="/minimax-prompt-generator/">Minimax</a><span class="nav-dot">&#xB7;</span><a href="/stable-video-prompt-generator/">Stable</a></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <a href="/zh/blog/">&#21338;&#23458;</a>
+        <a href="/zh/pricing/" class="nav-pill-pricing">&#20215;&#26684;</a>
+        <a href="/zh/about/" class="nav-pill-about">&#20851;&#20110;</a>
+        <a href="/zh/" class="nav-try-free">&#20813;&#36153;&#35797;&#29992; &#8594;</a>
+        <button id="theme-toggle" onclick="toggleTheme()" aria-label="&#20999;&#25442;&#20027;&#39064;" title="&#20999;&#25442;&#20027;&#39064;">&#9728;&#xFE0F;</button>
+  </nav>
+    </div>
+  </header>
+
+  <nav class="breadcrumb" aria-label="&#38754;&#21253;&#23633;&#23548;&#33322;">
+    <a href="/zh/">&#39318;&#39029;</a><span class="sep">&#8250;</span>
+    <a href="/zh/blog/">&#21338;&#23458;</a><span class="sep">&#8250;</span>
+    <span>Flux AI&#25552;&#31034;&#35789;&#25351;&#21335;2026</span>
+  </nav>
+
+  <div class="page-wrapper">
+
+    <header class="article-header">
+      <p class="article-tag">Flux AI</p>
+      <h1>Flux AI&#25552;&#31034;&#35789;&#25351;&#21335;2026&#65306;&#20026;Flux.1 Dev&#12289;Pro&#21644;Schnell&#25776;&#20889;&#23436;&#32654;&#25552;&#31034;&#35789;</h1>
+      <div class="article-meta">
+        <span>2026&#24180;3&#26376;</span>
+        <span class="dot">&#183;</span>
+        <span>&#38405;&#35835;&#26102;&#38388;13&#20998;&#38047;</span>
+        <span class="dot">&#183;</span>
+        <span>Flux.1 &#183; &#25552;&#31034;&#35789;&#24037;&#31243; &#183; AI&#22270;&#20687;&#29983;&#25104;</span>
+        <span class="dot">&#183;</span>
+        <span>&#26356;&#26032;&#20110;2026&#24180;3&#26376;</span>
+      </div>
+    </header>
+
+    <div class="article-body">
+
+      <p>Flux.1&#30001;Black Forest Labs&#20110;2024&#24180;&#20013;&#26399;&#21457;&#24067;&#26102;&#25913;&#21464;&#20102;&#28216;&#25103;&#35268;&#21017;&#65292;&#21040;2026&#24180;&#23427;&#24050;&#25104;&#20026;&#36861;&#27714;&#30495;&#23454;&#25668;&#24433;&#25928;&#26524;&#12289;&#26356;&#22909;&#30340;&#25991;&#23383;&#28210;&#26579;&#21644;&#26356;&#31934;&#30830;&#25552;&#31034;&#35789;&#36319;&#38543;&#33021;&#21147;&#30340;&#29992;&#25143;&#30340;&#39318;&#36873;&#29983;&#25104;&#22120;&#12290;&#20294;Flux&#30340;&#20248;&#21183;&#8212;&#8212;&#20854;&#31934;&#23494;&#30340;&#33258;&#28982;&#35821;&#35328;&#29702;&#35299;&#8212;&#8212;&#20063;&#20250;&#35753;&#20174;Midjourney&#25110;Stable Diffusion&#36716;&#26469;&#30340;&#29992;&#25143;&#24863;&#21040;&#22256;&#24785;&#65292;&#22240;&#20026;&#20182;&#20204;&#20064;&#24815;&#20102;&#22522;&#20110;&#26631;&#31614;&#30340;&#25552;&#31034;&#35789;&#26041;&#24335;&#12290;&#26412;&#25351;&#21335;&#23558;&#30830;&#20999;&#23637;&#31034;Flux&#30340;&#24037;&#20316;&#21407;&#29702;&#65292;&#20197;&#21450;&#22914;&#20309;&#25776;&#20889;&#33021;&#22987;&#32456;&#20135;&#20986;&#24778;&#33395;&#32467;&#26524;&#30340;&#25552;&#31034;&#35789;&#12290;</p>
+
+      <p>&#25105;&#20204;&#23558;&#28085;&#30422;&#20351;Flux&#34920;&#29616;&#19981;&#21516;&#30340;&#26550;&#26500;&#24046;&#24322;&#12289;&#23427;&#26368;&#21892;&#20110;&#21709;&#24212;&#30340;&#29305;&#23450;&#35789;&#27719;&#12289;10&#20010;&#23436;&#25972;&#20998;&#26512;&#30340;&#31034;&#20363;&#25552;&#31034;&#35789;&#65292;&#20197;&#21450;&#22914;&#20309;&#20351;&#29992;ImageToPrompt&#20174;&#20219;&#20309;&#21442;&#32771;&#22270;&#20687;&#33258;&#21160;&#29983;&#25104;Flux&#20248;&#21270;&#30340;&#25552;&#31034;&#35789;&#12290;</p>
+
+      <nav class="toc" aria-label="&#30446;&#24405;">
+        <details open>
+          <summary>&#26412;&#25351;&#21335;&#20869;&#23481;</summary>
+          <ol>
+            <li><a href="#flux-variants">Flux.1&#21464;&#20307;&#65306;Dev&#12289;Pro&#21644;Schnell</a></li>
+            <li><a href="#natural-language">&#20026;&#20160;&#20040;Flux&#20351;&#29992;&#33258;&#28982;&#35821;&#35328;</a></li>
+            <li><a href="#prompt-structure">Flux&#25552;&#31034;&#35789;&#32467;&#26500;</a></li>
+            <li><a href="#camera-terminology">&#26377;&#25928;&#30340;&#30456;&#26426;&#26415;&#35821;</a></li>
+            <li><a href="#lighting-descriptors">&#20809;&#32447;&#25551;&#36848;&#31526;</a></li>
+            <li><a href="#style-descriptors">&#39118;&#26684;&#25551;&#36848;&#31526;</a></li>
+            <li><a href="#what-not-to-do">Flux&#25552;&#31034;&#35789;&#20013;&#19981;&#35813;&#20570;&#30340;&#20107;</a></li>
+            <li><a href="#comparison-table">Flux Dev vs Pro vs Schnell&#23545;&#27604;</a></li>
+            <li><a href="#example-prompts">10&#20010;&#31034;&#20363;&#25552;&#31034;&#35789;&#21450;&#20998;&#26512;</a></li>
+            <li><a href="#imagetoprompt">&#20351;&#29992;ImageToPrompt&#29983;&#25104;Flux&#25552;&#31034;&#35789;</a></li>
+            <li><a href="#common-mistakes">Flux&#26032;&#25163;&#24120;&#35265;&#38169;&#35823;</a></li>
+          </ol>
+        </details>
+      </nav>
+
+      <div class="callout">
+        <p><strong>&#33258;&#21160;&#29983;&#25104;Flux&#25552;&#31034;&#35789;&#65306;</strong> <a href="/flux-prompt-generator/">&#25105;&#20204;&#30340;Flux&#25552;&#31034;&#35789;&#29983;&#25104;&#22120;</a>&#21487;&#20197;&#20174;&#20219;&#20309;&#22270;&#20687;&#25110;&#25991;&#23383;&#25551;&#36848;&#21019;&#24314;&#20248;&#21270;&#30340;&#25552;&#31034;&#35789;&#12290;</p>
+      </div>
+
+      <h2 id="flux-variants">Flux.1&#21464;&#20307;&#65306;Dev&#12289;Pro&#21644;Schnell</h2>
+
+      <p>Black Forest Labs&#21457;&#24067;&#20102;&#19977;&#20010;Flux.1&#21464;&#20307;&#65292;&#21508;&#33258;&#22312;&#36136;&#37327;&#12289;&#36895;&#24230;&#21644;&#21487;&#35775;&#38382;&#24615;&#20043;&#38388;&#26377;&#19981;&#21516;&#30340;&#24179;&#34913;&#12290;&#20102;&#35299;&#20320;&#20351;&#29992;&#30340;&#26159;&#21738;&#20010;&#21464;&#20307;&#24456;&#37325;&#35201;&#65292;&#22240;&#20026;&#23427;&#20204;&#23545;&#25552;&#31034;&#35789;&#30340;&#25935;&#24863;&#24230;&#30053;&#26377;&#19981;&#21516;&#12290;</p>
+
+      <div class="table-wrap">
+        <table class="comparison-table">
+          <thead>
+            <tr>
+              <th>&#21464;&#20307;</th>
+              <th>&#36895;&#24230;</th>
+              <th>&#36136;&#37327;</th>
+              <th>&#35768;&#21487;&#35777;</th>
+              <th>&#26368;&#20339;&#29992;&#36884;</th>
+              <th>&#20856;&#22411;&#27493;&#25968;</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Flux.1 Dev</strong></td>
+              <td>~20&#8211;40&#31186;(GPU)</td>
+              <td>&#9733;&#9733;&#9733;&#9733;&#9733;</td>
+              <td>&#38750;&#21830;&#19994;</td>
+              <td>&#39640;&#36136;&#37327;&#20010;&#20154;&#39033;&#30446;&#12289;&#23454;&#39564;</td>
+              <td>20&#8211;50&#27493;</td>
+            </tr>
+            <tr>
+              <td><strong>Flux.1 Pro</strong></td>
+              <td>~15&#8211;30&#31186;(API)</td>
+              <td>&#9733;&#9733;&#9733;&#9733;&#9733;</td>
+              <td>&#21830;&#19994;(API)</td>
+              <td>&#29983;&#20135;&#24037;&#20316;&#12289;&#21830;&#19994;&#39033;&#30446;</td>
+              <td>API&#31649;&#29702;</td>
+            </tr>
+            <tr>
+              <td><strong>Flux.1 Schnell</strong></td>
+              <td>~2&#8211;5&#31186;(GPU)</td>
+              <td>&#9733;&#9733;&#9733;&#9733;&#9734;</td>
+              <td>Apache 2.0(&#24320;&#28304;)</td>
+              <td>&#24555;&#36895;&#21407;&#22411;&#35774;&#35745;&#12289;&#22823;&#37327;&#29983;&#25104;</td>
+              <td>4&#27493;</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <p>&#23545;&#20110;&#22823;&#22810;&#25968;&#21019;&#24847;&#24037;&#20316;&#65292;<strong>Flux.1 Dev</strong>&#26159;&#26368;&#20339;&#36873;&#25321;&#8212;&#8212;&#22312;&#26412;&#22320;&#36816;&#34892;&#26102;&#65292;&#23427;&#30340;&#36136;&#37327;&#19982;Pro&#30456;&#24403;&#65292;&#19988;&#26080;&#27599;&#24352;&#22270;&#20687;&#30340;API&#25104;&#26412;&#12290;Flux.1 Schnell&#30340;&#36895;&#24230;&#20196;&#20154;&#24778;&#21497;&#65288;4&#20010;&#25512;&#29702;&#27493;&#39588;vs&#22823;&#22810;&#25968;&#27169;&#22411;&#30340;50&#20010;&#65289;&#65292;&#20294;&#32454;&#33410;&#30053;&#36719;&#65292;&#23545;&#24494;&#22937;&#30340;&#25552;&#31034;&#35789;&#24046;&#24322;&#21709;&#24212;&#36739;&#24369;&#12290;Pro&#36866;&#21512;&#38656;&#35201;&#35768;&#21487;&#35777;&#30340;&#21830;&#19994;&#29983;&#20135;&#31649;&#36947;&#12290;</p>
+
+      <p>&#19977;&#20010;&#21464;&#20307;&#20849;&#20139;&#30456;&#21516;&#30340;&#22522;&#26412;&#25552;&#31034;&#35789;&#36923;&#36753;&#8212;&#8212;&#24046;&#24322;&#22312;&#20110;&#29983;&#25104;&#36136;&#37327;&#21644;&#36895;&#24230;&#65292;&#32780;&#38750;&#22788;&#29702;&#25991;&#26412;&#30340;&#26041;&#24335;&#12290;</p>
+
+      <h2 id="natural-language">&#20026;&#20160;&#20040;Flux&#20351;&#29992;&#33258;&#28982;&#35821;&#35328;&#65288;&#20197;&#21450;&#20026;&#20160;&#20040;&#36825;&#24456;&#37325;&#35201;&#65289;</h2>
+
+      <p>Flux.1&#22522;&#20110;Diffusion Transformer&#65288;DiT&#65289;&#26550;&#26500;&#65292;&#32780;&#38750;Stable Diffusion 1.5&#21644;SDXL&#20351;&#29992;&#30340;UNet&#26550;&#26500;&#12290;&#20851;&#38190;&#30340;&#26159;&#65292;Flux&#20351;&#29992;T5-XXL&#25991;&#26412;&#32534;&#30721;&#22120;&#8212;&#8212;&#19982;Google&#30740;&#31350;&#20013;&#20351;&#29992;&#30340;&#30456;&#21516;&#31867;&#22411;&#30340;&#22823;&#35821;&#35328;&#27169;&#22411;&#8212;&#8212;&#32780;&#19981;&#26159;CLIP&#12290;</p>
+
+      <p>CLIP&#20027;&#35201;&#22312;&#30701;&#26631;&#39064;&#19982;&#22270;&#20687;&#21305;&#37197;&#19978;&#36827;&#34892;&#35757;&#32451;&#65292;&#23427;&#36866;&#21512;&#31616;&#30701;&#30340;&#25551;&#36848;&#24615;&#26631;&#31614;&#65292;&#20294;&#22312;&#22788;&#29702;&#22797;&#26434;&#20851;&#31995;&#12289;&#38271;&#21477;&#21644;&#32454;&#33147;&#30340;&#26500;&#22270;&#25351;&#20196;&#26102;&#34920;&#29616;&#21147;&#19981;&#20174;&#24515;&#12290;T5-XXL&#22312;&#22823;&#35268;&#27169;&#25991;&#26412;&#35821;&#26009;&#19978;&#35757;&#32451;&#65292;&#33021;&#22815;&#29702;&#35299;&#21477;&#27861;&#12289;&#35821;&#27861;&#12289;&#21477;&#23376;&#32467;&#26500;&#21644;&#19978;&#19979;&#25991;&#12290;</p>
+
+      <p>&#36825;&#19968;&#26550;&#26500;&#24046;&#24322;&#35299;&#37322;&#20102;&#20026;&#20160;&#20040;&#65306;</p>
+      <ul>
+        <li>Flux&#33021;&#22312;&#22270;&#20687;&#20013;&#20934;&#30830;&#28210;&#26579;&#25991;&#23383;&#65288;&#36825;&#26159;&#25152;&#26377;&#25193;&#25955;&#27169;&#22411;&#30340;&#21382;&#21490;&#24615;&#24369;&#28857;&#65289;</li>
+        <li>Flux&#33021;&#36981;&#24490;&#22797;&#26434;&#30340;&#22810;&#23376;&#21477;&#26500;&#22270;&#25351;&#20196;</li>
+        <li>Flux&#33021;&#29702;&#35299;&#20851;&#31995;&#24615;&#35821;&#35328;&#65306;&#8220;&#19968;&#20010;&#20154;&#31449;&#22312;&#19968;&#36742;&#32418;&#33394;&#27773;&#36710;&#30340;&#24038;&#36793;&#8221;</li>
+        <li>Flux&#19981;&#20250;&#20687;SD 1.5&#27169;&#22411;&#37027;&#26679;&#20174;&#36887;&#21495;&#20998;&#38548;&#30340;&#26631;&#31614;&#20013;&#21463;&#30410;</li>
+        <li>Flux&#19981;&#20250;&#20174;<code>(keyword:weight)</code>&#35821;&#27861;&#20013;&#21463;&#30410;&#8212;&#8212;&#23427;&#20250;&#24573;&#30053;&#26435;&#37325;&#26631;&#35760;</li>
+      </ul>
+
+      <h2 id="prompt-structure">Flux&#25552;&#31034;&#35789;&#32467;&#26500;&#65306;&#19977;&#37096;&#20998;&#20844;&#24335;</h2>
+
+      <p>&#26368;&#21487;&#38752;&#30340;Flux&#25552;&#31034;&#35789;&#36981;&#24490;&#19977;&#37096;&#20998;&#32467;&#26500;&#65306;<strong>&#20027;&#20307;&#21644;&#22330;&#26223;</strong>&#65292;&#28982;&#21518;&#26159;<strong>&#25216;&#26415;&#25668;&#24433;&#32454;&#33410;</strong>&#65292;&#26368;&#21518;&#26159;<strong>&#39118;&#26684;&#21644;&#27675;&#22260;</strong>&#12290;&#36825;&#31867;&#20284;&#20110;&#19987;&#19994;&#25668;&#24433;&#24072;&#25110;&#30005;&#24433;&#25668;&#24433;&#25351;&#23548;&#25551;&#36848;&#38236;&#22836;&#30340;&#26041;&#24335;&#12290;</p>
+
+      <pre><code class="prompt-example">[&#20027;&#20307;&#21644;&#22330;&#26223;&#25551;&#36848;] + [&#30456;&#26426;&#21644;&#25216;&#26415;&#32454;&#33410;] + [&#39118;&#26684;&#21644;&#27675;&#22260;]</code></pre>
+
+      <p>&#20855;&#20307;&#31034;&#20363;&#65306;</p>
+
+      <pre><code class="prompt-example">A middle-aged Japanese chef in a traditional white uniform carefully plating a bowl of ramen in a small Tokyo restaurant, steam rising from the broth, warm incandescent light overhead, other diners blurred in the background. Shot on Sony A7R V with 85mm f/1.4 lens, shallow depth of field, natural documentary lighting. Warm amber color grading, intimate storytelling mood, photojournalism style.</code></pre>
+
+      <p>&#35299;&#26512;&#20026;&#20160;&#20040;&#36825;&#20010;&#25552;&#31034;&#35789;&#26377;&#25928;&#65306;</p>
+      <ul>
+        <li><strong>&#8220;carefully plating&#8221;</strong> &#8212;&#8212; &#21103;&#35789;&#27604;&#21333;&#32431;&#30340;&#8220;plating&#8221;&#26356;&#33021;&#25429;&#25417;&#23039;&#21183;&#21644;&#21160;&#20316;</li>
+        <li><strong>&#8220;steam rising from the broth&#8221;</strong> &#8212;&#8212; Flux&#20250;&#23383;&#38754;&#28210;&#26579;&#30340;&#27675;&#27675;&#32454;&#33410;</li>
+        <li><strong>&#8220;other diners blurred in the background&#8221;</strong> &#8212;&#8212; Flux&#23558;&#27492;&#29702;&#35299;&#20026;&#26223;&#28145;&#25351;&#20196;</li>
+        <li><strong>&#30456;&#26426;/&#38236;&#22836;&#35268;&#26684;</strong> &#8212;&#8212; &#20256;&#36798;&#30495;&#23454;&#25668;&#24433;&#24847;&#22270;&#21644;&#29305;&#23450;&#30340;&#25955;&#26223;&#29305;&#24449;</li>
+        <li><strong>&#8220;intimate storytelling mood&#8221;</strong> &#8212;&#8212; &#26500;&#22270;&#21644;&#33394;&#35843;&#25351;&#20196;</li>
+      </ul>
+
+      <h2 id="camera-terminology">&#22312;Flux&#20013;&#26377;&#25928;&#30340;&#30456;&#26426;&#26415;&#35821;</h2>
+
+      <p>&#25351;&#23450;&#30495;&#23454;&#30456;&#26426;&#35774;&#22791;&#26159;Flux&#26368;&#24378;&#22823;&#30340;&#25216;&#24039;&#20043;&#19968;&#12290;T5&#32534;&#30721;&#22120;&#33021;&#35782;&#21035;&#29305;&#23450;&#30340;&#30456;&#26426;&#22411;&#21495;&#21450;&#20854;&#30456;&#20851;&#30340;&#35270;&#35273;&#29305;&#24449;&#8212;&#8212;&#20256;&#24863;&#22120;&#23610;&#23544;&#12289;&#21160;&#24577;&#33539;&#22260;&#12289;&#33394;&#24425;&#31185;&#23398;&#8212;&#8212;&#24182;&#23558;&#36825;&#20123;&#29305;&#36136;&#24212;&#29992;&#21040;&#36755;&#20986;&#20013;&#12290;</p>
+
+      <h3>&#30456;&#26426;&#26426;&#36523;</h3>
+      <ul>
+        <li><code>Sony A7R V</code> &#8212;&#8212; &#39640;&#20998;&#36776;&#29575;&#12289;&#32454;&#33410;&#20016;&#23500;&#12289;&#20013;&#24615;&#33394;&#24425;</li>
+        <li><code>Canon EOS R5</code> &#8212;&#8212; &#28201;&#26262;&#12289;&#24742;&#30446;&#30340;&#32932;&#33394;&#12289;&#33258;&#28982;&#28210;&#26579;</li>
+        <li><code>Nikon Z9</code> &#8212;&#8212; &#24378;&#21170;&#23545;&#27604;&#24230;&#12289;&#20986;&#33394;&#30340;&#21160;&#24577;&#33539;&#22260;</li>
+        <li><code>Fujifilm X-T5</code> &#8212;&#8212; &#33014;&#29255;&#33324;&#33394;&#24425;&#65292;&#23500;&#22763;&#33394;&#24425;&#31185;&#23398;</li>
+        <li><code>Hasselblad X2D</code> &#8212;&#8212; &#20013;&#30011;&#24133;&#22806;&#35266;&#12289;&#20986;&#33394;&#30340;&#33394;&#35843;&#36807;&#28193;</li>
+        <li><code>Leica M11</code> &#8212;&#8212; &#32463;&#20856;&#12289;&#30053;&#24494;&#28129;&#38597;&#12289;&#32426;&#23454;&#32654;&#23398;</li>
+      </ul>
+
+      <h3>&#38236;&#22836;&#21450;&#20854;&#25928;&#26524;</h3>
+      <ul>
+        <li><code>24mm f/1.4 wide angle</code> &#8212;&#8212; &#29615;&#22659;&#19978;&#19979;&#25991;&#65292;&#36731;&#24494;&#36793;&#32536;&#30072;&#21464;&#65292;&#25103;&#21095;&#24615;&#36879;&#35270;</li>
+        <li><code>35mm f/2</code> &#8212;&#8212; &#32463;&#20856;&#34903;&#22836;&#25668;&#24433;&#65292;&#33258;&#28982;&#36879;&#35270;</li>
+        <li><code>50mm f/1.2</code> &#8212;&#8212; &#20013;&#24615;&#36879;&#35270;&#65292;&#20248;&#31168;&#30340;&#25955;&#26223;&#65292;&#22810;&#29992;&#36884;</li>
+        <li><code>85mm f/1.4</code> &#8212;&#8212; &#35752;&#21916;&#30340;&#20154;&#20687;&#21387;&#32553;&#65292;&#26580;&#28369;&#30340;&#32972;&#26223;&#34394;&#21270;</li>
+        <li><code>135mm f/2</code> &#8212;&#8212; &#24378;&#21387;&#32553;&#65292;&#20027;&#20307;&#38548;&#31163;&#65292;&#22914;&#30011;&#33324;&#30340;&#25955;&#26223;</li>
+        <li><code>200mm f/2.8 telephoto</code> &#8212;&#8212; &#32972;&#26223;&#21387;&#32553;&#65292;&#36816;&#21160;/&#37326;&#29983;&#21160;&#29289;&#32654;&#23398;</li>
+      </ul>
+
+      <h3>&#30456;&#26426;&#35774;&#32622;</h3>
+      <ul>
+        <li><code>ISO 3200, high grain</code> &#8212;&#8212; &#28155;&#21152;&#33014;&#29255;&#33324;&#30340;&#22124;&#28857;&#32441;&#29702;&#65292;&#31895;&#31961;/&#32426;&#23454;&#32654;&#23398;</li>
+        <li><code>long exposure, motion blur</code> &#8212;&#8212; &#25429;&#25417;&#36816;&#21160;&#12289;&#20809;&#36857;</li>
+        <li><code>f/22, deep depth of field, everything in focus</code> &#8212;&#8212; &#39118;&#26223;/&#24314;&#31569;&#22806;&#35266;</li>
+        <li><code>f/1.2, razor-thin focus plane</code> &#8212;&#8212; &#20027;&#20307;&#19982;&#32972;&#26223;&#30340;&#26497;&#31471;&#20998;&#31163;</li>
+      </ul>
+
+      <h2 id="lighting-descriptors">&#25552;&#21319;Flux&#36755;&#20986;&#30340;&#20809;&#32447;&#25551;&#36848;&#31526;</h2>
+
+      <p>&#20809;&#32447;&#21487;&#20197;&#35828;&#26159;&#25668;&#24433;&#25552;&#31034;&#35789;&#20013;&#26368;&#26377;&#24433;&#21709;&#21147;&#30340;&#20803;&#32032;&#12290;Flux&#22312;&#25668;&#24433;&#21644;&#30005;&#24433;&#25668;&#24433;&#20869;&#23481;&#19978;&#30340;&#35757;&#32451;&#24847;&#21619;&#30528;&#23427;&#23545;&#20809;&#32447;&#26465;&#20214;&#26377;&#20016;&#23500;&#30340;&#35789;&#27719;&#12290;</p>
+
+      <h3>&#33258;&#28982;&#20809;</h3>
+      <ul>
+        <li><code>golden hour light</code> &#8212;&#8212; &#28201;&#26262;&#12289;&#26377;&#26041;&#21521;&#30340;&#20302;&#35282;&#24230;&#38451;&#20809;&#65292;&#38271;&#38452;&#24433;</li>
+        <li><code>blue hour</code> &#8212;&#8212; &#26580;&#21644;&#12289;&#20919;&#33394;&#30340;&#26085;&#33853;&#21518;&#34180;&#26286;</li>
+        <li><code>overcast diffused light</code> &#8212;&#8212; &#22343;&#21248;&#12289;&#26080;&#38452;&#24433;&#12289;&#26580;&#21644;&#8212;&#8212;&#38750;&#24120;&#36866;&#21512;&#20154;&#20687;</li>
+        <li><code>harsh midday sun, high contrast shadows</code> &#8212;&#8212; &#25103;&#21095;&#24615;&#12289;&#22799;&#26085;&#28814;&#28909;&#32654;&#23398;</li>
+        <li><code>dappled light through tree canopy</code> &#8212;&#8212; &#26862;&#26519;&#20809;&#32447;&#65292;&#27969;&#21160;&#30340;&#38452;&#24433;&#22270;&#26696;</li>
+        <li><code>window light, one-sided illumination</code> &#8212;&#8212; &#32463;&#20856;&#30340;&#23460;&#20869;&#20154;&#20687;&#29031;&#26126;</li>
+      </ul>
+
+      <h3>&#20154;&#24037;&#21644;&#24037;&#20316;&#23460;&#28783;&#20809;</h3>
+      <ul>
+        <li><code>Rembrandt lighting</code> &#8212;&#8212; &#20197;&#30524;&#19979;&#30340;&#19977;&#35282;&#24418;&#20809;&#26001;&#20026;&#29305;&#24449;&#30340;&#32463;&#20856;&#20154;&#20687;&#29031;&#26126;</li>
+        <li><code>split lighting, half shadow</code> &#8212;&#8212; &#25103;&#21095;&#24615;&#65292;&#19968;&#20391;&#20840;&#20142;&#65292;&#19968;&#20391;&#38452;&#24433;</li>
+        <li><code>ring light, flat frontal lighting</code> &#8212;&#8212; &#26102;&#23578;/&#32654;&#22918;&#22806;&#35266;&#65292;&#30524;&#20013;&#26377;&#29615;&#24418;&#21453;&#20809;</li>
+        <li><code>neon sign reflections, colored light</code> &#8212;&#8212; &#22478;&#24066;&#22812;&#38388;&#25668;&#24433;</li>
+        <li><code>candlelight, single flame source</code> &#8212;&#8212; &#28201;&#26262;&#12289;&#38378;&#28865;&#12289;&#20146;&#23494;</li>
+        <li><code>bioluminescent glow</code> &#8212;&#8212; &#20919;&#33394;&#34013;&#32511;&#65292;&#31185;&#24187;&#25110;&#22855;&#24187;</li>
+      </ul>
+
+      <h3>&#30005;&#24433;&#28783;&#20809;</h3>
+      <ul>
+        <li><code>volumetric light, god rays</code> &#8212;&#8212; &#36879;&#36807;&#22823;&#27668;/&#38654;&#38718;&#30340;&#21487;&#35265;&#20809;&#26463;</li>
+        <li><code>chiaroscuro</code> &#8212;&#8212; &#26126;&#26263;&#21306;&#22495;&#30340;&#26497;&#31471;&#23545;&#27604;&#65292;&#22914;&#27833;&#30011;&#33324;</li>
+        <li><code>practical lighting from below</code> &#8212;&#8212; &#24656;&#24598;/&#24778;&#24730;&#22806;&#35266;&#65292;&#19981;&#35752;&#21916;&#30340;&#38452;&#24433;</li>
+        <li><code>motivated lighting, warm practical sources</code> &#8212;&#8212; &#30495;&#23454;&#30340;&#23460;&#20869;&#30005;&#24433;&#25668;&#24433;</li>
+      </ul>
+
+      <h2 id="style-descriptors">&#22312;Flux&#20013;&#26377;&#25928;&#30340;&#39118;&#26684;&#25551;&#36848;&#31526;</h2>
+
+      <p>&#19982;Stable Diffusion&#38656;&#35201;&#29305;&#23450;&#26816;&#26597;&#28857;&#30340;&#39118;&#26684;&#20196;&#29260;&#19981;&#21516;&#65292;Flux&#36890;&#36807;&#20854;&#35821;&#35328;&#27169;&#22411;&#29702;&#35299;&#39118;&#26684;&#25551;&#36848;&#12290;&#36825;&#20123;&#25551;&#36848;&#31526;&#33021;&#31283;&#23450;&#20135;&#29983;&#21487;&#35782;&#21035;&#30340;&#32467;&#26524;&#65306;</p>
+
+      <h3>&#25668;&#24433;&#39118;&#26684;</h3>
+      <ul>
+        <li><code>photojournalism, documentary style</code></li>
+        <li><code>fashion editorial, high-end commercial</code></li>
+        <li><code>street photography, candid moment</code></li>
+        <li><code>fine art photography, gallery print quality</code></li>
+        <li><code>analog film photography, 35mm grain</code></li>
+        <li><code>medium format film, Kodak Portra 400 colors</code></li>
+      </ul>
+
+      <h3>&#33402;&#26415;&#21644;&#25554;&#30011;&#39118;&#26684;</h3>
+      <ul>
+        <li><code>oil painting, visible brushwork, museum quality</code></li>
+        <li><code>watercolor illustration, soft edges, paper texture</code></li>
+        <li><code>digital concept art, highly detailed, ArtStation quality</code></li>
+        <li><code>graphic novel illustration, bold lines, flat color</code></li>
+        <li><code>Art Nouveau style, ornamental, flowing lines</code></li>
+      </ul>
+
+      <h3>&#30005;&#24433;&#39118;&#26684;</h3>
+      <ul>
+        <li><code>cinematic film still, anamorphic lens flare</code></li>
+        <li><code>movie poster composition</code></li>
+        <li><code>in the visual style of a Wes Anderson film</code> &#8212;&#8212; &#23545;&#31216;&#12289;&#28129;&#33394;&#12289;&#24179;&#38754;</li>
+        <li><code>noir film aesthetic, black and white, hard shadows</code></li>
+      </ul>
+
+      <h2 id="what-not-to-do">Flux&#25552;&#31034;&#35789;&#20013;&#19981;&#35813;&#20570;&#30340;&#20107;</h2>
+
+      <p>&#22914;&#26524;&#20320;&#20174;Stable Diffusion&#25110;Midjourney&#36716;&#36807;&#26469;&#65292;&#36825;&#20123;&#20064;&#24815;&#20250;&#24433;&#21709;&#20320;&#30340;Flux&#25928;&#26524;&#65306;</p>
+
+      <ul>
+        <li><strong>&#19981;&#35201;&#20351;&#29992;(keyword:weight)&#35821;&#27861;&#12290;</strong> Flux&#23436;&#20840;&#24573;&#30053;&#25324;&#21495;&#20013;&#30340;&#26435;&#37325;&#20462;&#39280;&#31526;&#12290;<code>(beautiful:1.4)</code>&#21644;<code>beautiful</code>&#22312;Flux&#20013;&#20135;&#29983;&#30456;&#21516;&#30340;&#32467;&#26524;&#12290;</li>
+        <li><strong>&#19981;&#35201;&#20351;&#29992;--ar&#12289;--v&#12289;--style&#21442;&#25968;&#12290;</strong> &#36825;&#20123;&#26159;Midjourney&#29305;&#23450;&#30340;&#21442;&#25968;&#12290;&#23427;&#20204;&#20250;&#20316;&#20026;&#23383;&#38754;&#25991;&#23383;&#20986;&#29616;&#22312;Flux&#36755;&#20986;&#20013;&#12290;</li>
+        <li><strong>&#19981;&#35201;&#22312;Flux Dev/Schnell&#20013;&#20351;&#29992;&#21453;&#21521;&#25552;&#31034;&#35789;&#12290;</strong> &#26631;&#20934;Flux&#19981;&#20687;SD&#37027;&#26679;&#25903;&#25345;&#21453;&#21521;&#25552;&#31034;&#35789;&#12290;&#20351;&#29992;&#25551;&#36848;&#24615;&#30340;&#31215;&#26497;&#35821;&#35328;&#26367;&#20195;&#65306;&#35828;&#8220;clean, sharp background&#8221;&#32780;&#19981;&#26159;&#23581;&#35797;&#21453;&#21521;&#25552;&#31034;&#8220;blurry background&#8221;&#12290;</li>
+        <li><strong>&#19981;&#35201;&#22312;&#24320;&#22836;&#22534;&#30732;&#36136;&#37327;&#20196;&#29260;&#12290;</strong> &#8220;masterpiece, best quality, ultra detailed, 1girl&#8221;&#26159;SD&#35821;&#27861;&#12290;Flux&#20250;&#23558;&#20854;&#35299;&#37322;&#20026;&#23383;&#38754;&#21477;&#23376;&#65292;&#21487;&#33021;&#29983;&#25104;&#26631;&#27880;&#8220;masterpiece&#8221;&#30340;&#22270;&#20687;&#12290;</li>
+        <li><strong>&#19981;&#35201;&#20889;&#26497;&#30701;&#30340;&#25552;&#31034;&#35789;&#12290;</strong> Flux&#30340;T5&#32534;&#30721;&#22120;&#22312;&#26356;&#20016;&#23500;&#30340;&#19978;&#19979;&#25991;&#20449;&#24687;&#19979;&#34920;&#29616;&#26356;&#22909;&#12290;50&#35789;&#30340;&#25552;&#31034;&#35789;&#36890;&#24120;&#27604;10&#35789;&#30340;&#22312;&#22797;&#26434;&#22330;&#26223;&#20013;&#34920;&#29616;&#26356;&#22909;&#12290;</li>
+        <li><strong>&#19981;&#35201;&#32599;&#21015;&#27809;&#26377;&#35821;&#27861;&#32467;&#26500;&#30340;&#36887;&#21495;&#20998;&#38548;&#26631;&#31614;&#12290;</strong> &#8220;woman, forest, sunlight, beautiful, high quality&#8221;&#32473;Flux&#30340;&#20449;&#24687;&#23569;&#20110;&#8220;a woman standing in a sunlit forest, late afternoon, high quality photograph&#8221;&#12290;</li>
+      </ul>
+
+      <div class="callout">
+        <p><strong>&#21478;&#19968;&#38754;&#65306;</strong> Flux&#22788;&#29702;&#38750;&#24120;&#38271;&#12289;&#35814;&#32454;&#30340;&#25552;&#31034;&#35789;&#30340;&#33021;&#21147;&#36229;&#36807;&#20102;&#20219;&#20309;&#21069;&#20195;&#27169;&#22411;&#12290;&#19981;&#35201;&#23475;&#24597;&#20889;100+&#35789;&#30340;&#25552;&#31034;&#35789;&#65292;&#23427;&#20204;&#35835;&#36215;&#26469;&#20687;&#35814;&#32454;&#30340;&#22330;&#26223;&#25351;&#23548;&#8212;&#8212;Flux&#20250;&#20934;&#30830;&#25191;&#34892;&#12290;</p>
+      </div>
+
+      <div class="img-grid-2" style="margin:2rem 0">
+        <figure style="margin:0">
+          <picture><source srcset="/images/prompt-generator-from-image-temple-flux.webp" type="image/webp"><img src="/images/prompt-generator-from-image-temple-flux.jpeg" alt="Flux.1 Dev&#36755;&#20986;&#8212;&#8212;&#39118;&#26223;&#22330;&#26223;&#23637;&#31034;&#20855;&#26377;&#30495;&#23454;&#25668;&#24433;&#25928;&#26524;&#30340;&#28210;&#26579;" width="800" height="800" loading="lazy" style="width:100%;border-radius:0.5rem;display:block"></picture>
+          <figcaption style="color:var(--text-muted);font-size:0.8rem;text-align:center;margin-top:0.5rem">Flux.1 Dev&#65306;&#30495;&#23454;&#25668;&#24433;&#25928;&#26524;&#65292;&#32454;&#33410;&#20934;&#30830;</figcaption>
+        </figure>
+        <figure style="margin:0">
+          <picture><source srcset="/images/ai-image-generator-prompt-rose-flux.webp" type="image/webp"><img src="/images/ai-image-generator-prompt-rose-flux.jpeg" alt="Flux.1 Dev&#36755;&#20986;&#8212;&#8212;&#24314;&#31569;&#22330;&#26223;&#23637;&#31034;&#31934;&#30830;&#30340;&#31354;&#38388;&#28210;&#26579;" width="800" height="800" loading="lazy" style="width:100%;border-radius:0.5rem;display:block"></picture>
+          <figcaption style="color:var(--text-muted);font-size:0.8rem;text-align:center;margin-top:0.5rem">Flux&#33021;&#22815;&#20934;&#30830;&#22788;&#29702;&#22797;&#26434;&#30340;&#31354;&#38388;&#25351;&#20196;</figcaption>
+        </figure>
+      </div>
+
+      <h2 id="comparison-table">Flux Dev vs Pro vs Schnell&#23545;&#27604;</h2>
+
+      <div class="table-wrap">
+      <table class="comparison-table">
+        <thead>
+          <tr>
+            <th>&#26041;&#38754;</th>
+            <th>Flux</th>
+            <th>Midjourney</th>
+            <th>Stable Diffusion</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>&#25552;&#31034;&#35789;&#39118;&#26684;</td>
+            <td>&#35814;&#32454;&#30340;&#33258;&#28982;&#35821;&#35328;</td>
+            <td>&#25551;&#36848;&#31526;+&#21442;&#25968;</td>
+            <td>&#21152;&#26435;&#26631;&#31614;</td>
+          </tr>
+          <tr>
+            <td>&#30495;&#23454;&#25668;&#24433;&#24863;&#25928;&#26524;</td>
+            <td>&#20986;&#33394;</td>
+            <td>&#24456;&#22909;</td>
+            <td>&#22909;&#65288;&#38656;&#35201;&#22909;&#30340;&#26816;&#26597;&#28857;&#65289;</td>
+          </tr>
+          <tr>
+            <td>&#30456;&#26426;&#21442;&#25968;&#29702;&#35299;</td>
+            <td>&#38750;&#24120;&#22909;</td>
+            <td>&#37096;&#20998;&#25903;&#25345;</td>
+            <td>&#25928;&#26524;&#36739;&#24369;</td>
+          </tr>
+          <tr>
+            <td>&#21453;&#21521;&#25552;&#31034;&#35789;</td>
+            <td>&#19981;&#25903;&#25345;</td>
+            <td><code>--no</code></td>
+            <td>&#19987;&#29992;&#23383;&#27573;</td>
+          </tr>
+        </tbody>
+      </table>
+      </div>
+
+      <h2 id="example-prompts">10&#20010;&#31034;&#20363;&#25552;&#31034;&#35789;&#21450;&#20998;&#26512;</h2>
+
+      <h3>1. &#20154;&#20687;&#25668;&#24433;</h3>
+      <pre><code class="prompt-example">A 30-year-old woman with natural red hair sits by a rain-streaked window in a coffee shop, looking contemplative, hands wrapped around a ceramic mug. Late afternoon, overcast daylight from the left side, warm tungsten interior lights creating a color contrast. Shot on Fujifilm GFX 100S, 110mm f/2 equivalent, shallow depth of field. Kodak Portra 400 film emulation, slightly desaturated greens, intimate documentary feel.</code></pre>
+      <p><em>&#20026;&#20160;&#20040;&#26377;&#25928;&#65306;</em>&#20855;&#20307;&#30340;&#20027;&#20307;&#25551;&#36848;&#12289;&#31934;&#30830;&#30340;&#20809;&#32447;&#35774;&#32622;&#21450;&#26041;&#21521;&#12289;&#21629;&#21517;&#30340;&#33014;&#29255;&#29992;&#20110;&#33394;&#24425;&#25351;&#23548;&#12289;&#26411;&#23614;&#30340;&#27675;&#22260;&#25551;&#36848;&#31526;&#12290;</p>
+
+      <h3>2. &#24314;&#31569;&#25668;&#24433;</h3>
+      <pre><code class="prompt-example">The interior of a modernist cathedral, concrete brutalist architecture, shafts of light cutting through narrow vertical windows high on the walls, casting long geometric shadows on the textured concrete floor. Shot on Canon EOS R5, 17mm tilt-shift lens, all vertical lines corrected, f/11, everything in sharp focus. Monochromatic, high contrast black and white, fine art architectural photography.</code></pre>
+
+      <h3>3. &#22855;&#24187;&#39118;&#26223;</h3>
+      <pre><code class="prompt-example">A vast alien landscape at twilight: twin moons rising over a plateau covered in bioluminescent blue-purple vegetation, a lone explorer in a spacesuit standing at the edge, small against the scale of the environment. The atmosphere is thick and hazy, creating atmospheric perspective and layered depth. Painted in a style combining photorealistic digital art with concept art looseness, cinematic composition, epic scale, ultra-detailed foreground plants.</code></pre>
+
+      <h3>4. &#34903;&#22836;&#25668;&#24433;</h3>
+      <pre><code class="prompt-example">A crowded Tokyo crossing at rush hour, motion blur on the pedestrians suggesting movement, one sharply focused businessman in the center looking directly at the camera, surprised expression. Heavy rain, reflected neon signs on wet pavement, shallow depth. Shot on Leica Q3, 28mm f/1.7, ISO 6400, available light only. Black and white with deep shadows, photojournalism aesthetic.</code></pre>
+
+      <h3>5. &#20135;&#21697;&#25668;&#24433;</h3>
+      <pre><code class="prompt-example">A single glass bottle of amber whiskey on a dark walnut table, dramatic side lighting from a single spotlight source creating a strong specular highlight on the glass, warm amber liquid glowing. Dark background fading to black. Shot on Phase One IQ4, 120mm macro, f/8. Commercial product photography, ultra-clean, advertising quality, every glass bubble and label detail sharp.</code></pre>
+
+      <h3>6. &#37326;&#29983;&#21160;&#29289;&#25668;&#24433;</h3>
+      <pre><code class="prompt-example">A Bengal tiger wading through shallow water in a misty forest, early morning light filtering through dense canopy, water droplets frozen mid-splash around its legs. The tiger is alert, head turned slightly toward the camera. Shot on Nikon Z9, 500mm f/4 telephoto, 1/2000s to freeze motion, natural forest light. National Geographic quality wildlife photography, tack-sharp eyes, motion-blurred water.</code></pre>
+
+      <h3>7. &#32654;&#39135;&#25668;&#24433;</h3>
+      <pre><code class="prompt-example">A bowl of handmade pasta with cherry tomatoes, basil, and olive oil on a rough linen tablecloth, afternoon light from a kitchen window at 45 degrees, casting soft shadows. Steam rising from the pasta. Overhead angle, 45-degree composition. Shot on Sony A7R V, 90mm macro f/2.8. Warm editorial food photography, slightly desaturated background to make the food pop, Bon App&#233;tit magazine aesthetic.</code></pre>
+
+      <h3>8. &#31185;&#24187;&#27010;&#24565;&#33402;&#26415;</h3>
+      <pre><code class="prompt-example">Interior of a colossal generation ship, showing the agricultural rings with forests and fields curving upward in the centrifugal section, sunlight simulated by a central light tube, people as small figures walking between trees. The scale is breathtaking &#8212; the curvature of the interior visible. Detailed digital concept art, matte painting quality, warm environmental lighting, realistic atmospheric haze for scale, inspired by classic sci-fi illustration.</code></pre>
+
+      <h3>9. &#26102;&#23578;&#25668;&#24433;</h3>
+      <pre><code class="prompt-example">A model in a dramatic black structured coat stands in an empty white marble corridor, strong directional light from a large window to the right, creating graphic shadows across the floor. Editorial, minimal composition, confident pose with coat flowing slightly. Shot on Hasselblad X2D, 80mm f/2.8, balanced ambient and natural light. High fashion editorial, Vogue quality, exceptional tonal range, no distracting elements.</code></pre>
+
+      <h3>10. &#24494;&#36317;&#33258;&#28982;</h3>
+      <pre><code class="prompt-example">Extreme macro photography of a single dewdrop on a spider web strand, inside the dewdrop a perfectly formed reflection of the surrounding forest and morning sky visible. Overcast soft light, maximum detail in the water surface tension and web filaments. Shot on Canon MP-E 65mm 5x macro, f/11, focus-stacked for complete depth of field. Scientific illustration quality, razor-sharp details, magical natural world mood.</code></pre>
+
+      <h2 id="imagetoprompt">&#20351;&#29992;ImageToPrompt&#20174;&#21442;&#32771;&#22270;&#20687;&#29983;&#25104;Flux&#25552;&#31034;&#35789;</h2>
+
+      <p>&#25163;&#21160;&#25776;&#20889;Flux&#25552;&#31034;&#35789;&#38656;&#35201;&#20102;&#35299;&#36825;&#20123;&#29305;&#23450;&#35789;&#27719;&#8212;&#8212;&#30456;&#26426;&#22411;&#21495;&#12289;&#20809;&#32447;&#26415;&#35821;&#12289;&#39118;&#26684;&#21442;&#32771;&#12290;&#24403;&#20320;&#26377;&#19968;&#24352;&#21442;&#32771;&#22270;&#20687;&#24182;&#24819;&#22312;Flux&#20013;&#29983;&#25104;&#31867;&#20284;&#20869;&#23481;&#26102;&#65292;ImageToPrompt.dev&#20250;&#33258;&#21160;&#22788;&#29702;&#35789;&#27719;&#36716;&#25442;&#12290;</p>
+
+      <p>&#24403;&#20320;&#22312;ImageToPrompt&#20013;&#36873;&#25321;Flux&#20316;&#20026;&#30446;&#26631;&#27169;&#22411;&#26102;&#65306;</p>
+      <ol>
+        <li>&#35813;&#24037;&#20855;&#20351;&#29992;Claude Vision&#20998;&#26512;&#20320;&#30340;&#21442;&#32771;&#22270;&#20687;</li>
+        <li>&#23427;&#35782;&#21035;&#25668;&#24433;&#29305;&#24449;&#65306;&#34920;&#35266;&#28966;&#36317;&#12289;&#29031;&#26126;&#35774;&#32622;&#12289;&#26223;&#28145;&#12289;&#33394;&#24425;&#20998;&#32423;</li>
+        <li>&#23427;&#23558;&#36825;&#20123;&#29305;&#24449;&#21305;&#37197;&#21040;&#36866;&#24403;&#30340;Flux&#35789;&#27719;&#65306;&#29305;&#23450;&#30456;&#26426;&#35774;&#22791;&#12289;&#20809;&#32447;&#26415;&#35821;&#12289;&#39118;&#26684;&#25551;&#36848;&#31526;</li>
+        <li>&#23427;&#23558;&#36755;&#20986;&#26684;&#24335;&#21270;&#20026;&#36830;&#36143;&#30340;&#33258;&#28982;&#35821;&#35328;&#27573;&#33853;&#65292;&#32780;&#38750;&#26631;&#31614;&#21015;&#34920;</li>
+      </ol>
+
+      <h2 id="common-mistakes">Flux&#26032;&#25163;&#24120;&#35265;&#38169;&#35823;</h2>
+
+      <ol>
+        <li><strong>&#25226;Flux&#24403;Midjourney&#29992;&#12290;</strong> &#27809;&#26377;--ar&#21442;&#25968;&#65292;&#27809;&#26377;--style&#21442;&#25968;&#65292;&#27809;&#26377;--v 6.1&#12290;Flux&#38656;&#35201;&#32431;&#25551;&#36848;&#24615;&#25991;&#26412;&#12290;</li>
+        <li><strong>&#25226;Flux&#24403;Stable Diffusion&#29992;&#12290;</strong> &#27809;&#26377;(quality:1.4)&#20196;&#29260;&#65292;&#27809;&#26377;&#36887;&#21495;&#26631;&#31614;&#21015;&#34920;&#65292;&#27809;&#26377;&#21453;&#21521;&#25552;&#31034;&#35789;&#23383;&#27573;&#12290;</li>
+        <li><strong>&#22330;&#26223;&#25551;&#36848;&#19981;&#36275;&#12290;</strong> &#8220;A beautiful landscape&#8221;&#32473;Flux&#30340;&#20449;&#24687;&#24456;&#23569;&#12290;&#8220;A rocky coastal cliff at dawn, tide pools reflecting the pink sky, a lone lighthouse in the distance&#8221;&#32473;Flux&#19968;&#20010;&#21487;&#20197;&#26500;&#24314;&#30340;&#22330;&#26223;&#12290;</li>
+        <li><strong>&#27809;&#26377;&#22312;UI&#35774;&#32622;&#20013;&#25351;&#23450;&#23485;&#39640;&#27604;&#12290;</strong> Flux&#20174;&#35774;&#32622;&#32780;&#38750;&#25552;&#31034;&#35789;&#30830;&#23450;&#23485;&#39640;&#27604;&#12290;&#22914;&#26524;&#24819;&#35201;&#31446;&#29256;&#20154;&#20687;&#65292;&#22312;&#29983;&#25104;&#35774;&#32622;&#20013;&#35774;&#32622;9:16&#8212;&#8212;&#19981;&#35201;&#20889;&#22312;&#25552;&#31034;&#35789;&#20013;&#12290;</li>
+        <li><strong>&#26399;&#26395;&#31435;&#21363;&#23436;&#32654;&#12290;</strong> &#21363;&#20351;&#26377;&#20248;&#31168;&#30340;&#25552;&#31034;&#35789;&#65292;Flux&#29983;&#25104;&#20063;&#21463;&#30410;&#20110;&#36816;&#34892;3-5&#27425;&#21464;&#20307;&#12290;&#25193;&#25955;&#30340;&#38543;&#26426;&#24615;&#24847;&#21619;&#30528;&#36136;&#37327;&#22312;&#19981;&#21516;&#31181;&#23376;&#20043;&#38388;&#20250;&#21464;&#21270;&#12290;</li>
+        <li><strong>&#24573;&#30053;&#24341;&#23548;&#27604;&#20363;(CFG)&#12290;</strong> Flux Dev&#22312;CFG&#20540;3.5-4.0&#26102;&#25928;&#26524;&#26368;&#22909;&#12290;&#22312;SD&#20013;&#26377;&#25928;&#30340;&#36739;&#39640;&#20540;(7.0+)&#20250;&#22312;Flux&#20013;&#20135;&#29983;&#36807;&#39281;&#21644;&#12289;&#20276;&#26377;&#20266;&#24433;&#30340;&#32467;&#26524;&#12290;</li>
+        <li><strong>&#20165;&#20351;&#29992;&#33402;&#26415;&#23478;&#21517;&#23383;&#20316;&#20026;&#39118;&#26684;&#25463;&#24452;&#32780;&#19981;&#21152;&#25551;&#36848;&#12290;</strong> &#8220;by Greg Rutkowski&#8221;&#23545;Flux&#26469;&#35828;&#27604;&#8220;epic fantasy concept art with warm lighting and dramatic composition&#8221;&#26356;&#27169;&#31946;&#8212;&#8212;&#34429;&#28982;&#32467;&#21512;&#20004;&#32773;&#36890;&#24120;&#25928;&#26524;&#26368;&#22909;&#12290;</li>
+      </ol>
+
+      <div class="cta-box">
+        <h3>&#33258;&#21160;&#29983;&#25104;Flux&#25552;&#31034;&#35789;</h3>
+        <p>&#19978;&#20256;&#22270;&#20687;&#25110;&#25551;&#36848;&#20320;&#30340;&#24819;&#27861;&#65292;&#20960;&#31186;&#38047;&#20869;&#33719;&#24471;&#20248;&#21270;&#30340;Flux&#25552;&#31034;&#35789;&#12290;</p>
+        <a href="/flux-prompt-generator/" class="cta-btn">Flux&#25552;&#31034;&#35789;&#29983;&#25104;&#22120; &#8594;</a>
+      </div>
+
+      <h2>&#24120;&#35265;&#38382;&#39064;</h2>
+
+      <h3>&#20026;Flux AI&#25776;&#20889;&#25552;&#31034;&#35789;&#30340;&#26368;&#20339;&#26041;&#24335;&#26159;&#20160;&#20040;&#65311;</h3>
+      <p>Flux AI&#23545;&#35814;&#32454;&#30340;&#33258;&#28982;&#35821;&#35328;&#21709;&#24212;&#26368;&#22909;&#65292;&#32780;&#38750;&#29992;&#36887;&#21495;&#20998;&#38548;&#30340;&#26631;&#31614;&#12290;&#20687;&#20889;&#27573;&#33853;&#19968;&#26679;&#25551;&#36848;&#20320;&#30340;&#22330;&#26223;&#65292;&#21253;&#25324;&#20027;&#20307;&#12289;&#26500;&#22270;&#12289;&#20809;&#32447;&#12289;&#38236;&#22836;&#65288;&#22914;<code>Canon 85mm f/1.4</code>&#65289;&#21644;&#27675;&#22260;&#12290;</p>
+
+      <h3>Flux&#25903;&#25345;&#21453;&#21521;&#25552;&#31034;&#35789;&#21527;&#65311;</h3>
+      <p>&#19981;&#25903;&#25345;&#65292;Flux&#19981;&#20687;Stable Diffusion&#37027;&#26679;&#25903;&#25345;&#21453;&#21521;&#25552;&#31034;&#35789;&#12290;&#35201;&#36991;&#20813;&#19981;&#24819;&#35201;&#30340;&#20803;&#32032;&#65292;&#24212;&#29992;&#31215;&#26497;&#12289;&#31934;&#30830;&#30340;&#35821;&#35328;&#26469;&#25551;&#36848;&#20320;&#30830;&#20999;&#24819;&#30475;&#21040;&#30340;&#20869;&#23481;&#12290;</p>
+
+      <h3>Flux Dev&#21644;Flux Pro&#26377;&#20160;&#20040;&#21306;&#21035;&#65311;</h3>
+      <p>Flux Dev&#26159;&#20813;&#36153;&#30340;&#24320;&#28304;&#27169;&#22411;&#65292;&#36136;&#37327;&#30053;&#20302;&#12290;Flux Pro&#26159;&#21830;&#19994;&#27169;&#22411;&#65292;&#20855;&#26377;&#26356;&#22909;&#30340;&#19968;&#33268;&#24615;&#12289;&#26356;&#24378;&#30340;&#25351;&#20196;&#36319;&#38543;&#33021;&#21147;&#21644;&#26356;&#39640;&#30340;&#20998;&#36776;&#29575;&#12290;&#20004;&#32773;&#30340;&#25552;&#31034;&#35789;&#25216;&#24039;&#26159;&#30456;&#21516;&#30340;&#12290;</p>
+
+      <h3>Flux&#25552;&#31034;&#35789;&#20013;&#30340;&#30456;&#26426;&#21442;&#25968;&#30495;&#30340;&#26377;&#25928;&#26524;&#21527;&#65311;</h3>
+      <p>&#26159;&#30340;&#65292;Flux&#38750;&#24120;&#25797;&#38271;&#29702;&#35299;&#30456;&#26426;&#25216;&#26415;&#21442;&#25968;&#12290;&#25351;&#23450;&#20687;<code>Canon 85mm f/1.4</code>&#36825;&#26679;&#30340;&#38236;&#22836;&#20250;&#20135;&#29983;&#36924;&#30495;&#30340;&#25955;&#26223;&#25928;&#26524;&#65292;&#32780;<code>24mm f/8</code>&#21017;&#20250;&#29983;&#25104;&#26356;&#38160;&#21033;&#12289;&#26356;&#22823;&#26223;&#28145;&#30340;&#22270;&#20687;&#12290;</p>
+
+    </div>
+
+    <div class="author-bio">
+      <svg class="author-photo" width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="&#20316;&#32773;&#22836;&#20687;"><circle cx="32" cy="32" r="32" fill="#2a1f4e"/><circle cx="32" cy="26" r="11" fill="#7c6bc4"/><ellipse cx="32" cy="52" rx="18" ry="11" fill="#7c6bc4"/></svg>
+      <div class="author-info">
+        <p class="author-name">ImageToPrompt Team</p>
+        <p class="author-desc">&#25105;&#20204;&#26159;&#19968;&#25903;&#19987;&#19994;&#22242;&#38431;&#65292;&#33268;&#21147;&#20110;&#24110;&#21161;&#21019;&#20316;&#32773;&#25484;&#25569;AI&#22270;&#20687;&#29983;&#25104;&#25216;&#26415;&#12290;&#36890;&#36807;&#22270;&#20687;&#36716;&#25552;&#31034;&#35789;&#24037;&#20855;&#21644;AI&#25552;&#31034;&#35789;&#24037;&#31243;&#25351;&#21335;&#65292;&#25105;&#20204;&#20026;&#20840;&#29699;&#33402;&#26415;&#23478;&#30340;&#21019;&#20316;&#25552;&#20379;&#25903;&#25345;&#12290;</p>
+        <a href="https://x.com/Ilyass14286541" class="author-link">&#22312;X&#19978;&#20851;&#27880; &#8594;</a>
+      </div>
+    </div>
+
+    <div class="related-posts">
+      <h2>&#30456;&#20851;&#25351;&#21335;</h2>
+      <div class="related-grid">
+        <a href="/blog/midjourney-vs-flux/" class="related-card">
+          <p class="tag">&#23545;&#27604;</p>
+          <h3>Midjourney vs Flux&#65306;2026&#24180;&#23436;&#25972;&#23545;&#27604;</h3>
+        </a>
+        <a href="/blog/convert-image-to-ai-prompt/" class="related-card">
+          <p class="tag">&#25351;&#21335;</p>
+          <h3>&#22914;&#20309;&#23558;&#22270;&#20687;&#36716;&#25442;&#20026;AI&#25552;&#31034;&#35789;</h3>
+        </a>
+        <a href="/blog/prompt-engineering-for-ai-art/" class="related-card">
+          <p class="tag">&#20837;&#38376;</p>
+          <h3>AI&#33402;&#26415;&#30340;&#25552;&#31034;&#35789;&#24037;&#31243;</h3>
+        </a>
+        <a href="/blog/best-image-to-prompt-tools-2026/" class="related-card">
+          <p class="tag">&#23545;&#27604;</p>
+          <h3>2026&#24180;&#26368;&#20339;&#22270;&#20687;&#36716;&#25552;&#31034;&#35789;&#24037;&#20855;</h3>
+        </a>
+      </div>
+    </div>
+
+  </div>
+
+  <footer class="footer-4col">
+    <div class="f4-inner">
+      <div class="f4-brand">
+        <img src="/favicon.svg" alt="ImageToPrompt" width="28" height="28">
+        <span class="f4-brand-name">ImageTo<span class="accent">Prompt</span></span>
+        <span class="f4-brand-sub">&mdash; Free AI Prompt Generator</span>
+      </div>
+      <div class="f4-grid">
+        <div class="f4-section">
+          <h4 class="f4-heading">Image Prompt Tools</h4>
+          <a href="/">Image to Prompt</a>
+          <a href="/text-to-prompt/">Text to Prompt</a>
+      <a href="/describe-image/">Describe Image</a>
+          <a href="/midjourney-prompt-generator/">Midjourney</a>
+          <a href="/stable-diffusion-prompt-generator/">Stable Diffusion</a>
+          <a href="/flux-prompt-generator/">Flux</a>
+          <a href="/dall-e-prompt-generator/">DALL-E 3</a>
+          <a href="/adobe-firefly-prompt-generator/">Adobe Firefly</a>
+          <a href="/leonardo-ai-prompt-generator/">Leonardo AI</a>
+          <a href="/ideogram-prompt-generator/">Ideogram</a>
+        </div>
+        <div class="f4-section">
+          <h4 class="f4-heading">Video Prompt Tools</h4>
+          <a href="/image-to-video-prompt/">Image to Video Prompt</a>
+          <a href="/text-to-video-prompt/">Text to Video Prompt</a>
+          <a href="/veo-prompt-generator/">Veo / Flow Studio</a>
+          <a href="/kling-prompt-generator/">Kling AI</a>
+          <a href="/runway-prompt-generator/">Runway Gen-3</a>
+          <a href="/pika-prompt-generator/">Pika</a>
+          <a href="/luma-prompt-generator/">Luma Dream Machine</a>
+          <a href="/sora-prompt-generator/">Sora</a>
+          <a href="/minimax-prompt-generator/">Minimax</a>
+          <a href="/stable-video-prompt-generator/">Stable Video</a>
+        </div>
+        <div class="f4-section">
+          <h4 class="f4-heading">Resources</h4>
+          <a href="/zh/blog/">&#21338;&#23458;</a>
+          <a href="/zh/about/">&#20851;&#20110;</a>
+          <a href="/zh/pricing/">&#20215;&#26684;</a>
+          <a href="/contact/">Contact</a>
+          <a href="/privacy-policy/">Privacy Policy</a>
+          <a href="/terms-of-service/">Terms of Service</a>
+        </div>
+        <div class="f4-section">
+          <h4 class="f4-heading">Languages</h4>
+          <a href="/">English</a>
+          <a href="/fr/">Fran&#231;ais</a>
+          <a href="/ar/">&#1575;&#1604;&#1593;&#1585;&#1576;&#1610;&#1577;</a>
+          <a href="/es/">Espa&#241;ol</a>
+          <a href="/ko/">&#54620;&#44397;&#50612;</a>
+          <a href="/ja/">&#26085;&#26412;&#35486;</a>
+          <a href="/ru/">&#1056;&#1091;&#1089;&#1089;&#1082;&#1080;&#1081;</a>
+          <a href="/zh/">&#20013;&#25991;</a>
+        </div>
+      </div>
+      <div class="f4-bottom">
+        <p>&#169; 2026 ImageToPrompt.dev &#8212; Free AI Prompt Generator</p>
+        <p>Your images are never stored. All analysis is ephemeral and private.</p>
+      </div>
+    </div>
+  </footer>
+
+<script src="/newsletter-inject.js" defer></script>
+<script src="/nav.js" defer></script>
+  <script>
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', function() {
+    navigator.serviceWorker.register('/sw.js')
+      .catch(function(err) { console.warn('SW registration failed:', err); });
+  });
+}
+</script>
+</body>
+</html>

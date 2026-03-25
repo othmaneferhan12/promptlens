@@ -1,0 +1,442 @@
+<!doctype html>
+<html lang="zh">
+<head>
+  <script src="/theme-toggle.js"></script>
+  <meta charset="UTF-8" />
+  <link rel="dns-prefetch" href="https://www.googletagmanager.com">
+<link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="max-image-preview:large, index, follow">
+  <meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="ImageToPrompt">
+  <title>Ideogram&#25552;&#31034;&#35789;&#25351;&#21335;2026&#65306;&#25484;&#25569;AI&#22270;&#20687;&#20013;&#30340;&#25991;&#23383;&#29983;&#25104;</title>
+  <meta name="description" content="2026&#24180;Ideogram&#25552;&#31034;&#35789;&#23436;&#25972;&#25351;&#21335;&#12290;&#23398;&#20064;&#22914;&#20309;&#22312;AI&#22270;&#20687;&#20013;&#28155;&#21152;&#25991;&#23383;&#65292;&#21019;&#24314;&#25490;&#29256;&#33402;&#26415;&#12289;&#26631;&#24535;&#12289;&#28023;&#25253;&#21644;&#24179;&#38754;&#35774;&#35745;&#12290;" />
+  <link rel="canonical" href="https://www.imagetoprompt.dev/zh/blog/ideogram-tishi-ci-zhinan/" />
+  <link rel="alternate" hreflang="zh" href="https://www.imagetoprompt.dev/zh/blog/ideogram-tishi-ci-zhinan/" />
+  <link rel="alternate" hreflang="en" href="https://www.imagetoprompt.dev/blog/ideogram-prompt-guide/" />
+  <link rel="alternate" hreflang="x-default" href="https://www.imagetoprompt.dev/blog/ideogram-prompt-guide/" />
+  <meta property="og:title" content="Ideogram&#25552;&#31034;&#35789;&#25351;&#21335;2026&#65306;&#25484;&#25569;AI&#22270;&#20687;&#20013;&#30340;&#25991;&#23383;&#29983;&#25104;" />
+  <meta property="og:description" content="2026&#24180;Ideogram&#25552;&#31034;&#35789;&#23436;&#25972;&#25351;&#21335;&#12290;&#23398;&#20064;&#22914;&#20309;&#22312;AI&#22270;&#20687;&#20013;&#28155;&#21152;&#25991;&#23383;&#12290;" />
+  <meta property="og:url" content="https://www.imagetoprompt.dev/zh/blog/ideogram-tishi-ci-zhinan/" />
+  <meta property="og:type" content="article" />
+  <meta property="og:image" content="https://www.imagetoprompt.dev/og-image.png" />
+  <meta property="og:site_name" content="ImageToPrompt" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Ideogram&#25552;&#31034;&#35789;&#25351;&#21335;2026" />
+  <meta name="twitter:description" content="&#23436;&#25972;&#30340;Ideogram&#25552;&#31034;&#35789;&#25351;&#21335;&#12290;&#25991;&#23383;&#28210;&#26579;&#12289;&#28023;&#25253;&#35774;&#35745;&#12289;&#26631;&#24535;&#21019;&#24314;&#12290;" />
+  <meta name="twitter:image" content="https://www.imagetoprompt.dev/og-image.png" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="48x48" href="/favicon-48.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+  <link rel="manifest" href="/site.webmanifest" />
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="/fonts/space-grotesk-700.woff2" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="/fonts/inter-400.woff2" />
+  <link rel="stylesheet" href="/theme.css">
+  <link rel="preload" href="/blog.css" as="style" onload="this.onload=null;this.rel='stylesheet'"><noscript><link rel="stylesheet" href="/blog.css"></noscript>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Ideogram\u63d0\u793a\u8bcd\u6307\u53572026\uff1a\u638c\u63e1AI\u56fe\u50cf\u4e2d\u7684\u6587\u5b57\u751f\u6210",
+    "description": "2026\u5e74Ideogram\u63d0\u793a\u8bcd\u5b8c\u6574\u6307\u5357\u3002\u5b66\u4e60\u5982\u4f55\u5728AI\u56fe\u50cf\u4e2d\u6dfb\u52a0\u6587\u5b57\uff0c\u521b\u5efa\u6392\u7248\u827a\u672f\u3001\u6807\u5fd7\u3001\u6d77\u62a5\u548c\u5e73\u9762\u8bbe\u8ba1\u3002",
+    "image": "https://www.imagetoprompt.dev/og-image.png",
+    "datePublished": "2026-03-13",
+    "dateModified": "2026-03-24",
+    "inLanguage": "zh",
+    "author": { "@type": "Person", "name": "ImageToPrompt Team", "url": "https://www.imagetoprompt.dev/" },
+    "publisher": { "@type": "Organization", "name": "ImageToPrompt", "logo": { "@type": "ImageObject", "url": "https://www.imagetoprompt.dev/favicon.svg" } },
+    "mainEntityOfPage": { "@type": "WebPage", "@id": "https://www.imagetoprompt.dev/zh/blog/ideogram-tishi-ci-zhinan/" }
+  }
+  </script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4499206373485728" crossorigin="anonymous"></script>
+<script src="https://cdn.onesignal.com/sdks/web/v16/OneSignalSDK.page.js" defer></script>
+<script>
+  window.OneSignalDeferred = window.OneSignalDeferred || [];
+  OneSignalDeferred.push(async function(OneSignal) {
+    await OneSignal.init({ appId: "REPLACE_WITH_ONESIGNAL_APP_ID", notifyButton: { enable: false } });
+  });
+</script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="inner">
+      <a href="/zh/" class="site-logo"><img src="/favicon.svg" alt="ImageToPrompt" width="48" height="48"><div class="site-logo-text">ImageTo<span class="accent">Prompt</span><span class="site-logo-sub">&#20813;&#36153;AI&#25552;&#31034;&#35789;&#29983;&#25104;&#22120;</span></div></a>
+      <nav class="site-nav" aria-label="&#20027;&#23548;&#33322;">
+        <div class="nav-dropdown">
+          <button class="nav-dropdown-trigger" aria-haspopup="true" aria-expanded="false">Tools <span class="nav-chevron" aria-hidden="true">&#9660;</span></button>
+          <div class="nav-dropdown-menu" role="menu">
+            <div class="nav-mega-grid">
+              <div class="nav-mega-col">
+                <div class="nav-mega-heading">&#128444; IMAGE TOOLS</div>
+                <a href="/" role="menuitem" class="nav-mega-tool">Image to Prompt <span class="nav-mega-arrow">&#8594;</span></a>
+                <a href="/text-to-prompt/" role="menuitem" class="nav-mega-tool">Text to Prompt <span class="nav-mega-arrow">&#8594;</span></a>
+                <a href="/describe-image/" role="menuitem" class="nav-mega-tool">Describe Image <span class="nav-new-badge">NEW</span> <span class="nav-mega-arrow">&#8594;</span></a>
+                <div class="nav-mega-models-label">Models</div>
+                <div class="nav-mega-models"><a href="/midjourney-prompt-generator/">Midjourney</a><span class="nav-dot">&#xB7;</span><a href="/stable-diffusion-prompt-generator/">SD</a></div>
+                <div class="nav-mega-models"><a href="/flux-prompt-generator/">Flux</a><span class="nav-dot">&#xB7;</span><a href="/dall-e-prompt-generator/">DALL&#xB7;E&#xA0;3</a></div>
+                <div class="nav-mega-models"><a href="/adobe-firefly-prompt-generator/">Firefly</a><span class="nav-dot">&#xB7;</span><a href="/leonardo-ai-prompt-generator/">Leonardo</a></div>
+                <div class="nav-mega-models"><a href="/ideogram-prompt-generator/">Ideogram</a></div>
+              </div>
+              <div class="nav-mega-divider" aria-hidden="true"></div>
+              <div class="nav-mega-col">
+                <div class="nav-mega-heading">&#127909; VIDEO TOOLS</div>
+                <a href="/?tab=image-to-video" role="menuitem" class="nav-mega-tool">Image to Video <span class="nav-mega-arrow">&#8594;</span></a>
+                <a href="/?tab=text-to-video" role="menuitem" class="nav-mega-tool">Text to Video <span class="nav-mega-arrow">&#8594;</span></a>
+                <div class="nav-mega-models-label">Models</div>
+                <div class="nav-mega-models"><a href="/veo-prompt-generator/">Veo</a><span class="nav-dot">&#xB7;</span><a href="/kling-prompt-generator/">Kling</a></div>
+                <div class="nav-mega-models"><a href="/runway-prompt-generator/">Runway</a><span class="nav-dot">&#xB7;</span><a href="/pika-prompt-generator/">Pika</a></div>
+                <div class="nav-mega-models"><a href="/luma-prompt-generator/">Luma</a><span class="nav-dot">&#xB7;</span><a href="/sora-prompt-generator/">Sora</a></div>
+                <div class="nav-mega-models"><a href="/minimax-prompt-generator/">Minimax</a><span class="nav-dot">&#xB7;</span><a href="/stable-video-prompt-generator/">Stable</a></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <a href="/zh/blog/">&#21338;&#23458;</a>
+        <a href="/zh/pricing/" class="nav-pill-pricing">&#20215;&#26684;</a>
+        <a href="/zh/about/" class="nav-pill-about">&#20851;&#20110;</a>
+        <a href="/zh/" class="nav-try-free">&#20813;&#36153;&#35797;&#29992; &#8594;</a>
+        <button id="theme-toggle" onclick="toggleTheme()" aria-label="&#20999;&#25442;&#20027;&#39064;" title="&#20999;&#25442;&#20027;&#39064;">&#9728;&#xFE0F;</button>
+  </nav>
+    </div>
+  </header>
+
+  <nav class="breadcrumb" aria-label="&#38754;&#21253;&#23633;&#23548;&#33322;">
+    <a href="/zh/">&#39318;&#39029;</a><span class="sep">&#8250;</span>
+    <a href="/zh/blog/">&#21338;&#23458;</a><span class="sep">&#8250;</span>
+    <span>Ideogram&#25552;&#31034;&#35789;&#25351;&#21335;</span>
+  </nav>
+
+  <div class="page-wrapper">
+    <header class="article-header">
+      <p class="article-tag">AI&#24037;&#20855;</p>
+      <h1>Ideogram&#25552;&#31034;&#35789;&#25351;&#21335;2026&#65306;&#25484;&#25569;AI&#22270;&#20687;&#20013;&#30340;&#25991;&#23383;&#29983;&#25104;</h1>
+      <div class="article-meta">
+        <span>2026&#24180;3&#26376;</span><span class="dot">&#183;</span><span>&#38405;&#35835;&#26102;&#38388;11&#20998;&#38047;</span><span class="dot">&#183;</span><span>Ideogram &#183; &#25490;&#29256;&#35774;&#35745; &#183; &#24179;&#38754;&#35774;&#35745;</span>
+      </div>
+    </header>
+    <div class="article-body">
+
+      <p>&#27599;&#20010;AI&#22270;&#20687;&#29983;&#25104;&#22120;&#22312;&#25991;&#23383;&#26041;&#38754;&#37117;&#26377;&#19968;&#20010;&#33268;&#21629;&#32570;&#38519;&#65306;&#20081;&#30721;&#23383;&#27597;&#12289;&#26080;&#24847;&#20041;&#30340;&#21333;&#35789;&#12289;&#25197;&#26354;&#30340;&#25490;&#29256;&#12290;Midjourney&#33021;&#20135;&#29983;&#32654;&#20029;&#30340;&#33402;&#26415;&#20316;&#21697;&#65292;&#20294;&#20250;&#25226;&#8220;OPEN&#8221;&#21464;&#25104;&#8220;OPEM&#8221;&#12290;Stable Diffusion&#24456;&#38590;&#19968;&#33268;&#22320;&#25340;&#20889;&#20219;&#20309;&#20869;&#23481;&#12290;DALL-E 3&#27604;&#22823;&#22810;&#25968;&#37117;&#22909;&#65292;&#20294;&#22312;&#36739;&#38271;&#30340;&#23383;&#31526;&#20018;&#25110;&#39118;&#26684;&#21270;&#23383;&#20307;&#19978;&#20173;&#28982;&#20250;&#22833;&#35823;&#12290;</p>
+
+      <p>Ideogram&#19981;&#21516;&#12290;&#23427;&#20174;&#26681;&#26412;&#19978;&#23558;&#21487;&#35835;&#30340;&#25991;&#23383;&#28210;&#26579;&#20316;&#20026;&#26680;&#24515;&#33021;&#21147;&#26469;&#26500;&#24314;&#65292;Ideogram 2.0&#21487;&#20197;&#23558;&#20934;&#30830;&#12289;&#21487;&#35835;&#12289;&#39118;&#26684;&#21270;&#30340;&#25991;&#23383;&#30452;&#25509;&#25918;&#32622;&#22312;AI&#29983;&#25104;&#30340;&#22270;&#20687;&#20013;&#8212;&#8212;&#20351;&#20854;&#25104;&#20026;&#28023;&#25253;&#35774;&#35745;&#24072;&#12289;&#21697;&#29260;&#21019;&#24314;&#32773;&#12289;&#31038;&#20132;&#23186;&#20307;&#31649;&#29702;&#32773;&#20197;&#21450;&#20219;&#20309;&#38656;&#35201;&#23558;&#25490;&#29256;&#20316;&#20026;&#35270;&#35273;&#19968;&#37096;&#20998;&#30340;&#20154;&#30340;&#39318;&#36873;&#24037;&#20855;&#12290;</p>
+
+      <p>&#26412;&#25351;&#21335;&#28085;&#30422;&#20102;2026&#24180;&#26377;&#25928;&#25552;&#31034;Ideogram&#25152;&#38656;&#30340;&#19968;&#20999;&#65306;&#35821;&#27861;&#12289;&#23383;&#20307;&#25551;&#36848;&#31526;&#12289;&#20351;&#29992;&#22330;&#26223;&#20197;&#21450;&#21306;&#20998;&#26222;&#36890;&#32467;&#26524;&#21644;&#19987;&#19994;&#32423;&#36755;&#20986;&#30340;&#25216;&#24039;&#12290;</p>
+
+      <nav class="toc" aria-label="&#30446;&#24405;">
+        <details open>
+          <summary>&#26412;&#25351;&#21335;&#20869;&#23481;</summary>
+          <ol>
+            <li><a href="#unique">Ideogram&#30340;&#29420;&#29305;&#20043;&#22788;</a></li>
+            <li><a href="#v2-vs-v1">Ideogram 2.0 vs 1.0</a></li>
+            <li><a href="#text-syntax">&#25991;&#23383;&#28210;&#26579;&#35821;&#27861;</a></li>
+            <li><a href="#font-styles">&#23383;&#20307;&#39118;&#26684;&#25551;&#36848;&#31526;</a></li>
+            <li><a href="#poster-design">&#28023;&#25253;&#35774;&#35745;&#25552;&#31034;&#35789;</a></li>
+            <li><a href="#logo-design">&#26631;&#24535;&#35774;&#35745;</a></li>
+            <li><a href="#social-quotes">&#31038;&#20132;&#23186;&#20307;&#35821;&#24405;&#22270;&#29255;</a></li>
+            <li><a href="#color-combos">&#36866;&#21512;&#25991;&#23383;&#30340;&#39068;&#33394;&#32452;&#21512;</a></li>
+            <li><a href="#examples">10&#20010;&#23436;&#25972;&#31034;&#20363;</a></li>
+            <li><a href="#advanced-tips">&#39640;&#32423;&#25216;&#24039;</a></li>
+          </ol>
+        </details>
+      </nav>
+
+      <h2 id="unique">Ideogram&#22312;AI&#22270;&#20687;&#29983;&#25104;&#22120;&#20013;&#30340;&#29420;&#29305;&#20043;&#22788;</h2>
+
+      <p>&#22823;&#22810;&#25968;AI&#22270;&#20687;&#27169;&#22411;&#23558;&#25991;&#23383;&#35270;&#20026;&#21482;&#26159;&#21478;&#19968;&#20010;&#35270;&#35273;&#20803;&#32032;&#8212;&#8212;&#19968;&#32452;&#24212;&#35813;&#30475;&#36215;&#26469;&#22823;&#33268;&#20687;&#23383;&#27597;&#30340;&#24418;&#29366;&#12290;Ideogram&#30340;&#26550;&#26500;&#19987;&#38376;&#35299;&#20915;&#25991;&#23383;&#28210;&#26579;&#38382;&#39064;&#12290;&#35813;&#27169;&#22411;&#29702;&#35299;&#25991;&#23383;&#24517;&#39035;&#26159;<em>&#27491;&#30830;</em>&#30340;&#65292;&#32780;&#19981;&#20165;&#20165;&#26159;<em>&#39118;&#26684;&#36866;&#24403;</em>&#30340;&#12290;&#36825;&#20351;&#23427;&#22312;&#20197;&#19979;&#39046;&#22495;&#26080;&#21487;&#26367;&#20195;&#65306;</p>
+
+      <ul>
+        <li><strong>&#27963;&#21160;&#28023;&#25253;</strong>&#8212;&#8212;&#27963;&#21160;&#21517;&#31216;&#12289;&#26085;&#26399;&#21644;&#22330;&#22320;&#24517;&#39035;&#20934;&#30830;</li>
+        <li><strong>&#21697;&#29260;&#26631;&#24535;</strong>&#8212;&#8212;&#23383;&#24418;&#24517;&#39035;&#19968;&#33268;&#19988;&#28165;&#26224;</li>
+        <li><strong>&#31038;&#20132;&#23186;&#20307;&#22270;&#29255;</strong>&#8212;&#8212;&#24341;&#29992;&#21644;&#21495;&#21484;&#24615;&#29992;&#35821;&#26159;&#35774;&#35745;&#30340;&#26680;&#24515;</li>
+        <li><strong>&#20070;&#31821;&#23553;&#38754;&#21644;&#19987;&#36753;&#23553;&#38754;</strong>&#8212;&#8212;&#26631;&#39064;&#25490;&#29256;&#26159;&#20013;&#24515;</li>
+        <li><strong>&#20449;&#24687;&#22270;&#21644;&#25945;&#32946;&#20869;&#23481;</strong>&#8212;&#8212;&#26631;&#31614;&#24517;&#39035;&#21487;&#35835;</li>
+        <li><strong>&#20135;&#21697;&#27169;&#22411;</strong>&#8212;&#8212;&#21697;&#29260;&#21517;&#31216;&#20986;&#29616;&#22312;&#21253;&#35013;&#19978;</li>
+      </ul>
+
+      <h2 id="v2-vs-v1">Ideogram 2.0 vs 1.0&#65306;&#26377;&#20160;&#20040;&#21464;&#21270;</h2>
+
+      <p>Ideogram 2.0&#65288;2025&#24180;&#21457;&#24067;&#65289;&#30456;&#27604;&#21407;&#22987;&#27169;&#22411;&#26377;&#37325;&#22823;&#39134;&#36291;&#65306;</p>
+
+      <div class="table-wrap">
+      <table class="comparison-table">
+        <thead>
+          <tr><th>&#29305;&#24615;</th><th>Ideogram 1.0</th><th>Ideogram 2.0</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>&#25991;&#23383;&#20934;&#30830;&#24615;</td><td>&#30701;&#35821;&#23578;&#21487;</td><td>&#22810;&#34892;&#12289;&#36739;&#38271;&#23383;&#31526;&#20018;&#21487;&#38752;</td></tr>
+          <tr><td>&#23383;&#20307;&#39118;&#26684;&#33539;&#22260;</td><td>&#26377;&#38480;&#30340;&#34924;&#32447;/&#26080;&#34924;&#32447;&#36873;&#39033;</td><td>&#20016;&#23500;&#33539;&#22260;&#21253;&#25324;&#20070;&#27861;&#12289;&#22797;&#21476;&#12289;&#38678;&#34425;</td></tr>
+          <tr><td>&#22270;&#20687;&#36830;&#36143;&#24615;</td><td>&#20598;&#23572;&#26500;&#22270;&#38382;&#39064;</td><td>&#26356;&#24378;&#30340;&#22330;&#26223;&#29702;&#35299;</td></tr>
+          <tr><td>&#30495;&#23454;&#25668;&#24433;&#24863;</td><td>&#20013;&#31561;</td><td>&#39640;&#8212;&#8212;&#19982;Flux&#30456;&#24403;</td></tr>
+          <tr><td>&#30011;&#24067;&#23610;&#23544;</td><td>&#20559;&#27491;&#26041;&#24418;</td><td>&#23436;&#25972;&#23485;&#39640;&#27604;&#25903;&#25345;</td></tr>
+          <tr><td>Magic Prompt</td><td>&#22522;&#26412;&#25193;&#23637;</td><td>&#19978;&#19979;&#25991;&#24863;&#30693;&#22686;&#24378;</td></tr>
+        </tbody>
+      </table>
+      </div>
+
+      <h2 id="text-syntax">&#25991;&#23383;&#28210;&#26579;&#35821;&#27861;&#65306;&#22914;&#20309;&#22312;Ideogram&#20013;&#25351;&#23450;&#25991;&#23383;</h2>
+
+      <p>&#26680;&#24515;&#25216;&#24039;&#24456;&#31616;&#21333;&#65306;&#22312;&#25552;&#31034;&#35789;&#20013;&#29992;&#24341;&#21495;&#25324;&#20303;&#20320;&#24819;&#35201;&#30340;&#25991;&#23383;&#12290;Ideogram&#20250;&#35782;&#21035;&#24341;&#21495;&#20013;&#30340;&#23383;&#31526;&#20018;&#20026;&#38656;&#35201;&#22312;&#22270;&#20687;&#20013;&#23383;&#38754;&#28210;&#26579;&#30340;&#25991;&#23383;&#12290;</p>
+
+      <pre><code>A vintage travel poster for Paris with the text "PARIS" in large bold letters at the top, Eiffel Tower illustration, warm golden tones, art deco style</code></pre>
+
+      <p>&#20320;&#21487;&#20197;&#25351;&#23450;&#22810;&#20010;&#25991;&#23383;&#20803;&#32032;&#65306;</p>
+
+      <pre><code>Coffee shop menu board with the text "DAILY SPECIALS" as heading, chalk on blackboard texture, warm cafe atmosphere</code></pre>
+
+      <p>&#23545;&#20110;&#20301;&#32622;&#65292;&#20351;&#29992;&#26041;&#21521;&#24615;&#35821;&#35328;&#65306;</p>
+
+      <pre><code>Motivational poster with the quote "Rise and shine" in the center, "every morning is a new beginning" in smaller text below, sunrise photography background, sans-serif typography</code></pre>
+
+      <div class="callout callout-tip">
+        <strong>&#25552;&#31034;&#65306;</strong> &#23558;&#24341;&#21495;&#20013;&#30340;&#25991;&#23383;&#20445;&#25345;&#22312;6&#20010;&#21333;&#35789;&#25110;&#26356;&#23569;&#65292;&#20197;&#33719;&#24471;&#26368;&#21487;&#38752;&#30340;&#28210;&#26579;&#12290;Ideogram 2.0&#21487;&#20197;&#22788;&#29702;&#26356;&#38271;&#30340;&#21477;&#23376;&#65292;&#20294;&#36739;&#30701;&#30340;&#23383;&#31526;&#20018;&#26356;&#31283;&#23450;&#12290;
+      </div>
+
+      <h3>&#25991;&#23383;&#20301;&#32622;&#25551;&#36848;&#31526;</h3>
+      <ul>
+        <li><strong>&#20301;&#32622;&#65306;</strong> at the top&#12289;centered&#12289;bottom third&#12289;upper left corner&#12289;overlaid on</li>
+        <li><strong>&#23610;&#23544;&#65306;</strong> large&#12289;small&#12289;bold&#12289;headline-sized&#12289;subtitle&#12289;fine print</li>
+        <li><strong>&#34701;&#21512;&#65306;</strong> integrated into the design&#12289;overlaying the background&#12289;embossed into the surface&#12289;painted on</li>
+      </ul>
+
+      <h2 id="font-styles">&#23383;&#20307;&#39118;&#26684;&#25551;&#36848;&#31526;</h2>
+
+      <p>&#22312;Ideogram&#20013;&#20320;&#19981;&#26159;&#25353;&#21517;&#31216;&#25351;&#23450;&#23383;&#20307;&#8212;&#8212;&#32780;&#26159;&#25551;&#36848;&#25490;&#29256;&#30340;&#35270;&#35273;&#29305;&#24449;&#12290;&#36825;&#20123;&#25551;&#36848;&#31526;&#33021;&#31283;&#23450;&#20135;&#29983;&#29420;&#29305;&#12289;&#21487;&#35782;&#21035;&#30340;&#23383;&#20307;&#39118;&#26684;&#65306;</p>
+
+      <h3>&#34924;&#32447;&#20307;&#39118;&#26684;</h3>
+      <ul>
+        <li><code>elegant serif typography</code> &#8212;&#8212; &#32463;&#20856;&#12289;&#32534;&#36753;&#24863;&#35273;&#65288;&#31867;&#20284;Garamond&#12289;Times&#65289;</li>
+        <li><code>bold slab serif font</code> &#8212;&#8212; &#21402;&#37325;&#12289;&#22359;&#29366;&#34924;&#32447;&#65288;&#31867;&#20284;Rockwell&#65289;</li>
+        <li><code>decorative Victorian serif</code> &#8212;&#8212; &#21326;&#20029;&#12289;&#21382;&#21490;&#24863;&#30340;&#23383;&#24418;</li>
+      </ul>
+
+      <h3>&#26080;&#34924;&#32447;&#20307;&#39118;&#26684;</h3>
+      <ul>
+        <li><code>clean geometric sans-serif</code> &#8212;&#8212; &#26497;&#31616;&#12289;&#29616;&#20195;&#65288;&#31867;&#20284;Futura&#12289;Montserrat&#65289;</li>
+        <li><code>humanist sans-serif</code> &#8212;&#8212; &#28201;&#26262;&#12289;&#21451;&#22909;&#65288;&#31867;&#20284;Gill Sans&#65289;</li>
+        <li><code>condensed bold sans-serif</code> &#8212;&#8212; &#39640;&#30246;&#12289;&#31364;&#38271;&#12289;&#39640;&#20914;&#20987;&#21147;</li>
+        <li><code>rounded sans-serif</code> &#8212;&#8212; &#20146;&#20999;&#12289;&#22278;&#35282;</li>
+      </ul>
+
+      <h3>&#23637;&#31034;&#21644;&#29305;&#27530;&#39118;&#26684;</h3>
+      <ul>
+        <li><code>handwritten script font</code> &#8212;&#8212; &#33258;&#28982;&#12289;&#27969;&#30021;&#30340;&#23383;&#24418;</li>
+        <li><code>brush calligraphy</code> &#8212;&#8212; &#22696;&#31508;&#31508;&#35302;&#12289;&#21487;&#21464;&#23485;&#24230;</li>
+        <li><code>neon sign lettering</code> &#8212;&#8212; &#21457;&#20809;&#31649;&#12289;&#22797;&#21476;&#22812;&#29983;&#27963;</li>
+        <li><code>chalk lettering</code> &#8212;&#8212; &#26580;&#21644;&#12289;&#30053;&#31895;&#31961;&#12289;&#21654;&#21857;&#39302;&#33756;&#21333;&#39118;&#26684;</li>
+        <li><code>Art Deco lettering</code> &#8212;&#8212; &#20960;&#20309;&#12289;1920&#24180;&#20195;&#39749;&#21147;</li>
+      </ul>
+
+      <h2 id="poster-design">&#28023;&#25253;&#35774;&#35745;&#25552;&#31034;&#35789;</h2>
+
+      <p>&#28023;&#25253;&#35774;&#35745;&#26159;Ideogram&#26368;&#24378;&#30340;&#29992;&#20363;&#12290;&#20197;&#19979;&#26159;&#26368;&#24120;&#35265;&#28023;&#25253;&#31867;&#22411;&#30340;&#27169;&#26495;&#65306;</p>
+
+      <h3>&#27963;&#21160;&#28023;&#25253;</h3>
+      <pre><code>Concert poster for a jazz festival, text "JAZZ NIGHTS" in large Art Deco gold lettering at top, "JUNE 14-16, 2026" in smaller sans-serif below, silhouette of saxophone player, deep navy and gold color palette, vintage poster style, elegant and sophisticated</code></pre>
+
+      <h3>&#30005;&#24433;&#28023;&#25253;&#39118;&#26684;</h3>
+      <pre><code>Cinematic movie poster composition, dark atmospheric background, lone figure standing on a cliff at night, text "AFTER THE STORM" in dramatic condensed serif font at top, tagline "some things can't be washed away" in italic below the figure, moody film noir lighting</code></pre>
+
+      <h3>&#21169;&#24535;&#28023;&#25253;</h3>
+      <pre><code>Minimalist motivational poster, clean white background with subtle geometric texture, large centered text "DO THE WORK" in bold geometric sans-serif, small text "every single day" beneath it, modern typography, inspirational, print-ready design</code></pre>
+
+      <h2 id="logo-design">&#26631;&#24535;&#35774;&#35745;</h2>
+
+      <p>Ideogram&#22312;&#21253;&#21547;&#25991;&#23383;&#30340;&#26631;&#24535;&#27010;&#24565;&#26041;&#38754;&#36229;&#36234;&#20102;&#25152;&#26377;&#20854;&#20182;AI&#24037;&#20855;&#12290;&#34429;&#28982;&#20320;&#19981;&#20250;&#30452;&#25509;&#23558;AI&#36755;&#20986;&#20316;&#20026;&#26368;&#32456;&#29983;&#20135;&#26631;&#24535;&#65288;&#30690;&#37327;&#36319;&#36394;&#21644;&#22312;Illustrator&#20013;&#30340;&#23436;&#21892;&#20173;&#28982;&#24517;&#35201;&#65289;&#65292;&#20294;Ideogram&#21487;&#20197;&#27604;&#25163;&#21160;&#33609;&#22270;&#26356;&#24555;&#22320;&#29983;&#25104;&#24341;&#20154;&#27880;&#30446;&#30340;&#27010;&#24565;&#26041;&#21521;&#12290;</p>
+
+      <h3>&#25991;&#23383;&#26631;&#24535;</h3>
+      <pre><code>Minimalist wordmark logo for a tech startup called "Nexus", clean geometric sans-serif typography, gradient from deep purple to electric blue, simple and memorable, white background, professional brand identity</code></pre>
+
+      <h3>&#24509;&#31456;/&#32441;&#31456;&#26631;&#24535;</h3>
+      <pre><code>Vintage badge logo with circular border, text "CRAFTSMAN COFFEE" around the top arc, "EST. 2018" along the bottom arc, illustrated coffee bean in the center, earthy brown and cream color palette, artisan craft aesthetic, letterpress texture</code></pre>
+
+      <h2 id="social-quotes">&#31038;&#20132;&#23186;&#20307;&#35821;&#24405;&#22270;&#29255;</h2>
+
+      <p>&#35821;&#24405;&#22270;&#29255;&#26159;&#20869;&#23481;&#21019;&#20316;&#32773;&#20351;&#29992;Ideogram&#26368;&#39640;&#39057;&#30340;&#29992;&#20363;&#20043;&#19968;&#12290;&#30446;&#26631;&#26159;&#23558;&#21487;&#35835;&#30340;&#35821;&#24405;&#34701;&#20837;&#32654;&#35266;&#30340;&#22270;&#20687;&#20013;&#65292;&#21560;&#24341;&#29992;&#25143;&#20572;&#30041;&#27983;&#35272;&#12290;</p>
+
+      <pre><code>Instagram quote graphic, soft bokeh golden hour photography background, centered text "The best time to start was yesterday" in elegant handwritten script, muted warm tones, lifestyle brand aesthetic, portrait format 4:5</code></pre>
+
+      <pre><code>LinkedIn professional quote graphic, abstract dark geometric background, text "Leadership is not about being in charge" in bold clean sans-serif at top, attribution "&#8212; Simon Sinek" in smaller italic below, sophisticated business aesthetic, deep navy and white</code></pre>
+
+      <h2 id="color-combos">&#36866;&#21512;&#25991;&#23383;&#30340;&#39068;&#33394;&#32452;&#21512;</h2>
+
+      <p>&#25991;&#23383;&#21644;&#32972;&#26223;&#20043;&#38388;&#30340;&#39640;&#23545;&#27604;&#24230;&#26159;Ideogram&#36755;&#20986;&#20013;&#25991;&#23383;&#21487;&#35835;&#24615;&#30340;&#26368;&#37325;&#35201;&#22240;&#32032;&#12290;&#36825;&#20123;&#32452;&#21512;&#33021;&#31283;&#23450;&#20135;&#29983;&#21487;&#35835;&#30340;&#32467;&#26524;&#65306;</p>
+
+      <div class="table-wrap">
+      <table class="comparison-table">
+        <thead>
+          <tr><th>&#32972;&#26223;</th><th>&#25991;&#23383;&#39068;&#33394;</th><th>&#26368;&#36866;&#21512;</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>&#28145;&#28023;&#20891;&#34013;</td><td>&#30333;&#33394;&#25110;&#37329;&#33394;</td><td>&#19987;&#19994;&#12289;&#22882;&#21326;&#12289;&#33322;&#28023;</td></tr>
+          <tr><td>&#40657;&#33394;&#25110;&#28145;&#28845;</td><td>&#30333;&#33394;&#12289;&#22902;&#27833;&#33394;&#25110;&#38678;&#34425;</td><td>&#25103;&#21095;&#24615;&#12289;&#39640;&#31471;&#12289;&#22812;&#29983;&#27963;</td></tr>
+          <tr><td>&#22902;&#27833;&#25110;&#31859;&#30333;</td><td>&#28145;&#26837;&#25110;&#40657;&#33394;</td><td>&#32534;&#36753;&#12289;&#25163;&#24037;&#12289;&#28201;&#26262;</td></tr>
+          <tr><td>&#26862;&#26519;&#32511;</td><td>&#30333;&#33394;&#25110;&#28129;&#37329;</td><td>&#25143;&#22806;&#12289;&#33258;&#28982;&#12289;&#26377;&#26426;</td></tr>
+          <tr><td>&#36196;&#38518;&#33394;/&#38081;&#38152;&#33394;</td><td>&#30333;&#33394;&#25110;&#22902;&#27833;&#33394;</td><td>&#27874;&#35199;&#31859;&#20122;&#12289;&#27877;&#22303;&#12289;&#28201;&#26262;</td></tr>
+          <tr><td>&#28145;&#21187;&#33390;&#32418;</td><td>&#37329;&#33394;&#25110;&#22902;&#27833;&#33394;</td><td>&#22882;&#21326;&#12289;&#33889;&#33796;&#37202;&#12289;&#20256;&#25215;</td></tr>
+        </tbody>
+      </table>
+      </div>
+
+      <h2 id="examples">10&#20010;&#23436;&#25972;Ideogram&#25552;&#31034;&#35789;&#31034;&#20363;</h2>
+
+      <ol>
+        <li><strong>&#38899;&#20048;&#33410;&#28023;&#25253;&#65306;</strong>
+          <pre><code>Summer music festival poster, text "SOLAR FEST 2026" in large retro psychedelic lettering at top, "August 22-24 &#183; Desert Springs, CA" in clean sans-serif below, illustrated sun and mountains, warm sunset gradient background, 70s poster aesthetic, vertical format</code></pre>
+        </li>
+        <li><strong>&#38754;&#21253;&#24215;&#21697;&#29260;&#26631;&#24535;&#65306;</strong>
+          <pre><code>Artisan bakery logo, text "GOLDEN LOAF" in warm serif typography with a hand-drawn wheat illustration integrated above the text, rustic and warm, cream and golden-brown color scheme, circular badge format</code></pre>
+        </li>
+        <li><strong>&#31185;&#25216;&#22823;&#20250;&#24509;&#31456;&#65306;</strong>
+          <pre><code>Professional conference badge design, text "DEVCON 2026" in bold geometric sans-serif as headline, "Building the Future of Web" as subtitle in lighter weight, dark gradient background, electric blue accent, modern tech aesthetic</code></pre>
+        </li>
+        <li><strong>&#20070;&#31821;&#23553;&#38754;&#65306;</strong>
+          <pre><code>Thriller novel cover, dark atmospheric forest at night with a single lit window in the distance, title "THE HOLLOW WOODS" in distressed serif font at top, author "J. Rivers" at bottom in smaller clean sans-serif, fog and mystery, vertical 2:3 format</code></pre>
+        </li>
+        <li><strong>&#20581;&#36523;&#28023;&#25253;&#65306;</strong>
+          <pre><code>High energy fitness poster, dramatic low-angle shot of weights and gym equipment, text "NO DAYS OFF" in ultra-bold condensed sans-serif in the center, deep black background with orange and red gradient accent lighting, powerful and motivational</code></pre>
+        </li>
+        <li><strong>&#21654;&#21857;&#39302;&#20250;&#21592;&#21345;&#65306;</strong>
+          <pre><code>Small business loyalty stamp card, illustrated coffee cup in the center, text "BREW & CO" in rounded sans-serif above, "YOUR 10TH COFFEE IS FREE" in small print below, warm cream background, minimal charming design, horizontal card format</code></pre>
+        </li>
+        <li><strong>YouTube&#32553;&#30053;&#22270;&#65306;</strong>
+          <pre><code>YouTube thumbnail design, bold text "5 MISTAKES" in large red and yellow letters on the left side, dramatic photorealistic image of a frustrated person at a computer on the right, high contrast for small-screen readability, 16:9 format</code></pre>
+        </li>
+        <li><strong>&#23130;&#31036;&#35831;&#26604;&#27010;&#24565;&#65306;</strong>
+          <pre><code>Elegant wedding invitation design, soft watercolor floral border in blush and sage, centered text "Sarah & James" in flowing calligraphy, "June 21, 2026 &#183; Rosewood Estate" in small elegant serif below, ivory background, romantic and sophisticated</code></pre>
+        </li>
+        <li><strong>&#34903;&#22836;&#33402;&#26415;&#39118;&#26684;&#65306;</strong>
+          <pre><code>Urban street art mural design, brick wall background, large graffiti-style text "CREATE" in layered spray paint letters, vibrant colors including neon orange, electric blue, hot pink, urban art aesthetic, detailed texture</code></pre>
+        </li>
+        <li><strong>&#20135;&#21697;&#21253;&#35013;&#26631;&#31614;&#65306;</strong>
+          <pre><code>Premium olive oil label design, text "CASA VERDE" in elegant serif at top, "EXTRA VIRGIN OLIVE OIL" in small caps below, illustrated olive branch wrapping around the text, forest green and gold color scheme, artisan product label style</code></pre>
+        </li>
+      </ol>
+
+      <h2 id="advanced-tips">&#39640;&#32423;&#25216;&#24039;</h2>
+
+      <p><strong>&#29992;&#8220;typography as the hero&#8221;&#65306;</strong> &#24403;&#20320;&#24819;&#35201;&#25991;&#23383;&#21344;&#25454;&#26174;&#33879;&#20301;&#32622;&#26102;&#65292;&#26126;&#30830;&#21578;&#35785;Ideogram&#25991;&#23383;&#26159;&#28966;&#28857;&#12290;&#8220;Typography-forward design&#8221;&#34920;&#31034;&#25991;&#23383;&#24212;&#35813;&#22823;&#32780;&#31361;&#20986;&#12290;</p>
+
+      <p><strong>&#21442;&#32771;&#35774;&#35745;&#36816;&#21160;&#65306;</strong> &#20687;&#8220;Art Nouveau&#8221;&#12289;&#8220;Bauhaus&#8221;&#12289;&#8220;Swiss International Style&#8221;&#12289;&#8220;Memphis Design&#8221;&#25110;&#8220;Brutalist graphic design&#8221;&#36825;&#26679;&#30340;&#25551;&#36848;&#31526;&#20250;&#20135;&#29983;&#38750;&#24120;&#29420;&#29305;&#30340;&#25490;&#29256;&#22788;&#29702;&#12290;</p>
+
+      <p><strong>&#25551;&#36848;&#21360;&#21047;/&#29983;&#20135;&#26041;&#27861;&#65306;</strong> &#8220;Risograph print&#8221;&#12289;&#8220;letterpress&#8221;&#12289;&#8220;screen printed&#8221;&#12289;&#8220;embossed gold foil&#8221;&#37117;&#20250;&#20135;&#29983;&#29420;&#29305;&#30340;&#36136;&#24863;&#22788;&#29702;&#65292;&#19982;&#25490;&#29256;&#25645;&#37197;&#25928;&#26524;&#24456;&#22909;&#12290;</p>
+
+      <p><strong>Magic Prompt&#24320;&#20851;&#65306;</strong> Ideogram&#30340;Magic Prompt&#21151;&#33021;&#20250;&#25193;&#23637;&#20320;&#30340;&#36755;&#20837;&#12290;&#23545;&#20110;&#25991;&#23383;&#30456;&#20851;&#30340;&#24037;&#20316;&#65292;&#32771;&#34385;&#20851;&#38381;&#23427;&#8212;&#8212;&#23427;&#26377;&#26102;&#20250;&#37325;&#20889;&#20320;&#24341;&#21495;&#20013;&#30340;&#25991;&#23383;&#25110;&#25913;&#21464;&#20320;&#25351;&#23450;&#30340;&#35774;&#35745;&#26041;&#21521;&#12290;</p>
+
+      <div class="cta-box">
+        <h3>&#23581;&#35797;Ideogram&#25552;&#31034;&#35789;&#29983;&#25104;&#22120;</h3>
+        <p>&#19978;&#20256;&#22270;&#20687;&#25110;&#25551;&#36848;&#20320;&#30340;&#24819;&#27861;&#65292;&#33719;&#24471;&#20248;&#21270;&#30340;Ideogram&#25552;&#31034;&#35789;&#12290;</p>
+        <a href="/ideogram-prompt-generator/" class="cta-btn">Ideogram&#25552;&#31034;&#35789;&#29983;&#25104;&#22120; &#8594;</a>
+      </div>
+
+    </div>
+
+    <div class="author-bio">
+      <svg class="author-photo" width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="&#20316;&#32773;&#22836;&#20687;"><circle cx="32" cy="32" r="32" fill="#2a1f4e"/><circle cx="32" cy="26" r="11" fill="#7c6bc4"/><ellipse cx="32" cy="52" rx="18" ry="11" fill="#7c6bc4"/></svg>
+      <div class="author-info">
+        <p class="author-name">ImageToPrompt Team</p>
+        <p class="author-desc">&#25105;&#20204;&#26159;&#19968;&#25903;&#19987;&#19994;&#22242;&#38431;&#65292;&#33268;&#21147;&#20110;&#24110;&#21161;&#21019;&#20316;&#32773;&#25484;&#25569;AI&#22270;&#20687;&#29983;&#25104;&#25216;&#26415;&#12290;&#36890;&#36807;&#22270;&#20687;&#36716;&#25552;&#31034;&#35789;&#24037;&#20855;&#21644;AI&#25552;&#31034;&#35789;&#24037;&#31243;&#25351;&#21335;&#65292;&#25105;&#20204;&#20026;&#20840;&#29699;&#33402;&#26415;&#23478;&#30340;&#21019;&#20316;&#25552;&#20379;&#25903;&#25345;&#12290;</p>
+        <a href="https://x.com/Ilyass14286541" class="author-link">&#22312;X&#19978;&#20851;&#27880; &#8594;</a>
+      </div>
+    </div>
+
+    <div class="related-posts">
+      <h2>&#30456;&#20851;&#25351;&#21335;</h2>
+      <div class="related-grid">
+        <a href="/blog/dall-e-3-prompt-guide/" class="related-card">
+          <p class="tag">&#25351;&#21335;</p>
+          <h3>DALL-E 3&#25552;&#31034;&#35789;&#25351;&#21335;2026</h3>
+        </a>
+        <a href="/zh/blog/flux-ai-tishi-ci-zhinan/" class="related-card">
+          <p class="tag">&#25351;&#21335;</p>
+          <h3>Flux AI&#25552;&#31034;&#35789;&#25351;&#21335;</h3>
+        </a>
+        <a href="/blog/best-image-to-prompt-tools-2026/" class="related-card">
+          <p class="tag">&#23545;&#27604;</p>
+          <h3>2026&#24180;&#26368;&#20339;&#22270;&#20687;&#36716;&#25552;&#31034;&#35789;&#24037;&#20855;</h3>
+        </a>
+        <a href="/ideogram-prompt-generator/" class="related-card">
+          <p class="tag">&#24037;&#20855;</p>
+          <h3>Ideogram&#25552;&#31034;&#35789;&#29983;&#25104;&#22120;</h3>
+        </a>
+      </div>
+    </div>
+
+  </div>
+
+  <footer class="footer-4col">
+    <div class="f4-inner">
+      <div class="f4-brand">
+        <img src="/favicon.svg" alt="ImageToPrompt" width="28" height="28">
+        <span class="f4-brand-name">ImageTo<span class="accent">Prompt</span></span>
+        <span class="f4-brand-sub">&mdash; Free AI Prompt Generator</span>
+      </div>
+      <div class="f4-grid">
+        <div class="f4-section">
+          <h4 class="f4-heading">Image Prompt Tools</h4>
+          <a href="/">Image to Prompt</a>
+          <a href="/text-to-prompt/">Text to Prompt</a>
+      <a href="/describe-image/">Describe Image</a>
+          <a href="/midjourney-prompt-generator/">Midjourney</a>
+          <a href="/stable-diffusion-prompt-generator/">Stable Diffusion</a>
+          <a href="/flux-prompt-generator/">Flux</a>
+          <a href="/dall-e-prompt-generator/">DALL-E 3</a>
+          <a href="/adobe-firefly-prompt-generator/">Adobe Firefly</a>
+          <a href="/leonardo-ai-prompt-generator/">Leonardo AI</a>
+          <a href="/ideogram-prompt-generator/">Ideogram</a>
+        </div>
+        <div class="f4-section">
+          <h4 class="f4-heading">Video Prompt Tools</h4>
+          <a href="/image-to-video-prompt/">Image to Video Prompt</a>
+          <a href="/text-to-video-prompt/">Text to Video Prompt</a>
+          <a href="/veo-prompt-generator/">Veo / Flow Studio</a>
+          <a href="/kling-prompt-generator/">Kling AI</a>
+          <a href="/runway-prompt-generator/">Runway Gen-3</a>
+          <a href="/pika-prompt-generator/">Pika</a>
+          <a href="/luma-prompt-generator/">Luma Dream Machine</a>
+          <a href="/sora-prompt-generator/">Sora</a>
+          <a href="/minimax-prompt-generator/">Minimax</a>
+          <a href="/stable-video-prompt-generator/">Stable Video</a>
+        </div>
+        <div class="f4-section">
+          <h4 class="f4-heading">Resources</h4>
+          <a href="/zh/blog/">&#21338;&#23458;</a>
+          <a href="/zh/about/">&#20851;&#20110;</a>
+          <a href="/zh/pricing/">&#20215;&#26684;</a>
+          <a href="/contact/">Contact</a>
+          <a href="/privacy-policy/">Privacy Policy</a>
+          <a href="/terms-of-service/">Terms of Service</a>
+        </div>
+        <div class="f4-section">
+          <h4 class="f4-heading">Languages</h4>
+          <a href="/">English</a>
+          <a href="/fr/">Fran&#231;ais</a>
+          <a href="/ar/">&#1575;&#1604;&#1593;&#1585;&#1576;&#1610;&#1577;</a>
+          <a href="/es/">Espa&#241;ol</a>
+          <a href="/ko/">&#54620;&#44397;&#50612;</a>
+          <a href="/ja/">&#26085;&#26412;&#35486;</a>
+          <a href="/ru/">&#1056;&#1091;&#1089;&#1089;&#1082;&#1080;&#1081;</a>
+          <a href="/zh/">&#20013;&#25991;</a>
+        </div>
+      </div>
+      <div class="f4-bottom">
+        <p>&#169; 2026 ImageToPrompt.dev &#8212; Free AI Prompt Generator</p>
+        <p>Your images are never stored. All analysis is ephemeral and private.</p>
+      </div>
+    </div>
+  </footer>
+<script src="/newsletter-inject.js" defer></script>
+<script src="/nav.js" defer></script>
+  <script>
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', function() {
+    navigator.serviceWorker.register('/sw.js')
+      .catch(function(err) { console.warn('SW registration failed:', err); });
+  });
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,473 @@
+<!doctype html>
+<html lang="zh">
+<head>
+  <script src="/theme-toggle.js"></script>
+  <meta charset="UTF-8" />
+  <link rel="dns-prefetch" href="https://www.googletagmanager.com">
+<link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="max-image-preview:large, index, follow">
+  <meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="ImageToPrompt">
+  <title>什么是AI艺术提示词工程？初学者完全指南</title>
+  <meta name="description" content="学习AI艺术提示词工程的基础知识。涵盖主题、风格、光照、构图和技术参数，附带Midjourney、Stable Diffusion和Flux的实际示例。" />
+  <link rel="canonical" href="https://www.imagetoprompt.dev/zh/blog/tishi-ci-gongcheng-ai-yishu/" />
+  <link rel="alternate" hreflang="zh" href="https://www.imagetoprompt.dev/zh/blog/tishi-ci-gongcheng-ai-yishu/" />
+  <link rel="alternate" hreflang="en" href="https://www.imagetoprompt.dev/blog/prompt-engineering-for-ai-art/" />
+  <link rel="alternate" hreflang="x-default" href="https://www.imagetoprompt.dev/blog/prompt-engineering-for-ai-art/" />
+  <meta property="og:title" content="什么是AI艺术提示词工程？初学者完全指南" />
+  <meta property="og:description" content="从零开始学习编写有效的AI图像提示词，附带Midjourney、Stable Diffusion和Flux的实际示例。" />
+  <meta property="og:url" content="https://www.imagetoprompt.dev/zh/blog/tishi-ci-gongcheng-ai-yishu/" />
+  <meta property="og:type" content="article" />
+  <meta property="og:image" content="https://www.imagetoprompt.dev/og-image.png" />
+  <meta property="og:site_name" content="ImageToPrompt" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="AI艺术提示词工程入门指南" />
+  <meta name="twitter:description" content="学习AI艺术提示词工程。主题、风格、光照、构图五大支柱详解。" />
+  <meta name="twitter:image" content="https://www.imagetoprompt.dev/og-image.png" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="48x48" href="/favicon-48.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+  <link rel="manifest" href="/site.webmanifest" />
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="/fonts/space-grotesk-700.woff2" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="/fonts/inter-400.woff2" />
+  <link rel="stylesheet" href="/theme.css">
+  <link rel="preload" href="/blog.css" as="style" onload="this.onload=null;this.rel='stylesheet'"><noscript><link rel="stylesheet" href="/blog.css"></noscript>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "什么是AI艺术提示词工程？初学者完全指南",
+    "description": "学习AI艺术提示词工程的基础知识。涵盖主题、风格、光照、构图和技术参数，附带Midjourney、Stable Diffusion和Flux的实际示例。",
+    "image": "https://www.imagetoprompt.dev/og-image.png",
+    "datePublished": "2026-03-10",
+    "dateModified": "2026-03-24",
+    "inLanguage": "zh",
+    "author": { "@type": "Person", "name": "ImageToPrompt Team", "url": "https://www.imagetoprompt.dev/" },
+    "publisher": { "@type": "Organization", "name": "ImageToPrompt", "logo": { "@type": "ImageObject", "url": "https://www.imagetoprompt.dev/favicon.svg" } },
+    "mainEntityOfPage": { "@type": "WebPage", "@id": "https://www.imagetoprompt.dev/zh/blog/tishi-ci-gongcheng-ai-yishu/" }
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "什么是AI艺术的提示词工程？",
+        "acceptedAnswer": { "@type": "Answer", "text": "AI艺术的提示词工程是编写文本描述来引导AI图像生成器产生特定视觉效果的技能。它涉及用模型理解的语言描述主题、艺术风格、光照、构图、色调和氛围。每个模型——Midjourney、Stable Diffusion、DALL-E 3、Flux——都有不同的语法和词汇。" }
+      },
+      {
+        "@type": "Question",
+        "name": "优质AI艺术提示词的五大要素是什么？",
+        "acceptedAnswer": { "@type": "Answer", "text": "五大要素是：1）主题——图像中有什么；2）风格——看起来应该是什么样；3）光照——光线在做什么；4）构图——如何取景；5）氛围——应该给人什么感觉。每个要素为AI提供不同维度的指导信息。" }
+      },
+      {
+        "@type": "Question",
+        "name": "如何快速学习提示词工程？",
+        "acceptedAnswer": { "@type": "Answer", "text": "最快的方法是使用图像转提示词工具分析你喜欢的图像，了解描述它们的术语。然后每次只修改一个元素观察效果。同时浏览社区画廊（Midjourney Showcase、CivitAI）学习产生出色结果的提示词。" }
+      }
+    ]
+  }
+  </script>
+    <!-- Google AdSense -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4499206373485728" crossorigin="anonymous"></script>
+    <!-- Web Push Notifications -->
+<script src="https://cdn.onesignal.com/sdks/web/v16/OneSignalSDK.page.js" defer></script>
+<script>
+  window.OneSignalDeferred = window.OneSignalDeferred || [];
+  OneSignalDeferred.push(async function(OneSignal) {
+    await OneSignal.init({
+      appId: "REPLACE_WITH_ONESIGNAL_APP_ID",
+      notifyButton: { enable: false }
+    });
+  });
+</script>
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="inner">
+      <a href="/zh/" class="site-logo"><img src="/favicon.svg" alt="ImageToPrompt" width="48" height="48"><div class="site-logo-text">ImageTo<span class="accent">Prompt</span><span class="site-logo-sub">免费AI提示词生成器</span></div></a>
+      <nav class="site-nav" aria-label="主导航">
+        <div class="nav-dropdown">
+          <button class="nav-dropdown-trigger" aria-haspopup="true" aria-expanded="false">Tools <span class="nav-chevron" aria-hidden="true">&#9660;</span></button>
+          <div class="nav-dropdown-menu" role="menu">
+            <div class="nav-mega-grid">
+              <div class="nav-mega-col">
+                <div class="nav-mega-heading">&#128444; IMAGE TOOLS</div>
+                <a href="/" role="menuitem" class="nav-mega-tool">Image to Prompt <span class="nav-mega-arrow">&#8594;</span></a>
+                <a href="/text-to-prompt/" role="menuitem" class="nav-mega-tool">Text to Prompt <span class="nav-mega-arrow">&#8594;</span></a>
+                <a href="/describe-image/" role="menuitem" class="nav-mega-tool">Describe Image <span class="nav-new-badge">NEW</span> <span class="nav-mega-arrow">&#8594;</span></a>
+                <div class="nav-mega-models-label">Models</div>
+                <div class="nav-mega-models"><a href="/midjourney-prompt-generator/">Midjourney</a><span class="nav-dot">&#xB7;</span><a href="/stable-diffusion-prompt-generator/">SD</a></div>
+                <div class="nav-mega-models"><a href="/flux-prompt-generator/">Flux</a><span class="nav-dot">&#xB7;</span><a href="/dall-e-prompt-generator/">DALL&#xB7;E&#xA0;3</a></div>
+                <div class="nav-mega-models"><a href="/adobe-firefly-prompt-generator/">Firefly</a><span class="nav-dot">&#xB7;</span><a href="/leonardo-ai-prompt-generator/">Leonardo</a></div>
+                <div class="nav-mega-models"><a href="/ideogram-prompt-generator/">Ideogram</a></div>
+              </div>
+              <div class="nav-mega-divider" aria-hidden="true"></div>
+              <div class="nav-mega-col">
+                <div class="nav-mega-heading">&#127909; VIDEO TOOLS</div>
+                <a href="/?tab=image-to-video" role="menuitem" class="nav-mega-tool">Image to Video <span class="nav-mega-arrow">&#8594;</span></a>
+                <a href="/?tab=text-to-video" role="menuitem" class="nav-mega-tool">Text to Video <span class="nav-mega-arrow">&#8594;</span></a>
+                <div class="nav-mega-models-label">Models</div>
+                <div class="nav-mega-models"><a href="/veo-prompt-generator/">Veo</a><span class="nav-dot">&#xB7;</span><a href="/kling-prompt-generator/">Kling</a></div>
+                <div class="nav-mega-models"><a href="/runway-prompt-generator/">Runway</a><span class="nav-dot">&#xB7;</span><a href="/pika-prompt-generator/">Pika</a></div>
+                <div class="nav-mega-models"><a href="/luma-prompt-generator/">Luma</a><span class="nav-dot">&#xB7;</span><a href="/sora-prompt-generator/">Sora</a></div>
+                <div class="nav-mega-models"><a href="/minimax-prompt-generator/">Minimax</a><span class="nav-dot">&#xB7;</span><a href="/stable-video-prompt-generator/">Stable</a></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <a href="/zh/blog/">博客</a>
+        <a href="/zh/pricing/" class="nav-pill-pricing">价格</a>
+        <a href="/zh/about/" class="nav-pill-about">关于</a>
+        <a href="/zh/" class="nav-try-free">免费试用 &#8594;</a>
+        <button id="theme-toggle" onclick="toggleTheme()" aria-label="切换主题" title="切换主题">&#9728;&#xFE0F;</button>
+  </nav>
+    </div>
+  </header>
+
+  <nav class="breadcrumb" aria-label="面包屑导航">
+    <a href="/zh/">首页</a><span class="sep">&#8250;</span>
+    <a href="/zh/blog/">博客</a><span class="sep">&#8250;</span>
+    <span>AI艺术提示词工程</span>
+  </nav>
+
+  <div class="page-wrapper">
+
+    <header class="article-header">
+      <p class="article-tag">入门指南</p>
+      <h1>什么是AI艺术提示词工程？初学者完全指南</h1>
+      <div class="article-meta">
+        <span>2026年3月</span>
+        <span class="dot">&#183;</span>
+        <span>阅读时间10分钟</span>
+        <span class="dot">&#183;</span>
+        <span>Midjourney &#183; Stable Diffusion &#183; Flux &#183; DALL&#183;E 3</span>
+        <span class="dot">&#183;</span>
+        <span>更新于2026年3月</span>
+      </div>
+    </header>
+
+    <div class="article-body">
+
+      <p>你第一次打开Midjourney，输入"cool dragon"，得到的结果还行，但很普通，完全不是你心目中想要的。而另一个人输入了一大段具体的描述词，却生成了令人惊叹的作品。</p>
+
+      <p>区别就在于<strong>提示词工程</strong>——一种与AI图像生成器清晰有效沟通的技能。它不是编程，也不是魔法，而是一门可学习的手艺。本指南从零开始为你打下坚实的基础。</p>
+
+      <nav class="toc" aria-label="目录">
+        <details open>
+          <summary>本指南内容</summary>
+          <ol>
+            <li><a href="#what-is-prompt">什么是提示词？</a></li>
+            <li><a href="#why-vague-fails">为什么"Cool Dragon"不行</a></li>
+            <li><a href="#five-pillars">优质AI提示词的五大支柱</a></li>
+            <li><a href="#prompt-anatomy">专业提示词的解剖</a></li>
+            <li><a href="#quality-tags">质量标签：可靠的增效词</a></li>
+            <li><a href="#negative-prompts">负面提示词：排除你不想要的</a></li>
+            <li><a href="#vocabulary">提示词词汇速查表</a></li>
+            <li><a href="#prompt-evolution">观察提示词的进化过程</a></li>
+            <li><a href="#learn-fast">如何快速学习提示词工程</a></li>
+            <li><a href="#exercises">3个立刻可以练习的练习</a></li>
+            <li><a href="#faq">常见问题</a></li>
+          </ol>
+        </details>
+      </nav>
+
+      <h2 id="what-is-prompt">什么是提示词？</h2>
+
+      <p>在AI图像生成的语境中，<strong>提示词（prompt）</strong>是你给AI模型的文本指令，用于生成图像。AI读取你的文字，解读你的意图，并生成尝试匹配你描述的像素。</p>
+
+      <p>核心挑战在于：AI模型基于数十亿图像和标注训练而成。它们学会了文字和视觉概念之间的关联。但它们是以概率方式解读你的文字的——每次生成都略有不同，模型在"你到底想要什么"这个问题上做出了无数微观决策。</p>
+
+      <p>提示词工程就是编写能引导这些微观决策朝向你真正想要的结果的提示词。</p>
+
+      <h2 id="why-vague-fails">为什么"Cool Dragon"不行</h2>
+
+      <p>"Cool dragon"是最大程度的模糊。AI见过数千种被描述为"cool"的龙——西方龙、东方龙、卡通龙、写实龙。没有额外指导，它会选择所有这些的平均值。结果感觉平庸，因为它本质上就是"cool dragon"的统计平均值。</p>
+
+      <p>提示词越具体，AI可以利用的信息就越多，结果就越独特。对比：</p>
+
+      <p><strong>弱：</strong><code>cool dragon</code></p>
+      <p><strong>强：</strong><code>ancient sea dragon emerging from stormy ocean waves at night, translucent teal scales catching moonlight, massive wingspan, serpentine body, bioluminescent markings, cinematic wide shot, dramatic lighting, dark fantasy concept art</code></p>
+
+      <p>同一个主题，截然不同的结果。</p>
+
+      <h2 id="five-pillars">优质AI提示词的五大支柱</h2>
+
+      <h3>1. 主题——图像中有什么？</h3>
+      <p>主题是你的起点。要精确：</p>
+      <ul>
+        <li><strong>弱：</strong>"a woman"</li>
+        <li><strong>强：</strong>"a Japanese warrior woman in her 30s wearing intricately crafted ceremonial armor, standing in a bamboo forest"</li>
+      </ul>
+      <p>包括：外貌特征、年龄/时代、服装、表情、动作、与环境的关系。</p>
+
+      <h3>2. 风格——看起来应该是什么样？</h3>
+      <p>风格告诉AI在什么艺术或摄影语域中工作。常用风格类别：</p>
+      <ul>
+        <li><strong>摄影：</strong><code>cinematic photography</code>、<code>editorial portrait</code>、<code>documentary photography</code></li>
+        <li><strong>绘画：</strong><code>oil painting</code>、<code>watercolor illustration</code>、<code>impressionist painting</code></li>
+        <li><strong>插画：</strong><code>concept art</code>、<code>anime style</code>、<code>comic book illustration</code></li>
+        <li><strong>3D/渲染：</strong><code>octane render</code>、<code>unreal engine 5</code>、<code>CGI animation</code></li>
+      </ul>
+
+      <h3>3. 光照——光线在做什么？</h3>
+      <p>光照可以说是影响氛围和质量的最强大的单一元素。关键光照描述词：</p>
+      <ul>
+        <li><strong>方向：</strong>front-lit, side-lit, backlit, top-lit</li>
+        <li><strong>品质：</strong>soft diffused light, harsh direct light, dappled light</li>
+        <li><strong>时间：</strong>golden hour, blue hour, midday, overcast, night</li>
+        <li><strong>类型：</strong>natural sunlight, studio lighting, neon lights, candlelight</li>
+        <li><strong>经典布光：</strong>Rembrandt lighting, butterfly lighting, chiaroscuro</li>
+      </ul>
+
+      <h3>4. 构图——如何取景？</h3>
+      <p>构图告诉AI如何在画面中安排元素。借鉴电影/摄影术语：</p>
+      <ul>
+        <li><code>extreme close-up</code>——细节填满画面</li>
+        <li><code>close-up portrait</code>——面部和肩膀</li>
+        <li><code>medium shot</code>——腰部以上</li>
+        <li><code>wide shot</code>——主体在完整环境中</li>
+        <li><code>aerial view</code>——俯视视角</li>
+        <li><code>Dutch angle</code>——倾斜相机制造紧张感</li>
+      </ul>
+
+      <h3>5. 氛围——应该给人什么感觉？</h3>
+      <p>氛围传达情感基调。有用的氛围描述词：</p>
+      <ul>
+        <li>Mysterious, ominous, eerie, unsettling（神秘、不祥、诡异）</li>
+        <li>Hopeful, warm, nostalgic, peaceful（希望、温暖、怀旧、平静）</li>
+        <li>Epic, grand, awe-inspiring, majestic（史诗、宏大、壮丽）</li>
+        <li>Melancholic, quiet, lonely, contemplative（忧郁、安静、孤独）</li>
+      </ul>
+
+      <h2 id="prompt-anatomy">专业提示词的解剖</h2>
+
+      <p>让我们解析一个完整的专业提示词，标记每个组件：</p>
+
+      <pre><code>ancient sea dragon emerging from stormy ocean waves at night,  [主题]
+dark fantasy concept art, digital painting,                      [风格]
+dramatic rim lighting, bioluminescent glow from below,           [光照]
+deep navy blue and teal with warm orange accents,                [色彩]
+cinematic wide shot, low angle perspective,                      [构图]
+mysterious, awe-inspiring, powerful                              [氛围]
+--ar 21:9 --v 6.1 --style raw --q 2                            [参数]</code></pre>
+
+      <p>每个元素都有其存在意义。移除"bioluminescent glow from below"，龙就失去了超凡品质。移除"low angle perspective"，规模感就崩塌了。</p>
+
+      <h2 id="quality-tags">质量标签：可靠的增效词</h2>
+
+      <p>许多AI生成器对质量信号词有良好响应，这些词告诉模型产出最佳输出。在Stable Diffusion中尤其重要：</p>
+      <ul>
+        <li><code>masterpiece</code>、<code>best quality</code>、<code>highly detailed</code></li>
+        <li><code>8k resolution</code>、<code>ultra-high definition</code></li>
+        <li><code>sharp focus</code>、<code>professional</code></li>
+      </ul>
+      <p>在Midjourney和Flux中，这些标签不太必要，因为它们默认就以高质量为目标。但在SD中，它们能产生明显的差异。</p>
+
+      <h2 id="negative-prompts">负面提示词：排除你不想要的</h2>
+
+      <p>Stable Diffusion有一个独立的<strong>负面提示词</strong>字段，用于列出你想排除的元素。标准负面提示词基础：</p>
+      <p><code>blurry, low quality, bad anatomy, deformed fingers, watermark, text, logo, cropped, out of frame, duplicate, ugly, amateur, jpeg artifacts</code></p>
+      <p>Midjourney通过<code>--no [term]</code>处理负面排除，但没有SD的实现那么强大。</p>
+
+      <h2 id="vocabulary">提示词词汇速查表</h2>
+
+      <div class="table-wrap">
+      <table class="comparison-table">
+        <thead>
+          <tr><th>类别</th><th>常用术语</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>光照</td><td>golden hour, blue hour, rim light, backlit, Rembrandt lighting, volumetric light, neon light, candlelight, chiaroscuro, bioluminescent</td></tr>
+          <tr><td>风格</td><td>cinematic, editorial, concept art, oil painting, watercolor, anime style, photorealistic, minimalist, surrealist, Art Nouveau, dark fantasy</td></tr>
+          <tr><td>氛围</td><td>ethereal, dramatic, serene, ominous, nostalgic, whimsical, melancholic, epic, cozy, mysterious, magical</td></tr>
+          <tr><td>构图</td><td>close-up portrait, wide shot, bird's eye view, Dutch angle, rule of thirds, shallow depth of field, establishing shot</td></tr>
+          <tr><td>色彩</td><td>warm tones, cool tones, muted palette, vibrant saturated, monochromatic, pastel, earth tones, high contrast</td></tr>
+          <tr><td>相机/镜头</td><td>85mm f/1.4, 24mm wide angle, macro lens, Canon EOS R5, film grain, bokeh, tilt-shift</td></tr>
+        </tbody>
+      </table>
+      </div>
+
+      <h2 id="prompt-evolution">观察提示词的进化过程</h2>
+
+      <p>理解提示词工程最有效的方式是观察一个提示词如何从模糊变为精确。每个阶段增加一层信息：</p>
+
+      <p><strong>第1阶段——太模糊：</strong></p>
+      <pre><code>a cat in a garden</code></pre>
+      <p>通用。AI选择了"花园中的猫"的统计平均值。毫无特色。</p>
+
+      <p><strong>第2阶段——具体的主题和场景：</strong></p>
+      <pre><code>a fluffy orange tabby cat sitting among wildflowers in an English cottage garden</code></pre>
+      <p>更好了。现在有了品种、毛发质感、动作和具体环境。但仍然没有艺术方向。</p>
+
+      <p><strong>第3阶段——添加风格：</strong></p>
+      <pre><code>a fluffy orange tabby cat sitting among wildflowers in an English cottage garden, watercolor illustration style, soft edges, delicate linework</code></pre>
+      <p>有了艺术方向。风格词为AI提供了视觉语域。</p>
+
+      <p><strong>第4阶段——添加光照：</strong></p>
+      <pre><code>a fluffy orange tabby cat sitting among wildflowers in an English cottage garden, watercolor illustration style, soft edges, delicate linework, golden hour sunlight, dappled light filtering through trees, warm amber tones</code></pre>
+      <p>光照完全改变了氛围。同一场景现在感觉温暖、怀旧、田园诗般。</p>
+
+      <p><strong>第5阶段——添加构图和参数：</strong></p>
+      <pre><code>a fluffy orange tabby cat sitting among wildflowers in an English cottage garden, watercolor illustration style, soft edges, delicate linework, golden hour sunlight, dappled light filtering through trees, warm amber tones, shallow depth of field, rule of thirds composition --ar 3:2 --v 6.1</code></pre>
+      <p>专业级成果。与第1阶段相同的主题——被五层具体描述彻底改变。</p>
+
+      <h2 id="learn-fast">如何快速学习提示词工程</h2>
+
+      <h3>研究现有提示词</h3>
+      <p>PromptHero、Civitai和Lexica等网站允许你浏览带提示词的AI艺术。研究哪些描述词产生特定结果。</p>
+
+      <h3>使用图像转提示词工具</h3>
+      <p>学习的最佳方式之一是分析你喜欢的图像。<a href="/zh/">上传任何图片到ImageToPrompt</a>，仔细研究生成的提示词。对10-20张图片这样做，你就能快速内化词汇。</p>
+
+      <h3>每次只改变一个元素</h3>
+      <p>实验时，每次只改变一个元素。如果改了五个元素且结果变好了，你不知道是哪个改变起了作用。</p>
+
+      <h3>建立个人提示词库</h3>
+      <p>保存好用的短语和组合。或者跳过手动编写——使用我们的<a href="/text-to-prompt/">文本转提示词生成器</a>即时增强任何描述。</p>
+
+      <h2 id="exercises">3个立刻可以练习的练习</h2>
+
+      <h3>练习1：分析与对比</h3>
+      <p>上传你最喜欢的照片到<a href="/zh/">ImageToPrompt</a>。仔细阅读生成的提示词。然后关闭它，凭记忆为同一张图片从头编写你自己的提示词。对比两者——你遗漏了什么？AI遗漏了什么？</p>
+
+      <h3>练习2：单词游戏</h3>
+      <p>取任何有效的提示词，只改变一个词。生成两个版本并对比。用5个不同的词做5次。你会很快了解哪些描述词具有最大的视觉影响力。</p>
+
+      <h3>练习3：风格迁移</h3>
+      <p>使用ImageToPrompt从风景照片生成提示词。保留所有风格、光照、色彩和氛围词——但将主题替换为完全不同的事物。观察视觉语言如何迁移。</p>
+
+      <div class="cta-box">
+        <h3>通过分析真实图像开始学习</h3>
+        <p>上传任何图片到ImageToPrompt，精确了解视觉特质如何转化为提示词语言。这是学习提示词工程最快的途径。</p>
+        <a href="/zh/" class="cta-btn">试用免费图像转提示词生成器 &#8594;</a>
+      </div>
+
+      <h2 id="faq">常见问题</h2>
+
+      <h3>什么是AI艺术的提示词工程？</h3>
+      <p>AI艺术的提示词工程是编写文本描述来引导AI图像生成器产生特定视觉效果的技能。它涉及描述主题、艺术风格、光照、构图、色调和氛围。</p>
+
+      <h3>优质提示词的五大要素是什么？</h3>
+      <p>五大要素是：主题（图像中有什么）、风格（看起来应该是什么样）、光照（光线在做什么）、构图（如何取景）和氛围（应该给人什么感觉）。</p>
+
+      <h3>如何快速学习提示词工程？</h3>
+      <p>最快的方法是使用图像转提示词工具分析你喜欢的图像，然后每次只修改一个元素观察效果。浏览社区画廊学习产生出色结果的提示词也很有帮助。</p>
+
+    </div>
+
+    <div class="author-bio">
+      <svg class="author-photo" width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="作者头像"><circle cx="32" cy="32" r="32" fill="#2a1f4e"/><circle cx="32" cy="26" r="11" fill="#7c6bc4"/><ellipse cx="32" cy="52" rx="18" ry="11" fill="#7c6bc4"/></svg>
+      <div class="author-info">
+        <p class="author-name">ImageToPrompt Team</p>
+        <p class="author-desc">我们是一支专业团队，致力于帮助创作者掌握AI图像生成技术。通过图像转提示词工具和AI提示词工程指南，我们为全球艺术家的创作提供支持。</p>
+        <a href="https://x.com/Ilyass14286541" class="author-link">在X上关注 &#8594;</a>
+      </div>
+    </div>
+
+    <div class="related-posts">
+      <h2>相关指南</h2>
+      <div class="related-grid">
+        <a href="/zh/blog/tupian-zhuanhuan-ai-tishi-ci/" class="related-card">
+          <p class="tag">指南</p>
+          <h3>如何将图片转换为AI提示词</h3>
+        </a>
+        <a href="/zh/blog/midjourney-tishi-ci-zhinan-2026/" class="related-card">
+          <p class="tag">Midjourney</p>
+          <h3>Midjourney提示词完全指南 2026</h3>
+        </a>
+        <a href="/zh/blog/stable-diffusion-vs-midjourney-vs-dalle3/" class="related-card">
+          <p class="tag">对比评测</p>
+          <h3>SD vs Midjourney vs DALL&#183;E 3 vs Flux</h3>
+        </a>
+        <a href="/zh/blog/tishi-ci-gongcheng-changjian-cuowu/" class="related-card">
+          <p class="tag">技巧</p>
+          <h3>15个AI提示词工程常见错误</h3>
+        </a>
+      </div>
+    </div>
+
+  </div>
+
+  <footer class="footer-4col">
+    <div class="f4-inner">
+      <div class="f4-brand">
+        <img src="/favicon.svg" alt="ImageToPrompt" width="28" height="28">
+        <span class="f4-brand-name">ImageTo<span class="accent">Prompt</span></span>
+        <span class="f4-brand-sub">&mdash; Free AI Prompt Generator</span>
+      </div>
+      <div class="f4-grid">
+        <div class="f4-section">
+          <h4 class="f4-heading">Image Prompt Tools</h4>
+          <a href="/">Image to Prompt</a>
+          <a href="/text-to-prompt/">Text to Prompt</a>
+      <a href="/describe-image/">Describe Image</a>
+          <a href="/midjourney-prompt-generator/">Midjourney</a>
+          <a href="/stable-diffusion-prompt-generator/">Stable Diffusion</a>
+          <a href="/flux-prompt-generator/">Flux</a>
+          <a href="/dall-e-prompt-generator/">DALL-E 3</a>
+          <a href="/adobe-firefly-prompt-generator/">Adobe Firefly</a>
+          <a href="/leonardo-ai-prompt-generator/">Leonardo AI</a>
+          <a href="/ideogram-prompt-generator/">Ideogram</a>
+        </div>
+        <div class="f4-section">
+          <h4 class="f4-heading">Video Prompt Tools</h4>
+          <a href="/image-to-video-prompt/">Image to Video Prompt</a>
+          <a href="/text-to-video-prompt/">Text to Video Prompt</a>
+          <a href="/veo-prompt-generator/">Veo / Flow Studio</a>
+          <a href="/kling-prompt-generator/">Kling AI</a>
+          <a href="/runway-prompt-generator/">Runway Gen-3</a>
+          <a href="/pika-prompt-generator/">Pika</a>
+          <a href="/luma-prompt-generator/">Luma Dream Machine</a>
+          <a href="/sora-prompt-generator/">Sora</a>
+          <a href="/minimax-prompt-generator/">Minimax</a>
+          <a href="/stable-video-prompt-generator/">Stable Video</a>
+        </div>
+        <div class="f4-section">
+          <h4 class="f4-heading">Resources</h4>
+          <a href="/zh/blog/">博客</a>
+          <a href="/zh/about/">关于</a>
+          <a href="/zh/pricing/">价格</a>
+          <a href="/contact/">Contact</a>
+          <a href="/privacy-policy/">Privacy Policy</a>
+          <a href="/terms-of-service/">Terms of Service</a>
+        </div>
+        <div class="f4-section">
+          <h4 class="f4-heading">Languages</h4>
+          <a href="/">English</a>
+          <a href="/fr/">Fran&#231;ais</a>
+          <a href="/ar/">&#1575;&#1604;&#1593;&#1585;&#1576;&#1610;&#1577;</a>
+          <a href="/es/">Espa&#241;ol</a>
+          <a href="/ko/">&#54620;&#44397;&#50612;</a>
+          <a href="/ja/">&#26085;&#26412;&#35486;</a>
+          <a href="/ru/">&#1056;&#1091;&#1089;&#1089;&#1082;&#1080;&#1081;</a>
+          <a href="/zh/">中文</a>
+        </div>
+      </div>
+      <div class="f4-bottom">
+        <p>&#169; 2026 ImageToPrompt.dev &#8212; Free AI Prompt Generator</p>
+        <p>Your images are never stored. All analysis is ephemeral and private.</p>
+      </div>
+    </div>
+  </footer>
+
+<script src="/newsletter-inject.js" defer></script>
+<script src="/nav.js" defer></script>
+  <script>
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', function() {
+    navigator.serviceWorker.register('/sw.js')
+      .catch(function(err) { console.warn('SW registration failed:', err); });
+  });
+}
+</script>
+</body>
+</html>

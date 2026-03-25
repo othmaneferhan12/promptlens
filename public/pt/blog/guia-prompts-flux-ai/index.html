@@ -1,0 +1,610 @@
+<!doctype html>
+<html lang="pt">
+<head>
+  <script src="/theme-toggle.js"></script>
+  <meta charset="UTF-8" />
+  <link rel="dns-prefetch" href="https://www.googletagmanager.com">
+<link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="max-image-preview:large, index, follow">
+  <meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="ImageToPrompt">
+  <title>Guia de Prompts Flux AI 2026: Escreva Prompts Perfeitos para Flux.1 Dev, Pro e Schnell</title>
+  <meta name="description" content="Domine os prompts do Flux AI em 2026. Aprenda prompts em linguagem natural, configura&#231;&#245;es de c&#226;mera, termos de ilumina&#231;&#227;o e descritores de estilo para Flux.1 Dev, Pro e Schnell." />
+  <link rel="canonical" href="https://www.imagetoprompt.dev/pt/blog/guia-prompts-flux-ai/" />
+  <link rel="alternate" hreflang="pt" href="https://www.imagetoprompt.dev/pt/blog/guia-prompts-flux-ai/" />
+  <link rel="alternate" hreflang="en" href="https://www.imagetoprompt.dev/blog/flux-ai-prompt-guide/" />
+  <link rel="alternate" hreflang="x-default" href="https://www.imagetoprompt.dev/blog/flux-ai-prompt-guide/" />
+  <meta property="og:title" content="Guia de Prompts Flux AI 2026: Escreva Prompts Perfeitos para Flux.1 Dev, Pro e Schnell" />
+  <meta property="og:description" content="Domine os prompts do Flux AI em 2026. Aprenda prompts em linguagem natural, configura&#231;&#245;es de c&#226;mera, termos de ilumina&#231;&#227;o e descritores de estilo para Flux.1 Dev, Pro e Schnell." />
+  <meta property="og:url" content="https://www.imagetoprompt.dev/pt/blog/guia-prompts-flux-ai/" />
+  <meta property="og:type" content="article" />
+  <meta property="og:image" content="https://www.imagetoprompt.dev/og-image.png" />
+  <meta property="og:site_name" content="ImageToPrompt" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Guia de Prompts Flux AI 2026: Flux.1 Dev, Pro e Schnell" />
+  <meta name="twitter:description" content="Domine os prompts do Flux AI em 2026. Linguagem natural, configura&#231;&#245;es de c&#226;mera, ilumina&#231;&#227;o e descritores de estilo." />
+  <meta name="twitter:image" content="https://www.imagetoprompt.dev/og-image.png" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="48x48" href="/favicon-48.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+  <link rel="manifest" href="/site.webmanifest" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="/fonts/space-grotesk-700.woff2" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="/fonts/inter-400.woff2" />
+  <link rel="stylesheet" href="/theme.css">
+  <link rel="preload" href="/blog.css" as="style" onload="this.onload=null;this.rel='stylesheet'"><noscript><link rel="stylesheet" href="/blog.css"></noscript>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Guia de Prompts Flux AI 2026: Escreva Prompts Perfeitos para Flux.1 Dev, Pro e Schnell",
+    "description": "Domine os prompts do Flux AI em 2026. Aprenda prompts em linguagem natural, configura\u00e7\u00f5es de c\u00e2mera, termos de ilumina\u00e7\u00e3o e descritores de estilo para Flux.1 Dev, Pro e Schnell.",
+    "image": "https://www.imagetoprompt.dev/og-image.png",
+    "datePublished": "2026-03-13",
+    "dateModified": "2026-03-24",
+    "inLanguage": "pt",
+    "author": {
+      "@type": "Person",
+      "name": "ImageToPrompt Team",
+      "url": "https://www.imagetoprompt.dev/"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "ImageToPrompt",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://www.imagetoprompt.dev/favicon.svg"
+      }
+    },
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https://www.imagetoprompt.dev/pt/blog/guia-prompts-flux-ai/"
+    }
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Qual \u00e9 a melhor forma de escrever prompts para o Flux AI?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "O Flux AI responde melhor a linguagem natural detalhada do que a tags separadas por v\u00edrgulas. Descreva sua cena como um par\u00e1grafo, incluindo o assunto, o enquadramento, a ilumina\u00e7\u00e3o, a \u00f3ptica (ex: Canon 85mm f/1.4) e a atmosfera."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "O Flux suporta prompts negativos?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "N\u00e3o, o Flux n\u00e3o suporta prompts negativos ao contr\u00e1rio do Stable Diffusion. Para evitar elementos indesejados, formule seu prompt de maneira positiva e precisa, descrevendo exatamente o que voc\u00ea quer ver."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Qual \u00e9 a diferen\u00e7a entre Flux Dev e Flux Pro?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "O Flux Dev \u00e9 o modelo open-source gratuito com qualidade ligeiramente inferior. O Flux Pro \u00e9 o modelo comercial com melhor consist\u00eancia, melhor seguimento de instru\u00e7\u00f5es e resolu\u00e7\u00e3o superior. As t\u00e9cnicas de prompting s\u00e3o id\u00eanticas para ambos."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "As especifica\u00e7\u00f5es de c\u00e2mera nos prompts do Flux realmente fazem diferen\u00e7a?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Sim, o Flux compreende muito bem as especifica\u00e7\u00f5es t\u00e9cnicas de c\u00e2mera. Mencionar uma lente como Canon 85mm f/1.4 produz um bokeh realista, enquanto uma 24mm f/8 resultar\u00e1 em uma imagem mais n\u00edtida com mais profundidade de campo."
+        }
+      }
+    ]
+  }
+  </script>
+    <!-- Google AdSense -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4499206373485728" crossorigin="anonymous"></script>
+    <!-- Web Push Notifications -->
+<script src="https://cdn.onesignal.com/sdks/web/v16/OneSignalSDK.page.js" defer></script>
+<script>
+  window.OneSignalDeferred = window.OneSignalDeferred || [];
+  OneSignalDeferred.push(async function(OneSignal) {
+    await OneSignal.init({
+      appId: "REPLACE_WITH_ONESIGNAL_APP_ID",
+      notifyButton: { enable: false }
+    });
+  });
+</script>
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="inner">
+      <a href="/pt/" class="site-logo"><img src="/favicon.svg" alt="ImageToPrompt" width="48" height="48"><div class="site-logo-text">ImageTo<span class="accent">Prompt</span><span class="site-logo-sub">Gerador de Prompts IA Gratuito</span></div></a>
+      <nav class="site-nav" aria-label="Navega&#231;&#227;o principal">
+        <div class="nav-dropdown">
+          <button class="nav-dropdown-trigger" aria-haspopup="true" aria-expanded="false">Tools <span class="nav-chevron" aria-hidden="true">&#9660;</span></button>
+          <div class="nav-dropdown-menu" role="menu">
+            <div class="nav-mega-grid">
+              <div class="nav-mega-col">
+                <div class="nav-mega-heading">&#128444; IMAGE TOOLS</div>
+                <a href="/" role="menuitem" class="nav-mega-tool">Image to Prompt <span class="nav-mega-arrow">&#8594;</span></a>
+                <a href="/text-to-prompt/" role="menuitem" class="nav-mega-tool">Text to Prompt <span class="nav-mega-arrow">&#8594;</span></a>
+                <a href="/describe-image/" role="menuitem" class="nav-mega-tool">Describe Image <span class="nav-new-badge">NEW</span> <span class="nav-mega-arrow">&#8594;</span></a>
+                <div class="nav-mega-models-label">Models</div>
+                <div class="nav-mega-models"><a href="/midjourney-prompt-generator/">Midjourney</a><span class="nav-dot">&#xB7;</span><a href="/stable-diffusion-prompt-generator/">SD</a></div>
+                <div class="nav-mega-models"><a href="/flux-prompt-generator/">Flux</a><span class="nav-dot">&#xB7;</span><a href="/dall-e-prompt-generator/">DALL&#xB7;E&#xA0;3</a></div>
+                <div class="nav-mega-models"><a href="/adobe-firefly-prompt-generator/">Firefly</a><span class="nav-dot">&#xB7;</span><a href="/leonardo-ai-prompt-generator/">Leonardo</a></div>
+                <div class="nav-mega-models"><a href="/ideogram-prompt-generator/">Ideogram</a></div>
+              </div>
+              <div class="nav-mega-divider" aria-hidden="true"></div>
+              <div class="nav-mega-col">
+                <div class="nav-mega-heading">&#127909; VIDEO TOOLS</div>
+                <a href="/?tab=image-to-video" role="menuitem" class="nav-mega-tool">Image to Video <span class="nav-mega-arrow">&#8594;</span></a>
+                <a href="/?tab=text-to-video" role="menuitem" class="nav-mega-tool">Text to Video <span class="nav-mega-arrow">&#8594;</span></a>
+                <div class="nav-mega-models-label">Models</div>
+                <div class="nav-mega-models"><a href="/veo-prompt-generator/">Veo</a><span class="nav-dot">&#xB7;</span><a href="/kling-prompt-generator/">Kling</a></div>
+                <div class="nav-mega-models"><a href="/runway-prompt-generator/">Runway</a><span class="nav-dot">&#xB7;</span><a href="/pika-prompt-generator/">Pika</a></div>
+                <div class="nav-mega-models"><a href="/luma-prompt-generator/">Luma</a><span class="nav-dot">&#xB7;</span><a href="/sora-prompt-generator/">Sora</a></div>
+                <div class="nav-mega-models"><a href="/minimax-prompt-generator/">Minimax</a><span class="nav-dot">&#xB7;</span><a href="/stable-video-prompt-generator/">Stable</a></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <a href="/pt/blog/">Blog</a>
+        <a href="/pt/pricing/" class="nav-pill-pricing">Pre&#231;os</a>
+        <a href="/pt/about/" class="nav-pill-about">Sobre</a>
+        <a href="/pt/" class="nav-try-free">Experimentar &#8594;</a>
+        <button id="theme-toggle" onclick="toggleTheme()" aria-label="Alternar tema" title="Alternar tema">&#9728;&#xFE0F;</button>
+  </nav>
+    </div>
+  </header>
+
+  <nav class="breadcrumb" aria-label="Navega&#231;&#227;o estrutural">
+    <a href="/pt/">In&#237;cio</a><span class="sep">&#8250;</span>
+    <a href="/pt/blog/">Blog</a><span class="sep">&#8250;</span>
+    <span>Guia de Prompts Flux AI 2026</span>
+  </nav>
+
+  <div class="page-wrapper">
+
+    <header class="article-header">
+      <p class="article-tag">Flux AI</p>
+      <h1>Guia de Prompts Flux AI 2026: Escreva Prompts Perfeitos para Flux.1 Dev, Pro e Schnell</h1>
+      <div class="article-meta">
+        <span>Mar&#231;o 2026</span>
+        <span class="dot">&#183;</span>
+        <span>13 min de leitura</span>
+        <span class="dot">&#183;</span>
+        <span>Flux.1 &#183; Engenharia de Prompts &#183; Gera&#231;&#227;o de Imagens IA</span>
+        <span class="dot">&#183;</span>
+        <span>Atualizado em mar&#231;o 2026</span>
+      </div>
+    </header>
+
+    <div class="article-body">
+
+      <p>O Flux.1 mudou o jogo quando a Black Forest Labs o lan&#231;ou em meados de 2024, e em 2026 tornou-se o gerador preferido de usu&#225;rios que buscam resultados fotorrealistas com melhor renderiza&#231;&#227;o de texto e maior fidelidade aos prompts do que os concorrentes. Mas a for&#231;a do Flux &#8212; sua sofisticada compreens&#227;o de linguagem natural &#8212; tamb&#233;m confunde usu&#225;rios que chegam do Midjourney ou Stable Diffusion com h&#225;bitos constru&#237;dos em torno de prompts baseados em tags. Este guia mostra exatamente como o Flux pensa e como escrever prompts que produzam resultados impressionantes de forma consistente.</p>
+
+      <p>Vamos abordar a diferen&#231;a de arquitetura que faz o Flux se comportar de forma diferente, o vocabul&#225;rio espec&#237;fico ao qual ele responde melhor, 10 exemplos de prompts totalmente analisados e como usar o ImageToPrompt para gerar automaticamente prompts otimizados para Flux a partir de qualquer imagem de refer&#234;ncia.</p>
+
+      <nav class="toc" aria-label="Sum&#225;rio">
+        <details open>
+          <summary>Neste guia</summary>
+          <ol>
+            <li><a href="#variantes-flux">Variantes do Flux.1: Dev, Pro e Schnell</a></li>
+            <li><a href="#linguagem-natural">Por Que o Flux Usa Linguagem Natural</a></li>
+            <li><a href="#estrutura-prompt">Estrutura de Prompt do Flux</a></li>
+            <li><a href="#terminologia-camera">Terminologia de C&#226;mera que Funciona</a></li>
+            <li><a href="#descritores-iluminacao">Descritores de Ilumina&#231;&#227;o</a></li>
+            <li><a href="#descritores-estilo">Descritores de Estilo</a></li>
+            <li><a href="#o-que-nao-fazer">O Que N&#195;O Fazer nos Prompts do Flux</a></li>
+            <li><a href="#tabela-comparativa">Compara&#231;&#227;o: Flux Dev vs Pro vs Schnell</a></li>
+            <li><a href="#exemplos-prompts">10 Exemplos de Prompts com An&#225;lise</a></li>
+            <li><a href="#imagetoprompt">Usando o ImageToPrompt para Flux</a></li>
+            <li><a href="#erros-comuns">Erros Comuns de Iniciantes no Flux</a></li>
+          </ol>
+        </details>
+      </nav>
+
+      <h2 id="variantes-flux">Variantes do Flux.1: Dev, Pro e Schnell</h2>
+
+      <p>A Black Forest Labs lan&#231;ou tr&#234;s variantes do Flux.1, cada uma com um equil&#237;brio diferente entre qualidade, velocidade e acessibilidade. Entender qual variante voc&#234; est&#225; usando &#233; importante porque elas t&#234;m sensibilidades de prompt ligeiramente diferentes.</p>
+
+      <div class="table-wrap">
+        <table class="comparison-table">
+          <thead>
+            <tr>
+              <th>Variante</th>
+              <th>Velocidade</th>
+              <th>Qualidade</th>
+              <th>Licen&#231;a</th>
+              <th>Melhor Uso</th>
+              <th>Steps T&#237;picos</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Flux.1 Dev</strong></td>
+              <td>~20&#8211;40s (GPU)</td>
+              <td>&#9733;&#9733;&#9733;&#9733;&#9733;</td>
+              <td>N&#227;o comercial</td>
+              <td>Projetos pessoais de alta qualidade, experimenta&#231;&#227;o</td>
+              <td>20&#8211;50 steps</td>
+            </tr>
+            <tr>
+              <td><strong>Flux.1 Pro</strong></td>
+              <td>~15&#8211;30s (API)</td>
+              <td>&#9733;&#9733;&#9733;&#9733;&#9733;</td>
+              <td>Comercial (API)</td>
+              <td>Trabalho profissional, projetos comerciais</td>
+              <td>API gerenciada</td>
+            </tr>
+            <tr>
+              <td><strong>Flux.1 Schnell</strong></td>
+              <td>~2&#8211;5s (GPU)</td>
+              <td>&#9733;&#9733;&#9733;&#9733;&#9734;</td>
+              <td>Apache 2.0 (aberta)</td>
+              <td>Prototipagem r&#225;pida, gera&#231;&#227;o em grande volume</td>
+              <td>4 steps</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <p>Para a maioria dos trabalhos criativos, o <strong>Flux.1 Dev</strong> &#233; o melhor custo-benef&#237;cio &#8212; produz qualidade compar&#225;vel ao Pro sem custo por imagem via API quando rodado localmente. O Flux.1 Schnell &#233; not&#225;vel por sua velocidade (4 steps de infer&#234;ncia vs. 50 para a maioria dos modelos), mas produz detalhes ligeiramente mais suaves e &#233; menos responsivo a nuances sutis de prompt. O Pro &#233; a escolha para pipelines de produ&#231;&#227;o comercial onde o licenciamento importa.</p>
+
+      <p>As tr&#234;s variantes compartilham a mesma l&#243;gica fundamental de prompting &#8212; as diferen&#231;as est&#227;o na qualidade e velocidade de gera&#231;&#227;o, n&#227;o na forma como processam texto.</p>
+
+      <h2 id="linguagem-natural">Por Que o Flux Usa Linguagem Natural (E Por Que Isso Importa)</h2>
+
+      <p>O Flux.1 &#233; constru&#237;do em uma arquitetura Diffusion Transformer (DiT) ao inv&#233;s da arquitetura UNet usada pelo Stable Diffusion 1.5 e SDXL. Crucialmente, o Flux usa um codificador de texto T5-XXL &#8212; o mesmo tipo de modelo de linguagem grande usado na pesquisa do Google &#8212; em vez do CLIP.</p>
+
+      <p>O CLIP foi treinado principalmente para associar imagens a legendas curtas. Funciona bem com tags breves e descritivas, mas tem dificuldade com rela&#231;&#245;es complexas, frases longas e instru&#231;&#245;es composicionais nuanceadas. O T5-XXL foi treinado em corpora de texto massivos e compreende sintaxe, gram&#225;tica, estrutura de frases e contexto.</p>
+
+      <p>Essa diferen&#231;a arquitetural &#233; o motivo pelo qual:</p>
+      <ul>
+        <li>O Flux consegue renderizar texto com precis&#227;o em imagens (uma fraqueza hist&#243;rica de todos os modelos de difus&#227;o)</li>
+        <li>O Flux segue instru&#231;&#245;es composicionais complexas com m&#250;ltiplas cl&#225;usulas</li>
+        <li>O Flux entende linguagem relacional: &#8220;uma pessoa em p&#233; &#224; esquerda de um carro vermelho&#8221;</li>
+        <li>O Flux N&#195;O se beneficia de tags separadas por v&#237;rgulas como os modelos SD 1.5</li>
+        <li>O Flux N&#195;O se beneficia da sintaxe <code>(keyword:weight)</code> &#8212; ele ignora os marcadores de peso</li>
+      </ul>
+
+      <h2 id="estrutura-prompt">Estrutura de Prompt do Flux: A F&#243;rmula de Tr&#234;s Partes</h2>
+
+      <p>Os prompts mais confi&#225;veis para o Flux seguem uma estrutura de tr&#234;s partes: <strong>assunto e cena</strong>, depois <strong>detalhes t&#233;cnicos fotogr&#225;ficos</strong>, depois <strong>estilo e clima</strong>. Isso espelha como um fot&#243;grafo ou cin&#233;asta profissional descreveria um briefing de tomada.</p>
+
+      <pre><code class="prompt-example">[DESCRI&#199;&#195;O DO ASSUNTO E CENA] + [C&#194;MERA E DETALHES T&#201;CNICOS] + [ESTILO E CLIMA]</code></pre>
+
+      <p>Um exemplo concreto:</p>
+
+      <pre><code class="prompt-example">A middle-aged Japanese chef in a traditional white uniform carefully plating a bowl of ramen in a small Tokyo restaurant, steam rising from the broth, warm incandescent light overhead, other diners blurred in the background. Shot on Sony A7R V with 85mm f/1.4 lens, shallow depth of field, natural documentary lighting. Warm amber color grading, intimate storytelling mood, photojournalism style.</code></pre>
+
+      <p>Vamos analisar por que isso funciona:</p>
+      <ul>
+        <li><strong>&#8220;carefully plating&#8221;</strong> &#8212; o adv&#233;rbio captura a pose e a a&#231;&#227;o melhor do que apenas &#8220;plating&#8221;</li>
+        <li><strong>&#8220;steam rising from the broth&#8221;</strong> &#8212; detalhe atmosf&#233;rico que o Flux renderiza literalmente</li>
+        <li><strong>&#8220;other diners blurred in the background&#8221;</strong> &#8212; o Flux entende isso como uma instru&#231;&#227;o de profundidade de campo</li>
+        <li><strong>Especifica&#231;&#227;o de c&#226;mera/lente</strong> &#8212; sinaliza inten&#231;&#227;o fotorrealista e caracter&#237;sticas espec&#237;ficas de bokeh</li>
+        <li><strong>&#8220;intimate storytelling mood&#8221;</strong> &#8212; instru&#231;&#227;o composicional e tonal</li>
+      </ul>
+
+      <h2 id="terminologia-camera">Terminologia de C&#226;mera que Funciona no Flux</h2>
+
+      <p>Especificar equipamento real de c&#226;mera &#233; uma das t&#233;cnicas mais poderosas do Flux. O codificador T5 reconhece modelos de c&#226;mera espec&#237;ficos e suas caracter&#237;sticas visuais associadas &#8212; tamanho do sensor, faixa din&#226;mica, ci&#234;ncia de cores &#8212; e aplica essas qualidades &#224; sa&#237;da.</p>
+
+      <h3>Corpos de C&#226;mera</h3>
+      <ul>
+        <li><code>Sony A7R V</code> &#8212; alta resolu&#231;&#227;o, detalhado, ci&#234;ncia de cores neutra</li>
+        <li><code>Canon EOS R5</code> &#8212; quente, tons de pele agrad&#225;veis, renderiza&#231;&#227;o natural</li>
+        <li><code>Nikon Z9</code> &#8212; contraste marcante, forte faixa din&#226;mica</li>
+        <li><code>Fujifilm X-T5</code> &#8212; cores como filme, ci&#234;ncia de cores Fujifilm (especialmente com nomes de simula&#231;&#227;o de filme)</li>
+        <li><code>Hasselblad X2D</code> &#8212; visual de m&#233;dio formato, grada&#231;&#227;o tonal excepcional</li>
+        <li><code>Leica M11</code> &#8212; cl&#225;ssica, levemente contida, est&#233;tica documental</li>
+        <li><code>Phase One IQ4</code> &#8212; visual comercial/moda de alt&#237;ssima qualidade</li>
+      </ul>
+
+      <h3>Lentes e Seus Efeitos</h3>
+      <ul>
+        <li><code>24mm f/1.4 wide angle</code> &#8212; contexto ambiental, leve distor&#231;&#227;o nas bordas, perspectiva dram&#225;tica</li>
+        <li><code>35mm f/2</code> &#8212; fotografia de rua cl&#225;ssica, perspectiva natural</li>
+        <li><code>50mm f/1.2</code> &#8212; perspectiva neutra, excelente bokeh, vers&#225;til</li>
+        <li><code>85mm f/1.4</code> &#8212; compress&#227;o de retrato favorecedora, desfoque de fundo cremoso</li>
+        <li><code>135mm f/2</code> &#8212; forte compress&#227;o, sujeito isolado, bokeh pictorialista</li>
+        <li><code>200mm f/2.8 telephoto</code> &#8212; fundo comprimido, est&#233;tica de esporte/vida selvagem</li>
+        <li><code>macro lens, 1:1</code> &#8212; close-up extremo, alto n&#237;vel de detalhe</li>
+      </ul>
+
+      <h3>Configura&#231;&#245;es de C&#226;mera</h3>
+      <ul>
+        <li><code>ISO 3200, high grain</code> &#8212; adiciona textura de granula&#231;&#227;o tipo filme para est&#233;tica documental</li>
+        <li><code>long exposure, motion blur</code> &#8212; captura movimento, trilhas de luz</li>
+        <li><code>f/22, deep depth of field, everything in focus</code> &#8212; visual de paisagem/arquitetura</li>
+        <li><code>f/1.2, razor-thin focus plane</code> &#8212; separa&#231;&#227;o extrema entre sujeito e fundo</li>
+      </ul>
+
+      <h2 id="descritores-iluminacao">Descritores de Ilumina&#231;&#227;o que Elevam os Resultados do Flux</h2>
+
+      <p>A ilumina&#231;&#227;o &#233; sem d&#250;vida o elemento mais impactante em prompts fotogr&#225;ficos. O treinamento do Flux com conte&#250;do fotogr&#225;fico e cinematogr&#225;fico significa que ele tem um vocabul&#225;rio rico para condi&#231;&#245;es de ilumina&#231;&#227;o.</p>
+
+      <h3>Luz Natural</h3>
+      <ul>
+        <li><code>golden hour light</code> &#8212; luz solar quente, direcional e de &#226;ngulo baixo, sombras longas</li>
+        <li><code>blue hour</code> &#8212; crep&#250;sculo suave e frio logo ap&#243;s o p&#244;r do sol</li>
+        <li><code>overcast diffused light</code> &#8212; luz uniforme, sem sombras, suave &#8212; ideal para retratos</li>
+        <li><code>harsh midday sun, high contrast shadows</code> &#8212; dram&#225;tico, est&#233;tica de calor de ver&#227;o</li>
+        <li><code>dappled light through tree canopy</code> &#8212; luz de floresta, padr&#245;es de sombra em movimento</li>
+        <li><code>window light, one-sided illumination</code> &#8212; ilumina&#231;&#227;o cl&#225;ssica de retrato interior</li>
+      </ul>
+
+      <h3>Luz Artificial e de Est&#250;dio</h3>
+      <ul>
+        <li><code>Rembrandt lighting</code> &#8212; caracterizada por um tri&#226;ngulo de luz sob um olho; ilumina&#231;&#227;o cl&#225;ssica de retrato</li>
+        <li><code>split lighting, half shadow</code> &#8212; dram&#225;tica, um lado totalmente iluminado, outro na sombra</li>
+        <li><code>ring light, flat frontal lighting</code> &#8212; visual de moda/beleza, reflexos nos olhos</li>
+        <li><code>neon sign reflections, colored light</code> &#8212; fotografia noturna urbana</li>
+        <li><code>candlelight, single flame source</code> &#8212; quente, cintilante, &#237;ntima</li>
+        <li><code>bioluminescent glow</code> &#8212; azuis e verdes frios, sci-fi ou fantasia</li>
+      </ul>
+
+      <h3>Ilumina&#231;&#227;o Cinem&#225;tica</h3>
+      <ul>
+        <li><code>volumetric light, god rays</code> &#8212; feixes de luz vis&#237;veis atrav&#233;s da atmosfera/n&#233;voa</li>
+        <li><code>chiaroscuro</code> &#8212; contraste extremo entre &#225;reas claras e escuras, pictorialista</li>
+        <li><code>practical lighting from below</code> &#8212; visual de horror/suspense, sombras desfavorecedoras</li>
+        <li><code>motivated lighting, warm practical sources</code> &#8212; cinematografia realista de interiores</li>
+      </ul>
+
+      <h2 id="descritores-estilo">Descritores de Estilo que Funcionam Bem no Flux</h2>
+
+      <p>Diferentemente do Stable Diffusion, que precisa de tokens de estilo espec&#237;ficos de checkpoint, o Flux entende descri&#231;&#245;es estil&#237;sticas atrav&#233;s de seu modelo de linguagem. Estes descritores produzem resultados reconhec&#237;veis de forma consistente:</p>
+
+      <h3>Estilos Fotogr&#225;ficos</h3>
+      <ul>
+        <li><code>photojournalism, documentary style</code></li>
+        <li><code>fashion editorial, high-end commercial</code></li>
+        <li><code>street photography, candid moment</code></li>
+        <li><code>fine art photography, gallery print quality</code></li>
+        <li><code>analog film photography, 35mm grain</code></li>
+        <li><code>medium format film, Kodak Portra 400 colors</code></li>
+      </ul>
+
+      <h3>Estilos de Arte e Ilustra&#231;&#227;o</h3>
+      <ul>
+        <li><code>oil painting, visible brushwork, museum quality</code></li>
+        <li><code>watercolor illustration, soft edges, paper texture</code></li>
+        <li><code>digital concept art, highly detailed, ArtStation quality</code></li>
+        <li><code>graphic novel illustration, bold lines, flat color</code></li>
+        <li><code>Art Nouveau style, ornamental, flowing lines</code></li>
+      </ul>
+
+      <h3>Estilos Cinematogr&#225;ficos</h3>
+      <ul>
+        <li><code>cinematic film still, anamorphic lens flare</code></li>
+        <li><code>movie poster composition</code></li>
+        <li><code>in the visual style of a Wes Anderson film</code> &#8212; sim&#233;trico, pastel, plano</li>
+        <li><code>noir film aesthetic, black and white, hard shadows</code></li>
+      </ul>
+
+      <h2 id="o-que-nao-fazer">O Que N&#195;O Fazer nos Prompts do Flux</h2>
+
+      <p>Vindo do Stable Diffusion ou Midjourney, estes h&#225;bitos prejudicar&#227;o seus resultados no Flux:</p>
+
+      <ul>
+        <li><strong>N&#195;O use a sintaxe (keyword:weight).</strong> O Flux ignora completamente os modificadores de peso entre par&#234;nteses. <code>(beautiful:1.4)</code> e <code>beautiful</code> produzem resultados id&#234;nticos no Flux.</li>
+        <li><strong>N&#195;O use flags --ar, --v, --style.</strong> Esses s&#227;o par&#226;metros espec&#237;ficos do Midjourney. Eles aparecer&#227;o como texto literal nas sa&#237;das do Flux.</li>
+        <li><strong>N&#195;O use prompts negativos no Flux Dev/Schnell.</strong> O Flux padr&#227;o n&#227;o suporta prompts negativos como o SD. Use linguagem positiva descritiva: diga &#8220;clean, sharp background&#8221; em vez de tentar usar prompt negativo para &#8220;blurry background&#8221;.</li>
+        <li><strong>N&#195;O coloque tokens de qualidade no in&#237;cio.</strong> &#8220;masterpiece, best quality, ultra detailed, 1girl&#8221; &#233; sintaxe de SD. O Flux interpreta isso como uma frase literal e pode gerar uma imagem rotulada como &#8220;masterpiece&#8221;.</li>
+        <li><strong>N&#195;O escreva prompts extremamente curtos.</strong> O codificador T5 do Flux funciona melhor com informa&#231;&#245;es contextuais mais ricas. Um prompt de 50 palavras geralmente supera um de 10 palavras para cenas complexas.</li>
+        <li><strong>N&#195;O liste tags separadas por v&#237;rgulas sem estrutura gramatical.</strong> &#8220;woman, forest, sunlight, beautiful, high quality&#8221; d&#225; ao Flux menos informa&#231;&#227;o do que &#8220;a woman standing in a sunlit forest, late afternoon, high quality photograph&#8221;.</li>
+      </ul>
+
+      <div class="callout">
+        <p><strong>O outro lado:</strong> O Flux tamb&#233;m lida com prompts muito longos e detalhados melhor do que qualquer modelo anterior. N&#227;o tenha medo de prompts com mais de 100 palavras que leiam como dire&#231;&#227;o detalhada de cena &#8212; o Flux vai segui-los com precis&#227;o.</p>
+      </div>
+
+      <div class="img-grid-2" style="margin:2rem 0">
+        <figure style="margin:0">
+          <picture><source srcset="/images/prompt-generator-from-image-temple-flux.webp" type="image/webp"><img src="/images/prompt-generator-from-image-temple-flux.jpeg" alt="Sa&#237;da do Flux.1 Dev &#8212; cena paisag&#237;stica demonstrando renderiza&#231;&#227;o fotorrealista com detalhes precisos e prompt em linguagem natural" width="800" height="800" loading="lazy" style="width:100%;border-radius:0.5rem;display:block"></picture>
+          <figcaption style="color:var(--text-muted);font-size:0.8rem;text-align:center;margin-top:0.5rem">Flux.1 Dev: resultados fotorrealistas e precisos em detalhes</figcaption>
+        </figure>
+        <figure style="margin:0">
+          <picture><source srcset="/images/ai-image-generator-prompt-rose-flux.webp" type="image/webp"><img src="/images/ai-image-generator-prompt-rose-flux.jpeg" alt="Sa&#237;da do Flux.1 Dev &#8212; cena de arquitetura mostrando geometria n&#237;tida e renderiza&#231;&#227;o espacial precisa a partir de prompt descritivo" width="800" height="800" loading="lazy" style="width:100%;border-radius:0.5rem;display:block"></picture>
+          <figcaption style="color:var(--text-muted);font-size:0.8rem;text-align:center;margin-top:0.5rem">O Flux lida com instru&#231;&#245;es espaciais complexas com precis&#227;o</figcaption>
+        </figure>
+      </div>
+
+      <h2 id="exemplos-prompts">10 Exemplos de Prompts com An&#225;lise</h2>
+
+      <h3>1. Fotografia de Retrato</h3>
+      <pre><code class="prompt-example">A 30-year-old woman with natural red hair sits by a rain-streaked window in a coffee shop, looking contemplative, hands wrapped around a ceramic mug. Late afternoon, overcast daylight from the left side, warm tungsten interior lights creating a color contrast. Shot on Fujifilm GFX 100S, 110mm f/2 equivalent, shallow depth of field. Kodak Portra 400 film emulation, slightly desaturated greens, intimate documentary feel.</code></pre>
+      <p><em>Por que funciona:</em> Descri&#231;&#227;o espec&#237;fica do sujeito, configura&#231;&#227;o de ilumina&#231;&#227;o precisa com dire&#231;&#227;o da luz indicada, filme nomeado para orienta&#231;&#227;o de colora&#231;&#227;o, descritor de clima no final.</p>
+
+      <h3>2. Fotografia de Arquitetura</h3>
+      <pre><code class="prompt-example">The interior of a modernist cathedral, concrete brutalist architecture, shafts of light cutting through narrow vertical windows high on the walls, casting long geometric shadows on the textured concrete floor. Shot on Canon EOS R5, 17mm tilt-shift lens, all vertical lines corrected, f/11, everything in sharp focus. Monochromatic, high contrast black and white, fine art architectural photography.</code></pre>
+
+      <h3>3. Paisagem de Fantasia</h3>
+      <pre><code class="prompt-example">A vast alien landscape at twilight: twin moons rising over a plateau covered in bioluminescent blue-purple vegetation, a lone explorer in a spacesuit standing at the edge, small against the scale of the environment. The atmosphere is thick and hazy, creating atmospheric perspective and layered depth. Painted in a style combining photorealistic digital art with concept art looseness, cinematic composition, epic scale, ultra-detailed foreground plants.</code></pre>
+
+      <h3>4. Fotografia de Rua</h3>
+      <pre><code class="prompt-example">A crowded Tokyo crossing at rush hour, motion blur on the pedestrians suggesting movement, one sharply focused businessman in the center looking directly at the camera, surprised expression. Heavy rain, reflected neon signs on wet pavement, shallow depth. Shot on Leica Q3, 28mm f/1.7, ISO 6400, available light only. Black and white with deep shadows, photojournalism aesthetic.</code></pre>
+
+      <h3>5. Fotografia de Produto</h3>
+      <pre><code class="prompt-example">A single glass bottle of amber whiskey on a dark walnut table, dramatic side lighting from a single spotlight source creating a strong specular highlight on the glass, warm amber liquid glowing. Dark background fading to black. Shot on Phase One IQ4, 120mm macro, f/8. Commercial product photography, ultra-clean, advertising quality, every glass bubble and label detail sharp.</code></pre>
+
+      <h3>6. Fotografia de Vida Selvagem</h3>
+      <pre><code class="prompt-example">A Bengal tiger wading through shallow water in a misty forest, early morning light filtering through dense canopy, water droplets frozen mid-splash around its legs. The tiger is alert, head turned slightly toward the camera. Shot on Nikon Z9, 500mm f/4 telephoto, 1/2000s to freeze motion, natural forest light. National Geographic quality wildlife photography, tack-sharp eyes, motion-blurred water.</code></pre>
+
+      <h3>7. Fotografia Gastron&#244;mica</h3>
+      <pre><code class="prompt-example">A bowl of handmade pasta with cherry tomatoes, basil, and olive oil on a rough linen tablecloth, afternoon light from a kitchen window at 45 degrees, casting soft shadows. Steam rising from the pasta. Overhead angle, 45-degree composition. Shot on Sony A7R V, 90mm macro f/2.8. Warm editorial food photography, slightly desaturated background to make the food pop, Bon App&#233;tit magazine aesthetic.</code></pre>
+
+      <h3>8. Concept Art Sci-Fi</h3>
+      <pre><code class="prompt-example">Interior of a colossal generation ship, showing the agricultural rings with forests and fields curving upward in the centrifugal section, sunlight simulated by a central light tube, people as small figures walking between trees. The scale is breathtaking &#8212; the curvature of the interior visible. Detailed digital concept art, matte painting quality, warm environmental lighting, realistic atmospheric haze for scale, inspired by classic sci-fi illustration.</code></pre>
+
+      <h3>9. Fotografia de Moda</h3>
+      <pre><code class="prompt-example">A model in a dramatic black structured coat stands in an empty white marble corridor, strong directional light from a large window to the right, creating graphic shadows across the floor. Editorial, minimal composition, confident pose with coat flowing slightly. Shot on Hasselblad X2D, 80mm f/2.8, balanced ambient and natural light. High fashion editorial, Vogue quality, exceptional tonal range, no distracting elements.</code></pre>
+
+      <h3>10. Macro Natureza</h3>
+      <pre><code class="prompt-example">Extreme macro photography of a single dewdrop on a spider web strand, inside the dewdrop a perfectly formed reflection of the surrounding forest and morning sky visible. Overcast soft light, maximum detail in the water surface tension and web filaments. Shot on Canon MP-E 65mm 5x macro, f/11, focus-stacked for complete depth of field. Scientific illustration quality, razor-sharp details, magical natural world mood.</code></pre>
+
+      <h2 id="imagetoprompt">Usando o ImageToPrompt para Gerar Prompts Flux a partir de Imagens de Refer&#234;ncia</h2>
+
+      <p>Elaborar prompts para o Flux manualmente exige conhecer esse vocabul&#225;rio espec&#237;fico &#8212; modelos de c&#226;mera, termos de ilumina&#231;&#227;o, refer&#234;ncias de estilo. Quando voc&#234; tem uma imagem de refer&#234;ncia e quer gerar algo semelhante no Flux, o ImageToPrompt.dev faz a tradu&#231;&#227;o de vocabul&#225;rio automaticamente.</p>
+
+      <p>Quando voc&#234; seleciona Flux como modelo alvo no ImageToPrompt:</p>
+      <ol>
+        <li>A ferramenta analisa sua imagem de refer&#234;ncia usando Claude Vision</li>
+        <li>Identifica as caracter&#237;sticas fotogr&#225;ficas: dist&#226;ncia focal aparente, configura&#231;&#227;o de ilumina&#231;&#227;o, profundidade de campo, colora&#231;&#227;o</li>
+        <li>Associa essas caracter&#237;sticas ao vocabul&#225;rio apropriado do Flux: equipamento espec&#237;fico de c&#226;mera, terminologia de ilumina&#231;&#227;o, descritores de estilo</li>
+        <li>Formata a sa&#237;da como um par&#225;grafo coerente em linguagem natural, n&#227;o uma lista de tags</li>
+      </ol>
+
+      <p>Uma fotografia de refer&#234;ncia de um nascer do sol em floresta nublada, analisada pelo ImageToPrompt com alvo Flux, poderia produzir:</p>
+
+      <pre><code class="prompt-example">A dense Pacific Northwest forest in early morning, shafts of golden light cutting through mist between towering Douglas firs, the ground covered in soft green moss and fallen needles, a narrow dirt path disappearing into the fog. Shot on Sony A7R V, 35mm f/8, deep depth of field capturing both foreground moss texture and distant hazy trees. Moody and meditative, ethereal morning light, fine art landscape photography, muted cool shadows contrasting with warm light beams.</code></pre>
+
+      <h2 id="erros-comuns">Erros Comuns de Iniciantes no Flux</h2>
+
+      <ol>
+        <li><strong>Tratar o Flux como Midjourney.</strong> Sem flags --ar, sem par&#226;metros --style, sem --v 6.1. O Flux precisa de texto puramente descritivo.</li>
+        <li><strong>Tratar o Flux como Stable Diffusion.</strong> Sem tokens <code>(quality:1.4)</code>, sem listas de tags separadas por v&#237;rgula, sem campo de prompt negativo.</li>
+        <li><strong>Descrever a cena de forma insuficiente.</strong> &#8220;A beautiful landscape&#8221; d&#225; ao Flux muito pouco para trabalhar. &#8220;A rocky coastal cliff at dawn, tide pools reflecting the pink sky, a lone lighthouse in the distance&#8221; d&#225; ao Flux uma cena para construir.</li>
+        <li><strong>N&#227;o especificar a propor&#231;&#227;o nas configura&#231;&#245;es da interface.</strong> O Flux determina a propor&#231;&#227;o a partir das configura&#231;&#245;es, n&#227;o do prompt. Se voc&#234; quer um retrato vertical, defina 9:16 nas configura&#231;&#245;es de gera&#231;&#227;o &#8212; n&#227;o coloque isso no texto do prompt.</li>
+        <li><strong>Esperar perfei&#231;&#227;o imediata.</strong> Mesmo com excelentes prompts, as gera&#231;&#245;es do Flux se beneficiam de 3&#8211;5 varia&#231;&#245;es. A natureza estoc&#225;stica da difus&#227;o significa que a qualidade varia entre seeds.</li>
+        <li><strong>Ignorar o guidance scale (CFG).</strong> O Flux Dev funciona bem com valores de CFG de 3,5&#8211;4,0. Valores mais altos (7,0+) que funcionam no SD produzir&#227;o resultados supersaturados e cheios de artefatos no Flux.</li>
+        <li><strong>Usar nomes de artistas como atalhos de estilo sem descri&#231;&#227;o.</strong> &#8220;by Greg Rutkowski&#8221; &#233; mais amb&#237;guo para o Flux do que &#8220;epic fantasy concept art with warm lighting and dramatic composition&#8221; &#8212; embora combinar ambos frequentemente funcione melhor.</li>
+      </ol>
+
+      <div class="cta-box">
+        <h3>Gere Prompts Flux Automaticamente</h3>
+        <p>Envie uma imagem ou descreva sua ideia e obtenha um prompt Flux otimizado em segundos.</p>
+        <a href="/flux-prompt-generator/" class="cta-btn">Gerador de Prompts Flux &#8594;</a>
+      </div>
+
+      <h2 id="perguntas-frequentes">Perguntas Frequentes</h2>
+
+      <h3>Qual &#233; a melhor forma de escrever prompts para o Flux AI?</h3>
+      <p>O Flux AI responde melhor a linguagem natural detalhada do que a tags separadas por v&#237;rgulas. Descreva sua cena como um par&#225;grafo, incluindo o assunto, o enquadramento, a ilumina&#231;&#227;o, a &#243;ptica (ex: <code>Canon 85mm f/1.4</code>) e a atmosfera.</p>
+
+      <h3>O Flux suporta prompts negativos?</h3>
+      <p>N&#227;o, o Flux n&#227;o suporta prompts negativos ao contr&#225;rio do Stable Diffusion. Para evitar elementos indesejados, formule seu prompt de maneira positiva e precisa, descrevendo exatamente o que voc&#234; quer ver.</p>
+
+      <h3>Qual &#233; a diferen&#231;a entre Flux Dev e Flux Pro?</h3>
+      <p>O Flux Dev &#233; o modelo open-source gratuito com qualidade ligeiramente inferior. O Flux Pro &#233; o modelo comercial com melhor consist&#234;ncia, melhor seguimento de instru&#231;&#245;es e resolu&#231;&#227;o superior. As t&#233;cnicas de prompting s&#227;o id&#234;nticas para ambos.</p>
+
+      <h3>As especifica&#231;&#245;es de c&#226;mera nos prompts do Flux realmente fazem diferen&#231;a?</h3>
+      <p>Sim, o Flux compreende muito bem as especifica&#231;&#245;es t&#233;cnicas de c&#226;mera. Mencionar uma lente como <code>Canon 85mm f/1.4</code> produz um bokeh realista, enquanto uma <code>24mm f/8</code> resultar&#225; em uma imagem mais n&#237;tida com mais profundidade de campo.</p>
+
+    </div>
+
+    <div class="author-bio">
+      <svg class="author-photo" width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="Avatar do autor"><circle cx="32" cy="32" r="32" fill="#2a1f4e"/><circle cx="32" cy="26" r="11" fill="#7c6bc4"/><ellipse cx="32" cy="52" rx="18" ry="11" fill="#7c6bc4"/></svg>
+      <div class="author-info">
+        <p class="author-name">ImageToPrompt Team</p>
+        <p class="author-desc">Somos uma equipe de especialistas dedicados a ajudar criadores a dominar a gera&#231;&#227;o de imagens com IA. Atrav&#233;s de ferramentas de convers&#227;o de imagem para prompt e guias de engenharia de prompts, apoiamos artistas em todo o mundo.</p>
+        <a href="https://x.com/Ilyass14286541" class="author-link">Seguir no X &#8594;</a>
+      </div>
+    </div>
+
+    <div class="related-posts">
+      <h2>Guias relacionados</h2>
+      <div class="related-grid">
+        <a href="/pt/blog/como-escrever-prompts-ia-iniciantes/" class="related-card">
+          <p class="tag">Iniciante</p>
+          <h3>Como Escrever Prompts de IA para Iniciantes</h3>
+        </a>
+        <a href="/pt/blog/guia-prompts-ideogram/" class="related-card">
+          <p class="tag">Guia</p>
+          <h3>Guia de Prompts Ideogram 2026</h3>
+        </a>
+        <a href="/pt/blog/imagem-para-prompt-api/" class="related-card">
+          <p class="tag">Desenvolvedor</p>
+          <h3>API de Imagem para Prompt</h3>
+        </a>
+        <a href="/pt/blog/imagem-para-prompt-anime/" class="related-card">
+          <p class="tag">Anime</p>
+          <h3>Imagem para Prompt para Anime</h3>
+        </a>
+      </div>
+    </div>
+
+  </div>
+
+  <footer class="footer-4col">
+    <div class="f4-inner">
+      <div class="f4-brand">
+        <img src="/favicon.svg" alt="ImageToPrompt" width="28" height="28">
+        <span class="f4-brand-name">ImageTo<span class="accent">Prompt</span></span>
+        <span class="f4-brand-sub">&mdash; Free AI Prompt Generator</span>
+      </div>
+      <div class="f4-grid">
+        <div class="f4-section">
+          <h4 class="f4-heading">Image Prompt Tools</h4>
+          <a href="/">Image to Prompt</a>
+          <a href="/text-to-prompt/">Text to Prompt</a>
+      <a href="/describe-image/">Describe Image</a>
+          <a href="/midjourney-prompt-generator/">Midjourney</a>
+          <a href="/stable-diffusion-prompt-generator/">Stable Diffusion</a>
+          <a href="/flux-prompt-generator/">Flux</a>
+          <a href="/dall-e-prompt-generator/">DALL-E 3</a>
+          <a href="/adobe-firefly-prompt-generator/">Adobe Firefly</a>
+          <a href="/leonardo-ai-prompt-generator/">Leonardo AI</a>
+          <a href="/ideogram-prompt-generator/">Ideogram</a>
+        </div>
+        <div class="f4-section">
+          <h4 class="f4-heading">Video Prompt Tools</h4>
+          <a href="/image-to-video-prompt/">Image to Video Prompt</a>
+          <a href="/text-to-video-prompt/">Text to Video Prompt</a>
+          <a href="/veo-prompt-generator/">Veo / Flow Studio</a>
+          <a href="/kling-prompt-generator/">Kling AI</a>
+          <a href="/runway-prompt-generator/">Runway Gen-3</a>
+          <a href="/pika-prompt-generator/">Pika</a>
+          <a href="/luma-prompt-generator/">Luma Dream Machine</a>
+          <a href="/sora-prompt-generator/">Sora</a>
+          <a href="/minimax-prompt-generator/">Minimax</a>
+          <a href="/stable-video-prompt-generator/">Stable Video</a>
+        </div>
+        <div class="f4-section">
+          <h4 class="f4-heading">Resources</h4>
+          <a href="/pt/blog/">Blog</a>
+          <a href="/pt/about/">Sobre</a>
+          <a href="/pt/pricing/">Pre&#231;os</a>
+          <a href="/contact/">Contact</a>
+          <a href="/privacy-policy/">Privacy Policy</a>
+          <a href="/terms-of-service/">Terms of Service</a>
+        </div>
+        <div class="f4-section">
+          <h4 class="f4-heading">Languages</h4>
+          <a href="/">English</a>
+          <a href="/fr/">Fran&#231;ais</a>
+          <a href="/ar/">&#1575;&#1604;&#1593;&#1585;&#1576;&#1610;&#1577;</a>
+          <a href="/es/">Espa&#241;ol</a>
+          <a href="/ko/">&#54620;&#44397;&#50612;</a>
+          <a href="/ja/">&#26085;&#26412;&#35486;</a>
+          <a href="/ru/">&#1056;&#1091;&#1089;&#1089;&#1082;&#1080;&#1081;</a>
+          <a href="/pt/">Portugu&#234;s</a>
+        </div>
+      </div>
+      <div class="f4-bottom">
+        <p>&#169; 2026 ImageToPrompt.dev &#8212; Free AI Prompt Generator</p>
+        <p>Your images are never stored. All analysis is ephemeral and private.</p>
+      </div>
+    </div>
+  </footer>
+
+<script src="/newsletter-inject.js" defer></script>
+<script src="/nav.js" defer></script>
+  <script>
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', function() {
+    navigator.serviceWorker.register('/sw.js')
+      .catch(function(err) { console.warn('SW registration failed:', err); });
+  });
+}
+</script>
+</body>
+</html>

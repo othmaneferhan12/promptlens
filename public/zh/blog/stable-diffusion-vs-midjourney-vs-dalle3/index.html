@@ -1,0 +1,596 @@
+<!doctype html>
+<html lang="zh">
+<head>
+  <script src="/theme-toggle.js"></script>
+  <meta charset="UTF-8" />
+  <link rel="dns-prefetch" href="https://www.googletagmanager.com">
+<link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="max-image-preview:large, index, follow">
+  <meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="ImageToPrompt">
+  <title>Stable Diffusion vs Midjourney vs DALL-E 3 vs Flux：提示词差异全面解析</title>
+  <meta name="description" content="Stable Diffusion、Midjourney、DALL-E 3 和 Flux 在提示词语法与风格上有何不同？一篇客观对比，帮助您选择最适合的AI图像生成器。" />
+  <link rel="canonical" href="https://www.imagetoprompt.dev/zh/blog/stable-diffusion-vs-midjourney-vs-dalle3/" />
+  <link rel="alternate" hreflang="zh" href="https://www.imagetoprompt.dev/zh/blog/stable-diffusion-vs-midjourney-vs-dalle3/" />
+  <link rel="alternate" hreflang="en" href="https://www.imagetoprompt.dev/blog/stable-diffusion-vs-midjourney-vs-dalle3/" />
+  <link rel="alternate" hreflang="x-default" href="https://www.imagetoprompt.dev/blog/stable-diffusion-vs-midjourney-vs-dalle3/" />
+  <meta property="og:title" content="Stable Diffusion vs Midjourney vs DALL-E 3 vs Flux：提示词差异全面解析" />
+  <meta property="og:description" content="四大主流AI图像生成器的提示词语法与风格差异深度对比。" />
+  <meta property="og:url" content="https://www.imagetoprompt.dev/zh/blog/stable-diffusion-vs-midjourney-vs-dalle3/" />
+  <meta property="og:type" content="article" />
+  <meta property="og:image" content="https://www.imagetoprompt.dev/og-image.png" />
+  <meta property="og:site_name" content="ImageToPrompt" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Stable Diffusion vs Midjourney vs DALL-E 3 vs Flux：提示词差异全面解析" />
+  <meta name="twitter:description" content="四大主流AI图像生成器提示词对比，助您选择最佳工具。" />
+  <meta name="twitter:image" content="https://www.imagetoprompt.dev/og-image.png" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="48x48" href="/favicon-48.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+  <link rel="manifest" href="/site.webmanifest" />
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="/fonts/space-grotesk-700.woff2" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="/fonts/inter-400.woff2" />
+  <link rel="stylesheet" href="/theme.css">
+  <link rel="preload" href="/blog.css" as="style" onload="this.onload=null;this.rel='stylesheet'"><noscript><link rel="stylesheet" href="/blog.css"></noscript>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Stable Diffusion vs Midjourney vs DALL-E 3 vs Flux：提示词差异全面解析",
+    "description": "Stable Diffusion、Midjourney、DALL-E 3 和 Flux 在提示词语法与风格上有何不同？一篇客观对比，帮助您选择最适合的AI图像生成器。",
+    "image": "https://www.imagetoprompt.dev/og-image.png",
+    "datePublished": "2026-03-10",
+    "dateModified": "2026-03-24",
+    "inLanguage": "zh",
+    "author": {
+      "@type": "Person",
+      "name": "ImageToPrompt Team",
+      "url": "https://www.imagetoprompt.dev/"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "ImageToPrompt",
+      "logo": { "@type": "ImageObject", "url": "https://www.imagetoprompt.dev/favicon.svg" }
+    },
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https://www.imagetoprompt.dev/zh/blog/stable-diffusion-vs-midjourney-vs-dalle3/"
+    }
+  }
+  </script>
+    <!-- Google AdSense -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4499206373485728" crossorigin="anonymous"></script>
+    <!-- Web Push Notifications -->
+<script src="https://cdn.onesignal.com/sdks/web/v16/OneSignalSDK.page.js" defer></script>
+<script>
+  window.OneSignalDeferred = window.OneSignalDeferred || [];
+  OneSignalDeferred.push(async function(OneSignal) {
+    await OneSignal.init({
+      appId: "REPLACE_WITH_ONESIGNAL_APP_ID",
+      notifyButton: { enable: false }
+    });
+  });
+</script>
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="inner">
+      <a href="/zh/" class="site-logo"><img src="/favicon.svg" alt="ImageToPrompt" width="48" height="48"><div class="site-logo-text">ImageTo<span class="accent">Prompt</span><span class="site-logo-sub">免费AI提示词生成器</span></div></a>
+      <nav class="site-nav" aria-label="主导航">
+        <div class="nav-dropdown">
+          <button class="nav-dropdown-trigger" aria-haspopup="true" aria-expanded="false">Tools <span class="nav-chevron" aria-hidden="true">&#9660;</span></button>
+          <div class="nav-dropdown-menu" role="menu">
+            <div class="nav-mega-grid">
+              <div class="nav-mega-col">
+                <div class="nav-mega-heading">&#128444; IMAGE TOOLS</div>
+                <a href="/" role="menuitem" class="nav-mega-tool">Image to Prompt <span class="nav-mega-arrow">&#8594;</span></a>
+                <a href="/text-to-prompt/" role="menuitem" class="nav-mega-tool">Text to Prompt <span class="nav-mega-arrow">&#8594;</span></a>
+                <a href="/describe-image/" role="menuitem" class="nav-mega-tool">Describe Image <span class="nav-new-badge">NEW</span> <span class="nav-mega-arrow">&#8594;</span></a>
+                <div class="nav-mega-models-label">Models</div>
+                <div class="nav-mega-models"><a href="/midjourney-prompt-generator/">Midjourney</a><span class="nav-dot">&#xB7;</span><a href="/stable-diffusion-prompt-generator/">SD</a></div>
+                <div class="nav-mega-models"><a href="/flux-prompt-generator/">Flux</a><span class="nav-dot">&#xB7;</span><a href="/dall-e-prompt-generator/">DALL&#xB7;E&#xA0;3</a></div>
+                <div class="nav-mega-models"><a href="/adobe-firefly-prompt-generator/">Firefly</a><span class="nav-dot">&#xB7;</span><a href="/leonardo-ai-prompt-generator/">Leonardo</a></div>
+                <div class="nav-mega-models"><a href="/ideogram-prompt-generator/">Ideogram</a></div>
+              </div>
+              <div class="nav-mega-divider" aria-hidden="true"></div>
+              <div class="nav-mega-col">
+                <div class="nav-mega-heading">&#127909; VIDEO TOOLS</div>
+                <a href="/?tab=image-to-video" role="menuitem" class="nav-mega-tool">Image to Video <span class="nav-mega-arrow">&#8594;</span></a>
+                <a href="/?tab=text-to-video" role="menuitem" class="nav-mega-tool">Text to Video <span class="nav-mega-arrow">&#8594;</span></a>
+                <div class="nav-mega-models-label">Models</div>
+                <div class="nav-mega-models"><a href="/veo-prompt-generator/">Veo</a><span class="nav-dot">&#xB7;</span><a href="/kling-prompt-generator/">Kling</a></div>
+                <div class="nav-mega-models"><a href="/runway-prompt-generator/">Runway</a><span class="nav-dot">&#xB7;</span><a href="/pika-prompt-generator/">Pika</a></div>
+                <div class="nav-mega-models"><a href="/luma-prompt-generator/">Luma</a><span class="nav-dot">&#xB7;</span><a href="/sora-prompt-generator/">Sora</a></div>
+                <div class="nav-mega-models"><a href="/minimax-prompt-generator/">Minimax</a><span class="nav-dot">&#xB7;</span><a href="/stable-video-prompt-generator/">Stable</a></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <a href="/zh/blog/">博客</a>
+        <a href="/zh/pricing/" class="nav-pill-pricing">价格</a>
+        <a href="/zh/about/" class="nav-pill-about">关于</a>
+        <a href="/zh/" class="nav-try-free">免费试用 &#8594;</a>
+        <button id="theme-toggle" onclick="toggleTheme()" aria-label="切换主题" title="切换主题">&#9728;&#xFE0F;</button>
+  </nav>
+    </div>
+  </header>
+
+  <nav class="breadcrumb" aria-label="面包屑导航">
+    <a href="/zh/">首页</a><span class="sep">&#8250;</span>
+    <a href="/zh/blog/">博客</a><span class="sep">&#8250;</span>
+    <span>SD vs Midjourney vs DALL&#xB7;E 3 vs Flux</span>
+  </nav>
+
+  <div class="page-wrapper">
+
+    <header class="article-header">
+      <p class="article-tag">对比评测</p>
+      <h1>Stable Diffusion vs Midjourney vs DALL&#xB7;E 3 vs Flux：提示词差异全面解析</h1>
+      <div class="article-meta">
+        <span>2026年3月</span>
+        <span class="dot">&#xB7;</span>
+        <span>阅读约10分钟</span>
+        <span class="dot">&#xB7;</span>
+        <span>覆盖所有主流AI图像生成器</span>
+        <span class="dot">&#xB7;</span>
+        <span>2026年3月更新</span>
+      </div>
+    </header>
+
+    <div class="article-body">
+
+      <p>你一定听说过，同样的提示词在不同的AI图像生成器中会产生截然不同的结果。这确实如此——但差异远不止于视觉输出。每个生成器都有自己独特的提示词语言、擅长领域、使用技巧和最佳应用场景。</p>
+
+      <nav class="toc" aria-label="目录">
+        <details open>
+          <summary>本指南内容</summary>
+          <ol>
+            <li><a href="#midjourney-artistic-standard">Midjourney：艺术标杆</a></li>
+            <li><a href="#stable-diffusion-open-source">Stable Diffusion：开源利器</a></li>
+            <li><a href="#dalle3-natural-language">DALL&#xB7;E 3：自然语言与高保真</a></li>
+            <li><a href="#flux-photorealism">Flux：写实之王</a></li>
+            <li><a href="#side-by-side">并排对比：同一概念，四种提示词</a></li>
+            <li><a href="#which-to-choose">该选择哪个AI图像生成器？</a></li>
+            <li><a href="#pricing">价格对比（2026年3月）</a></li>
+          </ol>
+        </details>
+      </nav>
+
+      <p>本指南将详细介绍Stable Diffusion、Midjourney、DALL&#xB7;E 3和Flux在提示词语法、风格以及各自擅长领域的差异。理解这些差异对于在任何工具中获得稳定高质量的结果至关重要。</p>
+
+      <div class="callout">
+        <p><strong>提示：</strong><a href="/">ImageToPrompt</a> 可以为以上每个生成器生成特定模型的提示词。上传任意参考图片并选择目标模型，即可自动获得格式正确的提示词。</p>
+      </div>
+
+      <div class="table-wrap">
+      <table class="comparison-table">
+        <thead>
+          <tr>
+            <th>类别</th>
+            <th>Midjourney</th>
+            <th>Stable Diffusion</th>
+            <th>DALL&#xB7;E 3</th>
+            <th>Flux</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>价格</td><td>10-60美元/月</td><td>免费（开源）</td><td>20美元/月（ChatGPT Plus）</td><td>按图片付费（API）</td></tr>
+          <tr><td>免费方案</td><td>无</td><td>有（完全免费）</td><td>在Bing中有限使用</td><td>部分平台有限使用</td></tr>
+          <tr><td>提示词风格</td><td>描述性 + 参数</td><td>加权标签 + 负面提示词</td><td>自然语句</td><td>详细自然语言</td></tr>
+          <tr><td>最擅长</td><td>艺术/电影感</td><td>最大控制力，本地运行</td><td>图中文字</td><td>写实效果</td></tr>
+          <tr><td>写实能力</td><td>非常好</td><td>取决于模型</td><td>好</td><td>最佳</td></tr>
+          <tr><td>艺术风格</td><td>最佳</td><td>取决于模型</td><td>好</td><td>中等</td></tr>
+          <tr><td>图中文字</td><td>进步中（V6+）</td><td>较差</td><td>最佳</td><td>好</td></tr>
+          <tr><td>速度</td><td>快（云端）</td><td>取决于硬件</td><td>快（云端）</td><td>快（云端）</td></tr>
+          <tr><td>自定义程度</td><td>有限（参数）</td><td>丰富（LoRAs、检查点）</td><td>极少</td><td>中等</td></tr>
+          <tr><td>API访问</td><td>无官方API</td><td>有（多种）</td><td>有（OpenAI API）</td><td>有（Replicate、fal.ai）</td></tr>
+          <tr><td>隐私性</td><td>仅云端</td><td>可完全本地运行</td><td>仅云端</td><td>主要云端</td></tr>
+          <tr><td>学习曲线</td><td>低</td><td>高</td><td>极低</td><td>低</td></tr>
+          <tr><td>负面提示词</td><td><code>--no flag</code></td><td>完整负面提示词字段</td><td>不可用</td><td>不可用</td></tr>
+        </tbody>
+      </table>
+      </div>
+
+      <div class="cta-inline">
+        <p>亲自试试——上传任意图片，几秒钟内获得优化的AI提示词。</p>
+        <a href="/" class="cta-btn-sm">免费试用 &#8594;</a>
+      </div>
+
+      <h2 id="midjourney-artistic-standard">Midjourney：艺术标杆</h2>
+
+      <h3>提示词语法</h3>
+      <p>Midjourney使用逗号分隔的描述性短语，后跟双短横线参数：</p>
+      <p><code>ethereal forest spirit, bioluminescent flora, cinematic lighting, concept art --ar 3:2 --v 6.1 --style raw</code></p>
+
+      <h3>Midjourney 的优势</h3>
+      <ul>
+        <li>高质量的艺术、绘画和电影感图像</li>
+        <li>奇幻、科幻和超现实主义场景</li>
+        <li>肤色和光线自然的人物肖像</li>
+        <li>即使简单提示词也能稳定产出"漂亮"的结果</li>
+        <li>建筑和环境概念设计</li>
+      </ul>
+
+      <h3>Midjourney 提示词撰写技巧</h3>
+      <ul>
+        <li>将最重要的视觉元素放在最前面</li>
+        <li>大量使用描述性形容词——Midjourney 喜欢丰富的视觉语言</li>
+        <li>始终设置 <code>--ar</code> 以匹配预期的画布比例</li>
+        <li>添加 <code>--style raw</code> 获得更忠实的字面解释</li>
+        <li>在探索新概念时使用 <code>--chaos 20-40</code></li>
+      </ul>
+
+      <h3>Midjourney 的不足</h3>
+      <ul>
+        <li>图中文字渲染不可靠（尽管V6有所改善）</li>
+        <li>需要Discord账户和订阅——非免费</li>
+        <li>对技术用户而言，精细控制力不如Stable Diffusion</li>
+        <li>可能"过于精美"——即使你想要粗糙效果，也倾向于产生精致的审美</li>
+      </ul>
+
+      <h2 id="stable-diffusion-open-source">Stable Diffusion：开源利器</h2>
+
+      <h3>提示词语法</h3>
+      <p>SD使用带权重的括号语法，支持CLIP token强调：</p>
+      <p><code>(masterpiece:1.2), (photorealistic:1.1), ethereal forest spirit, glowing bioluminescent plants, (dramatic lighting:0.9), intricate details</code></p>
+      <p>另有独立的<strong>负面提示词</strong>字段：</p>
+      <p><code>blurry, low quality, deformed, bad anatomy, watermark, text, ugly, amateur</code></p>
+
+      <h3>Stable Diffusion 的优势</h3>
+      <ul>
+        <li>通过LoRAs、ControlNet和自定义检查点实现精细控制</li>
+        <li>局部重绘（Inpainting）和外扩绘制（Outpainting）工作流</li>
+        <li>在本地硬件上运行——完全私密</li>
+        <li>通过训练角色LoRA实现角色一致性</li>
+        <li>组合多种技术（img2img、超分辨率、面部修复）</li>
+        <li>免费开源（SDXL、SD 3.5 为当前旗舰模型）</li>
+      </ul>
+
+      <h3>Stable Diffusion 提示词撰写技巧</h3>
+      <ul>
+        <li>以质量标签开头：<code>(masterpiece:1.2), (best quality:1.1)</code></li>
+        <li>使用括号加数字增加权重：<code>(lighting:1.4)</code></li>
+        <li>使用方括号降低权重：<code>[background:0.7]</code></li>
+        <li>始终撰写有力的负面提示词——它与正面提示词同样重要</li>
+        <li>SD 1.5 的提示词保持在75个CLIP token以内；SDXL 能更好地处理长提示词</li>
+        <li>根据使用的检查点模型调整提示词风格</li>
+      </ul>
+
+      <h3>Stable Diffusion 的不足</h3>
+      <ul>
+        <li>学习曲线陡峭——仅配置和模型选择就需要数小时</li>
+        <li>质量严重依赖于所使用的检查点</li>
+        <li>SD 1.5、SDXL 和 SD 3.5 之间的提示词语法存在差异</li>
+        <li>人体解剖（尤其是手部）仍是常见问题，除非使用专用LoRA</li>
+      </ul>
+
+      <h2 id="dalle3-natural-language">DALL&#xB7;E 3：自然语言与高保真</h2>
+
+      <h3>提示词语法</h3>
+      <p>DALL&#xB7;E 3 是独特的——它更偏好完整的自然语句，而非基于标签的提示词：</p>
+      <p><em>"A photorealistic scene of a forest spirit emerging from a gnarled ancient oak tree, surrounded by bioluminescent plants casting a soft blue-green glow. The spirit appears ethereal and translucent, hair flowing like smoke. Cinematic wide shot, golden hour light filtering through the forest canopy."</em></p>
+
+      <h3>DALL&#xB7;E 3 的优势</h3>
+      <ul>
+        <li>精确遵循复杂的多部分指令</li>
+        <li>生成包含可读文字的图像——明显优于其他模型</li>
+        <li>安全且可商用的内容（严格的内容政策）</li>
+        <li>需要理解创作意图的概念性和抽象图像</li>
+        <li>干净、专业的插画风格</li>
+      </ul>
+
+      <h3>DALL&#xB7;E 3 提示词撰写技巧</h3>
+      <ul>
+        <li>使用完整句子撰写，而非逗号分隔的标签</li>
+        <li>明确说明你想要什么——DALL&#xB7;E 会非常字面地遵循指令</li>
+        <li>清晰描述构图："from above in a wide shot"与"close-up portrait"</li>
+        <li>包含风格参考："in the style of a 1970s sci-fi book cover"</li>
+        <li>图中文字需在提示词中用引号括起来</li>
+      </ul>
+
+      <h3>DALL&#xB7;E 3 的不足</h3>
+      <ul>
+        <li>比其他模型有更严格的内容限制</li>
+        <li>风格多样性较低——倾向于产生特定的"DALL&#xB7;E风格"</li>
+        <li>获取最佳效果需要OpenAI订阅（ChatGPT Plus）</li>
+        <li>与Midjourney或SD相比，对细节的精细控制较少</li>
+      </ul>
+
+      <h2 id="flux-photorealism">Flux：写实之王</h2>
+
+      <h3>提示词语法</h3>
+      <p>由Black Forest Labs开发的Flux使用与DALL&#xB7;E 3类似的详细描述性语言，但对摄影和技术术语的响应尤为出色：</p>
+      <p><em>"High-resolution photograph of a forest spirit standing in an ancient woodland at dawn. The spirit is partially translucent, surrounded by bioluminescent fungi and plants casting a blue-green glow. Shot with a Canon EOS R5 and 85mm f/1.4 lens, shallow depth of field, cinematic color grading, golden hour light rays filtering through mist."</em></p>
+
+      <h3>Flux 的优势</h3>
+      <ul>
+        <li>生成几乎难以与真实照片区分的写实图像</li>
+        <li>包含多个元素的复杂场景</li>
+        <li>准确的人体解剖和比例</li>
+        <li>精确的光照场景</li>
+        <li>忠实遵循详细的技术描述</li>
+      </ul>
+
+      <h3>Flux 提示词撰写技巧</h3>
+      <ul>
+        <li>使用摄影语言：相机型号、镜头规格、光圈、ISO</li>
+        <li>用技术术语描述光线："Rembrandt lighting"、"golden hour at 6am"</li>
+        <li>尽可能具体——Flux 精确解释每个细节</li>
+        <li>详细的长提示词往往比短提示词效果更好</li>
+        <li>加入后期处理描述："color graded, slight film grain, subtle vignette"</li>
+      </ul>
+
+      <h3>Flux 的不足</h3>
+      <ul>
+        <li>艺术/非写实风格不如Midjourney有特色</li>
+        <li>缺少个性——不会自行添加审美风格</li>
+        <li>需通过第三方平台访问（Replicate、fal.ai等）</li>
+      </ul>
+
+      <h2 id="side-by-side">并排对比：同一概念，四种提示词</h2>
+
+      <p>为了让差异更加直观，以下是同一概念——"日落时分，红色星球上的孤独宇航员"——在四个模型中的提示词写法：</p>
+
+      <h3>Midjourney 版本</h3>
+      <p><code>lone astronaut standing on a desolate red planet at sunset, dramatic silhouette against twin moons, cinematic wide shot, dust storms in distance, golden and rust color palette --ar 21:9 --v 6.1 --style raw --q 2</code></p>
+
+      <h3>Stable Diffusion 版本</h3>
+      <p><code>(masterpiece:1.2), (photorealistic:1.1), lone astronaut on red planet at sunset, dramatic silhouette, twin moons in sky, (dust storm:0.8), (golden hour lighting:1.3), cinematic, (wide angle shot:1.1), ultra detailed, 8k</code><br>
+      负面提示词：<code>blurry, low quality, bad anatomy, deformed, watermark, cartoon, 2D</code></p>
+
+      <h3>DALL&#xB7;E 3 版本</h3>
+      <p><em>"A cinematic wide-angle photograph of a lone astronaut standing on the barren surface of a red, Mars-like planet at sunset. Two moons are visible on the horizon. The astronaut appears as a dramatic silhouette against the orange and ochre sky. A distant dust storm is visible on the horizon. The scene is both epic and lonely."</em></p>
+
+      <h3>Flux 版本</h3>
+      <p><em>"Ultra high-resolution photograph of a lone astronaut in a white suit standing on the surface of a rocky red planet at sunset. Two crescent moons hang in the orange-red sky. Shot with a Hasselblad H6D, wide-angle 24mm lens, f/8. Dramatic atmospheric haze on the horizon, golden and ochre color grading, cinematic composition with the subject in the lower third, deep shadows across the crater landscape."</em></p>
+
+      <h3>视觉效果——同一概念，四种模型</h3>
+      <div class="model-output-grid">
+        <div class="model-output">
+          <span class="model-badge badge-mj">Midjourney V6.1</span>
+          <picture><source srcset="/images/ai-prompt-generator-cyberpunk-midjourney.webp" type="image/webp"><img src="/images/ai-prompt-generator-cyberpunk-midjourney.jpeg" alt="Midjourney V6.1 输出效果——日落时红色星球上的孤独宇航员与双月" width="800" height="457" loading="lazy"></picture>
+        </div>
+        <div class="model-output">
+          <span class="model-badge badge-sd">Stable Diffusion SDXL</span>
+          <picture><source srcset="/images/ai-prompt-generator-cyberpunk-stable-diffusion.webp" type="image/webp"><img src="/images/ai-prompt-generator-cyberpunk-stable-diffusion.jpeg" alt="Stable Diffusion SDXL 输出效果——日落时红色星球上的孤独宇航员" width="800" height="457" loading="lazy"></picture>
+        </div>
+        <div class="model-output">
+          <span class="model-badge badge-dalle">DALL&#xB7;E 3</span>
+          <picture><source srcset="/images/ai-prompt-generator-cyberpunk-dalle3.webp" type="image/webp"><img src="/images/ai-prompt-generator-cyberpunk-dalle3.jpeg" alt="DALL-E 3 输出效果——日落时红色星球上的孤独宇航员" width="800" height="457" loading="lazy"></picture>
+        </div>
+        <div class="model-output">
+          <span class="model-badge badge-flux">Flux</span>
+          <picture><source srcset="/images/ai-prompt-generator-cyberpunk-flux.webp" type="image/webp"><img src="/images/ai-prompt-generator-cyberpunk-flux.jpeg" alt="Flux 输出效果——日落时红色星球上的孤独宇航员" width="800" height="457" loading="lazy"></picture>
+        </div>
+      </div>
+
+      <h3>概念二：雨天温馨咖啡馆</h3>
+
+      <h4>Midjourney 版本</h4>
+      <p><code>cozy independent coffee shop interior on a rainy day, warm amber light, steam rising from cups, rain-streaked window, people reading books, rustic wood and leather decor --ar 16:9 --v 6.1 --style raw</code></p>
+
+      <h4>Stable Diffusion 版本</h4>
+      <p><code>(cozy coffee shop:1.2), rainy day interior, (warm amber lighting:1.3), steam from coffee cups, rain on window, (rustic decor:0.9), bokeh background, photorealistic</code><br>
+      负面提示词：<code>blurry, low quality, deformed, watermark, ugly</code></p>
+
+      <h4>DALL&#xB7;E 3 版本</h4>
+      <p><em>"A warm and inviting coffee shop on a rainy afternoon. Ambient light fixtures cast a soft golden glow on wooden tables. A large rain-streaked window looks out onto the grey street. Patrons read with books and laptops, steam rising from their cups. Cozy and atmospheric."</em></p>
+
+      <h4>Flux 版本</h4>
+      <p><em>"Interior photograph of a cozy independent coffee shop on a rainy day. Warm Edison bulb lighting, 2700K color temperature. Rain visible on large window panes overlooking the street. Shallow depth of field with soft-focus patrons. Shot with Sony A7R IV, 35mm f/1.8, mixed natural and artificial light, slight film grain."</em></p>
+
+      <div class="model-output-grid">
+        <div class="model-output">
+          <span class="model-badge badge-mj">Midjourney</span>
+          <picture><source srcset="/images/prompt-generator-from-image-temple-midjourney.webp" type="image/webp"><img src="/images/prompt-generator-from-image-temple-midjourney.jpeg" alt="Midjourney 输出——雨天温馨咖啡馆内部" width="800" height="457" loading="lazy"></picture>
+        </div>
+        <div class="model-output">
+          <span class="model-badge badge-sd">Stable Diffusion</span>
+          <picture><source srcset="/images/prompt-generator-from-image-temple-stable-diffusion.webp" type="image/webp"><img src="/images/prompt-generator-from-image-temple-stable-diffusion.jpeg" alt="Stable Diffusion 输出——雨天温馨咖啡馆内部" width="800" height="457" loading="lazy"></picture>
+        </div>
+        <div class="model-output">
+          <span class="model-badge badge-dalle">DALL&#xB7;E 3</span>
+          <picture><source srcset="/images/prompt-generator-from-image-temple-dalle3.webp" type="image/webp"><img src="/images/prompt-generator-from-image-temple-dalle3.jpeg" alt="DALL-E 3 输出——雨天温馨咖啡馆内部" width="800" height="457" loading="lazy"></picture>
+        </div>
+        <div class="model-output">
+          <span class="model-badge badge-flux">Flux</span>
+          <picture><source srcset="/images/prompt-generator-from-image-temple-flux.webp" type="image/webp"><img src="/images/prompt-generator-from-image-temple-flux.jpeg" alt="Flux 输出——雨天温馨咖啡馆内部" width="800" height="457" loading="lazy"></picture>
+        </div>
+      </div>
+
+      <h3>概念三：老年工匠肖像</h3>
+
+      <h4>Midjourney 版本</h4>
+      <p><code>portrait of elderly craftsman in his workshop, weathered hands, surrounded by tools of his trade, warm natural window light, deep wrinkles, proud dignified expression, documentary photography --ar 2:3 --v 6.1 --style raw --q 2</code></p>
+
+      <h4>Stable Diffusion 版本</h4>
+      <p><code>(photorealistic:1.2), portrait of elderly craftsman, (weathered hands:1.1), workshop background with tools, (warm window light:1.3), deep facial wrinkles, dignified expression, professional documentary photography, highly detailed</code><br>
+      负面提示词：<code>blurry, low quality, bad anatomy, deformed, watermark, young</code></p>
+
+      <h4>DALL&#xB7;E 3 版本</h4>
+      <p><em>"A photographic portrait of an elderly craftsman in his cluttered workshop. He has deeply weathered hands and a face lined with wrinkles from decades of skilled work. Warm natural light streams through a workshop window. His expression is proud and focused. Documentary photography style."</em></p>
+
+      <h4>Flux 版本</h4>
+      <p><em>"Photographic portrait of an elderly craftsman in his workshop, approximately 75 years old. Deeply weathered hands visible holding a hand tool. Workshop background with real vintage tools on pegboard. Shot with Leica M11, 50mm Summilux f/1.4, warm window light at f/2, slight underexposure for rich shadows, film emulation."</em></p>
+
+      <div class="model-output-grid">
+        <div class="model-output">
+          <span class="model-badge badge-mj">Midjourney</span>
+          <picture><source srcset="/images/ai-image-generator-prompt-rose-midjourney.webp" type="image/webp"><img src="/images/ai-image-generator-prompt-rose-midjourney.jpeg" alt="Midjourney 输出——工作室中的老年工匠肖像" width="800" height="1000" loading="lazy"></picture>
+        </div>
+        <div class="model-output">
+          <span class="model-badge badge-sd">Stable Diffusion</span>
+          <picture><source srcset="/images/ai-image-generator-prompt-rose-stable-diffusion.webp" type="image/webp"><img src="/images/ai-image-generator-prompt-rose-stable-diffusion.jpeg" alt="Stable Diffusion 输出——工作室中的老年工匠肖像" width="800" height="1000" loading="lazy"></picture>
+        </div>
+        <div class="model-output">
+          <span class="model-badge badge-dalle">DALL&#xB7;E 3</span>
+          <picture><source srcset="/images/ai-image-generator-prompt-rose-dalle3.webp" type="image/webp"><img src="/images/ai-image-generator-prompt-rose-dalle3.jpeg" alt="DALL-E 3 输出——工作室中的老年工匠肖像" width="800" height="1000" loading="lazy"></picture>
+        </div>
+        <div class="model-output">
+          <span class="model-badge badge-flux">Flux</span>
+          <picture><source srcset="/images/ai-image-generator-prompt-rose-flux.webp" type="image/webp"><img src="/images/ai-image-generator-prompt-rose-flux.jpeg" alt="Flux 输出——工作室中的老年工匠肖像" width="800" height="1000" loading="lazy"></picture>
+        </div>
+      </div>
+
+      <h2 id="which-to-choose">该选择哪个AI图像生成器？</h2>
+
+      <div class="decision-tree">
+        <p class="tree-question">您最看重什么？</p>
+        <ul class="tree-options">
+          <li><span class="tree-arrow">&#8594;</span> <strong>最高艺术质量</strong> &#8594; Midjourney</li>
+          <li><span class="tree-arrow">&#8594;</span> <strong>写实效果</strong> &#8594; Flux</li>
+          <li><span class="tree-arrow">&#8594;</span> <strong>完全控制与自定义</strong> &#8594; Stable Diffusion</li>
+          <li><span class="tree-arrow">&#8594;</span> <strong>图中文字</strong> &#8594; DALL&#xB7;E 3</li>
+          <li><span class="tree-arrow">&#8594;</span> <strong>免费/开源</strong> &#8594; Stable Diffusion</li>
+          <li><span class="tree-arrow">&#8594;</span> <strong>最容易上手</strong> &#8594; DALL&#xB7;E 3（通过ChatGPT）</li>
+          <li><span class="tree-arrow">&#8594;</span> <strong>商业安全</strong> &#8594; DALL&#xB7;E 3 或 Adobe Firefly</li>
+          <li><span class="tree-arrow">&#8594;</span> <strong>隐私/本地处理</strong> &#8594; Stable Diffusion</li>
+        </ul>
+      </div>
+
+      <h2 id="pricing">价格对比（2026年3月）</h2>
+
+      <div class="table-wrap">
+      <table class="comparison-table">
+        <thead>
+          <tr><th>方案</th><th>Midjourney</th><th>Stable Diffusion</th><th>DALL&#xB7;E 3</th><th>Flux</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>免费</td><td>无免费方案</td><td>有（开源）</td><td>有限（Bing）</td><td>部分平台有限使用</td></tr>
+          <tr><td>基础</td><td>10美元/月（约200张快速生成）</td><td>免费（自托管）</td><td>20美元/月（ChatGPT Plus）</td><td>约0.003-0.05美元/张（API）</td></tr>
+          <tr><td>专业</td><td>30美元/月（无限慢速生成）</td><td>免费（自托管）</td><td>20美元/月（同级别）</td><td>同API价格</td></tr>
+          <tr><td>旗舰</td><td>60美元/月（快速+隐身模式）</td><td>仅托管成本</td><td>企业定价</td><td>通过BFL企业定价</td></tr>
+        </tbody>
+      </table>
+      </div>
+      <p class="table-note"><em>价格截至2026年3月。订阅前请在各平台官网确认最新价格。</em></p>
+
+      <div class="cta-box">
+        <h3>从任意图片获取特定模型的提示词</h3>
+        <p>ImageToPrompt 可为四大模型生成格式正确的提示词。上传参考图片，选择目标生成器，几秒钟内即可获得可直接使用的提示词。</p>
+        <a href="/?lang=zh" class="cta-btn">免费试用 AI 提示词生成器 &#8594;</a>
+      </div>
+
+    </div>
+
+    <div class="author-bio">
+      <svg class="author-photo" width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="作者头像"><circle cx="32" cy="32" r="32" fill="#2a1f4e"/><circle cx="32" cy="26" r="11" fill="#7c6bc4"/><ellipse cx="32" cy="52" rx="18" ry="11" fill="#7c6bc4"/></svg>
+      <div class="author-info">
+        <p class="author-name">ImageToPrompt Team</p>
+        <p class="author-desc">我们是一支专业团队，致力于帮助创作者掌握AI图像生成技术。通过图像转提示词工具和AI提示词工程指南，我们为全球艺术家的创作提供支持。</p>
+        <a href="https://twitter.com/imagetoprompt" class="author-link">在X上关注 &#8594;</a>
+      </div>
+    </div>
+
+    <div class="related-posts">
+      <h2>相关指南</h2>
+      <div class="related-grid">
+        <a href="/zh/blog/wenben-zhuan-tishi-ci-shengchengqi/" class="related-card">
+          <p class="tag">工具</p>
+          <h3>文本转提示词：完整指南</h3>
+        </a>
+        <a href="/zh/blog/veo-vs-kling-vs-runway/" class="related-card">
+          <p class="tag">视频AI对比</p>
+          <h3>Veo vs Kling vs Runway vs Sora</h3>
+        </a>
+        <a href="/zh/blog/shipin-ai-tishi-ci-zhinan-2026/" class="related-card">
+          <p class="tag">视频AI</p>
+          <h3>2026年AI视频提示词指南</h3>
+        </a>
+        <a href="/blog/midjourney-prompt-guide-2026/" class="related-card">
+          <p class="tag">Midjourney</p>
+          <h3>Midjourney Prompts 2026: Complete Guide</h3>
+        </a>
+        <a href="/blog/stable-diffusion-prompt-guide/" class="related-card">
+          <p class="tag">Stable Diffusion</p>
+          <h3>Stable Diffusion Prompt Guide 2026</h3>
+        </a>
+        <a href="/blog/dall-e-3-prompt-guide/" class="related-card">
+          <p class="tag">DALL&#xB7;E 3</p>
+          <h3>DALL&#xB7;E 3 Prompt Guide 2026</h3>
+        </a>
+      </div>
+    </div>
+
+  </div>
+
+  <footer class="footer-4col">
+    <div class="f4-inner">
+      <div class="f4-brand">
+        <img src="/favicon.svg" alt="ImageToPrompt" width="28" height="28">
+        <span class="f4-brand-name">ImageTo<span class="accent">Prompt</span></span>
+        <span class="f4-brand-sub">&mdash; Free AI Prompt Generator</span>
+      </div>
+      <div class="f4-grid">
+        <div class="f4-section">
+          <h4 class="f4-heading">Image Prompt Tools</h4>
+          <a href="/">Image to Prompt</a>
+          <a href="/text-to-prompt/">Text to Prompt</a>
+      <a href="/describe-image/">Describe Image</a>
+          <a href="/midjourney-prompt-generator/">Midjourney</a>
+          <a href="/stable-diffusion-prompt-generator/">Stable Diffusion</a>
+          <a href="/flux-prompt-generator/">Flux</a>
+          <a href="/dall-e-prompt-generator/">DALL-E 3</a>
+          <a href="/adobe-firefly-prompt-generator/">Adobe Firefly</a>
+          <a href="/leonardo-ai-prompt-generator/">Leonardo AI</a>
+          <a href="/ideogram-prompt-generator/">Ideogram</a>
+        </div>
+        <div class="f4-section">
+          <h4 class="f4-heading">Video Prompt Tools</h4>
+          <a href="/image-to-video-prompt/">Image to Video Prompt</a>
+          <a href="/text-to-video-prompt/">Text to Video Prompt</a>
+          <a href="/veo-prompt-generator/">Veo / Flow Studio</a>
+          <a href="/kling-prompt-generator/">Kling AI</a>
+          <a href="/runway-prompt-generator/">Runway Gen-3</a>
+          <a href="/pika-prompt-generator/">Pika</a>
+          <a href="/luma-prompt-generator/">Luma Dream Machine</a>
+          <a href="/sora-prompt-generator/">Sora</a>
+          <a href="/minimax-prompt-generator/">Minimax</a>
+          <a href="/stable-video-prompt-generator/">Stable Video</a>
+        </div>
+        <div class="f4-section">
+          <h4 class="f4-heading">Resources</h4>
+          <a href="/zh/blog/">博客</a>
+          <a href="/zh/about/">关于</a>
+          <a href="/zh/pricing/">价格</a>
+          <a href="/contact/">Contact</a>
+          <a href="/privacy-policy/">Privacy Policy</a>
+          <a href="/terms-of-service/">Terms of Service</a>
+        </div>
+        <div class="f4-section">
+          <h4 class="f4-heading">Languages</h4>
+          <a href="/">English</a>
+          <a href="/fr/">Fran&#231;ais</a>
+          <a href="/ar/">&#1575;&#1604;&#1593;&#1585;&#1576;&#1610;&#1577;</a>
+          <a href="/es/">Espa&#241;ol</a>
+          <a href="/ko/">&#54620;&#44397;&#50612;</a>
+          <a href="/ja/">&#26085;&#26412;&#35486;</a>
+          <a href="/ru/">&#1056;&#1091;&#1089;&#1089;&#1082;&#1080;&#1081;</a>
+          <a href="/zh/">&#20013;&#25991;</a>
+        </div>
+      </div>
+      <div class="f4-bottom">
+        <p>&#169; 2026 ImageToPrompt.dev &#8212; Free AI Prompt Generator</p>
+        <p>Your images are never stored. All analysis is ephemeral and private.</p>
+      </div>
+    </div>
+  </footer>
+
+<script src="/newsletter-inject.js" defer></script>
+<script src="/nav.js" defer></script>
+  <script>
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', function() {
+    navigator.serviceWorker.register('/sw.js')
+      .catch(function(err) { console.warn('SW registration failed:', err); });
+  });
+}
+</script>
+</body>
+</html>

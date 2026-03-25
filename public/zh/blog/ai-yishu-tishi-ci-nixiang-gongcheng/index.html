@@ -1,0 +1,468 @@
+<!doctype html>
+<html lang="zh">
+<head>
+  <script src="/theme-toggle.js"></script>
+  <meta charset="UTF-8" />
+  <link rel="dns-prefetch" href="https://www.googletagmanager.com">
+<link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="max-image-preview:large, index, follow">
+  <meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="ImageToPrompt">
+  <title>如何从任何图像逆向工程AI艺术提示词</title>
+  <meta name="description" content="学习如何从任何图像逆向工程AI艺术提示词。提取任何AI生成作品的风格、光照和构图，在Midjourney或Stable Diffusion中重新创建。" />
+  <link rel="canonical" href="https://www.imagetoprompt.dev/zh/blog/ai-yishu-tishi-ci-nixiang-gongcheng/" />
+  <link rel="alternate" hreflang="zh" href="https://www.imagetoprompt.dev/zh/blog/ai-yishu-tishi-ci-nixiang-gongcheng/" />
+  <link rel="alternate" hreflang="en" href="https://www.imagetoprompt.dev/blog/reverse-engineer-ai-art-prompts/" />
+  <link rel="alternate" hreflang="x-default" href="https://www.imagetoprompt.dev/blog/reverse-engineer-ai-art-prompts/" />
+  <meta property="og:title" content="如何从任何图像逆向工程AI艺术提示词" />
+  <meta property="og:description" content="提取任何AI生成作品的风格、光照和构图，在Midjourney、Stable Diffusion或Flux中重新创建。" />
+  <meta property="og:url" content="https://www.imagetoprompt.dev/zh/blog/ai-yishu-tishi-ci-nixiang-gongcheng/" />
+  <meta property="og:type" content="article" />
+  <meta property="og:image" content="https://www.imagetoprompt.dev/og-image.png" />
+  <meta property="og:site_name" content="ImageToPrompt" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="AI艺术提示词逆向工程完全指南" />
+  <meta name="twitter:description" content="从任何图像提取AI提示词的完整方法——AI工具、手动分解和专业工作流。" />
+  <meta name="twitter:image" content="https://www.imagetoprompt.dev/og-image.png" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="48x48" href="/favicon-48.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+  <link rel="manifest" href="/site.webmanifest" />
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="/fonts/space-grotesk-700.woff2" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="/fonts/inter-400.woff2" />
+  <link rel="stylesheet" href="/theme.css">
+  <link rel="preload" href="/blog.css" as="style" onload="this.onload=null;this.rel='stylesheet'"><noscript><link rel="stylesheet" href="/blog.css"></noscript>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "如何从任何图像逆向工程AI艺术提示词",
+    "description": "学习如何从任何图像逆向工程AI艺术提示词。提取风格、光照和构图，在Midjourney或Stable Diffusion中重新创建。",
+    "image": "https://www.imagetoprompt.dev/og-image.png",
+    "datePublished": "2026-03-10",
+    "dateModified": "2026-03-24",
+    "inLanguage": "zh",
+    "author": { "@type": "Person", "name": "ImageToPrompt Team", "url": "https://www.imagetoprompt.dev/" },
+    "publisher": { "@type": "Organization", "name": "ImageToPrompt", "logo": { "@type": "ImageObject", "url": "https://www.imagetoprompt.dev/favicon.svg" } },
+    "mainEntityOfPage": { "@type": "WebPage", "@id": "https://www.imagetoprompt.dev/zh/blog/ai-yishu-tishi-ci-nixiang-gongcheng/" }
+  }
+  </script>
+    <!-- Google AdSense -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4499206373485728" crossorigin="anonymous"></script>
+    <!-- Web Push Notifications -->
+<script src="https://cdn.onesignal.com/sdks/web/v16/OneSignalSDK.page.js" defer></script>
+<script>
+  window.OneSignalDeferred = window.OneSignalDeferred || [];
+  OneSignalDeferred.push(async function(OneSignal) {
+    await OneSignal.init({
+      appId: "REPLACE_WITH_ONESIGNAL_APP_ID",
+      notifyButton: { enable: false }
+    });
+  });
+</script>
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="inner">
+      <a href="/zh/" class="site-logo"><img src="/favicon.svg" alt="ImageToPrompt" width="48" height="48"><div class="site-logo-text">ImageTo<span class="accent">Prompt</span><span class="site-logo-sub">免费AI提示词生成器</span></div></a>
+      <nav class="site-nav" aria-label="主导航">
+        <div class="nav-dropdown">
+          <button class="nav-dropdown-trigger" aria-haspopup="true" aria-expanded="false">Tools <span class="nav-chevron" aria-hidden="true">&#9660;</span></button>
+          <div class="nav-dropdown-menu" role="menu">
+            <div class="nav-mega-grid">
+              <div class="nav-mega-col">
+                <div class="nav-mega-heading">&#128444; IMAGE TOOLS</div>
+                <a href="/" role="menuitem" class="nav-mega-tool">Image to Prompt <span class="nav-mega-arrow">&#8594;</span></a>
+                <a href="/text-to-prompt/" role="menuitem" class="nav-mega-tool">Text to Prompt <span class="nav-mega-arrow">&#8594;</span></a>
+                <a href="/describe-image/" role="menuitem" class="nav-mega-tool">Describe Image <span class="nav-new-badge">NEW</span> <span class="nav-mega-arrow">&#8594;</span></a>
+                <div class="nav-mega-models-label">Models</div>
+                <div class="nav-mega-models"><a href="/midjourney-prompt-generator/">Midjourney</a><span class="nav-dot">&#xB7;</span><a href="/stable-diffusion-prompt-generator/">SD</a></div>
+                <div class="nav-mega-models"><a href="/flux-prompt-generator/">Flux</a><span class="nav-dot">&#xB7;</span><a href="/dall-e-prompt-generator/">DALL&#xB7;E&#xA0;3</a></div>
+                <div class="nav-mega-models"><a href="/adobe-firefly-prompt-generator/">Firefly</a><span class="nav-dot">&#xB7;</span><a href="/leonardo-ai-prompt-generator/">Leonardo</a></div>
+                <div class="nav-mega-models"><a href="/ideogram-prompt-generator/">Ideogram</a></div>
+              </div>
+              <div class="nav-mega-divider" aria-hidden="true"></div>
+              <div class="nav-mega-col">
+                <div class="nav-mega-heading">&#127909; VIDEO TOOLS</div>
+                <a href="/?tab=image-to-video" role="menuitem" class="nav-mega-tool">Image to Video <span class="nav-mega-arrow">&#8594;</span></a>
+                <a href="/?tab=text-to-video" role="menuitem" class="nav-mega-tool">Text to Video <span class="nav-mega-arrow">&#8594;</span></a>
+                <div class="nav-mega-models-label">Models</div>
+                <div class="nav-mega-models"><a href="/veo-prompt-generator/">Veo</a><span class="nav-dot">&#xB7;</span><a href="/kling-prompt-generator/">Kling</a></div>
+                <div class="nav-mega-models"><a href="/runway-prompt-generator/">Runway</a><span class="nav-dot">&#xB7;</span><a href="/pika-prompt-generator/">Pika</a></div>
+                <div class="nav-mega-models"><a href="/luma-prompt-generator/">Luma</a><span class="nav-dot">&#xB7;</span><a href="/sora-prompt-generator/">Sora</a></div>
+                <div class="nav-mega-models"><a href="/minimax-prompt-generator/">Minimax</a><span class="nav-dot">&#xB7;</span><a href="/stable-video-prompt-generator/">Stable</a></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <a href="/zh/blog/">博客</a>
+        <a href="/zh/pricing/" class="nav-pill-pricing">价格</a>
+        <a href="/zh/about/" class="nav-pill-about">关于</a>
+        <a href="/zh/" class="nav-try-free">免费试用 &#8594;</a>
+        <button id="theme-toggle" onclick="toggleTheme()" aria-label="切换主题" title="切换主题">&#9728;&#xFE0F;</button>
+  </nav>
+    </div>
+  </header>
+
+  <nav class="breadcrumb" aria-label="面包屑导航">
+    <a href="/zh/">首页</a><span class="sep">&#8250;</span>
+    <a href="/zh/blog/">博客</a><span class="sep">&#8250;</span>
+    <span>AI提示词逆向工程</span>
+  </nav>
+
+  <div class="page-wrapper">
+
+    <header class="article-header">
+      <p class="article-tag">教程</p>
+      <h1>如何从任何图像逆向工程AI艺术提示词</h1>
+      <div class="article-meta">
+        <span>2026年3月</span>
+        <span class="dot">&#183;</span>
+        <span>阅读时间9分钟</span>
+        <span class="dot">&#183;</span>
+        <span>Midjourney &#183; Stable Diffusion &#183; Flux</span>
+        <span class="dot">&#183;</span>
+        <span>更新于2026年3月</span>
+      </div>
+    </header>
+
+    <div class="article-body">
+
+      <p>你在浏览一个AI艺术画廊——DeviantArt、ArtStation、Twitter或某个Discord服务器——然后你停在了一张图片前。它恰好是你一直试图创建的效果。光照完美，构图惊艳，风格正是你想要的。</p>
+
+      <nav class="toc" aria-label="目录">
+        <details open>
+          <summary>本指南内容</summary>
+          <ol>
+            <li><a href="#why-it-works">为什么逆向工程有效（及其局限性）</a></li>
+            <li><a href="#method-1">方法1：使用AI图像转提示词工具</a></li>
+            <li><a href="#method-2">方法2：手动视觉分解</a></li>
+            <li><a href="#method-3">方法3：两者结合——专业工作流</a></li>
+            <li><a href="#complete-example">完整示例：逆向工程一张图片</a></li>
+            <li><a href="#model-tips">各模型逆向工程技巧</a></li>
+            <li><a href="#same-image-different-models">同一图像，不同模型</a></li>
+            <li><a href="#ethics">伦理考量</a></li>
+            <li><a href="#advanced">高级技术：基于提示词的风格迁移</a></li>
+          </ol>
+        </details>
+      </nav>
+
+      <p>问题是：你不知道提示词是什么。即使你知道了，复制它真的能给你同样的结果吗？</p>
+
+      <p>这就是<strong>提示词逆向工程</strong>的艺术——提取图像的视觉DNA并将其翻译成文本指令。掌握得当，这是AI艺术家能发展的最强大技能之一。本指南将带你走完整个过程。</p>
+
+      <h2 id="why-it-works">为什么逆向工程有效（及其局限性）</h2>
+
+      <p>AI图像生成器被训练来将文本提示词映射为视觉输出。逆向工程利用了这种关系：如果模型能从文本到图像，那么借助正确的工具，你也能从图像到文本近似值。</p>
+
+      <p>这不是完美的。AI生成器有固有的随机性（由seed值控制），相同的提示词会产生变体而不是完全相同的副本。但逆向工程能让你足够接近，从而：</p>
+      <ul>
+        <li>重现整体美感和氛围</li>
+        <li>将相同风格应用到不同主题</li>
+        <li>在现有视觉风格的基础上加入自己的创意</li>
+        <li>理解特定视觉效果是如何实现的</li>
+      </ul>
+
+      <h2 id="method-1">方法1：使用AI图像转提示词工具</h2>
+
+      <p>最快的方法是使用专门的<a href="/">图像转提示词转换器</a>，如ImageToPrompt。这些工具使用视觉AI分析你的参考图像，并生成针对目标模型格式化的完整提示词。</p>
+
+      <p>工作流程：</p>
+      <ol>
+        <li>保存你想要逆向工程的图像</li>
+        <li>上传到 <a href="/">ImageToPrompt.dev</a></li>
+        <li>选择你要使用的AI模型（Midjourney、Stable Diffusion、Flux等）</li>
+        <li>几秒内获得可直接使用的提示词</li>
+      </ol>
+
+      <p>这是大多数专业AI艺术家用作起点的方法。它处理了识别和表达视觉细节的繁重工作，让你专注于优化改进。</p>
+
+      <div class="cta-inline">
+        <p>亲自试试——上传任何图片，几秒内获得优化的AI提示词。</p>
+        <a href="/" class="cta-btn-sm">免费试用 &#8594;</a>
+      </div>
+
+      <h2 id="method-2">方法2：手动视觉分解</h2>
+
+      <p>即使有AI辅助，理解如何手动分解图像会让你成为更强的提示词工程师。以下是系统性解读任何图像的方法：</p>
+
+      <h3>分析主题</h3>
+      <p>从最明显的开始：图像中有什么？要具体。"女性"太弱。"一位二十多岁、中长暗色头发、穿着复古皮夹克的年轻女性"给了AI更多可用信息。</p>
+
+      <div class="img-single">
+        <a href="/images/describe-the-photo-artwork-analysis.webp" target="_blank" rel="noopener">
+          <picture><source srcset="/images/describe-the-photo-artwork-analysis.webp" type="image/webp"><img src="/images/describe-the-photo-artwork-analysis.jpeg" alt="带标注的AI艺术作品，标示了主题、光照方向、色彩区域、构图线条和风格指标，用于提示词逆向工程" width="1000" height="700" loading="lazy"></picture>
+        </a>
+        <p class="img-caption">视觉分解：在将图像翻译为提示词语言之前，识别其中每个元素。点击查看大图。</p>
+      </div>
+
+      <h3>解读光照</h3>
+      <p>光照是任何图像中最强大的元素之一。问自己：</p>
+      <ul>
+        <li>光源在哪里？（正面照明、侧面照明、逆光、轮廓光）</li>
+        <li>光线是硬的还是柔的？（直射阳光 vs 漫射阴天）</li>
+        <li>光线是什么颜色？（暖色金色时段、冷蓝黄昏、中性工作室）</li>
+        <li>是否有辅助光源或彩色滤光片？</li>
+        <li>阴影有多戏剧化？</li>
+      </ul>
+
+      <h3>识别风格和媒介</h3>
+      <p>这是摄影风格还是绘画风格？如果是摄影：什么相机、什么镜头？如果是绘画：什么媒介（油画、水彩、数字），什么艺术流派（印象派、超写实、动漫）？</p>
+
+      <p>有用的风格描述词包括：<code>cinematic</code>、<code>hyperrealistic</code>、<code>painterly</code>、<code>concept art</code>、<code>illustration</code>、<code>watercolor</code>、<code>cel shading</code>、<code>photorealism</code>、<code>editorial</code></p>
+
+      <h3>记录色彩方案</h3>
+      <p>AI生成器对色彩描述反应强烈。识别以下内容：</p>
+      <ul>
+        <li>主色调（定义图像的2-4种颜色）</li>
+        <li>整体色温（暖色、冷色或中性）</li>
+        <li>饱和度（鲜艳、柔和、低饱和）</li>
+        <li>对比度水平（高对比、平淡、低对比）</li>
+      </ul>
+
+      <h3>描述构图</h3>
+      <p>图像如何取景？常见构图描述词：</p>
+      <ul>
+        <li>镜头类型：close-up, medium shot, wide shot, aerial view, worm's eye view</li>
+        <li>景深：bokeh, shallow DOF, deep focus</li>
+        <li>三分法则、居中构图、引导线</li>
+        <li>负空间</li>
+      </ul>
+
+      <h2 id="method-3">方法3：两者结合——专业工作流</h2>
+
+      <p>最有效的方法是将AI分析与手动优化相结合。以下是专业AI艺术家使用的完整工作流：</p>
+
+      <h3>第一步：生成基础提示词</h3>
+      <p>将参考图像上传到<a href="/">ImageToPrompt</a>并生成初始提示词。这能让你完成约80%的工作，通常不到30秒。</p>
+
+      <h3>第二步：手动审查和标注</h3>
+      <p>批判性地审视生成的提示词。将其与图像对比。缺少什么？什么不准确？需要检查的具体方面：</p>
+      <ul>
+        <li>光照描述是否准确？</li>
+        <li>风格描述是否与你看到的匹配？</li>
+        <li>是否遗漏了重要的构图元素？</li>
+        <li>是否有未提及的主色调？</li>
+      </ul>
+
+      <h3>第三步：添加艺术家参考（可选）</h3>
+      <p>对于风格化图像，添加艺术家名称可以显著改善结果。"In the style of Greg Rutkowski"或"in the style of Makoto Shinkai"能向模型传达完整的视觉词汇。要有道德地使用——参考风格而非具体作品。</p>
+
+      <h3>第四步：测试和迭代</h3>
+      <p>用你优化后的提示词生成4-8个变体。将它们与参考图对比。找出最大差距并调整提示词来弥补。重复直到满意。</p>
+
+      <h2 id="complete-example">完整示例：逆向工程一张图片</h2>
+
+      <p>让我们在一张图片上走完整个过程——结合自动分析和手动优化来生成一个能真正重现结果的提示词。</p>
+
+      <div class="img-single">
+        <a href="/images/explain-this-image-astronaut-alien-planet.webp" target="_blank" rel="noopener">
+          <picture><source srcset="/images/explain-this-image-astronaut-alien-planet.webp" type="image/webp"><img src="/images/explain-this-image-astronaut-alien-planet.jpeg" alt="在逆向工程演练中使用的参考幻想肖像——需要分析的原始AI艺术作品" width="800" height="1100" loading="lazy"></picture>
+        </a>
+        <p class="img-caption">我们正在逆向工程的参考图像。点击查看大图。</p>
+      </div>
+
+      <h3>第一步：自动分析</h3>
+      <p>上传到ImageToPrompt并选择Midjourney后，工具生成了：</p>
+
+      <pre class="prompt-block">dramatic fantasy portrait of a female warrior, battle-worn armor with intricate engravings, fierce expression, rim lighting from behind with warm orange glow, particle effects and embers, dark atmospheric background, cinematic concept art, digital painting, highly detailed --ar 2:3 --v 6.1 --style raw --q 2</pre>
+
+      <h3>第二步：手动观察</h3>
+      <p>将自动输出与原图对比后，有两点突出。首先，AI没有捕捉到特定的色彩对比——盔甲有一种铜绿色（氧化铜绿）色调但未被提及。其次，背景不仅仅是"暗"的——它有一种烟雾弥漫、近乎火山般的气氛，可见火山灰颗粒。这两点都没有进入第一次生成的提示词。</p>
+
+      <h3>第三步：优化后的提示词</h3>
+      <p>添加遗漏的元素并调整重点：</p>
+
+      <pre class="prompt-block">dramatic fantasy portrait of a female warrior, battle-worn armor with verdigris patina and intricate engravings, fierce determined expression, rim lighting from behind with warm volcanic orange glow, ash particles and floating embers, smoky atmospheric background with volcanic haze, cinematic concept art, digital painting, highly detailed, deep shadow contrast --ar 2:3 --v 6.1 --style raw --q 2</pre>
+
+      <div class="img-single">
+        <a href="/images/explain-this-image-astronaut-recreated.webp" target="_blank" rel="noopener">
+          <picture><source srcset="/images/explain-this-image-astronaut-recreated.webp" type="image/webp"><img src="/images/explain-this-image-astronaut-recreated.jpeg" alt="使用优化后逆向工程提示词重新创建的幻想肖像——展示铜绿色调和火山气氛" width="800" height="1100" loading="lazy"></picture>
+        </a>
+        <p class="img-caption">使用优化提示词的结果。铜绿色调和火山气氛现在已呈现。</p>
+      </div>
+
+      <p>这两个添加——铜绿锈蚀和火山气氛——从根本上改变了图像的色彩叙事。这就是手动观察为自动分析增添的价值：使图像独特而非通用的特定细节。</p>
+
+      <h2 id="model-tips">各模型逆向工程技巧</h2>
+
+      <h3>逆向工程Midjourney图像</h3>
+      <p>Midjourney有独特的美学——精确的细节配合绘画般的品质。逆向工程Midjourney图像时，包含Midjourney特定参数：<code>--style raw</code>获取较少主观性的输出，或<code>--v 6.1</code>使用最新版本。如果想要更多变化，添加<code>--chaos 15-25</code>。</p>
+
+      <h3>逆向工程Stable Diffusion图像</h3>
+      <p>SD图像通常有独特的痕迹：特定的模型检查点会产生特征性的瑕疵。如果你知道图像是用SDXL创建的，使用SDXL检查点。包含强力负面提示词来避免SD常见问题：<code>blurry, low quality, bad anatomy, watermark, text</code>。</p>
+
+      <h3>逆向工程Flux图像</h3>
+      <p>Flux产生极其逼真的照片级图像。逆向工程Flux输出时，专注于摄影语言：镜头类型、相机设置、自然光描述。Flux对技术摄影术语反应良好。</p>
+
+      <h2 id="same-image-different-models">同一图像，不同模型</h2>
+
+      <p>同一张参考图像根据选择的AI模型会产生非常不同的提示词。以下展示了为什么这很重要以及实际差异是什么样的。</p>
+
+      <div class="img-single">
+        <a href="/images/ai-prompt-image-model-comparison-grid.webp" target="_blank" rel="noopener">
+          <picture><source srcset="/images/ai-prompt-image-model-comparison-grid.webp" type="image/webp"><img src="/images/ai-prompt-image-model-comparison-grid.jpeg" alt="源肖像图像，用于演示Midjourney、Stable Diffusion、DALL-E 3和Flux之间的提示词风格差异" width="800" height="1000" loading="lazy"></picture>
+        </a>
+      </div>
+
+      <div class="model-prompts-grid">
+        <div class="model-prompt-card">
+          <p class="model-label">Midjourney</p>
+          <pre class="prompt-block-sm">dramatic portrait, strong directional lighting, deep shadows, intense gaze, cinematic photography style --ar 2:3 --v 6.1 --style raw</pre>
+        </div>
+        <div class="model-prompt-card">
+          <p class="model-label">Stable Diffusion</p>
+          <pre class="prompt-block-sm">(photorealistic:1.2), dramatic portrait, (strong rim lighting:1.3), deep shadows, (intense gaze:1.1), professional photography
+负面提示词: blurry, low quality, deformed, bad anatomy, watermark</pre>
+        </div>
+        <div class="model-prompt-card">
+          <p class="model-label">Flux</p>
+          <pre class="prompt-block-sm">High-resolution photograph of a person in dramatic portrait lighting. Strong rim light from the left creates deep shadows. Shot with Canon EOS R5, 85mm f/1.4, shallow depth of field, cinematic color grading.</pre>
+        </div>
+        <div class="model-prompt-card">
+          <p class="model-label">DALL&#183;E 3</p>
+          <pre class="prompt-block-sm">A dramatic portrait photograph with strong directional lighting creating deep shadows on one side of the face. The subject has an intense, direct gaze. Cinematic, professional quality with shallow depth of field.</pre>
+        </div>
+      </div>
+
+      <p>每个提示词捕捉了同一图像，但使用了模型的原生语言。Midjourney使用简洁描述词加参数。Stable Diffusion使用加权语法和负面提示词。Flux使用摄影/技术语言。DALL·E 3使用完整的自然语句。相同的视觉内容，四种不同格式。</p>
+
+      <h2 id="ethics">伦理考量</h2>
+
+      <p>逆向工程AI艺术通常是没问题的——你在这些模型运作的训练范式内工作。但有几点需要注意：</p>
+
+      <ul>
+        <li><strong>不要声称别人的AI艺术是你自己的。</strong>为学习而逆向工程是可以的；但把结果当作你自己的原创作品而不引用来源是不诚实的。</li>
+        <li><strong>处理真实人物照片要谨慎。</strong>从照片中提取提示词然后生成特定真实人物的AI图像会引发严肃的伦理和法律问题。</li>
+        <li><strong>查看平台条款。</strong>一些平台禁止将其AI生成的图像用作训练数据或逆向工程输入。在操作前阅读条款。</li>
+      </ul>
+
+      <h2 id="advanced">高级技术：基于提示词的风格迁移</h2>
+
+      <p>一旦你从参考图像中提取了好的风格提示词，就可以将其应用到任何主题上。这被称为基于提示词的风格迁移，是逆向工程最具创意的用途之一。</p>
+
+      <p>例如：你逆向工程了一张美丽的金色时段人像并得到一个提示词："cinematic portrait photography, golden hour rim lighting, shallow depth of field, warm amber and rust tones, film grain, Canon 85mm f/1.4"</p>
+
+      <p>现在用任何东西替换人像主题：建筑、风景、静物、动物。光照和风格信息会迁移到新主题上，让你在非常不同的图像之间保持一致的美学。</p>
+
+      <div class="cta-box">
+        <h3>几秒钟开始逆向工程</h3>
+        <p>上传任何图片到ImageToPrompt，获取可在Midjourney、Stable Diffusion或Flux中直接使用的完整提示词。</p>
+        <a href="/zh/" class="cta-btn">试用免费AI提示词生成器 &#8594;</a>
+      </div>
+
+    </div>
+
+    <div class="author-bio">
+      <svg class="author-photo" width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="作者头像"><circle cx="32" cy="32" r="32" fill="#2a1f4e"/><circle cx="32" cy="26" r="11" fill="#7c6bc4"/><ellipse cx="32" cy="52" rx="18" ry="11" fill="#7c6bc4"/></svg>
+      <div class="author-info">
+        <p class="author-name">ImageToPrompt Team</p>
+        <p class="author-desc">我们是一支专业团队，致力于帮助创作者掌握AI图像生成技术。通过图像转提示词工具和AI提示词工程指南，我们为全球艺术家的创作提供支持。</p>
+        <a href="https://x.com/Ilyass14286541" class="author-link">在X上关注 &#8594;</a>
+      </div>
+    </div>
+
+    <div class="related-posts">
+      <h2>相关指南</h2>
+      <div class="related-grid">
+        <a href="/zh/blog/tupian-zhuanhuan-ai-tishi-ci/" class="related-card">
+          <p class="tag">指南</p>
+          <h3>如何将图片转换为AI提示词</h3>
+        </a>
+        <a href="/zh/blog/midjourney-tishi-ci-zhinan-2026/" class="related-card">
+          <p class="tag">Midjourney</p>
+          <h3>Midjourney提示词完全指南 2026</h3>
+        </a>
+        <a href="/zh/blog/stable-diffusion-vs-midjourney-vs-dalle3/" class="related-card">
+          <p class="tag">对比评测</p>
+          <h3>SD vs Midjourney vs DALL&#183;E 3 vs Flux</h3>
+        </a>
+        <a href="/zh/blog/tishi-ci-gongcheng-changjian-cuowu/" class="related-card">
+          <p class="tag">技巧</p>
+          <h3>15个AI提示词工程常见错误</h3>
+        </a>
+      </div>
+    </div>
+
+  </div>
+
+  <footer class="footer-4col">
+    <div class="f4-inner">
+      <div class="f4-brand">
+        <img src="/favicon.svg" alt="ImageToPrompt" width="28" height="28">
+        <span class="f4-brand-name">ImageTo<span class="accent">Prompt</span></span>
+        <span class="f4-brand-sub">&mdash; Free AI Prompt Generator</span>
+      </div>
+      <div class="f4-grid">
+        <div class="f4-section">
+          <h4 class="f4-heading">Image Prompt Tools</h4>
+          <a href="/">Image to Prompt</a>
+          <a href="/text-to-prompt/">Text to Prompt</a>
+      <a href="/describe-image/">Describe Image</a>
+          <a href="/midjourney-prompt-generator/">Midjourney</a>
+          <a href="/stable-diffusion-prompt-generator/">Stable Diffusion</a>
+          <a href="/flux-prompt-generator/">Flux</a>
+          <a href="/dall-e-prompt-generator/">DALL-E 3</a>
+          <a href="/adobe-firefly-prompt-generator/">Adobe Firefly</a>
+          <a href="/leonardo-ai-prompt-generator/">Leonardo AI</a>
+          <a href="/ideogram-prompt-generator/">Ideogram</a>
+        </div>
+        <div class="f4-section">
+          <h4 class="f4-heading">Video Prompt Tools</h4>
+          <a href="/image-to-video-prompt/">Image to Video Prompt</a>
+          <a href="/text-to-video-prompt/">Text to Video Prompt</a>
+          <a href="/veo-prompt-generator/">Veo / Flow Studio</a>
+          <a href="/kling-prompt-generator/">Kling AI</a>
+          <a href="/runway-prompt-generator/">Runway Gen-3</a>
+          <a href="/pika-prompt-generator/">Pika</a>
+          <a href="/luma-prompt-generator/">Luma Dream Machine</a>
+          <a href="/sora-prompt-generator/">Sora</a>
+          <a href="/minimax-prompt-generator/">Minimax</a>
+          <a href="/stable-video-prompt-generator/">Stable Video</a>
+        </div>
+        <div class="f4-section">
+          <h4 class="f4-heading">Resources</h4>
+          <a href="/zh/blog/">博客</a>
+          <a href="/zh/about/">关于</a>
+          <a href="/zh/pricing/">价格</a>
+          <a href="/contact/">Contact</a>
+          <a href="/privacy-policy/">Privacy Policy</a>
+          <a href="/terms-of-service/">Terms of Service</a>
+        </div>
+        <div class="f4-section">
+          <h4 class="f4-heading">Languages</h4>
+          <a href="/">English</a>
+          <a href="/fr/">Fran&#231;ais</a>
+          <a href="/ar/">&#1575;&#1604;&#1593;&#1585;&#1576;&#1610;&#1577;</a>
+          <a href="/es/">Espa&#241;ol</a>
+          <a href="/ko/">&#54620;&#44397;&#50612;</a>
+          <a href="/ja/">&#26085;&#26412;&#35486;</a>
+          <a href="/ru/">&#1056;&#1091;&#1089;&#1089;&#1082;&#1080;&#1081;</a>
+          <a href="/zh/">中文</a>
+        </div>
+      </div>
+      <div class="f4-bottom">
+        <p>&#169; 2026 ImageToPrompt.dev &#8212; Free AI Prompt Generator</p>
+        <p>Your images are never stored. All analysis is ephemeral and private.</p>
+      </div>
+    </div>
+  </footer>
+
+<script src="/newsletter-inject.js" defer></script>
+<script src="/nav.js" defer></script>
+  <script>
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', function() {
+    navigator.serviceWorker.register('/sw.js')
+      .catch(function(err) { console.warn('SW registration failed:', err); });
+  });
+}
+</script>
+</body>
+</html>

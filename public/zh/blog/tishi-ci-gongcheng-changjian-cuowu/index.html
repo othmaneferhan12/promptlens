@@ -1,0 +1,483 @@
+<!doctype html>
+<html lang="zh">
+<head>
+  <script src="/theme-toggle.js"></script>
+  <meta charset="UTF-8" />
+  <link rel="dns-prefetch" href="https://www.googletagmanager.com">
+<link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="max-image-preview:large, index, follow">
+  <meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="ImageToPrompt">
+  <title>15个AI提示词工程常见错误及修复方法（2026）</title>
+  <meta name="description" content="避免15个最常见的AI图像提示词错误。从模糊描述到错误的模型语法——了解什么在影响你的结果，以及如何逐一修复。" />
+  <link rel="canonical" href="https://www.imagetoprompt.dev/zh/blog/tishi-ci-gongcheng-changjian-cuowu/" />
+  <link rel="alternate" hreflang="zh" href="https://www.imagetoprompt.dev/zh/blog/tishi-ci-gongcheng-changjian-cuowu/" />
+  <link rel="alternate" hreflang="en" href="https://www.imagetoprompt.dev/blog/prompt-engineering-mistakes/" />
+  <link rel="alternate" hreflang="x-default" href="https://www.imagetoprompt.dev/blog/prompt-engineering-mistakes/" />
+  <meta property="og:title" content="15个AI提示词工程常见错误及修复方法" />
+  <meta property="og:description" content="避免15个最常见的AI图像提示词错误，附带每个错误的修改前后对比示例。" />
+  <meta property="og:url" content="https://www.imagetoprompt.dev/zh/blog/tishi-ci-gongcheng-changjian-cuowu/" />
+  <meta property="og:type" content="article" />
+  <meta property="og:image" content="https://www.imagetoprompt.dev/og-image.png" />
+  <meta property="og:site_name" content="ImageToPrompt" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="15个AI提示词工程常见错误" />
+  <meta name="twitter:description" content="15个最常见的AI图像提示词错误及修复方法。Midjourney、Stable Diffusion、Flux、DALL·E 3。" />
+  <meta name="twitter:image" content="https://www.imagetoprompt.dev/og-image.png" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="48x48" href="/favicon-48.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+  <link rel="manifest" href="/site.webmanifest" />
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="/fonts/space-grotesk-700.woff2" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="/fonts/inter-400.woff2" />
+  <link rel="stylesheet" href="/theme.css">
+  <link rel="preload" href="/blog.css" as="style" onload="this.onload=null;this.rel='stylesheet'"><noscript><link rel="stylesheet" href="/blog.css"></noscript>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "15个AI提示词工程常见错误及修复方法（2026）",
+    "description": "避免15个最常见的AI图像提示词错误。从模糊描述到错误的模型语法——了解什么在影响你的结果，以及如何逐一修复。",
+    "image": "https://www.imagetoprompt.dev/og-image.png",
+    "datePublished": "2026-03-10",
+    "dateModified": "2026-03-24",
+    "inLanguage": "zh",
+    "author": { "@type": "Person", "name": "ImageToPrompt Team", "url": "https://www.imagetoprompt.dev/" },
+    "publisher": { "@type": "Organization", "name": "ImageToPrompt", "logo": { "@type": "ImageObject", "url": "https://www.imagetoprompt.dev/favicon.svg" } },
+    "mainEntityOfPage": { "@type": "WebPage", "@id": "https://www.imagetoprompt.dev/zh/blog/tishi-ci-gongcheng-changjian-cuowu/" }
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "最常见的提示词工程错误是什么？",
+        "acceptedAnswer": { "@type": "Answer", "text": "最常见的错误是编写过于模糊的提示词。例如'a beautiful landscape'没有给AI模型任何具体方向。需要明确指定地点类型、光照、艺术风格、季节和氛围，才能获得可预测的高质量结果。" }
+      },
+      {
+        "@type": "Question",
+        "name": "为什么我的提示词在不同AI模型上效果不同？",
+        "acceptedAnswer": { "@type": "Answer", "text": "每个AI模型都有自己的提示词语法。Midjourney使用逗号分隔的描述词加参数（--ar、--v），Stable Diffusion使用括号内的权重（keyword:1.2），Flux偏好详细的自然语言，DALL-E 3最适合完整句子。为一个模型优化的提示词在另一个模型上效果会很差。" }
+      },
+      {
+        "@type": "Question",
+        "name": "更长的提示词会产生更好的结果吗？",
+        "acceptedAnswer": { "@type": "Answer", "text": "不一定。过长的提示词可能会稀释重要元素并在描述词之间造成冲突。大多数模型都有token限制（Stable Diffusion为75个，Midjourney和Flux更多）。应该专注于术语的质量和精确性，而不是数量。" }
+      },
+      {
+        "@type": "Question",
+        "name": "如何学习AI艺术的提示词工程？",
+        "acceptedAnswer": { "@type": "Answer", "text": "最好的方法是使用图像转提示词工具分析你喜欢的图像，理解描述它们的术语。然后每次只修改一个元素观察其效果。浏览社区画廊（Midjourney Showcase、CivitAI）学习产生优秀结果的提示词也很有帮助。" }
+      }
+    ]
+  }
+  </script>
+    <!-- Google AdSense -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4499206373485728" crossorigin="anonymous"></script>
+    <!-- Web Push Notifications -->
+<script src="https://cdn.onesignal.com/sdks/web/v16/OneSignalSDK.page.js" defer></script>
+<script>
+  window.OneSignalDeferred = window.OneSignalDeferred || [];
+  OneSignalDeferred.push(async function(OneSignal) {
+    await OneSignal.init({
+      appId: "REPLACE_WITH_ONESIGNAL_APP_ID",
+      notifyButton: { enable: false }
+    });
+  });
+</script>
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="inner">
+      <a href="/zh/" class="site-logo"><img src="/favicon.svg" alt="ImageToPrompt" width="48" height="48"><div class="site-logo-text">ImageTo<span class="accent">Prompt</span><span class="site-logo-sub">免费AI提示词生成器</span></div></a>
+      <nav class="site-nav" aria-label="主导航">
+        <div class="nav-dropdown">
+          <button class="nav-dropdown-trigger" aria-haspopup="true" aria-expanded="false">Tools <span class="nav-chevron" aria-hidden="true">&#9660;</span></button>
+          <div class="nav-dropdown-menu" role="menu">
+            <div class="nav-mega-grid">
+              <div class="nav-mega-col">
+                <div class="nav-mega-heading">&#128444; IMAGE TOOLS</div>
+                <a href="/" role="menuitem" class="nav-mega-tool">Image to Prompt <span class="nav-mega-arrow">&#8594;</span></a>
+                <a href="/text-to-prompt/" role="menuitem" class="nav-mega-tool">Text to Prompt <span class="nav-mega-arrow">&#8594;</span></a>
+                <a href="/describe-image/" role="menuitem" class="nav-mega-tool">Describe Image <span class="nav-new-badge">NEW</span> <span class="nav-mega-arrow">&#8594;</span></a>
+                <div class="nav-mega-models-label">Models</div>
+                <div class="nav-mega-models"><a href="/midjourney-prompt-generator/">Midjourney</a><span class="nav-dot">&#xB7;</span><a href="/stable-diffusion-prompt-generator/">SD</a></div>
+                <div class="nav-mega-models"><a href="/flux-prompt-generator/">Flux</a><span class="nav-dot">&#xB7;</span><a href="/dall-e-prompt-generator/">DALL&#xB7;E&#xA0;3</a></div>
+                <div class="nav-mega-models"><a href="/adobe-firefly-prompt-generator/">Firefly</a><span class="nav-dot">&#xB7;</span><a href="/leonardo-ai-prompt-generator/">Leonardo</a></div>
+                <div class="nav-mega-models"><a href="/ideogram-prompt-generator/">Ideogram</a></div>
+              </div>
+              <div class="nav-mega-divider" aria-hidden="true"></div>
+              <div class="nav-mega-col">
+                <div class="nav-mega-heading">&#127909; VIDEO TOOLS</div>
+                <a href="/?tab=image-to-video" role="menuitem" class="nav-mega-tool">Image to Video <span class="nav-mega-arrow">&#8594;</span></a>
+                <a href="/?tab=text-to-video" role="menuitem" class="nav-mega-tool">Text to Video <span class="nav-mega-arrow">&#8594;</span></a>
+                <div class="nav-mega-models-label">Models</div>
+                <div class="nav-mega-models"><a href="/veo-prompt-generator/">Veo</a><span class="nav-dot">&#xB7;</span><a href="/kling-prompt-generator/">Kling</a></div>
+                <div class="nav-mega-models"><a href="/runway-prompt-generator/">Runway</a><span class="nav-dot">&#xB7;</span><a href="/pika-prompt-generator/">Pika</a></div>
+                <div class="nav-mega-models"><a href="/luma-prompt-generator/">Luma</a><span class="nav-dot">&#xB7;</span><a href="/sora-prompt-generator/">Sora</a></div>
+                <div class="nav-mega-models"><a href="/minimax-prompt-generator/">Minimax</a><span class="nav-dot">&#xB7;</span><a href="/stable-video-prompt-generator/">Stable</a></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <a href="/zh/blog/">博客</a>
+        <a href="/zh/pricing/" class="nav-pill-pricing">价格</a>
+        <a href="/zh/about/" class="nav-pill-about">关于</a>
+        <a href="/zh/" class="nav-try-free">免费试用 &#8594;</a>
+        <button id="theme-toggle" onclick="toggleTheme()" aria-label="切换主题" title="切换主题">&#9728;&#xFE0F;</button>
+  </nav>
+    </div>
+  </header>
+
+  <nav class="breadcrumb" aria-label="面包屑导航">
+    <a href="/zh/">首页</a><span class="sep">&#8250;</span>
+    <a href="/zh/blog/">博客</a><span class="sep">&#8250;</span>
+    <span>提示词工程常见错误</span>
+  </nav>
+
+  <div class="page-wrapper">
+
+    <header class="article-header">
+      <p class="article-tag">提示词工程</p>
+      <h1>15个AI提示词工程常见错误及修复方法</h1>
+      <div class="article-meta">
+        <span>2026年3月</span>
+        <span class="dot">&#183;</span>
+        <span>阅读时间11分钟</span>
+        <span class="dot">&#183;</span>
+        <span>Midjourney &#183; Stable Diffusion &#183; Flux &#183; DALL&#183;E 3</span>
+        <span class="dot">&#183;</span>
+        <span>更新于2026年3月</span>
+      </div>
+    </header>
+
+    <div class="article-body">
+
+      <p>大多数人第一次使用AI图像生成器时都会产生平庸的结果——不是因为工具不好，而是因为编写提示词是一项需要练习才能掌握的技能。令人沮丧的是，无论使用哪种工具，无论经验水平如何，同样的基本错误总是反复出现。好消息是，一旦你知道这些错误是什么，它们都是可以修复的。</p>
+
+      <p>本指南涵盖了15个最常见的提示词工程错误、每个错误为什么会造成问题，以及——最重要的——如何修复它们。每个错误都附带修改前后的提示词对比，让你直观感受差异。</p>
+
+      <nav class="toc" aria-label="目录">
+        <details open>
+          <summary>本指南内容</summary>
+          <ol>
+            <li><a href="#cuowu-1">错误1：提示词太模糊</a></li>
+            <li><a href="#cuowu-2">错误2：使用错误的模型语法</a></li>
+            <li><a href="#cuowu-3">错误3：概念过载</a></li>
+            <li><a href="#cuowu-4">错误4：忽略光照</a></li>
+            <li><a href="#cuowu-5">错误5：忽视宽高比和构图</a></li>
+            <li><a href="#cuowu-6-10">错误6-10：结构与技术</a></li>
+            <li><a href="#cuowu-11-15">错误11-15：高级优化</a></li>
+            <li><a href="#xiufu-fangfa">如何修复这些错误</a></li>
+            <li><a href="#changjian-wenti">常见问题</a></li>
+          </ol>
+        </details>
+      </nav>
+
+      <div class="callout">
+        <p><strong>提示：</strong>学习避免这些错误的有效方法是用我们的<a href="/">图像转提示词工具</a>分析你喜欢的图像。你可以看到什么样的术语和结构能产生好的结果。</p>
+      </div>
+
+      <h2 id="cuowu-1">错误1：提示词太模糊</h2>
+
+      <p>这是最普遍的错误。像<code>a beautiful landscape</code>这样的提示词不会给模型任何具体方向。AI会用"美丽风景"的统计平均值来填充你的模糊描述，结果既通用又不可预测。</p>
+
+      <h3>修改前（模糊）</h3>
+      <div class="code-block"><code>a beautiful landscape</code></div>
+
+      <h3>修改后（具体）</h3>
+      <div class="code-block"><code>misty mountain valley at dawn, pine forests descending into fog-filled basin, golden sunrise breaking through clouds, aerial perspective, landscape photography, warm earth tones --ar 16:9 --v 6.1</code></div>
+
+      <p>修改后的版本明确了地点（山谷）、时间（黎明）、氛围（薄雾）、视角（航拍）、风格（风景摄影）、色调（暖色调大地色系）和技术参数。模型有了足够信息来生成一致的结果。</p>
+
+      <h2 id="cuowu-2">错误2：使用错误的模型语法</h2>
+
+      <p>每个AI模型都说着不同的"语言"。在Stable Diffusion里用Midjourney语法——或反过来——会产生糟糕的结果。这就像用中文跟一个只懂英文的人说话。</p>
+
+      <div class="table-wrap">
+      <table class="comparison-table">
+        <thead>
+          <tr>
+            <th>模型</th>
+            <th>正确语法</th>
+            <th>常见错误</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Midjourney</td>
+            <td><code>portrait, golden hour --ar 2:3 --v 6.1</code></td>
+            <td>使用权重语法 <code>(portrait:1.2)</code></td>
+          </tr>
+          <tr>
+            <td>Stable Diffusion</td>
+            <td><code>(portrait:1.2), golden hour, (bokeh:0.8)</code></td>
+            <td>使用 <code>--ar</code> 或 <code>--v</code></td>
+          </tr>
+          <tr>
+            <td>Flux</td>
+            <td><code>A portrait photograph taken during golden hour with warm light</code></td>
+            <td>使用标签而不是句子</td>
+          </tr>
+          <tr>
+            <td>DALL-E 3</td>
+            <td><code>A warm portrait photograph with golden hour sunlight</code></td>
+            <td>使用技术参数语法</td>
+          </tr>
+        </tbody>
+      </table>
+      </div>
+
+      <h2 id="cuowu-3">错误3：概念过载</h2>
+
+      <p>把每一个有趣的想法都塞进一个提示词——"赛博朋克武士骑着龙穿越霓虹灯下的东京暴雨同时与机器人战斗旁边还有樱花瀑布背景有一轮月亮"。AI模型平衡竞争概念的能力有限。当你给出8个不同的想法时，它会试图取平均值或只选择训练数据中最主导的概念。结果就是视觉混乱。</p>
+
+      <p><strong>修复方法：</strong>选择一个主要主题、一个环境和一种氛围。其他一切都是这三者的辅助细节。如果你有很多想法，分成多张图片生成——每张一个聚焦的概念——而不是一张过载的图片。</p>
+
+      <h2 id="cuowu-4">错误4：忽略光照</h2>
+
+      <p>描述了场景的每个元素——主题、环境、风格——却对光照只字未提。光照是将一张技术上正确的图像变成震撼作品的关键。没有光照指令，AI会默认使用平淡的通用工作室照明，让最有趣的主题看起来都很无聊。</p>
+
+      <p><strong>修复方法：</strong>始终至少包含一个光照描述词：</p>
+      <ul>
+        <li><strong>时段：</strong>golden hour, blue hour, midday harsh sun, pre-dawn</li>
+        <li><strong>光源：</strong>natural window light, backlit, candlelit, neon sign lighting</li>
+        <li><strong>品质：</strong>dramatic chiaroscuro, soft diffused, harsh direct, volumetric god rays</li>
+        <li><strong>色温：</strong>warm amber glow, cool blue moonlight, orange fire light</li>
+      </ul>
+
+      <h2 id="cuowu-5">错误5：忽视宽高比和构图</h2>
+
+      <p>总是用正方形格式生成图像，并且从不提及构图（相机角度、取景、透视）。人像需要竖版格式，风景需要横版，YouTube缩略图需要16:9。使用错误的宽高比会迫使AI做出构图妥协。</p>
+
+      <ul>
+        <li><strong>宽高比：</strong><code>--ar 16:9</code>（Midjourney）、<code>landscape format</code>、<code>vertical portrait orientation</code></li>
+        <li><strong>相机角度：</strong>overhead bird's eye view, low angle, eye level, Dutch tilt</li>
+        <li><strong>取景：</strong>extreme close-up, medium shot, wide establishing shot, rule of thirds</li>
+        <li><strong>镜头：</strong>wide angle, telephoto, fisheye, macro</li>
+      </ul>
+
+      <h2 id="cuowu-6-10">错误6-10：结构与技术</h2>
+
+      <h3>错误6：不使用负面提示词</h3>
+      <p>负面提示词在Stable Diffusion中至关重要，在Midjourney中也很有用（通过<code>--no</code>）。没有负面提示词，你就无法阻止模型产生变形的手指、模糊的面部和水印等瑕疵。标准负面提示词基础：</p>
+      <div class="code-block"><code>blurry, low quality, deformed, bad anatomy, extra limbs, extra fingers, watermark, text, signature, cropped, worst quality, low resolution, ugly, duplicate</code></div>
+
+      <h3>错误7：使用过时的模型版本</h3>
+      <p>在Midjourney v6.1已经可用时还在用v4，或者在SDXL能提供更好质量时仍使用SD 1.5模型。模型版本之间的质量差异巨大。在每个项目开始前确认你使用的是当前推荐版本。</p>
+
+      <h3>错误8：照搬别人的提示词</h3>
+      <p>从Reddit或PromptHero复制提示词并原封不动地运行，然后困惑为什么结果与示例图不同。共享的提示词与特定的模型、版本、种子值和设置绑定。将共享提示词作为起点而非配方使用——提取其中有效的风格和结构元素，为你的工具重写。</p>
+
+      <h3>错误9：不指定媒介或渲染风格</h3>
+      <p>描述了要展示什么，但没说如何渲染——让模型猜测你想要照片、数字插画、油画还是3D渲染。始终指定一种媒介：</p>
+
+      <div class="table-wrap">
+      <table class="comparison-table">
+        <thead>
+          <tr><th>媒介描述词</th><th>产生效果</th></tr>
+        </thead>
+        <tbody>
+          <tr><td><code>photorealistic, DSLR photography</code></td><td>具有相机特性的照片级图像</td></tr>
+          <tr><td><code>digital concept art</code></td><td>专业插画风格</td></tr>
+          <tr><td><code>oil painting, impasto texture</code></td><td>传统绘画效果，可见笔触</td></tr>
+          <tr><td><code>watercolor illustration</code></td><td>柔和通透的水彩风格</td></tr>
+          <tr><td><code>3D render, octane render</code></td><td>CG渲染效果，光线追踪</td></tr>
+        </tbody>
+      </table>
+      </div>
+
+      <h3>错误10：使用矛盾的描述词</h3>
+      <p>将互相排斥的风格描述词组合在一起——"cinematic photography AND flat design AND watercolor illustration"。选择一种视觉语域并坚持使用。如果想融合风格，要明确具体："watercolor illustration with a cinematic color palette and moody atmospheric lighting"是连贯的，因为它指定了清晰的媒介（水彩）加上风格影响。</p>
+
+      <h2 id="cuowu-11-15">错误11-15：高级优化</h2>
+
+      <h3>错误11：在Stable Diffusion中过度使用权重</h3>
+      <p>使用过高的注意力权重如<code>(subject:2.5)</code>或<code>((((beautiful))))</code>。大多数SD模型中1.3-1.5以上的权重会导致视觉瑕疵。保持权重在0.8到1.3之间进行微调。用描述性语言代替权重值——"strikingly beautiful"比<code>(beautiful:2.0)</code>更有效。</p>
+
+      <h3>错误12：忘记质量标签</h3>
+      <p>在SD提示词中忘记加入质量信号词。像<code>masterpiece</code>、<code>best quality</code>、<code>highly detailed</code>这样的标签会引导模型使用训练集中的高质量样本。在每个SD提示词开头加上质量锚点：</p>
+      <div class="code-block"><code>masterpiece, best quality, highly detailed, sharp focus, 8k uhd, [你的实际提示词]</code></div>
+
+      <h3>错误13：使用名人或品牌名称</h3>
+      <p>直接用"portrait of [某名人]"这样的提示词。内容过滤器会拦截或降级结果，而且即使通过了，模型对特定人物的表现也往往不一致。改为描述视觉特征：发色、发型、面部结构、大致年龄等。</p>
+
+      <h3>错误14：一次失败就放弃</h3>
+      <p>提交一个提示词，看到结果不匹配就断定工具不行。专业AI艺术家很少在第一次生成就得到最佳作品。第一次输出是诊断信息——它告诉你模型从提示词中理解了什么。养成迭代习惯：识别具体问题、修改一个元素、重新生成、对比。大多数有经验的AI艺术家在满意之前会迭代10-30次。</p>
+
+      <h3>错误15：忽视模型的原生优势</h3>
+      <p>试图在Midjourney中生成文字重型图形，在DALL·E 3中做写实产品摄影，或在Flux中做动漫角色设计。每个模型都有真正的优势和劣势。</p>
+
+      <div class="table-wrap">
+      <table class="comparison-table">
+        <thead>
+          <tr><th>用例</th><th>最佳模型</th><th>避免使用</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>写实人物/环境</td><td>Flux 1.1 Pro</td><td>Midjourney（风格化过重）</td></tr>
+          <tr><td>艺术/编辑插画</td><td>Midjourney v6.1</td><td>DALL·E 3（太直白）</td></tr>
+          <tr><td>图像中的文字</td><td>Ideogram 2.0</td><td>Midjourney、SD</td></tr>
+          <tr><td>游戏/概念艺术</td><td>Leonardo AI、Midjourney</td><td>DALL·E 3</td></tr>
+          <tr><td>动漫/漫画风格</td><td>NovelAI、Niji Journey</td><td>Flux</td></tr>
+          <tr><td>自定义微调风格</td><td>Stable Diffusion XL</td><td>任何闭源模型</td></tr>
+        </tbody>
+      </table>
+      </div>
+
+      <div class="cta-inline">
+        <p>分析已有图像来理解什么样的术语能产生最好的结果。</p>
+        <a href="/" class="cta-btn-sm">试用图像转提示词 &#8594;</a>
+      </div>
+
+      <h2 id="xiufu-fangfa">如何修复这些错误</h2>
+
+      <p>以下是一个系统化的流程来改善你的提示词：</p>
+
+      <ol>
+        <li><strong>分析你喜欢的图像：</strong>使用图像转提示词工具了解描述你所追求视觉风格的词汇</li>
+        <li><strong>分层构建提示词：</strong>主题 + 风格 + 光照 + 色彩 + 构图 + 技术参数</li>
+        <li><strong>每次只改一个元素：</strong>为了理解每个描述词的效果，两次生成之间只改变一个词</li>
+        <li><strong>使用负面提示词：</strong>主动排除瑕疵和不需要的元素</li>
+        <li><strong>适配模型语法：</strong>按目标模型的规范格式化提示词</li>
+        <li><strong>生成变体：</strong>永远不要只根据一次生成来判断一个提示词</li>
+        <li><strong>记录结果：</strong>保存有效和无效提示词的历史记录</li>
+      </ol>
+
+      <div class="cta-box">
+        <h3>通过实例学习</h3>
+        <p>上传任何图片即可获得专业级提示词。与你自己的提示词对比来发现缺失的元素。</p>
+        <a href="/zh/" class="cta-btn">免费试用 ImageToPrompt &#8594;</a>
+      </div>
+
+      <h2 id="changjian-wenti">常见问题</h2>
+
+      <h3>最常见的提示词工程错误是什么？</h3>
+      <p>最常见的错误是编写过于模糊的提示词。像<code>a beautiful landscape</code>这样的提示词不会给AI模型任何具体方向。需要明确指定地点类型、光照、艺术风格、季节和氛围，才能获得可预测的高质量结果。</p>
+
+      <h3>为什么我的提示词在不同模型上效果不同？</h3>
+      <p>每个AI模型都有自己的提示词语法。Midjourney使用逗号分隔的描述词加参数（<code>--ar</code>、<code>--v</code>），Stable Diffusion使用括号内的权重（<code>keyword:1.2</code>），Flux偏好详细的自然语言，DALL-E 3最适合完整句子。为一个模型优化的提示词在另一个模型上效果会很差。</p>
+
+      <h3>更长的提示词会产生更好的结果吗？</h3>
+      <p>不一定。过长的提示词可能会稀释重要元素并在描述词之间造成冲突。大多数模型都有token限制（Stable Diffusion为75个，Midjourney和Flux更多）。应该专注于术语的质量和精确性，而不是数量。</p>
+
+      <h3>如何学习AI艺术的提示词工程？</h3>
+      <p>最好的方法是使用图像转提示词工具分析你喜欢的图像，理解描述它们的术语。然后每次只修改一个元素观察其效果。浏览社区画廊（Midjourney Showcase、CivitAI）学习产生优秀结果的提示词也很有帮助。</p>
+
+    </div>
+
+    <div class="author-bio">
+      <svg class="author-photo" width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="作者头像"><circle cx="32" cy="32" r="32" fill="#2a1f4e"/><circle cx="32" cy="26" r="11" fill="#7c6bc4"/><ellipse cx="32" cy="52" rx="18" ry="11" fill="#7c6bc4"/></svg>
+      <div class="author-info">
+        <p class="author-name">ImageToPrompt Team</p>
+        <p class="author-desc">我们是一支专业团队，致力于帮助创作者掌握AI图像生成技术。通过图像转提示词工具和AI提示词工程指南，我们为全球艺术家的创作提供支持。</p>
+        <a href="https://x.com/Ilyass14286541" class="author-link">在X上关注 &#8594;</a>
+      </div>
+    </div>
+
+    <div class="related-posts">
+      <h2>相关指南</h2>
+      <div class="related-grid">
+        <a href="/zh/blog/tishi-ci-gongcheng-ai-yishu/" class="related-card">
+          <p class="tag">入门指南</p>
+          <h3>什么是AI艺术提示词工程？</h3>
+        </a>
+        <a href="/zh/blog/stable-diffusion-fumian-tishi-ci/" class="related-card">
+          <p class="tag">Stable Diffusion</p>
+          <h3>Stable Diffusion负面提示词指南</h3>
+        </a>
+        <a href="/zh/blog/midjourney-tishi-ci-zhinan-2026/" class="related-card">
+          <p class="tag">Midjourney</p>
+          <h3>Midjourney提示词完全指南 2026</h3>
+        </a>
+        <a href="/zh/blog/stable-diffusion-tishi-ci-zhinan/" class="related-card">
+          <p class="tag">Stable Diffusion</p>
+          <h3>Stable Diffusion提示词完全指南</h3>
+        </a>
+      </div>
+    </div>
+
+  </div>
+
+  <footer class="footer-4col">
+    <div class="f4-inner">
+      <div class="f4-brand">
+        <img src="/favicon.svg" alt="ImageToPrompt" width="28" height="28">
+        <span class="f4-brand-name">ImageTo<span class="accent">Prompt</span></span>
+        <span class="f4-brand-sub">&mdash; Free AI Prompt Generator</span>
+      </div>
+      <div class="f4-grid">
+        <div class="f4-section">
+          <h4 class="f4-heading">Image Prompt Tools</h4>
+          <a href="/">Image to Prompt</a>
+          <a href="/text-to-prompt/">Text to Prompt</a>
+      <a href="/describe-image/">Describe Image</a>
+          <a href="/midjourney-prompt-generator/">Midjourney</a>
+          <a href="/stable-diffusion-prompt-generator/">Stable Diffusion</a>
+          <a href="/flux-prompt-generator/">Flux</a>
+          <a href="/dall-e-prompt-generator/">DALL-E 3</a>
+          <a href="/adobe-firefly-prompt-generator/">Adobe Firefly</a>
+          <a href="/leonardo-ai-prompt-generator/">Leonardo AI</a>
+          <a href="/ideogram-prompt-generator/">Ideogram</a>
+        </div>
+        <div class="f4-section">
+          <h4 class="f4-heading">Video Prompt Tools</h4>
+          <a href="/image-to-video-prompt/">Image to Video Prompt</a>
+          <a href="/text-to-video-prompt/">Text to Video Prompt</a>
+          <a href="/veo-prompt-generator/">Veo / Flow Studio</a>
+          <a href="/kling-prompt-generator/">Kling AI</a>
+          <a href="/runway-prompt-generator/">Runway Gen-3</a>
+          <a href="/pika-prompt-generator/">Pika</a>
+          <a href="/luma-prompt-generator/">Luma Dream Machine</a>
+          <a href="/sora-prompt-generator/">Sora</a>
+          <a href="/minimax-prompt-generator/">Minimax</a>
+          <a href="/stable-video-prompt-generator/">Stable Video</a>
+        </div>
+        <div class="f4-section">
+          <h4 class="f4-heading">Resources</h4>
+          <a href="/zh/blog/">博客</a>
+          <a href="/zh/about/">关于</a>
+          <a href="/zh/pricing/">价格</a>
+          <a href="/contact/">Contact</a>
+          <a href="/privacy-policy/">Privacy Policy</a>
+          <a href="/terms-of-service/">Terms of Service</a>
+        </div>
+        <div class="f4-section">
+          <h4 class="f4-heading">Languages</h4>
+          <a href="/">English</a>
+          <a href="/fr/">Fran&#231;ais</a>
+          <a href="/ar/">&#1575;&#1604;&#1593;&#1585;&#1576;&#1610;&#1577;</a>
+          <a href="/es/">Espa&#241;ol</a>
+          <a href="/ko/">&#54620;&#44397;&#50612;</a>
+          <a href="/ja/">&#26085;&#26412;&#35486;</a>
+          <a href="/ru/">&#1056;&#1091;&#1089;&#1089;&#1082;&#1080;&#1081;</a>
+          <a href="/zh/">中文</a>
+        </div>
+      </div>
+      <div class="f4-bottom">
+        <p>&#169; 2026 ImageToPrompt.dev &#8212; Free AI Prompt Generator</p>
+        <p>Your images are never stored. All analysis is ephemeral and private.</p>
+      </div>
+    </div>
+  </footer>
+
+<script src="/newsletter-inject.js" defer></script>
+<script src="/nav.js" defer></script>
+  <script>
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', function() {
+    navigator.serviceWorker.register('/sw.js')
+      .catch(function(err) { console.warn('SW registration failed:', err); });
+  });
+}
+</script>
+</body>
+</html>

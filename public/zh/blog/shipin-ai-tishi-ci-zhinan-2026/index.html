@@ -1,0 +1,510 @@
+<!doctype html>
+<html lang="zh">
+<head>
+  <script src="/theme-toggle.js"></script>
+  <meta charset="UTF-8" />
+  <link rel="dns-prefetch" href="https://www.googletagmanager.com">
+<link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="max-image-preview:large, index, follow">
+  <meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="ImageToPrompt">
+  <title>2026年AI视频提示词指南：Veo、Kling、Runway和Sora提示词撰写全攻略</title>
+  <meta name="description" content="2026年AI视频提示词完整指南。涵盖Veo、Kling、Runway Gen-3、Pika、Luma和Sora的提示词撰写方法，附示例和模型对比。" />
+  <link rel="canonical" href="https://www.imagetoprompt.dev/zh/blog/shipin-ai-tishi-ci-zhinan-2026/" />
+  <link rel="alternate" hreflang="zh" href="https://www.imagetoprompt.dev/zh/blog/shipin-ai-tishi-ci-zhinan-2026/" />
+  <link rel="alternate" hreflang="en" href="https://www.imagetoprompt.dev/blog/video-prompt-guide-2026/" />
+  <link rel="alternate" hreflang="x-default" href="https://www.imagetoprompt.dev/blog/video-prompt-guide-2026/" />
+  <meta property="og:title" content="2026年AI视频提示词指南：Veo、Kling、Runway和Sora提示词撰写全攻略" />
+  <meta property="og:description" content="2026年AI视频提示词完整指南。涵盖Veo、Kling、Runway、Sora等所有模型。" />
+  <meta property="og:url" content="https://www.imagetoprompt.dev/zh/blog/shipin-ai-tishi-ci-zhinan-2026/" />
+  <meta property="og:type" content="article" />
+  <meta property="og:image" content="https://www.imagetoprompt.dev/og-image.png" />
+  <meta property="og:site_name" content="ImageToPrompt" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="2026年AI视频提示词指南：Veo、Kling、Runway和Sora" />
+  <meta name="twitter:description" content="2026年AI视频提示词完整指南。" />
+  <meta name="twitter:image" content="https://www.imagetoprompt.dev/og-image.png" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="48x48" href="/favicon-48.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+  <link rel="manifest" href="/site.webmanifest" />
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="/fonts/space-grotesk-700.woff2" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="/fonts/inter-400.woff2" />
+  <link rel="stylesheet" href="/theme.css">
+  <link rel="preload" href="/blog.css" as="style" onload="this.onload=null;this.rel='stylesheet'"><noscript><link rel="stylesheet" href="/blog.css"></noscript>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "2026年AI视频提示词指南：Veo、Kling、Runway和Sora提示词撰写全攻略",
+    "description": "2026年AI视频提示词完整指南。涵盖所有主流视频模型的提示词撰写方法。",
+    "image": "https://www.imagetoprompt.dev/og-image.png",
+    "datePublished": "2026-03-12",
+    "dateModified": "2026-03-24",
+    "inLanguage": "zh",
+    "author": {
+      "@type": "Person",
+      "name": "ImageToPrompt Team",
+      "url": "https://www.imagetoprompt.dev/"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "ImageToPrompt",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://www.imagetoprompt.dev/favicon.svg"
+      }
+    },
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https://www.imagetoprompt.dev/zh/blog/shipin-ai-tishi-ci-zhinan-2026/"
+    }
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "图片提示词和视频提示词有什么区别？",
+        "acceptedAnswer": { "@type": "Answer", "text": "视频提示词增加了图片提示词所没有的时间维度。您不仅需要描述视觉外观，还需要描述主体的运动、镜头运动（平移、倾斜、缩放、跟踪）、期望的时长和转场。典型结构为：场景 + 动作/运动 + 镜头运动 + 氛围 + 时长。" }
+      },
+      {
+        "@type": "Question",
+        "name": "如何在AI视频提示词中描述镜头运动？",
+        "acceptedAnswer": { "@type": "Answer", "text": "使用精确的电影术语：'slow dolly forward' 表示向前推进，'smooth tracking shot following the subject' 表示侧面跟随，'crane shot rising from ground level' 表示升起，'handheld camera with subtle shake' 表示纪录片风格。提示词中的运动描述越精确，效果越好。" }
+      },
+      {
+        "@type": "Question",
+        "name": "2026年AI能生成多长的视频？",
+        "acceptedAnswer": { "@type": "Answer", "text": "时长因模型而异：Veo最长8秒，Kling最长10秒，Runway Gen-3最长10秒，Sora最长20秒，Pika最长4秒。更长的视频可以通过将多个片段用一致的转场串联来制作。" }
+      },
+      {
+        "@type": "Question",
+        "name": "哪个AI视频模型最适合初学者？",
+        "acceptedAnswer": { "@type": "Answer", "text": "Runway Gen-3凭借直观的界面和稳定的效果，是最适合初学者的选择。Pika也是不错的入门选项，适合短小精致的创意片段。Google的Veo在画质和易用性之间提供了良好平衡。对于更有经验的用户，Kling在运动控制方面提供了最多的灵活性。" }
+      }
+    ]
+  }
+  </script>
+    <!-- Google AdSense -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4499206373485728" crossorigin="anonymous"></script>
+    <!-- Web Push Notifications -->
+<script src="https://cdn.onesignal.com/sdks/web/v16/OneSignalSDK.page.js" defer></script>
+<script>
+  window.OneSignalDeferred = window.OneSignalDeferred || [];
+  OneSignalDeferred.push(async function(OneSignal) {
+    await OneSignal.init({
+      appId: "REPLACE_WITH_ONESIGNAL_APP_ID",
+      notifyButton: { enable: false }
+    });
+  });
+</script>
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="inner">
+      <a href="/zh/" class="site-logo"><img src="/favicon.svg" alt="ImageToPrompt" width="48" height="48"><div class="site-logo-text">ImageTo<span class="accent">Prompt</span><span class="site-logo-sub">免费AI提示词生成器</span></div></a>
+      <nav class="site-nav" aria-label="主导航">
+        <div class="nav-dropdown">
+          <button class="nav-dropdown-trigger" aria-haspopup="true" aria-expanded="false">Tools <span class="nav-chevron" aria-hidden="true">&#9660;</span></button>
+          <div class="nav-dropdown-menu" role="menu">
+            <div class="nav-mega-grid">
+              <div class="nav-mega-col">
+                <div class="nav-mega-heading">&#128444; IMAGE TOOLS</div>
+                <a href="/" role="menuitem" class="nav-mega-tool">Image to Prompt <span class="nav-mega-arrow">&#8594;</span></a>
+                <a href="/text-to-prompt/" role="menuitem" class="nav-mega-tool">Text to Prompt <span class="nav-mega-arrow">&#8594;</span></a>
+                <a href="/describe-image/" role="menuitem" class="nav-mega-tool">Describe Image <span class="nav-new-badge">NEW</span> <span class="nav-mega-arrow">&#8594;</span></a>
+                <div class="nav-mega-models-label">Models</div>
+                <div class="nav-mega-models"><a href="/midjourney-prompt-generator/">Midjourney</a><span class="nav-dot">&#xB7;</span><a href="/stable-diffusion-prompt-generator/">SD</a></div>
+                <div class="nav-mega-models"><a href="/flux-prompt-generator/">Flux</a><span class="nav-dot">&#xB7;</span><a href="/dall-e-prompt-generator/">DALL&#xB7;E&#xA0;3</a></div>
+                <div class="nav-mega-models"><a href="/adobe-firefly-prompt-generator/">Firefly</a><span class="nav-dot">&#xB7;</span><a href="/leonardo-ai-prompt-generator/">Leonardo</a></div>
+                <div class="nav-mega-models"><a href="/ideogram-prompt-generator/">Ideogram</a></div>
+              </div>
+              <div class="nav-mega-divider" aria-hidden="true"></div>
+              <div class="nav-mega-col">
+                <div class="nav-mega-heading">&#127909; VIDEO TOOLS</div>
+                <a href="/?tab=image-to-video" role="menuitem" class="nav-mega-tool">Image to Video <span class="nav-mega-arrow">&#8594;</span></a>
+                <a href="/?tab=text-to-video" role="menuitem" class="nav-mega-tool">Text to Video <span class="nav-mega-arrow">&#8594;</span></a>
+                <div class="nav-mega-models-label">Models</div>
+                <div class="nav-mega-models"><a href="/veo-prompt-generator/">Veo</a><span class="nav-dot">&#xB7;</span><a href="/kling-prompt-generator/">Kling</a></div>
+                <div class="nav-mega-models"><a href="/runway-prompt-generator/">Runway</a><span class="nav-dot">&#xB7;</span><a href="/pika-prompt-generator/">Pika</a></div>
+                <div class="nav-mega-models"><a href="/luma-prompt-generator/">Luma</a><span class="nav-dot">&#xB7;</span><a href="/sora-prompt-generator/">Sora</a></div>
+                <div class="nav-mega-models"><a href="/minimax-prompt-generator/">Minimax</a><span class="nav-dot">&#xB7;</span><a href="/stable-video-prompt-generator/">Stable</a></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <a href="/zh/blog/">博客</a>
+        <a href="/zh/pricing/" class="nav-pill-pricing">价格</a>
+        <a href="/zh/about/" class="nav-pill-about">关于</a>
+        <a href="/zh/" class="nav-try-free">免费试用 &#8594;</a>
+        <button id="theme-toggle" onclick="toggleTheme()" aria-label="切换主题" title="切换主题">&#9728;&#xFE0F;</button>
+  </nav>
+    </div>
+  </header>
+
+  <nav class="breadcrumb" aria-label="面包屑导航">
+    <a href="/zh/">首页</a><span class="sep">&#8250;</span>
+    <a href="/zh/blog/">博客</a><span class="sep">&#8250;</span>
+    <span>2026年AI视频提示词指南</span>
+  </nav>
+
+  <div class="page-wrapper">
+
+    <header class="article-header">
+      <p class="article-tag">视频AI</p>
+      <h1>2026年AI视频提示词指南</h1>
+      <div class="article-meta">
+        <span>2026年3月</span>
+        <span class="dot">&#xB7;</span>
+        <span>阅读约12分钟</span>
+        <span class="dot">&#xB7;</span>
+        <span>Veo &#xB7; Kling &#xB7; Runway &#xB7; Sora &#xB7; Pika &#xB7; Luma</span>
+        <span class="dot">&#xB7;</span>
+        <span>2026年3月更新</span>
+      </div>
+    </header>
+
+    <div class="article-body">
+
+      <p>2026年，AI视频生成技术实现了质的飞跃。Google的Veo、Kling AI、Runway Gen-3 Alpha Turbo和OpenAI的Sora等模型能够从简单的文字描述生成令人惊叹的高质量视频片段。但输出质量完全取决于提示词的质量。本指南涵盖了2026年撰写有效AI视频提示词所需的一切知识。</p>
+
+      <nav class="toc" aria-label="目录">
+        <details open>
+          <summary>本指南内容</summary>
+          <ol>
+            <li><a href="#video-prompt-structure">AI视频提示词的结构</a></li>
+            <li><a href="#subject-motion">描述主体运动</a></li>
+            <li><a href="#camera-movements">镜头运动</a></li>
+            <li><a href="#duration">时长与时间节奏</a></li>
+            <li><a href="#model-tips">各模型技巧</a></li>
+            <li><a href="#prompt-examples">完整提示词示例</a></li>
+            <li><a href="#common-mistakes">AI视频常见错误</a></li>
+            <li><a href="#faq">常见问题</a></li>
+          </ol>
+        </details>
+      </nav>
+
+      <div class="callout">
+        <p><strong>快速生成：</strong>使用我们的<a href="/?tab=text-to-video">文本转视频提示词工具</a>为任何模型生成优化的视频提示词，或使用<a href="/?tab=image-to-video">图片转视频提示词工具</a>为现有图片制作动画。</p>
+      </div>
+
+      <h2 id="video-prompt-structure">AI视频提示词的结构</h2>
+
+      <p>与描述静止瞬间的图片提示词不同，视频提示词必须捕捉时间维度。推荐的结构遵循五层方案：</p>
+
+      <ol>
+        <li><strong>场景：</strong>布景、环境和光照条件</li>
+        <li><strong>主体：</strong>视频中出现什么，以及外观如何</li>
+        <li><strong>动作：</strong>主体在做什么，如何移动</li>
+        <li><strong>镜头运动：</strong>摄像机相对于场景如何移动</li>
+        <li><strong>氛围与风格：</strong>情感基调、电影风格、色彩搭配</li>
+      </ol>
+
+      <h3>完整结构示例</h3>
+      <div class="code-block"><code>A golden retriever runs joyfully along a sandy beach at sunset. Waves crash gently in the background. The camera tracks alongside the dog at ground level, creating a dynamic low-angle shot. Warm golden hour light, cinematic color grading, shallow depth of field, slow motion 120fps look.</code></div>
+
+      <p>这个提示词覆盖了五个层次：场景（日落海滩）、主体（金毛寻回犬）、动作（欢快奔跑）、摄像机（低角度侧面跟踪）和氛围（黄金时刻、电影感、慢动作）。</p>
+
+      <h2 id="subject-motion">描述主体运动</h2>
+
+      <p>运动是视频提示词中最重要也最微妙的组成部分。当前的AI模型理解广泛的运动类型，但词汇的精确性至关重要。</p>
+
+      <h3>人物运动</h3>
+      <ul>
+        <li><code>walking slowly through</code> — 缓慢穿过某个场所</li>
+        <li><code>turning to face the camera</code> — 转向面对镜头</li>
+        <li><code>gently brushing hair from face</code> — 轻柔自然的手势</li>
+        <li><code>running and leaping over obstacles</code> — 动态动作</li>
+        <li><code>standing still, wind blowing through clothes</code> — 主体静止但有微妙环境运动</li>
+      </ul>
+
+      <h3>自然运动</h3>
+      <ul>
+        <li><code>clouds drifting slowly across the sky</code> — 延时摄影效果的云彩</li>
+        <li><code>leaves falling gently in autumn wind</code> — 秋叶飘落</li>
+        <li><code>waves rolling toward shore</code> — 海浪运动</li>
+        <li><code>flame flickering in darkness</code> — 闪烁的火焰</li>
+        <li><code>rain droplets hitting puddle surface</code> — 雨滴落在水面上</li>
+      </ul>
+
+      <h3>物体运动</h3>
+      <ul>
+        <li><code>coffee steam rising from mug</code> — 蒸汽升腾</li>
+        <li><code>car driving along winding mountain road</code> — 车辆沿蜿蜒山路行驶</li>
+        <li><code>rotating slowly on display platform</code> — 产品展示旋转</li>
+      </ul>
+
+      <h2 id="camera-movements">镜头运动</h2>
+
+      <p>镜头运动为视频增添动感和深度。每个模型对这些指令的解释各不相同，但电影摄影术语是通用的。</p>
+
+      <div class="table-wrap">
+      <table class="comparison-table">
+        <thead>
+          <tr>
+            <th>运动类型</th>
+            <th>提示词术语</th>
+            <th>效果</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>水平摇镜</td>
+            <td><code>slow pan left/right</code></td>
+            <td>摄像机在轴上水平旋转</td>
+          </tr>
+          <tr>
+            <td>推镜</td>
+            <td><code>dolly forward / push in</code></td>
+            <td>摄像机向主体移动</td>
+          </tr>
+          <tr>
+            <td>横移跟踪</td>
+            <td><code>tracking shot following subject</code></td>
+            <td>摄像机横向跟随主体</td>
+          </tr>
+          <tr>
+            <td>垂直摇镜</td>
+            <td><code>tilt up/down</code></td>
+            <td>摄像机垂直旋转</td>
+          </tr>
+          <tr>
+            <td>吊臂镜头</td>
+            <td><code>crane shot rising upward</code></td>
+            <td>摄像机垂直升起</td>
+          </tr>
+          <tr>
+            <td>环绕镜头</td>
+            <td><code>orbiting around subject</code></td>
+            <td>摄像机围绕主体旋转</td>
+          </tr>
+          <tr>
+            <td>变焦</td>
+            <td><code>slow zoom in / zoom out</code></td>
+            <td>渐进式焦距变化</td>
+          </tr>
+          <tr>
+            <td>固定镜头</td>
+            <td><code>static camera, locked tripod</code></td>
+            <td>摄像机固定不动，仅主体运动</td>
+          </tr>
+        </tbody>
+      </table>
+      </div>
+
+      <h2 id="duration">时长与时间节奏</h2>
+
+      <p>视频提示词中的时间管理影响节奏和动作密度。以下是2026年各模型的最长时长：</p>
+
+      <div class="table-wrap">
+      <table class="comparison-table">
+        <thead>
+          <tr>
+            <th>模型</th>
+            <th>最长时长</th>
+            <th>最高分辨率</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>Veo（Google）</td><td>8秒</td><td>1080p</td></tr>
+          <tr><td>Kling AI</td><td>10秒</td><td>1080p</td></tr>
+          <tr><td>Runway Gen-3</td><td>10秒</td><td>1080p</td></tr>
+          <tr><td>Sora（OpenAI）</td><td>20秒</td><td>1080p</td></tr>
+          <tr><td>Pika</td><td>4秒</td><td>1080p</td></tr>
+          <tr><td>Luma Dream Machine</td><td>5秒</td><td>1080p</td></tr>
+          <tr><td>Minimax</td><td>6秒</td><td>1080p</td></tr>
+          <tr><td>Stable Video</td><td>4秒</td><td>1024x576</td></tr>
+        </tbody>
+      </table>
+      </div>
+
+      <p>对于短片段（3-5秒），专注于单一动作或运动。对于较长的片段（8-20秒），可以描述具有明确开头和结尾的动作序列。</p>
+
+      <h2 id="model-tips">各模型技巧</h2>
+
+      <h3>Veo（Google）</h3>
+      <p>Veo对描述性自然语言响应良好。优先使用包含电影参考的完整场景描述。加入质量指示词如 <code>cinematic quality, professional color grading, 4K look</code>。</p>
+
+      <h3>Kling AI</h3>
+      <p>Kling在人物动作和面部表情方面表现卓越。对物理动作要精确描述：用 <code>woman slowly raises her hand and waves</code> 而非 <code>woman waving</code>。Kling能很好地处理多主体的复杂动作。</p>
+
+      <h3>Runway Gen-3 Alpha Turbo</h3>
+      <p>Runway在图生视频模式下表现出色。提供高质量的源图片，然后只用提示词描述所需的运动即可。在文生视频模式下，Runway偏好简洁直接的提示词。</p>
+
+      <h3>Sora</h3>
+      <p>OpenAI的Sora理解包含多个连续动作的长而复杂的提示词。它是处理叙事场景和时间推进最好的模型。使用如 <code>first... then... finally...</code> 的短语来结构化动作序列。</p>
+
+      <h3>Pika</h3>
+      <p>Pika非常适合短小精致的创意片段。它擅长创意视觉效果和风格转换。使用 <code>3D rotate</code>、<code>inflate</code>、<code>melt</code> 等术语获得独特的特效。</p>
+
+      <h3>Luma Dream Machine</h3>
+      <p>Luma对氛围感描述响应良好。强调氛围和光照而非复杂动作。非常适合动态风景和沉思式场景。</p>
+
+      <h2 id="prompt-examples">完整提示词示例</h2>
+
+      <h3>电影感城市场景</h3>
+      <div class="code-block"><code>Aerial drone shot over a futuristic city at dusk. Neon lights reflect off wet streets below. The camera slowly descends through the skyline, weaving between glass skyscrapers. Cyberpunk atmosphere, volumetric fog, teal and orange color palette, cinematic widescreen, Blade Runner aesthetic.</code></div>
+
+      <h3>情感肖像</h3>
+      <div class="code-block"><code>Close-up portrait of an elderly man sitting by a window. Soft afternoon light illuminates one side of his weathered face. He slowly turns toward the camera with a gentle, knowing smile. Shallow depth of field, warm golden tones, intimate documentary style, 85mm lens look.</code></div>
+
+      <h3>自然延时摄影</h3>
+      <div class="code-block"><code>Time-lapse of wildflowers blooming in an alpine meadow. Clouds race overhead casting moving shadows across the landscape. The camera is positioned low among the flowers, tilting upward toward snow-capped peaks. Vivid saturated colors, National Geographic style, golden hour to blue hour transition.</code></div>
+
+      <h3>产品商业广告</h3>
+      <div class="code-block"><code>Luxury perfume bottle rotating slowly on a reflective black surface. Soft studio lighting creating elegant highlights on the glass. Golden liquid catches the light as the bottle turns 360 degrees. Minimalist black background, premium product photography, smooth continuous rotation.</code></div>
+
+      <div class="cta-inline">
+        <p>使用我们的免费工具为任何模型生成优化的视频提示词。</p>
+        <a href="/?tab=text-to-video" class="cta-btn-sm">文本转视频提示词 &#8594;</a>
+      </div>
+
+      <h2 id="common-mistakes">AI视频常见错误</h2>
+
+      <ol class="mistakes-list">
+        <li><strong>在短片段中描述过多动作。</strong>4秒的片段只能包含一个主要动作。如果描述三个不同的动作，模型会试图全部压缩进去，产生混乱和抖动的结果。</li>
+        <li><strong>忽略镜头运动。</strong>没有镜头指示时，模型会选择一个通常静态且无趣的默认角度。始终指定所需的镜头运动，以增加视频的动感。</li>
+        <li><strong>将图片提示词用于视频。</strong>图片提示词关注的是静态外观。视频提示词需要图片提示词所不包含的运动、时间性和序列描述。</li>
+        <li><strong>不针对目标模型调整。</strong>每个视频模型各有所长。在Pika（短片段）上使用复杂动作场景提示词，或在Sora（擅长长序列）上使用极简提示词，都是浪费模型的潜力。</li>
+        <li><strong>忘记光照条件。</strong>光照在视频中比图片更重要，因为它影响每一帧的一致性。光照定义不清可能在帧与帧之间造成令人不适的视觉不一致。</li>
+      </ol>
+
+      <div class="cta-box">
+        <h3>创建您的第一个AI视频提示词</h3>
+        <p>使用我们的免费工具为Veo、Kling、Runway、Sora及所有AI视频模型生成优化的视频提示词。</p>
+        <a href="/?tab=text-to-video" class="cta-btn">试用文本转视频提示词 &#8594;</a>
+      </div>
+
+      <h2 id="faq">常见问题</h2>
+
+      <h3>图片提示词和视频提示词有什么区别？</h3>
+      <p>视频提示词增加了图片提示词所没有的时间维度。您不仅需要描述视觉外观，还需要描述主体的运动、镜头运动（平移、倾斜、缩放、跟踪）、期望的时长和转场。典型结构为：场景 + 动作/运动 + 镜头运动 + 氛围 + 时长。</p>
+
+      <h3>如何在AI视频提示词中描述镜头运动？</h3>
+      <p>使用精确的电影术语：<code>slow dolly forward</code> 表示向前推进，<code>smooth tracking shot following the subject</code> 表示侧面跟随，<code>crane shot rising from ground level</code> 表示升起，<code>handheld camera with subtle shake</code> 表示纪录片风格。提示词中的运动描述越精确，效果越好。</p>
+
+      <h3>2026年AI能生成多长的视频？</h3>
+      <p>时长因模型而异：Veo最长8秒，Kling最长10秒，Runway Gen-3最长10秒，Sora最长20秒，Pika最长4秒。更长的视频可以通过将多个片段用一致的转场串联来制作。</p>
+
+      <h3>哪个AI视频模型最适合初学者？</h3>
+      <p>Runway Gen-3凭借直观的界面和稳定的效果，是最适合初学者的选择。Pika也是不错的入门选项，适合短小精致的创意片段。Google的Veo在画质和易用性之间提供了良好平衡。对于更有经验的用户，Kling在运动控制方面提供了最多的灵活性。</p>
+
+    </div>
+
+    <div class="author-bio">
+      <svg class="author-photo" width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="作者头像"><circle cx="32" cy="32" r="32" fill="#2a1f4e"/><circle cx="32" cy="26" r="11" fill="#7c6bc4"/><ellipse cx="32" cy="52" rx="18" ry="11" fill="#7c6bc4"/></svg>
+      <div class="author-info">
+        <p class="author-name">ImageToPrompt Team</p>
+        <p class="author-desc">我们是一支专业团队，致力于帮助创作者掌握AI图像生成技术。通过图像转提示词工具和AI提示词工程指南，我们为全球艺术家的创作提供支持。</p>
+        <a href="https://x.com/Ilyass14286541" class="author-link">在X上关注 &#8594;</a>
+      </div>
+    </div>
+
+    <div class="related-posts">
+      <h2>相关指南</h2>
+      <div class="related-grid">
+        <a href="/zh/blog/veo-vs-kling-vs-runway/" class="related-card">
+          <p class="tag">对比</p>
+          <h3>Veo vs Kling vs Runway vs Sora</h3>
+        </a>
+        <a href="/zh/blog/wenben-zhuan-tishi-ci-shengchengqi/" class="related-card">
+          <p class="tag">工具</p>
+          <h3>文本转提示词：完整指南</h3>
+        </a>
+        <a href="/zh/blog/stable-diffusion-vs-midjourney-vs-dalle3/" class="related-card">
+          <p class="tag">图像AI对比</p>
+          <h3>SD vs Midjourney vs DALL-E 3 vs Flux</h3>
+        </a>
+        <a href="/blog/prompt-engineering-for-ai-art/" class="related-card">
+          <p class="tag">入门</p>
+          <h3>Prompt Engineering for AI Art</h3>
+        </a>
+      </div>
+    </div>
+
+  </div>
+
+  <footer class="footer-4col">
+    <div class="f4-inner">
+      <div class="f4-brand">
+        <img src="/favicon.svg" alt="ImageToPrompt" width="28" height="28">
+        <span class="f4-brand-name">ImageTo<span class="accent">Prompt</span></span>
+        <span class="f4-brand-sub">&mdash; Free AI Prompt Generator</span>
+      </div>
+      <div class="f4-grid">
+        <div class="f4-section">
+          <h4 class="f4-heading">Image Prompt Tools</h4>
+          <a href="/">Image to Prompt</a>
+          <a href="/text-to-prompt/">Text to Prompt</a>
+      <a href="/describe-image/">Describe Image</a>
+          <a href="/midjourney-prompt-generator/">Midjourney</a>
+          <a href="/stable-diffusion-prompt-generator/">Stable Diffusion</a>
+          <a href="/flux-prompt-generator/">Flux</a>
+          <a href="/dall-e-prompt-generator/">DALL-E 3</a>
+          <a href="/adobe-firefly-prompt-generator/">Adobe Firefly</a>
+          <a href="/leonardo-ai-prompt-generator/">Leonardo AI</a>
+          <a href="/ideogram-prompt-generator/">Ideogram</a>
+        </div>
+        <div class="f4-section">
+          <h4 class="f4-heading">Video Prompt Tools</h4>
+          <a href="/image-to-video-prompt/">Image to Video Prompt</a>
+          <a href="/text-to-video-prompt/">Text to Video Prompt</a>
+          <a href="/veo-prompt-generator/">Veo / Flow Studio</a>
+          <a href="/kling-prompt-generator/">Kling AI</a>
+          <a href="/runway-prompt-generator/">Runway Gen-3</a>
+          <a href="/pika-prompt-generator/">Pika</a>
+          <a href="/luma-prompt-generator/">Luma Dream Machine</a>
+          <a href="/sora-prompt-generator/">Sora</a>
+          <a href="/minimax-prompt-generator/">Minimax</a>
+          <a href="/stable-video-prompt-generator/">Stable Video</a>
+        </div>
+        <div class="f4-section">
+          <h4 class="f4-heading">Resources</h4>
+          <a href="/zh/blog/">博客</a>
+          <a href="/zh/about/">关于</a>
+          <a href="/zh/pricing/">价格</a>
+          <a href="/contact/">Contact</a>
+          <a href="/privacy-policy/">Privacy Policy</a>
+          <a href="/terms-of-service/">Terms of Service</a>
+        </div>
+        <div class="f4-section">
+          <h4 class="f4-heading">Languages</h4>
+          <a href="/">English</a>
+          <a href="/fr/">Fran&#231;ais</a>
+          <a href="/ar/">&#1575;&#1604;&#1593;&#1585;&#1576;&#1610;&#1577;</a>
+          <a href="/es/">Espa&#241;ol</a>
+          <a href="/ko/">&#54620;&#44397;&#50612;</a>
+          <a href="/ja/">&#26085;&#26412;&#35486;</a>
+          <a href="/ru/">&#1056;&#1091;&#1089;&#1089;&#1082;&#1080;&#1081;</a>
+          <a href="/zh/">&#20013;&#25991;</a>
+        </div>
+      </div>
+      <div class="f4-bottom">
+        <p>&#169; 2026 ImageToPrompt.dev &#8212; Free AI Prompt Generator</p>
+        <p>Your images are never stored. All analysis is ephemeral and private.</p>
+      </div>
+    </div>
+  </footer>
+
+<script src="/newsletter-inject.js" defer></script>
+<script src="/nav.js" defer></script>
+  <script>
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', function() {
+    navigator.serviceWorker.register('/sw.js')
+      .catch(function(err) { console.warn('SW registration failed:', err); });
+  });
+}
+</script>
+</body>
+</html>

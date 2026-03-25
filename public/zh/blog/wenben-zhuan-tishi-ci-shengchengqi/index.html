@@ -1,0 +1,516 @@
+<!doctype html>
+<html lang="zh">
+<head>
+  <script src="/theme-toggle.js"></script>
+  <meta charset="UTF-8" />
+  <link rel="dns-prefetch" href="https://www.googletagmanager.com">
+<link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="max-image-preview:large, index, follow">
+  <meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="ImageToPrompt">
+  <title>文本转提示词：如何将简单描述变为专业AI提示词</title>
+  <meta name="description" content="学习如何将简单的文字描述转化为专业的AI提示词，适用于Midjourney、Stable Diffusion、Flux和DALL-E 3。5个前后对比示例、实用技巧和免费工具。" />
+  <link rel="canonical" href="https://www.imagetoprompt.dev/zh/blog/wenben-zhuan-tishi-ci-shengchengqi/" />
+  <link rel="alternate" hreflang="zh" href="https://www.imagetoprompt.dev/zh/blog/wenben-zhuan-tishi-ci-shengchengqi/" />
+  <link rel="alternate" hreflang="en" href="https://www.imagetoprompt.dev/blog/text-to-prompt-generator/" />
+  <link rel="alternate" hreflang="x-default" href="https://www.imagetoprompt.dev/blog/text-to-prompt-generator/" />
+  <meta property="og:title" content="文本转提示词：如何将简单描述变为专业AI提示词" />
+  <meta property="og:description" content="将简单描述转化为专业AI提示词。适用于所有模型的免费工具。" />
+  <meta property="og:url" content="https://www.imagetoprompt.dev/zh/blog/wenben-zhuan-tishi-ci-shengchengqi/" />
+  <meta property="og:type" content="article" />
+  <meta property="og:image" content="https://www.imagetoprompt.dev/og-image.png" />
+  <meta property="og:site_name" content="ImageToPrompt" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="文本转提示词：如何将简单描述变为专业AI提示词" />
+  <meta name="twitter:description" content="将简单描述转化为专业AI提示词。所有模型适用的免费工具。" />
+  <meta name="twitter:image" content="https://www.imagetoprompt.dev/og-image.png" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="48x48" href="/favicon-48.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+  <link rel="manifest" href="/site.webmanifest" />
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="/fonts/space-grotesk-700.woff2" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="/fonts/inter-400.woff2" />
+  <link rel="stylesheet" href="/theme.css">
+  <link rel="preload" href="/blog.css" as="style" onload="this.onload=null;this.rel='stylesheet'"><noscript><link rel="stylesheet" href="/blog.css"></noscript>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "文本转提示词：如何将简单描述变为专业AI提示词",
+    "description": "学习如何将简单的文字描述转化为专业的AI提示词，适用于Midjourney、Stable Diffusion、Flux和DALL-E 3。",
+    "image": "https://www.imagetoprompt.dev/og-image.png",
+    "datePublished": "2026-03-15",
+    "dateModified": "2026-03-24",
+    "inLanguage": "zh",
+    "author": {
+      "@type": "Person",
+      "name": "ImageToPrompt Team",
+      "url": "https://www.imagetoprompt.dev/"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "ImageToPrompt",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://www.imagetoprompt.dev/favicon.svg"
+      }
+    },
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https://www.imagetoprompt.dev/zh/blog/wenben-zhuan-tishi-ci-shengchengqi/"
+    }
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "文本转提示词生成器是如何工作的？",
+        "acceptedAnswer": { "@type": "Answer", "text": "文本转提示词生成器使用AI（ImageToPrompt 使用 Anthropic 的 Claude）将简单描述转化为针对目标AI模型优化的专业提示词。AI会自动添加光照、构图、风格细节以及特定模型的技术参数。" }
+      },
+      {
+        "@type": "Question",
+        "name": "文本转提示词和图像转提示词有什么区别？",
+        "acceptedAnswer": { "@type": "Answer", "text": "图像转提示词分析已有图片来提取描述性提示词。文本转提示词则将您的文字描述（即使简短模糊）丰富为详细的专业提示词。两个工具互补使用：有视觉参考时用图像转提示词，从创意出发时用文本转提示词。" }
+      },
+      {
+        "@type": "Question",
+        "name": "可以用中文输入描述吗？",
+        "acceptedAnswer": { "@type": "Answer", "text": "可以。您可以用中文写描述，生成器会产出针对目标AI模型优化的英文提示词。由于图像生成模型对英文提示词响应最好，自动翻译确保了更好的效果。" }
+      },
+      {
+        "@type": "Question",
+        "name": "文本转提示词生成器是免费的吗？",
+        "acceptedAnswer": { "@type": "Answer", "text": "是的，文本转提示词生成器免费使用，每日限额10次（与其他ImageToPrompt工具共享）。无需注册。如需更多使用量，请查看我们的价格页面。" }
+      }
+    ]
+  }
+  </script>
+    <!-- Google AdSense -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4499206373485728" crossorigin="anonymous"></script>
+    <!-- Web Push Notifications -->
+<script src="https://cdn.onesignal.com/sdks/web/v16/OneSignalSDK.page.js" defer></script>
+<script>
+  window.OneSignalDeferred = window.OneSignalDeferred || [];
+  OneSignalDeferred.push(async function(OneSignal) {
+    await OneSignal.init({
+      appId: "REPLACE_WITH_ONESIGNAL_APP_ID",
+      notifyButton: { enable: false }
+    });
+  });
+</script>
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="inner">
+      <a href="/zh/" class="site-logo"><img src="/favicon.svg" alt="ImageToPrompt" width="48" height="48"><div class="site-logo-text">ImageTo<span class="accent">Prompt</span><span class="site-logo-sub">免费AI提示词生成器</span></div></a>
+      <nav class="site-nav" aria-label="主导航">
+        <div class="nav-dropdown">
+          <button class="nav-dropdown-trigger" aria-haspopup="true" aria-expanded="false">Tools <span class="nav-chevron" aria-hidden="true">&#9660;</span></button>
+          <div class="nav-dropdown-menu" role="menu">
+            <div class="nav-mega-grid">
+              <div class="nav-mega-col">
+                <div class="nav-mega-heading">&#128444; IMAGE TOOLS</div>
+                <a href="/" role="menuitem" class="nav-mega-tool">Image to Prompt <span class="nav-mega-arrow">&#8594;</span></a>
+                <a href="/text-to-prompt/" role="menuitem" class="nav-mega-tool">Text to Prompt <span class="nav-mega-arrow">&#8594;</span></a>
+                <a href="/describe-image/" role="menuitem" class="nav-mega-tool">Describe Image <span class="nav-new-badge">NEW</span> <span class="nav-mega-arrow">&#8594;</span></a>
+                <div class="nav-mega-models-label">Models</div>
+                <div class="nav-mega-models"><a href="/midjourney-prompt-generator/">Midjourney</a><span class="nav-dot">&#xB7;</span><a href="/stable-diffusion-prompt-generator/">SD</a></div>
+                <div class="nav-mega-models"><a href="/flux-prompt-generator/">Flux</a><span class="nav-dot">&#xB7;</span><a href="/dall-e-prompt-generator/">DALL&#xB7;E&#xA0;3</a></div>
+                <div class="nav-mega-models"><a href="/adobe-firefly-prompt-generator/">Firefly</a><span class="nav-dot">&#xB7;</span><a href="/leonardo-ai-prompt-generator/">Leonardo</a></div>
+                <div class="nav-mega-models"><a href="/ideogram-prompt-generator/">Ideogram</a></div>
+              </div>
+              <div class="nav-mega-divider" aria-hidden="true"></div>
+              <div class="nav-mega-col">
+                <div class="nav-mega-heading">&#127909; VIDEO TOOLS</div>
+                <a href="/?tab=image-to-video" role="menuitem" class="nav-mega-tool">Image to Video <span class="nav-mega-arrow">&#8594;</span></a>
+                <a href="/?tab=text-to-video" role="menuitem" class="nav-mega-tool">Text to Video <span class="nav-mega-arrow">&#8594;</span></a>
+                <div class="nav-mega-models-label">Models</div>
+                <div class="nav-mega-models"><a href="/veo-prompt-generator/">Veo</a><span class="nav-dot">&#xB7;</span><a href="/kling-prompt-generator/">Kling</a></div>
+                <div class="nav-mega-models"><a href="/runway-prompt-generator/">Runway</a><span class="nav-dot">&#xB7;</span><a href="/pika-prompt-generator/">Pika</a></div>
+                <div class="nav-mega-models"><a href="/luma-prompt-generator/">Luma</a><span class="nav-dot">&#xB7;</span><a href="/sora-prompt-generator/">Sora</a></div>
+                <div class="nav-mega-models"><a href="/minimax-prompt-generator/">Minimax</a><span class="nav-dot">&#xB7;</span><a href="/stable-video-prompt-generator/">Stable</a></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <a href="/zh/blog/">博客</a>
+        <a href="/zh/pricing/" class="nav-pill-pricing">价格</a>
+        <a href="/zh/about/" class="nav-pill-about">关于</a>
+        <a href="/zh/" class="nav-try-free">免费试用 &#8594;</a>
+        <button id="theme-toggle" onclick="toggleTheme()" aria-label="切换主题" title="切换主题">&#9728;&#xFE0F;</button>
+  </nav>
+    </div>
+  </header>
+
+  <nav class="breadcrumb" aria-label="面包屑导航">
+    <a href="/zh/">首页</a><span class="sep">&#8250;</span>
+    <a href="/zh/blog/">博客</a><span class="sep">&#8250;</span>
+    <span>文本转提示词</span>
+  </nav>
+
+  <div class="page-wrapper">
+
+    <header class="article-header">
+      <p class="article-tag">AI工具</p>
+      <h1>文本转提示词：完整指南</h1>
+      <div class="article-meta">
+        <span>2026年3月</span>
+        <span class="dot">&#xB7;</span>
+        <span>阅读约9分钟</span>
+        <span class="dot">&#xB7;</span>
+        <span>Midjourney &#xB7; Stable Diffusion &#xB7; Flux &#xB7; DALL&#xB7;E 3</span>
+        <span class="dot">&#xB7;</span>
+        <span>2026年3月更新</span>
+      </div>
+    </header>
+
+    <div class="article-body">
+
+      <p>你脑海中有一个创意——一片奇幻景观、一幅电影感肖像、一个产品设计——但不知道如何将其转化为有效的AI提示词。这正是文本转提示词生成器要解决的问题。它接收你的简单描述，将其转化为针对目标AI模型优化的专业提示词。</p>
+
+      <nav class="toc" aria-label="目录">
+        <details open>
+          <summary>本指南内容</summary>
+          <ol>
+            <li><a href="#how-it-works">文本转提示词是如何工作的？</a></li>
+            <li><a href="#before-after">前后对比示例</a></li>
+            <li><a href="#model-output">按模型优化的输出</a></li>
+            <li><a href="#style-modes">风格模式</a></li>
+            <li><a href="#use-cases">应用场景</a></li>
+            <li><a href="#tips">撰写更好描述的技巧</a></li>
+            <li><a href="#text-vs-image">文本转提示词 vs 图像转提示词</a></li>
+            <li><a href="#faq">常见问题</a></li>
+          </ol>
+        </details>
+      </nav>
+
+      <div class="callout">
+        <p><strong>立即体验：</strong>用几个词描述你的创意，几秒钟内获得专业提示词。使用我们的<a href="/text-to-prompt/">文本转提示词工具</a>，免费、无需注册。</p>
+      </div>
+
+      <h2 id="how-it-works">文本转提示词是如何工作的？</h2>
+
+      <p>ImageToPrompt 的文本转提示词生成器使用 Anthropic 的 Claude AI 分析您的描述并将其丰富为专业提示词。这个过程分三步进行：</p>
+
+      <ol>
+        <li><strong>意图分析：</strong>AI识别描述中的主题、期望氛围和隐含风格</li>
+        <li><strong>内容丰富：</strong>AI添加缺失的细节——光照、构图、色彩搭配、艺术手法、画质参数</li>
+        <li><strong>格式化：</strong>提示词按照目标AI模型（Midjourney、Stable Diffusion、Flux等）的特定语法进行格式化</li>
+      </ol>
+
+      <p>最终结果是一个完整的提示词，可以直接粘贴到您的AI图像生成器中。每个提示词包含主提示词、负面提示词（适用时）以及一个创意变体供您选择。</p>
+
+      <h2 id="before-after">前后对比示例</h2>
+
+      <p>以下是具体示例，展示简单描述如何被转化为不同模型的专业提示词。</p>
+
+      <h3>示例一：奇幻风景</h3>
+
+      <h4>输入描述：</h4>
+      <div class="code-block"><code>一片夜晚发光的魔法森林</code></div>
+
+      <h4>生成的 Midjourney 提示词：</h4>
+      <div class="code-block"><code>enchanted forest at night, ancient towering trees with bioluminescent bark glowing soft cyan and violet, fireflies floating between twisted branches, mystical fog carpet on mossy ground, ethereal moonlight filtering through canopy, fantasy atmosphere, magical realism, rich jewel-tone palette, cinematic depth of field --ar 16:9 --v 6.1 --style raw</code></div>
+
+      <h4>生成的 Stable Diffusion 提示词：</h4>
+      <div class="code-block"><code>(enchanted forest:1.3), nighttime, (bioluminescent trees:1.2), ancient twisted trunks glowing cyan and violet, (fireflies:0.9), mystical fog on ground, moonlight rays through canopy, fantasy landscape, (magical atmosphere:1.1), highly detailed, 8k resolution, masterpiece, best quality
+
+Negative: blurry, low quality, daylight, modern objects, text, watermark, deformed trees, oversaturated</code></div>
+
+      <h3>示例二：职业肖像</h3>
+
+      <h4>输入描述：</h4>
+      <div class="code-block"><code>一位女企业家在现代办公室里的肖像</code></div>
+
+      <h4>生成的 Flux 提示词：</h4>
+      <div class="code-block"><code>Professional portrait photograph of a confident businesswoman in her 30s, standing in a contemporary minimalist office with floor-to-ceiling windows. She wears a tailored navy blazer over a crisp white blouse. Natural afternoon light streams in from the left, creating soft shadows and warm skin tones. The background features a sleek desk with a laptop and a modern art piece on the wall. Shot with Canon EOS R5, 85mm f/1.4 lens, shallow depth of field blurring the background, editorial portrait style, corporate photography, warm color grading.</code></div>
+
+      <h3>示例三：产品设计</h3>
+
+      <h4>输入描述：</h4>
+      <div class="code-block"><code>深色背景上的奢华手表</code></div>
+
+      <h4>生成的 DALL-E 3 提示词：</h4>
+      <div class="code-block"><code>A luxury Swiss chronograph watch photographed on a dark slate surface. The watch has a deep blue dial with rose gold indices and hands, a sapphire crystal catching subtle light reflections. The black leather strap curves elegantly. Dramatic studio lighting from the upper right creates precise highlights on the polished metal case. Dark moody background with gentle gradient. Product photography style, high-end commercial quality, ultra-sharp detail on watch face and mechanisms.</code></div>
+
+      <h2 id="model-output">按模型优化的输出</h2>
+
+      <p>相同的概念会因目标模型不同而生成截然不同的提示词。这就是选择模型至关重要的原因。</p>
+
+      <div class="table-wrap">
+      <table class="comparison-table">
+        <thead>
+          <tr>
+            <th>方面</th>
+            <th>Midjourney</th>
+            <th>Stable Diffusion</th>
+            <th>Flux</th>
+            <th>DALL-E 3</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>格式</td>
+            <td>描述词 + 参数</td>
+            <td>加权标签</td>
+            <td>详细自然语言</td>
+            <td>完整句子</td>
+          </tr>
+          <tr>
+            <td>负面提示词</td>
+            <td><code>--no</code> 标志</td>
+            <td>独立字段</td>
+            <td>不支持</td>
+            <td>不支持</td>
+          </tr>
+          <tr>
+            <td>理想长度</td>
+            <td>30-60词</td>
+            <td>20-50个标签</td>
+            <td>50-100词</td>
+            <td>40-80词</td>
+          </tr>
+          <tr>
+            <td>附加参数</td>
+            <td><code>--ar, --v, --style, --stylize</code></td>
+            <td>CFG, steps, sampler</td>
+            <td>极少</td>
+            <td>无</td>
+          </tr>
+        </tbody>
+      </table>
+      </div>
+
+      <h2 id="style-modes">风格模式</h2>
+
+      <p>ImageToPrompt 的文本转提示词生成器提供六种风格模式，影响生成提示词的角度和词汇：</p>
+
+      <ul>
+        <li><strong>电影感：</strong>戏剧性光照、景深、电影参考、情绪氛围。适合叙事场景和富有表现力的肖像。</li>
+        <li><strong>技术型：</strong>精确参数、镜头规格、真实拍摄条件。适合产品照片和建筑渲染。</li>
+        <li><strong>艺术型：</strong>引用艺术流派、绘画技法、创意构图。适合艺术作品和概念插画。</li>
+        <li><strong>极简型：</strong>仅包含核心元素的精炼提示词。当您想让模型自由发挥时使用。</li>
+        <li><strong>史诗型：</strong>宏大规模、戏剧性氛围、壮观细节。适合奇幻景观和科幻场景。</li>
+        <li><strong>摄影型：</strong>专业摄影术语、镜头类型、曝光设置。适合写实效果。</li>
+      </ul>
+
+      <h2 id="use-cases">应用场景</h2>
+
+      <h3>内容创作者</h3>
+      <p>社交媒体内容创作者使用文本转提示词快速生成与品牌一致的视觉内容。用几个词描述你的创意，选择风格，即可获得可在Midjourney或Flux中直接使用的专业提示词。</p>
+
+      <h3>设计师和插画师</h3>
+      <p>专业设计师使用该工具在进入制作阶段前探索概念方向。一个结构良好的提示词可以在几分钟内可视化数十种创意方向，大大加速概念构思阶段。</p>
+
+      <h3>营销团队</h3>
+      <p>营销团队生成活动视觉素材、产品模型和演示插图。技术模式对专业产品照片特别有用。</p>
+
+      <h3>教育培训</h3>
+      <p>教师和培训师创建课程视觉素材。文本转提示词可以将任何教学概念转化为视觉插图，无需平面设计技能。</p>
+
+      <h3>游戏开发</h3>
+      <p>独立开发者和工作室使用该工具创建概念设计、游戏资产和视觉参考。艺术模式生成针对概念设计和游戏插画优化的提示词。</p>
+
+      <div class="cta-inline">
+        <p>几秒钟内将你的下一个创意转化为专业提示词。</p>
+        <a href="/text-to-prompt/" class="cta-btn-sm">试用文本转提示词 &#8594;</a>
+      </div>
+
+      <h2 id="tips">撰写更好描述的技巧</h2>
+
+      <p>描述越清晰，生成的提示词越好。以下技巧帮助您最大化输出质量：</p>
+
+      <ol>
+        <li><strong>提及主体：</strong>"一只猫"不如"窗台上的暹罗猫"有用</li>
+        <li><strong>说明氛围：</strong>"忧郁的氛围"、"欢快多彩"、"阴暗神秘"可以引导AI产生所需的情感基调</li>
+        <li><strong>指定风格（如果心中有数）：</strong>"动漫风格"、"街头摄影"、"油画"帮助AI正确格式化提示词</li>
+        <li><strong>添加空间背景：</strong>"在巴黎咖啡馆里"、"在宇宙飞船中"、"在热带雨林中"为场景增添深度</li>
+        <li><strong>如果重要，提及光照：</strong>"日落时分"、"霓虹灯光"、"柔和的晨光"对氛围影响巨大</li>
+      </ol>
+
+      <p>您无需面面俱到——生成器会填补空白。但您提供的每一个细节都会提高结果的精确度。</p>
+
+      <h2 id="text-vs-image">文本转提示词 vs 图像转提示词</h2>
+
+      <p>两个工具互为补充，覆盖不同的使用场景：</p>
+
+      <div class="table-wrap">
+      <table class="comparison-table">
+        <thead>
+          <tr>
+            <th>维度</th>
+            <th>文本转提示词</th>
+            <th>图像转提示词</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>起点</td>
+            <td>一个创意或文字描述</td>
+            <td>一张已有的参考图片</td>
+          </tr>
+          <tr>
+            <td>最佳使用时机</td>
+            <td>从零开始的创意构想</td>
+            <td>想要复现或分析某种风格</td>
+          </tr>
+          <tr>
+            <td>创意控制</td>
+            <td>高——由您定义方向</td>
+            <td>中——图片引导结果</td>
+          </tr>
+          <tr>
+            <td>速度</td>
+            <td>非常快（3-5秒）</td>
+            <td>快（5-10秒）</td>
+          </tr>
+          <tr>
+            <td>典型使用场景</td>
+            <td>新创作、概念构想</td>
+            <td>风格复现、视觉分析</td>
+          </tr>
+        </tbody>
+      </table>
+      </div>
+
+      <p>高效的工作流程结合使用两个工具：用图像转提示词分析启发你的参考图片，然后用文本转提示词基于识别出的风格元素创建原创变体。</p>
+
+      <div class="cta-box">
+        <h3>试用文本转提示词生成器</h3>
+        <p>用几个词描述你的创意，获得针对Midjourney、Stable Diffusion、Flux或DALL-E 3优化的专业提示词。免费、无需注册。</p>
+        <a href="/text-to-prompt/" class="cta-btn">免费试用文本转提示词 &#8594;</a>
+      </div>
+
+      <h2 id="faq">常见问题</h2>
+
+      <h3>文本转提示词生成器是如何工作的？</h3>
+      <p>文本转提示词生成器使用AI（ImageToPrompt使用Anthropic的Claude）将简单描述转化为针对目标AI模型优化的专业提示词。AI会自动添加光照、构图、风格细节以及特定模型的技术参数。</p>
+
+      <h3>文本转提示词和图像转提示词有什么区别？</h3>
+      <p>图像转提示词分析已有图片来提取描述性提示词。文本转提示词将您的文字描述（即使简短模糊）丰富为详细的专业提示词。两个工具互补使用：有视觉参考时用图像转提示词，从创意出发时用文本转提示词。</p>
+
+      <h3>可以用中文输入描述吗？</h3>
+      <p>可以。您可以用中文写描述，生成器会产出针对目标AI模型优化的英文提示词。由于图像生成模型对英文提示词响应最好，自动翻译确保了更好的效果。</p>
+
+      <h3>文本转提示词生成器是免费的吗？</h3>
+      <p>是的，文本转提示词生成器免费使用，每日限额10次（与其他ImageToPrompt工具共享）。无需注册。如需更多使用量，请查看我们的价格页面。</p>
+
+    </div>
+
+    <div class="author-bio">
+      <svg class="author-photo" width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="作者头像"><circle cx="32" cy="32" r="32" fill="#2a1f4e"/><circle cx="32" cy="26" r="11" fill="#7c6bc4"/><ellipse cx="32" cy="52" rx="18" ry="11" fill="#7c6bc4"/></svg>
+      <div class="author-info">
+        <p class="author-name">ImageToPrompt Team</p>
+        <p class="author-desc">我们是一支专业团队，致力于帮助创作者掌握AI图像生成技术。通过图像转提示词工具和AI提示词工程指南，我们为全球艺术家的创作提供支持。</p>
+        <a href="https://x.com/Ilyass14286541" class="author-link">在X上关注 &#8594;</a>
+      </div>
+    </div>
+
+    <div class="related-posts">
+      <h2>相关指南</h2>
+      <div class="related-grid">
+        <a href="/zh/blog/stable-diffusion-vs-midjourney-vs-dalle3/" class="related-card">
+          <p class="tag">对比</p>
+          <h3>SD vs Midjourney vs DALL-E 3 vs Flux</h3>
+        </a>
+        <a href="/zh/blog/veo-vs-kling-vs-runway/" class="related-card">
+          <p class="tag">视频AI</p>
+          <h3>Veo vs Kling vs Runway vs Sora</h3>
+        </a>
+        <a href="/zh/blog/shipin-ai-tishi-ci-zhinan-2026/" class="related-card">
+          <p class="tag">视频AI</p>
+          <h3>2026年AI视频提示词指南</h3>
+        </a>
+        <a href="/blog/convert-image-to-ai-prompt/" class="related-card">
+          <p class="tag">指南</p>
+          <h3>How to Convert Any Image to an AI Prompt</h3>
+        </a>
+      </div>
+    </div>
+
+  </div>
+
+  <footer class="footer-4col">
+    <div class="f4-inner">
+      <div class="f4-brand">
+        <img src="/favicon.svg" alt="ImageToPrompt" width="28" height="28">
+        <span class="f4-brand-name">ImageTo<span class="accent">Prompt</span></span>
+        <span class="f4-brand-sub">&mdash; Free AI Prompt Generator</span>
+      </div>
+      <div class="f4-grid">
+        <div class="f4-section">
+          <h4 class="f4-heading">Image Prompt Tools</h4>
+          <a href="/">Image to Prompt</a>
+          <a href="/text-to-prompt/">Text to Prompt</a>
+      <a href="/describe-image/">Describe Image</a>
+          <a href="/midjourney-prompt-generator/">Midjourney</a>
+          <a href="/stable-diffusion-prompt-generator/">Stable Diffusion</a>
+          <a href="/flux-prompt-generator/">Flux</a>
+          <a href="/dall-e-prompt-generator/">DALL-E 3</a>
+          <a href="/adobe-firefly-prompt-generator/">Adobe Firefly</a>
+          <a href="/leonardo-ai-prompt-generator/">Leonardo AI</a>
+          <a href="/ideogram-prompt-generator/">Ideogram</a>
+        </div>
+        <div class="f4-section">
+          <h4 class="f4-heading">Video Prompt Tools</h4>
+          <a href="/image-to-video-prompt/">Image to Video Prompt</a>
+          <a href="/text-to-video-prompt/">Text to Video Prompt</a>
+          <a href="/veo-prompt-generator/">Veo / Flow Studio</a>
+          <a href="/kling-prompt-generator/">Kling AI</a>
+          <a href="/runway-prompt-generator/">Runway Gen-3</a>
+          <a href="/pika-prompt-generator/">Pika</a>
+          <a href="/luma-prompt-generator/">Luma Dream Machine</a>
+          <a href="/sora-prompt-generator/">Sora</a>
+          <a href="/minimax-prompt-generator/">Minimax</a>
+          <a href="/stable-video-prompt-generator/">Stable Video</a>
+        </div>
+        <div class="f4-section">
+          <h4 class="f4-heading">Resources</h4>
+          <a href="/zh/blog/">博客</a>
+          <a href="/zh/about/">关于</a>
+          <a href="/zh/pricing/">价格</a>
+          <a href="/contact/">Contact</a>
+          <a href="/privacy-policy/">Privacy Policy</a>
+          <a href="/terms-of-service/">Terms of Service</a>
+        </div>
+        <div class="f4-section">
+          <h4 class="f4-heading">Languages</h4>
+          <a href="/">English</a>
+          <a href="/fr/">Fran&#231;ais</a>
+          <a href="/ar/">&#1575;&#1604;&#1593;&#1585;&#1576;&#1610;&#1577;</a>
+          <a href="/es/">Espa&#241;ol</a>
+          <a href="/ko/">&#54620;&#44397;&#50612;</a>
+          <a href="/ja/">&#26085;&#26412;&#35486;</a>
+          <a href="/ru/">&#1056;&#1091;&#1089;&#1089;&#1082;&#1080;&#1081;</a>
+          <a href="/zh/">&#20013;&#25991;</a>
+        </div>
+      </div>
+      <div class="f4-bottom">
+        <p>&#169; 2026 ImageToPrompt.dev &#8212; Free AI Prompt Generator</p>
+        <p>Your images are never stored. All analysis is ephemeral and private.</p>
+      </div>
+    </div>
+  </footer>
+
+<script src="/newsletter-inject.js" defer></script>
+<script src="/nav.js" defer></script>
+  <script>
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', function() {
+    navigator.serviceWorker.register('/sw.js')
+      .catch(function(err) { console.warn('SW registration failed:', err); });
+  });
+}
+</script>
+</body>
+</html>
