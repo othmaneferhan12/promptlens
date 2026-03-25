@@ -383,6 +383,10 @@ const STATIC_PAGES = [
   { path: '/ko/blog/text-to-prompt-generator-gaideu/',              changefreq: 'monthly', priority: '0.7' },
   { path: '/ko/blog/veo-vs-kling-vs-runway/',                       changefreq: 'monthly', priority: '0.7' },
   { path: '/ko/blog/video-ai-prompt-gaideu-2026/',                  changefreq: 'monthly', priority: '0.7' },
+  // Chinese (zh) about, pricing, contact
+  { path: '/zh/about/',                                             changefreq: 'monthly', priority: '0.7' },
+  { path: '/zh/pricing/',                                           changefreq: 'monthly', priority: '0.7' },
+  { path: '/zh/contact/',                                           changefreq: 'monthly', priority: '0.6' },
   // Chinese (zh) blog index + posts
   { path: '/zh/blog/',                                             changefreq: 'weekly',  priority: '0.8' },
   { path: '/zh/blog/adobe-firefly-tishi-ci-jiqiao/',               changefreq: 'monthly', priority: '0.7' },
@@ -413,6 +417,10 @@ const STATIC_PAGES = [
   { path: '/zh/blog/wenben-zhuan-tishi-ci-shengchengqi/',         changefreq: 'monthly', priority: '0.7' },
   { path: '/zh/blog/veo-vs-kling-vs-runway/',                     changefreq: 'monthly', priority: '0.7' },
   { path: '/zh/blog/shipin-ai-tishi-ci-zhinan-2026/',             changefreq: 'monthly', priority: '0.7' },
+  // Portuguese (pt) about, pricing, contact
+  { path: '/pt/about/',                                             changefreq: 'monthly', priority: '0.7' },
+  { path: '/pt/pricing/',                                           changefreq: 'monthly', priority: '0.7' },
+  { path: '/pt/contact/',                                           changefreq: 'monthly', priority: '0.6' },
   // Portuguese (pt) blog index + posts
   { path: '/pt/blog/',                                             changefreq: 'weekly',  priority: '0.8' },
   { path: '/pt/blog/dicas-prompts-adobe-firefly/',                 changefreq: 'monthly', priority: '0.7' },
@@ -443,6 +451,10 @@ const STATIC_PAGES = [
   { path: '/pt/blog/gerador-texto-para-prompt/',                   changefreq: 'monthly', priority: '0.7' },
   { path: '/pt/blog/veo-vs-kling-vs-runway/',                      changefreq: 'monthly', priority: '0.7' },
   { path: '/pt/blog/guia-prompts-video-ia-2026/',                  changefreq: 'monthly', priority: '0.7' },
+  // German (de) about, pricing, contact
+  { path: '/de/about/',                                             changefreq: 'monthly', priority: '0.7' },
+  { path: '/de/pricing/',                                           changefreq: 'monthly', priority: '0.7' },
+  { path: '/de/contact/',                                           changefreq: 'monthly', priority: '0.6' },
   // German (de) blog index + posts
   { path: '/de/blog/',                                             changefreq: 'weekly',  priority: '0.8' },
   { path: '/de/blog/adobe-firefly-prompt-tipps/',                  changefreq: 'monthly', priority: '0.7' },
