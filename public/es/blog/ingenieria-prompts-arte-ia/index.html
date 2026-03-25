@@ -1,0 +1,641 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <script src="/theme-toggle.js"></script>
+  <meta charset="UTF-8" />
+  <link rel="dns-prefetch" href="https://www.googletagmanager.com">
+<link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="max-image-preview:large, index, follow">
+  <meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="ImageToPrompt">
+  <title>Prompt Engineering para Arte IA: Gu&#237;a para Principiantes</title>
+  <meta name="description" content="Aprende las bases del prompt engineering para arte IA. Cubre el sujeto, el estilo, la iluminaci&#243;n, la composici&#243;n y los par&#225;metros t&#233;cnicos con ejemplos concretos para principiantes." />
+  <link rel="canonical" href="https://www.imagetoprompt.dev/es/blog/ingenieria-prompts-arte-ia/" />
+  <link rel="alternate" hreflang="es" href="https://www.imagetoprompt.dev/es/blog/ingenieria-prompts-arte-ia/" />
+  <link rel="alternate" hreflang="en" href="https://www.imagetoprompt.dev/blog/prompt-engineering-for-ai-art/" />
+  <link rel="alternate" hreflang="fr" href="https://www.imagetoprompt.dev/fr/blog/prompt-engineering-art-ia-debutants/" />
+  <link rel="alternate" hreflang="ar" href="https://www.imagetoprompt.dev/ar/blog/handasa-prompts-fan-ia/" />
+  <link rel="alternate" hreflang="x-default" href="https://www.imagetoprompt.dev/blog/prompt-engineering-for-ai-art/" />
+  <meta property="og:title" content="Prompt Engineering para Arte IA: Gu&#237;a para Principiantes" />
+  <meta property="og:description" content="Aprende los fundamentos de la redacci&#243;n de prompts IA eficaces, con ejemplos concretos para Midjourney, Stable Diffusion y Flux." />
+  <meta property="og:url" content="https://www.imagetoprompt.dev/es/blog/ingenieria-prompts-arte-ia/" />
+  <meta property="og:type" content="article" />
+  <meta property="og:image" content="https://www.imagetoprompt.dev/og-image.png" />
+  <meta property="og:site_name" content="ImageToPrompt" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Prompt Engineering para Arte IA: Gu&#237;a para Principiantes" />
+  <meta name="twitter:description" content="Los fundamentos del prompt engineering para crear arte IA impresionante." />
+  <meta name="twitter:image" content="https://www.imagetoprompt.dev/og-image.png" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="48x48" href="/favicon-48.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+  <link rel="manifest" href="/site.webmanifest" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="/fonts/space-grotesk-700.woff2" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="/fonts/inter-400.woff2" />
+  <link rel="stylesheet" href="/theme.css">
+  <link rel="preload" href="/blog.css" as="style" onload="this.onload=null;this.rel='stylesheet'"><noscript><link rel="stylesheet" href="/blog.css"></noscript>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Prompt Engineering para Arte IA: Gu\u00eda para Principiantes",
+    "description": "Aprende las bases del prompt engineering para arte IA. Cubre el sujeto, el estilo, la iluminaci\u00f3n, la composici\u00f3n y los par\u00e1metros t\u00e9cnicos con ejemplos concretos para principiantes.",
+    "image": "https://www.imagetoprompt.dev/og-image.png",
+    "datePublished": "2026-03-10",
+    "dateModified": "2026-03-24",
+    "inLanguage": "es",
+    "author": {
+      "@type": "Person",
+      "name": "ImageToPrompt Team",
+      "url": "https://www.imagetoprompt.dev/"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "ImageToPrompt",
+      "logo": { "@type": "ImageObject", "url": "https://www.imagetoprompt.dev/favicon.svg" }
+    },
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https://www.imagetoprompt.dev/es/blog/ingenieria-prompts-arte-ia/"
+    }
+  }
+  </script>
+    <!-- Google AdSense -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4499206373485728" crossorigin="anonymous"></script>
+    <!-- Web Push Notifications -->
+<script src="https://cdn.onesignal.com/sdks/web/v16/OneSignalSDK.page.js" defer></script>
+<script>
+  window.OneSignalDeferred = window.OneSignalDeferred || [];
+  OneSignalDeferred.push(async function(OneSignal) {
+    await OneSignal.init({
+      appId: "REPLACE_WITH_ONESIGNAL_APP_ID",
+      notifyButton: { enable: false }
+    });
+  });
+</script>
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="inner">
+      <a href="/es/" class="site-logo"><img src="/favicon.svg" alt="ImageToPrompt" width="48" height="48"><div class="site-logo-text">ImageTo<span class="accent">Prompt</span><span class="site-logo-sub">Generador de Prompts IA Gratuito</span></div></a>
+      <nav class="site-nav" aria-label="Navegaci&#243;n principal">
+        <div class="nav-dropdown">
+          <button class="nav-dropdown-trigger" aria-haspopup="true" aria-expanded="false">Tools <span class="nav-chevron" aria-hidden="true">&#9660;</span></button>
+          <div class="nav-dropdown-menu" role="menu">
+            <div class="nav-mega-grid">
+              <div class="nav-mega-col">
+                <div class="nav-mega-heading">&#128444; IMAGE TOOLS</div>
+                <a href="/" role="menuitem" class="nav-mega-tool">Image to Prompt <span class="nav-mega-arrow">&#8594;</span></a>
+                <a href="/text-to-prompt/" role="menuitem" class="nav-mega-tool">Text to Prompt <span class="nav-mega-arrow">&#8594;</span></a>
+                <a href="/describe-image/" role="menuitem" class="nav-mega-tool">Describe Image <span class="nav-new-badge">NEW</span> <span class="nav-mega-arrow">&#8594;</span></a>
+                <div class="nav-mega-models-label">Models</div>
+                <div class="nav-mega-models"><a href="/midjourney-prompt-generator/">Midjourney</a><span class="nav-dot">&#xB7;</span><a href="/stable-diffusion-prompt-generator/">SD</a></div>
+                <div class="nav-mega-models"><a href="/flux-prompt-generator/">Flux</a><span class="nav-dot">&#xB7;</span><a href="/dall-e-prompt-generator/">DALL&#xB7;E&#xA0;3</a></div>
+                <div class="nav-mega-models"><a href="/adobe-firefly-prompt-generator/">Firefly</a><span class="nav-dot">&#xB7;</span><a href="/leonardo-ai-prompt-generator/">Leonardo</a></div>
+                <div class="nav-mega-models"><a href="/ideogram-prompt-generator/">Ideogram</a></div>
+              </div>
+              <div class="nav-mega-divider" aria-hidden="true"></div>
+              <div class="nav-mega-col">
+                <div class="nav-mega-heading">&#127909; VIDEO TOOLS</div>
+                <a href="/?tab=image-to-video" role="menuitem" class="nav-mega-tool">Image to Video <span class="nav-mega-arrow">&#8594;</span></a>
+                <a href="/?tab=text-to-video" role="menuitem" class="nav-mega-tool">Text to Video <span class="nav-mega-arrow">&#8594;</span></a>
+                <div class="nav-mega-models-label">Models</div>
+                <div class="nav-mega-models"><a href="/veo-prompt-generator/">Veo</a><span class="nav-dot">&#xB7;</span><a href="/kling-prompt-generator/">Kling</a></div>
+                <div class="nav-mega-models"><a href="/runway-prompt-generator/">Runway</a><span class="nav-dot">&#xB7;</span><a href="/pika-prompt-generator/">Pika</a></div>
+                <div class="nav-mega-models"><a href="/luma-prompt-generator/">Luma</a><span class="nav-dot">&#xB7;</span><a href="/sora-prompt-generator/">Sora</a></div>
+                <div class="nav-mega-models"><a href="/minimax-prompt-generator/">Minimax</a><span class="nav-dot">&#xB7;</span><a href="/stable-video-prompt-generator/">Stable</a></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <a href="/es/blog/" >Blog</a>
+        <a href="/es/pricing/" class="nav-pill-pricing">Pricing</a>
+        <a href="/es/about/" class="nav-pill-about">About</a>
+        <a href="/es/" class="nav-try-free">Probar &#8594;</a>
+        <button id="theme-toggle" onclick="toggleTheme()" aria-label="Switch theme" title="Switch theme">&#9728;&#xFE0F;</button>
+  </nav>
+    </div>
+  </header>
+
+  <nav class="breadcrumb" aria-label="Migas de pan">
+    <a href="/es/">Inicio</a><span class="sep">&#8250;</span>
+    <a href="/es/blog/">Blog</a><span class="sep">&#8250;</span>
+    <span>Prompt Engineering para Arte IA: Gu&#237;a para Principiantes</span>
+  </nav>
+
+  <div class="page-wrapper">
+
+    <header class="article-header">
+      <p class="article-tag">Gu&#237;a para Principiantes</p>
+      <h1>Prompt Engineering para Arte IA: Gu&#237;a para Principiantes</h1>
+      <div class="article-meta">
+        <span>Marzo 2026</span>
+        <span class="dot">&#183;</span>
+        <span>10 min de lectura</span>
+        <span class="dot">&#183;</span>
+        <span>Midjourney &#183; Stable Diffusion &#183; Flux &#183; DALL&#183;E 3</span>
+        <span class="dot">&#183;</span>
+        <span>Actualizado marzo 2026</span>
+      </div>
+    </header>
+
+    <div class="article-body">
+
+      <p>Abres Midjourney por primera vez, escribes &#171;drag&#243;n genial&#187; y obtienes un resultado que es... correcto. Gen&#233;rico. Nada parecido a lo que ten&#237;as en mente. Mientras tanto, alguien m&#225;s escribe un p&#225;rrafo de descriptores espec&#237;ficos y produce algo impresionante.</p>
+
+      <nav class="toc" aria-label="Contenido">
+        <details open>
+          <summary>En esta gu&#237;a</summary>
+          <ol>
+            <li><a href="#que-es-un-prompt">&#191;Qu&#233; es un Prompt?</a></li>
+            <li><a href="#por-que-no-funciona">Por Qu&#233; &#171;Drag&#243;n Genial&#187; No Funciona</a></li>
+            <li><a href="#cambios-simples">Observa la Diferencia: C&#243;mo una Sola Palabra lo Cambia Todo</a></li>
+            <li><a href="#los-cinco-pilares">Los Cinco Pilares de un Prompt de Arte IA S&#243;lido</a></li>
+            <li><a href="#anatomia-del-prompt">Anatom&#237;a de un Prompt Profesional</a></li>
+            <li><a href="#tokens-de-calidad">Tokens de Calidad: Los Impulsores Fiables</a></li>
+            <li><a href="#prompts-negativos">Prompts Negativos: Lo que No Quieres</a></li>
+            <li><a href="#guia-vocabulario">Gu&#237;a R&#225;pida de Vocabulario de Prompts</a></li>
+            <li><a href="#evolucion-del-prompt">Observa un Prompt Evolucionar: De B&#225;sico a Profesional</a></li>
+            <li><a href="#aprender-rapido">C&#243;mo Aprender Prompt Engineering R&#225;pidamente</a></li>
+            <li><a href="#camino-mas-rapido">El Camino M&#225;s R&#225;pido hacia Buenos Resultados</a></li>
+            <li><a href="#ejercicios-practicos">3 Ejercicios para Practicar Ahora</a></li>
+          </ol>
+        </details>
+      </nav>
+
+      <p>La diferencia es el <strong>prompt engineering</strong> &#8212; la habilidad de comunicarse clara y eficazmente con los generadores de im&#225;genes IA. No es programaci&#243;n. No es magia. Es un arte que se aprende, y esta gu&#237;a te da una base s&#243;lida desde cero.</p>
+
+      <h2 id="que-es-un-prompt">&#191;Qu&#233; es un Prompt?</h2>
+
+      <p>En el contexto de la generaci&#243;n de im&#225;genes IA, un <strong>prompt</strong> es la instrucci&#243;n textual que le das a un modelo IA para generar una imagen. La IA lee tu texto, interpreta lo que quieres decir y produce p&#237;xeles que intentan corresponder a tu descripci&#243;n.</p>
+
+      <p>El desaf&#237;o fundamental: los modelos IA est&#225;n entrenados con miles de millones de im&#225;genes y leyendas. Han aprendido asociaciones entre palabras y conceptos visuales. Pero interpretan tus palabras de forma probabil&#237;stica &#8212; cada generaci&#243;n es ligeramente diferente, y el modelo toma innumerables micro-decisiones sobre lo que &#171;realmente quer&#237;as decir&#187;.</p>
+
+      <p>El prompt engineering es la pr&#225;ctica de redactar prompts que gu&#237;en estas micro-decisiones hacia el resultado que realmente deseas obtener.</p>
+
+      <h2 id="por-que-no-funciona">Por Qu&#233; &#171;Drag&#243;n Genial&#187; No Funciona</h2>
+
+      <p>&#171;Drag&#243;n genial&#187; es m&#225;ximamente ambiguo. La IA ha visto miles de dragones descritos como &#171;geniales&#187; &#8212; dragones occidentales, dragones orientales, dragones de dibujos animados, dragones realistas, dragones que escupen fuego, dragones en vuelo. Sin orientaci&#243;n adicional, elige algo que es el promedio de todo eso. El resultado parece gen&#233;rico porque esencialmente lo es &#8212; es el promedio estad&#237;stico de &#171;drag&#243;n genial&#187;.</p>
+
+      <p>Cuanto m&#225;s espec&#237;fico sea tu prompt, m&#225;s informaci&#243;n tiene la IA para trabajar, y m&#225;s distintivo ser&#225; tu resultado. Compara:</p>
+
+      <p><strong>D&#233;bil:</strong> <code>cool dragon</code></p>
+      <p><strong>Fuerte:</strong> <code>ancient sea dragon emerging from stormy ocean waves at night, translucent teal scales catching moonlight, massive wingspan, serpentine body, bioluminescent markings, cinematic wide shot, dramatic lighting, dark fantasy concept art</code></p>
+
+      <p>Mismo sujeto. Resultados muy diferentes.</p>
+
+      <div class="cta-inline">
+        <p>Pru&#233;balo t&#250; mismo &#8212; sube cualquier imagen y obt&#233;n un prompt IA optimizado en segundos.</p>
+        <a href="/" class="cta-btn-sm">Probar Gratis &#8594;</a>
+      </div>
+
+      <h2 id="cambios-simples">Observa la Diferencia: C&#243;mo una Sola Palabra lo Cambia Todo</h2>
+
+      <p>El poder del prompt engineering se hace m&#225;s evidente cuando cambias exactamente una palabra y comparas los resultados. Aqu&#237; tienes cinco pares que demuestran cu&#225;nto puede cambiar un solo t&#233;rmino el resultado.</p>
+
+      <div class="word-pair">
+        <div class="word-pair-item">
+          <code>cinematic portrait</code>
+          <picture><source srcset="/images/image-to-prompt-ai-cinematic-portrait-style.webp" type="image/webp"><img src="/images/image-to-prompt-ai-cinematic-portrait-style.jpeg" alt="Retrato cinem&#225;tico &#8212; iluminaci&#243;n dram&#225;tica estilo pel&#237;cula para comparaci&#243;n de prompts de arte IA" width="800" height="1200" loading="lazy"></picture>
+        </div>
+        <div class="word-pair-vs"><span class="vs-badge">VS</span></div>
+        <div class="word-pair-item">
+          <code><strong>editorial</strong> portrait</code>
+          <picture><source srcset="/images/describe-a-picture-editorial-portrait-style.webp" type="image/webp"><img src="/images/describe-a-picture-editorial-portrait-style.jpeg" alt="Retrato editorial &#8212; estilo profesional limpio listo para revista, cambio de una palabra de prompt IA" width="800" height="1200" loading="lazy"></picture>
+        </div>
+        <p class="pair-explanation"><strong>Cinematic</strong> empuja hacia una iluminaci&#243;n f&#237;lmica dram&#225;tica, sombras profundas y un ambiente teatral. <strong>Editorial</strong> se&#241;ala algo limpio, profesional, listo para revista &#8212; generalmente m&#225;s luminoso, m&#225;s controlado, menos atmosf&#233;rico.</p>
+      </div>
+
+      <div class="word-pair">
+        <div class="word-pair-item">
+          <code><strong>golden hour</strong> lighting</code>
+          <picture><source srcset="/images/ai-prompt-generator-golden-hour-lighting.webp" type="image/webp"><img src="/images/ai-prompt-generator-golden-hour-lighting.jpeg" alt="Iluminaci&#243;n golden hour &#8212; tonos c&#225;lidos naranja &#225;mbar al atardecer, ejemplo de prompt engineering" width="800" height="1200" loading="lazy"></picture>
+        </div>
+        <div class="word-pair-vs"><span class="vs-badge">VS</span></div>
+        <div class="word-pair-item">
+          <code><strong>blue hour</strong> lighting</code>
+          <picture><source srcset="/images/image-prompt-blue-hour-lighting.webp" type="image/webp"><img src="/images/image-prompt-blue-hour-lighting.jpeg" alt="Iluminaci&#243;n blue hour &#8212; tonos fr&#237;os azules suaves al crep&#250;sculo, cambio de una sola palabra de prompt" width="800" height="1200" loading="lazy"></picture>
+        </div>
+        <p class="pair-explanation"><strong>Golden hour</strong> (justo despu&#233;s del amanecer o antes del atardecer) produce una luz c&#225;lida naranja y &#225;mbar con sombras largas. <strong>Blue hour</strong> (justo despu&#233;s del atardecer) produce una luz suave, fr&#237;a y difusa azul con casi ninguna sombra &#8212; un registro emocional completamente diferente.</p>
+      </div>
+
+      <div class="word-pair">
+        <div class="word-pair-item">
+          <code><strong>oil painting</strong></code>
+          <picture><source srcset="/images/ai-image-to-prompt-oil-painting-style.webp" type="image/webp"><img src="/images/ai-image-to-prompt-oil-painting-style.jpeg" alt="Estilo pintura al &#243;leo en arte IA &#8212; color rico saturado con textura de pinceladas visibles" width="800" height="600" loading="lazy"></picture>
+        </div>
+        <div class="word-pair-vs"><span class="vs-badge">VS</span></div>
+        <div class="word-pair-item">
+          <code><strong>watercolor</strong> painting</code>
+          <picture><source srcset="/images/describe-the-photo-watercolor-style.webp" type="image/webp"><img src="/images/describe-the-photo-watercolor-style.jpeg" alt="Estilo acuarela en arte IA &#8212; bordes suaves y lavados transparentes, comparaci&#243;n de palabras de prompt" width="800" height="600" loading="lazy"></picture>
+        </div>
+        <p class="pair-explanation"><strong>Oil painting</strong> implica un color rico y saturado, pinceladas visibles y una sensaci&#243;n de peso y permanencia. <strong>Watercolor</strong> implica bordes suaves, lavados transparentes, tonos m&#225;s claros y un trazo delicado &#8212; m&#225;s ligero y ef&#237;mero en la sensaci&#243;n.</p>
+      </div>
+
+      <div class="word-pair">
+        <div class="word-pair-item">
+          <code><strong>wide angle shot</strong></code>
+          <picture><source srcset="/images/free-image-url-generator-wide-shot-composition.webp" type="image/webp"><img src="/images/free-image-url-generator-wide-shot-composition.jpeg" alt="Plano gran angular &#8212; sujeto mostrado en todo su contexto ambiental, palabra de composici&#243;n de prompt" width="1200" height="675" loading="lazy"></picture>
+        </div>
+        <div class="word-pair-vs"><span class="vs-badge">VS</span></div>
+        <div class="word-pair-item">
+          <code><strong>extreme close-up</strong></code>
+          <picture><source srcset="/images/prompt-generator-from-image-extreme-closeup.webp" type="image/webp"><img src="/images/prompt-generator-from-image-extreme-closeup.jpeg" alt="Primer plano extremo en arte IA &#8212; el detalle llena todo el encuadre, cambio de una sola palabra de prompt" width="800" height="800" loading="lazy"></picture>
+        </div>
+        <p class="pair-explanation"><strong>Wide angle shot</strong> coloca a tu sujeto en contexto, mostrando el entorno a su alrededor. <strong>Extreme close-up</strong> elimina por completo el contexto, centr&#225;ndose en un solo detalle. Son opuestos compositivos que producen im&#225;genes fundamentalmente diferentes del mismo sujeto.</p>
+      </div>
+
+      <div class="word-pair">
+        <div class="word-pair-item">
+          <code><strong>peaceful</strong> mood</code>
+          <picture><source srcset="/images/ai-prompt-image-peaceful-mood.webp" type="image/webp"><img src="/images/ai-prompt-image-peaceful-mood.jpeg" alt="Ambiente pac&#237;fico en arte IA &#8212; escena tranquila y serena con luz suave, ejemplo de palabra de ambiente de prompt" width="800" height="600" loading="lazy"></picture>
+        </div>
+        <div class="word-pair-vs"><span class="vs-badge">VS</span></div>
+        <div class="word-pair-item">
+          <code><strong>ominous</strong> mood</code>
+          <picture><source srcset="/images/explain-this-image-ominous-mood.webp" type="image/webp"><img src="/images/explain-this-image-ominous-mood.jpeg" alt="Ambiente siniestro en arte IA &#8212; escena oscura y amenazante, efecto de una palabra de prompt" width="800" height="600" loading="lazy"></picture>
+        </div>
+        <p class="pair-explanation">Las palabras de ambiente influyen en las elecciones de color, el tratamiento de la iluminaci&#243;n e incluso la expresi&#243;n del sujeto. <strong>Peaceful</strong> tiende hacia una luz suave, espacios abiertos y colores calmados. <strong>Ominous</strong> tiende hacia una iluminaci&#243;n oscura, sombras profundas y una sensaci&#243;n de amenaza &#8212; incluso con un sujeto id&#233;ntico.</p>
+      </div>
+
+      <h2 id="los-cinco-pilares">Los Cinco Pilares de un Prompt de Arte IA S&#243;lido</h2>
+
+      <h3>1. Sujeto &#8212; &#191;Qu&#233; hay en la Imagen?</h3>
+
+      <p>El sujeto es tu punto de partida: la persona, la criatura, el objeto o la escena que deseas representar. S&#233; preciso:</p>
+      <ul>
+        <li><strong>D&#233;bil:</strong> &#171;una mujer&#187;</li>
+        <li><strong>Fuerte:</strong> &#171;una guerrera japonesa de unos treinta a&#241;os vistiendo una armadura ceremonial finamente trabajada, de pie en un bosque de bamb&#250;&#187;</li>
+      </ul>
+
+      <p>Incluye: caracter&#237;sticas f&#237;sicas, edad/&#233;poca, vestimenta, expresi&#243;n, acci&#243;n, relaci&#243;n con el entorno.</p>
+
+      <h3>2. Estilo &#8212; &#191;C&#243;mo debe Parecer?</h3>
+
+      <p>El estilo le indica a la IA en qu&#233; registro art&#237;stico o fotogr&#225;fico trabajar. Sin ello, la IA elige por s&#237; misma &#8212; generalmente algo entre fotorrealista y concept art.</p>
+
+      <p>Categor&#237;as de estilo comunes:</p>
+      <ul>
+        <li><strong>Fotogr&#225;fico:</strong> <code>cinematic photography</code>, <code>editorial portrait</code>, <code>documentary photography</code>, <code>macro photography</code></li>
+        <li><strong>Pintura:</strong> <code>oil painting</code>, <code>watercolor illustration</code>, <code>impressionist painting</code>, <code>digital painting</code></li>
+        <li><strong>Ilustraci&#243;n:</strong> <code>concept art</code>, <code>anime style</code>, <code>comic book illustration</code>, <code>children's book illustration</code></li>
+        <li><strong>3D/Renderizado:</strong> <code>octane render</code>, <code>unreal engine 5</code>, <code>CGI animation</code></li>
+      </ul>
+
+      <p>Tambi&#233;n puedes hacer referencia a artistas espec&#237;ficos (&#250;salos &#233;ticamente) o describir un g&#233;nero visual reconocible como &#171;arte de portada de ciencia ficci&#243;n de los a&#241;os 1980&#187; o &#171;p&#243;ster Art Nouveau&#187;.</p>
+
+      <h3>3. Iluminaci&#243;n &#8212; &#191;Qu&#233; Hace la Luz?</h3>
+
+      <p>La iluminaci&#243;n es posiblemente el elemento m&#225;s poderoso para el ambiente y la calidad. Los generadores IA son sorprendentemente buenos para interpretar descripciones de iluminaci&#243;n espec&#237;ficas.</p>
+
+      <p>Descriptores de iluminaci&#243;n clave:</p>
+      <ul>
+        <li><strong>Direcci&#243;n:</strong> iluminaci&#243;n frontal, lateral, contraluz, desde arriba, desde abajo</li>
+        <li><strong>Calidad:</strong> luz suave difusa, luz dura directa, luz tenue</li>
+        <li><strong>Hora del d&#237;a:</strong> golden hour, blue hour, mediod&#237;a, nublado, noche</li>
+        <li><strong>Tipo:</strong> sol natural, iluminaci&#243;n de estudio, neones, velas, bioluminiscencia, llama</li>
+        <li><strong>Setups de iluminaci&#243;n con nombre:</strong> Rembrandt lighting, butterfly lighting, claroscuro</li>
+      </ul>
+
+      <p>Una imagen mal iluminada con un excelente sujeto siempre parece mediocre. Una buena iluminaci&#243;n eleva todo lo dem&#225;s.</p>
+
+      <h3>4. Composici&#243;n &#8212; &#191;C&#243;mo est&#225; Encuadrada?</h3>
+
+      <p>La composici&#243;n le indica a la IA c&#243;mo disponer los elementos en el encuadre. Sin gu&#237;a, la IA elige por defecto lo que era m&#225;s com&#250;n en sus datos de entrenamiento &#8212; generalmente un encuadre centrado y neutro.</p>
+
+      <p>Tipos de plano (tomados del cine/fotograf&#237;a):</p>
+      <ul>
+        <li><code>extreme close-up</code> &#8212; llena el encuadre con un detalle (un ojo, una textura, una boca)</li>
+        <li><code>close-up portrait</code> &#8212; rostro y hombros</li>
+        <li><code>medium shot</code> &#8212; hasta la cintura</li>
+        <li><code>full body shot</code> &#8212; sujeto de la cabeza a los pies</li>
+        <li><code>wide shot</code> &#8212; sujeto en todo su entorno</li>
+        <li><code>establishing shot</code> &#8212; gran entorno, sujeto peque&#241;o</li>
+        <li><code>aerial view</code> / <code>bird's eye view</code> &#8212; vista desde arriba</li>
+        <li><code>worm's eye view</code> &#8212; vista desde abajo hacia arriba</li>
+        <li><code>Dutch angle</code> &#8212; c&#225;mara inclinada para crear tensi&#243;n</li>
+      </ul>
+
+      <p>T&#233;cnicas de composici&#243;n:</p>
+      <ul>
+        <li><code>rule of thirds</code> &#8212; sujeto descentrado</li>
+        <li><code>centered composition</code> &#8212; sim&#233;trico, formal</li>
+        <li><code>leading lines</code> &#8212; los elementos del entorno gu&#237;an la mirada</li>
+        <li><code>bokeh / shallow depth of field</code> &#8212; fondo desenfocado</li>
+        <li><code>deep focus</code> &#8212; todo n&#237;tido</li>
+      </ul>
+
+      <h3>5. Ambiente y Atm&#243;sfera &#8212; &#191;C&#243;mo debe Sentirse?</h3>
+
+      <p>El ambiente comunica el registro emocional. Influye en las elecciones de color, el tratamiento de la iluminaci&#243;n y la sensaci&#243;n general de la imagen incluso cuando no especificas cada detalle.</p>
+
+      <p>Descriptores de ambiente &#250;tiles:</p>
+      <ul>
+        <li>Misterioso, siniestro, inquietante, perturbador</li>
+        <li>Esperanzador, c&#225;lido, nost&#225;lgico, pac&#237;fico</li>
+        <li>&#201;pico, grandioso, impresionante, majestuoso</li>
+        <li>Melanc&#243;lico, tranquilo, solitario, contemplativo</li>
+        <li>Tenso, urgente, ca&#243;tico, en&#233;rgico</li>
+        <li>M&#225;gico, sobrenatural, on&#237;rico, surrealista</li>
+      </ul>
+
+      <h2 id="anatomia-del-prompt">Anatom&#237;a de un Prompt Profesional</h2>
+
+      <p>Diseccionemos un prompt profesional completo, etiquetando cada componente para ver exactamente c&#243;mo corresponde a los Cinco Pilares.</p>
+
+      <div class="prompt-anatomy-box">
+        <p>
+          <span class="anatomy-tag subject">ancient sea dragon emerging from stormy ocean waves at night</span>,
+          <span class="anatomy-tag style">dark fantasy concept art, digital painting</span>,
+          <span class="anatomy-tag lighting">dramatic rim lighting, bioluminescent glow from below</span>,
+          <span class="anatomy-tag color">deep navy blue and teal with warm orange accents</span>,
+          <span class="anatomy-tag composition">cinematic wide shot, low angle perspective</span>,
+          <span class="anatomy-tag mood">mysterious, awe-inspiring, powerful</span>
+          <span class="anatomy-tag params">--ar 21:9 --v 6.1 --style raw --q 2</span>
+        </p>
+        <div class="anatomy-legend">
+          <span class="anatomy-tag subject">Sujeto</span>
+          <span class="anatomy-tag style">Estilo</span>
+          <span class="anatomy-tag lighting">Iluminaci&#243;n</span>
+          <span class="anatomy-tag color">Color</span>
+          <span class="anatomy-tag composition">Composici&#243;n</span>
+          <span class="anatomy-tag mood">Ambiente</span>
+          <span class="anatomy-tag params">Par&#225;metros</span>
+        </div>
+      </div>
+
+      <p>Cada elemento tiene su raz&#243;n de ser. Elimina &#171;bioluminescent glow from below&#187; y el drag&#243;n pierde su cualidad sobrenatural. Elimina &#171;low angle perspective&#187; y el sentido de escala se derrumba. Los prompts profesionales no son largos por ser largos &#8212; son espec&#237;ficos porque cada t&#233;rmino a&#241;ade informaci&#243;n que la IA puede utilizar.</p>
+
+      <h2 id="tokens-de-calidad">Tokens de Calidad: Los Impulsores Fiables</h2>
+
+      <p>Muchos generadores IA responden a t&#233;rminos que se&#241;alan calidad e indican al modelo que produzca su mejor resultado. Estos son particularmente importantes en Stable Diffusion:</p>
+
+      <ul>
+        <li><code>masterpiece</code>, <code>best quality</code>, <code>highly detailed</code></li>
+        <li><code>8k resolution</code>, <code>ultra-high definition</code></li>
+        <li><code>sharp focus</code>, <code>professional</code></li>
+        <li><code>award-winning photography</code></li>
+      </ul>
+
+      <p>En Midjourney y Flux, estos tokens son menos necesarios porque estos modelos ya apuntan a alta calidad por defecto. Pero en SD hacen una diferencia significativa.</p>
+
+      <h2 id="prompts-negativos">Prompts Negativos: Lo que No Quieres</h2>
+
+      <p>Stable Diffusion dispone de un campo de <strong>prompt negativo</strong> separado donde listas los elementos que deseas excluir. Es una de las funcionalidades m&#225;s poderosas de SD.</p>
+
+      <p>Un prompt negativo b&#225;sico est&#225;ndar:</p>
+      <p><code>blurry, low quality, bad anatomy, deformed fingers, watermark, text, logo, cropped, out of frame, duplicate, ugly, amateur, jpeg artifacts</code></p>
+
+      <p>A&#241;ade negativos espec&#237;ficos del modelo para tu checkpoint. Para la generaci&#243;n de retratos, incluye siempre: <code>bad hands, missing fingers, extra fingers, fused fingers, mutated hands</code></p>
+
+      <p>Midjourney maneja esto con <code>--no [t&#233;rmino]</code> al final de tu prompt, aunque es menos potente que la implementaci&#243;n de SD.</p>
+
+      <h2 id="guia-vocabulario">Gu&#237;a R&#225;pida de Vocabulario de Prompts</h2>
+
+      <p>Una tabla de referencia de los t&#233;rminos de prompt m&#225;s fiables por categor&#237;a. Gu&#225;rdala en favoritos y &#250;sala como punto de partida al construir nuevos prompts.</p>
+
+      <div class="table-wrap">
+      <table class="comparison-table vocab-table">
+        <thead>
+          <tr><th>Categor&#237;a</th><th>T&#233;rminos &#218;tiles</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Iluminaci&#243;n</td><td>golden hour, blue hour, rim light, backlit, Rembrandt lighting, volumetric light, neon light, candlelight, overcast, harsh shadow, soft diffused light, chiaroscuro, bioluminescent</td></tr>
+          <tr><td>Estilo</td><td>cinematic, editorial, concept art, oil painting, watercolor, anime style, photorealistic, hyperrealistic, minimalist, surrealist, impressionist, Art Nouveau, dark fantasy, retrofuturism</td></tr>
+          <tr><td>Ambiente</td><td>ethereal, dramatic, serene, ominous, nostalgic, whimsical, melancholic, epic, cozy, unsettling, mysterious, triumphant, desolate, magical</td></tr>
+          <tr><td>Composici&#243;n</td><td>close-up portrait, wide shot, bird's eye view, Dutch angle, rule of thirds, centered symmetrical, leading lines, negative space, shallow depth of field, deep focus, extreme close-up, establishing shot</td></tr>
+          <tr><td>Color</td><td>warm tones, cool tones, muted palette, vibrant saturated, monochromatic, complementary colors, pastel, earth tones, jewel tones, high contrast, desaturated</td></tr>
+          <tr><td>Calidad (SD)</td><td>masterpiece, best quality, highly detailed, 8k resolution, ultra HD, sharp focus, professional, award-winning photography</td></tr>
+          <tr><td>C&#225;mara / Objetivo</td><td>85mm f/1.4, 24mm wide angle, macro lens, Canon EOS R5, Hasselblad, film grain, bokeh, tilt-shift, anamorphic lens flare, shallow depth of field</td></tr>
+        </tbody>
+      </table>
+      </div>
+
+      <h2 id="evolucion-del-prompt">Observa un Prompt Evolucionar: De B&#225;sico a Profesional</h2>
+
+      <p>La forma m&#225;s efectiva de comprender el prompt engineering es observar un solo prompt pasar de lo vago a lo preciso. Cada etapa a&#241;ade una capa de informaci&#243;n.</p>
+
+      <div class="progression-stage">
+        <div class="stage-connector"><div class="stage-bubble">1</div></div>
+        <div class="stage-content">
+          <p class="stage-label">Etapa 1 &#8212; Demasiado vago</p>
+          <pre class="prompt-block">a cat in a garden</pre>
+          <picture><source srcset="/images/image-to-prompt-basic-cat-garden.webp" type="image/webp"><img src="/images/image-to-prompt-basic-cat-garden.jpeg" alt="Resultado etapa 1: gato gen&#233;rico en un jard&#237;n &#8212; prompt vago de IA produce un resultado promedio" width="800" height="600" loading="lazy"></picture>
+          <p class="stage-note">Gen&#233;rico. La IA elige el promedio estad&#237;stico de &#171;gato en un jard&#237;n&#187; &#8212; probablemente un gato dom&#233;stico, probablemente de d&#237;a, probablemente un c&#233;sped verde. Nada distintivo.</p>
+        </div>
+      </div>
+
+      <div class="progression-stage">
+        <div class="stage-connector"><div class="stage-bubble">2</div></div>
+        <div class="stage-content">
+          <p class="stage-label">Etapa 2 &#8212; Sujeto y entorno espec&#237;ficos</p>
+          <pre class="prompt-block">a fluffy orange tabby cat sitting among wildflowers in an English cottage garden</pre>
+          <picture><source srcset="/images/describe-a-picture-cat-watercolor-style.webp" type="image/webp"><img src="/images/describe-a-picture-cat-watercolor-style.jpeg" alt="Resultado etapa 2: tabby naranja esponjoso en un jard&#237;n ingl&#233;s con flores silvestres" width="800" height="600" loading="lazy"></picture>
+          <p class="stage-note">Mejor. Ahora tenemos la raza (tabby naranja), el pelaje (esponjoso), la acci&#243;n (sentado), el entorno espec&#237;fico (flores silvestres, jard&#237;n de cottage ingl&#233;s). Pero a&#250;n no tenemos direcci&#243;n art&#237;stica.</p>
+        </div>
+      </div>
+
+      <div class="progression-stage">
+        <div class="stage-connector"><div class="stage-bubble">3</div></div>
+        <div class="stage-content">
+          <p class="stage-label">Etapa 3 &#8212; A&#241;adir el estilo</p>
+          <pre class="prompt-block">a fluffy orange tabby cat sitting among wildflowers in an English cottage garden, watercolor illustration style, soft edges, delicate linework</pre>
+          <picture><source srcset="/images/ai-prompt-generator-cat-golden-hour.webp" type="image/webp"><img src="/images/ai-prompt-generator-cat-golden-hour.jpeg" alt="Resultado etapa 3: ilustraci&#243;n acuarela de un tabby en un jard&#237;n de cottage" width="800" height="600" loading="lazy"></picture>
+          <p class="stage-note">Ahora tiene una direcci&#243;n art&#237;stica. Las palabras de estilo le dan a la IA un registro visual en el que trabajar. El sujeto es el mismo, pero la t&#233;cnica lo transforma.</p>
+        </div>
+      </div>
+
+      <div class="progression-stage">
+        <div class="stage-connector"><div class="stage-bubble">4</div></div>
+        <div class="stage-content">
+          <p class="stage-label">Etapa 4 &#8212; A&#241;adir la iluminaci&#243;n</p>
+          <pre class="prompt-block">a fluffy orange tabby cat sitting among wildflowers in an English cottage garden, watercolor illustration style, soft edges, delicate linework, golden hour sunlight, dappled light filtering through trees, warm amber tones</pre>
+          <picture><source srcset="/images/image-prompt-cat-detailed-cottage-garden.webp" type="image/webp"><img src="/images/image-prompt-cat-detailed-cottage-garden.jpeg" alt="Resultado etapa 4: gato acuarela en jard&#237;n con luz golden hour tamizada y tonos &#225;mbar c&#225;lidos" width="800" height="600" loading="lazy"></picture>
+          <p class="stage-note">La iluminaci&#243;n transforma completamente el ambiente. La misma escena ahora parece c&#225;lida, nost&#225;lgica e id&#237;lica. La iluminaci&#243;n es a menudo la adici&#243;n de mayor impacto que puedes hacer a un prompt.</p>
+        </div>
+      </div>
+
+      <div class="progression-stage">
+        <div class="stage-connector"><div class="stage-bubble">5</div></div>
+        <div class="stage-content">
+          <p class="stage-label">Etapa 5 &#8212; A&#241;adir la composici&#243;n y los par&#225;metros</p>
+          <pre class="prompt-block">a fluffy orange tabby cat sitting among wildflowers in an English cottage garden, watercolor illustration style, soft edges, delicate linework, golden hour sunlight, dappled light filtering through trees, warm amber tones, shallow depth of field, rule of thirds composition --ar 3:2 --v 6.1</pre>
+          <picture><source srcset="/images/ai-image-to-prompt-cat-final-result.webp" type="image/webp"><img src="/images/ai-image-to-prompt-cat-final-result.jpeg" alt="Resultado etapa 5: retrato acuarela profesional de un gato con composici&#243;n regla de los tercios y poca profundidad de campo" width="800" height="600" loading="lazy"></picture>
+          <p class="stage-note">Resultado profesional. Los t&#233;rminos de composici&#243;n dirigen el encuadre de la IA. La relaci&#243;n de aspecto corresponde al uso previsto. Es el mismo sujeto que en la etapa 1 &#8212; transformado por cinco capas de especificidad.</p>
+        </div>
+      </div>
+
+      <h2 id="aprender-rapido">C&#243;mo Aprender Prompt Engineering R&#225;pidamente</h2>
+
+      <h3>Estudiar Prompts Existentes</h3>
+      <p>Sitios como PromptHero, Civitai y Lexica te permiten explorar obras de arte IA con los prompts que las crearon. Estudia qu&#233; descriptores producen resultados espec&#237;ficos. Busca patrones en los prompts detr&#225;s de las im&#225;genes que te gustan.</p>
+
+      <h3>Usar la Conversi&#243;n Imagen a Prompt</h3>
+      <p>Una de las mejores formas de aprender es analizar las im&#225;genes que adoras. <a href="/">Sube cualquier imagen a ImageToPrompt</a> y examina cuidadosamente el prompt generado. Ver&#225;s c&#243;mo cualidades visuales espec&#237;ficas se traducen en lenguaje de prompt. Haz esto con 10 a 20 im&#225;genes e interiorizarás r&#225;pidamente el vocabulario.</p>
+
+      <h3>Cambiar Un Solo Elemento a la Vez</h3>
+      <p>Al experimentar, cambia solo un elemento entre generaciones. Si cambias cinco cosas y el resultado mejora, no sabes qu&#233; cambio ayud&#243;. Si cambias uno, aprendes exactamente lo que hace.</p>
+
+      <h3>Construir una Biblioteca de Prompts Personal</h3>
+      <p>Conserva un documento de las frases y combinaciones que funcionan bien para ti. &#171;Golden hour backlit portrait&#187; quiz&#225;s sea algo que usas en el 30% de tus prompts. Tener una biblioteca de frases fiables acelera considerablemente tu flujo de trabajo.</p>
+
+      <h2 id="camino-mas-rapido">El Camino M&#225;s R&#225;pido hacia Buenos Resultados</h2>
+
+      <p>Si est&#225;s empezando y quieres buenos resultados r&#225;pidamente, aqu&#237; tienes el atajo:</p>
+
+      <ol>
+        <li>Encuentra 3 a 5 im&#225;genes que representen el estilo que deseas crear</li>
+        <li>Sube cada una a <a href="/">ImageToPrompt</a> para extraer el prompt</li>
+        <li>Identifica los elementos comunes en esos prompts &#8212; esos son tus anclas de estilo</li>
+        <li>Construye tu propio prompt usando esas anclas como base</li>
+        <li>Genera, eval&#250;a y ajusta un elemento a la vez</li>
+      </ol>
+
+      <p>Este enfoque evita meses de prueba y error d&#225;ndote vocabulario real que funciona en prompts reales, derivado de im&#225;genes que realmente te gustan.</p>
+
+      <h2 id="ejercicios-practicos">3 Ejercicios para Practicar Ahora</h2>
+
+      <p>Leer sobre prompt engineering no es suficiente. Estos ejercicios desarrollan una verdadera intuici&#243;n r&#225;pidamente.</p>
+
+      <div class="exercise-block">
+        <h3>Ejercicio 1: Analizar y Comparar</h3>
+        <p>Sube tu foto favorita a <a href="/">ImageToPrompt</a>. Lee atentamente el prompt generado. Luego ci&#233;rralo y redacta tu propio prompt para la misma imagen desde cero sin mirar el resultado de la IA. Compara los dos &#8212; &#191;qu&#233; te falt&#243;? &#191;Qu&#233; le falt&#243; a la IA? Las carencias en ambos sentidos te ense&#241;an m&#225;s que cualquier tutorial.</p>
+      </div>
+
+      <div class="exercise-block">
+        <h3>Ejercicio 2: El Juego de la Palabra &#218;nica</h3>
+        <p>Toma un prompt que funcione y cambia exactamente una palabra. Genera ambas versiones y compara. Haz esto 5 veces con 5 palabras diferentes. Aprender&#225;s r&#225;pidamente qu&#233; descriptores tienen el mayor impacto visual &#8212; y te sorprender&#225;. A menudo es un t&#233;rmino de iluminaci&#243;n o una sola palabra de ambiente, no la descripci&#243;n del sujeto, lo que marca la mayor diferencia.</p>
+      </div>
+
+      <div class="exercise-block">
+        <h3>Ejercicio 3: Transferencia de Estilo</h3>
+        <p>Genera un prompt a partir de una fotograf&#237;a de paisaje usando ImageToPrompt. Ahora conserva TODAS las palabras de estilo, iluminaci&#243;n, color y ambiente de ese prompt &#8212; pero reemplaza el sujeto por algo completamente diferente (una persona, un veh&#237;culo, un edificio). Observa c&#243;mo se transfiere el lenguaje visual. As&#237; es como los artistas IA profesionales construyen un estilo coherente a trav&#233;s de sujetos variados.</p>
+      </div>
+
+      <div class="cta-box">
+        <h3>Empieza a Aprender Analizando Im&#225;genes Reales</h3>
+        <p>Sube cualquier imagen a ImageToPrompt y observa exactamente c&#243;mo las cualidades visuales se traducen en lenguaje de prompt. La forma m&#225;s r&#225;pida de aprender prompt engineering.</p>
+        <a href="/?lang=es" class="cta-btn">Probar el Generador de Prompts IA Gratuito &#8594;</a>
+      </div>
+
+    </div>
+
+    <div class="author-bio">
+      <svg class="author-photo" width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="Avatar del autor"><circle cx="32" cy="32" r="32" fill="#2a1f4e"/><circle cx="32" cy="26" r="11" fill="#7c6bc4"/><ellipse cx="32" cy="52" rx="18" ry="11" fill="#7c6bc4"/></svg>
+      <div class="author-info">
+        <p class="author-name">ImageToPrompt Team</p>
+        <p class="author-desc">Ingenieros de prompts y artistas de IA especializados en Midjourney, Stable Diffusion y Flux. Construimos ImageToPrompt para hacer la generaci&#243;n de im&#225;genes con IA accesible para todos.</p>
+        <a href="https://x.com/Ilyass14286541" class="author-link">Seguir en X &#8594;</a>
+      </div>
+    </div>
+
+    <div class="related-posts">
+      <h2>Gu&#237;as Relacionadas</h2>
+      <div class="related-grid">
+        <a href="/es/blog/convertir-imagen-en-prompt-ia/" class="related-card">
+          <p class="tag">Gu&#237;a</p>
+          <h3>C&#243;mo Convertir una Imagen en Prompt IA</h3>
+        </a>
+        <a href="/es/blog/guia-prompts-midjourney-2026/" class="related-card">
+          <p class="tag">Midjourney</p>
+          <h3>Gu&#237;a Completa de Prompts Midjourney 2026</h3>
+        </a>
+        <a href="/es/blog/stable-diffusion-vs-midjourney-vs-dalle3/" class="related-card">
+          <p class="tag">Comparativa</p>
+          <h3>SD vs Midjourney vs DALL&#183;E 3 vs Flux</h3>
+        </a>
+        <a href="/blog/how-to-write-ai-prompts-beginners/" class="related-card">
+          <p class="tag">Tutorial Principiantes</p>
+          <h3>C&#243;mo Redactar Prompts IA para Principiantes</h3>
+        </a>
+        <a href="/blog/prompt-engineering-mistakes/" class="related-card">
+          <p class="tag">Consejos</p>
+          <h3>15 Errores de Prompt Engineering a Evitar</h3>
+        </a>
+        <a href="/blog/ai-art-styles-glossary/" class="related-card">
+          <p class="tag">Referencia</p>
+          <h3>Glosario de 50 Estilos de Arte IA</h3>
+        </a>
+      </div>
+    </div>
+
+  </div>
+
+  <footer class="footer-4col">
+    <div class="f4-inner">
+      <div class="f4-brand">
+        <img src="/favicon.svg" alt="ImageToPrompt" width="28" height="28">
+        <span class="f4-brand-name">ImageTo<span class="accent">Prompt</span></span>
+        <span class="f4-brand-sub">&mdash; Free AI Prompt Generator</span>
+      </div>
+      <div class="f4-grid">
+        <div class="f4-section">
+          <h4 class="f4-heading">Image Prompt Tools</h4>
+          <a href="/">Image to Prompt</a>
+          <a href="/text-to-prompt/">Text to Prompt</a>
+      <a href="/describe-image/">Describe Image</a>
+          <a href="/midjourney-prompt-generator/">Midjourney</a>
+          <a href="/stable-diffusion-prompt-generator/">Stable Diffusion</a>
+          <a href="/flux-prompt-generator/">Flux</a>
+          <a href="/dall-e-prompt-generator/">DALL-E 3</a>
+          <a href="/adobe-firefly-prompt-generator/">Adobe Firefly</a>
+          <a href="/leonardo-ai-prompt-generator/">Leonardo AI</a>
+          <a href="/ideogram-prompt-generator/">Ideogram</a>
+        </div>
+        <div class="f4-section">
+          <h4 class="f4-heading">Video Prompt Tools</h4>
+          <a href="/image-to-video-prompt/">Image to Video Prompt</a>
+          <a href="/text-to-video-prompt/">Text to Video Prompt</a>
+          <a href="/veo-prompt-generator/">Veo / Flow Studio</a>
+          <a href="/kling-prompt-generator/">Kling AI</a>
+          <a href="/runway-prompt-generator/">Runway Gen-3</a>
+          <a href="/pika-prompt-generator/">Pika</a>
+          <a href="/luma-prompt-generator/">Luma Dream Machine</a>
+          <a href="/sora-prompt-generator/">Sora</a>
+          <a href="/minimax-prompt-generator/">Minimax</a>
+          <a href="/stable-video-prompt-generator/">Stable Video</a>
+        </div>
+        <div class="f4-section">
+          <h4 class="f4-heading">Resources</h4>
+          <a href="/es/blog/">Blog</a>
+          <a href="/es/about/">About</a>
+          <a href="/es/pricing/">Pricing</a>
+          <a href="/contact/">Contact</a>
+          <a href="/privacy-policy/">Privacy Policy</a>
+          <a href="/terms-of-service/">Terms of Service</a>
+        </div>
+        <div class="f4-section">
+          <h4 class="f4-heading">Languages</h4>
+          <a href="/">English</a>
+          <a href="/fr/">Fran&#231;ais</a>
+          <a href="/ar/">&#1575;&#1604;&#1593;&#1585;&#1576;&#1610;&#1577;</a>
+          <a href="/es/">Espa&#241;ol</a>
+          <a href="/ko/">&#54620;&#44397;&#50612;</a>
+          <a href="/ja/">&#26085;&#26412;&#35486;</a>
+          <a href="/ru/">&#1056;&#1091;&#1089;&#1089;&#1082;&#1080;&#1081;</a>
+        </div>
+      </div>
+      <div class="f4-bottom">
+        <p>&#169; 2026 ImageToPrompt.dev &#8212; Free AI Prompt Generator</p>
+        <p>Your images are never stored. All analysis is ephemeral and private.</p>
+      </div>
+    </div>
+  </footer>
+
+<script src="/newsletter-inject.js" defer></script>
+<script src="/nav.js" defer></script>
+  <script>
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', function() {
+    navigator.serviceWorker.register('/sw.js')
+      .catch(function(err) { console.warn('SW registration failed:', err); });
+  });
+}
+</script>
+</body>
+</html>

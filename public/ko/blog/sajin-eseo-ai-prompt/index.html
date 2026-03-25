@@ -1,0 +1,517 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <script src="/theme-toggle.js"></script>
+  <meta charset="UTF-8" />
+  <link rel="dns-prefetch" href="https://www.googletagmanager.com">
+<link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="max-image-preview:large, index, follow">
+  <meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="ImageToPrompt">
+  <title>&#49324;&#51652;&#50640;&#49436; AI &#54532;&#47212;&#54532;&#53944; &#47564;&#46308;&#44592;: &#50756;&#48317; &#44032;&#51060;&#46300;</title>
+  <meta name="description" content="&#49892;&#51228; &#49324;&#51652;&#51012; AI &#54532;&#47212;&#54532;&#53944;&#47196; &#48320;&#54872;&#54616;&#45716; &#48169;&#48277;&#51012; &#50508;&#50500;&#48372;&#49464;&#50836;. &#51312;&#47749;, &#44396;&#46020;, &#48516;&#50948;&#44592;&#47484; &#54252;&#52265;&#54616;&#45716; &#44592;&#49696;&#51012; &#49444;&#47749;&#54633;&#45768;&#45796;." />
+  <link rel="canonical" href="https://www.imagetoprompt.dev/ko/blog/sajin-eseo-ai-prompt/" />
+  <link rel="alternate" hreflang="ko" href="https://www.imagetoprompt.dev/ko/blog/sajin-eseo-ai-prompt/" />
+  <link rel="alternate" hreflang="en" href="https://www.imagetoprompt.dev/blog/ai-prompt-from-photo/" />
+  <link rel="alternate" hreflang="fr" href="https://www.imagetoprompt.dev/fr/blog/prompt-ia-depuis-photo/" />
+  <link rel="alternate" hreflang="ar" href="https://www.imagetoprompt.dev/ar/blog/prompt-ia-min-soura-haqiqiya/" />
+  <link rel="alternate" hreflang="es" href="https://www.imagetoprompt.dev/es/blog/prompt-ia-desde-foto/" />
+  <link rel="alternate" hreflang="ja" href="https://www.imagetoprompt.dev/ja/blog/shashin-kara-ai-prompt/" />
+  <link rel="alternate" hreflang="x-default" href="https://www.imagetoprompt.dev/blog/ai-prompt-from-photo/" />
+  <meta property="og:title" content="&#49324;&#51652;&#50640;&#49436; AI &#54532;&#47212;&#54532;&#53944; &#47564;&#46308;&#44592;: &#50756;&#48317; &#44032;&#51060;&#46300;" />
+  <meta property="og:description" content="&#49892;&#51228; &#49324;&#51652;&#51012; AI &#54532;&#47212;&#54532;&#53944;&#47196; &#48320;&#54872;&#54616;&#45716; &#48169;&#48277;. &#51312;&#47749;, &#44396;&#46020;, &#48516;&#50948;&#44592;&#47484; &#54252;&#52265;&#54616;&#45716; &#44592;&#49696;." />
+  <meta property="og:url" content="https://www.imagetoprompt.dev/ko/blog/sajin-eseo-ai-prompt/" />
+  <meta property="og:type" content="article" />
+  <meta property="og:image" content="https://www.imagetoprompt.dev/og-image.png" />
+  <meta property="og:site_name" content="ImageToPrompt" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="&#49324;&#51652;&#50640;&#49436; AI &#54532;&#47212;&#54532;&#53944; &#47564;&#46308;&#44592;: &#50756;&#48317; &#44032;&#51060;&#46300;" />
+  <meta name="twitter:description" content="&#49892;&#51228; &#49324;&#51652;&#51012; AI &#54532;&#47212;&#54532;&#53944;&#47196; &#48320;&#54872;. &#51312;&#47749;&#44284; &#44396;&#46020;, &#48516;&#50948;&#44592;&#47484; &#54252;&#52265;&#54616;&#45716; &#48169;&#48277;." />
+  <meta name="twitter:image" content="https://www.imagetoprompt.dev/og-image.png" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="48x48" href="/favicon-48.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+  <link rel="manifest" href="/site.webmanifest" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="/fonts/space-grotesk-700.woff2" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="/fonts/inter-400.woff2" />
+  <link rel="stylesheet" href="/theme.css">
+  <link rel="preload" href="/blog.css" as="style" onload="this.onload=null;this.rel='stylesheet'"><noscript><link rel="stylesheet" href="/blog.css"></noscript>
+  <style>body{font-family:'Noto Sans KR',sans-serif}</style>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "\uc0ac\uc9c4\uc5d0\uc11c AI \ud504\ub86c\ud504\ud2b8 \ub9cc\ub4e4\uae30: \uc644\ubcbd \uac00\uc774\ub4dc",
+    "description": "\uc2e4\uc81c \uc0ac\uc9c4\uc744 AI \ud504\ub86c\ud504\ud2b8\ub85c \ubcc0\ud658\ud558\ub294 \ubc29\ubc95\uc744 \uc54c\uc544\ubcf4\uc138\uc694. \uc870\uba85, \uad6c\ub3c4, \ubd84\uc704\uae30\ub97c \ud3ec\ucc29\ud558\ub294 \uae30\uc220\uc744 \uc124\uba85\ud569\ub2c8\ub2e4.",
+    "image": "https://www.imagetoprompt.dev/og-image.png",
+    "datePublished": "2026-03-11",
+    "dateModified": "2026-03-24",
+    "inLanguage": "ko",
+    "author": {
+      "@type": "Person",
+      "name": "ImageToPrompt Team",
+      "url": "https://www.imagetoprompt.dev/"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "ImageToPrompt",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://www.imagetoprompt.dev/favicon.svg"
+      }
+    },
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https://www.imagetoprompt.dev/ko/blog/sajin-eseo-ai-prompt/"
+    }
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "\uc5b4\ub5a4 \uc720\ud615\uc758 \uc0ac\uc9c4\uc774 AI \ud504\ub86c\ud504\ud2b8\ub85c \uac00\uc7a5 \uc798 \ubcc0\ud658\ub418\ub098\uc694?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "\uba85\ud655\ud55c \uc8fc\uc81c, \ub3c5\ud2b9\ud55c \uc870\uba85, \ub6f0\ub837\ud55c \uc2dc\uac01\uc801 \uc2a4\ud0c0\uc77c\uc774 \uc788\ub294 \uc0ac\uc9c4\uc774 \uac00\uc7a5 \uc798 \ubcc0\ud658\ub429\ub2c8\ub2e4. \uc804\ubb38 \uc0ac\uc9c4(\uc2a4\ud29c\ub514\uc624 \ucd08\uc0c1\ud654, \ud48d\uacbd, \uac74\ucd95)\uc774 \ud2b9\uc131\uc744 \uc124\uba85\ud558\uae30 \uc26c\uc6cc \ub6f0\uc5b4\ub09c \uacb0\uacfc\ub97c \ub0c5\ub2c8\ub2e4. \uc5ec\ub7ec \uc8fc\uc81c\uac00 \uc11e\uc774\uac70\ub098 \ud3c9\ud3c9\ud55c \uc870\uba85\uc758 \uc2a4\ub9c8\ud2b8\ud3f0 \uc0ac\uc9c4\uc740 \ub35c \uc815\ud655\ud55c \ud504\ub86c\ud504\ud2b8\ub97c \uc0dd\uc131\ud569\ub2c8\ub2e4."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "\uc0ac\uc9c4\uc758 \uc870\uba85\uc744 AI \ud504\ub86c\ud504\ud2b8\ub85c \uc5b4\ub5bb\uac8c \uc124\uba85\ud558\ub098\uc694?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "\uba3c\uc800 \uad11\uc6d0(natural light, studio strobe, window light)\uc744 \uc2dd\ubcc4\ud558\uace0, \uad11\uc9c8(soft, hard, diffused), \ubc29\ud5a5(backlit, side-lit, overhead), \uc0c9\uc628\ub3c4(warm, cool, neutral)\ub97c \ud30c\uc545\ud558\uc138\uc694. \uc608\uc2dc: 'warm golden hour side lighting', 'cool overcast soft diffused light', 'dramatic rim lighting from behind'. \uc870\uba85\uc740 \ud504\ub86c\ud504\ud2b8\uc5d0\uc11c \uac00\uc7a5 \ud070 \uc601\ud5a5\uc744 \ubbf8\uce58\ub294 \uc694\uc18c\uc785\ub2c8\ub2e4."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "AI \ud504\ub86c\ud504\ud2b8\uc5d0 \uce74\uba54\ub77c\uc640 \ub80c\uc988 \uc6a9\uc5b4\ub97c \ud3ec\ud568\ud574\uc57c \ud558\ub098\uc694?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "\ub124, \uce74\uba54\ub77c \uc6a9\uc5b4\ub294 \ud2b9\ud788 Flux\uc640 Stable Diffusion\uc5d0\uc11c \ud070 \ub3c4\uc6c0\uc774 \ub429\ub2c8\ub2e4. 'Shot with Canon EOS R5, 85mm f/1.4'\ub294 \ud53c\uc0ac\uacc4 \uc2ec\ub3c4\uc640 \ub80c\ub354\ub9c1\uc5d0 \uc601\ud5a5\uc744 \ubbf8\uce69\ub2c8\ub2e4. '24mm wide angle'\uc740 \uc6d0\uadfc\uac10\uc744 \ub113\ud788\uace0, 'Hasselblad medium format'\uc740 \ub354 \uc2dc\ub124\ub9c8\ud2f1\ud55c \ub80c\ub354\ub9c1\uc744 \ub9cc\ub4e4\uc5b4\ub0c5\ub2c8\ub2e4."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "AI \ud504\ub86c\ud504\ud2b8\ub85c \uc0ac\uc9c4\uc758 \uc815\ud655\ud55c \uad6c\ub3c4\ub97c \uc7ac\ud604\ud560 \uc218 \uc788\ub098\uc694?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "\ud14d\uc2a4\ud2b8 \ud504\ub86c\ud504\ud2b8\ub9cc\uc73c\ub85c\ub294 \uc815\ud655\ud55c \uad6c\ub3c4\ub97c \uc7ac\ud604\ud560 \uc218 \uc5c6\uc2b5\ub2c8\ub2e4. 'rule of thirds', 'centered composition', 'leading lines', 'symmetrical' \uac19\uc740 \uc6a9\uc5b4\ub97c \uc0ac\uc6a9\ud558\uc138\uc694. \uc815\ubc00\ud55c \uad6c\ub3c4 \uc81c\uc5b4\ub97c \uc704\ud574\uc11c\ub294 Stable Diffusion\uc758 ControlNet\uc744 \uc0ac\uc6a9\ud558\uc138\uc694 \u2014 Canny \ub610\ub294 Depth \ubaa8\ub4c8\uc774 \uc0ac\uc9c4\uc758 \uad6c\uc870\ub97c \ucd94\ucd9c\ud558\uc5ec \uc0dd\uc131\uc744 \uc548\ub0b4\ud569\ub2c8\ub2e4."
+        }
+      }
+    ]
+  }
+  </script>
+    <!-- Google AdSense -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4499206373485728" crossorigin="anonymous"></script>
+    <!-- Web Push Notifications -->
+<script src="https://cdn.onesignal.com/sdks/web/v16/OneSignalSDK.page.js" defer></script>
+<script>
+  window.OneSignalDeferred = window.OneSignalDeferred || [];
+  OneSignalDeferred.push(async function(OneSignal) {
+    await OneSignal.init({
+      appId: "REPLACE_WITH_ONESIGNAL_APP_ID",
+      notifyButton: { enable: false }
+    });
+  });
+</script>
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="inner">
+      <a href="/ko/" class="site-logo"><img src="/favicon.svg" alt="ImageToPrompt" width="48" height="48"><div class="site-logo-text">ImageTo<span class="accent">Prompt</span><span class="site-logo-sub">&#47924;&#47308; AI &#54532;&#47212;&#54532;&#53944; &#49373;&#49457;&#44592;</span></div></a>
+      <nav class="site-nav" aria-label="&#47700;&#51064; &#45236;&#48708;&#44172;&#51060;&#49496;">
+        <div class="nav-dropdown">
+          <button class="nav-dropdown-trigger" aria-haspopup="true" aria-expanded="false">Tools <span class="nav-chevron" aria-hidden="true">&#9660;</span></button>
+          <div class="nav-dropdown-menu" role="menu">
+            <div class="nav-mega-grid">
+              <div class="nav-mega-col">
+                <div class="nav-mega-heading">&#128444; IMAGE TOOLS</div>
+                <a href="/" role="menuitem" class="nav-mega-tool">Image to Prompt <span class="nav-mega-arrow">&#8594;</span></a>
+                <a href="/text-to-prompt/" role="menuitem" class="nav-mega-tool">Text to Prompt <span class="nav-mega-arrow">&#8594;</span></a>
+                <a href="/describe-image/" role="menuitem" class="nav-mega-tool">Describe Image <span class="nav-new-badge">NEW</span> <span class="nav-mega-arrow">&#8594;</span></a>
+                <div class="nav-mega-models-label">Models</div>
+                <div class="nav-mega-models"><a href="/midjourney-prompt-generator/">Midjourney</a><span class="nav-dot">&#xB7;</span><a href="/stable-diffusion-prompt-generator/">SD</a></div>
+                <div class="nav-mega-models"><a href="/flux-prompt-generator/">Flux</a><span class="nav-dot">&#xB7;</span><a href="/dall-e-prompt-generator/">DALL&#xB7;E&#xA0;3</a></div>
+                <div class="nav-mega-models"><a href="/adobe-firefly-prompt-generator/">Firefly</a><span class="nav-dot">&#xB7;</span><a href="/leonardo-ai-prompt-generator/">Leonardo</a></div>
+                <div class="nav-mega-models"><a href="/ideogram-prompt-generator/">Ideogram</a></div>
+              </div>
+              <div class="nav-mega-divider" aria-hidden="true"></div>
+              <div class="nav-mega-col">
+                <div class="nav-mega-heading">&#127909; VIDEO TOOLS</div>
+                <a href="/?tab=image-to-video" role="menuitem" class="nav-mega-tool">Image to Video <span class="nav-mega-arrow">&#8594;</span></a>
+                <a href="/?tab=text-to-video" role="menuitem" class="nav-mega-tool">Text to Video <span class="nav-mega-arrow">&#8594;</span></a>
+                <div class="nav-mega-models-label">Models</div>
+                <div class="nav-mega-models"><a href="/veo-prompt-generator/">Veo</a><span class="nav-dot">&#xB7;</span><a href="/kling-prompt-generator/">Kling</a></div>
+                <div class="nav-mega-models"><a href="/runway-prompt-generator/">Runway</a><span class="nav-dot">&#xB7;</span><a href="/pika-prompt-generator/">Pika</a></div>
+                <div class="nav-mega-models"><a href="/luma-prompt-generator/">Luma</a><span class="nav-dot">&#xB7;</span><a href="/sora-prompt-generator/">Sora</a></div>
+                <div class="nav-mega-models"><a href="/minimax-prompt-generator/">Minimax</a><span class="nav-dot">&#xB7;</span><a href="/stable-video-prompt-generator/">Stable</a></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <a href="/ko/blog/">&#48660;&#47196;&#44536;</a>
+        <a href="/ko/pricing/" class="nav-pill-pricing">&#50836;&#44552;</a>
+        <a href="/ko/about/" class="nav-pill-about">&#49548;&#44060;</a>
+        <a href="/ko/" class="nav-try-free">&#47924;&#47308; &#52404;&#54744; &#8594;</a>
+        <button id="theme-toggle" onclick="toggleTheme()" aria-label="&#53580;&#47560; &#51204;&#54872;" title="&#53580;&#47560; &#51204;&#54872;">&#9728;&#xFE0F;</button>
+  </nav>
+    </div>
+  </header>
+
+  <nav class="breadcrumb" aria-label="&#53456;&#49353;&#44221;&#47196;">
+    <a href="/ko/">&#54856;</a><span class="sep">&#8250;</span>
+    <a href="/ko/blog/">&#48660;&#47196;&#44536;</a><span class="sep">&#8250;</span>
+    <span>&#49324;&#51652;&#50640;&#49436; AI &#54532;&#47212;&#54532;&#53944;</span>
+  </nav>
+
+  <div class="page-wrapper">
+
+    <header class="article-header">
+      <p class="article-tag">&#49324;&#51652;</p>
+      <h1>&#49324;&#51652;&#50640;&#49436; AI &#54532;&#47212;&#54532;&#53944; &#47564;&#46308;&#44592;</h1>
+      <div class="article-meta">
+        <span>2026&#45380; 3&#50900;</span>
+        <span class="dot">&#183;</span>
+        <span>10&#48516; &#51069;&#44592;</span>
+        <span class="dot">&#183;</span>
+        <span>Flux &#183; Midjourney &#183; Stable Diffusion &#183; &#49324;&#51652;</span>
+        <span class="dot">&#183;</span>
+        <span>2026&#45380; 3&#50900; &#50629;&#45936;&#51060;&#53944;</span>
+      </div>
+    </header>
+
+    <div class="article-body">
+
+      <p>&#49892;&#51228; &#49324;&#51652;&#51012; AI &#54532;&#47212;&#54532;&#53944;&#47196; &#48320;&#54872;&#54616;&#45716; &#44163;&#51008; AI &#51060;&#48120;&#51648;&#45208; &#51068;&#47084;&#49828;&#53944;&#47484; &#48320;&#54872;&#54616;&#45716; &#44163;&#44284; &#44540;&#48376;&#51201;&#51004;&#47196; &#45796;&#47493;&#45768;&#45796;. &#49892;&#51228; &#49324;&#51652;&#50640;&#45716; AI &#51060;&#48120;&#51648; &#49373;&#49457;&#44592;&#44032; &#45440;&#46972;&#50868; &#51221;&#54869;&#46020;&#47196; &#51116;&#54788;&#54624; &#49688; &#51080;&#45716; &#44305;&#54617;, &#51312;&#47749;, &#45824;&#44592; &#51221;&#48372;&#44032; &#54252;&#54632;&#46104;&#50612; &#51080;&#49845;&#45768;&#45796; &#8212; &#45800;, &#50612;&#46523;&#44172; &#49444;&#47749;&#54644;&#50556; &#54616;&#45716;&#51648; &#50508;&#50500;&#50556; &#54633;&#45768;&#45796;. &#51060; &#44032;&#51060;&#46300;&#45716; &#49324;&#51652;&#51012; &#49324;&#51652;&#51089;&#44032;&#52376;&#47100; &#51069;&#44256; &#44536;&#44163;&#51012; &#54952;&#44284;&#51201;&#51064; AI &#54532;&#47212;&#54532;&#53944;&#47196; &#48264;&#50669;&#54616;&#45716; &#48169;&#48277;&#51012; &#44032;&#47476;&#52432;&#46300;&#47549;&#45768;&#45796;.</p>
+
+      <nav class="toc" aria-label="&#47785;&#52264;">
+        <details open>
+          <summary>&#51060; &#44032;&#51060;&#46300;&#51032; &#45236;&#50857;</summary>
+          <ol>
+            <li><a href="#jomyeong-ilgi">&#51312;&#47749; &#51069;&#44592;&#50752; &#49444;&#47749;</a></li>
+            <li><a href="#gudo-peureioming">&#44396;&#46020;&#50752; &#54532;&#47112;&#51060;&#48141;</a></li>
+            <li><a href="#kamera-yongeo">&#52852;&#47700;&#46972;&#50752; &#47116;&#51592; &#50857;&#50612;</a></li>
+            <li><a href="#saeksang-bunwigi">&#49353;&#49345; &#54036;&#47112;&#53944;&#50752; &#48516;&#50948;&#44592;</a></li>
+            <li><a href="#jangreu-yesi">&#49324;&#51652; &#51109;&#47476;&#48324; &#50696;&#49884;</a></li>
+            <li><a href="#hucheori-hyogwa">&#54980;&#52376;&#47532; &#54952;&#44284;</a></li>
+            <li><a href="#jaju-munneun-jilmun">&#51088;&#51452; &#47928;&#45716; &#51656;&#47928;</a></li>
+          </ol>
+        </details>
+      </nav>
+
+      <div class="callout">
+        <p><strong>&#51648;&#44552; &#52404;&#54744;&#54644;&#48372;&#49464;&#50836;:</strong> <a href="/">Image to Prompt &#46020;&#44396;</a>&#50640; &#50612;&#46500; &#49324;&#51652;&#51060;&#46304; &#50629;&#47196;&#46300;&#54616;&#47732; &#51312;&#47749;, &#44396;&#46020;, &#48516;&#50948;&#44592;&#47484; &#51088;&#46041;&#51004;&#47196; &#54252;&#52265;&#54616;&#45716; &#54532;&#47212;&#54532;&#53944;&#47484; &#48155;&#51012; &#49688; &#51080;&#49845;&#45768;&#45796;. &#52572;&#51201;&#51032; &#44208;&#44284;&#47484; &#50948;&#54644; &#8220;&#54252;&#53664;&#44536;&#47000;&#54589;&#8221; &#47784;&#46300;&#47484; &#49440;&#53469;&#54616;&#49464;&#50836;.</p>
+      </div>
+
+      <h2 id="jomyeong-ilgi">&#51312;&#47749; &#51069;&#44592;&#50752; &#49444;&#47749;</h2>
+
+      <p>&#51312;&#47749;&#51008; &#49324;&#51652;&#50640;&#49436; &#44032;&#51109; &#51473;&#50836;&#54620; &#50836;&#49548;&#51060;&#47728; AI &#54532;&#47212;&#54532;&#53944;&#50640;&#49436;&#46020; &#44032;&#51109; &#53360; &#50689;&#54693;&#51012; &#48120;&#52841;&#45768;&#45796;. &#49324;&#51652;&#51032; &#48731;&#51012; &#8220;&#51069;&#44256;&#8221; &#53412;&#50892;&#46300;&#47196; &#48264;&#50669;&#54616;&#45716; &#44163;&#51008; &#49324;&#51652; &#54532;&#47212;&#54532;&#53944; &#50644;&#51648;&#45768;&#50612;&#47553;&#50640;&#49436; &#44032;&#51109; &#44032;&#52824; &#51080;&#45716; &#44592;&#49696;&#51077;&#45768;&#45796;.</p>
+
+      <h3>&#44305;&#50896;</h3>
+      <p>&#47676;&#51200; &#48731;&#51060; &#50612;&#46356;&#49436; &#50724;&#45716;&#51648; &#54028;&#50501;&#54616;&#49464;&#50836;. &#44033; &#44305;&#50896;&#51008; AI &#47784;&#45944;&#51060; &#51064;&#49885;&#54616;&#45716; &#44256;&#50976;&#54620; &#53945;&#49457;&#51060; &#51080;&#49845;&#45768;&#45796;:</p>
+      <ul>
+        <li><code>natural sunlight</code> &#8212; &#51649;&#49324;&#44305;&#46972;&#51060;, &#49440;&#47749;&#54620; &#44536;&#47548;&#51088;</li>
+        <li><code>window light</code> &#8212; &#54596;&#53552;&#47553;&#46108; &#51088;&#50672;&#44305;, &#48512;&#46300;&#47101;&#44256; &#48169;&#54693;&#49457; &#51080;&#45716; &#48731;</li>
+        <li><code>overcast sky</code> &#8212; &#46160;&#47163;&#54620; &#44536;&#47548;&#51088; &#50630;&#51060; &#54140;&#51652; &#48731;</li>
+        <li><code>studio strobe</code> &#8212; &#53685;&#51228;&#46108; &#44512;&#51068;&#54620; &#51312;&#47749;</li>
+        <li><code>practical lights</code> &#8212; &#51109;&#47732; &#50504;&#50640; &#48372;&#51060;&#45716; &#47016;&#54532;, &#45348;&#50728;, &#52488;</li>
+        <li><code>mixed lighting</code> &#8212; &#51088;&#50672;&#44305;&#44284; &#51064;&#44277;&#44305;&#51032; &#51312;&#54633;</li>
+      </ul>
+
+      <h3>&#44305;&#51656;</h3>
+      <p>&#44305;&#51656;&#51008; &#48731;&#51032; &#8220;&#44053;&#46020;&#8221; &#46608;&#45716; &#8220;&#48512;&#46300;&#47084;&#50880;&#8221;&#51012; &#49444;&#47749;&#54633;&#45768;&#45796;:</p>
+      <ul>
+        <li><code>soft diffused light</code> &#8212; &#44536;&#47548;&#51088;&#50752; &#48731;&#51032; &#48512;&#46300;&#47084;&#50868; &#51204;&#54872; (&#55120;&#47536; &#54616;&#45720;, &#49548;&#54532;&#53944;&#48149;&#49828;)</li>
+        <li><code>hard direct light</code> &#8212; &#49440;&#47749;&#54620; &#44536;&#47548;&#51088;&#50752; &#44053;&#54620; &#45824;&#48708; (&#51221;&#50724; &#53468;&#50577;, &#45236;&#51109; &#54540;&#47000;&#49884;)</li>
+        <li><code>dappled light</code> &#8212; &#45208;&#47943;&#51079;&#51060;&#45208; &#48660;&#46972;&#51064;&#46300;&#47484; &#53685;&#44284;&#54620; &#48731;</li>
+        <li><code>volumetric light</code> &#8212; &#50504;&#44060;, &#47676;&#51648;, &#50504;&#44060; &#49549;&#50640;&#49436; &#48372;&#51060;&#45716; &#44305;&#49440;</li>
+      </ul>
+
+      <h3>&#44305;&#48169;&#54693;</h3>
+      <p>&#48731;&#51032; &#48169;&#54693;&#51008; &#48516;&#50948;&#44592;&#50640; &#44537;&#51201;&#51064; &#50689;&#54693;&#51012; &#48120;&#52841;&#45768;&#45796;:</p>
+      <ul>
+        <li><code>front lighting</code> &#8212; &#54217;&#54217;&#54620; &#51312;&#47749;, &#45230;&#51008; &#51077;&#52404;&#44048;</li>
+        <li><code>side lighting</code> &#8212; &#53581;&#49828;&#52376;&#47484; &#46300;&#47084;&#45236;&#44256; &#51077;&#52404;&#44048; &#49373;&#49457;</li>
+        <li><code>backlit / backlighting</code> &#8212; &#49892;&#47336;&#50631;&#44284; &#54980;&#44305; &#54952;&#44284;</li>
+        <li><code>rim lighting</code> &#8212; &#54588;&#49324;&#52404; &#51452;&#50948;&#51032; &#48731;&#45208;&#45716; &#50980;&#44285;</li>
+        <li><code>Rembrandt lighting</code> &#8212; &#48152;&#45824;&#51901; &#48380;&#50640; &#44256;&#51204;&#51201;&#51064; &#49340;&#44033;&#54805; &#44305;</li>
+        <li><code>overhead lighting</code> &#8212; &#50948;&#50640;&#49436; &#48708;&#52628;&#45716; &#48731;, &#45576; &#50500;&#47000; &#44536;&#47548;&#51088;</li>
+      </ul>
+
+      <h3>&#49353;&#50728;&#46020;</h3>
+      <ul>
+        <li><code>warm golden light</code> &#8212; &#51068;&#47792;, &#53573;&#49828;&#53584; (2700-3500K)</li>
+        <li><code>neutral daylight</code> &#8212; &#44512;&#54805; &#51105;&#55180; &#48731; (5500K)</li>
+        <li><code>cool blue light</code> &#8212; &#44536;&#45720;, &#48660;&#47336;&#50500;&#50892;, &#55120;&#47536; &#45216; (6500K+)</li>
+        <li><code>mixed color temperature</code> &#8212; &#46384;&#46907;&#54620; &#53573;&#49828;&#53584; + &#52264;&#44032;&#50868; &#51452;&#44305;</li>
+      </ul>
+
+      <h2 id="gudo-peureioming">&#44396;&#46020;&#50752; &#54532;&#47112;&#51060;&#48141;</h2>
+
+      <p>&#44396;&#46020;&#45716; &#48372;&#45716; &#49324;&#46988;&#51032; &#49884;&#49440;&#51012; &#51060;&#46160;&#44256; &#51060;&#48120;&#51648;&#51032; &#49884;&#44033;&#51201; &#44396;&#51312;&#47484; &#47564;&#46308;&#50612;&#45253;&#45768;&#45796;. AI &#49373;&#49457;&#44592;&#45716; &#49324;&#51652; &#44396;&#46020; &#50857;&#50612;&#47484; &#51096; &#51060;&#54644;&#54633;&#45768;&#45796;.</p>
+
+      <h3>&#49399; &#50976;&#54805;</h3>
+      <ul>
+        <li><code>extreme close-up (ECU)</code> &#8212; &#44537;&#45800; &#46356;&#53580;&#51068; (&#45576;, &#53581;&#49828;&#52376;, &#47932;&#48169;&#50872;)</li>
+        <li><code>close-up</code> &#8212; &#50620;&#44404;&#51060;&#45208; &#44061;&#52404;&#51032; &#53364;&#47196;&#51592;&#50629;</li>
+        <li><code>medium shot</code> &#8212; &#54588;&#49324;&#52404;&#47484; &#54728;&#47532;&#44620;&#51648; &#45812;&#51008; &#49399;</li>
+        <li><code>full body shot</code> &#8212; &#54588;&#49324;&#52404; &#51204;&#52404;</li>
+        <li><code>wide shot / establishing shot</code> &#8212; &#54872;&#44221;&#51012; &#48372;&#50668;&#51452;&#45716; &#50752;&#51060;&#46300; &#49399;</li>
+        <li><code>aerial view / drone shot</code> &#8212; &#54637;&#44277; &#49399;</li>
+      </ul>
+
+      <h3>&#52852;&#47700;&#46972; &#50521;&#44544;</h3>
+      <ul>
+        <li><code>eye level</code> &#8212; &#45576;&#45458;&#51060;&#51032; &#51088;&#50672;&#49828;&#47084;&#50868; &#50521;&#44544;</li>
+        <li><code>low angle / worm's eye view</code> &#8212; &#47196;&#50549;&#44544;, &#54588;&#49324;&#52404;&#47484; &#50948;&#50517;&#51201;&#51004;&#47196;</li>
+        <li><code>high angle / bird's eye view</code> &#8212; &#54616;&#51060;&#50549;&#44544;, &#54588;&#49324;&#52404;&#47484; &#50557;&#54616;&#44172;</li>
+        <li><code>dutch angle / tilted</code> &#8212; &#44592;&#50872;&#50612;&#51652; &#50521;&#44544;, &#48520;&#50504;&#44048; &#51312;&#49457;</li>
+        <li><code>over the shoulder</code> &#8212; &#50612;&#44648; &#45320;&#47672;&#47196; &#48372;&#45716; &#49884;&#51216;</li>
+      </ul>
+
+      <h3>&#44396;&#46020; &#44508;&#52825;</h3>
+      <ul>
+        <li><code>rule of thirds</code> &#8212; &#49340;&#46321;&#48516; &#44536;&#47532;&#46300; &#44368;&#52264;&#51216;&#50640; &#54588;&#49324;&#52404; &#48176;&#52824;</li>
+        <li><code>centered composition</code> &#8212; &#44032;&#50868;&#45936;&#50640; &#54588;&#49324;&#52404;, &#45824;&#52845; &#54952;&#44284;</li>
+        <li><code>leading lines</code> &#8212; &#49884;&#49440;&#51012; &#54588;&#49324;&#52404;&#47196; &#51060;&#46160;&#45716; &#49440;</li>
+        <li><code>frame within a frame</code> &#8212; &#54588;&#49324;&#52404;&#47484; &#44048;&#49912;&#45716; &#44148;&#52629;&#51201; &#50836;&#49548;</li>
+        <li><code>negative space</code> &#8212; &#54588;&#49324;&#52404; &#51452;&#50948;&#51032; &#45331;&#51008; &#50668;&#48177;</li>
+      </ul>
+
+      <h2 id="kamera-yongeo">&#52852;&#47700;&#46972;&#50752; &#47116;&#51592; &#50857;&#50612;</h2>
+
+      <p>&#52852;&#47700;&#46972;&#50752; &#47116;&#51592; &#44592;&#49696; &#50857;&#50612;&#45716; AI &#44208;&#44284;&#50640; &#49345;&#45817;&#54620; &#50689;&#54693;&#51012; &#48120;&#52841;&#45768;&#45796;. &#50896;&#44540;&#48277;, &#54588;&#49324;&#44228; &#49900;&#46020;, &#51204;&#52404;&#51201;&#51064; &#47116;&#45908;&#47553;&#50640; &#50689;&#54693;&#51012; &#51469;&#45768;&#45796;.</p>
+
+      <h3>&#52488;&#51216;&#44144;&#47532;</h3>
+      <div class="table-wrap">
+      <table class="comparison-table">
+        <thead>
+          <tr>
+            <th>&#52488;&#51216;&#44144;&#47532;</th>
+            <th>&#49884;&#44033;&#51201; &#54952;&#44284;</th>
+            <th>&#51068;&#48152;&#51201; &#50857;&#46020;</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><code>14-24mm</code></td>
+            <td>&#52488;&#44305;&#44033;, &#50780;&#44257;, &#44284;&#51109;&#46108; &#50896;&#44540;&#48277;</td>
+            <td>&#44148;&#52629;, &#47788;&#51077;&#44048; &#51080;&#45716; &#54413;&#44221;</td>
+          </tr>
+          <tr>
+            <td><code>35mm</code></td>
+            <td>&#51088;&#50672;&#49828;&#47084;&#50868; &#50521;&#44544;, &#51201;&#45817;&#54620; &#44618;&#51060;&#44048;</td>
+            <td>&#49828;&#53944;&#47551; &#54252;&#53664;, &#47476;&#54252;</td>
+          </tr>
+          <tr>
+            <td><code>50mm</code></td>
+            <td>&#51088;&#50672;&#49828;&#47084;&#50868; &#50896;&#44540;&#48277;, &#51064;&#44036;&#51032; &#49884;&#50556;&#50640; &#44032;&#44620;&#50880;</td>
+            <td>&#54872;&#44221; &#52488;&#49345;&#54868;, &#51068;&#49345;</td>
+          </tr>
+          <tr>
+            <td><code>85mm</code></td>
+            <td>&#48512;&#46300;&#47084;&#50868; &#50517;&#52629;, &#53356;&#47532;&#48120;&#54620; &#48372;&#44172;</td>
+            <td>&#52488;&#49345;&#54868;, &#54056;&#49496;</td>
+          </tr>
+          <tr>
+            <td><code>135-200mm</code></td>
+            <td>&#44053;&#54620; &#50517;&#52629;, &#47588;&#50864; &#55120;&#47536; &#48176;&#44221;</td>
+            <td>&#53364;&#47196;&#51592;&#50629; &#52488;&#49345;, &#49828;&#54252;&#52768;, &#50556;&#49373;</td>
+          </tr>
+        </tbody>
+      </table>
+      </div>
+
+      <h3>&#51312;&#47532;&#44060;&#50752; &#54588;&#49324;&#44228; &#49900;&#46020;</h3>
+      <ul>
+        <li><code>f/1.4 - f/2.0</code> &#8212; &#50490;&#51008; &#54588;&#49324;&#44228; &#49900;&#46020;, &#46160;&#47163;&#54620; &#48372;&#44172;: <code>shallow depth of field, creamy bokeh, f/1.4</code></li>
+        <li><code>f/5.6 - f/8</code> &#8212; &#51473;&#44036; &#54588;&#49324;&#44228; &#49900;&#46020;: <code>moderate depth of field, sharp subject with slightly soft background</code></li>
+        <li><code>f/11 - f/16</code> &#8212; &#50526;&#50640;&#49436; &#46244;&#44620;&#51648; &#47784;&#46160; &#49440;&#47749;: <code>deep depth of field, everything in sharp focus, landscape photography</code></li>
+      </ul>
+
+      <h3>&#52852;&#47700;&#46972; &#47784;&#45944;</h3>
+      <p>&#53945;&#51221; &#52852;&#47700;&#46972; &#47784;&#45944;&#51012; &#50616;&#44553;&#54616;&#47732; &#47116;&#45908;&#47553;&#50640; &#50689;&#54693;&#51012; &#48120;&#52841;&#45768;&#45796;:</p>
+      <ul>
+        <li><code>Canon EOS R5</code> &#8212; &#46384;&#46907;&#54616;&#44256; &#51088;&#50672;&#49828;&#47084;&#50868; &#49353;&#44048;</li>
+        <li><code>Sony A7IV</code> &#8212; &#45458;&#51008; &#49440;&#47749;&#46020;, &#51473;&#47549;&#51201; &#49353;&#44048;</li>
+        <li><code>Fujifilm X-T5</code> &#8212; &#54596;&#47492; &#49884;&#48044;&#47112;&#51060;&#49496;, &#50976;&#44592;&#51201;&#51064; &#53668;</li>
+        <li><code>Hasselblad X2D</code> &#8212; &#51473;&#54805;&#54252;&#47607;, &#46832;&#50612;&#45212; &#49353;&#49345; &#44618;&#51060;</li>
+        <li><code>Leica M11</code> &#8212; &#48724;&#54000;&#51648; &#44048;&#49457;, &#46021;&#53945;&#54620; &#47560;&#51060;&#53356;&#47196; &#52968;&#53944;&#46972;&#49828;&#53944;</li>
+      </ul>
+
+      <h2 id="saeksang-bunwigi">&#49353;&#49345; &#54036;&#47112;&#53944;&#50752; &#48516;&#50948;&#44592;</h2>
+
+      <p>&#49892;&#51228; &#49324;&#51652;&#50640;&#45716; &#48516;&#50948;&#44592;&#47484; &#51221;&#51032;&#54616;&#45716; &#53945;&#51221; &#52972;&#47084; &#44536;&#47112;&#51060;&#46377;&#51060; &#51080;&#45716; &#44221;&#50864;&#44032; &#47566;&#49845;&#45768;&#45796;. &#54532;&#47212;&#54532;&#53944;&#50640;&#49436; &#51060;&#47484; &#49444;&#47749;&#54616;&#45716; &#48169;&#48277;:</p>
+
+      <ul>
+        <li><code>warm earth tones</code> &#8212; &#54889;&#53664;&#49353;, &#44040;&#49353;, &#54840;&#48149;&#49353; &#53668; (&#46972;&#51060;&#54532;&#49828;&#53440;&#51068; &#52488;&#49345;&#54868;)</li>
+        <li><code>cool desaturated tones</code> &#8212; &#52264;&#44032;&#50868; &#54028;&#46976;&#49353;&#44284; &#54924;&#49353; (&#54252;&#53664;&#51200;&#45328;&#47532;&#51608;)</li>
+        <li><code>teal and orange color grading</code> &#8212; &#53364;&#47000;&#49885; &#49884;&#45348;&#47560;&#54001; &#52972;&#47084; &#44536;&#47112;&#51060;&#46377;</li>
+        <li><code>matte film look</code> &#8212; &#45458;&#50500;&#51652; &#48660;&#47001;, &#45230;&#51008; &#53080;&#53944;&#46972;&#49828;&#53944; (&#54596;&#47492; &#49884;&#48044;&#47112;&#51060;&#49496;)</li>
+        <li><code>high contrast black and white</code> &#8212; &#46300;&#46972;&#47560;&#54001; &#47784;&#45432;&#53356;&#47212;</li>
+        <li><code>cross-processed colors</code> &#8212; &#49353;&#51060; &#49333;&#50500;&#51648;&#44256; &#52292;&#46020;&#44032; &#45458;&#51008; &#48724;&#54000;&#51648; &#54952;&#44284;</li>
+      </ul>
+
+      <h2 id="jangreu-yesi">&#49324;&#51652; &#51109;&#47476;&#48324; &#50696;&#49884;</h2>
+
+      <h3>&#49828;&#53888;&#46356;&#50724; &#52488;&#49345;&#54868;</h3>
+      <p><code>studio portrait of a middle-aged man with salt-and-pepper beard, wearing a navy turtleneck, Rembrandt lighting with softbox key light, dark charcoal background, shot with Canon 85mm f/1.4, shallow depth of field, warm skin tones, editorial quality</code></p>
+
+      <h3>&#54413;&#44221;</h3>
+      <p><code>dramatic mountain landscape at golden hour, jagged snow-capped peaks, valley filled with fog, warm amber light hitting the summits, deep shadows in the valley, shot with 24mm wide angle lens, deep depth of field, landscape photography, vivid but natural colors</code></p>
+
+      <h3>&#49828;&#53944;&#47551; &#54252;&#53664;</h3>
+      <p><code>candid street photography, elderly woman walking through rain-soaked Tokyo alley at night, neon signs reflecting on wet pavement, shot with Fujifilm X-T5, 35mm f/1.4, slight film grain, natural ambient light, documentary style</code></p>
+
+      <h3>&#44148;&#52629;</h3>
+      <p><code>architectural photography of a modern glass building, dramatic perspective from ground level looking up, clear blue sky reflected in glass panels, geometric lines and symmetry, shot with 17mm tilt-shift lens, sharp details, high contrast</code></p>
+
+      <h2 id="hucheori-hyogwa">&#54980;&#52376;&#47532; &#54952;&#44284;</h2>
+
+      <p>&#49324;&#51652;&#51032; &#54980;&#52376;&#47532;&#45716; &#50808;&#44288;&#50640; &#53360; &#50689;&#54693;&#51012; &#48120;&#52841;&#45768;&#45796;. AI &#49373;&#49457;&#44592;&#45716; &#45796;&#50577;&#54620; &#54980;&#52376;&#47532; &#50857;&#50612;&#47484; &#51064;&#49885;&#54633;&#45768;&#45796;:</p>
+
+      <ul>
+        <li><code>film grain</code> &#8212; &#49892;&#48260; &#54596;&#47492;&#51032; &#51088;&#50672;&#49828;&#47084;&#50868; &#44536;&#47112;&#51064; &#53581;&#49828;&#52376;</li>
+        <li><code>lens flare</code> &#8212; &#44305;&#54617;&#51201; &#48152;&#49324;&#50752; &#54980;&#44305;</li>
+        <li><code>vignette</code> &#8212; &#51060;&#48120;&#51648; &#44032;&#51109;&#51088;&#47532; &#50612;&#46160;&#50880;</li>
+        <li><code>chromatic aberration</code> &#8212; &#44061;&#52404; &#44032;&#51109;&#51088;&#47532;&#51032; &#49353;&#49688;&#52264;</li>
+        <li><code>motion blur</code> &#8212; &#50880;&#51649;&#51076; &#55120;&#47548;</li>
+        <li><code>split toning</code> &#8212; &#44536;&#47548;&#51088;&#50752; &#54616;&#51060;&#46972;&#51060;&#53944;&#50640; &#45796;&#47480; &#49353;&#49345;</li>
+        <li><code>Kodak Portra 400 film simulation</code> &#8212; &#53945;&#51221; &#54596;&#47492; &#49884;&#48044;&#47112;&#51060;&#49496;</li>
+        <li><code>desaturated shadows with warm highlights</code> &#8212; &#53945;&#51221; &#52972;&#47084; &#44536;&#47112;&#51060;&#46377;</li>
+      </ul>
+
+      <div class="cta-box">
+        <h3>&#49324;&#51652;&#51012; AI &#54532;&#47212;&#54532;&#53944;&#47196; &#48320;&#54872;&#54616;&#49464;&#50836;</h3>
+        <p>&#50612;&#46500; &#49324;&#51652;&#51060;&#46304; &#50629;&#47196;&#46300;&#54616;&#44256; &#51312;&#47749;, &#44396;&#46020;, &#48516;&#50948;&#44592;&#47484; &#51221;&#54869;&#55176; &#54252;&#52265;&#54616;&#45716; &#54532;&#47212;&#54532;&#53944;&#47484; &#48155;&#51004;&#49464;&#50836; &#8212; &#50668;&#47084;&#48516;&#51060; &#49440;&#54840;&#54616;&#45716; AI &#47784;&#45944;&#50640; &#52572;&#51201;&#54868;&#46121;&#45768;&#45796;.</p>
+        <a href="/?lang=ko" class="cta-btn">ImageToPrompt &#47924;&#47308;&#47196; &#49324;&#50857;&#54644;&#48372;&#44592; &#8594;</a>
+      </div>
+
+      <h2 id="jaju-munneun-jilmun">&#51088;&#51452; &#47928;&#45716; &#51656;&#47928;</h2>
+
+      <h3>&#50612;&#46500; &#50976;&#54805;&#51032; &#49324;&#51652;&#51060; AI &#54532;&#47212;&#54532;&#53944;&#47196; &#44032;&#51109; &#51096; &#48320;&#54872;&#46104;&#45208;&#50836;?</h3>
+      <p>&#47749;&#54869;&#54620; &#51452;&#51228;, &#46021;&#53945;&#54620; &#51312;&#47749;, &#46160;&#46300;&#47084;&#51652; &#49884;&#44033;&#51201; &#49828;&#53440;&#51068;&#51060; &#51080;&#45716; &#49324;&#51652;&#51060; &#44032;&#51109; &#51096; &#48320;&#54872;&#46121;&#45768;&#45796;. &#51204;&#47928; &#49324;&#51652;(&#49828;&#53888;&#46356;&#50724; &#52488;&#49345;, &#54413;&#44221;, &#44148;&#52629;)&#51008; &#53945;&#49457;&#51012; &#49444;&#47749;&#54616;&#44592; &#49772;&#50892; &#46832;&#50612;&#45212; &#44208;&#44284;&#47484; &#45253;&#45768;&#45796;. &#50668;&#47084; &#51452;&#51228;&#44032; &#49462;&#51060;&#44144;&#45208; &#54217;&#54217;&#54620; &#51312;&#47749;&#51032; &#49828;&#47560;&#53944;&#54256; &#49324;&#51652;&#51008; &#45916; &#51221;&#54869;&#54620; &#54532;&#47212;&#54532;&#53944;&#47484; &#49373;&#49457;&#54633;&#45768;&#45796;.</p>
+
+      <h3>&#49324;&#51652;&#51032; &#51312;&#47749;&#51012; AI &#54532;&#47212;&#54532;&#53944;&#47196; &#50612;&#46523;&#44172; &#49444;&#47749;&#54616;&#45208;&#50836;?</h3>
+      <p>&#44305;&#50896;(natural light, studio strobe, window light), &#44305;&#51656;(soft, hard, diffused), &#48169;&#54693;(backlit, side-lit, overhead), &#49353;&#50728;&#46020;(warm, cool, neutral)&#47484; &#54028;&#50501;&#54616;&#49464;&#50836;. &#50696;&#49884;: &#8220;warm golden hour side lighting&#8221; &#46608;&#45716; &#8220;cool overcast soft diffused light&#8221;. &#51312;&#47749;&#51008; &#54532;&#47212;&#54532;&#53944;&#50640;&#49436; &#44032;&#51109; &#53360; &#50689;&#54693;&#51012; &#48120;&#52824;&#45716; &#50836;&#49548;&#51077;&#45768;&#45796;.</p>
+
+      <h3>AI &#54532;&#47212;&#54532;&#53944;&#50640; &#52852;&#47700;&#46972;&#50752; &#47116;&#51592; &#50857;&#50612;&#47484; &#54252;&#54632;&#54644;&#50556; &#54616;&#45208;&#50836;?</h3>
+      <p>&#45348;, &#52852;&#47700;&#46972; &#50857;&#50612;&#45716; &#53945;&#55176; Flux&#50752; Stable Diffusion&#50640;&#49436; &#53360; &#46020;&#50880;&#51060; &#46121;&#45768;&#45796;. &#8220;Shot with Canon EOS R5, 85mm f/1.4&#8221;&#45716; &#54588;&#49324;&#44228; &#49900;&#46020;&#50752; &#47116;&#45908;&#47553;&#50640; &#50689;&#54693;&#51012; &#48120;&#52841;&#45768;&#45796;. &#8220;24mm wide angle&#8221;&#51008; &#50896;&#44540;&#44048;&#51012; &#45331;&#55176;&#44256;, &#8220;Hasselblad medium format&#8221;&#51008; &#45908; &#49884;&#45348;&#47560;&#54001;&#54620; &#47116;&#45908;&#47553;&#51012; &#47564;&#46308;&#50612;&#45253;&#45768;&#45796;.</p>
+
+      <h3>AI &#54532;&#47212;&#54532;&#53944;&#47196; &#49324;&#51652;&#51032; &#51221;&#54869;&#54620; &#44396;&#46020;&#47484; &#51116;&#54788;&#54624; &#49688; &#51080;&#45208;&#50836;?</h3>
+      <p>&#53581;&#49828;&#53944; &#54532;&#47212;&#54532;&#53944;&#47564;&#51004;&#47196;&#45716; &#51221;&#54869;&#54620; &#44396;&#46020;&#47484; &#51116;&#54788;&#54624; &#49688; &#50630;&#49845;&#45768;&#45796;. &#8220;rule of thirds&#8221;, &#8220;centered composition&#8221;, &#8220;leading lines&#8221; &#44057;&#51008; &#50857;&#50612;&#47484; &#49324;&#50857;&#54616;&#49464;&#50836;. &#51221;&#48128;&#54620; &#44396;&#46020; &#51228;&#50612;&#47484; &#50948;&#54644;&#49436;&#45716; Stable Diffusion&#51032; ControlNet&#51012; &#49324;&#50857;&#54616;&#49464;&#50836; &#8212; Canny &#46608;&#45716; Depth &#47784;&#46280;&#51060; &#49324;&#51652;&#51032; &#44396;&#51312;&#47484; &#52628;&#52636;&#54616;&#50668; &#49373;&#49457;&#51012; &#50504;&#45236;&#54633;&#45768;&#45796;.</p>
+
+    </div>
+
+    <div class="author-bio">
+      <svg class="author-photo" width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="&#51200;&#51088; &#50500;&#48148;&#53440;"><circle cx="32" cy="32" r="32" fill="#2a1f4e"/><circle cx="32" cy="26" r="11" fill="#7c6bc4"/><ellipse cx="32" cy="52" rx="18" ry="11" fill="#7c6bc4"/></svg>
+      <div class="author-info">
+        <p class="author-name">ImageToPrompt Team</p>
+        <p class="author-desc">&#53356;&#47532;&#50640;&#51060;&#53552;&#46308;&#51060; AI &#51060;&#48120;&#51648; &#49373;&#49457;&#51012; &#47560;&#49828;&#53552;&#54624; &#49688; &#51080;&#46020;&#47197; &#46027;&#45716; &#51204;&#47928; &#54016;&#51077;&#45768;&#45796;. &#51060;&#48120;&#51648;&#50640;&#49436; &#54532;&#47212;&#54532;&#53944;&#47196; &#48320;&#54872; &#46020;&#44396;&#50752; AI &#54532;&#47212;&#54532;&#53944; &#50644;&#51648;&#45768;&#50612;&#47553; &#44032;&#51060;&#46300;&#47484; &#53685;&#54644; &#51204; &#49464;&#44228; &#50500;&#54000;&#49828;&#53944;&#51032; &#52285;&#51089; &#54876;&#46041;&#51012; &#51648;&#50896;&#54633;&#45768;&#45796;.</p>
+        <a href="https://x.com/Ilyass14286541" class="author-link">X&#50640;&#49436; &#54036;&#47196;&#50864; &#8594;</a>
+      </div>
+    </div>
+
+    <div class="related-posts">
+      <h2>&#44288;&#47144; &#44032;&#51060;&#46300;</h2>
+      <div class="related-grid">
+        <a href="/ko/blog/imiji-eseo-ai-prompt-byeonhwan/" class="related-card">
+          <p class="tag">&#44032;&#51060;&#46300;</p>
+          <h3>&#51060;&#48120;&#51648;&#50640;&#49436; AI &#54532;&#47212;&#54532;&#53944;&#47196; &#48320;&#54872;&#54616;&#45716; &#48169;&#48277;</h3>
+        </a>
+        <a href="/ko/blog/ai-prompt-jakseongbeop-ibmun/" class="related-card">
+          <p class="tag">&#52488;&#48372;&#51088;</p>
+          <h3>AI &#54532;&#47212;&#54532;&#53944; &#51089;&#49457;&#48277; &#51077;&#47928;</h3>
+        </a>
+        <a href="/ko/blog/best-image-to-prompt-tools-2026/" class="related-card">
+          <p class="tag">&#46020;&#44396; &#48708;&#44368;</p>
+          <h3>2026&#45380; &#52572;&#44256;&#51032; &#51060;&#48120;&#51648; &#53804; &#54532;&#47212;&#54532;&#53944; &#46020;&#44396;</h3>
+        </a>
+      </div>
+    </div>
+
+  </div>
+
+  <footer class="footer-4col">
+    <div class="f4-inner">
+      <div class="f4-brand">
+        <img src="/favicon.svg" alt="ImageToPrompt" width="28" height="28">
+        <span class="f4-brand-name">ImageTo<span class="accent">Prompt</span></span>
+        <span class="f4-brand-sub">&mdash; Free AI Prompt Generator</span>
+      </div>
+      <div class="f4-grid">
+        <div class="f4-section">
+          <h4 class="f4-heading">Image Prompt Tools</h4>
+          <a href="/">Image to Prompt</a>
+          <a href="/text-to-prompt/">Text to Prompt</a>
+      <a href="/describe-image/">Describe Image</a>
+          <a href="/midjourney-prompt-generator/">Midjourney</a>
+          <a href="/stable-diffusion-prompt-generator/">Stable Diffusion</a>
+          <a href="/flux-prompt-generator/">Flux</a>
+          <a href="/dall-e-prompt-generator/">DALL-E 3</a>
+          <a href="/adobe-firefly-prompt-generator/">Adobe Firefly</a>
+          <a href="/leonardo-ai-prompt-generator/">Leonardo AI</a>
+          <a href="/ideogram-prompt-generator/">Ideogram</a>
+        </div>
+        <div class="f4-section">
+          <h4 class="f4-heading">Video Prompt Tools</h4>
+          <a href="/image-to-video-prompt/">Image to Video Prompt</a>
+          <a href="/text-to-video-prompt/">Text to Video Prompt</a>
+          <a href="/veo-prompt-generator/">Veo / Flow Studio</a>
+          <a href="/kling-prompt-generator/">Kling AI</a>
+          <a href="/runway-prompt-generator/">Runway Gen-3</a>
+          <a href="/pika-prompt-generator/">Pika</a>
+          <a href="/luma-prompt-generator/">Luma Dream Machine</a>
+          <a href="/sora-prompt-generator/">Sora</a>
+          <a href="/minimax-prompt-generator/">Minimax</a>
+          <a href="/stable-video-prompt-generator/">Stable Video</a>
+        </div>
+        <div class="f4-section">
+          <h4 class="f4-heading">Resources</h4>
+          <a href="/ko/blog/">&#48660;&#47196;&#44536;</a>
+          <a href="/ko/about/">&#49548;&#44060;</a>
+          <a href="/ko/pricing/">&#50836;&#44552;</a>
+          <a href="/contact/">Contact</a>
+          <a href="/privacy-policy/">Privacy Policy</a>
+          <a href="/terms-of-service/">Terms of Service</a>
+        </div>
+        <div class="f4-section">
+          <h4 class="f4-heading">Languages</h4>
+          <a href="/">English</a>
+          <a href="/fr/">Fran&#231;ais</a>
+          <a href="/ar/">&#1575;&#1604;&#1593;&#1585;&#1576;&#1610;&#1577;</a>
+          <a href="/es/">Espa&#241;ol</a>
+          <a href="/ko/">&#54620;&#44397;&#50612;</a>
+          <a href="/ja/">&#26085;&#26412;&#35486;</a>
+          <a href="/ru/">&#1056;&#1091;&#1089;&#1089;&#1082;&#1080;&#1081;</a>
+        </div>
+      </div>
+      <div class="f4-bottom">
+        <p>&#169; 2026 ImageToPrompt.dev &#8212; Free AI Prompt Generator</p>
+        <p>Your images are never stored. All analysis is ephemeral and private.</p>
+      </div>
+    </div>
+  </footer>
+
+<script src="/newsletter-inject.js" defer></script>
+<script src="/nav.js" defer></script>
+  <script>
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', function() {
+    navigator.serviceWorker.register('/sw.js')
+      .catch(function(err) { console.warn('SW registration failed:', err); });
+  });
+}
+</script>
+</body>
+</html>

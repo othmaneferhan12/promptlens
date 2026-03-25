@@ -1,0 +1,553 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <script src="/theme-toggle.js"></script>
+  <meta charset="UTF-8" />
+  <link rel="dns-prefetch" href="https://www.googletagmanager.com">
+<link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="max-image-preview:large, index, follow">
+  <meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="ImageToPrompt">
+  <title>Gu&#237;a de Prompts Ideogram: Texto, Tipograf&#237;a y Dise&#241;o Gr&#225;fico</title>
+  <meta name="description" content="Domina los prompts de Ideogram para generar im&#225;genes con texto legible." />
+  <link rel="canonical" href="https://www.imagetoprompt.dev/es/blog/guia-prompts-ideogram/" />
+  <link rel="alternate" hreflang="es" href="https://www.imagetoprompt.dev/es/blog/guia-prompts-ideogram/" />
+  <link rel="alternate" hreflang="en" href="https://www.imagetoprompt.dev/blog/ideogram-prompt-guide/" />
+  <link rel="alternate" hreflang="fr" href="https://www.imagetoprompt.dev/fr/blog/guide-prompts-ideogram/" />
+  <link rel="alternate" hreflang="ar" href="https://www.imagetoprompt.dev/ar/blog/dalil-prompts-ideogram/" />
+  <link rel="alternate" hreflang="x-default" href="https://www.imagetoprompt.dev/blog/ideogram-prompt-guide/" />
+  <meta property="og:title" content="Gu&#237;a de Prompts Ideogram: Texto, Tipograf&#237;a y Dise&#241;o Gr&#225;fico" />
+  <meta property="og:description" content="Domina los prompts de Ideogram para generar im&#225;genes con texto legible." />
+  <meta property="og:url" content="https://www.imagetoprompt.dev/es/blog/guia-prompts-ideogram/" />
+  <meta property="og:type" content="article" />
+  <meta property="og:image" content="https://www.imagetoprompt.dev/og-image.png" />
+  <meta property="og:site_name" content="ImageToPrompt" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Gu&#237;a de Prompts Ideogram: Texto, Tipograf&#237;a y Dise&#241;o Gr&#225;fico" />
+  <meta name="twitter:description" content="Domina los prompts de Ideogram para texto legible en im&#225;genes IA." />
+  <meta name="twitter:image" content="https://www.imagetoprompt.dev/og-image.png" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="48x48" href="/favicon-48.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+  <link rel="manifest" href="/site.webmanifest" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="/fonts/space-grotesk-700.woff2" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="/fonts/inter-400.woff2" />
+  <link rel="stylesheet" href="/theme.css">
+  <link rel="preload" href="/blog.css" as="style" onload="this.onload=null;this.rel='stylesheet'"><noscript><link rel="stylesheet" href="/blog.css"></noscript>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Gu\u00eda de Prompts Ideogram: Texto, Tipograf\u00eda y Dise\u00f1o Gr\u00e1fico",
+    "description": "Domina los prompts de Ideogram para generar im\u00e1genes con texto legible.",
+    "image": "https://www.imagetoprompt.dev/og-image.png",
+    "datePublished": "2026-03-14",
+    "dateModified": "2026-03-24",
+    "inLanguage": "es",
+    "author": {
+      "@type": "Person",
+      "name": "ImageToPrompt Team",
+      "url": "https://www.imagetoprompt.dev/"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "ImageToPrompt",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://www.imagetoprompt.dev/favicon.svg"
+      }
+    },
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https://www.imagetoprompt.dev/es/blog/guia-prompts-ideogram/"
+    }
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "\u00bfC\u00f3mo genera Ideogram texto legible en las im\u00e1genes?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Ideogram fue entrenado espec\u00edficamente para comprender y reproducir texto en las im\u00e1genes. Para obtener texto legible, coloca el texto entre comillas en tu prompt (por ejemplo, 'un logo con el texto \"HELLO WORLD\"'). Ideogram 2.0 maneja correctamente la mayor\u00eda de palabras cortas y medianas. Para textos largos, div\u00eddelos en varios elementos cortos."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "\u00bfPuede Ideogram crear logos profesionales?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Ideogram es excelente para la exploraci\u00f3n de conceptos de logos, pero los resultados generalmente necesitan ser finalizados en un software vectorial como Adobe Illustrator. Usa prompts como 'minimal logo design, clean vector style, \"BRAND NAME\", simple geometric shapes, flat colors, white background'. Los resultados sirven como base de ideaci\u00f3n que los dise\u00f1adores profesionales refinan."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "\u00bfCu\u00e1l es la diferencia entre Ideogram y DALL-E 3 para texto?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Ambos destacan en la representaci\u00f3n de texto, pero con fortalezas diferentes. Ideogram es superior para tipograf\u00eda decorativa, logos y dise\u00f1os gr\u00e1ficos con texto integrado. DALL-E 3 es mejor para texto contextual (letreros, carteles en escenas) y sigue m\u00e1s fielmente las instrucciones de estilo. DALL-E 3 comprende mejor las descripciones largas y complejas."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "\u00bfC\u00f3mo optimizar los prompts de Ideogram para dise\u00f1o gr\u00e1fico?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Para dise\u00f1o gr\u00e1fico, usa t\u00e9rminos espec\u00edficos del dominio: 'poster design', 'social media banner', 'book cover', 'infographic layout'. Especifica el estilo tipogr\u00e1fico deseado ('bold sans-serif', 'elegant serif', 'hand-lettered'). Incluye directrices de color y composici\u00f3n. Usa el modo 'Design' de Ideogram en lugar de 'General' para resultados m\u00e1s gr\u00e1ficos."
+        }
+      }
+    ]
+  }
+  </script>
+    <!-- Google AdSense -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4499206373485728" crossorigin="anonymous"></script>
+    <!-- Web Push Notifications -->
+<script src="https://cdn.onesignal.com/sdks/web/v16/OneSignalSDK.page.js" defer></script>
+<script>
+  window.OneSignalDeferred = window.OneSignalDeferred || [];
+  OneSignalDeferred.push(async function(OneSignal) {
+    await OneSignal.init({
+      appId: "REPLACE_WITH_ONESIGNAL_APP_ID",
+      notifyButton: { enable: false }
+    });
+  });
+</script>
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="inner">
+      <a href="/es/" class="site-logo"><img src="/favicon.svg" alt="ImageToPrompt" width="48" height="48"><div class="site-logo-text">ImageTo<span class="accent">Prompt</span><span class="site-logo-sub">Generador de Prompts IA Gratuito</span></div></a>
+      <nav class="site-nav" aria-label="Navegaci&#243;n principal">
+        <div class="nav-dropdown">
+          <button class="nav-dropdown-trigger" aria-haspopup="true" aria-expanded="false">Tools <span class="nav-chevron" aria-hidden="true">&#9660;</span></button>
+          <div class="nav-dropdown-menu" role="menu">
+            <div class="nav-mega-grid">
+              <div class="nav-mega-col">
+                <div class="nav-mega-heading">&#128444; IMAGE TOOLS</div>
+                <a href="/" role="menuitem" class="nav-mega-tool">Image to Prompt <span class="nav-mega-arrow">&#8594;</span></a>
+                <a href="/text-to-prompt/" role="menuitem" class="nav-mega-tool">Text to Prompt <span class="nav-mega-arrow">&#8594;</span></a>
+                <a href="/describe-image/" role="menuitem" class="nav-mega-tool">Describe Image <span class="nav-new-badge">NEW</span> <span class="nav-mega-arrow">&#8594;</span></a>
+                <div class="nav-mega-models-label">Models</div>
+                <div class="nav-mega-models"><a href="/midjourney-prompt-generator/">Midjourney</a><span class="nav-dot">&#xB7;</span><a href="/stable-diffusion-prompt-generator/">SD</a></div>
+                <div class="nav-mega-models"><a href="/flux-prompt-generator/">Flux</a><span class="nav-dot">&#xB7;</span><a href="/dall-e-prompt-generator/">DALL&#xB7;E&#xA0;3</a></div>
+                <div class="nav-mega-models"><a href="/adobe-firefly-prompt-generator/">Firefly</a><span class="nav-dot">&#xB7;</span><a href="/leonardo-ai-prompt-generator/">Leonardo</a></div>
+                <div class="nav-mega-models"><a href="/ideogram-prompt-generator/">Ideogram</a></div>
+              </div>
+              <div class="nav-mega-divider" aria-hidden="true"></div>
+              <div class="nav-mega-col">
+                <div class="nav-mega-heading">&#127909; VIDEO TOOLS</div>
+                <a href="/?tab=image-to-video" role="menuitem" class="nav-mega-tool">Image to Video <span class="nav-mega-arrow">&#8594;</span></a>
+                <a href="/?tab=text-to-video" role="menuitem" class="nav-mega-tool">Text to Video <span class="nav-mega-arrow">&#8594;</span></a>
+                <div class="nav-mega-models-label">Models</div>
+                <div class="nav-mega-models"><a href="/veo-prompt-generator/">Veo</a><span class="nav-dot">&#xB7;</span><a href="/kling-prompt-generator/">Kling</a></div>
+                <div class="nav-mega-models"><a href="/runway-prompt-generator/">Runway</a><span class="nav-dot">&#xB7;</span><a href="/pika-prompt-generator/">Pika</a></div>
+                <div class="nav-mega-models"><a href="/luma-prompt-generator/">Luma</a><span class="nav-dot">&#xB7;</span><a href="/sora-prompt-generator/">Sora</a></div>
+                <div class="nav-mega-models"><a href="/minimax-prompt-generator/">Minimax</a><span class="nav-dot">&#xB7;</span><a href="/stable-video-prompt-generator/">Stable</a></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <a href="/es/blog/" >Blog</a>
+        <a href="/es/pricing/" class="nav-pill-pricing">Pricing</a>
+        <a href="/es/about/" class="nav-pill-about">About</a>
+        <a href="/es/" class="nav-try-free">Probar &#8594;</a>
+        <button id="theme-toggle" onclick="toggleTheme()" aria-label="Switch theme" title="Switch theme">&#9728;&#xFE0F;</button>
+  </nav>
+    </div>
+  </header>
+
+  <nav class="breadcrumb" aria-label="Migas de pan">
+    <a href="/es/">Inicio</a><span class="sep">&#8250;</span>
+    <a href="/es/blog/">Blog</a><span class="sep">&#8250;</span>
+    <span>Gu&#237;a Prompts Ideogram</span>
+  </nav>
+
+  <div class="page-wrapper">
+
+    <header class="article-header">
+      <p class="article-tag">Ideogram</p>
+      <h1>Gu&#237;a Completa de Prompts Ideogram</h1>
+      <div class="article-meta">
+        <span>Marzo 2026</span>
+        <span class="dot">&#183;</span>
+        <span>10 min de lectura</span>
+        <span class="dot">&#183;</span>
+        <span>Ideogram 2.0 &#183; Tipograf&#237;a &#183; Logo &#183; Dise&#241;o Gr&#225;fico</span>
+        <span class="dot">&#183;</span>
+        <span>Actualizado marzo 2026</span>
+      </div>
+    </header>
+
+    <div class="article-body">
+
+      <p>Ideogram se distingue de todos los dem&#225;s generadores de im&#225;genes IA por una capacidad &#250;nica: la generaci&#243;n de texto legible en las im&#225;genes. Mientras que Midjourney, Stable Diffusion e incluso Flux generalmente producen texto deformado o ilegible, Ideogram es capaz de renderizar palabras, frases y tipograf&#237;as con una fidelidad notable. Esto lo convierte en la herramienta ideal para dise&#241;o gr&#225;fico, creaci&#243;n de logos, carteles y todo contenido visual que requiera texto.</p>
+
+      <nav class="toc" aria-label="&#205;ndice">
+        <details open>
+          <summary>En esta gu&#237;a</summary>
+          <ol>
+            <li><a href="#texto-legible">Generar Texto Legible</a></li>
+            <li><a href="#tipografia-keywords">Palabras Clave de Tipograf&#237;a</a></li>
+            <li><a href="#creacion-logos">Creaci&#243;n de Logos</a></li>
+            <li><a href="#diseno-grafico">Dise&#241;o Gr&#225;fico y Carteles</a></li>
+            <li><a href="#modos-ideogram">Modos de Ideogram: General, Design, 3D, Realistic</a></li>
+            <li><a href="#trucos-avanzados">Trucos Avanzados</a></li>
+            <li><a href="#preguntas-frecuentes">Preguntas Frecuentes</a></li>
+          </ol>
+        </details>
+      </nav>
+
+      <div class="callout">
+        <p><strong>Generador Ideogram:</strong> Usa nuestro <a href="/ideogram-prompt-generator/">generador de prompts Ideogram</a> para crear prompts optimizados con las palabras clave tipogr&#225;ficas y de dise&#241;o adecuadas. Sube una imagen de referencia para empezar.</p>
+      </div>
+
+      <h2 id="texto-legible">Generar Texto Legible</h2>
+
+      <p>La clave para obtener texto legible en Ideogram es simple pero fundamental: coloca el texto deseado entre comillas en tu prompt. Esta es la regla n&#250;mero uno.</p>
+
+      <h3>Reglas B&#225;sicas para el Texto</h3>
+      <ul>
+        <li><strong>Usa comillas:</strong> <code>a sign that says "OPEN"</code> &#8212; las comillas le indican a Ideogram que ese texto debe renderizarse literalmente</li>
+        <li><strong>Mant&#233;n el texto corto:</strong> De 1 a 5 palabras funcionan mejor. M&#225;s all&#225; de 7-8 palabras, la precisi&#243;n disminuye</li>
+        <li><strong>Usa may&#250;sculas:</strong> El texto en may&#250;sculas se renderiza con mayor fidelidad que el texto en min&#250;sculas</li>
+        <li><strong>Evita caracteres especiales:</strong> Las letras est&#225;ndar se manejan bien, pero los acentos y caracteres no latinos pueden ser problem&#225;ticos</li>
+      </ul>
+
+      <h3>Ejemplos de Prompts con Texto</h3>
+      <p><code>a vintage neon sign in a dark alley that says "CAFE LUNA", glowing warm amber light, rainy night, reflections on wet pavement</code></p>
+      <p><code>a birthday card design with the text "HAPPY BIRTHDAY" in colorful bubble letters, confetti, balloons, festive background</code></p>
+      <p><code>a minimalist poster with the word "BREATHE" in thin sans-serif typography, gradient background from light blue to soft pink, calming aesthetic</code></p>
+
+      <h3>Texto Multil&#237;nea</h3>
+      <p>Para texto en varias l&#237;neas, separa los elementos en tu prompt:</p>
+      <p><code>a book cover design, title text "THE LAST" at the top and "HORIZON" below it, dramatic sunset landscape, serif typography, cinematic atmosphere</code></p>
+
+      <h2 id="tipografia-keywords">Palabras Clave de Tipograf&#237;a</h2>
+
+      <p>Ideogram comprende un vocabulario tipogr&#225;fico rico. Utilizar los t&#233;rminos correctos proporciona un control notable sobre la apariencia del texto en tus im&#225;genes.</p>
+
+      <h3>Familias de Fuentes</h3>
+      <div class="table-wrap">
+      <table class="comparison-table">
+        <thead>
+          <tr>
+            <th>Palabra Clave</th>
+            <th>Estilo Resultante</th>
+            <th>Uso T&#237;pico</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><code>bold sans-serif</code></td>
+            <td>Caracteres gruesos sin remates</td>
+            <td>Carteles, t&#237;tulos modernos</td>
+          </tr>
+          <tr>
+            <td><code>elegant serif</code></td>
+            <td>Caracteres cl&#225;sicos con remates</td>
+            <td>Libros, marcas de lujo</td>
+          </tr>
+          <tr>
+            <td><code>hand-lettered</code></td>
+            <td>Letras manuscritas art&#237;sticas</td>
+            <td>Tarjetas, packaging artesanal</td>
+          </tr>
+          <tr>
+            <td><code>script / cursive</code></td>
+            <td>Escritura cursiva elegante</td>
+            <td>Invitaciones, marcas femeninas</td>
+          </tr>
+          <tr>
+            <td><code>monospace</code></td>
+            <td>Caracteres de ancho fijo</td>
+            <td>Tech, c&#243;digo, retro</td>
+          </tr>
+          <tr>
+            <td><code>stencil</code></td>
+            <td>Letras tipo plantilla</td>
+            <td>Militar, industrial, street art</td>
+          </tr>
+          <tr>
+            <td><code>bubble letters</code></td>
+            <td>Letras redondeadas e infladas</td>
+            <td>Infantil, divertido, graffiti</td>
+          </tr>
+          <tr>
+            <td><code>gothic / blackletter</code></td>
+            <td>Letras g&#243;ticas medievales</td>
+            <td>Metal, cervecer&#237;as, certificados</td>
+          </tr>
+        </tbody>
+      </table>
+      </div>
+
+      <h3>Estilos de Texto Avanzados</h3>
+      <ul>
+        <li><code>3D text</code> &#8212; texto con volumen y profundidad</li>
+        <li><code>metallic text</code> &#8212; texto con apariencia met&#225;lica (oro, plata, cromo)</li>
+        <li><code>neon text</code> &#8212; texto con efecto ne&#243;n luminoso</li>
+        <li><code>embossed text</code> &#8212; texto en relieve</li>
+        <li><code>text with drop shadow</code> &#8212; texto con sombra paralela</li>
+        <li><code>outlined text</code> &#8212; texto solo con contorno</li>
+        <li><code>gradient text</code> &#8212; texto con degradado de colores</li>
+      </ul>
+
+      <h2 id="creacion-logos">Creaci&#243;n de Logos</h2>
+
+      <p>Ideogram se ha convertido en una herramienta de ideaci&#243;n imprescindible para los dise&#241;adores de logos. La capacidad de generar texto legible combinada con elementos gr&#225;ficos lo convierte en una herramienta poderosa para explorar r&#225;pidamente conceptos de logos.</p>
+
+      <h3>Prompts para Logos Minimalistas</h3>
+      <p><code>minimal logo design, clean vector style, the text "NORTH STAR" in modern sans-serif font, simple geometric star icon above the text, black on white background, professional branding</code></p>
+
+      <h3>Prompts para Logos Ilustrativos</h3>
+      <p><code>illustrated logo, a stylized mountain peak with a rising sun behind it, the text "SUMMIT CO" below in bold condensed font, outdoor adventure brand, earthy color palette of forest green and warm brown</code></p>
+
+      <h3>Prompts para Logos Tipogr&#225;ficos</h3>
+      <p><code>typographic logo, the letters "AB" intertwined in an elegant monogram, gold metallic finish, luxury brand aesthetic, clean white background, sophisticated serif typography</code></p>
+
+      <h3>Prompts para Logos Tipo Insignia</h3>
+      <p><code>vintage badge logo, circular shape, "CRAFT BREWERY" text curved along the top, "EST. 2024" at the bottom, hop illustration in the center, distressed texture, rustic craft beer branding</code></p>
+
+      <h3>Consejos para la Creaci&#243;n de Logos</h3>
+      <ul>
+        <li>Agrega siempre <code>white background</code> o <code>solid color background</code> para facilitar la extracci&#243;n</li>
+        <li>Usa <code>vector style</code> o <code>clean flat design</code> para l&#237;neas n&#237;tidas</li>
+        <li>Genera 8-10 variaciones y usa las mejores como base de exploraci&#243;n</li>
+        <li>Los resultados son conceptos &#8212; final&#237;zalos en Illustrator para uso profesional</li>
+      </ul>
+
+      <h2 id="diseno-grafico">Dise&#241;o Gr&#225;fico y Carteles</h2>
+
+      <h3>Carteles de Eventos</h3>
+      <p><code>event poster design, "JAZZ NIGHT" in bold art deco typography, saxophone silhouette, dark blue and gold color scheme, vintage 1920s aesthetic, elegant layout --ar 2:3</code></p>
+
+      <h3>Banners para Redes Sociales</h3>
+      <p><code>social media banner, "SUMMER SALE 50% OFF" in bold white sans-serif text, tropical leaves and flowers, vibrant gradient from teal to coral, modern clean design --ar 16:9</code></p>
+
+      <h3>Portadas de Libros</h3>
+      <p><code>book cover design, title "SILENT WATERS" in thin elegant serif font, author name "J. MORGAN" smaller below, dark moody ocean scene, moonlight reflecting on calm water, thriller novel aesthetic --ar 2:3</code></p>
+
+      <h3>Infograf&#237;as</h3>
+      <p><code>infographic design, "5 TIPS FOR BETTER SLEEP" as main heading, clean modern layout, numbered sections, soft purple and blue color scheme, flat illustration style icons, health and wellness theme</code></p>
+
+      <h3>Packaging</h3>
+      <p><code>product packaging design, coffee bag mockup, "MOUNTAIN BREW" in rustic hand-lettered font, mountain illustration, kraft paper texture, earth tones, artisan coffee branding</code></p>
+
+      <h2 id="modos-ideogram">Modos de Ideogram: General, Design, 3D, Realistic</h2>
+
+      <p>Ideogram ofrece varios modos de generaci&#243;n, cada uno optimizado para un tipo de contenido espec&#237;fico. Elegir el modo correcto es crucial para obtener resultados adecuados.</p>
+
+      <h3>Modo General</h3>
+      <p>El modo por defecto, vers&#225;til. Ideal para ilustraciones, escenas e im&#225;genes art&#237;sticas con texto integrado. Utiliza un estilo pictural natural.</p>
+
+      <h3>Modo Design</h3>
+      <p>Optimizado para el dise&#241;o gr&#225;fico profesional. Produce resultados m&#225;s n&#237;tidos, m&#225;s gr&#225;ficos, con colores m&#225;s controlados. Es el modo recomendado para logos, carteles, banners y todo contenido de dise&#241;o gr&#225;fico.</p>
+
+      <h3>Modo 3D</h3>
+      <p>Genera textos y objetos con un aspecto tridimensional. Ideal para t&#237;tulos de videojuegos, logos 3D y visuales de alto impacto. El texto renderizado en 3D suele ser m&#225;s legible y dram&#225;tico.</p>
+
+      <h3>Modo Realistic</h3>
+      <p>Se acerca a la fotograf&#237;a realista. Ideal para letreros, carteles en entornos realistas y mockups de productos con texto.</p>
+
+      <h2 id="trucos-avanzados">Trucos Avanzados</h2>
+
+      <h3>Control de la Posici&#243;n del Texto</h3>
+      <p>Puedes influir en d&#243;nde aparece el texto en la imagen con t&#233;rminos de posici&#243;n:</p>
+      <ul>
+        <li><code>text at the top</code> &#8212; texto en la parte superior de la imagen</li>
+        <li><code>text centered</code> &#8212; texto centrado</li>
+        <li><code>text along the bottom</code> &#8212; texto en la parte inferior</li>
+        <li><code>text curved along a circle</code> &#8212; texto siguiendo una curva</li>
+      </ul>
+
+      <h3>Combinar Texto e Ilustraci&#243;n</h3>
+      <p>Los mejores resultados surgen cuando el texto y la ilustraci&#243;n se complementan. Describe la ilustraci&#243;n en detalle y luego especifica c&#243;mo se integra el texto:</p>
+      <p><code>a whimsical illustration of a cat reading a book in a cozy armchair, with the text "BOOK CLUB" integrated into a decorative banner above the scene, warm watercolor style, inviting atmosphere</code></p>
+
+      <h3>Evitar Errores de Texto</h3>
+      <ul>
+        <li>Si el texto est&#225; mal escrito, regenera &#8212; Ideogram es probabil&#237;stico y puede fallar en algunos intentos</li>
+        <li>Las palabras comunes en ingl&#233;s se renderzan mejor que las palabras raras o t&#233;rminos t&#233;cnicos</li>
+        <li>Divide las frases largas en varios elementos de texto cortos</li>
+        <li>Usa el modo Design para una mejor precisi&#243;n tipogr&#225;fica</li>
+      </ul>
+
+      <h3>Ideogram vs. Midjourney vs. DALL-E 3 para Dise&#241;o</h3>
+      <div class="table-wrap">
+      <table class="comparison-table">
+        <thead>
+          <tr>
+            <th>Criterio</th>
+            <th>Ideogram</th>
+            <th>Midjourney</th>
+            <th>DALL-E 3</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Texto legible</td>
+            <td>Excelente</td>
+            <td>Mediocre</td>
+            <td>Muy bueno</td>
+          </tr>
+          <tr>
+            <td>Logos</td>
+            <td>Excelente</td>
+            <td>Bueno (sin texto)</td>
+            <td>Bueno</td>
+          </tr>
+          <tr>
+            <td>Carteles</td>
+            <td>Excelente</td>
+            <td>Bueno (art&#237;stico)</td>
+            <td>Bueno</td>
+          </tr>
+          <tr>
+            <td>Calidad art&#237;stica</td>
+            <td>Bueno</td>
+            <td>Excelente</td>
+            <td>Muy bueno</td>
+          </tr>
+          <tr>
+            <td>Control tipogr&#225;fico</td>
+            <td>Avanzado</td>
+            <td>M&#237;nimo</td>
+            <td>Moderado</td>
+          </tr>
+        </tbody>
+      </table>
+      </div>
+
+      <div class="cta-box">
+        <h3>Genera Prompts Ideogram Optimizados</h3>
+        <p>Sube un dise&#241;o de referencia y obt&#233;n un prompt Ideogram con las palabras clave tipogr&#225;ficas y de dise&#241;o gr&#225;fico adecuadas.</p>
+        <a href="/ideogram-prompt-generator/" class="cta-btn">Probar el Generador Ideogram &#8594;</a>
+      </div>
+
+      <h2 id="preguntas-frecuentes">Preguntas Frecuentes</h2>
+
+      <h3>&#191;C&#243;mo genera Ideogram texto legible en las im&#225;genes?</h3>
+      <p>Ideogram fue entrenado espec&#237;ficamente para comprender y reproducir texto. Para obtener texto legible, coloca el texto deseado entre comillas en tu prompt. Ideogram 2.0 maneja correctamente la mayor&#237;a de palabras cortas y medianas. Para textos largos, div&#237;delos en varios elementos cortos para mejores resultados.</p>
+
+      <h3>&#191;Puede Ideogram crear logos profesionales?</h3>
+      <p>Ideogram es excelente para la exploraci&#243;n de conceptos de logos. Usa prompts como <code>minimal logo design, clean vector style, "BRAND NAME", simple geometric shapes, flat colors, white background</code>. Sin embargo, los resultados generalmente necesitan ser finalizados en un software vectorial como Adobe Illustrator para uso profesional.</p>
+
+      <h3>&#191;Cu&#225;l es la diferencia entre Ideogram y DALL-E 3 para texto?</h3>
+      <p>Ambos destacan en la representaci&#243;n de texto con fortalezas diferentes. Ideogram es superior para tipograf&#237;a decorativa, logos y dise&#241;os gr&#225;ficos con texto integrado. DALL-E 3 es mejor para texto contextual (letreros, carteles en escenas) y comprende mejor las descripciones largas y complejas.</p>
+
+      <h3>&#191;C&#243;mo optimizar los prompts de Ideogram para dise&#241;o gr&#225;fico?</h3>
+      <p>Usa t&#233;rminos espec&#237;ficos del dise&#241;o: &#171;poster design&#187;, &#171;social media banner&#187;, &#171;book cover&#187;. Especifica el estilo tipogr&#225;fico deseado (&#171;bold sans-serif&#187;, &#171;elegant serif&#187;, &#171;hand-lettered&#187;). Incluye directrices de color y composici&#243;n. Usa el modo &#171;Design&#187; de Ideogram en lugar de &#171;General&#187; para resultados m&#225;s gr&#225;ficos.</p>
+
+    </div>
+
+    <div class="author-bio">
+      <svg class="author-photo" width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="Avatar del autor"><circle cx="32" cy="32" r="32" fill="#2a1f4e"/><circle cx="32" cy="26" r="11" fill="#7c6bc4"/><ellipse cx="32" cy="52" rx="18" ry="11" fill="#7c6bc4"/></svg>
+      <div class="author-info">
+        <p class="author-name">ImageToPrompt Team</p>
+        <p class="author-desc">Ingenieros de prompts y artistas de IA especializados en Midjourney, Stable Diffusion y Flux. Construimos ImageToPrompt para hacer la generaci&#243;n de im&#225;genes con IA accesible para todos.</p>
+        <a href="https://x.com/Ilyass14286541" class="author-link">Seguir en X &#8594;</a>
+      </div>
+    </div>
+
+    <div class="related-posts">
+      <h2>Gu&#237;as Relacionadas</h2>
+      <div class="related-grid">
+        <a href="/es/blog/escribir-prompts-ia-principiantes/" class="related-card">
+          <p class="tag">Principiante</p>
+          <h3>C&#243;mo Escribir Prompts IA: Tutorial para Principiantes</h3>
+        </a>
+        <a href="/es/blog/consejos-prompts-adobe-firefly/" class="related-card">
+          <p class="tag">Adobe Firefly</p>
+          <h3>Consejos de Prompts Adobe Firefly para Uso Profesional</h3>
+        </a>
+        <a href="/es/blog/glosario-estilos-arte-ia/" class="related-card">
+          <p class="tag">Glosario</p>
+          <h3>Glosario de Estilos de Arte IA: 50 Estilos Explicados</h3>
+        </a>
+      </div>
+    </div>
+
+  </div>
+
+  <footer class="footer-4col">
+    <div class="f4-inner">
+      <div class="f4-brand">
+        <img src="/favicon.svg" alt="ImageToPrompt" width="28" height="28">
+        <span class="f4-brand-name">ImageTo<span class="accent">Prompt</span></span>
+        <span class="f4-brand-sub">&mdash; Free AI Prompt Generator</span>
+      </div>
+      <div class="f4-grid">
+        <div class="f4-section">
+          <h4 class="f4-heading">Image Prompt Tools</h4>
+          <a href="/">Image to Prompt</a>
+          <a href="/text-to-prompt/">Text to Prompt</a>
+      <a href="/describe-image/">Describe Image</a>
+          <a href="/midjourney-prompt-generator/">Midjourney</a>
+          <a href="/stable-diffusion-prompt-generator/">Stable Diffusion</a>
+          <a href="/flux-prompt-generator/">Flux</a>
+          <a href="/dall-e-prompt-generator/">DALL-E 3</a>
+          <a href="/adobe-firefly-prompt-generator/">Adobe Firefly</a>
+          <a href="/leonardo-ai-prompt-generator/">Leonardo AI</a>
+          <a href="/ideogram-prompt-generator/">Ideogram</a>
+        </div>
+        <div class="f4-section">
+          <h4 class="f4-heading">Video Prompt Tools</h4>
+          <a href="/image-to-video-prompt/">Image to Video Prompt</a>
+          <a href="/text-to-video-prompt/">Text to Video Prompt</a>
+          <a href="/veo-prompt-generator/">Veo / Flow Studio</a>
+          <a href="/kling-prompt-generator/">Kling AI</a>
+          <a href="/runway-prompt-generator/">Runway Gen-3</a>
+          <a href="/pika-prompt-generator/">Pika</a>
+          <a href="/luma-prompt-generator/">Luma Dream Machine</a>
+          <a href="/sora-prompt-generator/">Sora</a>
+          <a href="/minimax-prompt-generator/">Minimax</a>
+          <a href="/stable-video-prompt-generator/">Stable Video</a>
+        </div>
+        <div class="f4-section">
+          <h4 class="f4-heading">Resources</h4>
+          <a href="/es/blog/">Blog</a>
+          <a href="/es/about/">About</a>
+          <a href="/es/pricing/">Pricing</a>
+          <a href="/contact/">Contact</a>
+          <a href="/privacy-policy/">Privacy Policy</a>
+          <a href="/terms-of-service/">Terms of Service</a>
+        </div>
+        <div class="f4-section">
+          <h4 class="f4-heading">Languages</h4>
+          <a href="/">English</a>
+          <a href="/fr/">Fran&#231;ais</a>
+          <a href="/ar/">&#1575;&#1604;&#1593;&#1585;&#1576;&#1610;&#1577;</a>
+          <a href="/es/">Espa&#241;ol</a>
+          <a href="/ko/">&#54620;&#44397;&#50612;</a>
+          <a href="/ja/">&#26085;&#26412;&#35486;</a>
+          <a href="/ru/">&#1056;&#1091;&#1089;&#1089;&#1082;&#1080;&#1081;</a>
+        </div>
+      </div>
+      <div class="f4-bottom">
+        <p>&#169; 2026 ImageToPrompt.dev &#8212; Free AI Prompt Generator</p>
+        <p>Your images are never stored. All analysis is ephemeral and private.</p>
+      </div>
+    </div>
+  </footer>
+
+<script src="/newsletter-inject.js" defer></script>
+<script src="/nav.js" defer></script>
+  <script>
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', function() {
+    navigator.serviceWorker.register('/sw.js')
+      .catch(function(err) { console.warn('SW registration failed:', err); });
+  });
+}
+</script>
+</body>
+</html>

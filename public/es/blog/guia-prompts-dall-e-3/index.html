@@ -1,0 +1,455 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <script src="/theme-toggle.js"></script>
+  <meta charset="UTF-8" />
+  <link rel="dns-prefetch" href="https://www.googletagmanager.com">
+<link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="max-image-preview:large, index, follow">
+  <meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="ImageToPrompt">
+  <title>Gu&#237;a de Prompts DALL-E 3: C&#243;mo Escribir Prompts para ChatGPT</title>
+  <meta name="description" content="Domina los prompts de DALL-E 3 en 2026. Sintaxis en lenguaje natural, renderizado de texto, integraci&#243;n con ChatGPT y ejemplos pr&#225;cticos." />
+  <link rel="canonical" href="https://www.imagetoprompt.dev/es/blog/guia-prompts-dall-e-3/" />
+  <link rel="alternate" hreflang="es" href="https://www.imagetoprompt.dev/es/blog/guia-prompts-dall-e-3/" />
+  <link rel="alternate" hreflang="en" href="https://www.imagetoprompt.dev/blog/dall-e-3-prompt-guide/" />
+  <link rel="alternate" hreflang="fr" href="https://www.imagetoprompt.dev/fr/blog/guide-prompts-dall-e-3/" />
+  <link rel="alternate" hreflang="ar" href="https://www.imagetoprompt.dev/ar/blog/dalil-prompts-dall-e-3/" />
+  <link rel="alternate" hreflang="x-default" href="https://www.imagetoprompt.dev/blog/dall-e-3-prompt-guide/" />
+  <meta property="og:title" content="Gu&#237;a de Prompts DALL-E 3: C&#243;mo Escribir Prompts para ChatGPT" />
+  <meta property="og:description" content="Domina los prompts de DALL-E 3 en 2026. Sintaxis en lenguaje natural, renderizado de texto, integraci&#243;n con ChatGPT y ejemplos." />
+  <meta property="og:url" content="https://www.imagetoprompt.dev/es/blog/guia-prompts-dall-e-3/" />
+  <meta property="og:type" content="article" />
+  <meta property="og:image" content="https://www.imagetoprompt.dev/og-image.png" />
+  <meta property="og:site_name" content="ImageToPrompt" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Gu&#237;a Completa de Prompts DALL-E 3" />
+  <meta name="twitter:description" content="Domina los prompts de DALL-E 3. Lenguaje natural, renderizado de texto, ChatGPT y ejemplos." />
+  <meta name="twitter:image" content="https://www.imagetoprompt.dev/og-image.png" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="48x48" href="/favicon-48.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+  <link rel="manifest" href="/site.webmanifest" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="/fonts/space-grotesk-700.woff2" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="/fonts/inter-400.woff2" />
+  <link rel="stylesheet" href="/theme.css">
+  <link rel="preload" href="/blog.css" as="style" onload="this.onload=null;this.rel='stylesheet'"><noscript><link rel="stylesheet" href="/blog.css"></noscript>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Gu\u00eda de Prompts DALL-E 3: C\u00f3mo Escribir Prompts para ChatGPT",
+    "description": "Domina los prompts de DALL-E 3 en 2026. Sintaxis en lenguaje natural, renderizado de texto, integraci\u00f3n con ChatGPT y ejemplos.",
+    "image": "https://www.imagetoprompt.dev/og-image.png",
+    "datePublished": "2026-03-07",
+    "dateModified": "2026-03-22",
+    "inLanguage": "es",
+    "author": {
+      "@type": "Person",
+      "name": "ImageToPrompt Team",
+      "url": "https://www.imagetoprompt.dev/"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "ImageToPrompt",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://www.imagetoprompt.dev/favicon.svg"
+      }
+    },
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https://www.imagetoprompt.dev/es/blog/guia-prompts-dall-e-3/"
+    }
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "\u00bfC\u00f3mo acceder a DALL-E 3?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "DALL-E 3 est\u00e1 disponible a trav\u00e9s de ChatGPT Plus (20$/mes), ChatGPT Enterprise, la API de OpenAI y Microsoft Copilot (versi\u00f3n gratuita limitada). El acceso v\u00eda ChatGPT es el m\u00e1s sencillo ya que ChatGPT reformula autom\u00e1ticamente tus prompts para optimizar los resultados."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "\u00bfPuede DALL-E 3 generar texto legible en las im\u00e1genes?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "S\u00ed, es una de las fortalezas \u00fanicas de DALL-E 3. Puede renderizar texto corto (1-5 palabras) de forma bastante fiable en las im\u00e1genes. Para mejores resultados, especifica el texto entre comillas en tu prompt y precisa la fuente y el estilo deseados."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "\u00bfPor qu\u00e9 ChatGPT modifica mis prompts de DALL-E 3?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "ChatGPT act\u00faa como intermediario y reformula tus prompts para mejorar los resultados y cumplir con las pol\u00edticas de contenido de OpenAI. Puedes ver el prompt modificado en la interfaz. Para controlarlo, indica \u00abUsa exactamente este prompt, no lo modifiques\u00bb en tu mensaje."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "\u00bfDALL-E 3 soporta prompts negativos?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No, DALL-E 3 no soporta prompts negativos como Stable Diffusion. Para evitar elementos no deseados, formula tu prompt de manera positiva o indica expl\u00edcitamente lo que no quieres en el texto del prompt (ej: \u00abwithout any text or watermarks\u00bb)."
+        }
+      }
+    ]
+  }
+  </script>
+    <!-- Google AdSense -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4499206373485728" crossorigin="anonymous"></script>
+    <!-- Web Push Notifications -->
+<script src="https://cdn.onesignal.com/sdks/web/v16/OneSignalSDK.page.js" defer></script>
+<script>
+  window.OneSignalDeferred = window.OneSignalDeferred || [];
+  OneSignalDeferred.push(async function(OneSignal) {
+    await OneSignal.init({
+      appId: "REPLACE_WITH_ONESIGNAL_APP_ID",
+      notifyButton: { enable: false }
+    });
+  });
+</script>
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="inner">
+      <a href="/es/" class="site-logo"><img src="/favicon.svg" alt="ImageToPrompt" width="48" height="48"><div class="site-logo-text">ImageTo<span class="accent">Prompt</span><span class="site-logo-sub">Generador de Prompts IA Gratuito</span></div></a>
+      <nav class="site-nav" aria-label="Navegaci&#243;n principal">
+        <div class="nav-dropdown">
+          <button class="nav-dropdown-trigger" aria-haspopup="true" aria-expanded="false">Tools <span class="nav-chevron" aria-hidden="true">&#9660;</span></button>
+          <div class="nav-dropdown-menu" role="menu">
+            <div class="nav-mega-grid">
+              <div class="nav-mega-col">
+                <div class="nav-mega-heading">&#128444; IMAGE TOOLS</div>
+                <a href="/" role="menuitem" class="nav-mega-tool">Image to Prompt <span class="nav-mega-arrow">&#8594;</span></a>
+                <a href="/text-to-prompt/" role="menuitem" class="nav-mega-tool">Text to Prompt <span class="nav-mega-arrow">&#8594;</span></a>
+                <a href="/describe-image/" role="menuitem" class="nav-mega-tool">Describe Image <span class="nav-new-badge">NEW</span> <span class="nav-mega-arrow">&#8594;</span></a>
+                <div class="nav-mega-models-label">Models</div>
+                <div class="nav-mega-models"><a href="/midjourney-prompt-generator/">Midjourney</a><span class="nav-dot">&#xB7;</span><a href="/stable-diffusion-prompt-generator/">SD</a></div>
+                <div class="nav-mega-models"><a href="/flux-prompt-generator/">Flux</a><span class="nav-dot">&#xB7;</span><a href="/dall-e-prompt-generator/">DALL&#xB7;E&#xA0;3</a></div>
+                <div class="nav-mega-models"><a href="/adobe-firefly-prompt-generator/">Firefly</a><span class="nav-dot">&#xB7;</span><a href="/leonardo-ai-prompt-generator/">Leonardo</a></div>
+                <div class="nav-mega-models"><a href="/ideogram-prompt-generator/">Ideogram</a></div>
+              </div>
+              <div class="nav-mega-divider" aria-hidden="true"></div>
+              <div class="nav-mega-col">
+                <div class="nav-mega-heading">&#127909; VIDEO TOOLS</div>
+                <a href="/?tab=image-to-video" role="menuitem" class="nav-mega-tool">Image to Video <span class="nav-mega-arrow">&#8594;</span></a>
+                <a href="/?tab=text-to-video" role="menuitem" class="nav-mega-tool">Text to Video <span class="nav-mega-arrow">&#8594;</span></a>
+                <div class="nav-mega-models-label">Models</div>
+                <div class="nav-mega-models"><a href="/veo-prompt-generator/">Veo</a><span class="nav-dot">&#xB7;</span><a href="/kling-prompt-generator/">Kling</a></div>
+                <div class="nav-mega-models"><a href="/runway-prompt-generator/">Runway</a><span class="nav-dot">&#xB7;</span><a href="/pika-prompt-generator/">Pika</a></div>
+                <div class="nav-mega-models"><a href="/luma-prompt-generator/">Luma</a><span class="nav-dot">&#xB7;</span><a href="/sora-prompt-generator/">Sora</a></div>
+                <div class="nav-mega-models"><a href="/minimax-prompt-generator/">Minimax</a><span class="nav-dot">&#xB7;</span><a href="/stable-video-prompt-generator/">Stable</a></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <a href="/es/blog/" >Blog</a>
+        <a href="/es/pricing/" class="nav-pill-pricing">Pricing</a>
+        <a href="/es/about/" class="nav-pill-about">About</a>
+        <a href="/es/" class="nav-try-free">Probar &#8594;</a>
+        <button id="theme-toggle" onclick="toggleTheme()" aria-label="Switch theme" title="Switch theme">&#9728;&#xFE0F;</button>
+  </nav>
+    </div>
+  </header>
+
+  <nav class="breadcrumb" aria-label="Migas de pan">
+    <a href="/es/">Inicio</a><span class="sep">&#8250;</span>
+    <a href="/es/blog/">Blog</a><span class="sep">&#8250;</span>
+    <span>Gu&#237;a de Prompts DALL-E 3</span>
+  </nav>
+
+  <div class="page-wrapper">
+
+    <header class="article-header">
+      <p class="article-tag">DALL-E 3</p>
+      <h1>Gu&#237;a Completa de Prompts DALL-E 3</h1>
+      <div class="article-meta">
+        <span>Marzo 2026</span>
+        <span class="dot">&#183;</span>
+        <span>10 min de lectura</span>
+        <span class="dot">&#183;</span>
+        <span>DALL-E 3 &#183; ChatGPT &#183; OpenAI</span>
+        <span class="dot">&#183;</span>
+        <span>Actualizado marzo 2026</span>
+      </div>
+    </header>
+
+    <div class="article-body">
+
+      <p>DALL-E 3 de OpenAI es &#250;nico entre los generadores de im&#225;genes con IA. A diferencia de Midjourney, Stable Diffusion o Flux, est&#225; profundamente integrado con ChatGPT, lo que significa que puedes describir tus im&#225;genes en lenguaje natural conversacional. Adem&#225;s, DALL-E 3 es actualmente el mejor modelo para renderizar texto legible en las im&#225;genes generadas. Esta gu&#237;a te ense&#241;a a aprovechar estas capacidades &#250;nicas.</p>
+
+      <nav class="toc" aria-label="Contenido">
+        <details open>
+          <summary>En esta gu&#237;a</summary>
+          <ol>
+            <li><a href="#acceso-dall-e-3">C&#243;mo Acceder a DALL-E 3</a></li>
+            <li><a href="#lenguaje-natural">El Enfoque de Lenguaje Natural</a></li>
+            <li><a href="#renderizado-texto">Renderizado de Texto en Im&#225;genes</a></li>
+            <li><a href="#integracion-chatgpt">La Integraci&#243;n con ChatGPT</a></li>
+            <li><a href="#politica-contenido">Pol&#237;tica de Contenido</a></li>
+            <li><a href="#ejemplos-prompts">Ejemplos de Prompts</a></li>
+            <li><a href="#limitaciones">Limitaciones y Soluciones</a></li>
+            <li><a href="#preguntas-frecuentes">Preguntas Frecuentes</a></li>
+          </ol>
+        </details>
+      </nav>
+
+      <div class="callout">
+        <p><strong>Genera prompts para DALL-E 3:</strong> <a href="/dall-e-prompt-generator/">Nuestro generador de prompts DALL-E 3</a> crea prompts optimizados a partir de cualquier imagen o descripci&#243;n textual.</p>
+      </div>
+
+      <h2 id="acceso-dall-e-3">C&#243;mo Acceder a DALL-E 3</h2>
+
+      <p>DALL-E 3 est&#225; disponible a trav&#233;s de varios canales:</p>
+
+      <ul>
+        <li><strong>ChatGPT Plus:</strong> 20$/mes &#8212; la forma m&#225;s sencilla, con interfaz conversacional</li>
+        <li><strong>ChatGPT Enterprise / Team:</strong> Para equipos y empresas</li>
+        <li><strong>API de OpenAI:</strong> Acceso program&#225;tico, tarificaci&#243;n por token</li>
+        <li><strong>Microsoft Copilot:</strong> Versi&#243;n gratuita limitada (antes Bing Image Creator)</li>
+      </ul>
+
+      <p>El acceso v&#237;a ChatGPT es recomendado para la mayor&#237;a de usuarios ya que ChatGPT act&#250;a como asistente de prompting, reformulando autom&#225;ticamente tus solicitudes para optimizar los resultados.</p>
+
+      <h2 id="lenguaje-natural">El Enfoque de Lenguaje Natural</h2>
+
+      <p>DALL-E 3 fue dise&#241;ado para comprender el lenguaje natural conversacional. No necesitas sintaxis especial, ponderaci&#243;n ni par&#225;metros. Simplemente escribe lo que quieres ver, como si estuvieras describiendo la imagen a alguien:</p>
+
+      <pre><code>A cozy reading nook by a large window on a rainy day. There's a comfortable armchair with a knitted blanket, a steaming cup of tea on a small side table, and a bookshelf filled with old leather-bound books. The light is soft and warm, filtering through rain-streaked glass. The style should be like a watercolor illustration with soft, muted colors.</code></pre>
+
+      <p>Este prompt en lenguaje natural producir&#225; un resultado muy cercano a la descripci&#243;n. DALL-E 3 comprende el contexto, la atm&#243;sfera y las relaciones espaciales entre los elementos mejor que cualquier otro modelo cuando recibe frases completas.</p>
+
+      <h3>Estructura recomendada</h3>
+
+      <p>Para resultados &#243;ptimos, estructura tu prompt as&#237;:</p>
+
+      <ol>
+        <li><strong>Sujeto principal:</strong> Lo que est&#225; en el centro de la imagen</li>
+        <li><strong>Contexto / escenario:</strong> D&#243;nde se desarrolla la escena</li>
+        <li><strong>Iluminaci&#243;n y ambiente:</strong> La atm&#243;sfera deseada</li>
+        <li><strong>Estilo art&#237;stico:</strong> El acabado visual (fotograf&#237;a, ilustraci&#243;n, pintura, etc.)</li>
+        <li><strong>Detalles espec&#237;ficos:</strong> Colores, composiciones, elementos adicionales</li>
+      </ol>
+
+      <h2 id="renderizado-texto">Renderizado de Texto en Im&#225;genes</h2>
+
+      <p>Esta es la fortaleza m&#225;s distintiva de DALL-E 3. A diferencia de Midjourney y Stable Diffusion, que fallan regularmente al renderizar texto legible, DALL-E 3 maneja relativamente bien las palabras cortas.</p>
+
+      <h3>Buenas pr&#225;cticas para el texto</h3>
+
+      <ul>
+        <li><strong>Pon el texto entre comillas:</strong> <code>a coffee mug with the text "Good Morning" written on it</code></li>
+        <li><strong>Lim&#237;tate a 1-5 palabras:</strong> M&#225;s all&#225;, los errores de renderizado son frecuentes</li>
+        <li><strong>Especifica el estilo tipogr&#225;fico:</strong> <code>in bold sans-serif letters</code>, <code>in elegant script font</code></li>
+        <li><strong>Indica la ubicaci&#243;n:</strong> <code>text centered on the front of the mug</code></li>
+      </ul>
+
+      <h3>Ejemplos de prompts con texto</h3>
+
+      <pre><code>A vintage-style poster for a jazz club with the text "Blue Note" in large art deco typography at the top. Below, a silhouette of a saxophone player against a deep blue background with golden spotlights. The style mimics 1950s concert posters with textured paper appearance.</code></pre>
+
+      <pre><code>A minimalist logo design on a white background featuring the word "BLOOM" in clean, modern sans-serif typography. Below the text, a simple geometric flower icon in gradient from pink to orange. Professional brand identity style.</code></pre>
+
+      <h2 id="integracion-chatgpt">La Integraci&#243;n con ChatGPT</h2>
+
+      <p>Cuando usas DALL-E 3 a trav&#233;s de ChatGPT, se produce un proceso de reformulaci&#243;n autom&#225;tica:</p>
+
+      <ol>
+        <li>Escribes tu solicitud en lenguaje natural</li>
+        <li>ChatGPT interpreta tu solicitud y genera un prompt detallado y optimizado</li>
+        <li>Este prompt reformulado se env&#237;a a DALL-E 3</li>
+        <li>La imagen se genera y se muestra con el prompt utilizado</li>
+      </ol>
+
+      <p>Esta reformulaci&#243;n es generalmente beneficiosa &#8212; ChatGPT a&#241;ade detalles de composici&#243;n, iluminaci&#243;n y estilo que no has especificado. Sin embargo, si quieres control total, puedes indicar:</p>
+
+      <pre><code>Genera una imagen con exactamente este prompt, sin modificarlo: [tu prompt aqu&#237;]</code></pre>
+
+      <h3>Consejo: el modo iterativo</h3>
+
+      <p>Una de las ventajas &#250;nicas de la integraci&#243;n con ChatGPT es la iteraci&#243;n conversacional. Despu&#233;s de una generaci&#243;n, puedes decir:</p>
+
+      <ul>
+        <li>&#8220;Haz la iluminaci&#243;n m&#225;s c&#225;lida y a&#241;ade m&#225;s niebla&#8221;</li>
+        <li>&#8220;Mant&#233;n el mismo estilo pero reemplaza el gato por un perro&#8221;</li>
+        <li>&#8220;Rehaz la misma imagen pero en formato paisaje 16:9&#8221;</li>
+        <li>&#8220;Me gusta el estilo, pero hazlo m&#225;s oscuro y dram&#225;tico&#8221;</li>
+      </ul>
+
+      <h2 id="politica-contenido">Pol&#237;tica de Contenido</h2>
+
+      <p>DALL-E 3 tiene la pol&#237;tica de contenido m&#225;s restrictiva entre los grandes generadores. Estas son las limitaciones clave:</p>
+
+      <ul>
+        <li><strong>Sin personalidades reales:</strong> Imposible generar retratos de personas reales identificadas</li>
+        <li><strong>Sin contenido violento expl&#237;cito:</strong> Las escenas de violencia gr&#225;fica son rechazadas</li>
+        <li><strong>Sin contenido para adultos:</strong> Ning&#250;n contenido sexualmente expl&#237;cito</li>
+        <li><strong>Estilos de artistas recientes:</strong> DALL-E 3 rechaza copiar el estilo de artistas vivos identificados</li>
+      </ul>
+
+      <p>Para sortear la restricci&#243;n sobre estilos de artistas, describe las caracter&#237;sticas visuales en lugar de nombrar al artista: en vez de &#8220;in the style of [artista]&#8221;, describe &#8220;with bold geometric shapes, vibrant primary colors, and thick black outlines&#8221;.</p>
+
+      <h2 id="ejemplos-prompts">Ejemplos de Prompts</h2>
+
+      <h3>Ilustraci&#243;n editorial</h3>
+      <pre><code>An editorial illustration for a technology magazine article about artificial intelligence. A human hand and a robotic hand reaching toward each other, similar to Michelangelo's Creation of Adam, but in a modern, clean vector style with a gradient background going from deep blue to teal. Minimalist design with subtle circuit board patterns in the background.</code></pre>
+
+      <h3>Foto de producto</h3>
+      <pre><code>A professional product photograph of a sleek, modern perfume bottle on a reflective black surface. The bottle is transparent with amber-colored liquid inside. Dramatic studio lighting from the left creates a golden glow through the liquid. Soft bokeh lights in the dark background. High-end commercial photography style.</code></pre>
+
+      <h3>Escena fant&#225;stica</h3>
+      <pre><code>A vast underground library carved into crystalline cave walls, with bioluminescent plants growing between the bookshelves providing soft blue-green illumination. A young wizard in flowing robes reads a glowing book at a stone desk. Magical particles float in the air. The style is detailed digital fantasy art with a sense of wonder and discovery.</code></pre>
+
+      <h3>Infograf&#237;a</h3>
+      <pre><code>A clean, modern infographic showing the water cycle. Blue and white color scheme on a light background. Arrows connecting clouds, rain, rivers, ocean, and evaporation stages. Each stage has a small icon and a label. The text labels are "Evaporation", "Condensation", "Precipitation", "Collection". Scientific illustration style, educational and clear.</code></pre>
+
+      <h2 id="limitaciones">Limitaciones y Soluciones</h2>
+
+      <ul>
+        <li><strong>Resoluci&#243;n limitada:</strong> DALL-E 3 genera en 1024x1024, 1792x1024 o 1024x1792. Usa un upscaler para mayor resoluci&#243;n.</li>
+        <li><strong>Sin control fino:</strong> Sin CFG scale, sin sampler, sin seed reproducible. La iteraci&#243;n se hace conversacionalmente.</li>
+        <li><strong>Reformulaci&#243;n autom&#225;tica:</strong> ChatGPT modifica tus prompts. Pide expl&#237;citamente que no lo haga si es necesario.</li>
+        <li><strong>Consistencia de personajes:</strong> Dif&#237;cil mantener el mismo personaje entre generaciones. Describe los detalles f&#237;sicos con precisi&#243;n.</li>
+      </ul>
+
+      <div class="cta-box">
+        <h3>Genera Prompts DALL-E 3 Optimizados</h3>
+        <p>Sube una imagen o describe tu idea y obt&#233;n un prompt DALL-E 3 formateado en lenguaje natural.</p>
+        <a href="/dall-e-prompt-generator/" class="cta-btn">Generador de Prompts DALL-E 3 &#8594;</a>
+      </div>
+
+      <h2 id="preguntas-frecuentes">Preguntas Frecuentes</h2>
+
+      <h3>&#191;C&#243;mo acceder a DALL-E 3?</h3>
+      <p>DALL-E 3 est&#225; disponible a trav&#233;s de ChatGPT Plus (20$/mes), ChatGPT Enterprise, la API de OpenAI y Microsoft Copilot (versi&#243;n gratuita limitada). El acceso v&#237;a ChatGPT es el m&#225;s sencillo ya que ChatGPT reformula autom&#225;ticamente tus prompts para optimizar los resultados.</p>
+
+      <h3>&#191;Puede DALL-E 3 generar texto legible en las im&#225;genes?</h3>
+      <p>S&#237;, es una de las fortalezas &#250;nicas de DALL-E 3. Puede renderizar texto corto (1-5 palabras) de forma bastante fiable en las im&#225;genes. Para mejores resultados, especifica el texto entre comillas en tu prompt y precisa la fuente y el estilo deseados.</p>
+
+      <h3>&#191;Por qu&#233; ChatGPT modifica mis prompts de DALL-E 3?</h3>
+      <p>ChatGPT act&#250;a como intermediario y reformula tus prompts para mejorar los resultados y cumplir con las pol&#237;ticas de contenido de OpenAI. Puedes ver el prompt modificado en la interfaz. Para controlarlo, indica &#8220;Usa exactamente este prompt, no lo modifiques&#8221; en tu mensaje.</p>
+
+      <h3>&#191;DALL-E 3 soporta prompts negativos?</h3>
+      <p>No, DALL-E 3 no soporta prompts negativos como Stable Diffusion. Para evitar elementos no deseados, formula tu prompt de manera positiva o indica expl&#237;citamente lo que no quieres en el texto del prompt (ej: <code>without any text or watermarks</code>).</p>
+
+    </div>
+
+    <div class="author-bio">
+      <svg class="author-photo" width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="Avatar del autor"><circle cx="32" cy="32" r="32" fill="#2a1f4e"/><circle cx="32" cy="26" r="11" fill="#7c6bc4"/><ellipse cx="32" cy="52" rx="18" ry="11" fill="#7c6bc4"/></svg>
+      <div class="author-info">
+        <p class="author-name">ImageToPrompt Team</p>
+        <p class="author-desc">Ingenieros de prompts y artistas de IA especializados en Midjourney, Stable Diffusion y Flux. Construimos ImageToPrompt para hacer la generaci&#243;n de im&#225;genes con IA accesible para todos.</p>
+        <a href="https://x.com/Ilyass14286541" class="author-link">Seguir en X &#8594;</a>
+      </div>
+    </div>
+
+    <div class="related-posts">
+      <h2>Gu&#237;as Relacionadas</h2>
+      <div class="related-grid">
+        <a href="/es/blog/guia-prompts-flux-ai/" class="related-card">
+          <p class="tag">Flux AI</p>
+          <h3>Gu&#237;a de Prompts Flux AI 2026</h3>
+        </a>
+        <a href="/es/blog/guia-prompts-midjourney-2026/" class="related-card">
+          <p class="tag">Midjourney</p>
+          <h3>Gu&#237;a Completa de Prompts Midjourney 2026</h3>
+        </a>
+        <a href="/es/blog/stable-diffusion-vs-midjourney-vs-dalle3/" class="related-card">
+          <p class="tag">Comparativa</p>
+          <h3>SD vs Midjourney vs DALL&#183;E 3 vs Flux</h3>
+        </a>
+        <a href="/es/blog/imagen-a-prompt-diseno-logos/" class="related-card">
+          <p class="tag">Logos</p>
+          <h3>Imagen a Prompt para Dise&#241;o de Logos</h3>
+        </a>
+      </div>
+    </div>
+
+  </div>
+
+  <footer class="footer-4col">
+    <div class="f4-inner">
+      <div class="f4-brand">
+        <img src="/favicon.svg" alt="ImageToPrompt" width="28" height="28">
+        <span class="f4-brand-name">ImageTo<span class="accent">Prompt</span></span>
+        <span class="f4-brand-sub">&mdash; Free AI Prompt Generator</span>
+      </div>
+      <div class="f4-grid">
+        <div class="f4-section">
+          <h4 class="f4-heading">Image Prompt Tools</h4>
+          <a href="/">Image to Prompt</a>
+          <a href="/text-to-prompt/">Text to Prompt</a>
+      <a href="/describe-image/">Describe Image</a>
+          <a href="/midjourney-prompt-generator/">Midjourney</a>
+          <a href="/stable-diffusion-prompt-generator/">Stable Diffusion</a>
+          <a href="/flux-prompt-generator/">Flux</a>
+          <a href="/dall-e-prompt-generator/">DALL-E 3</a>
+          <a href="/adobe-firefly-prompt-generator/">Adobe Firefly</a>
+          <a href="/leonardo-ai-prompt-generator/">Leonardo AI</a>
+          <a href="/ideogram-prompt-generator/">Ideogram</a>
+        </div>
+        <div class="f4-section">
+          <h4 class="f4-heading">Video Prompt Tools</h4>
+          <a href="/image-to-video-prompt/">Image to Video Prompt</a>
+          <a href="/text-to-video-prompt/">Text to Video Prompt</a>
+          <a href="/veo-prompt-generator/">Veo / Flow Studio</a>
+          <a href="/kling-prompt-generator/">Kling AI</a>
+          <a href="/runway-prompt-generator/">Runway Gen-3</a>
+          <a href="/pika-prompt-generator/">Pika</a>
+          <a href="/luma-prompt-generator/">Luma Dream Machine</a>
+          <a href="/sora-prompt-generator/">Sora</a>
+          <a href="/minimax-prompt-generator/">Minimax</a>
+          <a href="/stable-video-prompt-generator/">Stable Video</a>
+        </div>
+        <div class="f4-section">
+          <h4 class="f4-heading">Resources</h4>
+          <a href="/es/blog/">Blog</a>
+          <a href="/es/about/">About</a>
+          <a href="/es/pricing/">Pricing</a>
+          <a href="/contact/">Contact</a>
+          <a href="/privacy-policy/">Privacy Policy</a>
+          <a href="/terms-of-service/">Terms of Service</a>
+        </div>
+        <div class="f4-section">
+          <h4 class="f4-heading">Languages</h4>
+          <a href="/">English</a>
+          <a href="/fr/">Fran&#231;ais</a>
+          <a href="/ar/">&#1575;&#1604;&#1593;&#1585;&#1576;&#1610;&#1577;</a>
+          <a href="/es/">Espa&#241;ol</a>
+          <a href="/ko/">&#54620;&#44397;&#50612;</a>
+          <a href="/ja/">&#26085;&#26412;&#35486;</a>
+          <a href="/ru/">&#1056;&#1091;&#1089;&#1089;&#1082;&#1080;&#1081;</a>
+        </div>
+      </div>
+      <div class="f4-bottom">
+        <p>&#169; 2026 ImageToPrompt.dev &#8212; Free AI Prompt Generator</p>
+        <p>Your images are never stored. All analysis is ephemeral and private.</p>
+      </div>
+    </div>
+  </footer>
+
+<script src="/newsletter-inject.js" defer></script>
+<script src="/nav.js" defer></script>
+  <script>
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', function() {
+    navigator.serviceWorker.register('/sw.js')
+      .catch(function(err) { console.warn('SW registration failed:', err); });
+  });
+}
+</script>
+</body>
+</html>

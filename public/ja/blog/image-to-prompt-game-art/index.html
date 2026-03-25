@@ -1,0 +1,456 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <script src="/theme-toggle.js"></script>
+  <meta charset="UTF-8" />
+  <link rel="dns-prefetch" href="https://www.googletagmanager.com">
+<link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="max-image-preview:large, index, follow">
+  <meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="ImageToPrompt">
+  <title>ゲームアート向け画像からプロンプト変換：コンセプトアーティストガイド</title>
+  <meta name="description" content="ゲームのコンセプトアートをLeonardo AI、Midjourney、Stable Diffusion向けのAIプロンプトに変換する方法を解説します。" />
+  <link rel="canonical" href="https://www.imagetoprompt.dev/ja/blog/image-to-prompt-game-art/" />
+  <link rel="alternate" hreflang="ja" href="https://www.imagetoprompt.dev/ja/blog/image-to-prompt-game-art/" />
+  <link rel="alternate" hreflang="en" href="https://www.imagetoprompt.dev/blog/image-to-prompt-for-game-art/" />
+  <link rel="alternate" hreflang="fr" href="https://www.imagetoprompt.dev/fr/blog/image-vers-prompt-jeux-video/" />
+  <link rel="alternate" hreflang="ar" href="https://www.imagetoprompt.dev/ar/blog/soura-ila-prompt-funun-alaaab/" />
+  <link rel="alternate" hreflang="es" href="https://www.imagetoprompt.dev/es/blog/imagen-a-prompt-arte-videojuegos/" />
+  <link rel="alternate" hreflang="x-default" href="https://www.imagetoprompt.dev/blog/image-to-prompt-for-game-art/" />
+  <meta property="og:title" content="ゲームアート向け画像からプロンプト変換：コンセプトアーティストガイド" />
+  <meta property="og:description" content="ゲームのコンセプトアートをLeonardo AI、Midjourney、Stable Diffusion向けのAIプロンプトに変換する方法を解説します。" />
+  <meta property="og:url" content="https://www.imagetoprompt.dev/ja/blog/image-to-prompt-game-art/" />
+  <meta property="og:type" content="article" />
+  <meta property="og:image" content="https://www.imagetoprompt.dev/og-image.png" />
+  <meta property="og:site_name" content="ImageToPrompt" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="ゲームアート向け画像からプロンプト変換：コンセプトアーティストガイド" />
+  <meta name="twitter:description" content="ゲームのコンセプトアートをLeonardo AI、Midjourney、Stable Diffusion向けのAIプロンプトに変換する方法を解説します。" />
+  <meta name="twitter:image" content="https://www.imagetoprompt.dev/og-image.png" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="48x48" href="/favicon-48.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+  <link rel="manifest" href="/site.webmanifest" />
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="/fonts/space-grotesk-700.woff2" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="/fonts/inter-400.woff2" />
+  <link rel="stylesheet" href="/theme.css">
+  <link rel="preload" href="/blog.css" as="style" onload="this.onload=null;this.rel='stylesheet'"><noscript><link rel="stylesheet" href="/blog.css"></noscript>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "ゲームアート向け画像からプロンプト変換：コンセプトアーティストガイド",
+    "description": "ゲームのコンセプトアートをLeonardo AI、Midjourney、Stable Diffusion向けのAIプロンプトに変換する方法を解説します。",
+    "image": "https://www.imagetoprompt.dev/og-image.png",
+    "datePublished": "2026-03-13",
+    "dateModified": "2026-03-24",
+    "inLanguage": "ja",
+    "author": {
+      "@type": "Person",
+      "name": "ImageToPrompt Team",
+      "url": "https://www.imagetoprompt.dev/"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "ImageToPrompt",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://www.imagetoprompt.dev/favicon.svg"
+      }
+    },
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https://www.imagetoprompt.dev/ja/blog/image-to-prompt-game-art/"
+    }
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "ゲームのコンセプトアートに最適なAI画像生成ツールはどれですか？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Leonardo AIはコンセプトアート、キャラクター、環境に特化したファインチューニング済みモデルを備えており、ゲームアートに最適です。Midjourneyは雰囲気やエピックな構図の表現に優れています。Stable Diffusionは専用チェックポイント（DreamShaperやRPGなど）を使用することで最も高い制御性を実現します。素早いプロトタイピングにはMidjourneyが最も効率的です。"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "AIで一貫性のあるキャラクターシートを生成するには？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "「character reference sheet, multiple views, front view, side view, back view, T-pose, white background, consistent design」のようなプロンプトを使用してください。Midjourneyでは--ar 16:9を追加して複数のビューを収容する横長フォーマットにします。一貫性を保つため、各プロンプトでキャラクターの特徴的な要素を正確に記述し、--cref機能があれば活用してください。"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "ゲーム制作のパイプラインでAIをプロフェッショナルに活用できますか？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "はい、多くのスタジオがAIをパイプラインに組み込んでいます。AIはムードボード作成、初期コンセプトの探索、テクスチャ生成、デザインの高速イテレーションに活用されています。コンセプトアーティストを置き換えるものではなく、アイデア出しのフェーズを大幅に加速するツールです。本番環境で使用する前に、各ツールの商用ライセンスを確認してください。"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "ゲームジャンルに応じてプロンプトを調整するには？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "各ジャンルには固有のビジュアル表現があります。ファンタジー：「medieval, magical, enchanted, epic scale」。SF：「futuristic, holographic, metallic, neon accents」。ホラー：「dark atmosphere, decaying, ominous, desaturated」。カートゥーン/カジュアル：「vibrant colors, rounded shapes, whimsical, stylized」。これらのジャンル用語をコンセプトアートの技術的な記述語と組み合わせてください。"
+        }
+      }
+    ]
+  }
+  </script>
+    <!-- Google AdSense -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4499206373485728" crossorigin="anonymous"></script>
+    <!-- Web Push Notifications -->
+<script src="https://cdn.onesignal.com/sdks/web/v16/OneSignalSDK.page.js" defer></script>
+<script>
+  window.OneSignalDeferred = window.OneSignalDeferred || [];
+  OneSignalDeferred.push(async function(OneSignal) {
+    await OneSignal.init({
+      appId: "REPLACE_WITH_ONESIGNAL_APP_ID",
+      notifyButton: { enable: false }
+    });
+  });
+</script>
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="inner">
+      <a href="/ja/" class="site-logo"><img src="/favicon.svg" alt="ImageToPrompt" width="48" height="48"><div class="site-logo-text">ImageTo<span class="accent">Prompt</span><span class="site-logo-sub">無料AIプロンプトジェネレーター</span></div></a>
+      <nav class="site-nav" aria-label="メインナビゲーション">
+        <div class="nav-dropdown">
+          <button class="nav-dropdown-trigger" aria-haspopup="true" aria-expanded="false">Tools <span class="nav-chevron" aria-hidden="true">&#9660;</span></button>
+          <div class="nav-dropdown-menu" role="menu">
+            <div class="nav-mega-grid">
+              <div class="nav-mega-col">
+                <div class="nav-mega-heading">&#128444; IMAGE TOOLS</div>
+                <a href="/" role="menuitem" class="nav-mega-tool">Image to Prompt <span class="nav-mega-arrow">&#8594;</span></a>
+                <a href="/text-to-prompt/" role="menuitem" class="nav-mega-tool">Text to Prompt <span class="nav-mega-arrow">&#8594;</span></a>
+                <a href="/describe-image/" role="menuitem" class="nav-mega-tool">Describe Image <span class="nav-new-badge">NEW</span> <span class="nav-mega-arrow">&#8594;</span></a>
+                <div class="nav-mega-models-label">Models</div>
+                <div class="nav-mega-models"><a href="/midjourney-prompt-generator/">Midjourney</a><span class="nav-dot">&#xB7;</span><a href="/stable-diffusion-prompt-generator/">SD</a></div>
+                <div class="nav-mega-models"><a href="/flux-prompt-generator/">Flux</a><span class="nav-dot">&#xB7;</span><a href="/dall-e-prompt-generator/">DALL&#xB7;E&#xA0;3</a></div>
+                <div class="nav-mega-models"><a href="/adobe-firefly-prompt-generator/">Firefly</a><span class="nav-dot">&#xB7;</span><a href="/leonardo-ai-prompt-generator/">Leonardo</a></div>
+                <div class="nav-mega-models"><a href="/ideogram-prompt-generator/">Ideogram</a></div>
+              </div>
+              <div class="nav-mega-divider" aria-hidden="true"></div>
+              <div class="nav-mega-col">
+                <div class="nav-mega-heading">&#127909; VIDEO TOOLS</div>
+                <a href="/?tab=image-to-video" role="menuitem" class="nav-mega-tool">Image to Video <span class="nav-mega-arrow">&#8594;</span></a>
+                <a href="/?tab=text-to-video" role="menuitem" class="nav-mega-tool">Text to Video <span class="nav-mega-arrow">&#8594;</span></a>
+                <div class="nav-mega-models-label">Models</div>
+                <div class="nav-mega-models"><a href="/veo-prompt-generator/">Veo</a><span class="nav-dot">&#xB7;</span><a href="/kling-prompt-generator/">Kling</a></div>
+                <div class="nav-mega-models"><a href="/runway-prompt-generator/">Runway</a><span class="nav-dot">&#xB7;</span><a href="/pika-prompt-generator/">Pika</a></div>
+                <div class="nav-mega-models"><a href="/luma-prompt-generator/">Luma</a><span class="nav-dot">&#xB7;</span><a href="/sora-prompt-generator/">Sora</a></div>
+                <div class="nav-mega-models"><a href="/minimax-prompt-generator/">Minimax</a><span class="nav-dot">&#xB7;</span><a href="/stable-video-prompt-generator/">Stable</a></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <a href="/ja/blog/">ブログ</a>
+        <a href="/ja/pricing/" class="nav-pill-pricing">料金</a>
+        <a href="/ja/about/" class="nav-pill-about">概要</a>
+        <a href="/ja/" class="nav-try-free">無料で試す &#8594;</a>
+        <button id="theme-toggle" onclick="toggleTheme()" aria-label="テーマ切替" title="テーマ切替">&#9728;&#xFE0F;</button>
+  </nav>
+    </div>
+  </header>
+
+  <nav class="breadcrumb" aria-label="パンくずリスト">
+    <a href="/ja/">ホーム</a> <span aria-hidden="true">›</span>
+    <a href="/ja/blog/">ブログ</a> <span aria-hidden="true">›</span>
+    <span aria-current="page">ゲームアート向け画像からプロンプト変換</span>
+  </nav>
+
+  <div class="page-wrapper">
+
+    <header class="article-header">
+      <p class="article-tag">ゲームアート</p>
+      <h1>ゲームアート向け画像からプロンプト変換：コンセプトアーティストガイド</h1>
+      <div class="article-meta">
+        <span>2026年3月</span>
+        <span class="dot">&middot;</span>
+        <span>読了時間：約10分</span>
+        <span class="dot">&middot;</span>
+        <span>Leonardo AI &middot; Midjourney &middot; Stable Diffusion &middot; コンセプトアート</span>
+        <span class="dot">&middot;</span>
+        <span>2026年3月更新</span>
+      </div>
+    </header>
+
+    <div class="article-body">
+
+      <p>コンセプトアートはゲーム制作の核心です。すべてのキャラクター、環境、武器、UIは、開発チーム全体を導くビジュアルビジョンから始まります。AI画像生成ツールの登場により、コンセプトアーティストやインディー開発者はかつてない強力なアイデア出しツールを手に入れました。数分で数十ものバリエーションを生成できるのです。</p>
+
+      <p>画像からプロンプトへの変換は、この分野で特に価値があります。既存のコンセプトアートを解析して、どのビジュアル要素で構成されているかを理解し、その要素を新しい作品の制作に再利用することができます。</p>
+
+      <nav class="toc" aria-label="目次">
+        <details open>
+          <summary>このガイドの内容</summary>
+          <ol>
+            <li><a href="#character-design">キャラクターデザイン：キャラクターとクリーチャー</a></li>
+            <li><a href="#environment-art">環境アート：世界と背景</a></li>
+            <li><a href="#weapon-item-design">武器とアイテムのデザイン</a></li>
+            <li><a href="#styles-par-genre">ゲームジャンル別スタイル</a></li>
+            <li><a href="#workflow-concept-art">コンセプトアーティスト向けAIワークフロー</a></li>
+            <li><a href="#meilleurs-modeles">ゲームアートに最適なモデル</a></li>
+            <li><a href="#questions-frequentes">よくある質問</a></li>
+          </ol>
+        </details>
+      </nav>
+
+      <div class="callout">
+        <p><strong>おすすめツール：</strong> <a href="/leonardo-ai-prompt-generator/">Leonardo AIプロンプトジェネレーター</a>はゲームのコンセプトアートに最適化されています。参考となるコンセプトアートをアップロードすると、Leonardoの専用モデルに適したプロンプトを取得できます。</p>
+      </div>
+
+      <h2 id="character-design">キャラクターデザイン：キャラクターとクリーチャー</h2>
+
+      <p>キャラクターデザインは、画像からプロンプトへの変換が最も効果的に機能する分野のひとつです。ゲームキャラクターには非常に具体的なビジュアル特性があります。鎧、アクセサリー、ポーズ、表情など、AIモデルはこれらを驚くほど正確に理解します。</p>
+
+      <h3>キャラクターシート用プロンプト</h3>
+      <p>キャラクターシート（複数ビューのキャラクター設定画）は制作現場で不可欠です。以下の方法で生成できます。</p>
+      <p><code>character reference sheet, fantasy warrior, full body, multiple views, front view, side view, back view, T-pose, detailed armor design, consistent style, white background, concept art, clean linework --ar 16:9</code></p>
+
+      <h3>キャラクターポートレート用プロンプト</h3>
+      <p>対話シーンやシネマティクスの参考となる詳細なポートレートには次のようなプロンプトが有効です。</p>
+      <p><code>character portrait, grizzled dwarf blacksmith, weathered face, thick braided beard, soot-covered leather apron, warm forge light, detailed skin texture, concept art style, fantasy RPG character --ar 2:3</code></p>
+
+      <h3>クリーチャーとモンスター</h3>
+      <p>クリーチャーのデザインでは、独創的かつ一貫性のあるデザインに導くための独特な語彙が必要です。</p>
+      <p><code>creature design, ancient forest guardian, bioluminescent moss growing on bark-like skin, glowing amber eyes, root-like limbs, towering figure, mystical atmosphere, concept art, creature study sheet --ar 16:9</code></p>
+
+      <h3>既存キャラクターのスタイルを抽出する</h3>
+      <p>気に入ったキャラクターのコンセプトアートがある場合は、<a href="/">ImageToPrompt</a>にアップロードして重要な要素を抽出しましょう。AIがスタイル記述語（painterly、cel-shaded、realisticなど）、デザイン要素（鎧のタイプ、カラースキーム、シルエット）、技術的な詳細（ライティング、ポーズ、構図）を特定します。これらを再利用して、同じビジュアルユニバースの新しいキャラクターを作成できます。</p>
+
+      <h2 id="environment-art">環境アート：世界と背景</h2>
+
+      <p>環境アートはゲームの雰囲気と没入感を決定づけます。風景、インテリア、建築物の生成は、AIが最も得意とする分野です。適切なプロンプトを使用すれば、壮観な結果が得られます。</p>
+
+      <h3>屋外の風景</h3>
+      <p><code>vast fantasy landscape, ancient elven city built into cliff faces, cascading waterfalls, bioluminescent vegetation, golden sunset light, atmospheric perspective, epic scale, environment concept art, painterly style --ar 21:9</code></p>
+
+      <h3>室内とダンジョン</h3>
+      <p><code>dark dungeon interior, stone corridors, flickering torch light, moss-covered walls, ancient runes glowing faintly, puddles reflecting light, ominous atmosphere, dungeon crawler environment, concept art --ar 16:9</code></p>
+
+      <h3>街とハブ</h3>
+      <p><code>bustling fantasy marketplace, wooden stalls with colorful awnings, diverse fantasy races, warm afternoon light, cobblestone streets, hanging lanterns, RPG town hub, detailed environment concept art, lively atmosphere --ar 21:9</code></p>
+
+      <h3>キーアートとスプラッシュスクリーン</h3>
+      <p>プロモーション画像やローディング画面向けのプロンプトです。</p>
+      <p><code>epic key art, lone warrior standing at the edge of a crumbling bridge, massive dragon silhouette in storm clouds behind, dramatic lightning, cinematic composition, heroic scale, game cover art quality --ar 16:9</code></p>
+
+      <h2 id="weapon-item-design">武器とアイテムのデザイン</h2>
+
+      <p>武器やアイテムのデザインは、ゲーム制作における独自の技術分野です。プロンプトでは素材、プロポーション、ビジュアルスタイルを正確に指定する必要があります。</p>
+
+      <h3>武器</h3>
+      <p><code>weapon design sheet, legendary greatsword, ornate golden crossguard, glowing blue rune engravings along the blade, dragon leather grip, crystalline pommel, white background, multiple angles, item concept art --ar 16:9</code></p>
+
+      <h3>鎧と装備</h3>
+      <p><code>armor design, elven ranger outfit, leather and mithril plates, nature-inspired ornaments, leaf motifs, forest green and silver color scheme, practical fantasy design, equipment concept art, front and back view --ar 16:9</code></p>
+
+      <h3>魔法のアイテムと消耗品</h3>
+      <p><code>magical item collection, potion bottles of various shapes, glowing liquids in amber, emerald and crimson, ornate stoppers, floating magical particles, dark background, item icon reference, game UI art style --ar 1:1</code></p>
+
+      <h2 id="styles-par-genre">ゲームジャンル別スタイル</h2>
+
+      <p>各ゲームジャンルには独自のビジュアル言語があります。以下は、プロンプトに使えるジャンル別の重要キーワードです。</p>
+
+      <div class="table-wrap">
+      <table class="comparison-table">
+        <thead>
+          <tr>
+            <th>ジャンル</th>
+            <th>ビジュアルキーワード</th>
+            <th>代表的なカラーパレット</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>ファンタジーRPG</td>
+            <td>medieval, magical, enchanted, ornate, epic scale</td>
+            <td>ゴールド、フォレストグリーン、ディープブルー</td>
+          </tr>
+          <tr>
+            <td>SF</td>
+            <td>futuristic, holographic, metallic, sleek, neon accents</td>
+            <td>アイスブルー、クローム、ネオンシアン</td>
+          </tr>
+          <tr>
+            <td>ホラー／サバイバル</td>
+            <td>decaying, ominous, desaturated, visceral, claustrophobic</td>
+            <td>ダークグレー、ブラッドレッド、ブラック</td>
+          </tr>
+          <tr>
+            <td>カートゥーン／カジュアル</td>
+            <td>vibrant, rounded shapes, whimsical, stylized, bouncy</td>
+            <td>鮮やかで彩度の高い色</td>
+          </tr>
+          <tr>
+            <td>ポストアポカリプス</td>
+            <td>ruined, overgrown, rusty, makeshift, desolate</td>
+            <td>ブラウン、ラスト、オリーブグリーン</td>
+          </tr>
+          <tr>
+            <td>サイバーパンク</td>
+            <td>neon-lit, rain-soaked, corporate, augmented, gritty</td>
+            <td>マゼンタ、シアン、バイオレット</td>
+          </tr>
+        </tbody>
+      </table>
+      </div>
+
+      <h2 id="workflow-concept-art">コンセプトアーティスト向けAIワークフロー</h2>
+
+      <p>画像からプロンプトへの変換をコンセプトアートのパイプラインに統合するプロフェッショナルなワークフローを紹介します。</p>
+
+      <ol>
+        <li><strong>リファレンス収集：</strong> プロジェクトの目指すビジュアルスタイルを表現する参考画像を5〜10枚集めます</li>
+        <li><strong>プロンプト抽出：</strong> 各参考画像をImageToPromptにアップロードし、主要なビジュアル要素（スタイル、パレット、レンダリング技法、構図）を特定します</li>
+        <li><strong>スタイルガイドプロンプトの作成：</strong> 共通要素を組み合わせて、ゲームのビジュアルアイデンティティを定義する「スタイルプロンプト」の基盤を作ります</li>
+        <li><strong>バリエーション生成：</strong> スタイルプロンプトをプレフィックスとして使用し、各アセット（キャラクター、環境、アイテム）の具体的な説明を追加します</li>
+        <li><strong>選定とペイントオーバー：</strong> 最良の結果を選び、PhotoshopやClip Studio Paintでペイントオーバーのベースとして使用します</li>
+        <li><strong>イテレーション：</strong> ペイントオーバーした作品を新たなプロンプトに変換し、さらに洗練されたバリエーションを作成します</li>
+      </ol>
+
+      <p>このワークフローにより、コンセプトアーティストの創造的なコントロールを維持しながら、初期アイデアから完成したコンセプトアートまでの工程を従来の何分の一かの時間で進めることができます。</p>
+
+      <h2 id="meilleurs-modeles">ゲームアートに最適なモデル</h2>
+
+      <h3>Leonardo AI</h3>
+      <p>Leonardo AIは、ファインチューニング済みの専用モデルを備えており、ゲームアートの第一候補です。Leonardoの「DreamShaper」モデルはコンセプトアートに特に効果的で、「Absolute Reality」はフォトリアルな参考資料の作成に優れています。最大の利点は、Leonardoがゲームアートの語彙を他のどのツールよりも深く理解している点です。</p>
+
+      <h3>Midjourney</h3>
+      <p>Midjourneyは最小限の労力で視覚的に圧倒的な結果を生み出します。ムードボード、キーアート、プロモーションイラストに最適です。<code>--style raw</code>や<code>--chaos</code>パラメータは、予想外のクリエイティブな方向性を探索するのに特に役立ちます。</p>
+
+      <h3>Stable Diffusion（専用チェックポイント使用）</h3>
+      <p>Stable DiffusionにRPG v5、DreamShaper、Counterfeit（アニメ向け）などのチェックポイントを組み合わせると、コンセプトアーティストにとって最も高い制御性が得られます。ControlNetを使用してポーズ、構図、奥行きをガイドする機能は、制作現場の作業において他に類を見ない強みです。</p>
+
+      <div class="cta-box">
+        <h3>ゲームアートのリファレンスを変換しよう</h3>
+        <p>参考となるコンセプトアートをアップロードして、Leonardo AI、Midjourney、Stable Diffusion向けに最適化されたゲームアート専用プロンプトを取得しましょう。</p>
+        <a href="/?lang=ja" class="cta-btn">ImageToPromptを無料で試す →</a>
+      </div>
+
+      <h2 id="questions-frequentes">よくある質問</h2>
+
+      <h3>ゲームのコンセプトアートに最適なAI画像生成ツールはどれですか？</h3>
+      <p>Leonardo AIはファインチューニング済みモデルを備えており、ゲームアートに特化しています。Midjourneyは雰囲気やエピックな構図に優れています。専用チェックポイントを使用したStable Diffusionは最も高い制御性を提供します。素早いプロトタイピングにはMidjourneyが最も効率的で、デフォルトの品質が高いためです。</p>
+
+      <h3>AIで一貫性のあるキャラクターシートを生成するには？</h3>
+      <p>「character reference sheet, multiple views, front view, side view, back view, T-pose, white background, consistent design」のようなプロンプトを使用してください。Midjourneyでは<code>--ar 16:9</code>を追加して複数のビューに対応する横長フォーマットにします。キャラクターの特徴的な要素をプロンプトごとに正確に記述することで、一貫性を最大化できます。</p>
+
+      <h3>ゲーム制作のパイプラインでAIをプロフェッショナルに活用できますか？</h3>
+      <p>はい、多くのスタジオがAIを制作パイプラインに組み込んでいます。ムードボード作成、初期コンセプトの探索、テクスチャ生成、デザインの高速イテレーションなどに活用されています。AIはコンセプトアーティストを置き換えるものではなく、アイデア出しのフェーズを大幅に加速するツールです。本番環境で使用する前に、各ツールの商用ライセンスを必ず確認してください。</p>
+
+      <h3>ゲームジャンルに応じてプロンプトを調整するには？</h3>
+      <p>各ジャンルには固有のビジュアル表現があります。ファンタジー：「medieval, magical, enchanted, epic scale」。SF：「futuristic, holographic, metallic, neon accents」。ホラー：「dark atmosphere, decaying, ominous, desaturated」。これらのジャンル用語をコンセプトアートの技術的な記述語と組み合わせることで、最適な結果が得られます。</p>
+
+    </div>
+
+    <div class="author-bio"><img src="/favicon.svg" alt="ImageToPrompt Team" width="44" height="44"><div><strong>ImageToPrompt Team</strong><p>私たちはクリエイターの皆さんがAI画像生成をマスターできるよう支援する専門チームです。画像からプロンプトへの変換ツールやAIプロンプトエンジニアリングガイドを通じて、世界中のアーティストの創作活動をサポートしています。</p><a href="https://x.com/ImageToPrompt" target="_blank" rel="noopener" class="author-follow">Xでフォロー</a></div></div>
+
+    <div class="related-posts">
+      <h2>関連ガイド</h2>
+      <div class="related-grid">
+        <a href="/ja/blog/ai-art-style-yougo/" class="related-card">
+          <p class="tag">用語集</p>
+          <h3>AIアートスタイル用語集：50スタイル解説</h3>
+        </a>
+        <a href="/ja/blog/stable-diffusion-prompt-gaido/" class="related-card">
+          <p class="tag">Stable Diffusion</p>
+          <h3>Stable Diffusionプロンプト完全ガイド2026</h3>
+        </a>
+        <a href="/ja/blog/shashin-kara-ai-prompt/" class="related-card">
+          <p class="tag">写真</p>
+          <h3>実写写真からAIプロンプトを生成する方法</h3>
+        </a>
+      </div>
+    </div>
+
+  </div>
+
+  <footer class="footer-4col">
+    <div class="f4-inner">
+      <div class="f4-brand">
+        <img src="/favicon.svg" alt="ImageToPrompt" width="28" height="28">
+        <span class="f4-brand-name">ImageTo<span class="accent">Prompt</span></span>
+        <span class="f4-brand-sub">&mdash; Free AI Prompt Generator</span>
+      </div>
+      <div class="f4-grid">
+        <div class="f4-section">
+          <h4 class="f4-heading">Image Prompt Tools</h4>
+          <a href="/">Image to Prompt</a>
+          <a href="/text-to-prompt/">Text to Prompt</a>
+      <a href="/describe-image/">Describe Image</a>
+          <a href="/midjourney-prompt-generator/">Midjourney</a>
+          <a href="/stable-diffusion-prompt-generator/">Stable Diffusion</a>
+          <a href="/flux-prompt-generator/">Flux</a>
+          <a href="/dall-e-prompt-generator/">DALL-E 3</a>
+          <a href="/adobe-firefly-prompt-generator/">Adobe Firefly</a>
+          <a href="/leonardo-ai-prompt-generator/">Leonardo AI</a>
+          <a href="/ideogram-prompt-generator/">Ideogram</a>
+        </div>
+        <div class="f4-section">
+          <h4 class="f4-heading">Video Prompt Tools</h4>
+          <a href="/image-to-video-prompt/">Image to Video Prompt</a>
+          <a href="/text-to-video-prompt/">Text to Video Prompt</a>
+          <a href="/veo-prompt-generator/">Veo / Flow Studio</a>
+          <a href="/kling-prompt-generator/">Kling AI</a>
+          <a href="/runway-prompt-generator/">Runway Gen-3</a>
+          <a href="/pika-prompt-generator/">Pika</a>
+          <a href="/luma-prompt-generator/">Luma Dream Machine</a>
+          <a href="/sora-prompt-generator/">Sora</a>
+          <a href="/minimax-prompt-generator/">Minimax</a>
+          <a href="/stable-video-prompt-generator/">Stable Video</a>
+        </div>
+        <div class="f4-section">
+          <h4 class="f4-heading">Resources</h4>
+          <a href="/ja/blog/">ブログ</a>
+          <a href="/ja/about/">概要</a>
+          <a href="/ja/pricing/">料金</a>
+          <a href="/contact/">Contact</a>
+          <a href="/privacy-policy/">Privacy Policy</a>
+          <a href="/terms-of-service/">Terms of Service</a>
+        </div>
+        <div class="f4-section">
+          <h4 class="f4-heading">Languages</h4>
+          <a href="/">English</a>
+          <a href="/fr/">Fran&#231;ais</a>
+          <a href="/ar/">&#1575;&#1604;&#1593;&#1585;&#1576;&#1610;&#1577;</a>
+          <a href="/es/">Espa&#241;ol</a>
+          <a href="/ko/">&#54620;&#44397;&#50612;</a>
+          <a href="/ja/">&#26085;&#26412;&#35486;</a>
+          <a href="/ru/">&#1056;&#1091;&#1089;&#1089;&#1082;&#1080;&#1081;</a>
+        </div>
+      </div>
+      <div class="f4-bottom">
+        <p>&#169; 2026 ImageToPrompt.dev &#8212; Free AI Prompt Generator</p>
+        <p>Your images are never stored. All analysis is ephemeral and private.</p>
+      </div>
+    </div>
+  </footer>
+
+<script src="/newsletter-inject.js" defer></script>
+<script src="/nav.js" defer></script>
+  <script>
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', function() {
+    navigator.serviceWorker.register('/sw.js')
+      .catch(function(err) { console.warn('SW registration failed:', err); });
+  });
+}
+</script>
+</body>
+</html>

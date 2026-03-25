@@ -1,0 +1,461 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <script src="/theme-toggle.js"></script>
+  <meta charset="UTF-8" />
+  <link rel="dns-prefetch" href="https://www.googletagmanager.com">
+<link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="max-image-preview:large, index, follow">
+  <meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="ImageToPrompt">
+  <title>Stable Diffusionネガティブプロンプトの使い方（完全ガイド）</title>
+  <meta name="description" content="Stable Diffusionのネガティブプロンプト完全ガイド。構文、よく使う例、避けるべきミス、コピーして使えるリストを解説します。" />
+  <link rel="canonical" href="https://www.imagetoprompt.dev/ja/blog/negative-prompt-stable-diffusion/" />
+  <link rel="alternate" hreflang="ja" href="https://www.imagetoprompt.dev/ja/blog/negative-prompt-stable-diffusion/" />
+  <link rel="alternate" hreflang="en" href="https://www.imagetoprompt.dev/blog/negative-prompts-stable-diffusion/" />
+  <link rel="alternate" hreflang="fr" href="https://www.imagetoprompt.dev/fr/blog/prompts-negatifs-stable-diffusion/" />
+  <link rel="alternate" hreflang="ar" href="https://www.imagetoprompt.dev/ar/blog/prompts-salbiya-stable-diffusion/" />
+  <link rel="alternate" hreflang="es" href="https://www.imagetoprompt.dev/es/blog/prompts-negativos-stable-diffusion/" />
+  <link rel="alternate" hreflang="x-default" href="https://www.imagetoprompt.dev/blog/negative-prompts-stable-diffusion/" />
+  <meta property="og:title" content="Stable Diffusionネガティブプロンプトの使い方（完全ガイド）" />
+  <meta property="og:description" content="Stable Diffusionのネガティブプロンプト完全ガイド。構文、よく使う例、避けるべきミスを解説。" />
+  <meta property="og:url" content="https://www.imagetoprompt.dev/ja/blog/negative-prompt-stable-diffusion/" />
+  <meta property="og:type" content="article" />
+  <meta property="og:image" content="https://www.imagetoprompt.dev/og-image.png" />
+  <meta property="og:site_name" content="ImageToPrompt" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Stable Diffusionネガティブプロンプト：完全ガイド" />
+  <meta name="twitter:description" content="Stable Diffusionのネガティブプロンプト完全ガイド。構文、例文、コピーして使えるリスト。" />
+  <meta name="twitter:image" content="https://www.imagetoprompt.dev/og-image.png" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="48x48" href="/favicon-48.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+  <link rel="manifest" href="/site.webmanifest" />
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="/fonts/space-grotesk-700.woff2" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="/fonts/inter-400.woff2" />
+  <link rel="stylesheet" href="/theme.css">
+  <link rel="preload" href="/blog.css" as="style" onload="this.onload=null;this.rel='stylesheet'"><noscript><link rel="stylesheet" href="/blog.css"></noscript>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Stable Diffusionネガティブプロンプトの使い方（完全ガイド）",
+    "description": "Stable Diffusionのネガティブプロンプト完全ガイド。構文、よく使う例、避けるべきミス、コピーして使えるリストを解説します。",
+    "image": "https://www.imagetoprompt.dev/og-image.png",
+    "datePublished": "2026-03-09",
+    "dateModified": "2026-03-24",
+    "inLanguage": "ja",
+    "author": {
+      "@type": "Person",
+      "name": "ImageToPrompt Team",
+      "url": "https://www.imagetoprompt.dev/"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "ImageToPrompt",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://www.imagetoprompt.dev/favicon.svg"
+      }
+    },
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https://www.imagetoprompt.dev/ja/blog/negative-prompt-stable-diffusion/"
+    }
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Stable Diffusionのネガティブプロンプトとは何ですか？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "ネガティブプロンプトとは、生成画像に含めたくない要素を指定する専用のテキスト欄です。モデルは生成時にこれらの概念から積極的に離れるよう動作し、品質を向上させてアーティファクトを削減します。"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "CFG scaleはネガティブプロンプトに影響しますか？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "はい、CFG scale（Classifier-Free Guidance）はモデルがポジティブプロンプトとネガティブプロンプトの両方にどの程度従うかを決定します。CFG 7が適切なバランスです。CFGが高すぎる（15+）とアーティファクトが生じ、低すぎる（3〜4）とネガティブプロンプトが部分的に無視されます。"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "最も便利な汎用ネガティブプロンプトは何ですか？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "最も効果的な汎用ネガティブプロンプトは、(worst quality:1.4), (low quality:1.4), blurry, watermark, signature, text, deformed, bad anatomy, bad hands, extra fingers, missing fingers, extra limbs, duplicate, cropped, out of frame, ugly です。"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "MidjourneyやFluxはネガティブプロンプトに対応していますか？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Midjourneyは--noパラメータ（例：--no text, watermark）による限定的なサポートがあります。Fluxはネガティブプロンプトに対応していません。Stable Diffusionのみが重み付け対応の完全な専用フィールドを提供しています。"
+        }
+      }
+    ]
+  }
+  </script>
+    <!-- Google AdSense -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4499206373485728" crossorigin="anonymous"></script>
+    <!-- Web Push Notifications -->
+<script src="https://cdn.onesignal.com/sdks/web/v16/OneSignalSDK.page.js" defer></script>
+<script>
+  window.OneSignalDeferred = window.OneSignalDeferred || [];
+  OneSignalDeferred.push(async function(OneSignal) {
+    await OneSignal.init({
+      appId: "REPLACE_WITH_ONESIGNAL_APP_ID",
+      notifyButton: { enable: false }
+    });
+  });
+</script>
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="inner">
+      <a href="/ja/" class="site-logo"><img src="/favicon.svg" alt="ImageToPrompt" width="48" height="48"><div class="site-logo-text">ImageTo<span class="accent">Prompt</span><span class="site-logo-sub">無料AIプロンプトジェネレーター</span></div></a>
+      <nav class="site-nav" aria-label="メインナビゲーション">
+        <div class="nav-dropdown">
+          <button class="nav-dropdown-trigger" aria-haspopup="true" aria-expanded="false">Tools <span class="nav-chevron" aria-hidden="true">&#9660;</span></button>
+          <div class="nav-dropdown-menu" role="menu">
+            <div class="nav-mega-grid">
+              <div class="nav-mega-col">
+                <div class="nav-mega-heading">&#128444; IMAGE TOOLS</div>
+                <a href="/" role="menuitem" class="nav-mega-tool">Image to Prompt &#8594;</a>
+                <a href="/text-to-prompt/" role="menuitem" class="nav-mega-tool">Text to Prompt &#8594;</a>
+                <a href="/describe-image/" role="menuitem" class="nav-mega-tool">Describe Image <span class="nav-new-badge">NEW</span> &#8594;</a>
+                <div class="nav-mega-models-label">Models</div>
+                <div class="nav-mega-models"><a href="/midjourney-prompt-generator/">Midjourney</a><span class="nav-dot">&#xB7;</span><a href="/stable-diffusion-prompt-generator/">SD</a></div>
+                <div class="nav-mega-models"><a href="/flux-prompt-generator/">Flux</a><span class="nav-dot">&#xB7;</span><a href="/dall-e-prompt-generator/">DALL&#xB7;E&#xA0;3</a></div>
+                <div class="nav-mega-models"><a href="/adobe-firefly-prompt-generator/">Firefly</a><span class="nav-dot">&#xB7;</span><a href="/leonardo-ai-prompt-generator/">Leonardo</a></div>
+                <div class="nav-mega-models"><a href="/ideogram-prompt-generator/">Ideogram</a></div>
+              </div>
+              <div class="nav-mega-divider" aria-hidden="true"></div>
+              <div class="nav-mega-col">
+                <div class="nav-mega-heading">&#127909; VIDEO TOOLS</div>
+                <a href="/?tab=image-to-video" role="menuitem" class="nav-mega-tool">Image to Video &#8594;</a>
+                <a href="/?tab=text-to-video" role="menuitem" class="nav-mega-tool">Text to Video &#8594;</a>
+                <div class="nav-mega-models-label">Models</div>
+                <div class="nav-mega-models"><a href="/veo-prompt-generator/">Veo</a><span class="nav-dot">&#xB7;</span><a href="/kling-prompt-generator/">Kling</a></div>
+                <div class="nav-mega-models"><a href="/runway-prompt-generator/">Runway</a><span class="nav-dot">&#xB7;</span><a href="/pika-prompt-generator/">Pika</a></div>
+                <div class="nav-mega-models"><a href="/luma-prompt-generator/">Luma</a><span class="nav-dot">&#xB7;</span><a href="/sora-prompt-generator/">Sora</a></div>
+                <div class="nav-mega-models"><a href="/minimax-prompt-generator/">Minimax</a><span class="nav-dot">&#xB7;</span><a href="/stable-video-prompt-generator/">Stable</a></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <a href="/ja/blog/">ブログ</a>
+        <a href="/ja/pricing/" class="nav-pill-pricing">料金</a>
+        <a href="/ja/about/" class="nav-pill-about">概要</a>
+        <a href="/ja/" class="nav-try-free">無料で試す &#8594;</a>
+        <button id="theme-toggle" onclick="toggleTheme()" aria-label="テーマ切替" title="テーマ切替">&#9728;&#xFE0F;</button>
+  </nav>
+    </div>
+  </header>
+
+  <nav class="breadcrumb" aria-label="パンくずリスト">
+    <a href="/ja/">ホーム</a> <span aria-hidden="true">›</span>
+    <a href="/ja/blog/">ブログ</a> <span aria-hidden="true">›</span>
+    <span aria-current="page">Stable Diffusionネガティブプロンプト</span>
+  </nav>
+
+  <div class="page-wrapper">
+
+    <header class="article-header">
+      <p class="article-tag">Stable Diffusion</p>
+      <h1>Stable Diffusionのネガティブプロンプト：完全ガイド</h1>
+      <div class="article-meta">
+        <span>2026年3月</span>
+        <span class="dot">&#183;</span>
+        <span>読了時間 9分</span>
+        <span class="dot">&#183;</span>
+        <span>Stable Diffusion &#183; SDXL &#183; Automatic1111</span>
+        <span class="dot">&#183;</span>
+        <span>2026年3月更新</span>
+      </div>
+    </header>
+
+    <div class="article-body">
+
+      <p>ネガティブプロンプトは、Stable Diffusionで最も強力でありながら最も理解されていないツールの一つです。生成画像に含めたくない要素をモデルに指示することができます。変形した手からウォーターマーク、圧縮アーティファクトまで、あらゆる不要な要素を排除できます。正しく使えば、すべての生成結果の品質が大幅に向上します。</p>
+
+      <nav class="toc" aria-label="目次">
+        <details open>
+          <summary>このガイドの内容</summary>
+          <ol>
+            <li><a href="#negative-prompt-toha">ネガティブプロンプトとは？</a></li>
+            <li><a href="#gijutsu-teki-shikumi">技術的な仕組み</a></li>
+            <li><a href="#cfg-scale">CFG Scaleとの関係</a></li>
+            <li><a href="#hanyo-list">汎用ネガティブプロンプトリスト</a></li>
+            <li><a href="#youto-betsu">用途別ネガティブプロンプト</a></li>
+            <li><a href="#koubun-omomi">構文と重み付け</a></li>
+            <li><a href="#yoku-aru-machigai">よくあるミス</a></li>
+            <li><a href="#yokuaru-shitsumon">よくある質問</a></li>
+          </ol>
+        </details>
+      </nav>
+
+      <div class="callout">
+        <p><strong>ヒント：</strong> <a href="/">ImageToPrompt</a>でStable Diffusionをターゲットモデルに選択すると、最適化されたネガティブプロンプトが自動生成されます。画像をアップロードするだけで、ポジティブプロンプトとネガティブプロンプトの両方を一度の分析で取得できます。</p>
+      </div>
+
+      <h2 id="negative-prompt-toha">ネガティブプロンプトとは？</h2>
+
+      <p>Stable Diffusionにおけるネガティブプロンプトとは、生成画像に含めたくない要素、品質、スタイルを指定する専用のテキスト欄です。デノイジング（ノイズ除去）プロセス中に、モデルはこれらの概念から積極的に離れるよう動作し、よりクリーンで正確な画像を生成します。</p>
+
+      <p>コンパスに例えると分かりやすいでしょう。ポジティブプロンプトが目指す方向を示し、ネガティブプロンプトが避けるべき方向を定義します。この二つが組み合わさることで、生成を正確な結果へと導きます。</p>
+
+      <h2 id="gijutsu-teki-shikumi">技術的な仕組み</h2>
+
+      <p>Stable Diffusionは、Classifier-Free Guidance（CFG）と呼ばれるプロセスを使用して、ポジティブプロンプトとネガティブプロンプトのバランスを取ります。デノイジングの各ステップで、モデルは2つの予測を計算します：</p>
+
+      <ol>
+        <li><strong>ポジティブ</strong>プロンプトに基づく予測</li>
+        <li><strong>ネガティブ</strong>プロンプトに基づく予測（ネガティブプロンプトが指定されていない場合は無条件予測）</li>
+      </ol>
+
+      <p>最終結果は、CFG scaleで定義された強度に従い、ネガティブ予測から離れ、ポジティブ予測に近づくように計算されます。</p>
+
+      <h2 id="cfg-scale">CFG Scaleとの関係</h2>
+
+      <p>CFG scaleは、モデルがプロンプトにどの程度従うかを決定します。この値はポジティブプロンプトとネガティブプロンプトの両方に影響します：</p>
+
+      <div class="table-wrap">
+      <table class="comparison-table">
+        <thead>
+          <tr>
+            <th>CFG Scale</th>
+            <th>効果</th>
+            <th>推奨用途</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>1 &#8211; 3</td>
+            <td>創造的、プロンプトを部分的に無視</td>
+            <td>自由な探索</td>
+          </tr>
+          <tr>
+            <td>5 &#8211; 7</td>
+            <td>品質と創造性のバランス</td>
+            <td>一般的な使用（推奨）</td>
+          </tr>
+          <tr>
+            <td>8 &#8211; 12</td>
+            <td>プロンプトに忠実に従う</td>
+            <td>精度が重要な場合</td>
+          </tr>
+          <tr>
+            <td>13+</td>
+            <td>厳格すぎ、アーティファクトの可能性大</td>
+            <td>一般的に避けるべき</td>
+          </tr>
+        </tbody>
+      </table>
+      </div>
+
+      <p>重要なポイント：CFGが高いとネガティブプロンプトの効果も増幅されます。CFGが12以上でネガティブプロンプトが過度に強い場合、モデルが特定の概念から離れすぎて奇妙な結果が生じるリスクがあります。</p>
+
+      <h2 id="hanyo-list">汎用ネガティブプロンプトリスト</h2>
+
+      <p>以下は、ほとんどの生成で出発点として推奨する汎用ネガティブプロンプトのリストです：</p>
+
+      <h3>画像品質</h3>
+      <pre><code>(worst quality:1.4), (low quality:1.4), normal quality, jpeg artifacts, blurry, noisy, grainy, pixelated, low resolution</code></pre>
+
+      <h3>解剖学とプロポーション</h3>
+      <pre><code>bad anatomy, bad hands, extra fingers, missing fingers, extra limbs, missing limbs, fused fingers, too many fingers, deformed, mutated, disfigured, malformed</code></pre>
+
+      <h3>構図</h3>
+      <pre><code>cropped, out of frame, cut off, duplicate, clone, copy, watermark, signature, text, logo, username, artist name</code></pre>
+
+      <h3>コピーして使える完全リスト</h3>
+      <pre><code>(worst quality:1.4), (low quality:1.4), blurry, noisy, watermark, signature, text, logo, bad anatomy, bad hands, extra fingers, missing fingers, extra limbs, deformed, disfigured, duplicate, cropped, out of frame, ugly, poorly drawn face, poorly drawn hands</code></pre>
+
+      <h2 id="youto-betsu">用途別ネガティブプロンプト</h2>
+
+      <h3>フォトリアルなポートレート</h3>
+      <pre><code>(worst quality:1.4), (low quality:1.4), bad anatomy, bad hands, deformed face, deformed eyes, asymmetric eyes, cross-eyed, extra fingers, missing fingers, blurry, watermark, signature, 3d render, cartoon, anime, illustration, painting, drawing</code></pre>
+
+      <h3>アニメ・漫画風アート</h3>
+      <pre><code>(worst quality:1.4), (low quality:1.4), realistic, photorealistic, 3d render, bad anatomy, bad hands, extra fingers, deformed, blurry, watermark, signature, text, duplicate, cropped, ugly</code></pre>
+
+      <h3>風景・環境</h3>
+      <pre><code>(worst quality:1.4), (low quality:1.4), blurry, noisy, watermark, text, logo, people, person, human, figures, cars, vehicles, modern objects, power lines, telephone poles</code></pre>
+
+      <h3>商品写真</h3>
+      <pre><code>(worst quality:1.4), (low quality:1.4), blurry, noisy, watermark, text, logo, cluttered background, distracting elements, poor lighting, shadows on product, reflections, distortion</code></pre>
+
+      <h2 id="koubun-omomi">構文と重み付け</h2>
+
+      <p>ネガティブプロンプトは、Stable Diffusionのポジティブプロンプトと同じ重み付け構文に対応しています：</p>
+
+      <ul>
+        <li><code>(term:1.4)</code> &#8212; 強い重み、モデルがその概念を積極的に回避</li>
+        <li><code>(term:1.0)</code> &#8212; 通常の重み（デフォルト）</li>
+        <li><code>(term:0.6)</code> &#8212; 弱い重み、軽度の影響</li>
+        <li><code>[term]</code> &#8212; 重みを10%減少</li>
+        <li><code>(term)</code> &#8212; 重みを10%増加</li>
+      </ul>
+
+      <p>品質関連の用語は1.4の重み（<code>(worst quality:1.4)</code>）にすることを推奨します。全体的な品質への影響が最も大きいためです。コンテンツ固有の用語は1.0のままにしましょう。</p>
+
+      <h2 id="yoku-aru-machigai">よくあるミス</h2>
+
+      <ol class="mistakes-list">
+        <li>
+          <strong>ネガティブプロンプトが長すぎる。</strong>ポジティブプロンプトと同様に、ネガティブプロンプトにもトークン制限があります（SDXLで77トークン）。制限を超えた用語は無視されます。最も重要な要素を優先してください。
+        </li>
+        <li>
+          <strong>ネガティブ欄にポジティブな記述を入れる。</strong><code>not blurry</code>と書かないでください。単に<code>blurry</code>と書きます。ネガティブフィールドは既に「これを避ける」と解釈されています。
+        </li>
+        <li>
+          <strong>ポジティブとネガティブの矛盾。</strong>ポジティブプロンプトで<code>painting</code>を要求し、ネガティブプロンプトに<code>painting</code>を含めると、モデルは矛盾するシグナルを受け取ります。結果は一貫性のないものになります。
+        </li>
+        <li>
+          <strong>リストをそのままコピーして適応しない。</strong>汎用ネガティブプロンプトは良い出発点ですが、具体的なケースに合わせて調整する必要があります。ポートレート用のネガティブプロンプトは風景用とは異なります。
+        </li>
+      </ol>
+
+      <div class="cta-box">
+        <h3>ネガティブプロンプトを自動生成</h3>
+        <p>参考画像をアップロードしてStable Diffusionを選択してください。ImageToPromptが最適化されたポジティブプロンプトとネガティブプロンプトを生成します。</p>
+        <a href="/?lang=ja" class="cta-btn">ImageToPromptを試す &#8594;</a>
+      </div>
+
+      <h2 id="yokuaru-shitsumon">よくある質問</h2>
+
+      <h3>Stable Diffusionのネガティブプロンプトとは何ですか？</h3>
+      <p>ネガティブプロンプトとは、生成画像に含めたくない要素を指定する専用のテキスト欄です。モデルは生成時にこれらの概念から積極的に離れるよう動作し、品質を向上させてアーティファクトを削減します。</p>
+
+      <h3>CFG scaleはネガティブプロンプトに影響しますか？</h3>
+      <p>はい、CFG scale（Classifier-Free Guidance）はモデルがポジティブプロンプトとネガティブプロンプトの両方にどの程度従うかを決定します。CFG 7が適切なバランスです。CFGが高すぎる（15+）とアーティファクトが生じ、低すぎる（3〜4）とネガティブプロンプトが部分的に無視されます。</p>
+
+      <h3>最も便利な汎用ネガティブプロンプトは何ですか？</h3>
+      <p>最も効果的な汎用ネガティブプロンプトは：<code>(worst quality:1.4), (low quality:1.4), blurry, watermark, signature, text, deformed, bad anatomy, bad hands, extra fingers, missing fingers, extra limbs, duplicate, cropped, out of frame, ugly</code>です。</p>
+
+      <h3>MidjourneyやFluxはネガティブプロンプトに対応していますか？</h3>
+      <p>Midjourneyは<code>--no</code>パラメータ（例：<code>--no text, watermark</code>）による限定的なサポートがあります。Fluxはネガティブプロンプトに一切対応していません。Stable Diffusionのみが重み付け対応の完全な専用フィールドを提供しています。</p>
+
+    </div>
+
+    <div class="author-bio">
+      <img src="/favicon.svg" alt="ImageToPrompt Team" width="44" height="44">
+      <div>
+        <strong>ImageToPrompt Team</strong>
+        <p>私たちはクリエイターの皆さんがAI画像生成をマスターできるよう支援する専門チームです。画像からプロンプトへの変換ツールやAIプロンプトエンジニアリングガイドを通じて、世界中のアーティストの創作活動をサポートしています。</p>
+        <a href="https://x.com/ImageToPrompt" target="_blank" rel="noopener" class="author-follow">Xでフォロー</a>
+      </div>
+    </div>
+
+    <div class="related-posts">
+      <h2>関連ガイド</h2>
+      <div class="related-grid">
+        <a href="/ja/blog/image-to-prompt-anime/" class="related-card">
+          <p class="tag">アニメ</p>
+          <h3>アニメ向け画像からプロンプト変換</h3>
+        </a>
+        <a href="/ja/blog/stable-diffusion-vs-midjourney-vs-dalle3/" class="related-card">
+          <p class="tag">比較</p>
+          <h3>Stable Diffusion vs Midjourney vs DALL&#183;E 3</h3>
+        </a>
+        <a href="/ja/blog/gazou-kara-prompt-henkan/" class="related-card">
+          <p class="tag">ガイド</p>
+          <h3>画像をAIプロンプトに変換する方法</h3>
+        </a>
+        <a href="/ja/blog/flux-ai-prompt-guide/" class="related-card">
+          <p class="tag">Flux AI</p>
+          <h3>Flux AIプロンプトガイド 2026</h3>
+        </a>
+      </div>
+    </div>
+
+  </div>
+
+  <footer class="footer-4col">
+    <div class="f4-inner">
+      <div class="f4-brand">
+        <img src="/favicon.svg" alt="ImageToPrompt" width="28" height="28">
+        <span class="f4-brand-name">ImageTo<span class="accent">Prompt</span></span>
+        <span class="f4-brand-sub">&mdash; Free AI Prompt Generator</span>
+      </div>
+      <div class="f4-grid">
+        <div class="f4-section">
+          <h4 class="f4-heading">Image Prompt Tools</h4>
+          <a href="/">Image to Prompt</a>
+          <a href="/text-to-prompt/">Text to Prompt</a>
+      <a href="/describe-image/">Describe Image</a>
+          <a href="/midjourney-prompt-generator/">Midjourney</a>
+          <a href="/stable-diffusion-prompt-generator/">Stable Diffusion</a>
+          <a href="/flux-prompt-generator/">Flux</a>
+          <a href="/dall-e-prompt-generator/">DALL-E 3</a>
+          <a href="/adobe-firefly-prompt-generator/">Adobe Firefly</a>
+          <a href="/leonardo-ai-prompt-generator/">Leonardo AI</a>
+          <a href="/ideogram-prompt-generator/">Ideogram</a>
+        </div>
+        <div class="f4-section">
+          <h4 class="f4-heading">Video Prompt Tools</h4>
+          <a href="/image-to-video-prompt/">Image to Video Prompt</a>
+          <a href="/text-to-video-prompt/">Text to Video Prompt</a>
+          <a href="/veo-prompt-generator/">Veo / Flow Studio</a>
+          <a href="/kling-prompt-generator/">Kling AI</a>
+          <a href="/runway-prompt-generator/">Runway Gen-3</a>
+          <a href="/pika-prompt-generator/">Pika</a>
+          <a href="/luma-prompt-generator/">Luma Dream Machine</a>
+          <a href="/sora-prompt-generator/">Sora</a>
+          <a href="/minimax-prompt-generator/">Minimax</a>
+          <a href="/stable-video-prompt-generator/">Stable Video</a>
+        </div>
+        <div class="f4-section">
+          <h4 class="f4-heading">Resources</h4>
+          <a href="/ja/blog/">ブログ</a>
+          <a href="/ja/about/">概要</a>
+          <a href="/ja/pricing/">料金</a>
+          <a href="/contact/">Contact</a>
+          <a href="/privacy-policy/">Privacy Policy</a>
+          <a href="/terms-of-service/">Terms of Service</a>
+        </div>
+        <div class="f4-section">
+          <h4 class="f4-heading">Languages</h4>
+          <a href="/">English</a>
+          <a href="/fr/">Fran&#231;ais</a>
+          <a href="/ar/">&#1575;&#1604;&#1593;&#1585;&#1576;&#1610;&#1577;</a>
+          <a href="/es/">Espa&#241;ol</a>
+          <a href="/ko/">&#54620;&#44397;&#50612;</a>
+          <a href="/ja/">&#26085;&#26412;&#35486;</a>
+          <a href="/ru/">&#1056;&#1091;&#1089;&#1089;&#1082;&#1080;&#1081;</a>
+        </div>
+      </div>
+      <div class="f4-bottom">
+        <p>&#169; 2026 ImageToPrompt.dev &#8212; Free AI Prompt Generator</p>
+        <p>Your images are never stored. All analysis is ephemeral and private.</p>
+      </div>
+    </div>
+  </footer>
+
+<script src="/newsletter-inject.js" defer></script>
+<script src="/nav.js" defer></script>
+  <script>
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', function() {
+    navigator.serviceWorker.register('/sw.js')
+      .catch(function(err) { console.warn('SW registration failed:', err); });
+  });
+}
+</script>
+</body>
+</html>

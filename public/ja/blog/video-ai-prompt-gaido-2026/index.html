@@ -1,0 +1,512 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <script src="/theme-toggle.js"></script>
+  <meta charset="UTF-8" />
+  <link rel="dns-prefetch" href="https://www.googletagmanager.com">
+<link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="max-image-preview:large, index, follow">
+  <meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="ImageToPrompt">
+  <title>AI動画プロンプトガイド 2026：Veo、Kling、Runway、Sora対応</title>
+  <meta name="description" content="2026年のAI動画プロンプトの書き方完全ガイド。Veo、Kling、Runway、Sora、Pika、Lumaなど全モデル対応。" />
+  <link rel="canonical" href="https://www.imagetoprompt.dev/ja/blog/video-ai-prompt-gaido-2026/" />
+  <link rel="alternate" hreflang="ja" href="https://www.imagetoprompt.dev/ja/blog/video-ai-prompt-gaido-2026/" />
+  <link rel="alternate" hreflang="en" href="https://www.imagetoprompt.dev/blog/video-prompt-guide-2026/" />
+  <link rel="alternate" hreflang="fr" href="https://www.imagetoprompt.dev/fr/blog/guide-prompts-video-ia-2026/" />
+  <link rel="alternate" hreflang="ar" href="https://www.imagetoprompt.dev/ar/blog/dalil-prompts-video-ia-2026/" />
+  <link rel="alternate" hreflang="es" href="https://www.imagetoprompt.dev/es/blog/guia-prompts-video-ia-2026/" />
+  <link rel="alternate" hreflang="x-default" href="https://www.imagetoprompt.dev/blog/video-prompt-guide-2026/" />
+  <meta property="og:title" content="AI動画プロンプトガイド 2026：Veo、Kling、Runway、Sora対応" />
+  <meta property="og:description" content="2026年のAI動画プロンプトの書き方完全ガイド。Veo、Kling、Runway、Soraなど全モデル対応。" />
+  <meta property="og:url" content="https://www.imagetoprompt.dev/ja/blog/video-ai-prompt-gaido-2026/" />
+  <meta property="og:type" content="article" />
+  <meta property="og:image" content="https://www.imagetoprompt.dev/og-image.png" />
+  <meta property="og:site_name" content="ImageToPrompt" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="AI動画プロンプトガイド 2026：Veo、Kling、Runway、Sora対応" />
+  <meta name="twitter:description" content="2026年のAI動画プロンプトの書き方完全ガイド。" />
+  <meta name="twitter:image" content="https://www.imagetoprompt.dev/og-image.png" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="48x48" href="/favicon-48.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+  <link rel="manifest" href="/site.webmanifest" />
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="/fonts/space-grotesk-700.woff2" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="/fonts/inter-400.woff2" />
+  <link rel="stylesheet" href="/theme.css">
+  <link rel="preload" href="/blog.css" as="style" onload="this.onload=null;this.rel='stylesheet'"><noscript><link rel="stylesheet" href="/blog.css"></noscript>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "AI動画プロンプトガイド 2026：Veo、Kling、Runway、Sora対応",
+    "description": "2026年のAI動画プロンプトの書き方完全ガイド。全動画モデル対応。",
+    "image": "https://www.imagetoprompt.dev/og-image.png",
+    "datePublished": "2026-03-12",
+    "dateModified": "2026-03-24",
+    "inLanguage": "ja",
+    "author": {
+      "@type": "Person",
+      "name": "ImageToPrompt Team",
+      "url": "https://www.imagetoprompt.dev/"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "ImageToPrompt",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://www.imagetoprompt.dev/favicon.svg"
+      }
+    },
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https://www.imagetoprompt.dev/ja/blog/video-ai-prompt-gaido-2026/"
+    }
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "画像プロンプトと動画プロンプトの違いは何ですか？",
+        "acceptedAnswer": { "@type": "Answer", "text": "動画プロンプトには、画像プロンプトにはない時間的な次元が加わります。視覚的な外観だけでなく、被写体の動き、カメラワーク（パン、ティルト、ズーム、トラッキング）、希望する長さ、トランジションも記述する必要があります。典型的な構造は、シーン＋アクション/動き＋カメラワーク＋雰囲気＋長さです。" }
+      },
+      {
+        "@type": "Question",
+        "name": "AI動画プロンプトでカメラワークをどう記述すればよいですか？",
+        "acceptedAnswer": { "@type": "Answer", "text": "正確な映画用語を使用してください。前進する動きには「slow dolly forward」、横方向の追従には「smooth tracking shot following the subject」、上昇する動きには「crane shot rising from ground level」、ドキュメンタリー風のエフェクトには「handheld camera with subtle shake」を使います。プロンプト内でカメラの動きを正確に記述するほど、より良い結果が得られます。" }
+      },
+      {
+        "@type": "Question",
+        "name": "2026年にAIで生成できる動画の長さはどれくらいですか？",
+        "acceptedAnswer": { "@type": "Answer", "text": "モデルによって異なります。Veoは最大8秒、Klingは最大10秒、Runway Gen-3は最大10秒、Soraは最大20秒、Pikaは最大4秒の動画を生成できます。より長い動画は、一貫性のあるトランジションで複数のクリップをつなげることで作成できます。" }
+      },
+      {
+        "@type": "Question",
+        "name": "初心者に最適なAI動画モデルはどれですか？",
+        "acceptedAnswer": { "@type": "Answer", "text": "Runway Gen-3は直感的なインターフェースと安定した結果により、初心者にとって最もアクセスしやすいモデルです。Pikaも短くスタイライズされたクリップで始めるのに良い選択肢です。GoogleのVeoは品質と使いやすさのバランスが良好です。より上級のユーザーには、Klingが最も多くの動きのコントロールを提供します。" }
+      }
+    ]
+  }
+  </script>
+    <!-- Google AdSense -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4499206373485728" crossorigin="anonymous"></script>
+    <!-- Web Push Notifications -->
+<script src="https://cdn.onesignal.com/sdks/web/v16/OneSignalSDK.page.js" defer></script>
+<script>
+  window.OneSignalDeferred = window.OneSignalDeferred || [];
+  OneSignalDeferred.push(async function(OneSignal) {
+    await OneSignal.init({
+      appId: "REPLACE_WITH_ONESIGNAL_APP_ID",
+      notifyButton: { enable: false }
+    });
+  });
+</script>
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="inner">
+      <a href="/ja/" class="site-logo"><img src="/favicon.svg" alt="ImageToPrompt" width="48" height="48"><div class="site-logo-text">ImageTo<span class="accent">Prompt</span><span class="site-logo-sub">無料AIプロンプトジェネレーター</span></div></a>
+      <nav class="site-nav" aria-label="メインナビゲーション">
+        <div class="nav-dropdown">
+          <button class="nav-dropdown-trigger" aria-haspopup="true" aria-expanded="false">Tools <span class="nav-chevron" aria-hidden="true">&#9660;</span></button>
+          <div class="nav-dropdown-menu" role="menu">
+            <div class="nav-mega-grid">
+              <div class="nav-mega-col">
+                <div class="nav-mega-heading">&#128444; IMAGE TOOLS</div>
+                <a href="/" role="menuitem" class="nav-mega-tool">Image to Prompt <span class="nav-mega-arrow">&#8594;</span></a>
+                <a href="/text-to-prompt/" role="menuitem" class="nav-mega-tool">Text to Prompt <span class="nav-mega-arrow">&#8594;</span></a>
+                <a href="/describe-image/" role="menuitem" class="nav-mega-tool">Describe Image <span class="nav-new-badge">NEW</span> <span class="nav-mega-arrow">&#8594;</span></a>
+                <div class="nav-mega-models-label">Models</div>
+                <div class="nav-mega-models"><a href="/midjourney-prompt-generator/">Midjourney</a><span class="nav-dot">&#xB7;</span><a href="/stable-diffusion-prompt-generator/">SD</a></div>
+                <div class="nav-mega-models"><a href="/flux-prompt-generator/">Flux</a><span class="nav-dot">&#xB7;</span><a href="/dall-e-prompt-generator/">DALL&#xB7;E&#xA0;3</a></div>
+                <div class="nav-mega-models"><a href="/adobe-firefly-prompt-generator/">Firefly</a><span class="nav-dot">&#xB7;</span><a href="/leonardo-ai-prompt-generator/">Leonardo</a></div>
+                <div class="nav-mega-models"><a href="/ideogram-prompt-generator/">Ideogram</a></div>
+              </div>
+              <div class="nav-mega-divider" aria-hidden="true"></div>
+              <div class="nav-mega-col">
+                <div class="nav-mega-heading">&#127909; VIDEO TOOLS</div>
+                <a href="/?tab=image-to-video" role="menuitem" class="nav-mega-tool">Image to Video <span class="nav-mega-arrow">&#8594;</span></a>
+                <a href="/?tab=text-to-video" role="menuitem" class="nav-mega-tool">Text to Video <span class="nav-mega-arrow">&#8594;</span></a>
+                <div class="nav-mega-models-label">Models</div>
+                <div class="nav-mega-models"><a href="/veo-prompt-generator/">Veo</a><span class="nav-dot">&#xB7;</span><a href="/kling-prompt-generator/">Kling</a></div>
+                <div class="nav-mega-models"><a href="/runway-prompt-generator/">Runway</a><span class="nav-dot">&#xB7;</span><a href="/pika-prompt-generator/">Pika</a></div>
+                <div class="nav-mega-models"><a href="/luma-prompt-generator/">Luma</a><span class="nav-dot">&#xB7;</span><a href="/sora-prompt-generator/">Sora</a></div>
+                <div class="nav-mega-models"><a href="/minimax-prompt-generator/">Minimax</a><span class="nav-dot">&#xB7;</span><a href="/stable-video-prompt-generator/">Stable</a></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <a href="/ja/blog/">ブログ</a>
+        <a href="/ja/pricing/" class="nav-pill-pricing">料金</a>
+        <a href="/ja/about/" class="nav-pill-about">概要</a>
+        <a href="/ja/" class="nav-try-free">無料で試す &#8594;</a>
+        <button id="theme-toggle" onclick="toggleTheme()" aria-label="テーマ切替" title="テーマ切替">&#9728;&#xFE0F;</button>
+  </nav>
+    </div>
+  </header>
+
+  <nav class="breadcrumb" aria-label="パンくずリスト">
+    <a href="/ja/">ホーム</a> <span aria-hidden="true">›</span>
+    <a href="/ja/blog/">ブログ</a> <span aria-hidden="true">›</span>
+    <span aria-current="page">AI動画プロンプトガイド 2026</span>
+  </nav>
+
+  <div class="page-wrapper">
+
+    <header class="article-header">
+      <p class="article-tag">AI動画</p>
+      <h1>AI動画プロンプトガイド 2026</h1>
+      <div class="article-meta">
+        <span>2026年3月</span>
+        <span class="dot">·</span>
+        <span>12分で読めます</span>
+        <span class="dot">·</span>
+        <span>Veo · Kling · Runway · Sora · Pika · Luma</span>
+        <span class="dot">·</span>
+        <span>2026年3月更新</span>
+      </div>
+    </header>
+
+    <div class="article-body">
+
+      <p>2026年、AI動画生成は驚異的な進歩を遂げました。GoogleのVeo、Kling AI、Runway Gen-3 Alpha Turbo、OpenAIのSoraといったモデルが、シンプルなテキスト記述から驚くほど高品質な動画クリップを生成しています。しかし、出力の品質はプロンプトの品質に完全に依存します。このガイドでは、2026年に効果的なAI動画プロンプトを書くために知っておくべきすべてをカバーします。</p>
+
+      <nav class="toc" aria-label="目次">
+        <details open>
+          <summary>このガイドの内容</summary>
+          <ol>
+            <li><a href="#prompt-kouzou">AI動画プロンプトの構造</a></li>
+            <li><a href="#hishatai-ugoki">被写体の動きの記述</a></li>
+            <li><a href="#camera-work">カメラワーク</a></li>
+            <li><a href="#nagasa-jikan">長さと時間軸</a></li>
+            <li><a href="#model-betsu-tips">モデル別のコツ</a></li>
+            <li><a href="#prompt-rei">プロンプトの完全な例</a></li>
+            <li><a href="#yokuaru-machigai">AI動画でよくある間違い</a></li>
+            <li><a href="#yokuaru-shitsumon">よくある質問</a></li>
+          </ol>
+        </details>
+      </nav>
+
+      <div class="callout">
+        <p><strong>簡単に生成：</strong>当サイトの<a href="/?tab=text-to-video">Text to Video Promptツール</a>で任意のモデル向けに最適化された動画プロンプトを生成できます。また、<a href="/?tab=image-to-video">Image to Video Promptツール</a>で既存の画像をアニメーション化することもできます。</p>
+      </div>
+
+      <h2 id="prompt-kouzou">AI動画プロンプトの構造</h2>
+
+      <p>静止した瞬間を記述する画像プロンプトとは異なり、動画プロンプトは時間的な次元を捉える必要があります。推奨される構造は5つのレイヤーに従います。</p>
+
+      <ol>
+        <li><strong>シーン：</strong>セット、環境、照明条件</li>
+        <li><strong>被写体：</strong>動画に何が映り、どのような外観か</li>
+        <li><strong>アクション：</strong>被写体が何をしているか、どのように動くか</li>
+        <li><strong>カメラワーク：</strong>シーンに対してカメラがどう動くか</li>
+        <li><strong>雰囲気とスタイル：</strong>感情的なトーン、映像スタイル、色調</li>
+      </ol>
+
+      <h3>完全な構造の例</h3>
+      <div class="code-block"><code>A golden retriever runs joyfully along a sandy beach at sunset. Waves crash gently in the background. The camera tracks alongside the dog at ground level, creating a dynamic low-angle shot. Warm golden hour light, cinematic color grading, shallow depth of field, slow motion 120fps look.</code></div>
+
+      <p>このプロンプトは5つのレイヤーすべてをカバーしています。シーン（夕暮れのビーチ）、被写体（ゴールデンレトリバー）、アクション（楽しそうに走る）、カメラ（地面レベルの横方向トラッキング）、雰囲気（ゴールデンアワー、シネマティック、スローモーション）。</p>
+
+      <h2 id="hishatai-ugoki">被写体の動きの記述</h2>
+
+      <p>動きは動画プロンプトで最も重要かつ繊細な要素です。現在のAIモデルは幅広い動きを理解しますが、語彙の正確さが不可欠です。</p>
+
+      <h3>人物の動き</h3>
+      <ul>
+        <li><code>walking slowly through</code> ― ある場所をゆっくり歩く</li>
+        <li><code>turning to face the camera</code> ― カメラの方を向く</li>
+        <li><code>gently brushing hair from face</code> ― 繊細で自然な仕草</li>
+        <li><code>running and leaping over obstacles</code> ― ダイナミックなアクション</li>
+        <li><code>standing still, wind blowing through clothes</code> ― 静止した被写体に微細な動き</li>
+      </ul>
+
+      <h3>自然の動き</h3>
+      <ul>
+        <li><code>clouds drifting slowly across the sky</code> ― タイムラプスの雲</li>
+        <li><code>leaves falling gently in autumn wind</code> ― 落ち葉</li>
+        <li><code>waves rolling toward shore</code> ― 波の動き</li>
+        <li><code>flame flickering in darkness</code> ― 揺らめく炎</li>
+        <li><code>rain droplets hitting puddle surface</code> ― 水たまりに落ちる雨粒</li>
+      </ul>
+
+      <h3>物体の動き</h3>
+      <ul>
+        <li><code>coffee steam rising from mug</code> ― 立ち上る湯気</li>
+        <li><code>car driving along winding mountain road</code> ― 曲がりくねった山道を走る車</li>
+        <li><code>rotating slowly on display platform</code> ― 商品プレゼンテーション用の回転</li>
+      </ul>
+
+      <h2 id="camera-work">カメラワーク</h2>
+
+      <p>カメラワークは動画にダイナミズムと奥行きを与えます。各モデルでこれらの指示の解釈は異なりますが、映画用語は普遍的に理解されます。</p>
+
+      <div class="table-wrap">
+      <table class="comparison-table">
+        <thead>
+          <tr>
+            <th>カメラワーク</th>
+            <th>プロンプト用語</th>
+            <th>効果</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>水平パン</td>
+            <td><code>slow pan left/right</code></td>
+            <td>カメラが軸上で水平に回転する</td>
+          </tr>
+          <tr>
+            <td>ドリーイン</td>
+            <td><code>dolly forward / push in</code></td>
+            <td>カメラが被写体に向かって前進する</td>
+          </tr>
+          <tr>
+            <td>トラッキングショット</td>
+            <td><code>tracking shot following subject</code></td>
+            <td>カメラが被写体を横方向に追従する</td>
+          </tr>
+          <tr>
+            <td>ティルトアップ/ダウン</td>
+            <td><code>tilt up/down</code></td>
+            <td>カメラが垂直方向に回転する</td>
+          </tr>
+          <tr>
+            <td>クレーンショット</td>
+            <td><code>crane shot rising upward</code></td>
+            <td>カメラが垂直に上昇する</td>
+          </tr>
+          <tr>
+            <td>オービット</td>
+            <td><code>orbiting around subject</code></td>
+            <td>カメラが被写体の周りを回る</td>
+          </tr>
+          <tr>
+            <td>ズーム</td>
+            <td><code>slow zoom in / zoom out</code></td>
+            <td>焦点距離が徐々に変化する</td>
+          </tr>
+          <tr>
+            <td>固定カメラ</td>
+            <td><code>static camera, locked tripod</code></td>
+            <td>カメラは静止し、被写体だけが動く</td>
+          </tr>
+        </tbody>
+      </table>
+      </div>
+
+      <h2 id="nagasa-jikan">長さと時間軸</h2>
+
+      <p>動画プロンプトにおける時間管理は、テンポとアクションの密度に影響します。2026年時点の各モデルの最大動画長は以下の通りです。</p>
+
+      <div class="table-wrap">
+      <table class="comparison-table">
+        <thead>
+          <tr>
+            <th>モデル</th>
+            <th>最大動画長</th>
+            <th>最大解像度</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>Veo（Google）</td><td>8秒</td><td>1080p</td></tr>
+          <tr><td>Kling AI</td><td>10秒</td><td>1080p</td></tr>
+          <tr><td>Runway Gen-3</td><td>10秒</td><td>1080p</td></tr>
+          <tr><td>Sora（OpenAI）</td><td>20秒</td><td>1080p</td></tr>
+          <tr><td>Pika</td><td>4秒</td><td>1080p</td></tr>
+          <tr><td>Luma Dream Machine</td><td>5秒</td><td>1080p</td></tr>
+          <tr><td>Minimax</td><td>6秒</td><td>1080p</td></tr>
+          <tr><td>Stable Video</td><td>4秒</td><td>1024x576</td></tr>
+        </tbody>
+      </table>
+      </div>
+
+      <p>短いクリップ（3〜5秒）の場合は、ひとつの動きまたはアクションに集中してください。長いクリップ（8〜20秒）の場合は、明確な始まりと終わりのあるシーケンスを記述できます。</p>
+
+      <h2 id="model-betsu-tips">モデル別のコツ</h2>
+
+      <h3>Veo（Google）</h3>
+      <p>Veoは自然言語による記述的な表現に良く反応します。映画的な参照を含むシーンの完全な説明を心がけてください。<code>cinematic quality, professional color grading, 4K look</code>のような品質指示を含めると効果的です。</p>
+
+      <h3>Kling AI</h3>
+      <p>Klingは人体の動きと表情表現に優れています。身体的なアクションを正確に記述してください。<code>woman waving</code>ではなく<code>woman slowly raises her hand and waves</code>のように具体的に書きましょう。Klingは複数の被写体が登場する複雑な動きも上手く処理します。</p>
+
+      <h3>Runway Gen-3 Alpha Turbo</h3>
+      <p>RunwayはImage-to-Videoモードで非常に高いパフォーマンスを発揮します。高品質なソース画像を用意し、望む動きだけを記述するプロンプトを提供してください。Text-to-Videoモードでは、簡潔で直接的なプロンプトを好みます。</p>
+
+      <h3>Sora</h3>
+      <p>OpenAIのSoraは、複数のアクションが連続する長く複雑なプロンプトを理解します。時間的な進行があるナラティブシーンの処理が最も得意なモデルです。<code>first... then... finally...</code>のようなフレーズでシーケンスを構成してください。</p>
+
+      <h3>Pika</h3>
+      <p>Pikaは短くスタイライズされたクリップに最適です。クリエイティブなビジュアルエフェクトとスタイル変換に優れています。<code>3D rotate</code>、<code>inflate</code>、<code>melt</code>などの用語を使うと、ユニークな特殊効果が得られます。</p>
+
+      <h3>Luma Dream Machine</h3>
+      <p>Lumaは雰囲気のある記述に適しています。複雑なアクションよりもムードと照明を重視してください。アニメーション風景や瞑想的なシーンに最適です。</p>
+
+      <h2 id="prompt-rei">プロンプトの完全な例</h2>
+
+      <h3>シネマティックな都市シーン</h3>
+      <div class="code-block"><code>Aerial drone shot over a futuristic city at dusk. Neon lights reflect off wet streets below. The camera slowly descends through the skyline, weaving between glass skyscrapers. Cyberpunk atmosphere, volumetric fog, teal and orange color palette, cinematic widescreen, Blade Runner aesthetic.</code></div>
+
+      <h3>感情的なポートレート</h3>
+      <div class="code-block"><code>Close-up portrait of an elderly man sitting by a window. Soft afternoon light illuminates one side of his weathered face. He slowly turns toward the camera with a gentle, knowing smile. Shallow depth of field, warm golden tones, intimate documentary style, 85mm lens look.</code></div>
+
+      <h3>自然とタイムラプス</h3>
+      <div class="code-block"><code>Time-lapse of wildflowers blooming in an alpine meadow. Clouds race overhead casting moving shadows across the landscape. The camera is positioned low among the flowers, tilting upward toward snow-capped peaks. Vivid saturated colors, National Geographic style, golden hour to blue hour transition.</code></div>
+
+      <h3>商品コマーシャル</h3>
+      <div class="code-block"><code>Luxury perfume bottle rotating slowly on a reflective black surface. Soft studio lighting creating elegant highlights on the glass. Golden liquid catches the light as the bottle turns 360 degrees. Minimalist black background, premium product photography, smooth continuous rotation.</code></div>
+
+      <div class="cta-inline">
+        <p>あらゆるモデルに対応した最適化された動画プロンプトを、無料ツールで生成できます。</p>
+        <a href="/?tab=text-to-video" class="cta-btn-sm">Text to Video Prompt →</a>
+      </div>
+
+      <h2 id="yokuaru-machigai">AI動画でよくある間違い</h2>
+
+      <ol class="mistakes-list">
+        <li><strong>短いクリップに多すぎるアクションを詰め込む。</strong>4秒のクリップにはメインの動きはひとつだけ収められます。3つの異なるアクションを記述すると、モデルはすべてを圧縮しようとし、混乱したぎこちない結果になります。</li>
+        <li><strong>カメラワークを無視する。</strong>カメラの指示がないと、モデルはデフォルトの（多くの場合退屈な）静止アングルを選びます。動画にダイナミズムを与えるために、必ず希望するカメラワークを指定してください。</li>
+        <li><strong>画像用プロンプトを動画に流用する。</strong>画像プロンプトは静的な外観に焦点を当てています。動画プロンプトには、画像プロンプトにはない動き、時間軸、シーケンスの記述が必要です。</li>
+        <li><strong>ターゲットモデルに最適化しない。</strong>各動画モデルにはそれぞれの強みがあります。Pika（短いクリップ向け）に複雑なアクションシーンのプロンプトを使ったり、Sora（長いシーケンスが可能）にミニマリストなプロンプトを使うのは、モデルのポテンシャルの無駄遣いです。</li>
+        <li><strong>照明条件を忘れる。</strong>照明は各フレームの一貫性に影響するため、動画では画像以上に重要です。照明の定義が不十分だと、フレーム間で不快な視覚的不整合が生じることがあります。</li>
+      </ol>
+
+      <div class="cta-box">
+        <h3>初めてのAI動画プロンプトを作成しよう</h3>
+        <p>当サイトの無料ツールで、Veo、Kling、Runway、Sora、その他すべてのAI動画モデルに最適化されたプロンプトを生成できます。</p>
+        <a href="/?tab=text-to-video" class="cta-btn">Text to Video Promptを試す →</a>
+      </div>
+
+      <h2 id="yokuaru-shitsumon">よくある質問</h2>
+
+      <h3>画像プロンプトと動画プロンプトの違いは何ですか？</h3>
+      <p>動画プロンプトには、画像プロンプトにはない時間的な次元が加わります。視覚的な外観だけでなく、被写体の動き、カメラワーク（パン、ティルト、ズーム、トラッキング）、希望する長さ、トランジションも記述する必要があります。典型的な構造は、シーン＋アクション/動き＋カメラワーク＋雰囲気＋長さです。</p>
+
+      <h3>AI動画プロンプトでカメラワークをどう記述すればよいですか？</h3>
+      <p>正確な映画用語を使用してください。前進する動きには<code>slow dolly forward</code>、横方向の追従には<code>smooth tracking shot following the subject</code>、上昇する動きには<code>crane shot rising from ground level</code>、ドキュメンタリー風のエフェクトには<code>handheld camera with subtle shake</code>を使います。プロンプト内でカメラの動きを正確に記述するほど、より良い結果が得られます。</p>
+
+      <h3>2026年にAIで生成できる動画の長さはどれくらいですか？</h3>
+      <p>モデルによって異なります。Veoは最大8秒、Klingは最大10秒、Runway Gen-3は最大10秒、Soraは最大20秒、Pikaは最大4秒の動画を生成できます。より長い動画は、一貫性のあるトランジションで複数のクリップをつなげることで作成できます。</p>
+
+      <h3>初心者に最適なAI動画モデルはどれですか？</h3>
+      <p>Runway Gen-3は直感的なインターフェースと安定した結果により、初心者にとって最もアクセスしやすいモデルです。Pikaも短くスタイライズされたクリップで始めるのに良い選択肢です。GoogleのVeoは品質と使いやすさのバランスが良好です。より上級のユーザーには、Klingが最も多くの動きのコントロールを提供します。</p>
+
+    </div>
+
+    <div class="author-bio">
+      <img src="/favicon.svg" alt="ImageToPrompt Team" width="44" height="44">
+      <div>
+        <strong>ImageToPrompt Team</strong>
+        <p>私たちはクリエイターの皆さんがAI画像生成をマスターできるよう支援する専門チームです。画像からプロンプトへの変換ツールやAIプロンプトエンジニアリングガイドを通じて、世界中のアーティストの創作活動をサポートしています。</p>
+        <a href="https://x.com/ImageToPrompt" target="_blank" rel="noopener" class="author-follow">Xでフォロー</a>
+      </div>
+    </div>
+
+    <div class="related-posts">
+      <h2>関連ガイド</h2>
+      <div class="related-grid">
+        <a href="/ja/blog/veo-vs-kling-vs-runway/" class="related-card">
+          <p class="tag">比較</p>
+          <h3>Veo vs Kling vs Runway vs Sora</h3>
+        </a>
+        <a href="/ja/blog/ai-prompt-kakikata-nyumon/" class="related-card">
+          <p class="tag">ツール</p>
+          <h3>AIプロンプトの書き方入門</h3>
+        </a>
+        <a href="/ja/blog/prompt-engineering-ai-art-nyumon/" class="related-card">
+          <p class="tag">初心者向け</p>
+          <h3>AIアートのプロンプトエンジニアリング入門</h3>
+        </a>
+        <a href="/ja/blog/prompt-engineering-machigai/" class="related-card">
+          <p class="tag">よくある間違い</p>
+          <h3>プロンプトエンジニアリング15の間違い</h3>
+        </a>
+      </div>
+    </div>
+
+  </div>
+
+  <footer class="footer-4col">
+    <div class="f4-inner">
+      <div class="f4-brand">
+        <img src="/favicon.svg" alt="ImageToPrompt" width="28" height="28">
+        <span class="f4-brand-name">ImageTo<span class="accent">Prompt</span></span>
+        <span class="f4-brand-sub">&mdash; Free AI Prompt Generator</span>
+      </div>
+      <div class="f4-grid">
+        <div class="f4-section">
+          <h4 class="f4-heading">Image Prompt Tools</h4>
+          <a href="/">Image to Prompt</a>
+          <a href="/text-to-prompt/">Text to Prompt</a>
+      <a href="/describe-image/">Describe Image</a>
+          <a href="/midjourney-prompt-generator/">Midjourney</a>
+          <a href="/stable-diffusion-prompt-generator/">Stable Diffusion</a>
+          <a href="/flux-prompt-generator/">Flux</a>
+          <a href="/dall-e-prompt-generator/">DALL-E 3</a>
+          <a href="/adobe-firefly-prompt-generator/">Adobe Firefly</a>
+          <a href="/leonardo-ai-prompt-generator/">Leonardo AI</a>
+          <a href="/ideogram-prompt-generator/">Ideogram</a>
+        </div>
+        <div class="f4-section">
+          <h4 class="f4-heading">Video Prompt Tools</h4>
+          <a href="/image-to-video-prompt/">Image to Video Prompt</a>
+          <a href="/text-to-video-prompt/">Text to Video Prompt</a>
+          <a href="/veo-prompt-generator/">Veo / Flow Studio</a>
+          <a href="/kling-prompt-generator/">Kling AI</a>
+          <a href="/runway-prompt-generator/">Runway Gen-3</a>
+          <a href="/pika-prompt-generator/">Pika</a>
+          <a href="/luma-prompt-generator/">Luma Dream Machine</a>
+          <a href="/sora-prompt-generator/">Sora</a>
+          <a href="/minimax-prompt-generator/">Minimax</a>
+          <a href="/stable-video-prompt-generator/">Stable Video</a>
+        </div>
+        <div class="f4-section">
+          <h4 class="f4-heading">Resources</h4>
+          <a href="/ja/blog/">ブログ</a>
+          <a href="/ja/about/">概要</a>
+          <a href="/ja/pricing/">料金</a>
+          <a href="/contact/">Contact</a>
+          <a href="/privacy-policy/">Privacy Policy</a>
+          <a href="/terms-of-service/">Terms of Service</a>
+        </div>
+        <div class="f4-section">
+          <h4 class="f4-heading">Languages</h4>
+          <a href="/">English</a>
+          <a href="/fr/">Fran&#231;ais</a>
+          <a href="/ar/">&#1575;&#1604;&#1593;&#1585;&#1576;&#1610;&#1577;</a>
+          <a href="/es/">Espa&#241;ol</a>
+          <a href="/ko/">&#54620;&#44397;&#50612;</a>
+          <a href="/ja/">&#26085;&#26412;&#35486;</a>
+          <a href="/ru/">&#1056;&#1091;&#1089;&#1089;&#1082;&#1080;&#1081;</a>
+        </div>
+      </div>
+      <div class="f4-bottom">
+        <p>&#169; 2026 ImageToPrompt.dev &#8212; Free AI Prompt Generator</p>
+        <p>Your images are never stored. All analysis is ephemeral and private.</p>
+      </div>
+    </div>
+  </footer>
+
+<script src="/newsletter-inject.js" defer></script>
+<script src="/nav.js" defer></script>
+  <script>
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', function() {
+    navigator.serviceWorker.register('/sw.js')
+      .catch(function(err) { console.warn('SW registration failed:', err); });
+  });
+}
+</script>
+</body>
+</html>

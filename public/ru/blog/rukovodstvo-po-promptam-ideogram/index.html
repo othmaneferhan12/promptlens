@@ -1,0 +1,565 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <script src="/theme-toggle.js"></script>
+  <meta charset="UTF-8" />
+  <link rel="dns-prefetch" href="https://www.googletagmanager.com">
+<link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="max-image-preview:large, index, follow">
+  <meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="ImageToPrompt">
+  <title>Руководство по промптам Ideogram: текст, типографика и графический дизайн</title>
+  <meta name="description" content="Освойте промпты Ideogram для генерации AI-изображений с читаемым текстом. Типографика, создание логотипов, советы по дизайну — полное руководство." />
+  <link rel="canonical" href="https://www.imagetoprompt.dev/ru/blog/rukovodstvo-po-promptam-ideogram/" />
+  <link rel="alternate" hreflang="ru" href="https://www.imagetoprompt.dev/ru/blog/rukovodstvo-po-promptam-ideogram/" />
+  <link rel="alternate" hreflang="en" href="https://www.imagetoprompt.dev/blog/ideogram-prompt-guide/" />
+  <link rel="alternate" hreflang="fr" href="https://www.imagetoprompt.dev/fr/blog/guide-prompts-ideogram/" />
+  <link rel="alternate" hreflang="ar" href="https://www.imagetoprompt.dev/ar/blog/dalil-prompts-ideogram/" />
+  <link rel="alternate" hreflang="es" href="https://www.imagetoprompt.dev/es/blog/guia-prompts-ideogram/" />
+  <link rel="alternate" hreflang="ja" href="https://www.imagetoprompt.dev/ja/blog/ideogram-prompt-gaido/" />
+  <link rel="alternate" hreflang="ko" href="https://www.imagetoprompt.dev/ko/blog/ideogram-prompt-gaideu/" />
+  <link rel="alternate" hreflang="x-default" href="https://www.imagetoprompt.dev/blog/ideogram-prompt-guide/" />
+  <meta property="og:title" content="Руководство по промптам Ideogram: текст, типографика и графический дизайн" />
+  <meta property="og:description" content="Освойте промпты Ideogram для генерации AI-изображений с читаемым текстом." />
+  <meta property="og:url" content="https://www.imagetoprompt.dev/ru/blog/rukovodstvo-po-promptam-ideogram/" />
+  <meta property="og:type" content="article" />
+  <meta property="og:image" content="https://www.imagetoprompt.dev/og-image.png" />
+  <meta property="og:site_name" content="ImageToPrompt" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Руководство по промптам Ideogram: текст, типографика и графический дизайн" />
+  <meta name="twitter:description" content="Полное руководство по генерации AI-изображений с читаемым текстом в Ideogram." />
+  <meta name="twitter:image" content="https://www.imagetoprompt.dev/og-image.png" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="48x48" href="/favicon-48.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+  <link rel="manifest" href="/site.webmanifest" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="/fonts/space-grotesk-700.woff2" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="/fonts/inter-400.woff2" />
+  <link rel="stylesheet" href="/theme.css">
+  <link rel="preload" href="/blog.css" as="style" onload="this.onload=null;this.rel='stylesheet'"><noscript><link rel="stylesheet" href="/blog.css"></noscript>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Руководство по промптам Ideogram: текст, типографика и графический дизайн",
+    "description": "Освойте промпты Ideogram для генерации AI-изображений с читаемым текстом.",
+    "image": "https://www.imagetoprompt.dev/og-image.png",
+    "datePublished": "2026-03-14",
+    "dateModified": "2026-03-24",
+    "inLanguage": "ru",
+    "author": {
+      "@type": "Person",
+      "name": "ImageToPrompt Team",
+      "url": "https://www.imagetoprompt.dev/"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "ImageToPrompt",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://www.imagetoprompt.dev/favicon.svg"
+      }
+    },
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https://www.imagetoprompt.dev/ru/blog/rukovodstvo-po-promptam-ideogram/"
+    }
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "inLanguage": "ru",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Главная", "item": "https://www.imagetoprompt.dev/ru/" },
+      { "@type": "ListItem", "position": 2, "name": "Блог", "item": "https://www.imagetoprompt.dev/ru/blog/" },
+      { "@type": "ListItem", "position": 3, "name": "Руководство по промптам Ideogram" }
+    ]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "inLanguage": "ru",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Как Ideogram генерирует читаемый текст на изображениях?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Ideogram специально обучен понимать и воспроизводить текст на изображениях. Для получения читаемого текста заключайте его в кавычки в промпте (например: 'a logo with the text \"HELLO WORLD\"'). Ideogram 2.0 точно обрабатывает большинство коротких и средних по длине слов. Для длинного текста разбивайте его на несколько коротких элементов."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Можно ли создавать профессиональные логотипы в Ideogram?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Ideogram отлично подходит для разведки концепций логотипов, но обычно требуется доработка в векторном редакторе, таком как Adobe Illustrator. Используйте промпты вида 'minimal logo design, clean vector style, \"BRAND NAME\", simple geometric shapes, flat colors, white background'. Результаты служат отличной основой для идей, которые профессиональный дизайнер может довести до совершенства."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "В чём разница между Ideogram и DALL-E 3 в генерации текста?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Обе модели хороши в рендеринге текста, но имеют разные сильные стороны. Ideogram превосходит в декоративной типографике, логотипах и графическом дизайне с текстом. DALL-E 3 сильнее в контекстном тексте (вывески, знаки в сценах) и лучше следует длинным сложным описаниям."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Как оптимизировать промпты Ideogram для графического дизайна?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Используйте терминологию, специфичную для дизайна: 'poster design', 'social media banner', 'book cover', 'infographic layout'. Указывайте желаемый стиль типографики ('bold sans-serif', 'elegant serif', 'hand-lettered'), включайте инструкции по цвету и композиции. Для более графических результатов используйте режим Design в Ideogram."
+        }
+      }
+    ]
+  }
+  </script>
+    <!-- Google AdSense -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4499206373485728" crossorigin="anonymous"></script>
+    <!-- Web Push Notifications -->
+<script src="https://cdn.onesignal.com/sdks/web/v16/OneSignalSDK.page.js" defer></script>
+<script>
+  window.OneSignalDeferred = window.OneSignalDeferred || [];
+  OneSignalDeferred.push(async function(OneSignal) {
+    await OneSignal.init({
+      appId: "REPLACE_WITH_ONESIGNAL_APP_ID",
+      notifyButton: { enable: false }
+    });
+  });
+</script>
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="inner">
+      <a href="/ru/" class="site-logo"><img src="/favicon.svg" alt="ImageToPrompt" width="48" height="48"><div class="site-logo-text">ImageTo<span class="accent">Prompt</span><span class="site-logo-sub">Бесплатный AI генератор промптов</span></div></a>
+      <nav class="site-nav" aria-label="Основная навигация">
+        <div class="nav-dropdown">
+          <button class="nav-dropdown-trigger" aria-haspopup="true" aria-expanded="false">Tools <span class="nav-chevron" aria-hidden="true">&#9660;</span></button>
+          <div class="nav-dropdown-menu" role="menu">
+            <div class="nav-mega-grid">
+              <div class="nav-mega-col">
+                <div class="nav-mega-heading">&#128444; IMAGE TOOLS</div>
+                <a href="/" role="menuitem" class="nav-mega-tool">Image to Prompt <span class="nav-mega-arrow">&#8594;</span></a>
+                <a href="/text-to-prompt/" role="menuitem" class="nav-mega-tool">Text to Prompt <span class="nav-mega-arrow">&#8594;</span></a>
+                <a href="/describe-image/" role="menuitem" class="nav-mega-tool">Describe Image <span class="nav-new-badge">NEW</span> <span class="nav-mega-arrow">&#8594;</span></a>
+                <div class="nav-mega-models-label">Models</div>
+                <div class="nav-mega-models"><a href="/midjourney-prompt-generator/">Midjourney</a><span class="nav-dot">&#xB7;</span><a href="/stable-diffusion-prompt-generator/">SD</a></div>
+                <div class="nav-mega-models"><a href="/flux-prompt-generator/">Flux</a><span class="nav-dot">&#xB7;</span><a href="/dall-e-prompt-generator/">DALL&#xB7;E&#xA0;3</a></div>
+                <div class="nav-mega-models"><a href="/adobe-firefly-prompt-generator/">Firefly</a><span class="nav-dot">&#xB7;</span><a href="/leonardo-ai-prompt-generator/">Leonardo</a></div>
+                <div class="nav-mega-models"><a href="/ideogram-prompt-generator/">Ideogram</a></div>
+              </div>
+              <div class="nav-mega-divider" aria-hidden="true"></div>
+              <div class="nav-mega-col">
+                <div class="nav-mega-heading">&#127909; VIDEO TOOLS</div>
+                <a href="/?tab=image-to-video" role="menuitem" class="nav-mega-tool">Image to Video <span class="nav-mega-arrow">&#8594;</span></a>
+                <a href="/?tab=text-to-video" role="menuitem" class="nav-mega-tool">Text to Video <span class="nav-mega-arrow">&#8594;</span></a>
+                <div class="nav-mega-models-label">Models</div>
+                <div class="nav-mega-models"><a href="/veo-prompt-generator/">Veo</a><span class="nav-dot">&#xB7;</span><a href="/kling-prompt-generator/">Kling</a></div>
+                <div class="nav-mega-models"><a href="/runway-prompt-generator/">Runway</a><span class="nav-dot">&#xB7;</span><a href="/pika-prompt-generator/">Pika</a></div>
+                <div class="nav-mega-models"><a href="/luma-prompt-generator/">Luma</a><span class="nav-dot">&#xB7;</span><a href="/sora-prompt-generator/">Sora</a></div>
+                <div class="nav-mega-models"><a href="/minimax-prompt-generator/">Minimax</a><span class="nav-dot">&#xB7;</span><a href="/stable-video-prompt-generator/">Stable</a></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <a href="/ru/blog/">Блог</a>
+        <a href="/ru/pricing/" class="nav-pill-pricing">Цены</a>
+        <a href="/ru/about/" class="nav-pill-about">О нас</a>
+        <a href="/ru/" class="nav-try-free">Попробовать &#8594;</a>
+        <button id="theme-toggle" onclick="toggleTheme()" aria-label="Переключить тему" title="Переключить тему">&#9728;&#xFE0F;</button>
+  </nav>
+    </div>
+  </header>
+
+  <nav class="breadcrumb" aria-label="Хлебные крошки"><a href="/ru/">Главная</a> <span aria-hidden="true">›</span> <a href="/ru/blog/">Блог</a> <span aria-hidden="true">›</span> <span aria-current="page">Руководство по промптам Ideogram</span></nav>
+
+  <div class="page-wrapper">
+
+    <header class="article-header">
+      <p class="article-tag">Ideogram</p>
+      <h1>Полное руководство по промптам Ideogram</h1>
+      <div class="article-meta">
+        <span>Март 2026</span>
+        <span class="dot">·</span>
+        <span>Время чтения: 10 мин</span>
+        <span class="dot">·</span>
+        <span>Ideogram 2.0 · Типографика · Логотипы · Графический дизайн</span>
+        <span class="dot">·</span>
+        <span>Обновлено: март 2026</span>
+      </div>
+    </header>
+
+    <div class="article-body">
+
+      <p>Ideogram обладает уникальной способностью, которая отличает его от всех других AI-генераторов изображений — он умеет создавать читаемый текст на изображениях. Midjourney, Stable Diffusion и даже Flux обычно выдают искажённый или нечитаемый текст, тогда как Ideogram рендерит слова, фразы и типографику с поразительно высокой точностью. Это делает его идеальным инструментом для графического дизайна, создания логотипов, постеров и любого визуального контента, требующего текста.</p>
+
+      <nav class="toc" aria-label="Содержание">
+        <details open>
+          <summary>Содержание руководства</summary>
+          <ol>
+            <li><a href="#chitaemyj-tekst">Генерация читаемого текста</a></li>
+            <li><a href="#tipografika">Ключевые слова типографики</a></li>
+            <li><a href="#sozdanie-logotipov">Создание логотипов</a></li>
+            <li><a href="#graficheskij-dizajn">Графический дизайн и постеры</a></li>
+            <li><a href="#rezhimy-ideogram">Режимы Ideogram: General, Design, 3D, Realistic</a></li>
+            <li><a href="#prodvinutye-tekhniki">Продвинутые техники</a></li>
+            <li><a href="#voprosy">Часто задаваемые вопросы</a></li>
+          </ol>
+        </details>
+      </nav>
+
+      <div class="callout">
+        <p><strong>Генератор Ideogram:</strong> Используйте наш <a href="/ideogram-prompt-generator/">генератор промптов Ideogram</a> для создания оптимизированных промптов с подходящими ключевыми словами типографики и дизайна. Просто загрузите референс-изображение.</p>
+      </div>
+
+      <h2 id="chitaemyj-tekst">Генерация читаемого текста</h2>
+
+      <p>Ключ к получению читаемого текста в Ideogram прост, но крайне важен: заключайте желаемый текст в кавычки в промпте. Это самое основное правило.</p>
+
+      <h3>Базовые правила для текста</h3>
+      <ul>
+        <li><strong>Используйте кавычки:</strong> <code>a sign that says "OPEN"</code> — кавычки указывают Ideogram, что этот текст нужно рендерить буквально</li>
+        <li><strong>Текст должен быть коротким:</strong> 1-5 слов наиболее эффективны. При более чем 7-8 словах точность снижается</li>
+        <li><strong>Используйте заглавные буквы:</strong> текст в верхнем регистре рендерится точнее, чем в нижнем</li>
+        <li><strong>Избегайте спецсимволов:</strong> стандартный латинский алфавит работает нормально, но диакритические знаки и нелатинские символы могут вызвать проблемы</li>
+      </ul>
+
+      <h3>Примеры промптов с текстом</h3>
+      <p><code>a vintage neon sign in a dark alley that says "CAFE LUNA", glowing warm amber light, rainy night, reflections on wet pavement</code></p>
+      <p><code>a birthday card design with the text "HAPPY BIRTHDAY" in colorful bubble letters, confetti, balloons, festive background</code></p>
+      <p><code>a minimalist poster with the word "BREATHE" in thin sans-serif typography, gradient background from light blue to soft pink, calming aesthetic</code></p>
+
+      <h3>Многострочный текст</h3>
+      <p>Для размещения нескольких строк текста описывайте каждый элемент отдельно в промпте.</p>
+      <p><code>a book cover design, title text "THE LAST" at the top and "HORIZON" below it, dramatic sunset landscape, serif typography, cinematic atmosphere</code></p>
+
+      <h2 id="tipografika">Ключевые слова типографики</h2>
+
+      <p>Ideogram понимает богатый словарь типографических терминов. Правильная терминология позволяет удивительно точно контролировать внешний вид текста на изображении.</p>
+
+      <h3>Семейства шрифтов</h3>
+      <div class="table-wrap">
+      <table class="comparison-table">
+        <thead>
+          <tr>
+            <th>Ключевое слово</th>
+            <th>Стиль результата</th>
+            <th>Типичное применение</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><code>bold sans-serif</code></td>
+            <td>Жирные буквы без засечек</td>
+            <td>Постеры, современные заголовки</td>
+          </tr>
+          <tr>
+            <td><code>elegant serif</code></td>
+            <td>Классические буквы с засечками</td>
+            <td>Книги, премиальные бренды</td>
+          </tr>
+          <tr>
+            <td><code>hand-lettered</code></td>
+            <td>Рукописный художественный леттеринг</td>
+            <td>Открытки, крафтовая упаковка</td>
+          </tr>
+          <tr>
+            <td><code>script / cursive</code></td>
+            <td>Элегантный курсив</td>
+            <td>Приглашения, женские бренды</td>
+          </tr>
+          <tr>
+            <td><code>monospace</code></td>
+            <td>Моноширинный шрифт</td>
+            <td>Тех, код, ретро</td>
+          </tr>
+          <tr>
+            <td><code>stencil</code></td>
+            <td>Трафаретные буквы</td>
+            <td>Военный стиль, индустриальный, стрит-арт</td>
+          </tr>
+          <tr>
+            <td><code>bubble letters</code></td>
+            <td>Округлые надутые буквы</td>
+            <td>Детский стиль, поп, граффити</td>
+          </tr>
+          <tr>
+            <td><code>gothic / blackletter</code></td>
+            <td>Средневековый готический шрифт</td>
+            <td>Металл, пивоварни, сертификаты</td>
+          </tr>
+        </tbody>
+      </table>
+      </div>
+
+      <h3>Продвинутые стили текста</h3>
+      <ul>
+        <li><code>3D text</code> — объёмный текст с глубиной</li>
+        <li><code>metallic text</code> — текст с металлическим видом (золото, серебро, хром)</li>
+        <li><code>neon text</code> — текст с эффектом неонового свечения</li>
+        <li><code>embossed text</code> — тиснёный текст</li>
+        <li><code>text with drop shadow</code> — текст с тенью</li>
+        <li><code>outlined text</code> — контурный текст</li>
+        <li><code>gradient text</code> — текст с градиентом цвета</li>
+      </ul>
+
+      <h2 id="sozdanie-logotipov">Создание логотипов</h2>
+
+      <p>Ideogram стал незаменимым инструментом для генерации идей логотипов. Сочетание способности генерировать читаемый текст с графическими элементами делает его мощным инструментом для быстрой разведки концепций.</p>
+
+      <h3>Минималистичный логотип</h3>
+      <p><code>minimal logo design, clean vector style, the text "NORTH STAR" in modern sans-serif font, simple geometric star icon above the text, black on white background, professional branding</code></p>
+
+      <h3>Иллюстрированный логотип</h3>
+      <p><code>illustrated logo, a stylized mountain peak with a rising sun behind it, the text "SUMMIT CO" below in bold condensed font, outdoor adventure brand, earthy color palette of forest green and warm brown</code></p>
+
+      <h3>Типографический логотип</h3>
+      <p><code>typographic logo, the letters "AB" intertwined in an elegant monogram, gold metallic finish, luxury brand aesthetic, clean white background, sophisticated serif typography</code></p>
+
+      <h3>Логотип-значок</h3>
+      <p><code>vintage badge logo, circular shape, "CRAFT BREWERY" text curved along the top, "EST. 2024" at the bottom, hop illustration in the center, distressed texture, rustic craft beer branding</code></p>
+
+      <h3>Советы по созданию логотипов</h3>
+      <ul>
+        <li>Всегда добавляйте <code>white background</code> или <code>solid color background</code> для лёгкого извлечения</li>
+        <li>Для чистых линий используйте <code>vector style</code> и <code>clean flat design</code></li>
+        <li>Генерируйте 8-10 вариаций и выбирайте лучшие как основу для дальнейшей работы</li>
+        <li>Результаты являются концептами. Для профессионального использования доработайте в Illustrator</li>
+      </ul>
+
+      <h2 id="graficheskij-dizajn">Графический дизайн и постеры</h2>
+
+      <h3>Афиша мероприятия</h3>
+      <p><code>event poster design, "JAZZ NIGHT" in bold art deco typography, saxophone silhouette, dark blue and gold color scheme, vintage 1920s aesthetic, elegant layout --ar 2:3</code></p>
+
+      <h3>Баннер для соцсетей</h3>
+      <p><code>social media banner, "SUMMER SALE 50% OFF" in bold white sans-serif text, tropical leaves and flowers, vibrant gradient from teal to coral, modern clean design --ar 16:9</code></p>
+
+      <h3>Обложка книги</h3>
+      <p><code>book cover design, title "SILENT WATERS" in thin elegant serif font, author name "J. MORGAN" smaller below, dark moody ocean scene, moonlight reflecting on calm water, thriller novel aesthetic --ar 2:3</code></p>
+
+      <h3>Инфографика</h3>
+      <p><code>infographic design, "5 TIPS FOR BETTER SLEEP" as main heading, clean modern layout, numbered sections, soft purple and blue color scheme, flat illustration style icons, health and wellness theme</code></p>
+
+      <h3>Дизайн упаковки</h3>
+      <p><code>product packaging design, coffee bag mockup, "MOUNTAIN BREW" in rustic hand-lettered font, mountain illustration, kraft paper texture, earth tones, artisan coffee branding</code></p>
+
+      <h2 id="rezhimy-ideogram">Режимы Ideogram: General, Design, 3D, Realistic</h2>
+
+      <p>Ideogram имеет несколько режимов генерации, каждый из которых оптимизирован для определённого типа контента. Правильный выбор режима критически важен для получения желаемых результатов.</p>
+
+      <h3>Режим General</h3>
+      <p>Режим по умолчанию, универсальный. Подходит для иллюстраций, сцен, художественных изображений с текстом. Использует естественный живописный стиль.</p>
+
+      <h3>Режим Design</h3>
+      <p>Оптимизирован для профессионального графического дизайна. Даёт более чёткие, графичные результаты с лучшим контролем цвета. Рекомендуется для логотипов, постеров, баннеров и другого графического дизайн-контента.</p>
+
+      <h3>Режим 3D</h3>
+      <p>Придаёт объёмный вид тексту и объектам. Идеален для игровых заголовков, 3D-логотипов, визуально эффектных образов. 3D-текст часто получается более читаемым и впечатляющим.</p>
+
+      <h3>Режим Realistic</h3>
+      <p>Реализует фотореалистичный стиль, приближённый к фотографии. Подходит для реалистичных вывесок и знаков в среде, продуктовых мокапов с текстом и т.д.</p>
+
+      <h2 id="prodvinutye-tekhniki">Продвинутые техники</h2>
+
+      <h3>Контроль позиции текста</h3>
+      <p>Используйте термины позиционирования для управления расположением текста на изображении.</p>
+      <ul>
+        <li><code>text at the top</code> — текст в верхней части изображения</li>
+        <li><code>text centered</code> — текст по центру</li>
+        <li><code>text along the bottom</code> — текст в нижней части изображения</li>
+        <li><code>text curved along a circle</code> — текст по дуге круга</li>
+      </ul>
+
+      <h3>Сочетание текста и иллюстрации</h3>
+      <p>Лучшие результаты достигаются, когда текст и иллюстрация дополняют друг друга. Подробно опишите иллюстрацию и укажите, как текст должен интегрироваться.</p>
+      <p><code>a whimsical illustration of a cat reading a book in a cozy armchair, with the text "BOOK CLUB" integrated into a decorative banner above the scene, warm watercolor style, inviting atmosphere</code></p>
+
+      <h3>Избежание ошибок в тексте</h3>
+      <ul>
+        <li>Если текст написан с ошибкой, перегенерируйте. Ideogram работает вероятностно — некоторые попытки могут быть неудачными</li>
+        <li>Распространённые английские слова рендерятся точнее, чем редкие или специальные термины</li>
+        <li>Длинные предложения разбивайте на несколько коротких текстовых элементов</li>
+        <li>Для большей точности типографики используйте режим Design</li>
+      </ul>
+
+      <h3>Сравнение Ideogram vs. Midjourney vs. DALL-E 3 для дизайна</h3>
+      <div class="table-wrap">
+      <table class="comparison-table">
+        <thead>
+          <tr>
+            <th>Критерий</th>
+            <th>Ideogram</th>
+            <th>Midjourney</th>
+            <th>DALL-E 3</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Читаемый текст</td>
+            <td>Отлично</td>
+            <td>Слабо</td>
+            <td>Очень хорошо</td>
+          </tr>
+          <tr>
+            <td>Логотипы</td>
+            <td>Отлично</td>
+            <td>Хорошо (без текста)</td>
+            <td>Хорошо</td>
+          </tr>
+          <tr>
+            <td>Постеры</td>
+            <td>Отлично</td>
+            <td>Хорошо (художественные)</td>
+            <td>Хорошо</td>
+          </tr>
+          <tr>
+            <td>Художественное качество</td>
+            <td>Хорошо</td>
+            <td>Отлично</td>
+            <td>Очень хорошо</td>
+          </tr>
+          <tr>
+            <td>Контроль типографики</td>
+            <td>Продвинутый</td>
+            <td>Минимальный</td>
+            <td>Средний</td>
+          </tr>
+        </tbody>
+      </table>
+      </div>
+
+      <div class="cta-box">
+        <h3>Сгенерируйте оптимизированный промпт для Ideogram</h3>
+        <p>Загрузите референс-дизайн и получите промпт Ideogram с подходящими ключевыми словами типографики и графического дизайна.</p>
+        <a href="/ideogram-prompt-generator/" class="cta-btn">Попробовать генератор Ideogram &#8594;</a>
+      </div>
+
+      <h2 id="voprosy">Часто задаваемые вопросы</h2>
+
+      <h3>Как Ideogram генерирует читаемый текст на изображениях?</h3>
+      <p>Ideogram специально обучен понимать и воспроизводить текст на изображениях. Для получения читаемого текста заключайте его в кавычки в промпте. Ideogram 2.0 точно обрабатывает большинство коротких и средних по длине слов. Для длинного текста разбивайте его на несколько коротких элементов.</p>
+
+      <h3>Можно ли создавать профессиональные логотипы в Ideogram?</h3>
+      <p>Ideogram отлично подходит для разведки концепций логотипов. Используйте промпты вида <code>minimal logo design, clean vector style, "BRAND NAME", simple geometric shapes, flat colors, white background</code>. Однако для профессионального использования обычно требуется доработка в векторном редакторе, таком как Adobe Illustrator.</p>
+
+      <h3>В чём разница между Ideogram и DALL-E 3 в генерации текста?</h3>
+      <p>Обе модели хороши в рендеринге текста, но имеют разные сильные стороны. Ideogram превосходит в декоративной типографике, логотипах и графическом дизайне с текстом. DALL-E 3 сильнее в контекстном тексте (вывески, знаки в сценах) и лучше следует длинным сложным описаниям.</p>
+
+      <h3>Как оптимизировать промпты Ideogram для графического дизайна?</h3>
+      <p>Используйте терминологию, специфичную для дизайна: «poster design», «social media banner», «book cover» и т.д. Указывайте желаемый стиль типографики («bold sans-serif», «elegant serif», «hand-lettered»), включайте инструкции по цвету и композиции. Для более графических результатов используйте режим «Design» вместо «General».</p>
+
+    </div>
+
+    <div class="author-bio">
+      <img src="/favicon.svg" alt="ImageToPrompt Team" width="44" height="44">
+      <div>
+        <strong>ImageToPrompt Team</strong>
+        <p>Мы — команда экспертов, помогающая креативщикам освоить генерацию AI-изображений. Мы делимся актуальными руководствами по лучшим практикам и новым техникам в генерации AI-изображений.</p>
+        <a href="https://x.com/ImageToPrompt" target="_blank" rel="noopener" class="author-follow">Подписаться на X</a>
+      </div>
+    </div>
+
+    <div class="related-posts">
+      <h2>Связанные руководства</h2>
+      <div class="related-grid">
+        <a href="/ru/blog/rukovodstvo-po-promptam-dall-e-3/" class="related-card">
+          <p class="tag">DALL-E 3</p>
+          <h3>Полное руководство по промптам DALL-E 3</h3>
+        </a>
+        <a href="/ru/blog/rukovodstvo-po-promptam-leonardo-ai/" class="related-card">
+          <p class="tag">Leonardo AI</p>
+          <h3>Руководство по промптам Leonardo AI</h3>
+        </a>
+        <a href="/ru/blog/rukovodstvo-po-promptam-flux-ai/" class="related-card">
+          <p class="tag">Flux AI</p>
+          <h3>Руководство по промптам Flux AI 2026</h3>
+        </a>
+      </div>
+    </div>
+
+  </div>
+
+  <footer class="footer-4col">
+    <div class="f4-inner">
+      <div class="f4-brand">
+        <img src="/favicon.svg" alt="ImageToPrompt" width="28" height="28">
+        <span class="f4-brand-name">ImageTo<span class="accent">Prompt</span></span>
+        <span class="f4-brand-sub">&mdash; Free AI Prompt Generator</span>
+      </div>
+      <div class="f4-grid">
+        <div class="f4-section">
+          <h4 class="f4-heading">Image Prompt Tools</h4>
+          <a href="/">Image to Prompt</a>
+          <a href="/text-to-prompt/">Text to Prompt</a>
+          <a href="/describe-image/">Describe Image</a>
+          <a href="/midjourney-prompt-generator/">Midjourney</a>
+          <a href="/stable-diffusion-prompt-generator/">Stable Diffusion</a>
+          <a href="/flux-prompt-generator/">Flux</a>
+          <a href="/dall-e-prompt-generator/">DALL-E 3</a>
+          <a href="/adobe-firefly-prompt-generator/">Adobe Firefly</a>
+          <a href="/leonardo-ai-prompt-generator/">Leonardo AI</a>
+          <a href="/ideogram-prompt-generator/">Ideogram</a>
+        </div>
+        <div class="f4-section">
+          <h4 class="f4-heading">Video Prompt Tools</h4>
+          <a href="/image-to-video-prompt/">Image to Video Prompt</a>
+          <a href="/text-to-video-prompt/">Text to Video Prompt</a>
+          <a href="/veo-prompt-generator/">Veo / Flow Studio</a>
+          <a href="/kling-prompt-generator/">Kling AI</a>
+          <a href="/runway-prompt-generator/">Runway Gen-3</a>
+          <a href="/pika-prompt-generator/">Pika</a>
+          <a href="/luma-prompt-generator/">Luma Dream Machine</a>
+          <a href="/sora-prompt-generator/">Sora</a>
+          <a href="/minimax-prompt-generator/">Minimax</a>
+          <a href="/stable-video-prompt-generator/">Stable Video</a>
+        </div>
+        <div class="f4-section">
+          <h4 class="f4-heading">Resources</h4>
+          <a href="/ru/blog/">Блог</a>
+          <a href="/ru/about/">О нас</a>
+          <a href="/ru/pricing/">Цены</a>
+          <a href="/contact/">Contact</a>
+          <a href="/privacy-policy/">Privacy Policy</a>
+          <a href="/terms-of-service/">Terms of Service</a>
+        </div>
+        <div class="f4-section">
+          <h4 class="f4-heading">Languages</h4>
+          <a href="/">English</a>
+          <a href="/fr/">Fran&#231;ais</a>
+          <a href="/ar/">&#1575;&#1604;&#1593;&#1585;&#1576;&#1610;&#1577;</a>
+          <a href="/es/">Espa&#241;ol</a>
+          <a href="/ko/">&#54620;&#44397;&#50612;</a>
+          <a href="/ja/">&#26085;&#26412;&#35486;</a>
+          <a href="/ru/">&#1056;&#1091;&#1089;&#1089;&#1082;&#1080;&#1081;</a>
+        </div>
+      </div>
+      <div class="f4-bottom">
+        <p>&copy; 2026 ImageToPrompt.dev &mdash; Free AI Prompt Generator</p>
+        <p>Your images are never stored. All analysis is ephemeral and private.</p>
+      </div>
+    </div>
+  </footer>
+
+<script src="/newsletter-inject.js" defer></script>
+<script src="/nav.js" defer></script>
+  <script>
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', function() {
+    navigator.serviceWorker.register('/sw.js')
+      .catch(function(err) { console.warn('SW registration failed:', err); });
+  });
+}
+</script>
+</body>
+</html>

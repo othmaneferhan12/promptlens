@@ -1,0 +1,643 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <script src="/theme-toggle.js"></script>
+  <meta charset="UTF-8" />
+  <link rel="dns-prefetch" href="https://www.googletagmanager.com">
+<link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="max-image-preview:large, index, follow">
+  <meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="ImageToPrompt">
+  <title>AIアートのためのプロンプトエンジニアリング入門ガイド</title>
+  <meta name="description" content="AIアートのプロンプトエンジニアリング基礎を学びましょう。被写体、スタイル、ライティング、構図、技術パラメータを初心者向けの具体例で解説します。" />
+  <link rel="canonical" href="https://www.imagetoprompt.dev/ja/blog/prompt-engineering-ai-art-nyumon/" />
+  <link rel="alternate" hreflang="ja" href="https://www.imagetoprompt.dev/ja/blog/prompt-engineering-ai-art-nyumon/" />
+  <link rel="alternate" hreflang="en" href="https://www.imagetoprompt.dev/blog/prompt-engineering-for-ai-art/" />
+  <link rel="alternate" hreflang="fr" href="https://www.imagetoprompt.dev/fr/blog/prompt-engineering-art-ia-debutants/" />
+  <link rel="alternate" hreflang="ar" href="https://www.imagetoprompt.dev/ar/blog/handasa-prompts-fan-ia/" />
+  <link rel="alternate" hreflang="es" href="https://www.imagetoprompt.dev/es/blog/ingenieria-prompts-arte-ia/" />
+  <link rel="alternate" hreflang="x-default" href="https://www.imagetoprompt.dev/blog/prompt-engineering-for-ai-art/" />
+  <meta property="og:title" content="AIアートのためのプロンプトエンジニアリング入門ガイド" />
+  <meta property="og:description" content="Midjourney、Stable Diffusion、Fluxでの効果的なAIプロンプトの書き方を具体例で学びましょう。" />
+  <meta property="og:url" content="https://www.imagetoprompt.dev/ja/blog/prompt-engineering-ai-art-nyumon/" />
+  <meta property="og:type" content="article" />
+  <meta property="og:image" content="https://www.imagetoprompt.dev/og-image.png" />
+  <meta property="og:site_name" content="ImageToPrompt" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="AIアートのためのプロンプトエンジニアリング入門ガイド" />
+  <meta name="twitter:description" content="素晴らしいAIアートを生み出すためのプロンプトエンジニアリングの基礎。" />
+  <meta name="twitter:image" content="https://www.imagetoprompt.dev/og-image.png" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="48x48" href="/favicon-48.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+  <link rel="manifest" href="/site.webmanifest" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="/fonts/space-grotesk-700.woff2" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="/fonts/inter-400.woff2" />
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/theme.css">
+  <link rel="preload" href="/blog.css" as="style" onload="this.onload=null;this.rel='stylesheet'"><noscript><link rel="stylesheet" href="/blog.css"></noscript>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "AIアートのためのプロンプトエンジニアリング入門ガイド",
+    "description": "AIアートのプロンプトエンジニアリング基礎を学びましょう。被写体、スタイル、ライティング、構図、技術パラメータを初心者向けの具体例で解説します。",
+    "image": "https://www.imagetoprompt.dev/og-image.png",
+    "datePublished": "2026-03-10",
+    "dateModified": "2026-03-24",
+    "inLanguage": "ja",
+    "author": {
+      "@type": "Person",
+      "name": "ImageToPrompt Team",
+      "url": "https://www.imagetoprompt.dev/"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "ImageToPrompt",
+      "logo": { "@type": "ImageObject", "url": "https://www.imagetoprompt.dev/favicon.svg" }
+    },
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https://www.imagetoprompt.dev/ja/blog/prompt-engineering-ai-art-nyumon/"
+    }
+  }
+  </script>
+    <!-- Google AdSense -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4499206373485728" crossorigin="anonymous"></script>
+    <!-- Web Push Notifications -->
+<script src="https://cdn.onesignal.com/sdks/web/v16/OneSignalSDK.page.js" defer></script>
+<script>
+  window.OneSignalDeferred = window.OneSignalDeferred || [];
+  OneSignalDeferred.push(async function(OneSignal) {
+    await OneSignal.init({
+      appId: "REPLACE_WITH_ONESIGNAL_APP_ID",
+      notifyButton: { enable: false }
+    });
+  });
+</script>
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="inner">
+      <a href="/ja/" class="site-logo"><img src="/favicon.svg" alt="ImageToPrompt" width="48" height="48"><div class="site-logo-text">ImageTo<span class="accent">Prompt</span><span class="site-logo-sub">無料AIプロンプトジェネレーター</span></div></a>
+      <nav class="site-nav" aria-label="メインナビゲーション">
+        <div class="nav-dropdown">
+          <button class="nav-dropdown-trigger" aria-haspopup="true" aria-expanded="false">Tools <span class="nav-chevron" aria-hidden="true">&#9660;</span></button>
+          <div class="nav-dropdown-menu" role="menu">
+            <div class="nav-mega-grid">
+              <div class="nav-mega-col">
+                <div class="nav-mega-heading">&#128444; IMAGE TOOLS</div>
+                <a href="/" role="menuitem" class="nav-mega-tool">Image to Prompt <span class="nav-mega-arrow">&#8594;</span></a>
+                <a href="/text-to-prompt/" role="menuitem" class="nav-mega-tool">Text to Prompt <span class="nav-mega-arrow">&#8594;</span></a>
+                <a href="/describe-image/" role="menuitem" class="nav-mega-tool">Describe Image <span class="nav-new-badge">NEW</span> <span class="nav-mega-arrow">&#8594;</span></a>
+                <div class="nav-mega-models-label">Models</div>
+                <div class="nav-mega-models"><a href="/midjourney-prompt-generator/">Midjourney</a><span class="nav-dot">&#xB7;</span><a href="/stable-diffusion-prompt-generator/">SD</a></div>
+                <div class="nav-mega-models"><a href="/flux-prompt-generator/">Flux</a><span class="nav-dot">&#xB7;</span><a href="/dall-e-prompt-generator/">DALL&#xB7;E&#xA0;3</a></div>
+                <div class="nav-mega-models"><a href="/adobe-firefly-prompt-generator/">Firefly</a><span class="nav-dot">&#xB7;</span><a href="/leonardo-ai-prompt-generator/">Leonardo</a></div>
+                <div class="nav-mega-models"><a href="/ideogram-prompt-generator/">Ideogram</a></div>
+              </div>
+              <div class="nav-mega-divider" aria-hidden="true"></div>
+              <div class="nav-mega-col">
+                <div class="nav-mega-heading">&#127909; VIDEO TOOLS</div>
+                <a href="/?tab=image-to-video" role="menuitem" class="nav-mega-tool">Image to Video <span class="nav-mega-arrow">&#8594;</span></a>
+                <a href="/?tab=text-to-video" role="menuitem" class="nav-mega-tool">Text to Video <span class="nav-mega-arrow">&#8594;</span></a>
+                <div class="nav-mega-models-label">Models</div>
+                <div class="nav-mega-models"><a href="/veo-prompt-generator/">Veo</a><span class="nav-dot">&#xB7;</span><a href="/kling-prompt-generator/">Kling</a></div>
+                <div class="nav-mega-models"><a href="/runway-prompt-generator/">Runway</a><span class="nav-dot">&#xB7;</span><a href="/pika-prompt-generator/">Pika</a></div>
+                <div class="nav-mega-models"><a href="/luma-prompt-generator/">Luma</a><span class="nav-dot">&#xB7;</span><a href="/sora-prompt-generator/">Sora</a></div>
+                <div class="nav-mega-models"><a href="/minimax-prompt-generator/">Minimax</a><span class="nav-dot">&#xB7;</span><a href="/stable-video-prompt-generator/">Stable</a></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <a href="/ja/blog/">ブログ</a>
+        <a href="/ja/pricing/" class="nav-pill-pricing">料金</a>
+        <a href="/ja/about/" class="nav-pill-about">概要</a>
+        <a href="/ja/" class="nav-try-free">無料で試す &#8594;</a>
+        <button id="theme-toggle" onclick="toggleTheme()" aria-label="テーマ切替" title="テーマ切替">&#9728;&#xFE0F;</button>
+  </nav>
+    </div>
+  </header>
+
+  <nav class="breadcrumb" aria-label="パンくずリスト">
+    <a href="/ja/">ホーム</a> <span aria-hidden="true">›</span>
+    <a href="/ja/blog/">ブログ</a> <span aria-hidden="true">›</span>
+    <span aria-current="page">AIアートのためのプロンプトエンジニアリング入門</span>
+  </nav>
+
+  <div class="page-wrapper">
+
+    <header class="article-header">
+      <p class="article-tag">初心者ガイド</p>
+      <h1>AIアートのためのプロンプトエンジニアリング入門ガイド</h1>
+      <div class="article-meta">
+        <span>2026年3月</span>
+        <span class="dot">·</span>
+        <span>10分で読めます</span>
+        <span class="dot">·</span>
+        <span>Midjourney · Stable Diffusion · Flux · DALL·E 3</span>
+        <span class="dot">·</span>
+        <span>2026年3月更新</span>
+      </div>
+    </header>
+
+    <div class="article-body">
+
+      <p>初めてMidjourneyを開いて「かっこいいドラゴン」と入力すると、得られる結果は... まあまあです。無難で、頭に思い描いていたものとはかけ離れています。一方で、別の誰かが具体的な記述語をいくつも並べて入力し、息をのむような作品を生み出しています。</p>
+
+      <nav class="toc" aria-label="目次">
+        <details open>
+          <summary>このガイドの内容</summary>
+          <ol>
+            <li><a href="#quest-ce-quun-prompt">プロンプトとは何か？</a></li>
+            <li><a href="#pourquoi-ca-ne-marche-pas">「かっこいいドラゴン」がうまくいかない理由</a></li>
+            <li><a href="#changements-simples">違いを見る：たった一語でこれだけ変わる</a></li>
+            <li><a href="#les-cinq-piliers">AIアートプロンプトの5つの柱</a></li>
+            <li><a href="#anatomie-du-prompt">プロのプロンプトの解剖学</a></li>
+            <li><a href="#tokens-de-qualite">クオリティトークン：信頼できるブースター</a></li>
+            <li><a href="#prompts-negatifs">ネガティブプロンプト：望まないものを指定する</a></li>
+            <li><a href="#aide-memoire-vocabulaire">プロンプトボキャブラリー早見表</a></li>
+            <li><a href="#evolution-du-prompt">プロンプトの進化を見る：基本からプロへ</a></li>
+            <li><a href="#apprendre-rapidement">プロンプトエンジニアリングを素早く学ぶ方法</a></li>
+            <li><a href="#chemin-le-plus-rapide">良い結果への最短ルート</a></li>
+            <li><a href="#exercices-pratiques">今すぐ実践できる3つのエクササイズ</a></li>
+          </ol>
+        </details>
+      </nav>
+
+      <p>その違いは<strong>プロンプトエンジニアリング</strong>にあります。AI画像生成ツールと明確かつ効果的にコミュニケーションするスキルです。プログラミングではありません。魔法でもありません。学べる技術であり、このガイドではゼロからしっかりとした基礎を身につけることができます。</p>
+
+      <h2 id="quest-ce-quun-prompt">プロンプトとは何か？</h2>
+
+      <p>AI画像生成において、<strong>プロンプト</strong>とはAIモデルに画像を生成させるためのテキスト指示です。AIはあなたのテキストを読み、意図を解釈し、その記述に一致するピクセルを生成しようとします。</p>
+
+      <p>根本的な課題：AIモデルは数十億の画像とキャプションで訓練されています。言葉と視覚概念の関連性を学習しています。しかし、あなたの言葉を確率的に解釈するため、生成のたびに結果は微妙に異なり、モデルはあなたが「本当に言いたかったこと」について無数の細かい判断を下します。</p>
+
+      <p>プロンプトエンジニアリングとは、これらの細かい判断をあなたが実際に望む結果へと導くプロンプトを作成する技術です。</p>
+
+      <h2 id="pourquoi-ca-ne-marche-pas">「かっこいいドラゴン」がうまくいかない理由</h2>
+
+      <p>「かっこいいドラゴン」は最大限に曖昧です。AIは「かっこいい」と表現された何千ものドラゴンを見てきました — 西洋のドラゴン、東洋の龍、カートゥーンのドラゴン、リアルなドラゴン、火を吐くドラゴン、飛んでいるドラゴン。追加のガイダンスがなければ、AIはそのすべての平均値のようなものを選びます。結果が無難に見えるのは、それが本質的に「かっこいいドラゴン」の統計的平均だからです。</p>
+
+      <p>プロンプトが具体的であるほど、AIが活用できる情報が増え、結果はより独創的になります。比較してみましょう：</p>
+
+      <p><strong>弱い：</strong> <code>cool dragon</code></p>
+      <p><strong>強い：</strong> <code>ancient sea dragon emerging from stormy ocean waves at night, translucent teal scales catching moonlight, massive wingspan, serpentine body, bioluminescent markings, cinematic wide shot, dramatic lighting, dark fantasy concept art</code></p>
+
+      <p>同じ被写体。まったく異なる結果。</p>
+
+      <div class="cta-inline">
+        <p>自分で試してみましょう — 任意の画像をアップロードすると、最適化されたAIプロンプトが数秒で生成されます。</p>
+        <a href="/" class="cta-btn-sm">無料で試す →</a>
+      </div>
+
+      <h2 id="changements-simples">違いを見る：たった一語でこれだけ変わる</h2>
+
+      <p>プロンプトエンジニアリングの力は、一語だけ変えて結果を比較したときに最も明確になります。どれほど一つの用語で結果が変わるかを示す5つのペアを紹介します。</p>
+
+      <div class="word-pair">
+        <div class="word-pair-item">
+          <code>cinematic portrait</code>
+          <picture><source srcset="/images/image-to-prompt-ai-cinematic-portrait-style.webp" type="image/webp"><img src="/images/image-to-prompt-ai-cinematic-portrait-style.jpeg" alt="シネマティックポートレート — ドラマチックな映画風ライティングによるAIアートプロンプト比較" width="800" height="1200" loading="lazy"></picture>
+        </div>
+        <div class="word-pair-vs"><span class="vs-badge">VS</span></div>
+        <div class="word-pair-item">
+          <code><strong>editorial</strong> portrait</code>
+          <picture><source srcset="/images/describe-a-picture-editorial-portrait-style.webp" type="image/webp"><img src="/images/describe-a-picture-editorial-portrait-style.jpeg" alt="エディトリアルポートレート — 雑誌向けのプロフェッショナルなクリーンスタイル、AIプロンプト一語変更" width="800" height="1200" loading="lazy"></picture>
+        </div>
+        <p class="pair-explanation"><strong>Cinematic</strong>はドラマチックな映画的ライティング、深い影、劇場的な雰囲気に導きます。<strong>Editorial</strong>はクリーンでプロフェッショナルな雑誌向けの仕上がり — 一般に明るく、コントロールされ、雰囲気を抑えた表現になります。</p>
+      </div>
+
+      <div class="word-pair">
+        <div class="word-pair-item">
+          <code><strong>golden hour</strong> lighting</code>
+          <picture><source srcset="/images/ai-prompt-generator-golden-hour-lighting.webp" type="image/webp"><img src="/images/ai-prompt-generator-golden-hour-lighting.jpeg" alt="ゴールデンアワーライティング — 暖色のオレンジとアンバーの夕暮れトーン、プロンプトエンジニアリング例" width="800" height="1200" loading="lazy"></picture>
+        </div>
+        <div class="word-pair-vs"><span class="vs-badge">VS</span></div>
+        <div class="word-pair-item">
+          <code><strong>blue hour</strong> lighting</code>
+          <picture><source srcset="/images/image-prompt-blue-hour-lighting.webp" type="image/webp"><img src="/images/image-prompt-blue-hour-lighting.jpeg" alt="ブルーアワーライティング — 冷たい青のソフトな黄昏トーン、プロンプト一語変更" width="800" height="1200" loading="lazy"></picture>
+        </div>
+        <p class="pair-explanation"><strong>Golden hour</strong>（日の出直後または日没直前）は暖かいオレンジとアンバーの光に長い影を生み出します。<strong>Blue hour</strong>（日没直後）は柔らかく冷たい拡散した青い光でほとんど影がありません — まったく異なる感情的トーンです。</p>
+      </div>
+
+      <div class="word-pair">
+        <div class="word-pair-item">
+          <code><strong>oil painting</strong></code>
+          <picture><source srcset="/images/ai-image-to-prompt-oil-painting-style.webp" type="image/webp"><img src="/images/ai-image-to-prompt-oil-painting-style.jpeg" alt="AIアートの油絵スタイル — 豊かな彩度の色彩と筆のテクスチャ" width="800" height="600" loading="lazy"></picture>
+        </div>
+        <div class="word-pair-vs"><span class="vs-badge">VS</span></div>
+        <div class="word-pair-item">
+          <code><strong>watercolor</strong> painting</code>
+          <picture><source srcset="/images/describe-the-photo-watercolor-style.webp" type="image/webp"><img src="/images/describe-the-photo-watercolor-style.jpeg" alt="AIアートの水彩画スタイル — 柔らかなエッジと透明なウォッシュ、プロンプト語彙比較" width="800" height="600" loading="lazy"></picture>
+        </div>
+        <p class="pair-explanation"><strong>Oil painting</strong>は豊かで彩度の高い色、目に見える筆跡、重厚で永続的な印象を生み出します。<strong>Watercolor</strong>は柔らかなエッジ、透明なウォッシュ、明るいトーン、繊細な線を生み出し、より軽くはかない雰囲気になります。</p>
+      </div>
+
+      <div class="word-pair">
+        <div class="word-pair-item">
+          <code><strong>wide angle shot</strong></code>
+          <picture><source srcset="/images/free-image-url-generator-wide-shot-composition.webp" type="image/webp"><img src="/images/free-image-url-generator-wide-shot-composition.jpeg" alt="広角ショット — 被写体を環境のコンテキスト全体で表示、プロンプト構図ワード" width="1200" height="675" loading="lazy"></picture>
+        </div>
+        <div class="word-pair-vs"><span class="vs-badge">VS</span></div>
+        <div class="word-pair-item">
+          <code><strong>extreme close-up</strong></code>
+          <picture><source srcset="/images/prompt-generator-from-image-extreme-closeup.webp" type="image/webp"><img src="/images/prompt-generator-from-image-extreme-closeup.jpeg" alt="AIアートの超クローズアップ — ディテールがフレーム全体を埋める、プロンプト一語変更" width="800" height="800" loading="lazy"></picture>
+        </div>
+        <p class="pair-explanation"><strong>Wide angle shot</strong>は被写体をコンテキストの中に置き、周囲の環境を見せます。<strong>Extreme close-up</strong>はコンテキストを完全に排除し、一つのディテールに集中します。同じ被写体から根本的に異なる画像を生み出す構図の対極です。</p>
+      </div>
+
+      <div class="word-pair">
+        <div class="word-pair-item">
+          <code><strong>peaceful</strong> mood</code>
+          <picture><source srcset="/images/ai-prompt-image-peaceful-mood.webp" type="image/webp"><img src="/images/ai-prompt-image-peaceful-mood.jpeg" alt="AIアートの穏やかな雰囲気 — 柔らかな光の静寂なシーン、プロンプトムードワード例" width="800" height="600" loading="lazy"></picture>
+        </div>
+        <div class="word-pair-vs"><span class="vs-badge">VS</span></div>
+        <div class="word-pair-item">
+          <code><strong>ominous</strong> mood</code>
+          <picture><source srcset="/images/explain-this-image-ominous-mood.webp" type="image/webp"><img src="/images/explain-this-image-ominous-mood.jpeg" alt="AIアートの不吉な雰囲気 — 暗く威圧的なシーン、プロンプト一語の効果" width="800" height="600" loading="lazy"></picture>
+        </div>
+        <p class="pair-explanation">ムードワードは色の選択、ライティング処理、被写体の表情にまで影響します。<strong>Peaceful</strong>は柔らかな光、開放的な空間、穏やかな色調に向かいます。<strong>Ominous</strong>は暗いライティング、深い影、脅威的な雰囲気に向かいます — 同じ被写体でも。</p>
+      </div>
+
+      <h2 id="les-cinq-piliers">AIアートプロンプトの5つの柱</h2>
+
+      <h3>1. 被写体 — 画像に何があるか？</h3>
+
+      <p>被写体は出発点です：表現したい人物、生き物、オブジェクト、またはシーン。具体的に記述しましょう：</p>
+      <ul>
+        <li><strong>弱い：</strong>「女性」</li>
+        <li><strong>強い：</strong>「精巧な装飾が施された儀式用の鎧を身にまとい、竹林の中に立つ30代の日本人女性戦士」</li>
+      </ul>
+
+      <p>含めるべき情報：身体的特徴、年齢・時代、服装、表情、行動、環境との関係。</p>
+
+      <h3>2. スタイル — どのように見えるべきか？</h3>
+
+      <p>スタイルはAIにどの芸術的・写真的表現で作業するかを指示します。指定しなければ、AIは自分で選択します — 通常はフォトリアルとコンセプトアートの中間です。</p>
+
+      <p>よく使われるスタイルカテゴリ：</p>
+      <ul>
+        <li><strong>写真的：</strong> <code>cinematic photography</code>、<code>editorial portrait</code>、<code>documentary photography</code>、<code>macro photography</code></li>
+        <li><strong>絵画的：</strong> <code>oil painting</code>、<code>watercolor illustration</code>、<code>impressionist painting</code>、<code>digital painting</code></li>
+        <li><strong>イラスト：</strong> <code>concept art</code>、<code>anime style</code>、<code>comic book illustration</code>、<code>children's book illustration</code></li>
+        <li><strong>3D/レンダー：</strong> <code>octane render</code>、<code>unreal engine 5</code>、<code>CGI animation</code></li>
+      </ul>
+
+      <p>特定のアーティスト名を参照したり（倫理的に使用）、「1980年代のSF表紙アート」や「アール・ヌーヴォーポスター」のような認知度の高いビジュアルジャンルを記述することもできます。</p>
+
+      <h3>3. ライティング — 光は何をしているか？</h3>
+
+      <p>ライティングは雰囲気とクオリティにおいて間違いなく最も強力な要素です。AI画像生成ツールは具体的なライティングの記述を驚くほどうまく解釈します。</p>
+
+      <p>重要なライティング記述語：</p>
+      <ul>
+        <li><strong>方向：</strong>正面光、側面光、逆光、上からの光、下からの光</li>
+        <li><strong>質感：</strong>柔らかい拡散光、硬い直接光、ほのかな光</li>
+        <li><strong>時間帯：</strong>golden hour、blue hour、正午、曇り、夜</li>
+        <li><strong>種類：</strong>自然太陽光、スタジオ照明、ネオン、ろうそく、生物発光、炎</li>
+        <li><strong>名前付きライティングセットアップ：</strong>Rembrandt lighting、butterfly lighting、chiaroscuro</li>
+      </ul>
+
+      <p>優れた被写体でもライティングが悪ければ凡庸に見えます。良いライティングはすべてを引き上げます。</p>
+
+      <h3>4. 構図 — どのようにフレーミングされているか？</h3>
+
+      <p>構図はAIにフレーム内の要素の配置方法を指示します。ガイダンスがなければ、AIは訓練データで最も一般的だったものをデフォルトにします — 通常はセンター寄りのニュートラルなフレーミングです。</p>
+
+      <p>ショットタイプ（映画/写真から借用）：</p>
+      <ul>
+        <li><code>extreme close-up</code> — フレーム全体をディテールで埋める（目、テクスチャ、口）</li>
+        <li><code>close-up portrait</code> — 顔と肩</li>
+        <li><code>medium shot</code> — 腰まで</li>
+        <li><code>full body shot</code> — 頭からつま先まで</li>
+        <li><code>wide shot</code> — 被写体を環境全体の中で</li>
+        <li><code>establishing shot</code> — 広い環境、被写体は小さく</li>
+        <li><code>aerial view</code> / <code>bird's eye view</code> — 上からの眺め</li>
+        <li><code>worm's eye view</code> — 下から上を見る</li>
+        <li><code>Dutch angle</code> — カメラを傾けて緊張感を生む</li>
+      </ul>
+
+      <p>構図テクニック：</p>
+      <ul>
+        <li><code>rule of thirds</code> — 被写体を中心からずらす</li>
+        <li><code>centered composition</code> — 対称的、フォーマル</li>
+        <li><code>leading lines</code> — 環境要素が視線を導く</li>
+        <li><code>bokeh / shallow depth of field</code> — 背景のぼけ</li>
+        <li><code>deep focus</code> — すべてシャープ</li>
+      </ul>
+
+      <h3>5. 雰囲気とアトモスフィア — どう感じさせるか？</h3>
+
+      <p>雰囲気は感情的なトーンを伝えます。色の選択、ライティング処理、画像全体の印象に影響を与え、細部を一つ一つ指定しなくても効果を発揮します。</p>
+
+      <p>便利なムード記述語：</p>
+      <ul>
+        <li>ミステリアス、不吉、不穏、不安</li>
+        <li>希望に満ちた、暖かい、ノスタルジック、穏やか</li>
+        <li>壮大、壮麗、圧倒的、荘厳</li>
+        <li>メランコリック、静寂、孤独、瞑想的</li>
+        <li>緊張した、切迫した、混沌とした、エネルギッシュ</li>
+        <li>魔法的、超自然的、夢幻的、シュール</li>
+      </ul>
+
+      <h2 id="anatomie-du-prompt">プロのプロンプトの解剖学</h2>
+
+      <p>プロのプロンプトを分解し、各コンポーネントに5つの柱のどれに対応するかラベルを付けてみましょう。</p>
+
+      <div class="prompt-anatomy-box">
+        <p>
+          <span class="anatomy-tag subject">ancient sea dragon emerging from stormy ocean waves at night</span>,
+          <span class="anatomy-tag style">dark fantasy concept art, digital painting</span>,
+          <span class="anatomy-tag lighting">dramatic rim lighting, bioluminescent glow from below</span>,
+          <span class="anatomy-tag color">deep navy blue and teal with warm orange accents</span>,
+          <span class="anatomy-tag composition">cinematic wide shot, low angle perspective</span>,
+          <span class="anatomy-tag mood">mysterious, awe-inspiring, powerful</span>
+          <span class="anatomy-tag params">--ar 21:9 --v 6.1 --style raw --q 2</span>
+        </p>
+        <div class="anatomy-legend">
+          <span class="anatomy-tag subject">被写体</span>
+          <span class="anatomy-tag style">スタイル</span>
+          <span class="anatomy-tag lighting">ライティング</span>
+          <span class="anatomy-tag color">カラー</span>
+          <span class="anatomy-tag composition">構図</span>
+          <span class="anatomy-tag mood">雰囲気</span>
+          <span class="anatomy-tag params">パラメータ</span>
+        </div>
+      </div>
+
+      <p>各要素には意味があります。「bioluminescent glow from below」を削除するとドラゴンの超自然的な品質が失われます。「low angle perspective」を削除するとスケール感が崩壊します。プロのプロンプトが長いのは長さのためではなく、各用語がAIに活用できる情報を追加しているからです。</p>
+
+      <h2 id="tokens-de-qualite">クオリティトークン：信頼できるブースター</h2>
+
+      <p>多くのAI画像生成ツールは、最高品質の出力を生み出すようモデルに指示するクオリティシグナル用語に反応します。これらはStable Diffusionで特に重要です：</p>
+
+      <ul>
+        <li><code>masterpiece</code>、<code>best quality</code>、<code>highly detailed</code></li>
+        <li><code>8k resolution</code>、<code>ultra-high definition</code></li>
+        <li><code>sharp focus</code>、<code>professional</code></li>
+        <li><code>award-winning photography</code></li>
+      </ul>
+
+      <p>MidjourneyとFluxでは、これらのモデルがデフォルトで高品質を目指すため、クオリティトークンは必要性が低くなります。しかしSDでは顕著な違いをもたらします。</p>
+
+      <h2 id="prompts-negatifs">ネガティブプロンプト：望まないものを指定する</h2>
+
+      <p>Stable Diffusionには、除外したい要素をリストする独立した<strong>ネガティブプロンプト</strong>フィールドがあります。SDの最も強力な機能の一つです。</p>
+
+      <p>基本的な標準ネガティブプロンプト：</p>
+      <p><code>blurry, low quality, bad anatomy, deformed fingers, watermark, text, logo, cropped, out of frame, duplicate, ugly, amateur, jpeg artifacts</code></p>
+
+      <p>使用するチェックポイントに応じたモデル固有のネガティブを追加してください。ポートレート生成では常に以下を含めましょう：<code>bad hands, missing fingers, extra fingers, fused fingers, mutated hands</code></p>
+
+      <p>Midjourneyではプロンプト末尾の<code>--no [用語]</code>でこれを処理しますが、SDの実装ほど強力ではありません。</p>
+
+      <h2 id="aide-memoire-vocabulaire">プロンプトボキャブラリー早見表</h2>
+
+      <p>カテゴリ別の最も信頼できるプロンプト用語のリファレンステーブル。ブックマークして新しいプロンプト構築時の出発点にしてください。</p>
+
+      <div class="table-wrap">
+      <table class="comparison-table vocab-table">
+        <thead>
+          <tr><th>カテゴリ</th><th>便利な用語</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>ライティング</td><td>golden hour, blue hour, rim light, backlit, Rembrandt lighting, volumetric light, neon light, candlelight, overcast, harsh shadow, soft diffused light, chiaroscuro, bioluminescent</td></tr>
+          <tr><td>スタイル</td><td>cinematic, editorial, concept art, oil painting, watercolor, anime style, photorealistic, hyperrealistic, minimalist, surrealist, impressionist, Art Nouveau, dark fantasy, retrofuturism</td></tr>
+          <tr><td>雰囲気</td><td>ethereal, dramatic, serene, ominous, nostalgic, whimsical, melancholic, epic, cozy, unsettling, mysterious, triumphant, desolate, magical</td></tr>
+          <tr><td>構図</td><td>close-up portrait, wide shot, bird's eye view, Dutch angle, rule of thirds, centered symmetrical, leading lines, negative space, shallow depth of field, deep focus, extreme close-up, establishing shot</td></tr>
+          <tr><td>カラー</td><td>warm tones, cool tones, muted palette, vibrant saturated, monochromatic, complementary colors, pastel, earth tones, jewel tones, high contrast, desaturated</td></tr>
+          <tr><td>クオリティ（SD）</td><td>masterpiece, best quality, highly detailed, 8k resolution, ultra HD, sharp focus, professional, award-winning photography</td></tr>
+          <tr><td>カメラ/レンズ</td><td>85mm f/1.4, 24mm wide angle, macro lens, Canon EOS R5, Hasselblad, film grain, bokeh, tilt-shift, anamorphic lens flare, shallow depth of field</td></tr>
+        </tbody>
+      </table>
+      </div>
+
+      <h2 id="evolution-du-prompt">プロンプトの進化を見る：基本からプロへ</h2>
+
+      <p>プロンプトエンジニアリングを理解する最も効果的な方法は、一つのプロンプトが曖昧から精密へと進化する過程を見ることです。各ステップで情報のレイヤーが追加されます。</p>
+
+      <div class="progression-stage">
+        <div class="stage-connector"><div class="stage-bubble">1</div></div>
+        <div class="stage-content">
+          <p class="stage-label">ステージ1 — 曖昧すぎる</p>
+          <pre class="prompt-block">a cat in a garden</pre>
+          <picture><source srcset="/images/image-to-prompt-basic-cat-garden.webp" type="image/webp"><img src="/images/image-to-prompt-basic-cat-garden.jpeg" alt="ステージ1結果：庭にいる無難な猫 — 曖昧なAIプロンプトは平均的な結果を生む" width="800" height="600" loading="lazy"></picture>
+          <p class="stage-note">無難。AIは「庭の猫」の統計的平均を選択します — おそらく飼い猫、おそらく昼間、おそらく緑の芝生。何も際立っていません。</p>
+        </div>
+      </div>
+
+      <div class="progression-stage">
+        <div class="stage-connector"><div class="stage-bubble">2</div></div>
+        <div class="stage-content">
+          <p class="stage-label">ステージ2 — 被写体と設定を具体化</p>
+          <pre class="prompt-block">a fluffy orange tabby cat sitting among wildflowers in an English cottage garden</pre>
+          <picture><source srcset="/images/describe-a-picture-cat-watercolor-style.webp" type="image/webp"><img src="/images/describe-a-picture-cat-watercolor-style.jpeg" alt="ステージ2結果：ワイルドフラワーの中のイングリッシュコテージガーデンでオレンジのタビー猫" width="800" height="600" loading="lazy"></picture>
+          <p class="stage-note">改善。猫種（オレンジタビー）、毛並み（ふわふわ）、動作（座っている）、具体的な環境（ワイルドフラワー、イングリッシュコテージガーデン）が指定されました。しかし芸術的方向性はまだありません。</p>
+        </div>
+      </div>
+
+      <div class="progression-stage">
+        <div class="stage-connector"><div class="stage-bubble">3</div></div>
+        <div class="stage-content">
+          <p class="stage-label">ステージ3 — スタイルを追加</p>
+          <pre class="prompt-block">a fluffy orange tabby cat sitting among wildflowers in an English cottage garden, watercolor illustration style, soft edges, delicate linework</pre>
+          <picture><source srcset="/images/ai-prompt-generator-cat-golden-hour.webp" type="image/webp"><img src="/images/ai-prompt-generator-cat-golden-hour.jpeg" alt="ステージ3結果：コテージガーデンのタビー猫の水彩イラスト" width="800" height="600" loading="lazy"></picture>
+          <p class="stage-note">芸術的方向性が付きました。スタイルワードはAIに視覚的表現の方向を与えます。被写体は同じですが、テクニックによって変容しています。</p>
+        </div>
+      </div>
+
+      <div class="progression-stage">
+        <div class="stage-connector"><div class="stage-bubble">4</div></div>
+        <div class="stage-content">
+          <p class="stage-label">ステージ4 — ライティングを追加</p>
+          <pre class="prompt-block">a fluffy orange tabby cat sitting among wildflowers in an English cottage garden, watercolor illustration style, soft edges, delicate linework, golden hour sunlight, dappled light filtering through trees, warm amber tones</pre>
+          <picture><source srcset="/images/image-prompt-cat-detailed-cottage-garden.webp" type="image/webp"><img src="/images/image-prompt-cat-detailed-cottage-garden.jpeg" alt="ステージ4結果：ゴールデンアワーの木漏れ日と暖かいアンバートーンの水彩猫" width="800" height="600" loading="lazy"></picture>
+          <p class="stage-note">ライティングが雰囲気を完全に変えます。同じシーンが暖かく、ノスタルジックで、牧歌的に見えるようになりました。ライティングはプロンプトに加えられる最もインパクトの大きい要素です。</p>
+        </div>
+      </div>
+
+      <div class="progression-stage">
+        <div class="stage-connector"><div class="stage-bubble">5</div></div>
+        <div class="stage-content">
+          <p class="stage-label">ステージ5 — 構図とパラメータを追加</p>
+          <pre class="prompt-block">a fluffy orange tabby cat sitting among wildflowers in an English cottage garden, watercolor illustration style, soft edges, delicate linework, golden hour sunlight, dappled light filtering through trees, warm amber tones, shallow depth of field, rule of thirds composition --ar 3:2 --v 6.1</pre>
+          <picture><source srcset="/images/ai-image-to-prompt-cat-final-result.webp" type="image/webp"><img src="/images/ai-image-to-prompt-cat-final-result.jpeg" alt="ステージ5結果：三分割法構図と浅い被写界深度のプロフェッショナル猫水彩ポートレート" width="800" height="600" loading="lazy"></picture>
+          <p class="stage-note">プロフェッショナルな仕上がり。構図の用語がAIのフレーミングを誘導します。アスペクト比は用途に合わせています。ステージ1と同じ被写体が、5つの具体性のレイヤーによって変容しました。</p>
+        </div>
+      </div>
+
+      <h2 id="apprendre-rapidement">プロンプトエンジニアリングを素早く学ぶ方法</h2>
+
+      <h3>既存のプロンプトを研究する</h3>
+      <p>PromptHero、Civitai、Lexicaなどのサイトでは、AIアート作品とそれを生成したプロンプトを閲覧できます。どの記述語がどのような結果を生むかを研究しましょう。好きな画像の背後にあるプロンプトのパターンを探してください。</p>
+
+      <h3>画像からプロンプトへの変換を活用する</h3>
+      <p>最も効果的な学習方法の一つは、気に入った画像を分析することです。<a href="/">ImageToPromptに任意の画像をアップロード</a>し、生成されたプロンプトを注意深く読みましょう。視覚的な品質がプロンプト言語にどのように変換されるかが分かります。10〜20枚の画像でこれを行えば、語彙が素早く身につきます。</p>
+
+      <h3>一度に一つの要素だけ変更する</h3>
+      <p>実験するときは、生成間で一つの要素だけを変更してください。5つの要素を変えて結果が改善しても、どの変更が効果的だったか分かりません。1つだけ変えれば、その効果を正確に学べます。</p>
+
+      <h3>個人用プロンプトライブラリを構築する</h3>
+      <p>うまく機能するフレーズや組み合わせのドキュメントを保持しましょう。「golden hour backlit portrait」はプロンプトの30%で使用するかもしれません。信頼できるフレーズのライブラリがあれば、ワークフローが大幅に加速します。</p>
+
+      <h2 id="chemin-le-plus-rapide">良い結果への最短ルート</h2>
+
+      <p>初心者で素早く良い結果が欲しい場合のショートカット：</p>
+
+      <ol>
+        <li>作りたいスタイルを代表する画像を3〜5枚見つける</li>
+        <li>それぞれを<a href="/">ImageToPrompt</a>にアップロードしてプロンプトを抽出する</li>
+        <li>それらのプロンプトの共通要素を特定する — それがスタイルのアンカーです</li>
+        <li>これらのアンカーを基盤として独自のプロンプトを構築する</li>
+        <li>生成、評価、一要素ずつ調整を繰り返す</li>
+      </ol>
+
+      <p>このアプローチは、気に入った画像から実際に機能するボキャブラリーを得ることで、何ヶ月もの試行錯誤をショートカットします。</p>
+
+      <h2 id="exercices-pratiques">今すぐ実践できる3つのエクササイズ</h2>
+
+      <p>プロンプトエンジニアリングについて読むだけでは不十分です。これらのエクササイズで本物の直感を素早く養えます。</p>
+
+      <div class="exercise-block">
+        <h3>エクササイズ1：分析と比較</h3>
+        <p>お気に入りの写真を<a href="/">ImageToPrompt</a>にアップロード。生成されたプロンプトを注意深く読む。次にそれを閉じて、AI出力を見ずに同じ画像用の自分のプロンプトをゼロから書く。両者を比較 — あなたは何を見落としましたか？AIは何を見落としましたか？双方のギャップがどんなチュートリアルよりも多くを教えてくれます。</p>
+      </div>
+
+      <div class="exercise-block">
+        <h3>エクササイズ2：一語ゲーム</h3>
+        <p>うまく機能するプロンプトを取り、正確に一語だけ変更。両バージョンを生成して比較。5つの異なる単語で5回これを繰り返す。どの記述語が最も大きな視覚的インパクトを持つかがすぐに分かります — そして驚くでしょう。被写体の記述ではなく、ライティング用語やムードの一語が最大の違いを生むことが多いのです。</p>
+      </div>
+
+      <div class="exercise-block">
+        <h3>エクササイズ3：スタイル転写</h3>
+        <p>ImageToPromptを使って風景写真からプロンプトを生成。そのプロンプトのスタイル、ライティング、カラー、ムードの言葉をすべて残したまま、被写体だけをまったく異なるもの（人物、車両、建物）に差し替える。視覚言語がどう転写されるか確認。これがプロのAIアーティストが多様な被写体で一貫したスタイルを構築する方法です。</p>
+      </div>
+
+      <div class="cta-box">
+        <h3>実際の画像を分析して学び始めましょう</h3>
+        <p>ImageToPromptに任意の画像をアップロードすると、視覚的品質がプロンプト言語にどう変換されるかがすぐに分かります。プロンプトエンジニアリングを学ぶ最速の方法です。</p>
+        <a href="/?lang=ja" class="cta-btn">無料AIプロンプトジェネレーターを試す →</a>
+      </div>
+
+    </div>
+
+    <div class="author-bio">
+      <img src="/favicon.svg" alt="ImageToPrompt Team" width="44" height="44">
+      <div>
+        <strong>ImageToPrompt Team</strong>
+        <p>私たちはクリエイターの皆さんがAI画像生成をマスターできるよう支援する専門チームです。画像からプロンプトへの変換ツールやAIプロンプトエンジニアリングガイドを通じて、世界中のアーティストの創作活動をサポートしています。</p>
+        <a href="https://x.com/ImageToPrompt" target="_blank" rel="noopener" class="author-follow">Xでフォロー</a>
+      </div>
+    </div>
+
+    <div class="related-posts">
+      <h2>関連ガイド</h2>
+      <div class="related-grid">
+        <a href="/ja/blog/gazou-kara-ai-prompt-henkan/" class="related-card">
+          <p class="tag">ガイド</p>
+          <h3>画像をAIプロンプトに変換する方法</h3>
+        </a>
+        <a href="/ja/blog/midjourney-prompt-gaido-2026/" class="related-card">
+          <p class="tag">Midjourney</p>
+          <h3>Midjourneyプロンプト完全ガイド 2026</h3>
+        </a>
+        <a href="/ja/blog/stable-diffusion-prompt-gaido/" class="related-card">
+          <p class="tag">比較</p>
+          <h3>SD vs Midjourney vs DALL·E 3 vs Flux</h3>
+        </a>
+        <a href="/ja/blog/ai-prompt-kakikata-nyumon/" class="related-card">
+          <p class="tag">初心者チュートリアル</p>
+          <h3>初心者のためのAIプロンプトの書き方</h3>
+        </a>
+        <a href="/ja/blog/prompt-engineering-machigai/" class="related-card">
+          <p class="tag">アドバイス</p>
+          <h3>避けるべきプロンプトエンジニアリング15の間違い</h3>
+        </a>
+        <a href="/ja/blog/ai-art-style-yougo/" class="related-card">
+          <p class="tag">リファレンス</p>
+          <h3>AIアートスタイル用語集50</h3>
+        </a>
+      </div>
+    </div>
+
+  </div>
+
+  <footer class="footer-4col">
+    <div class="f4-inner">
+      <div class="f4-brand">
+        <img src="/favicon.svg" alt="ImageToPrompt" width="28" height="28">
+        <span class="f4-brand-name">ImageTo<span class="accent">Prompt</span></span>
+        <span class="f4-brand-sub">&mdash; Free AI Prompt Generator</span>
+      </div>
+      <div class="f4-grid">
+        <div class="f4-section">
+          <h4 class="f4-heading">Image Prompt Tools</h4>
+          <a href="/">Image to Prompt</a>
+          <a href="/text-to-prompt/">Text to Prompt</a>
+      <a href="/describe-image/">Describe Image</a>
+          <a href="/midjourney-prompt-generator/">Midjourney</a>
+          <a href="/stable-diffusion-prompt-generator/">Stable Diffusion</a>
+          <a href="/flux-prompt-generator/">Flux</a>
+          <a href="/dall-e-prompt-generator/">DALL-E 3</a>
+          <a href="/adobe-firefly-prompt-generator/">Adobe Firefly</a>
+          <a href="/leonardo-ai-prompt-generator/">Leonardo AI</a>
+          <a href="/ideogram-prompt-generator/">Ideogram</a>
+        </div>
+        <div class="f4-section">
+          <h4 class="f4-heading">Video Prompt Tools</h4>
+          <a href="/image-to-video-prompt/">Image to Video Prompt</a>
+          <a href="/text-to-video-prompt/">Text to Video Prompt</a>
+          <a href="/veo-prompt-generator/">Veo / Flow Studio</a>
+          <a href="/kling-prompt-generator/">Kling AI</a>
+          <a href="/runway-prompt-generator/">Runway Gen-3</a>
+          <a href="/pika-prompt-generator/">Pika</a>
+          <a href="/luma-prompt-generator/">Luma Dream Machine</a>
+          <a href="/sora-prompt-generator/">Sora</a>
+          <a href="/minimax-prompt-generator/">Minimax</a>
+          <a href="/stable-video-prompt-generator/">Stable Video</a>
+        </div>
+        <div class="f4-section">
+          <h4 class="f4-heading">Resources</h4>
+          <a href="/ja/blog/">ブログ</a>
+          <a href="/ja/about/">概要</a>
+          <a href="/ja/pricing/">料金</a>
+          <a href="/contact/">Contact</a>
+          <a href="/privacy-policy/">Privacy Policy</a>
+          <a href="/terms-of-service/">Terms of Service</a>
+        </div>
+        <div class="f4-section">
+          <h4 class="f4-heading">Languages</h4>
+          <a href="/">English</a>
+          <a href="/fr/">Fran&#231;ais</a>
+          <a href="/ar/">&#1575;&#1604;&#1593;&#1585;&#1576;&#1610;&#1577;</a>
+          <a href="/es/">Espa&#241;ol</a>
+          <a href="/ko/">&#54620;&#44397;&#50612;</a>
+          <a href="/ja/">&#26085;&#26412;&#35486;</a>
+          <a href="/ru/">&#1056;&#1091;&#1089;&#1089;&#1082;&#1080;&#1081;</a>
+        </div>
+      </div>
+      <div class="f4-bottom">
+        <p>&#169; 2026 ImageToPrompt.dev &#8212; Free AI Prompt Generator</p>
+        <p>Your images are never stored. All analysis is ephemeral and private.</p>
+      </div>
+    </div>
+  </footer>
+
+<script src="/newsletter-inject.js" defer></script>
+<script src="/nav.js" defer></script>
+  <script>
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', function() {
+    navigator.serviceWorker.register('/sw.js')
+      .catch(function(err) { console.warn('SW registration failed:', err); });
+  });
+}
+</script>
+</body>
+</html>

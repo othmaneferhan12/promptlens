@@ -1,0 +1,533 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <script src="/theme-toggle.js"></script>
+  <meta charset="UTF-8" />
+  <link rel="dns-prefetch" href="https://www.googletagmanager.com">
+<link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="max-image-preview:large, index, follow">
+  <meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="ImageToPrompt">
+  <title>Flux AIプロンプト完全ガイド 2026：パラメータ、例文、コツ</title>
+  <meta name="description" content="2026年版Flux AIプロンプトをマスターしましょう。写真用語、カメラスペック、ライティング、コピーして使える例文を解説します。" />
+  <link rel="canonical" href="https://www.imagetoprompt.dev/ja/blog/flux-ai-prompt-gaido/" />
+  <link rel="alternate" hreflang="ja" href="https://www.imagetoprompt.dev/ja/blog/flux-ai-prompt-gaido/" />
+  <link rel="alternate" hreflang="en" href="https://www.imagetoprompt.dev/blog/flux-ai-prompt-guide/" />
+  <link rel="alternate" hreflang="fr" href="https://www.imagetoprompt.dev/fr/blog/guide-prompts-flux-ai/" />
+  <link rel="alternate" hreflang="ar" href="https://www.imagetoprompt.dev/ar/blog/dalil-prompts-flux-ai/" />
+  <link rel="alternate" hreflang="es" href="https://www.imagetoprompt.dev/es/blog/guia-prompts-flux-ai/" />
+  <link rel="alternate" hreflang="x-default" href="https://www.imagetoprompt.dev/blog/flux-ai-prompt-guide/" />
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <meta property="og:title" content="Flux AIプロンプト完全ガイド 2026：パラメータ、例文、コツ" />
+  <meta property="og:description" content="2026年版Flux AIプロンプトをマスターしましょう。写真用語、カメラスペック、ライティング、コピーして使える例文を解説します。" />
+  <meta property="og:url" content="https://www.imagetoprompt.dev/ja/blog/flux-ai-prompt-gaido/" />
+  <meta property="og:type" content="article" />
+  <meta property="og:image" content="https://www.imagetoprompt.dev/og-image.png" />
+  <meta property="og:site_name" content="ImageToPrompt" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Flux AIプロンプト完全ガイド 2026" />
+  <meta name="twitter:description" content="Flux AIプロンプトをマスター。写真用語、カメラスペック、ライティング、例文を解説。" />
+  <meta name="twitter:image" content="https://www.imagetoprompt.dev/og-image.png" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="48x48" href="/favicon-48.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+  <link rel="manifest" href="/site.webmanifest" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="/fonts/space-grotesk-700.woff2" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="/fonts/inter-400.woff2" />
+  <link rel="stylesheet" href="/theme.css">
+  <link rel="preload" href="/blog.css" as="style" onload="this.onload=null;this.rel='stylesheet'"><noscript><link rel="stylesheet" href="/blog.css"></noscript>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Flux AI\u30d7\u30ed\u30f3\u30d7\u30c8\u5b8c\u5168\u30ac\u30a4\u30c9 2026\uff1a\u30d1\u30e9\u30e1\u30fc\u30bf\u3001\u4f8b\u6587\u3001\u30b3\u30c4",
+    "description": "2026\u5e74\u7248Flux AI\u30d7\u30ed\u30f3\u30d7\u30c8\u3092\u30de\u30b9\u30bf\u30fc\u3057\u307e\u3057\u3087\u3046\u3002\u5199\u771f\u7528\u8a9e\u3001\u30ab\u30e1\u30e9\u30b9\u30da\u30c3\u30af\u3001\u30e9\u30a4\u30c6\u30a3\u30f3\u30b0\u3001\u30b3\u30d4\u30fc\u3057\u3066\u4f7f\u3048\u308b\u4f8b\u6587\u3092\u89e3\u8aac\u3057\u307e\u3059\u3002",
+    "image": "https://www.imagetoprompt.dev/og-image.png",
+    "datePublished": "2026-03-08",
+    "dateModified": "2026-03-24",
+    "inLanguage": "ja",
+    "author": {
+      "@type": "Person",
+      "name": "ImageToPrompt Team",
+      "url": "https://www.imagetoprompt.dev/"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "ImageToPrompt",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://www.imagetoprompt.dev/favicon.svg"
+      }
+    },
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https://www.imagetoprompt.dev/ja/blog/flux-ai-prompt-gaido/"
+    }
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Flux AI\u306e\u30d7\u30ed\u30f3\u30d7\u30c8\u3092\u66f8\u304f\u6700\u826f\u306e\u65b9\u6cd5\u306f\uff1f",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Flux AI\u306f\u30ab\u30f3\u30de\u533a\u5207\u308a\u306e\u30bf\u30b0\u3088\u308a\u3082\u3001\u8a73\u7d30\u306a\u81ea\u7136\u8a00\u8a9e\u306b\u6700\u3082\u3088\u304f\u53cd\u5fdc\u3057\u307e\u3059\u3002\u88ab\u5199\u4f53\u3001\u30d5\u30ec\u30fc\u30df\u30f3\u30b0\u3001\u30e9\u30a4\u30c6\u30a3\u30f3\u30b0\u3001\u30ec\u30f3\u30ba\uff08\u4f8b\uff1aCanon 85mm f/1.4\uff09\u3001\u96f0\u56f2\u6c17\u3092\u542b\u3080\u6bb5\u843d\u3068\u3057\u3066\u30b7\u30fc\u30f3\u3092\u8a18\u8ff0\u3057\u3066\u304f\u3060\u3055\u3044\u3002"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Flux\u306f\u30cd\u30ac\u30c6\u30a3\u30d6\u30d7\u30ed\u30f3\u30d7\u30c8\u306b\u5bfe\u5fdc\u3057\u3066\u3044\u307e\u3059\u304b\uff1f",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "\u3044\u3044\u3048\u3001Flux\u306fStable Diffusion\u3068\u306f\u7570\u306a\u308a\u3001\u30cd\u30ac\u30c6\u30a3\u30d6\u30d7\u30ed\u30f3\u30d7\u30c8\u306b\u306f\u5bfe\u5fdc\u3057\u3066\u3044\u307e\u305b\u3093\u3002\u4e0d\u8981\u306a\u8981\u7d20\u3092\u907f\u3051\u308b\u306b\u306f\u3001\u898b\u305f\u3044\u3082\u306e\u3092\u6b63\u78ba\u306b\u8a18\u8ff0\u3059\u308b\u5f62\u3067\u3001\u30dd\u30b8\u30c6\u30a3\u30d6\u304b\u3064\u5177\u4f53\u7684\u306a\u30d7\u30ed\u30f3\u30d7\u30c8\u3092\u4f5c\u6210\u3057\u3066\u304f\u3060\u3055\u3044\u3002"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Flux Dev\u3068Flux Pro\u306e\u9055\u3044\u306f\u4f55\u3067\u3059\u304b\uff1f",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Flux Dev\u306f\u30aa\u30fc\u30d7\u30f3\u30bd\u30fc\u30b9\u306e\u7121\u6599\u30e2\u30c7\u30eb\u3067\u3001\u54c1\u8cea\u306f\u3084\u3084\u52a3\u308a\u307e\u3059\u3002Flux Pro\u306f\u5546\u7528\u30e2\u30c7\u30eb\u3067\u3001\u4e00\u8cab\u6027\u3001\u6307\u793a\u306e\u8ffd\u5f93\u6027\u3001\u89e3\u50cf\u5ea6\u304c\u512a\u308c\u3066\u3044\u307e\u3059\u3002\u30d7\u30ed\u30f3\u30d7\u30c8\u306e\u30c6\u30af\u30cb\u30c3\u30af\u306f\u4e21\u65b9\u3068\u3082\u540c\u3058\u3067\u3059\u3002"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Flux\u306e\u30d7\u30ed\u30f3\u30d7\u30c8\u3067\u30ab\u30e1\u30e9\u30b9\u30da\u30c3\u30af\u3092\u6307\u5b9a\u3059\u308b\u3068\u672c\u5f53\u306b\u5909\u308f\u308a\u307e\u3059\u304b\uff1f",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "\u306f\u3044\u3001Flux\u306f\u30ab\u30e1\u30e9\u306e\u6280\u8853\u7684\u306a\u30b9\u30da\u30c3\u30af\u3092\u975e\u5e38\u306b\u3088\u304f\u7406\u89e3\u3057\u307e\u3059\u3002Canon 85mm f/1.4\u306e\u3088\u3046\u306a\u30ec\u30f3\u30ba\u3092\u6307\u5b9a\u3059\u308b\u3068\u30ea\u30a2\u30eb\u306a\u30dc\u30b1\u304c\u751f\u6210\u3055\u308c\u300124mm f/8\u3067\u306f\u88ab\u5199\u754c\u6df1\u5ea6\u304c\u6df1\u304f\u30b7\u30e3\u30fc\u30d7\u306a\u753b\u50cf\u304c\u5f97\u3089\u308c\u307e\u3059\u3002"
+        }
+      }
+    ]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "\u30db\u30fc\u30e0",
+        "item": "https://www.imagetoprompt.dev/ja/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "\u30d6\u30ed\u30b0",
+        "item": "https://www.imagetoprompt.dev/ja/blog/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "Flux AI\u30d7\u30ed\u30f3\u30d7\u30c8\u5b8c\u5168\u30ac\u30a4\u30c9 2026"
+      }
+    ]
+  }
+  </script>
+    <!-- Google AdSense -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4499206373485728" crossorigin="anonymous"></script>
+    <!-- Web Push Notifications -->
+<script src="https://cdn.onesignal.com/sdks/web/v16/OneSignalSDK.page.js" defer></script>
+<script>
+  window.OneSignalDeferred = window.OneSignalDeferred || [];
+  OneSignalDeferred.push(async function(OneSignal) {
+    await OneSignal.init({
+      appId: "REPLACE_WITH_ONESIGNAL_APP_ID",
+      notifyButton: { enable: false }
+    });
+  });
+</script>
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="inner">
+      <a href="/ja/" class="site-logo"><img src="/favicon.svg" alt="ImageToPrompt" width="48" height="48"><div class="site-logo-text">ImageTo<span class="accent">Prompt</span><span class="site-logo-sub">無料AIプロンプトジェネレーター</span></div></a>
+      <nav class="site-nav" aria-label="メインナビゲーション">
+        <div class="nav-dropdown">
+          <button class="nav-dropdown-trigger" aria-haspopup="true" aria-expanded="false">Tools <span class="nav-chevron" aria-hidden="true">&#9660;</span></button>
+          <div class="nav-dropdown-menu" role="menu">
+            <div class="nav-mega-grid">
+              <div class="nav-mega-col">
+                <div class="nav-mega-heading">&#128444; IMAGE TOOLS</div>
+                <a href="/" role="menuitem" class="nav-mega-tool">Image to Prompt <span class="nav-mega-arrow">&#8594;</span></a>
+                <a href="/text-to-prompt/" role="menuitem" class="nav-mega-tool">Text to Prompt <span class="nav-mega-arrow">&#8594;</span></a>
+                <a href="/describe-image/" role="menuitem" class="nav-mega-tool">Describe Image <span class="nav-new-badge">NEW</span> <span class="nav-mega-arrow">&#8594;</span></a>
+                <div class="nav-mega-models-label">Models</div>
+                <div class="nav-mega-models"><a href="/midjourney-prompt-generator/">Midjourney</a><span class="nav-dot">&#xB7;</span><a href="/stable-diffusion-prompt-generator/">SD</a></div>
+                <div class="nav-mega-models"><a href="/flux-prompt-generator/">Flux</a><span class="nav-dot">&#xB7;</span><a href="/dall-e-prompt-generator/">DALL&#xB7;E&#xA0;3</a></div>
+                <div class="nav-mega-models"><a href="/adobe-firefly-prompt-generator/">Firefly</a><span class="nav-dot">&#xB7;</span><a href="/leonardo-ai-prompt-generator/">Leonardo</a></div>
+                <div class="nav-mega-models"><a href="/ideogram-prompt-generator/">Ideogram</a></div>
+              </div>
+              <div class="nav-mega-divider" aria-hidden="true"></div>
+              <div class="nav-mega-col">
+                <div class="nav-mega-heading">&#127909; VIDEO TOOLS</div>
+                <a href="/?tab=image-to-video" role="menuitem" class="nav-mega-tool">Image to Video <span class="nav-mega-arrow">&#8594;</span></a>
+                <a href="/?tab=text-to-video" role="menuitem" class="nav-mega-tool">Text to Video <span class="nav-mega-arrow">&#8594;</span></a>
+                <div class="nav-mega-models-label">Models</div>
+                <div class="nav-mega-models"><a href="/veo-prompt-generator/">Veo</a><span class="nav-dot">&#xB7;</span><a href="/kling-prompt-generator/">Kling</a></div>
+                <div class="nav-mega-models"><a href="/runway-prompt-generator/">Runway</a><span class="nav-dot">&#xB7;</span><a href="/pika-prompt-generator/">Pika</a></div>
+                <div class="nav-mega-models"><a href="/luma-prompt-generator/">Luma</a><span class="nav-dot">&#xB7;</span><a href="/sora-prompt-generator/">Sora</a></div>
+                <div class="nav-mega-models"><a href="/minimax-prompt-generator/">Minimax</a><span class="nav-dot">&#xB7;</span><a href="/stable-video-prompt-generator/">Stable</a></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <a href="/ja/blog/">ブログ</a>
+        <a href="/ja/pricing/" class="nav-pill-pricing">料金</a>
+        <a href="/ja/about/" class="nav-pill-about">概要</a>
+        <a href="/ja/" class="nav-try-free">無料で試す &#8594;</a>
+        <button id="theme-toggle" onclick="toggleTheme()" aria-label="テーマ切替" title="テーマ切替">&#9728;&#xFE0F;</button>
+  </nav>
+    </div>
+  </header>
+
+  <nav class="breadcrumb" aria-label="パンくずリスト"><a href="/ja/">ホーム</a> <span aria-hidden="true">›</span> <a href="/ja/blog/">ブログ</a> <span aria-hidden="true">›</span> <span aria-current="page">Flux AIプロンプトガイド 2026</span></nav>
+
+  <div class="page-wrapper">
+
+    <header class="article-header">
+      <p class="article-tag">Flux AI</p>
+      <h1>Flux AIプロンプトガイド 2026：パラメータと例文</h1>
+      <div class="article-meta">
+        <span>2026年3月</span>
+        <span class="dot">&#183;</span>
+        <span>11分で読める</span>
+        <span class="dot">&#183;</span>
+        <span>Flux Dev &#183; Flux Pro &#183; Black Forest Labs</span>
+        <span class="dot">&#183;</span>
+        <span>2026年3月更新</span>
+      </div>
+    </header>
+
+    <div class="article-body">
+
+      <p>Black Forest LabsのFluxは、プロンプティングへの根本的に異なるアプローチでAI画像生成に革命をもたらしました。重み付きタグに依存するStable Diffusionや、短い記述語にパラメータを組み合わせるMidjourneyとは異なり、Fluxは他のどのモデルよりも詳細な自然言語を理解します。このガイドでは、その能力を最大限に活用する方法をお伝えします。</p>
+
+      <nav class="toc" aria-label="目次">
+        <details open>
+          <summary>このガイドの内容</summary>
+          <ol>
+            <li><a href="#flux-approach">Fluxの独自アプローチ</a></li>
+            <li><a href="#photo-language">写真用語の活用</a></li>
+            <li><a href="#camera-specs">カメラスペック</a></li>
+            <li><a href="#lighting">ライティングをマスターする</a></li>
+            <li><a href="#prompt-examples">Fluxプロンプト10選</a></li>
+            <li><a href="#mistakes">避けるべきミス</a></li>
+            <li><a href="#flux-vs-others">Flux vs. 他モデル</a></li>
+            <li><a href="#faq">よくある質問</a></li>
+          </ol>
+        </details>
+      </nav>
+
+      <div class="callout">
+        <p><strong>Fluxプロンプトを自動生成：</strong> <a href="/flux-prompt-generator/">Fluxプロンプトジェネレーター</a>なら、どんな画像やテキスト説明からでも最適化されたFluxプロンプトを作成できます。</p>
+      </div>
+
+      <h2 id="flux-approach">Fluxの独自アプローチ</h2>
+
+      <p>Fluxを他と差別化しているのは、自然言語の理解力です。Stable Diffusionが <code>(portrait:1.2), golden hour, (bokeh:0.8)</code> のような記述を要求するのに対し、Fluxは以下のような表現を好みます。</p>
+
+      <pre><code>A portrait photograph of a young woman taken during golden hour, with soft warm light illuminating her face from the side. Shot on a Canon EOS R5 with an 85mm f/1.4 lens, creating a beautiful creamy bokeh in the background.</code></pre>
+
+      <p>Fluxはプロンプトをキーワードリストではなく、記述的な段落として処理します。説明が正確で自然であるほど、結果は良くなります。これは、すでにビジュアル技術用語で考えるフォトグラファーやアートディレクターにとって大きなアドバンテージです。</p>
+
+      <h2 id="photo-language">写真用語の活用</h2>
+
+      <p>Fluxは本格的な写真用語を使用したときに最も優れた結果を出します。以下は最も効果的な用語です。</p>
+
+      <h3>ショットタイプ</h3>
+      <ul>
+        <li><code>extreme close-up</code> — ディテールの超クローズアップ（目、テクスチャ、オブジェクト）</li>
+        <li><code>close-up portrait</code> — タイトなポートレート、顔と肩</li>
+        <li><code>medium shot</code> — ミディアムショット、腰から頭部まで</li>
+        <li><code>full body shot</code> — 全身ショット</li>
+        <li><code>wide establishing shot</code> — 場面設定のワイドショット</li>
+        <li><code>aerial view</code> — 空撮/俯瞰ビュー</li>
+      </ul>
+
+      <h3>被写界深度</h3>
+      <ul>
+        <li><code>shallow depth of field, f/1.4</code> — 背景が大きくボケ、被写体がシャープ</li>
+        <li><code>moderate depth of field, f/4</code> — シャープからボケへの緩やかな遷移</li>
+        <li><code>deep depth of field, f/11</code> — 前景から背景まで全てシャープ</li>
+      </ul>
+
+      <h2 id="camera-specs">カメラスペック</h2>
+
+      <p>Fluxの独自の強みの一つは、カメラの技術的スペックの理解力です。特定のボディやレンズを指定すると、実際にレンダリングに影響します。</p>
+
+      <div class="table-wrap">
+      <table class="comparison-table">
+        <thead>
+          <tr>
+            <th>スペック</th>
+            <th>画像への効果</th>
+            <th>用途例</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><code>Canon 85mm f/1.4</code></td>
+            <td>クリーミーなボケ、魅力的なポートレート</td>
+            <td>ポートレート、ファッション</td>
+          </tr>
+          <tr>
+            <td><code>Sony 24mm f/1.4</code></td>
+            <td>広角、ダイナミックな遠近感</td>
+            <td>建築、風景</td>
+          </tr>
+          <tr>
+            <td><code>Nikon 50mm f/1.8</code></td>
+            <td>自然な遠近感、汎用性</td>
+            <td>ストリートフォト</td>
+          </tr>
+          <tr>
+            <td><code>Canon 200mm f/2.8</code></td>
+            <td>強い圧縮効果、被写体の分離</td>
+            <td>野生動物、スポーツ</td>
+          </tr>
+          <tr>
+            <td><code>Fujifilm X100V, 23mm</code></td>
+            <td>フィルムライクな描写、独特の色彩</td>
+            <td>ストリート、ドキュメンタリー</td>
+          </tr>
+        </tbody>
+      </table>
+      </div>
+
+      <h2 id="lighting">ライティングをマスターする</h2>
+
+      <p>ライティングはあらゆる画像で最も重要な要素です。Fluxは非常に詳細なライティングの記述を理解します。</p>
+
+      <ul>
+        <li><code>golden hour sunlight streaming through windows</code> — 暖かく黄金色の光</li>
+        <li><code>overcast diffused natural light</code> — 柔らかく均一な光</li>
+        <li><code>dramatic Rembrandt lighting with deep shadows</code> — クラシックなスタジオライティング</li>
+        <li><code>neon-lit city street at night, reflections on wet pavement</code> — 都市の夜間ライティング</li>
+        <li><code>backlit silhouette against a bright sunset sky</code> — ドラマチックな逆光</li>
+        <li><code>soft studio lighting with a large octabox key light</code> — プロのスタジオライティング</li>
+      </ul>
+
+      <h2 id="prompt-examples">Fluxプロンプト10選</h2>
+
+      <p>以下は、テスト済みで最適化された10のFluxプロンプトです。コピーしてすぐにお使いいただけます。</p>
+
+      <h3>1. シネマティックポートレート</h3>
+      <pre><code>Cinematic portrait photograph of an elderly fisherman with weathered skin and deep wrinkles, looking directly at the camera with piercing blue eyes. Shot during golden hour on a dock, warm sunlight creating rim lighting on his silver hair. Canon EOS R5, 85mm f/1.4 lens, shallow depth of field with the ocean blurred in the background.</code></pre>
+
+      <h3>2. ストリートフォト</h3>
+      <pre><code>Street photography of a rainy Tokyo alley at night, neon signs reflecting on wet cobblestones. A lone figure with an umbrella walks away from camera. Shot on Fujifilm X100V, 23mm lens, slightly underexposed for mood. Atmospheric fog diffusing the neon light into soft colored halos.</code></pre>
+
+      <h3>3. 壮大な風景</h3>
+      <pre><code>Dramatic landscape photograph of a volcanic mountain at sunrise, with layers of morning mist filling the valley below. The sky transitions from deep purple to warm orange. Shot on Sony A7R IV with a 16-35mm f/2.8 lens at f/11 for maximum sharpness throughout. Foreground includes frost-covered wildflowers.</code></pre>
+
+      <h3>4. フード写真</h3>
+      <pre><code>Overhead food photography of a rustic Italian dinner table with handmade pasta, fresh basil, ripe tomatoes, and olive oil in a ceramic pitcher. Warm natural light from a nearby window, soft shadows, linen tablecloth texture. Shot on Canon 5D Mark IV with a 50mm macro lens.</code></pre>
+
+      <h3>5. ミニマリスト建築</h3>
+      <pre><code>Minimalist architectural photograph of a white concrete spiral staircase viewed from above, creating a geometric pattern. Clean lines, strong shadows from directional sunlight, monochromatic palette with subtle warm tones. Shot on Hasselblad medium format, 45mm lens, high contrast black and white.</code></pre>
+
+      <h3>6. ファッションポートレート</h3>
+      <pre><code>Editorial fashion photograph of a model wearing an avant-garde geometric black dress, standing in a stark white gallery space. Dramatic directional lighting creating strong shadows. Shot on Phase One IQ4 medium format, 80mm lens. High contrast, desaturated color palette with only red lipstick as color accent.</code></pre>
+
+      <h3>7. 自然マクロ</h3>
+      <pre><code>Extreme macro photograph of morning dew drops on a spider web, each droplet acting as a tiny lens reflecting the colorful garden behind. Shot with Canon MP-E 65mm macro lens at 5x magnification, f/8, focus stacked for sharpness. Soft morning backlight creating rainbow refractions in the water droplets.</code></pre>
+
+      <h3>8. アーバンシーン</h3>
+      <pre><code>Urban photograph of a brutalist concrete building facade with repetitive geometric window patterns, shot from below looking up against a moody overcast sky. A single person visible in one window creates scale and human interest. Sony 24mm f/1.4 GM lens, f/8, high dynamic range.</code></pre>
+
+      <h3>9. 環境ポートレート</h3>
+      <pre><code>Environmental portrait of a ceramicist in her sunlit studio, hands covered in wet clay, working at a pottery wheel. Natural window light creating beautiful side lighting on her concentrated face. The background shows shelves of finished pottery pieces slightly out of focus. Nikon Z9, 35mm f/1.4 lens.</code></pre>
+
+      <h3>10. 夜景写真</h3>
+      <pre><code>Night photography of a remote desert landscape under the Milky Way, with a lone Joshua tree silhouetted against the star-filled sky. Long exposure creating slight star trails. The galactic core visible in warm golden tones contrasting with the cool blue night sky. Sony A7S III, 14mm f/1.8, 20 second exposure, ISO 3200.</code></pre>
+
+      <h2 id="mistakes">避けるべきミス</h2>
+
+      <ul>
+        <li><strong>Stable Diffusionの構文を使う：</strong> Fluxは <code>(tag:1.2)</code> や重みを理解しません。自然言語で記述してください。</li>
+        <li><strong>プロンプトが短すぎる：</strong> Midjourneyとは違い、Fluxは長く詳細な記述で効果を発揮します。</li>
+        <li><strong>ネガティブプロンプトを探す：</strong> Fluxはネガティブプロンプトに対応していません。ポジティブに表現してください。</li>
+        <li><strong>ライティングを忘れる：</strong> ライティングは最も影響力のある要素であることが多いです。決して軽視しないでください。</li>
+      </ul>
+
+      <h2 id="flux-vs-others">Flux vs. 他モデル</h2>
+
+      <div class="table-wrap">
+      <table class="comparison-table">
+        <thead>
+          <tr>
+            <th>比較項目</th>
+            <th>Flux</th>
+            <th>Midjourney</th>
+            <th>Stable Diffusion</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>プロンプトスタイル</td>
+            <td>詳細な自然言語</td>
+            <td>記述語 + パラメータ</td>
+            <td>重み付きタグ</td>
+          </tr>
+          <tr>
+            <td>フォトリアリズム</td>
+            <td>優秀</td>
+            <td>非常に良い</td>
+            <td>良い（適切なチェックポイント使用時）</td>
+          </tr>
+          <tr>
+            <td>カメラスペック</td>
+            <td>非常によく理解する</td>
+            <td>部分的に理解</td>
+            <td>ほとんど効果なし</td>
+          </tr>
+          <tr>
+            <td>ネガティブプロンプト</td>
+            <td>非対応</td>
+            <td><code>--no</code></td>
+            <td>専用フィールドあり</td>
+          </tr>
+        </tbody>
+      </table>
+      </div>
+
+      <div class="cta-box">
+        <h3>Fluxプロンプトを自動生成</h3>
+        <p>画像をアップロードするかアイデアを入力すると、最適化されたFluxプロンプトが数秒で取得できます。</p>
+        <a href="/flux-prompt-generator/" class="cta-btn">Fluxプロンプトジェネレーター &#8594;</a>
+      </div>
+
+      <h2 id="faq">よくある質問</h2>
+
+      <h3>Flux AIのプロンプトを書く最良の方法は？</h3>
+      <p>Flux AIはカンマ区切りのタグよりも、詳細な自然言語に最もよく反応します。被写体、フレーミング、ライティング、レンズ（例：<code>Canon 85mm f/1.4</code>）、雰囲気を含む段落としてシーンを記述してください。</p>
+
+      <h3>Fluxはネガティブプロンプトに対応していますか？</h3>
+      <p>いいえ、FluxはStable Diffusionとは異なり、ネガティブプロンプトに対応していません。不要な要素を避けるには、見たいものを正確に記述する形で、ポジティブかつ具体的なプロンプトを作成してください。</p>
+
+      <h3>Flux DevとFlux Proの違いは何ですか？</h3>
+      <p>Flux Devはオープンソースの無料モデルで、品質はやや劣ります。Flux Proは商用モデルで、一貫性、指示の追従性、解像度が優れています。プロンプトのテクニックは両方とも同じです。</p>
+
+      <h3>Fluxのプロンプトでカメラスペックを指定すると本当に変わりますか？</h3>
+      <p>はい、Fluxはカメラの技術的スペックを非常によく理解します。<code>Canon 85mm f/1.4</code> のようなレンズを指定するとリアルなボケが生成され、<code>24mm f/8</code> では被写界深度が深くシャープな画像が得られます。</p>
+
+    </div>
+
+    <div class="author-bio">
+      <img src="/favicon.svg" alt="ImageToPrompt Team" width="44" height="44">
+      <div>
+        <strong>ImageToPrompt Team</strong>
+        <p>私たちはクリエイターの皆さんがAI画像生成をマスターできるよう支援する専門チームです。画像からプロンプトへの変換ツールやAIプロンプトエンジニアリングガイドを通じて、世界中のアーティストの創作活動をサポートしています。</p>
+        <a href="https://x.com/ImageToPrompt" target="_blank" rel="noopener" class="author-follow">Xでフォロー</a>
+      </div>
+    </div>
+
+    <div class="related-posts">
+      <h2>関連ガイド</h2>
+      <div class="related-grid">
+        <a href="/ja/blog/midjourney-vs-flux/" class="related-card">
+          <p class="tag">比較</p>
+          <h3>Midjourney vs Flux：2026年完全比較</h3>
+        </a>
+        <a href="/ja/blog/gazou-kara-ai-prompt-henkan/" class="related-card">
+          <p class="tag">ガイド</p>
+          <h3>画像をAIプロンプトに変換する方法</h3>
+        </a>
+        <a href="/ja/blog/prompt-engineering-ai-art-nyumon/" class="related-card">
+          <p class="tag">初心者</p>
+          <h3>AIアートのためのプロンプトエンジニアリング入門</h3>
+        </a>
+        <a href="/ja/blog/best-image-to-prompt-tools-2026/" class="related-card">
+          <p class="tag">比較</p>
+          <h3>2026年版 画像からプロンプト変換ツール ベスト</h3>
+        </a>
+      </div>
+    </div>
+
+  </div>
+
+  <footer class="footer-4col">
+    <div class="f4-inner">
+      <div class="f4-brand">
+        <img src="/favicon.svg" alt="ImageToPrompt" width="28" height="28">
+        <span class="f4-brand-name">ImageTo<span class="accent">Prompt</span></span>
+        <span class="f4-brand-sub">&mdash; Free AI Prompt Generator</span>
+      </div>
+      <div class="f4-grid">
+        <div class="f4-section">
+          <h4 class="f4-heading">Image Prompt Tools</h4>
+          <a href="/">Image to Prompt</a>
+          <a href="/text-to-prompt/">Text to Prompt</a>
+      <a href="/describe-image/">Describe Image</a>
+          <a href="/midjourney-prompt-generator/">Midjourney</a>
+          <a href="/stable-diffusion-prompt-generator/">Stable Diffusion</a>
+          <a href="/flux-prompt-generator/">Flux</a>
+          <a href="/dall-e-prompt-generator/">DALL-E 3</a>
+          <a href="/adobe-firefly-prompt-generator/">Adobe Firefly</a>
+          <a href="/leonardo-ai-prompt-generator/">Leonardo AI</a>
+          <a href="/ideogram-prompt-generator/">Ideogram</a>
+        </div>
+        <div class="f4-section">
+          <h4 class="f4-heading">Video Prompt Tools</h4>
+          <a href="/image-to-video-prompt/">Image to Video Prompt</a>
+          <a href="/text-to-video-prompt/">Text to Video Prompt</a>
+          <a href="/veo-prompt-generator/">Veo / Flow Studio</a>
+          <a href="/kling-prompt-generator/">Kling AI</a>
+          <a href="/runway-prompt-generator/">Runway Gen-3</a>
+          <a href="/pika-prompt-generator/">Pika</a>
+          <a href="/luma-prompt-generator/">Luma Dream Machine</a>
+          <a href="/sora-prompt-generator/">Sora</a>
+          <a href="/minimax-prompt-generator/">Minimax</a>
+          <a href="/stable-video-prompt-generator/">Stable Video</a>
+        </div>
+        <div class="f4-section">
+          <h4 class="f4-heading">Resources</h4>
+          <a href="/ja/blog/">ブログ</a>
+          <a href="/ja/about/">概要</a>
+          <a href="/ja/pricing/">料金</a>
+          <a href="/contact/">Contact</a>
+          <a href="/privacy-policy/">Privacy Policy</a>
+          <a href="/terms-of-service/">Terms of Service</a>
+        </div>
+        <div class="f4-section">
+          <h4 class="f4-heading">Languages</h4>
+          <a href="/">English</a>
+          <a href="/fr/">Fran&#231;ais</a>
+          <a href="/ar/">&#1575;&#1604;&#1593;&#1585;&#1576;&#1610;&#1577;</a>
+          <a href="/es/">Espa&#241;ol</a>
+          <a href="/ko/">&#54620;&#44397;&#50612;</a>
+          <a href="/ja/">&#26085;&#26412;&#35486;</a>
+          <a href="/ru/">&#1056;&#1091;&#1089;&#1089;&#1082;&#1080;&#1081;</a>
+        </div>
+      </div>
+      <div class="f4-bottom">
+        <p>&#169; 2026 ImageToPrompt.dev &#8212; Free AI Prompt Generator</p>
+        <p>Your images are never stored. All analysis is ephemeral and private.</p>
+      </div>
+    </div>
+  </footer>
+
+<script src="/newsletter-inject.js" defer></script>
+<script src="/nav.js" defer></script>
+  <script>
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', function() {
+    navigator.serviceWorker.register('/sw.js')
+      .catch(function(err) { console.warn('SW registration failed:', err); });
+  });
+}
+</script>
+</body>
+</html>

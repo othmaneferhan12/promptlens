@@ -1,0 +1,516 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <script src="/theme-toggle.js"></script>
+  <meta charset="UTF-8" />
+  <link rel="dns-prefetch" href="https://www.googletagmanager.com">
+<link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="max-image-preview:large, index, follow">
+  <meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="ImageToPrompt">
+  <title>実写写真からAIプロンプトを作成する方法：完全ガイド</title>
+  <meta name="description" content="実写写真をAIプロンプトに変換する方法を学びましょう。ライティング、構図、雰囲気を正確にキャプチャするテクニックを解説します。" />
+  <link rel="canonical" href="https://www.imagetoprompt.dev/ja/blog/shashin-kara-ai-prompt/" />
+  <link rel="alternate" hreflang="ja" href="https://www.imagetoprompt.dev/ja/blog/shashin-kara-ai-prompt/" />
+  <link rel="alternate" hreflang="en" href="https://www.imagetoprompt.dev/blog/ai-prompt-from-photo/" />
+  <link rel="alternate" hreflang="fr" href="https://www.imagetoprompt.dev/fr/blog/prompt-ia-depuis-photo/" />
+  <link rel="alternate" hreflang="ar" href="https://www.imagetoprompt.dev/ar/blog/prompt-ia-min-soura-haqiqiya/" />
+  <link rel="alternate" hreflang="es" href="https://www.imagetoprompt.dev/es/blog/prompt-ia-desde-foto/" />
+  <link rel="alternate" hreflang="x-default" href="https://www.imagetoprompt.dev/blog/ai-prompt-from-photo/" />
+  <meta property="og:title" content="実写写真からAIプロンプトを作成する方法：完全ガイド" />
+  <meta property="og:description" content="実写写真をAIプロンプトに変換する方法を学びましょう。ライティング、構図、雰囲気を正確にキャプチャするテクニックを解説します。" />
+  <meta property="og:url" content="https://www.imagetoprompt.dev/ja/blog/shashin-kara-ai-prompt/" />
+  <meta property="og:type" content="article" />
+  <meta property="og:image" content="https://www.imagetoprompt.dev/og-image.png" />
+  <meta property="og:site_name" content="ImageToPrompt" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="実写写真からAIプロンプトを作成する方法：完全ガイド" />
+  <meta name="twitter:description" content="実写写真をAIプロンプトに変換。ライティング、構図、雰囲気のキャプチャテクニック。" />
+  <meta name="twitter:image" content="https://www.imagetoprompt.dev/og-image.png" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="48x48" href="/favicon-48.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+  <link rel="manifest" href="/site.webmanifest" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="/fonts/space-grotesk-700.woff2" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="/fonts/inter-400.woff2" />
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/theme.css">
+  <link rel="preload" href="/blog.css" as="style" onload="this.onload=null;this.rel='stylesheet'"><noscript><link rel="stylesheet" href="/blog.css"></noscript>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "実写写真からAIプロンプトを作成する方法：完全ガイド",
+    "description": "実写写真をAIプロンプトに変換する方法を学びましょう。ライティング、構図、雰囲気を正確にキャプチャするテクニックを解説します。",
+    "image": "https://www.imagetoprompt.dev/og-image.png",
+    "datePublished": "2026-03-11",
+    "dateModified": "2026-03-24",
+    "inLanguage": "ja",
+    "author": {
+      "@type": "Person",
+      "name": "ImageToPrompt Team",
+      "url": "https://www.imagetoprompt.dev/"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "ImageToPrompt",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://www.imagetoprompt.dev/favicon.svg"
+      }
+    },
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https://www.imagetoprompt.dev/ja/blog/shashin-kara-ai-prompt/"
+    }
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "どのような写真がAIプロンプトに最も変換しやすいですか？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "明確な被写体、特徴的なライティング、際立ったビジュアルスタイルを持つ写真が最も変換しやすいです。プロフェッショナルな写真（スタジオポートレート、風景、建築）は優れた結果をもたらします。被写体が複数あったりフラットなライティングのスマートフォン写真は、正確なプロンプトへの変換が難しくなります。"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "写真のライティングをAIプロンプトでどう表現しますか？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "まず光源（natural light、studio strobe、window light）を特定し、次に質感（soft、hard、diffused）、方向（backlit、side-lit、overhead）、色温度（warm、cool、neutral）を確認します。例：「warm golden hour side lighting」「cool overcast soft diffused light」「dramatic rim lighting from behind」。ライティングはプロンプトで最もインパクトのある要素です。"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "AIプロンプトにカメラやレンズの用語を含めるべきですか？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "はい、カメラ用語は特にFluxとStable Diffusionで大きな効果があります。「Shot with Canon EOS R5, 85mm f/1.4」は被写界深度とレンダリングに影響します。「24mm wide angle」はパースペクティブを広げます。「200mm telephoto」は奥行きを圧縮します。「Hasselblad medium format」はより映画的なレンダリングを生み出します。これらの用語は実際の光学特性をシミュレートします。"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "AIプロンプトで写真の正確な構図を再現できますか？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "テキストプロンプトだけでは正確な構図の再現はできません。「rule of thirds」「centered composition」「leading lines」などの用語を使用してください。正確な構図の制御にはStable DiffusionのControlNetを使用します。CannyやDepthモジュールが参照写真から構造を抽出し、生成をガイドします。"
+        }
+      }
+    ]
+  }
+  </script>
+    <!-- Google AdSense -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4499206373485728" crossorigin="anonymous"></script>
+    <!-- Web Push Notifications -->
+<script src="https://cdn.onesignal.com/sdks/web/v16/OneSignalSDK.page.js" defer></script>
+<script>
+  window.OneSignalDeferred = window.OneSignalDeferred || [];
+  OneSignalDeferred.push(async function(OneSignal) {
+    await OneSignal.init({
+      appId: "REPLACE_WITH_ONESIGNAL_APP_ID",
+      notifyButton: { enable: false }
+    });
+  });
+</script>
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="inner">
+      <a href="/ja/" class="site-logo"><img src="/favicon.svg" alt="ImageToPrompt" width="48" height="48"><div class="site-logo-text">ImageTo<span class="accent">Prompt</span><span class="site-logo-sub">無料AIプロンプトジェネレーター</span></div></a>
+      <nav class="site-nav" aria-label="メインナビゲーション">
+        <div class="nav-dropdown">
+          <button class="nav-dropdown-trigger" aria-haspopup="true" aria-expanded="false">Tools <span class="nav-chevron" aria-hidden="true">&#9660;</span></button>
+          <div class="nav-dropdown-menu" role="menu">
+            <div class="nav-mega-grid">
+              <div class="nav-mega-col">
+                <div class="nav-mega-heading">&#128444; IMAGE TOOLS</div>
+                <a href="/" role="menuitem" class="nav-mega-tool">Image to Prompt <span class="nav-mega-arrow">&#8594;</span></a>
+                <a href="/text-to-prompt/" role="menuitem" class="nav-mega-tool">Text to Prompt <span class="nav-mega-arrow">&#8594;</span></a>
+                <a href="/describe-image/" role="menuitem" class="nav-mega-tool">Describe Image <span class="nav-new-badge">NEW</span> <span class="nav-mega-arrow">&#8594;</span></a>
+                <div class="nav-mega-models-label">Models</div>
+                <div class="nav-mega-models"><a href="/midjourney-prompt-generator/">Midjourney</a><span class="nav-dot">&#xB7;</span><a href="/stable-diffusion-prompt-generator/">SD</a></div>
+                <div class="nav-mega-models"><a href="/flux-prompt-generator/">Flux</a><span class="nav-dot">&#xB7;</span><a href="/dall-e-prompt-generator/">DALL&#xB7;E&#xA0;3</a></div>
+                <div class="nav-mega-models"><a href="/adobe-firefly-prompt-generator/">Firefly</a><span class="nav-dot">&#xB7;</span><a href="/leonardo-ai-prompt-generator/">Leonardo</a></div>
+                <div class="nav-mega-models"><a href="/ideogram-prompt-generator/">Ideogram</a></div>
+              </div>
+              <div class="nav-mega-divider" aria-hidden="true"></div>
+              <div class="nav-mega-col">
+                <div class="nav-mega-heading">&#127909; VIDEO TOOLS</div>
+                <a href="/?tab=image-to-video" role="menuitem" class="nav-mega-tool">Image to Video <span class="nav-mega-arrow">&#8594;</span></a>
+                <a href="/?tab=text-to-video" role="menuitem" class="nav-mega-tool">Text to Video <span class="nav-mega-arrow">&#8594;</span></a>
+                <div class="nav-mega-models-label">Models</div>
+                <div class="nav-mega-models"><a href="/veo-prompt-generator/">Veo</a><span class="nav-dot">&#xB7;</span><a href="/kling-prompt-generator/">Kling</a></div>
+                <div class="nav-mega-models"><a href="/runway-prompt-generator/">Runway</a><span class="nav-dot">&#xB7;</span><a href="/pika-prompt-generator/">Pika</a></div>
+                <div class="nav-mega-models"><a href="/luma-prompt-generator/">Luma</a><span class="nav-dot">&#xB7;</span><a href="/sora-prompt-generator/">Sora</a></div>
+                <div class="nav-mega-models"><a href="/minimax-prompt-generator/">Minimax</a><span class="nav-dot">&#xB7;</span><a href="/stable-video-prompt-generator/">Stable</a></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <a href="/ja/blog/">ブログ</a>
+        <a href="/ja/pricing/" class="nav-pill-pricing">料金</a>
+        <a href="/ja/about/" class="nav-pill-about">概要</a>
+        <a href="/ja/" class="nav-try-free">無料で試す &#8594;</a>
+        <button id="theme-toggle" onclick="toggleTheme()" aria-label="テーマ切替" title="テーマ切替">&#9728;&#xFE0F;</button>
+  </nav>
+    </div>
+  </header>
+
+  <nav class="breadcrumb" aria-label="パンくずリスト">
+    <a href="/ja/">ホーム</a> <span aria-hidden="true">›</span>
+    <a href="/ja/blog/">ブログ</a> <span aria-hidden="true">›</span>
+    <span aria-current="page">実写写真からAIプロンプトを作成</span>
+  </nav>
+
+  <div class="page-wrapper">
+
+    <header class="article-header">
+      <p class="article-tag">写真</p>
+      <h1>実写写真からAIプロンプトを作成する方法</h1>
+      <div class="article-meta">
+        <span>2026年3月</span>
+        <span class="dot">·</span>
+        <span>10分で読めます</span>
+        <span class="dot">·</span>
+        <span>Flux · Midjourney · Stable Diffusion · 写真</span>
+        <span class="dot">·</span>
+        <span>2026年3月更新</span>
+      </div>
+    </header>
+
+    <div class="article-body">
+
+      <p>実写写真をAIプロンプトに変換することは、AI画像やイラストの変換とは根本的に異なります。実写写真には光学的、照明的、大気的な情報が含まれており、AI画像生成ツールは驚くほど忠実にこれらを再現できます — それらを正しく言葉で表現する方法を知っていれば。このガイドでは、写真家のように写真を読み、見えているものを効果的なAIプロンプトに翻訳する方法をお教えします。</p>
+
+      <nav class="toc" aria-label="目次">
+        <details open>
+          <summary>このガイドの内容</summary>
+          <ol>
+            <li><a href="#lire-eclairage">ライティングの読み方と表現</a></li>
+            <li><a href="#composition-cadrage">構図とフレーミング</a></li>
+            <li><a href="#terminologie-camera">カメラとレンズの用語</a></li>
+            <li><a href="#palette-ambiance">カラーパレットと雰囲気</a></li>
+            <li><a href="#exemples-par-genre">写真ジャンル別の例</a></li>
+            <li><a href="#post-traitement">プロンプトでのポストプロセス効果</a></li>
+            <li><a href="#questions-frequentes">よくある質問</a></li>
+          </ol>
+        </details>
+      </nav>
+
+      <div class="callout">
+        <p><strong>今すぐ試す：</strong>任意の写真を<a href="/">Image to Promptツール</a>にアップロードすると、写真のライティング、構図、雰囲気を自動的にキャプチャしたプロンプトが生成されます。最適な結果を得るには「写真」モードを選択してください。</p>
+      </div>
+
+      <h2 id="lire-eclairage">ライティングの読み方と表現</h2>
+
+      <p>ライティングは写真において最も重要な要素であり、AIプロンプトにおいても最もインパクトの大きい要素です。写真の光を「読み」、それをキーワードに翻訳する方法を学ぶことは、写真プロンプトエンジニアリングにおいて最も価値のあるスキルです。</p>
+
+      <h3>光源</h3>
+      <p>まず、光がどこから来ているかを特定します。各光源にはAIモデルが認識する固有の特徴があります：</p>
+      <ul>
+        <li><code>natural sunlight</code> — 直射日光、シャープな影</li>
+        <li><code>window light</code> — フィルタリングされた自然光、柔らかく方向性がある</li>
+        <li><code>overcast sky</code> — 拡散光、影が目立たない</li>
+        <li><code>studio strobe</code> — コントロールされた均一な照明</li>
+        <li><code>practical lights</code> — ランプ、ネオン、ろうそくなどシーン内に見える光源</li>
+        <li><code>mixed lighting</code> — 自然光と人工光の組み合わせ</li>
+      </ul>
+
+      <h3>光の質</h3>
+      <p>質とは光の「硬さ」や「柔らかさ」を表します：</p>
+      <ul>
+        <li><code>soft diffused light</code> — 影と光の境界が滑らか（曇天、ソフトボックス）</li>
+        <li><code>hard direct light</code> — シャープな影と強いコントラスト（正午の太陽、裸フラッシュ）</li>
+        <li><code>dappled light</code> — 木の葉やブラインドを通してフィルタリングされた光</li>
+        <li><code>volumetric light</code> — 霧、ほこり、霧の中で見える光の筋</li>
+      </ul>
+
+      <h3>光の方向</h3>
+      <p>方向は雰囲気に劇的な影響を与えます：</p>
+      <ul>
+        <li><code>front lighting</code> — フラットな照明、立体感が少ない</li>
+        <li><code>side lighting</code> — テクスチャを際立たせ、ボリュームを生む</li>
+        <li><code>backlit / backlighting</code> — シルエットと光のハロー</li>
+        <li><code>rim lighting</code> — 被写体の輪郭を光が縁取る</li>
+        <li><code>Rembrandt lighting</code> — 反対側の頬にできる三角形の光</li>
+        <li><code>overhead lighting</code> — 天頂光、目の下に影ができる</li>
+      </ul>
+
+      <h3>色温度</h3>
+      <ul>
+        <li><code>warm golden light</code> — 夕日、タングステン（2700-3500K）</li>
+        <li><code>neutral daylight</code> — バランスのとれた光（5500K）</li>
+        <li><code>cool blue light</code> — 日陰、ブルーアワー、曇り空（6500K以上）</li>
+        <li><code>mixed color temperature</code> — 暖色のタングステンと冷色の自然光の組み合わせ</li>
+      </ul>
+
+      <h2 id="composition-cadrage">構図とフレーミング</h2>
+
+      <p>構図は鑑賞者の視線を誘導し、画像の視覚的構造を作り上げます。AI画像生成ツールは写真の構図用語をよく理解しています。</p>
+
+      <h3>ショットタイプ</h3>
+      <ul>
+        <li><code>extreme close-up (ECU)</code> — 極端なディテール（瞳、テクスチャ、水滴）</li>
+        <li><code>close-up</code> — 顔や物体のクローズアップ</li>
+        <li><code>medium shot</code> — 被写体を腰まで撮影</li>
+        <li><code>full body shot</code> — 被写体の全身</li>
+        <li><code>wide shot / establishing shot</code> — 環境を見せるワイドショット</li>
+        <li><code>aerial view / drone shot</code> — 空撮</li>
+      </ul>
+
+      <h3>カメラアングル</h3>
+      <ul>
+        <li><code>eye level</code> — 自然な目線の高さ</li>
+        <li><code>low angle / worm's eye view</code> — ローアングル、被写体を堂々と見せる</li>
+        <li><code>high angle / bird's eye view</code> — ハイアングル、被写体を脆弱に見せる</li>
+        <li><code>dutch angle / tilted</code> — 傾いたアングル、不安感を演出</li>
+        <li><code>over the shoulder</code> — 肩越しのアングル</li>
+      </ul>
+
+      <h3>構図のルール</h3>
+      <ul>
+        <li><code>rule of thirds</code> — 三分割法のグリッド交点に被写体を配置</li>
+        <li><code>centered composition</code> — 被写体を中央に配置、対称性の効果</li>
+        <li><code>leading lines</code> — 視線を被写体に導く線</li>
+        <li><code>frame within a frame</code> — 建築要素が被写体を囲む</li>
+        <li><code>negative space</code> — 被写体の周囲に広い余白</li>
+      </ul>
+
+      <h2 id="terminologie-camera">カメラとレンズの用語</h2>
+
+      <p>カメラとレンズの技術用語はAI生成の結果に大きな影響を与えます。パースペクティブ、被写界深度、画像全体のレンダリングに影響します。</p>
+
+      <h3>焦点距離</h3>
+      <div class="table-wrap">
+      <table class="comparison-table">
+        <thead>
+          <tr>
+            <th>焦点距離</th>
+            <th>視覚的効果</th>
+            <th>一般的な用途</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><code>14-24mm</code></td>
+            <td>超広角、歪み、誇張されたパースペクティブ</td>
+            <td>建築、没入感のある風景</td>
+          </tr>
+          <tr>
+            <td><code>35mm</code></td>
+            <td>自然な画角、わずかな奥行き</td>
+            <td>ストリートフォト、ドキュメンタリー</td>
+          </tr>
+          <tr>
+            <td><code>50mm</code></td>
+            <td>自然なパースペクティブ、人間の視野に近い</td>
+            <td>環境ポートレート、日常</td>
+          </tr>
+          <tr>
+            <td><code>85mm</code></td>
+            <td>柔らかい圧縮、クリーミーなボケ</td>
+            <td>ポートレート、ファッション</td>
+          </tr>
+          <tr>
+            <td><code>135-200mm</code></td>
+            <td>強い圧縮、背景が非常にぼけた</td>
+            <td>クローズアップポートレート、スポーツ、自然</td>
+          </tr>
+        </tbody>
+      </table>
+      </div>
+
+      <h3>絞りと被写界深度</h3>
+      <ul>
+        <li><code>f/1.4 - f/2.0</code> — 浅い被写界深度、顕著なボケ：<code>shallow depth of field, creamy bokeh, f/1.4</code></li>
+        <li><code>f/5.6 - f/8</code> — 中程度の被写界深度：<code>moderate depth of field, sharp subject with slightly soft background</code></li>
+        <li><code>f/11 - f/16</code> — 前景から背景まですべてシャープ：<code>deep depth of field, everything in sharp focus, landscape photography</code></li>
+      </ul>
+
+      <h3>カメラモデル</h3>
+      <p>特定のカメラモデルに言及するとレンダリングに影響します：</p>
+      <ul>
+        <li><code>Canon EOS R5</code> — 暖色で自然な色合い</li>
+        <li><code>Sony A7IV</code> — 高いシャープネス、ニュートラルな色</li>
+        <li><code>Fujifilm X-T5</code> — フィルムシミュレーション、有機的なトーン</li>
+        <li><code>Hasselblad X2D</code> — 中判フォーマット、卓越した色の深み</li>
+        <li><code>Leica M11</code> — ヴィンテージな味わい、独特のマイクロコントラスト</li>
+      </ul>
+
+      <h2 id="palette-ambiance">カラーパレットと雰囲気</h2>
+
+      <p>実写写真には特定のカラーグレーディング — 雰囲気を決定するカラー処理 — が施されていることがよくあります。プロンプトでの表現方法は以下の通りです：</p>
+
+      <ul>
+        <li><code>warm earth tones</code> — オーカー、ブラウン、アンバートーン（ライフスタイルポートレート）</li>
+        <li><code>cool desaturated tones</code> — 抑えたブルーとグレー（フォトジャーナリズム）</li>
+        <li><code>teal and orange color grading</code> — 定番のシネマティックカラーグレーディング</li>
+        <li><code>matte film look</code> — 持ち上げた黒、コントラスト低減（フィルムシミュレーション）</li>
+        <li><code>high contrast black and white</code> — ドラマチックなモノクローム</li>
+        <li><code>cross-processed colors</code> — ずれた彩度の高い色（ヴィンテージ効果）</li>
+      </ul>
+
+      <h2 id="exemples-par-genre">写真ジャンル別の例</h2>
+
+      <h3>スタジオポートレート</h3>
+      <p><code>studio portrait of a middle-aged man with salt-and-pepper beard, wearing a navy turtleneck, Rembrandt lighting with softbox key light, dark charcoal background, shot with Canon 85mm f/1.4, shallow depth of field, warm skin tones, editorial quality</code></p>
+
+      <h3>風景写真</h3>
+      <p><code>dramatic mountain landscape at golden hour, jagged snow-capped peaks, valley filled with fog, warm amber light hitting the summits, deep shadows in the valley, shot with 24mm wide angle lens, deep depth of field, landscape photography, vivid but natural colors</code></p>
+
+      <h3>ストリートフォトグラフィー</h3>
+      <p><code>candid street photography, elderly woman walking through rain-soaked Tokyo alley at night, neon signs reflecting on wet pavement, shot with Fujifilm X-T5, 35mm f/1.4, slight film grain, natural ambient light, documentary style</code></p>
+
+      <h3>建築写真</h3>
+      <p><code>architectural photography of a modern glass building, dramatic perspective from ground level looking up, clear blue sky reflected in glass panels, geometric lines and symmetry, shot with 17mm tilt-shift lens, sharp details, high contrast</code></p>
+
+      <h2 id="post-traitement">プロンプトでのポストプロセス効果</h2>
+
+      <p>写真のポストプロセスは見た目に大きな影響を与えます。AI画像生成ツールは多くのポストプロセス用語を認識します：</p>
+
+      <ul>
+        <li><code>film grain</code> — フィルムカメラの自然な粒状テクスチャ</li>
+        <li><code>lens flare</code> — 光学的な反射とハロー</li>
+        <li><code>vignette</code> — 画像の端が暗くなる効果</li>
+        <li><code>chromatic aberration</code> — オブジェクトの端に生じる色にじみ</li>
+        <li><code>motion blur</code> — 動きによるブレ</li>
+        <li><code>split toning</code> — シャドウとハイライトに異なる色を適用</li>
+        <li><code>Kodak Portra 400 film simulation</code> — 特定のフィルムシミュレーション</li>
+        <li><code>desaturated shadows with warm highlights</code> — 特定のカラーグレーディング</li>
+      </ul>
+
+      <div class="cta-box">
+        <h3>写真をAIプロンプトに変換</h3>
+        <p>任意の写真をアップロードすると、ライティング、構図、雰囲気を正確にキャプチャしたプロンプトが生成されます。お気に入りのAIモデル向けに最適化されています。</p>
+        <a href="/?lang=ja" class="cta-btn">ImageToPromptを無料で試す →</a>
+      </div>
+
+      <h2 id="questions-frequentes">よくある質問</h2>
+
+      <h3>どのような写真がAIプロンプトに最も変換しやすいですか？</h3>
+      <p>明確な被写体、特徴的なライティング、際立ったビジュアルスタイルを持つ写真が最も変換しやすいです。プロフェッショナルな写真（スタジオポートレート、風景、建築）は特徴が説明しやすいため、優れた結果が得られます。被写体が複数あったりフラットなライティングのスマートフォン写真は、精度の低いプロンプトになりがちです。</p>
+
+      <h3>写真のライティングをAIプロンプトでどう表現しますか？</h3>
+      <p>光源（natural light、studio strobe、window light）、質感（soft、hard、diffused）、方向（backlit、side-lit、overhead）、色温度（warm、cool、neutral）を特定します。例：「warm golden hour side lighting」や「cool overcast soft diffused light」。ライティングはプロンプトで最もインパクトのある要素です。</p>
+
+      <h3>AIプロンプトにカメラやレンズの用語を含めるべきですか？</h3>
+      <p>はい、カメラ用語は特にFluxとStable Diffusionで大きな効果があります。「Shot with Canon EOS R5, 85mm f/1.4」は被写界深度とレンダリングに影響します。「24mm wide angle」はパースペクティブを広げ、「Hasselblad medium format」はより映画的なレンダリングを生み出します。これらの用語は実際の光学特性をシミュレートします。</p>
+
+      <h3>AIプロンプトで写真の正確な構図を再現できますか？</h3>
+      <p>テキストプロンプトだけでは正確な構図を再現することはできません。「rule of thirds」「centered composition」「leading lines」などの用語を使用してください。正確な構図の制御にはStable DiffusionのControlNet — CannyまたはDepthモジュール — を使用すると、参照写真から構造を抽出して生成をガイドできます。</p>
+
+    </div>
+
+    <div class="author-bio">
+      <img src="/favicon.svg" alt="ImageToPrompt Team" width="44" height="44">
+      <div>
+        <strong>ImageToPrompt Team</strong>
+        <p>私たちはクリエイターの皆さんがAI画像生成をマスターできるよう支援する専門チームです。画像からプロンプトへの変換ツールやAIプロンプトエンジニアリングガイドを通じて、世界中のアーティストの創作活動をサポートしています。</p>
+        <a href="https://x.com/ImageToPrompt" target="_blank" rel="noopener" class="author-follow">Xでフォロー</a>
+      </div>
+    </div>
+
+    <div class="related-posts">
+      <h2>関連ガイド</h2>
+      <div class="related-grid">
+        <a href="/ja/blog/gazou-kara-ai-prompt-henkan/" class="related-card">
+          <p class="tag">ガイド</p>
+          <h3>画像をAIプロンプトに変換する方法</h3>
+        </a>
+        <a href="/ja/blog/image-to-prompt-sns/" class="related-card">
+          <p class="tag">SNS</p>
+          <h3>SNS向けの画像からプロンプト変換</h3>
+        </a>
+        <a href="/ja/blog/ai-art-style-yougo/" class="related-card">
+          <p class="tag">用語集</p>
+          <h3>AIアートスタイル用語集：50スタイル解説</h3>
+        </a>
+      </div>
+    </div>
+
+  </div>
+
+  <footer class="footer-4col">
+    <div class="f4-inner">
+      <div class="f4-brand">
+        <img src="/favicon.svg" alt="ImageToPrompt" width="28" height="28">
+        <span class="f4-brand-name">ImageTo<span class="accent">Prompt</span></span>
+        <span class="f4-brand-sub">&mdash; Free AI Prompt Generator</span>
+      </div>
+      <div class="f4-grid">
+        <div class="f4-section">
+          <h4 class="f4-heading">Image Prompt Tools</h4>
+          <a href="/">Image to Prompt</a>
+          <a href="/text-to-prompt/">Text to Prompt</a>
+      <a href="/describe-image/">Describe Image</a>
+          <a href="/midjourney-prompt-generator/">Midjourney</a>
+          <a href="/stable-diffusion-prompt-generator/">Stable Diffusion</a>
+          <a href="/flux-prompt-generator/">Flux</a>
+          <a href="/dall-e-prompt-generator/">DALL-E 3</a>
+          <a href="/adobe-firefly-prompt-generator/">Adobe Firefly</a>
+          <a href="/leonardo-ai-prompt-generator/">Leonardo AI</a>
+          <a href="/ideogram-prompt-generator/">Ideogram</a>
+        </div>
+        <div class="f4-section">
+          <h4 class="f4-heading">Video Prompt Tools</h4>
+          <a href="/image-to-video-prompt/">Image to Video Prompt</a>
+          <a href="/text-to-video-prompt/">Text to Video Prompt</a>
+          <a href="/veo-prompt-generator/">Veo / Flow Studio</a>
+          <a href="/kling-prompt-generator/">Kling AI</a>
+          <a href="/runway-prompt-generator/">Runway Gen-3</a>
+          <a href="/pika-prompt-generator/">Pika</a>
+          <a href="/luma-prompt-generator/">Luma Dream Machine</a>
+          <a href="/sora-prompt-generator/">Sora</a>
+          <a href="/minimax-prompt-generator/">Minimax</a>
+          <a href="/stable-video-prompt-generator/">Stable Video</a>
+        </div>
+        <div class="f4-section">
+          <h4 class="f4-heading">Resources</h4>
+          <a href="/ja/blog/">ブログ</a>
+          <a href="/ja/about/">概要</a>
+          <a href="/ja/pricing/">料金</a>
+          <a href="/contact/">Contact</a>
+          <a href="/privacy-policy/">Privacy Policy</a>
+          <a href="/terms-of-service/">Terms of Service</a>
+        </div>
+        <div class="f4-section">
+          <h4 class="f4-heading">Languages</h4>
+          <a href="/">English</a>
+          <a href="/fr/">Fran&#231;ais</a>
+          <a href="/ar/">&#1575;&#1604;&#1593;&#1585;&#1576;&#1610;&#1577;</a>
+          <a href="/es/">Espa&#241;ol</a>
+          <a href="/ko/">&#54620;&#44397;&#50612;</a>
+          <a href="/ja/">&#26085;&#26412;&#35486;</a>
+          <a href="/ru/">&#1056;&#1091;&#1089;&#1089;&#1082;&#1080;&#1081;</a>
+        </div>
+      </div>
+      <div class="f4-bottom">
+        <p>&#169; 2026 ImageToPrompt.dev &#8212; Free AI Prompt Generator</p>
+        <p>Your images are never stored. All analysis is ephemeral and private.</p>
+      </div>
+    </div>
+  </footer>
+
+<script src="/newsletter-inject.js" defer></script>
+<script src="/nav.js" defer></script>
+  <script>
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', function() {
+    navigator.serviceWorker.register('/sw.js')
+      .catch(function(err) { console.warn('SW registration failed:', err); });
+  });
+}
+</script>
+</body>
+</html>

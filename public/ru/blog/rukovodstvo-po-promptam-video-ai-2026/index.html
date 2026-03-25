@@ -1,0 +1,641 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <script src="/theme-toggle.js"></script>
+  <meta charset="UTF-8" />
+  <link rel="dns-prefetch" href="https://www.googletagmanager.com">
+<link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="max-image-preview:large, index, follow">
+  <meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="ImageToPrompt">
+  <title>Руководство по промптам для AI-видео 2026: Veo, Kling, Runway и Sora</title>
+  <meta name="description" content="Полное руководство по написанию промптов для AI-видео в 2026 году. Охватывает Veo, Kling, Runway Gen-3, Pika, Luma и Sora с примерами и сравнением моделей." />
+  <link rel="canonical" href="https://www.imagetoprompt.dev/ru/blog/rukovodstvo-po-promptam-video-ai-2026/" />
+  <link rel="alternate" hreflang="ru" href="https://www.imagetoprompt.dev/ru/blog/rukovodstvo-po-promptam-video-ai-2026/" />
+  <link rel="alternate" hreflang="en" href="https://www.imagetoprompt.dev/blog/video-prompt-guide-2026/" />
+  <link rel="alternate" hreflang="fr" href="https://www.imagetoprompt.dev/fr/blog/guide-prompts-video-ia-2026/" />
+  <link rel="alternate" hreflang="ar" href="https://www.imagetoprompt.dev/ar/blog/dalil-prompts-video-ia-2026/" />
+  <link rel="alternate" hreflang="es" href="https://www.imagetoprompt.dev/es/blog/guia-prompts-video-ia-2026/" />
+  <link rel="alternate" hreflang="ja" href="https://www.imagetoprompt.dev/ja/blog/video-ai-prompt-gaido-2026/" />
+  <link rel="alternate" hreflang="ko" href="https://www.imagetoprompt.dev/ko/blog/video-ai-prompt-gaideu-2026/" />
+  <link rel="alternate" hreflang="x-default" href="https://www.imagetoprompt.dev/blog/video-prompt-guide-2026/" />
+  <meta property="og:title" content="Руководство по промптам для AI-видео 2026: Veo, Kling, Runway и Sora" />
+  <meta property="og:description" content="Полное руководство по написанию промптов для AI-видео в 2026 году. Охватывает Veo, Kling, Runway Gen-3, Pika, Luma и Sora." />
+  <meta property="og:url" content="https://www.imagetoprompt.dev/ru/blog/rukovodstvo-po-promptam-video-ai-2026/" />
+  <meta property="og:type" content="article" />
+  <meta property="og:image" content="https://www.imagetoprompt.dev/og-image.png" />
+  <meta property="og:site_name" content="ImageToPrompt" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Руководство по промптам для AI-видео 2026: Veo, Kling, Runway и Sora" />
+  <meta name="twitter:description" content="Полное руководство по написанию промптов для AI-видео в 2026 году." />
+  <meta name="twitter:image" content="https://www.imagetoprompt.dev/og-image.png" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="48x48" href="/favicon-48.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+  <link rel="manifest" href="/site.webmanifest" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="/fonts/space-grotesk-700.woff2" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="/fonts/inter-400.woff2" />
+  <link rel="stylesheet" href="/theme.css">
+  <link rel="preload" href="/blog.css" as="style" onload="this.onload=null;this.rel='stylesheet'"><noscript><link rel="stylesheet" href="/blog.css"></noscript>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Руководство по промптам для AI-видео 2026: Veo, Kling, Runway и Sora",
+    "description": "Полное руководство по написанию промптов для AI-видео в 2026 году. Охватывает все основные модели генерации видео.",
+    "image": "https://www.imagetoprompt.dev/og-image.png",
+    "datePublished": "2026-03-12",
+    "dateModified": "2026-03-24",
+    "inLanguage": "ru",
+    "author": {
+      "@type": "Person",
+      "name": "ImageToPrompt Team",
+      "url": "https://www.imagetoprompt.dev/"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "ImageToPrompt",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://www.imagetoprompt.dev/favicon.svg"
+      }
+    },
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https://www.imagetoprompt.dev/ru/blog/rukovodstvo-po-promptam-video-ai-2026/"
+    }
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "inLanguage": "ru",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Главная", "item": "https://www.imagetoprompt.dev/ru/" },
+      { "@type": "ListItem", "position": 2, "name": "Блог", "item": "https://www.imagetoprompt.dev/ru/blog/" },
+      { "@type": "ListItem", "position": 3, "name": "Руководство по промптам для AI-видео 2026", "item": "https://www.imagetoprompt.dev/ru/blog/rukovodstvo-po-promptam-video-ai-2026/" }
+    ]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "inLanguage": "ru",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "В чём разница между промптами для изображений и промптами для видео?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Промпты для изображений описывают статичное визуальное состояние: то, что вы видите в одном застывшем мгновении. Промпты для видео дополнительно должны описывать движение, время и хореографию камеры. Вам нужно указать, что движется, как движется, с какой скоростью, в каком направлении и в течение какого времени. Работа камеры становится явным элементом — панорамирование влево, наезд, подъём краном — а не подразумеваемым кадрированием. Хорошие видеопромпты мыслят кинематографически: они описывают последовательность моментов, а не один кадр." }
+      },
+      {
+        "@type": "Question",
+        "name": "Как указать движение камеры в промптах для видео?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Используйте стандартную кинематографическую терминологию, которую модели усвоили из профессионального кино- и видеоконтента. Распространённые движения камеры: 'dolly in' (камера приближается к объекту), 'pull back' (камера отдаляется), 'pan left/right' (камера вращается по горизонтали), 'tilt up/down' (камера вращается по вертикали), 'crane up/down' (камера перемещается вертикально), 'tracking shot' (камера следует за движущимся объектом), 'handheld' (намеренная тряска для реализма), 'static shot' (камера неподвижна). Добавление этих терминов в промпт значительно влияет на поведение камеры во всех основных видеомоделях." }
+      },
+      {
+        "@type": "Question",
+        "name": "Какой длины должны быть промпты для AI-видео?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Зависит от модели. Для Runway, Pika, Veo и Luma лучше всего работают 1–3 предложения. Для Kling: 3–5 предложений. Для Sora: полные абзацы часто дают лучшие результаты — модель создана для обработки описаний повествовательной длины. Для Stable Video Diffusion: «промпт» — это в основном технические параметры плюс краткое описание движения. Как правило, пишите ровно столько, сколько нужно для полного описания желаемого кадра — не дополняйте и не сокращайте." }
+      },
+      {
+        "@type": "Question",
+        "name": "Какая модель AI-видео лучше всего подходит для начинающих?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Pika Labs — наиболее дружелюбная к новичкам модель AI-видео. У неё щедрый бесплатный тариф, простой интерфейс, и она хорошо реагирует на короткие, понятные промпты без необходимости знания кинематографии. Для начинающих, которые хотят более высокое качество, Luma Dream Machine тоже доступна — чёткие описания реалистичных сцен на естественном языке дают хорошие результаты без технических знаний." }
+      }
+    ]
+  }
+  </script>
+    <!-- Google AdSense -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4499206373485728" crossorigin="anonymous"></script>
+    <!-- Web Push Notifications -->
+<script src="https://cdn.onesignal.com/sdks/web/v16/OneSignalSDK.page.js" defer></script>
+<script>
+  window.OneSignalDeferred = window.OneSignalDeferred || [];
+  OneSignalDeferred.push(async function(OneSignal) {
+    await OneSignal.init({
+      appId: "REPLACE_WITH_ONESIGNAL_APP_ID",
+      notifyButton: { enable: false }
+    });
+  });
+</script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "VideoObject",
+    "inLanguage": "ru",
+    "name": "Руководство по промптам для AI-видео 2026 — демо инструмента для Veo, Kling, Runway и других",
+    "description": "Посмотрите реальную демонстрацию бесплатного генератора видеопромптов ImageToPrompt с примерами из руководства по промптам для AI-видео 2026.",
+    "thumbnailUrl": "https://img.youtube.com/vi/5lcSaYcMuq8/maxresdefault.jpg",
+    "uploadDate": "2026-03-18",
+    "contentUrl": "https://www.youtube.com/watch?v=5lcSaYcMuq8",
+    "embedUrl": "https://www.youtube.com/embed/5lcSaYcMuq8",
+    "duration": "PT3M",
+    "publisher": {
+      "@type": "Organization",
+      "name": "ImageToPrompt",
+      "logo": { "@type": "ImageObject", "url": "https://www.imagetoprompt.dev/favicon.svg" }
+    }
+  }
+  </script>
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="inner">
+      <a href="/ru/" class="site-logo"><img src="/favicon.svg" alt="ImageToPrompt" width="48" height="48"><div class="site-logo-text">ImageTo<span class="accent">Prompt</span><span class="site-logo-sub">Бесплатный AI генератор промптов</span></div></a>
+      <nav class="site-nav" aria-label="Основная навигация">
+        <div class="nav-dropdown">
+          <button class="nav-dropdown-trigger" aria-haspopup="true" aria-expanded="false">Tools <span class="nav-chevron" aria-hidden="true">&#9660;</span></button>
+          <div class="nav-dropdown-menu" role="menu">
+            <div class="nav-mega-grid">
+              <div class="nav-mega-col">
+                <div class="nav-mega-heading">&#128444; IMAGE TOOLS</div>
+                <a href="/" role="menuitem" class="nav-mega-tool">Image to Prompt <span class="nav-mega-arrow">&#8594;</span></a>
+                <a href="/text-to-prompt/" role="menuitem" class="nav-mega-tool">Text to Prompt <span class="nav-mega-arrow">&#8594;</span></a>
+                <a href="/describe-image/" role="menuitem" class="nav-mega-tool">Describe Image <span class="nav-new-badge">NEW</span> <span class="nav-mega-arrow">&#8594;</span></a>
+                <div class="nav-mega-models-label">Models</div>
+                <div class="nav-mega-models"><a href="/midjourney-prompt-generator/">Midjourney</a><span class="nav-dot">&#xB7;</span><a href="/stable-diffusion-prompt-generator/">SD</a></div>
+                <div class="nav-mega-models"><a href="/flux-prompt-generator/">Flux</a><span class="nav-dot">&#xB7;</span><a href="/dall-e-prompt-generator/">DALL&#xB7;E&#xA0;3</a></div>
+                <div class="nav-mega-models"><a href="/adobe-firefly-prompt-generator/">Firefly</a><span class="nav-dot">&#xB7;</span><a href="/leonardo-ai-prompt-generator/">Leonardo</a></div>
+                <div class="nav-mega-models"><a href="/ideogram-prompt-generator/">Ideogram</a></div>
+              </div>
+              <div class="nav-mega-divider" aria-hidden="true"></div>
+              <div class="nav-mega-col">
+                <div class="nav-mega-heading">&#127909; VIDEO TOOLS</div>
+                <a href="/?tab=image-to-video" role="menuitem" class="nav-mega-tool">Image to Video <span class="nav-mega-arrow">&#8594;</span></a>
+                <a href="/?tab=text-to-video" role="menuitem" class="nav-mega-tool">Text to Video <span class="nav-mega-arrow">&#8594;</span></a>
+                <div class="nav-mega-models-label">Models</div>
+                <div class="nav-mega-models"><a href="/veo-prompt-generator/">Veo</a><span class="nav-dot">&#xB7;</span><a href="/kling-prompt-generator/">Kling</a></div>
+                <div class="nav-mega-models"><a href="/runway-prompt-generator/">Runway</a><span class="nav-dot">&#xB7;</span><a href="/pika-prompt-generator/">Pika</a></div>
+                <div class="nav-mega-models"><a href="/luma-prompt-generator/">Luma</a><span class="nav-dot">&#xB7;</span><a href="/sora-prompt-generator/">Sora</a></div>
+                <div class="nav-mega-models"><a href="/minimax-prompt-generator/">Minimax</a><span class="nav-dot">&#xB7;</span><a href="/stable-video-prompt-generator/">Stable</a></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <a href="/ru/blog/">Блог</a>
+        <a href="/ru/pricing/" class="nav-pill-pricing">Цены</a>
+        <a href="/ru/about/" class="nav-pill-about">О нас</a>
+        <a href="/ru/" class="nav-try-free">Попробовать &#8594;</a>
+        <button id="theme-toggle" onclick="toggleTheme()" aria-label="Переключить тему" title="Переключить тему">&#9728;&#xFE0F;</button>
+  </nav>
+    </div>
+  </header>
+
+  <nav class="breadcrumb" aria-label="Хлебные крошки">
+    <a href="/ru/">Главная</a> <span aria-hidden="true">›</span>
+    <a href="/ru/blog/">Блог</a> <span aria-hidden="true">›</span>
+    <span aria-current="page">Руководство по промптам для AI-видео 2026</span>
+  </nav>
+
+  <div class="page-wrapper">
+
+    <header class="article-header">
+      <p class="article-tag">AI-видео</p>
+      <h1>Руководство по промптам для AI-видео 2026: как писать промпты для каждой модели</h1>
+      <div class="snippet-answer">
+        <p><strong>Как написать видеопромпт для AI?</strong></p>
+        <p>Промпт для AI-видео описывает сцену, движение, работу камеры, длительность и стиль для генераторов, таких как Veo, Kling, Runway и Sora. Формула: [Описание сцены] + [Движение объекта] + [Движение камеры] + [Длительность] + [Стиль]. В отличие от промптов для изображений, видеопромпты должны описывать временные элементы — то, что происходит во времени, а не просто статичную сцену.</p>
+      </div>
+      <div class="article-meta">
+        <span>Март 2026</span>
+        <span class="dot">·</span>
+        <span>Время чтения: 14 мин</span>
+        <span class="dot">·</span>
+        <span>Все основные видеомодели</span>
+        <span class="dot">·</span>
+        <span>Обновлено: март 2026</span>
+      </div>
+    </header>
+
+
+
+
+
+      <!-- YouTube Demo Video -->
+      <div class="video-demo-section" style="margin:2.5rem 0;">
+        <h2 style="font-family:'Space Grotesk',sans-serif;font-size:1.25rem;font-weight:700;color:var(--text-primary);margin:0 0 0.5rem;">Смотреть: как это работает</h2>
+        <p style="color:var(--text-muted);font-size:0.9rem;margin:0 0 1.25rem;">Посмотрите инструмент в действии — реальный пример с AI-сгенерированным промптом.</p>
+        <div style="position:relative;padding-bottom:56.25%;height:0;overflow:hidden;border-radius:12px;border:1px solid var(--border-subtle);">
+          <iframe
+            src="https://www.youtube.com/embed/5lcSaYcMuq8"
+            title="Руководство по промптам для AI-видео 2026 — демо инструмента для Veo, Kling, Runway и других"
+            frameborder="0"
+            style="position:absolute;top:0;left:0;width:100%;height:100%;border:0;"
+            loading="lazy"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowfullscreen>
+          </iframe>
+        </div>
+      </div>
+
+
+    <div class="article-body">
+
+      <p>Генерация AI-видео превратилась из научного любопытства в практический творческий инструмент всего за два года. В 2026 году один создатель контента с браузером и хорошо составленным промптом может создать видеоматериал, для которого десять лет назад потребовалась бы профессиональная съёмочная группа. Но видеопромпты — это не просто «длинные промпты для изображений»: они требуют совершенно иного подхода к описанию.</p>
+
+      <nav class="toc" aria-label="Содержание">
+        <details open>
+          <summary>Содержание руководства</summary>
+          <ol>
+            <li><a href="#otlichiya-videopromptov">Почему видеопромпты отличаются от промптов для изображений</a></li>
+            <li><a href="#formula-videoprompta">Формула видеопромпта</a></li>
+            <li><a href="#klyuchevye-elementy">Ключевые элементы каждого видеопромпта</a></li>
+            <li><a href="#razbor-po-modelyam">Разбор по моделям</a></li>
+            <li><a href="#tablitsa-sravneniya">Таблица сравнения моделей</a></li>
+            <li><a href="#gotovye-prompty">5 готовых видеопромптов</a></li>
+            <li><a href="#rasprostranennye-oshibki">Распространённые ошибки в видеопромптах</a></li>
+            <li><a href="#ispolzovanie-imagetoprompt">Как использовать ImageToPrompt для видео</a></li>
+            <li><a href="#chasto-zadavaemye-voprosy">Часто задаваемые вопросы</a></li>
+          </ol>
+        </details>
+      </nav>
+
+      <div class="callout">
+        <p><strong>Хотите автоматически генерировать видеопромпты?</strong> <a href="/?tab=video">Попробуйте генератор видеопромптов ImageToPrompt</a> — загрузите изображение или опишите сцену и получите оптимизированный промпт для любой видеомодели. Бесплатно, без регистрации.</p>
+      </div>
+
+      <h2 id="otlichiya-videopromptov">Почему видеопромпты отличаются от промптов для изображений</h2>
+
+      <p>Когда вы пишете промпт для изображения, вы описываете одно застывшее мгновение: что находится в кадре, как оно освещено, какой у него стиль. Задача AI — создать одно убедительное статичное изображение на основе этого описания.</p>
+
+      <p>Видеопромпты требуют чего-то принципиально более сложного. Вы описываете не момент — вы описываете <strong>последовательность моментов и переходы между ними</strong>. Каждый элемент в кадре также нуждается в траектории движения. Сама камера становится персонажем со своим собственным движением, скоростью и поведением во времени.</p>
+
+      <p>Три измерения, которых нет у промптов для изображений:</p>
+
+      <ul>
+        <li><strong>Движение:</strong> Что движется? Как быстро? В каком направлении? Ускоряется или замедляется? Зацикливается или прогрессирует?</li>
+        <li><strong>Время:</strong> Как сцена меняется от начала до конца? Происходит ли переход в освещении, погоде или состоянии объекта?</li>
+        <li><strong>Хореография камеры:</strong> Где начинает камера? Двигается ли она? Как — dolly, pan, crane, handheld? Следит ли за объектом или остаётся статичной?</li>
+      </ul>
+
+      <p>Именно освоение этих трёх измерений отличает посредственное AI-видео от убедительного — вне зависимости от используемой модели.</p>
+
+      <h2 id="formula-videoprompta">Формула видеопромпта</h2>
+
+      <div class="formula-box">
+        <p class="formula-line"><span class="formula-tag subject">Описание сцены</span> + <span class="formula-tag setting">Движение</span> + <span class="formula-tag style">Работа камеры</span> + <span class="formula-tag lighting">Длительность</span> + <span class="formula-tag mood">Стиль / Атмосфера</span></p>
+      </div>
+
+      <p>Эта формула из пяти частей работает со всеми основными видеомоделями, хотя вес и стиль каждого элемента варьируется в зависимости от модели. Вот как следует думать о каждом компоненте:</p>
+
+      <h3>1. Описание сцены (Что вы видите)</h3>
+      <p>Начните с объекта и окружения — та же основа, что и для промпта изображения. Будьте конкретны: «a woman» менее эффективно, чем «a woman in her 40s, dark hair, wearing a light linen shirt, standing at the edge of a wheat field at dusk».</p>
+
+      <h3>2. Движение (Что движется)</h3>
+      <p>Описывайте движение объектов явно. Не предполагайте, что модель сама определит движение по типу объекта. «A waterfall» — это статично без «water cascading down in slow motion, mist rising at the base». Перечислите каждый движущийся элемент и опишите тип его движения, направление и скорость.</p>
+
+      <h3>3. Работа камеры (Как вы это видите)</h3>
+      <p>Используйте стандартные кинематографические термины. Камера, которая начинает близко и отъезжает назад, создаёт разрешение напряжения. Медленный наезд создаёт нарастающую интимность. Статичный широкий план выглядит наблюдательным. Указание работы камеры — это единственное самое важное улучшение, которое большинство начинающих могут внести в свои видеопромпты.</p>
+
+      <h3>4. Длительность (Как долго)</h3>
+      <p>Большинство моделей реагируют на явные указания длительности: «5 seconds», «8 seconds», «10 seconds». Это определяет, как модель распределяет движение и камеру на протяжении клипа. Без указания длительности модель принимает собственное решение — которое иногда оказывается слишком сжатым или слишком медленным для описанного действия.</p>
+
+      <h3>5. Стиль / Атмосфера</h3>
+      <p>Кинематографические отсылки, жанровые подсказки и дескрипторы качества формируют общую эстетику. «Cinematic», «documentary style», «nature documentary», «fashion film», «music video» — всё это влияет на цветокоррекцию, темп движения и композиционные решения.</p>
+
+      <h2 id="klyuchevye-elementy">Ключевые элементы каждого видеопромпта</h2>
+
+      <h3>Описание начального кадра</h3>
+      <p>Опишите, что зритель видит в самый первый момент клипа. Это закрепляет генерацию модели. Думайте об этом как об описании первого кадра фильма: «A narrow medieval alley, wet cobblestones reflecting torch light, empty, fog at street level.»</p>
+
+      <h3>Описание движения</h3>
+      <p>Укажите основную дугу движения клипа. Что меняется от первого кадра до последнего? «A figure appears at the far end of the alley and slowly walks toward camera» задаёт чёткую траекторию движения для выполнения моделью.</p>
+
+      <h3>Движение камеры</h3>
+      <p>Даже «отсутствие движения» стоит указать явно: «camera static» сообщает модели не добавлять ненужное смещение камеры. Для активного движения: «slow push in toward the alley entrance» задаёт направление, скорость и конечную точку.</p>
+
+      <h3>Длительность</h3>
+      <p>Включите оценку длительности: «6 seconds», «8 seconds». Согласование описанного движения с указанной длительностью помогает модели распределить движение по кадрам надлежащим образом.</p>
+
+      <h3>Атмосфера и освещение</h3>
+      <p>Как ведёт себя свет? Меняется ли он (от рассвета до полного дневного света), направленный (одиночный жёсткий ключевой свет) или рассеянный (облачность)? Изменения освещения — один из самых кинематографичных элементов, доступных в видеопромптах, и начинающие используют их недостаточно.</p>
+
+      <h2 id="razbor-po-modelyam">Разбор по моделям</h2>
+
+      <h3>Veo (Google)</h3>
+      <p>Veo лучше всего реагирует на <strong>описания на естественном языке с акцентом на движении</strong>. Google обучил модель на обширном корпусе реального видео, поэтому она глубоко понимает кинематографический словарь. Описания должны быть лаконичными и прямыми. Veo отлично справляется с фотореализмом и естественной физикой движения. <a href="/veo-prompt-generator/">Генератор промптов для Veo &#8594;</a></p>
+      <div class="code-example">
+        <code>A golden retriever runs through a sprinkler in a garden on a summer afternoon, water spraying in slow motion, droplets catching sunlight, camera tracks alongside at dog level, 6 seconds, cinematic</code>
+      </div>
+
+      <h3>Kling (Kuaishou)</h3>
+      <p>Kling <strong>терпим к деталям и обрабатывает сложные сцены с несколькими объектами</strong> лучше, чем большинство моделей. Вы можете включить больше элементов, более длинные описания и более конкретные инструкции по движению, не теряя связности. Особенно силён для контента в азиатской эстетике и стилизованных сцен. <a href="/kling-prompt-generator/">Генератор промптов для Kling &#8594;</a></p>
+      <div class="code-example">
+        <code>Traditional Japanese tea ceremony on a bamboo platform overlooking a mountain lake, host's hands move with deliberate grace pouring hot water into ceramic bowl, steam rising, pine trees reflected in still water below, autumn colors, slow camera tilt down to surface reflection, 8 seconds</code>
+      </div>
+
+      <h3>Runway Gen-3</h3>
+      <p>Runway вознаграждает <strong>описания, начинающиеся с движения камеры</strong>. Начинайте с действия камеры, затем описывайте, что камера видит. У Runway один из лучших показателей управления камерой среди всех моделей — она понимает тонкий язык камеры, такой как «motivated handheld» или «imperceptibly slow push-in». <a href="/runway-prompt-generator/">Генератор промптов для Runway &#8594;</a></p>
+      <div class="code-example">
+        <code>Slow dolly forward into a dimly lit jazz club, musician on stage visible in the distance, warm amber stage lighting, cigarette smoke drifting through spotlight beams, couples at tables in silhouette, 8 seconds, cinematic, film grain</code>
+      </div>
+
+      <h3>Pika</h3>
+      <p>Pika лучше всего работает с <strong>короткими, сфокусированными промптами и явными ключевыми словами стиля</strong>. Модель эффективно обрабатывает описания и отлично справляется со стилистически согласованным результатом, когда вы используете чёткие жанровые или эстетические подсказки. Идеальна для быстрой итерации и тестирования концепций. <a href="/pika-prompt-generator/">Генератор промптов для Pika &#8594;</a></p>
+      <div class="code-example">
+        <code>Neon-lit Tokyo street at night, rain reflections on asphalt, pedestrians with umbrellas, slow motion, cyberpunk aesthetic, 5 seconds</code>
+      </div>
+
+      <h3>Luma Dream Machine</h3>
+      <p>Luma отлично справляется с <strong>фотореалистичной работой камеры и описаниями глубины</strong>. Опишите положение камеры, соотношение глубины между передним и задним планами, а также качество света. Обработка параллакса у Luma исключительна — упоминание многослойной глубины запускает впечатляющий пространственный реализм. <a href="/luma-prompt-generator/">Генератор промптов для Luma &#8594;</a></p>
+      <div class="code-example">
+        <code>Ocean waves rolling onto a rocky beach at sunrise, camera positioned low just above water level, waves filling frame as they approach, golden backlight scattering off foam, 6 seconds, photorealistic</code>
+      </div>
+
+      <h3>Sora (OpenAI)</h3>
+      <p>Sora обрабатывает <strong>полные повествовательные абзацы и многоэлементную сложность</strong>. Пишите полными предложениями, описывайте несколько одновременных действий и включайте контекст и атмосферу. Sora принимает интеллектуальные решения о том, как визуально реализовать повествовательные описания. <a href="/sora-prompt-generator/">Генератор промптов для Sora &#8594;</a></p>
+      <div class="code-example">
+        <code>A young girl in a yellow rain jacket runs through a puddle-filled street while her father chases after her laughing, both splashing through the rain, cherry blossom petals floating past in the wet air, Tokyo residential neighborhood, 8 seconds, warm and joyful</code>
+      </div>
+
+      <h3>Minimax / Hailuo</h3>
+      <p>Minimax специализируется на <strong>описаниях, сфокусированных на персонажах и выражениях</strong>. Подробно описывайте мимику, язык тела и тайминг жестов. Используйте эмоциональный контекст для формирования исполняемого состояния персонажа. <a href="/minimax-prompt-generator/">Генератор промптов для Minimax &#8594;</a></p>
+      <div class="code-example">
+        <code>Young man receives unexpected news, expression shifts from neutral to wide-eyed shock, then breaks slowly into disbelieving laughter, hand covers mouth briefly, 4 seconds, intimate close-up, documentary style</code>
+      </div>
+
+      <h3>Stable Video Diffusion</h3>
+      <p>SVD работает как <strong>модель image-to-video с технической параметрической записью</strong>. Предоставьте опорный кадр и опишите движение с помощью motion_bucket_id (0–255) для количества, fps_id для темпа и augmentation_level для силы кондиционирования. <a href="/stable-video-prompt-generator/">Генератор промптов для SVD &#8594;</a></p>
+      <div class="code-example">
+        <code>Reference frame: architectural interior with dramatic window light. Motion: dust particles floating in light beam, subtle camera drift right, curtains moving gently. motion_bucket_id: 70, fps: 12, 3 seconds</code>
+      </div>
+
+      <h2 id="tablitsa-sravneniya">Таблица сравнения моделей</h2>
+
+      <div style="overflow-x:auto;margin:2rem 0">
+        <table style="width:100%;border-collapse:collapse;font-size:0.875rem">
+          <thead>
+            <tr style="border-bottom:2px solid #3a2f6e">
+              <th style="text-align:left;padding:0.75rem 0.5rem;color:#a78bfa">Модель</th>
+              <th style="text-align:left;padding:0.75rem 0.5rem;color:#a78bfa">Макс. длительность</th>
+              <th style="text-align:left;padding:0.75rem 0.5rem;color:#a78bfa">Лучше всего для</th>
+              <th style="text-align:left;padding:0.75rem 0.5rem;color:#a78bfa">Стиль промпта</th>
+              <th style="text-align:left;padding:0.75rem 0.5rem;color:#a78bfa">Бесплатный тариф</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr style="border-bottom:1px solid #2a2250">
+              <td style="padding:0.625rem 0.5rem"><strong>Veo</strong></td>
+              <td style="padding:0.625rem 0.5rem">~1 мин</td>
+              <td style="padding:0.625rem 0.5rem">Фотореализм</td>
+              <td style="padding:0.625rem 0.5rem">Лаконичный, с акцентом на движении</td>
+              <td style="padding:0.625rem 0.5rem">Ограниченный (Google Labs)</td>
+            </tr>
+            <tr style="border-bottom:1px solid #2a2250">
+              <td style="padding:0.625rem 0.5rem"><strong>Kling</strong></td>
+              <td style="padding:0.625rem 0.5rem">~2 мин</td>
+              <td style="padding:0.625rem 0.5rem">Сложные сцены</td>
+              <td style="padding:0.625rem 0.5rem">Терпим к деталям</td>
+              <td style="padding:0.625rem 0.5rem">Да (ежедневные кредиты)</td>
+            </tr>
+            <tr style="border-bottom:1px solid #2a2250">
+              <td style="padding:0.625rem 0.5rem"><strong>Runway Gen-3</strong></td>
+              <td style="padding:0.625rem 0.5rem">~10 сек</td>
+              <td style="padding:0.625rem 0.5rem">Управление камерой</td>
+              <td style="padding:0.625rem 0.5rem">Камера прежде всего</td>
+              <td style="padding:0.625rem 0.5rem">Да (ограниченный)</td>
+            </tr>
+            <tr style="border-bottom:1px solid #2a2250">
+              <td style="padding:0.625rem 0.5rem"><strong>Sora</strong></td>
+              <td style="padding:0.625rem 0.5rem">~20 сек</td>
+              <td style="padding:0.625rem 0.5rem">Нарративная сложность</td>
+              <td style="padding:0.625rem 0.5rem">Повествовательные абзацы</td>
+              <td style="padding:0.625rem 0.5rem">Нет (только Plus/Pro)</td>
+            </tr>
+            <tr style="border-bottom:1px solid #2a2250">
+              <td style="padding:0.625rem 0.5rem"><strong>Pika</strong></td>
+              <td style="padding:0.625rem 0.5rem">~10 сек</td>
+              <td style="padding:0.625rem 0.5rem">Быстрая итерация</td>
+              <td style="padding:0.625rem 0.5rem">Короткий + ключевые слова стиля</td>
+              <td style="padding:0.625rem 0.5rem">Да (щедрый)</td>
+            </tr>
+            <tr style="border-bottom:1px solid #2a2250">
+              <td style="padding:0.625rem 0.5rem"><strong>Luma</strong></td>
+              <td style="padding:0.625rem 0.5rem">~5–10 сек</td>
+              <td style="padding:0.625rem 0.5rem">Фотореализм + глубина</td>
+              <td style="padding:0.625rem 0.5rem">Кинематографичный, с акцентом на камере</td>
+              <td style="padding:0.625rem 0.5rem">Да (ограниченный)</td>
+            </tr>
+            <tr style="border-bottom:1px solid #2a2250">
+              <td style="padding:0.625rem 0.5rem"><strong>Minimax / Hailuo</strong></td>
+              <td style="padding:0.625rem 0.5rem">~6 сек</td>
+              <td style="padding:0.625rem 0.5rem">Анимация персонажей</td>
+              <td style="padding:0.625rem 0.5rem">Детали выражений</td>
+              <td style="padding:0.625rem 0.5rem">Да</td>
+            </tr>
+            <tr>
+              <td style="padding:0.625rem 0.5rem"><strong>Stable Video</strong></td>
+              <td style="padding:0.625rem 0.5rem">~3–4 сек</td>
+              <td style="padding:0.625rem 0.5rem">Открытый исходный код / локально</td>
+              <td style="padding:0.625rem 0.5rem">Технические параметры</td>
+              <td style="padding:0.625rem 0.5rem">Бесплатно (self-hosted)</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h2 id="gotovye-prompty">5 готовых видеопромптов</h2>
+
+      <p>Эти промпты созданы для хорошей работы с несколькими моделями. Скопируйте и вставьте их напрямую или используйте как шаблоны для адаптации под вашу сцену.</p>
+
+      <h3>1. Природа — Прибрежный рассвет</h3>
+      <div class="code-example">
+        <code>Rocky coastline at the moment of sunrise, waves crashing against weathered sea stacks, warm orange light breaking over the horizon, sea birds lifting into flight from the rocks, camera slowly craning upward from just above water level to reveal the full seascape, 8 seconds, cinematic nature documentary</code>
+      </div>
+
+      <h3>2. Городская среда — Ночной город</h3>
+      <div class="code-example">
+        <code>Overhead drone shot of a rain-soaked city intersection at night, neon signs and headlights reflected in wet streets below, pedestrians with umbrellas moving in all directions, slow descending camera toward the street level, 10 seconds, cinematic, shallow depth of field</code>
+      </div>
+
+      <h3>3. Персонаж — Эмоциональный момент</h3>
+      <div class="code-example">
+        <code>Close-up on a musician's face as they play the final note of a performance — eyes closed, expression of deep feeling as the note fades, crowd applause heard but unseen, slow rack focus from face to blurred stage lights behind, 5 seconds, warm concert lighting, intimate documentary</code>
+      </div>
+
+      <h3>4. Продукт — Премиальная презентация</h3>
+      <div class="code-example">
+        <code>A luxury watch rotating on a dark velvet surface, macro lens revealing the intricate movement of the mechanical hands, a single narrow beam of light catching the crystal face, slow 360-degree rotation over 6 seconds, commercial photography aesthetic, premium and precise</code>
+      </div>
+
+      <h3>5. Фантастика — Волшебный лес</h3>
+      <div class="code-example">
+        <code>An ancient forest at night where the trees themselves emit a soft bioluminescent blue-green glow, fireflies drift between roots, a river visible through the trees reflects the glowing canopy above, camera moves slowly through the trees in a low tracking shot, 10 seconds, fantasy, ethereal atmosphere</code>
+      </div>
+
+      <h2 id="rasprostranennye-oshibki">Распространённые ошибки в видеопромптах</h2>
+
+      <h3>Отсутствие указания длительности</h3>
+      <p>Без подсказки о длительности модели принимают произвольные решения о темпе. Промпт, описывающий «a figure walking from the far end of a hallway to the camera», нуждается в указании длительности — иначе модель может сжать это в 2 секунды (слишком быстро) или растянуть на 10 (слишком медленно). Всегда указывайте целевую длительность.</p>
+
+      <h3>Размытые указания камеры</h3>
+      <p>«Cinematic camera» — это не указание камеры. «Slow dolly in toward the subject» — это указание. Размытые описания камеры дают непредсказуемые результаты. Используйте конкретные кинематографические термины для предсказуемого результата.</p>
+
+      <h3>Противоречивые элементы движения</h3>
+      <p>Промпты, описывающие несколько противоречивых движений — «camera pulls back while also tracking left and the subject runs toward camera» — сбивают модель с толку. Определите основную ось движения и описывайте вторичные движения как явно подчинённые. Одно доминирующее движение на клип — надёжное правило для начинающих.</p>
+
+      <h3>Использование промптов для изображений в видео</h3>
+      <p>Самая распространённая ошибка новичков: описание красивой статичной сцены без какого-либо движения. «A forest at golden hour with sunbeams through ancient trees» — это промпт для изображения. Добавьте движение, чтобы превратить его в видеопромпт: «...sunbeams shifting as clouds move, leaves rustling in a gentle breeze, camera slowly pushing into the forest depth.»</p>
+
+      <h3>Смешивание несовместимых стилевых указаний</h3>
+      <p>«Handheld documentary style, perfectly stabilized 4K cinematic, anime aesthetic, photorealistic» — каждое из этих указаний тянет в свою сторону. Выберите одно согласованное стилевое направление и придерживайтесь его в рамках одного промпта.</p>
+
+      <h2 id="ispolzovanie-imagetoprompt">Как использовать ImageToPrompt для видеопромптов</h2>
+
+      <p>Генератор видеопромптов ImageToPrompt анализирует ваше опорное изображение или описание и создаёт оптимизированный промпт для выбранной видеомодели. Вот как получить лучшие результаты:</p>
+
+      <ol>
+        <li><strong>Выберите вкладку Video</strong> в верхней части интерфейса инструмента.</li>
+        <li><strong>Выберите целевую модель</strong> — Veo, Kling, Runway, Pika, Luma, Sora, Minimax или Stable Video.</li>
+        <li><strong>Загрузите опорное изображение</strong> (необязательно, но рекомендуется). ImageToPrompt извлечёт визуальные элементы, качество освещения, композицию и настроение из вашего изображения в качестве основы для видеопромпта.</li>
+        <li><strong>Опишите желаемое движение</strong> в текстовом поле. Это не обязательно должен быть полный промпт — достаточно указать направление движения. ImageToPrompt объединит его с извлечённым анализом изображения.</li>
+        <li><strong>Скопируйте и вставьте</strong> сгенерированный промпт непосредственно в выбранную видеомодель.</li>
+      </ol>
+
+      <div class="cta-inline">
+        <p>Попробуйте бесплатный генератор видеопромптов — работает для Veo, Kling, Runway, Pika, Luma, Sora и других.</p>
+        <a href="/?tab=video" class="cta-btn-sm">Генерировать видеопромпты бесплатно &#8594;</a>
+      </div>
+
+      <h2 id="chasto-zadavaemye-voprosy">Часто задаваемые вопросы</h2>
+
+      <div class="faq-list">
+        <details class="faq-item">
+          <summary>В чём разница между промптами для изображений и промптами для видео?</summary>
+          <p>Промпты для изображений описывают статичное визуальное состояние: то, что вы видите в одном застывшем мгновении. Промпты для видео дополнительно должны описывать движение, время и хореографию камеры. Вам нужно указать, что движется, как движется, с какой скоростью, в каком направлении и в течение какого времени. Работа камеры становится явным элементом — панорамирование влево, наезд, подъём краном — а не подразумеваемым кадрированием. Хорошие видеопромпты мыслят кинематографически: они описывают последовательность моментов, а не один кадр.</p>
+        </details>
+        <details class="faq-item">
+          <summary>Как указать движение камеры в промптах для видео?</summary>
+          <p>Используйте стандартную кинематографическую терминологию, которую модели усвоили из профессионального кино- и видеоконтента. Распространённые движения камеры: «dolly in» (камера приближается к объекту), «pull back» (камера отдаляется), «pan left/right» (камера вращается по горизонтали), «tilt up/down» (камера вращается по вертикали), «crane up/down» (камера перемещается вертикально), «tracking shot» (камера следует за движущимся объектом), «handheld» (намеренная тряска для реализма), «static shot» (камера неподвижна). Добавление этих терминов в промпт значительно влияет на поведение камеры во всех основных видеомоделях.</p>
+        </details>
+        <details class="faq-item">
+          <summary>Какой длины должны быть промпты для AI-видео?</summary>
+          <p>Зависит от модели. Для Runway, Pika, Veo и Luma лучше всего работают 1–3 предложения. Для Kling: 3–5 предложений. Для Sora: полные абзацы часто дают лучшие результаты — модель создана для обработки описаний повествовательной длины. Для Stable Video Diffusion: «промпт» — это в основном технические параметры плюс краткое описание движения. Как правило, пишите ровно столько, сколько нужно для полного описания желаемого кадра — не дополняйте и не сокращайте.</p>
+        </details>
+        <details class="faq-item">
+          <summary>Какая модель AI-видео лучше всего подходит для начинающих?</summary>
+          <p>Pika Labs — наиболее дружелюбная к новичкам модель AI-видео. У неё щедрый бесплатный тариф, простой интерфейс, и она хорошо реагирует на короткие, понятные промпты без необходимости знания кинематографии. Для начинающих, которые хотят более высокое качество, Luma Dream Machine тоже доступна — чёткие описания реалистичных сцен на естественном языке дают хорошие результаты без технических знаний.</p>
+        </details>
+      </div>
+
+      <div class="cta-box">
+        <h3>Генерируйте промпты для AI-видео из ваших изображений</h3>
+        <p>Загрузите любое опорное изображение и получите оптимизированный видеопромпт для Veo, Kling, Runway, Luma, Sora и других — полностью бесплатно.</p>
+        <a href="/?tab=video" class="cta-btn">Попробовать бесплатный генератор видеопромптов &#8594;</a>
+      </div>
+
+    </div>
+
+    <div class="author-bio">
+      <img src="/favicon.svg" alt="ImageToPrompt Team" width="44" height="44">
+      <div>
+        <strong>ImageToPrompt Team</strong>
+        <p>Мы — команда экспертов, помогающая креативщикам освоить генерацию AI-изображений.</p>
+        <a href="https://x.com/ImageToPrompt" target="_blank" rel="noopener" class="author-follow">Подписаться на X</a>
+      </div>
+    </div>
+
+    <div class="related-posts">
+      <h2>Связанные руководства</h2>
+      <div class="related-grid">
+        <a href="/ru/blog/veo-vs-kling-vs-runway/" class="related-card">
+          <p class="tag">Сравнение</p>
+          <h3>Veo vs Kling vs Runway vs Sora</h3>
+        </a>
+        <a href="/ru/blog/kak-pisat-ai-prompty-novichkam/" class="related-card">
+          <p class="tag">Руководство</p>
+          <h3>Как писать AI-промпты: руководство для начинающих</h3>
+        </a>
+        <a href="/ru/blog/inzhenering-promptov-dlya-ii-arta/" class="related-card">
+          <p class="tag">Для начинающих</p>
+          <h3>Промпт-инжиниринг для AI-арта: введение</h3>
+        </a>
+        <a href="/ru/blog/oshibki-prompt-inzheneringa/" class="related-card">
+          <p class="tag">Частые ошибки</p>
+          <h3>15 ошибок промпт-инжиниринга</h3>
+        </a>
+      </div>
+    </div>
+
+  </div>
+
+  <footer class="footer-4col">
+    <div class="f4-inner">
+      <div class="f4-brand">
+        <img src="/favicon.svg" alt="ImageToPrompt" width="28" height="28">
+        <span class="f4-brand-name">ImageTo<span class="accent">Prompt</span></span>
+        <span class="f4-brand-sub">&mdash; Free AI Prompt Generator</span>
+      </div>
+      <div class="f4-grid">
+        <div class="f4-section">
+          <h4 class="f4-heading">Image Prompt Tools</h4>
+          <a href="/">Image to Prompt</a>
+          <a href="/text-to-prompt/">Text to Prompt</a>
+      <a href="/describe-image/">Describe Image</a>
+          <a href="/midjourney-prompt-generator/">Midjourney</a>
+          <a href="/stable-diffusion-prompt-generator/">Stable Diffusion</a>
+          <a href="/flux-prompt-generator/">Flux</a>
+          <a href="/dall-e-prompt-generator/">DALL-E 3</a>
+          <a href="/adobe-firefly-prompt-generator/">Adobe Firefly</a>
+          <a href="/leonardo-ai-prompt-generator/">Leonardo AI</a>
+          <a href="/ideogram-prompt-generator/">Ideogram</a>
+        </div>
+        <div class="f4-section">
+          <h4 class="f4-heading">Video Prompt Tools</h4>
+          <a href="/image-to-video-prompt/">Image to Video Prompt</a>
+          <a href="/text-to-video-prompt/">Text to Video Prompt</a>
+          <a href="/veo-prompt-generator/">Veo / Flow Studio</a>
+          <a href="/kling-prompt-generator/">Kling AI</a>
+          <a href="/runway-prompt-generator/">Runway Gen-3</a>
+          <a href="/pika-prompt-generator/">Pika</a>
+          <a href="/luma-prompt-generator/">Luma Dream Machine</a>
+          <a href="/sora-prompt-generator/">Sora</a>
+          <a href="/minimax-prompt-generator/">Minimax</a>
+          <a href="/stable-video-prompt-generator/">Stable Video</a>
+        </div>
+        <div class="f4-section">
+          <h4 class="f4-heading">Resources</h4>
+          <a href="/ru/blog/">Блог</a>
+          <a href="/ru/about/">О нас</a>
+          <a href="/ru/pricing/">Цены</a>
+          <a href="/contact/">Contact</a>
+          <a href="/privacy-policy/">Privacy Policy</a>
+          <a href="/terms-of-service/">Terms of Service</a>
+        </div>
+        <div class="f4-section">
+          <h4 class="f4-heading">Languages</h4>
+          <a href="/">English</a>
+          <a href="/fr/">Fran&#231;ais</a>
+          <a href="/ar/">&#1575;&#1604;&#1593;&#1585;&#1576;&#1610;&#1577;</a>
+          <a href="/es/">Espa&#241;ol</a>
+          <a href="/ko/">&#54620;&#44397;&#50612;</a>
+          <a href="/ja/">&#26085;&#26412;&#35486;</a>
+          <a href="/ru/">&#1056;&#1091;&#1089;&#1089;&#1082;&#1080;&#1081;</a>
+        </div>
+      </div>
+      <div class="f4-bottom">
+        <p>&#169; 2026 ImageToPrompt.dev &#8212; Free AI Prompt Generator</p>
+        <p>Your images are never stored. All analysis is ephemeral and private.</p>
+      </div>
+    </div>
+  </footer>
+
+<script src="/newsletter-inject.js" defer></script>
+<script src="/nav.js" defer></script>
+  <script>
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', function() {
+    navigator.serviceWorker.register('/sw.js')
+      .catch(function(err) { console.warn('SW registration failed:', err); });
+  });
+}
+</script>
+</body>
+</html>

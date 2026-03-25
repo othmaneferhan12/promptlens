@@ -1,0 +1,473 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <script src="/theme-toggle.js"></script>
+  <meta charset="UTF-8" />
+  <link rel="dns-prefetch" href="https://www.googletagmanager.com">
+<link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="max-image-preview:large, index, follow">
+  <meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="ImageToPrompt">
+  <title>Imagen a Prompt para Anime: Convierte Arte Anime en Prompts de IA</title>
+  <meta name="description" content="Aprende a convertir ilustraciones anime en prompts de IA optimizados para Midjourney, Stable Diffusion y Flux." />
+  <link rel="canonical" href="https://www.imagetoprompt.dev/es/blog/imagen-a-prompt-anime/" />
+  <link rel="alternate" hreflang="es" href="https://www.imagetoprompt.dev/es/blog/imagen-a-prompt-anime/" />
+  <link rel="alternate" hreflang="en" href="https://www.imagetoprompt.dev/blog/image-to-prompt-for-anime/" />
+  <link rel="alternate" hreflang="fr" href="https://www.imagetoprompt.dev/fr/blog/image-vers-prompt-anime/" />
+  <link rel="alternate" hreflang="ar" href="https://www.imagetoprompt.dev/ar/blog/soura-ila-prompt-anime/" />
+  <link rel="alternate" hreflang="x-default" href="https://www.imagetoprompt.dev/blog/image-to-prompt-for-anime/" />
+  <meta property="og:title" content="Imagen a Prompt para Anime: Convierte Arte Anime en Prompts de IA" />
+  <meta property="og:description" content="Aprende a convertir ilustraciones anime en prompts de IA optimizados para Midjourney, Stable Diffusion y Flux." />
+  <meta property="og:url" content="https://www.imagetoprompt.dev/es/blog/imagen-a-prompt-anime/" />
+  <meta property="og:type" content="article" />
+  <meta property="og:image" content="https://www.imagetoprompt.dev/og-image.png" />
+  <meta property="og:site_name" content="ImageToPrompt" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Imagen a Prompt para Anime: Convierte Arte Anime en Prompts de IA" />
+  <meta name="twitter:description" content="Convertir ilustraciones anime en prompts de IA optimizados para Midjourney, Stable Diffusion y Flux." />
+  <meta name="twitter:image" content="https://www.imagetoprompt.dev/og-image.png" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="48x48" href="/favicon-48.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+  <link rel="manifest" href="/site.webmanifest" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="/fonts/space-grotesk-700.woff2" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="/fonts/inter-400.woff2" />
+  <link rel="stylesheet" href="/theme.css">
+  <link rel="preload" href="/blog.css" as="style" onload="this.onload=null;this.rel='stylesheet'"><noscript><link rel="stylesheet" href="/blog.css"></noscript>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Imagen a Prompt para Anime: Convierte Arte Anime en Prompts de IA",
+    "description": "Aprende a convertir ilustraciones anime en prompts de IA optimizados para Midjourney, Stable Diffusion y Flux.",
+    "image": "https://www.imagetoprompt.dev/og-image.png",
+    "datePublished": "2026-03-12",
+    "dateModified": "2026-03-24",
+    "inLanguage": "es",
+    "author": {
+      "@type": "Person",
+      "name": "ImageToPrompt Team",
+      "url": "https://www.imagetoprompt.dev/"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "ImageToPrompt",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://www.imagetoprompt.dev/favicon.svg"
+      }
+    },
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https://www.imagetoprompt.dev/es/blog/imagen-a-prompt-anime/"
+    }
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "\u00bfQu\u00e9 palabras clave usar para generar estilo anime en Stable Diffusion?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Para Stable Diffusion, usa tags como anime, manga style, cel shading, vibrant colors, detailed eyes, sakura petals, dynamic pose. A\u00f1ade tokens de calidad como (masterpiece:1.2), (best quality:1.1) y prompts negativos espec\u00edficos para anime."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "\u00bfPuede Midjourney generar verdadero estilo anime?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "S\u00ed, Midjourney v6+ maneja muy bien el estilo anime. Usa prompts como anime illustration, Studio Ghibli style, cel-shaded, manga aesthetic. A\u00f1ade --niji para activar el modo espec\u00edfico de anime de Midjourney."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "\u00bfQu\u00e9 prompts negativos usar para el arte anime?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Para anime en Stable Diffusion, usa estos prompts negativos: realistic, photorealistic, 3d render, deformed hands, extra fingers, bad anatomy, blurry, low quality, ugly, watermark, signature, cropped."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "\u00bfC\u00f3mo convertir una ilustraci\u00f3n anime existente en un prompt de IA?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Usa ImageToPrompt para subir tu ilustraci\u00f3n anime. La herramienta identifica autom\u00e1ticamente el estilo (shonen, shojo, seinen), las caracter\u00edsticas de dise\u00f1o, la paleta de colores y genera un prompt optimizado para tu modelo objetivo."
+        }
+      }
+    ]
+  }
+  </script>
+    <!-- Google AdSense -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4499206373485728" crossorigin="anonymous"></script>
+    <!-- Web Push Notifications -->
+<script src="https://cdn.onesignal.com/sdks/web/v16/OneSignalSDK.page.js" defer></script>
+<script>
+  window.OneSignalDeferred = window.OneSignalDeferred || [];
+  OneSignalDeferred.push(async function(OneSignal) {
+    await OneSignal.init({
+      appId: "REPLACE_WITH_ONESIGNAL_APP_ID",
+      notifyButton: { enable: false }
+    });
+  });
+</script>
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="inner">
+      <a href="/es/" class="site-logo"><img src="/favicon.svg" alt="ImageToPrompt" width="48" height="48"><div class="site-logo-text">ImageTo<span class="accent">Prompt</span><span class="site-logo-sub">Generador de Prompts IA Gratuito</span></div></a>
+      <nav class="site-nav" aria-label="Navegaci&#243;n principal">
+        <div class="nav-dropdown">
+          <button class="nav-dropdown-trigger" aria-haspopup="true" aria-expanded="false">Tools <span class="nav-chevron" aria-hidden="true">&#9660;</span></button>
+          <div class="nav-dropdown-menu" role="menu">
+            <div class="nav-mega-grid">
+              <div class="nav-mega-col">
+                <div class="nav-mega-heading">&#128444; IMAGE TOOLS</div>
+                <a href="/" role="menuitem" class="nav-mega-tool">Image to Prompt <span class="nav-mega-arrow">&#8594;</span></a>
+                <a href="/text-to-prompt/" role="menuitem" class="nav-mega-tool">Text to Prompt <span class="nav-mega-arrow">&#8594;</span></a>
+                <a href="/describe-image/" role="menuitem" class="nav-mega-tool">Describe Image <span class="nav-new-badge">NEW</span> <span class="nav-mega-arrow">&#8594;</span></a>
+                <div class="nav-mega-models-label">Models</div>
+                <div class="nav-mega-models"><a href="/midjourney-prompt-generator/">Midjourney</a><span class="nav-dot">&#xB7;</span><a href="/stable-diffusion-prompt-generator/">SD</a></div>
+                <div class="nav-mega-models"><a href="/flux-prompt-generator/">Flux</a><span class="nav-dot">&#xB7;</span><a href="/dall-e-prompt-generator/">DALL&#xB7;E&#xA0;3</a></div>
+                <div class="nav-mega-models"><a href="/adobe-firefly-prompt-generator/">Firefly</a><span class="nav-dot">&#xB7;</span><a href="/leonardo-ai-prompt-generator/">Leonardo</a></div>
+                <div class="nav-mega-models"><a href="/ideogram-prompt-generator/">Ideogram</a></div>
+              </div>
+              <div class="nav-mega-divider" aria-hidden="true"></div>
+              <div class="nav-mega-col">
+                <div class="nav-mega-heading">&#127909; VIDEO TOOLS</div>
+                <a href="/?tab=image-to-video" role="menuitem" class="nav-mega-tool">Image to Video <span class="nav-mega-arrow">&#8594;</span></a>
+                <a href="/?tab=text-to-video" role="menuitem" class="nav-mega-tool">Text to Video <span class="nav-mega-arrow">&#8594;</span></a>
+                <div class="nav-mega-models-label">Models</div>
+                <div class="nav-mega-models"><a href="/veo-prompt-generator/">Veo</a><span class="nav-dot">&#xB7;</span><a href="/kling-prompt-generator/">Kling</a></div>
+                <div class="nav-mega-models"><a href="/runway-prompt-generator/">Runway</a><span class="nav-dot">&#xB7;</span><a href="/pika-prompt-generator/">Pika</a></div>
+                <div class="nav-mega-models"><a href="/luma-prompt-generator/">Luma</a><span class="nav-dot">&#xB7;</span><a href="/sora-prompt-generator/">Sora</a></div>
+                <div class="nav-mega-models"><a href="/minimax-prompt-generator/">Minimax</a><span class="nav-dot">&#xB7;</span><a href="/stable-video-prompt-generator/">Stable</a></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <a href="/es/blog/" >Blog</a>
+        <a href="/es/pricing/" class="nav-pill-pricing">Pricing</a>
+        <a href="/es/about/" class="nav-pill-about">About</a>
+        <a href="/es/" class="nav-try-free">Probar &#8594;</a>
+        <button id="theme-toggle" onclick="toggleTheme()" aria-label="Switch theme" title="Switch theme">&#9728;&#xFE0F;</button>
+  </nav>
+    </div>
+  </header>
+
+  <nav class="breadcrumb" aria-label="Migas de pan">
+    <a href="/es/">Inicio</a><span class="sep">&#8250;</span>
+    <a href="/es/blog/">Blog</a><span class="sep">&#8250;</span>
+    <span>Imagen a Prompt para Anime</span>
+  </nav>
+
+  <div class="page-wrapper">
+
+    <header class="article-header">
+      <p class="article-tag">Anime &amp; Manga</p>
+      <h1>Imagen a Prompt para Anime: Gu&#237;a Completa</h1>
+      <div class="article-meta">
+        <span>Marzo 2026</span>
+        <span class="dot">&#183;</span>
+        <span>9 min de lectura</span>
+        <span class="dot">&#183;</span>
+        <span>Stable Diffusion &#183; Midjourney &#183; Flux</span>
+        <span class="dot">&#183;</span>
+        <span>Actualizado en marzo 2026</span>
+      </div>
+    </header>
+
+    <div class="article-body">
+
+      <p>El arte anime posee un vocabulario visual &#250;nico que lo distingue de cualquier otro estilo art&#237;stico. Los grandes ojos expresivos, las l&#237;neas n&#237;tidas del cel shading, las paletas de colores vibrantes y las poses din&#225;micas exigen t&#233;cnicas de prompting espec&#237;ficas que la mayor&#237;a de las gu&#237;as generalistas no cubren. Esta gu&#237;a te muestra c&#243;mo convertir ilustraciones anime en prompts de IA precisos y c&#243;mo escribir prompts anime efectivos para cada modelo principal.</p>
+
+      <nav class="toc" aria-label="Contenido">
+        <details open>
+          <summary>En esta gu&#237;a</summary>
+          <ol>
+            <li><a href="#por-que-anime-diferente">Por Qu&#233; el Anime Necesita Prompting Espec&#237;fico</a></li>
+            <li><a href="#vocabulario-anime">El Vocabulario Esencial del Anime</a></li>
+            <li><a href="#stable-diffusion-anime">Prompts Anime para Stable Diffusion</a></li>
+            <li><a href="#midjourney-anime">Prompts Anime para Midjourney</a></li>
+            <li><a href="#flux-anime">Prompts Anime para Flux</a></li>
+            <li><a href="#tokens-calidad">Tokens de Calidad y Prompts Negativos</a></li>
+            <li><a href="#convertir-ilustracion">Convertir una Ilustraci&#243;n Anime Existente</a></li>
+            <li><a href="#preguntas-frecuentes">Preguntas Frecuentes</a></li>
+          </ol>
+        </details>
+      </nav>
+
+      <div class="callout">
+        <p><strong>Consejo:</strong> Para convertir instant&#225;neamente cualquier ilustraci&#243;n anime en un prompt de IA, <a href="/">usa ImageToPrompt</a>. La herramienta detecta autom&#225;ticamente el estilo anime, las caracter&#237;sticas de dise&#241;o y genera un prompt optimizado para tu modelo objetivo.</p>
+      </div>
+
+      <h2 id="por-que-anime-diferente">Por Qu&#233; el Anime Necesita Prompting Espec&#237;fico</h2>
+
+      <p>El anime no es simplemente un "estilo de dibujo". Es un sistema visual completo con sus propias reglas de proporci&#243;n, iluminaci&#243;n y narrativa visual. Un prompt gen&#233;rico como <code>girl with blue hair</code> producir&#225; un resultado muy diferente seg&#250;n a&#241;adas <code>anime style</code>, <code>manga illustration</code> o <code>cel shading</code>.</p>
+
+      <p>Los generadores de IA distinguen varios subg&#233;neros del anime, cada uno con sus propias convenciones visuales:</p>
+
+      <ul>
+        <li><strong>Shonen:</strong> L&#237;neas din&#225;micas, poses de acci&#243;n, iluminaci&#243;n dram&#225;tica, m&#250;sculos marcados &#8212; <em>Dragon Ball</em>, <em>Naruto</em>, <em>One Piece</em></li>
+        <li><strong>Shojo:</strong> Tonos pastel, elementos florales, expresiones emotivas, fondos on&#237;ricos &#8212; <em>Sailor Moon</em>, <em>Cardcaptor Sakura</em></li>
+        <li><strong>Seinen:</strong> Realismo acentuado, paleta oscura, detalles anat&#243;micos, atm&#243;sferas maduras &#8212; <em>Berserk</em>, <em>Ghost in the Shell</em></li>
+        <li><strong>Chibi:</strong> Proporciones deformadas (cabeza grande, cuerpo peque&#241;o), expresiones exageradas, estilo kawaii</li>
+        <li><strong>Studio Ghibli:</strong> Paisajes detallados, colores naturales, atm&#243;sferas contemplativas, integraci&#243;n armoniosa naturaleza-personaje</li>
+      </ul>
+
+      <h2 id="vocabulario-anime">El Vocabulario Esencial del Anime</h2>
+
+      <p>Estas son las palabras clave m&#225;s efectivas para el prompting anime, clasificadas por categor&#237;a:</p>
+
+      <h3>Estilo y renderizado</h3>
+      <ul>
+        <li><code>anime style</code>, <code>manga illustration</code>, <code>cel shading</code>, <code>flat color</code></li>
+        <li><code>digital anime art</code>, <code>anime key visual</code>, <code>light novel illustration</code></li>
+        <li><code>anime screencap</code>, <code>anime wallpaper</code>, <code>visual novel CG</code></li>
+      </ul>
+
+      <h3>Caracter&#237;sticas de los personajes</h3>
+      <ul>
+        <li><code>detailed eyes</code>, <code>anime eyes</code>, <code>sparkling eyes</code>, <code>heterochromia</code></li>
+        <li><code>flowing hair</code>, <code>twin tails</code>, <code>ahoge</code>, <code>side ponytail</code></li>
+        <li><code>school uniform</code>, <code>magical girl outfit</code>, <code>mecha suit</code>, <code>traditional kimono</code></li>
+      </ul>
+
+      <h3>Composici&#243;n y ambiente</h3>
+      <ul>
+        <li><code>dynamic pose</code>, <code>action shot</code>, <code>dutch angle</code>, <code>dramatic perspective</code></li>
+        <li><code>sakura petals</code>, <code>cherry blossom background</code>, <code>sunset rooftop</code>, <code>night city</code></li>
+        <li><code>sparkle effects</code>, <code>lens flare</code>, <code>rim lighting</code>, <code>backlighting</code></li>
+      </ul>
+
+      <h2 id="stable-diffusion-anime">Prompts Anime para Stable Diffusion</h2>
+
+      <p>Stable Diffusion es el modelo m&#225;s popular para el arte anime gracias a sus numerosos checkpoints especializados (Anything v5, Counterfeit, Waifu Diffusion, NovelAI). La sintaxis ponderada permite un control preciso.</p>
+
+      <h3>Estructura de prompt recomendada</h3>
+
+      <p>Comienza con los tokens de calidad, luego el sujeto, despu&#233;s el estilo y finalmente el ambiente:</p>
+
+      <pre><code>(masterpiece:1.2), (best quality:1.1), anime style, 1girl, long silver hair, blue eyes, school uniform, standing on rooftop, sunset, cherry blossom petals falling, wind blowing hair, dramatic lighting, vibrant colors, detailed background, anime key visual</code></pre>
+
+      <h3>Prompt negativo recomendado para anime</h3>
+
+      <pre><code>(worst quality:1.4), (low quality:1.4), realistic, photorealistic, 3d render, deformed, bad anatomy, bad hands, extra fingers, missing fingers, extra limbs, ugly, blurry, watermark, signature, text, cropped, out of frame, duplicate</code></pre>
+
+      <p>Observa la inclusi&#243;n de <code>realistic</code> y <code>photorealistic</code> en los prompts negativos &#8212; esto empuja al modelo hacia un renderizado m&#225;s estilizado y anime.</p>
+
+      <h2 id="midjourney-anime">Prompts Anime para Midjourney</h2>
+
+      <p>Midjourney ofrece el modo <code>--niji</code>, espec&#237;ficamente entrenado para el arte anime y manga. Es un cambio de modelo completo, no simplemente un filtro de estilo.</p>
+
+      <h3>Ejemplos de prompts Midjourney anime</h3>
+
+      <pre><code>anime girl with silver hair standing on a rooftop at sunset, cherry blossoms falling, dramatic wind, vibrant colors, detailed eyes, anime key visual --niji 6 --ar 2:3</code></pre>
+
+      <pre><code>dark fantasy anime warrior, black armor, glowing red sword, rain falling, dramatic lightning, seinen manga style --niji 6 --ar 16:9 --style expressive</code></pre>
+
+      <p>El par&#225;metro <code>--style expressive</code> en el modo niji acentua las emociones y el dinamismo. Usa <code>--style cute</code> para un renderizado m&#225;s kawaii y suave.</p>
+
+      <h2 id="flux-anime">Prompts Anime para Flux</h2>
+
+      <p>Flux maneja el estilo anime con un lenguaje natural detallado. No necesitas sintaxis especial &#8212; simplemente describe lo que quieres con precisi&#243;n.</p>
+
+      <pre><code>Anime-style illustration of a young woman with flowing silver hair and piercing blue eyes, standing on a school rooftop during golden hour. Cherry blossom petals drift through the warm evening air. She wears a dark blue sailor uniform with a red ribbon. The background shows a panoramic city skyline bathed in orange and pink sunset light. Studio anime quality with detailed cel shading, vibrant saturated colors, and soft rim lighting highlighting her hair.</code></pre>
+
+      <p>Con Flux, la longitud y la precisi&#243;n del prompt importan m&#225;s que las palabras clave aisladas. Describe la escena como si estuvieras escribiendo un p&#225;rrafo de una novela visual.</p>
+
+      <h2 id="tokens-calidad">Tokens de Calidad y Prompts Negativos</h2>
+
+      <p>Los tokens de calidad son palabras clave que mejoran la calidad general de la salida anime. Su efectividad var&#237;a seg&#250;n el modelo:</p>
+
+      <div class="table-wrap">
+      <table class="comparison-table">
+        <thead>
+          <tr>
+            <th>Token</th>
+            <th>Stable Diffusion</th>
+            <th>Midjourney</th>
+            <th>Flux</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><code>masterpiece</code></td>
+            <td>Muy efectivo</td>
+            <td>Poco efecto</td>
+            <td>Poco efecto</td>
+          </tr>
+          <tr>
+            <td><code>best quality</code></td>
+            <td>Muy efectivo</td>
+            <td>Poco efecto</td>
+            <td>Moderado</td>
+          </tr>
+          <tr>
+            <td><code>highly detailed</code></td>
+            <td>Efectivo</td>
+            <td>Efectivo</td>
+            <td>Efectivo</td>
+          </tr>
+          <tr>
+            <td><code>anime key visual</code></td>
+            <td>Muy efectivo</td>
+            <td>Efectivo</td>
+            <td>Efectivo</td>
+          </tr>
+        </tbody>
+      </table>
+      </div>
+
+      <h2 id="convertir-ilustracion">Convertir una Ilustraci&#243;n Anime Existente</h2>
+
+      <p>Cuando tienes una ilustraci&#243;n anime que deseas recrear o de la que quieres extraer el estilo, la conversi&#243;n de imagen a prompt es particularmente poderosa. La IA puede identificar caracter&#237;sticas espec&#237;ficas del anime que quiz&#225;s no hab&#237;as notado o no sab&#237;as nombrar.</p>
+
+      <p>Con <a href="/">ImageToPrompt</a>, el proceso es sencillo:</p>
+      <ol>
+        <li>Sube tu ilustraci&#243;n anime</li>
+        <li>Selecciona tu modelo objetivo (Stable Diffusion con un checkpoint anime es lo recomendado)</li>
+        <li>Elige el modo de estilo "Art&#237;stico" para maximizar los detalles de estilo</li>
+        <li>La IA identifica autom&#225;ticamente el subg&#233;nero, las caracter&#237;sticas de dise&#241;o, la paleta y genera un prompt completo</li>
+      </ol>
+
+      <p>La ventaja clave: la herramienta detecta matices como el tipo de cel shading utilizado, la densidad de las l&#237;neas, el estilo de coloraci&#243;n de los ojos e incluso la generaci&#243;n est&#233;tica (anime de los a&#241;os 90 vs. anime moderno), y luego traduce todo eso en palabras clave que el modelo de IA entiende.</p>
+
+      <div class="cta-box">
+        <h3>Convierte Tu Ilustraci&#243;n Anime en un Prompt</h3>
+        <p>Sube cualquier ilustraci&#243;n anime y obt&#233;n un prompt optimizado para Stable Diffusion, Midjourney o Flux &#8212; sin registro.</p>
+        <a href="/?lang=es" class="cta-btn">Probar ImageToPrompt &#8594;</a>
+      </div>
+
+      <h2 id="preguntas-frecuentes">Preguntas Frecuentes</h2>
+
+      <h3>&#191;Qu&#233; palabras clave usar para generar estilo anime en Stable Diffusion?</h3>
+      <p>Para Stable Diffusion, usa tags como <code>anime</code>, <code>manga style</code>, <code>cel shading</code>, <code>vibrant colors</code>, <code>detailed eyes</code>, <code>sakura petals</code>, <code>dynamic pose</code>. A&#241;ade tokens de calidad como <code>(masterpiece:1.2)</code>, <code>(best quality:1.1)</code> y prompts negativos espec&#237;ficos para anime.</p>
+
+      <h3>&#191;Puede Midjourney generar verdadero estilo anime?</h3>
+      <p>S&#237;, Midjourney v6+ maneja muy bien el estilo anime. Usa prompts como <code>anime illustration</code>, <code>Studio Ghibli style</code>, <code>cel-shaded</code>, <code>manga aesthetic</code>. A&#241;ade <code>--niji</code> para activar el modo espec&#237;fico de anime de Midjourney, que utiliza un modelo completamente diferente optimizado para este estilo.</p>
+
+      <h3>&#191;Qu&#233; prompts negativos usar para el arte anime?</h3>
+      <p>Para anime en Stable Diffusion, usa estos prompts negativos: <code>realistic, photorealistic, 3d render, deformed hands, extra fingers, bad anatomy, blurry, low quality, ugly, watermark, signature, cropped</code>. La inclusi&#243;n de <code>realistic</code> es esencial para evitar una mezcla indeseada de estilos.</p>
+
+      <h3>&#191;C&#243;mo convertir una ilustraci&#243;n anime existente en un prompt de IA?</h3>
+      <p>Usa <a href="/">ImageToPrompt</a> para subir tu ilustraci&#243;n anime. La herramienta identifica autom&#225;ticamente el estilo (shonen, shojo, seinen), las caracter&#237;sticas de dise&#241;o, la paleta de colores y genera un prompt optimizado para tu modelo objetivo.</p>
+
+    </div>
+
+    <div class="author-bio">
+      <svg class="author-photo" width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="Avatar del autor"><circle cx="32" cy="32" r="32" fill="#2a1f4e"/><circle cx="32" cy="26" r="11" fill="#7c6bc4"/><ellipse cx="32" cy="52" rx="18" ry="11" fill="#7c6bc4"/></svg>
+      <div class="author-info">
+        <p class="author-name">ImageToPrompt Team</p>
+        <p class="author-desc">Ingenieros de prompts y artistas de IA especializados en Midjourney, Stable Diffusion y Flux. Construimos ImageToPrompt para hacer la generaci&#243;n de im&#225;genes con IA accesible para todos.</p>
+        <a href="https://x.com/Ilyass14286541" class="author-link">Seguir en X &#8594;</a>
+      </div>
+    </div>
+
+    <div class="related-posts">
+      <h2>Gu&#237;as Relacionadas</h2>
+      <div class="related-grid">
+        <a href="/es/blog/convertir-imagen-a-prompt-ia/" class="related-card">
+          <p class="tag">Gu&#237;a</p>
+          <h3>C&#243;mo Convertir una Imagen en Prompt de IA</h3>
+        </a>
+        <a href="/es/blog/prompts-negativos-stable-diffusion/" class="related-card">
+          <p class="tag">Stable Diffusion</p>
+          <h3>Prompts Negativos en Stable Diffusion</h3>
+        </a>
+        <a href="/es/blog/guia-prompts-midjourney-2026/" class="related-card">
+          <p class="tag">Midjourney</p>
+          <h3>Gu&#237;a Completa de Prompts Midjourney 2026</h3>
+        </a>
+        <a href="/es/blog/mejores-herramientas-imagen-a-prompt-2026/" class="related-card">
+          <p class="tag">Comparativa</p>
+          <h3>Mejores Herramientas Imagen a Prompt 2026</h3>
+        </a>
+      </div>
+    </div>
+
+  </div>
+
+  <footer class="footer-4col">
+    <div class="f4-inner">
+      <div class="f4-brand">
+        <img src="/favicon.svg" alt="ImageToPrompt" width="28" height="28">
+        <span class="f4-brand-name">ImageTo<span class="accent">Prompt</span></span>
+        <span class="f4-brand-sub">&mdash; Free AI Prompt Generator</span>
+      </div>
+      <div class="f4-grid">
+        <div class="f4-section">
+          <h4 class="f4-heading">Image Prompt Tools</h4>
+          <a href="/">Image to Prompt</a>
+          <a href="/text-to-prompt/">Text to Prompt</a>
+      <a href="/describe-image/">Describe Image</a>
+          <a href="/midjourney-prompt-generator/">Midjourney</a>
+          <a href="/stable-diffusion-prompt-generator/">Stable Diffusion</a>
+          <a href="/flux-prompt-generator/">Flux</a>
+          <a href="/dall-e-prompt-generator/">DALL-E 3</a>
+          <a href="/adobe-firefly-prompt-generator/">Adobe Firefly</a>
+          <a href="/leonardo-ai-prompt-generator/">Leonardo AI</a>
+          <a href="/ideogram-prompt-generator/">Ideogram</a>
+        </div>
+        <div class="f4-section">
+          <h4 class="f4-heading">Video Prompt Tools</h4>
+          <a href="/image-to-video-prompt/">Image to Video Prompt</a>
+          <a href="/text-to-video-prompt/">Text to Video Prompt</a>
+          <a href="/veo-prompt-generator/">Veo / Flow Studio</a>
+          <a href="/kling-prompt-generator/">Kling AI</a>
+          <a href="/runway-prompt-generator/">Runway Gen-3</a>
+          <a href="/pika-prompt-generator/">Pika</a>
+          <a href="/luma-prompt-generator/">Luma Dream Machine</a>
+          <a href="/sora-prompt-generator/">Sora</a>
+          <a href="/minimax-prompt-generator/">Minimax</a>
+          <a href="/stable-video-prompt-generator/">Stable Video</a>
+        </div>
+        <div class="f4-section">
+          <h4 class="f4-heading">Resources</h4>
+          <a href="/es/blog/">Blog</a>
+          <a href="/es/about/">About</a>
+          <a href="/es/pricing/">Pricing</a>
+          <a href="/contact/">Contact</a>
+          <a href="/privacy-policy/">Privacy Policy</a>
+          <a href="/terms-of-service/">Terms of Service</a>
+        </div>
+        <div class="f4-section">
+          <h4 class="f4-heading">Languages</h4>
+          <a href="/">English</a>
+          <a href="/fr/">Fran&#231;ais</a>
+          <a href="/ar/">&#1575;&#1604;&#1593;&#1585;&#1576;&#1610;&#1577;</a>
+          <a href="/es/">Espa&#241;ol</a>
+          <a href="/ko/">&#54620;&#44397;&#50612;</a>
+          <a href="/ja/">&#26085;&#26412;&#35486;</a>
+          <a href="/ru/">&#1056;&#1091;&#1089;&#1089;&#1082;&#1080;&#1081;</a>
+        </div>
+      </div>
+      <div class="f4-bottom">
+        <p>&#169; 2026 ImageToPrompt.dev &#8212; Free AI Prompt Generator</p>
+        <p>Your images are never stored. All analysis is ephemeral and private.</p>
+      </div>
+    </div>
+  </footer>
+
+<script src="/newsletter-inject.js" defer></script>
+<script src="/nav.js" defer></script>
+  <script>
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', function() {
+    navigator.serviceWorker.register('/sw.js')
+      .catch(function(err) { console.warn('SW registration failed:', err); });
+  });
+}
+</script>
+</body>
+</html>

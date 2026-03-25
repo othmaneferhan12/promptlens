@@ -1,0 +1,521 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <script src="/theme-toggle.js"></script>
+  <meta charset="UTF-8" />
+  <link rel="dns-prefetch" href="https://www.googletagmanager.com">
+<link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="max-image-preview:large, index, follow">
+  <meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="ImageToPrompt">
+  <title>Midjourney 프롬프트 완전 가이드 2026: 파라미터, 예시, 팁</title>
+  <meta name="description" content="2026년 Midjourney 프롬프트 완전 가이드. 최신 버전 --v 6.1, 파라미터 목록, 바로 사용할 수 있는 10개 프롬프트 예시, 고급 테크닉. 2026년 3월 업데이트." />
+  <link rel="canonical" href="https://www.imagetoprompt.dev/ko/blog/midjourney-prompt-gaideu-2026/" />
+  <link rel="alternate" hreflang="ko" href="https://www.imagetoprompt.dev/ko/blog/midjourney-prompt-gaideu-2026/" />
+  <link rel="alternate" hreflang="en" href="https://www.imagetoprompt.dev/blog/midjourney-prompt-guide-2026/" />
+  <link rel="alternate" hreflang="fr" href="https://www.imagetoprompt.dev/fr/blog/guide-prompts-midjourney-2026/" />
+  <link rel="alternate" hreflang="ar" href="https://www.imagetoprompt.dev/ar/blog/dalil-prompts-midjourney-2026/" />
+  <link rel="alternate" hreflang="es" href="https://www.imagetoprompt.dev/es/blog/guia-prompts-midjourney-2026/" />
+  <link rel="alternate" hreflang="ja" href="https://www.imagetoprompt.dev/ja/blog/midjourney-prompt-gaido-2026/" />
+  <link rel="alternate" hreflang="ru" href="https://www.imagetoprompt.dev/ru/blog/rukovodstvo-po-promptam-midjourney-2026/" />
+  <link rel="alternate" hreflang="x-default" href="https://www.imagetoprompt.dev/blog/midjourney-prompt-guide-2026/" />
+  <meta property="og:title" content="Midjourney 프롬프트 완전 가이드 2026: 파라미터, 예시, 팁" />
+  <meta property="og:description" content="2026년 Midjourney 프롬프트 완전 가이드. --v 6.1, 파라미터, 구조, 바로 사용할 수 있는 10개 프롬프트 예시." />
+  <meta property="og:url" content="https://www.imagetoprompt.dev/ko/blog/midjourney-prompt-gaideu-2026/" />
+  <meta property="og:type" content="article" />
+  <meta property="og:image" content="https://www.imagetoprompt.dev/og-image.png" />
+  <meta property="og:site_name" content="ImageToPrompt" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Midjourney 프롬프트 완전 가이드 2026" />
+  <meta name="twitter:description" content="--v 6.1 파라미터, 프롬프트 구조, 복사해서 쓸 수 있는 10가지 예시." />
+  <meta name="twitter:image" content="https://www.imagetoprompt.dev/og-image.png" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="48x48" href="/favicon-48.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+  <link rel="manifest" href="/site.webmanifest" />
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="/fonts/space-grotesk-700.woff2" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="/fonts/inter-400.woff2" />
+  <link rel="stylesheet" href="/theme.css">
+  <link rel="preload" href="/blog.css" as="style" onload="this.onload=null;this.rel='stylesheet'"><noscript><link rel="stylesheet" href="/blog.css"></noscript>
+  <style>body{font-family:'Noto Sans KR',sans-serif}</style>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Midjourney 프롬프트 완전 가이드 2026: 파라미터, 예시, 팁",
+    "description": "2026년 Midjourney 프롬프트 완전 가이드. 최신 버전 --v 6.1, 파라미터, 바로 사용할 수 있는 10개 프롬프트 예시.",
+    "image": "https://www.imagetoprompt.dev/og-image.png",
+    "datePublished": "2026-03-10",
+    "dateModified": "2026-03-24",
+    "inLanguage": "ko",
+    "author": {
+      "@type": "Person",
+      "name": "ImageToPrompt Team",
+      "url": "https://www.imagetoprompt.dev/"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "ImageToPrompt",
+      "logo": { "@type": "ImageObject", "url": "https://www.imagetoprompt.dev/favicon.svg" }
+    },
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https://www.imagetoprompt.dev/ko/blog/midjourney-prompt-gaideu-2026/"
+    }
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "inLanguage": "ko",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "홈", "item": "https://www.imagetoprompt.dev/ko/" },
+      { "@type": "ListItem", "position": 2, "name": "블로그", "item": "https://www.imagetoprompt.dev/ko/blog/" },
+      { "@type": "ListItem", "position": 3, "name": "Midjourney 프롬프트 완전 가이드 2026" }
+    ]
+  }
+  </script>
+    <!-- Google AdSense -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4499206373485728" crossorigin="anonymous"></script>
+    <!-- Web Push Notifications -->
+<script src="https://cdn.onesignal.com/sdks/web/v16/OneSignalSDK.page.js" defer></script>
+<script>
+  window.OneSignalDeferred = window.OneSignalDeferred || [];
+  OneSignalDeferred.push(async function(OneSignal) {
+    await OneSignal.init({
+      appId: "REPLACE_WITH_ONESIGNAL_APP_ID",
+      notifyButton: { enable: false }
+    });
+  });
+</script>
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="inner">
+      <a href="/ko/" class="site-logo"><img src="/favicon.svg" alt="ImageToPrompt" width="48" height="48"><div class="site-logo-text">ImageTo<span class="accent">Prompt</span><span class="site-logo-sub">무료 AI 프롬프트 생성기</span></div></a>
+      <nav class="site-nav" aria-label="메인 내비게이션">
+        <div class="nav-dropdown">
+          <button class="nav-dropdown-trigger" aria-haspopup="true" aria-expanded="false">Tools <span class="nav-chevron" aria-hidden="true">&#9660;</span></button>
+          <div class="nav-dropdown-menu" role="menu">
+            <div class="nav-mega-grid">
+              <div class="nav-mega-col">
+                <div class="nav-mega-heading">&#128444; IMAGE TOOLS</div>
+                <a href="/" role="menuitem" class="nav-mega-tool">Image to Prompt <span class="nav-mega-arrow">&#8594;</span></a>
+                <a href="/text-to-prompt/" role="menuitem" class="nav-mega-tool">Text to Prompt <span class="nav-mega-arrow">&#8594;</span></a>
+                <a href="/describe-image/" role="menuitem" class="nav-mega-tool">Describe Image <span class="nav-new-badge">NEW</span> <span class="nav-mega-arrow">&#8594;</span></a>
+                <div class="nav-mega-models-label">Models</div>
+                <div class="nav-mega-models"><a href="/midjourney-prompt-generator/">Midjourney</a><span class="nav-dot">&#xB7;</span><a href="/stable-diffusion-prompt-generator/">SD</a></div>
+                <div class="nav-mega-models"><a href="/flux-prompt-generator/">Flux</a><span class="nav-dot">&#xB7;</span><a href="/dall-e-prompt-generator/">DALL&#xB7;E&#xA0;3</a></div>
+                <div class="nav-mega-models"><a href="/adobe-firefly-prompt-generator/">Firefly</a><span class="nav-dot">&#xB7;</span><a href="/leonardo-ai-prompt-generator/">Leonardo</a></div>
+                <div class="nav-mega-models"><a href="/ideogram-prompt-generator/">Ideogram</a></div>
+              </div>
+              <div class="nav-mega-divider" aria-hidden="true"></div>
+              <div class="nav-mega-col">
+                <div class="nav-mega-heading">&#127909; VIDEO TOOLS</div>
+                <a href="/?tab=image-to-video" role="menuitem" class="nav-mega-tool">Image to Video <span class="nav-mega-arrow">&#8594;</span></a>
+                <a href="/?tab=text-to-video" role="menuitem" class="nav-mega-tool">Text to Video <span class="nav-mega-arrow">&#8594;</span></a>
+                <div class="nav-mega-models-label">Models</div>
+                <div class="nav-mega-models"><a href="/veo-prompt-generator/">Veo</a><span class="nav-dot">&#xB7;</span><a href="/kling-prompt-generator/">Kling</a></div>
+                <div class="nav-mega-models"><a href="/runway-prompt-generator/">Runway</a><span class="nav-dot">&#xB7;</span><a href="/pika-prompt-generator/">Pika</a></div>
+                <div class="nav-mega-models"><a href="/luma-prompt-generator/">Luma</a><span class="nav-dot">&#xB7;</span><a href="/sora-prompt-generator/">Sora</a></div>
+                <div class="nav-mega-models"><a href="/minimax-prompt-generator/">Minimax</a><span class="nav-dot">&#xB7;</span><a href="/stable-video-prompt-generator/">Stable</a></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <a href="/ko/blog/">블로그</a>
+        <a href="/ko/pricing/" class="nav-pill-pricing">요금</a>
+        <a href="/ko/about/" class="nav-pill-about">소개</a>
+        <a href="/ko/" class="nav-try-free">무료 체험 &#8594;</a>
+        <button id="theme-toggle" onclick="toggleTheme()" aria-label="테마 전환" title="테마 전환">&#9728;&#xFE0F;</button>
+  </nav>
+    </div>
+  </header>
+
+  <nav class="breadcrumb" aria-label="탐색경로">
+    <a href="/ko/">홈</a> <span aria-hidden="true">›</span>
+    <a href="/ko/blog/">블로그</a> <span aria-hidden="true">›</span>
+    <span aria-current="page">Midjourney 프롬프트 완전 가이드 2026</span>
+  </nav>
+
+  <div class="page-wrapper">
+
+    <header class="article-header">
+      <p class="article-tag">Midjourney 가이드</p>
+      <h1>Midjourney 프롬프트 완전 가이드 2026: 파라미터, 예시, 팁</h1>
+      <div class="article-meta">
+        <span>2026년 3월</span>
+        <span class="dot">·</span>
+        <span>11분 소요</span>
+        <span class="dot">·</span>
+        <span>Midjourney v6.1</span>
+        <span class="dot">·</span>
+        <span>2026년 3월 업데이트</span>
+      </div>
+    </header>
+
+    <div class="article-body">
+
+      <p>Midjourney는 세계에서 가장 인기 있는 AI 이미지 생성 도구입니다 &#8212; 그리고 그럴 만한 이유가 있습니다. 적절한 프롬프트를 주면 정말 숨이 멎을 만한 이미지를 생성합니다. 잘못된 프롬프트를 주면 평범하고 조잡하거나 전혀 동떨어진 결과가 나옵니다.</p>
+
+      <nav class="toc" aria-label="목차">
+        <details open>
+          <summary>이 가이드의 내용</summary>
+          <ol>
+            <li><a href="#choeshin-version">2026년 Midjourney 최신 버전(--v 6.1)</a></li>
+            <li><a href="#prompt-gujo">Midjourney 프롬프트 구조</a></li>
+            <li><a href="#prompt-gongsik">Midjourney 프롬프트 공식</a></li>
+            <li><a href="#subject-gisul">효과적인 피사체 기술 방법</a></li>
+            <li><a href="#style-medium">스타일과 미디엄 기술어</a></li>
+            <li><a href="#lighting">조명이 전부입니다</a></li>
+            <li><a href="#essential-params">Midjourney 필수 파라미터</a></li>
+            <li><a href="#10-prompts">2026년 복사해서 쓸 수 있는 Midjourney 프롬프트 10선</a></li>
+            <li><a href="#gujo-bigyo">구조 비교: Midjourney vs Flux vs Stable Diffusion</a></li>
+            <li><a href="#yesi-gyeolgwa">프롬프트 예시와 결과</a></li>
+            <li><a href="#version-bigyo">버전 비교</a></li>
+            <li><a href="#prompt-gajungchi">프롬프트 가중치</a></li>
+            <li><a href="#heunhan-silsu">Midjourney 프롬프트의 흔한 실수</a></li>
+            <li><a href="#ilgwanseong">일관된 결과를 얻는 방법</a></li>
+            <li><a href="#multi-prompt">멀티 프롬프트와 퍼뮤테이션</a></li>
+            <li><a href="#image-ref">이미지 참조의 효과적인 사용법</a></li>
+            <li><a href="#troubleshooting">자주 발생하는 문제 해결법</a></li>
+          </ol>
+        </details>
+      </nav>
+
+      <p>Midjourney에서 평범한 결과와 탁월한 결과의 차이는 대부분 프롬프트의 품질에 달려 있습니다. 이 가이드에서는 2026년에 일관되게 뛰어난 Midjourney 프롬프트를 작성하기 위해 필요한 모든 것을 다룹니다.</p>
+
+      <div class="callout">
+        <p><strong>재현하고 싶은 이미지가 있나요?</strong> 처음부터 프롬프트를 작성하는 대신 <a href="/">ImageToPrompt에 업로드</a>하면 Midjourney용 프롬프트가 자동 생성됩니다. 이 가이드를 활용해 추가 조정하세요.</p>
+      </div>
+
+      <h2 id="choeshin-version">2026년 Midjourney 최신 버전(--v 6.1)</h2>
+
+      <p>2026년 3월 현재, Midjourney의 기본 버전은 <strong>--v 6.1</strong>입니다. 버전을 지정하지 않으면 자동으로 이 버전이 사용됩니다. 이전 버전과 비교해 크게 개선되었으며 프롬프트 작성법에 직접적인 영향을 줍니다.</p>
+
+      <p><strong>v6에서 v6.1</strong>로의 전환에서 세 가지 주요 개선이 있었습니다. 첫째, 일관성: v6.1은 여러 파트로 구성된 프롬프트를 더 충실히 따르므로 복잡한 장면이 더 정확하게 렌더링됩니다. 둘째, 손과 해부학: Midjourney의 오랜 약점이었던 손 변형이 v6.1에서 크게 개선되었지만, 인물 클로즈업에서는 <code>--no deformed hands</code>를 추가하는 것을 권장합니다. 셋째, 텍스트 렌더링: Ideogram이나 DALL-E 3의 타이포그래피 능력에는 아직 미치지 못하지만, v6.1은 프롬프트에서 따옴표를 사용한 경우 짧은 단어나 간단한 구문을 이미지 내에 안정적으로 렌더링할 수 있습니다.</p>
+
+      <div class="callout">
+        <p><strong>빠른 참조:</strong> 프롬프트 끝에 항상 <code>--v 6.1</code>을 추가해 최신 버전을 고정하세요. 예: <code>your prompt here --ar 16:9 --v 6.1 --style raw</code></p>
+      </div>
+
+      <h2 id="prompt-gujo">Midjourney 프롬프트 구조</h2>
+
+      <p>완전한 Midjourney 프롬프트는 다음 구조를 따릅니다:</p>
+
+      <p><code>[피사체 설명], [스타일과 미디엄], [조명], [구도], [분위기], [기술적 디테일] --파라미터 값 --파라미터 값</code></p>
+
+      <h2 id="prompt-gongsik">Midjourney 프롬프트 공식</h2>
+
+      <div class="formula-box">
+        <p class="formula-line"><span class="formula-tag subject">피사체 + 디테일</span> + <span class="formula-tag setting">환경/설정</span> + <span class="formula-tag style">스타일/미디엄</span> + <span class="formula-tag lighting">조명</span> + <span class="formula-tag color">컬러 팔레트</span> + <span class="formula-tag mood">분위기</span> + <span class="formula-tag composition">구도</span> + <span class="formula-tag params">--파라미터</span></p>
+      </div>
+
+      <h2 id="subject-gisul">효과적인 피사체 기술 방법</h2>
+
+      <p>피사체는 프롬프트의 기반입니다. 가장 흔한 실수는 너무 모호하게 작성하는 것입니다. "드래곤"이라고 하면 평범한 드래곤이 생성됩니다. "무지개빛으로 빛나는 에메랄드 비늘을 가진 고대 드래곤이 침수된 지하 방의 무너진 돌 왕좌에 앉아 있다"고 작성하면 훨씬 더 구체적이고 흥미로운 결과를 얻을 수 있습니다.</p>
+
+      <h2 id="style-medium">스타일과 미디엄 기술어</h2>
+
+      <h3>사진 스타일</h3>
+      <ul>
+        <li><code>cinematic photography</code> &#8212; 깊이와 드라마가 있는 영화적 품질</li>
+        <li><code>editorial photography</code> &#8212; 깔끔하고 전문적인, 매거진용</li>
+        <li><code>documentary photography</code> &#8212; 캔디드, 생생한 질감, 진정성</li>
+        <li><code>studio portrait</code> &#8212; 통제된 조명, 중립적 배경</li>
+      </ul>
+
+      <h3>아트 스타일</h3>
+      <ul>
+        <li><code>concept art</code> &#8212; 상세하고 내러티브한 일러스트레이션</li>
+        <li><code>digital painting</code> &#8212; 디지털 정밀도를 가진 회화적 텍스처</li>
+        <li><code>oil painting</code> &#8212; 풍부한 텍스처, 깊은 색감, 클래식</li>
+        <li><code>watercolor illustration</code> &#8212; 부드러운 엣지, 투명한 레이어</li>
+      </ul>
+
+      <h2 id="lighting">조명이 전부입니다</h2>
+
+      <p>다른 어떤 요소보다 조명이 이미지의 분위기를 결정합니다. Midjourney는 조명 기술을 해석하는 능력이 매우 뛰어납니다.</p>
+
+      <h3>자연광</h3>
+      <ul>
+        <li><code>golden hour lighting</code> &#8212; 따뜻하고 수평적, 긴 그림자(일출/일몰)</li>
+        <li><code>blue hour</code> &#8212; 쿨톤, 박명, 부드러운 앰비언트 라이트</li>
+        <li><code>overcast soft lighting</code> &#8212; 확산된 균일한 빛, 강한 그림자 없음</li>
+      </ul>
+
+      <h3>스튜디오 조명 / 인공광</h3>
+      <ul>
+        <li><code>Rembrandt lighting</code> &#8212; 빛의 삼각형이 특징인 클래식 포트레이트 조명</li>
+        <li><code>rim lighting</code> / <code>backlit</code> &#8212; 빛으로 윤곽이 부각된 피사체</li>
+        <li><code>neon lighting</code> &#8212; 선명한 컬러 라이트, 사이버펑크 미학</li>
+        <li><code>volumetric lighting</code> &#8212; 눈에 보이는 광선, 대기적 깊이</li>
+      </ul>
+
+      <h2 id="essential-params">Midjourney 필수 파라미터</h2>
+
+      <p>파라미터는 프롬프트 끝에 더블 대시 뒤에 추가합니다. 출력을 정밀하게 제어할 수 있습니다.</p>
+
+      <div class="table-wrap">
+      <table class="comparison-table">
+        <thead>
+          <tr><th>파라미터</th><th>구문</th><th>범위 / 값</th><th>기능</th><th>기본값</th><th>예시</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>화면 비율</td><td><code>--ar L:H</code></td><td>임의의 비율</td><td>이미지 종횡비 설정</td><td>1:1</td><td><code>--ar 16:9</code></td></tr>
+          <tr><td>버전</td><td><code>--v N</code></td><td>4, 5, 5.1, 5.2, 6, 6.1</td><td>모델 버전</td><td>6.1</td><td><code>--v 6.1</code></td></tr>
+          <tr><td>Style Raw</td><td><code>--style raw</code></td><td>온/오프</td><td>더 충실하고 리터럴한 출력</td><td>오프</td><td><code>--style raw</code></td></tr>
+          <tr><td>Stylize</td><td><code>--s N</code></td><td>0–1000</td><td>예술적 해석 강도</td><td>100</td><td><code>--s 750</code></td></tr>
+          <tr><td>Chaos</td><td><code>--c N</code></td><td>0–100</td><td>그리드 결과 간 변형</td><td>0</td><td><code>--c 30</code></td></tr>
+          <tr><td>Quality</td><td><code>--q N</code></td><td>0.25, 0.5, 1, 2</td><td>렌더링 품질과 계산 시간</td><td>1</td><td><code>--q 2</code></td></tr>
+          <tr><td>No</td><td><code>--no [용어]</code></td><td>임의의 단어</td><td>결과에서 요소 제외</td><td>—</td><td><code>--no blur, text</code></td></tr>
+          <tr><td>Seed</td><td><code>--seed N</code></td><td>0–4294967295</td><td>재현 가능한 시작점</td><td>랜덤</td><td><code>--seed 12345</code></td></tr>
+        </tbody>
+      </table>
+      </div>
+
+      <h2 id="10-prompts">2026년 복사해서 쓸 수 있는 Midjourney 프롬프트 10선</h2>
+
+      <p>다음 10개의 프롬프트는 Midjourney v6.1에서 바로 사용할 수 있는 실전 프롬프트입니다. 그대로 복사하거나 자신의 피사체에 맞춰 템플릿으로 활용하세요.</p>
+
+      <h3>1. 시네마틱 포트레이트</h3>
+      <pre><code class="prompt-example">young woman with sharp features and silver-streaked hair, intense gaze, wearing a weathered leather jacket, shot on Sony A7R V with 85mm f/1.4, shallow depth of field, dramatic Rembrandt lighting, cinematic color grade with teal shadows and warm highlights --ar 2:3 --v 6.1 --style raw --q 2</code></pre>
+
+      <h3>2. 판타지 풍경</h3>
+      <pre><code class="prompt-example">floating sky islands covered in ancient ruins and waterfalls cascading into clouds below, twin moons on the horizon, bioluminescent flora glowing at twilight, vast epic scale, fantasy concept art, matte painting style, volumetric god rays --ar 21:9 --v 6.1 --q 2 --s 400</code></pre>
+
+      <h3>3. 상품 촬영</h3>
+      <pre><code class="prompt-example">minimalist glass perfume bottle with gold cap on white marble surface, water droplets condensation, soft diffused natural light from left window, subtle reflections, premium commercial product photography, razor-sharp focus, negative space --ar 4:5 --v 6.1 --style raw</code></pre>
+
+      <h3>4. 애니메이션 캐릭터</h3>
+      <pre><code class="prompt-example">female mage character with flowing silver hair and glowing violet eyes, ornate blue and gold robes with celestial embroidery, casting a spell with trails of light, dramatic upward angle, highly detailed anime illustration, soft cel shading, dynamic pose --ar 2:3 --v 6.1 --q 2</code></pre>
+
+      <h3>5. 건축 비주얼라이제이션</h3>
+      <pre><code class="prompt-example">modern minimalist villa at twilight, floor-to-ceiling glass walls revealing warm interior light, infinity pool reflecting orange sky, concrete and dark wood facade, surrounded by curated desert landscaping, architectural photography, wide angle exterior shot --ar 16:9 --v 6.1 --style raw --q 2</code></pre>
+
+      <h2 id="gujo-bigyo">구조 비교: Midjourney, Flux, Stable Diffusion</h2>
+
+      <div class="table-wrap">
+      <table class="comparison-table">
+        <thead>
+          <tr><th>항목</th><th>Midjourney v6.1</th><th>Flux.1 Dev/Pro</th><th>Stable Diffusion XL</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>프롬프트 형식</td><td>쉼표 구분 기술어</td><td>자연어 문장</td><td>가중치 태그 리스트</td></tr>
+          <tr><td>파라미터</td><td><code>--ar --v --s --c --q</code></td><td>없음(UI/API에서 설정)</td><td>CFG scale, steps, sampler</td></tr>
+          <tr><td>네거티브 프롬프트</td><td><code>--no [용어]</code></td><td>미지원</td><td>전용 네거티브 필드</td></tr>
+          <tr><td>프롬프트 길이</td><td>중간(50~150단어)</td><td>긴 편(1~4문장)</td><td>짧음~중간(태그 리스트)</td></tr>
+          <tr><td>강점</td><td>예술적, 스타일리시, 일관된 미학</td><td>포토리얼, 오픈소스, 셀프호스트</td><td>파인튠 모델, 애니메이션, 커스텀 워크플로우</td></tr>
+        </tbody>
+      </table>
+      </div>
+
+      <h2 id="yesi-gyeolgwa">프롬프트 예시와 결과</h2>
+
+      <div class="prompt-example">
+        <p class="example-category">포트레이트</p>
+        <pre class="prompt-block">elderly Japanese fisherman with weathered face and deep-set eyes, worn rain gear, standing at harbor at dawn, dramatic side lighting with golden fog, documentary photography, shallow depth of field, rule of thirds --ar 2:3 --v 6.1 --style raw --q 2</pre>
+        <picture><source srcset="/images/describe-the-photo-midjourney-fisherman-portrait.webp" type="image/webp"><img src="/images/describe-the-photo-midjourney-fisherman-portrait.jpeg" alt="Midjourney V6.1 포트레이트 프롬프트 결과 — 새벽 항구에 서 있는 노령 일본인 어부, 다큐멘터리 사진 스타일" width="800" height="1200" loading="lazy"></picture>
+        <p><em>작동 이유:</em> 피사체의 구체성(국적, 나이, 직업, 특정 특징) + 장소 + 시간대가 중요한 역할을 합니다. <code>--style raw</code>는 Midjourney가 사실적으로 보여야 하는 피사체를 과도하게 미화하는 것을 방지합니다.</p>
+      </div>
+
+      <h2 id="version-bigyo">Midjourney 버전 비교</h2>
+
+      <div class="table-wrap">
+      <table class="comparison-table">
+        <thead>
+          <tr><th>항목</th><th>V5.2</th><th>V6</th><th>V6.1</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>포토리얼리즘</td><td>좋음</td><td>매우 좋음</td><td>최고</td></tr>
+          <tr><td>텍스트 렌더링</td><td>불량</td><td>개선됨</td><td>좋음</td></tr>
+          <tr><td>디테일 수준</td><td>높음</td><td>매우 높음</td><td>매우 높음</td></tr>
+          <tr><td>프롬프트 추종성</td><td>보통</td><td>좋음</td><td>매우 좋음</td></tr>
+          <tr><td>미적 스타일</td><td>독특한 MJ 룩</td><td>더 자연적</td><td>가장 자연적</td></tr>
+        </tbody>
+      </table>
+      </div>
+
+      <h2 id="prompt-gajungchi">프롬프트 가중치</h2>
+
+      <p>프롬프트의 특정 부분에 Midjourney가 부여하는 중요도를 <code>::</code> 구문 뒤의 숫자로 제어할 수 있습니다:</p>
+
+      <p><code>a surreal landscape::2 with tiny clockwork figures::1</code></p>
+
+      <p><code>::2</code>는 Midjourney에게 풍경이 피규어보다 2배 중요하다는 것을 나타냅니다. 음수 가중치를 사용해 요소를 억제할 수도 있습니다: <code>forest::2 buildings::-1</code>은 숲을 강조하고 건물을 배제하는 방향으로 작동합니다.</p>
+
+      <h2 id="heunhan-silsu">Midjourney 프롬프트의 흔한 실수</h2>
+
+      <h3>중요하지 않은 요소에 대한 과도한 디테일</h3>
+      <p>Midjourney는 프롬프트 전체에 주의를 배분합니다. 배경 요소 설명에 50단어를 쓰면 메인 피사체와 경쟁하게 됩니다. 가장 중요한 것부터 시작하세요.</p>
+
+      <h3>모순되는 지시</h3>
+      <p>"밝고 화창한" + "어둡고 드라마틱한 분위기"는 혼란을 초래합니다. 내부적으로 일관되게 유지하세요.</p>
+
+      <h3>구도 누락</h3>
+      <p>구도 가이던스 없이는 Midjourney가 자체적으로 판단합니다. 명시적인 구도를 추가하세요: "클로즈업 포트레이트", "와이드 샷", "오버헤드 뷰" 등.</p>
+
+      <h2 id="ilgwanseong">일관된 결과를 얻는 방법</h2>
+
+      <p>마음에 드는 결과를 찾으면 <strong>시드 값</strong>을 사용해 유사한 결과를 재현하세요. Midjourney 메시지에 이모지 리액션을 추가하면 시드를 얻을 수 있으며, 향후 프롬프트에서 <code>--seed [숫자]</code>를 사용해 유사한 구도의 시작점을 얻을 수 있습니다.</p>
+
+      <h2 id="multi-prompt">멀티 프롬프트와 퍼뮤테이션</h2>
+
+      <p><code>::</code> 구문을 사용하면 프롬프트를 가중 세그먼트로 분할하고 Midjourney에 각 파트의 중요도를 지시할 수 있습니다.</p>
+
+      <p><strong>기본 가중치:</strong> <code>stormy ocean::2 tiny sailing ship::1</code> &#8212; 바다가 배보다 2배의 시각적 가중치를 받습니다.</p>
+
+      <p><strong>음수 가중치:</strong> <code>forest::2 buildings::-1</code> &#8212; 숲을 강조하고 건물을 결과에서 적극적으로 배제합니다.</p>
+
+      <h2 id="image-ref">이미지 참조의 효과적인 사용법</h2>
+
+      <p>Midjourney는 프롬프트 앞에 이미지 URL을 받을 수 있습니다. <code>--iw</code>(image weight) 파라미터로 참조 이미지가 결과에 미치는 영향력을 제어할 수 있습니다.</p>
+
+      <ul>
+        <li><code>--iw 0.5</code>: 가벼운 영향 &#8212; 참조가 스타일과 분위기를 대략적으로 가이드</li>
+        <li><code>--iw 1</code>: 중간 영향 &#8212; 기본값, 참조와 텍스트 프롬프트의 균형</li>
+        <li><code>--iw 2</code>: 강한 영향 &#8212; 결과가 참조에 가까워짐</li>
+      </ul>
+
+      <h2 id="troubleshooting">자주 발생하는 문제 해결법</h2>
+
+      <div class="troubleshooting-grid">
+        <div class="trouble-item">
+          <p class="trouble-q">이미지가 너무 어둡습니다</p>
+          <p class="trouble-a">명시적인 조명을 추가하세요: <code>bright ambient lighting</code>, <code>well-lit scene</code> 또는 특정 광원. 어두운 분위기를 암시하는 무드 단어를 제거하세요.</p>
+        </div>
+        <div class="trouble-item">
+          <p class="trouble-q">손이 변형되었습니다</p>
+          <p class="trouble-a"><code>--no deformed hands, extra fingers, fused fingers</code>를 사용하고, 포지티브 프롬프트에 <code>detailed hands, accurate anatomy</code>를 포함하세요.</p>
+        </div>
+        <div class="trouble-item">
+          <p class="trouble-q">4개 그리드 결과가 모두 비슷합니다</p>
+          <p class="trouble-a"><code>--chaos 30</code> 이상을 추가하세요. 낮은 chaos(기본값 0)는 매우 유사한 변형을 생성합니다.</p>
+        </div>
+        <div class="trouble-item">
+          <p class="trouble-q">이미지 내 텍스트가 흐릿합니다</p>
+          <p class="trouble-a">V6 또는 V6.1을 사용하세요. 프롬프트에서 표시하고 싶은 정확한 텍스트를 따옴표로 감싸세요.</p>
+        </div>
+      </div>
+
+      <div class="cta-box">
+        <h3>이미지에서 Midjourney 프롬프트 생성</h3>
+        <p>참조 이미지를 업로드하면 --ar, --v, 스타일 파라미터가 포함된 완전한 Midjourney 프롬프트가 생성됩니다.</p>
+        <a href="/?lang=ko" class="cta-btn">무료 Midjourney 프롬프트 생성기 사용하기 &#8594;</a>
+      </div>
+
+    </div>
+
+    <div class="author-bio">
+      <img src="/favicon.svg" alt="ImageToPrompt Team" width="44" height="44">
+      <div>
+        <strong>ImageToPrompt Team</strong>
+        <p>크리에이터들이 AI 이미지 생성을 마스터할 수 있도록 돕는 전문 팀입니다. 이미지에서 프롬프트로 변환 도구와 AI 프롬프트 엔지니어링 가이드를 통해 전 세계 아티스트의 창작 활동을 지원합니다.</p>
+        <a href="https://x.com/ImageToPrompt" target="_blank" rel="noopener" class="author-follow">X에서 팔로우</a>
+      </div>
+    </div>
+
+    <div class="related-posts">
+      <h2>관련 가이드</h2>
+      <div class="related-grid">
+        <a href="/ko/blog/dall-e-3-prompt-gaideu/" class="related-card">
+          <p class="tag">DALL-E 3</p>
+          <h3>DALL-E 3 프롬프트 완전 가이드</h3>
+        </a>
+        <a href="/ko/blog/flux-ai-prompt-gaideu/" class="related-card">
+          <p class="tag">Flux AI</p>
+          <h3>Flux AI 프롬프트 가이드 2026</h3>
+        </a>
+        <a href="/ko/blog/stable-diffusion-prompt-gaideu/" class="related-card">
+          <p class="tag">Stable Diffusion</p>
+          <h3>Stable Diffusion 프롬프트 가이드</h3>
+        </a>
+        <a href="/ko/blog/ideogram-prompt-gaideu/" class="related-card">
+          <p class="tag">Ideogram</p>
+          <h3>Ideogram 프롬프트 완전 가이드</h3>
+        </a>
+      </div>
+    </div>
+
+  </div>
+
+  <footer class="footer-4col">
+    <div class="f4-inner">
+      <div class="f4-brand">
+        <img src="/favicon.svg" alt="ImageToPrompt" width="28" height="28">
+        <span class="f4-brand-name">ImageTo<span class="accent">Prompt</span></span>
+        <span class="f4-brand-sub">&mdash; Free AI Prompt Generator</span>
+      </div>
+      <div class="f4-grid">
+        <div class="f4-section">
+          <h4 class="f4-heading">Image Prompt Tools</h4>
+          <a href="/">Image to Prompt</a>
+          <a href="/text-to-prompt/">Text to Prompt</a>
+          <a href="/describe-image/">Describe Image</a>
+          <a href="/midjourney-prompt-generator/">Midjourney</a>
+          <a href="/stable-diffusion-prompt-generator/">Stable Diffusion</a>
+          <a href="/flux-prompt-generator/">Flux</a>
+          <a href="/dall-e-prompt-generator/">DALL-E 3</a>
+          <a href="/adobe-firefly-prompt-generator/">Adobe Firefly</a>
+          <a href="/leonardo-ai-prompt-generator/">Leonardo AI</a>
+          <a href="/ideogram-prompt-generator/">Ideogram</a>
+        </div>
+        <div class="f4-section">
+          <h4 class="f4-heading">Video Prompt Tools</h4>
+          <a href="/image-to-video-prompt/">Image to Video Prompt</a>
+          <a href="/text-to-video-prompt/">Text to Video Prompt</a>
+          <a href="/veo-prompt-generator/">Veo / Flow Studio</a>
+          <a href="/kling-prompt-generator/">Kling AI</a>
+          <a href="/runway-prompt-generator/">Runway Gen-3</a>
+          <a href="/pika-prompt-generator/">Pika</a>
+          <a href="/luma-prompt-generator/">Luma Dream Machine</a>
+          <a href="/sora-prompt-generator/">Sora</a>
+          <a href="/minimax-prompt-generator/">Minimax</a>
+          <a href="/stable-video-prompt-generator/">Stable Video</a>
+        </div>
+        <div class="f4-section">
+          <h4 class="f4-heading">Resources</h4>
+          <a href="/ko/blog/">블로그</a>
+          <a href="/ko/about/">소개</a>
+          <a href="/ko/pricing/">요금</a>
+          <a href="/contact/">Contact</a>
+          <a href="/privacy-policy/">Privacy Policy</a>
+          <a href="/terms-of-service/">Terms of Service</a>
+        </div>
+        <div class="f4-section">
+          <h4 class="f4-heading">Languages</h4>
+          <a href="/">English</a>
+          <a href="/fr/">Fran&#231;ais</a>
+          <a href="/ar/">&#1575;&#1604;&#1593;&#1585;&#1576;&#1610;&#1577;</a>
+          <a href="/es/">Espa&#241;ol</a>
+          <a href="/ko/">한국어</a>
+          <a href="/ja/">日本語</a>
+          <a href="/ru/">Русский</a>
+        </div>
+      </div>
+      <div class="f4-bottom">
+        <p>&copy; 2026 ImageToPrompt.dev &mdash; Free AI Prompt Generator</p>
+        <p>Your images are never stored. All analysis is ephemeral and private.</p>
+      </div>
+    </div>
+  </footer>
+
+<script src="/newsletter-inject.js" defer></script>
+<script src="/nav.js" defer></script>
+  <script>
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', function() {
+    navigator.serviceWorker.register('/sw.js')
+      .catch(function(err) { console.warn('SW registration failed:', err); });
+  });
+}
+</script>
+</body>
+</html>

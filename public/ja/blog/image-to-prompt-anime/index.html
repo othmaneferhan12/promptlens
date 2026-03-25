@@ -1,0 +1,475 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <script src="/theme-toggle.js"></script>
+  <meta charset="UTF-8" />
+  <link rel="dns-prefetch" href="https://www.googletagmanager.com">
+<link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="max-image-preview:large, index, follow">
+  <meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="ImageToPrompt">
+  <title>アニメ画像からプロンプトへ：アニメイラストをAIプロンプトに変換する方法</title>
+  <meta name="description" content="アニメイラストをMidjourney、Stable Diffusion、Flux向けの最適化されたAIプロンプトに変換する方法を学びましょう。" />
+  <link rel="canonical" href="https://www.imagetoprompt.dev/ja/blog/image-to-prompt-anime/" />
+  <link rel="alternate" hreflang="ja" href="https://www.imagetoprompt.dev/ja/blog/image-to-prompt-anime/" />
+  <link rel="alternate" hreflang="en" href="https://www.imagetoprompt.dev/blog/image-to-prompt-for-anime/" />
+  <link rel="alternate" hreflang="fr" href="https://www.imagetoprompt.dev/fr/blog/image-vers-prompt-anime/" />
+  <link rel="alternate" hreflang="ar" href="https://www.imagetoprompt.dev/ar/blog/soura-ila-prompt-anime/" />
+  <link rel="alternate" hreflang="es" href="https://www.imagetoprompt.dev/es/blog/imagen-a-prompt-anime/" />
+  <link rel="alternate" hreflang="x-default" href="https://www.imagetoprompt.dev/blog/image-to-prompt-for-anime/" />
+  <meta property="og:title" content="アニメ画像からプロンプトへ：アニメイラストをAIプロンプトに変換する方法" />
+  <meta property="og:description" content="アニメイラストをMidjourney、Stable Diffusion、Flux向けの最適化されたAIプロンプトに変換する方法を学びましょう。" />
+  <meta property="og:url" content="https://www.imagetoprompt.dev/ja/blog/image-to-prompt-anime/" />
+  <meta property="og:type" content="article" />
+  <meta property="og:image" content="https://www.imagetoprompt.dev/og-image.png" />
+  <meta property="og:site_name" content="ImageToPrompt" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="アニメ画像からプロンプトへ：アニメイラストをAIプロンプトに変換" />
+  <meta name="twitter:description" content="アニメイラストをMidjourney、Stable Diffusion、Flux向けの最適化されたAIプロンプトに変換する方法。" />
+  <meta name="twitter:image" content="https://www.imagetoprompt.dev/og-image.png" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="48x48" href="/favicon-48.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+  <link rel="manifest" href="/site.webmanifest" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="/fonts/space-grotesk-700.woff2" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="/fonts/inter-400.woff2" />
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/theme.css">
+  <link rel="preload" href="/blog.css" as="style" onload="this.onload=null;this.rel='stylesheet'"><noscript><link rel="stylesheet" href="/blog.css"></noscript>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "アニメ画像からプロンプトへ：アニメイラストをAIプロンプトに変換する方法",
+    "description": "アニメイラストをMidjourney、Stable Diffusion、Flux向けの最適化されたAIプロンプトに変換する方法を学びましょう。",
+    "image": "https://www.imagetoprompt.dev/og-image.png",
+    "datePublished": "2026-03-12",
+    "dateModified": "2026-03-24",
+    "inLanguage": "ja",
+    "author": {
+      "@type": "Person",
+      "name": "ImageToPrompt Team",
+      "url": "https://www.imagetoprompt.dev/"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "ImageToPrompt",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://www.imagetoprompt.dev/favicon.svg"
+      }
+    },
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https://www.imagetoprompt.dev/ja/blog/image-to-prompt-anime/"
+    }
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Stable Diffusionでアニメスタイルを生成するにはどのキーワードを使えばよいですか？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Stable Diffusionでは、anime、manga style、cel shading、vibrant colors、detailed eyes、sakura petals、dynamic poseなどのタグを使用しましょう。(masterpiece:1.2)、(best quality:1.1)などの品質トークンと、アニメ専用のネガティブプロンプトも追加してください。"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Midjourneyで本格的なアニメスタイルを生成できますか？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "はい、Midjourney v6+はアニメスタイルを非常にうまく処理します。anime illustration、Studio Ghibli style、cel-shaded、manga aestheticなどのプロンプトを使用してください。--nijiを追加すると、Midjourneyのアニメ専用モードが有効になります。"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "アニメアートにはどのようなネガティブプロンプトを使えばよいですか？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Stable Diffusionでのアニメには、以下のネガティブプロンプトを使用してください：realistic, photorealistic, 3d render, deformed hands, extra fingers, bad anatomy, blurry, low quality, ugly, watermark, signature, cropped。"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "既存のアニメイラストをAIプロンプトに変換するにはどうすればよいですか？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "ImageToPromptを使ってアニメイラストをアップロードしてください。ツールがスタイル（少年、少女、青年）、デザインの特徴、カラーパレットを自動的に識別し、ターゲットモデルに最適化されたプロンプトを生成します。"
+        }
+      }
+    ]
+  }
+  </script>
+    <!-- Google AdSense -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4499206373485728" crossorigin="anonymous"></script>
+    <!-- Web Push Notifications -->
+<script src="https://cdn.onesignal.com/sdks/web/v16/OneSignalSDK.page.js" defer></script>
+<script>
+  window.OneSignalDeferred = window.OneSignalDeferred || [];
+  OneSignalDeferred.push(async function(OneSignal) {
+    await OneSignal.init({
+      appId: "REPLACE_WITH_ONESIGNAL_APP_ID",
+      notifyButton: { enable: false }
+    });
+  });
+</script>
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="inner">
+      <a href="/ja/" class="site-logo"><img src="/favicon.svg" alt="ImageToPrompt" width="48" height="48"><div class="site-logo-text">ImageTo<span class="accent">Prompt</span><span class="site-logo-sub">無料AIプロンプトジェネレーター</span></div></a>
+      <nav class="site-nav" aria-label="メインナビゲーション">
+        <div class="nav-dropdown">
+          <button class="nav-dropdown-trigger" aria-haspopup="true" aria-expanded="false">Tools <span class="nav-chevron" aria-hidden="true">&#9660;</span></button>
+          <div class="nav-dropdown-menu" role="menu">
+            <div class="nav-mega-grid">
+              <div class="nav-mega-col">
+                <div class="nav-mega-heading">&#128444; IMAGE TOOLS</div>
+                <a href="/" role="menuitem" class="nav-mega-tool">Image to Prompt <span class="nav-mega-arrow">&#8594;</span></a>
+                <a href="/text-to-prompt/" role="menuitem" class="nav-mega-tool">Text to Prompt <span class="nav-mega-arrow">&#8594;</span></a>
+                <a href="/describe-image/" role="menuitem" class="nav-mega-tool">Describe Image <span class="nav-new-badge">NEW</span> <span class="nav-mega-arrow">&#8594;</span></a>
+                <div class="nav-mega-models-label">Models</div>
+                <div class="nav-mega-models"><a href="/midjourney-prompt-generator/">Midjourney</a><span class="nav-dot">&#xB7;</span><a href="/stable-diffusion-prompt-generator/">SD</a></div>
+                <div class="nav-mega-models"><a href="/flux-prompt-generator/">Flux</a><span class="nav-dot">&#xB7;</span><a href="/dall-e-prompt-generator/">DALL&#xB7;E&#xA0;3</a></div>
+                <div class="nav-mega-models"><a href="/adobe-firefly-prompt-generator/">Firefly</a><span class="nav-dot">&#xB7;</span><a href="/leonardo-ai-prompt-generator/">Leonardo</a></div>
+                <div class="nav-mega-models"><a href="/ideogram-prompt-generator/">Ideogram</a></div>
+              </div>
+              <div class="nav-mega-divider" aria-hidden="true"></div>
+              <div class="nav-mega-col">
+                <div class="nav-mega-heading">&#127909; VIDEO TOOLS</div>
+                <a href="/?tab=image-to-video" role="menuitem" class="nav-mega-tool">Image to Video <span class="nav-mega-arrow">&#8594;</span></a>
+                <a href="/?tab=text-to-video" role="menuitem" class="nav-mega-tool">Text to Video <span class="nav-mega-arrow">&#8594;</span></a>
+                <div class="nav-mega-models-label">Models</div>
+                <div class="nav-mega-models"><a href="/veo-prompt-generator/">Veo</a><span class="nav-dot">&#xB7;</span><a href="/kling-prompt-generator/">Kling</a></div>
+                <div class="nav-mega-models"><a href="/runway-prompt-generator/">Runway</a><span class="nav-dot">&#xB7;</span><a href="/pika-prompt-generator/">Pika</a></div>
+                <div class="nav-mega-models"><a href="/luma-prompt-generator/">Luma</a><span class="nav-dot">&#xB7;</span><a href="/sora-prompt-generator/">Sora</a></div>
+                <div class="nav-mega-models"><a href="/minimax-prompt-generator/">Minimax</a><span class="nav-dot">&#xB7;</span><a href="/stable-video-prompt-generator/">Stable</a></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <a href="/ja/blog/">ブログ</a>
+        <a href="/ja/pricing/" class="nav-pill-pricing">料金</a>
+        <a href="/ja/about/" class="nav-pill-about">概要</a>
+        <a href="/ja/" class="nav-try-free">無料で試す &#8594;</a>
+        <button id="theme-toggle" onclick="toggleTheme()" aria-label="テーマ切替" title="テーマ切替">&#9728;&#xFE0F;</button>
+  </nav>
+    </div>
+  </header>
+
+  <nav class="breadcrumb" aria-label="パンくずリスト">
+    <a href="/ja/">ホーム</a> <span aria-hidden="true">&#8250;</span>
+    <a href="/ja/blog/">ブログ</a> <span aria-hidden="true">&#8250;</span>
+    <span aria-current="page">アニメ画像からプロンプトへ</span>
+  </nav>
+
+  <div class="page-wrapper">
+
+    <header class="article-header">
+      <p class="article-tag">アニメ＆マンガ</p>
+      <h1>アニメ画像からプロンプトへ：完全ガイド</h1>
+      <div class="article-meta">
+        <span>2026年3月</span>
+        <span class="dot">&#183;</span>
+        <span>9分で読めます</span>
+        <span class="dot">&#183;</span>
+        <span>Stable Diffusion &#183; Midjourney &#183; Flux</span>
+        <span class="dot">&#183;</span>
+        <span>2026年3月更新</span>
+      </div>
+    </header>
+
+    <div class="article-body">
+
+      <p>アニメアートは、他のアートスタイルとは全く異なる独自のビジュアル言語を持っています。大きく表情豊かな瞳、セルシェーディングのくっきりとした線、鮮やかなカラーパレット、ダイナミックなポーズには、一般的なガイドでは扱われない専門的なプロンプティング技術が求められます。このガイドでは、アニメイラストを正確なAIプロンプトに変換する方法と、各主要モデルで効果的なアニメプロンプトの書き方を紹介します。</p>
+
+      <nav class="toc" aria-label="目次">
+        <details open>
+          <summary>このガイドの内容</summary>
+          <ol>
+            <li><a href="#naze-anime-tokushu">アニメに専門的なプロンプティングが必要な理由</a></li>
+            <li><a href="#anime-yogo">アニメの必須用語集</a></li>
+            <li><a href="#stable-diffusion-anime">Stable Diffusion向けアニメプロンプト</a></li>
+            <li><a href="#midjourney-anime">Midjourney向けアニメプロンプト</a></li>
+            <li><a href="#flux-anime">Flux向けアニメプロンプト</a></li>
+            <li><a href="#hinshitsu-token">品質トークンとネガティブプロンプト</a></li>
+            <li><a href="#illust-henkan">既存のアニメイラストを変換する</a></li>
+            <li><a href="#yokuaru-shitsumon">よくある質問</a></li>
+          </ol>
+        </details>
+      </nav>
+
+      <div class="callout">
+        <p><strong>ヒント：</strong> アニメイラストを瞬時にAIプロンプトに変換するには、<a href="/">ImageToPromptをご利用ください</a>。アニメスタイル、デザインの特徴を自動検出し、ターゲットモデルに最適化されたプロンプトを生成します。</p>
+      </div>
+
+      <h2 id="naze-anime-tokushu">アニメに専門的なプロンプティングが必要な理由</h2>
+
+      <p>アニメは単なる「画風」ではありません。独自のプロポーション、ライティング、視覚的ストーリーテリングのルールを持つ完全なビジュアルシステムです。<code>girl with blue hair</code>という汎用的なプロンプトは、<code>anime style</code>、<code>manga illustration</code>、<code>cel shading</code>のいずれを追加するかによって大きく異なる結果を生み出します。</p>
+
+      <p>AIジェネレーターはアニメのいくつかのサブジャンルを区別しており、それぞれに独自のビジュアル規範があります。</p>
+
+      <ul>
+        <li><strong>少年：</strong> ダイナミックな線、アクションポーズ、ドラマチックなライティング、際立つ筋肉 &#8212; <em>ドラゴンボール</em>、<em>ナルト</em>、<em>ワンピース</em></li>
+        <li><strong>少女：</strong> パステルトーン、花のモチーフ、感情豊かな表情、幻想的な背景 &#8212; <em>セーラームーン</em>、<em>カードキャプターさくら</em></li>
+        <li><strong>青年：</strong> 高いリアリズム、ダークなパレット、解剖学的ディテール、成熟した雰囲気 &#8212; <em>ベルセルク</em>、<em>攻殻機動隊</em></li>
+        <li><strong>ちび：</strong> デフォルメされたプロポーション（大きな頭、小さな体）、誇張された表情、かわいいスタイル</li>
+        <li><strong>スタジオジブリ：</strong> 精密な風景、自然な色彩、静寂な雰囲気、自然とキャラクターの調和的な融合</li>
+      </ul>
+
+      <h2 id="anime-yogo">アニメの必須用語集</h2>
+
+      <p>アニメプロンプティングに最も効果的なキーワードをカテゴリ別にまとめました。</p>
+
+      <h3>スタイルとレンダリング</h3>
+      <ul>
+        <li><code>anime style</code>、<code>manga illustration</code>、<code>cel shading</code>、<code>flat color</code></li>
+        <li><code>digital anime art</code>、<code>anime key visual</code>、<code>light novel illustration</code></li>
+        <li><code>anime screencap</code>、<code>anime wallpaper</code>、<code>visual novel CG</code></li>
+      </ul>
+
+      <h3>キャラクターの特徴</h3>
+      <ul>
+        <li><code>detailed eyes</code>、<code>anime eyes</code>、<code>sparkling eyes</code>、<code>heterochromia</code></li>
+        <li><code>flowing hair</code>、<code>twin tails</code>、<code>ahoge</code>、<code>side ponytail</code></li>
+        <li><code>school uniform</code>、<code>magical girl outfit</code>、<code>mecha suit</code>、<code>traditional kimono</code></li>
+      </ul>
+
+      <h3>構図と雰囲気</h3>
+      <ul>
+        <li><code>dynamic pose</code>、<code>action shot</code>、<code>dutch angle</code>、<code>dramatic perspective</code></li>
+        <li><code>sakura petals</code>、<code>cherry blossom background</code>、<code>sunset rooftop</code>、<code>night city</code></li>
+        <li><code>sparkle effects</code>、<code>lens flare</code>、<code>rim lighting</code>、<code>backlighting</code></li>
+      </ul>
+
+      <h2 id="stable-diffusion-anime">Stable Diffusion向けアニメプロンプト</h2>
+
+      <p>Stable Diffusionは、専門チェックポイント（Anything v5、Counterfeit、Waifu Diffusion、NovelAI）が豊富なため、アニメアートで最も人気のあるモデルです。重み付け構文により精密な制御が可能です。</p>
+
+      <h3>推奨プロンプト構造</h3>
+
+      <p>品質トークンから始め、次に被写体、スタイル、雰囲気の順で記述します。</p>
+
+      <pre><code>(masterpiece:1.2), (best quality:1.1), anime style, 1girl, long silver hair, blue eyes, school uniform, standing on rooftop, sunset, cherry blossom petals falling, wind blowing hair, dramatic lighting, vibrant colors, detailed background, anime key visual</code></pre>
+
+      <h3>アニメ向け推奨ネガティブプロンプト</h3>
+
+      <pre><code>(worst quality:1.4), (low quality:1.4), realistic, photorealistic, 3d render, deformed, bad anatomy, bad hands, extra fingers, missing fingers, extra limbs, ugly, blurry, watermark, signature, text, cropped, out of frame, duplicate</code></pre>
+
+      <p>ネガティブプロンプトに<code>realistic</code>と<code>photorealistic</code>を含めていることに注目してください。これにより、モデルはよりスタイライズされたアニメ風のレンダリングに向かいます。</p>
+
+      <h2 id="midjourney-anime">Midjourney向けアニメプロンプト</h2>
+
+      <p>Midjourneyには、アニメやマンガアートに特化してトレーニングされた<code>--niji</code>モードがあります。これは単なるスタイルフィルターではなく、完全に異なるモデルへの切り替えです。</p>
+
+      <h3>Midjourneyアニメプロンプト例</h3>
+
+      <pre><code>anime girl with silver hair standing on a rooftop at sunset, cherry blossoms falling, dramatic wind, vibrant colors, detailed eyes, anime key visual --niji 6 --ar 2:3</code></pre>
+
+      <pre><code>dark fantasy anime warrior, black armor, glowing red sword, rain falling, dramatic lightning, seinen manga style --niji 6 --ar 16:9 --style expressive</code></pre>
+
+      <p>nijiモードの<code>--style expressive</code>パラメータは感情とダイナミズムを強調します。よりかわいらしく柔らかいレンダリングには<code>--style cute</code>を使用してください。</p>
+
+      <h2 id="flux-anime">Flux向けアニメプロンプト</h2>
+
+      <p>Fluxは自然言語の詳細な記述でアニメスタイルを処理します。特別な構文は不要で、求めるものを正確に描写するだけです。</p>
+
+      <pre><code>Anime-style illustration of a young woman with flowing silver hair and piercing blue eyes, standing on a school rooftop during golden hour. Cherry blossom petals drift through the warm evening air. She wears a dark blue sailor uniform with a red ribbon. The background shows a panoramic city skyline bathed in orange and pink sunset light. Studio anime quality with detailed cel shading, vibrant saturated colors, and soft rim lighting highlighting her hair.</code></pre>
+
+      <p>Fluxでは、個別のキーワードよりもプロンプトの長さと精度が重要です。ビジュアルノベルの一段落を書くようにシーンを描写しましょう。</p>
+
+      <h2 id="hinshitsu-token">品質トークンとネガティブプロンプト</h2>
+
+      <p>品質トークンは、アニメ出力の全体的な品質を向上させるキーワードです。モデルによって効果が異なります。</p>
+
+      <div class="table-wrap">
+      <table class="comparison-table">
+        <thead>
+          <tr>
+            <th>トークン</th>
+            <th>Stable Diffusion</th>
+            <th>Midjourney</th>
+            <th>Flux</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><code>masterpiece</code></td>
+            <td>非常に効果的</td>
+            <td>効果小</td>
+            <td>効果小</td>
+          </tr>
+          <tr>
+            <td><code>best quality</code></td>
+            <td>非常に効果的</td>
+            <td>効果小</td>
+            <td>中程度</td>
+          </tr>
+          <tr>
+            <td><code>highly detailed</code></td>
+            <td>効果的</td>
+            <td>効果的</td>
+            <td>効果的</td>
+          </tr>
+          <tr>
+            <td><code>anime key visual</code></td>
+            <td>非常に効果的</td>
+            <td>効果的</td>
+            <td>効果的</td>
+          </tr>
+        </tbody>
+      </table>
+      </div>
+
+      <h2 id="illust-henkan">既存のアニメイラストを変換する</h2>
+
+      <p>再現したいアニメイラストがある場合や、そのスタイルを抽出したい場合、画像からプロンプトへの変換は特に強力です。AIは、あなたが気づかなかったり名前を知らなかったりするアニメ特有の特徴を識別できます。</p>
+
+      <p><a href="/">ImageToPrompt</a>を使えば、プロセスはシンプルです。</p>
+      <ol>
+        <li>アニメイラストをアップロードします</li>
+        <li>ターゲットモデルを選択します（アニメチェックポイントを使ったStable Diffusionが推奨です）</li>
+        <li>スタイルモードを「アーティスティック」に設定して、スタイルの詳細を最大化します</li>
+        <li>AIがサブジャンル、デザインの特徴、パレットを自動識別し、完全なプロンプトを生成します</li>
+      </ol>
+
+      <p>重要な利点は、使用されているセルシェーディングのタイプ、線の密度、瞳の着色スタイル、さらには世代の美学（90年代アニメ vs 現代アニメ）といった微妙なニュアンスまで検出し、AIモデルが理解できるキーワードに翻訳することです。</p>
+
+      <div class="cta-box">
+        <h3>アニメイラストをプロンプトに変換</h3>
+        <p>アニメイラストをアップロードするだけで、Stable Diffusion、Midjourney、Flux向けの最適化されたプロンプトを取得できます。登録不要です。</p>
+        <a href="/?lang=ja" class="cta-btn">ImageToPromptを試す &#8594;</a>
+      </div>
+
+      <h2 id="yokuaru-shitsumon">よくある質問</h2>
+
+      <h3>Stable Diffusionでアニメスタイルを生成するにはどのキーワードを使えばよいですか？</h3>
+      <p>Stable Diffusionでは、<code>anime</code>、<code>manga style</code>、<code>cel shading</code>、<code>vibrant colors</code>、<code>detailed eyes</code>、<code>sakura petals</code>、<code>dynamic pose</code>などのタグを使用しましょう。<code>(masterpiece:1.2)</code>、<code>(best quality:1.1)</code>などの品質トークンと、アニメ専用のネガティブプロンプトも追加してください。</p>
+
+      <h3>Midjourneyで本格的なアニメスタイルを生成できますか？</h3>
+      <p>はい、Midjourney v6+はアニメスタイルを非常にうまく処理します。<code>anime illustration</code>、<code>Studio Ghibli style</code>、<code>cel-shaded</code>、<code>manga aesthetic</code>などのプロンプトを使用してください。<code>--niji</code>を追加すると、このスタイルに最適化された完全に異なるモデルを使用するMidjourneyのアニメ専用モードが有効になります。</p>
+
+      <h3>アニメアートにはどのようなネガティブプロンプトを使えばよいですか？</h3>
+      <p>Stable Diffusionでのアニメには、以下のネガティブプロンプトを使用してください：<code>realistic, photorealistic, 3d render, deformed hands, extra fingers, bad anatomy, blurry, low quality, ugly, watermark, signature, cropped</code>。スタイルの意図しないミックスを避けるために、<code>realistic</code>を含めることが不可欠です。</p>
+
+      <h3>既存のアニメイラストをAIプロンプトに変換するにはどうすればよいですか？</h3>
+      <p><a href="/">ImageToPrompt</a>を使ってアニメイラストをアップロードしてください。ツールがスタイル（少年、少女、青年）、デザインの特徴、カラーパレットを自動的に識別し、ターゲットモデルに最適化されたプロンプトを生成します。</p>
+
+    </div>
+
+    <div class="author-bio">
+      <img src="/favicon.svg" alt="ImageToPrompt Team" width="44" height="44">
+      <div>
+        <strong>ImageToPrompt Team</strong>
+        <p>私たちはクリエイターの皆さんがAI画像生成をマスターできるよう支援する専門チームです。画像からプロンプトへの変換ツールやAIプロンプトエンジニアリングガイドを通じて、世界中のアーティストの創作活動をサポートしています。</p>
+        <a href="https://x.com/ImageToPrompt" target="_blank" rel="noopener" class="author-follow">Xでフォロー</a>
+      </div>
+    </div>
+
+    <div class="related-posts">
+      <h2>関連ガイド</h2>
+      <div class="related-grid">
+        <a href="/ja/blog/gazou-kara-prompt-ai-henkan/" class="related-card">
+          <p class="tag">ガイド</p>
+          <h3>画像をAIプロンプトに変換する方法</h3>
+        </a>
+        <a href="/ja/blog/negative-prompt-stable-diffusion/" class="related-card">
+          <p class="tag">Stable Diffusion</p>
+          <h3>Stable Diffusionのネガティブプロンプト</h3>
+        </a>
+        <a href="/ja/blog/midjourney-prompt-gaido-2026/" class="related-card">
+          <p class="tag">Midjourney</p>
+          <h3>Midjourneyプロンプト完全ガイド2026</h3>
+        </a>
+        <a href="/ja/blog/best-image-to-prompt-tools-2026/" class="related-card">
+          <p class="tag">比較</p>
+          <h3>2026年版 画像からプロンプトへの最良ツール</h3>
+        </a>
+      </div>
+    </div>
+
+  </div>
+
+  <footer class="footer-4col">
+    <div class="f4-inner">
+      <div class="f4-brand">
+        <img src="/favicon.svg" alt="ImageToPrompt" width="28" height="28">
+        <span class="f4-brand-name">ImageTo<span class="accent">Prompt</span></span>
+        <span class="f4-brand-sub">&mdash; Free AI Prompt Generator</span>
+      </div>
+      <div class="f4-grid">
+        <div class="f4-section">
+          <h4 class="f4-heading">Image Prompt Tools</h4>
+          <a href="/">Image to Prompt</a>
+          <a href="/text-to-prompt/">Text to Prompt</a>
+      <a href="/describe-image/">Describe Image</a>
+          <a href="/midjourney-prompt-generator/">Midjourney</a>
+          <a href="/stable-diffusion-prompt-generator/">Stable Diffusion</a>
+          <a href="/flux-prompt-generator/">Flux</a>
+          <a href="/dall-e-prompt-generator/">DALL-E 3</a>
+          <a href="/adobe-firefly-prompt-generator/">Adobe Firefly</a>
+          <a href="/leonardo-ai-prompt-generator/">Leonardo AI</a>
+          <a href="/ideogram-prompt-generator/">Ideogram</a>
+        </div>
+        <div class="f4-section">
+          <h4 class="f4-heading">Video Prompt Tools</h4>
+          <a href="/image-to-video-prompt/">Image to Video Prompt</a>
+          <a href="/text-to-video-prompt/">Text to Video Prompt</a>
+          <a href="/veo-prompt-generator/">Veo / Flow Studio</a>
+          <a href="/kling-prompt-generator/">Kling AI</a>
+          <a href="/runway-prompt-generator/">Runway Gen-3</a>
+          <a href="/pika-prompt-generator/">Pika</a>
+          <a href="/luma-prompt-generator/">Luma Dream Machine</a>
+          <a href="/sora-prompt-generator/">Sora</a>
+          <a href="/minimax-prompt-generator/">Minimax</a>
+          <a href="/stable-video-prompt-generator/">Stable Video</a>
+        </div>
+        <div class="f4-section">
+          <h4 class="f4-heading">Resources</h4>
+          <a href="/ja/blog/">ブログ</a>
+          <a href="/ja/about/">概要</a>
+          <a href="/ja/pricing/">料金</a>
+          <a href="/contact/">Contact</a>
+          <a href="/privacy-policy/">Privacy Policy</a>
+          <a href="/terms-of-service/">Terms of Service</a>
+        </div>
+        <div class="f4-section">
+          <h4 class="f4-heading">Languages</h4>
+          <a href="/">English</a>
+          <a href="/fr/">Fran&#231;ais</a>
+          <a href="/ar/">&#1575;&#1604;&#1593;&#1585;&#1576;&#1610;&#1577;</a>
+          <a href="/es/">Espa&#241;ol</a>
+          <a href="/ko/">&#54620;&#44397;&#50612;</a>
+          <a href="/ja/">&#26085;&#26412;&#35486;</a>
+          <a href="/ru/">&#1056;&#1091;&#1089;&#1089;&#1082;&#1080;&#1081;</a>
+        </div>
+      </div>
+      <div class="f4-bottom">
+        <p>&#169; 2026 ImageToPrompt.dev &#8212; Free AI Prompt Generator</p>
+        <p>Your images are never stored. All analysis is ephemeral and private.</p>
+      </div>
+    </div>
+  </footer>
+
+<script src="/newsletter-inject.js" defer></script>
+<script src="/nav.js" defer></script>
+  <script>
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', function() {
+    navigator.serviceWorker.register('/sw.js')
+      .catch(function(err) { console.warn('SW registration failed:', err); });
+  });
+}
+</script>
+</body>
+</html>

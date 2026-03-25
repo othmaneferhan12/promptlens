@@ -1,0 +1,482 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <script src="/theme-toggle.js"></script>
+  <meta charset="UTF-8" />
+  <link rel="dns-prefetch" href="https://www.googletagmanager.com">
+<link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="max-image-preview:large, index, follow">
+  <meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="ImageToPrompt">
+  <title>AI &#54532;&#47212;&#54532;&#53944; &#51089;&#49457;&#48277; &#51077;&#47928; &#8212; &#52488;&#48372;&#51088;&#47484; &#50948;&#54620; &#44032;&#51060;&#46300;</title>
+  <meta name="description" content="Midjourney, Stable Diffusion, DALL-E 3&#50857; AI &#54532;&#47212;&#54532;&#53944; &#51089;&#49457;&#48277;&#51012; &#52488;&#48372;&#51088;&#46020; &#49789;&#44172; &#48176;&#50872; &#49688; &#51080;&#45716; &#50756;&#48317; &#44032;&#51060;&#46300;&#51077;&#45768;&#45796;." />
+  <link rel="canonical" href="https://www.imagetoprompt.dev/ko/blog/ai-prompt-jakseongbeop-ibmun/" />
+  <link rel="alternate" hreflang="ko" href="https://www.imagetoprompt.dev/ko/blog/ai-prompt-jakseongbeop-ibmun/" />
+  <link rel="alternate" hreflang="en" href="https://www.imagetoprompt.dev/blog/how-to-write-ai-prompts-beginners/" />
+  <link rel="alternate" hreflang="fr" href="https://www.imagetoprompt.dev/fr/blog/ecrire-prompts-ia-debutants/" />
+  <link rel="alternate" hreflang="ar" href="https://www.imagetoprompt.dev/ar/blog/kitabat-prompts-ia-lilmubtadiin/" />
+  <link rel="alternate" hreflang="es" href="https://www.imagetoprompt.dev/es/blog/escribir-prompts-ia-principiantes/" />
+  <link rel="alternate" hreflang="ja" href="https://www.imagetoprompt.dev/ja/blog/ai-prompt-kakikata-nyumon/" />
+  <link rel="alternate" hreflang="x-default" href="https://www.imagetoprompt.dev/blog/how-to-write-ai-prompts-beginners/" />
+  <meta property="og:title" content="AI &#54532;&#47212;&#54532;&#53944; &#51089;&#49457;&#48277; &#51077;&#47928; &#8212; &#52488;&#48372;&#51088;&#47484; &#50948;&#54620; &#44032;&#51060;&#46300;" />
+  <meta property="og:description" content="Midjourney, Stable Diffusion, DALL-E 3&#50857; AI &#54532;&#47212;&#54532;&#53944; &#51089;&#49457;&#48277;&#51012; &#52488;&#48372;&#51088;&#46020; &#49789;&#44172; &#48176;&#50872; &#49688; &#51080;&#45716; &#50756;&#48317; &#44032;&#51060;&#46300;&#51077;&#45768;&#45796;." />
+  <meta property="og:url" content="https://www.imagetoprompt.dev/ko/blog/ai-prompt-jakseongbeop-ibmun/" />
+  <meta property="og:type" content="article" />
+  <meta property="og:image" content="https://www.imagetoprompt.dev/og-image.png" />
+  <meta property="og:site_name" content="ImageToPrompt" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="AI &#54532;&#47212;&#54532;&#53944; &#51089;&#49457;&#48277; &#51077;&#47928; &#8212; &#52488;&#48372;&#51088;&#47484; &#50948;&#54620; &#44032;&#51060;&#46300;" />
+  <meta name="twitter:description" content="Midjourney, Stable Diffusion, DALL-E 3&#50857; AI &#54532;&#47212;&#54532;&#53944; &#51089;&#49457;&#48277;&#51012; &#52488;&#48372;&#51088;&#46020; &#49789;&#44172; &#48176;&#50872; &#49688; &#51080;&#45716; &#50756;&#48317; &#44032;&#51060;&#46300;&#51077;&#45768;&#45796;." />
+  <meta name="twitter:image" content="https://www.imagetoprompt.dev/og-image.png" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="48x48" href="/favicon-48.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+  <link rel="manifest" href="/site.webmanifest" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="/fonts/space-grotesk-700.woff2" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="/fonts/inter-400.woff2" />
+  <link rel="stylesheet" href="/theme.css">
+  <link rel="preload" href="/blog.css" as="style" onload="this.onload=null;this.rel='stylesheet'"><noscript><link rel="stylesheet" href="/blog.css"></noscript>
+  <style>body{font-family:'Noto Sans KR',sans-serif}</style>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "AI \ud504\ub86c\ud504\ud2b8 \uc791\uc131\ubc95 \uc785\ubb38 \u2014 \ucd08\ubcf4\uc790\ub97c \uc704\ud55c \uac00\uc774\ub4dc",
+    "description": "Midjourney, Stable Diffusion, DALL-E 3\uc6a9 AI \ud504\ub86c\ud504\ud2b8 \uc791\uc131\ubc95\uc744 \ucd08\ubcf4\uc790\ub3c4 \uc27d\uac8c \ubc30\uc6b8 \uc218 \uc788\ub294 \uc644\ubcbd \uac00\uc774\ub4dc\uc785\ub2c8\ub2e4.",
+    "image": "https://www.imagetoprompt.dev/og-image.png",
+    "datePublished": "2026-03-10",
+    "dateModified": "2026-03-24",
+    "inLanguage": "ko",
+    "author": {
+      "@type": "Person",
+      "name": "ImageToPrompt Team",
+      "url": "https://www.imagetoprompt.dev/"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "ImageToPrompt",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://www.imagetoprompt.dev/favicon.svg"
+      }
+    },
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https://www.imagetoprompt.dev/ko/blog/ai-prompt-jakseongbeop-ibmun/"
+    }
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "AI \ud504\ub86c\ud504\ud2b8\uc758 \uc774\uc0c1\uc801\uc778 \uae38\uc774\ub294 \uc5bc\ub9c8\uc778\uac00\uc694?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "\uc774\uc0c1\uc801\uc778 \uae38\uc774\ub294 \ubaa8\ub378\uc5d0 \ub530\ub77c \ub2e4\ub985\ub2c8\ub2e4. Midjourney\ub294 20~60\ub2e8\uc5b4\uac00 \uc801\ub2f9\ud569\ub2c8\ub2e4. Stable Diffusion\uc740 75\ud1a0\ud070(\uc57d 60\ub2e8\uc5b4) \uc774\ud558\ub85c \uc720\uc9c0\ud574\uc57c \uc798\ub9bc\uc744 \ubc29\uc9c0\ud560 \uc218 \uc788\uc2b5\ub2c8\ub2e4. Flux\uc640 DALL-E 3\ub294 50~100\ub2e8\uc5b4\uc758 \uae34 \uc124\uba85\ub3c4 \uc798 \ucc98\ub9ac\ud569\ub2c8\ub2e4. \uc77c\ubc18\uc801\uc73c\ub85c \uc9e7\uac8c \uc2dc\uc791\ud574\uc11c \uc810\uc9c4\uc801\uc73c\ub85c \uc138\ubd80 \uc0ac\ud56d\uc744 \ucd94\uac00\ud558\ub294 \uac83\uc774 \uc88b\uc2b5\ub2c8\ub2e4."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "\ud504\ub86c\ud504\ud2b8\ub294 \uc601\uc5b4\ub85c \uc368\uc57c \ud558\ub098\uc694, \ud55c\uad6d\uc5b4\ub85c \uc368\ub3c4 \ub418\ub098\uc694?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "\uc8fc\uc694 AI \uc774\ubbf8\uc9c0 \uc0dd\uc131\uae30 \ubaa8\ub450\uc5d0 \uc601\uc5b4 \ud504\ub86c\ud504\ud2b8\ub97c \uad8c\uc7a5\ud569\ub2c8\ub2e4. \ubaa8\ub378\ub4e4\uc774 \uc8fc\ub85c \uc601\uc5b4 \ub370\uc774\ud130\ub85c \ud559\uc2b5\ub418\uc5c8\uae30 \ub54c\ubb38\uc5d0 \uc601\uc5b4 \ud504\ub86c\ud504\ud2b8\uac00 \ub354 \uc815\ud655\ud558\uace0 \uc77c\uad00\ub41c \uacb0\uacfc\ub97c \ub9cc\ub4e4\uc5b4\ub0c5\ub2c8\ub2e4. DALL-E 3\uc640 Midjourney\uac00 \ud55c\uad6d\uc5b4\ub97c \uc774\ud574\ud558\uc9c0\ub9cc, \ubbf8\uc220 \ubc0f \uc0ac\uc9c4 \uc804\ubb38 \uc6a9\uc5b4\ub294 \uc601\uc5b4\ub85c \uc4f8 \ub54c \ub354 \uc798 \uc778\uc2dd\ub429\ub2c8\ub2e4."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "\uacb0\uacfc\uac00 \uc88b\uc9c0 \uc54a\uc744 \ub54c \ud504\ub86c\ud504\ud2b8\ub97c \uc5b4\ub5bb\uac8c \uac1c\uc120\ud558\ub098\uc694?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "\uc138 \uac00\uc9c0 \uc8fc\uc694 \uc804\ub7b5\uc774 \uc788\uc2b5\ub2c8\ub2e4: 1) \uad6c\uccb4\uc131\uc744 \ub192\uc774\uc138\uc694 \u2014 \ubaa8\ud638\ud55c \ud45c\ud604\uc744 \uc815\ud655\ud55c \uc124\uba85\uc73c\ub85c \uad50\uccb4\ud558\uc138\uc694 ('\uc608\uc05c \uc9d1' \ub300\uc2e0 'modern minimalist house with floor-to-ceiling windows' \uc0ac\uc6a9). 2) \uc870\uba85\uacfc \ubd84\uc704\uae30\ub97c \uc870\uc815\ud558\uc138\uc694 \u2014 \uc774 \uc694\uc18c\ub4e4\uc774 \uacb0\uacfc\ub97c \uadf9\uc801\uc73c\ub85c \ubcc0\ud654\uc2dc\ud0b5\ub2c8\ub2e4. 3) Stable Diffusion\uc5d0\uc11c \ub124\uac70\ud2f0\ube0c \ud504\ub86c\ud504\ud2b8\ub97c \uc0ac\uc6a9\ud558\uc5ec \uc6d0\ud558\uc9c0 \uc54a\ub294 \uc694\uc18c\ub97c \uc81c\uac70\ud558\uc138\uc694."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "\ucd08\ubcf4\uc790\uc5d0\uac8c \uac00\uc7a5 \uc88b\uc740 AI \uc774\ubbf8\uc9c0 \uc0dd\uc131\uae30\ub294 \ubb34\uc5c7\uc778\uac00\uc694?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "DALL-E 3(ChatGPT \uacbd\uc720)\uac00 \ud2b9\ubcc4\ud55c \uad6c\ubb38 \uc5c6\uc774 \uc790\uc5f0\uc5b4\ub97c \uc774\ud574\ud558\uae30 \ub54c\ubb38\uc5d0 \uac00\uc7a5 \uc811\uadfc\uc131\uc774 \ub192\uc2b5\ub2c8\ub2e4. Midjourney\ub294 \uac04\ub2e8\ud55c \ud504\ub86c\ud504\ud2b8\ub85c\ub3c4 \ub6f0\uc5b4\ub09c \uacb0\uacfc\ub97c \uc81c\uacf5\ud558\uc9c0\ub9cc Discord\uac00 \ud544\uc694\ud569\ub2c8\ub2e4. Stable Diffusion\uc740 \uac00\uc7a5 \ub9ce\uc740 \uc81c\uc5b4\ub97c \uc81c\uacf5\ud558\uc9c0\ub9cc \ud559\uc2b5 \uace1\uc120\uc774 \uac00\ud30c\ub985\ub2c8\ub2e4. Flux\ub294 \uc790\uc5f0\uc5b4 \ud504\ub86c\ud504\ud2b8\uc640 \uc0ac\uc2e4\uc801\uc778 \uacb0\uacfc\ub97c \uc81c\uacf5\ud558\ub294 \uc88b\uc740 \uc808\ucda9\uc548\uc785\ub2c8\ub2e4."
+        }
+      }
+    ]
+  }
+  </script>
+    <!-- Google AdSense -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4499206373485728" crossorigin="anonymous"></script>
+    <!-- Web Push Notifications -->
+<script src="https://cdn.onesignal.com/sdks/web/v16/OneSignalSDK.page.js" defer></script>
+<script>
+  window.OneSignalDeferred = window.OneSignalDeferred || [];
+  OneSignalDeferred.push(async function(OneSignal) {
+    await OneSignal.init({
+      appId: "REPLACE_WITH_ONESIGNAL_APP_ID",
+      notifyButton: { enable: false }
+    });
+  });
+</script>
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="inner">
+      <a href="/ko/" class="site-logo"><img src="/favicon.svg" alt="ImageToPrompt" width="48" height="48"><div class="site-logo-text">ImageTo<span class="accent">Prompt</span><span class="site-logo-sub">&#47924;&#47308; AI &#54532;&#47212;&#54532;&#53944; &#49373;&#49457;&#44592;</span></div></a>
+      <nav class="site-nav" aria-label="&#47700;&#51064; &#45236;&#48708;&#44172;&#51060;&#49496;">
+        <div class="nav-dropdown">
+          <button class="nav-dropdown-trigger" aria-haspopup="true" aria-expanded="false">Tools <span class="nav-chevron" aria-hidden="true">&#9660;</span></button>
+          <div class="nav-dropdown-menu" role="menu">
+            <div class="nav-mega-grid">
+              <div class="nav-mega-col">
+                <div class="nav-mega-heading">&#128444; IMAGE TOOLS</div>
+                <a href="/" role="menuitem" class="nav-mega-tool">Image to Prompt <span class="nav-mega-arrow">&#8594;</span></a>
+                <a href="/text-to-prompt/" role="menuitem" class="nav-mega-tool">Text to Prompt <span class="nav-mega-arrow">&#8594;</span></a>
+                <a href="/describe-image/" role="menuitem" class="nav-mega-tool">Describe Image <span class="nav-new-badge">NEW</span> <span class="nav-mega-arrow">&#8594;</span></a>
+                <div class="nav-mega-models-label">Models</div>
+                <div class="nav-mega-models"><a href="/midjourney-prompt-generator/">Midjourney</a><span class="nav-dot">&#xB7;</span><a href="/stable-diffusion-prompt-generator/">SD</a></div>
+                <div class="nav-mega-models"><a href="/flux-prompt-generator/">Flux</a><span class="nav-dot">&#xB7;</span><a href="/dall-e-prompt-generator/">DALL&#xB7;E&#xA0;3</a></div>
+                <div class="nav-mega-models"><a href="/adobe-firefly-prompt-generator/">Firefly</a><span class="nav-dot">&#xB7;</span><a href="/leonardo-ai-prompt-generator/">Leonardo</a></div>
+                <div class="nav-mega-models"><a href="/ideogram-prompt-generator/">Ideogram</a></div>
+              </div>
+              <div class="nav-mega-divider" aria-hidden="true"></div>
+              <div class="nav-mega-col">
+                <div class="nav-mega-heading">&#127909; VIDEO TOOLS</div>
+                <a href="/?tab=image-to-video" role="menuitem" class="nav-mega-tool">Image to Video <span class="nav-mega-arrow">&#8594;</span></a>
+                <a href="/?tab=text-to-video" role="menuitem" class="nav-mega-tool">Text to Video <span class="nav-mega-arrow">&#8594;</span></a>
+                <div class="nav-mega-models-label">Models</div>
+                <div class="nav-mega-models"><a href="/veo-prompt-generator/">Veo</a><span class="nav-dot">&#xB7;</span><a href="/kling-prompt-generator/">Kling</a></div>
+                <div class="nav-mega-models"><a href="/runway-prompt-generator/">Runway</a><span class="nav-dot">&#xB7;</span><a href="/pika-prompt-generator/">Pika</a></div>
+                <div class="nav-mega-models"><a href="/luma-prompt-generator/">Luma</a><span class="nav-dot">&#xB7;</span><a href="/sora-prompt-generator/">Sora</a></div>
+                <div class="nav-mega-models"><a href="/minimax-prompt-generator/">Minimax</a><span class="nav-dot">&#xB7;</span><a href="/stable-video-prompt-generator/">Stable</a></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <a href="/ko/blog/">&#48660;&#47196;&#44536;</a>
+        <a href="/ko/pricing/" class="nav-pill-pricing">&#50836;&#44552;</a>
+        <a href="/ko/about/" class="nav-pill-about">&#49548;&#44060;</a>
+        <a href="/ko/" class="nav-try-free">&#47924;&#47308; &#52404;&#54744; &#8594;</a>
+        <button id="theme-toggle" onclick="toggleTheme()" aria-label="&#53580;&#47560; &#51204;&#54872;" title="&#53580;&#47560; &#51204;&#54872;">&#9728;&#xFE0F;</button>
+  </nav>
+    </div>
+  </header>
+
+  <nav class="breadcrumb" aria-label="&#53456;&#49353;&#44221;&#47196;">
+    <a href="/ko/">&#54856;</a><span class="sep">&#8250;</span>
+    <a href="/ko/blog/">&#48660;&#47196;&#44536;</a><span class="sep">&#8250;</span>
+    <span>AI &#54532;&#47212;&#54532;&#53944; &#51089;&#49457;&#48277; &#51077;&#47928;</span>
+  </nav>
+
+  <div class="page-wrapper">
+
+    <header class="article-header">
+      <p class="article-tag">&#52488;&#48372;&#51088;</p>
+      <h1>AI &#54532;&#47212;&#54532;&#53944; &#51089;&#49457;&#48277; &#8212; &#52488;&#48372;&#51088; &#44032;&#51060;&#46300;</h1>
+      <div class="article-meta">
+        <span>2026&#45380; 3&#50900;</span>
+        <span class="dot">&#183;</span>
+        <span>10&#48516; &#51069;&#44592;</span>
+        <span class="dot">&#183;</span>
+        <span>Midjourney &#183; Stable Diffusion &#183; DALL&#183;E 3 &#183; Flux</span>
+        <span class="dot">&#183;</span>
+        <span>2026&#45380; 3&#50900; &#50629;&#45936;&#51060;&#53944;</span>
+      </div>
+    </header>
+
+    <div class="article-body">
+
+      <p>AI&#47196; &#51060;&#48120;&#51648;&#47484; &#47564;&#46308;&#44256; &#49910;&#51648;&#47564;, &#44208;&#44284;&#44032; &#47672;&#47551;&#49549;&#50640; &#44536;&#47536; &#44163;&#44284; &#51204;&#54784; &#45796;&#47480;&#44032;&#50836;? &#47928;&#51228;&#45716; &#50500;&#47560; &#49324;&#50857;&#54616;&#45716; &#47784;&#45944;&#51060; &#50500;&#45768;&#46972; &#54532;&#47212;&#54532;&#53944;&#47484; &#51089;&#49457;&#54616;&#45716; &#48169;&#48277;&#50640; &#51080;&#51012; &#44163;&#51077;&#45768;&#45796;. AI &#54532;&#47212;&#54532;&#53944; &#51089;&#49457;&#51008; &#48176;&#50872; &#49688; &#51080;&#45716; &#44592;&#49696;&#51060;&#47728;, &#51060; &#44032;&#51060;&#46300;&#45716; &#50724;&#45720;&#48512;&#53552; &#45440;&#46972;&#50868; &#44208;&#44284;&#47484; &#50619;&#44592; &#50948;&#54620; &#54596;&#49688; &#44592;&#52488;&#47484; &#50508;&#47140;&#46300;&#47549;&#45768;&#45796;.</p>
+
+      <nav class="toc" aria-label="&#47785;&#52264;">
+        <details open>
+          <summary>&#51060; &#44032;&#51060;&#46300;&#51032; &#45236;&#50857;</summary>
+          <ol>
+            <li><a href="#ai-prompt-ran">AI &#54532;&#47212;&#54532;&#53944;&#46976;?</a></li>
+            <li><a href="#johun-prompt-gujo">&#51339;&#51008; &#54532;&#47212;&#54532;&#53944;&#51032; &#44396;&#51312;</a></li>
+            <li><a href="#6gaji-pilsu-yoso">6&#44032;&#51648; &#54596;&#49688; &#50836;&#49548;</a></li>
+            <li><a href="#model-byeol-guimun">&#47784;&#45944;&#48324; &#44396;&#47928;</a></li>
+            <li><a href="#chobojar-template">&#52488;&#48372;&#51088; &#53596;&#54540;&#47551;</a></li>
+            <li><a href="#heunhan-silsu">&#44032;&#51109; &#55120;&#54620; &#49892;&#49688;</a></li>
+            <li><a href="#silje-yeonseup">&#49892;&#51204; &#50672;&#49845;</a></li>
+            <li><a href="#jaju-munneun-jilmun">&#51088;&#51452; &#47928;&#45716; &#51656;&#47928;</a></li>
+          </ol>
+        </details>
+      </nav>
+
+      <div class="callout">
+        <p><strong>&#48736;&#47480; &#48169;&#48277;:</strong> &#54532;&#47212;&#54532;&#53944; &#51089;&#49457;&#51060; &#50500;&#51649; &#50612;&#47157;&#45796;&#47732;, <a href="/text-to-prompt/">Text to Prompt &#49373;&#49457;&#44592;</a>&#47484; &#49324;&#50857;&#54644;&#48372;&#49464;&#50836;. &#44036;&#45800;&#54620; &#50500;&#51060;&#46356;&#50612;&#47484; &#47751; &#45800;&#50612;&#47196; &#51077;&#47141;&#54616;&#47732; &#50612;&#46500; &#47784;&#45944;&#50640;&#46020; &#52572;&#51201;&#54868;&#46108; &#54532;&#47212;&#54532;&#53944;&#47484; &#47564;&#46308;&#50612; &#46300;&#47549;&#45768;&#45796;.</p>
+      </div>
+
+      <h2 id="ai-prompt-ran">AI &#54532;&#47212;&#54532;&#53944;&#46976;?</h2>
+
+      <p>&#54532;&#47212;&#54532;&#53944;&#45716; AI &#51060;&#48120;&#51648; &#49373;&#49457;&#44592;&#50640; &#50612;&#46500; &#51060;&#48120;&#51648;&#47484; &#47564;&#46308;&#44256; &#49910;&#51008;&#51648; &#50508;&#47140;&#51452;&#45716; &#53581;&#49828;&#53944; &#47749;&#47161;&#51077;&#45768;&#45796;. &#47784;&#45944;&#44284; &#49548;&#53685;&#54616;&#45716; &#49688;&#45800;&#51060;&#46972;&#44256; &#49373;&#44033;&#54616;&#49464;&#50836;. &#54532;&#47212;&#54532;&#53944;&#44032; &#47749;&#54869;&#54616;&#44256; &#49464;&#48128;&#54624;&#49688;&#47197; &#44208;&#44284;&#47932;&#51008; &#50668;&#47084;&#48516;&#51032; &#48708;&#51204;&#50640; &#45908; &#44032;&#44620;&#50892;&#51665;&#45768;&#45796;.</p>
+
+      <p>&#54532;&#47212;&#54532;&#53944;&#47484; &#47588;&#50864; &#51116;&#45733;&#51080;&#51648;&#47564; &#50500;&#51452; &#47928;&#51088; &#44536;&#45824;&#47196; &#54644;&#49437;&#54616;&#45716; &#50500;&#54000;&#49828;&#53944;&#50640;&#44172; &#51452;&#47928;&#51012; &#54616;&#45716; &#44163;&#51004;&#47196; &#49373;&#44033;&#54644;&#48372;&#49464;&#50836;. &#50500;&#54000;&#49828;&#53944;&#45716; &#50668;&#47084;&#48516;&#51060; &#50836;&#52397;&#54620; &#44163;&#51012; &#51221;&#54869;&#55176; &#49892;&#54665;&#54633;&#45768;&#45796;. &#8220;&#44256;&#50577;&#51060;&#8221;&#46972;&#44256; &#54616;&#47732; &#51068;&#48152;&#51201;&#51064; &#44256;&#50577;&#51060;&#47484; &#50619;&#51012; &#44163;&#51077;&#45768;&#45796;. &#54616;&#51648;&#47564; <code>an orange tabby cat sitting on a windowsill, golden hour sunlight, watercolor style, soft warm tones</code>&#46972;&#44256; &#54616;&#47732; &#55016;&#50472; &#45908; &#44396;&#52404;&#51201;&#51060;&#44256; &#47588;&#47141;&#51201;&#51064; &#44208;&#44284;&#47484; &#50619;&#51012; &#49688; &#51080;&#49845;&#45768;&#45796;.</p>
+
+      <h2 id="johun-prompt-gujo">&#51339;&#51008; &#54532;&#47212;&#54532;&#53944;&#51032; &#44396;&#51312;</h2>
+
+      <p>&#54952;&#44284;&#51201;&#51064; &#54532;&#47212;&#54532;&#53944;&#45716; &#45800;&#49692;&#55176; &#49444;&#47749;&#54616;&#45716; &#44163;&#51060; &#50500;&#45768;&#46972;, &#51060;&#48120;&#51648;&#51032; &#47784;&#46304; &#52769;&#47732;&#51012; &#50504;&#45236;&#54616;&#45716; &#44396;&#51312;&#54868;&#46108; &#51648;&#49884;&#49324;&#54637;&#51077;&#45768;&#45796;. &#44592;&#48376; &#44277;&#49885;&#51008; &#45796;&#51020;&#44284; &#44057;&#49845;&#45768;&#45796;:</p>
+
+      <p><strong>&#51452;&#51228; + &#49464;&#48512; &#49324;&#54637; + &#54872;&#44221; + &#49828;&#53440;&#51068; + &#51312;&#47749; + &#44592;&#49696; &#47588;&#44060;&#48320;&#49688;</strong></p>
+
+      <p>&#44036;&#45800;&#54620; &#50696;&#49884;: <code>a cat in a garden</code> &#8212; &#51068;&#48152;&#51201;&#51060;&#44256; &#50696;&#52769;&#54624; &#49688; &#50630;&#45716; &#44208;&#44284;.</p>
+
+      <p>&#44396;&#51312;&#54868;&#46108; &#50696;&#49884;: <code>a fluffy orange tabby cat sitting among blooming lavender in a cottage garden, soft golden hour sunlight, shallow depth of field, oil painting style, warm color palette</code> &#8212; &#44396;&#52404;&#51201;&#51060;&#44256; &#53685;&#51228;&#46108; &#44208;&#44284;.</p>
+
+      <p>&#52264;&#51060;&#45716; &#50644;&#52397;&#45225;&#45768;&#45796;. &#46160; &#48264;&#51704; &#54532;&#47212;&#54532;&#53944;&#45716; &#47784;&#45944;&#50640; &#51452;&#51228;(fluffy orange tabby cat), &#46041;&#51089;(sitting), &#54872;&#44221;(blooming lavender, cottage garden), &#51312;&#47749;(golden hour), &#44592;&#48277;(shallow depth of field), &#49828;&#53440;&#51068;(oil painting)&#50640; &#45824;&#54620; &#51221;&#54869;&#54620; &#51221;&#48372;&#47484; &#51228;&#44277;&#54633;&#45768;&#45796;.</p>
+
+      <h2 id="6gaji-pilsu-yoso">6&#44032;&#51648; &#54596;&#49688; &#50836;&#49548;</h2>
+
+      <h3>1. &#51452;&#51228;</h3>
+      <p>&#51452;&#51228;&#45716; &#51060;&#48120;&#51648;&#51032; &#54645;&#49900;&#51077;&#45768;&#45796;. &#44032;&#45733;&#54620; &#44396;&#52404;&#51201;&#51004;&#47196; &#51089;&#49457;&#54616;&#49464;&#50836;. &#8220;a woman&#8221; &#45824;&#49888; &#8220;a young woman with curly red hair wearing a vintage dress&#8221;&#47484; &#49884;&#46020;&#54644;&#48372;&#49464;&#50836;. &#44396;&#52404;&#49457;&#51060; &#47784;&#54840;&#49457;&#51012; &#50630;&#50528;&#44256; &#47784;&#45944;&#50640; &#47749;&#54869;&#54620; &#48169;&#54693;&#51012; &#51228;&#49884;&#54633;&#45768;&#45796;.</p>
+
+      <h3>2. &#54872;&#44221;</h3>
+      <p>&#51452;&#51228;&#44032; &#50612;&#46356;&#50640; &#51080;&#45208;&#50836;? &#49828;&#53888;&#46356;&#50724;, &#47560;&#48277;&#51032; &#49714;, &#48120;&#47000; &#46020;&#49884;? &#54872;&#44221;&#51008; &#47589;&#46973;&#51012; &#49444;&#51221;&#54616;&#44256; &#51060;&#48120;&#51648;&#51032; &#48516;&#50948;&#44592;&#50640; &#44618;&#51008; &#50689;&#54693;&#51012; &#48120;&#52841;&#45768;&#45796;. &#54876;&#50857; &#50696;&#49884;: <code>in a misty forest</code>, <code>on a busy city street</code>, <code>inside a cozy cabin</code>, <code>floating in deep space</code>.</p>
+
+      <h3>3. &#49828;&#53440;&#51068;</h3>
+      <p>&#49828;&#53440;&#51068;&#51008; &#51204;&#52404;&#51201;&#51064; &#48120;&#54617;&#51012; &#44208;&#51221;&#54633;&#45768;&#45796;. AI &#49373;&#49457;&#44592;&#45716; &#53364;&#47000;&#49885;&#48512;&#53552; &#54788;&#45824;&#51201;&#51064; &#49828;&#53440;&#51068;&#44620;&#51648; &#49688;&#48177; &#44032;&#51648;&#47484; &#51064;&#49885;&#54633;&#45768;&#45796;. &#52488;&#48372;&#51088;&#50640;&#44172; &#50976;&#50857;&#54620; &#49828;&#53440;&#51068; &#47751; &#44032;&#51648;:</p>
+      <ul>
+        <li><code>cinematic photography</code> &#8212; &#50689;&#54868;&#44057; &#54408;&#51656;</li>
+        <li><code>oil painting</code> &#8212; &#51204;&#53685;&#51201;&#51064; &#50976;&#54868;</li>
+        <li><code>digital art</code> &#8212; &#46356;&#51648;&#53560; &#51068;&#47084;&#49828;&#53944;&#47112;&#51060;&#49496;</li>
+        <li><code>watercolor</code> &#8212; &#49688;&#52292;&#54868;</li>
+        <li><code>anime style</code> &#8212; &#51068;&#48376; &#50528;&#45768;&#47700;&#51060;&#49496; &#49828;&#53440;&#51068;</li>
+        <li><code>concept art</code> &#8212; &#44172;&#51076; &#46608;&#45716; &#50689;&#54868; &#46356;&#51088;&#51064;</li>
+      </ul>
+
+      <h3>4. &#51312;&#47749;</h3>
+      <p>&#51312;&#47749;&#51008; &#50500;&#47560;&#52628;&#50612;&#51201; &#44208;&#44284;&#50752; &#51204;&#47928;&#51201; &#44208;&#44284;&#51032; &#52264;&#51060;&#47484; &#47564;&#46300;&#45716; &#50836;&#49548;&#51077;&#45768;&#45796;. &#44032;&#51109; &#50976;&#50857;&#54620; &#51312;&#47749; &#50857;&#50612;:</p>
+      <ul>
+        <li><code>golden hour</code> &#8212; &#51068;&#52636; &#46608;&#45716; &#51068;&#47792; &#49884;&#51032; &#46384;&#46907;&#54620; &#54889;&#44552;&#48731; &#51312;&#47749;</li>
+        <li><code>dramatic lighting</code> &#8212; &#44536;&#47548;&#51088;&#50752; &#48731;&#51032; &#44053;&#54620; &#45824;&#48708;</li>
+        <li><code>soft diffused light</code> &#8212; &#48512;&#46300;&#47101;&#44256; &#44512;&#51068;&#54620; &#48731;</li>
+        <li><code>neon lighting</code> &#8212; &#52972;&#47084;&#54400; &#45348;&#50728; &#51312;&#47749;</li>
+        <li><code>backlit</code> &#8212; &#49892;&#47336;&#50631;&#51012; &#47564;&#46300;&#45716; &#50669;&#44305;</li>
+        <li><code>studio lighting</code> &#8212; &#51204;&#47928;&#51201;&#51004;&#47196; &#53685;&#51228;&#46108; &#51312;&#47749;</li>
+      </ul>
+
+      <h3>5. &#44396;&#46020;</h3>
+      <p>&#44396;&#46020;&#45716; &#54532;&#47112;&#51076;&#44284; &#50896;&#44540;&#48277;&#50640; &#50689;&#54693;&#51012; &#48120;&#52841;&#45768;&#45796;. &#50976;&#50857;&#54620; &#50857;&#50612;:</p>
+      <ul>
+        <li><code>close-up portrait</code> &#8212; &#53364;&#47196;&#51592;&#50629; &#52488;&#49345;&#54868;</li>
+        <li><code>wide angle shot</code> &#8212; &#50752;&#51060;&#46300; &#49399;</li>
+        <li><code>bird's eye view</code> &#8212; &#54637;&#44277; &#49399;</li>
+        <li><code>low angle shot</code> &#8212; &#47196;&#50549;&#44544;</li>
+        <li><code>shallow depth of field</code> &#8212; &#48176;&#44221; &#55120;&#47548; &#54952;&#44284;</li>
+        <li><code>symmetrical composition</code> &#8212; &#45824;&#52845; &#44396;&#46020;</li>
+      </ul>
+
+      <h3>6. &#52972;&#47084; &#54036;&#47112;&#53944;</h3>
+      <p>&#51452;&#50836; &#52972;&#47084;&#47484; &#51221;&#51032;&#54616;&#47732; &#47784;&#45944;&#51060; &#51068;&#44288;&#46108; &#48516;&#50948;&#44592;&#47484; &#47564;&#46300;&#45716; &#45936; &#46020;&#50880;&#51060; &#46121;&#45768;&#45796;. &#50696;&#49884;: <code>warm earth tones</code>, <code>cool blue palette</code>, <code>muted pastel colors</code>, <code>vibrant saturated colors</code>, <code>monochromatic</code>.</p>
+
+      <h2 id="model-byeol-guimun">&#47784;&#45944;&#48324; &#44396;&#47928;</h2>
+
+      <p>&#44033; AI &#51060;&#48120;&#51648; &#49373;&#49457;&#44592;&#45716; &#44256;&#50976;&#54620; &#44396;&#47928;&#51012; &#44032;&#51648;&#44256; &#51080;&#49845;&#45768;&#45796;. &#50732;&#48148;&#47480; &#54805;&#49885;&#51012; &#49324;&#50857;&#54616;&#45716; &#44163;&#51060; &#51339;&#51008; &#44208;&#44284;&#47484; &#50619;&#45716; &#45936; &#54596;&#49688;&#51201;&#51077;&#45768;&#45796;.</p>
+
+      <h3>Midjourney</h3>
+      <p>Midjourney&#45716; &#49788;&#54364;&#47196; &#44396;&#48516;&#46108; &#49444;&#47749;&#50640; <code>--</code> &#46244;&#50640; &#47588;&#44060;&#48320;&#49688;&#47484; &#52628;&#44032;&#54633;&#45768;&#45796;. &#53945;&#48324;&#54620; &#44396;&#47928; &#50630;&#51060; &#51088;&#50672;&#50612;&#47196; &#51089;&#49457;&#54644;&#46020; &#51339;&#49845;&#45768;&#45796;.</p>
+      <p>&#50696;&#49884;: <code>a majestic eagle soaring over snow-capped mountains, dramatic sky, golden hour lighting, cinematic --ar 16:9 --v 6.1 --style raw</code></p>
+      <p>&#51452;&#50836; &#47588;&#44060;&#48320;&#49688;: <code>--ar</code> (&#54868;&#47732; &#48708;&#50984;), <code>--v</code> (&#47784;&#45944; &#48260;&#51204;), <code>--style raw</code> (&#51649;&#50669;&#51201; &#54644;&#49437;), <code>--stylize</code> (&#50696;&#49696;&#49457; &#49688;&#51456;), <code>--chaos</code> (&#45796;&#50577;&#49457;).</p>
+
+      <h3>Stable Diffusion</h3>
+      <p>Stable Diffusion&#51008; &#44292;&#54840;&#50752; &#44032;&#51473;&#52824;&#47484; &#49324;&#50857;&#54616;&#45716; &#44396;&#47928;&#51012; &#50416;&#45768;&#45796;. &#50836;&#49548;&#51032; &#51473;&#50836;&#46020;&#47484; &#45458;&#51060;&#44144;&#45208; &#45230;&#52636; &#49688; &#51080;&#49845;&#45768;&#45796;.</p>
+      <p>&#50696;&#49884;: <code>(masterpiece:1.2), (best quality:1.1), majestic eagle soaring over mountains, (dramatic sky:1.3), golden hour, (cinematic lighting:1.2)</code></p>
+      <p>&#45348;&#44144;&#54000;&#48652; &#54532;&#47212;&#54532;&#53944;: <code>(worst quality:1.4), (low quality:1.4), blurry, deformed, extra limbs</code></p>
+
+      <h3>Flux</h3>
+      <p>Black Forest Labs&#51032; Flux&#45716; &#51088;&#50672;&#50612;&#47196; &#44600;&#44256; &#49345;&#49464;&#54620; &#49444;&#47749;&#51012; &#49440;&#54840;&#54633;&#45768;&#45796;. &#53945;&#48324;&#54620; &#44396;&#47928;&#51060; &#54596;&#50836; &#50630;&#49845;&#45768;&#45796;.</p>
+      <p>&#50696;&#49884;: <code>A majestic bald eagle with wings fully spread soaring high above a dramatic mountain range capped with fresh snow. The scene is bathed in warm golden hour light with dramatic clouds stretching across the sky. Shot with a telephoto lens, shallow depth of field, cinematic quality.</code></p>
+
+      <h3>DALL-E 3</h3>
+      <p>DALL-E 3&#45716; &#51088;&#50672;&#50612;&#50752; &#50756;&#51204;&#54620; &#47928;&#51109;&#51012; &#51060;&#54644;&#54633;&#45768;&#45796;. &#51221;&#54869;&#54620; &#51648;&#49884; &#49688;&#54665;&#44284; &#51060;&#48120;&#51648; &#45236; &#53581;&#49828;&#53944; &#49373;&#49457;&#50640; &#46832;&#50612;&#45225;&#45768;&#45796;.</p>
+      <p>&#50696;&#49884;: <code>A photorealistic image of a majestic eagle soaring above snow-covered mountains during golden hour, with dramatic cloud formations and warm light illuminating its wings</code></p>
+
+      <h2 id="chobojar-template">&#52488;&#48372;&#51088; &#53596;&#54540;&#47551;</h2>
+
+      <p>&#48148;&#47196; &#54876;&#50857;&#54624; &#49688; &#51080;&#45716; &#53596;&#54540;&#47551;&#51012; &#49548;&#44060;&#54633;&#45768;&#45796;:</p>
+
+      <h3>&#52488;&#49345;&#54868;</h3>
+      <p><code>portrait of [&#51452;&#51228; &#49444;&#47749;], [&#54364;&#51221;], [&#51032;&#49345;], [&#51312;&#47749;], [&#49828;&#53440;&#51068;], [&#52972;&#47084;]</code></p>
+      <p>&#50696;&#49884;: <code>portrait of an elderly fisherman with weathered skin, thoughtful expression, wearing a knit sweater, golden hour side lighting, cinematic photography, warm earth tones</code></p>
+
+      <h3>&#54413;&#44221;</h3>
+      <p><code>[&#54413;&#44221; &#50976;&#54805;], [&#44228;&#51208;/&#49884;&#44036;], [&#45216;&#50472;], [&#51312;&#47749;], [&#49828;&#53440;&#51068;], [&#48516;&#50948;&#44592;]</code></p>
+      <p>&#50696;&#49884;: <code>misty mountain valley at dawn, autumn colors, light fog rolling through pine trees, soft diffused light, landscape photography, peaceful serene mood</code></p>
+
+      <h3>&#52968;&#49481; &#50500;&#53944;</h3>
+      <p><code>[&#51109;&#47732; &#50976;&#54805;], [&#51109;&#47476;], [&#44148;&#52629;/&#46356;&#51088;&#51064; &#49464;&#48512;], [&#48516;&#50948;&#44592;], concept art, [&#50689;&#44048;&#51012; &#51456; &#50500;&#54000;&#49828;&#53944; &#46608;&#45716; &#49828;&#53888;&#46356;&#50724;]</code></p>
+      <p>&#50696;&#49884;: <code>ancient floating temple above the clouds, high fantasy, ornate stone carvings, mystical atmosphere, concept art, volumetric lighting, epic scale</code></p>
+
+      <h2 id="heunhan-silsu">&#44032;&#51109; &#55120;&#54620; &#49892;&#49688;</h2>
+
+      <ol class="mistakes-list">
+        <li><strong>&#45320;&#47924; &#47784;&#54840;&#54616;&#44172; &#51089;&#49457;&#54616;&#44592;.</strong> &#8220;A beautiful landscape&#8221;&#45716; &#47784;&#45944;&#50640; &#44144;&#51032; &#50500;&#47924;&#47088; &#48169;&#54693;&#49457;&#51012; &#51228;&#49884;&#54616;&#51648; &#47803;&#54633;&#45768;&#45796;. &#50612;&#46500; &#50976;&#54805;&#51032; &#54413;&#44221;&#51064;&#51648;, &#50612;&#46500; &#49884;&#44036;&#45824;&#51064;&#51648;, &#50612;&#46500; &#51312;&#47749;&#51064;&#51648;, &#50612;&#46500; &#49828;&#53440;&#51068;&#51064;&#51648; &#44396;&#52404;&#51201;&#51004;&#47196; &#51089;&#49457;&#54616;&#49464;&#50836;. &#49464;&#48512; &#49324;&#54637;&#51012; &#52628;&#44032;&#54624;&#49688;&#47197; &#44208;&#44284;&#44032; &#44060;&#49440;&#46121;&#45768;&#45796;.</li>
+        <li><strong>&#54532;&#47212;&#54532;&#53944; &#44284;&#48512;&#54616;.</strong> &#48152;&#45824;&#51032; &#47928;&#51228;&#46020; &#51080;&#49845;&#45768;&#45796;. 200&#45800;&#50612;&#50640; &#49345;&#52649;&#46104;&#45716; &#51648;&#49884;&#44032; &#45812;&#44596; &#54532;&#47212;&#54532;&#53944;&#45716; &#47784;&#45944;&#51012; &#54844;&#46976;&#49828;&#47101;&#44172; &#54633;&#45768;&#45796;. 30-50&#45800;&#50612;&#47196; &#49884;&#51089;&#54644;&#49436; &#51216;&#51652;&#51201;&#51004;&#47196; &#52628;&#44032;&#54616;&#49464;&#50836;.</li>
+        <li><strong>&#54868;&#47732; &#48708;&#50984; &#47924;&#49884;&#54616;&#44592;.</strong> &#54413;&#44221; &#54805;&#49885;&#51032; &#52488;&#49345;&#54868;&#45208; &#51221;&#49324;&#44033;&#54805; &#54413;&#44221;&#51008; &#51060;&#49345;&#54620; &#44396;&#46020;&#47484; &#47564;&#46308;&#50612;&#45253;&#45768;&#45796;. Midjourney&#50640;&#49436; &#52488;&#49345;&#54868;&#50640;&#45716; <code>--ar 2:3</code>, &#54413;&#44221;&#50640;&#45716; <code>--ar 16:9</code>&#47484; &#49324;&#50857;&#54616;&#49464;&#50836;.</li>
+        <li><strong>&#48152;&#48373;&#54616;&#51648; &#50506;&#44592;.</strong> &#52395; &#48264;&#51704; &#54532;&#47212;&#54532;&#53944;&#44032; &#50756;&#48317;&#54624; &#44221;&#50864;&#45716; &#44144;&#51032; &#50630;&#49845;&#45768;&#45796;. &#49373;&#49457;&#54616;&#44256;, &#54217;&#44032;&#54616;&#44256;, &#50836;&#49548; &#54616;&#45208;&#50473; &#51312;&#51221;&#54616;&#44256;, &#45796;&#49884; &#49373;&#49457;&#54616;&#49464;&#50836;. &#51060;&#44163;&#51008; &#48152;&#48373;&#51201;&#51064; &#44284;&#51221;&#51077;&#45768;&#45796;.</li>
+        <li><strong>&#54532;&#47212;&#54532;&#53944;&#47484; &#51060;&#54644; &#50630;&#51060; &#48373;&#49324;&#54616;&#44592;.</strong> &#50728;&#46972;&#51064;&#50640; &#44277;&#50976;&#46108; &#54532;&#47212;&#54532;&#53944;&#45716; &#48176;&#50864;&#44592;&#50640; &#51339;&#51008; &#52636;&#48156;&#51216;&#51060;&#51648;&#47564;, &#44033; &#50857;&#50612;&#47484; &#51060;&#54644;&#54616;&#51648; &#47803;&#54616;&#47732; &#50668;&#47084;&#48516;&#51032; &#53945;&#51221; &#50836;&#44396;&#50640; &#47582;&#52656; &#51312;&#51221;&#54624; &#49688; &#50630;&#49845;&#45768;&#45796;.</li>
+      </ol>
+
+      <h2 id="silje-yeonseup">&#49892;&#51204; &#50672;&#49845;</h2>
+
+      <p>&#48176;&#50864;&#45716; &#44032;&#51109; &#51339;&#51008; &#48169;&#48277;&#51008; &#49892;&#49845;&#51077;&#45768;&#45796;. &#45800;&#44228;&#48324; &#50672;&#49845; 3&#44032;&#51648;&#47484; &#49548;&#44060;&#54633;&#45768;&#45796;:</p>
+
+      <h3>&#50672;&#49845; 1: &#45800;&#44228;&#48324; &#54532;&#47212;&#54532;&#53944;</h3>
+      <p>&#52572;&#49548;&#54620;&#51032; &#54532;&#47212;&#54532;&#53944;&#50640;&#49436; &#49884;&#51089;&#54644;&#49436; &#47588;&#48264; &#50836;&#49548; &#54616;&#45208;&#47484; &#52628;&#44032;&#54616;&#49464;&#50836;. &#44033; &#52628;&#44032;&#44032; &#44208;&#44284;&#50640; &#50612;&#46500; &#50689;&#54693;&#51012; &#48120;&#52824;&#45716;&#51648; &#44288;&#52272;&#54616;&#49464;&#50836;.</p>
+      <ol>
+        <li><code>a cat</code></li>
+        <li><code>a fluffy orange cat sitting on a windowsill</code></li>
+        <li><code>a fluffy orange cat sitting on a windowsill, golden hour sunlight</code></li>
+        <li><code>a fluffy orange cat sitting on a windowsill, golden hour sunlight, oil painting style</code></li>
+        <li><code>a fluffy orange cat sitting on a windowsill, golden hour sunlight, oil painting style, warm amber and cream tones</code></li>
+      </ol>
+
+      <h3>&#50672;&#49845; 2: &#49828;&#53440;&#51068; &#48320;&#44221;</h3>
+      <p>&#44256;&#51221;&#46108; &#51452;&#51228;&#47484; &#50976;&#51648;&#54616;&#44256; &#49828;&#53440;&#51068;&#47564; &#48320;&#44221;&#54616;&#49464;&#50836;. &#49828;&#53440;&#51068; &#53412;&#50892;&#46300;&#44032; &#44208;&#44284;&#50640; &#48120;&#52824;&#45716; &#50689;&#54693;&#51012; &#54869;&#51064;&#54624; &#49688; &#51080;&#49845;&#45768;&#45796;.</p>
+      <ul>
+        <li><code>a medieval castle on a cliff &#8212; cinematic photography</code></li>
+        <li><code>a medieval castle on a cliff &#8212; watercolor painting</code></li>
+        <li><code>a medieval castle on a cliff &#8212; anime style</code></li>
+        <li><code>a medieval castle on a cliff &#8212; cyberpunk reimagining</code></li>
+      </ul>
+
+      <h3>&#50672;&#49845; 3: &#51312;&#47749; &#48320;&#54872;</h3>
+      <p>&#44057;&#51008; &#51452;&#51228;&#50752; &#44057;&#51008; &#49828;&#53440;&#51068;&#51012; &#50976;&#51648;&#54616;&#44256; &#51312;&#47749;&#47564; &#48320;&#44221;&#54616;&#49464;&#50836;. &#48731;&#51060; &#51060;&#48120;&#51648;&#47484; &#50620;&#47560;&#45208; &#48320;&#54868;&#49884;&#53412;&#45716;&#51648; &#54869;&#51064;&#54624; &#49688; &#51080;&#49845;&#45768;&#45796;.</p>
+      <ul>
+        <li><code>portrait of a woman &#8212; golden hour lighting</code></li>
+        <li><code>portrait of a woman &#8212; dramatic rim lighting</code></li>
+        <li><code>portrait of a woman &#8212; neon lighting, blue and pink</code></li>
+        <li><code>portrait of a woman &#8212; soft overcast diffused light</code></li>
+      </ul>
+
+      <div class="cta-box">
+        <h3>&#51648;&#44552; &#48148;&#47196; &#49884;&#51089;&#54616;&#49464;&#50836;</h3>
+        <p>Text to Prompt &#46020;&#44396;&#47196; &#44036;&#45800;&#54620; &#50500;&#51060;&#46356;&#50612;&#47484; &#52572;&#51201;&#54868;&#46108; &#54532;&#47212;&#54532;&#53944;&#47196; &#48320;&#54872;&#54616;&#44144;&#45208;, &#52280;&#51312; &#51060;&#48120;&#51648;&#47484; &#50629;&#47196;&#46300;&#54616;&#50668; &#48148;&#47196; &#49324;&#50857; &#44032;&#45733;&#54620; &#54532;&#47212;&#54532;&#53944;&#47484; &#50619;&#51004;&#49464;&#50836;.</p>
+        <a href="/text-to-prompt/" class="cta-btn">Text to Prompt &#49324;&#50857;&#54644;&#48372;&#44592; &#8594;</a>
+      </div>
+
+      <h2 id="jaju-munneun-jilmun">&#51088;&#51452; &#47928;&#45716; &#51656;&#47928;</h2>
+
+      <h3>AI &#54532;&#47212;&#54532;&#53944;&#51032; &#51060;&#49345;&#51201;&#51064; &#44600;&#51060;&#45716; &#50620;&#47560;&#51064;&#44032;&#50836;?</h3>
+      <p>&#51060;&#49345;&#51201;&#51064; &#44600;&#51060;&#45716; &#47784;&#45944;&#50640; &#46384;&#46972; &#45796;&#47493;&#45768;&#45796;. Midjourney&#45716; 20~60&#45800;&#50612;&#44032; &#51201;&#45817;&#54633;&#45768;&#45796;. Stable Diffusion&#51008; 75&#53664;&#53360;(&#50557; 60&#45800;&#50612;) &#51060;&#54616;&#47196; &#50976;&#51648;&#54644;&#50556; &#51096;&#47548;&#51012; &#48169;&#51648;&#54624; &#49688; &#51080;&#49845;&#45768;&#45796;. Flux&#50752; DALL-E 3&#45716; 50~100&#45800;&#50612;&#51032; &#44596; &#49444;&#47749;&#46020; &#51096; &#52376;&#47532;&#54633;&#45768;&#45796;. &#51068;&#48152;&#51201;&#51004;&#47196; &#51674;&#44172; &#49884;&#51089;&#54644;&#49436; &#51216;&#51652;&#51201;&#51004;&#47196; &#49464;&#48512; &#49324;&#54637;&#51012; &#52628;&#44032;&#54616;&#45716; &#44163;&#51060; &#51339;&#49845;&#45768;&#45796;.</p>
+
+      <h3>&#54532;&#47212;&#54532;&#53944;&#45716; &#50689;&#50612;&#47196; &#50024;&#50556; &#54616;&#45208;&#50836;, &#54620;&#44397;&#50612;&#47196; &#50024;&#46020; &#46104;&#45208;&#50836;?</h3>
+      <p>&#51452;&#50836; AI &#51060;&#48120;&#51648; &#49373;&#49457;&#44592; &#47784;&#46160;&#50640; &#50689;&#50612; &#54532;&#47212;&#54532;&#53944;&#47484; &#44428;&#51109;&#54633;&#45768;&#45796;. &#47784;&#45944;&#46308;&#51060; &#51452;&#47196; &#50689;&#50612; &#45936;&#51060;&#53552;&#47196; &#54617;&#49845;&#46104;&#50632;&#44592; &#46412;&#47928;&#50640; &#50689;&#50612; &#54532;&#47212;&#54532;&#53944;&#44032; &#45908; &#51221;&#54869;&#54616;&#44256; &#51068;&#44288;&#46108; &#44208;&#44284;&#47484; &#47564;&#46308;&#50612;&#45253;&#45768;&#45796;. DALL-E 3&#50752; Midjourney&#44032; &#54620;&#44397;&#50612;&#47484; &#51060;&#54644;&#54616;&#51648;&#47564;, &#48120;&#49696; &#48143; &#49324;&#51652; &#51204;&#47928; &#50857;&#50612;&#45716; &#50689;&#50612;&#47196; &#50416; &#46412; &#45908; &#51096; &#51064;&#49885;&#46121;&#45768;&#45796;.</p>
+
+      <h3>&#44208;&#44284;&#44032; &#51339;&#51648; &#50506;&#51012; &#46412; &#54532;&#47212;&#54532;&#53944;&#47484; &#50612;&#46523;&#44172; &#44060;&#49440;&#54616;&#45208;&#50836;?</h3>
+      <p>&#49464; &#44032;&#51648; &#51452;&#50836; &#51204;&#47029;&#51060; &#51080;&#49845;&#45768;&#45796;: 1) &#44396;&#52404;&#49457;&#51012; &#45458;&#51060;&#49464;&#50836; &#8212; &#47784;&#54840;&#54620; &#54364;&#54788;&#51012; &#51221;&#54869;&#54620; &#49444;&#47749;&#51004;&#47196; &#44368;&#52404;&#54616;&#49464;&#50836;. 2) &#51312;&#47749;&#44284; &#48516;&#50948;&#44592;&#47484; &#51312;&#51221;&#54616;&#49464;&#50836; &#8212; &#51060; &#50836;&#49548;&#46308;&#51060; &#44208;&#44284;&#47484; &#44537;&#51201;&#51004;&#47196; &#48148;&#44985;&#45768;&#45796;. 3) Stable Diffusion&#50640;&#49436; <code>blurry, deformed, low quality</code> &#44057;&#51008; &#45348;&#44144;&#54000;&#48652; &#54532;&#47212;&#54532;&#53944;&#47484; &#49324;&#50857;&#54616;&#50668; &#50896;&#54616;&#51648; &#50506;&#45716; &#50836;&#49548;&#47484; &#51228;&#44144;&#54616;&#49464;&#50836;.</p>
+
+      <h3>&#52488;&#48372;&#51088;&#50640;&#44172; &#44032;&#51109; &#51339;&#51008; AI &#51060;&#48120;&#51648; &#49373;&#49457;&#44592;&#45716; &#47924;&#50631;&#51064;&#44032;&#50836;?</h3>
+      <p>DALL-E 3(ChatGPT &#44221;&#50976;)&#44032; &#53945;&#48324;&#54620; &#44396;&#47928; &#50630;&#51060; &#51088;&#50672;&#50612;&#47484; &#51060;&#54644;&#54616;&#44592; &#46412;&#47928;&#50640; &#44032;&#51109; &#51217;&#44540;&#49457;&#51060; &#45458;&#49845;&#45768;&#45796;. Midjourney&#45716; &#44036;&#45800;&#54620; &#54532;&#47212;&#54532;&#53944;&#47196;&#46020; &#46832;&#50612;&#45212; &#44208;&#44284;&#47484; &#51228;&#44277;&#54616;&#51648;&#47564; Discord&#44032; &#54596;&#50836;&#54633;&#45768;&#45796;. Stable Diffusion&#51008; &#44032;&#51109; &#47566;&#51008; &#51228;&#50612;&#47484; &#51228;&#44277;&#54616;&#51648;&#47564; &#54617;&#49845; &#44257;&#49440;&#51060; &#44032;&#54028;&#47493;&#45768;&#45796;. Flux&#45716; &#51088;&#50672;&#50612; &#54532;&#47212;&#54532;&#53944;&#50752; &#49324;&#49892;&#51201;&#51064; &#44208;&#44284;&#47484; &#51228;&#44277;&#54616;&#45716; &#51339;&#51008; &#51208;&#52649;&#50504;&#51077;&#45768;&#45796;.</p>
+
+    </div>
+
+    <div class="author-bio">
+      <svg class="author-photo" width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="&#51200;&#51088; &#50500;&#48148;&#53440;"><circle cx="32" cy="32" r="32" fill="#2a1f4e"/><circle cx="32" cy="26" r="11" fill="#7c6bc4"/><ellipse cx="32" cy="52" rx="18" ry="11" fill="#7c6bc4"/></svg>
+      <div class="author-info">
+        <p class="author-name">ImageToPrompt Team</p>
+        <p class="author-desc">&#53356;&#47532;&#50640;&#51060;&#53552;&#46308;&#51060; AI &#51060;&#48120;&#51648; &#49373;&#49457;&#51012; &#47560;&#49828;&#53552;&#54624; &#49688; &#51080;&#46020;&#47197; &#46027;&#45716; &#51204;&#47928; &#54016;&#51077;&#45768;&#45796;. &#51060;&#48120;&#51648;&#50640;&#49436; &#54532;&#47212;&#54532;&#53944;&#47196; &#48320;&#54872; &#46020;&#44396;&#50752; AI &#54532;&#47212;&#54532;&#53944; &#50644;&#51648;&#45768;&#50612;&#47553; &#44032;&#51060;&#46300;&#47484; &#53685;&#54644; &#51204; &#49464;&#44228; &#50500;&#54000;&#49828;&#53944;&#51032; &#52285;&#51089; &#54876;&#46041;&#51012; &#51648;&#50896;&#54633;&#45768;&#45796;.</p>
+        <a href="https://x.com/Ilyass14286541" class="author-link">X&#50640;&#49436; &#54036;&#47196;&#50864; &#8594;</a>
+      </div>
+    </div>
+
+    <div class="related-posts">
+      <h2>&#44288;&#47144; &#44032;&#51060;&#46300;</h2>
+      <div class="related-grid">
+        <a href="/ko/blog/imiji-eseo-ai-prompt-byeonhwan/" class="related-card">
+          <p class="tag">&#44032;&#51060;&#46300;</p>
+          <h3>&#51060;&#48120;&#51648;&#50640;&#49436; AI &#54532;&#47212;&#54532;&#53944;&#47196; &#48320;&#54872;&#54616;&#45716; &#48169;&#48277;</h3>
+        </a>
+        <a href="/ko/blog/sajin-eseo-ai-prompt/" class="related-card">
+          <p class="tag">&#49324;&#51652;</p>
+          <h3>&#49324;&#51652;&#50640;&#49436; AI &#54532;&#47212;&#54532;&#53944; &#47564;&#46308;&#44592;</h3>
+        </a>
+        <a href="/ko/blog/best-image-to-prompt-tools-2026/" class="related-card">
+          <p class="tag">&#46020;&#44396; &#48708;&#44368;</p>
+          <h3>2026&#45380; &#52572;&#44256;&#51032; &#51060;&#48120;&#51648; &#53804; &#54532;&#47212;&#54532;&#53944; &#46020;&#44396;</h3>
+        </a>
+      </div>
+    </div>
+
+  </div>
+
+  <footer class="footer-4col">
+    <div class="f4-inner">
+      <div class="f4-brand">
+        <img src="/favicon.svg" alt="ImageToPrompt" width="28" height="28">
+        <span class="f4-brand-name">ImageTo<span class="accent">Prompt</span></span>
+        <span class="f4-brand-sub">&mdash; Free AI Prompt Generator</span>
+      </div>
+      <div class="f4-grid">
+        <div class="f4-section">
+          <h4 class="f4-heading">Image Prompt Tools</h4>
+          <a href="/">Image to Prompt</a>
+          <a href="/text-to-prompt/">Text to Prompt</a>
+      <a href="/describe-image/">Describe Image</a>
+          <a href="/midjourney-prompt-generator/">Midjourney</a>
+          <a href="/stable-diffusion-prompt-generator/">Stable Diffusion</a>
+          <a href="/flux-prompt-generator/">Flux</a>
+          <a href="/dall-e-prompt-generator/">DALL-E 3</a>
+          <a href="/adobe-firefly-prompt-generator/">Adobe Firefly</a>
+          <a href="/leonardo-ai-prompt-generator/">Leonardo AI</a>
+          <a href="/ideogram-prompt-generator/">Ideogram</a>
+        </div>
+        <div class="f4-section">
+          <h4 class="f4-heading">Video Prompt Tools</h4>
+          <a href="/image-to-video-prompt/">Image to Video Prompt</a>
+          <a href="/text-to-video-prompt/">Text to Video Prompt</a>
+          <a href="/veo-prompt-generator/">Veo / Flow Studio</a>
+          <a href="/kling-prompt-generator/">Kling AI</a>
+          <a href="/runway-prompt-generator/">Runway Gen-3</a>
+          <a href="/pika-prompt-generator/">Pika</a>
+          <a href="/luma-prompt-generator/">Luma Dream Machine</a>
+          <a href="/sora-prompt-generator/">Sora</a>
+          <a href="/minimax-prompt-generator/">Minimax</a>
+          <a href="/stable-video-prompt-generator/">Stable Video</a>
+        </div>
+        <div class="f4-section">
+          <h4 class="f4-heading">Resources</h4>
+          <a href="/ko/blog/">&#48660;&#47196;&#44536;</a>
+          <a href="/ko/about/">&#49548;&#44060;</a>
+          <a href="/ko/pricing/">&#50836;&#44552;</a>
+          <a href="/contact/">Contact</a>
+          <a href="/privacy-policy/">Privacy Policy</a>
+          <a href="/terms-of-service/">Terms of Service</a>
+        </div>
+        <div class="f4-section">
+          <h4 class="f4-heading">Languages</h4>
+          <a href="/">English</a>
+          <a href="/fr/">Fran&#231;ais</a>
+          <a href="/ar/">&#1575;&#1604;&#1593;&#1585;&#1576;&#1610;&#1577;</a>
+          <a href="/es/">Espa&#241;ol</a>
+          <a href="/ko/">&#54620;&#44397;&#50612;</a>
+          <a href="/ja/">&#26085;&#26412;&#35486;</a>
+          <a href="/ru/">&#1056;&#1091;&#1089;&#1089;&#1082;&#1080;&#1081;</a>
+        </div>
+      </div>
+      <div class="f4-bottom">
+        <p>&#169; 2026 ImageToPrompt.dev &#8212; Free AI Prompt Generator</p>
+        <p>Your images are never stored. All analysis is ephemeral and private.</p>
+      </div>
+    </div>
+  </footer>
+
+<script src="/newsletter-inject.js" defer></script>
+<script src="/nav.js" defer></script>
+  <script>
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', function() {
+    navigator.serviceWorker.register('/sw.js')
+      .catch(function(err) { console.warn('SW registration failed:', err); });
+  });
+}
+</script>
+</body>
+</html>

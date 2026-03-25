@@ -1,0 +1,730 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <script src="/theme-toggle.js"></script>
+  <meta charset="UTF-8" />
+  <link rel="dns-prefetch" href="https://www.googletagmanager.com">
+<link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="max-image-preview:large, index, follow">
+  <meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="ImageToPrompt">
+  <title>Midjourneyプロンプト完全ガイド 2026：パラメータ、例文、コツ</title>
+  <meta name="description" content="2026年版Midjourneyプロンプト完全ガイド。最新バージョン--v 6.1、パラメータ一覧、すぐに使える10個のプロンプト例、上級テクニック。2026年3月更新。" />
+  <link rel="canonical" href="https://www.imagetoprompt.dev/ja/blog/midjourney-prompt-gaido-2026/" />
+  <link rel="alternate" hreflang="ja" href="https://www.imagetoprompt.dev/ja/blog/midjourney-prompt-gaido-2026/" />
+  <link rel="alternate" hreflang="en" href="https://www.imagetoprompt.dev/blog/midjourney-prompt-guide-2026/" />
+  <link rel="alternate" hreflang="fr" href="https://www.imagetoprompt.dev/fr/blog/guide-prompts-midjourney-2026/" />
+  <link rel="alternate" hreflang="ar" href="https://www.imagetoprompt.dev/ar/blog/dalil-prompts-midjourney-2026/" />
+  <link rel="alternate" hreflang="es" href="https://www.imagetoprompt.dev/es/blog/guia-prompts-midjourney-2026/" />
+  <link rel="alternate" hreflang="x-default" href="https://www.imagetoprompt.dev/blog/midjourney-prompt-guide-2026/" />
+  <meta property="og:title" content="Midjourneyプロンプト完全ガイド 2026：パラメータ、例文、コツ" />
+  <meta property="og:description" content="2026年版Midjourneyプロンプト完全ガイド。--v 6.1、パラメータ、構造、すぐに使える10個のプロンプト例。" />
+  <meta property="og:url" content="https://www.imagetoprompt.dev/ja/blog/midjourney-prompt-gaido-2026/" />
+  <meta property="og:type" content="article" />
+  <meta property="og:image" content="https://www.imagetoprompt.dev/og-image.png" />
+  <meta property="og:site_name" content="ImageToPrompt" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Midjourneyプロンプト完全ガイド 2026" />
+  <meta name="twitter:description" content="--v 6.1パラメータ、プロンプト構造、コピペで使える10個の例文。" />
+  <meta name="twitter:image" content="https://www.imagetoprompt.dev/og-image.png" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="48x48" href="/favicon-48.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+  <link rel="manifest" href="/site.webmanifest" />
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="/fonts/space-grotesk-700.woff2" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="/fonts/inter-400.woff2" />
+  <link rel="stylesheet" href="/theme.css">
+  <link rel="preload" href="/blog.css" as="style" onload="this.onload=null;this.rel='stylesheet'"><noscript><link rel="stylesheet" href="/blog.css"></noscript>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Midjourneyプロンプト完全ガイド 2026：パラメータ、例文、コツ",
+    "description": "2026年版Midjourneyプロンプト完全ガイド。最新バージョン--v 6.1、パラメータ一覧、すぐに使える10個のプロンプト例。",
+    "image": "https://www.imagetoprompt.dev/og-image.png",
+    "datePublished": "2026-03-10",
+    "dateModified": "2026-03-24",
+    "inLanguage": "ja",
+    "author": {
+      "@type": "Person",
+      "name": "ImageToPrompt Team",
+      "url": "https://www.imagetoprompt.dev/"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "ImageToPrompt",
+      "logo": { "@type": "ImageObject", "url": "https://www.imagetoprompt.dev/favicon.svg" }
+    },
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https://www.imagetoprompt.dev/ja/blog/midjourney-prompt-gaido-2026/"
+    }
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "inLanguage": "ja",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "ホーム",
+        "item": "https://www.imagetoprompt.dev/ja/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "ブログ",
+        "item": "https://www.imagetoprompt.dev/ja/blog/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "Midjourneyプロンプト完全ガイド 2026"
+      }
+    ]
+  }
+  </script>
+    <!-- Google AdSense -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4499206373485728" crossorigin="anonymous"></script>
+    <!-- Web Push Notifications -->
+<script src="https://cdn.onesignal.com/sdks/web/v16/OneSignalSDK.page.js" defer></script>
+<script>
+  window.OneSignalDeferred = window.OneSignalDeferred || [];
+  OneSignalDeferred.push(async function(OneSignal) {
+    await OneSignal.init({
+      appId: "REPLACE_WITH_ONESIGNAL_APP_ID",
+      notifyButton: { enable: false }
+    });
+  });
+</script>
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="inner">
+      <a href="/ja/" class="site-logo"><img src="/favicon.svg" alt="ImageToPrompt" width="48" height="48"><div class="site-logo-text">ImageTo<span class="accent">Prompt</span><span class="site-logo-sub">無料AIプロンプトジェネレーター</span></div></a>
+      <nav class="site-nav" aria-label="メインナビゲーション">
+        <div class="nav-dropdown">
+          <button class="nav-dropdown-trigger" aria-haspopup="true" aria-expanded="false">Tools <span class="nav-chevron" aria-hidden="true">&#9660;</span></button>
+          <div class="nav-dropdown-menu" role="menu">
+            <div class="nav-mega-grid">
+              <div class="nav-mega-col">
+                <div class="nav-mega-heading">&#128444; IMAGE TOOLS</div>
+                <a href="/" role="menuitem" class="nav-mega-tool">Image to Prompt <span class="nav-mega-arrow">&#8594;</span></a>
+                <a href="/text-to-prompt/" role="menuitem" class="nav-mega-tool">Text to Prompt <span class="nav-mega-arrow">&#8594;</span></a>
+                <a href="/describe-image/" role="menuitem" class="nav-mega-tool">Describe Image <span class="nav-new-badge">NEW</span> <span class="nav-mega-arrow">&#8594;</span></a>
+                <div class="nav-mega-models-label">Models</div>
+                <div class="nav-mega-models"><a href="/midjourney-prompt-generator/">Midjourney</a><span class="nav-dot">&#xB7;</span><a href="/stable-diffusion-prompt-generator/">SD</a></div>
+                <div class="nav-mega-models"><a href="/flux-prompt-generator/">Flux</a><span class="nav-dot">&#xB7;</span><a href="/dall-e-prompt-generator/">DALL&#xB7;E&#xA0;3</a></div>
+                <div class="nav-mega-models"><a href="/adobe-firefly-prompt-generator/">Firefly</a><span class="nav-dot">&#xB7;</span><a href="/leonardo-ai-prompt-generator/">Leonardo</a></div>
+                <div class="nav-mega-models"><a href="/ideogram-prompt-generator/">Ideogram</a></div>
+              </div>
+              <div class="nav-mega-divider" aria-hidden="true"></div>
+              <div class="nav-mega-col">
+                <div class="nav-mega-heading">&#127909; VIDEO TOOLS</div>
+                <a href="/?tab=image-to-video" role="menuitem" class="nav-mega-tool">Image to Video <span class="nav-mega-arrow">&#8594;</span></a>
+                <a href="/?tab=text-to-video" role="menuitem" class="nav-mega-tool">Text to Video <span class="nav-mega-arrow">&#8594;</span></a>
+                <div class="nav-mega-models-label">Models</div>
+                <div class="nav-mega-models"><a href="/veo-prompt-generator/">Veo</a><span class="nav-dot">&#xB7;</span><a href="/kling-prompt-generator/">Kling</a></div>
+                <div class="nav-mega-models"><a href="/runway-prompt-generator/">Runway</a><span class="nav-dot">&#xB7;</span><a href="/pika-prompt-generator/">Pika</a></div>
+                <div class="nav-mega-models"><a href="/luma-prompt-generator/">Luma</a><span class="nav-dot">&#xB7;</span><a href="/sora-prompt-generator/">Sora</a></div>
+                <div class="nav-mega-models"><a href="/minimax-prompt-generator/">Minimax</a><span class="nav-dot">&#xB7;</span><a href="/stable-video-prompt-generator/">Stable</a></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <a href="/ja/blog/">ブログ</a>
+        <a href="/ja/pricing/" class="nav-pill-pricing">料金</a>
+        <a href="/ja/about/" class="nav-pill-about">概要</a>
+        <a href="/ja/" class="nav-try-free">無料で試す &#8594;</a>
+        <button id="theme-toggle" onclick="toggleTheme()" aria-label="テーマ切替" title="テーマ切替">&#9728;&#xFE0F;</button>
+  </nav>
+    </div>
+  </header>
+
+  <nav class="breadcrumb" aria-label="パンくずリスト">
+    <a href="/ja/">ホーム</a> <span aria-hidden="true">›</span>
+    <a href="/ja/blog/">ブログ</a> <span aria-hidden="true">›</span>
+    <span aria-current="page">Midjourneyプロンプト完全ガイド 2026</span>
+  </nav>
+
+  <div class="page-wrapper">
+
+    <header class="article-header">
+      <p class="article-tag">Midjourneyガイド</p>
+      <h1>Midjourneyプロンプト完全ガイド 2026：パラメータ、例文、コツ</h1>
+      <div class="article-meta">
+        <span>2026年3月</span>
+        <span class="dot">·</span>
+        <span>読了時間11分</span>
+        <span class="dot">·</span>
+        <span>Midjourney v6.1</span>
+        <span class="dot">·</span>
+        <span>2026年3月更新</span>
+      </div>
+    </header>
+
+    <div class="article-body">
+
+      <p>Midjourneyは世界で最も人気のあるAI画像生成ツールです &#8212; そしてそれには理由があります。適切なプロンプトを与えれば、本当に息をのむような画像を生成します。間違ったプロンプトを与えると、ありきたりで雑な、あるいは全く的外れな結果になります。</p>
+
+      <nav class="toc" aria-label="目次">
+        <details open>
+          <summary>このガイドの内容</summary>
+          <ol>
+            <li><a href="#saishin-version">2026年のMidjourney最新バージョン（--v 6.1）</a></li>
+            <li><a href="#prompt-kouzou">Midjourneyプロンプトの構造</a></li>
+            <li><a href="#prompt-koushiki">Midjourneyプロンプトの公式</a></li>
+            <li><a href="#subject-kijutsu">効果的な被写体の記述方法</a></li>
+            <li><a href="#style-medium">スタイルとメディアムの記述子</a></li>
+            <li><a href="#lighting">ライティングがすべて</a></li>
+            <li><a href="#essential-params">Midjourneyの必須パラメータ</a></li>
+            <li><a href="#10-prompts">2026年版コピペで使えるMidjourneyプロンプト10選</a></li>
+            <li><a href="#kouzou-hikaku">構造比較：Midjourney vs Flux vs Stable Diffusion</a></li>
+            <li><a href="#rei-kekka">プロンプト例と結果</a></li>
+            <li><a href="#version-hikaku">バージョン比較</a></li>
+            <li><a href="#prompt-juuzuke">プロンプトの重み付け</a></li>
+            <li><a href="#yokuaru-machigai">Midjourneyプロンプトのよくある間違い</a></li>
+            <li><a href="#ikkansei">一貫した結果を得る方法</a></li>
+            <li><a href="#multi-prompt">マルチプロンプトとパーミュテーション</a></li>
+            <li><a href="#image-ref">画像参照の効果的な使い方</a></li>
+            <li><a href="#troubleshooting">よくある問題の解決法</a></li>
+          </ol>
+        </details>
+      </nav>
+
+      <p>Midjourneyで平凡な結果と卓越した結果の違いは、たいていプロンプトの質に帰着します。このガイドでは、2026年に一貫して優れたMidjourneyプロンプトを書くために必要なすべてを網羅します。</p>
+
+      <div class="callout">
+        <p><strong>再現したい画像がありますか？</strong>ゼロからプロンプトを書く代わりに、<a href="/">ImageToPromptにアップロード</a>すると、Midjourney用のプロンプトが自動生成されます。このガイドを使ってさらに調整しましょう。</p>
+      </div>
+
+      <h2 id="saishin-version">2026年のMidjourney最新バージョン（--v 6.1）</h2>
+
+      <p>2026年3月現在、Midjourneyのデフォルトバージョンは<strong>--v 6.1</strong>です。バージョンを指定しなければ自動的にこのバージョンが使用されます。前のバージョンと比較して大幅な改善が行われており、プロンプトの書き方に直接影響します。</p>
+
+      <p><strong>v6からv6.1</strong>への移行では、3つの大きな改善がありました。まず、一貫性：v6.1は複数のパートを持つプロンプトをより忠実に追従するため、複数の要素が記述された複雑なシーンがより正確にレンダリングされます。次に、手と解剖学：Midjourneyの長年の弱点であった手の変形がv6.1では大幅に改善されましたが、人物のクローズアップでは<code>--no deformed hands</code>を追加することをお勧めします。最後に、テキストレンダリング：IdeogramやDALL-E 3のタイポグラフィ能力にはまだ及びませんが、v6.1はプロンプト内で引用符を使用した場合、短い単語やシンプルなフレーズを画像内に安定してレンダリングできます。</p>
+
+      <p>最新バージョンを明示的に使用するには、プロンプトの末尾に常に<code>--v 6.1</code>を追加してください。これにより保存したプロンプトの将来互換性が保たれます。Midjourneyがv7をリリースしても、既存のプロンプトの動作が変わることはありません。Midjourneyの設定（<code>/settings</code> → バージョン選択）でv6.1をデフォルトに設定できます。</p>
+
+      <p>今後の展望として、Midjourneyは<strong>v7</strong>がビデオ生成、画像間の3D一貫性、キャラクターの一貫性（複数の生成間で同一のキャラクターの顔と衣装を維持する機能）の強化に重点を置くことを示唆しています。2026年の静止画像制作においてはv6.1がベストな選択です。最もフォトリアルでプロンプトに忠実な出力を得るには、<code>--v 6.1</code>と<code>--style raw</code>を使用してください。</p>
+
+      <div class="callout">
+        <p><strong>クイックリファレンス：</strong>プロンプトの末尾に常に<code>--v 6.1</code>を追加して、最新のベストバージョンを固定しましょう。例：<code>your prompt here --ar 16:9 --v 6.1 --style raw</code></p>
+      </div>
+
+      <h2 id="prompt-kouzou">Midjourneyプロンプトの構造</h2>
+
+      <p>完全なMidjourneyプロンプトは以下の構造に従います：</p>
+
+      <p><code>[被写体の説明], [スタイルとメディアム], [ライティング], [構図], [雰囲気], [技術的ディテール] --パラメータ 値 --パラメータ 値</code></p>
+
+      <p>例えば：</p>
+      <p><code>ancient stone temple overgrown with vines and glowing bioluminescent moss, cinematic concept art, dramatic rim lighting with deep shadows, wide angle shot, mysterious and otherworldly atmosphere --ar 16:9 --v 6.1 --style raw --q 2</code></p>
+
+      <p>各コンポーネントを詳しく見ていきましょう。</p>
+
+      <h2 id="prompt-koushiki">Midjourneyプロンプトの公式</h2>
+
+      <div class="formula-box">
+        <p class="formula-line"><span class="formula-tag subject">被写体 + ディテール</span> + <span class="formula-tag setting">環境/設定</span> + <span class="formula-tag style">スタイル/メディアム</span> + <span class="formula-tag lighting">ライティング</span> + <span class="formula-tag color">カラーパレット</span> + <span class="formula-tag mood">雰囲気</span> + <span class="formula-tag composition">構図</span> + <span class="formula-tag params">--パラメータ</span></p>
+      </div>
+
+      <h3>ポートレートの例</h3>
+      <p><code><span class="formula-inline subject">elderly Japanese craftsman, weathered hands, focused expression</span>, <span class="formula-inline setting">seated at a traditional woodworking bench covered in tools</span>, <span class="formula-inline style">editorial photography</span>, <span class="formula-inline lighting">soft window light from the left</span>, <span class="formula-inline color">warm wood tones with cool shadow areas</span>, <span class="formula-inline mood">contemplative, dignified</span>, <span class="formula-inline composition">medium shot, shallow depth of field</span> <span class="formula-inline params">--ar 2:3 --v 6.1 --style raw</span></code></p>
+
+      <h3>風景の例</h3>
+      <p><code><span class="formula-inline subject">ancient stone ruins half-submerged in still water</span>, <span class="formula-inline setting">flooded valley surrounded by dense jungle</span>, <span class="formula-inline style">cinematic photography</span>, <span class="formula-inline lighting">blue hour, mist rising off the water</span>, <span class="formula-inline color">cool blue-greens with warm torch light reflections</span>, <span class="formula-inline mood">mysterious, lost civilization atmosphere</span>, <span class="formula-inline composition">wide establishing shot, symmetrical reflection</span> <span class="formula-inline params">--ar 21:9 --v 6.1 --q 2</span></code></p>
+
+      <h3>コマーシャル / 商品の例</h3>
+      <p><code><span class="formula-inline subject">minimalist ceramic coffee mug, steam rising</span>, <span class="formula-inline setting">on a clean marble surface with morning light</span>, <span class="formula-inline style">commercial product photography</span>, <span class="formula-inline lighting">soft diffused natural light, subtle rim highlight</span>, <span class="formula-inline color">white and cream palette with warm coffee tones</span>, <span class="formula-inline mood">calm, premium, aspirational</span>, <span class="formula-inline composition">close-up, 45-degree angle, negative space above</span> <span class="formula-inline params">--ar 4:5 --v 6.1 --style raw</span></code></p>
+
+      <div class="cta-inline">
+        <p>実際に試してみましょう &#8212; 画像をアップロードするだけで、AIが最適化されたプロンプトを数秒で生成します。</p>
+        <a href="/" class="cta-btn-sm">無料で試す →</a>
+      </div>
+
+      <h2 id="subject-kijutsu">効果的な被写体の記述方法</h2>
+
+      <p>被写体はプロンプトの基盤です。最も一般的な間違いは曖昧すぎることです。「ドラゴン」ではありきたりなドラゴンが生成されます。「虹色に輝くエメラルドの鱗を持つ古代のドラゴンが、浸水した地下の部屋にある崩れた石の玉座に止まっている」と書けば、はるかに具体的で興味深い結果が得られます。</p>
+
+      <p>含めるべき被写体の要素：</p>
+      <ul>
+        <li><strong>身体的特徴：</strong>サイズ、年齢、状態、際立った特徴</li>
+        <li><strong>コンテキスト：</strong>被写体がどこにいるか、何をしているか、周囲に何があるか</li>
+        <li><strong>感情状態：</strong>表情、姿勢、エネルギー</li>
+        <li><strong>環境との関係：</strong>被写体が周囲の環境とどのように相互作用しているか</li>
+      </ul>
+
+      <h2 id="style-medium">スタイルとメディアムの記述子</h2>
+
+      <p>被写体の後に、画像のスタイルを指定します。Midjourneyは幅広いスタイル用語を理解します：</p>
+
+      <h3>写真スタイル</h3>
+      <ul>
+        <li><code>cinematic photography</code> &#8212; 深みとドラマのある映画的品質</li>
+        <li><code>editorial photography</code> &#8212; クリーンでプロフェッショナル、雑誌向け</li>
+        <li><code>documentary photography</code> &#8212; カンディッド、生の質感、オーセンティック</li>
+        <li><code>studio portrait</code> &#8212; コントロールされた照明、中性的な背景</li>
+      </ul>
+
+      <h3>アートスタイル</h3>
+      <ul>
+        <li><code>concept art</code> &#8212; 詳細でナラティブなイラスト</li>
+        <li><code>digital painting</code> &#8212; デジタルの精度を持つ絵画的テクスチャ</li>
+        <li><code>oil painting</code> &#8212; テクスチャ豊か、リッチな色彩、クラシック</li>
+        <li><code>watercolor illustration</code> &#8212; ソフトなエッジ、透明なレイヤー</li>
+        <li><code>ink illustration</code> &#8212; 大胆なライン、強いコントラスト</li>
+        <li><code>anime style</code> &#8212; 日本のアニメーション美学</li>
+      </ul>
+
+      <h3>レンダリングスタイル</h3>
+      <ul>
+        <li><code>octane render</code> / <code>unreal engine</code> &#8212; フォトリアルな3Dレンダリング</li>
+        <li><code>isometric illustration</code> &#8212; 上から見た3Dパースペクティブ</li>
+        <li><code>pixel art</code> &#8212; レトロゲーム風の美学</li>
+      </ul>
+
+      <h2 id="lighting">ライティングがすべて</h2>
+
+      <p>他のどの要素よりも、ライティングが画像の雰囲気を決定します。Midjourneyはライティングの記述を解釈する能力が非常に優れています。</p>
+
+      <h3>自然光</h3>
+      <ul>
+        <li><code>golden hour lighting</code> &#8212; 暖かく水平的、長い影（日の出/日の入り）</li>
+        <li><code>blue hour</code> &#8212; クール、薄暮、柔らかいアンビエントライト</li>
+        <li><code>overcast soft lighting</code> &#8212; 拡散した均一な光、硬い影なし</li>
+        <li><code>harsh midday sunlight</code> &#8212; 強いコントラスト、くっきりとした影</li>
+        <li><code>moonlight</code> &#8212; 冷たいブルーホワイト、ミステリアス</li>
+      </ul>
+
+      <h3>スタジオ照明・人工光</h3>
+      <ul>
+        <li><code>Rembrandt lighting</code> &#8212; 光の三角形を特徴とするクラシックなポートレート照明</li>
+        <li><code>rim lighting</code> / <code>backlit</code> &#8212; 光で輪郭が際立った被写体</li>
+        <li><code>neon lighting</code> &#8212; 鮮やかなカラーライト、サイバーパンク美学</li>
+        <li><code>dramatic chiaroscuro</code> &#8212; 光と影の極端なコントラスト</li>
+        <li><code>volumetric lighting</code> &#8212; 目に見える光線、大気的な深み</li>
+      </ul>
+
+      <h2 id="essential-params">Midjourneyの必須パラメータ</h2>
+
+      <p>パラメータはプロンプトの末尾にダブルダッシュの後に追加します。出力を精密に制御できます。</p>
+
+      <div class="table-wrap">
+      <table class="comparison-table">
+        <thead>
+          <tr>
+            <th>パラメータ</th>
+            <th>構文</th>
+            <th>範囲 / 値</th>
+            <th>機能</th>
+            <th>デフォルト</th>
+            <th>例</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>アスペクト比</td><td><code>--ar L:H</code></td><td>任意の比率</td><td>画像の縦横比を設定</td><td>1:1</td><td><code>--ar 16:9</code></td></tr>
+          <tr><td>バージョン</td><td><code>--v N</code></td><td>4, 5, 5.1, 5.2, 6, 6.1</td><td>モデルバージョン</td><td>6.1</td><td><code>--v 6.1</code></td></tr>
+          <tr><td>Style Raw</td><td><code>--style raw</code></td><td>オン/オフ</td><td>より忠実でリテラルな出力</td><td>オフ</td><td><code>--style raw</code></td></tr>
+          <tr><td>Stylize</td><td><code>--s N</code></td><td>0–1000</td><td>芸術的解釈の強度</td><td>100</td><td><code>--s 750</code></td></tr>
+          <tr><td>Chaos</td><td><code>--c N</code></td><td>0–100</td><td>グリッド結果間のバリエーション</td><td>0</td><td><code>--c 30</code></td></tr>
+          <tr><td>Quality</td><td><code>--q N</code></td><td>0.25, 0.5, 1, 2</td><td>レンダリング品質と計算時間</td><td>1</td><td><code>--q 2</code></td></tr>
+          <tr><td>No</td><td><code>--no [用語]</code></td><td>任意の単語</td><td>結果から要素を除外</td><td>—</td><td><code>--no blur, text</code></td></tr>
+          <tr><td>Seed</td><td><code>--seed N</code></td><td>0–4294967295</td><td>再現可能な開始点</td><td>ランダム</td><td><code>--seed 12345</code></td></tr>
+          <tr><td>Tile</td><td><code>--tile</code></td><td>オン/オフ</td><td>繰り返しパターンを作成</td><td>オフ</td><td><code>--tile</code></td></tr>
+          <tr><td>Repeat</td><td><code>--repeat N</code></td><td>1–40</td><td>プロンプトを複数回実行</td><td>1</td><td><code>--repeat 4</code></td></tr>
+          <tr><td>Image Weight</td><td><code>--iw N</code></td><td>0.5–2</td><td>参照画像の影響力</td><td>1</td><td><code>--iw 1.5</code></td></tr>
+        </tbody>
+      </table>
+      </div>
+
+      <h2 id="10-prompts">2026年版コピペで使えるMidjourneyプロンプト10選</h2>
+
+      <p>以下の10個のプロンプトはMidjourney v6.1ですぐに使える本番用プロンプトです。そのままコピーするか、自分の被写体に合わせたテンプレートとして活用してください。</p>
+
+      <h3>1. シネマティックポートレート</h3>
+      <p>プロフェッショナルなライティングと浅い被写界深度を持つ、ドラマチックな映画品質のクローズアップを生成します。</p>
+      <pre><code class="prompt-example">young woman with sharp features and silver-streaked hair, intense gaze, wearing a weathered leather jacket, shot on Sony A7R V with 85mm f/1.4, shallow depth of field, dramatic Rembrandt lighting, cinematic color grade with teal shadows and warm highlights --ar 2:3 --v 6.1 --style raw --q 2</code></pre>
+
+      <h3>2. ファンタジー風景</h3>
+      <p>大気的な奥行きと非現実的な色彩を持つ壮大な広角ファンタジー環境を生成します。</p>
+      <pre><code class="prompt-example">floating sky islands covered in ancient ruins and waterfalls cascading into clouds below, twin moons on the horizon, bioluminescent flora glowing at twilight, vast epic scale, fantasy concept art, matte painting style, volumetric god rays --ar 21:9 --v 6.1 --q 2 --s 400</code></pre>
+
+      <h3>3. 商品撮影</h3>
+      <p>ECサイトや広告に適した、クリーンなプレミアム商品写真を作成します。</p>
+      <pre><code class="prompt-example">minimalist glass perfume bottle with gold cap on white marble surface, water droplets condensation, soft diffused natural light from left window, subtle reflections, premium commercial product photography, razor-sharp focus, negative space --ar 4:5 --v 6.1 --style raw</code></pre>
+
+      <h3>4. アニメキャラクター</h3>
+      <p>表現豊かな特徴とスタイリッシュなデザインの詳細なアニメキャラクターイラストを生成します。</p>
+      <pre><code class="prompt-example">female mage character with flowing silver hair and glowing violet eyes, ornate blue and gold robes with celestial embroidery, casting a spell with trails of light, dramatic upward angle, highly detailed anime illustration, soft cel shading, dynamic pose --ar 2:3 --v 6.1 --q 2</code></pre>
+
+      <h3>5. 建築ビジュアライゼーション</h3>
+      <p>精密な素材感とプロフェッショナルなライティングのフォトリアルな建築外観をレンダリングします。</p>
+      <pre><code class="prompt-example">modern minimalist villa at twilight, floor-to-ceiling glass walls revealing warm interior light, infinity pool reflecting orange sky, concrete and dark wood facade, surrounded by curated desert landscaping, architectural photography, wide angle exterior shot --ar 16:9 --v 6.1 --style raw --q 2</code></pre>
+
+      <h3>6. アブストラクトアート</h3>
+      <p>ウォールアートやデジタル背景に適した、印象的な抽象構図を作成します。</p>
+      <pre><code class="prompt-example">fluid simulation of molten gold and deep cobalt blue colliding in slow motion, macro photography, high-speed capture frozen in time, swirling organic forms, extreme detail in surface tension and droplet formation, studio lighting, abstract fine art --ar 1:1 --v 6.1 --q 2 --s 600</code></pre>
+
+      <h3>7. フード撮影</h3>
+      <p>意図的なスタイリングとライティングを備えた食欲をそそるエディトリアル品質の食品写真を生成します。</p>
+      <pre><code class="prompt-example">rustic sourdough loaf just pulled from oven, steam rising, golden-brown crust, cracked top revealing open crumb, on a worn wooden board with scattered flour and a linen cloth, warm kitchen window light, food photography, close-up overhead angle --ar 4:5 --v 6.1 --style raw</code></pre>
+
+      <h3>8. SF コンセプトアート</h3>
+      <p>シネマティックでナラティブなスタイルの詳細なSF環境アートを生成します。</p>
+      <pre><code class="prompt-example">abandoned alien megastructure half-buried in red desert sand, towering monolithic slabs of dark metal covered in cryptic geometric engravings, dramatic low sun casting long shadows, lone explorer figure for scale, sci-fi concept art, matte painting, cinematic wide shot --ar 21:9 --v 6.1 --q 2</code></pre>
+
+      <h3>9. ヴィンテージ / レトロスタイル</h3>
+      <p>時代を感じさせる美学とカラー処理を持つ、本物のヴィンテージ感のある画像を作成します。</p>
+      <pre><code class="prompt-example">1970s road trip across American Southwest, vintage station wagon on Route 66, dust clouds behind, vast red canyon landscape, analog film grain, Kodachrome color palette, warm faded tones, cinematic 16mm aesthetic, wide angle --ar 16:9 --v 6.1 --style raw --s 200</code></pre>
+
+      <h3>10. ミニマルデザイン</h3>
+      <p>意図的なネガティブスペースと洗練されたビジュアル表現の、クリーンでデザイン志向の画像を生成します。</p>
+      <pre><code class="prompt-example">single red tulip in a clear glass vase on a white table, high-key even lighting, long shadow cast to the right, minimal composition with intentional negative space, Japanese minimalist aesthetic, commercial photography --ar 4:5 --v 6.1 --style raw</code></pre>
+
+      <div class="callout">
+        <p><strong>ヒント：</strong><a href="/">ImageToPrompt</a>を使えば、参照画像から同様のプロンプトを自動生成できます。テンプレートとして構造を理解し、結果を微調整するのに活用してください。</p>
+      </div>
+
+      <h2 id="kouzou-hikaku">構造比較：Midjourney、Flux、Stable Diffusion</h2>
+
+      <p>AIアーティストが犯す最も一般的な間違いの一つは、使用するモデルに合わないフォーマットでプロンプトを書くことです。Midjourney、Flux、Stable Diffusionは根本的に異なるプロンプト言語を持っています。一方で完璧に機能するプロンプトでも、別のモデルでは平凡な結果になります。</p>
+
+      <p><strong>Midjourney</strong>は、視覚的重要度順に並べたカンマ区切りの記述子を好みます。被写体とアクションから始め、次にスタイル/メディアム、ライティング、構図、雰囲気の順に記述し、最後に<code>--パラメータ</code>を付けます。Midjourneyはプロンプトに比例して注意を配分するため、最初に書いたものが最も視覚的重みを受けます。</p>
+
+      <p><strong>Flux</strong>（Flux.1 Dev/Pro/Schnell）はT5-XXL大規模言語モデルを使用してプロンプトを解釈するため、MidjourneyのCLIPアプローチよりも自然言語をはるかによく理解します。Fluxのプロンプトは完全な説明文として書いてください。Fluxは<code>--パラメータ</code>、ネガティブプロンプト、重み付け構文に対応していません。</p>
+
+      <p><strong>Stable Diffusion</strong>はCLIPベースのトークンエンコーディングを使用するため、重み付きタグリストに反応します。最初に品質トークン（<code>masterpiece, best quality, ultra-detailed</code>）、次に被写体とスタイルのトークン、そして別のネガティブプロンプトフィールドを使用します。<code>(重要なコンセプト:1.3)</code>や<code>[あまり重要でない:0.7]</code>のような重み付けで、強調を精密に調整できます。</p>
+
+      <div class="table-wrap">
+      <table class="comparison-table">
+        <thead>
+          <tr>
+            <th>項目</th>
+            <th>Midjourney v6.1</th>
+            <th>Flux.1 Dev/Pro</th>
+            <th>Stable Diffusion XL</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>プロンプト形式</td>
+            <td>カンマ区切りの記述子</td>
+            <td>自然言語の文章</td>
+            <td>重み付きタグリスト</td>
+          </tr>
+          <tr>
+            <td>パラメータ</td>
+            <td><code>--ar --v --s --c --q</code></td>
+            <td>なし（UI/APIで設定）</td>
+            <td>CFG scale, steps, sampler</td>
+          </tr>
+          <tr>
+            <td>ネガティブプロンプト</td>
+            <td><code>--no [用語]</code></td>
+            <td>非対応</td>
+            <td>専用ネガティブフィールド</td>
+          </tr>
+          <tr>
+            <td>プロンプトの長さ</td>
+            <td>中程度（50〜150語）</td>
+            <td>長め（1〜4文）</td>
+            <td>短〜中程度（タグリスト）</td>
+          </tr>
+          <tr>
+            <td>重み付け制御</td>
+            <td><code>被写体::2</code>構文</td>
+            <td>文章内の強調のみ</td>
+            <td><code>(用語:1.3)</code>構文</td>
+          </tr>
+          <tr>
+            <td>得意分野</td>
+            <td>アーティスティック、スタイリッシュ、一貫した美学</td>
+            <td>フォトリアル、オープンソース、セルフホスト</td>
+            <td>ファインチューンモデル、アニメ、カスタムワークフロー</td>
+          </tr>
+        </tbody>
+      </table>
+      </div>
+
+      <h2 id="rei-kekka">プロンプト例と結果</h2>
+
+      <p>6つの異なるカテゴリの完全なプロンプトと、それぞれが機能する理由の主要な選択ポイントの解説です。</p>
+
+      <div class="prompt-example">
+        <p class="example-category">ポートレート</p>
+        <pre class="prompt-block">elderly Japanese fisherman with weathered face and deep-set eyes, worn rain gear, standing at harbor at dawn, dramatic side lighting with golden fog, documentary photography, shallow depth of field, rule of thirds --ar 2:3 --v 6.1 --style raw --q 2</pre>
+        <picture><source srcset="/images/describe-the-photo-midjourney-fisherman-portrait.webp" type="image/webp"><img src="/images/describe-the-photo-midjourney-fisherman-portrait.jpeg" alt="Midjourney V6.1ポートレートプロンプト結果 — 夜明けの港に立つ年配の日本人漁師、ドキュメンタリー写真スタイル" width="800" height="1200" loading="lazy"></picture>
+        <p><em>機能する理由：</em>被写体の具体性（国籍、年齢、職業、特定の特徴）＋ロケーション＋時間帯が重要な役割を果たしています。<code>--style raw</code>はMidjourneyがリアルに見えるべき被写体を過度に美化するのを防ぎます。</p>
+      </div>
+
+      <div class="prompt-example">
+        <p class="example-category">風景</p>
+        <pre class="prompt-block">vast salt flats at sunset stretching to the horizon, lone dead tree in foreground, mirror-like water reflection of dramatic orange and purple sky, surreal and otherworldly, wide angle shot, hyperrealistic photography --ar 21:9 --v 6.1 --q 2</pre>
+        <picture><source srcset="/images/ai-image-generator-prompt-midjourney-roman-ruins.webp" type="image/webp"><img src="/images/ai-image-generator-prompt-midjourney-roman-ruins.jpeg" alt="Midjourney V6.1風景プロンプト結果 — 枯れ木と鏡面反射のある夕暮れの塩平原" width="1200" height="514" loading="lazy"></picture>
+        <p><em>機能する理由：</em>水面の鏡面反射が空を二重にする構図デバイスを作り出しています。<code>--ar 21:9</code>はシーンのシネマティックな広がりに合致します。前景の要素（枯れ木）が奥行きを追加します。</p>
+      </div>
+
+      <div class="prompt-example">
+        <p class="example-category">ファンタジー / コンセプトアート</p>
+        <pre class="prompt-block">ancient library inside a living tree, bookshelves carved into the wood, glowing bioluminescent spores floating in the air, reading nooks with warm candlelight, moss and vines growing between shelves, fantasy concept art, digital painting, magical atmosphere --ar 16:9 --v 6.1 --q 2</pre>
+        <picture><source srcset="/images/image-to-prompt-ai-midjourney-fantasy-library.webp" type="image/webp"><img src="/images/image-to-prompt-ai-midjourney-fantasy-library.jpeg" alt="Midjourney V6.1ファンタジーコンセプトアートプロンプト結果 — 生きた木の中の古代図書館と生物発光胞子" width="1200" height="675" loading="lazy"></picture>
+        <p><em>機能する理由：</em>複数の具体的な環境ディテールが注意を奪い合うことで豊かさを生み出しています。光源のミックス（生物発光＋キャンドル）がAIに明確なコントラストの手がかりを提供します。</p>
+      </div>
+
+      <div class="prompt-example">
+        <p class="example-category">商品撮影</p>
+        <pre class="prompt-block">luxury perfume bottle on black marble surface, dramatic backlit lighting creating caustic light patterns, water droplets on glass, dark moody atmosphere with deep shadows, commercial product photography, macro lens, sharp focus --ar 1:1 --v 6.1 --style raw</pre>
+        <picture><source srcset="/images/prompt-generator-from-image-midjourney-perfume.webp" type="image/webp"><img src="/images/prompt-generator-from-image-midjourney-perfume.jpeg" alt="Midjourney V6.1商品撮影プロンプト結果 — ブラックマーブル上の高級香水ボトルとドラマティックなコースティックライティング" width="800" height="800" loading="lazy"></picture>
+        <p><em>機能する理由：</em><code>caustic light patterns</code>はMidjourneyの写真理解を活性化する具体的なライティング用語です。暗い背景＋バックライトはMidjourneyが得意とする信頼性の高い商品撮影の組み合わせです。</p>
+      </div>
+
+      <div class="prompt-example">
+        <p class="example-category">アブストラクト</p>
+        <pre class="prompt-block">liquid metallic paint in motion, swirling golds and deep blues colliding, extreme macro photography, high contrast, rich saturated color, abstract art, studio lighting --ar 1:1 --v 6.1 --q 2</pre>
+        <picture><source srcset="/images/ai-prompt-generator-abstract-paint-explosion.webp" type="image/webp"><img src="/images/ai-prompt-generator-abstract-paint-explosion.jpeg" alt="Midjourney V6.1アブストラクトアートプロンプト結果 — 渦巻く金色と深青のリキッドメタリックペイントのエクストリームマクロ" width="800" height="800" loading="lazy"></picture>
+        <p><em>機能する理由：</em>アブストラクト作品では、素材（<code>liquid metallic paint</code>）＋動き＋スケール（<code>extreme macro</code>）が被写体の説明より効果的です。色のコントラスト（ゴールド対ディープブルー）が強い方向性を与えます。</p>
+      </div>
+
+      <div class="prompt-example">
+        <p class="example-category">建築</p>
+        <pre class="prompt-block">brutalist concrete cathedral interior, massive columns with vertical light slits, dramatic shafts of sunlight cutting through dust, vast empty nave, black and white architectural photography, wide angle, deep perspective --ar 2:3 --v 6.1 --style raw --q 2</pre>
+        <picture><source srcset="/images/explain-this-image-midjourney-cathedral.webp" type="image/webp"><img src="/images/explain-this-image-midjourney-cathedral.jpeg" alt="Midjourney V6.1建築プロンプト結果 — ドラマティックな光の帯が差し込むブルータリストコンクリート大聖堂内部" width="800" height="1200" loading="lazy"></picture>
+        <p><em>機能する理由：</em>建築ショットには強い構図言語（パースペクティブ、「massive」「vast」などのスケール表現）が必要です。特定の開口部を通した光の帯は、Midjourneyが美しくレンダリングする信頼性の高いドラマティック効果です。</p>
+      </div>
+
+      <h2 id="version-hikaku">Midjourneyバージョン比較</h2>
+
+      <div class="image-row">
+        <div>
+          <span class="comparison-badge badge-original" style="margin-bottom:0.375rem;">V5.2</span>
+          <picture><source srcset="/images/ai-prompt-image-midjourney-v52-samurai.webp" type="image/webp"><img src="/images/ai-prompt-image-midjourney-v52-samurai.jpeg" alt="Midjourney V5.2結果 — バージョン比較で使用した同じプロンプト" width="800" height="800" loading="lazy"></picture>
+        </div>
+        <div>
+          <span class="comparison-badge badge-tool" style="margin-bottom:0.375rem;">V6</span>
+          <picture><source srcset="/images/free-image-url-generator-midjourney-v6-samurai.webp" type="image/webp"><img src="/images/free-image-url-generator-midjourney-v6-samurai.jpeg" alt="Midjourney V6結果 — リアリズム向上を示すバージョン比較" width="800" height="800" loading="lazy"></picture>
+        </div>
+        <div>
+          <span class="comparison-badge badge-recreation" style="margin-bottom:0.375rem;">V6.1</span>
+          <picture><source srcset="/images/image-to-prompt-midjourney-v61-jazz-musician.webp" type="image/webp"><img src="/images/image-to-prompt-midjourney-v61-jazz-musician.jpeg" alt="Midjourney V6.1結果 — ディテールと一貫性が向上した最新バージョン" width="800" height="800" loading="lazy"></picture>
+        </div>
+      </div>
+
+      <div class="table-wrap">
+      <table class="comparison-table">
+        <thead>
+          <tr><th>項目</th><th>V5.2</th><th>V6</th><th>V6.1</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>フォトリアリズム</td><td>良い</td><td>とても良い</td><td>最高</td></tr>
+          <tr><td>テキストレンダリング</td><td>不良</td><td>改善</td><td>良い</td></tr>
+          <tr><td>ディテールレベル</td><td>高い</td><td>とても高い</td><td>とても高い</td></tr>
+          <tr><td>プロンプト追従性</td><td>普通</td><td>良い</td><td>とても良い</td></tr>
+          <tr><td>美的スタイル</td><td>独特のMJルック</td><td>より自然</td><td>最も自然</td></tr>
+        </tbody>
+      </table>
+      </div>
+
+      <h2 id="prompt-juuzuke">プロンプトの重み付け</h2>
+
+      <p>プロンプトの特定の部分にMidjourneyが置く重要度を<code>::</code>構文に続く数値で制御できます：</p>
+
+      <p><code>a surreal landscape::2 with tiny clockwork figures::1</code></p>
+
+      <p><code>::2</code>はMidjourneyに対して風景がフィギュアの2倍重要であることを示します。負の重みを使用して要素を抑制することもできます：<code>forest::2 buildings::-1</code>は森を強調し、建物を排除する方向に働きます。</p>
+
+      <h2 id="yokuaru-machigai">Midjourneyプロンプトのよくある間違い</h2>
+
+      <h3>重要でない要素への過度なディテール</h3>
+      <p>Midjourneyはプロンプト全体に注意を配分します。背景要素の説明に50単語を費やすと、メインの被写体と競合してしまいます。最も重要なものから始めましょう。</p>
+
+      <h3>矛盾する指示</h3>
+      <p>「明るくて晴れ」＋「暗くてドラマティックな雰囲気」は混乱を招きます。内部的に一貫してください。全体的に明るいシーンにドラマチックな影が欲しい場合は、具体的に「明るいアンビエントライトと深くドラマチックな影」と記述しましょう。</p>
+
+      <h3>構図の忘れ</h3>
+      <p>構図のガイダンスがなければ、Midjourneyが独自の判断をします。明示的な構図を追加しましょう：「クローズアップポートレート」「ワイドショット」「俯瞰」「エクストリームマクロ」など。これだけで結果が劇的に変わります。</p>
+
+      <h3>アスペクト比の忘れ</h3>
+      <p>デフォルトの1:1正方形はめったに望む結果ではありません。使用目的に合わせて常に<code>--ar</code>を追加しましょう。</p>
+
+      <h2 id="ikkansei">一貫した結果を得る方法</h2>
+
+      <p>気に入った結果が見つかったら、<strong>seed値</strong>を使って類似の結果を再現しましょう。Midjourneyのメッセージに絵文字リアクションを追加するとseedを取得でき、今後のプロンプトで<code>--seed [数値]</code>を使って同様の構図の開始点を得ることができます。</p>
+
+      <h2 id="multi-prompt">マルチプロンプトとパーミュテーション</h2>
+
+      <p><code>::</code>構文を使うと、プロンプトを重み付きセグメントに分割し、Midjourneyに各パートの重要度を指示できます。</p>
+
+      <p><strong>基本的な重み付け：</strong></p>
+      <p><code>stormy ocean::2 tiny sailing ship::1</code> &#8212; 海が船の2倍の視覚的重みを得ます。</p>
+
+      <p><strong>負の重み付け：</strong></p>
+      <p><code>forest::2 buildings::-1</code> &#8212; 森を強調し、建物を結果から積極的に排除します。</p>
+
+      <p><strong>シーン対スタイルの分離：</strong></p>
+      <p><code>ancient warrior::2 oil painting::1.5 dark background::-0.5</code> &#8212; 被写体を強く強調、絵画的スタイル、最小限の背景。</p>
+
+      <h2 id="image-ref">画像参照の効果的な使い方</h2>
+
+      <p>Midjourneyはプロンプトの先頭に画像URLを受け付けます。<code>--iw</code>（image weight）パラメータで参照画像が結果に与える影響力を制御できます。</p>
+
+      <ul>
+        <li><code>--iw 0.5</code>：控えめな影響 &#8212; 参照がスタイルと雰囲気をおおまかにガイド</li>
+        <li><code>--iw 1</code>：中程度の影響 &#8212; デフォルト、参照とテキストプロンプトのバランス</li>
+        <li><code>--iw 2</code>：強い影響 &#8212; 結果が参照に近くなる</li>
+      </ul>
+
+      <p>これが<a href="/">ImageToPromptのような画像からプロンプトへのツール</a>がMidjourneyを補完する方法です。参照画像からテキストプロンプトを抽出し、さらに画像URLもビジュアルアンカーとして提供することで、より強力なスタイル転送が可能になります。</p>
+
+      <h2 id="troubleshooting">よくある問題の解決法</h2>
+
+      <div class="troubleshooting-grid">
+        <div class="trouble-item">
+          <p class="trouble-q">画像が暗すぎる</p>
+          <p class="trouble-a">明示的なライティングを追加してください：<code>bright ambient lighting</code>、<code>well-lit scene</code>、または特定の光源。暗さを暗示するムードワードを削除しましょう。</p>
+        </div>
+        <div class="trouble-item">
+          <p class="trouble-q">手が変形している</p>
+          <p class="trouble-a"><code>--no deformed hands, extra fingers, fused fingers</code>を使い、ポジティブプロンプトに<code>detailed hands, accurate anatomy</code>を含めてください。V6.1は以前のバージョンより手の処理が向上しています。</p>
+        </div>
+        <div class="trouble-item">
+          <p class="trouble-q">4つのグリッド結果がすべて似ている</p>
+          <p class="trouble-a"><code>--chaos 30</code>以上を追加してください。低いchaos（デフォルト0）は非常に似たバリエーションを生成します。探索時はchaos 20〜50を使い、方向性が決まったら0に戻しましょう。</p>
+        </div>
+        <div class="trouble-item">
+          <p class="trouble-q">画像内のテキストがぼやけている</p>
+          <p class="trouble-a">V6またはV6.1を使用してください（旧バージョンは不可）。プロンプト内で表示したい正確なテキストを引用符で囲んでください：<code>"OPEN" sign on the door</code>。テキストは短く &#8212; 1語または2〜3語のフレーズが最適です。</p>
+        </div>
+      </div>
+
+      <div class="cta-box">
+        <h3>画像からMidjourneyプロンプトを生成</h3>
+        <p>参照画像をアップロードするだけで、--ar、--v、スタイルパラメータが含まれた完全なMidjourneyプロンプトが生成されます。</p>
+        <a href="/?lang=ja" class="cta-btn">無料Midjourneyプロンプトジェネレーターを試す →</a>
+      </div>
+
+    </div>
+
+    <div class="author-bio">
+      <img src="/favicon.svg" alt="ImageToPrompt Team" width="44" height="44">
+      <div>
+        <strong>ImageToPrompt Team</strong>
+        <p>私たちはクリエイターの皆さんがAI画像生成をマスターできるよう支援する専門チームです。画像からプロンプトへの変換ツールやAIプロンプトエンジニアリングガイドを通じて、世界中のアーティストの創作活動をサポートしています。</p>
+        <a href="https://x.com/ImageToPrompt" target="_blank" rel="noopener" class="author-follow">Xでフォロー</a>
+      </div>
+    </div>
+
+    <div class="related-posts">
+      <h2>関連ガイド</h2>
+      <div class="related-grid">
+        <a href="/ja/blog/stable-diffusion-vs-midjourney-vs-dalle3/" class="related-card">
+          <p class="tag">比較</p>
+          <h3>SD vs Midjourney vs DALL·E 3 vs Flux：プロンプト比較</h3>
+        </a>
+        <a href="/ja/blog/gazou-kara-prompt-henkan/" class="related-card">
+          <p class="tag">ガイド</p>
+          <h3>画像からMidjourneyプロンプトへの変換方法</h3>
+        </a>
+        <a href="/ja/blog/prompt-engineering-ai-art-nyuumon/" class="related-card">
+          <p class="tag">入門</p>
+          <h3>AIアートのためのプロンプトエンジニアリング入門</h3>
+        </a>
+        <a href="/blog/midjourney-vs-flux/" class="related-card">
+          <p class="tag">比較</p>
+          <h3>Midjourney vs Flux AI：2026年どちらが優れているか？</h3>
+        </a>
+        <a href="/blog/ai-art-styles-glossary/" class="related-card">
+          <p class="tag">リファレンス</p>
+          <h3>AIアートスタイル50用語集</h3>
+        </a>
+        <a href="/blog/prompt-engineering-mistakes/" class="related-card">
+          <p class="tag">ヒント</p>
+          <h3>避けるべきプロンプトエンジニアリングの15の間違い</h3>
+        </a>
+      </div>
+    </div>
+
+  </div>
+
+  <footer class="footer-4col">
+    <div class="f4-inner">
+      <div class="f4-brand">
+        <img src="/favicon.svg" alt="ImageToPrompt" width="28" height="28">
+        <span class="f4-brand-name">ImageTo<span class="accent">Prompt</span></span>
+        <span class="f4-brand-sub">&mdash; Free AI Prompt Generator</span>
+      </div>
+      <div class="f4-grid">
+        <div class="f4-section">
+          <h4 class="f4-heading">Image Prompt Tools</h4>
+          <a href="/">Image to Prompt</a>
+          <a href="/text-to-prompt/">Text to Prompt</a>
+          <a href="/describe-image/">Describe Image</a>
+          <a href="/midjourney-prompt-generator/">Midjourney</a>
+          <a href="/stable-diffusion-prompt-generator/">Stable Diffusion</a>
+          <a href="/flux-prompt-generator/">Flux</a>
+          <a href="/dall-e-prompt-generator/">DALL-E 3</a>
+          <a href="/adobe-firefly-prompt-generator/">Adobe Firefly</a>
+          <a href="/leonardo-ai-prompt-generator/">Leonardo AI</a>
+          <a href="/ideogram-prompt-generator/">Ideogram</a>
+        </div>
+        <div class="f4-section">
+          <h4 class="f4-heading">Video Prompt Tools</h4>
+          <a href="/image-to-video-prompt/">Image to Video Prompt</a>
+          <a href="/text-to-video-prompt/">Text to Video Prompt</a>
+          <a href="/veo-prompt-generator/">Veo / Flow Studio</a>
+          <a href="/kling-prompt-generator/">Kling AI</a>
+          <a href="/runway-prompt-generator/">Runway Gen-3</a>
+          <a href="/pika-prompt-generator/">Pika</a>
+          <a href="/luma-prompt-generator/">Luma Dream Machine</a>
+          <a href="/sora-prompt-generator/">Sora</a>
+          <a href="/minimax-prompt-generator/">Minimax</a>
+          <a href="/stable-video-prompt-generator/">Stable Video</a>
+        </div>
+        <div class="f4-section">
+          <h4 class="f4-heading">Resources</h4>
+          <a href="/ja/blog/">ブログ</a>
+          <a href="/ja/about/">概要</a>
+          <a href="/ja/pricing/">料金</a>
+          <a href="/contact/">Contact</a>
+          <a href="/privacy-policy/">Privacy Policy</a>
+          <a href="/terms-of-service/">Terms of Service</a>
+        </div>
+        <div class="f4-section">
+          <h4 class="f4-heading">Languages</h4>
+          <a href="/">English</a>
+          <a href="/fr/">Français</a>
+          <a href="/ar/">العربية</a>
+          <a href="/es/">Español</a>
+          <a href="/ko/">한국어</a>
+          <a href="/ja/">日本語</a>
+          <a href="/ru/">Русский</a>
+        </div>
+      </div>
+      <div class="f4-bottom">
+        <p>&copy; 2026 ImageToPrompt.dev &mdash; Free AI Prompt Generator</p>
+        <p>Your images are never stored. All analysis is ephemeral and private.</p>
+      </div>
+    </div>
+  </footer>
+
+<script src="/newsletter-inject.js" defer></script>
+<script src="/nav.js" defer></script>
+  <script>
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', function() {
+    navigator.serviceWorker.register('/sw.js')
+      .catch(function(err) { console.warn('SW registration failed:', err); });
+  });
+}
+</script>
+</body>
+</html>

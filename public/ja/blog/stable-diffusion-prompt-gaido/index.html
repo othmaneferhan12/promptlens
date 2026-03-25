@@ -1,0 +1,530 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <script src="/theme-toggle.js"></script>
+  <meta charset="UTF-8" />
+  <link rel="dns-prefetch" href="https://www.googletagmanager.com">
+<link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="max-image-preview:large, index, follow">
+  <meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="ImageToPrompt">
+  <title>Stable Diffusionプロンプト完全ガイド 2026</title>
+  <meta name="description" content="Stable Diffusionのプロンプトをマスターしましょう。重み付け構文、ネガティブプロンプト、SD 1.5・SDXL・SD 3.5向けクオリティタグを解説します。" />
+  <link rel="canonical" href="https://www.imagetoprompt.dev/ja/blog/stable-diffusion-prompt-gaido/" />
+  <link rel="alternate" hreflang="ja" href="https://www.imagetoprompt.dev/ja/blog/stable-diffusion-prompt-gaido/" />
+  <link rel="alternate" hreflang="en" href="https://www.imagetoprompt.dev/blog/stable-diffusion-prompt-guide/" />
+  <link rel="alternate" hreflang="fr" href="https://www.imagetoprompt.dev/fr/blog/guide-prompts-stable-diffusion/" />
+  <link rel="alternate" hreflang="ar" href="https://www.imagetoprompt.dev/ar/blog/dalil-prompts-stable-diffusion/" />
+  <link rel="alternate" hreflang="es" href="https://www.imagetoprompt.dev/es/blog/guia-prompts-stable-diffusion/" />
+  <link rel="alternate" hreflang="x-default" href="https://www.imagetoprompt.dev/blog/stable-diffusion-prompt-guide/" />
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <meta property="og:title" content="Stable Diffusionプロンプト完全ガイド 2026" />
+  <meta property="og:description" content="Stable Diffusionのプロンプトをマスターしましょう。重み付け構文、ネガティブプロンプト、SD 1.5・SDXL・SD 3.5向けクオリティタグを解説します。" />
+  <meta property="og:url" content="https://www.imagetoprompt.dev/ja/blog/stable-diffusion-prompt-gaido/" />
+  <meta property="og:type" content="article" />
+  <meta property="og:image" content="https://www.imagetoprompt.dev/og-image.png" />
+  <meta property="og:site_name" content="ImageToPrompt" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Stable Diffusionプロンプト完全ガイド 2026" />
+  <meta name="twitter:description" content="Stable Diffusionのプロンプトをマスター。重み付け構文、ネガティブプロンプト、クオリティタグを解説。" />
+  <meta name="twitter:image" content="https://www.imagetoprompt.dev/og-image.png" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="48x48" href="/favicon-48.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+  <link rel="manifest" href="/site.webmanifest" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="/fonts/space-grotesk-700.woff2" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="/fonts/inter-400.woff2" />
+  <link rel="stylesheet" href="/theme.css">
+  <link rel="preload" href="/blog.css" as="style" onload="this.onload=null;this.rel='stylesheet'"><noscript><link rel="stylesheet" href="/blog.css"></noscript>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Stable Diffusion\u30d7\u30ed\u30f3\u30d7\u30c8\u5b8c\u5168\u30ac\u30a4\u30c9 2026",
+    "description": "Stable Diffusion\u306e\u30d7\u30ed\u30f3\u30d7\u30c8\u3092\u30de\u30b9\u30bf\u30fc\u3057\u307e\u3057\u3087\u3046\u3002\u91cd\u307f\u4ed8\u3051\u69cb\u6587\u3001\u30cd\u30ac\u30c6\u30a3\u30d6\u30d7\u30ed\u30f3\u30d7\u30c8\u3001SD 1.5\u30fbSDXL\u30fbSD 3.5\u5411\u3051\u30af\u30aa\u30ea\u30c6\u30a3\u30bf\u30b0\u3092\u89e3\u8aac\u3057\u307e\u3059\u3002",
+    "image": "https://www.imagetoprompt.dev/og-image.png",
+    "datePublished": "2026-03-08",
+    "dateModified": "2026-03-24",
+    "inLanguage": "ja",
+    "author": {
+      "@type": "Person",
+      "name": "ImageToPrompt Team",
+      "url": "https://www.imagetoprompt.dev/"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "ImageToPrompt",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://www.imagetoprompt.dev/favicon.svg"
+      }
+    },
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https://www.imagetoprompt.dev/ja/blog/stable-diffusion-prompt-gaido/"
+    }
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Stable Diffusion\u306e\u91cd\u307f\u4ed8\u3051\u69cb\u6587\u306f\u3069\u306e\u3088\u3046\u306b\u6a5f\u80fd\u3057\u307e\u3059\u304b\uff1f",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "\u91cd\u307f\u4ed8\u3051\u69cb\u6587\u306f\u62ec\u5f27\u3068\u30b3\u30ed\u30f3\u3092\u4f7f\u3063\u3066\u3001\u5404\u30bf\u30fc\u30e0\u306e\u91cd\u8981\u5ea6\u3092\u5897\u6e1b\u3057\u307e\u3059\u3002(term:1.3)\u306f\u91cd\u307f\u309230%\u5897\u52a0\u3001(term:0.7)\u306f30%\u6e1b\u5c11\u3055\u305b\u307e\u3059\u3002\u30c7\u30d5\u30a9\u30eb\u30c8\u5024\u306f1.0\u3067\u3059\u3002\u30b7\u30f3\u30d7\u30eb\u306a\u62ec\u5f27\u3082\u4f7f\u3048\u307e\u3059\uff1a(term)\u306f(term:1.1)\u3001((term))\u306f(term:1.21)\u306b\u76f8\u5f53\u3057\u307e\u3059\u30021.5\u3092\u8d85\u3048\u308b\u91cd\u307f\u306f\u30a2\u30fc\u30c6\u30a3\u30d5\u30a1\u30af\u30c8\u306e\u539f\u56e0\u306b\u306a\u308b\u306e\u3067\u907f\u3051\u3066\u304f\u3060\u3055\u3044\u3002"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Stable Diffusion\u306b\u6700\u9069\u306a\u30cd\u30ac\u30c6\u30a3\u30d6\u30d7\u30ed\u30f3\u30d7\u30c8\u306f\u4f55\u3067\u3059\u304b\uff1f",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "\u6c4e\u7528\u7684\u306a\u30cd\u30ac\u30c6\u30a3\u30d6\u30d7\u30ed\u30f3\u30d7\u30c8\uff1a'(worst quality:1.4), (low quality:1.4), (normal quality:1.2), lowres, bad anatomy, bad hands, extra digits, fewer digits, cropped, watermark, signature, blurry, deformed'\u3002\u30dd\u30fc\u30c8\u30ec\u30fc\u30c8\u306b\u306f'extra fingers, mutated hands, poorly drawn face, ugly, disfigured'\u3092\u8ffd\u52a0\u3057\u3066\u304f\u3060\u3055\u3044\u3002\u4f7f\u7528\u3059\u308b\u30c1\u30a7\u30c3\u30af\u30dd\u30a4\u30f3\u30c8\u306b\u5408\u308f\u305b\u3066\u8abf\u6574\u3057\u307e\u3057\u3087\u3046\u3002"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "SD 1.5\u3001SDXL\u3001SD 3.5\u306e\u30d7\u30ed\u30f3\u30d7\u30c8\u306e\u9055\u3044\u306f\u4f55\u3067\u3059\u304b\uff1f",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "SD 1.5\u306f\u30af\u30aa\u30ea\u30c6\u30a3\u30bf\u30b0\uff08masterpiece\u3001best quality\uff09\u3092\u542b\u3080\u9ad8\u5ea6\u306b\u69cb\u9020\u5316\u3055\u308c\u305f\u30d7\u30ed\u30f3\u30d7\u30c8\u304c\u5fc5\u8981\u3067\u3001\u91cd\u307f\u4ed8\u3051\u69cb\u6587\u306b\u3088\u304f\u53cd\u5fdc\u3057\u307e\u3059\u3002SDXL\u306f\u81ea\u7136\u8a00\u8a9e\u306e\u7406\u89e3\u304c\u5411\u4e0a\u3057\u3001\u30af\u30aa\u30ea\u30c6\u30a3\u30bf\u30b0\u306e\u5fc5\u8981\u6027\u304c\u6e1b\u308a\u307e\u3059\u304c\u3001\u91cd\u307f\u4ed8\u3051\u306f\u5f15\u304d\u7d9a\u304d\u6709\u7528\u3067\u3059\u3002SD 3.5\u306f\u65b0\u3057\u3044\u30b7\u30b9\u30c6\u30e0\u3092\u63a1\u7528\u3057\u3001Flux\u306b\u4f3c\u305f\u8a73\u7d30\u306a\u81ea\u7136\u8a00\u8a9e\u306e\u8aac\u660e\u304c\u6700\u3082\u52b9\u679c\u7684\u3067\u3001\u6280\u8853\u7684\u306a\u30bf\u30b0\u3078\u306e\u4f9d\u5b58\u5ea6\u304c\u4f4e\u304f\u306a\u3063\u3066\u3044\u307e\u3059\u3002"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Stable Diffusion\u306e\u30d7\u30ed\u30f3\u30d7\u30c8\u306b\u6700\u9069\u306aCFG Scale\u306e\u9078\u3073\u65b9\u306f\uff1f",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "CFG Scale\u306f\u30e2\u30c7\u30eb\u304c\u30d7\u30ed\u30f3\u30d7\u30c8\u306b\u3069\u306e\u7a0b\u5ea6\u5fe0\u5b9f\u306b\u5f93\u3046\u304b\u3092\u5236\u5fa1\u3057\u307e\u3059\u3002\u4f4e\u3044\u5024\uff083-5\uff09\u306f\u5275\u9020\u7684\u3067\u3059\u304c\u30d7\u30ed\u30f3\u30d7\u30c8\u3078\u306e\u5fe0\u5b9f\u5ea6\u304c\u4f4e\u304f\u306a\u308a\u307e\u3059\u3002\u4e2d\u9593\u5024\uff087-9\uff09\u306f\u5275\u9020\u6027\u3068\u5fe0\u5b9f\u5ea6\u306e\u30d0\u30e9\u30f3\u30b9\u304c\u826f\u304f\u3001\u307b\u3068\u3093\u3069\u306e\u7528\u9014\u306b\u6700\u9069\u3067\u3059\u3002\u9ad8\u3044\u5024\uff0810-15\uff09\u306f\u30d7\u30ed\u30f3\u30d7\u30c8\u306b\u975e\u5e38\u306b\u5fe0\u5b9f\u3067\u3059\u304c\u3001\u904e\u5f69\u5ea6\u3084\u30a2\u30fc\u30c6\u30a3\u30d5\u30a1\u30af\u30c8\u306e\u30ea\u30b9\u30af\u304c\u3042\u308a\u307e\u3059\u30027\u304b\u3089\u59cb\u3081\u3066\u8abf\u6574\u3057\u3066\u304f\u3060\u3055\u3044\u3002"
+        }
+      }
+    ]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "\u30db\u30fc\u30e0",
+        "item": "https://www.imagetoprompt.dev/ja/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "\u30d6\u30ed\u30b0",
+        "item": "https://www.imagetoprompt.dev/ja/blog/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "Stable Diffusion\u30d7\u30ed\u30f3\u30d7\u30c8\u5b8c\u5168\u30ac\u30a4\u30c9 2026"
+      }
+    ]
+  }
+  </script>
+    <!-- Google AdSense -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4499206373485728" crossorigin="anonymous"></script>
+    <!-- Web Push Notifications -->
+<script src="https://cdn.onesignal.com/sdks/web/v16/OneSignalSDK.page.js" defer></script>
+<script>
+  window.OneSignalDeferred = window.OneSignalDeferred || [];
+  OneSignalDeferred.push(async function(OneSignal) {
+    await OneSignal.init({
+      appId: "REPLACE_WITH_ONESIGNAL_APP_ID",
+      notifyButton: { enable: false }
+    });
+  });
+</script>
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="inner">
+      <a href="/ja/" class="site-logo"><img src="/favicon.svg" alt="ImageToPrompt" width="48" height="48"><div class="site-logo-text">ImageTo<span class="accent">Prompt</span><span class="site-logo-sub">無料AIプロンプトジェネレーター</span></div></a>
+      <nav class="site-nav" aria-label="メインナビゲーション">
+        <div class="nav-dropdown">
+          <button class="nav-dropdown-trigger" aria-haspopup="true" aria-expanded="false">Tools <span class="nav-chevron" aria-hidden="true">&#9660;</span></button>
+          <div class="nav-dropdown-menu" role="menu">
+            <div class="nav-mega-grid">
+              <div class="nav-mega-col">
+                <div class="nav-mega-heading">&#128444; IMAGE TOOLS</div>
+                <a href="/" role="menuitem" class="nav-mega-tool">Image to Prompt <span class="nav-mega-arrow">&#8594;</span></a>
+                <a href="/text-to-prompt/" role="menuitem" class="nav-mega-tool">Text to Prompt <span class="nav-mega-arrow">&#8594;</span></a>
+                <a href="/describe-image/" role="menuitem" class="nav-mega-tool">Describe Image <span class="nav-new-badge">NEW</span> <span class="nav-mega-arrow">&#8594;</span></a>
+                <div class="nav-mega-models-label">Models</div>
+                <div class="nav-mega-models"><a href="/midjourney-prompt-generator/">Midjourney</a><span class="nav-dot">&#xB7;</span><a href="/stable-diffusion-prompt-generator/">SD</a></div>
+                <div class="nav-mega-models"><a href="/flux-prompt-generator/">Flux</a><span class="nav-dot">&#xB7;</span><a href="/dall-e-prompt-generator/">DALL&#xB7;E&#xA0;3</a></div>
+                <div class="nav-mega-models"><a href="/adobe-firefly-prompt-generator/">Firefly</a><span class="nav-dot">&#xB7;</span><a href="/leonardo-ai-prompt-generator/">Leonardo</a></div>
+                <div class="nav-mega-models"><a href="/ideogram-prompt-generator/">Ideogram</a></div>
+              </div>
+              <div class="nav-mega-divider" aria-hidden="true"></div>
+              <div class="nav-mega-col">
+                <div class="nav-mega-heading">&#127909; VIDEO TOOLS</div>
+                <a href="/?tab=image-to-video" role="menuitem" class="nav-mega-tool">Image to Video <span class="nav-mega-arrow">&#8594;</span></a>
+                <a href="/?tab=text-to-video" role="menuitem" class="nav-mega-tool">Text to Video <span class="nav-mega-arrow">&#8594;</span></a>
+                <div class="nav-mega-models-label">Models</div>
+                <div class="nav-mega-models"><a href="/veo-prompt-generator/">Veo</a><span class="nav-dot">&#xB7;</span><a href="/kling-prompt-generator/">Kling</a></div>
+                <div class="nav-mega-models"><a href="/runway-prompt-generator/">Runway</a><span class="nav-dot">&#xB7;</span><a href="/pika-prompt-generator/">Pika</a></div>
+                <div class="nav-mega-models"><a href="/luma-prompt-generator/">Luma</a><span class="nav-dot">&#xB7;</span><a href="/sora-prompt-generator/">Sora</a></div>
+                <div class="nav-mega-models"><a href="/minimax-prompt-generator/">Minimax</a><span class="nav-dot">&#xB7;</span><a href="/stable-video-prompt-generator/">Stable</a></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <a href="/ja/blog/">ブログ</a>
+        <a href="/ja/pricing/" class="nav-pill-pricing">料金</a>
+        <a href="/ja/about/" class="nav-pill-about">概要</a>
+        <a href="/ja/" class="nav-try-free">無料で試す &#8594;</a>
+        <button id="theme-toggle" onclick="toggleTheme()" aria-label="テーマ切替" title="テーマ切替">&#9728;&#xFE0F;</button>
+  </nav>
+    </div>
+  </header>
+
+  <nav class="breadcrumb" aria-label="パンくずリスト"><a href="/ja/">ホーム</a> <span aria-hidden="true">›</span> <a href="/ja/blog/">ブログ</a> <span aria-hidden="true">›</span> <span aria-current="page">Stable Diffusionプロンプトガイド</span></nav>
+
+  <div class="page-wrapper">
+
+    <header class="article-header">
+      <p class="article-tag">Stable Diffusion</p>
+      <h1>Stable Diffusionプロンプトガイド 2026</h1>
+      <div class="article-meta">
+        <span>2026年3月</span>
+        <span class="dot">·</span>
+        <span>11分で読める</span>
+        <span class="dot">·</span>
+        <span>SD 1.5 · SDXL · SD 3.5 · ComfyUI</span>
+        <span class="dot">·</span>
+        <span>2026年3月更新</span>
+      </div>
+    </header>
+
+    <div class="article-body">
+
+      <p>Stable Diffusionは、最も柔軟で技術的なAI画像生成ツールです。MidjourneyやDALL-E 3がユーザー体験を簡素化しているのに対し、Stable Diffusionは生成のあらゆる側面をきめ細かく制御できます。ただし、他のモデルにはない特有のプロンプト構文や技術的なパラメータを習得する必要があります。</p>
+
+      <nav class="toc" aria-label="目次">
+        <details open>
+          <summary>このガイドの内容</summary>
+          <ol>
+            <li><a href="#jumidzuke-koubun">重み付け構文の解説</a></li>
+            <li><a href="#negative-prompt">ネガティブプロンプトをマスターする</a></li>
+            <li><a href="#quality-tags">必須クオリティタグ</a></li>
+            <li><a href="#sd-versions">SD 1.5・SDXL・SD 3.5の違い</a></li>
+            <li><a href="#checkpoints">チェックポイントとの互換性</a></li>
+            <li><a href="#technical-params">CFG Scale・Steps・Samplers</a></li>
+            <li><a href="#advanced-templates">上級プロンプトテンプレート</a></li>
+            <li><a href="#faq">よくある質問</a></li>
+          </ol>
+        </details>
+      </nav>
+
+      <div class="callout">
+        <p><strong>自動生成ツール：</strong> 当サイトの<a href="/stable-diffusion-prompt-generator/">Stable Diffusionプロンプトジェネレーター</a>は、重み付け構文、クオリティタグ、ネガティブプロンプトを含む最適化されたプロンプトを自動生成します。参考画像をアップロードして始めましょう。</p>
+      </div>
+
+      <h2 id="jumidzuke-koubun">重み付け構文の解説</h2>
+
+      <p>重み付け構文は、AI画像生成ツールの中でStable Diffusionを際立たせる独自の機能です。プロンプト内の各タームの相対的な重要度を増減させることができます。</p>
+
+      <h3>基本構文</h3>
+      <p>フォーマットは <code>(ターム:重み)</code> で、重みは小数値です。デフォルト値は1.0です。</p>
+      <ul>
+        <li><code>(golden hour:1.3)</code> — 「golden hour」の重要度を30%増加</li>
+        <li><code>(bokeh:0.7)</code> — 「bokeh」の重要度を30%減少</li>
+        <li><code>(masterpiece:1.2), (best quality:1.1)</code> — 重み付きのクオリティタグ</li>
+      </ul>
+
+      <h3>重み付けのショートカット</h3>
+      <p>Stable Diffusionは括弧を重ねるショートカットもサポートしています。</p>
+      <ul>
+        <li><code>(term)</code> = <code>(term:1.1)</code></li>
+        <li><code>((term))</code> = <code>(term:1.21)</code></li>
+        <li><code>(((term)))</code> = <code>(term:1.33)</code></li>
+        <li><code>[term]</code> = <code>(term:0.9)</code> — 重みを減少</li>
+      </ul>
+
+      <h3>重み付けのルール</h3>
+      <p>重み付けは強力なツールですが、慎重に使用する必要があります。</p>
+      <ul>
+        <li><strong>0.5から1.5の範囲に収めましょう：</strong> それを超えると、視覚的なアーティファクトや歪みが発生するリスクがあります</li>
+        <li><strong>重み付けするタームは少なめに：</strong> すべてを1.3にすると、実質的に何も強調されません</li>
+        <li><strong>問題解決に重み付けを活用：</strong> 要素が表示されない場合は重みを増やし、支配的すぎる場合は減らしましょう</li>
+      </ul>
+
+      <h3>完成例</h3>
+      <p><code>(masterpiece:1.2), (best quality:1.1), 1girl, (flowing red hair:1.2), green eyes, (medieval dress:1.1), standing in a (enchanted forest:1.3), (golden hour lighting:1.2), (bokeh:0.8), detailed face, soft shadows</code></p>
+
+      <h2 id="negative-prompt">ネガティブプロンプトをマスターする</h2>
+
+      <p>ネガティブプロンプトは、Stable Diffusion（および派生モデル）独自の機能です。画像に表示させたくないものをモデルに指示します。これがアマチュアレベルとプロフェッショナルレベルの結果を分ける決定的な要素になることが多いです。</p>
+
+      <h3>汎用ネガティブプロンプト</h3>
+      <p>このネガティブプロンプトは、ほとんどの生成で基盤として効果的です。</p>
+      <p><code>(worst quality:1.4), (low quality:1.4), (normal quality:1.2), lowres, bad anatomy, bad hands, extra digits, fewer digits, cropped, watermark, signature, username, blurry, deformed, jpeg artifacts</code></p>
+
+      <h3>専用ネガティブプロンプト</h3>
+
+      <p><strong>ポートレート用：</strong></p>
+      <p><code>(worst quality:1.4), (low quality:1.4), bad anatomy, bad hands, extra fingers, mutated hands, poorly drawn face, ugly, disfigured, cross-eyed, asymmetric face, extra limbs, fused fingers</code></p>
+
+      <p><strong>風景用：</strong></p>
+      <p><code>(worst quality:1.4), (low quality:1.4), blurry, watermark, text, logo, oversaturated, distorted horizon, unnatural colors</code></p>
+
+      <p><strong>アニメ用：</strong></p>
+      <p><code>(worst quality:1.4), (low quality:1.4), bad anatomy, bad hands, extra digits, missing fingers, poorly drawn face, simple background, flat colors, bad proportions</code></p>
+
+      <h2 id="quality-tags">必須クオリティタグ</h2>
+
+      <p>クオリティタグは、画像の全体的な品質を向上させるキーワードです。その効果はStable Diffusionのバージョンや使用するチェックポイントによって異なります。</p>
+
+      <h3>最も効果的なタグ</h3>
+      <div class="table-wrap">
+      <table class="comparison-table">
+        <thead>
+          <tr>
+            <th>タグ</th>
+            <th>効果</th>
+            <th>有効なバージョン</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><code>masterpiece</code></td>
+            <td>最高品質、丁寧な構図</td>
+            <td>SD 1.5、一部のSDXL</td>
+          </tr>
+          <tr>
+            <td><code>best quality</code></td>
+            <td>細部の精緻さ、クリーンな描画</td>
+            <td>SD 1.5、SDXL</td>
+          </tr>
+          <tr>
+            <td><code>highly detailed</code></td>
+            <td>ディテールレベルの向上</td>
+            <td>全バージョン</td>
+          </tr>
+          <tr>
+            <td><code>sharp focus</code></td>
+            <td>シャープネスの向上</td>
+            <td>全バージョン</td>
+          </tr>
+          <tr>
+            <td><code>8k uhd</code></td>
+            <td>見た目の高解像度化</td>
+            <td>SD 1.5、SDXLでは効果が不安定</td>
+          </tr>
+          <tr>
+            <td><code>intricate details</code></td>
+            <td>複雑で繊細なディテール</td>
+            <td>全バージョン</td>
+          </tr>
+        </tbody>
+      </table>
+      </div>
+
+      <h2 id="sd-versions">SD 1.5・SDXL・SD 3.5の違い</h2>
+
+      <h3>SD 1.5</h3>
+      <p>最も成熟したバージョンで、チェックポイントやLoRAの最大のエコシステムを持っています。SD 1.5のプロンプトは、クオリティタグと重み付け構文に大きく依存します。ネイティブ解像度：512x512。</p>
+      <p>プロンプト例：<code>(masterpiece:1.2), (best quality:1.1), highly detailed, 1girl, long blonde hair, blue eyes, white dress, standing in flower field, golden hour, (bokeh:0.8), sharp focus</code></p>
+
+      <h3>SDXL</h3>
+      <p>ネイティブ解像度は1024x1024で、自然言語の理解が向上しています。SDXLはクオリティタグの必要性が少なくなっていますが、精密な制御には重み付けが引き続き有効です。2つのテキストエンコーダー（CLIP ViT-LとOpenCLIP ViT-bigG）のシステムにより、意味論的な理解が向上しています。</p>
+      <p>プロンプト例：<code>beautiful young woman with long blonde hair, wearing an elegant white dress, standing in a sunlit wildflower meadow, (golden hour:1.2), soft bokeh background, detailed skin texture, professional photography</code></p>
+
+      <h3>SD 3.5</h3>
+      <p>最新バージョンは、MMDiT（Multi-Modal Diffusion Transformer）アーキテクチャを採用しており、自然言語の理解が大幅に向上しています。従来のクオリティタグの影響力は低下しています。Fluxに似た、詳細な自然言語での記述が最も効果的です。</p>
+      <p>プロンプト例：<code>A beautiful young woman with flowing blonde hair and bright blue eyes stands in a vast field of wildflowers during golden hour. She wears an elegant white summer dress that catches the warm breeze. The background is softly blurred with warm amber tones. Professional portrait photography with detailed skin texture and natural soft lighting.</code></p>
+
+      <h2 id="checkpoints">チェックポイントとの互換性</h2>
+
+      <p>チェックポイント（カスタムモデル）はStable Diffusionの大きな強みです。各チェックポイントは、特定のプロンプト設定で訓練されています。</p>
+
+      <ul>
+        <li><strong>Realistic Vision：</strong> 詳細な写真風プロンプトやカメラ用語に優れています（<code>Canon EOS R5, 85mm f/1.4, RAW photo</code>）</li>
+        <li><strong>DreamShaper：</strong> 汎用性が高く、アートと写真を組み合わせたプロンプトに対応</li>
+        <li><strong>Anything V5：</strong> アニメに最適化されており、Danbooruタグを使用（<code>1girl, long_hair, blue_eyes, school_uniform</code>）</li>
+        <li><strong>Juggernaut XL：</strong> 人気のSDXLチェックポイントで、適度なクオリティタグを含む自然言語を好む</li>
+      </ul>
+
+      <p>重要なアドバイス：CivitAIのチェックポイントページを必ず確認して、推奨プロンプトや推奨クオリティタグを把握しましょう。あるチェックポイントで完璧なプロンプトが、別のチェックポイントでは効果がない場合があります。</p>
+
+      <h2 id="technical-params">CFG Scale・Steps・Samplers</h2>
+
+      <h3>CFG Scale（Classifier-Free Guidance）</h3>
+      <p>CFG Scaleはプロンプトへの忠実度を制御します。多くの初心者が見落としがちな重要なパラメータです。</p>
+      <ul>
+        <li><strong>CFG 3-5：</strong> クリエイティブで自由 — モデルがプロンプトを自由に解釈</li>
+        <li><strong>CFG 7-9：</strong> バランス型 — 創造性と忠実度の良いバランス（推奨）</li>
+        <li><strong>CFG 10-15：</strong> 厳密 — プロンプトに忠実に従うが、過彩度になる可能性あり</li>
+        <li><strong>CFG 15+：</strong> 非推奨 — アーティファクトが頻発し、不自然な色になりがち</li>
+      </ul>
+
+      <h3>Steps（拡散ステップ数）</h3>
+      <p>ステップ数は生成時間と結果の品質に影響します。</p>
+      <ul>
+        <li><strong>15-20 steps：</strong> 高速、テスト用として許容できる品質</li>
+        <li><strong>25-35 steps：</strong> 品質と速度の良いバランス（推奨）</li>
+        <li><strong>40-50 steps：</strong> 高品質、生成時間が長め</li>
+        <li><strong>50+ steps：</strong> 収穫逓減 — ほとんどの場合不要</li>
+      </ul>
+
+      <h3>Samplers</h3>
+      <p>サンプラーの選択は、結果の品質とスタイルに影響します。2026年に人気のサンプラーは以下の通りです。</p>
+      <ul>
+        <li><strong>DPM++ 2M Karras：</strong> 標準的な選択 — 高速で高品質</li>
+        <li><strong>Euler a：</strong> クリエイティブで、アーティスティックな構図に最適</li>
+        <li><strong>DPM++ SDE Karras：</strong> 細部のディテールやテクスチャに優秀</li>
+        <li><strong>UniPC：</strong> 高速で効率的、プロトタイピングに最適</li>
+      </ul>
+
+      <h2 id="advanced-templates">上級プロンプトテンプレート</h2>
+
+      <h3>フォトリアルポートレート（SD 1.5）</h3>
+      <p>プロンプト：<code>(masterpiece:1.2), (best quality:1.1), (RAW photo:1.2), portrait of a 30 year old woman, (detailed skin texture:1.2), natural skin, freckles, green eyes, auburn hair, (natural lighting:1.1), f/2.8, Canon EOS R5, 85mm lens, shallow depth of field</code></p>
+      <p>ネガティブ：<code>(worst quality:1.4), (low quality:1.4), bad anatomy, deformed iris, extra fingers, poorly drawn face, airbrushed skin, plastic skin, doll-like</code></p>
+
+      <h3>ファンタジー風景（SDXL）</h3>
+      <p>プロンプト：<code>majestic fantasy landscape, ancient ruins overgrown with luminescent plants, (floating islands:1.2) in a purple twilight sky, waterfalls cascading into mist, (volumetric lighting:1.3), ethereal atmosphere, concept art quality, highly detailed, 8k</code></p>
+      <p>ネガティブ：<code>(worst quality:1.4), blurry, watermark, text, oversaturated, flat lighting</code></p>
+
+      <h3>アニメ（Anything V5）</h3>
+      <p>プロンプト：<code>(masterpiece:1.2), (best quality:1.1), 1girl, long silver hair, violet eyes, detailed eyes, (fantasy armor:1.2), glowing runes, dynamic pose, magical particles, night sky background, (bloom:0.8), detailed face</code></p>
+      <p>ネガティブ：<code>(worst quality:1.4), (low quality:1.4), bad anatomy, extra limbs, poorly drawn hands, simple background, flat shading</code></p>
+
+      <div class="cta-box">
+        <h3>最適化されたStable Diffusionプロンプトを生成</h3>
+        <p>参考画像をアップロードすると、重み付け構文、クオリティタグ、ネガティブプロンプトを含む完全なStable Diffusionプロンプトが取得できます。</p>
+        <a href="/stable-diffusion-prompt-generator/" class="cta-btn">SDジェネレーターを試す →</a>
+      </div>
+
+      <h2 id="faq">よくある質問</h2>
+
+      <h3>Stable Diffusionの重み付け構文はどのように機能しますか？</h3>
+      <p>重み付け構文は括弧とコロンを使って、各タームの重要度を増減させます。<code>(term:1.3)</code> は重みを30%増加、<code>(term:0.7)</code> は30%減少させます。デフォルト値は1.0です。1.5を超える重みは視覚的なアーティファクトや歪みの原因になるため避けてください。</p>
+
+      <h3>Stable Diffusionに最適なネガティブプロンプトは何ですか？</h3>
+      <p>汎用的なネガティブプロンプト：<code>(worst quality:1.4), (low quality:1.4), (normal quality:1.2), lowres, bad anatomy, bad hands, extra digits, fewer digits, cropped, watermark, signature, blurry, deformed</code>。ポートレートには <code>extra fingers, mutated hands, poorly drawn face</code> などの専用タームを追加してください。使用するチェックポイントに合わせて調整しましょう。</p>
+
+      <h3>SD 1.5、SDXL、SD 3.5のプロンプトの違いは何ですか？</h3>
+      <p>SD 1.5はクオリティタグを含む高度に構造化されたプロンプトが必要で、重み付け構文によく反応します。SDXLは自然言語の理解が向上し、クオリティタグの必要性が減りますが、重み付けは引き続き有用です。SD 3.5はFluxに似た詳細な自然言語の記述を好む新しいシステムを採用しており、技術的なタグへの依存度が低くなっています。</p>
+
+      <h3>Stable Diffusionのプロンプトに最適なCFG Scaleの選び方は？</h3>
+      <p>CFG Scaleはプロンプトへの忠実度を制御します。低い値（3-5）はクリエイティブですがプロンプトへの忠実度が低くなります。中間値（7-9）は最良のバランスを提供し、ほとんどの用途に最適です。高い値（10-15）はプロンプトに非常に忠実ですが、過彩度のリスクがあります。7から始めて、結果に応じて調整してください。</p>
+
+    </div>
+
+    <div class="author-bio">
+      <img src="/favicon.svg" alt="ImageToPrompt Team" width="44" height="44">
+      <div>
+        <strong>ImageToPrompt Team</strong>
+        <p>私たちはクリエイターの皆さんがAI画像生成をマスターできるよう支援する専門チームです。画像からプロンプトへの変換ツールやAIプロンプトエンジニアリングガイドを通じて、世界中のアーティストの創作活動をサポートしています。</p>
+        <a href="https://x.com/ImageToPrompt" target="_blank" rel="noopener" class="author-follow">Xでフォロー</a>
+      </div>
+    </div>
+
+    <div class="related-posts">
+      <h2>関連ガイド</h2>
+      <div class="related-grid">
+        <a href="/ja/blog/ai-art-style-yougo/" class="related-card">
+          <p class="tag">用語集</p>
+          <h3>AIアートスタイル用語集：50スタイル解説</h3>
+        </a>
+        <a href="/ja/blog/ai-prompt-kakikata-nyumon/" class="related-card">
+          <p class="tag">初心者</p>
+          <h3>AIプロンプトの書き方：初心者向けチュートリアル</h3>
+        </a>
+        <a href="/ja/blog/ideogram-prompt-gaido/" class="related-card">
+          <p class="tag">Ideogram</p>
+          <h3>Ideogramプロンプト完全ガイド</h3>
+        </a>
+      </div>
+    </div>
+
+  </div>
+
+  <footer class="footer-4col">
+    <div class="f4-inner">
+      <div class="f4-brand">
+        <img src="/favicon.svg" alt="ImageToPrompt" width="28" height="28">
+        <span class="f4-brand-name">ImageTo<span class="accent">Prompt</span></span>
+        <span class="f4-brand-sub">&mdash; Free AI Prompt Generator</span>
+      </div>
+      <div class="f4-grid">
+        <div class="f4-section">
+          <h4 class="f4-heading">Image Prompt Tools</h4>
+          <a href="/">Image to Prompt</a>
+          <a href="/text-to-prompt/">Text to Prompt</a>
+      <a href="/describe-image/">Describe Image</a>
+          <a href="/midjourney-prompt-generator/">Midjourney</a>
+          <a href="/stable-diffusion-prompt-generator/">Stable Diffusion</a>
+          <a href="/flux-prompt-generator/">Flux</a>
+          <a href="/dall-e-prompt-generator/">DALL-E 3</a>
+          <a href="/adobe-firefly-prompt-generator/">Adobe Firefly</a>
+          <a href="/leonardo-ai-prompt-generator/">Leonardo AI</a>
+          <a href="/ideogram-prompt-generator/">Ideogram</a>
+        </div>
+        <div class="f4-section">
+          <h4 class="f4-heading">Video Prompt Tools</h4>
+          <a href="/image-to-video-prompt/">Image to Video Prompt</a>
+          <a href="/text-to-video-prompt/">Text to Video Prompt</a>
+          <a href="/veo-prompt-generator/">Veo / Flow Studio</a>
+          <a href="/kling-prompt-generator/">Kling AI</a>
+          <a href="/runway-prompt-generator/">Runway Gen-3</a>
+          <a href="/pika-prompt-generator/">Pika</a>
+          <a href="/luma-prompt-generator/">Luma Dream Machine</a>
+          <a href="/sora-prompt-generator/">Sora</a>
+          <a href="/minimax-prompt-generator/">Minimax</a>
+          <a href="/stable-video-prompt-generator/">Stable Video</a>
+        </div>
+        <div class="f4-section">
+          <h4 class="f4-heading">Resources</h4>
+          <a href="/ja/blog/">ブログ</a>
+          <a href="/ja/about/">概要</a>
+          <a href="/ja/pricing/">料金</a>
+          <a href="/contact/">Contact</a>
+          <a href="/privacy-policy/">Privacy Policy</a>
+          <a href="/terms-of-service/">Terms of Service</a>
+        </div>
+        <div class="f4-section">
+          <h4 class="f4-heading">Languages</h4>
+          <a href="/">English</a>
+          <a href="/fr/">Fran&#231;ais</a>
+          <a href="/ar/">&#1575;&#1604;&#1593;&#1585;&#1576;&#1610;&#1577;</a>
+          <a href="/es/">Espa&#241;ol</a>
+          <a href="/ko/">&#54620;&#44397;&#50612;</a>
+          <a href="/ja/">&#26085;&#26412;&#35486;</a>
+          <a href="/ru/">&#1056;&#1091;&#1089;&#1089;&#1082;&#1080;&#1081;</a>
+        </div>
+      </div>
+      <div class="f4-bottom">
+        <p>&#169; 2026 ImageToPrompt.dev &#8212; Free AI Prompt Generator</p>
+        <p>Your images are never stored. All analysis is ephemeral and private.</p>
+      </div>
+    </div>
+  </footer>
+
+<script src="/newsletter-inject.js" defer></script>
+<script src="/nav.js" defer></script>
+  <script>
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', function() {
+    navigator.serviceWorker.register('/sw.js')
+      .catch(function(err) { console.warn('SW registration failed:', err); });
+  });
+}
+</script>
+</body>
+</html>

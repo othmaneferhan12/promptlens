@@ -1,0 +1,506 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <script src="/theme-toggle.js"></script>
+  <meta charset="UTF-8" />
+  <link rel="dns-prefetch" href="https://www.googletagmanager.com">
+<link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="max-image-preview:large, index, follow">
+  <meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="ImageToPrompt">
+  <title>Leonardo AIプロンプトガイド：ゲームアート＆キャラクターデザイン</title>
+  <meta name="description" content="Leonardo AIでゲームアートとキャラクターデザインをマスターしましょう。プロンプト例、カスタムモデル、アート用語を含む完全ガイドです。" />
+  <link rel="canonical" href="https://www.imagetoprompt.dev/ja/blog/leonardo-ai-prompt-gaido/" />
+  <link rel="alternate" hreflang="ja" href="https://www.imagetoprompt.dev/ja/blog/leonardo-ai-prompt-gaido/" />
+  <link rel="alternate" hreflang="en" href="https://www.imagetoprompt.dev/blog/leonardo-ai-prompt-guide/" />
+  <link rel="alternate" hreflang="fr" href="https://www.imagetoprompt.dev/fr/blog/guide-prompts-leonardo-ai/" />
+  <link rel="alternate" hreflang="ar" href="https://www.imagetoprompt.dev/ar/blog/dalil-prompts-leonardo-ai/" />
+  <link rel="alternate" hreflang="es" href="https://www.imagetoprompt.dev/es/blog/guia-prompts-leonardo-ai/" />
+  <link rel="alternate" hreflang="x-default" href="https://www.imagetoprompt.dev/blog/leonardo-ai-prompt-guide/" />
+  <meta property="og:title" content="Leonardo AIプロンプトガイド：ゲームアート＆キャラクターデザイン" />
+  <meta property="og:description" content="Leonardo AIでゲームアートとキャラクターデザインを最適化されたプロンプトでマスターしましょう。" />
+  <meta property="og:url" content="https://www.imagetoprompt.dev/ja/blog/leonardo-ai-prompt-gaido/" />
+  <meta property="og:type" content="article" />
+  <meta property="og:image" content="https://www.imagetoprompt.dev/og-image.png" />
+  <meta property="og:site_name" content="ImageToPrompt" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Leonardo AIプロンプトガイド：ゲームアート＆キャラクターデザイン" />
+  <meta name="twitter:description" content="Leonardo AIでゲームアートとキャラクターデザインをマスターしましょう。" />
+  <meta name="twitter:image" content="https://www.imagetoprompt.dev/og-image.png" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="48x48" href="/favicon-48.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+  <link rel="manifest" href="/site.webmanifest" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="/fonts/space-grotesk-700.woff2" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="/fonts/inter-400.woff2" />
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/theme.css">
+  <link rel="preload" href="/blog.css" as="style" onload="this.onload=null;this.rel='stylesheet'"><noscript><link rel="stylesheet" href="/blog.css"></noscript>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Leonardo AIプロンプトガイド：ゲームアート＆キャラクターデザイン",
+    "description": "Leonardo AIでゲームアートとキャラクターデザインを最適化されたプロンプトでマスターしましょう。",
+    "image": "https://www.imagetoprompt.dev/og-image.png",
+    "datePublished": "2026-03-15",
+    "dateModified": "2026-03-24",
+    "inLanguage": "ja",
+    "author": {
+      "@type": "Person",
+      "name": "ImageToPrompt Team",
+      "url": "https://www.imagetoprompt.dev/"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "ImageToPrompt",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://www.imagetoprompt.dev/favicon.svg"
+      }
+    },
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https://www.imagetoprompt.dev/ja/blog/leonardo-ai-prompt-gaido/"
+    }
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "ゲームアートに最適なLeonardo AIモデルはどれですか？",
+        "acceptedAnswer": { "@type": "Answer", "text": "ゲームアートには、リアルな環境にはLeonardo Diffusion XL、スタイライズされたコンセプトアートにはDreamShaper、ファンタジーキャラクターにはRPG v5が最も優れています。リアル、セミリアル、カートゥーンなど、求めるビジュアルスタイルによって最適なモデルが異なります。" }
+      },
+      {
+        "@type": "Question",
+        "name": "Leonardo AIで一貫性のあるキャラクターを作成するにはどうすればよいですか？",
+        "acceptedAnswer": { "@type": "Answer", "text": "キャラクターの一貫性を維持するには、各プロンプトに身体的特徴、衣装、アクセサリーを含む詳細な説明を使用しましょう。同じカスタムモデルと固定シードを組み合わせてください。Leonardo AIのファインチューニング機能を使えば、特定のキャラクターに特化したモデルのトレーニングも可能です。" }
+      },
+      {
+        "@type": "Question",
+        "name": "ゲームアートにおいてLeonardo AIとMidjourneyの違いは何ですか？",
+        "acceptedAnswer": { "@type": "Answer", "text": "Leonardo AIはカスタムモデル、ファインチューニングツール、統合APIによる技術的制御に優れており、ゲーム制作パイプラインに最適です。Midjourneyはアート品質やシネマティックな美しさに優れていますが、スタイルの細かい制御は限定的です。" }
+      },
+      {
+        "@type": "Question",
+        "name": "コンセプトアート向けにLeonardo AIプロンプトを最適化するにはどうすればよいですか？",
+        "acceptedAnswer": { "@type": "Answer", "text": "プロンプトをレイヤー構造で構築しましょう。メインの被写体から始め、アートスタイル（concept art、digital painting）を追加し、ライティングと雰囲気を指定し、最後に解像度やアスペクト比などの技術的詳細で締めくくります。environment concept、character design sheet、prop designなどの用語を使ってモデルを誘導しましょう。" }
+      }
+    ]
+  }
+  </script>
+    <!-- Google AdSense -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4499206373485728" crossorigin="anonymous"></script>
+    <!-- Web Push Notifications -->
+<script src="https://cdn.onesignal.com/sdks/web/v16/OneSignalSDK.page.js" defer></script>
+<script>
+  window.OneSignalDeferred = window.OneSignalDeferred || [];
+  OneSignalDeferred.push(async function(OneSignal) {
+    await OneSignal.init({
+      appId: "REPLACE_WITH_ONESIGNAL_APP_ID",
+      notifyButton: { enable: false }
+    });
+  });
+</script>
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="inner">
+      <a href="/ja/" class="site-logo"><img src="/favicon.svg" alt="ImageToPrompt" width="48" height="48"><div class="site-logo-text">ImageTo<span class="accent">Prompt</span><span class="site-logo-sub">無料AIプロンプトジェネレーター</span></div></a>
+      <nav class="site-nav" aria-label="メインナビゲーション">
+        <div class="nav-dropdown">
+          <button class="nav-dropdown-trigger" aria-haspopup="true" aria-expanded="false">Tools <span class="nav-chevron" aria-hidden="true">&#9660;</span></button>
+          <div class="nav-dropdown-menu" role="menu">
+            <div class="nav-mega-grid">
+              <div class="nav-mega-col">
+                <div class="nav-mega-heading">&#128444; IMAGE TOOLS</div>
+                <a href="/" role="menuitem" class="nav-mega-tool">Image to Prompt <span class="nav-mega-arrow">&#8594;</span></a>
+                <a href="/text-to-prompt/" role="menuitem" class="nav-mega-tool">Text to Prompt <span class="nav-mega-arrow">&#8594;</span></a>
+                <a href="/describe-image/" role="menuitem" class="nav-mega-tool">Describe Image <span class="nav-new-badge">NEW</span> <span class="nav-mega-arrow">&#8594;</span></a>
+                <div class="nav-mega-models-label">Models</div>
+                <div class="nav-mega-models"><a href="/midjourney-prompt-generator/">Midjourney</a><span class="nav-dot">&#xB7;</span><a href="/stable-diffusion-prompt-generator/">SD</a></div>
+                <div class="nav-mega-models"><a href="/flux-prompt-generator/">Flux</a><span class="nav-dot">&#xB7;</span><a href="/dall-e-prompt-generator/">DALL&#xB7;E&#xA0;3</a></div>
+                <div class="nav-mega-models"><a href="/adobe-firefly-prompt-generator/">Firefly</a><span class="nav-dot">&#xB7;</span><a href="/leonardo-ai-prompt-generator/">Leonardo</a></div>
+                <div class="nav-mega-models"><a href="/ideogram-prompt-generator/">Ideogram</a></div>
+              </div>
+              <div class="nav-mega-divider" aria-hidden="true"></div>
+              <div class="nav-mega-col">
+                <div class="nav-mega-heading">&#127909; VIDEO TOOLS</div>
+                <a href="/?tab=image-to-video" role="menuitem" class="nav-mega-tool">Image to Video <span class="nav-mega-arrow">&#8594;</span></a>
+                <a href="/?tab=text-to-video" role="menuitem" class="nav-mega-tool">Text to Video <span class="nav-mega-arrow">&#8594;</span></a>
+                <div class="nav-mega-models-label">Models</div>
+                <div class="nav-mega-models"><a href="/veo-prompt-generator/">Veo</a><span class="nav-dot">&#xB7;</span><a href="/kling-prompt-generator/">Kling</a></div>
+                <div class="nav-mega-models"><a href="/runway-prompt-generator/">Runway</a><span class="nav-dot">&#xB7;</span><a href="/pika-prompt-generator/">Pika</a></div>
+                <div class="nav-mega-models"><a href="/luma-prompt-generator/">Luma</a><span class="nav-dot">&#xB7;</span><a href="/sora-prompt-generator/">Sora</a></div>
+                <div class="nav-mega-models"><a href="/minimax-prompt-generator/">Minimax</a><span class="nav-dot">&#xB7;</span><a href="/stable-video-prompt-generator/">Stable</a></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <a href="/ja/blog/">ブログ</a>
+        <a href="/ja/pricing/" class="nav-pill-pricing">料金</a>
+        <a href="/ja/about/" class="nav-pill-about">概要</a>
+        <a href="/ja/" class="nav-try-free">無料で試す &#8594;</a>
+        <button id="theme-toggle" onclick="toggleTheme()" aria-label="テーマ切替" title="テーマ切替">&#9728;&#xFE0F;</button>
+  </nav>
+    </div>
+  </header>
+
+  <nav class="breadcrumb" aria-label="パンくずリスト">
+    <a href="/ja/">ホーム</a> <span aria-hidden="true">&#8250;</span>
+    <a href="/ja/blog/">ブログ</a> <span aria-hidden="true">&#8250;</span>
+    <span aria-current="page">Leonardo AIプロンプトガイド</span>
+  </nav>
+
+  <div class="page-wrapper">
+
+    <header class="article-header">
+      <p class="article-tag">Leonardo AI</p>
+      <h1>Leonardo AIプロンプト完全ガイド</h1>
+      <div class="article-meta">
+        <span>2026年3月</span>
+        <span class="dot">&#183;</span>
+        <span>10分で読めます</span>
+        <span class="dot">&#183;</span>
+        <span>Leonardo AI &#183; ゲームアート &#183; キャラクターデザイン</span>
+        <span class="dot">&#183;</span>
+        <span>2026年3月更新</span>
+      </div>
+    </header>
+
+    <div class="article-body">
+
+      <p>Leonardo AIは、ゲームアートやキャラクターデザインに特化した最も強力なAI画像生成ツールの一つとして急速に地位を確立しました。MidjourneyやDALL-E 3などの他のツールとは異なり、Leonardo AIはモデル、スタイル、生成パラメータを細かく制御できるため、ゲームアーティストやプロのキャラクターデザイナーに特に支持されています。</p>
+
+      <nav class="toc" aria-label="目次">
+        <details open>
+          <summary>このガイドの内容</summary>
+          <ol>
+            <li><a href="#naze-leonardo-ai">なぜゲームアートにLeonardo AIを選ぶのか？</a></li>
+            <li><a href="#prompt-kozo">Leonardo AIプロンプトの構造</a></li>
+            <li><a href="#custom-model">カスタムモデルとファインチューニング</a></li>
+            <li><a href="#game-art">ゲームアート向けプロンプト</a></li>
+            <li><a href="#character-design">キャラクターデザイン</a></li>
+            <li><a href="#art-yogo">アート用語集</a></li>
+            <li><a href="#kodo-parameter">詳細パラメータ</a></li>
+            <li><a href="#sakerubekimisu">避けるべきミス</a></li>
+            <li><a href="#yokuaru-shitsumon">よくある質問</a></li>
+          </ol>
+        </details>
+      </nav>
+
+      <p>このガイドでは、ゲームアートやキャラクターデザインでプロレベルの結果を得るためのLeonardo AIプロンプトの構成方法を解説します。カスタムモデル、専門的なアート用語、そして開発スタジオが日常的に使用している高度なテクニックを網羅しています。</p>
+
+      <div class="callout">
+        <p><strong>便利なヒント：</strong> <a href="/leonardo-ai-prompt-generator/">Leonardo AIプロンプトジェネレーター</a>を使えば、最適化されたプロンプトを自動生成できます。参考画像をアップロードするだけで、すぐに使えるプロンプトが数秒で手に入ります。</p>
+      </div>
+
+      <h2 id="naze-leonardo-ai">なぜゲームアートにLeonardo AIを選ぶのか？</h2>
+
+      <p>Leonardo AIは、ゲーム制作に不可欠な以下の特徴により、他のAI画像生成ツールとは一線を画しています。</p>
+
+      <ul>
+        <li><strong>専門モデル：</strong> RPG v5、DreamShaper、Leonardo Diffusion XLなどのモデルは、ファンタジーアート、コンセプトアート、ゲームアセットに特化してトレーニングされています</li>
+        <li><strong>カスタムファインチューニング：</strong> 独自のアートスタイルでモデルをトレーニングし、プロジェクト全体のビジュアルの一貫性を維持できます</li>
+        <li><strong>統合API：</strong> 制作パイプラインに直接組み込んでアセット生成を自動化できます</li>
+        <li><strong>ガイダンス制御：</strong> CFGスケールやステップ数を細かく調整し、創造性とプロンプト忠実度のバランスを取れます</li>
+        <li><strong>AlchemyとPhotoReal：</strong> プロユースケースの出力品質を大幅に向上させる高度なモードです</li>
+      </ul>
+
+      <h2 id="prompt-kozo">Leonardo AIプロンプトの構造</h2>
+
+      <p>効果的なLeonardo AIプロンプトは、レイヤー構造に従います。各レイヤーが曖昧さを排除しながら具体性を追加していきます。</p>
+
+      <h3>レイヤー1：メインの被写体</h3>
+      <p>常にメインの被写体から始めましょう。具体的かつ描写的に記述します。</p>
+      <div class="code-block"><code>a fierce dragon knight standing on a cliff edge, full body view, dynamic pose</code></div>
+
+      <h3>レイヤー2：アートスタイル</h3>
+      <p>希望するビジュアルスタイルを追加します。Leonardo AIはコンセプトアートやゲームアートの用語に特に良く反応します。</p>
+      <div class="code-block"><code>concept art style, digital painting, artstation trending, highly detailed</code></div>
+
+      <h3>レイヤー3：ライティングと雰囲気</h3>
+      <p>ライティングは画像の印象を劇的に変えます。光の方向、強度、色温度を指定しましょう。</p>
+      <div class="code-block"><code>dramatic rim lighting, volumetric fog, golden hour atmosphere, cinematic lighting</code></div>
+
+      <h3>レイヤー4：技術的詳細</h3>
+      <p>レンダリング品質に影響する技術的仕様で締めくくります。</p>
+      <div class="code-block"><code>8k resolution, ultra detailed, sharp focus, professional illustration</code></div>
+
+      <h3>完成プロンプトの組み立て</h3>
+      <div class="code-block"><code>a fierce dragon knight standing on a cliff edge, full body view, dynamic pose, concept art style, digital painting, artstation trending, highly detailed, dramatic rim lighting, volumetric fog, golden hour atmosphere, cinematic lighting, 8k resolution, ultra detailed, sharp focus, professional illustration</code></div>
+
+      <h2 id="custom-model">カスタムモデルとファインチューニング</h2>
+
+      <p>Leonardo AIの最大の強みの一つは、カスタムモデルのトレーニング機能です。この機能は、数百ものアセットにわたって一貫したアートディレクションを維持する必要があるゲームスタジオにとって特に有用です。</p>
+
+      <h3>適切なベースモデルの選択</h3>
+
+      <div class="table-wrap">
+      <table class="comparison-table">
+        <thead>
+          <tr>
+            <th>モデル</th>
+            <th>最適な用途</th>
+            <th>スタイル</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Leonardo Diffusion XL</td>
+            <td>リアルな環境、テクスチャ</td>
+            <td>フォトリアル</td>
+          </tr>
+          <tr>
+            <td>DreamShaper v7</td>
+            <td>コンセプトアート、イラスト</td>
+            <td>セミリアル</td>
+          </tr>
+          <tr>
+            <td>RPG v5</td>
+            <td>ファンタジーキャラクター、クリーチャー</td>
+            <td>ファンタジー/RPG</td>
+          </tr>
+          <tr>
+            <td>Absolute Reality</td>
+            <td>リアルなポートレート、写真</td>
+            <td>ウルトラリアル</td>
+          </tr>
+          <tr>
+            <td>Anime Pastel Dream</td>
+            <td>アニメアート、マンガイラスト</td>
+            <td>アニメ/マンガ</td>
+          </tr>
+        </tbody>
+      </table>
+      </div>
+
+      <p>ファインチューニングには、希望するスタイルの高品質な画像が10～30枚必要です。スタイル、カラーパレット、構図が一貫した画像を使用することで、最良の結果が得られます。</p>
+
+      <h2 id="game-art">ゲームアート向けプロンプト</h2>
+
+      <p>ゲームアートは、環境、キャラクター、オブジェクト、UI、テクスチャ、ビジュアルエフェクトなど幅広いアセットをカバーします。各タイプに最適化されたプロンプト構造を紹介します。</p>
+
+      <h3>環境と背景</h3>
+      <div class="code-block"><code>mystical enchanted forest clearing with ancient stone ruins, bioluminescent mushrooms and floating particles, lush vegetation, game environment concept art, top-down isometric view, vibrant color palette, hand-painted style, detailed foliage</code></div>
+
+      <h3>プロップとゲームオブジェクト</h3>
+      <div class="code-block"><code>legendary enchanted sword with glowing blue runes, ornate golden hilt with dragon motif, magical aura effect, game item icon, centered composition, dark background, clean edges, RPG weapon design, highly detailed metalwork</code></div>
+
+      <h3>テクスチャとマテリアル</h3>
+      <div class="code-block"><code>seamless tileable stone wall texture, medieval castle brick pattern, moss and weathering details, PBR material, diffuse map style, even lighting, no shadows, game texture asset, 2048x2048</code></div>
+
+      <h2 id="character-design">キャラクターデザイン</h2>
+
+      <p>Leonardo AIによるキャラクターデザインでは、一貫性とディテールに特に注意が必要です。プロが使用しているテクニックを紹介します。</p>
+
+      <h3>キャラクターシート</h3>
+      <p>キャラクターシートは、複数のアングルからキャラクターを定義するために不可欠です。以下のプロンプト構造を使用しましょう。</p>
+      <div class="code-block"><code>character design sheet, multiple views, front view, side view, back view, 3/4 view, female elf ranger, leather armor with emerald accents, braided silver hair, pointed ears, athletic build, full body, white background, clean lines, concept art style, consistent design</code></div>
+
+      <h3>キャラクターポートレート</h3>
+      <div class="code-block"><code>portrait of a battle-scarred orc warlord, fierce expression, tribal war paint, tusks, heavy plate armor with tribal engravings, dramatic chiaroscuro lighting, fantasy character portrait, oil painting style, rich color palette, highly detailed skin texture</code></div>
+
+      <h3>アクションポーズのキャラクター</h3>
+      <div class="code-block"><code>dynamic action pose, cyberpunk street samurai leaping through neon-lit rain, katana drawn, cybernetic arm glowing, motion blur on background, dramatic low angle shot, sci-fi character illustration, anime-influenced style</code></div>
+
+      <div class="cta-inline">
+        <p>既存のスタイルを再現するためのLeonardo AIプロンプトが必要ですか？参考画像をアップロードして最適化されたプロンプトを取得しましょう。</p>
+        <a href="/leonardo-ai-prompt-generator/" class="cta-btn-sm">Leonardo AIジェネレーター &#8594;</a>
+      </div>
+
+      <h2 id="art-yogo">アート用語集</h2>
+
+      <p>アート用語を習得することが、Leonardo AIで正確な結果を得るための鍵です。カテゴリ別に最も有用な用語をまとめました。</p>
+
+      <h3>レンダリングスタイル</h3>
+      <ul>
+        <li><strong>Concept art：</strong> ゲームや映画スタジオで使われるプリプロダクション用スタイル</li>
+        <li><strong>Digital painting：</strong> 筆のタッチが見えるデジタルペインティング</li>
+        <li><strong>Cel-shading：</strong> 輪郭線が強調されたフラットなレンダリング、コミックスタイル</li>
+        <li><strong>Photorealistic render：</strong> 写真と見分けがつかないレンダリング</li>
+        <li><strong>Low poly：</strong> インディーゲームで人気のシンプルな幾何学スタイル</li>
+        <li><strong>Pixel art：</strong> 2Dゲームに最適なレトロピクセルスタイル</li>
+      </ul>
+
+      <h3>ライティング用語</h3>
+      <ul>
+        <li><strong>Rim lighting：</strong> 被写体の輪郭を際立たせる光</li>
+        <li><strong>Volumetric lighting：</strong> 大気中を通過する可視光線</li>
+        <li><strong>Ambient occlusion：</strong> くぼみや角に生じる柔らかい影</li>
+        <li><strong>Subsurface scattering：</strong> 肌などの半透明素材を透過する光</li>
+        <li><strong>Global illumination：</strong> 光の反射を含むリアルなライティング</li>
+      </ul>
+
+      <h3>構図用語</h3>
+      <ul>
+        <li><strong>Dynamic pose：</strong> 動きやアクション中のキャラクター</li>
+        <li><strong>Hero shot：</strong> 被写体を力強く見せるローアングル</li>
+        <li><strong>Establishing shot：</strong> 環境全体を見せるワイドショット</li>
+        <li><strong>Close-up：</strong> 顔や特定のディテールに寄ったフレーミング</li>
+      </ul>
+
+      <h2 id="kodo-parameter">詳細パラメータ</h2>
+
+      <p>テキストプロンプト以外にも、Leonardo AIには生成画像の品質とスタイルに直接影響するパラメータがあります。</p>
+
+      <h3>Guidance Scale（CFG）</h3>
+      <p>Guidance Scaleは画像のプロンプトへの忠実度を制御します。低い値（3～5）はモデルにより多くの創造的自由を与え、高い値（10～15）はプロンプトにより忠実に従います。ゲームアートでは通常、7～9の値が最適なバランスを提供します。</p>
+
+      <h3>ステップ数</h3>
+      <p>ステップ数が多いほどディテールが増しますが、生成時間も長くなります。素早いドラフトには20～30ステップで十分です。最終アセットには40～60ステップまで上げて、最大限のディテールを得ましょう。</p>
+
+      <h3>AlchemyとPhotoReal</h3>
+      <p>Alchemyモードは解剖学的な一貫性と細部のディテールを大幅に向上させます。PhotoRealは出力にフォトリアリスティックな質感を追加します。どちらもトークン消費量が多くなりますが、プロユースケースでは明らかに優れた結果を生み出します。</p>
+
+      <h3>ネガティブプロンプト</h3>
+      <p>ネガティブプロンプトは、Leonardo AIにおいてメインプロンプトと同様に重要です。一般的なアーティファクトを排除するために使用しましょう。</p>
+      <div class="code-block"><code>blurry, low quality, deformed, bad anatomy, extra limbs, watermark, text, signature, cropped, out of frame, worst quality, low resolution, ugly, duplicate</code></div>
+
+      <h2 id="sakerubekimisu">避けるべきミス</h2>
+
+      <ol class="mistakes-list">
+        <li><strong>目的のスタイルに合わないモデルを使用する。</strong> リアルなモデルでは良いピクセルアートは生成できず、その逆も同様です。プロンプトを書く前に、アートディレクションに適したベースモデルを選択しましょう。</li>
+        <li><strong>説明語を詰め込みすぎる。</strong> 200語のプロンプトは重要な要素を埋もれさせます。50～80語に絞り、不要な要素はネガティブプロンプトで除外しましょう。</li>
+        <li><strong>ガイダンス設定を無視する。</strong> デフォルトのCFGスケールが常に最適とは限りません。忠実度と創造性の理想的なバランスを見つけるため、さまざまな値を試しましょう。</li>
+        <li><strong>ネガティブプロンプトを使用しない。</strong> ネガティブプロンプトなしでは、モデルがアーティファクトや変形、望まない要素を自由に生成してしまいます。最低限の品質除外は常に含めましょう。</li>
+        <li><strong>構図とカメラアングルを忘れる。</strong> ポーズやフレーミングの指示がないキャラクターは、予測不可能な形でレンダリングされます。常にfull body、portrait、close-upなど希望のアングルを指定しましょう。</li>
+      </ol>
+
+      <div class="cta-box">
+        <h3>最適化されたLeonardo AIプロンプトを生成</h3>
+        <p>参考画像をアップロードして、適切なアート用語でフォーマットされたLeonardo AIプロンプトをすぐに取得しましょう。</p>
+        <a href="/leonardo-ai-prompt-generator/" class="cta-btn">Leonardo AIジェネレーターを試す &#8594;</a>
+      </div>
+
+      <h2 id="yokuaru-shitsumon">よくある質問</h2>
+
+      <h3>ゲームアートに最適なLeonardo AIモデルはどれですか？</h3>
+      <p>ゲームアートには、リアルな環境にはLeonardo Diffusion XL、スタイライズされたコンセプトアートにはDreamShaper、ファンタジーキャラクターにはRPG v5が最も優れています。リアル、セミリアル、カートゥーンなど、求めるビジュアルスタイルによって最適なモデルが異なります。</p>
+
+      <h3>Leonardo AIで一貫性のあるキャラクターを作成するにはどうすればよいですか？</h3>
+      <p>キャラクターの一貫性を維持するには、各プロンプトに身体的特徴、衣装、アクセサリーを含む詳細な説明を使用しましょう。同じカスタムモデルと固定シードを組み合わせてください。Leonardo AIのファインチューニング機能を使えば、特定のキャラクターに特化したモデルのトレーニングも可能です。</p>
+
+      <h3>ゲームアートにおいてLeonardo AIとMidjourneyの違いは何ですか？</h3>
+      <p>Leonardo AIはカスタムモデル、ファインチューニングツール、統合APIによる技術的制御に優れており、ゲーム制作パイプラインに最適です。Midjourneyはアート品質やシネマティックな美しさに優れていますが、スタイルの細かい制御は限定的です。</p>
+
+      <h3>コンセプトアート向けにLeonardo AIプロンプトを最適化するにはどうすればよいですか？</h3>
+      <p>プロンプトをレイヤー構造で構築しましょう。メインの被写体から始め、アートスタイル（concept art、digital painting）を追加し、ライティングと雰囲気を指定し、最後に解像度やアスペクト比などの技術的詳細で締めくくります。<code>environment concept</code>、<code>character design sheet</code>、<code>prop design</code>などの用語を使ってモデルを誘導しましょう。</p>
+
+    </div>
+
+    <div class="author-bio">
+      <img src="/favicon.svg" alt="ImageToPrompt Team" width="44" height="44">
+      <div>
+        <strong>ImageToPrompt Team</strong>
+        <p>私たちはクリエイターの皆さんがAI画像生成をマスターできるよう支援する専門チームです。画像からプロンプトへの変換ツールやAIプロンプトエンジニアリングガイドを通じて、世界中のアーティストの創作活動をサポートしています。</p>
+        <a href="https://x.com/ImageToPrompt" target="_blank" rel="noopener" class="author-follow">Xでフォロー</a>
+      </div>
+    </div>
+
+    <div class="related-posts">
+      <h2>関連ガイド</h2>
+      <div class="related-grid">
+        <a href="/ja/blog/midjourney-prompt-gaido-2026/" class="related-card">
+          <p class="tag">Midjourney</p>
+          <h3>Midjourneyプロンプト完全ガイド2026</h3>
+        </a>
+        <a href="/ja/blog/stable-diffusion-prompt-gaido/" class="related-card">
+          <p class="tag">Stable Diffusion</p>
+          <h3>Stable Diffusionプロンプトガイド</h3>
+        </a>
+        <a href="/ja/blog/prompt-engineering-ai-art-nyumon/" class="related-card">
+          <p class="tag">入門</p>
+          <h3>AIアートのためのプロンプトエンジニアリング</h3>
+        </a>
+        <a href="/ja/blog/prompt-engineering-machigai/" class="related-card">
+          <p class="tag">ミス</p>
+          <h3>避けるべきプロンプトエンジニアリングの15の間違い</h3>
+        </a>
+      </div>
+    </div>
+
+  </div>
+
+  <footer class="footer-4col">
+    <div class="f4-inner">
+      <div class="f4-brand">
+        <img src="/favicon.svg" alt="ImageToPrompt" width="28" height="28">
+        <span class="f4-brand-name">ImageTo<span class="accent">Prompt</span></span>
+        <span class="f4-brand-sub">&mdash; Free AI Prompt Generator</span>
+      </div>
+      <div class="f4-grid">
+        <div class="f4-section">
+          <h4 class="f4-heading">Image Prompt Tools</h4>
+          <a href="/">Image to Prompt</a>
+          <a href="/text-to-prompt/">Text to Prompt</a>
+      <a href="/describe-image/">Describe Image</a>
+          <a href="/midjourney-prompt-generator/">Midjourney</a>
+          <a href="/stable-diffusion-prompt-generator/">Stable Diffusion</a>
+          <a href="/flux-prompt-generator/">Flux</a>
+          <a href="/dall-e-prompt-generator/">DALL-E 3</a>
+          <a href="/adobe-firefly-prompt-generator/">Adobe Firefly</a>
+          <a href="/leonardo-ai-prompt-generator/">Leonardo AI</a>
+          <a href="/ideogram-prompt-generator/">Ideogram</a>
+        </div>
+        <div class="f4-section">
+          <h4 class="f4-heading">Video Prompt Tools</h4>
+          <a href="/image-to-video-prompt/">Image to Video Prompt</a>
+          <a href="/text-to-video-prompt/">Text to Video Prompt</a>
+          <a href="/veo-prompt-generator/">Veo / Flow Studio</a>
+          <a href="/kling-prompt-generator/">Kling AI</a>
+          <a href="/runway-prompt-generator/">Runway Gen-3</a>
+          <a href="/pika-prompt-generator/">Pika</a>
+          <a href="/luma-prompt-generator/">Luma Dream Machine</a>
+          <a href="/sora-prompt-generator/">Sora</a>
+          <a href="/minimax-prompt-generator/">Minimax</a>
+          <a href="/stable-video-prompt-generator/">Stable Video</a>
+        </div>
+        <div class="f4-section">
+          <h4 class="f4-heading">Resources</h4>
+          <a href="/ja/blog/">ブログ</a>
+          <a href="/ja/about/">概要</a>
+          <a href="/ja/pricing/">料金</a>
+          <a href="/contact/">Contact</a>
+          <a href="/privacy-policy/">Privacy Policy</a>
+          <a href="/terms-of-service/">Terms of Service</a>
+        </div>
+        <div class="f4-section">
+          <h4 class="f4-heading">Languages</h4>
+          <a href="/">English</a>
+          <a href="/fr/">Fran&#231;ais</a>
+          <a href="/ar/">&#1575;&#1604;&#1593;&#1585;&#1576;&#1610;&#1577;</a>
+          <a href="/es/">Espa&#241;ol</a>
+          <a href="/ko/">&#54620;&#44397;&#50612;</a>
+          <a href="/ja/">&#26085;&#26412;&#35486;</a>
+          <a href="/ru/">&#1056;&#1091;&#1089;&#1089;&#1082;&#1080;&#1081;</a>
+        </div>
+      </div>
+      <div class="f4-bottom">
+        <p>&#169; 2026 ImageToPrompt.dev &#8212; Free AI Prompt Generator</p>
+        <p>Your images are never stored. All analysis is ephemeral and private.</p>
+      </div>
+    </div>
+  </footer>
+
+<script src="/newsletter-inject.js" defer></script>
+<script src="/nav.js" defer></script>
+  <script>
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', function() {
+    navigator.serviceWorker.register('/sw.js')
+      .catch(function(err) { console.warn('SW registration failed:', err); });
+  });
+}
+</script>
+</body>
+</html>

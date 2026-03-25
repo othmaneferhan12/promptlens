@@ -1,0 +1,536 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <script src="/theme-toggle.js"></script>
+  <meta charset="UTF-8" />
+  <link rel="dns-prefetch" href="https://www.googletagmanager.com">
+<link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="max-image-preview:large, index, follow">
+  <meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="ImageToPrompt">
+  <title>Руководство по промптам Flux AI 2026: параметры, примеры и советы</title>
+  <meta name="description" content="Освойте промпты Flux AI в 2026 году. Фотографическая терминология, характеристики камер, освещение и готовые примеры промптов." />
+  <link rel="canonical" href="https://www.imagetoprompt.dev/ru/blog/rukovodstvo-po-promptam-flux-ai/" />
+  <link rel="alternate" hreflang="ru" href="https://www.imagetoprompt.dev/ru/blog/rukovodstvo-po-promptam-flux-ai/" />
+  <link rel="alternate" hreflang="en" href="https://www.imagetoprompt.dev/blog/flux-ai-prompt-guide/" />
+  <link rel="alternate" hreflang="fr" href="https://www.imagetoprompt.dev/fr/blog/guide-prompts-flux-ai/" />
+  <link rel="alternate" hreflang="ar" href="https://www.imagetoprompt.dev/ar/blog/dalil-prompts-flux-ai/" />
+  <link rel="alternate" hreflang="es" href="https://www.imagetoprompt.dev/es/blog/guia-prompts-flux-ai/" />
+  <link rel="alternate" hreflang="ja" href="https://www.imagetoprompt.dev/ja/blog/flux-ai-prompt-gaido/" />
+  <link rel="alternate" hreflang="ko" href="https://www.imagetoprompt.dev/ko/blog/flux-ai-prompt-gaideu/" />
+  <link rel="alternate" hreflang="x-default" href="https://www.imagetoprompt.dev/blog/flux-ai-prompt-guide/" />
+  <meta property="og:title" content="Руководство по промптам Flux AI 2026: параметры, примеры и советы" />
+  <meta property="og:description" content="Освойте промпты Flux AI в 2026 году. Фотографическая терминология, характеристики камер, освещение и готовые примеры промптов." />
+  <meta property="og:url" content="https://www.imagetoprompt.dev/ru/blog/rukovodstvo-po-promptam-flux-ai/" />
+  <meta property="og:type" content="article" />
+  <meta property="og:image" content="https://www.imagetoprompt.dev/og-image.png" />
+  <meta property="og:site_name" content="ImageToPrompt" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Руководство по промптам Flux AI 2026" />
+  <meta name="twitter:description" content="Освойте промпты Flux AI. Фотографическая терминология, камеры, освещение и примеры." />
+  <meta name="twitter:image" content="https://www.imagetoprompt.dev/og-image.png" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="48x48" href="/favicon-48.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+  <link rel="manifest" href="/site.webmanifest" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="/fonts/space-grotesk-700.woff2" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="/fonts/inter-400.woff2" />
+  <link rel="stylesheet" href="/theme.css">
+  <link rel="preload" href="/blog.css" as="style" onload="this.onload=null;this.rel='stylesheet'"><noscript><link rel="stylesheet" href="/blog.css"></noscript>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Руководство по промптам Flux AI 2026: параметры, примеры и советы",
+    "description": "Освойте промпты Flux AI в 2026 году. Фотографическая терминология, характеристики камер, освещение и готовые примеры промптов.",
+    "image": "https://www.imagetoprompt.dev/og-image.png",
+    "datePublished": "2026-03-08",
+    "dateModified": "2026-03-24",
+    "inLanguage": "ru",
+    "author": {
+      "@type": "Person",
+      "name": "ImageToPrompt Team",
+      "url": "https://www.imagetoprompt.dev/"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "ImageToPrompt",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://www.imagetoprompt.dev/favicon.svg"
+      }
+    },
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https://www.imagetoprompt.dev/ru/blog/rukovodstvo-po-promptam-flux-ai/"
+    }
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "inLanguage": "ru",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Как лучше всего писать промпты для Flux AI?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Flux AI лучше всего реагирует на подробный естественный язык, а не на теги через запятую. Описывайте сцену как абзац текста, включая объект, кадрирование, освещение, объектив (например: Canon 85mm f/1.4) и атмосферу."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Поддерживает ли Flux негативные промпты?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Нет, в отличие от Stable Diffusion, Flux не поддерживает негативные промпты. Чтобы избежать нежелательных элементов, создавайте позитивные и конкретные промпты, точно описывая то, что хотите увидеть."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "В чём разница между Flux Dev и Flux Pro?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Flux Dev — бесплатная модель с открытым исходным кодом, качество немного ниже. Flux Pro — коммерческая модель с лучшей консистентностью, точностью следования инструкциям и разрешением. Техники промптинга одинаковы для обеих версий."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Действительно ли указание характеристик камеры в промптах Flux влияет на результат?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Да, Flux очень хорошо понимает технические характеристики камер. Указание объектива Canon 85mm f/1.4 создаёт реалистичное боке, а 24mm f/8 даёт большую глубину резкости и чёткое изображение."
+        }
+      }
+    ]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "inLanguage": "ru",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Главная",
+        "item": "https://www.imagetoprompt.dev/ru/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Блог",
+        "item": "https://www.imagetoprompt.dev/ru/blog/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "Руководство по промптам Flux AI 2026"
+      }
+    ]
+  }
+  </script>
+    <!-- Google AdSense -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4499206373485728" crossorigin="anonymous"></script>
+    <!-- Web Push Notifications -->
+<script src="https://cdn.onesignal.com/sdks/web/v16/OneSignalSDK.page.js" defer></script>
+<script>
+  window.OneSignalDeferred = window.OneSignalDeferred || [];
+  OneSignalDeferred.push(async function(OneSignal) {
+    await OneSignal.init({
+      appId: "REPLACE_WITH_ONESIGNAL_APP_ID",
+      notifyButton: { enable: false }
+    });
+  });
+</script>
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="inner">
+      <a href="/ru/" class="site-logo"><img src="/favicon.svg" alt="ImageToPrompt" width="48" height="48"><div class="site-logo-text">ImageTo<span class="accent">Prompt</span><span class="site-logo-sub">Бесплатный AI генератор промптов</span></div></a>
+      <nav class="site-nav" aria-label="Основная навигация">
+        <div class="nav-dropdown">
+          <button class="nav-dropdown-trigger" aria-haspopup="true" aria-expanded="false">Tools <span class="nav-chevron" aria-hidden="true">&#9660;</span></button>
+          <div class="nav-dropdown-menu" role="menu">
+            <div class="nav-mega-grid">
+              <div class="nav-mega-col">
+                <div class="nav-mega-heading">&#128444; IMAGE TOOLS</div>
+                <a href="/" role="menuitem" class="nav-mega-tool">Image to Prompt <span class="nav-mega-arrow">&#8594;</span></a>
+                <a href="/text-to-prompt/" role="menuitem" class="nav-mega-tool">Text to Prompt <span class="nav-mega-arrow">&#8594;</span></a>
+                <a href="/describe-image/" role="menuitem" class="nav-mega-tool">Describe Image <span class="nav-new-badge">NEW</span> <span class="nav-mega-arrow">&#8594;</span></a>
+                <div class="nav-mega-models-label">Models</div>
+                <div class="nav-mega-models"><a href="/midjourney-prompt-generator/">Midjourney</a><span class="nav-dot">&#xB7;</span><a href="/stable-diffusion-prompt-generator/">SD</a></div>
+                <div class="nav-mega-models"><a href="/flux-prompt-generator/">Flux</a><span class="nav-dot">&#xB7;</span><a href="/dall-e-prompt-generator/">DALL&#xB7;E&#xA0;3</a></div>
+                <div class="nav-mega-models"><a href="/adobe-firefly-prompt-generator/">Firefly</a><span class="nav-dot">&#xB7;</span><a href="/leonardo-ai-prompt-generator/">Leonardo</a></div>
+                <div class="nav-mega-models"><a href="/ideogram-prompt-generator/">Ideogram</a></div>
+              </div>
+              <div class="nav-mega-divider" aria-hidden="true"></div>
+              <div class="nav-mega-col">
+                <div class="nav-mega-heading">&#127909; VIDEO TOOLS</div>
+                <a href="/?tab=image-to-video" role="menuitem" class="nav-mega-tool">Image to Video <span class="nav-mega-arrow">&#8594;</span></a>
+                <a href="/?tab=text-to-video" role="menuitem" class="nav-mega-tool">Text to Video <span class="nav-mega-arrow">&#8594;</span></a>
+                <div class="nav-mega-models-label">Models</div>
+                <div class="nav-mega-models"><a href="/veo-prompt-generator/">Veo</a><span class="nav-dot">&#xB7;</span><a href="/kling-prompt-generator/">Kling</a></div>
+                <div class="nav-mega-models"><a href="/runway-prompt-generator/">Runway</a><span class="nav-dot">&#xB7;</span><a href="/pika-prompt-generator/">Pika</a></div>
+                <div class="nav-mega-models"><a href="/luma-prompt-generator/">Luma</a><span class="nav-dot">&#xB7;</span><a href="/sora-prompt-generator/">Sora</a></div>
+                <div class="nav-mega-models"><a href="/minimax-prompt-generator/">Minimax</a><span class="nav-dot">&#xB7;</span><a href="/stable-video-prompt-generator/">Stable</a></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <a href="/ru/blog/">Блог</a>
+        <a href="/ru/pricing/" class="nav-pill-pricing">Цены</a>
+        <a href="/ru/about/" class="nav-pill-about">О нас</a>
+        <a href="/ru/" class="nav-try-free">Попробовать &#8594;</a>
+        <button id="theme-toggle" onclick="toggleTheme()" aria-label="Переключить тему" title="Переключить тему">&#9728;&#xFE0F;</button>
+  </nav>
+    </div>
+  </header>
+
+  <nav class="breadcrumb" aria-label="Хлебные крошки"><a href="/ru/">Главная</a> <span aria-hidden="true">›</span> <a href="/ru/blog/">Блог</a> <span aria-hidden="true">›</span> <span aria-current="page">Руководство по промптам Flux AI 2026</span></nav>
+
+  <div class="page-wrapper">
+
+    <header class="article-header">
+      <p class="article-tag">Flux AI</p>
+      <h1>Руководство по промптам Flux AI 2026: параметры и примеры</h1>
+      <div class="article-meta">
+        <span>Март 2026</span>
+        <span class="dot">&#183;</span>
+        <span>Время чтения: 11 мин</span>
+        <span class="dot">&#183;</span>
+        <span>Flux Dev &#183; Flux Pro &#183; Black Forest Labs</span>
+        <span class="dot">&#183;</span>
+        <span>Обновлено: март 2026</span>
+      </div>
+    </header>
+
+    <div class="article-body">
+
+      <p>Flux от Black Forest Labs произвёл революцию в AI-генерации изображений благодаря принципиально иному подходу к промптингу. В отличие от Stable Diffusion с его взвешенными тегами и Midjourney с короткими дескрипторами и параметрами, Flux понимает подробный естественный язык лучше любой другой модели. В этом руководстве мы расскажем, как максимально использовать эти возможности.</p>
+
+      <nav class="toc" aria-label="Содержание">
+        <details open>
+          <summary>Содержание руководства</summary>
+          <ol>
+            <li><a href="#podkhod-flux">Уникальный подход Flux</a></li>
+            <li><a href="#foto-terminologiya">Фотографическая терминология</a></li>
+            <li><a href="#kharakteristiki-kamer">Характеристики камер</a></li>
+            <li><a href="#osveshchenie">Освещение</a></li>
+            <li><a href="#primery-promptov">10 примеров промптов Flux</a></li>
+            <li><a href="#oshibki">Ошибки, которых следует избегать</a></li>
+            <li><a href="#flux-vs-drugie">Flux vs. другие модели</a></li>
+            <li><a href="#voprosy">Часто задаваемые вопросы</a></li>
+          </ol>
+        </details>
+      </nav>
+
+      <div class="callout">
+        <p><strong>Автоматическая генерация промптов Flux:</strong> <a href="/flux-prompt-generator/">Генератор промптов Flux</a> создаст оптимизированный промпт из любого изображения или текстового описания.</p>
+      </div>
+
+      <h2 id="podkhod-flux">Уникальный подход Flux</h2>
+
+      <p>Flux отличается от других моделей прежде всего уровнем понимания естественного языка. Если Stable Diffusion требует записи вроде <code>(portrait:1.2), golden hour, (bokeh:0.8)</code>, то Flux предпочитает выражения следующего типа:</p>
+
+      <pre><code>A portrait photograph of a young woman taken during golden hour, with soft warm light illuminating her face from the side. Shot on a Canon EOS R5 with an 85mm f/1.4 lens, creating a beautiful creamy bokeh in the background.</code></pre>
+
+      <p>Flux обрабатывает промпты не как списки ключевых слов, а как описательные абзацы. Чем точнее и естественнее описание, тем лучше результат. Это большое преимущество для фотографов и арт-директоров, которые уже привыкли мыслить визуальной терминологией.</p>
+
+      <h2 id="foto-terminologiya">Фотографическая терминология</h2>
+
+      <p>Flux показывает лучшие результаты при использовании профессиональной фотографической терминологии. Вот наиболее эффективные термины.</p>
+
+      <h3>Типы кадров</h3>
+      <ul>
+        <li><code>extreme close-up</code> — сверхкрупный план деталей (глаза, текстуры, объекты)</li>
+        <li><code>close-up portrait</code> — крупный портрет, лицо и плечи</li>
+        <li><code>medium shot</code> — средний план, от талии до головы</li>
+        <li><code>full body shot</code> — съёмка в полный рост</li>
+        <li><code>wide establishing shot</code> — общий план для установления сцены</li>
+        <li><code>aerial view</code> — аэрофотосъёмка / вид сверху</li>
+      </ul>
+
+      <h3>Глубина резкости</h3>
+      <ul>
+        <li><code>shallow depth of field, f/1.4</code> — размытый фон, резкий объект</li>
+        <li><code>moderate depth of field, f/4</code> — плавный переход от резкости к размытию</li>
+        <li><code>deep depth of field, f/11</code> — всё резко от переднего до заднего плана</li>
+      </ul>
+
+      <h2 id="kharakteristiki-kamer">Характеристики камер</h2>
+
+      <p>Одна из уникальных сильных сторон Flux — понимание технических характеристик камер. Указание конкретного корпуса или объектива действительно влияет на рендеринг.</p>
+
+      <div class="table-wrap">
+      <table class="comparison-table">
+        <thead>
+          <tr>
+            <th>Характеристика</th>
+            <th>Влияние на изображение</th>
+            <th>Пример использования</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><code>Canon 85mm f/1.4</code></td>
+            <td>Кремовое боке, привлекательные портреты</td>
+            <td>Портреты, мода</td>
+          </tr>
+          <tr>
+            <td><code>Sony 24mm f/1.4</code></td>
+            <td>Широкий угол, динамичная перспектива</td>
+            <td>Архитектура, пейзажи</td>
+          </tr>
+          <tr>
+            <td><code>Nikon 50mm f/1.8</code></td>
+            <td>Естественная перспектива, универсальность</td>
+            <td>Стрит-фотография</td>
+          </tr>
+          <tr>
+            <td><code>Canon 200mm f/2.8</code></td>
+            <td>Сильная компрессия, отделение объекта</td>
+            <td>Дикая природа, спорт</td>
+          </tr>
+          <tr>
+            <td><code>Fujifilm X100V, 23mm</code></td>
+            <td>Плёночная передача, характерные цвета</td>
+            <td>Стрит, документалистика</td>
+          </tr>
+        </tbody>
+      </table>
+      </div>
+
+      <h2 id="osveshchenie">Освещение</h2>
+
+      <p>Освещение — важнейший элемент любого изображения. Flux понимает очень детальные описания освещения.</p>
+
+      <ul>
+        <li><code>golden hour sunlight streaming through windows</code> — тёплый золотистый свет</li>
+        <li><code>overcast diffused natural light</code> — мягкий равномерный свет</li>
+        <li><code>dramatic Rembrandt lighting with deep shadows</code> — классическое студийное освещение</li>
+        <li><code>neon-lit city street at night, reflections on wet pavement</code> — городское ночное освещение</li>
+        <li><code>backlit silhouette against a bright sunset sky</code> — драматичная контровая подсветка</li>
+        <li><code>soft studio lighting with a large octabox key light</code> — профессиональное студийное освещение</li>
+      </ul>
+
+      <h2 id="primery-promptov">10 примеров промптов Flux</h2>
+
+      <p>Ниже представлены 10 протестированных и оптимизированных промптов для Flux. Копируйте и используйте.</p>
+
+      <h3>1. Кинематографический портрет</h3>
+      <pre><code>Cinematic portrait photograph of an elderly fisherman with weathered skin and deep wrinkles, looking directly at the camera with piercing blue eyes. Shot during golden hour on a dock, warm sunlight creating rim lighting on his silver hair. Canon EOS R5, 85mm f/1.4 lens, shallow depth of field with the ocean blurred in the background.</code></pre>
+
+      <h3>2. Стрит-фотография</h3>
+      <pre><code>Street photography of a rainy Tokyo alley at night, neon signs reflecting on wet cobblestones. A lone figure with an umbrella walks away from camera. Shot on Fujifilm X100V, 23mm lens, slightly underexposed for mood. Atmospheric fog diffusing the neon light into soft colored halos.</code></pre>
+
+      <h3>3. Эпический пейзаж</h3>
+      <pre><code>Dramatic landscape photograph of a volcanic mountain at sunrise, with layers of morning mist filling the valley below. The sky transitions from deep purple to warm orange. Shot on Sony A7R IV with a 16-35mm f/2.8 lens at f/11 for maximum sharpness throughout. Foreground includes frost-covered wildflowers.</code></pre>
+
+      <h3>4. Фуд-фотография</h3>
+      <pre><code>Overhead food photography of a rustic Italian dinner table with handmade pasta, fresh basil, ripe tomatoes, and olive oil in a ceramic pitcher. Warm natural light from a nearby window, soft shadows, linen tablecloth texture. Shot on Canon 5D Mark IV with a 50mm macro lens.</code></pre>
+
+      <h3>5. Минималистичная архитектура</h3>
+      <pre><code>Minimalist architectural photograph of a white concrete spiral staircase viewed from above, creating a geometric pattern. Clean lines, strong shadows from directional sunlight, monochromatic palette with subtle warm tones. Shot on Hasselblad medium format, 45mm lens, high contrast black and white.</code></pre>
+
+      <h3>6. Фешн-портрет</h3>
+      <pre><code>Editorial fashion photograph of a model wearing an avant-garde geometric black dress, standing in a stark white gallery space. Dramatic directional lighting creating strong shadows. Shot on Phase One IQ4 medium format, 80mm lens. High contrast, desaturated color palette with only red lipstick as color accent.</code></pre>
+
+      <h3>7. Макросъёмка природы</h3>
+      <pre><code>Extreme macro photograph of morning dew drops on a spider web, each droplet acting as a tiny lens reflecting the colorful garden behind. Shot with Canon MP-E 65mm macro lens at 5x magnification, f/8, focus stacked for sharpness. Soft morning backlight creating rainbow refractions in the water droplets.</code></pre>
+
+      <h3>8. Городская сцена</h3>
+      <pre><code>Urban photograph of a brutalist concrete building facade with repetitive geometric window patterns, shot from below looking up against a moody overcast sky. A single person visible in one window creates scale and human interest. Sony 24mm f/1.4 GM lens, f/8, high dynamic range.</code></pre>
+
+      <h3>9. Портрет в среде</h3>
+      <pre><code>Environmental portrait of a ceramicist in her sunlit studio, hands covered in wet clay, working at a pottery wheel. Natural window light creating beautiful side lighting on her concentrated face. The background shows shelves of finished pottery pieces slightly out of focus. Nikon Z9, 35mm f/1.4 lens.</code></pre>
+
+      <h3>10. Ночная фотография</h3>
+      <pre><code>Night photography of a remote desert landscape under the Milky Way, with a lone Joshua tree silhouetted against the star-filled sky. Long exposure creating slight star trails. The galactic core visible in warm golden tones contrasting with the cool blue night sky. Sony A7S III, 14mm f/1.8, 20 second exposure, ISO 3200.</code></pre>
+
+      <h2 id="oshibki">Ошибки, которых следует избегать</h2>
+
+      <ul>
+        <li><strong>Использование синтаксиса Stable Diffusion:</strong> Flux не понимает <code>(tag:1.2)</code> и веса. Описывайте всё естественным языком.</li>
+        <li><strong>Слишком короткие промпты:</strong> В отличие от Midjourney, Flux лучше работает с длинными подробными описаниями.</li>
+        <li><strong>Поиск негативных промптов:</strong> Flux не поддерживает негативные промпты. Формулируйте всё позитивно.</li>
+        <li><strong>Игнорирование освещения:</strong> Освещение часто является самым влиятельным элементом. Никогда не пренебрегайте им.</li>
+      </ul>
+
+      <h2 id="flux-vs-drugie">Flux vs. другие модели</h2>
+
+      <div class="table-wrap">
+      <table class="comparison-table">
+        <thead>
+          <tr>
+            <th>Критерий</th>
+            <th>Flux</th>
+            <th>Midjourney</th>
+            <th>Stable Diffusion</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Стиль промпта</td>
+            <td>Подробный естественный язык</td>
+            <td>Дескрипторы + параметры</td>
+            <td>Взвешенные теги</td>
+          </tr>
+          <tr>
+            <td>Фотореализм</td>
+            <td>Отлично</td>
+            <td>Очень хорошо</td>
+            <td>Хорошо (с подходящим чекпоинтом)</td>
+          </tr>
+          <tr>
+            <td>Характеристики камер</td>
+            <td>Очень хорошо понимает</td>
+            <td>Частично понимает</td>
+            <td>Почти не влияет</td>
+          </tr>
+          <tr>
+            <td>Негативные промпты</td>
+            <td>Не поддерживает</td>
+            <td><code>--no</code></td>
+            <td>Специальное поле</td>
+          </tr>
+        </tbody>
+      </table>
+      </div>
+
+      <div class="cta-box">
+        <h3>Автоматическая генерация промптов Flux</h3>
+        <p>Загрузите изображение или введите идею и получите оптимизированный промпт Flux за несколько секунд.</p>
+        <a href="/flux-prompt-generator/" class="cta-btn">Генератор промптов Flux &#8594;</a>
+      </div>
+
+      <h2 id="voprosy">Часто задаваемые вопросы</h2>
+
+      <h3>Как лучше всего писать промпты для Flux AI?</h3>
+      <p>Flux AI лучше всего реагирует на подробный естественный язык, а не на теги через запятую. Описывайте сцену как абзац текста, включая объект, кадрирование, освещение, объектив (например: <code>Canon 85mm f/1.4</code>) и атмосферу.</p>
+
+      <h3>Поддерживает ли Flux негативные промпты?</h3>
+      <p>Нет, в отличие от Stable Diffusion, Flux не поддерживает негативные промпты. Чтобы избежать нежелательных элементов, создавайте позитивные и конкретные промпты, точно описывая то, что хотите увидеть.</p>
+
+      <h3>В чём разница между Flux Dev и Flux Pro?</h3>
+      <p>Flux Dev — бесплатная модель с открытым исходным кодом, качество немного ниже. Flux Pro — коммерческая модель с лучшей консистентностью, точностью следования инструкциям и разрешением. Техники промптинга одинаковы для обеих версий.</p>
+
+      <h3>Действительно ли указание характеристик камеры в промптах Flux влияет на результат?</h3>
+      <p>Да, Flux очень хорошо понимает технические характеристики камер. Указание объектива <code>Canon 85mm f/1.4</code> создаёт реалистичное боке, а <code>24mm f/8</code> даёт большую глубину резкости и чёткое изображение.</p>
+
+    </div>
+
+    <div class="author-bio">
+      <img src="/favicon.svg" alt="ImageToPrompt Team" width="44" height="44">
+      <div>
+        <strong>ImageToPrompt Team</strong>
+        <p>Мы — команда экспертов, помогающая креативщикам освоить генерацию AI-изображений. Мы делимся актуальными руководствами по лучшим практикам и новым техникам в генерации AI-изображений.</p>
+        <a href="https://x.com/ImageToPrompt" target="_blank" rel="noopener" class="author-follow">Подписаться на X</a>
+      </div>
+    </div>
+
+    <div class="related-posts">
+      <h2>Связанные руководства</h2>
+      <div class="related-grid">
+        <a href="/ru/blog/rukovodstvo-po-promptam-stable-diffusion/" class="related-card">
+          <p class="tag">Stable Diffusion</p>
+          <h3>Руководство по промптам Stable Diffusion 2026</h3>
+        </a>
+        <a href="/ru/blog/rukovodstvo-po-promptam-dall-e-3/" class="related-card">
+          <p class="tag">DALL-E 3</p>
+          <h3>Полное руководство по промптам DALL-E 3</h3>
+        </a>
+        <a href="/ru/blog/rukovodstvo-po-promptam-ideogram/" class="related-card">
+          <p class="tag">Ideogram</p>
+          <h3>Полное руководство по промптам Ideogram</h3>
+        </a>
+        <a href="/ru/blog/rukovodstvo-po-promptam-leonardo-ai/" class="related-card">
+          <p class="tag">Leonardo AI</p>
+          <h3>Руководство по промптам Leonardo AI</h3>
+        </a>
+      </div>
+    </div>
+
+  </div>
+
+  <footer class="footer-4col">
+    <div class="f4-inner">
+      <div class="f4-brand">
+        <img src="/favicon.svg" alt="ImageToPrompt" width="28" height="28">
+        <span class="f4-brand-name">ImageTo<span class="accent">Prompt</span></span>
+        <span class="f4-brand-sub">&mdash; Free AI Prompt Generator</span>
+      </div>
+      <div class="f4-grid">
+        <div class="f4-section">
+          <h4 class="f4-heading">Image Prompt Tools</h4>
+          <a href="/">Image to Prompt</a>
+          <a href="/text-to-prompt/">Text to Prompt</a>
+          <a href="/describe-image/">Describe Image</a>
+          <a href="/midjourney-prompt-generator/">Midjourney</a>
+          <a href="/stable-diffusion-prompt-generator/">Stable Diffusion</a>
+          <a href="/flux-prompt-generator/">Flux</a>
+          <a href="/dall-e-prompt-generator/">DALL-E 3</a>
+          <a href="/adobe-firefly-prompt-generator/">Adobe Firefly</a>
+          <a href="/leonardo-ai-prompt-generator/">Leonardo AI</a>
+          <a href="/ideogram-prompt-generator/">Ideogram</a>
+        </div>
+        <div class="f4-section">
+          <h4 class="f4-heading">Video Prompt Tools</h4>
+          <a href="/image-to-video-prompt/">Image to Video Prompt</a>
+          <a href="/text-to-video-prompt/">Text to Video Prompt</a>
+          <a href="/veo-prompt-generator/">Veo / Flow Studio</a>
+          <a href="/kling-prompt-generator/">Kling AI</a>
+          <a href="/runway-prompt-generator/">Runway Gen-3</a>
+          <a href="/pika-prompt-generator/">Pika</a>
+          <a href="/luma-prompt-generator/">Luma Dream Machine</a>
+          <a href="/sora-prompt-generator/">Sora</a>
+          <a href="/minimax-prompt-generator/">Minimax</a>
+          <a href="/stable-video-prompt-generator/">Stable Video</a>
+        </div>
+        <div class="f4-section">
+          <h4 class="f4-heading">Resources</h4>
+          <a href="/ru/blog/">Блог</a>
+          <a href="/ru/about/">О нас</a>
+          <a href="/ru/pricing/">Цены</a>
+          <a href="/contact/">Contact</a>
+          <a href="/privacy-policy/">Privacy Policy</a>
+          <a href="/terms-of-service/">Terms of Service</a>
+        </div>
+        <div class="f4-section">
+          <h4 class="f4-heading">Languages</h4>
+          <a href="/">English</a>
+          <a href="/fr/">Fran&#231;ais</a>
+          <a href="/ar/">&#1575;&#1604;&#1593;&#1585;&#1576;&#1610;&#1577;</a>
+          <a href="/es/">Espa&#241;ol</a>
+          <a href="/ko/">&#54620;&#44397;&#50612;</a>
+          <a href="/ja/">&#26085;&#26412;&#35486;</a>
+          <a href="/ru/">&#1056;&#1091;&#1089;&#1089;&#1082;&#1080;&#1081;</a>
+        </div>
+      </div>
+      <div class="f4-bottom">
+        <p>&copy; 2026 ImageToPrompt.dev &mdash; Free AI Prompt Generator</p>
+        <p>Your images are never stored. All analysis is ephemeral and private.</p>
+      </div>
+    </div>
+  </footer>
+
+<script src="/newsletter-inject.js" defer></script>
+<script src="/nav.js" defer></script>
+  <script>
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', function() {
+    navigator.serviceWorker.register('/sw.js')
+      .catch(function(err) { console.warn('SW registration failed:', err); });
+  });
+}
+</script>
+</body>
+</html>

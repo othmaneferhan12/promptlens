@@ -1,0 +1,505 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <script src="/theme-toggle.js"></script>
+  <meta charset="UTF-8" />
+  <link rel="dns-prefetch" href="https://www.googletagmanager.com">
+<link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="max-image-preview:large, index, follow">
+  <meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="ImageToPrompt">
+  <title>AI 이미지의 프롬프트를 해독하는 방법 (리버스 엔지니어링)</title>
+  <meta name="description" content="모든 AI 이미지의 프롬프트를 리버스 엔지니어링하는 방법을 배워보세요. 스타일, 라이팅, 구도를 추출하여 Midjourney와 Stable Diffusion에서 재현합니다." />
+  <link rel="canonical" href="https://www.imagetoprompt.dev/ko/blog/ai-prompt-reverse-engineering/" />
+  <link rel="alternate" hreflang="ko" href="https://www.imagetoprompt.dev/ko/blog/ai-prompt-reverse-engineering/" />
+  <link rel="alternate" hreflang="en" href="https://www.imagetoprompt.dev/blog/reverse-engineer-ai-art-prompts/" />
+  <link rel="alternate" hreflang="fr" href="https://www.imagetoprompt.dev/fr/blog/reverse-engineering-prompts-ia/" />
+  <link rel="alternate" hreflang="ar" href="https://www.imagetoprompt.dev/ar/blog/iada-handasa-prompts-souar-ia/" />
+  <link rel="alternate" hreflang="es" href="https://www.imagetoprompt.dev/es/blog/ingenieria-inversa-prompts-ia/" />
+  <link rel="alternate" hreflang="ja" href="https://www.imagetoprompt.dev/ja/blog/ai-prompt-reverse-engineering/" />
+  <link rel="alternate" hreflang="ru" href="https://www.imagetoprompt.dev/ru/blog/obratnaya-inzheneriya-promptov/" />
+  <link rel="alternate" hreflang="x-default" href="https://www.imagetoprompt.dev/blog/reverse-engineer-ai-art-prompts/" />
+  <meta property="og:title" content="AI 이미지의 프롬프트를 해독하는 방법 (리버스 엔지니어링)" />
+  <meta property="og:description" content="모든 AI 이미지에서 스타일, 라이팅, 구도를 추출하여 Midjourney, Stable Diffusion, Flux에서 재현하는 방법." />
+  <meta property="og:url" content="https://www.imagetoprompt.dev/ko/blog/ai-prompt-reverse-engineering/" />
+  <meta property="og:type" content="article" />
+  <meta property="og:image" content="https://www.imagetoprompt.dev/og-image.png" />
+  <meta property="og:site_name" content="ImageToPrompt" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="AI 이미지의 프롬프트를 해독하는 방법 (리버스 엔지니어링)" />
+  <meta name="twitter:description" content="Midjourney, Stable Diffusion, Flux용 AI 프롬프트 리버스 엔지니어링 완전 가이드." />
+  <meta name="twitter:image" content="https://www.imagetoprompt.dev/og-image.png" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="48x48" href="/favicon-48.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+  <link rel="manifest" href="/site.webmanifest" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="/fonts/space-grotesk-700.woff2" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="/fonts/inter-400.woff2" />
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/theme.css">
+  <link rel="preload" href="/blog.css" as="style" onload="this.onload=null;this.rel='stylesheet'"><noscript><link rel="stylesheet" href="/blog.css"></noscript>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "AI 이미지의 프롬프트를 해독하는 방법 (리버스 엔지니어링)",
+    "description": "모든 AI 이미지의 프롬프트를 리버스 엔지니어링하는 방법을 배워보세요. 스타일, 라이팅, 구도를 추출하여 Midjourney와 Stable Diffusion에서 재현합니다.",
+    "image": "https://www.imagetoprompt.dev/og-image.png",
+    "datePublished": "2026-03-10",
+    "dateModified": "2026-03-24",
+    "inLanguage": "ko",
+    "author": {
+      "@type": "Person",
+      "name": "ImageToPrompt Team",
+      "url": "https://www.imagetoprompt.dev/"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "ImageToPrompt",
+      "logo": { "@type": "ImageObject", "url": "https://www.imagetoprompt.dev/favicon.svg" }
+    },
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https://www.imagetoprompt.dev/ko/blog/ai-prompt-reverse-engineering/"
+    }
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "홈", "item": "https://www.imagetoprompt.dev/ko/" },
+      { "@type": "ListItem", "position": 2, "name": "블로그", "item": "https://www.imagetoprompt.dev/ko/blog/" },
+      { "@type": "ListItem", "position": 3, "name": "AI 프롬프트 리버스 엔지니어링" }
+    ]
+  }
+  </script>
+    <!-- Google AdSense -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4499206373485728" crossorigin="anonymous"></script>
+    <!-- Web Push Notifications -->
+<script src="https://cdn.onesignal.com/sdks/web/v16/OneSignalSDK.page.js" defer></script>
+<script>
+  window.OneSignalDeferred = window.OneSignalDeferred || [];
+  OneSignalDeferred.push(async function(OneSignal) {
+    await OneSignal.init({
+      appId: "REPLACE_WITH_ONESIGNAL_APP_ID",
+      notifyButton: { enable: false }
+    });
+  });
+</script>
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="inner">
+      <a href="/ko/" class="site-logo"><img src="/favicon.svg" alt="ImageToPrompt" width="48" height="48"><div class="site-logo-text">ImageTo<span class="accent">Prompt</span><span class="site-logo-sub">무료 AI 프롬프트 생성기</span></div></a>
+      <nav class="site-nav" aria-label="메인 내비게이션">
+        <div class="nav-dropdown">
+          <button class="nav-dropdown-trigger" aria-haspopup="true" aria-expanded="false">Tools <span class="nav-chevron" aria-hidden="true">&#9660;</span></button>
+          <div class="nav-dropdown-menu" role="menu">
+            <div class="nav-mega-grid">
+              <div class="nav-mega-col">
+                <div class="nav-mega-heading">&#128444; IMAGE TOOLS</div>
+                <a href="/" role="menuitem" class="nav-mega-tool">Image to Prompt <span class="nav-mega-arrow">&#8594;</span></a>
+                <a href="/text-to-prompt/" role="menuitem" class="nav-mega-tool">Text to Prompt <span class="nav-mega-arrow">&#8594;</span></a>
+                <a href="/describe-image/" role="menuitem" class="nav-mega-tool">Describe Image <span class="nav-new-badge">NEW</span> <span class="nav-mega-arrow">&#8594;</span></a>
+                <div class="nav-mega-models-label">Models</div>
+                <div class="nav-mega-models"><a href="/midjourney-prompt-generator/">Midjourney</a><span class="nav-dot">&#xB7;</span><a href="/stable-diffusion-prompt-generator/">SD</a></div>
+                <div class="nav-mega-models"><a href="/flux-prompt-generator/">Flux</a><span class="nav-dot">&#xB7;</span><a href="/dall-e-prompt-generator/">DALL&#xB7;E&#xA0;3</a></div>
+                <div class="nav-mega-models"><a href="/adobe-firefly-prompt-generator/">Firefly</a><span class="nav-dot">&#xB7;</span><a href="/leonardo-ai-prompt-generator/">Leonardo</a></div>
+                <div class="nav-mega-models"><a href="/ideogram-prompt-generator/">Ideogram</a></div>
+              </div>
+              <div class="nav-mega-divider" aria-hidden="true"></div>
+              <div class="nav-mega-col">
+                <div class="nav-mega-heading">&#127909; VIDEO TOOLS</div>
+                <a href="/?tab=image-to-video" role="menuitem" class="nav-mega-tool">Image to Video <span class="nav-mega-arrow">&#8594;</span></a>
+                <a href="/?tab=text-to-video" role="menuitem" class="nav-mega-tool">Text to Video <span class="nav-mega-arrow">&#8594;</span></a>
+                <div class="nav-mega-models-label">Models</div>
+                <div class="nav-mega-models"><a href="/veo-prompt-generator/">Veo</a><span class="nav-dot">&#xB7;</span><a href="/kling-prompt-generator/">Kling</a></div>
+                <div class="nav-mega-models"><a href="/runway-prompt-generator/">Runway</a><span class="nav-dot">&#xB7;</span><a href="/pika-prompt-generator/">Pika</a></div>
+                <div class="nav-mega-models"><a href="/luma-prompt-generator/">Luma</a><span class="nav-dot">&#xB7;</span><a href="/sora-prompt-generator/">Sora</a></div>
+                <div class="nav-mega-models"><a href="/minimax-prompt-generator/">Minimax</a><span class="nav-dot">&#xB7;</span><a href="/stable-video-prompt-generator/">Stable</a></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <a href="/ko/blog/">블로그</a>
+        <a href="/ko/pricing/" class="nav-pill-pricing">요금</a>
+        <a href="/ko/about/" class="nav-pill-about">소개</a>
+        <a href="/ko/" class="nav-try-free">무료 체험 &#8594;</a>
+        <button id="theme-toggle" onclick="toggleTheme()" aria-label="테마 전환" title="테마 전환">&#9728;&#xFE0F;</button>
+  </nav>
+    </div>
+  </header>
+
+  <nav class="breadcrumb" aria-label="브레드크럼">
+    <a href="/ko/">홈</a> <span aria-hidden="true">›</span>
+    <a href="/ko/blog/">블로그</a> <span aria-hidden="true">›</span>
+    <span aria-current="page">AI 프롬프트 리버스 엔지니어링</span>
+  </nav>
+
+  <div class="page-wrapper">
+
+    <header class="article-header">
+      <p class="article-tag">튜토리얼</p>
+      <h1>AI 이미지의 프롬프트를 해독하는 방법 (리버스 엔지니어링)</h1>
+      <div class="article-meta">
+        <span>2026년 3월</span>
+        <span class="dot">·</span>
+        <span>9분 소요</span>
+        <span class="dot">·</span>
+        <span>Midjourney · Stable Diffusion · Flux</span>
+        <span class="dot">·</span>
+        <span>2026년 3월 업데이트</span>
+      </div>
+    </header>
+
+    <div class="article-body">
+
+      <p>AI 아트 갤러리를 스크롤하다 보면 — DeviantArt, ArtStation, Twitter, Discord 서버 등 — 딱 내가 만들고 싶었던 것과 꼭 맞는 이미지에서 손이 멈추는 순간이 있습니다. 라이팅이 완벽합니다. 구도가 숨 막힐 정도로 아름답습니다. 스타일이 바로 원하던 그것입니다.</p>
+
+      <nav class="toc" aria-label="목차">
+        <details open>
+          <summary>이 가이드의 내용</summary>
+          <ol>
+            <li><a href="#why-it-works">리버스 엔지니어링이 작동하는 이유 (그리고 한계)</a></li>
+            <li><a href="#method-1">방법 1: AI의 이미지-투-프롬프트 도구 사용</a></li>
+            <li><a href="#method-2">방법 2: 수동 비주얼 분해</a></li>
+            <li><a href="#method-3">방법 3: 두 가지를 결합 — 프로의 워크플로우</a></li>
+            <li><a href="#full-example">완전한 예시: 이미지 리버스 엔지니어링</a></li>
+            <li><a href="#tips-by-model">모델별 리버스 엔지니어링 팁</a></li>
+            <li><a href="#same-image-diff-models">같은 이미지, 다른 모델</a></li>
+            <li><a href="#ethics">윤리적 고려사항</a></li>
+            <li><a href="#advanced">고급 테크닉: 프롬프트를 통한 스타일 전사</a></li>
+          </ol>
+        </details>
+      </nav>
+
+      <p>문제는: 프롬프트를 모른다는 것입니다. 그리고 설령 프롬프트를 안다 해도, 복사해서 같은 결과를 얻을 수 있을까요?</p>
+
+      <p>이것이 바로 <strong>프롬프트 리버스 엔지니어링</strong>입니다 — 이미지의 비주얼 DNA를 추출하여 텍스트 지시로 번역하는 기술입니다. 마스터하면 AI 아티스트가 익힐 수 있는 가장 강력한 기술 중 하나입니다. 이 가이드에서는 전체 과정을 상세히 설명합니다.</p>
+
+      <h2 id="why-it-works">리버스 엔지니어링이 작동하는 이유 (그리고 한계)</h2>
+
+      <p>AI 이미지 생성 도구는 텍스트 프롬프트를 비주얼 출력에 매핑하도록 훈련되었습니다. 리버스 엔지니어링은 이 관계를 역이용합니다: 모델이 텍스트를 이미지로 변환할 수 있다면, 적절한 도구를 사용하면 이미지를 텍스트 근사값으로 변환하는 것도 가능합니다.</p>
+
+      <p>완벽하지는 않습니다. AI 생성 도구에는 고유한 무작위성(시드 값으로 제어)이 있어 같은 프롬프트라도 동일한 사본이 아닌 변형을 생성합니다. 하지만 리버스 엔지니어링을 통해 다음이 충분히 가능해집니다:</p>
+      <ul>
+        <li>전체적인 에스테틱과 분위기를 재현하기</li>
+        <li>같은 스타일을 다른 피사체에 적용하기</li>
+        <li>기존 비주얼 스타일에 자신만의 크리에이티브 요소를 더하기</li>
+        <li>특정 비주얼 이펙트가 어떻게 구현되었는지 이해하기</li>
+      </ul>
+
+      <h2 id="method-1">방법 1: AI의 이미지-투-프롬프트 도구 사용</h2>
+
+      <p>가장 빠른 접근법은 ImageToPrompt 같은 전용 <a href="/">이미지-투-프롬프트 변환 도구</a>를 사용하는 것입니다. 이러한 도구는 AI 비전을 사용하여 참조 이미지를 분석하고 타겟 모델에 맞게 포맷된 완전한 프롬프트를 생성합니다.</p>
+
+      <p>워크플로우:</p>
+      <ol>
+        <li>리버스 엔지니어링하고 싶은 이미지를 저장</li>
+        <li><a href="/">ImageToPrompt.dev</a>에 업로드</li>
+        <li>사용하려는 AI 모델 선택 (Midjourney, Stable Diffusion, Flux 등)</li>
+        <li>몇 초 만에 바로 사용할 수 있는 프롬프트 획득</li>
+      </ol>
+
+      <p>이것은 대부분의 프로 AI 아티스트가 출발점으로 사용하는 접근법입니다. 비주얼 디테일의 식별과 언어화라는 번거로운 작업을 처리해 주므로, 여러분은 프롬프트의 정제에 집중할 수 있습니다.</p>
+
+      <div class="cta-inline">
+        <p>직접 시도해 보세요 — 아무 이미지를 업로드하면 최적화된 AI 프롬프트가 몇 초 만에 생성됩니다.</p>
+        <a href="/" class="cta-btn-sm">무료 체험 →</a>
+      </div>
+
+      <h2 id="method-2">방법 2: 수동 비주얼 분해</h2>
+
+      <p>AI의 도움이 있더라도 수동으로 이미지를 분해하는 방법을 이해하면 훨씬 더 뛰어난 프롬프트 엔지니어가 될 수 있습니다. 모든 이미지를 체계적으로 읽는 방법을 소개합니다.</p>
+
+      <h3>피사체 분석</h3>
+      <p>명확한 것부터 시작합니다: 이미지 안에 무엇이 있는가? 구체적으로. "여성"은 약합니다. "20대 후반의 다크 헤어 세미롱, 빈티지 가죽 재킷을 입은 젊은 여성"은 AI에게 훨씬 많은 정보를 제공합니다.</p>
+
+      <div class="img-single">
+        <a href="/images/describe-the-photo-artwork-analysis.webp" target="_blank" rel="noopener">
+          <picture><source srcset="/images/describe-the-photo-artwork-analysis.webp" type="image/webp"><img src="/images/describe-the-photo-artwork-analysis.jpeg" alt="프롬프트 리버스 엔지니어링을 위한 AI 아트워크 분석: 피사체, 라이팅 방향, 색상 팔레트, 구도 라인, 스타일 인디케이터의 레이블 주석" width="1000" height="700" loading="lazy"></picture>
+        </a>
+        <p class="img-caption">비주얼 분해: 프롬프트 언어로 변환하기 전에 이미지의 각 요소를 식별합니다. 클릭하면 원본 크기로 봅니다.</p>
+      </div>
+
+      <h3>라이팅 읽기</h3>
+      <p>라이팅은 모든 이미지에서 가장 강력한 요소 중 하나입니다. 다음 질문을 스스로에게 던져보세요:</p>
+      <ul>
+        <li>광원이 어디에 있는가? (정면 광, 측면 광, 역광, 림 라이트)</li>
+        <li>빛이 딱딱한가 부드러운가? (딱딱한 직사광 vs. 부드러운 흐린 날의 확산광)</li>
+        <li>빛의 색은? (따뜻한 golden hour, 차가운 blue hour, 중립적인 스튜디오)</li>
+        <li>이차적 광원이나 컬러 젤이 있는가?</li>
+        <li>그림자가 드라마틱한가?</li>
+      </ul>
+
+      <h3>스타일과 매체 식별</h3>
+      <p>사진적인가 회화적인가? 사진적이라면: 어떤 카메라, 어떤 렌즈? 회화적이라면: 어떤 매체(유화, 수채화, 디지털), 어떤 아티스트 스타일(인상주의, 하이퍼리얼리스트, 애니메이션)?</p>
+      <p>유용한 스타일 설명어: <code>cinematic</code>, <code>hyperrealistic</code>, <code>painterly</code>, <code>concept art</code>, <code>illustration</code>, <code>watercolor</code>, <code>cel shading</code>, <code>photorealism</code>, <code>editorial</code></p>
+
+      <h3>색상 팔레트 기록</h3>
+      <p>AI 이미지 생성 도구는 색상 설명에 강하게 반응합니다. 다음을 식별하세요:</p>
+      <ul>
+        <li>지배적인 색상 (이미지를 정의하는 2~4가지 색)</li>
+        <li>전체적인 온도 (따뜻한, 차가운, 중립적)</li>
+        <li>채도 (선명한, 절제된, 저채도)</li>
+        <li>대비 수준 (고대비, 평평한, 저대비)</li>
+      </ul>
+
+      <h3>구도 기술</h3>
+      <p>이미지가 어떻게 프레이밍되어 있는가? 일반적인 구도 설명어:</p>
+      <ul>
+        <li>샷 타입: 클로즈업, 미디엄 샷, 와이드 샷, 공중 촬영, 로우 앵글</li>
+        <li>피사계 심도: 보케, 얕은 피사계 심도, 전면 선명</li>
+        <li>삼분할법, 센터 구도, 리딩 라인</li>
+        <li>네거티브 스페이스</li>
+      </ul>
+
+      <h2 id="method-3">방법 3: 두 가지를 결합 — 프로의 워크플로우</h2>
+
+      <p>가장 효과적인 접근법은 AI 분석과 수동 정제를 결합하는 것입니다. 프로 AI 아티스트가 사용하는 완전한 워크플로우를 소개합니다:</p>
+
+      <h3>단계 1: 베이스 프롬프트 생성</h3>
+      <p>참조 이미지를 <a href="/">ImageToPrompt</a>에 업로드하여 초기 프롬프트를 생성합니다. 이것으로 약 80%까지 도달할 수 있으며, 보통 30초도 걸리지 않습니다.</p>
+
+      <h3>단계 2: 수동으로 검토하고 주석 달기</h3>
+      <p>생성된 프롬프트를 비판적으로 검토합니다. 이미지와 비교하여 무엇이 부족한가? 무엇이 부정확한가? 구체적으로 확인할 포인트:</p>
+      <ul>
+        <li>라이팅이 정확하게 기술되었는가?</li>
+        <li>스타일 설명이 보이는 것과 일치하는가?</li>
+        <li>놓치고 있는 중요한 구도 요소가 없는가?</li>
+        <li>언급되지 않은 지배적인 색이 없는가?</li>
+      </ul>
+
+      <h3>단계 3: 아티스트 레퍼런스 추가 (선택사항)</h3>
+      <p>스타일리시한 이미지의 경우 아티스트 이름을 추가하면 결과가 크게 개선될 수 있습니다. "In the style of Greg Rutkowski"나 "in the style of Makoto Shinkai"는 완전한 비주얼 보캐뷸러리를 모델에 전달합니다. 윤리적으로 사용하세요 — 특정 작품이 아닌 스타일을 참조합시다.</p>
+
+      <h3>단계 4: 테스트와 반복</h3>
+      <p>정제된 프롬프트로 4~8개의 변형을 생성합니다. 참조 이미지와 비교하여 가장 큰 차이를 식별하고 이를 메우도록 프롬프트를 조정합니다. 만족할 때까지 반복합니다.</p>
+
+      <h2 id="full-example">완전한 예시: 이미지 리버스 엔지니어링</h2>
+
+      <p>하나의 이미지로 전체 프로세스를 실행해 보겠습니다 — 자동 분석과 수동 정제를 결합하여 실제로 결과를 재현할 수 있는 프롬프트를 만듭니다.</p>
+
+      <div class="img-single">
+        <a href="/images/explain-this-image-astronaut-alien-planet.webp" target="_blank" rel="noopener">
+          <picture><source srcset="/images/explain-this-image-astronaut-alien-planet.webp" type="image/webp"><img src="/images/explain-this-image-astronaut-alien-planet.jpeg" alt="리버스 엔지니어링 예시에 사용할 판타지 포트레이트 참조 — 분석 대상 원본 AI 아트" width="800" height="1100" loading="lazy"></picture>
+        </a>
+        <p class="img-caption">리버스 엔지니어링할 참조 이미지. 클릭하면 원본 크기로 봅니다.</p>
+      </div>
+
+      <h3>단계 1: 자동 분석</h3>
+      <p>Midjourney를 선택하여 ImageToPrompt에 업로드한 후, 도구가 다음을 생성했습니다:</p>
+      <pre class="prompt-block">dramatic fantasy portrait of a female warrior, battle-worn armor with intricate engravings, fierce expression, rim lighting from behind with warm orange glow, particle effects and embers, dark atmospheric background, cinematic concept art, digital painting, highly detailed --ar 2:3 --v 6.1 --style raw --q 2</pre>
+
+      <h3>단계 2: 수동 관찰</h3>
+      <p>자동 결과를 원본 이미지와 비교했을 때 2가지가 눈에 띄었습니다. 첫째, AI가 특정 색상 대비를 포착하지 못했습니다 — 갑옷에는 verdigris(산화 구리의 녹색) 색조가 있었으나 언급되지 않았습니다. 둘째, 배경은 단순히 "어두운" 것이 아니라 연기가 자욱한, 거의 화산성의 대기감이 있었고 재 입자가 보였습니다.</p>
+
+      <h3>단계 3: 정제된 프롬프트</h3>
+      <p>부족한 요소를 추가하고 강조를 조정했습니다:</p>
+      <pre class="prompt-block">dramatic fantasy portrait of a female warrior, battle-worn armor with verdigris patina and intricate engravings, fierce determined expression, rim lighting from behind with warm volcanic orange glow, ash particles and floating embers, smoky atmospheric background with volcanic haze, cinematic concept art, digital painting, highly detailed, deep shadow contrast --ar 2:3 --v 6.1 --style raw --q 2</pre>
+
+      <div class="img-single">
+        <a href="/images/explain-this-image-astronaut-recreated.webp" target="_blank" rel="noopener">
+          <picture><source srcset="/images/explain-this-image-astronaut-recreated.webp" type="image/webp"><img src="/images/explain-this-image-astronaut-recreated.jpeg" alt="정제된 리버스 엔지니어링 프롬프트로 재현된 판타지 포트레이트 — verdigris 색조와 화산성 대기감" width="800" height="1100" loading="lazy"></picture>
+        </a>
+        <p class="img-caption">정제된 프롬프트로 얻은 결과. verdigris 색조와 화산성 대기감이 재현되었습니다.</p>
+      </div>
+
+      <p>두 가지 추가 — verdigris 녹과 화산성 대기감 — 가 이미지의 비주얼 내러티브를 근본적으로 바꿨습니다. 이것이 바로 수동 관찰이 자동 분석에 가져다주는 것: 이미지를 평범하지 않고 돋보이게 하는 구체적인 디테일입니다.</p>
+
+      <h2 id="tips-by-model">모델별 리버스 엔지니어링 팁</h2>
+
+      <h3>Midjourney 이미지의 리버스 엔지니어링</h3>
+      <p>Midjourney는 독특한 에스테틱이 있습니다 — 회화적 품질을 가진 정밀한 디테일. Midjourney 이미지의 리버스 엔지니어링에서는 Midjourney 고유의 파라미터를 포함하세요: <code>--style raw</code>로 덜 주장하는 출력, <code>--v 6.1</code>로 최신 버전. 결과에 변형이 필요하면 <code>--chaos 15-25</code>를 추가합니다.</p>
+
+      <h3>Stable Diffusion 이미지의 리버스 엔지니어링</h3>
+      <p>SD 이미지에는 특징적인 단서가 있는 경우가 많습니다: 특정 모델 체크포인트는 특징적인 아티팩트를 생성합니다. SDXL로 만든 이미지로 판단되면 SDXL 체크포인트를 사용하세요. SD의 일반적인 문제를 피하기 위해 탄탄한 네거티브 프롬프트를 포함하세요: <code>blurry, low quality, bad anatomy, watermark, text</code>.</p>
+
+      <h3>Flux 이미지의 리버스 엔지니어링</h3>
+      <p>Flux는 매우 포토리얼한 이미지를 생성합니다. Flux 출력의 리버스 엔지니어링에서는 사진적 언어에 집중하세요: 렌즈 타입, 카메라 설정, 자연광 설명. Flux는 기술적 사진 용어에 잘 반응합니다.</p>
+
+      <h2 id="same-image-diff-models">같은 이미지, 다른 모델</h2>
+
+      <p>같은 참조 이미지라도 선택하는 AI 모델에 따라 매우 다른 프롬프트가 생성됩니다.</p>
+
+      <div class="img-single">
+        <a href="/images/ai-prompt-image-model-comparison-grid.webp" target="_blank" rel="noopener">
+          <picture><source srcset="/images/ai-prompt-image-model-comparison-grid.webp" type="image/webp"><img src="/images/ai-prompt-image-model-comparison-grid.jpeg" alt="Midjourney, Stable Diffusion, DALL-E 3, Flux 간의 프롬프트 스타일 차이를 보여주는 소스 포트레이트 이미지" width="800" height="1000" loading="lazy"></picture>
+        </a>
+      </div>
+
+      <div class="model-prompts-grid">
+        <div class="model-prompt-card">
+          <p class="model-label">Midjourney</p>
+          <pre class="prompt-block-sm">dramatic portrait, strong directional lighting, deep shadows, intense gaze, cinematic photography style --ar 2:3 --v 6.1 --style raw</pre>
+        </div>
+        <div class="model-prompt-card">
+          <p class="model-label">Stable Diffusion</p>
+          <pre class="prompt-block-sm">(photorealistic:1.2), dramatic portrait, (strong rim lighting:1.3), deep shadows, (intense gaze:1.1), professional photography
+Negative: blurry, low quality, deformed, bad anatomy, watermark</pre>
+        </div>
+        <div class="model-prompt-card">
+          <p class="model-label">Flux</p>
+          <pre class="prompt-block-sm">High-resolution photograph of a person in dramatic portrait lighting. Strong rim light from the left creates deep shadows. Shot with Canon EOS R5, 85mm f/1.4, shallow depth of field, cinematic color grading.</pre>
+        </div>
+        <div class="model-prompt-card">
+          <p class="model-label">DALL·E 3</p>
+          <pre class="prompt-block-sm">A dramatic portrait photograph with strong directional lighting creating deep shadows on one side of the face. The subject has an intense, direct gaze. Cinematic, professional quality with shallow depth of field.</pre>
+        </div>
+      </div>
+
+      <p>각 프롬프트는 같은 이미지를 포착하지만, 각 모델의 네이티브 언어로 표현됩니다. Midjourney는 간결한 설명어와 파라미터를 사용. Stable Diffusion은 가중치 구문과 네거티브 프롬프트를 사용. Flux는 사진적/기술적 언어를 사용. DALL-E 3은 완전한 자연어 문장을 사용. 같은 비주얼 콘텐츠, 4가지 다른 포맷입니다.</p>
+
+      <h2 id="ethics">윤리적 고려사항</h2>
+
+      <p>AI 아트의 리버스 엔지니어링은 일반적으로 허용됩니다 — 이러한 모델이 작동하는 트레이닝 패러다임 안에서 작업하고 있기 때문입니다. 그러나 몇 가지 고려할 점이 있습니다:</p>
+
+      <ul>
+        <li><strong>다른 사람의 AI 아트를 자신의 작품이라고 주장하지 마세요.</strong> 학습 목적의 리버스 엔지니어링은 괜찮습니다. 소스를 언급하지 않고 결과를 자신의 오리지널 작품으로 제시하는 것은 정직하지 못합니다.</li>
+        <li><strong>실존 인물의 사진에는 주의하세요.</strong> 사진에서 프롬프트를 추출하여 특정 실존 인물의 AI 이미지를 생성하는 것은 심각한 윤리적/법적 문제를 제기합니다.</li>
+        <li><strong>플랫폼 이용약관을 확인하세요.</strong> 일부 플랫폼은 AI 생성 이미지를 트레이닝 데이터나 리버스 엔지니어링 입력으로 사용하는 것을 금지합니다. 사전에 약관을 확인하세요.</li>
+      </ul>
+
+      <h2 id="advanced">고급 테크닉: 프롬프트를 통한 스타일 전사</h2>
+
+      <p>참조 이미지에서 좋은 스타일 프롬프트를 추출했다면 어떤 피사체에든 적용할 수 있습니다. 이를 프롬프트 기반 스타일 전사라고 하며, 리버스 엔지니어링의 가장 크리에이티브한 활용법 중 하나입니다.</p>
+
+      <p>예를 들어: 골든아워의 아름다운 포트레이트를 리버스 엔지니어링하여 다음과 같은 프롬프트를 얻었다고 합시다: <em>"cinematic portrait photography, golden hour rim lighting, shallow depth of field, warm amber and rust tones, film grain, Canon 85mm f/1.4"</em></p>
+
+      <p>포트레이트의 피사체를 무엇이든 바꿔보세요: 건물, 풍경, 정물, 동물. 라이팅과 스타일 정보가 새 피사체에 전사되어, 매우 다른 이미지들 사이에서도 일관된 에스테틱을 얻을 수 있습니다.</p>
+
+      <div class="cta-box">
+        <h3>몇 초 만에 리버스 엔지니어링을 시작하세요</h3>
+        <p>ImageToPrompt에 아무 이미지를 업로드하면 Midjourney, Stable Diffusion, Flux에서 바로 사용할 수 있는 모델별 완전한 프롬프트를 받을 수 있습니다.</p>
+        <a href="/?lang=ko" class="cta-btn">무료 AI 프롬프트 생성기 체험 →</a>
+      </div>
+
+    </div>
+
+    <div class="author-bio">
+      <img src="/favicon.svg" alt="ImageToPrompt Team" width="44" height="44">
+      <div>
+        <strong>ImageToPrompt Team</strong>
+        <p>크리에이터들이 AI 이미지 생성을 마스터할 수 있도록 돕는 전문 팀입니다. AI 이미지 생성의 모범 사례와 새로운 기법에 대한 최신 가이드를 공유합니다.</p>
+        <a href="https://x.com/ImageToPrompt" target="_blank" rel="noopener" class="author-follow">X에서 팔로우</a>
+      </div>
+    </div>
+
+    <div class="cta-box cta-download">
+      <h3>무료 다운로드: 프롬프트 리버스 엔지니어링 요약 시트</h3>
+      <p>라이팅 타입, 구도 용어, 스타일 설명어, 색상 보캐뷸러리를 망라한 비주얼 레퍼런스 카드 — 모든 이미지를 프롬프트 언어로 분해하는 데 필요한 모든 것이 담겨 있습니다.</p>
+      <a href="/downloads/cheat-sheet.pdf" class="cta-btn">PDF 다운로드 →</a>
+    </div>
+
+    <div class="related-posts">
+      <h2>관련 가이드</h2>
+      <div class="related-grid">
+        <a href="/ko/blog/imijieso-ai-prompt-byeonhwan/" class="related-card">
+          <p class="tag">가이드</p>
+          <h3>이미지를 AI 프롬프트로 변환하는 방법</h3>
+        </a>
+        <a href="/ko/blog/midjourney-prompt-gaideu-2026/" class="related-card">
+          <p class="tag">Midjourney</p>
+          <h3>Midjourney 프롬프트 완전 가이드 2026</h3>
+        </a>
+        <a href="/ko/blog/stable-diffusion-vs-midjourney-vs-dalle3/" class="related-card">
+          <p class="tag">비교</p>
+          <h3>SD vs Midjourney vs DALL·E 3 vs Flux</h3>
+        </a>
+        <a href="/ko/blog/best-image-to-prompt-tools-2026/" class="related-card">
+          <p class="tag">도구 비교</p>
+          <h3>2026년 베스트 이미지-투-프롬프트 도구 7선</h3>
+        </a>
+        <a href="/ko/blog/sajin-eseo-ai-prompt/" class="related-card">
+          <p class="tag">실전 가이드</p>
+          <h3>실사 사진에서 AI 프롬프트를 만드는 방법</h3>
+        </a>
+        <a href="/ko/blog/flux-ai-prompt-gaideu/" class="related-card">
+          <p class="tag">Flux AI</p>
+          <h3>Flux AI 프롬프트 가이드 2026</h3>
+        </a>
+      </div>
+    </div>
+
+  </div>
+
+  <footer class="footer-4col">
+    <div class="f4-inner">
+      <div class="f4-brand">
+        <img src="/favicon.svg" alt="ImageToPrompt" width="28" height="28">
+        <span class="f4-brand-name">ImageTo<span class="accent">Prompt</span></span>
+        <span class="f4-brand-sub">&mdash; Free AI Prompt Generator</span>
+      </div>
+      <div class="f4-grid">
+        <div class="f4-section">
+          <h4 class="f4-heading">Image Prompt Tools</h4>
+          <a href="/">Image to Prompt</a>
+          <a href="/text-to-prompt/">Text to Prompt</a>
+      <a href="/describe-image/">Describe Image</a>
+          <a href="/midjourney-prompt-generator/">Midjourney</a>
+          <a href="/stable-diffusion-prompt-generator/">Stable Diffusion</a>
+          <a href="/flux-prompt-generator/">Flux</a>
+          <a href="/dall-e-prompt-generator/">DALL-E 3</a>
+          <a href="/adobe-firefly-prompt-generator/">Adobe Firefly</a>
+          <a href="/leonardo-ai-prompt-generator/">Leonardo AI</a>
+          <a href="/ideogram-prompt-generator/">Ideogram</a>
+        </div>
+        <div class="f4-section">
+          <h4 class="f4-heading">Video Prompt Tools</h4>
+          <a href="/image-to-video-prompt/">Image to Video Prompt</a>
+          <a href="/text-to-video-prompt/">Text to Video Prompt</a>
+          <a href="/veo-prompt-generator/">Veo / Flow Studio</a>
+          <a href="/kling-prompt-generator/">Kling AI</a>
+          <a href="/runway-prompt-generator/">Runway Gen-3</a>
+          <a href="/pika-prompt-generator/">Pika</a>
+          <a href="/luma-prompt-generator/">Luma Dream Machine</a>
+          <a href="/sora-prompt-generator/">Sora</a>
+          <a href="/minimax-prompt-generator/">Minimax</a>
+          <a href="/stable-video-prompt-generator/">Stable Video</a>
+        </div>
+        <div class="f4-section">
+          <h4 class="f4-heading">Resources</h4>
+          <a href="/ko/blog/">블로그</a>
+          <a href="/ko/about/">소개</a>
+          <a href="/ko/pricing/">요금</a>
+          <a href="/contact/">Contact</a>
+          <a href="/privacy-policy/">Privacy Policy</a>
+          <a href="/terms-of-service/">Terms of Service</a>
+        </div>
+        <div class="f4-section">
+          <h4 class="f4-heading">Languages</h4>
+          <a href="/">English</a>
+          <a href="/fr/">Fran&#231;ais</a>
+          <a href="/ar/">&#1575;&#1604;&#1593;&#1585;&#1576;&#1610;&#1577;</a>
+          <a href="/es/">Espa&#241;ol</a>
+          <a href="/ko/">&#54620;&#44397;&#50612;</a>
+          <a href="/ja/">&#26085;&#26412;&#35486;</a>
+          <a href="/ru/">&#1056;&#1091;&#1089;&#1089;&#1082;&#1080;&#1081;</a>
+        </div>
+      </div>
+      <div class="f4-bottom">
+        <p>&#169; 2026 ImageToPrompt.dev &#8212; Free AI Prompt Generator</p>
+        <p>Your images are never stored. All analysis is ephemeral and private.</p>
+      </div>
+    </div>
+  </footer>
+
+<script src="/newsletter-inject.js" defer></script>
+<script src="/nav.js" defer></script>
+  <script>
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', function() {
+    navigator.serviceWorker.register('/sw.js')
+      .catch(function(err) { console.warn('SW registration failed:', err); });
+  });
+}
+</script>
+</body>
+</html>

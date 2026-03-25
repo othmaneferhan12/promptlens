@@ -1,0 +1,466 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <script src="/theme-toggle.js"></script>
+  <meta charset="UTF-8" />
+  <link rel="dns-prefetch" href="https://www.googletagmanager.com">
+<link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="max-image-preview:large, index, follow">
+  <meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="ImageToPrompt">
+  <title>商品撮影の画像からプロンプトへ：ECサイト向けガイド</title>
+  <meta name="description" content="商品写真をAIプロンプトに変換して、プロフェッショナルなECビジュアルを再現する方法を解説します。" />
+  <link rel="canonical" href="https://www.imagetoprompt.dev/ja/blog/image-to-prompt-seihin-satsue/" />
+  <link rel="alternate" hreflang="ja" href="https://www.imagetoprompt.dev/ja/blog/image-to-prompt-seihin-satsue/" />
+  <link rel="alternate" hreflang="en" href="https://www.imagetoprompt.dev/blog/image-to-prompt-product-photography/" />
+  <link rel="alternate" hreflang="fr" href="https://www.imagetoprompt.dev/fr/blog/image-vers-prompt-photographie-produit/" />
+  <link rel="alternate" hreflang="ar" href="https://www.imagetoprompt.dev/ar/blog/soura-ila-prompt-taswir-muntajat/" />
+  <link rel="alternate" hreflang="es" href="https://www.imagetoprompt.dev/es/blog/imagen-a-prompt-fotografia-producto/" />
+  <link rel="alternate" hreflang="x-default" href="https://www.imagetoprompt.dev/blog/image-to-prompt-product-photography/" />
+  <meta property="og:title" content="商品撮影の画像からプロンプトへ：ECサイト向けガイド" />
+  <meta property="og:description" content="商品写真をAIプロンプトに変換して、プロフェッショナルなECビジュアルを再現する方法を解説します。" />
+  <meta property="og:url" content="https://www.imagetoprompt.dev/ja/blog/image-to-prompt-seihin-satsue/" />
+  <meta property="og:type" content="article" />
+  <meta property="og:image" content="https://www.imagetoprompt.dev/og-image.png" />
+  <meta property="og:site_name" content="ImageToPrompt" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="商品撮影の画像からプロンプトへ：ECサイト向けガイド" />
+  <meta name="twitter:description" content="商品写真をAIプロンプトに変換して、プロフェッショナルなECビジュアルを再現しましょう。" />
+  <meta name="twitter:image" content="https://www.imagetoprompt.dev/og-image.png" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="48x48" href="/favicon-48.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+  <link rel="manifest" href="/site.webmanifest" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="/fonts/space-grotesk-700.woff2" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="/fonts/inter-400.woff2" />
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/theme.css">
+  <link rel="preload" href="/blog.css" as="style" onload="this.onload=null;this.rel='stylesheet'"><noscript><link rel="stylesheet" href="/blog.css"></noscript>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "商品撮影の画像からプロンプトへ：ECサイト向けガイド",
+    "description": "商品写真をAIプロンプトに変換して、プロフェッショナルなECビジュアルを再現する方法を解説します。",
+    "image": "https://www.imagetoprompt.dev/og-image.png",
+    "datePublished": "2026-03-13",
+    "dateModified": "2026-03-24",
+    "inLanguage": "ja",
+    "author": {
+      "@type": "Person",
+      "name": "ImageToPrompt Team",
+      "url": "https://www.imagetoprompt.dev/"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "ImageToPrompt",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://www.imagetoprompt.dev/favicon.svg"
+      }
+    },
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https://www.imagetoprompt.dev/ja/blog/image-to-prompt-seihin-satsue/"
+    }
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "AIでECサイト品質の商品写真を生成できますか？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "はい、2026年現在、FluxやMidjourneyなどのモデルは非常にリアルな商品画像を生成できます。ただし、モックアップ、コンテキストのバリエーション、マーケティングビジュアルに最適であり、特定の商品の実際の写真撮影を完全に置き換えるものではありません。"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "商品撮影に最適なAIモデルはどれですか？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Fluxは光学やスタジオライティングの理解に優れており、フォトリアルな商品写真に最適です。Midjourneyはライフスタイルやアーティスティックなビジュアルに優れています。DALL-E 3はテキストが統合されたシチュエーション画像に適しています。"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "AIを使ってブランドの視覚的一貫性を維持するにはどうすればよいですか？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "ImageToPromptを使って既存の参照写真を分析し、再利用可能な「スタイルプロンプト」を抽出してください。このプロンプトにはブランドのライティング、アングル、カラーパレット、背景スタイルが記録されており、新しい商品にも適用できます。"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "商品写真プロンプトに不可欠なキーワードは何ですか？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "不可欠なキーワードには、product photography、studio lighting、clean background、commercial photography、professional photo、high resolution、sharp focus、centered compositionが含まれます。ライティングの種類や希望する背景の具体的な詳細も追加してください。"
+        }
+      }
+    ]
+  }
+  </script>
+    <!-- Google AdSense -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4499206373485728" crossorigin="anonymous"></script>
+    <!-- Web Push Notifications -->
+<script src="https://cdn.onesignal.com/sdks/web/v16/OneSignalSDK.page.js" defer></script>
+<script>
+  window.OneSignalDeferred = window.OneSignalDeferred || [];
+  OneSignalDeferred.push(async function(OneSignal) {
+    await OneSignal.init({
+      appId: "REPLACE_WITH_ONESIGNAL_APP_ID",
+      notifyButton: { enable: false }
+    });
+  });
+</script>
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="inner">
+      <a href="/ja/" class="site-logo"><img src="/favicon.svg" alt="ImageToPrompt" width="48" height="48"><div class="site-logo-text">ImageTo<span class="accent">Prompt</span><span class="site-logo-sub">無料AIプロンプトジェネレーター</span></div></a>
+      <nav class="site-nav" aria-label="メインナビゲーション">
+        <div class="nav-dropdown">
+          <button class="nav-dropdown-trigger" aria-haspopup="true" aria-expanded="false">Tools <span class="nav-chevron" aria-hidden="true">&#9660;</span></button>
+          <div class="nav-dropdown-menu" role="menu">
+            <div class="nav-mega-grid">
+              <div class="nav-mega-col">
+                <div class="nav-mega-heading">&#128444; IMAGE TOOLS</div>
+                <a href="/" role="menuitem" class="nav-mega-tool">Image to Prompt <span class="nav-mega-arrow">&#8594;</span></a>
+                <a href="/text-to-prompt/" role="menuitem" class="nav-mega-tool">Text to Prompt <span class="nav-mega-arrow">&#8594;</span></a>
+                <a href="/describe-image/" role="menuitem" class="nav-mega-tool">Describe Image <span class="nav-new-badge">NEW</span> <span class="nav-mega-arrow">&#8594;</span></a>
+                <div class="nav-mega-models-label">Models</div>
+                <div class="nav-mega-models"><a href="/midjourney-prompt-generator/">Midjourney</a><span class="nav-dot">&#xB7;</span><a href="/stable-diffusion-prompt-generator/">SD</a></div>
+                <div class="nav-mega-models"><a href="/flux-prompt-generator/">Flux</a><span class="nav-dot">&#xB7;</span><a href="/dall-e-prompt-generator/">DALL&#xB7;E&#xA0;3</a></div>
+                <div class="nav-mega-models"><a href="/adobe-firefly-prompt-generator/">Firefly</a><span class="nav-dot">&#xB7;</span><a href="/leonardo-ai-prompt-generator/">Leonardo</a></div>
+                <div class="nav-mega-models"><a href="/ideogram-prompt-generator/">Ideogram</a></div>
+              </div>
+              <div class="nav-mega-divider" aria-hidden="true"></div>
+              <div class="nav-mega-col">
+                <div class="nav-mega-heading">&#127909; VIDEO TOOLS</div>
+                <a href="/?tab=image-to-video" role="menuitem" class="nav-mega-tool">Image to Video <span class="nav-mega-arrow">&#8594;</span></a>
+                <a href="/?tab=text-to-video" role="menuitem" class="nav-mega-tool">Text to Video <span class="nav-mega-arrow">&#8594;</span></a>
+                <div class="nav-mega-models-label">Models</div>
+                <div class="nav-mega-models"><a href="/veo-prompt-generator/">Veo</a><span class="nav-dot">&#xB7;</span><a href="/kling-prompt-generator/">Kling</a></div>
+                <div class="nav-mega-models"><a href="/runway-prompt-generator/">Runway</a><span class="nav-dot">&#xB7;</span><a href="/pika-prompt-generator/">Pika</a></div>
+                <div class="nav-mega-models"><a href="/luma-prompt-generator/">Luma</a><span class="nav-dot">&#xB7;</span><a href="/sora-prompt-generator/">Sora</a></div>
+                <div class="nav-mega-models"><a href="/minimax-prompt-generator/">Minimax</a><span class="nav-dot">&#xB7;</span><a href="/stable-video-prompt-generator/">Stable</a></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <a href="/ja/blog/">ブログ</a>
+        <a href="/ja/pricing/" class="nav-pill-pricing">料金</a>
+        <a href="/ja/about/" class="nav-pill-about">概要</a>
+        <a href="/ja/" class="nav-try-free">無料で試す &#8594;</a>
+        <button id="theme-toggle" onclick="toggleTheme()" aria-label="テーマ切替" title="テーマ切替">&#9728;&#xFE0F;</button>
+  </nav>
+    </div>
+  </header>
+
+  <nav class="breadcrumb" aria-label="パンくずリスト">
+    <a href="/ja/">ホーム</a> <span aria-hidden="true">&#8250;</span>
+    <a href="/ja/blog/">ブログ</a> <span aria-hidden="true">&#8250;</span>
+    <span aria-current="page">商品撮影の画像からプロンプトへ</span>
+  </nav>
+
+  <div class="page-wrapper">
+
+    <header class="article-header">
+      <p class="article-tag">EC・通販</p>
+      <h1>商品撮影の画像からプロンプトへ：ECサイト向けガイド</h1>
+      <div class="article-meta">
+        <span>2026年3月</span>
+        <span class="dot">&#183;</span>
+        <span>9分で読めます</span>
+        <span class="dot">&#183;</span>
+        <span>Flux &#183; Midjourney &#183; DALL&#183;E 3</span>
+        <span class="dot">&#183;</span>
+        <span>2026年3月更新</span>
+      </div>
+    </header>
+
+    <div class="article-body">
+
+      <p>商品撮影は、AI画像生成がビジネスに最も大きな影響を与える分野の一つです。ECブランドには商品ごとに何十枚ものビジュアルが必要です。白背景、ライフスタイル、シチュエーション、季節ごとのバリエーションなどです。画像からプロンプトへの変換を使えば、既存のベストショットを分析し、ブランドアイデンティティに一貫した再利用可能なプロンプトを生成できます。</p>
+
+      <nav class="toc" aria-label="目次">
+        <details open>
+          <summary>このガイドの内容</summary>
+          <ol>
+            <li><a href="#naze-ai-shohin">なぜ商品撮影にAIを活用するのか</a></li>
+            <li><a href="#studio-lighting">スタジオライティングの種類</a></li>
+            <li><a href="#haikei-style">背景スタイル</a></li>
+            <li><a href="#hissu-keyword">必須キーワード</a></li>
+            <li><a href="#category-prompt">カテゴリ別プロンプト</a></li>
+            <li><a href="#brand-ikkansei">ブランドの一貫性を維持する</a></li>
+            <li><a href="#osusume-model">おすすめモデル</a></li>
+            <li><a href="#yokuaru-shitsumon">よくある質問</a></li>
+          </ol>
+        </details>
+      </nav>
+
+      <div class="callout">
+        <p><strong>ヒント：</strong> <a href="/">ImageToPrompt</a>にお気に入りの商品写真をアップロードして、再利用可能な「スタイルプロンプト」を抽出しましょう。同じスタイルを他のすべての商品に適用することで、完璧な視覚的一貫性が実現できます。</p>
+      </div>
+
+      <h2 id="naze-ai-shohin">なぜ商品撮影にAIを活用するのか</h2>
+
+      <p>従来の商品撮影は高コストです。スタジオ、機材、カメラマン、レタッチが必要になります。AIはこのプロセスを完全に置き換えるものではありませんが、強力に補完します。</p>
+
+      <ul>
+        <li><strong>コンテキストのバリエーション：</strong> ブランドのスタイルプロンプトがあれば、新しい撮影なしでキッチン、リビング、屋外など何十通りものシチュエーションを生成できます</li>
+        <li><strong>迅速なプロトタイピング：</strong> 写真撮影に投資する前に、さまざまな環境での商品イメージを確認できます</li>
+        <li><strong>季節限定ビジュアル：</strong> クリスマス、夏、ハロウィンなど、ロジスティクスなしで商品の季節バリエーションを作成できます</li>
+        <li><strong>A/Bテスト：</strong> 複数のビジュアルスタイルを素早く生成して、コンバージョン率をテストできます</li>
+        <li><strong>背景の差し替え：</strong> 白背景の写真を瞬時にライフスタイルビジュアルに変換できます</li>
+      </ul>
+
+      <h2 id="studio-lighting">スタジオライティングの種類</h2>
+
+      <p>ライティングは商品撮影において最も重要な要素です。以下は最も有用な設定とそのキーワードです。</p>
+
+      <h3>フラットライティング</h3>
+      <p>影のない均一な照明。商品の見やすさが最優先されるカタログ向けEC写真に最適です。</p>
+      <pre><code>product photography, flat even lighting, no harsh shadows, clean white background, commercial catalog style</code></pre>
+
+      <h3>ドラマチックライティング</h3>
+      <p>強い指向性のある光と際立つ影。ハイエンドな雰囲気を演出し、高級商品に最適です。</p>
+      <pre><code>luxury product photography, dramatic side lighting, deep shadows, dark moody background, premium feel, single key light</code></pre>
+
+      <h3>バックライティング（逆光）</h3>
+      <p>商品の背後からの光で光輪を作り出します。ボトル、グラス、透明な商品に最適です。</p>
+      <pre><code>product photography with backlighting, glowing rim light, translucent product, light passing through, ethereal quality</code></pre>
+
+      <h3>自然光</h3>
+      <p>窓からの柔らかく自然な光。手作り商品、食品、ライフスタイル商品に最適です。</p>
+      <pre><code>product photography, soft natural window light, warm tones, organic feel, lifestyle setting, artisan aesthetic</code></pre>
+
+      <h2 id="haikei-style">背景スタイル</h2>
+
+      <div class="table-wrap">
+      <table class="comparison-table">
+        <thead>
+          <tr>
+            <th>スタイル</th>
+            <th>用途</th>
+            <th>キーワード</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>純白背景</td>
+            <td>カタログ、Amazon</td>
+            <td><code>pure white background, isolated, clean</code></td>
+          </tr>
+          <tr>
+            <td>グラデーション背景</td>
+            <td>プレミアム、テック</td>
+            <td><code>gradient background, soft vignette</code></td>
+          </tr>
+          <tr>
+            <td>テクスチャ面</td>
+            <td>手作り、食品</td>
+            <td><code>marble surface, wooden table, linen texture</code></td>
+          </tr>
+          <tr>
+            <td>ライフスタイル</td>
+            <td>SNS</td>
+            <td><code>lifestyle setting, in-context, natural environment</code></td>
+          </tr>
+          <tr>
+            <td>ダーク背景</td>
+            <td>高級、プレミアム</td>
+            <td><code>dark background, moody, high contrast</code></td>
+          </tr>
+        </tbody>
+      </table>
+      </div>
+
+      <h2 id="hissu-keyword">必須キーワード</h2>
+
+      <p>以下のキーワードは、AIで生成する商品写真の品質を一貫して向上させます。</p>
+
+      <ul>
+        <li><code>product photography</code> &#8212; コマーシャルスタイルを引き出す</li>
+        <li><code>studio lighting</code> &#8212; プロフェッショナルなスタジオ照明</li>
+        <li><code>commercial photography</code> &#8212; 広告品質</li>
+        <li><code>sharp focus on product</code> &#8212; 商品へのピント</li>
+        <li><code>centered composition</code> &#8212; 商品をフレーム中央に配置</li>
+        <li><code>high resolution, 8K</code> &#8212; 細部の表現</li>
+        <li><code>professional retouching</code> &#8212; 丁寧な仕上げ</li>
+        <li><code>no distracting elements</code> &#8212; クリーンな背景</li>
+      </ul>
+
+      <h2 id="category-prompt">カテゴリ別プロンプト</h2>
+
+      <h3>コスメ・ビューティー</h3>
+      <pre><code>Professional product photography of a luxury skincare bottle on a marble surface, soft diffused studio lighting from above, water droplets on the surface suggesting freshness, clean minimalist composition, cream and gold color palette, sharp focus on the product label, blurred botanical elements in the background</code></pre>
+
+      <h3>食品・飲料</h3>
+      <pre><code>Overhead food photography of artisan bread on a rustic wooden board, scattered flour, warm natural window light from the left creating soft shadows, linen napkin texture, small bowls of ingredients around the main subject, warm earthy tones, appetizing and inviting atmosphere</code></pre>
+
+      <h3>テクノロジー・ガジェット</h3>
+      <pre><code>Sleek product photography of a modern wireless headphone on a dark reflective surface, dramatic side lighting creating sharp highlights on the metallic surfaces, subtle blue gradient background, tech-forward aesthetic, clean lines, premium commercial quality</code></pre>
+
+      <h3>ファッション・アクセサリー</h3>
+      <pre><code>Editorial fashion product photography of a leather handbag, soft studio lighting with large softbox, light grey background, styled with a silk scarf and sunglasses, luxury brand aesthetic, sharp detail on leather texture, slight shadow underneath for depth</code></pre>
+
+      <h2 id="brand-ikkansei">ブランドの一貫性を維持する</h2>
+
+      <p>視覚的な一貫性はECブランドにとって不可欠です。画像からプロンプトへの変換を活用して一貫性を実現する方法を紹介します。</p>
+
+      <ol>
+        <li><strong>ベストショットを分析：</strong> お気に入りの商品写真を<a href="/">ImageToPrompt</a>にアップロードします</li>
+        <li><strong>スタイルプロンプトを抽出：</strong> 生成されたプロンプトがライティング、アングル、パレット、背景スタイルを記録します</li>
+        <li><strong>テンプレートを作成：</strong> 商品固有の詳細をプレースホルダーに置き換えます。商品名の代わりに「[商品]」を使用します</li>
+        <li><strong>各商品に再利用：</strong> テンプレートに新しい商品を挿入するだけで、一貫性が保証されます</li>
+        <li><strong>カラーパレットを記録：</strong> 抽出された16進カラーコードを使って色の一貫性を確保します</li>
+      </ol>
+
+      <h2 id="osusume-model">おすすめモデル</h2>
+
+      <ul>
+        <li><strong>Flux：</strong> 純粋なフォトリアリズムに最適。生成された商品写真は実際のスタジオ撮影と見分けがつきません。</li>
+        <li><strong>Midjourney：</strong> ライフスタイルやマーケティングビジュアルに最適。デフォルトの美しさが非常に魅力的です。</li>
+        <li><strong>DALL-E 3：</strong> 画像上に読みやすいテキストが必要な場合に最適（ラベル、パッケージ）。</li>
+        <li><strong>Adobe Firefly：</strong> すでにAdobeエコシステムで作業している場合に最適（Photoshop統合）。</li>
+      </ul>
+
+      <div class="cta-box">
+        <h3>商品写真のスタイルを抽出</h3>
+        <p>商品写真をアップロードして、全商品ラインナップに一貫したビジュアルを生成するための再利用可能なプロンプトを取得しましょう。</p>
+        <a href="/?lang=ja" class="cta-btn">ImageToPromptを試す &#8594;</a>
+      </div>
+
+      <h2 id="yokuaru-shitsumon">よくある質問</h2>
+
+      <h3>AIでECサイト品質の商品写真を生成できますか？</h3>
+      <p>はい、2026年現在、FluxやMidjourneyなどのモデルは非常にリアルな商品画像を生成できます。ただし、モックアップ、コンテキストのバリエーション、マーケティングビジュアルに最適であり、特定の商品の実際の写真撮影を完全に置き換えるものではありません。</p>
+
+      <h3>商品撮影に最適なAIモデルはどれですか？</h3>
+      <p>Fluxは光学やスタジオライティングの理解に優れており、フォトリアルな商品写真に最適です。Midjourneyはライフスタイルやアーティスティックなビジュアルに優れています。DALL-E 3はテキストが統合されたシチュエーション画像に適しています。</p>
+
+      <h3>AIを使ってブランドの視覚的一貫性を維持するにはどうすればよいですか？</h3>
+      <p><a href="/">ImageToPrompt</a>を使って既存の参照写真を分析し、再利用可能な「スタイルプロンプト」を抽出してください。このプロンプトにはブランドのライティング、アングル、カラーパレット、背景スタイルが記録されており、新しい商品にも適用できます。</p>
+
+      <h3>商品写真プロンプトに不可欠なキーワードは何ですか？</h3>
+      <p>不可欠なキーワードには、<code>product photography</code>、<code>studio lighting</code>、<code>clean background</code>、<code>commercial photography</code>、<code>professional photo</code>、<code>high resolution</code>、<code>sharp focus</code>、<code>centered composition</code>が含まれます。ライティングの種類や希望する背景の具体的な詳細も追加してください。</p>
+
+    </div>
+
+    <div class="author-bio">
+      <img src="/favicon.svg" alt="ImageToPrompt Team" width="44" height="44">
+      <div>
+        <strong>ImageToPrompt Team</strong>
+        <p>私たちはクリエイターの皆さんがAI画像生成をマスターできるよう支援する専門チームです。画像からプロンプトへの変換ツールやAIプロンプトエンジニアリングガイドを通じて、世界中のアーティストの創作活動をサポートしています。</p>
+        <a href="https://x.com/ImageToPrompt" target="_blank" rel="noopener" class="author-follow">Xでフォロー</a>
+      </div>
+    </div>
+
+    <div class="related-posts">
+      <h2>関連ガイド</h2>
+      <div class="related-grid">
+        <a href="/ja/blog/gazou-kara-prompt-ai-henkan/" class="related-card">
+          <p class="tag">ガイド</p>
+          <h3>画像をAIプロンプトに変換する方法</h3>
+        </a>
+        <a href="/ja/blog/flux-ai-prompt-gaido/" class="related-card">
+          <p class="tag">Flux AI</p>
+          <h3>Flux AIプロンプトガイド2026</h3>
+        </a>
+        <a href="/ja/blog/dall-e-3-prompt-gaido/" class="related-card">
+          <p class="tag">DALL-E 3</p>
+          <h3>DALL-E 3プロンプト完全ガイド</h3>
+        </a>
+        <a href="/ja/blog/image-to-prompt-logo-design/" class="related-card">
+          <p class="tag">ロゴ</p>
+          <h3>ロゴデザインの画像からプロンプトへ</h3>
+        </a>
+      </div>
+    </div>
+
+  </div>
+
+  <footer class="footer-4col">
+    <div class="f4-inner">
+      <div class="f4-brand">
+        <img src="/favicon.svg" alt="ImageToPrompt" width="28" height="28">
+        <span class="f4-brand-name">ImageTo<span class="accent">Prompt</span></span>
+        <span class="f4-brand-sub">&mdash; Free AI Prompt Generator</span>
+      </div>
+      <div class="f4-grid">
+        <div class="f4-section">
+          <h4 class="f4-heading">Image Prompt Tools</h4>
+          <a href="/">Image to Prompt</a>
+          <a href="/text-to-prompt/">Text to Prompt</a>
+      <a href="/describe-image/">Describe Image</a>
+          <a href="/midjourney-prompt-generator/">Midjourney</a>
+          <a href="/stable-diffusion-prompt-generator/">Stable Diffusion</a>
+          <a href="/flux-prompt-generator/">Flux</a>
+          <a href="/dall-e-prompt-generator/">DALL-E 3</a>
+          <a href="/adobe-firefly-prompt-generator/">Adobe Firefly</a>
+          <a href="/leonardo-ai-prompt-generator/">Leonardo AI</a>
+          <a href="/ideogram-prompt-generator/">Ideogram</a>
+        </div>
+        <div class="f4-section">
+          <h4 class="f4-heading">Video Prompt Tools</h4>
+          <a href="/image-to-video-prompt/">Image to Video Prompt</a>
+          <a href="/text-to-video-prompt/">Text to Video Prompt</a>
+          <a href="/veo-prompt-generator/">Veo / Flow Studio</a>
+          <a href="/kling-prompt-generator/">Kling AI</a>
+          <a href="/runway-prompt-generator/">Runway Gen-3</a>
+          <a href="/pika-prompt-generator/">Pika</a>
+          <a href="/luma-prompt-generator/">Luma Dream Machine</a>
+          <a href="/sora-prompt-generator/">Sora</a>
+          <a href="/minimax-prompt-generator/">Minimax</a>
+          <a href="/stable-video-prompt-generator/">Stable Video</a>
+        </div>
+        <div class="f4-section">
+          <h4 class="f4-heading">Resources</h4>
+          <a href="/ja/blog/">ブログ</a>
+          <a href="/ja/about/">概要</a>
+          <a href="/ja/pricing/">料金</a>
+          <a href="/contact/">Contact</a>
+          <a href="/privacy-policy/">Privacy Policy</a>
+          <a href="/terms-of-service/">Terms of Service</a>
+        </div>
+        <div class="f4-section">
+          <h4 class="f4-heading">Languages</h4>
+          <a href="/">English</a>
+          <a href="/fr/">Fran&#231;ais</a>
+          <a href="/ar/">&#1575;&#1604;&#1593;&#1585;&#1576;&#1610;&#1577;</a>
+          <a href="/es/">Espa&#241;ol</a>
+          <a href="/ko/">&#54620;&#44397;&#50612;</a>
+          <a href="/ja/">&#26085;&#26412;&#35486;</a>
+          <a href="/ru/">&#1056;&#1091;&#1089;&#1089;&#1082;&#1080;&#1081;</a>
+        </div>
+      </div>
+      <div class="f4-bottom">
+        <p>&#169; 2026 ImageToPrompt.dev &#8212; Free AI Prompt Generator</p>
+        <p>Your images are never stored. All analysis is ephemeral and private.</p>
+      </div>
+    </div>
+  </footer>
+
+<script src="/newsletter-inject.js" defer></script>
+<script src="/nav.js" defer></script>
+  <script>
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', function() {
+    navigator.serviceWorker.register('/sw.js')
+      .catch(function(err) { console.warn('SW registration failed:', err); });
+  });
+}
+</script>
+</body>
+</html>

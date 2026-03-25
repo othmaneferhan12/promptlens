@@ -1,0 +1,473 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <script src="/theme-toggle.js"></script>
+  <meta charset="UTF-8" />
+  <link rel="dns-prefetch" href="https://www.googletagmanager.com">
+<link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="max-image-preview:large, index, follow">
+  <meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="ImageToPrompt">
+  <title>15 ошибок промпт-инженерии, которых следует избегать в 2026 году</title>
+  <meta name="description" content="15 распространённых ошибок промпт-инженерии для AI-арта. Как распознать каждую ошибку и исправить её для получения лучших результатов." />
+  <link rel="canonical" href="https://www.imagetoprompt.dev/ru/blog/oshibki-prompt-inzheneringa/" />
+  <link rel="alternate" hreflang="ru" href="https://www.imagetoprompt.dev/ru/blog/oshibki-prompt-inzheneringa/" />
+  <link rel="alternate" hreflang="en" href="https://www.imagetoprompt.dev/blog/prompt-engineering-mistakes/" />
+  <link rel="alternate" hreflang="fr" href="https://www.imagetoprompt.dev/fr/blog/erreurs-prompt-engineering/" />
+  <link rel="alternate" hreflang="ar" href="https://www.imagetoprompt.dev/ar/blog/akhta-handasa-prompts/" />
+  <link rel="alternate" hreflang="es" href="https://www.imagetoprompt.dev/es/blog/errores-ingenieria-prompts/" />
+  <link rel="alternate" hreflang="ja" href="https://www.imagetoprompt.dev/ja/blog/prompt-engineering-machigai/" />
+  <link rel="alternate" hreflang="ko" href="https://www.imagetoprompt.dev/ko/blog/prompt-engineering-silsu/" />
+  <link rel="alternate" hreflang="x-default" href="https://www.imagetoprompt.dev/blog/prompt-engineering-mistakes/" />
+  <meta property="og:title" content="15 ошибок промпт-инженерии, которых следует избегать в 2026 году" />
+  <meta property="og:description" content="15 распространённых ошибок промпт-инженерии для AI-арта и способы их исправления." />
+  <meta property="og:url" content="https://www.imagetoprompt.dev/ru/blog/oshibki-prompt-inzheneringa/" />
+  <meta property="og:type" content="article" />
+  <meta property="og:image" content="https://www.imagetoprompt.dev/og-image.png" />
+  <meta property="og:site_name" content="ImageToPrompt" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="15 ошибок промпт-инженерии, которых следует избегать в 2026 году" />
+  <meta name="twitter:description" content="15 распространённых ошибок промпт-инженерии для AI-арта." />
+  <meta name="twitter:image" content="https://www.imagetoprompt.dev/og-image.png" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="48x48" href="/favicon-48.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+  <link rel="manifest" href="/site.webmanifest" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="/fonts/space-grotesk-700.woff2" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="/fonts/inter-400.woff2" />
+  <link rel="stylesheet" href="/theme.css">
+  <link rel="preload" href="/blog.css" as="style" onload="this.onload=null;this.rel='stylesheet'"><noscript><link rel="stylesheet" href="/blog.css"></noscript>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "15 ошибок промпт-инженерии, которых следует избегать в 2026 году",
+    "description": "15 распространённых ошибок промпт-инженерии для AI-арта и способы их исправления.",
+    "image": "https://www.imagetoprompt.dev/og-image.png",
+    "datePublished": "2026-03-10",
+    "dateModified": "2026-03-24",
+    "inLanguage": "ru",
+    "author": {
+      "@type": "Person",
+      "name": "ImageToPrompt Team",
+      "url": "https://www.imagetoprompt.dev/"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "ImageToPrompt",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://www.imagetoprompt.dev/favicon.svg"
+      }
+    },
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https://www.imagetoprompt.dev/ru/blog/oshibki-prompt-inzheneringa/"
+    }
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Главная", "item": "https://www.imagetoprompt.dev/ru/" },
+      { "@type": "ListItem", "position": 2, "name": "Блог", "item": "https://www.imagetoprompt.dev/ru/blog/" },
+      { "@type": "ListItem", "position": 3, "name": "15 ошибок промпт-инженерии" }
+    ]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Какая самая распространённая ошибка в промпт-инженерии?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Самая распространённая ошибка -- слишком размытые промпты. Промпт вроде 'a beautiful landscape' не даёт AI-модели конкретного направления. Для предсказуемых и качественных результатов необходимо указать тип пейзажа, освещение, художественный стиль, сезон и атмосферу." }
+      },
+      {
+        "@type": "Question",
+        "name": "Почему мой промпт не работает на всех AI-моделях?",
+        "acceptedAnswer": { "@type": "Answer", "text": "У каждой AI-модели свой синтаксис промптов. Midjourney использует дескрипторы через запятую с параметрами (--ar, --v), Stable Diffusion -- веса в скобках (keyword:1.2), Flux предпочитает подробный естественный язык, а DALL-E 3 лучше работает с полными предложениями. Промпт, оптимизированный для одной модели, даст плохие результаты на другой." }
+      },
+      {
+        "@type": "Question",
+        "name": "Чем длиннее промпт, тем лучше результат?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Не обязательно. Слишком длинные промпты могут размывать ключевые элементы или создавать противоречия между дескрипторами. У большинства моделей есть лимит токенов (у Stable Diffusion -- 75, у Midjourney и Flux -- больше). Сосредоточьтесь на качестве и конкретности терминов, а не на количестве." }
+      },
+      {
+        "@type": "Question",
+        "name": "Как научиться промпт-инженерии для AI-арта?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Лучший подход -- анализировать понравившиеся изображения через инструмент 'изображение в промпт' и понимать термины, которые их описывают. Затем изменяйте по одному элементу за раз, наблюдая за эффектом. Изучайте галереи сообществ (Midjourney Showcase, CivitAI), чтобы исследовать промпты, дающие отличные результаты." }
+      }
+    ]
+  }
+  </script>
+    <!-- Google AdSense -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4499206373485728" crossorigin="anonymous"></script>
+    <!-- Web Push Notifications -->
+<script src="https://cdn.onesignal.com/sdks/web/v16/OneSignalSDK.page.js" defer></script>
+<script>
+  window.OneSignalDeferred = window.OneSignalDeferred || [];
+  OneSignalDeferred.push(async function(OneSignal) {
+    await OneSignal.init({
+      appId: "REPLACE_WITH_ONESIGNAL_APP_ID",
+      notifyButton: { enable: false }
+    });
+  });
+</script>
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="inner">
+      <a href="/ru/" class="site-logo"><img src="/favicon.svg" alt="ImageToPrompt" width="48" height="48"><div class="site-logo-text">ImageTo<span class="accent">Prompt</span><span class="site-logo-sub">Бесплатный AI генератор промптов</span></div></a>
+      <nav class="site-nav" aria-label="Основная навигация">
+        <div class="nav-dropdown">
+          <button class="nav-dropdown-trigger" aria-haspopup="true" aria-expanded="false">Tools <span class="nav-chevron" aria-hidden="true">&#9660;</span></button>
+          <div class="nav-dropdown-menu" role="menu">
+            <div class="nav-mega-grid">
+              <div class="nav-mega-col">
+                <div class="nav-mega-heading">&#128444; IMAGE TOOLS</div>
+                <a href="/" role="menuitem" class="nav-mega-tool">Image to Prompt &#8594;</a>
+                <a href="/text-to-prompt/" role="menuitem" class="nav-mega-tool">Text to Prompt &#8594;</a>
+                <a href="/describe-image/" role="menuitem" class="nav-mega-tool">Describe Image <span class="nav-new-badge">NEW</span> &#8594;</a>
+                <div class="nav-mega-models-label">Models</div>
+                <div class="nav-mega-models"><a href="/midjourney-prompt-generator/">Midjourney</a><span class="nav-dot">&#xB7;</span><a href="/stable-diffusion-prompt-generator/">SD</a></div>
+                <div class="nav-mega-models"><a href="/flux-prompt-generator/">Flux</a><span class="nav-dot">&#xB7;</span><a href="/dall-e-prompt-generator/">DALL&#xB7;E&#xA0;3</a></div>
+                <div class="nav-mega-models"><a href="/adobe-firefly-prompt-generator/">Firefly</a><span class="nav-dot">&#xB7;</span><a href="/leonardo-ai-prompt-generator/">Leonardo</a></div>
+                <div class="nav-mega-models"><a href="/ideogram-prompt-generator/">Ideogram</a></div>
+              </div>
+              <div class="nav-mega-divider" aria-hidden="true"></div>
+              <div class="nav-mega-col">
+                <div class="nav-mega-heading">&#127909; VIDEO TOOLS</div>
+                <a href="/?tab=image-to-video" role="menuitem" class="nav-mega-tool">Image to Video &#8594;</a>
+                <a href="/?tab=text-to-video" role="menuitem" class="nav-mega-tool">Text to Video &#8594;</a>
+                <div class="nav-mega-models-label">Models</div>
+                <div class="nav-mega-models"><a href="/veo-prompt-generator/">Veo</a><span class="nav-dot">&#xB7;</span><a href="/kling-prompt-generator/">Kling</a></div>
+                <div class="nav-mega-models"><a href="/runway-prompt-generator/">Runway</a><span class="nav-dot">&#xB7;</span><a href="/pika-prompt-generator/">Pika</a></div>
+                <div class="nav-mega-models"><a href="/luma-prompt-generator/">Luma</a><span class="nav-dot">&#xB7;</span><a href="/sora-prompt-generator/">Sora</a></div>
+                <div class="nav-mega-models"><a href="/minimax-prompt-generator/">Minimax</a><span class="nav-dot">&#xB7;</span><a href="/stable-video-prompt-generator/">Stable</a></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <a href="/ru/blog/">Блог</a>
+        <a href="/ru/pricing/" class="nav-pill-pricing">Цены</a>
+        <a href="/ru/about/" class="nav-pill-about">О нас</a>
+        <a href="/ru/" class="nav-try-free">Попробовать &#8594;</a>
+        <button id="theme-toggle" onclick="toggleTheme()" aria-label="Переключить тему" title="Переключить тему">&#9728;&#xFE0F;</button>
+  </nav>
+    </div>
+  </header>
+
+  <nav class="breadcrumb" aria-label="Хлебные крошки">
+    <a href="/ru/">Главная</a> <span aria-hidden="true">›</span>
+    <a href="/ru/blog/">Блог</a> <span aria-hidden="true">›</span>
+    <span aria-current="page">Ошибки промпт-инженерии</span>
+  </nav>
+
+  <div class="page-wrapper">
+
+    <header class="article-header">
+      <p class="article-tag">Промпт-инженерия</p>
+      <h1>15 ошибок промпт-инженерии, которых следует избегать</h1>
+      <div class="article-meta">
+        <span>Март 2026</span>
+        <span class="dot">&#183;</span>
+        <span>Время чтения: 11 мин</span>
+        <span class="dot">&#183;</span>
+        <span>Midjourney &#183; Stable Diffusion &#183; Flux &#183; DALL&#183;E 3</span>
+        <span class="dot">&#183;</span>
+        <span>Обновлено: март 2026</span>
+      </div>
+    </header>
+
+    <div class="article-body">
+
+      <p>Промпт-инженерия для AI-арта &#8212; это навык, который развивается через практику. Однако существуют общие ошибки, которые повторяются как у новичков, так и у пользователей среднего уровня. Определив и исправив эти ошибки, вы сможете кардинально улучшить качество результатов вне зависимости от используемой AI-модели.</p>
+
+      <nav class="toc" aria-label="Содержание">
+        <details open>
+          <summary>Содержание руководства</summary>
+          <ol>
+            <li><a href="#oshibka-1">Ошибка 1: Слишком размытый промпт</a></li>
+            <li><a href="#oshibka-2">Ошибка 2: Чрезмерно длинный промпт</a></li>
+            <li><a href="#oshibka-3">Ошибка 3: Неправильный синтаксис модели</a></li>
+            <li><a href="#oshibka-4">Ошибка 4: Игнорирование негативных промптов</a></li>
+            <li><a href="#oshibka-5">Ошибка 5: Пренебрежение соотношением сторон</a></li>
+            <li><a href="#oshibki-6-10">Ошибки 6-10: Структура и композиция</a></li>
+            <li><a href="#oshibki-11-15">Ошибки 11-15: Продвинутая оптимизация</a></li>
+            <li><a href="#kak-ispravit">Как исправить эти ошибки</a></li>
+            <li><a href="#chasto-zadavaemye-voprosy">Часто задаваемые вопросы</a></li>
+          </ol>
+        </details>
+      </nav>
+
+      <div class="callout">
+        <p><strong>Совет:</strong> Эффективный способ избежать этих ошибок &#8212; анализировать понравившиеся изображения через <a href="/">инструмент изображение-в-промпт</a>. Вы сможете точно увидеть, какие термины и структура дают хорошие результаты.</p>
+      </div>
+
+      <h2 id="oshibka-1">Ошибка 1: Слишком размытый промпт</h2>
+
+      <p>Самая распространённая ошибка. Промпт вроде <code>a beautiful landscape</code> не даёт модели конкретного направления. Модели приходится самостоятельно заполнять все пробелы, и результат получается стандартным и непредсказуемым.</p>
+
+      <h3>До исправления (размытый)</h3>
+      <div class="code-block"><code>a beautiful landscape</code></div>
+
+      <h3>После исправления (конкретный)</h3>
+      <div class="code-block"><code>misty mountain valley at dawn, pine forests descending into fog-filled basin, golden sunrise breaking through clouds, aerial perspective, landscape photography, warm earth tones --ar 16:9 --v 6.1</code></div>
+
+      <p>Исправленная версия указывает место (горы), время суток (рассвет), атмосферу (туман), ракурс (аэросъёмка), стиль (пейзажная фотография), цветовую гамму (тёплые земляные тона) и технические параметры. Достаточно информации для генерации согласованного результата.</p>
+
+      <h2 id="oshibka-2">Ошибка 2: Чрезмерно длинный промпт</h2>
+
+      <p>Обратная проблема столь же опасна. Промпт на 200 слов погребает ключевые элементы в массе дескрипторов, которые противоречат друг другу или взаимно разбавляются. У AI-моделей ограниченный ресурс внимания, и термины в начале промпта имеют больший вес, чем термины в конце.</p>
+
+      <p>Решение: ограничьтесь 40-80 тщательно подобранными словами. Каждое слово должно нести смысловую нагрузку. Если какой-то термин не меняет результат заметно &#8212; удалите его. Для исключения нежелательных элементов используйте негативные промпты вместо формулировок «без...» в основном промпте.</p>
+
+      <h2 id="oshibka-3">Ошибка 3: Неправильный синтаксис модели</h2>
+
+      <p>Каждая AI-модель имеет свой язык. Использование синтаксиса Midjourney в Stable Diffusion или наоборот приведёт к неудовлетворительным результатам.</p>
+
+      <div class="table-wrap">
+      <table class="comparison-table">
+        <thead>
+          <tr>
+            <th>Модель</th>
+            <th>Правильный синтаксис</th>
+            <th>Частая ошибка</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Midjourney</td>
+            <td><code>portrait, golden hour --ar 2:3 --v 6.1</code></td>
+            <td>Использование весов <code>(portrait:1.2)</code></td>
+          </tr>
+          <tr>
+            <td>Stable Diffusion</td>
+            <td><code>(portrait:1.2), golden hour, (bokeh:0.8)</code></td>
+            <td>Использование <code>--ar</code> и <code>--v</code></td>
+          </tr>
+          <tr>
+            <td>Flux</td>
+            <td><code>A portrait photograph taken during golden hour with warm light</code></td>
+            <td>Использование тегов вместо предложений</td>
+          </tr>
+          <tr>
+            <td>DALL-E 3</td>
+            <td><code>A warm portrait photograph with golden hour sunlight</code></td>
+            <td>Использование технического синтаксиса</td>
+          </tr>
+        </tbody>
+      </table>
+      </div>
+
+      <h2 id="oshibka-4">Ошибка 4: Игнорирование негативных промптов</h2>
+
+      <p>Негативные промпты незаменимы в Stable Diffusion и полезны в Midjourney (через <code>--no</code>). Без них модель свободно генерирует артефакты, анатомические деформации и нежелательные визуальные элементы.</p>
+
+      <p>Эффективный базовый негативный промпт для Stable Diffusion:</p>
+      <div class="code-block"><code>blurry, low quality, deformed, bad anatomy, extra limbs, extra fingers, watermark, text, signature, cropped, worst quality, low resolution, ugly, duplicate, morbid, mutilated</code></div>
+
+      <p>В Midjourney используйте флаг <code>--no</code> для исключения конкретных элементов: <code>--no text, watermark, blurry</code>.</p>
+
+      <h2 id="oshibka-5">Ошибка 5: Пренебрежение соотношением сторон</h2>
+
+      <p>Соотношение сторон существенно влияет на композицию изображения. Портрет в формате 16:9 будет иметь слишком много пустого пространства по бокам, а пейзаж в формате 1:1 потеряет панорамность. Простые правила:</p>
+
+      <ul>
+        <li><strong>Портреты:</strong> <code>--ar 2:3</code> или <code>--ar 3:4</code> (вертикальный формат)</li>
+        <li><strong>Пейзажи:</strong> <code>--ar 16:9</code> или <code>--ar 21:9</code> (горизонтальный широкий)</li>
+        <li><strong>Квадратная композиция:</strong> <code>--ar 1:1</code> (соцсети, иконки)</li>
+        <li><strong>Кинематографическое фото:</strong> <code>--ar 2.39:1</code> (анаморфотный формат)</li>
+      </ul>
+
+      <h2 id="oshibki-6-10">Ошибки 6-10: Структура и композиция</h2>
+
+      <h3>Ошибка 6: Отсутствие указания освещения</h3>
+      <p>Освещение &#8212; один из важнейших элементов визуального искусства. Без указания освещения модель выбирает стандартное, часто плоское и невыразительное. Всегда добавляйте дескрипторы освещения: <code>golden hour</code>, <code>dramatic side lighting</code>, <code>soft diffused light</code>, <code>neon-lit</code>.</p>
+
+      <h3>Ошибка 7: Забытая композиция</h3>
+      <p>Композиция определяет, как взгляд зрителя перемещается по изображению. Без указания модель часто размещает объект скучно по центру. Используйте такие термины, как <code>rule of thirds</code>, <code>leading lines</code>, <code>bird's eye view</code>, <code>low angle shot</code>, <code>extreme close-up</code>.</p>
+
+      <h3>Ошибка 8: Смешение противоречивых стилей</h3>
+      <p>Сочетание <code>photorealistic</code> и <code>anime style</code> в одном промпте вызывает конфликт. Модель пытается выполнить оба указания одновременно, создавая неубедительный гибрид. Выберите один основной стиль и придерживайтесь его.</p>
+
+      <h3>Ошибка 9: Недостаточное указание качества</h3>
+      <p>Индикаторы качества влияют на уровень детализации и отделки. В Stable Diffusion термины <code>masterpiece</code>, <code>best quality</code>, <code>highly detailed</code> реально воздействуют на результат. В Midjourney <code>--quality 2</code> и <code>--style raw</code> обеспечивают большую детализацию.</p>
+
+      <h3>Ошибка 10: Игнорирование цветовой палитры</h3>
+      <p>Цвет определяет эмоциональный тон изображения. Без указания используются цвета модели по умолчанию. Уточняйте ваше намерение: <code>warm earth tones</code>, <code>cool blue and silver palette</code>, <code>monochromatic sepia</code>, <code>vibrant neon colors</code>.</p>
+
+      <h2 id="oshibki-11-15">Ошибки 11-15: Продвинутая оптимизация</h2>
+
+      <h3>Ошибка 11: Копирование промптов без понимания</h3>
+      <p>Копирование промптов из интернета без понимания роли каждого термина лишает возможности эффективно итерировать. Если результат не устраивает, вы не знаете, что исправить. Потратьте время на понимание эффекта каждого дескриптора.</p>
+
+      <h3>Ошибка 12: Отсутствие итераций</h3>
+      <p>AI-генерация изображений стохастична. Один промпт может дать отличный результат при первой попытке и посредственный при второй. Всегда генерируйте 4-8 вариаций, прежде чем судить о промпте. Часто проблема не в промпте, а в случайном сиде.</p>
+
+      <h3>Ошибка 13: Использование неподходящей модели</h3>
+      <p>Midjourney превосходен в артистических и кинематографических изображениях, Stable Diffusion &#8212; в техническом контроле, Flux &#8212; в фотореализме, DALL-E 3 &#8212; в тексте на изображениях. Выбор подходящей модели так же важен, как и сам промпт.</p>
+
+      <h3>Ошибка 14: Неиспользование продвинутых параметров</h3>
+      <p>Параметры <code>--chaos</code> (Midjourney), CFG scale (Stable Diffusion), <code>--stylize</code> (Midjourney) позволяют тонко настраивать поведение модели. Игнорировать их &#8212; всё равно что не использовать регуляторы на музыкальном инструменте.</p>
+
+      <h3>Ошибка 15: Слишком ранний отказ</h3>
+      <p>Навык промпт-инженерии развивается с практикой. Первый результат редко бывает идеальным. Каждая генерация учит чему-то о поведении модели. Ведите журнал промптов, отмечая, что работает и что не работает.</p>
+
+      <div class="cta-inline">
+        <p>Анализируйте существующие изображения, чтобы понять, какие термины дают лучшие результаты.</p>
+        <a href="/" class="cta-btn-sm">Попробовать изображение в промпт &#8594;</a>
+      </div>
+
+      <h2 id="kak-ispravit">Как исправить эти ошибки</h2>
+
+      <p>Системный процесс улучшения промптов:</p>
+
+      <ol>
+        <li><strong>Анализируйте понравившиеся изображения:</strong> используйте инструмент изображение-в-промпт, чтобы понять лексику, описывающую желаемый визуальный стиль</li>
+        <li><strong>Структурируйте промпт послойно:</strong> объект + стиль + освещение + цвет + композиция + технические параметры</li>
+        <li><strong>Меняйте по одному элементу за раз:</strong> чтобы понять эффект каждого дескриптора, меняйте только одно слово между двумя генерациями</li>
+        <li><strong>Используйте негативные промпты:</strong> активно исключайте артефакты и нежелательные элементы</li>
+        <li><strong>Адаптируйте синтаксис под модель:</strong> форматируйте промпт по правилам целевой модели</li>
+        <li><strong>Генерируйте вариации:</strong> не судите промпт по одной генерации</li>
+        <li><strong>Записывайте результаты:</strong> ведите историю работающих и неработающих промптов</li>
+      </ol>
+
+      <div class="cta-box">
+        <h3>Учитесь на реальных примерах</h3>
+        <p>Загрузите любое изображение и получите профессиональный промпт. Сравните его со своим промптом, чтобы определить недостающие элементы.</p>
+        <a href="/?lang=ru" class="cta-btn">Попробовать ImageToPrompt бесплатно &#8594;</a>
+      </div>
+
+      <h2 id="chasto-zadavaemye-voprosy">Часто задаваемые вопросы</h2>
+
+      <h3>Какая самая распространённая ошибка в промпт-инженерии?</h3>
+      <p>Самая распространённая ошибка &#8212; слишком размытые промпты. Промпт вроде <code>a beautiful landscape</code> не даёт AI-модели конкретного направления. Для предсказуемых и качественных результатов необходимо указать тип пейзажа, освещение, художественный стиль, сезон и атмосферу.</p>
+
+      <h3>Почему мой промпт не работает на всех AI-моделях?</h3>
+      <p>У каждой AI-модели свой синтаксис промптов. Midjourney использует дескрипторы через запятую с параметрами (<code>--ar</code>, <code>--v</code>), Stable Diffusion &#8212; веса в скобках (<code>keyword:1.2</code>), Flux предпочитает подробный естественный язык, а DALL-E 3 лучше работает с полными предложениями. Промпт, оптимизированный для одной модели, даст плохие результаты на другой.</p>
+
+      <h3>Чем длиннее промпт, тем лучше результат?</h3>
+      <p>Не обязательно. Слишком длинные промпты могут размывать ключевые элементы или создавать противоречия между дескрипторами. У большинства моделей есть лимит токенов (у Stable Diffusion &#8212; 75, у Midjourney и Flux &#8212; больше). Сосредоточьтесь на качестве и конкретности терминов, а не на количестве.</p>
+
+      <h3>Как научиться промпт-инженерии для AI-арта?</h3>
+      <p>Лучший подход &#8212; анализировать понравившиеся изображения через инструмент изображение-в-промпт и понимать термины, которые их описывают. Затем изменяйте по одному элементу за раз, наблюдая за эффектом. Изучайте галереи сообществ (Midjourney Showcase, CivitAI), чтобы исследовать промпты, дающие отличные результаты.</p>
+
+    </div>
+
+    <div class="author-bio">
+      <img src="/favicon.svg" alt="ImageToPrompt Team" width="44" height="44">
+      <div>
+        <strong>ImageToPrompt Team</strong>
+        <p>Мы — команда экспертов, помогающая креативщикам освоить генерацию AI-изображений. Мы делимся актуальными руководствами по лучшим практикам и новым техникам в генерации AI-изображений.</p>
+        <a href="https://x.com/ImageToPrompt" target="_blank" rel="noopener" class="author-follow">Подписаться на X</a>
+      </div>
+    </div>
+
+    <div class="related-posts">
+      <h2>Связанные руководства</h2>
+      <div class="related-grid">
+        <a href="/ru/blog/negativnye-prompty-stable-diffusion/" class="related-card">
+          <p class="tag">Stable Diffusion</p>
+          <h3>Негативные промпты в Stable Diffusion</h3>
+        </a>
+        <a href="/ru/blog/midjourney-vs-flux/" class="related-card">
+          <p class="tag">Сравнение</p>
+          <h3>Midjourney vs Flux: полное сравнение 2026</h3>
+        </a>
+        <a href="/ru/blog/image-to-prompt-anime/" class="related-card">
+          <p class="tag">Аниме</p>
+          <h3>Изображение в промпт для аниме</h3>
+        </a>
+        <a href="/ru/blog/image-to-prompt-igrovaya-grafika/" class="related-card">
+          <p class="tag">Игровая графика</p>
+          <h3>Изображение в промпт для игровой графики</h3>
+        </a>
+      </div>
+    </div>
+
+  </div>
+
+  <footer class="footer-4col">
+    <div class="f4-inner">
+      <div class="f4-brand">
+        <img src="/favicon.svg" alt="ImageToPrompt" width="28" height="28">
+        <span class="f4-brand-name">ImageTo<span class="accent">Prompt</span></span>
+        <span class="f4-brand-sub">&mdash; Free AI Prompt Generator</span>
+      </div>
+      <div class="f4-grid">
+        <div class="f4-section">
+          <h4 class="f4-heading">Image Prompt Tools</h4>
+          <a href="/">Image to Prompt</a>
+          <a href="/text-to-prompt/">Text to Prompt</a>
+      <a href="/describe-image/">Describe Image</a>
+          <a href="/midjourney-prompt-generator/">Midjourney</a>
+          <a href="/stable-diffusion-prompt-generator/">Stable Diffusion</a>
+          <a href="/flux-prompt-generator/">Flux</a>
+          <a href="/dall-e-prompt-generator/">DALL-E 3</a>
+          <a href="/adobe-firefly-prompt-generator/">Adobe Firefly</a>
+          <a href="/leonardo-ai-prompt-generator/">Leonardo AI</a>
+          <a href="/ideogram-prompt-generator/">Ideogram</a>
+        </div>
+        <div class="f4-section">
+          <h4 class="f4-heading">Video Prompt Tools</h4>
+          <a href="/image-to-video-prompt/">Image to Video Prompt</a>
+          <a href="/text-to-video-prompt/">Text to Video Prompt</a>
+          <a href="/veo-prompt-generator/">Veo / Flow Studio</a>
+          <a href="/kling-prompt-generator/">Kling AI</a>
+          <a href="/runway-prompt-generator/">Runway Gen-3</a>
+          <a href="/pika-prompt-generator/">Pika</a>
+          <a href="/luma-prompt-generator/">Luma Dream Machine</a>
+          <a href="/sora-prompt-generator/">Sora</a>
+          <a href="/minimax-prompt-generator/">Minimax</a>
+          <a href="/stable-video-prompt-generator/">Stable Video</a>
+        </div>
+        <div class="f4-section">
+          <h4 class="f4-heading">Resources</h4>
+          <a href="/ru/blog/">Блог</a>
+          <a href="/ru/about/">О нас</a>
+          <a href="/ru/pricing/">Цены</a>
+          <a href="/contact/">Contact</a>
+          <a href="/privacy-policy/">Privacy Policy</a>
+          <a href="/terms-of-service/">Terms of Service</a>
+        </div>
+        <div class="f4-section">
+          <h4 class="f4-heading">Languages</h4>
+          <a href="/">English</a>
+          <a href="/fr/">Fran&#231;ais</a>
+          <a href="/ar/">&#1575;&#1604;&#1593;&#1585;&#1576;&#1610;&#1577;</a>
+          <a href="/es/">Espa&#241;ol</a>
+          <a href="/ko/">&#54620;&#44397;&#50612;</a>
+          <a href="/ja/">&#26085;&#26412;&#35486;</a>
+          <a href="/ru/">&#1056;&#1091;&#1089;&#1089;&#1082;&#1080;&#1081;</a>
+        </div>
+      </div>
+      <div class="f4-bottom">
+        <p>&#169; 2026 ImageToPrompt.dev &#8212; Free AI Prompt Generator</p>
+        <p>Your images are never stored. All analysis is ephemeral and private.</p>
+      </div>
+    </div>
+  </footer>
+
+<script src="/newsletter-inject.js" defer></script>
+<script src="/nav.js" defer></script>
+  <script>
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', function() {
+    navigator.serviceWorker.register('/sw.js')
+      .catch(function(err) { console.warn('SW registration failed:', err); });
+  });
+}
+</script>
+</body>
+</html>

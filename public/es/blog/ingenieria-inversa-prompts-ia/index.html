@@ -1,0 +1,485 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <script src="/theme-toggle.js"></script>
+  <meta charset="UTF-8" />
+  <link rel="dns-prefetch" href="https://www.googletagmanager.com">
+<link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="max-image-preview:large, index, follow">
+  <meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="ImageToPrompt">
+  <title>C&#243;mo Decodificar los Prompts de una Imagen IA (Ingenier&#237;a Inversa)</title>
+  <meta name="description" content="Aprende a hacer ingenier&#237;a inversa de los prompts IA de cualquier imagen. Extrae el estilo, la iluminaci&#243;n y la composici&#243;n para recrearlos en Midjourney o Stable Diffusion." />
+  <link rel="canonical" href="https://www.imagetoprompt.dev/es/blog/ingenieria-inversa-prompts-ia/" />
+  <link rel="alternate" hreflang="es" href="https://www.imagetoprompt.dev/es/blog/ingenieria-inversa-prompts-ia/" />
+  <link rel="alternate" hreflang="en" href="https://www.imagetoprompt.dev/blog/reverse-engineer-ai-art-prompts/" />
+  <link rel="alternate" hreflang="fr" href="https://www.imagetoprompt.dev/fr/blog/reverse-engineering-prompts-ia/" />
+  <link rel="alternate" hreflang="ar" href="https://www.imagetoprompt.dev/ar/blog/iada-handasa-prompts-souar-ia/" />
+  <link rel="alternate" hreflang="x-default" href="https://www.imagetoprompt.dev/blog/reverse-engineer-ai-art-prompts/" />
+  <meta property="og:title" content="C&#243;mo Decodificar los Prompts de una Imagen IA (Ingenier&#237;a Inversa)" />
+  <meta property="og:description" content="Extrae el estilo, la iluminaci&#243;n y la composici&#243;n de cualquier imagen IA para recrearlos en Midjourney, Stable Diffusion o Flux." />
+  <meta property="og:url" content="https://www.imagetoprompt.dev/es/blog/ingenieria-inversa-prompts-ia/" />
+  <meta property="og:type" content="article" />
+  <meta property="og:image" content="https://www.imagetoprompt.dev/og-image.png" />
+  <meta property="og:site_name" content="ImageToPrompt" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="C&#243;mo Decodificar los Prompts de una Imagen IA (Ingenier&#237;a Inversa)" />
+  <meta name="twitter:description" content="Gu&#237;a completa de ingenier&#237;a inversa de prompts IA para Midjourney, Stable Diffusion y Flux." />
+  <meta name="twitter:image" content="https://www.imagetoprompt.dev/og-image.png" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="48x48" href="/favicon-48.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+  <link rel="manifest" href="/site.webmanifest" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="/fonts/space-grotesk-700.woff2" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="/fonts/inter-400.woff2" />
+  <link rel="stylesheet" href="/theme.css">
+  <link rel="preload" href="/blog.css" as="style" onload="this.onload=null;this.rel='stylesheet'"><noscript><link rel="stylesheet" href="/blog.css"></noscript>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Cómo Decodificar los Prompts de una Imagen IA (Ingeniería Inversa)",
+    "description": "Aprende a hacer ingeniería inversa de los prompts IA de cualquier imagen. Extrae el estilo, la iluminación y la composición para recrearlos en Midjourney o Stable Diffusion.",
+    "image": "https://www.imagetoprompt.dev/og-image.png",
+    "datePublished": "2026-03-10",
+    "dateModified": "2026-03-24",
+    "inLanguage": "es",
+    "author": {
+      "@type": "Person",
+      "name": "ImageToPrompt Team",
+      "url": "https://www.imagetoprompt.dev/"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "ImageToPrompt",
+      "logo": { "@type": "ImageObject", "url": "https://www.imagetoprompt.dev/favicon.svg" }
+    },
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https://www.imagetoprompt.dev/es/blog/ingenieria-inversa-prompts-ia/"
+    }
+  }
+  </script>
+    <!-- Google AdSense -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4499206373485728" crossorigin="anonymous"></script>
+    <!-- Web Push Notifications -->
+<script src="https://cdn.onesignal.com/sdks/web/v16/OneSignalSDK.page.js" defer></script>
+<script>
+  window.OneSignalDeferred = window.OneSignalDeferred || [];
+  OneSignalDeferred.push(async function(OneSignal) {
+    await OneSignal.init({
+      appId: "REPLACE_WITH_ONESIGNAL_APP_ID",
+      notifyButton: { enable: false }
+    });
+  });
+</script>
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="inner">
+      <a href="/es/" class="site-logo"><img src="/favicon.svg" alt="ImageToPrompt" width="48" height="48"><div class="site-logo-text">ImageTo<span class="accent">Prompt</span><span class="site-logo-sub">Generador de Prompts IA Gratuito</span></div></a>
+      <nav class="site-nav" aria-label="Navegaci&#243;n principal">
+        <div class="nav-dropdown">
+          <button class="nav-dropdown-trigger" aria-haspopup="true" aria-expanded="false">Tools <span class="nav-chevron" aria-hidden="true">&#9660;</span></button>
+          <div class="nav-dropdown-menu" role="menu">
+            <div class="nav-mega-grid">
+              <div class="nav-mega-col">
+                <div class="nav-mega-heading">&#128444; IMAGE TOOLS</div>
+                <a href="/" role="menuitem" class="nav-mega-tool">Image to Prompt <span class="nav-mega-arrow">&#8594;</span></a>
+                <a href="/text-to-prompt/" role="menuitem" class="nav-mega-tool">Text to Prompt <span class="nav-mega-arrow">&#8594;</span></a>
+                <a href="/describe-image/" role="menuitem" class="nav-mega-tool">Describe Image <span class="nav-new-badge">NEW</span> <span class="nav-mega-arrow">&#8594;</span></a>
+                <div class="nav-mega-models-label">Models</div>
+                <div class="nav-mega-models"><a href="/midjourney-prompt-generator/">Midjourney</a><span class="nav-dot">&#xB7;</span><a href="/stable-diffusion-prompt-generator/">SD</a></div>
+                <div class="nav-mega-models"><a href="/flux-prompt-generator/">Flux</a><span class="nav-dot">&#xB7;</span><a href="/dall-e-prompt-generator/">DALL&#xB7;E&#xA0;3</a></div>
+                <div class="nav-mega-models"><a href="/adobe-firefly-prompt-generator/">Firefly</a><span class="nav-dot">&#xB7;</span><a href="/leonardo-ai-prompt-generator/">Leonardo</a></div>
+                <div class="nav-mega-models"><a href="/ideogram-prompt-generator/">Ideogram</a></div>
+              </div>
+              <div class="nav-mega-divider" aria-hidden="true"></div>
+              <div class="nav-mega-col">
+                <div class="nav-mega-heading">&#127909; VIDEO TOOLS</div>
+                <a href="/?tab=image-to-video" role="menuitem" class="nav-mega-tool">Image to Video <span class="nav-mega-arrow">&#8594;</span></a>
+                <a href="/?tab=text-to-video" role="menuitem" class="nav-mega-tool">Text to Video <span class="nav-mega-arrow">&#8594;</span></a>
+                <div class="nav-mega-models-label">Models</div>
+                <div class="nav-mega-models"><a href="/veo-prompt-generator/">Veo</a><span class="nav-dot">&#xB7;</span><a href="/kling-prompt-generator/">Kling</a></div>
+                <div class="nav-mega-models"><a href="/runway-prompt-generator/">Runway</a><span class="nav-dot">&#xB7;</span><a href="/pika-prompt-generator/">Pika</a></div>
+                <div class="nav-mega-models"><a href="/luma-prompt-generator/">Luma</a><span class="nav-dot">&#xB7;</span><a href="/sora-prompt-generator/">Sora</a></div>
+                <div class="nav-mega-models"><a href="/minimax-prompt-generator/">Minimax</a><span class="nav-dot">&#xB7;</span><a href="/stable-video-prompt-generator/">Stable</a></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <a href="/es/blog/" >Blog</a>
+        <a href="/es/pricing/" class="nav-pill-pricing">Pricing</a>
+        <a href="/es/about/" class="nav-pill-about">About</a>
+        <a href="/es/" class="nav-try-free">Probar &#8594;</a>
+        <button id="theme-toggle" onclick="toggleTheme()" aria-label="Switch theme" title="Switch theme">&#9728;&#xFE0F;</button>
+  </nav>
+    </div>
+  </header>
+
+  <nav class="breadcrumb" aria-label="Migas de pan">
+    <a href="/es/">Inicio</a><span class="sep">&#8250;</span>
+    <a href="/es/blog/">Blog</a><span class="sep">&#8250;</span>
+    <span>Decodificar los Prompts de una Imagen IA</span>
+  </nav>
+
+  <div class="page-wrapper">
+
+    <header class="article-header">
+      <p class="article-tag">Tutorial</p>
+      <h1>C&#243;mo Decodificar los Prompts de una Imagen IA (Ingenier&#237;a Inversa)</h1>
+      <div class="article-meta">
+        <span>Marzo 2026</span>
+        <span class="dot">&#183;</span>
+        <span>9 min de lectura</span>
+        <span class="dot">&#183;</span>
+        <span>Midjourney &#183; Stable Diffusion &#183; Flux</span>
+        <span class="dot">&#183;</span>
+        <span>Actualizado marzo 2026</span>
+      </div>
+    </header>
+
+    <div class="article-body">
+
+      <p>Est&#225;s navegando por una galer&#237;a de arte IA &#8212; DeviantArt, ArtStation, Twitter o un servidor de Discord &#8212; y te detienes en una imagen que corresponde exactamente a lo que intentas crear. La iluminaci&#243;n es perfecta. La composici&#243;n es impresionante. El estilo es precisamente lo que buscas.</p>
+
+      <nav class="toc" aria-label="&#205;ndice">
+        <details open>
+          <summary>En esta gu&#237;a</summary>
+          <ol>
+            <li><a href="#por-que-funciona">Por Qu&#233; la Ingenier&#237;a Inversa Funciona (Y Sus L&#237;mites)</a></li>
+            <li><a href="#metodo-1-herramienta-ia">M&#233;todo 1: Usar una Herramienta IA de Imagen a Prompt</a></li>
+            <li><a href="#metodo-2-descomposicion-manual">M&#233;todo 2: Descomposici&#243;n Visual Manual</a></li>
+            <li><a href="#metodo-3-combinar-ambos">M&#233;todo 3: Combinar Ambos &#8212; El Flujo de Trabajo Profesional</a></li>
+            <li><a href="#ejemplo-completo">Ejemplo Completo: Ingenier&#237;a Inversa de una Imagen</a></li>
+            <li><a href="#consejos-por-modelo">Consejos de Ingenier&#237;a Inversa por Modelo</a></li>
+            <li><a href="#misma-imagen-diferentes-modelos">Misma Imagen, Modelos Diferentes</a></li>
+            <li><a href="#consideraciones-eticas">Consideraciones &#201;ticas</a></li>
+            <li><a href="#tecnica-avanzada">T&#233;cnica Avanzada: Transferencia de Estilo v&#237;a Prompt</a></li>
+          </ol>
+        </details>
+      </nav>
+
+      <p>El problema: no conoces el prompt. Y aunque lo conocieras, &#191;copiarlo te dar&#237;a el mismo resultado?</p>
+
+      <p>Este es el arte de la <strong>ingenier&#237;a inversa de prompts</strong> &#8212; extraer el ADN visual de una imagen y traducirlo en instrucciones textuales. Bien dominada, es una de las habilidades m&#225;s poderosas que un artista IA puede desarrollar. Esta gu&#237;a te acompa&#241;a en el proceso completo.</p>
+
+      <h2 id="por-que-funciona">Por Qu&#233; la Ingenier&#237;a Inversa Funciona (Y Sus L&#237;mites)</h2>
+
+      <p>Los generadores de im&#225;genes IA est&#225;n entrenados para mapear prompts textuales hacia outputs visuales. La ingenier&#237;a inversa explota esta relaci&#243;n: si un modelo puede pasar de texto &#8594; imagen, entonces con las herramientas adecuadas, tambi&#233;n puedes pasar de imagen &#8594; aproximaci&#243;n textual.</p>
+
+      <p>No es perfecto. Los generadores IA tienen una aleatoriedad inherente (controlada por los valores seed), y el mismo prompt producir&#225; variaciones, no copias id&#233;nticas. Pero la ingenier&#237;a inversa te acerca lo suficiente para:</p>
+      <ul>
+        <li>Recrear la est&#233;tica y la atm&#243;sfera generales</li>
+        <li>Aplicar el mismo estilo a sujetos diferentes</li>
+        <li>Construir sobre un estilo visual existente con tus propios aportes creativos</li>
+        <li>Comprender c&#243;mo se logran efectos visuales espec&#237;ficos</li>
+      </ul>
+
+      <h2 id="metodo-1-herramienta-ia">M&#233;todo 1: Usar una Herramienta IA de Imagen a Prompt</h2>
+
+      <p>El enfoque m&#225;s r&#225;pido es usar un <a href="/">convertidor de imagen a prompt</a> dedicado como ImageToPrompt. Estas herramientas usan IA de visi&#243;n para analizar tu imagen de referencia y generar un prompt completo formateado para tu modelo objetivo.</p>
+
+      <p>El flujo de trabajo:</p>
+      <ol>
+        <li>Guarda la imagen que deseas analizar con ingenier&#237;a inversa</li>
+        <li>S&#250;bela a <a href="/">ImageToPrompt.dev</a></li>
+        <li>Selecciona el modelo IA que deseas usar (Midjourney, Stable Diffusion, Flux, etc.)</li>
+        <li>Obt&#233;n un prompt listo para usar en segundos</li>
+      </ol>
+
+      <p>Este es el enfoque que la mayor&#237;a de los artistas IA profesionales usan como punto de partida. Se encarga del trabajo tedioso de identificar y articular los detalles visuales, permiti&#233;ndote concentrarte en el refinamiento.</p>
+
+      <div class="cta-inline">
+        <p>Pru&#233;balo t&#250; mismo &#8212; sube cualquier imagen y obt&#233;n un prompt IA optimizado en segundos.</p>
+        <a href="/" class="cta-btn-sm">Probar Gratis &#8594;</a>
+      </div>
+
+      <h2 id="metodo-2-descomposicion-manual">M&#233;todo 2: Descomposici&#243;n Visual Manual</h2>
+
+      <p>Incluso con la asistencia de la IA, comprender c&#243;mo descomponer manualmente una imagen te convierte en un mejor ingeniero de prompts. As&#237; es c&#243;mo leer sistem&#225;ticamente cualquier imagen:</p>
+
+      <h3>Analizar el Sujeto</h3>
+      <p>Empieza por lo obvio: &#191;qu&#233; hay en la imagen? S&#233; espec&#237;fico. &#171;Mujer&#187; es d&#233;bil. &#171;Una mujer joven de unos veinte a&#241;os con cabello oscuro hasta los hombros, usando una chaqueta de cuero vintage&#187; le da a la IA mucho m&#225;s con lo que trabajar.</p>
+
+      <div class="img-single">
+        <a href="/images/describe-the-photo-artwork-analysis.webp" target="_blank" rel="noopener">
+          <picture><source srcset="/images/describe-the-photo-artwork-analysis.webp" type="image/webp"><img src="/images/describe-the-photo-artwork-analysis.jpeg" alt="Obra de arte IA con anotaciones etiquetadas mostrando el sujeto, la direcci&#243;n de iluminaci&#243;n, las zonas de paleta de colores, las l&#237;neas de composici&#243;n y los indicadores de estilo para la ingenier&#237;a inversa de prompts" width="1000" height="700" loading="lazy"></picture>
+        </a>
+        <p class="img-caption">Descomposici&#243;n visual: identificaci&#243;n de cada elemento de una imagen antes de traducirlo a lenguaje de prompt. Haz clic para ver a tama&#241;o completo.</p>
+      </div>
+
+      <h3>Leer la Iluminaci&#243;n</h3>
+      <p>La iluminaci&#243;n es uno de los elementos m&#225;s poderosos en cualquier imagen. Hazte estas preguntas:</p>
+      <ul>
+        <li>&#191;D&#243;nde est&#225; la fuente de luz? (iluminaci&#243;n frontal, lateral, contraluz, rim lighting)</li>
+        <li>&#191;La luz es dura o suave? (sol directo duro vs. cielo nublado difuso)</li>
+        <li>&#191;De qu&#233; color es la luz? (golden hour c&#225;lido, crep&#250;sculo azul fr&#237;o, estudio neutro)</li>
+        <li>&#191;Hay fuentes de luz secundarias o geles de color?</li>
+        <li>&#191;Las sombras son dram&#225;ticas?</li>
+      </ul>
+
+      <h3>Identificar el Estilo y el Medio</h3>
+      <p>&#191;Es fotogr&#225;fico o pintado? Si es fotogr&#225;fico: &#191;qu&#233; c&#225;mara, qu&#233; objetivo? Si es pintado: &#191;qu&#233; medio (&#243;leo, acuarela, digital), qu&#233; estilo art&#237;stico (impresionista, hiperrealista, anime)?</p>
+
+      <p>Descriptores de estilo &#250;tiles incluyen: <code>cinematic</code>, <code>hyperrealistic</code>, <code>painterly</code>, <code>concept art</code>, <code>illustration</code>, <code>watercolor</code>, <code>cel shading</code>, <code>photorealism</code>, <code>editorial</code></p>
+
+      <h3>Anotar la Paleta de Colores</h3>
+      <p>Los generadores IA reaccionan fuertemente a las descripciones de color. Identifica:</p>
+      <ul>
+        <li>Colores dominantes (2&#8211;4 colores que definen la imagen)</li>
+        <li>Temperatura general (c&#225;lida, fr&#237;a o neutra)</li>
+        <li>Saturaci&#243;n (viva, atenuada, desaturada)</li>
+        <li>Nivel de contraste (alto contraste, plano, bajo contraste)</li>
+      </ul>
+
+      <h3>Describir la Composici&#243;n</h3>
+      <p>&#191;C&#243;mo est&#225; encuadrada la imagen? Descriptores de composici&#243;n comunes:</p>
+      <ul>
+        <li>Tipo de plano: primer plano, plano medio, plano general, vista a&#233;rea, vista desde el suelo</li>
+        <li>Profundidad de campo: bokeh, poca PDC, enfoque profundo</li>
+        <li>Regla de los tercios, composici&#243;n centrada, l&#237;neas gu&#237;a</li>
+        <li>Espacio negativo</li>
+      </ul>
+
+      <h2 id="metodo-3-combinar-ambos">M&#233;todo 3: Combinar Ambos &#8212; El Flujo de Trabajo Profesional</h2>
+
+      <p>El enfoque m&#225;s eficaz combina el an&#225;lisis IA con un refinamiento manual. Este es el flujo de trabajo completo que los artistas IA profesionales utilizan:</p>
+
+      <h3>Paso 1: Generar un Prompt Base</h3>
+      <p>Sube tu imagen de referencia a <a href="/">ImageToPrompt</a> y genera un prompt inicial. Esto te lleva aproximadamente al 80% del camino y normalmente tarda menos de 30 segundos.</p>
+
+      <h3>Paso 2: Revisar y Anotar Manualmente</h3>
+      <p>Examina el prompt generado de forma cr&#237;tica. Comp&#225;ralo con la imagen. &#191;Qu&#233; falta? &#191;Qu&#233; es incorrecto? Puntos espec&#237;ficos a verificar:</p>
+      <ul>
+        <li>&#191;La iluminaci&#243;n est&#225; descrita con precisi&#243;n?</li>
+        <li>&#191;La descripci&#243;n del estilo corresponde a lo que ves?</li>
+        <li>&#191;Hay elementos compositivos importantes que faltan?</li>
+        <li>&#191;Hay colores dominantes no mencionados?</li>
+      </ul>
+
+      <h3>Paso 3: A&#241;adir Referencias de Artistas (Opcional)</h3>
+      <p>Para im&#225;genes estilizadas, a&#241;adir el nombre de un artista puede mejorar considerablemente los resultados. &#171;In the style of Greg Rutkowski&#187; o &#171;in the style of Makoto Shinkai&#187; comunica un vocabulario visual completo al modelo. Usa esto de manera &#233;tica &#8212; referencia el estilo, no obras espec&#237;ficas.</p>
+
+      <h3>Paso 4: Probar e Iterar</h3>
+      <p>Genera de 4 a 8 variantes con tu prompt refinado. Comp&#225;ralas con tu referencia. Identifica las mayores diferencias y ajusta el prompt para corregirlas. Repite hasta quedar satisfecho.</p>
+
+      <h2 id="ejemplo-completo">Ejemplo Completo: Ingenier&#237;a Inversa de una Imagen</h2>
+
+      <p>Recorramos el proceso completo con una sola imagen &#8212; combinando el an&#225;lisis automatizado con el refinamiento manual para producir un prompt que realmente recree el resultado.</p>
+
+      <div class="img-single">
+        <a href="/images/explain-this-image-astronaut-alien-planet.webp" target="_blank" rel="noopener">
+          <picture><source srcset="/images/explain-this-image-astronaut-alien-planet.webp" type="image/webp"><img src="/images/explain-this-image-astronaut-alien-planet.jpeg" alt="Retrato fant&#225;stico de referencia utilizado en el ejemplo de ingenier&#237;a inversa &#8212; obra de arte IA original a analizar" width="800" height="1100" loading="lazy"></picture>
+        </a>
+        <p class="img-caption">La imagen de referencia que analizamos con ingenier&#237;a inversa. Haz clic para ver a tama&#241;o completo.</p>
+      </div>
+
+      <h3>Paso 1: An&#225;lisis Automatizado</h3>
+      <p>Despu&#233;s de subir la imagen a ImageToPrompt con Midjourney seleccionado, la herramienta gener&#243;:</p>
+
+      <pre class="prompt-block">dramatic fantasy portrait of a female warrior, battle-worn armor with intricate engravings, fierce expression, rim lighting from behind with warm orange glow, particle effects and embers, dark atmospheric background, cinematic concept art, digital painting, highly detailed --ar 2:3 --v 6.1 --style raw --q 2</pre>
+
+      <h3>Paso 2: Observaciones Manuales</h3>
+      <p>Al examinar el resultado automatizado frente a la imagen original, dos cosas destacaban. Primero, la IA no hab&#237;a capturado el contraste de color espec&#237;fico &#8212; la armadura ten&#237;a un tono verdigris (verde cobre oxidado) que no estaba mencionado. Segundo, el fondo no era simplemente &#171;oscuro&#187; &#8212; ten&#237;a una atm&#243;sfera humosa, casi volc&#225;nica, con part&#237;culas de ceniza visibles. Ninguno de los dos se hab&#237;a reflejado en el primer prompt.</p>
+
+      <h3>Paso 3: El Prompt Refinado</h3>
+      <p>A&#241;adiendo los elementos faltantes y ajustando el &#233;nfasis:</p>
+
+      <pre class="prompt-block">dramatic fantasy portrait of a female warrior, battle-worn armor with verdigris patina and intricate engravings, fierce determined expression, rim lighting from behind with warm volcanic orange glow, ash particles and floating embers, smoky atmospheric background with volcanic haze, cinematic concept art, digital painting, highly detailed, deep shadow contrast --ar 2:3 --v 6.1 --style raw --q 2</pre>
+
+      <div class="img-single">
+        <a href="/images/explain-this-image-astronaut-recreated.webp" target="_blank" rel="noopener">
+          <picture><source srcset="/images/explain-this-image-astronaut-recreated.webp" type="image/webp"><img src="/images/explain-this-image-astronaut-recreated.jpeg" alt="Retrato fant&#225;stico recreado usando el prompt refinado de ingenier&#237;a inversa &#8212; mostrando el tono verdigris y la atm&#243;sfera volc&#225;nica" width="800" height="1100" loading="lazy"></picture>
+        </a>
+        <p class="img-caption">Resultado obtenido con el prompt refinado. El tono verdigris y la atm&#243;sfera volc&#225;nica ahora est&#225;n presentes.</p>
+      </div>
+
+      <p>Las dos adiciones &#8212; p&#225;tina verdigris y atm&#243;sfera volc&#225;nica &#8212; cambiaron fundamentalmente la narrativa visual de la imagen. Esto es lo que la observaci&#243;n manual aporta al an&#225;lisis automatizado: los detalles espec&#237;ficos que hacen que una imagen sea distintiva en lugar de gen&#233;rica.</p>
+
+      <h2 id="consejos-por-modelo">Consejos de Ingenier&#237;a Inversa por Modelo</h2>
+
+      <h3>Ingenier&#237;a Inversa de Im&#225;genes Midjourney</h3>
+      <p>Midjourney tiene una est&#233;tica distintiva &#8212; detalle preciso con cualidades pict&#243;ricas. Al hacer ingenier&#237;a inversa de im&#225;genes Midjourney, incluye par&#225;metros espec&#237;ficos de Midjourney: <code>--style raw</code> para un output menos estilizado, o <code>--v 6.1</code> para la &#250;ltima versi&#243;n. A&#241;ade <code>--chaos 15-25</code> si quieres m&#225;s variaci&#243;n en tus resultados.</p>
+
+      <h3>Ingenier&#237;a Inversa de Im&#225;genes Stable Diffusion</h3>
+      <p>Las im&#225;genes SD a menudo tienen indicios distintivos: checkpoints de modelos espec&#237;ficos producen artefactos caracter&#237;sticos. Si sabes que la imagen fue creada con SDXL, usa un checkpoint SDXL. Incluye un prompt negativo s&#243;lido para evitar problemas comunes de SD: <code>blurry, low quality, bad anatomy, watermark, text</code>.</p>
+
+      <h3>Ingenier&#237;a Inversa de Im&#225;genes Flux</h3>
+      <p>Flux produce im&#225;genes extremadamente fotorrealistas. Al hacer ingenier&#237;a inversa de output Flux, conc&#233;ntrate en el lenguaje fotogr&#225;fico: tipos de objetivos, ajustes de c&#225;mara, descripciones de iluminaci&#243;n natural. Flux responde bien a la terminolog&#237;a fotogr&#225;fica t&#233;cnica.</p>
+
+      <h2 id="misma-imagen-diferentes-modelos">Misma Imagen, Modelos Diferentes</h2>
+
+      <p>La misma imagen de referencia produce prompts muy diferentes seg&#250;n el modelo IA seleccionado. He aqu&#237; por qu&#233; esto es importante y c&#243;mo se ven las diferencias en la pr&#225;ctica.</p>
+
+      <div class="img-single">
+        <a href="/images/ai-prompt-image-model-comparison-grid.webp" target="_blank" rel="noopener">
+          <picture><source srcset="/images/ai-prompt-image-model-comparison-grid.webp" type="image/webp"><img src="/images/ai-prompt-image-model-comparison-grid.jpeg" alt="Imagen retrato fuente utilizada para demostrar las diferencias de estilo de prompt entre Midjourney, Stable Diffusion, DALL-E 3 y Flux" width="800" height="1000" loading="lazy"></picture>
+        </a>
+      </div>
+
+      <div class="model-prompts-grid">
+        <div class="model-prompt-card">
+          <p class="model-label">Midjourney</p>
+          <pre class="prompt-block-sm">dramatic portrait, strong directional lighting, deep shadows, intense gaze, cinematic photography style --ar 2:3 --v 6.1 --style raw</pre>
+        </div>
+        <div class="model-prompt-card">
+          <p class="model-label">Stable Diffusion</p>
+          <pre class="prompt-block-sm">(photorealistic:1.2), dramatic portrait, (strong rim lighting:1.3), deep shadows, (intense gaze:1.1), professional photography
+Negativo: blurry, low quality, deformed, bad anatomy, watermark</pre>
+        </div>
+        <div class="model-prompt-card">
+          <p class="model-label">Flux</p>
+          <pre class="prompt-block-sm">High-resolution photograph of a person in dramatic portrait lighting. Strong rim light from the left creates deep shadows. Shot with Canon EOS R5, 85mm f/1.4, shallow depth of field, cinematic color grading.</pre>
+        </div>
+        <div class="model-prompt-card">
+          <p class="model-label">DALL&#183;E 3</p>
+          <pre class="prompt-block-sm">A dramatic portrait photograph with strong directional lighting creating deep shadows on one side of the face. The subject has an intense, direct gaze. Cinematic, professional quality with shallow depth of field.</pre>
+        </div>
+      </div>
+
+      <p>Cada prompt captura la misma imagen pero en el lenguaje nativo de su modelo. Midjourney usa descriptores concisos y par&#225;metros. Stable Diffusion usa sintaxis ponderada y prompt negativo. Flux usa lenguaje fotogr&#225;fico/t&#233;cnico. DALL&#183;E 3 usa frases naturales completas. El mismo contenido visual, cuatro formatos diferentes.</p>
+
+      <h2 id="consideraciones-eticas">Consideraciones &#201;ticas</h2>
+
+      <p>La ingenier&#237;a inversa de arte IA es generalmente aceptable &#8212; est&#225;s trabajando dentro del paradigma de entrenamiento en el que estos modelos operan. Pero hay algunos puntos a considerar:</p>
+
+      <ul>
+        <li><strong>No reclames el arte IA de otra persona como tuyo.</strong> La ingenier&#237;a inversa para aprender est&#225; bien; presentar el resultado como tu creaci&#243;n original sin referenciar la fuente es enga&#241;oso.</li>
+        <li><strong>Ten cuidado con fotograf&#237;as reales de personas.</strong> Extraer un prompt de una foto y luego generar im&#225;genes IA de una persona real espec&#237;fica plantea cuestiones &#233;ticas y legales serias.</li>
+        <li><strong>Verifica los t&#233;rminos de uso de las plataformas.</strong> Algunas plataformas proh&#237;ben usar sus im&#225;genes generadas por IA como datos de entrenamiento o entradas de ingenier&#237;a inversa. Lee los t&#233;rminos antes de proceder.</li>
+      </ul>
+
+      <h2 id="tecnica-avanzada">T&#233;cnica Avanzada: Transferencia de Estilo v&#237;a Prompt</h2>
+
+      <p>Una vez que has extra&#237;do un buen prompt de estilo de una imagen de referencia, puedes aplicarlo a cualquier sujeto. Esto se llama transferencia de estilo basada en prompt, y es uno de los usos m&#225;s creativos de la ingenier&#237;a inversa.</p>
+
+      <p>Ejemplo: Haces ingenier&#237;a inversa de un retrato hermosamente iluminado en golden hour y obtienes un prompt como: <em>&#171;cinematic portrait photography, golden hour rim lighting, shallow depth of field, warm amber and rust tones, film grain, Canon 85mm f/1.4&#187;</em></p>
+
+      <p>Ahora reemplaza el sujeto del retrato por cualquier cosa: un edificio, un paisaje, una naturaleza muerta, un animal. La informaci&#243;n de iluminaci&#243;n y estilo se transfiere al nuevo sujeto, d&#225;ndote est&#233;ticas consistentes a trav&#233;s de im&#225;genes muy diferentes.</p>
+
+      <div class="cta-box">
+        <h3>Comienza la Ingenier&#237;a Inversa en Segundos</h3>
+        <p>Sube cualquier imagen a ImageToPrompt y obt&#233;n un prompt completo, espec&#237;fico para el modelo, listo para usar en Midjourney, Stable Diffusion o Flux.</p>
+        <a href="/?lang=es" class="cta-btn">Probar el Generador de Prompts IA Gratis &#8594;</a>
+      </div>
+
+    </div>
+
+    <div class="author-bio">
+      <svg class="author-photo" width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="Avatar del autor"><circle cx="32" cy="32" r="32" fill="#2a1f4e"/><circle cx="32" cy="26" r="11" fill="#7c6bc4"/><ellipse cx="32" cy="52" rx="18" ry="11" fill="#7c6bc4"/></svg>
+      <div class="author-info">
+        <p class="author-name">ImageToPrompt Team</p>
+        <p class="author-desc">Ingenieros de prompts y artistas de IA especializados en Midjourney, Stable Diffusion y Flux. Construimos ImageToPrompt para hacer la generaci&#243;n de im&#225;genes con IA accesible para todos.</p>
+        <a href="https://x.com/Ilyass14286541" class="author-link">Seguir en X &#8594;</a>
+      </div>
+    </div>
+
+    <div class="cta-box cta-download">
+      <h3>Descarga Gratuita: Hoja de Referencia de Ingenier&#237;a Inversa de Prompts</h3>
+      <p>Una tarjeta de referencia visual con tipos de iluminaci&#243;n, t&#233;rminos de composici&#243;n, descriptores de estilo y vocabulario de colores &#8212; todo lo que necesitas para descomponer cualquier imagen en lenguaje de prompt.</p>
+      <a href="/downloads/cheat-sheet.pdf" class="cta-btn">Descargar el PDF &#8594;</a>
+    </div>
+
+    <div class="related-posts">
+      <h2>Gu&#237;as Relacionadas</h2>
+      <div class="related-grid">
+        <a href="/es/blog/guia-prompts-dall-e-3/" class="related-card">
+          <p class="tag">Gu&#237;a</p>
+          <h3>Gu&#237;a de Prompts DALL-E 3</h3>
+        </a>
+        <a href="/es/blog/consejos-prompts-adobe-firefly/" class="related-card">
+          <p class="tag">Adobe Firefly</p>
+          <h3>Consejos de Prompts para Adobe Firefly</h3>
+        </a>
+        <a href="/es/blog/glosario-estilos-arte-ia/" class="related-card">
+          <p class="tag">Comparativo</p>
+          <h3>Glosario de Estilos de Arte IA</h3>
+        </a>
+        <a href="/es/blog/errores-ingenieria-prompts/" class="related-card">
+          <p class="tag">Prompt Engineering</p>
+          <h3>15 Errores de Prompt Engineering</h3>
+        </a>
+      </div>
+    </div>
+
+  </div>
+
+  <footer class="footer-4col">
+    <div class="f4-inner">
+      <div class="f4-brand">
+        <img src="/favicon.svg" alt="ImageToPrompt" width="28" height="28">
+        <span class="f4-brand-name">ImageTo<span class="accent">Prompt</span></span>
+        <span class="f4-brand-sub">&mdash; Free AI Prompt Generator</span>
+      </div>
+      <div class="f4-grid">
+        <div class="f4-section">
+          <h4 class="f4-heading">Image Prompt Tools</h4>
+          <a href="/">Image to Prompt</a>
+          <a href="/text-to-prompt/">Text to Prompt</a>
+      <a href="/describe-image/">Describe Image</a>
+          <a href="/midjourney-prompt-generator/">Midjourney</a>
+          <a href="/stable-diffusion-prompt-generator/">Stable Diffusion</a>
+          <a href="/flux-prompt-generator/">Flux</a>
+          <a href="/dall-e-prompt-generator/">DALL-E 3</a>
+          <a href="/adobe-firefly-prompt-generator/">Adobe Firefly</a>
+          <a href="/leonardo-ai-prompt-generator/">Leonardo AI</a>
+          <a href="/ideogram-prompt-generator/">Ideogram</a>
+        </div>
+        <div class="f4-section">
+          <h4 class="f4-heading">Video Prompt Tools</h4>
+          <a href="/image-to-video-prompt/">Image to Video Prompt</a>
+          <a href="/text-to-video-prompt/">Text to Video Prompt</a>
+          <a href="/veo-prompt-generator/">Veo / Flow Studio</a>
+          <a href="/kling-prompt-generator/">Kling AI</a>
+          <a href="/runway-prompt-generator/">Runway Gen-3</a>
+          <a href="/pika-prompt-generator/">Pika</a>
+          <a href="/luma-prompt-generator/">Luma Dream Machine</a>
+          <a href="/sora-prompt-generator/">Sora</a>
+          <a href="/minimax-prompt-generator/">Minimax</a>
+          <a href="/stable-video-prompt-generator/">Stable Video</a>
+        </div>
+        <div class="f4-section">
+          <h4 class="f4-heading">Resources</h4>
+          <a href="/es/blog/">Blog</a>
+          <a href="/es/about/">About</a>
+          <a href="/es/pricing/">Pricing</a>
+          <a href="/contact/">Contact</a>
+          <a href="/privacy-policy/">Privacy Policy</a>
+          <a href="/terms-of-service/">Terms of Service</a>
+        </div>
+        <div class="f4-section">
+          <h4 class="f4-heading">Languages</h4>
+          <a href="/">English</a>
+          <a href="/fr/">Fran&#231;ais</a>
+          <a href="/ar/">&#1575;&#1604;&#1593;&#1585;&#1576;&#1610;&#1577;</a>
+          <a href="/es/">Espa&#241;ol</a>
+          <a href="/ko/">&#54620;&#44397;&#50612;</a>
+          <a href="/ja/">&#26085;&#26412;&#35486;</a>
+          <a href="/ru/">&#1056;&#1091;&#1089;&#1089;&#1082;&#1080;&#1081;</a>
+        </div>
+      </div>
+      <div class="f4-bottom">
+        <p>&#169; 2026 ImageToPrompt.dev &#8212; Free AI Prompt Generator</p>
+        <p>Your images are never stored. All analysis is ephemeral and private.</p>
+      </div>
+    </div>
+  </footer>
+
+<script src="/newsletter-inject.js" defer></script>
+<script src="/nav.js" defer></script>
+  <script>
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', function() {
+    navigator.serviceWorker.register('/sw.js')
+      .catch(function(err) { console.warn('SW registration failed:', err); });
+  });
+}
+</script>
+</body>
+</html>

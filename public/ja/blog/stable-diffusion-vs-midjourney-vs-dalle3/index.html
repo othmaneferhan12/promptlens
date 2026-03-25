@@ -1,0 +1,590 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <script src="/theme-toggle.js"></script>
+  <meta charset="UTF-8" />
+  <link rel="dns-prefetch" href="https://www.googletagmanager.com">
+<link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="max-image-preview:large, index, follow">
+  <meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="ImageToPrompt">
+  <title>Stable Diffusion vs Midjourney vs DALL-E 3 vs Flux：プロンプト比較ガイド</title>
+  <meta name="description" content="Stable Diffusion、Midjourney、DALL-E 3、Fluxのプロンプト構文とスタイルの違いを徹底比較。最適なAI画像生成ツールを選ぶための正直なガイド。" />
+  <link rel="canonical" href="https://www.imagetoprompt.dev/ja/blog/stable-diffusion-vs-midjourney-vs-dalle3/" />
+  <link rel="alternate" hreflang="ja" href="https://www.imagetoprompt.dev/ja/blog/stable-diffusion-vs-midjourney-vs-dalle3/" />
+  <link rel="alternate" hreflang="en" href="https://www.imagetoprompt.dev/blog/stable-diffusion-vs-midjourney-vs-dalle3/" />
+  <link rel="alternate" hreflang="fr" href="https://www.imagetoprompt.dev/fr/blog/stable-diffusion-vs-midjourney-vs-dalle3/" />
+  <link rel="alternate" hreflang="ar" href="https://www.imagetoprompt.dev/ar/blog/stable-diffusion-vs-midjourney-vs-dalle3/" />
+  <link rel="alternate" hreflang="es" href="https://www.imagetoprompt.dev/es/blog/stable-diffusion-vs-midjourney-vs-dalle3/" />
+  <link rel="alternate" hreflang="x-default" href="https://www.imagetoprompt.dev/blog/stable-diffusion-vs-midjourney-vs-dalle3/" />
+  <meta property="og:title" content="Stable Diffusion vs Midjourney vs DALL-E 3 vs Flux：プロンプト比較ガイド" />
+  <meta property="og:description" content="4大AI画像生成ツールのプロンプト構文とスタイルの違いを詳しく比較します。" />
+  <meta property="og:url" content="https://www.imagetoprompt.dev/ja/blog/stable-diffusion-vs-midjourney-vs-dalle3/" />
+  <meta property="og:type" content="article" />
+  <meta property="og:image" content="https://www.imagetoprompt.dev/og-image.png" />
+  <meta property="og:site_name" content="ImageToPrompt" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Stable Diffusion vs Midjourney vs DALL-E 3 vs Flux：プロンプト比較ガイド" />
+  <meta name="twitter:description" content="4大AI画像生成ツールの比較で最適なツールを選びましょう。" />
+  <meta name="twitter:image" content="https://www.imagetoprompt.dev/og-image.png" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="48x48" href="/favicon-48.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+  <link rel="manifest" href="/site.webmanifest" />
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="/fonts/space-grotesk-700.woff2" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="/fonts/inter-400.woff2" />
+  <link rel="stylesheet" href="/theme.css">
+  <link rel="preload" href="/blog.css" as="style" onload="this.onload=null;this.rel='stylesheet'"><noscript><link rel="stylesheet" href="/blog.css"></noscript>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Stable Diffusion vs Midjourney vs DALL-E 3 vs Flux：プロンプト比較ガイド",
+    "description": "Stable Diffusion、Midjourney、DALL-E 3、Fluxのプロンプト構文とスタイルの違いを徹底比較。最適なAI画像生成ツールを選ぶための正直なガイド。",
+    "image": "https://www.imagetoprompt.dev/og-image.png",
+    "datePublished": "2026-03-10",
+    "dateModified": "2026-03-24",
+    "inLanguage": "ja",
+    "author": {
+      "@type": "Person",
+      "name": "ImageToPrompt Team",
+      "url": "https://www.imagetoprompt.dev/"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "ImageToPrompt",
+      "logo": { "@type": "ImageObject", "url": "https://www.imagetoprompt.dev/favicon.svg" }
+    },
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https://www.imagetoprompt.dev/ja/blog/stable-diffusion-vs-midjourney-vs-dalle3/"
+    }
+  }
+  </script>
+    <!-- Google AdSense -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4499206373485728" crossorigin="anonymous"></script>
+    <!-- Web Push Notifications -->
+<script src="https://cdn.onesignal.com/sdks/web/v16/OneSignalSDK.page.js" defer></script>
+<script>
+  window.OneSignalDeferred = window.OneSignalDeferred || [];
+  OneSignalDeferred.push(async function(OneSignal) {
+    await OneSignal.init({
+      appId: "REPLACE_WITH_ONESIGNAL_APP_ID",
+      notifyButton: { enable: false }
+    });
+  });
+</script>
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="inner">
+      <a href="/ja/" class="site-logo"><img src="/favicon.svg" alt="ImageToPrompt" width="48" height="48"><div class="site-logo-text">ImageTo<span class="accent">Prompt</span><span class="site-logo-sub">無料AIプロンプトジェネレーター</span></div></a>
+      <nav class="site-nav" aria-label="メインナビゲーション">
+        <div class="nav-dropdown">
+          <button class="nav-dropdown-trigger" aria-haspopup="true" aria-expanded="false">Tools <span class="nav-chevron" aria-hidden="true">&#9660;</span></button>
+          <div class="nav-dropdown-menu" role="menu">
+            <div class="nav-mega-grid">
+              <div class="nav-mega-col">
+                <div class="nav-mega-heading">&#128444; IMAGE TOOLS</div>
+                <a href="/" role="menuitem" class="nav-mega-tool">Image to Prompt <span class="nav-mega-arrow">&#8594;</span></a>
+                <a href="/text-to-prompt/" role="menuitem" class="nav-mega-tool">Text to Prompt <span class="nav-mega-arrow">&#8594;</span></a>
+                <a href="/describe-image/" role="menuitem" class="nav-mega-tool">Describe Image <span class="nav-new-badge">NEW</span> <span class="nav-mega-arrow">&#8594;</span></a>
+                <div class="nav-mega-models-label">Models</div>
+                <div class="nav-mega-models"><a href="/midjourney-prompt-generator/">Midjourney</a><span class="nav-dot">&#xB7;</span><a href="/stable-diffusion-prompt-generator/">SD</a></div>
+                <div class="nav-mega-models"><a href="/flux-prompt-generator/">Flux</a><span class="nav-dot">&#xB7;</span><a href="/dall-e-prompt-generator/">DALL&#xB7;E&#xA0;3</a></div>
+                <div class="nav-mega-models"><a href="/adobe-firefly-prompt-generator/">Firefly</a><span class="nav-dot">&#xB7;</span><a href="/leonardo-ai-prompt-generator/">Leonardo</a></div>
+                <div class="nav-mega-models"><a href="/ideogram-prompt-generator/">Ideogram</a></div>
+              </div>
+              <div class="nav-mega-divider" aria-hidden="true"></div>
+              <div class="nav-mega-col">
+                <div class="nav-mega-heading">&#127909; VIDEO TOOLS</div>
+                <a href="/?tab=image-to-video" role="menuitem" class="nav-mega-tool">Image to Video <span class="nav-mega-arrow">&#8594;</span></a>
+                <a href="/?tab=text-to-video" role="menuitem" class="nav-mega-tool">Text to Video <span class="nav-mega-arrow">&#8594;</span></a>
+                <div class="nav-mega-models-label">Models</div>
+                <div class="nav-mega-models"><a href="/veo-prompt-generator/">Veo</a><span class="nav-dot">&#xB7;</span><a href="/kling-prompt-generator/">Kling</a></div>
+                <div class="nav-mega-models"><a href="/runway-prompt-generator/">Runway</a><span class="nav-dot">&#xB7;</span><a href="/pika-prompt-generator/">Pika</a></div>
+                <div class="nav-mega-models"><a href="/luma-prompt-generator/">Luma</a><span class="nav-dot">&#xB7;</span><a href="/sora-prompt-generator/">Sora</a></div>
+                <div class="nav-mega-models"><a href="/minimax-prompt-generator/">Minimax</a><span class="nav-dot">&#xB7;</span><a href="/stable-video-prompt-generator/">Stable</a></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <a href="/ja/blog/">ブログ</a>
+        <a href="/ja/pricing/" class="nav-pill-pricing">料金</a>
+        <a href="/ja/about/" class="nav-pill-about">概要</a>
+        <a href="/ja/" class="nav-try-free">無料で試す &#8594;</a>
+        <button id="theme-toggle" onclick="toggleTheme()" aria-label="テーマ切替" title="テーマ切替">&#9728;&#xFE0F;</button>
+  </nav>
+    </div>
+  </header>
+
+  <nav class="breadcrumb" aria-label="パンくずリスト">
+    <a href="/ja/">ホーム</a> <span aria-hidden="true">&#8250;</span>
+    <a href="/ja/blog/">ブログ</a> <span aria-hidden="true">&#8250;</span>
+    <span aria-current="page">SD vs Midjourney vs DALL&#xB7;E 3 vs Flux</span>
+  </nav>
+
+  <div class="page-wrapper">
+
+    <header class="article-header">
+      <p class="article-tag">比較ガイド</p>
+      <h1>Stable Diffusion vs Midjourney vs DALL&#xB7;E 3 vs Flux：プロンプト比較ガイド</h1>
+      <div class="article-meta">
+        <span>2026年3月</span>
+        <span class="dot">&#183;</span>
+        <span>読了目安 10分</span>
+        <span class="dot">&#183;</span>
+        <span>主要AI画像生成ツール全比較</span>
+        <span class="dot">&#183;</span>
+        <span>2026年3月更新</span>
+      </div>
+    </header>
+
+    <div class="article-body">
+
+      <p>同じプロンプトでもAI画像生成ツールによって異なる結果が得られるという話を聞いたことがあるでしょう。それは事実ですが、違いは単なる見た目の差にとどまりません。各ツールには独自のプロンプト言語、独自の強み、独自の癖、そして理想的なユースケースがあります。</p>
+
+      <nav class="toc" aria-label="目次">
+        <details open>
+          <summary>このガイドの内容</summary>
+          <ol>
+            <li><a href="#midjourney-geijutsu">Midjourney：アーティスティックの代名詞</a></li>
+            <li><a href="#stable-diffusion-opensource">Stable Diffusion：オープンソースの力</a></li>
+            <li><a href="#dalle3-shizen-gengo">DALL&#xB7;E 3：自然言語と高忠実度</a></li>
+            <li><a href="#flux-fotoriarizumu">Flux：フォトリアリズムの王者</a></li>
+            <li><a href="#hikaku">比較：同じコンセプト、4つのプロンプト</a></li>
+            <li><a href="#sentaku">どのAI画像生成ツールを選ぶべきか？</a></li>
+            <li><a href="#kakaku-hikaku">価格比較（2026年3月）</a></li>
+          </ol>
+        </details>
+      </nav>
+
+      <p>このガイドでは、Stable Diffusion、Midjourney、DALL&#xB7;E 3、Fluxがプロンプトの構文、スタイル、そしてそれぞれの得意分野でどう異なるかを詳しく解説します。これらの違いを理解することは、どのツールでも一貫して良い結果を得るために不可欠です。</p>
+
+      <div class="callout">
+        <p><strong>ヒント：</strong><a href="/">ImageToPrompt</a>はこれらすべてのジェネレーター向けにモデル固有のプロンプトを生成します。参照画像をアップロードしてターゲットモデルを選択すれば、正しくフォーマットされたプロンプトが自動的に得られます。</p>
+      </div>
+
+      <div class="table-wrap">
+      <table class="comparison-table">
+        <thead>
+          <tr>
+            <th>カテゴリ</th>
+            <th>Midjourney</th>
+            <th>Stable Diffusion</th>
+            <th>DALL&#xB7;E 3</th>
+            <th>Flux</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>価格</td><td>10〜60ドル/月</td><td>無料（オープンソース）</td><td>20ドル/月（ChatGPT Plus）</td><td>API経由で画像単位課金</td></tr>
+          <tr><td>無料プラン</td><td>なし</td><td>あり（完全無料）</td><td>Bingで制限付き</td><td>一部プラットフォームで制限付き</td></tr>
+          <tr><td>プロンプトスタイル</td><td>記述的 + パラメータ</td><td>重み付きタグ + ネガティブ</td><td>自然な文章</td><td>詳細な自然言語</td></tr>
+          <tr><td>最適な用途</td><td>アーティスティック/シネマティック</td><td>最大限の制御、ローカル利用</td><td>画像内テキスト</td><td>フォトリアリズム</td></tr>
+          <tr><td>フォトリアリズム</td><td>非常に良い</td><td>モデル依存</td><td>良い</td><td>最高</td></tr>
+          <tr><td>アーティスティック</td><td>最高</td><td>モデル依存</td><td>良い</td><td>中程度</td></tr>
+          <tr><td>画像内テキスト</td><td>改善中（V6+）</td><td>苦手</td><td>最高</td><td>良い</td></tr>
+          <tr><td>速度</td><td>高速（クラウド）</td><td>ハードウェア依存</td><td>高速（クラウド）</td><td>高速（クラウド）</td></tr>
+          <tr><td>カスタマイズ性</td><td>限定的（パラメータ）</td><td>広範（LoRA、チェックポイント）</td><td>最小限</td><td>中程度</td></tr>
+          <tr><td>APIアクセス</td><td>公式APIなし</td><td>あり（複数）</td><td>あり（OpenAI API）</td><td>あり（Replicate、fal.ai）</td></tr>
+          <tr><td>プライバシー</td><td>クラウドのみ</td><td>ローカル実行可能</td><td>クラウドのみ</td><td>主にクラウド</td></tr>
+          <tr><td>学習曲線</td><td>低い</td><td>高い</td><td>非常に低い</td><td>低い</td></tr>
+          <tr><td>ネガティブプロンプト</td><td><code>--no flag</code></td><td>専用フィールドあり</td><td>非対応</td><td>非対応</td></tr>
+        </tbody>
+      </table>
+      </div>
+
+      <div class="cta-inline">
+        <p>実際に試してみましょう — 画像をアップロードして、最適化されたAIプロンプトを数秒で取得できます。</p>
+        <a href="/" class="cta-btn-sm">無料で試す →</a>
+      </div>
+
+      <h2 id="midjourney-geijutsu">Midjourney：アーティスティックの代名詞</h2>
+
+      <h3>プロンプト構文</h3>
+      <p>Midjourneyはカンマ区切りの記述的フレーズを使用し、ダブルダッシュのパラメータが続きます。</p>
+      <p><code>ethereal forest spirit, bioluminescent flora, cinematic lighting, concept art --ar 3:2 --v 6.1 --style raw</code></p>
+
+      <h3>Midjourneyが得意なこと</h3>
+      <ul>
+        <li>高い美的品質のアーティスティック、絵画的、シネマティックな画像</li>
+        <li>ファンタジー、SF、シュルレアリスムのイメージ</li>
+        <li>自然な肌とライティングのポートレート写真</li>
+        <li>シンプルなプロンプトでも一貫して「美しい」結果</li>
+        <li>建築とコンセプトアート</li>
+      </ul>
+
+      <h3>Midjourneyのプロンプト作成のコツ</h3>
+      <ul>
+        <li>最も重要なビジュアル要素から始める</li>
+        <li>記述的な形容詞を豊富に使う — Midjourneyは豊かな視覚的言語を好みます</li>
+        <li>必ず<code>--ar</code>を設定して、意図するキャンバスに合わせる</li>
+        <li>より忠実な解釈が必要な場合は<code>--style raw</code>を追加</li>
+        <li>新しいコンセプトを探求する際は<code>--chaos 20-40</code>を使用</li>
+      </ul>
+
+      <h3>Midjourneyの弱点</h3>
+      <ul>
+        <li>画像内のテキスト描画が不安定（v6で改善中）</li>
+        <li>Discordアカウントとサブスクリプションが必要 — 無料プランなし</li>
+        <li>技術志向のユーザーにとってStable Diffusionほどの細かな制御ができない</li>
+        <li>「美しすぎる」傾向 — 粗い表現が欲しい場合でも洗練されたルックになりがち</li>
+      </ul>
+
+      <h2 id="stable-diffusion-opensource">Stable Diffusion：オープンソースの力</h2>
+
+      <h3>プロンプト構文</h3>
+      <p>SDは括弧を使った重み付き構文でCLIPトークンの強調をサポートします。</p>
+      <p><code>(masterpiece:1.2), (photorealistic:1.1), ethereal forest spirit, glowing bioluminescent plants, (dramatic lighting:0.9), intricate details</code></p>
+      <p>さらに別の<strong>ネガティブプロンプト</strong>フィールドがあります。</p>
+      <p><code>blurry, low quality, deformed, bad anatomy, watermark, text, ugly, amateur</code></p>
+
+      <h3>Stable Diffusionが得意なこと</h3>
+      <ul>
+        <li>LoRA、ControlNet、カスタムチェックポイントによる精密な制御</li>
+        <li>インペインティングとアウトペインティングのワークフロー</li>
+        <li>自分のハードウェアでローカル実行 — 完全なプライバシー</li>
+        <li>トレーニング済みキャラクターLoRAによるキャラクターの一貫性</li>
+        <li>複数のテクニックの組み合わせ（img2img、アップスケーリング、顔修復）</li>
+        <li>無料かつオープンソース（SDXL、SD 3.5が現在の主力モデル）</li>
+      </ul>
+
+      <h3>Stable Diffusionのプロンプト作成のコツ</h3>
+      <ul>
+        <li>品質トークンから始める：<code>(masterpiece:1.2), (best quality:1.1)</code></li>
+        <li>括弧と数値で重みを増やす：<code>(lighting:1.4)</code></li>
+        <li>角括弧で重みを減らす：<code>[background:0.7]</code></li>
+        <li>必ず強力なネガティブプロンプトを書く — ポジティブと同じくらい重要</li>
+        <li>SD 1.5ではプロンプトを75 CLIPトークン以内に保つ。SDXLはより長いプロンプトに対応</li>
+        <li>使用するチェックポイントモデルに合わせてプロンプトスタイルを調整</li>
+      </ul>
+
+      <h3>Stable Diffusionの弱点</h3>
+      <ul>
+        <li>学習曲線が急 — セットアップとモデル選択だけで何時間もかかる</li>
+        <li>品質は使用するチェックポイントに大きく依存</li>
+        <li>SD 1.5、SDXL、SD 3.5でプロンプト構文が異なる</li>
+        <li>解剖学（特に手）は専用LoRAなしでは依然として問題が多い</li>
+      </ul>
+
+      <h2 id="dalle3-shizen-gengo">DALL&#xB7;E 3：自然言語と高忠実度</h2>
+
+      <h3>プロンプト構文</h3>
+      <p>DALL&#xB7;E 3はユニークで、タグベースのプロンプトではなく完全な自然文を好みます。</p>
+      <p><em>「古い節くれだったオークの木から現れる森の精霊のフォトリアリスティックなシーン。柔らかな青緑の光を放つ生物発光植物に囲まれている。精霊は半透明で幽玄な姿で、髪は煙のようにたなびく。ゴールデンアワーの金色の光が木漏れ日として差し込む、シネマティックなワイドショット。」</em></p>
+
+      <h3>DALL&#xB7;E 3が得意なこと</h3>
+      <ul>
+        <li>複数のパートからなる複雑な指示を忠実に実行</li>
+        <li>読めるテキストを含む画像の生成 — 他モデルより明らかに優秀</li>
+        <li>安全で商用利用可能なコンテンツ（厳格なコンテンツポリシー）</li>
+        <li>意図の理解が必要なコンセプチュアル・抽象的なイメージ</li>
+        <li>クリーンでプロフェッショナルなイラストレーションスタイル</li>
+      </ul>
+
+      <h3>DALL&#xB7;E 3のプロンプト作成のコツ</h3>
+      <ul>
+        <li>カンマ区切りのタグではなく完全な文章で書く</li>
+        <li>欲しいものを明確に — DALL&#xB7;E は指示を非常に忠実に解釈する</li>
+        <li>構図を明確に記述：「上空からのワイドショット」vs「クローズアップポートレート」</li>
+        <li>スタイルの参照を含める：「1970年代のSF小説の表紙風」</li>
+        <li>画像内テキストには、プロンプト内で正確なテキストを引用符で囲む</li>
+      </ul>
+
+      <h3>DALL&#xB7;E 3の弱点</h3>
+      <ul>
+        <li>他モデルよりコンテンツポリシーが厳しい</li>
+        <li>スタイルの多様性が少ない — 「DALL&#xB7;Eルック」になりがち</li>
+        <li>最良の結果にはOpenAIのサブスクリプション（ChatGPT Plus）が必要</li>
+        <li>MidjourneyやSDと比べて細部の制御が少ない</li>
+      </ul>
+
+      <h2 id="flux-fotoriarizumu">Flux：フォトリアリズムの王者</h2>
+
+      <h3>プロンプト構文</h3>
+      <p>Black Forest Labs開発のFluxは、DALL&#xB7;E 3に似た詳細な記述言語を使用しますが、特に写真・技術用語に強く反応します。</p>
+      <p><em>「古代の森に夜明けに佇む森の精霊の高解像度写真。精霊は部分的に半透明で、青緑の光を放つ生物発光キノコや植物に囲まれている。Canon EOS R5 85mm f/1.4レンズで撮影、浅い被写界深度、シネマティックなカラーグレーディング、霧の間から差し込むゴールデンアワーの光線。」</em></p>
+
+      <h3>Fluxが得意なこと</h3>
+      <ul>
+        <li>実際の写真と見分けがつかないフォトリアリスティックな画像</li>
+        <li>複数の要素を含む複雑なシーン</li>
+        <li>正確な人体の解剖学と比率</li>
+        <li>精密なライティングシナリオ</li>
+        <li>詳細で技術的な説明への追従</li>
+      </ul>
+
+      <h3>Fluxのプロンプト作成のコツ</h3>
+      <ul>
+        <li>写真用語を使う：カメラモデル、レンズスペック、絞り、ISO</li>
+        <li>技術的な用語でライティングを記述：「Rembrandt lighting」「朝6時のgolden hour」</li>
+        <li>非常に具体的に — Fluxはディテールを正確に解釈する</li>
+        <li>長くて詳細なプロンプトが短いものより良い結果を出す傾向</li>
+        <li>ポストプロセスの記述を含める：「カラーグレード済み、軽いフィルムグレイン、わずかなビネット」</li>
+      </ul>
+
+      <h3>Fluxの弱点</h3>
+      <ul>
+        <li>アーティスティック/非フォトリアルなスタイルはMidjourneyほど際立たない</li>
+        <li>個性が少ない — 独自の美的タッチを加えない</li>
+        <li>サードパーティプラットフォーム（Replicate、fal.aiなど）経由のアクセス</li>
+      </ul>
+
+      <h2 id="hikaku">比較：同じコンセプト、4つのプロンプト</h2>
+
+      <p>違いを具体的に示すため、同じコンセプト「赤い惑星の夕焼けに佇む孤独な宇宙飛行士」を各モデルでどのように表現するか見てみましょう。</p>
+
+      <h3>Midjourney版</h3>
+      <p><code>lone astronaut standing on a desolate red planet at sunset, dramatic silhouette against twin moons, cinematic wide shot, dust storms in distance, golden and rust color palette --ar 21:9 --v 6.1 --style raw --q 2</code></p>
+
+      <h3>Stable Diffusion版</h3>
+      <p><code>(masterpiece:1.2), (photorealistic:1.1), lone astronaut on red planet at sunset, dramatic silhouette, twin moons in sky, (dust storm:0.8), (golden hour lighting:1.3), cinematic, (wide angle shot:1.1), ultra detailed, 8k</code><br>
+      ネガティブ：<code>blurry, low quality, bad anatomy, deformed, watermark, cartoon, 2D</code></p>
+
+      <h3>DALL&#xB7;E 3版</h3>
+      <p><em>「火星に似た赤い惑星の荒涼とした表面に、夕焼けの中で一人の宇宙飛行士が立っているシネマティックなワイドアングル写真。地平線に2つの月が見える。オレンジと黄土色の空を背景に、宇宙飛行士がドラマチックなシルエットとして映る。遠くの地平線に砂嵐が見える。壮大で孤独な雰囲気のシーン。」</em></p>
+
+      <h3>Flux版</h3>
+      <p><em>「赤い岩石惑星の表面に夕焼けの中で立つ白い宇宙服の孤独な宇宙飛行士の超高解像度写真。オレンジレッドの空に2つの三日月が浮かぶ。Hasselblad H6D、24mm広角レンズ、f/8で撮影。地平線にドラマチックな大気の霞、ゴールドとオーカーのカラーグレーディング、被写体を下3分の1に配置したシネマティック構図、クレーターの風景に深い影。」</em></p>
+
+      <h3>ビジュアル結果 — 同じコンセプト、4つのモデル</h3>
+      <div class="model-output-grid">
+        <div class="model-output">
+          <span class="model-badge badge-mj">Midjourney V6.1</span>
+          <picture><source srcset="/images/ai-prompt-generator-cyberpunk-midjourney.webp" type="image/webp"><img src="/images/ai-prompt-generator-cyberpunk-midjourney.jpeg" alt="Midjourney V6.1の結果 — 赤い惑星の夕焼けに佇む孤独な宇宙飛行士" width="800" height="457" loading="lazy"></picture>
+        </div>
+        <div class="model-output">
+          <span class="model-badge badge-sd">Stable Diffusion SDXL</span>
+          <picture><source srcset="/images/ai-prompt-generator-cyberpunk-stable-diffusion.webp" type="image/webp"><img src="/images/ai-prompt-generator-cyberpunk-stable-diffusion.jpeg" alt="Stable Diffusion SDXLの結果 — 赤い惑星の夕焼けに佇む宇宙飛行士" width="800" height="457" loading="lazy"></picture>
+        </div>
+        <div class="model-output">
+          <span class="model-badge badge-dalle">DALL&#xB7;E 3</span>
+          <picture><source srcset="/images/ai-prompt-generator-cyberpunk-dalle3.webp" type="image/webp"><img src="/images/ai-prompt-generator-cyberpunk-dalle3.jpeg" alt="DALL&#xB7;E 3の結果 — 赤い惑星の夕焼けに佇む宇宙飛行士" width="800" height="457" loading="lazy"></picture>
+        </div>
+        <div class="model-output">
+          <span class="model-badge badge-flux">Flux</span>
+          <picture><source srcset="/images/ai-prompt-generator-cyberpunk-flux.webp" type="image/webp"><img src="/images/ai-prompt-generator-cyberpunk-flux.jpeg" alt="Fluxの結果 — 赤い惑星の夕焼けに佇む宇宙飛行士" width="800" height="457" loading="lazy"></picture>
+        </div>
+      </div>
+
+      <h3>コンセプト2：雨の日の居心地の良いカフェ</h3>
+
+      <h4>Midjourney版</h4>
+      <p><code>cozy independent coffee shop interior on a rainy day, warm amber light, steam rising from cups, rain-streaked window, people reading books, rustic wood and leather decor --ar 16:9 --v 6.1 --style raw</code></p>
+
+      <h4>Stable Diffusion版</h4>
+      <p><code>(cozy coffee shop:1.2), rainy day interior, (warm amber lighting:1.3), steam from coffee cups, rain on window, (rustic decor:0.9), bokeh background, photorealistic</code><br>
+      ネガティブ：<code>blurry, low quality, deformed, watermark, ugly</code></p>
+
+      <h4>DALL&#xB7;E 3版</h4>
+      <p><em>「雨の午後の温かく居心地の良いカフェ。アンビエント照明が木製テーブルに柔らかな金色の光を投げかけている。雨粒が流れる大きな窓の向こうにグレーの通りが見える。本やラップトップを前にくつろぐお客たち、カップから立ち上る湯気。居心地がよく雰囲気のある空間。」</em></p>
+
+      <h4>Flux版</h4>
+      <p><em>「雨の日の独立系カフェのインテリア写真。エジソン電球の暖色照明、色温度2700K。大きなガラス窓の向こうに雨が見える。Sony A7R IV、35mm f/1.8で撮影。お客は柔らかなボケで描かれ、自然光と人工光のミックス、軽いフィルムグレイン。」</em></p>
+
+      <div class="model-output-grid">
+        <div class="model-output">
+          <span class="model-badge badge-mj">Midjourney</span>
+          <picture><source srcset="/images/prompt-generator-from-image-temple-midjourney.webp" type="image/webp"><img src="/images/prompt-generator-from-image-temple-midjourney.jpeg" alt="Midjourneyの結果 — 雨の日のカフェインテリア" width="800" height="457" loading="lazy"></picture>
+        </div>
+        <div class="model-output">
+          <span class="model-badge badge-sd">Stable Diffusion</span>
+          <picture><source srcset="/images/prompt-generator-from-image-temple-stable-diffusion.webp" type="image/webp"><img src="/images/prompt-generator-from-image-temple-stable-diffusion.jpeg" alt="Stable Diffusionの結果 — 雨の日のカフェインテリア" width="800" height="457" loading="lazy"></picture>
+        </div>
+        <div class="model-output">
+          <span class="model-badge badge-dalle">DALL&#xB7;E 3</span>
+          <picture><source srcset="/images/prompt-generator-from-image-temple-dalle3.webp" type="image/webp"><img src="/images/prompt-generator-from-image-temple-dalle3.jpeg" alt="DALL&#xB7;E 3の結果 — 雨の日のカフェインテリア" width="800" height="457" loading="lazy"></picture>
+        </div>
+        <div class="model-output">
+          <span class="model-badge badge-flux">Flux</span>
+          <picture><source srcset="/images/prompt-generator-from-image-temple-flux.webp" type="image/webp"><img src="/images/prompt-generator-from-image-temple-flux.jpeg" alt="Fluxの結果 — 雨の日のカフェインテリア" width="800" height="457" loading="lazy"></picture>
+        </div>
+      </div>
+
+      <h3>コンセプト3：年配の職人のポートレート</h3>
+
+      <h4>Midjourney版</h4>
+      <p><code>portrait of elderly craftsman in his workshop, weathered hands, surrounded by tools of his trade, warm natural window light, deep wrinkles, proud dignified expression, documentary photography --ar 2:3 --v 6.1 --style raw --q 2</code></p>
+
+      <h4>Stable Diffusion版</h4>
+      <p><code>(photorealistic:1.2), portrait of elderly craftsman, (weathered hands:1.1), workshop background with tools, (warm window light:1.3), deep facial wrinkles, dignified expression, professional documentary photography, highly detailed</code><br>
+      ネガティブ：<code>blurry, low quality, bad anatomy, deformed, watermark, young</code></p>
+
+      <h4>DALL&#xB7;E 3版</h4>
+      <p><em>「散らかった工房にいる年配の職人の写真ポートレート。数十年にわたる熟練の仕事を物語る、深い皺と使い込まれた手を持つ。工房の窓から暖かい自然光が差し込んでいる。表情は誇り高く集中している。ドキュメンタリー写真スタイル。」</em></p>
+
+      <h4>Flux版</h4>
+      <p><em>「工房にいる年配の職人（約75歳）の写真ポートレート。使い込まれた手が手工具を持っている。有孔ボードに本物の古い道具が掛かった工房の背景。Leica M11、50mm Summilux f/1.4、f/2での窓光、豊かな影のためわずかにアンダー露出、フィルムエミュレーション。」</em></p>
+
+      <div class="model-output-grid">
+        <div class="model-output">
+          <span class="model-badge badge-mj">Midjourney</span>
+          <picture><source srcset="/images/ai-image-generator-prompt-rose-midjourney.webp" type="image/webp"><img src="/images/ai-image-generator-prompt-rose-midjourney.jpeg" alt="Midjourneyの結果 — 工房にいる年配の職人のポートレート" width="800" height="1000" loading="lazy"></picture>
+        </div>
+        <div class="model-output">
+          <span class="model-badge badge-sd">Stable Diffusion</span>
+          <picture><source srcset="/images/ai-image-generator-prompt-rose-stable-diffusion.webp" type="image/webp"><img src="/images/ai-image-generator-prompt-rose-stable-diffusion.jpeg" alt="Stable Diffusionの結果 — 工房にいる年配の職人のポートレート" width="800" height="1000" loading="lazy"></picture>
+        </div>
+        <div class="model-output">
+          <span class="model-badge badge-dalle">DALL&#xB7;E 3</span>
+          <picture><source srcset="/images/ai-image-generator-prompt-rose-dalle3.webp" type="image/webp"><img src="/images/ai-image-generator-prompt-rose-dalle3.jpeg" alt="DALL&#xB7;E 3の結果 — 工房にいる年配の職人のポートレート" width="800" height="1000" loading="lazy"></picture>
+        </div>
+        <div class="model-output">
+          <span class="model-badge badge-flux">Flux</span>
+          <picture><source srcset="/images/ai-image-generator-prompt-rose-flux.webp" type="image/webp"><img src="/images/ai-image-generator-prompt-rose-flux.jpeg" alt="Fluxの結果 — 工房にいる年配の職人のポートレート" width="800" height="1000" loading="lazy"></picture>
+        </div>
+      </div>
+
+      <h2 id="sentaku">どのAI画像生成ツールを選ぶべきか？</h2>
+
+      <div class="decision-tree">
+        <p class="tree-question">あなたの優先事項は？</p>
+        <ul class="tree-options">
+          <li><span class="tree-arrow">→</span> <strong>最高のアーティスティック品質</strong> → Midjourney</li>
+          <li><span class="tree-arrow">→</span> <strong>フォトリアリズム</strong> → Flux</li>
+          <li><span class="tree-arrow">→</span> <strong>完全な制御とカスタマイズ</strong> → Stable Diffusion</li>
+          <li><span class="tree-arrow">→</span> <strong>画像内テキスト</strong> → DALL&#xB7;E 3</li>
+          <li><span class="tree-arrow">→</span> <strong>無料 / オープンソース</strong> → Stable Diffusion</li>
+          <li><span class="tree-arrow">→</span> <strong>最も始めやすい</strong> → DALL&#xB7;E 3（ChatGPT経由）</li>
+          <li><span class="tree-arrow">→</span> <strong>商用利用の安全性</strong> → DALL&#xB7;E 3 または Adobe Firefly</li>
+          <li><span class="tree-arrow">→</span> <strong>プライバシー / ローカル処理</strong> → Stable Diffusion</li>
+        </ul>
+      </div>
+
+      <h2 id="kakaku-hikaku">価格比較（2026年3月）</h2>
+
+      <div class="table-wrap">
+      <table class="comparison-table">
+        <thead>
+          <tr><th>プラン</th><th>Midjourney</th><th>Stable Diffusion</th><th>DALL&#xB7;E 3</th><th>Flux</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>無料</td><td>無料プランなし</td><td>あり（オープンソース）</td><td>制限付き（Bing）</td><td>一部プラットフォームで制限付き</td></tr>
+          <tr><td>ベーシック</td><td>10ドル/月（約200枚の高速生成）</td><td>無料（セルフホスト）</td><td>20ドル/月（ChatGPT Plus）</td><td>約0.003〜0.05ドル/画像（API）</td></tr>
+          <tr><td>プロ</td><td>30ドル/月（リラックスモード無制限）</td><td>無料（セルフホスト）</td><td>20ドル/月（同プラン）</td><td>同一API料金</td></tr>
+          <tr><td>最上位</td><td>60ドル/月（高速 + ステルスモード）</td><td>ホスティング費のみ</td><td>エンタープライズ料金</td><td>BFL経由エンタープライズ</td></tr>
+        </tbody>
+      </table>
+      </div>
+      <p class="table-note"><em>価格は2026年3月時点のものです。サブスクリプション前に各プラットフォームの最新料金をご確認ください。</em></p>
+
+      <div class="cta-box">
+        <h3>あらゆる画像からモデル別プロンプトを生成</h3>
+        <p>ImageToPromptは4つすべてのモデル向けに正しくフォーマットされたプロンプトを生成します。参照画像をアップロードし、ターゲットジェネレーターを選択すれば、すぐに使えるプロンプトが数秒で手に入ります。</p>
+        <a href="/ja/" class="cta-btn">無料AIプロンプトジェネレーターを試す →</a>
+      </div>
+
+    </div>
+
+    <div class="author-bio">
+      <img src="/favicon.svg" alt="ImageToPrompt Team" width="44" height="44">
+      <div>
+        <strong>ImageToPrompt Team</strong>
+        <p>私たちはクリエイターの皆さんがAI画像生成をマスターできるよう支援する専門チームです。画像からプロンプトへの変換ツールやAIプロンプトエンジニアリングガイドを通じて、世界中のアーティストの創作活動をサポートしています。</p>
+        <a href="https://x.com/ImageToPrompt" target="_blank" rel="noopener" class="author-follow">Xでフォロー</a>
+      </div>
+    </div>
+
+    <div class="related-posts">
+      <h2>関連ガイド</h2>
+      <div class="related-grid">
+        <a href="/ja/blog/midjourney-prompt-kanzen-gaido/" class="related-card">
+          <p class="tag">Midjourney</p>
+          <h3>Midjourneyプロンプト完全ガイド 2026</h3>
+        </a>
+        <a href="/ja/blog/gazou-kara-prompt-henkan/" class="related-card">
+          <p class="tag">ガイド</p>
+          <h3>画像をAIプロンプトに変換する方法</h3>
+        </a>
+        <a href="/ja/blog/prompt-engineering-ai-art-nyuumon/" class="related-card">
+          <p class="tag">入門</p>
+          <h3>AIアートのプロンプトエンジニアリングとは？</h3>
+        </a>
+        <a href="/ja/blog/midjourney-vs-flux/" class="related-card">
+          <p class="tag">比較ガイド</p>
+          <h3>Midjourney vs Flux AI：どちらが優れているか？</h3>
+        </a>
+      </div>
+    </div>
+
+  </div>
+
+  <footer class="footer-4col">
+    <div class="f4-inner">
+      <div class="f4-brand">
+        <img src="/favicon.svg" alt="ImageToPrompt" width="28" height="28">
+        <span class="f4-brand-name">ImageTo<span class="accent">Prompt</span></span>
+        <span class="f4-brand-sub">&mdash; Free AI Prompt Generator</span>
+      </div>
+      <div class="f4-grid">
+        <div class="f4-section">
+          <h4 class="f4-heading">Image Prompt Tools</h4>
+          <a href="/">Image to Prompt</a>
+          <a href="/text-to-prompt/">Text to Prompt</a>
+      <a href="/describe-image/">Describe Image</a>
+          <a href="/midjourney-prompt-generator/">Midjourney</a>
+          <a href="/stable-diffusion-prompt-generator/">Stable Diffusion</a>
+          <a href="/flux-prompt-generator/">Flux</a>
+          <a href="/dall-e-prompt-generator/">DALL-E 3</a>
+          <a href="/adobe-firefly-prompt-generator/">Adobe Firefly</a>
+          <a href="/leonardo-ai-prompt-generator/">Leonardo AI</a>
+          <a href="/ideogram-prompt-generator/">Ideogram</a>
+        </div>
+        <div class="f4-section">
+          <h4 class="f4-heading">Video Prompt Tools</h4>
+          <a href="/image-to-video-prompt/">Image to Video Prompt</a>
+          <a href="/text-to-video-prompt/">Text to Video Prompt</a>
+          <a href="/veo-prompt-generator/">Veo / Flow Studio</a>
+          <a href="/kling-prompt-generator/">Kling AI</a>
+          <a href="/runway-prompt-generator/">Runway Gen-3</a>
+          <a href="/pika-prompt-generator/">Pika</a>
+          <a href="/luma-prompt-generator/">Luma Dream Machine</a>
+          <a href="/sora-prompt-generator/">Sora</a>
+          <a href="/minimax-prompt-generator/">Minimax</a>
+          <a href="/stable-video-prompt-generator/">Stable Video</a>
+        </div>
+        <div class="f4-section">
+          <h4 class="f4-heading">Resources</h4>
+          <a href="/ja/blog/">ブログ</a>
+          <a href="/ja/about/">概要</a>
+          <a href="/ja/pricing/">料金</a>
+          <a href="/contact/">Contact</a>
+          <a href="/privacy-policy/">Privacy Policy</a>
+          <a href="/terms-of-service/">Terms of Service</a>
+        </div>
+        <div class="f4-section">
+          <h4 class="f4-heading">Languages</h4>
+          <a href="/">English</a>
+          <a href="/fr/">Fran&#231;ais</a>
+          <a href="/ar/">&#1575;&#1604;&#1593;&#1585;&#1576;&#1610;&#1577;</a>
+          <a href="/es/">Espa&#241;ol</a>
+          <a href="/ko/">&#54620;&#44397;&#50612;</a>
+          <a href="/ja/">&#26085;&#26412;&#35486;</a>
+          <a href="/ru/">&#1056;&#1091;&#1089;&#1089;&#1082;&#1080;&#1081;</a>
+        </div>
+      </div>
+      <div class="f4-bottom">
+        <p>&#169; 2026 ImageToPrompt.dev &#8212; Free AI Prompt Generator</p>
+        <p>Your images are never stored. All analysis is ephemeral and private.</p>
+      </div>
+    </div>
+  </footer>
+
+<script src="/newsletter-inject.js" defer></script>
+<script src="/nav.js" defer></script>
+  <script>
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', function() {
+    navigator.serviceWorker.register('/sw.js')
+      .catch(function(err) { console.warn('SW registration failed:', err); });
+  });
+}
+</script>
+</body>
+</html>

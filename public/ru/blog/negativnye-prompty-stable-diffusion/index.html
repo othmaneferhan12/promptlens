@@ -1,0 +1,473 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <script src="/theme-toggle.js"></script>
+  <meta charset="UTF-8" />
+  <link rel="dns-prefetch" href="https://www.googletagmanager.com">
+<link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="max-image-preview:large, index, follow">
+  <meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="ImageToPrompt">
+  <title>Негативные промпты в Stable Diffusion: полное руководство</title>
+  <meta name="description" content="Полное руководство по негативным промптам Stable Diffusion. Синтаксис, частые примеры, ошибки и готовые списки для копирования." />
+  <link rel="canonical" href="https://www.imagetoprompt.dev/ru/blog/negativnye-prompty-stable-diffusion/" />
+  <link rel="alternate" hreflang="ru" href="https://www.imagetoprompt.dev/ru/blog/negativnye-prompty-stable-diffusion/" />
+  <link rel="alternate" hreflang="en" href="https://www.imagetoprompt.dev/blog/negative-prompts-stable-diffusion/" />
+  <link rel="alternate" hreflang="fr" href="https://www.imagetoprompt.dev/fr/blog/prompts-negatifs-stable-diffusion/" />
+  <link rel="alternate" hreflang="ar" href="https://www.imagetoprompt.dev/ar/blog/prompts-salbiya-stable-diffusion/" />
+  <link rel="alternate" hreflang="es" href="https://www.imagetoprompt.dev/es/blog/prompts-negativos-stable-diffusion/" />
+  <link rel="alternate" hreflang="ja" href="https://www.imagetoprompt.dev/ja/blog/negative-prompt-stable-diffusion/" />
+  <link rel="alternate" hreflang="ko" href="https://www.imagetoprompt.dev/ko/blog/negative-prompt-stable-diffusion/" />
+  <link rel="alternate" hreflang="x-default" href="https://www.imagetoprompt.dev/blog/negative-prompts-stable-diffusion/" />
+  <meta property="og:title" content="Негативные промпты в Stable Diffusion: полное руководство" />
+  <meta property="og:description" content="Полное руководство по негативным промптам Stable Diffusion. Синтаксис, примеры, ошибки." />
+  <meta property="og:url" content="https://www.imagetoprompt.dev/ru/blog/negativnye-prompty-stable-diffusion/" />
+  <meta property="og:type" content="article" />
+  <meta property="og:image" content="https://www.imagetoprompt.dev/og-image.png" />
+  <meta property="og:site_name" content="ImageToPrompt" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Негативные промпты в Stable Diffusion: полное руководство" />
+  <meta name="twitter:description" content="Полное руководство по негативным промптам Stable Diffusion. Синтаксис, примеры, готовые списки." />
+  <meta name="twitter:image" content="https://www.imagetoprompt.dev/og-image.png" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="48x48" href="/favicon-48.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+  <link rel="manifest" href="/site.webmanifest" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="/fonts/space-grotesk-700.woff2" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="/fonts/inter-400.woff2" />
+  <link rel="stylesheet" href="/theme.css">
+  <link rel="preload" href="/blog.css" as="style" onload="this.onload=null;this.rel='stylesheet'"><noscript><link rel="stylesheet" href="/blog.css"></noscript>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Негативные промпты в Stable Diffusion: полное руководство",
+    "description": "Полное руководство по негативным промптам Stable Diffusion. Синтаксис, частые примеры, ошибки и готовые списки для копирования.",
+    "image": "https://www.imagetoprompt.dev/og-image.png",
+    "datePublished": "2026-03-09",
+    "dateModified": "2026-03-24",
+    "inLanguage": "ru",
+    "author": {
+      "@type": "Person",
+      "name": "ImageToPrompt Team",
+      "url": "https://www.imagetoprompt.dev/"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "ImageToPrompt",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://www.imagetoprompt.dev/favicon.svg"
+      }
+    },
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https://www.imagetoprompt.dev/ru/blog/negativnye-prompty-stable-diffusion/"
+    }
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Главная", "item": "https://www.imagetoprompt.dev/ru/" },
+      { "@type": "ListItem", "position": 2, "name": "Блог", "item": "https://www.imagetoprompt.dev/ru/blog/" },
+      { "@type": "ListItem", "position": 3, "name": "Негативные промпты в Stable Diffusion" }
+    ]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Что такое негативный промпт в Stable Diffusion?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Негативный промпт -- это специальное текстовое поле, в котором указываются элементы, которые не должны появляться в сгенерированном изображении. Модель активно отклоняется от этих концепций при генерации, повышая качество и уменьшая артефакты."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Влияет ли CFG scale на негативные промпты?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Да, CFG scale (Classifier-Free Guidance) определяет, насколько строго модель следует как позитивному, так и негативному промптам. CFG 7 -- оптимальный баланс. Слишком высокий CFG (15+) вызывает артефакты, слишком низкий (3-4) частично игнорирует негативные промпты."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Какой самый полезный универсальный негативный промпт?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Наиболее эффективный универсальный негативный промпт: (worst quality:1.4), (low quality:1.4), blurry, watermark, signature, text, deformed, bad anatomy, bad hands, extra fingers, missing fingers, extra limbs, duplicate, cropped, out of frame, ugly."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Поддерживают ли Midjourney и Flux негативные промпты?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Midjourney имеет ограниченную поддержку через параметр --no (например: --no text, watermark). Flux не поддерживает негативные промпты. Только Stable Diffusion предоставляет полноценное выделенное поле с поддержкой весов."
+        }
+      }
+    ]
+  }
+  </script>
+    <!-- Google AdSense -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4499206373485728" crossorigin="anonymous"></script>
+    <!-- Web Push Notifications -->
+<script src="https://cdn.onesignal.com/sdks/web/v16/OneSignalSDK.page.js" defer></script>
+<script>
+  window.OneSignalDeferred = window.OneSignalDeferred || [];
+  OneSignalDeferred.push(async function(OneSignal) {
+    await OneSignal.init({
+      appId: "REPLACE_WITH_ONESIGNAL_APP_ID",
+      notifyButton: { enable: false }
+    });
+  });
+</script>
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="inner">
+      <a href="/ru/" class="site-logo"><img src="/favicon.svg" alt="ImageToPrompt" width="48" height="48"><div class="site-logo-text">ImageTo<span class="accent">Prompt</span><span class="site-logo-sub">Бесплатный AI генератор промптов</span></div></a>
+      <nav class="site-nav" aria-label="Основная навигация">
+        <div class="nav-dropdown">
+          <button class="nav-dropdown-trigger" aria-haspopup="true" aria-expanded="false">Tools <span class="nav-chevron" aria-hidden="true">&#9660;</span></button>
+          <div class="nav-dropdown-menu" role="menu">
+            <div class="nav-mega-grid">
+              <div class="nav-mega-col">
+                <div class="nav-mega-heading">&#128444; IMAGE TOOLS</div>
+                <a href="/" role="menuitem" class="nav-mega-tool">Image to Prompt &#8594;</a>
+                <a href="/text-to-prompt/" role="menuitem" class="nav-mega-tool">Text to Prompt &#8594;</a>
+                <a href="/describe-image/" role="menuitem" class="nav-mega-tool">Describe Image <span class="nav-new-badge">NEW</span> &#8594;</a>
+                <div class="nav-mega-models-label">Models</div>
+                <div class="nav-mega-models"><a href="/midjourney-prompt-generator/">Midjourney</a><span class="nav-dot">&#xB7;</span><a href="/stable-diffusion-prompt-generator/">SD</a></div>
+                <div class="nav-mega-models"><a href="/flux-prompt-generator/">Flux</a><span class="nav-dot">&#xB7;</span><a href="/dall-e-prompt-generator/">DALL&#xB7;E&#xA0;3</a></div>
+                <div class="nav-mega-models"><a href="/adobe-firefly-prompt-generator/">Firefly</a><span class="nav-dot">&#xB7;</span><a href="/leonardo-ai-prompt-generator/">Leonardo</a></div>
+                <div class="nav-mega-models"><a href="/ideogram-prompt-generator/">Ideogram</a></div>
+              </div>
+              <div class="nav-mega-divider" aria-hidden="true"></div>
+              <div class="nav-mega-col">
+                <div class="nav-mega-heading">&#127909; VIDEO TOOLS</div>
+                <a href="/?tab=image-to-video" role="menuitem" class="nav-mega-tool">Image to Video &#8594;</a>
+                <a href="/?tab=text-to-video" role="menuitem" class="nav-mega-tool">Text to Video &#8594;</a>
+                <div class="nav-mega-models-label">Models</div>
+                <div class="nav-mega-models"><a href="/veo-prompt-generator/">Veo</a><span class="nav-dot">&#xB7;</span><a href="/kling-prompt-generator/">Kling</a></div>
+                <div class="nav-mega-models"><a href="/runway-prompt-generator/">Runway</a><span class="nav-dot">&#xB7;</span><a href="/pika-prompt-generator/">Pika</a></div>
+                <div class="nav-mega-models"><a href="/luma-prompt-generator/">Luma</a><span class="nav-dot">&#xB7;</span><a href="/sora-prompt-generator/">Sora</a></div>
+                <div class="nav-mega-models"><a href="/minimax-prompt-generator/">Minimax</a><span class="nav-dot">&#xB7;</span><a href="/stable-video-prompt-generator/">Stable</a></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <a href="/ru/blog/">Блог</a>
+        <a href="/ru/pricing/" class="nav-pill-pricing">Цены</a>
+        <a href="/ru/about/" class="nav-pill-about">О нас</a>
+        <a href="/ru/" class="nav-try-free">Попробовать &#8594;</a>
+        <button id="theme-toggle" onclick="toggleTheme()" aria-label="Переключить тему" title="Переключить тему">&#9728;&#xFE0F;</button>
+  </nav>
+    </div>
+  </header>
+
+  <nav class="breadcrumb" aria-label="Хлебные крошки">
+    <a href="/ru/">Главная</a> <span aria-hidden="true">›</span>
+    <a href="/ru/blog/">Блог</a> <span aria-hidden="true">›</span>
+    <span aria-current="page">Негативные промпты в Stable Diffusion</span>
+  </nav>
+
+  <div class="page-wrapper">
+
+    <header class="article-header">
+      <p class="article-tag">Stable Diffusion</p>
+      <h1>Негативные промпты в Stable Diffusion: полное руководство</h1>
+      <div class="article-meta">
+        <span>Март 2026</span>
+        <span class="dot">&#183;</span>
+        <span>Время чтения: 9 мин</span>
+        <span class="dot">&#183;</span>
+        <span>Stable Diffusion &#183; SDXL &#183; Automatic1111</span>
+        <span class="dot">&#183;</span>
+        <span>Обновлено: март 2026</span>
+      </div>
+    </header>
+
+    <div class="article-body">
+
+      <p>Негативные промпты &#8212; один из самых мощных и в то же время наименее понятых инструментов в Stable Diffusion. Они позволяют указать модели, какие элементы не должны появляться в сгенерированном изображении: от деформированных рук и водяных знаков до артефактов сжатия. При правильном использовании они значительно улучшают качество каждой генерации.</p>
+
+      <nav class="toc" aria-label="Содержание">
+        <details open>
+          <summary>Содержание руководства</summary>
+          <ol>
+            <li><a href="#chto-takoe-negativnyj-prompt">Что такое негативный промпт?</a></li>
+            <li><a href="#kak-eto-rabotaet">Как это работает технически</a></li>
+            <li><a href="#cfg-scale">Связь с CFG Scale</a></li>
+            <li><a href="#universalnye-spiski">Универсальные списки негативных промптов</a></li>
+            <li><a href="#po-naznacheniyu">Негативные промпты по назначению</a></li>
+            <li><a href="#sintaksis-vesa">Синтаксис и веса</a></li>
+            <li><a href="#rasprostranennye-oshibki">Распространённые ошибки</a></li>
+            <li><a href="#chasto-zadavaemye-voprosy">Часто задаваемые вопросы</a></li>
+          </ol>
+        </details>
+      </nav>
+
+      <div class="callout">
+        <p><strong>Совет:</strong> Выберите Stable Diffusion в качестве целевой модели в <a href="/">ImageToPrompt</a>, и оптимизированные негативные промпты будут сгенерированы автоматически. Загрузите изображение и получите как позитивный, так и негативный промпт за один анализ.</p>
+      </div>
+
+      <h2 id="chto-takoe-negativnyj-prompt">Что такое негативный промпт?</h2>
+
+      <p>Негативный промпт в Stable Diffusion &#8212; это специальное текстовое поле, в котором указываются элементы, качества и стили, которые не должны присутствовать в сгенерированном изображении. В процессе шумоподавления (денойзинга) модель активно отклоняется от этих концепций, создавая более чистые и точные изображения.</p>
+
+      <p>Наглядная аналогия с компасом: позитивный промпт указывает направление, куда нужно двигаться, а негативный промпт определяет направления, которых следует избегать. Вместе они направляют генерацию к точному результату.</p>
+
+      <h2 id="kak-eto-rabotaet">Как это работает технически</h2>
+
+      <p>Stable Diffusion использует процесс под названием Classifier-Free Guidance (CFG) для балансировки позитивных и негативных промптов. На каждом шаге денойзинга модель вычисляет два прогноза:</p>
+
+      <ol>
+        <li>Прогноз на основе <strong>позитивного</strong> промпта</li>
+        <li>Прогноз на основе <strong>негативного</strong> промпта (или безусловный прогноз, если негативный промпт не задан)</li>
+      </ol>
+
+      <p>Финальный результат вычисляется путём отклонения от негативного прогноза и приближения к позитивному, с интенсивностью, определяемой CFG scale.</p>
+
+      <h2 id="cfg-scale">Связь с CFG Scale</h2>
+
+      <p>CFG scale определяет, насколько строго модель следует промптам. Это значение влияет как на позитивный, так и на негативный промпт:</p>
+
+      <div class="table-wrap">
+      <table class="comparison-table">
+        <thead>
+          <tr>
+            <th>CFG Scale</th>
+            <th>Эффект</th>
+            <th>Рекомендуемое использование</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>1 &#8211; 3</td>
+            <td>Креативный, частично игнорирует промпт</td>
+            <td>Свободное исследование</td>
+          </tr>
+          <tr>
+            <td>5 &#8211; 7</td>
+            <td>Баланс качества и креативности</td>
+            <td>Общее использование (рекомендуется)</td>
+          </tr>
+          <tr>
+            <td>8 &#8211; 12</td>
+            <td>Строго следует промпту</td>
+            <td>Когда важна точность</td>
+          </tr>
+          <tr>
+            <td>13+</td>
+            <td>Слишком строго, вероятны артефакты</td>
+            <td>Обычно следует избегать</td>
+          </tr>
+        </tbody>
+      </table>
+      </div>
+
+      <p>Важный момент: при высоком CFG эффект негативных промптов тоже усиливается. При CFG 12+ и чрезмерно сильных негативных промптах модель может отклоняться от определённых концепций слишком далеко, что приводит к странным результатам.</p>
+
+      <h2 id="universalnye-spiski">Универсальные списки негативных промптов</h2>
+
+      <p>Ниже приведены универсальные негативные промпты, рекомендуемые в качестве стартовой точки для большинства генераций:</p>
+
+      <h3>Качество изображения</h3>
+      <pre><code>(worst quality:1.4), (low quality:1.4), normal quality, jpeg artifacts, blurry, noisy, grainy, pixelated, low resolution</code></pre>
+
+      <h3>Анатомия и пропорции</h3>
+      <pre><code>bad anatomy, bad hands, extra fingers, missing fingers, extra limbs, missing limbs, fused fingers, too many fingers, deformed, mutated, disfigured, malformed</code></pre>
+
+      <h3>Композиция</h3>
+      <pre><code>cropped, out of frame, cut off, duplicate, clone, copy, watermark, signature, text, logo, username, artist name</code></pre>
+
+      <h3>Готовый полный список для копирования</h3>
+      <pre><code>(worst quality:1.4), (low quality:1.4), blurry, noisy, watermark, signature, text, logo, bad anatomy, bad hands, extra fingers, missing fingers, extra limbs, deformed, disfigured, duplicate, cropped, out of frame, ugly, poorly drawn face, poorly drawn hands</code></pre>
+
+      <h2 id="po-naznacheniyu">Негативные промпты по назначению</h2>
+
+      <h3>Фотореалистичные портреты</h3>
+      <pre><code>(worst quality:1.4), (low quality:1.4), bad anatomy, bad hands, deformed face, deformed eyes, asymmetric eyes, cross-eyed, extra fingers, missing fingers, blurry, watermark, signature, 3d render, cartoon, anime, illustration, painting, drawing</code></pre>
+
+      <h3>Аниме и манга</h3>
+      <pre><code>(worst quality:1.4), (low quality:1.4), realistic, photorealistic, 3d render, bad anatomy, bad hands, extra fingers, deformed, blurry, watermark, signature, text, duplicate, cropped, ugly</code></pre>
+
+      <h3>Пейзажи и окружения</h3>
+      <pre><code>(worst quality:1.4), (low quality:1.4), blurry, noisy, watermark, text, logo, people, person, human, figures, cars, vehicles, modern objects, power lines, telephone poles</code></pre>
+
+      <h3>Продуктовые фото</h3>
+      <pre><code>(worst quality:1.4), (low quality:1.4), blurry, noisy, watermark, text, logo, cluttered background, distracting elements, poor lighting, shadows on product, reflections, distortion</code></pre>
+
+      <h2 id="sintaksis-vesa">Синтаксис и веса</h2>
+
+      <p>Негативные промпты поддерживают тот же синтаксис весов, что и позитивные промпты в Stable Diffusion:</p>
+
+      <ul>
+        <li><code>(term:1.4)</code> &#8212; сильный вес, модель активно избегает эту концепцию</li>
+        <li><code>(term:1.0)</code> &#8212; обычный вес (по умолчанию)</li>
+        <li><code>(term:0.6)</code> &#8212; слабый вес, лёгкое влияние</li>
+        <li><code>[term]</code> &#8212; уменьшение веса на 10%</li>
+        <li><code>(term)</code> &#8212; увеличение веса на 10%</li>
+      </ul>
+
+      <p>Рекомендуется устанавливать вес 1.4 для терминов, связанных с качеством (<code>(worst quality:1.4)</code>), поскольку они оказывают наибольшее влияние на общее качество. Контентно-специфические термины оставляйте с весом 1.0.</p>
+
+      <h2 id="rasprostranennye-oshibki">Распространённые ошибки</h2>
+
+      <ol class="mistakes-list">
+        <li>
+          <strong>Слишком длинный негативный промпт.</strong> Как и позитивный промпт, негативный имеет лимит токенов (77 для SDXL). Термины за пределами лимита игнорируются. Приоритизируйте наиболее важные элементы.
+        </li>
+        <li>
+          <strong>Позитивные описания в негативном поле.</strong> Не пишите <code>not blurry</code>. Просто пишите <code>blurry</code>. Негативное поле уже интерпретируется как «избегать этого».
+        </li>
+        <li>
+          <strong>Противоречие между позитивным и негативным промптами.</strong> Если вы запрашиваете <code>painting</code> в позитивном промпте и одновременно включаете <code>painting</code> в негативный, модель получает противоречивые сигналы. Результат будет несогласованным.
+        </li>
+        <li>
+          <strong>Копирование списков без адаптации.</strong> Универсальные негативные промпты &#8212; хорошая стартовая точка, но их нужно адаптировать под конкретный случай. Негативный промпт для портрета отличается от промпта для пейзажа.
+        </li>
+      </ol>
+
+      <div class="cta-box">
+        <h3>Автоматическая генерация негативных промптов</h3>
+        <p>Загрузите референсное изображение и выберите Stable Diffusion. ImageToPrompt сгенерирует оптимизированные позитивный и негативный промпты.</p>
+        <a href="/?lang=ru" class="cta-btn">Попробовать ImageToPrompt &#8594;</a>
+      </div>
+
+      <h2 id="chasto-zadavaemye-voprosy">Часто задаваемые вопросы</h2>
+
+      <h3>Что такое негативный промпт в Stable Diffusion?</h3>
+      <p>Негативный промпт &#8212; это специальное текстовое поле, в котором указываются элементы, которые не должны появляться в сгенерированном изображении. Модель активно отклоняется от этих концепций при генерации, повышая качество и уменьшая артефакты.</p>
+
+      <h3>Влияет ли CFG scale на негативные промпты?</h3>
+      <p>Да, CFG scale (Classifier-Free Guidance) определяет, насколько строго модель следует как позитивному, так и негативному промптам. CFG 7 &#8212; оптимальный баланс. Слишком высокий CFG (15+) вызывает артефакты, слишком низкий (3&#8211;4) частично игнорирует негативные промпты.</p>
+
+      <h3>Какой самый полезный универсальный негативный промпт?</h3>
+      <p>Наиболее эффективный универсальный негативный промпт: <code>(worst quality:1.4), (low quality:1.4), blurry, watermark, signature, text, deformed, bad anatomy, bad hands, extra fingers, missing fingers, extra limbs, duplicate, cropped, out of frame, ugly</code>.</p>
+
+      <h3>Поддерживают ли Midjourney и Flux негативные промпты?</h3>
+      <p>Midjourney имеет ограниченную поддержку через параметр <code>--no</code> (например: <code>--no text, watermark</code>). Flux не поддерживает негативные промпты вовсе. Только Stable Diffusion предоставляет полноценное выделенное поле с поддержкой весов.</p>
+
+    </div>
+
+    <div class="author-bio">
+      <img src="/favicon.svg" alt="ImageToPrompt Team" width="44" height="44">
+      <div>
+        <strong>ImageToPrompt Team</strong>
+        <p>Мы — команда экспертов, помогающая креативщикам освоить генерацию AI-изображений. Мы делимся актуальными руководствами по лучшим практикам и новым техникам в генерации AI-изображений.</p>
+        <a href="https://x.com/ImageToPrompt" target="_blank" rel="noopener" class="author-follow">Подписаться на X</a>
+      </div>
+    </div>
+
+    <div class="related-posts">
+      <h2>Связанные руководства</h2>
+      <div class="related-grid">
+        <a href="/ru/blog/image-to-prompt-anime/" class="related-card">
+          <p class="tag">Аниме</p>
+          <h3>Изображение в промпт для аниме</h3>
+        </a>
+        <a href="/ru/blog/midjourney-vs-flux/" class="related-card">
+          <p class="tag">Сравнение</p>
+          <h3>Midjourney vs Flux: полное сравнение 2026</h3>
+        </a>
+        <a href="/ru/blog/oshibki-prompt-inzheneringa/" class="related-card">
+          <p class="tag">Промпт-инженерия</p>
+          <h3>15 ошибок промпт-инженерии</h3>
+        </a>
+        <a href="/ru/blog/image-to-prompt-igrovaya-grafika/" class="related-card">
+          <p class="tag">Игровая графика</p>
+          <h3>Изображение в промпт для игровой графики</h3>
+        </a>
+      </div>
+    </div>
+
+  </div>
+
+  <footer class="footer-4col">
+    <div class="f4-inner">
+      <div class="f4-brand">
+        <img src="/favicon.svg" alt="ImageToPrompt" width="28" height="28">
+        <span class="f4-brand-name">ImageTo<span class="accent">Prompt</span></span>
+        <span class="f4-brand-sub">&mdash; Free AI Prompt Generator</span>
+      </div>
+      <div class="f4-grid">
+        <div class="f4-section">
+          <h4 class="f4-heading">Image Prompt Tools</h4>
+          <a href="/">Image to Prompt</a>
+          <a href="/text-to-prompt/">Text to Prompt</a>
+      <a href="/describe-image/">Describe Image</a>
+          <a href="/midjourney-prompt-generator/">Midjourney</a>
+          <a href="/stable-diffusion-prompt-generator/">Stable Diffusion</a>
+          <a href="/flux-prompt-generator/">Flux</a>
+          <a href="/dall-e-prompt-generator/">DALL-E 3</a>
+          <a href="/adobe-firefly-prompt-generator/">Adobe Firefly</a>
+          <a href="/leonardo-ai-prompt-generator/">Leonardo AI</a>
+          <a href="/ideogram-prompt-generator/">Ideogram</a>
+        </div>
+        <div class="f4-section">
+          <h4 class="f4-heading">Video Prompt Tools</h4>
+          <a href="/image-to-video-prompt/">Image to Video Prompt</a>
+          <a href="/text-to-video-prompt/">Text to Video Prompt</a>
+          <a href="/veo-prompt-generator/">Veo / Flow Studio</a>
+          <a href="/kling-prompt-generator/">Kling AI</a>
+          <a href="/runway-prompt-generator/">Runway Gen-3</a>
+          <a href="/pika-prompt-generator/">Pika</a>
+          <a href="/luma-prompt-generator/">Luma Dream Machine</a>
+          <a href="/sora-prompt-generator/">Sora</a>
+          <a href="/minimax-prompt-generator/">Minimax</a>
+          <a href="/stable-video-prompt-generator/">Stable Video</a>
+        </div>
+        <div class="f4-section">
+          <h4 class="f4-heading">Resources</h4>
+          <a href="/ru/blog/">Блог</a>
+          <a href="/ru/about/">О нас</a>
+          <a href="/ru/pricing/">Цены</a>
+          <a href="/contact/">Contact</a>
+          <a href="/privacy-policy/">Privacy Policy</a>
+          <a href="/terms-of-service/">Terms of Service</a>
+        </div>
+        <div class="f4-section">
+          <h4 class="f4-heading">Languages</h4>
+          <a href="/">English</a>
+          <a href="/fr/">Fran&#231;ais</a>
+          <a href="/ar/">&#1575;&#1604;&#1593;&#1585;&#1576;&#1610;&#1577;</a>
+          <a href="/es/">Espa&#241;ol</a>
+          <a href="/ko/">&#54620;&#44397;&#50612;</a>
+          <a href="/ja/">&#26085;&#26412;&#35486;</a>
+          <a href="/ru/">&#1056;&#1091;&#1089;&#1089;&#1082;&#1080;&#1081;</a>
+        </div>
+      </div>
+      <div class="f4-bottom">
+        <p>&#169; 2026 ImageToPrompt.dev &#8212; Free AI Prompt Generator</p>
+        <p>Your images are never stored. All analysis is ephemeral and private.</p>
+      </div>
+    </div>
+  </footer>
+
+<script src="/newsletter-inject.js" defer></script>
+<script src="/nav.js" defer></script>
+  <script>
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', function() {
+    navigator.serviceWorker.register('/sw.js')
+      .catch(function(err) { console.warn('SW registration failed:', err); });
+  });
+}
+</script>
+</body>
+</html>

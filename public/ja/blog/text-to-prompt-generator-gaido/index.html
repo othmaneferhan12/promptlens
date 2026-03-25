@@ -1,0 +1,518 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <script src="/theme-toggle.js"></script>
+  <meta charset="UTF-8" />
+  <link rel="dns-prefetch" href="https://www.googletagmanager.com">
+<link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="max-image-preview:large, index, follow">
+  <meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="ImageToPrompt">
+  <title>テキストからプロンプトへ：説明文をプロ仕様のAIプロンプトに変換</title>
+  <meta name="description" content="基本的な説明文をプロ仕様のAIプロンプトに変換。Midjourney、Stable Diffusion、Flux、DALL-E 3すべてのモデルに対応した無料ツール。" />
+  <link rel="canonical" href="https://www.imagetoprompt.dev/ja/blog/text-to-prompt-generator-gaido/" />
+  <link rel="alternate" hreflang="ja" href="https://www.imagetoprompt.dev/ja/blog/text-to-prompt-generator-gaido/" />
+  <link rel="alternate" hreflang="en" href="https://www.imagetoprompt.dev/blog/text-to-prompt-generator/" />
+  <link rel="alternate" hreflang="fr" href="https://www.imagetoprompt.dev/fr/blog/generateur-texte-vers-prompt/" />
+  <link rel="alternate" hreflang="ar" href="https://www.imagetoprompt.dev/ar/blog/muwalid-nass-ila-prompt/" />
+  <link rel="alternate" hreflang="es" href="https://www.imagetoprompt.dev/es/blog/generador-texto-a-prompt/" />
+  <link rel="alternate" hreflang="x-default" href="https://www.imagetoprompt.dev/blog/text-to-prompt-generator/" />
+  <meta property="og:title" content="テキストからプロンプトへ：説明文をプロ仕様のAIプロンプトに変換" />
+  <meta property="og:description" content="基本的な説明文をプロ仕様のAIプロンプトに変換。すべてのモデルに対応。" />
+  <meta property="og:url" content="https://www.imagetoprompt.dev/ja/blog/text-to-prompt-generator-gaido/" />
+  <meta property="og:type" content="article" />
+  <meta property="og:image" content="https://www.imagetoprompt.dev/og-image.png" />
+  <meta property="og:site_name" content="ImageToPrompt" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="テキストからプロンプトへ：説明文をプロ仕様のAIプロンプトに変換" />
+  <meta name="twitter:description" content="説明文をプロ仕様のAIプロンプトに変換。すべてのモデルに無料対応。" />
+  <meta name="twitter:image" content="https://www.imagetoprompt.dev/og-image.png" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="48x48" href="/favicon-48.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+  <link rel="manifest" href="/site.webmanifest" />
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="/fonts/space-grotesk-700.woff2" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="/fonts/inter-400.woff2" />
+  <link rel="stylesheet" href="/theme.css">
+  <link rel="preload" href="/blog.css" as="style" onload="this.onload=null;this.rel='stylesheet'"><noscript><link rel="stylesheet" href="/blog.css"></noscript>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "テキストからプロンプトへ：説明文をプロ仕様のAIプロンプトに変換",
+    "description": "基本的な説明文をプロ仕様のAIプロンプトに変換。すべてのモデルに対応。",
+    "image": "https://www.imagetoprompt.dev/og-image.png",
+    "datePublished": "2026-03-15",
+    "dateModified": "2026-03-24",
+    "inLanguage": "ja",
+    "author": {
+      "@type": "Person",
+      "name": "ImageToPrompt Team",
+      "url": "https://www.imagetoprompt.dev/"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "ImageToPrompt",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://www.imagetoprompt.dev/favicon.svg"
+      }
+    },
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https://www.imagetoprompt.dev/ja/blog/text-to-prompt-generator-gaido/"
+    }
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "テキストからプロンプトジェネレーターはどのように機能しますか？",
+        "acceptedAnswer": { "@type": "Answer", "text": "テキストからプロンプトジェネレーターはAI（ImageToPromptの場合はAnthropicのClaude）を使用して、シンプルな説明文をターゲットAIモデルに最適化されたプロフェッショナルなプロンプトに変換します。AIはライティング、構図、スタイルの詳細と、選択したモデル固有の技術パラメータを自動的に追加します。" }
+      },
+      {
+        "@type": "Question",
+        "name": "テキストからプロンプトと画像からプロンプトの違いは何ですか？",
+        "acceptedAnswer": { "@type": "Answer", "text": "画像からプロンプトは既存の画像を分析してそれを記述するプロンプトを抽出します。テキストからプロンプトはあなたのテキスト説明（短くて曖昧でも可）を受け取り、詳細なプロフェッショナルプロンプトに拡張します。両ツールは補完的です：視覚的な参照がある場合は画像からプロンプトを、アイデアから始める場合はテキストからプロンプトを使用してください。" }
+      },
+      {
+        "@type": "Question",
+        "name": "テキストからプロンプトジェネレーターは日本語で使えますか？",
+        "acceptedAnswer": { "@type": "Answer", "text": "はい。日本語で説明を入力すると、ジェネレーターはターゲットAIモデル向けに最適化された英語のプロンプトを生成します。画像生成モデルは英語のプロンプトで最良の結果を出すため、自動翻訳によってより良い結果が保証されます。" }
+      },
+      {
+        "@type": "Question",
+        "name": "テキストからプロンプトジェネレーターは無料ですか？",
+        "acceptedAnswer": { "@type": "Answer", "text": "はい、テキストからプロンプトジェネレーターは1日10回まで無料で利用できます（他のImageToPromptツールと共有）。登録不要です。より集中的な利用には、料金ページでプランをご確認ください。" }
+      }
+    ]
+  }
+  </script>
+    <!-- Google AdSense -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4499206373485728" crossorigin="anonymous"></script>
+    <!-- Web Push Notifications -->
+<script src="https://cdn.onesignal.com/sdks/web/v16/OneSignalSDK.page.js" defer></script>
+<script>
+  window.OneSignalDeferred = window.OneSignalDeferred || [];
+  OneSignalDeferred.push(async function(OneSignal) {
+    await OneSignal.init({
+      appId: "REPLACE_WITH_ONESIGNAL_APP_ID",
+      notifyButton: { enable: false }
+    });
+  });
+</script>
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="inner">
+      <a href="/ja/" class="site-logo"><img src="/favicon.svg" alt="ImageToPrompt" width="48" height="48"><div class="site-logo-text">ImageTo<span class="accent">Prompt</span><span class="site-logo-sub">無料AIプロンプトジェネレーター</span></div></a>
+      <nav class="site-nav" aria-label="メインナビゲーション">
+        <div class="nav-dropdown">
+          <button class="nav-dropdown-trigger" aria-haspopup="true" aria-expanded="false">Tools <span class="nav-chevron" aria-hidden="true">&#9660;</span></button>
+          <div class="nav-dropdown-menu" role="menu">
+            <div class="nav-mega-grid">
+              <div class="nav-mega-col">
+                <div class="nav-mega-heading">&#128444; IMAGE TOOLS</div>
+                <a href="/" role="menuitem" class="nav-mega-tool">Image to Prompt <span class="nav-mega-arrow">&#8594;</span></a>
+                <a href="/text-to-prompt/" role="menuitem" class="nav-mega-tool">Text to Prompt <span class="nav-mega-arrow">&#8594;</span></a>
+                <a href="/describe-image/" role="menuitem" class="nav-mega-tool">Describe Image <span class="nav-new-badge">NEW</span> <span class="nav-mega-arrow">&#8594;</span></a>
+                <div class="nav-mega-models-label">Models</div>
+                <div class="nav-mega-models"><a href="/midjourney-prompt-generator/">Midjourney</a><span class="nav-dot">&#xB7;</span><a href="/stable-diffusion-prompt-generator/">SD</a></div>
+                <div class="nav-mega-models"><a href="/flux-prompt-generator/">Flux</a><span class="nav-dot">&#xB7;</span><a href="/dall-e-prompt-generator/">DALL&#xB7;E&#xA0;3</a></div>
+                <div class="nav-mega-models"><a href="/adobe-firefly-prompt-generator/">Firefly</a><span class="nav-dot">&#xB7;</span><a href="/leonardo-ai-prompt-generator/">Leonardo</a></div>
+                <div class="nav-mega-models"><a href="/ideogram-prompt-generator/">Ideogram</a></div>
+              </div>
+              <div class="nav-mega-divider" aria-hidden="true"></div>
+              <div class="nav-mega-col">
+                <div class="nav-mega-heading">&#127909; VIDEO TOOLS</div>
+                <a href="/?tab=image-to-video" role="menuitem" class="nav-mega-tool">Image to Video <span class="nav-mega-arrow">&#8594;</span></a>
+                <a href="/?tab=text-to-video" role="menuitem" class="nav-mega-tool">Text to Video <span class="nav-mega-arrow">&#8594;</span></a>
+                <div class="nav-mega-models-label">Models</div>
+                <div class="nav-mega-models"><a href="/veo-prompt-generator/">Veo</a><span class="nav-dot">&#xB7;</span><a href="/kling-prompt-generator/">Kling</a></div>
+                <div class="nav-mega-models"><a href="/runway-prompt-generator/">Runway</a><span class="nav-dot">&#xB7;</span><a href="/pika-prompt-generator/">Pika</a></div>
+                <div class="nav-mega-models"><a href="/luma-prompt-generator/">Luma</a><span class="nav-dot">&#xB7;</span><a href="/sora-prompt-generator/">Sora</a></div>
+                <div class="nav-mega-models"><a href="/minimax-prompt-generator/">Minimax</a><span class="nav-dot">&#xB7;</span><a href="/stable-video-prompt-generator/">Stable</a></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <a href="/ja/blog/">ブログ</a>
+        <a href="/ja/pricing/" class="nav-pill-pricing">料金</a>
+        <a href="/ja/about/" class="nav-pill-about">概要</a>
+        <a href="/ja/" class="nav-try-free">無料で試す &#8594;</a>
+        <button id="theme-toggle" onclick="toggleTheme()" aria-label="テーマ切替" title="テーマ切替">&#9728;&#xFE0F;</button>
+  </nav>
+    </div>
+  </header>
+
+  <nav class="breadcrumb" aria-label="パンくずリスト">
+    <a href="/ja/">ホーム</a> <span aria-hidden="true">&#8250;</span>
+    <a href="/ja/blog/">ブログ</a> <span aria-hidden="true">&#8250;</span>
+    <span aria-current="page">テキストからプロンプトへ</span>
+  </nav>
+
+  <div class="page-wrapper">
+
+    <header class="article-header">
+      <p class="article-tag">AIツール</p>
+      <h1>テキストからプロンプトへ：完全ガイド</h1>
+      <div class="article-meta">
+        <span>2026年3月</span>
+        <span class="dot">&#183;</span>
+        <span>読了目安 9分</span>
+        <span class="dot">&#183;</span>
+        <span>Midjourney &#183; Stable Diffusion &#183; Flux &#183; DALL&#xB7;E 3</span>
+        <span class="dot">&#183;</span>
+        <span>2026年3月更新</span>
+      </div>
+    </header>
+
+    <div class="article-body">
+
+      <p>頭の中にアイデアがある — ファンタジー風景、シネマティックなポートレート、プロダクトデザイン — でも、それを効果的なAIプロンプトにどう変換すればいいか分からない。まさにそれを解決するのがテキストからプロンプトジェネレーターです。シンプルな説明を受け取り、お好みのAIモデルに最適化されたプロフェッショナルなプロンプトに変換します。</p>
+
+      <nav class="toc" aria-label="目次">
+        <details open>
+          <summary>このガイドの内容</summary>
+          <ol>
+            <li><a href="#shikumi">テキストからプロンプトの仕組み</a></li>
+            <li><a href="#before-after">変換前後の例</a></li>
+            <li><a href="#model-betsu">モデル別最適化出力</a></li>
+            <li><a href="#style-mode">スタイルモード</a></li>
+            <li><a href="#use-case">ユースケース</a></li>
+            <li><a href="#kijutsu-tips">より良い説明を書くコツ</a></li>
+            <li><a href="#text-vs-image">テキストからプロンプト vs 画像からプロンプト</a></li>
+            <li><a href="#faq">よくある質問</a></li>
+          </ol>
+        </details>
+      </nav>
+
+      <div class="callout">
+        <p><strong>今すぐ試す：</strong>アイデアを数語で記述するだけで、数秒でプロ仕様のプロンプトが手に入ります。<a href="/text-to-prompt/">テキストからプロンプトツール</a>で無料、登録不要でお試しください。</p>
+      </div>
+
+      <h2 id="shikumi">テキストからプロンプトの仕組み</h2>
+
+      <p>ImageToPromptのテキストからプロンプトジェネレーターは、AnthropicのClaude AIを使用して説明を分析し、プロフェッショナルなプロンプトに拡張します。プロセスは3つのステップで行われます。</p>
+
+      <ol>
+        <li><strong>意図の分析：</strong>AIが説明文から主要な被写体、望まれる雰囲気、暗示されるスタイルを特定します</li>
+        <li><strong>拡張：</strong>AIが不足している詳細を追加 — ライティング、構図、カラーパレット、アーティスティックテクニック、品質パラメータ</li>
+        <li><strong>フォーマット：</strong>ターゲットAIモデル（Midjourney、Stable Diffusion、Fluxなど）の固有構文に合わせてプロンプトをフォーマット</li>
+      </ol>
+
+      <p>結果はAI画像生成ツールに直接貼り付けられる完全なプロンプトです。各プロンプトにはメインプロンプト、ネガティブプロンプト（該当する場合）、そして代替案としてのクリエイティブバリエーションが含まれます。</p>
+
+      <h2 id="before-after">変換前後の例</h2>
+
+      <p>シンプルな説明がどのように各モデル向けのプロフェッショナルプロンプトに変換されるか、具体的な例を紹介します。</p>
+
+      <h3>例1：ファンタジー風景</h3>
+
+      <h4>入力する説明：</h4>
+      <div class="code-block"><code>夜に光る木がある魔法の森</code></div>
+
+      <h4>生成されたMidjourneyプロンプト：</h4>
+      <div class="code-block"><code>enchanted forest at night, ancient towering trees with bioluminescent bark glowing soft cyan and violet, fireflies floating between twisted branches, mystical fog carpet on mossy ground, ethereal moonlight filtering through canopy, fantasy atmosphere, magical realism, rich jewel-tone palette, cinematic depth of field --ar 16:9 --v 6.1 --style raw</code></div>
+
+      <h4>生成されたStable Diffusionプロンプト：</h4>
+      <div class="code-block"><code>(enchanted forest:1.3), nighttime, (bioluminescent trees:1.2), ancient twisted trunks glowing cyan and violet, (fireflies:0.9), mystical fog on ground, moonlight rays through canopy, fantasy landscape, (magical atmosphere:1.1), highly detailed, 8k resolution, masterpiece, best quality
+
+Negative: blurry, low quality, daylight, modern objects, text, watermark, deformed trees, oversaturated</code></div>
+
+      <h3>例2：プロフェッショナルポートレート</h3>
+
+      <h4>入力する説明：</h4>
+      <div class="code-block"><code>モダンなオフィスにいる女性起業家のポートレート</code></div>
+
+      <h4>生成されたFluxプロンプト：</h4>
+      <div class="code-block"><code>Professional portrait photograph of a confident businesswoman in her 30s, standing in a contemporary minimalist office with floor-to-ceiling windows. She wears a tailored navy blazer over a crisp white blouse. Natural afternoon light streams in from the left, creating soft shadows and warm skin tones. The background features a sleek desk with a laptop and a modern art piece on the wall. Shot with Canon EOS R5, 85mm f/1.4 lens, shallow depth of field blurring the background, editorial portrait style, corporate photography, warm color grading.</code></div>
+
+      <h3>例3：プロダクトデザイン</h3>
+
+      <h4>入力する説明：</h4>
+      <div class="code-block"><code>暗い背景の高級腕時計</code></div>
+
+      <h4>生成されたDALL-E 3プロンプト：</h4>
+      <div class="code-block"><code>A luxury Swiss chronograph watch photographed on a dark slate surface. The watch has a deep blue dial with rose gold indices and hands, a sapphire crystal catching subtle light reflections. The black leather strap curves elegantly. Dramatic studio lighting from the upper right creates precise highlights on the polished metal case. Dark moody background with gentle gradient. Product photography style, high-end commercial quality, ultra-sharp detail on watch face and mechanisms.</code></div>
+
+      <h2 id="model-betsu">モデル別最適化出力</h2>
+
+      <p>同じコンセプトでも、ターゲットモデルによって生成されるプロンプトは大幅に異なります。モデル選択が重要な理由はここにあります。</p>
+
+      <div class="table-wrap">
+      <table class="comparison-table">
+        <thead>
+          <tr>
+            <th>項目</th>
+            <th>Midjourney</th>
+            <th>Stable Diffusion</th>
+            <th>Flux</th>
+            <th>DALL-E 3</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>フォーマット</td>
+            <td>記述子 + パラメータ</td>
+            <td>重み付きタグ</td>
+            <td>詳細な自然言語</td>
+            <td>完全な文章</td>
+          </tr>
+          <tr>
+            <td>ネガティブプロンプト</td>
+            <td><code>--no</code>フラグ</td>
+            <td>専用フィールド</td>
+            <td>非対応</td>
+            <td>非対応</td>
+          </tr>
+          <tr>
+            <td>理想的な長さ</td>
+            <td>30〜60語</td>
+            <td>20〜50タグ</td>
+            <td>50〜100語</td>
+            <td>40〜80語</td>
+          </tr>
+          <tr>
+            <td>追加パラメータ</td>
+            <td><code>--ar, --v, --style, --stylize</code></td>
+            <td>CFG, steps, sampler</td>
+            <td>最小限</td>
+            <td>なし</td>
+          </tr>
+        </tbody>
+      </table>
+      </div>
+
+      <h2 id="style-mode">スタイルモード</h2>
+
+      <p>ImageToPromptのテキストからプロンプトジェネレーターは、生成されるプロンプトのアングルと語彙に影響を与える6つのスタイルモードを提供します。</p>
+
+      <ul>
+        <li><strong>シネマティック：</strong>ドラマチックなライティング、被写界深度、映画的な参照、感情的なムード。ナラティブシーンや表現力豊かなポートレートに最適。</li>
+        <li><strong>テクニカル：</strong>パラメータの精度、レンズスペック、リアルな撮影条件。プロダクト写真や建築レンダリングに最適。</li>
+        <li><strong>アーティスティック：</strong>アートムーブメントの参照、絵画技法、クリエイティブな構図。アート作品やコンセプチュアルイラストレーションに。</li>
+        <li><strong>ミニマル：</strong>必要最小限の要素のみの簡潔なプロンプト。モデルに自由に解釈させたい場合に便利。</li>
+        <li><strong>エピック：</strong>壮大なスケール、ドラマチックな雰囲気、スペクタキュラーなディテール。ファンタジー風景やSFシーンに。</li>
+        <li><strong>フォトグラフィック：</strong>プロフェッショナルな写真用語、レンズタイプ、露出設定。フォトリアリスティックな結果に。</li>
+      </ul>
+
+      <h2 id="use-case">ユースケース</h2>
+
+      <h3>コンテンツクリエイター</h3>
+      <p>SNSのコンテンツクリエイターは、テキストからプロンプトを使ってブランドに一貫したビジュアルを素早く生成します。アイデアを数語で記述し、スタイルを選んで、MidjourneyやFluxですぐに使えるプロフェッショナルプロンプトを取得できます。</p>
+
+      <h3>デザイナー・イラストレーター</h3>
+      <p>プロのデザイナーは、本格的な制作に入る前のコンセプト探索にこのツールを活用します。適切に構造化されたプロンプトにより、数分で何十ものクリエイティブな方向性を視覚化でき、アイデーション段階を大幅に加速します。</p>
+
+      <h3>マーケティングチーム</h3>
+      <p>マーケティングチームはキャンペーンビジュアル、プロダクトモックアップ、プレゼンテーション用イラストを生成します。テクニカルモードはプロフェッショナルなプロダクト写真に特に有用です。</p>
+
+      <h3>教育・研修</h3>
+      <p>教師やトレーナーは授業用の視覚教材を作成します。テキストからプロンプトにより、グラフィックデザインのスキルなしで、あらゆる教育コンセプトをビジュアルイラストに変換できます。</p>
+
+      <h3>ゲーム開発者</h3>
+      <p>インディー開発者やスタジオは、コンセプトアート、ゲームアセット、ビジュアルリファレンスの作成にこのツールを活用します。アーティスティックモードはコンセプトアートやゲームイラスト向けに最適化されたプロンプトを生成します。</p>
+
+      <div class="cta-inline">
+        <p>次のアイデアを数秒でプロ仕様のプロンプトに変換しましょう。</p>
+        <a href="/text-to-prompt/" class="cta-btn-sm">テキストからプロンプトを試す →</a>
+      </div>
+
+      <h2 id="kijutsu-tips">より良い説明を書くコツ</h2>
+
+      <p>説明が明確であるほど、生成されるプロンプトの品質も向上します。出力品質を最大化するためのヒントを紹介します。</p>
+
+      <ol>
+        <li><strong>主要な被写体を明記する：</strong>「猫」よりも「窓辺に座るシャム猫」の方が有効です</li>
+        <li><strong>雰囲気を示す：</strong>「メランコリックな雰囲気」「明るくカラフル」「暗くミステリアス」がAIを望む感情のトーンに導きます</li>
+        <li><strong>希望するスタイルがあれば明記：</strong>「アニメ風」「ストリートフォトグラフィー」「油絵」がAIのプロンプトフォーマットを助けます</li>
+        <li><strong>空間的なコンテキストを追加：</strong>「パリのカフェで」「宇宙船内で」「熱帯雨林で」がシーンに奥行きを与えます</li>
+        <li><strong>重要ならライティングを記載：</strong>「夕焼け時」「ネオンライティング」「柔らかな朝の光」が雰囲気に大きく影響します</li>
+      </ol>
+
+      <p>すべてを網羅する必要はありません — ジェネレーターが足りない部分を補完します。しかし、提供する詳細が多いほど、結果の精度は向上します。</p>
+
+      <h2 id="text-vs-image">テキストからプロンプト vs 画像からプロンプト</h2>
+
+      <p>2つのツールは補完的で、異なるユースケースをカバーします。</p>
+
+      <div class="table-wrap">
+      <table class="comparison-table">
+        <thead>
+          <tr>
+            <th>基準</th>
+            <th>テキストからプロンプト</th>
+            <th>画像からプロンプト</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>出発点</td>
+            <td>アイデアやテキスト説明</td>
+            <td>既存の参照画像</td>
+          </tr>
+          <tr>
+            <td>最適な場面</td>
+            <td>ゼロからアイデアを形にする時</td>
+            <td>スタイルを再現・分析したい時</td>
+          </tr>
+          <tr>
+            <td>クリエイティブコントロール</td>
+            <td>高い — 方向性を自分で定義</td>
+            <td>中程度 — 画像が結果を導く</td>
+          </tr>
+          <tr>
+            <td>速度</td>
+            <td>非常に高速（3〜5秒）</td>
+            <td>高速（5〜10秒）</td>
+          </tr>
+          <tr>
+            <td>典型的なユースケース</td>
+            <td>新規作成、アイデーション</td>
+            <td>スタイル再現、ビジュアル分析</td>
+          </tr>
+        </tbody>
+      </table>
+      </div>
+
+      <p>効果的なワークフローは両ツールを組み合わせます：画像からプロンプトでインスピレーション源のリファレンスを分析し、次にテキストからプロンプトで特定したスタイル要素に基づくオリジナルバリエーションを作成します。</p>
+
+      <div class="cta-box">
+        <h3>テキストからプロンプトジェネレーターを試す</h3>
+        <p>アイデアを数語で記述するだけで、Midjourney、Stable Diffusion、Flux、DALL-E 3向けに最適化されたプロフェッショナルプロンプトが得られます。無料、登録不要。</p>
+        <a href="/text-to-prompt/" class="cta-btn">テキストからプロンプトを無料で試す →</a>
+      </div>
+
+      <h2 id="faq">よくある質問</h2>
+
+      <h3>テキストからプロンプトジェネレーターはどのように機能しますか？</h3>
+      <p>テキストからプロンプトジェネレーターはAI（ImageToPromptの場合はAnthropicのClaude）を使用して、シンプルな説明文をターゲットAIモデルに最適化されたプロフェッショナルなプロンプトに変換します。AIはライティング、構図、スタイルの詳細と、選択したモデル固有の技術パラメータを自動的に追加します。</p>
+
+      <h3>テキストからプロンプトと画像からプロンプトの違いは何ですか？</h3>
+      <p>画像からプロンプトは既存の画像を分析してそれを記述するプロンプトを抽出します。テキストからプロンプトはあなたのテキスト説明（短くて曖昧でも可）を受け取り、詳細なプロフェッショナルプロンプトに拡張します。両ツールは補完的です：視覚的な参照がある場合は画像からプロンプトを、アイデアから始める場合はテキストからプロンプトを使用してください。</p>
+
+      <h3>テキストからプロンプトジェネレーターは日本語で使えますか？</h3>
+      <p>はい。日本語で説明を入力すると、ジェネレーターはターゲットAIモデル向けに最適化された英語のプロンプトを生成します。画像生成モデルは英語のプロンプトで最良の結果を出すため、自動翻訳によってより良い結果が保証されます。</p>
+
+      <h3>テキストからプロンプトジェネレーターは無料ですか？</h3>
+      <p>はい、テキストからプロンプトジェネレーターは1日10回まで無料で利用できます（他のImageToPromptツールと共有）。登録不要です。より集中的な利用には、料金ページでプランをご確認ください。</p>
+
+    </div>
+
+    <div class="author-bio">
+      <img src="/favicon.svg" alt="ImageToPrompt Team" width="44" height="44">
+      <div>
+        <strong>ImageToPrompt Team</strong>
+        <p>私たちはクリエイターの皆さんがAI画像生成をマスターできるよう支援する専門チームです。画像からプロンプトへの変換ツールやAIプロンプトエンジニアリングガイドを通じて、世界中のアーティストの創作活動をサポートしています。</p>
+        <a href="https://x.com/ImageToPrompt" target="_blank" rel="noopener" class="author-follow">Xでフォロー</a>
+      </div>
+    </div>
+
+    <div class="related-posts">
+      <h2>関連ガイド</h2>
+      <div class="related-grid">
+        <a href="/ja/blog/gazou-kara-prompt-henkan/" class="related-card">
+          <p class="tag">ガイド</p>
+          <h3>画像をAIプロンプトに変換する方法</h3>
+        </a>
+        <a href="/ja/blog/prompt-engineering-machigai/" class="related-card">
+          <p class="tag">注意点</p>
+          <h3>避けるべきプロンプトエンジニアリングの15の間違い</h3>
+        </a>
+        <a href="/ja/blog/prompt-engineering-ai-art-nyuumon/" class="related-card">
+          <p class="tag">入門</p>
+          <h3>AIアートのプロンプトエンジニアリングとは？</h3>
+        </a>
+        <a href="/ja/blog/api-image-to-prompt/" class="related-card">
+          <p class="tag">開発者向け</p>
+          <h3>開発者向け画像からプロンプトAPI</h3>
+        </a>
+      </div>
+    </div>
+
+  </div>
+
+  <footer class="footer-4col">
+    <div class="f4-inner">
+      <div class="f4-brand">
+        <img src="/favicon.svg" alt="ImageToPrompt" width="28" height="28">
+        <span class="f4-brand-name">ImageTo<span class="accent">Prompt</span></span>
+        <span class="f4-brand-sub">&mdash; Free AI Prompt Generator</span>
+      </div>
+      <div class="f4-grid">
+        <div class="f4-section">
+          <h4 class="f4-heading">Image Prompt Tools</h4>
+          <a href="/">Image to Prompt</a>
+          <a href="/text-to-prompt/">Text to Prompt</a>
+      <a href="/describe-image/">Describe Image</a>
+          <a href="/midjourney-prompt-generator/">Midjourney</a>
+          <a href="/stable-diffusion-prompt-generator/">Stable Diffusion</a>
+          <a href="/flux-prompt-generator/">Flux</a>
+          <a href="/dall-e-prompt-generator/">DALL-E 3</a>
+          <a href="/adobe-firefly-prompt-generator/">Adobe Firefly</a>
+          <a href="/leonardo-ai-prompt-generator/">Leonardo AI</a>
+          <a href="/ideogram-prompt-generator/">Ideogram</a>
+        </div>
+        <div class="f4-section">
+          <h4 class="f4-heading">Video Prompt Tools</h4>
+          <a href="/image-to-video-prompt/">Image to Video Prompt</a>
+          <a href="/text-to-video-prompt/">Text to Video Prompt</a>
+          <a href="/veo-prompt-generator/">Veo / Flow Studio</a>
+          <a href="/kling-prompt-generator/">Kling AI</a>
+          <a href="/runway-prompt-generator/">Runway Gen-3</a>
+          <a href="/pika-prompt-generator/">Pika</a>
+          <a href="/luma-prompt-generator/">Luma Dream Machine</a>
+          <a href="/sora-prompt-generator/">Sora</a>
+          <a href="/minimax-prompt-generator/">Minimax</a>
+          <a href="/stable-video-prompt-generator/">Stable Video</a>
+        </div>
+        <div class="f4-section">
+          <h4 class="f4-heading">Resources</h4>
+          <a href="/ja/blog/">ブログ</a>
+          <a href="/ja/about/">概要</a>
+          <a href="/ja/pricing/">料金</a>
+          <a href="/contact/">Contact</a>
+          <a href="/privacy-policy/">Privacy Policy</a>
+          <a href="/terms-of-service/">Terms of Service</a>
+        </div>
+        <div class="f4-section">
+          <h4 class="f4-heading">Languages</h4>
+          <a href="/">English</a>
+          <a href="/fr/">Fran&#231;ais</a>
+          <a href="/ar/">&#1575;&#1604;&#1593;&#1585;&#1576;&#1610;&#1577;</a>
+          <a href="/es/">Espa&#241;ol</a>
+          <a href="/ko/">&#54620;&#44397;&#50612;</a>
+          <a href="/ja/">&#26085;&#26412;&#35486;</a>
+          <a href="/ru/">&#1056;&#1091;&#1089;&#1089;&#1082;&#1080;&#1081;</a>
+        </div>
+      </div>
+      <div class="f4-bottom">
+        <p>&#169; 2026 ImageToPrompt.dev &#8212; Free AI Prompt Generator</p>
+        <p>Your images are never stored. All analysis is ephemeral and private.</p>
+      </div>
+    </div>
+  </footer>
+
+<script src="/newsletter-inject.js" defer></script>
+<script src="/nav.js" defer></script>
+  <script>
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', function() {
+    navigator.serviceWorker.register('/sw.js')
+      .catch(function(err) { console.warn('SW registration failed:', err); });
+  });
+}
+</script>
+</body>
+</html>

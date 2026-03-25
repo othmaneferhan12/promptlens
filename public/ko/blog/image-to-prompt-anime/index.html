@@ -1,0 +1,477 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <script src="/theme-toggle.js"></script>
+  <meta charset="UTF-8" />
+  <link rel="dns-prefetch" href="https://www.googletagmanager.com">
+<link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="max-image-preview:large, index, follow">
+  <meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="ImageToPrompt">
+  <title>애니메이션 이미지에서 프롬프트로: 애니메이션 일러스트를 AI 프롬프트로 변환하는 방법</title>
+  <meta name="description" content="애니메이션 일러스트를 Midjourney, Stable Diffusion, Flux에 최적화된 AI 프롬프트로 변환하는 방법을 알아보세요." />
+  <link rel="canonical" href="https://www.imagetoprompt.dev/ko/blog/image-to-prompt-anime/" />
+  <link rel="alternate" hreflang="ko" href="https://www.imagetoprompt.dev/ko/blog/image-to-prompt-anime/" />
+  <link rel="alternate" hreflang="en" href="https://www.imagetoprompt.dev/blog/image-to-prompt-for-anime/" />
+  <link rel="alternate" hreflang="fr" href="https://www.imagetoprompt.dev/fr/blog/image-vers-prompt-anime/" />
+  <link rel="alternate" hreflang="ar" href="https://www.imagetoprompt.dev/ar/blog/soura-ila-prompt-anime/" />
+  <link rel="alternate" hreflang="es" href="https://www.imagetoprompt.dev/es/blog/imagen-a-prompt-anime/" />
+  <link rel="alternate" hreflang="ja" href="https://www.imagetoprompt.dev/ja/blog/image-to-prompt-anime/" />
+  <link rel="alternate" hreflang="ru" href="https://www.imagetoprompt.dev/ru/blog/image-to-prompt-anime/" />
+  <link rel="alternate" hreflang="x-default" href="https://www.imagetoprompt.dev/blog/image-to-prompt-for-anime/" />
+  <meta property="og:title" content="애니메이션 이미지에서 프롬프트로: 애니메이션 일러스트를 AI 프롬프트로 변환하는 방법" />
+  <meta property="og:description" content="애니메이션 일러스트를 Midjourney, Stable Diffusion, Flux에 최적화된 AI 프롬프트로 변환하는 방법을 알아보세요." />
+  <meta property="og:url" content="https://www.imagetoprompt.dev/ko/blog/image-to-prompt-anime/" />
+  <meta property="og:type" content="article" />
+  <meta property="og:image" content="https://www.imagetoprompt.dev/og-image.png" />
+  <meta property="og:site_name" content="ImageToPrompt" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="애니메이션 이미지에서 프롬프트로: 애니메이션 일러스트를 AI 프롬프트로 변환" />
+  <meta name="twitter:description" content="애니메이션 일러스트를 Midjourney, Stable Diffusion, Flux에 최적화된 AI 프롬프트로 변환하는 방법." />
+  <meta name="twitter:image" content="https://www.imagetoprompt.dev/og-image.png" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="48x48" href="/favicon-48.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+  <link rel="manifest" href="/site.webmanifest" />
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="/fonts/space-grotesk-700.woff2" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="/fonts/inter-400.woff2" />
+  <link rel="stylesheet" href="/theme.css">
+  <link rel="preload" href="/blog.css" as="style" onload="this.onload=null;this.rel='stylesheet'"><noscript><link rel="stylesheet" href="/blog.css"></noscript>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "애니메이션 이미지에서 프롬프트로: 애니메이션 일러스트를 AI 프롬프트로 변환하는 방법",
+    "description": "애니메이션 일러스트를 Midjourney, Stable Diffusion, Flux에 최적화된 AI 프롬프트로 변환하는 방법을 알아보세요.",
+    "image": "https://www.imagetoprompt.dev/og-image.png",
+    "datePublished": "2026-03-12",
+    "dateModified": "2026-03-24",
+    "inLanguage": "ko",
+    "author": {
+      "@type": "Person",
+      "name": "ImageToPrompt Team",
+      "url": "https://www.imagetoprompt.dev/"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "ImageToPrompt",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://www.imagetoprompt.dev/favicon.svg"
+      }
+    },
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https://www.imagetoprompt.dev/ko/blog/image-to-prompt-anime/"
+    }
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Stable Diffusion에서 애니메이션 스타일을 생성하려면 어떤 키워드를 사용해야 하나요?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Stable Diffusion에서는 anime, manga style, cel shading, vibrant colors, detailed eyes, sakura petals, dynamic pose 등의 태그를 사용하세요. (masterpiece:1.2), (best quality:1.1) 같은 품질 토큰과 애니메이션 전용 네거티브 프롬프트도 추가하세요."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Midjourney에서 본격적인 애니메이션 스타일을 생성할 수 있나요?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "네, Midjourney v6+는 애니메이션 스타일을 매우 잘 처리합니다. anime illustration, Studio Ghibli style, cel-shaded, manga aesthetic 같은 프롬프트를 사용하세요. --niji를 추가하면 이 스타일에 최적화된 완전히 다른 모델을 사용하는 Midjourney의 애니메이션 전용 모드가 활성화됩니다."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "애니메이션 아트에는 어떤 네거티브 프롬프트를 사용해야 하나요?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Stable Diffusion에서의 애니메이션에는 다음 네거티브 프롬프트를 사용하세요: realistic, photorealistic, 3d render, deformed hands, extra fingers, bad anatomy, blurry, low quality, ugly, watermark, signature, cropped."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "기존 애니메이션 일러스트를 AI 프롬프트로 변환하려면 어떻게 해야 하나요?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "ImageToPrompt를 사용해 애니메이션 일러스트를 업로드하세요. 도구가 스타일(소년, 소녀, 청년), 디자인 특성, 컬러 팔레트를 자동으로 식별하고 타겟 모델에 최적화된 프롬프트를 생성합니다."
+        }
+      }
+    ]
+  }
+  </script>
+    <!-- Google AdSense -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4499206373485728" crossorigin="anonymous"></script>
+    <!-- Web Push Notifications -->
+<script src="https://cdn.onesignal.com/sdks/web/v16/OneSignalSDK.page.js" defer></script>
+<script>
+  window.OneSignalDeferred = window.OneSignalDeferred || [];
+  OneSignalDeferred.push(async function(OneSignal) {
+    await OneSignal.init({
+      appId: "REPLACE_WITH_ONESIGNAL_APP_ID",
+      notifyButton: { enable: false }
+    });
+  });
+</script>
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="inner">
+      <a href="/ko/" class="site-logo"><img src="/favicon.svg" alt="ImageToPrompt" width="48" height="48"><div class="site-logo-text">ImageTo<span class="accent">Prompt</span><span class="site-logo-sub">무료 AI 프롬프트 생성기</span></div></a>
+      <nav class="site-nav" aria-label="메인 내비게이션">
+        <div class="nav-dropdown">
+          <button class="nav-dropdown-trigger" aria-haspopup="true" aria-expanded="false">Tools <span class="nav-chevron" aria-hidden="true">&#9660;</span></button>
+          <div class="nav-dropdown-menu" role="menu">
+            <div class="nav-mega-grid">
+              <div class="nav-mega-col">
+                <div class="nav-mega-heading">&#128444; IMAGE TOOLS</div>
+                <a href="/" role="menuitem" class="nav-mega-tool">Image to Prompt <span class="nav-mega-arrow">&#8594;</span></a>
+                <a href="/text-to-prompt/" role="menuitem" class="nav-mega-tool">Text to Prompt <span class="nav-mega-arrow">&#8594;</span></a>
+                <a href="/describe-image/" role="menuitem" class="nav-mega-tool">Describe Image <span class="nav-new-badge">NEW</span> <span class="nav-mega-arrow">&#8594;</span></a>
+                <div class="nav-mega-models-label">Models</div>
+                <div class="nav-mega-models"><a href="/midjourney-prompt-generator/">Midjourney</a><span class="nav-dot">&#xB7;</span><a href="/stable-diffusion-prompt-generator/">SD</a></div>
+                <div class="nav-mega-models"><a href="/flux-prompt-generator/">Flux</a><span class="nav-dot">&#xB7;</span><a href="/dall-e-prompt-generator/">DALL&#xB7;E&#xA0;3</a></div>
+                <div class="nav-mega-models"><a href="/adobe-firefly-prompt-generator/">Firefly</a><span class="nav-dot">&#xB7;</span><a href="/leonardo-ai-prompt-generator/">Leonardo</a></div>
+                <div class="nav-mega-models"><a href="/ideogram-prompt-generator/">Ideogram</a></div>
+              </div>
+              <div class="nav-mega-divider" aria-hidden="true"></div>
+              <div class="nav-mega-col">
+                <div class="nav-mega-heading">&#127909; VIDEO TOOLS</div>
+                <a href="/?tab=image-to-video" role="menuitem" class="nav-mega-tool">Image to Video <span class="nav-mega-arrow">&#8594;</span></a>
+                <a href="/?tab=text-to-video" role="menuitem" class="nav-mega-tool">Text to Video <span class="nav-mega-arrow">&#8594;</span></a>
+                <div class="nav-mega-models-label">Models</div>
+                <div class="nav-mega-models"><a href="/veo-prompt-generator/">Veo</a><span class="nav-dot">&#xB7;</span><a href="/kling-prompt-generator/">Kling</a></div>
+                <div class="nav-mega-models"><a href="/runway-prompt-generator/">Runway</a><span class="nav-dot">&#xB7;</span><a href="/pika-prompt-generator/">Pika</a></div>
+                <div class="nav-mega-models"><a href="/luma-prompt-generator/">Luma</a><span class="nav-dot">&#xB7;</span><a href="/sora-prompt-generator/">Sora</a></div>
+                <div class="nav-mega-models"><a href="/minimax-prompt-generator/">Minimax</a><span class="nav-dot">&#xB7;</span><a href="/stable-video-prompt-generator/">Stable</a></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <a href="/ko/blog/">블로그</a>
+        <a href="/ko/pricing/" class="nav-pill-pricing">요금</a>
+        <a href="/ko/about/" class="nav-pill-about">소개</a>
+        <a href="/ko/" class="nav-try-free">무료 체험 &#8594;</a>
+        <button id="theme-toggle" onclick="toggleTheme()" aria-label="테마 전환" title="테마 전환">&#9728;&#xFE0F;</button>
+  </nav>
+    </div>
+  </header>
+
+  <nav class="breadcrumb" aria-label="브레드크럼">
+    <a href="/ko/">홈</a> <span aria-hidden="true">&#8250;</span>
+    <a href="/ko/blog/">블로그</a> <span aria-hidden="true">&#8250;</span>
+    <span aria-current="page">애니메이션 이미지에서 프롬프트로</span>
+  </nav>
+
+  <div class="page-wrapper">
+
+    <header class="article-header">
+      <p class="article-tag">애니메이션 &amp; 만화</p>
+      <h1>애니메이션 이미지에서 프롬프트로: 완전 가이드</h1>
+      <div class="article-meta">
+        <span>2026년 3월</span>
+        <span class="dot">&#183;</span>
+        <span>9분 소요</span>
+        <span class="dot">&#183;</span>
+        <span>Stable Diffusion &#183; Midjourney &#183; Flux</span>
+        <span class="dot">&#183;</span>
+        <span>2026년 3월 업데이트</span>
+      </div>
+    </header>
+
+    <div class="article-body">
+
+      <p>애니메이션 아트는 다른 아트 스타일과는 전혀 다른 독자적인 비주얼 언어를 가지고 있습니다. 크고 표정이 풍부한 눈, 셀 셰이딩의 선명한 선, 생동감 넘치는 컬러 팔레트, 다이내믹한 포즈에는 일반적인 가이드에서 다루지 않는 전문적인 프롬프팅 기법이 필요합니다. 이 가이드에서는 애니메이션 일러스트를 정확한 AI 프롬프트로 변환하는 방법과, 각 주요 모델에서 효과적인 애니메이션 프롬프트 작성법을 소개합니다.</p>
+
+      <nav class="toc" aria-label="목차">
+        <details open>
+          <summary>이 가이드의 내용</summary>
+          <ol>
+            <li><a href="#wae-anime-teuksu">애니메이션에 전문적인 프롬프팅이 필요한 이유</a></li>
+            <li><a href="#anime-yongeo">애니메이션 필수 용어집</a></li>
+            <li><a href="#stable-diffusion-anime">Stable Diffusion용 애니메이션 프롬프트</a></li>
+            <li><a href="#midjourney-anime">Midjourney용 애니메이션 프롬프트</a></li>
+            <li><a href="#flux-anime">Flux용 애니메이션 프롬프트</a></li>
+            <li><a href="#pumjil-token">품질 토큰과 네거티브 프롬프트</a></li>
+            <li><a href="#illust-byeonhwan">기존 애니메이션 일러스트 변환하기</a></li>
+            <li><a href="#jaju-mutneun-jilmun">자주 묻는 질문</a></li>
+          </ol>
+        </details>
+      </nav>
+
+      <div class="callout">
+        <p><strong>팁:</strong> 애니메이션 일러스트를 순식간에 AI 프롬프트로 변환하려면 <a href="/">ImageToPrompt를 이용해 보세요</a>. 애니메이션 스타일과 디자인 특성을 자동 감지하고, 타겟 모델에 최적화된 프롬프트를 생성합니다.</p>
+      </div>
+
+      <h2 id="wae-anime-teuksu">애니메이션에 전문적인 프롬프팅이 필요한 이유</h2>
+
+      <p>애니메이션은 단순한 '화풍'이 아닙니다. 독자적인 프로포션, 라이팅, 시각적 스토리텔링 규칙을 가진 완전한 비주얼 시스템입니다. <code>girl with blue hair</code>라는 범용적인 프롬프트는 <code>anime style</code>, <code>manga illustration</code>, <code>cel shading</code> 중 어떤 것을 추가하느냐에 따라 크게 다른 결과를 만들어냅니다.</p>
+
+      <p>AI 제너레이터는 애니메이션의 여러 서브장르를 구별하며, 각각 고유한 비주얼 규범이 있습니다.</p>
+
+      <ul>
+        <li><strong>소년(Shonen):</strong> 다이내믹한 선, 액션 포즈, 드라마틱한 라이팅, 두드러지는 근육 &#8212; <em>드래곤볼</em>, <em>나루토</em>, <em>원피스</em></li>
+        <li><strong>소녀(Shoujo):</strong> 파스텔 톤, 꽃 모티프, 감정 풍부한 표정, 환상적인 배경 &#8212; <em>세일러문</em>, <em>카드캡터 사쿠라</em></li>
+        <li><strong>청년(Seinen):</strong> 높은 리얼리즘, 어두운 팔레트, 해부학적 디테일, 성숙한 분위기 &#8212; <em>베르세르크</em>, <em>공각기동대</em></li>
+        <li><strong>치비(Chibi):</strong> 데포르메된 프로포션(큰 머리, 작은 몸), 과장된 표정, 귀여운 스타일</li>
+        <li><strong>스튜디오 지브리:</strong> 정밀한 풍경, 자연스러운 색채, 고요한 분위기, 자연과 캐릭터의 조화로운 융합</li>
+      </ul>
+
+      <h2 id="anime-yongeo">애니메이션 필수 용어집</h2>
+
+      <p>애니메이션 프롬프팅에 가장 효과적인 키워드를 카테고리별로 정리했습니다.</p>
+
+      <h3>스타일과 렌더링</h3>
+      <ul>
+        <li><code>anime style</code>, <code>manga illustration</code>, <code>cel shading</code>, <code>flat color</code></li>
+        <li><code>digital anime art</code>, <code>anime key visual</code>, <code>light novel illustration</code></li>
+        <li><code>anime screencap</code>, <code>anime wallpaper</code>, <code>visual novel CG</code></li>
+      </ul>
+
+      <h3>캐릭터 특성</h3>
+      <ul>
+        <li><code>detailed eyes</code>, <code>anime eyes</code>, <code>sparkling eyes</code>, <code>heterochromia</code></li>
+        <li><code>flowing hair</code>, <code>twin tails</code>, <code>ahoge</code>, <code>side ponytail</code></li>
+        <li><code>school uniform</code>, <code>magical girl outfit</code>, <code>mecha suit</code>, <code>traditional kimono</code></li>
+      </ul>
+
+      <h3>구도와 분위기</h3>
+      <ul>
+        <li><code>dynamic pose</code>, <code>action shot</code>, <code>dutch angle</code>, <code>dramatic perspective</code></li>
+        <li><code>sakura petals</code>, <code>cherry blossom background</code>, <code>sunset rooftop</code>, <code>night city</code></li>
+        <li><code>sparkle effects</code>, <code>lens flare</code>, <code>rim lighting</code>, <code>backlighting</code></li>
+      </ul>
+
+      <h2 id="stable-diffusion-anime">Stable Diffusion용 애니메이션 프롬프트</h2>
+
+      <p>Stable Diffusion은 전문 체크포인트(Anything v5, Counterfeit, Waifu Diffusion, NovelAI)가 풍부하여 애니메이션 아트에서 가장 인기 있는 모델입니다. 가중치 구문을 통해 정밀한 제어가 가능합니다.</p>
+
+      <h3>권장 프롬프트 구조</h3>
+
+      <p>품질 토큰부터 시작하여 피사체, 스타일, 분위기 순서로 기술합니다.</p>
+
+      <pre><code>(masterpiece:1.2), (best quality:1.1), anime style, 1girl, long silver hair, blue eyes, school uniform, standing on rooftop, sunset, cherry blossom petals falling, wind blowing hair, dramatic lighting, vibrant colors, detailed background, anime key visual</code></pre>
+
+      <h3>애니메이션용 권장 네거티브 프롬프트</h3>
+
+      <pre><code>(worst quality:1.4), (low quality:1.4), realistic, photorealistic, 3d render, deformed, bad anatomy, bad hands, extra fingers, missing fingers, extra limbs, ugly, blurry, watermark, signature, text, cropped, out of frame, duplicate</code></pre>
+
+      <p>네거티브 프롬프트에 <code>realistic</code>과 <code>photorealistic</code>을 포함하고 있다는 점에 주목하세요. 이렇게 하면 모델이 더 스타일라이즈된 애니메이션풍 렌더링을 지향하게 됩니다.</p>
+
+      <h2 id="midjourney-anime">Midjourney용 애니메이션 프롬프트</h2>
+
+      <p>Midjourney에는 애니메이션과 만화 아트에 특화되어 트레이닝된 <code>--niji</code> 모드가 있습니다. 이것은 단순한 스타일 필터가 아니라 완전히 다른 모델로의 전환입니다.</p>
+
+      <h3>Midjourney 애니메이션 프롬프트 예시</h3>
+
+      <pre><code>anime girl with silver hair standing on a rooftop at sunset, cherry blossoms falling, dramatic wind, vibrant colors, detailed eyes, anime key visual --niji 6 --ar 2:3</code></pre>
+
+      <pre><code>dark fantasy anime warrior, black armor, glowing red sword, rain falling, dramatic lightning, seinen manga style --niji 6 --ar 16:9 --style expressive</code></pre>
+
+      <p>niji 모드의 <code>--style expressive</code> 파라미터는 감정과 다이내미즘을 강조합니다. 더 귀엽고 부드러운 렌더링에는 <code>--style cute</code>를 사용하세요.</p>
+
+      <h2 id="flux-anime">Flux용 애니메이션 프롬프트</h2>
+
+      <p>Flux는 자연어의 상세한 서술로 애니메이션 스타일을 처리합니다. 특별한 구문이 필요 없이, 원하는 것을 정확히 묘사하기만 하면 됩니다.</p>
+
+      <pre><code>Anime-style illustration of a young woman with flowing silver hair and piercing blue eyes, standing on a school rooftop during golden hour. Cherry blossom petals drift through the warm evening air. She wears a dark blue sailor uniform with a red ribbon. The background shows a panoramic city skyline bathed in orange and pink sunset light. Studio anime quality with detailed cel shading, vibrant saturated colors, and soft rim lighting highlighting her hair.</code></pre>
+
+      <p>Flux에서는 개별 키워드보다 프롬프트의 길이와 정밀도가 중요합니다. 비주얼 노벨의 한 단락을 쓰듯 장면을 묘사하세요.</p>
+
+      <h2 id="pumjil-token">품질 토큰과 네거티브 프롬프트</h2>
+
+      <p>품질 토큰은 애니메이션 출력의 전체적인 품질을 향상시키는 키워드입니다. 모델에 따라 효과가 다릅니다.</p>
+
+      <div class="table-wrap">
+      <table class="comparison-table">
+        <thead>
+          <tr>
+            <th>토큰</th>
+            <th>Stable Diffusion</th>
+            <th>Midjourney</th>
+            <th>Flux</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><code>masterpiece</code></td>
+            <td>매우 효과적</td>
+            <td>효과 미미</td>
+            <td>효과 미미</td>
+          </tr>
+          <tr>
+            <td><code>best quality</code></td>
+            <td>매우 효과적</td>
+            <td>효과 미미</td>
+            <td>보통</td>
+          </tr>
+          <tr>
+            <td><code>highly detailed</code></td>
+            <td>효과적</td>
+            <td>효과적</td>
+            <td>효과적</td>
+          </tr>
+          <tr>
+            <td><code>anime key visual</code></td>
+            <td>매우 효과적</td>
+            <td>효과적</td>
+            <td>효과적</td>
+          </tr>
+        </tbody>
+      </table>
+      </div>
+
+      <h2 id="illust-byeonhwan">기존 애니메이션 일러스트 변환하기</h2>
+
+      <p>재현하고 싶은 애니메이션 일러스트가 있거나 그 스타일을 추출하고 싶다면, 이미지에서 프롬프트로의 변환이 특히 강력합니다. AI는 여러분이 인지하지 못하거나 이름을 모르는 애니메이션 특유의 특성을 식별할 수 있습니다.</p>
+
+      <p><a href="/">ImageToPrompt</a>를 사용하면 프로세스는 간단합니다.</p>
+      <ol>
+        <li>애니메이션 일러스트를 업로드합니다</li>
+        <li>타겟 모델을 선택합니다(애니메이션 체크포인트를 사용한 Stable Diffusion 권장)</li>
+        <li>스타일 모드를 '아티스틱'으로 설정하여 스타일 디테일을 극대화합니다</li>
+        <li>AI가 서브장르, 디자인 특성, 팔레트를 자동 식별하고 완전한 프롬프트를 생성합니다</li>
+      </ol>
+
+      <p>핵심 이점은 사용된 셀 셰이딩 유형, 선의 밀도, 눈 채색 스타일, 심지어 세대별 미학(90년대 애니메이션 vs 현대 애니메이션)까지 미묘한 뉘앙스를 감지하여 AI 모델이 이해할 수 있는 키워드로 번역해 준다는 것입니다.</p>
+
+      <div class="cta-box">
+        <h3>애니메이션 일러스트를 프롬프트로 변환</h3>
+        <p>애니메이션 일러스트를 업로드하기만 하면 Stable Diffusion, Midjourney, Flux에 최적화된 프롬프트를 받을 수 있습니다. 회원가입 불필요.</p>
+        <a href="/?lang=ko" class="cta-btn">ImageToPrompt 체험하기 &#8594;</a>
+      </div>
+
+      <h2 id="jaju-mutneun-jilmun">자주 묻는 질문</h2>
+
+      <h3>Stable Diffusion에서 애니메이션 스타일을 생성하려면 어떤 키워드를 사용해야 하나요?</h3>
+      <p>Stable Diffusion에서는 <code>anime</code>, <code>manga style</code>, <code>cel shading</code>, <code>vibrant colors</code>, <code>detailed eyes</code>, <code>sakura petals</code>, <code>dynamic pose</code> 등의 태그를 사용하세요. <code>(masterpiece:1.2)</code>, <code>(best quality:1.1)</code> 같은 품질 토큰과 애니메이션 전용 네거티브 프롬프트도 추가하세요.</p>
+
+      <h3>Midjourney에서 본격적인 애니메이션 스타일을 생성할 수 있나요?</h3>
+      <p>네, Midjourney v6+는 애니메이션 스타일을 매우 잘 처리합니다. <code>anime illustration</code>, <code>Studio Ghibli style</code>, <code>cel-shaded</code>, <code>manga aesthetic</code> 같은 프롬프트를 사용하세요. <code>--niji</code>를 추가하면 이 스타일에 최적화된 완전히 다른 모델을 사용하는 Midjourney의 애니메이션 전용 모드가 활성화됩니다.</p>
+
+      <h3>애니메이션 아트에는 어떤 네거티브 프롬프트를 사용해야 하나요?</h3>
+      <p>Stable Diffusion에서의 애니메이션에는 다음 네거티브 프롬프트를 사용하세요: <code>realistic, photorealistic, 3d render, deformed hands, extra fingers, bad anatomy, blurry, low quality, ugly, watermark, signature, cropped</code>. 스타일의 의도치 않은 혼합을 피하기 위해 <code>realistic</code>을 포함하는 것이 필수적입니다.</p>
+
+      <h3>기존 애니메이션 일러스트를 AI 프롬프트로 변환하려면 어떻게 해야 하나요?</h3>
+      <p><a href="/">ImageToPrompt</a>를 사용해 애니메이션 일러스트를 업로드하세요. 도구가 스타일(소년, 소녀, 청년), 디자인 특성, 컬러 팔레트를 자동으로 식별하고 타겟 모델에 최적화된 프롬프트를 생성합니다.</p>
+
+    </div>
+
+    <div class="author-bio">
+      <img src="/favicon.svg" alt="ImageToPrompt Team" width="44" height="44">
+      <div>
+        <strong>ImageToPrompt Team</strong>
+        <p>크리에이터들이 AI 이미지 생성을 마스터할 수 있도록 돕는 전문 팀입니다. AI 이미지 생성의 모범 사례와 새로운 기법에 대한 최신 가이드를 공유합니다.</p>
+        <a href="https://x.com/ImageToPrompt" target="_blank" rel="noopener" class="author-follow">X에서 팔로우</a>
+      </div>
+    </div>
+
+    <div class="related-posts">
+      <h2>관련 가이드</h2>
+      <div class="related-grid">
+        <a href="/ko/blog/ai-prompt-jakseonghaneun-beob/" class="related-card">
+          <p class="tag">가이드</p>
+          <h3>이미지를 AI 프롬프트로 변환하는 방법</h3>
+        </a>
+        <a href="/ko/blog/negative-prompt-stable-diffusion/" class="related-card">
+          <p class="tag">Stable Diffusion</p>
+          <h3>Stable Diffusion 네거티브 프롬프트</h3>
+        </a>
+        <a href="/ko/blog/midjourney-prompt-gaideu-2026/" class="related-card">
+          <p class="tag">Midjourney</p>
+          <h3>Midjourney 프롬프트 완전 가이드 2026</h3>
+        </a>
+        <a href="/ko/blog/best-image-to-prompt-tools-2026/" class="related-card">
+          <p class="tag">비교</p>
+          <h3>2026년 최고의 이미지-프롬프트 변환 도구</h3>
+        </a>
+      </div>
+    </div>
+
+  </div>
+
+  <footer class="footer-4col">
+    <div class="f4-inner">
+      <div class="f4-brand">
+        <img src="/favicon.svg" alt="ImageToPrompt" width="28" height="28">
+        <span class="f4-brand-name">ImageTo<span class="accent">Prompt</span></span>
+        <span class="f4-brand-sub">&mdash; Free AI Prompt Generator</span>
+      </div>
+      <div class="f4-grid">
+        <div class="f4-section">
+          <h4 class="f4-heading">Image Prompt Tools</h4>
+          <a href="/">Image to Prompt</a>
+          <a href="/text-to-prompt/">Text to Prompt</a>
+          <a href="/describe-image/">Describe Image</a>
+          <a href="/midjourney-prompt-generator/">Midjourney</a>
+          <a href="/stable-diffusion-prompt-generator/">Stable Diffusion</a>
+          <a href="/flux-prompt-generator/">Flux</a>
+          <a href="/dall-e-prompt-generator/">DALL-E 3</a>
+          <a href="/adobe-firefly-prompt-generator/">Adobe Firefly</a>
+          <a href="/leonardo-ai-prompt-generator/">Leonardo AI</a>
+          <a href="/ideogram-prompt-generator/">Ideogram</a>
+        </div>
+        <div class="f4-section">
+          <h4 class="f4-heading">Video Prompt Tools</h4>
+          <a href="/image-to-video-prompt/">Image to Video Prompt</a>
+          <a href="/text-to-video-prompt/">Text to Video Prompt</a>
+          <a href="/veo-prompt-generator/">Veo / Flow Studio</a>
+          <a href="/kling-prompt-generator/">Kling AI</a>
+          <a href="/runway-prompt-generator/">Runway Gen-3</a>
+          <a href="/pika-prompt-generator/">Pika</a>
+          <a href="/luma-prompt-generator/">Luma Dream Machine</a>
+          <a href="/sora-prompt-generator/">Sora</a>
+          <a href="/minimax-prompt-generator/">Minimax</a>
+          <a href="/stable-video-prompt-generator/">Stable Video</a>
+        </div>
+        <div class="f4-section">
+          <h4 class="f4-heading">Resources</h4>
+          <a href="/ko/blog/">블로그</a>
+          <a href="/ko/about/">소개</a>
+          <a href="/ko/pricing/">요금</a>
+          <a href="/contact/">Contact</a>
+          <a href="/privacy-policy/">Privacy Policy</a>
+          <a href="/terms-of-service/">Terms of Service</a>
+        </div>
+        <div class="f4-section">
+          <h4 class="f4-heading">Languages</h4>
+          <a href="/">English</a>
+          <a href="/fr/">Fran&#231;ais</a>
+          <a href="/ar/">&#1575;&#1604;&#1593;&#1585;&#1576;&#1610;&#1577;</a>
+          <a href="/es/">Espa&#241;ol</a>
+          <a href="/ko/">&#54620;&#44397;&#50612;</a>
+          <a href="/ja/">&#26085;&#26412;&#35486;</a>
+          <a href="/ru/">&#1056;&#1091;&#1089;&#1089;&#1082;&#1080;&#1081;</a>
+        </div>
+      </div>
+      <div class="f4-bottom">
+        <p>&#169; 2026 ImageToPrompt.dev &#8212; Free AI Prompt Generator</p>
+        <p>Your images are never stored. All analysis is ephemeral and private.</p>
+      </div>
+    </div>
+  </footer>
+
+<script src="/newsletter-inject.js" defer></script>
+<script src="/nav.js" defer></script>
+  <script>
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', function() {
+    navigator.serviceWorker.register('/sw.js')
+      .catch(function(err) { console.warn('SW registration failed:', err); });
+  });
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,629 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <script src="/theme-toggle.js"></script>
+  <meta charset="UTF-8" />
+  <link rel="dns-prefetch" href="https://www.googletagmanager.com">
+<link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="max-image-preview:large, index, follow">
+  <meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="ImageToPrompt">
+  <title>Image to Prompt API: руководство по интеграции для разработчиков</title>
+  <meta name="description" content="Документация ImageToPrompt API для разработчиков. Примеры кода на Python и JavaScript, эндпоинты, аутентификация и обработка ошибок." />
+  <link rel="canonical" href="https://www.imagetoprompt.dev/ru/blog/image-to-prompt-api/" />
+  <link rel="alternate" hreflang="ru" href="https://www.imagetoprompt.dev/ru/blog/image-to-prompt-api/" />
+  <link rel="alternate" hreflang="en" href="https://www.imagetoprompt.dev/blog/image-to-prompt-api/" />
+  <link rel="alternate" hreflang="fr" href="https://www.imagetoprompt.dev/fr/blog/api-image-vers-prompt/" />
+  <link rel="alternate" hreflang="ar" href="https://www.imagetoprompt.dev/ar/blog/api-soura-ila-prompt/" />
+  <link rel="alternate" hreflang="es" href="https://www.imagetoprompt.dev/es/blog/api-imagen-a-prompt/" />
+  <link rel="alternate" hreflang="ja" href="https://www.imagetoprompt.dev/ja/blog/image-to-prompt-api/" />
+  <link rel="alternate" hreflang="ko" href="https://www.imagetoprompt.dev/ko/blog/image-to-prompt-api/" />
+  <link rel="alternate" hreflang="x-default" href="https://www.imagetoprompt.dev/blog/image-to-prompt-api/" />
+  <meta property="og:title" content="Image to Prompt API: руководство по интеграции для разработчиков" />
+  <meta property="og:description" content="Документация ImageToPrompt API для разработчиков. Примеры кода на Python и JavaScript, эндпоинты, аутентификация и обработка ошибок." />
+  <meta property="og:url" content="https://www.imagetoprompt.dev/ru/blog/image-to-prompt-api/" />
+  <meta property="og:type" content="article" />
+  <meta property="og:image" content="https://www.imagetoprompt.dev/og-image.png" />
+  <meta property="og:site_name" content="ImageToPrompt" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Image to Prompt API: руководство по интеграции для разработчиков" />
+  <meta name="twitter:description" content="Документация ImageToPrompt API для разработчиков. Примеры кода и руководство по интеграции." />
+  <meta name="twitter:image" content="https://www.imagetoprompt.dev/og-image.png" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="48x48" href="/favicon-48.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+  <link rel="manifest" href="/site.webmanifest" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="/fonts/space-grotesk-700.woff2" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="/fonts/inter-400.woff2" />
+  <link rel="stylesheet" href="/theme.css">
+  <link rel="preload" href="/blog.css" as="style" onload="this.onload=null;this.rel='stylesheet'"><noscript><link rel="stylesheet" href="/blog.css"></noscript>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Image to Prompt API: руководство по интеграции для разработчиков",
+    "description": "Документация ImageToPrompt API для разработчиков. Примеры кода на Python и JavaScript, эндпоинты, аутентификация и обработка ошибок.",
+    "image": "https://www.imagetoprompt.dev/og-image.png",
+    "datePublished": "2026-03-12",
+    "dateModified": "2026-03-24",
+    "inLanguage": "ru",
+    "author": {
+      "@type": "Person",
+      "name": "ImageToPrompt Team",
+      "url": "https://www.imagetoprompt.dev/"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "ImageToPrompt",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://www.imagetoprompt.dev/favicon.svg"
+      }
+    },
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https://www.imagetoprompt.dev/ru/blog/image-to-prompt-api/"
+    }
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Бесплатен ли ImageToPrompt API?",
+        "acceptedAnswer": { "@type": "Answer", "text": "API предоставляет бесплатную квоту в 10 запросов в день на IP-адрес. Эта квота разделяется между всеми эндпоинтами (image-to-prompt, text-to-prompt, image-to-video, text-to-video). Если вам нужно больше запросов, ознакомьтесь с платными планами на странице цен." }
+      },
+      {
+        "@type": "Question",
+        "name": "Какие форматы изображений поддерживает API?",
+        "acceptedAnswer": { "@type": "Answer", "text": "API принимает изображения в форматах JPEG, PNG, WebP и GIF (только первый кадр). Максимальный размер — 10 МБ на изображение. Изображения передаются в base64-кодировке в теле JSON-запроса. Для лучших результатов используйте изображения размером не менее 512x512 пикселей." }
+      },
+      {
+        "@type": "Question",
+        "name": "Как обрабатывать ошибки и лимиты запросов API?",
+        "acceptedAnswer": { "@type": "Answer", "text": "При достижении лимита API возвращает HTTP-код 429 с заголовком Retry-After, указывающим время повторной попытки. Реализуйте экспоненциальный откат в вашем коде. Код 400 указывает на проблему с запросом (невалидное изображение, отсутствующие параметры), а код 500 — на временную проблему сервера." }
+      },
+      {
+        "@type": "Question",
+        "name": "Сохраняются ли изображения, отправленные через API?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Нет. Все изображения обрабатываются временно в памяти и никогда не сохраняются на сервере. Анализ выполняется Claude AI в реальном времени, и данные удаляются сразу после генерации промпта. Логи изображений не ведутся." }
+      }
+    ]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Главная", "item": "https://www.imagetoprompt.dev/ru/" },
+      { "@type": "ListItem", "position": 2, "name": "Блог", "item": "https://www.imagetoprompt.dev/ru/blog/" },
+      { "@type": "ListItem", "position": 3, "name": "Image to Prompt API" }
+    ]
+  }
+  </script>
+    <!-- Google AdSense -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4499206373485728" crossorigin="anonymous"></script>
+    <!-- Web Push Notifications -->
+<script src="https://cdn.onesignal.com/sdks/web/v16/OneSignalSDK.page.js" defer></script>
+<script>
+  window.OneSignalDeferred = window.OneSignalDeferred || [];
+  OneSignalDeferred.push(async function(OneSignal) {
+    await OneSignal.init({
+      appId: "REPLACE_WITH_ONESIGNAL_APP_ID",
+      notifyButton: { enable: false }
+    });
+  });
+</script>
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="inner">
+      <a href="/ru/" class="site-logo"><img src="/favicon.svg" alt="ImageToPrompt" width="48" height="48"><div class="site-logo-text">ImageTo<span class="accent">Prompt</span><span class="site-logo-sub">Бесплатный AI генератор промптов</span></div></a>
+      <nav class="site-nav" aria-label="Основная навигация">
+        <div class="nav-dropdown">
+          <button class="nav-dropdown-trigger" aria-haspopup="true" aria-expanded="false">Tools <span class="nav-chevron" aria-hidden="true">&#9660;</span></button>
+          <div class="nav-dropdown-menu" role="menu">
+            <div class="nav-mega-grid">
+              <div class="nav-mega-col">
+                <div class="nav-mega-heading">&#128444; IMAGE TOOLS</div>
+                <a href="/" role="menuitem" class="nav-mega-tool">Image to Prompt <span class="nav-mega-arrow">&#8594;</span></a>
+                <a href="/text-to-prompt/" role="menuitem" class="nav-mega-tool">Text to Prompt <span class="nav-mega-arrow">&#8594;</span></a>
+                <a href="/describe-image/" role="menuitem" class="nav-mega-tool">Describe Image <span class="nav-new-badge">NEW</span> <span class="nav-mega-arrow">&#8594;</span></a>
+                <div class="nav-mega-models-label">Models</div>
+                <div class="nav-mega-models"><a href="/midjourney-prompt-generator/">Midjourney</a><span class="nav-dot">&#xB7;</span><a href="/stable-diffusion-prompt-generator/">SD</a></div>
+                <div class="nav-mega-models"><a href="/flux-prompt-generator/">Flux</a><span class="nav-dot">&#xB7;</span><a href="/dall-e-prompt-generator/">DALL&#xB7;E&#xA0;3</a></div>
+                <div class="nav-mega-models"><a href="/adobe-firefly-prompt-generator/">Firefly</a><span class="nav-dot">&#xB7;</span><a href="/leonardo-ai-prompt-generator/">Leonardo</a></div>
+                <div class="nav-mega-models"><a href="/ideogram-prompt-generator/">Ideogram</a></div>
+              </div>
+              <div class="nav-mega-divider" aria-hidden="true"></div>
+              <div class="nav-mega-col">
+                <div class="nav-mega-heading">&#127909; VIDEO TOOLS</div>
+                <a href="/?tab=image-to-video" role="menuitem" class="nav-mega-tool">Image to Video <span class="nav-mega-arrow">&#8594;</span></a>
+                <a href="/?tab=text-to-video" role="menuitem" class="nav-mega-tool">Text to Video <span class="nav-mega-arrow">&#8594;</span></a>
+                <div class="nav-mega-models-label">Models</div>
+                <div class="nav-mega-models"><a href="/veo-prompt-generator/">Veo</a><span class="nav-dot">&#xB7;</span><a href="/kling-prompt-generator/">Kling</a></div>
+                <div class="nav-mega-models"><a href="/runway-prompt-generator/">Runway</a><span class="nav-dot">&#xB7;</span><a href="/pika-prompt-generator/">Pika</a></div>
+                <div class="nav-mega-models"><a href="/luma-prompt-generator/">Luma</a><span class="nav-dot">&#xB7;</span><a href="/sora-prompt-generator/">Sora</a></div>
+                <div class="nav-mega-models"><a href="/minimax-prompt-generator/">Minimax</a><span class="nav-dot">&#xB7;</span><a href="/stable-video-prompt-generator/">Stable</a></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <a href="/ru/blog/">Блог</a>
+        <a href="/ru/pricing/" class="nav-pill-pricing">Цены</a>
+        <a href="/ru/about/" class="nav-pill-about">О нас</a>
+        <a href="/ru/" class="nav-try-free">Попробовать &#8594;</a>
+        <button id="theme-toggle" onclick="toggleTheme()" aria-label="Переключить тему" title="Переключить тему">&#9728;&#xFE0F;</button>
+  </nav>
+    </div>
+  </header>
+
+  <nav class="breadcrumb" aria-label="Хлебные крошки">
+    <a href="/ru/">Главная</a> <span aria-hidden="true">›</span>
+    <a href="/ru/blog/">Блог</a> <span aria-hidden="true">›</span>
+    <span aria-current="page">Image to Prompt API</span>
+  </nav>
+
+  <div class="page-wrapper">
+
+    <header class="article-header">
+      <p class="article-tag">Для разработчиков</p>
+      <h1>Image to Prompt API для разработчиков</h1>
+      <div class="article-meta">
+        <span>Март 2026</span>
+        <span class="dot">&#183;</span>
+        <span>Время чтения: 9 мин</span>
+        <span class="dot">&#183;</span>
+        <span>API &#183; Python &#183; JavaScript &#183; REST</span>
+        <span class="dot">&#183;</span>
+        <span>Обновлено: март 2026</span>
+      </div>
+    </header>
+
+    <div class="article-body">
+
+      <p>Интеграция функции конвертации изображений в промпты в ваше приложение открывает мощные возможности: автоматическая генерация описаний, инструменты визуального поиска, конвейеры создания контента и рекомендательные системы на основе визуального стиля. В этом техническом руководстве вы найдёте всё необходимое для интеграции ImageToPrompt API в ваш проект.</p>
+
+      <nav class="toc" aria-label="Содержание">
+        <details open>
+          <summary>Содержание руководства</summary>
+          <ol>
+            <li><a href="#obzor-api">Обзор API</a></li>
+            <li><a href="#autentifikatsiya">Аутентификация и безопасность</a></li>
+            <li><a href="#endpointy">Доступные эндпоинты</a></li>
+            <li><a href="#primer-python">Пример интеграции на Python</a></li>
+            <li><a href="#primer-javascript">Пример интеграции на JavaScript</a></li>
+            <li><a href="#parametry-zaprosa">Параметры запроса</a></li>
+            <li><a href="#format-otveta">Формат ответа</a></li>
+            <li><a href="#limity-zaprosov">Лимиты запросов и квоты</a></li>
+            <li><a href="#obrabotka-oshibok">Обработка ошибок</a></li>
+            <li><a href="#prodvinutye-keisy">Продвинутые сценарии использования</a></li>
+            <li><a href="#chasto-zadavaemye-voprosy">Часто задаваемые вопросы</a></li>
+          </ol>
+        </details>
+      </nav>
+
+      <div class="callout">
+        <p><strong>Примечание:</strong> ImageToPrompt API работает на базе Claude AI от Anthropic и обрабатывает изображения временно. Изображения никогда не сохраняются на сервере.</p>
+      </div>
+
+      <h2 id="obzor-api">Обзор API</h2>
+
+      <p>ImageToPrompt API предоставляет четыре основных эндпоинта, покрывающих все сценарии конвертации изображений/текста в AI-промпты. Каждый эндпоинт принимает POST-запрос с JSON-телом и возвращает структурированный ответ с сгенерированным промптом и полезными метаданными.</p>
+
+      <p>API размещён на серверлесс-функциях Vercel, что обеспечивает низкую задержку и высокую доступность. Среднее время ответа составляет 5-10 секунд в зависимости от сложности изображения и выбранной целевой модели.</p>
+
+      <h2 id="autentifikatsiya">Аутентификация и безопасность</h2>
+
+      <p>Запросы к API требуют заголовка аутентификации с секретным ключом. Ключ передаётся в заголовке <code>x-app-secret</code> каждого запроса.</p>
+
+      <div class="code-block"><code>POST /api/analyze
+Content-Type: application/json
+x-app-secret: YOUR_APP_SECRET
+
+{
+  "image": "data:image/jpeg;base64,/9j/4AAQ...",
+  "model": "midjourney",
+  "style": "cinematic"
+}</code></div>
+
+      <p>Все коммуникации шифруются по HTTPS. Изображения передаются в base64 в теле запроса и не проходят через небезопасные сторонние сервисы.</p>
+
+      <h2 id="endpointy">Доступные эндпоинты</h2>
+
+      <div class="table-wrap">
+      <table class="comparison-table">
+        <thead>
+          <tr>
+            <th>Эндпоинт</th>
+            <th>Метод</th>
+            <th>Описание</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><code>/api/analyze</code></td>
+            <td>POST</td>
+            <td>Конвертация изображения в AI-промпт для целевой модели</td>
+          </tr>
+          <tr>
+            <td><code>/api/text-to-prompt</code></td>
+            <td>POST</td>
+            <td>Преобразование текстового описания в оптимизированный AI-промпт</td>
+          </tr>
+          <tr>
+            <td><code>/api/image-to-video-prompt</code></td>
+            <td>POST</td>
+            <td>Генерация AI-видеопромпта из исходного изображения</td>
+          </tr>
+          <tr>
+            <td><code>/api/text-to-video-prompt</code></td>
+            <td>POST</td>
+            <td>Создание AI-видеопромпта из текстового описания</td>
+          </tr>
+        </tbody>
+      </table>
+      </div>
+
+      <h2 id="primer-python">Пример интеграции на Python</h2>
+
+      <p>Ниже представлен полный пример интеграции на Python с использованием библиотеки <code>requests</code>. Этот скрипт кодирует локальное изображение в base64, отправляет запрос к API и выводит сгенерированный промпт.</p>
+
+      <div class="code-block"><code>import requests
+import base64
+import json
+
+def image_to_prompt(image_path, model="midjourney", style="cinematic"):
+    """Convert a local image to an AI prompt."""
+
+    # Read and encode the image
+    with open(image_path, "rb") as f:
+        image_data = base64.b64encode(f.read()).decode("utf-8")
+
+    # Determine MIME type
+    ext = image_path.lower().split(".")[-1]
+    mime_types = {"jpg": "jpeg", "jpeg": "jpeg", "png": "png", "webp": "webp"}
+    mime = mime_types.get(ext, "jpeg")
+
+    # Build the request
+    payload = {
+        "image": f"data:image/{mime};base64,{image_data}",
+        "model": model,
+        "style": style
+    }
+
+    headers = {
+        "Content-Type": "application/json",
+        "x-app-secret": "YOUR_APP_SECRET"
+    }
+
+    response = requests.post(
+        "https://www.imagetoprompt.dev/api/analyze",
+        json=payload,
+        headers=headers,
+        timeout=30
+    )
+
+    if response.status_code == 200:
+        result = response.json()
+        return result
+    elif response.status_code == 429:
+        print("Rate limit reached. Try again tomorrow.")
+        return None
+    else:
+        print(f"Error {response.status_code}: {response.text}")
+        return None
+
+# Usage
+result = image_to_prompt("my-photo.jpg", model="flux", style="technical")
+if result:
+    print("Prompt:", result["prompt"])
+    print("Negative:", result.get("negative", "N/A"))</code></div>
+
+      <h2 id="primer-javascript">Пример интеграции на JavaScript</h2>
+
+      <p>Пример с использованием <code>fetch</code> для веб-приложений и Node.js. Этот код работает как на стороне браузера, так и на серверной стороне в Node.js 18+.</p>
+
+      <div class="code-block"><code>async function imageToPrompt(imageFile, model = "midjourney", style = "cinematic") {
+  // Convert File to base64
+  const reader = new FileReader();
+  const base64 = await new Promise((resolve) => {
+    reader.onload = () => resolve(reader.result);
+    reader.readAsDataURL(imageFile);
+  });
+
+  const response = await fetch("https://www.imagetoprompt.dev/api/analyze", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+      "x-app-secret": "YOUR_APP_SECRET"
+    },
+    body: JSON.stringify({
+      image: base64,
+      model: model,
+      style: style
+    })
+  });
+
+  if (response.status === 429) {
+    throw new Error("Rate limit exceeded");
+  }
+
+  if (!response.ok) {
+    throw new Error(`API error: ${response.status}`);
+  }
+
+  return await response.json();
+}
+
+// Usage with file input
+const fileInput = document.querySelector('input[type="file"]');
+fileInput.addEventListener("change", async (e) => {
+  const file = e.target.files[0];
+  try {
+    const result = await imageToPrompt(file, "stable-diffusion", "technical");
+    console.log("Generated prompt:", result.prompt);
+  } catch (err) {
+    console.error("Failed:", err.message);
+  }
+});</code></div>
+
+      <h2 id="parametry-zaprosa">Параметры запроса</h2>
+
+      <p>Каждый эндпоинт принимает определённые параметры, влияющие на генерацию промпта. Ниже приведены параметры основного эндпоинта <code>/api/analyze</code>.</p>
+
+      <div class="table-wrap">
+      <table class="comparison-table">
+        <thead>
+          <tr>
+            <th>Параметр</th>
+            <th>Тип</th>
+            <th>Обязательный</th>
+            <th>Описание</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><code>image</code></td>
+            <td>string</td>
+            <td>Да</td>
+            <td>Изображение в base64 с data URI-префиксом</td>
+          </tr>
+          <tr>
+            <td><code>model</code></td>
+            <td>string</td>
+            <td>Да</td>
+            <td>Целевая модель: midjourney, stable-diffusion, flux, dall-e-3, adobe-firefly, leonardo-ai, ideogram</td>
+          </tr>
+          <tr>
+            <td><code>style</code></td>
+            <td>string</td>
+            <td>Нет</td>
+            <td>Стиль промпта: cinematic, technical, artistic, minimal, epic, photographic</td>
+          </tr>
+        </tbody>
+      </table>
+      </div>
+
+      <h2 id="format-otveta">Формат ответа</h2>
+
+      <p>API возвращает структурированный JSON-объект с основным промптом, негативным промптом (при наличии), креативными вариациями и метаданными визуального анализа.</p>
+
+      <div class="code-block"><code>{
+  "prompt": "cinematic portrait of a woman in golden hour light, shallow depth of field, film grain, warm tones --ar 3:2 --v 6.1 --style raw",
+  "negative": "blurry, low quality, deformed, bad anatomy",
+  "remix": "ethereal portrait bathed in amber sunset glow, dreamlike bokeh...",
+  "colors": ["#D4A574", "#2C1810", "#F5E6D3", "#8B4513", "#FFD700"],
+  "tags": ["portrait", "golden hour", "cinematic", "warm tones"],
+  "aspectRatio": "3:2",
+  "model": "midjourney",
+  "style": "cinematic"
+}</code></div>
+
+      <h2 id="limity-zaprosov">Лимиты запросов и квоты</h2>
+
+      <p>API использует систему ограничения запросов на основе IP-адресов через Upstash Redis. Текущие лимиты:</p>
+
+      <ul>
+        <li><strong>Бесплатная квота:</strong> 10 запросов в день на IP-адрес</li>
+        <li><strong>Общая квота:</strong> 10 запросов разделяются между всеми эндпоинтами (analyze, text-to-prompt, image-to-video-prompt, text-to-video-prompt)</li>
+        <li><strong>Сброс:</strong> счётчик обнуляется ежедневно в 00:00 UTC</li>
+        <li><strong>Заголовки ответа:</strong> <code>X-RateLimit-Remaining</code> показывает оставшееся количество запросов</li>
+      </ul>
+
+      <p>При превышении квоты API возвращает HTTP-код 429 с пояснительным сообщением. Реализуйте механизм повторных попыток с экспоненциальным откатом в клиентском коде.</p>
+
+      <h2 id="obrabotka-oshibok">Обработка ошибок</h2>
+
+      <p>API использует стандартные HTTP-коды для сообщений об ошибках. Вот наиболее распространённые коды и их значения:</p>
+
+      <div class="table-wrap">
+      <table class="comparison-table">
+        <thead>
+          <tr>
+            <th>Код</th>
+            <th>Значение</th>
+            <th>Рекомендуемое действие</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>200</td>
+            <td>Успех</td>
+            <td>Обработайте ответ в обычном режиме</td>
+          </tr>
+          <tr>
+            <td>400</td>
+            <td>Невалидный запрос</td>
+            <td>Проверьте формат изображения и параметры</td>
+          </tr>
+          <tr>
+            <td>401</td>
+            <td>Не аутентифицирован</td>
+            <td>Проверьте ключ x-app-secret</td>
+          </tr>
+          <tr>
+            <td>429</td>
+            <td>Превышен лимит запросов</td>
+            <td>Дождитесь сброса квоты или перейдите на платный план</td>
+          </tr>
+          <tr>
+            <td>500</td>
+            <td>Ошибка сервера</td>
+            <td>Повторите попытку через несколько секунд с экспоненциальным откатом</td>
+          </tr>
+        </tbody>
+      </table>
+      </div>
+
+      <h2 id="prodvinutye-keisy">Продвинутые сценарии использования</h2>
+
+      <h3>Конвейер генерации контента</h3>
+      <p>Интегрируйте API в конвейер создания контента для автоматической генерации визуальных описаний из фотографий товаров, изображений портфолио или скриншотов дизайна. Это позволяет создавать стилистически согласованные вариации в масштабе.</p>
+
+      <h3>Визуальный поисковый движок</h3>
+      <p>Используйте сгенерированные промпты как семантические дескрипторы для индексации и поиска изображений по визуальному стилю. Теги цвета, стиля и атмосферы, возвращаемые API, формируют богатый индекс для поиска по визуальному сходству.</p>
+
+      <h3>Образовательный инструмент для креативщиков</h3>
+      <p>Создайте образовательный инструмент, разбирающий изображение на визуальные элементы (освещение, композиция, палитра, стиль), помогая художникам и фотографам понять, что делает изображение эффективным.</p>
+
+      <h3>Автоматизация для социальных сетей</h3>
+      <p>Автоматически генерируйте описательные подписи и хэштеги из визуалов. Сгенерированные промпты содержат наиболее релевантные термины для детального и привлекательного описания визуального контента.</p>
+
+      <div class="cta-box">
+        <h3>Попробуйте API прямо сейчас</h3>
+        <p>Начните с бесплатной квоты в 10 запросов в день. Для тестирования онлайн-инструмента регистрация не требуется.</p>
+        <a href="/?lang=ru" class="cta-btn">Попробовать ImageToPrompt бесплатно &#8594;</a>
+      </div>
+
+      <h2 id="chasto-zadavaemye-voprosy">Часто задаваемые вопросы</h2>
+
+      <h3>Бесплатен ли ImageToPrompt API?</h3>
+      <p>API предоставляет бесплатную квоту в 10 запросов в день на IP-адрес. Эта квота разделяется между всеми эндпоинтами (image-to-prompt, text-to-prompt, image-to-video, text-to-video). Если вам нужно больше запросов, ознакомьтесь с платными планами на странице цен.</p>
+
+      <h3>Какие форматы изображений поддерживает API?</h3>
+      <p>API принимает изображения в форматах JPEG, PNG, WebP и GIF (только первый кадр). Максимальный размер — 10 МБ на изображение. Изображения передаются в base64-кодировке в теле JSON-запроса. Для лучших результатов используйте изображения размером не менее 512x512 пикселей.</p>
+
+      <h3>Как обрабатывать ошибки и лимиты запросов API?</h3>
+      <p>При достижении лимита API возвращает HTTP-код 429 с заголовком Retry-After, указывающим время повторной попытки. Реализуйте экспоненциальный откат в вашем коде. Код 400 указывает на проблему с запросом (невалидное изображение, отсутствующие параметры), а код 500 — на временную проблему сервера.</p>
+
+      <h3>Сохраняются ли изображения, отправленные через API?</h3>
+      <p>Нет. Все изображения обрабатываются временно в памяти и никогда не сохраняются на сервере. Анализ выполняется Claude AI в реальном времени, и данные удаляются сразу после генерации промпта. Логи изображений не ведутся.</p>
+
+    </div>
+
+    <div class="author-bio">
+      <img src="/favicon.svg" alt="ImageToPrompt Team" width="44" height="44">
+      <div>
+        <strong>ImageToPrompt Team</strong>
+        <p>Мы — команда экспертов, помогающая креативщикам освоить генерацию AI-изображений. Мы делимся актуальными руководствами по лучшим практикам и новым техникам в генерации AI-изображений.</p>
+        <a href="https://x.com/ImageToPrompt" target="_blank" rel="noopener" class="author-follow">Подписаться на X</a>
+      </div>
+    </div>
+
+    <div class="related-posts">
+      <h2>Связанные руководства</h2>
+      <div class="related-grid">
+        <a href="/ru/blog/luchshie-instrumenty-image-to-prompt-2026/" class="related-card">
+          <p class="tag">Сравнение инструментов</p>
+          <h3>Лучшие инструменты Image to Prompt 2026</h3>
+        </a>
+        <a href="/ru/blog/" class="related-card">
+          <p class="tag">Руководство</p>
+          <h3>Как конвертировать изображение в AI-промпт</h3>
+        </a>
+        <a href="/ru/blog/" class="related-card">
+          <p class="tag">Инструменты</p>
+          <h3>Text to Prompt: полное руководство</h3>
+        </a>
+        <a href="/ru/blog/" class="related-card">
+          <p class="tag">Видео</p>
+          <h3>Руководство по AI-видеопромптам 2026</h3>
+        </a>
+      </div>
+    </div>
+
+  </div>
+
+  <footer class="footer-4col">
+    <div class="f4-inner">
+      <div class="f4-brand">
+        <img src="/favicon.svg" alt="ImageToPrompt" width="28" height="28">
+        <span class="f4-brand-name">ImageTo<span class="accent">Prompt</span></span>
+        <span class="f4-brand-sub">&mdash; Free AI Prompt Generator</span>
+      </div>
+      <div class="f4-grid">
+        <div class="f4-section">
+          <h4 class="f4-heading">Image Prompt Tools</h4>
+          <a href="/">Image to Prompt</a>
+          <a href="/text-to-prompt/">Text to Prompt</a>
+      <a href="/describe-image/">Describe Image</a>
+          <a href="/midjourney-prompt-generator/">Midjourney</a>
+          <a href="/stable-diffusion-prompt-generator/">Stable Diffusion</a>
+          <a href="/flux-prompt-generator/">Flux</a>
+          <a href="/dall-e-prompt-generator/">DALL-E 3</a>
+          <a href="/adobe-firefly-prompt-generator/">Adobe Firefly</a>
+          <a href="/leonardo-ai-prompt-generator/">Leonardo AI</a>
+          <a href="/ideogram-prompt-generator/">Ideogram</a>
+        </div>
+        <div class="f4-section">
+          <h4 class="f4-heading">Video Prompt Tools</h4>
+          <a href="/image-to-video-prompt/">Image to Video Prompt</a>
+          <a href="/text-to-video-prompt/">Text to Video Prompt</a>
+          <a href="/veo-prompt-generator/">Veo / Flow Studio</a>
+          <a href="/kling-prompt-generator/">Kling AI</a>
+          <a href="/runway-prompt-generator/">Runway Gen-3</a>
+          <a href="/pika-prompt-generator/">Pika</a>
+          <a href="/luma-prompt-generator/">Luma Dream Machine</a>
+          <a href="/sora-prompt-generator/">Sora</a>
+          <a href="/minimax-prompt-generator/">Minimax</a>
+          <a href="/stable-video-prompt-generator/">Stable Video</a>
+        </div>
+        <div class="f4-section">
+          <h4 class="f4-heading">Resources</h4>
+          <a href="/ru/blog/">Блог</a>
+          <a href="/ru/about/">О нас</a>
+          <a href="/ru/pricing/">Цены</a>
+          <a href="/contact/">Contact</a>
+          <a href="/privacy-policy/">Privacy Policy</a>
+          <a href="/terms-of-service/">Terms of Service</a>
+        </div>
+        <div class="f4-section">
+          <h4 class="f4-heading">Languages</h4>
+          <a href="/">English</a>
+          <a href="/fr/">Fran&#231;ais</a>
+          <a href="/ar/">&#1575;&#1604;&#1593;&#1585;&#1576;&#1610;&#1577;</a>
+          <a href="/es/">Espa&#241;ol</a>
+          <a href="/ko/">&#54620;&#44397;&#50612;</a>
+          <a href="/ja/">&#26085;&#26412;&#35486;</a>
+          <a href="/ru/">&#1056;&#1091;&#1089;&#1089;&#1082;&#1080;&#1081;</a>
+        </div>
+      </div>
+      <div class="f4-bottom">
+        <p>&#169; 2026 ImageToPrompt.dev &#8212; Free AI Prompt Generator</p>
+        <p>Your images are never stored. All analysis is ephemeral and private.</p>
+      </div>
+    </div>
+  </footer>
+
+<script src="/newsletter-inject.js" defer></script>
+<script src="/nav.js" defer></script>
+  <script>
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', function() {
+    navigator.serviceWorker.register('/sw.js')
+      .catch(function(err) { console.warn('SW registration failed:', err); });
+  });
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,484 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <script src="/theme-toggle.js"></script>
+  <meta charset="UTF-8" />
+  <link rel="dns-prefetch" href="https://www.googletagmanager.com">
+<link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="max-image-preview:large, index, follow">
+  <meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="ImageToPrompt">
+  <title>DALL-E 3プロンプトガイド：ChatGPTで画像生成プロンプトを書く方法</title>
+  <meta name="description" content="2026年版DALL-E 3プロンプト完全ガイド。自然言語構文、テキストレンダリング、ChatGPT統合、実用的なプロンプト例を詳しく解説します。" />
+  <link rel="canonical" href="https://www.imagetoprompt.dev/ja/blog/dall-e-3-prompt-gaido/" />
+  <link rel="alternate" hreflang="ja" href="https://www.imagetoprompt.dev/ja/blog/dall-e-3-prompt-gaido/" />
+  <link rel="alternate" hreflang="en" href="https://www.imagetoprompt.dev/blog/dall-e-3-prompt-guide/" />
+  <link rel="alternate" hreflang="fr" href="https://www.imagetoprompt.dev/fr/blog/guide-prompts-dall-e-3/" />
+  <link rel="alternate" hreflang="ar" href="https://www.imagetoprompt.dev/ar/blog/dalil-prompts-dall-e-3/" />
+  <link rel="alternate" hreflang="es" href="https://www.imagetoprompt.dev/es/blog/guia-prompts-dall-e-3/" />
+  <link rel="alternate" hreflang="x-default" href="https://www.imagetoprompt.dev/blog/dall-e-3-prompt-guide/" />
+  <meta property="og:title" content="DALL-E 3プロンプトガイド：ChatGPTで画像生成プロンプトを書く方法" />
+  <meta property="og:description" content="2026年版DALL-E 3プロンプト完全ガイド。自然言語構文、テキストレンダリング、ChatGPT統合、実用的なプロンプト例を詳しく解説します。" />
+  <meta property="og:url" content="https://www.imagetoprompt.dev/ja/blog/dall-e-3-prompt-gaido/" />
+  <meta property="og:type" content="article" />
+  <meta property="og:image" content="https://www.imagetoprompt.dev/og-image.png" />
+  <meta property="og:site_name" content="ImageToPrompt" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="DALL-E 3プロンプト完全ガイド" />
+  <meta name="twitter:description" content="DALL-E 3プロンプトをマスターしよう。自然言語、テキストレンダリング、ChatGPT統合と実例を解説。" />
+  <meta name="twitter:image" content="https://www.imagetoprompt.dev/og-image.png" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="48x48" href="/favicon-48.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+  <link rel="manifest" href="/site.webmanifest" />
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="/fonts/space-grotesk-700.woff2" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="/fonts/inter-400.woff2" />
+  <link rel="stylesheet" href="/theme.css">
+  <link rel="preload" href="/blog.css" as="style" onload="this.onload=null;this.rel='stylesheet'"><noscript><link rel="stylesheet" href="/blog.css"></noscript>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "DALL-E 3プロンプトガイド：ChatGPTで画像生成プロンプトを書く方法",
+    "description": "2026年版DALL-E 3プロンプト完全ガイド。自然言語構文、テキストレンダリング、ChatGPT統合、実用的なプロンプト例を詳しく解説します。",
+    "image": "https://www.imagetoprompt.dev/og-image.png",
+    "datePublished": "2026-03-07",
+    "dateModified": "2026-03-24",
+    "inLanguage": "ja",
+    "author": {
+      "@type": "Person",
+      "name": "ImageToPrompt Team",
+      "url": "https://www.imagetoprompt.dev/"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "ImageToPrompt",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://www.imagetoprompt.dev/favicon.svg"
+      }
+    },
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https://www.imagetoprompt.dev/ja/blog/dall-e-3-prompt-gaido/"
+    }
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "inLanguage": "ja",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "ホーム",
+        "item": "https://www.imagetoprompt.dev/ja/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "ブログ",
+        "item": "https://www.imagetoprompt.dev/ja/blog/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "DALL-E 3プロンプトガイド"
+      }
+    ]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "inLanguage": "ja",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "DALL-E 3にはどうやってアクセスできますか？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "DALL-E 3はChatGPT Plus（月額20ドル）、ChatGPT Enterprise、OpenAI API、Microsoft Copilot（無料版は制限あり）からアクセスできます。ChatGPT経由のアクセスが最も簡単で、ChatGPTがプロンプトを自動的に最適化してくれます。"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "DALL-E 3は画像内に読めるテキストを生成できますか？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "はい、これはDALL-E 3のユニークな強みの一つです。短いテキスト（1〜5単語）であれば比較的安定してレンダリングできます。より良い結果を得るには、プロンプト内でテキストを引用符で囲み、フォントやスタイルを指定してください。"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "なぜChatGPTはDALL-E 3のプロンプトを変更するのですか？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "ChatGPTは仲介役として機能し、結果の品質を向上させ、OpenAIのコンテンツポリシーを遵守するためにプロンプトを自動的にリライトします。変更されたプロンプトはインターフェースで確認できます。これを制御したい場合は、「このプロンプトをそのまま使用し、変更しないでください」とメッセージに記載してください。"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "DALL-E 3はネガティブプロンプトに対応していますか？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "いいえ、DALL-E 3はStable Diffusionのようなネガティブプロンプトには対応していません。不要な要素を避けるには、プロンプトを肯定的に表現するか、プロンプトテキスト内で明示的に除外したいものを記述してください（例：「without any text or watermarks」）。"
+        }
+      }
+    ]
+  }
+  </script>
+    <!-- Google AdSense -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4499206373485728" crossorigin="anonymous"></script>
+    <!-- Web Push Notifications -->
+<script src="https://cdn.onesignal.com/sdks/web/v16/OneSignalSDK.page.js" defer></script>
+<script>
+  window.OneSignalDeferred = window.OneSignalDeferred || [];
+  OneSignalDeferred.push(async function(OneSignal) {
+    await OneSignal.init({
+      appId: "REPLACE_WITH_ONESIGNAL_APP_ID",
+      notifyButton: { enable: false }
+    });
+  });
+</script>
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="inner">
+      <a href="/ja/" class="site-logo"><img src="/favicon.svg" alt="ImageToPrompt" width="48" height="48"><div class="site-logo-text">ImageTo<span class="accent">Prompt</span><span class="site-logo-sub">無料AIプロンプトジェネレーター</span></div></a>
+      <nav class="site-nav" aria-label="メインナビゲーション">
+        <div class="nav-dropdown">
+          <button class="nav-dropdown-trigger" aria-haspopup="true" aria-expanded="false">Tools <span class="nav-chevron" aria-hidden="true">&#9660;</span></button>
+          <div class="nav-dropdown-menu" role="menu">
+            <div class="nav-mega-grid">
+              <div class="nav-mega-col">
+                <div class="nav-mega-heading">&#128444; IMAGE TOOLS</div>
+                <a href="/" role="menuitem" class="nav-mega-tool">Image to Prompt <span class="nav-mega-arrow">&#8594;</span></a>
+                <a href="/text-to-prompt/" role="menuitem" class="nav-mega-tool">Text to Prompt <span class="nav-mega-arrow">&#8594;</span></a>
+                <a href="/describe-image/" role="menuitem" class="nav-mega-tool">Describe Image <span class="nav-new-badge">NEW</span> <span class="nav-mega-arrow">&#8594;</span></a>
+                <div class="nav-mega-models-label">Models</div>
+                <div class="nav-mega-models"><a href="/midjourney-prompt-generator/">Midjourney</a><span class="nav-dot">&#xB7;</span><a href="/stable-diffusion-prompt-generator/">SD</a></div>
+                <div class="nav-mega-models"><a href="/flux-prompt-generator/">Flux</a><span class="nav-dot">&#xB7;</span><a href="/dall-e-prompt-generator/">DALL&#xB7;E&#xA0;3</a></div>
+                <div class="nav-mega-models"><a href="/adobe-firefly-prompt-generator/">Firefly</a><span class="nav-dot">&#xB7;</span><a href="/leonardo-ai-prompt-generator/">Leonardo</a></div>
+                <div class="nav-mega-models"><a href="/ideogram-prompt-generator/">Ideogram</a></div>
+              </div>
+              <div class="nav-mega-divider" aria-hidden="true"></div>
+              <div class="nav-mega-col">
+                <div class="nav-mega-heading">&#127909; VIDEO TOOLS</div>
+                <a href="/?tab=image-to-video" role="menuitem" class="nav-mega-tool">Image to Video <span class="nav-mega-arrow">&#8594;</span></a>
+                <a href="/?tab=text-to-video" role="menuitem" class="nav-mega-tool">Text to Video <span class="nav-mega-arrow">&#8594;</span></a>
+                <div class="nav-mega-models-label">Models</div>
+                <div class="nav-mega-models"><a href="/veo-prompt-generator/">Veo</a><span class="nav-dot">&#xB7;</span><a href="/kling-prompt-generator/">Kling</a></div>
+                <div class="nav-mega-models"><a href="/runway-prompt-generator/">Runway</a><span class="nav-dot">&#xB7;</span><a href="/pika-prompt-generator/">Pika</a></div>
+                <div class="nav-mega-models"><a href="/luma-prompt-generator/">Luma</a><span class="nav-dot">&#xB7;</span><a href="/sora-prompt-generator/">Sora</a></div>
+                <div class="nav-mega-models"><a href="/minimax-prompt-generator/">Minimax</a><span class="nav-dot">&#xB7;</span><a href="/stable-video-prompt-generator/">Stable</a></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <a href="/ja/blog/">ブログ</a>
+        <a href="/ja/pricing/" class="nav-pill-pricing">料金</a>
+        <a href="/ja/about/" class="nav-pill-about">概要</a>
+        <a href="/ja/" class="nav-try-free">無料で試す &#8594;</a>
+        <button id="theme-toggle" onclick="toggleTheme()" aria-label="テーマ切替" title="テーマ切替">&#9728;&#xFE0F;</button>
+  </nav>
+    </div>
+  </header>
+
+  <nav class="breadcrumb" aria-label="パンくずリスト">
+    <a href="/ja/">ホーム</a> <span aria-hidden="true">›</span>
+    <a href="/ja/blog/">ブログ</a> <span aria-hidden="true">›</span>
+    <span aria-current="page">DALL-E 3プロンプトガイド</span>
+  </nav>
+
+  <div class="page-wrapper">
+
+    <header class="article-header">
+      <p class="article-tag">DALL-E 3</p>
+      <h1>DALL-E 3プロンプト完全ガイド</h1>
+      <div class="article-meta">
+        <span>2026年3月</span>
+        <span class="dot">&#183;</span>
+        <span>読了時間10分</span>
+        <span class="dot">&#183;</span>
+        <span>DALL-E 3 &#183; ChatGPT &#183; OpenAI</span>
+        <span class="dot">&#183;</span>
+        <span>2026年3月更新</span>
+      </div>
+    </header>
+
+    <div class="article-body">
+
+      <p>OpenAIのDALL-E 3は、AI画像生成ツールの中でもユニークな存在です。Midjourney、Stable Diffusion、Fluxとは異なり、ChatGPTと深く統合されているため、会話形式の自然言語で画像を記述することができます。さらに、DALL-E 3は現在、生成画像内に読み取り可能なテキストをレンダリングする能力において最も優れたモデルです。このガイドでは、これらのユニークな機能を最大限に活用する方法を解説します。</p>
+
+      <nav class="toc" aria-label="目次">
+        <details open>
+          <summary>このガイドの内容</summary>
+          <ol>
+            <li><a href="#akusesu">DALL-E 3へのアクセス方法</a></li>
+            <li><a href="#shizen-gengo">自然言語アプローチ</a></li>
+            <li><a href="#tekisuto-rendering">画像内のテキストレンダリング</a></li>
+            <li><a href="#chatgpt-tougou">ChatGPT統合</a></li>
+            <li><a href="#kontentsu-porishi">コンテンツポリシー</a></li>
+            <li><a href="#puronputo-rei">プロンプト例</a></li>
+            <li><a href="#genkai">制限事項と回避策</a></li>
+            <li><a href="#yokuaru-shitsumon">よくある質問</a></li>
+          </ol>
+        </details>
+      </nav>
+
+      <div class="callout">
+        <p><strong>DALL-E 3プロンプトを生成：</strong> <a href="/dall-e-prompt-generator/">DALL-E 3プロンプトジェネレーター</a>を使えば、あらゆる画像やテキスト説明から最適化されたプロンプトを作成できます。</p>
+      </div>
+
+      <h2 id="akusesu">DALL-E 3へのアクセス方法</h2>
+
+      <p>DALL-E 3には以下の方法でアクセスできます：</p>
+
+      <ul>
+        <li><strong>ChatGPT Plus：</strong>月額20ドル &#8212; 会話型インターフェースを備えた最も簡単な方法</li>
+        <li><strong>ChatGPT Enterprise / Team：</strong>チームや企業向け</li>
+        <li><strong>OpenAI API：</strong>プログラムからのアクセス、トークン単位の課金</li>
+        <li><strong>Microsoft Copilot：</strong>無料版（制限あり、旧Bing Image Creator）</li>
+      </ul>
+
+      <p>ほとんどのユーザーにはChatGPT経由のアクセスがおすすめです。ChatGPTがプロンプティングアシスタントとして機能し、リクエストを自動的にリライトして結果を最適化してくれるためです。</p>
+
+      <h2 id="shizen-gengo">自然言語アプローチ</h2>
+
+      <p>DALL-E 3は会話形式の自然言語を理解するように設計されています。特別な構文、重み付け、パラメータは必要ありません。誰かに画像を説明するように、見たいものをそのまま書くだけです：</p>
+
+      <pre><code>A cozy reading nook by a large window on a rainy day. There's a comfortable armchair with a knitted blanket, a steaming cup of tea on a small side table, and a bookshelf filled with old leather-bound books. The light is soft and warm, filtering through rain-streaked glass. The style should be like a watercolor illustration with soft, muted colors.</code></pre>
+
+      <p>この自然言語プロンプトは、説明に非常に近い結果を生成します。DALL-E 3は、完全な文章を受け取った場合、文脈、雰囲気、要素間の空間的関係を他のどのモデルよりもよく理解します。</p>
+
+      <h3>推奨される構造</h3>
+
+      <p>最適な結果を得るには、以下の構造でプロンプトを組み立てましょう：</p>
+
+      <ol>
+        <li><strong>メインの被写体：</strong>画像の中心となるもの</li>
+        <li><strong>背景 / 設定：</strong>シーンが展開される場所</li>
+        <li><strong>照明と雰囲気：</strong>望む雰囲気</li>
+        <li><strong>アートスタイル：</strong>ビジュアルの表現方法（写真、イラスト、絵画など）</li>
+        <li><strong>具体的なディテール：</strong>色、構図、追加要素</li>
+      </ol>
+
+      <h2 id="tekisuto-rendering">画像内のテキストレンダリング</h2>
+
+      <p>これがDALL-E 3の最も際立った強みです。MidjourneyやStable Diffusionが読み取り可能なテキストのレンダリングに頻繁に失敗するのに対し、DALL-E 3は短い単語を比較的うまく処理できます。</p>
+
+      <h3>テキストのベストプラクティス</h3>
+
+      <ul>
+        <li><strong>テキストを引用符で囲む：</strong> <code>a coffee mug with the text "Good Morning" written on it</code></li>
+        <li><strong>1〜5単語に制限する：</strong>それ以上になると、レンダリングエラーが頻繁に発生します</li>
+        <li><strong>タイポグラフィスタイルを指定する：</strong> <code>in bold sans-serif letters</code>、<code>in elegant script font</code></li>
+        <li><strong>配置を指定する：</strong> <code>text centered on the front of the mug</code></li>
+      </ul>
+
+      <h3>テキスト入りプロンプトの例</h3>
+
+      <pre><code>A vintage-style poster for a jazz club with the text "Blue Note" in large art deco typography at the top. Below, a silhouette of a saxophone player against a deep blue background with golden spotlights. The style mimics 1950s concert posters with textured paper appearance.</code></pre>
+
+      <pre><code>A minimalist logo design on a white background featuring the word "BLOOM" in clean, modern sans-serif typography. Below the text, a simple geometric flower icon in gradient from pink to orange. Professional brand identity style.</code></pre>
+
+      <h2 id="chatgpt-tougou">ChatGPT統合</h2>
+
+      <p>ChatGPT経由でDALL-E 3を使用すると、自動的にリライトプロセスが実行されます：</p>
+
+      <ol>
+        <li>自然言語でリクエストを記述する</li>
+        <li>ChatGPTがリクエストを解釈し、詳細で最適化されたプロンプトを生成する</li>
+        <li>リライトされたプロンプトがDALL-E 3に送信される</li>
+        <li>画像が生成され、使用されたプロンプトとともに表示される</li>
+      </ol>
+
+      <p>このリライトは一般的に有益です &#8212; ChatGPTが、あなたが指定しなかった構図、照明、スタイルのディテールを追加してくれます。ただし、完全なコントロールが必要な場合は、以下のように依頼できます：</p>
+
+      <pre><code>Generate an image with exactly this prompt, without modifying it: [your prompt here]</code></pre>
+
+      <h3>ヒント：イテレーションモード</h3>
+
+      <p>ChatGPT統合のユニークな利点の一つは、会話形式でのイテレーションです。生成後に以下のように指示できます：</p>
+
+      <ul>
+        <li>「照明をもっと暖かくして、霧を増やしてください」</li>
+        <li>「同じスタイルを維持しつつ、猫を犬に替えてください」</li>
+        <li>「同じ画像を16:9の横長フォーマットでやり直してください」</li>
+        <li>「スタイルは気に入っていますが、もっと暗くドラマチックにしてください」</li>
+      </ul>
+
+      <h2 id="kontentsu-porishi">コンテンツポリシー</h2>
+
+      <p>DALL-E 3は主要な画像生成ツールの中で最も厳格なコンテンツポリシーを持っています。主な制限事項は以下の通りです：</p>
+
+      <ul>
+        <li><strong>実在の人物は不可：</strong>名前を指定した実在の人物の肖像画を生成することはできません</li>
+        <li><strong>露骨な暴力コンテンツは不可：</strong>グラフィックな暴力シーンは拒否されます</li>
+        <li><strong>成人向けコンテンツは不可：</strong>性的に露骨なコンテンツは許可されません</li>
+        <li><strong>現役アーティストのスタイル：</strong>DALL-E 3は名前を指定した現役アーティストのスタイルをコピーすることを拒否します</li>
+      </ul>
+
+      <p>アーティストのスタイル制限を回避するには、アーティストの名前を使う代わりに視覚的特徴を記述してください。例えば「in the style of [アーティスト名]」の代わりに、「with bold geometric shapes, vibrant primary colors, and thick black outlines」と記述します。</p>
+
+      <h2 id="puronputo-rei">プロンプト例</h2>
+
+      <h3>エディトリアルイラスト</h3>
+      <pre><code>An editorial illustration for a technology magazine article about artificial intelligence. A human hand and a robotic hand reaching toward each other, similar to Michelangelo's Creation of Adam, but in a modern, clean vector style with a gradient background going from deep blue to teal. Minimalist design with subtle circuit board patterns in the background.</code></pre>
+
+      <h3>商品写真</h3>
+      <pre><code>A professional product photograph of a sleek, modern perfume bottle on a reflective black surface. The bottle is transparent with amber-colored liquid inside. Dramatic studio lighting from the left creates a golden glow through the liquid. Soft bokeh lights in the dark background. High-end commercial photography style.</code></pre>
+
+      <h3>ファンタジーシーン</h3>
+      <pre><code>A vast underground library carved into crystalline cave walls, with bioluminescent plants growing between the bookshelves providing soft blue-green illumination. A young wizard in flowing robes reads a glowing book at a stone desk. Magical particles float in the air. The style is detailed digital fantasy art with a sense of wonder and discovery.</code></pre>
+
+      <h3>インフォグラフィック</h3>
+      <pre><code>A clean, modern infographic showing the water cycle. Blue and white color scheme on a light background. Arrows connecting clouds, rain, rivers, ocean, and evaporation stages. Each stage has a small icon and a label. The text labels are "Evaporation", "Condensation", "Precipitation", "Collection". Scientific illustration style, educational and clear.</code></pre>
+
+      <h2 id="genkai">制限事項と回避策</h2>
+
+      <ul>
+        <li><strong>解像度の制限：</strong>DALL-E 3は1024x1024、1792x1024、または1024x1792で生成します。より高い解像度が必要な場合はアップスケーラーを使用してください。</li>
+        <li><strong>細かい制御ができない：</strong>CFGスケール、サンプラー、再現可能なシードなどはありません。イテレーションは会話形式で行います。</li>
+        <li><strong>自動リライト：</strong>ChatGPTがプロンプトを変更します。必要に応じて、変更しないように明示的に依頼してください。</li>
+        <li><strong>キャラクターの一貫性：</strong>複数の生成間で同じキャラクターを維持することは困難です。身体的特徴を正確に記述してください。</li>
+      </ul>
+
+      <div class="cta-box">
+        <h3>最適化されたDALL-E 3プロンプトを生成</h3>
+        <p>画像をアップロードするか、アイデアを説明するだけで、自然言語形式のDALL-E 3プロンプトが生成されます。</p>
+        <a href="/dall-e-prompt-generator/" class="cta-btn">DALL-E 3プロンプトジェネレーター &#8594;</a>
+      </div>
+
+      <h2 id="yokuaru-shitsumon">よくある質問</h2>
+
+      <h3>DALL-E 3にはどうやってアクセスできますか？</h3>
+      <p>DALL-E 3はChatGPT Plus（月額20ドル）、ChatGPT Enterprise、OpenAI API、Microsoft Copilot（無料版は制限あり）からアクセスできます。ChatGPT経由のアクセスが最も簡単で、ChatGPTがプロンプトを自動的に最適化してくれます。</p>
+
+      <h3>DALL-E 3は画像内に読めるテキストを生成できますか？</h3>
+      <p>はい、これはDALL-E 3のユニークな強みの一つです。短いテキスト（1〜5単語）であれば比較的安定してレンダリングできます。より良い結果を得るには、プロンプト内でテキストを引用符で囲み、フォントやスタイルを指定してください。</p>
+
+      <h3>なぜChatGPTはDALL-E 3のプロンプトを変更するのですか？</h3>
+      <p>ChatGPTは仲介役として機能し、結果の品質を向上させ、OpenAIのコンテンツポリシーを遵守するためにプロンプトを自動的にリライトします。変更されたプロンプトはインターフェースで確認できます。これを制御したい場合は、「このプロンプトをそのまま使用し、変更しないでください」とメッセージに記載してください。</p>
+
+      <h3>DALL-E 3はネガティブプロンプトに対応していますか？</h3>
+      <p>いいえ、DALL-E 3はStable Diffusionのようなネガティブプロンプトには対応していません。不要な要素を避けるには、プロンプトを肯定的に表現するか、プロンプトテキスト内で明示的に除外したいものを記述してください（例：<code>without any text or watermarks</code>）。</p>
+
+    </div>
+
+    <div class="author-bio">
+      <img src="/favicon.svg" alt="ImageToPrompt Team" width="44" height="44">
+      <div>
+        <strong>ImageToPrompt Team</strong>
+        <p>私たちはクリエイターの皆さんがAI画像生成をマスターできるよう支援する専門チームです。画像からプロンプトへの変換ツールやAIプロンプトエンジニアリングガイドを通じて、世界中のアーティストの創作活動をサポートしています。</p>
+        <a href="https://x.com/ImageToPrompt" target="_blank" rel="noopener" class="author-follow">Xでフォロー</a>
+      </div>
+    </div>
+
+    <div class="related-posts">
+      <h2>関連ガイド</h2>
+      <div class="related-grid">
+        <a href="/ja/blog/flux-ai-prompt-gaido/" class="related-card">
+          <p class="tag">Flux AI</p>
+          <h3>Flux AIプロンプトガイド 2026</h3>
+        </a>
+        <a href="/ja/blog/midjourney-prompt-gaido-2026/" class="related-card">
+          <p class="tag">Midjourney</p>
+          <h3>Midjourneyプロンプト完全ガイド 2026</h3>
+        </a>
+        <a href="/ja/blog/stable-diffusion-vs-midjourney-vs-dalle3/" class="related-card">
+          <p class="tag">比較</p>
+          <h3>SD vs Midjourney vs DALL&#183;E 3 vs Flux</h3>
+        </a>
+        <a href="/ja/blog/gazou-kara-prompt-logo/" class="related-card">
+          <p class="tag">ロゴ</p>
+          <h3>画像からプロンプトでロゴデザイン</h3>
+        </a>
+      </div>
+    </div>
+
+  </div>
+
+  <footer class="footer-4col">
+    <div class="f4-inner">
+      <div class="f4-brand">
+        <img src="/favicon.svg" alt="ImageToPrompt" width="28" height="28">
+        <span class="f4-brand-name">ImageTo<span class="accent">Prompt</span></span>
+        <span class="f4-brand-sub">&mdash; Free AI Prompt Generator</span>
+      </div>
+      <div class="f4-grid">
+        <div class="f4-section">
+          <h4 class="f4-heading">Image Prompt Tools</h4>
+          <a href="/">Image to Prompt</a>
+          <a href="/text-to-prompt/">Text to Prompt</a>
+          <a href="/describe-image/">Describe Image</a>
+          <a href="/midjourney-prompt-generator/">Midjourney</a>
+          <a href="/stable-diffusion-prompt-generator/">Stable Diffusion</a>
+          <a href="/flux-prompt-generator/">Flux</a>
+          <a href="/dall-e-prompt-generator/">DALL-E 3</a>
+          <a href="/adobe-firefly-prompt-generator/">Adobe Firefly</a>
+          <a href="/leonardo-ai-prompt-generator/">Leonardo AI</a>
+          <a href="/ideogram-prompt-generator/">Ideogram</a>
+        </div>
+        <div class="f4-section">
+          <h4 class="f4-heading">Video Prompt Tools</h4>
+          <a href="/image-to-video-prompt/">Image to Video Prompt</a>
+          <a href="/text-to-video-prompt/">Text to Video Prompt</a>
+          <a href="/veo-prompt-generator/">Veo / Flow Studio</a>
+          <a href="/kling-prompt-generator/">Kling AI</a>
+          <a href="/runway-prompt-generator/">Runway Gen-3</a>
+          <a href="/pika-prompt-generator/">Pika</a>
+          <a href="/luma-prompt-generator/">Luma Dream Machine</a>
+          <a href="/sora-prompt-generator/">Sora</a>
+          <a href="/minimax-prompt-generator/">Minimax</a>
+          <a href="/stable-video-prompt-generator/">Stable Video</a>
+        </div>
+        <div class="f4-section">
+          <h4 class="f4-heading">Resources</h4>
+          <a href="/ja/blog/">ブログ</a>
+          <a href="/ja/about/">概要</a>
+          <a href="/ja/pricing/">料金</a>
+          <a href="/contact/">Contact</a>
+          <a href="/privacy-policy/">Privacy Policy</a>
+          <a href="/terms-of-service/">Terms of Service</a>
+        </div>
+        <div class="f4-section">
+          <h4 class="f4-heading">Languages</h4>
+          <a href="/">English</a>
+          <a href="/fr/">Français</a>
+          <a href="/ar/">العربية</a>
+          <a href="/es/">Español</a>
+          <a href="/ko/">한국어</a>
+          <a href="/ja/">日本語</a>
+          <a href="/ru/">Русский</a>
+        </div>
+      </div>
+      <div class="f4-bottom">
+        <p>&copy; 2026 ImageToPrompt.dev &mdash; Free AI Prompt Generator</p>
+        <p>Your images are never stored. All analysis is ephemeral and private.</p>
+      </div>
+    </div>
+  </footer>
+
+<script src="/newsletter-inject.js" defer></script>
+<script src="/nav.js" defer></script>
+  <script>
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', function() {
+    navigator.serviceWorker.register('/sw.js')
+      .catch(function(err) { console.warn('SW registration failed:', err); });
+  });
+}
+</script>
+</body>
+</html>

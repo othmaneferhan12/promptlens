@@ -1,0 +1,509 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <script src="/theme-toggle.js"></script>
+  <meta charset="UTF-8" />
+  <link rel="dns-prefetch" href="https://www.googletagmanager.com">
+<link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="max-image-preview:large, index, follow">
+  <meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="ImageToPrompt">
+  <title>Midjourney vs Flux：2026年どちらのAI画像生成が優れているか？</title>
+  <meta name="description" content="2026年版 Midjourney vs Flux 徹底比較。画像品質、フォトリアリズム、制御性、価格、ユースケースを詳しく解説します。" />
+  <link rel="canonical" href="https://www.imagetoprompt.dev/ja/blog/midjourney-vs-flux/" />
+  <link rel="alternate" hreflang="ja" href="https://www.imagetoprompt.dev/ja/blog/midjourney-vs-flux/" />
+  <link rel="alternate" hreflang="en" href="https://www.imagetoprompt.dev/blog/midjourney-vs-flux/" />
+  <link rel="alternate" hreflang="fr" href="https://www.imagetoprompt.dev/fr/blog/midjourney-vs-flux/" />
+  <link rel="alternate" hreflang="ar" href="https://www.imagetoprompt.dev/ar/blog/midjourney-vs-flux/" />
+  <link rel="alternate" hreflang="es" href="https://www.imagetoprompt.dev/es/blog/midjourney-vs-flux/" />
+  <link rel="alternate" hreflang="x-default" href="https://www.imagetoprompt.dev/blog/midjourney-vs-flux/" />
+  <meta property="og:title" content="Midjourney vs Flux：2026年どちらのAI画像生成が優れているか？" />
+  <meta property="og:description" content="2026年版 Midjourney vs Flux 徹底比較。品質、リアリズム、制御性、価格、ユースケース。" />
+  <meta property="og:url" content="https://www.imagetoprompt.dev/ja/blog/midjourney-vs-flux/" />
+  <meta property="og:type" content="article" />
+  <meta property="og:image" content="https://www.imagetoprompt.dev/og-image.png" />
+  <meta property="og:site_name" content="ImageToPrompt" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Midjourney vs Flux：2026年完全比較ガイド" />
+  <meta name="twitter:description" content="2026年版 Midjourney vs Flux 徹底比較。品質、リアリズム、制御性、価格。" />
+  <meta name="twitter:image" content="https://www.imagetoprompt.dev/og-image.png" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="48x48" href="/favicon-48.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+  <link rel="manifest" href="/site.webmanifest" />
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="/fonts/space-grotesk-700.woff2" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="/fonts/inter-400.woff2" />
+  <link rel="stylesheet" href="/theme.css">
+  <link rel="preload" href="/blog.css" as="style" onload="this.onload=null;this.rel='stylesheet'"><noscript><link rel="stylesheet" href="/blog.css"></noscript>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Midjourney vs Flux：2026年どちらのAI画像生成が優れているか？",
+    "description": "2026年版 Midjourney vs Flux 徹底比較。画像品質、フォトリアリズム、制御性、価格、ユースケースを詳しく解説します。",
+    "image": "https://www.imagetoprompt.dev/og-image.png",
+    "datePublished": "2026-03-11",
+    "dateModified": "2026-03-24",
+    "inLanguage": "ja",
+    "author": {
+      "@type": "Person",
+      "name": "ImageToPrompt Team",
+      "url": "https://www.imagetoprompt.dev/"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "ImageToPrompt",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://www.imagetoprompt.dev/favicon.svg"
+      }
+    },
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https://www.imagetoprompt.dev/ja/blog/midjourney-vs-flux/"
+    }
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Midjourney と Flux、フォトリアリズムに優れているのはどちらですか？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "2026年時点では、純粋なフォトリアリズムにおいてFluxが一般的に優れていると評価されています。Fluxはカメラの仕様、自然光、光の物理をより正確に理解します。一方、Midjourneyはアーティスティックでシネマティックな表現に優れています。"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Flux は無料ですか？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Flux Devはオープンソースの無料モデルで、ローカル環境で実行できます。Flux Proは Black Forest Labs の API またはサードパーティプラットフォーム経由で利用可能な有料商用サービスです。Midjourneyは月額10ドルからの有料サブスクリプションが必要です。"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Midjourney と Flux で同じプロンプトを使えますか？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "いいえ、2つのモデルはプロンプトのスタイルが大きく異なります。Midjourneyは --ar や --v などのパラメータ付きの短い記述子を使用し、Fluxはカメラの技術仕様を含む自然言語での詳細な説明を好みます。ImageToPromptを使えば、各モデルに最適化されたプロンプトを生成できます。"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "2026年、初心者にはどちらのモデルがおすすめですか？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "初心者にはMidjourneyがおすすめです。直感的なWebインターフェースがあり、シンプルなプロンプトでも美しい結果が得られます。Fluxはローカルインストール（Flux Dev）やAPI アクセス（Flux Pro）により多くの技術知識が必要です。"
+        }
+      }
+    ]
+  }
+  </script>
+    <!-- Google AdSense -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4499206373485728" crossorigin="anonymous"></script>
+    <!-- Web Push Notifications -->
+<script src="https://cdn.onesignal.com/sdks/web/v16/OneSignalSDK.page.js" defer></script>
+<script>
+  window.OneSignalDeferred = window.OneSignalDeferred || [];
+  OneSignalDeferred.push(async function(OneSignal) {
+    await OneSignal.init({
+      appId: "REPLACE_WITH_ONESIGNAL_APP_ID",
+      notifyButton: { enable: false }
+    });
+  });
+</script>
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="inner">
+      <a href="/ja/" class="site-logo"><img src="/favicon.svg" alt="ImageToPrompt" width="48" height="48"><div class="site-logo-text">ImageTo<span class="accent">Prompt</span><span class="site-logo-sub">無料AIプロンプトジェネレーター</span></div></a>
+      <nav class="site-nav" aria-label="メインナビゲーション">
+        <div class="nav-dropdown">
+          <button class="nav-dropdown-trigger" aria-haspopup="true" aria-expanded="false">Tools <span class="nav-chevron" aria-hidden="true">&#9660;</span></button>
+          <div class="nav-dropdown-menu" role="menu">
+            <div class="nav-mega-grid">
+              <div class="nav-mega-col">
+                <div class="nav-mega-heading">&#128444; IMAGE TOOLS</div>
+                <a href="/" role="menuitem" class="nav-mega-tool">Image to Prompt <span class="nav-mega-arrow">&#8594;</span></a>
+                <a href="/text-to-prompt/" role="menuitem" class="nav-mega-tool">Text to Prompt <span class="nav-mega-arrow">&#8594;</span></a>
+                <a href="/describe-image/" role="menuitem" class="nav-mega-tool">Describe Image <span class="nav-new-badge">NEW</span> <span class="nav-mega-arrow">&#8594;</span></a>
+                <div class="nav-mega-models-label">Models</div>
+                <div class="nav-mega-models"><a href="/midjourney-prompt-generator/">Midjourney</a><span class="nav-dot">&#xB7;</span><a href="/stable-diffusion-prompt-generator/">SD</a></div>
+                <div class="nav-mega-models"><a href="/flux-prompt-generator/">Flux</a><span class="nav-dot">&#xB7;</span><a href="/dall-e-prompt-generator/">DALL&#xB7;E&#xA0;3</a></div>
+                <div class="nav-mega-models"><a href="/adobe-firefly-prompt-generator/">Firefly</a><span class="nav-dot">&#xB7;</span><a href="/leonardo-ai-prompt-generator/">Leonardo</a></div>
+                <div class="nav-mega-models"><a href="/ideogram-prompt-generator/">Ideogram</a></div>
+              </div>
+              <div class="nav-mega-divider" aria-hidden="true"></div>
+              <div class="nav-mega-col">
+                <div class="nav-mega-heading">&#127909; VIDEO TOOLS</div>
+                <a href="/?tab=image-to-video" role="menuitem" class="nav-mega-tool">Image to Video <span class="nav-mega-arrow">&#8594;</span></a>
+                <a href="/?tab=text-to-video" role="menuitem" class="nav-mega-tool">Text to Video <span class="nav-mega-arrow">&#8594;</span></a>
+                <div class="nav-mega-models-label">Models</div>
+                <div class="nav-mega-models"><a href="/veo-prompt-generator/">Veo</a><span class="nav-dot">&#xB7;</span><a href="/kling-prompt-generator/">Kling</a></div>
+                <div class="nav-mega-models"><a href="/runway-prompt-generator/">Runway</a><span class="nav-dot">&#xB7;</span><a href="/pika-prompt-generator/">Pika</a></div>
+                <div class="nav-mega-models"><a href="/luma-prompt-generator/">Luma</a><span class="nav-dot">&#xB7;</span><a href="/sora-prompt-generator/">Sora</a></div>
+                <div class="nav-mega-models"><a href="/minimax-prompt-generator/">Minimax</a><span class="nav-dot">&#xB7;</span><a href="/stable-video-prompt-generator/">Stable</a></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <a href="/ja/blog/">ブログ</a>
+        <a href="/ja/pricing/" class="nav-pill-pricing">料金</a>
+        <a href="/ja/about/" class="nav-pill-about">概要</a>
+        <a href="/ja/" class="nav-try-free">無料で試す &#8594;</a>
+        <button id="theme-toggle" onclick="toggleTheme()" aria-label="テーマ切替" title="テーマ切替">&#9728;&#xFE0F;</button>
+  </nav>
+    </div>
+  </header>
+
+  <nav class="breadcrumb" aria-label="パンくずリスト">
+    <a href="/ja/">ホーム</a> <span aria-hidden="true">&#8250;</span>
+    <a href="/ja/blog/">ブログ</a> <span aria-hidden="true">&#8250;</span>
+    <span aria-current="page">Midjourney vs Flux</span>
+  </nav>
+
+  <div class="page-wrapper">
+
+    <header class="article-header">
+      <p class="article-tag">比較ガイド</p>
+      <h1>Midjourney vs Flux：2026年完全比較ガイド</h1>
+      <div class="article-meta">
+        <span>2026年3月</span>
+        <span class="dot">&#183;</span>
+        <span>読了目安 10分</span>
+        <span class="dot">&#183;</span>
+        <span>Midjourney v6.1 &#183; Flux Pro &#183; Flux Dev</span>
+        <span class="dot">&#183;</span>
+        <span>2026年3月更新</span>
+      </div>
+    </header>
+
+    <div class="article-body">
+
+      <p>Midjourney と Flux は、2026年に最も注目されている2つのAI画像生成ツールです。Midjourneyは独特のシネマティックな美学でこの分野のパイオニアとして知られ、一方のFluxはBlack Forest Labs開発の新参者ながら、その驚異的なフォトリアリズムでフォトグラファーやクリエイターを急速に魅了しています。この詳細な比較ガイドで、あなたのニーズに最適なツールを見つけましょう。</p>
+
+      <nav class="toc" aria-label="目次">
+        <details open>
+          <summary>このガイドの内容</summary>
+          <ol>
+            <li><a href="#gaiyou">概要</a></li>
+            <li><a href="#gazou-hinshitsu">画像品質</a></li>
+            <li><a href="#fotoriarizumu">フォトリアリズム</a></li>
+            <li><a href="#prompting-style">プロンプトスタイル</a></li>
+            <li><a href="#kakaku">価格とアクセス性</a></li>
+            <li><a href="#seigyo-parameter">制御とパラメータ</a></li>
+            <li><a href="#use-case">ユースケース</a></li>
+            <li><a href="#verdict">最終評価</a></li>
+            <li><a href="#faq">よくある質問</a></li>
+          </ol>
+        </details>
+      </nav>
+
+      <h2 id="gaiyou">概要</h2>
+
+      <div class="table-wrap">
+      <table class="comparison-table">
+        <thead>
+          <tr>
+            <th>特徴</th>
+            <th>Midjourney v6.1</th>
+            <th>Flux Pro / Dev</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>開発元</td>
+            <td>Midjourney Inc.</td>
+            <td>Black Forest Labs</td>
+          </tr>
+          <tr>
+            <td>アクセス方法</td>
+            <td>Webアプリ + Discord</td>
+            <td>API + ローカル実行（Dev）</td>
+          </tr>
+          <tr>
+            <td>オープンソース</td>
+            <td>いいえ</td>
+            <td>はい（Flux Dev）</td>
+          </tr>
+          <tr>
+            <td>価格</td>
+            <td>月額10ドルから</td>
+            <td>無料（Dev）/ 有料（Pro）</td>
+          </tr>
+          <tr>
+            <td>プロンプトスタイル</td>
+            <td>記述子 + パラメータ</td>
+            <td>詳細な自然言語</td>
+          </tr>
+          <tr>
+            <td>主な強み</td>
+            <td>アーティスティックな美学</td>
+            <td>フォトリアリズム</td>
+          </tr>
+        </tbody>
+      </table>
+      </div>
+
+      <h2 id="gazou-hinshitsu">画像品質</h2>
+
+      <p>純粋な画像品質において、2026年時点で両モデルは非常に優秀ですが、アプローチが異なります。</p>
+
+      <p><strong>Midjourney</strong>は、デフォルトでシネマティックな美学を持つ画像を生成します。<code>a cat sitting on a windowsill</code>のようなシンプルなプロンプトでも、ドラマチックなライティング、豊かな色彩、洗練された構図を備えた画像が生成されます。この「Midjourneyマジック」は初心者にとっては魅力ですが、ニュートラルな表現が必要な場合には制約となることもあります。</p>
+
+      <p><strong>Flux</strong>は、よりリアリティに忠実なアプローチを採用しています。自然な不完全さ、リアルなライティング、正確な光の物理を備えた、実際の写真に近い画像を生成します。デフォルトでは「インスタ映え」するような仕上がりではありませんが、より本物に近い表現が得られます。</p>
+
+      <h2 id="fotoriarizumu">フォトリアリズム</h2>
+
+      <p>これはFluxが最も明確に差をつける分野です。3つの重要なポイントがあります。</p>
+
+      <ul>
+        <li><strong>光学系の理解：</strong>Fluxは異なるレンズの特性を忠実に再現します。<code>Canon 85mm f/1.4</code>と指定すれば、特徴的なクリーミーなボケが得られます。Midjourneyはレンズの指定をより自由に解釈する傾向があります。</li>
+        <li><strong>光の物理：</strong>影、反射、コースティクスはFluxの方がより物理的に正確です。Midjourneyはライティングを美化する傾向があり、美しいですが必ずしもリアルではありません。</li>
+        <li><strong>テクスチャとディテール：</strong>肌、布、素材のテクスチャはFluxの方がより自然です。Midjourneyは時として「完璧すぎる」効果を生み出し、AI生成であることが分かりやすくなります。</li>
+      </ul>
+
+      <h2 id="prompting-style">プロンプトスタイル</h2>
+
+      <p>プロンプトスタイルの違いは根本的なもので、ツール選びに大きく影響します。</p>
+
+      <h3>Midjourney</h3>
+      <pre><code>cinematic portrait of elderly fisherman, golden hour, dramatic lighting, film grain, warm tones --ar 3:2 --v 6.1 --style raw --stylize 200</code></pre>
+
+      <p>Midjourneyは、カンマ区切りの記述子とそれに続く技術パラメータを使用します。簡潔で効率的、かつ修正が容易です。<code>--stylize</code>パラメータはモデルのアーティスティックな解釈度を制御します。</p>
+
+      <h3>Flux</h3>
+      <pre><code>A cinematic portrait photograph of an elderly fisherman with deeply weathered skin and sun-bleached silver hair, captured during golden hour on a wooden dock. Warm, directional sunlight creates dramatic side lighting with long shadows. Shot on a Canon EOS R5 with an 85mm f/1.4 lens, shallow depth of field blurring the harbor in the background. Natural film grain, warm color temperature.</code></pre>
+
+      <p>Fluxは自然言語による説明的な段落を好みます。説明がより詳細で具体的であるほど、より良い結果が得られます。カメラの技術仕様は特によく理解されます。</p>
+
+      <h2 id="kakaku">価格とアクセス性</h2>
+
+      <h3>Midjourney</h3>
+      <ul>
+        <li><strong>Basic：</strong>月額10ドル — 約200回の生成</li>
+        <li><strong>Standard：</strong>月額30ドル — 約900回の生成 + リラックスモード無制限</li>
+        <li><strong>Pro：</strong>月額60ドル — 約1800回の生成 + ステルスモード</li>
+        <li>Webインターフェース（alpha.midjourney.com）またはDiscord経由でアクセス</li>
+      </ul>
+
+      <h3>Flux</h3>
+      <ul>
+        <li><strong>Flux Dev：</strong>無料、オープンソース、GPU（12GB以上のVRAM）があればローカル実行可能</li>
+        <li><strong>Flux Pro：</strong>BFLのAPIまたはReplicateなどのプラットフォーム経由で有料（1画像あたり約0.03〜0.05ドル）</li>
+        <li>公式のWebインターフェースなし — ローカル利用には技術的知識が必要</li>
+      </ul>
+
+      <p>1画像あたりのコストは一般的にFluxの方が安く、特にFlux Devをローカルで実行するためのGPUがある場合はさらにお得です。Midjourneyはより手軽に使えるオールインワン体験を提供します。</p>
+
+      <h2 id="seigyo-parameter">制御とパラメータ</h2>
+
+      <div class="table-wrap">
+      <table class="comparison-table">
+        <thead>
+          <tr>
+            <th>機能</th>
+            <th>Midjourney</th>
+            <th>Flux</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>アスペクト比</td>
+            <td><code>--ar 16:9</code></td>
+            <td>APIパラメータ経由</td>
+          </tr>
+          <tr>
+            <td>ネガティブプロンプト</td>
+            <td><code>--no element</code></td>
+            <td>非対応</td>
+          </tr>
+          <tr>
+            <td>スタイライゼーション</td>
+            <td><code>--stylize 0-1000</code></td>
+            <td>説明文で指定</td>
+          </tr>
+          <tr>
+            <td>参照画像</td>
+            <td>対応（<code>--iw</code>）</td>
+            <td>ControlNet / IP-Adapter経由</td>
+          </tr>
+          <tr>
+            <td>バリエーション</td>
+            <td><code>--chaos 0-100</code></td>
+            <td>seed値で制御</td>
+          </tr>
+          <tr>
+            <td>インペインティング</td>
+            <td>対応（Vary Region）</td>
+            <td>対応（ComfyUI利用）</td>
+          </tr>
+        </tbody>
+      </table>
+      </div>
+
+      <h2 id="use-case">ユースケース</h2>
+
+      <h3>Midjourneyを選ぶべき場合</h3>
+      <ul>
+        <li>技術的な設定なしで素早く美しい結果が欲しい場合</li>
+        <li>イラスト、コンセプトアート、アーティスティックなビジュアルを制作する場合</li>
+        <li>初心者で直感的なインターフェースを求めている場合</li>
+        <li>画像を分析する<code>/describe</code>機能が必要な場合</li>
+        <li>SNSやマーケティング用のビジュアルを制作する場合</li>
+      </ul>
+
+      <h3>Fluxを選ぶべき場合</h3>
+      <ul>
+        <li>フォトリアリズムが最優先の場合</li>
+        <li>フォトグラファーで特定のカメラ設定をシミュレートしたい場合</li>
+        <li>GPUを持っていて無料で無制限のツールが欲しい場合</li>
+        <li>API経由で画像生成を自動パイプラインに組み込む場合</li>
+        <li>物理的なディテール（ライティング、影、反射）の一貫性が必要な場合</li>
+      </ul>
+
+      <h2 id="verdict">最終評価</h2>
+
+      <p>絶対的な勝者はいません。MidjourneyとFluxはそれぞれ異なる分野で優れています。Midjourneyはアーティスティックな美学とアクセス性において依然として王者であり、Fluxはフォトリアリズムで圧倒的な強さを誇り、技術志向のユーザーにコスト面でも優位性があります。</p>
+
+      <p>私たちのおすすめ：予算が許すなら、両方を使いましょう。<a href="/">ImageToPrompt</a>で各モデルに最適化されたプロンプトを生成し、プロジェクトごとに結果を比較するのがベストです。</p>
+
+      <div class="cta-box">
+        <h3>Midjourney と Flux 両方のプロンプトを生成</h3>
+        <p>画像をアップロードして、両モデル向けに最適化されたプロンプトを同時に取得しましょう。</p>
+        <a href="/ja/" class="cta-btn">ImageToPromptを試す &#8594;</a>
+      </div>
+
+      <h2 id="faq">よくある質問</h2>
+
+      <h3>Midjourney と Flux、フォトリアリズムに優れているのはどちらですか？</h3>
+      <p>2026年時点では、純粋なフォトリアリズムにおいてFluxが一般的に優れていると評価されています。Fluxはカメラの仕様、自然光、光の物理をより正確に理解します。一方、Midjourneyはアーティスティックでシネマティックな表現に優れています。</p>
+
+      <h3>Flux は無料ですか？</h3>
+      <p>Flux Devはオープンソースの無料モデルで、ローカル環境で実行できます。Flux Proは Black Forest Labs のAPIまたはサードパーティプラットフォーム経由で利用可能な有料商用サービスです。Midjourneyは月額10ドルからの有料サブスクリプションが必要です。</p>
+
+      <h3>Midjourney と Flux で同じプロンプトを使えますか？</h3>
+      <p>いいえ、2つのモデルはプロンプトのスタイルが大きく異なります。Midjourneyは<code>--ar</code>や<code>--v</code>などのパラメータ付きの短い記述子を使用し、Fluxはカメラの技術仕様を含む自然言語での詳細な説明を好みます。<a href="/">ImageToPrompt</a>を使えば、各モデルに最適化されたプロンプトを生成できます。</p>
+
+      <h3>2026年、初心者にはどちらのモデルがおすすめですか？</h3>
+      <p>初心者にはMidjourneyがおすすめです。直感的なWebインターフェースがあり、シンプルなプロンプトでも美しい結果が得られます。Fluxはローカルインストール（Flux Dev）やAPIアクセス（Flux Pro）により多くの技術知識が必要です。</p>
+
+    </div>
+
+    <div class="author-bio">
+      <img src="/favicon.svg" alt="ImageToPrompt Team" width="44" height="44">
+      <div>
+        <strong>ImageToPrompt Team</strong>
+        <p>私たちはクリエイターの皆さんがAI画像生成をマスターできるよう支援する専門チームです。画像からプロンプトへの変換ツールやAIプロンプトエンジニアリングガイドを通じて、世界中のアーティストの創作活動をサポートしています。</p>
+        <a href="https://x.com/ImageToPrompt" target="_blank" rel="noopener" class="author-follow">Xでフォロー</a>
+      </div>
+    </div>
+
+    <div class="related-posts">
+      <h2>関連ガイド</h2>
+      <div class="related-grid">
+        <a href="/ja/blog/flux-ai-prompt-gaido/" class="related-card">
+          <p class="tag">Flux AI</p>
+          <h3>Flux AIプロンプトガイド 2026</h3>
+        </a>
+        <a href="/ja/blog/midjourney-prompt-kanzen-gaido/" class="related-card">
+          <p class="tag">Midjourney</p>
+          <h3>Midjourneyプロンプト完全ガイド 2026</h3>
+        </a>
+        <a href="/ja/blog/stable-diffusion-vs-midjourney-vs-dalle3/" class="related-card">
+          <p class="tag">比較ガイド</p>
+          <h3>SD vs Midjourney vs DALL&#183;E 3 vs Flux</h3>
+        </a>
+        <a href="/ja/blog/best-image-to-prompt-tools-2026/" class="related-card">
+          <p class="tag">ツール</p>
+          <h3>画像からプロンプト変換ツール 2026年ベスト</h3>
+        </a>
+      </div>
+    </div>
+
+  </div>
+
+  <footer class="footer-4col">
+    <div class="f4-inner">
+      <div class="f4-brand">
+        <img src="/favicon.svg" alt="ImageToPrompt" width="28" height="28">
+        <span class="f4-brand-name">ImageTo<span class="accent">Prompt</span></span>
+        <span class="f4-brand-sub">&mdash; Free AI Prompt Generator</span>
+      </div>
+      <div class="f4-grid">
+        <div class="f4-section">
+          <h4 class="f4-heading">Image Prompt Tools</h4>
+          <a href="/">Image to Prompt</a>
+          <a href="/text-to-prompt/">Text to Prompt</a>
+      <a href="/describe-image/">Describe Image</a>
+          <a href="/midjourney-prompt-generator/">Midjourney</a>
+          <a href="/stable-diffusion-prompt-generator/">Stable Diffusion</a>
+          <a href="/flux-prompt-generator/">Flux</a>
+          <a href="/dall-e-prompt-generator/">DALL-E 3</a>
+          <a href="/adobe-firefly-prompt-generator/">Adobe Firefly</a>
+          <a href="/leonardo-ai-prompt-generator/">Leonardo AI</a>
+          <a href="/ideogram-prompt-generator/">Ideogram</a>
+        </div>
+        <div class="f4-section">
+          <h4 class="f4-heading">Video Prompt Tools</h4>
+          <a href="/image-to-video-prompt/">Image to Video Prompt</a>
+          <a href="/text-to-video-prompt/">Text to Video Prompt</a>
+          <a href="/veo-prompt-generator/">Veo / Flow Studio</a>
+          <a href="/kling-prompt-generator/">Kling AI</a>
+          <a href="/runway-prompt-generator/">Runway Gen-3</a>
+          <a href="/pika-prompt-generator/">Pika</a>
+          <a href="/luma-prompt-generator/">Luma Dream Machine</a>
+          <a href="/sora-prompt-generator/">Sora</a>
+          <a href="/minimax-prompt-generator/">Minimax</a>
+          <a href="/stable-video-prompt-generator/">Stable Video</a>
+        </div>
+        <div class="f4-section">
+          <h4 class="f4-heading">Resources</h4>
+          <a href="/ja/blog/">ブログ</a>
+          <a href="/ja/about/">概要</a>
+          <a href="/ja/pricing/">料金</a>
+          <a href="/contact/">Contact</a>
+          <a href="/privacy-policy/">Privacy Policy</a>
+          <a href="/terms-of-service/">Terms of Service</a>
+        </div>
+        <div class="f4-section">
+          <h4 class="f4-heading">Languages</h4>
+          <a href="/">English</a>
+          <a href="/fr/">Fran&#231;ais</a>
+          <a href="/ar/">&#1575;&#1604;&#1593;&#1585;&#1576;&#1610;&#1577;</a>
+          <a href="/es/">Espa&#241;ol</a>
+          <a href="/ko/">&#54620;&#44397;&#50612;</a>
+          <a href="/ja/">&#26085;&#26412;&#35486;</a>
+          <a href="/ru/">&#1056;&#1091;&#1089;&#1089;&#1082;&#1080;&#1081;</a>
+        </div>
+      </div>
+      <div class="f4-bottom">
+        <p>&#169; 2026 ImageToPrompt.dev &#8212; Free AI Prompt Generator</p>
+        <p>Your images are never stored. All analysis is ephemeral and private.</p>
+      </div>
+    </div>
+  </footer>
+
+<script src="/newsletter-inject.js" defer></script>
+<script src="/nav.js" defer></script>
+  <script>
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', function() {
+    navigator.serviceWorker.register('/sw.js')
+      .catch(function(err) { console.warn('SW registration failed:', err); });
+  });
+}
+</script>
+</body>
+</html>

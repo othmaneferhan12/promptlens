@@ -1,0 +1,533 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <script src="/theme-toggle.js"></script>
+  <meta charset="UTF-8" />
+  <link rel="dns-prefetch" href="https://www.googletagmanager.com">
+<link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="max-image-preview:large, index, follow">
+  <meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="ImageToPrompt">
+  <title>Руководство по промптам Stable Diffusion 2026: от основ до продвинутых техник</title>
+  <meta name="description" content="Полное руководство по промптам Stable Diffusion на 2026 год. Синтаксис весов, негативные промпты, теги качества для SD 1.5, SDXL и SD 3.5." />
+  <link rel="canonical" href="https://www.imagetoprompt.dev/ru/blog/rukovodstvo-po-promptam-stable-diffusion/" />
+  <link rel="alternate" hreflang="ru" href="https://www.imagetoprompt.dev/ru/blog/rukovodstvo-po-promptam-stable-diffusion/" />
+  <link rel="alternate" hreflang="en" href="https://www.imagetoprompt.dev/blog/stable-diffusion-prompt-guide/" />
+  <link rel="alternate" hreflang="fr" href="https://www.imagetoprompt.dev/fr/blog/guide-prompts-stable-diffusion/" />
+  <link rel="alternate" hreflang="ar" href="https://www.imagetoprompt.dev/ar/blog/dalil-prompts-stable-diffusion/" />
+  <link rel="alternate" hreflang="es" href="https://www.imagetoprompt.dev/es/blog/guia-prompts-stable-diffusion/" />
+  <link rel="alternate" hreflang="ja" href="https://www.imagetoprompt.dev/ja/blog/stable-diffusion-prompt-gaido/" />
+  <link rel="alternate" hreflang="ko" href="https://www.imagetoprompt.dev/ko/blog/stable-diffusion-prompt-gaideu/" />
+  <link rel="alternate" hreflang="x-default" href="https://www.imagetoprompt.dev/blog/stable-diffusion-prompt-guide/" />
+  <meta property="og:title" content="Руководство по промптам Stable Diffusion 2026: от основ до продвинутых техник" />
+  <meta property="og:description" content="Полное руководство по промптам Stable Diffusion на 2026 год. Синтаксис весов, негативные промпты, теги качества для SD 1.5, SDXL и SD 3.5." />
+  <meta property="og:url" content="https://www.imagetoprompt.dev/ru/blog/rukovodstvo-po-promptam-stable-diffusion/" />
+  <meta property="og:type" content="article" />
+  <meta property="og:image" content="https://www.imagetoprompt.dev/og-image.png" />
+  <meta property="og:site_name" content="ImageToPrompt" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Руководство по промптам Stable Diffusion 2026" />
+  <meta name="twitter:description" content="Освойте промпты Stable Diffusion. Синтаксис весов, негативные промпты и теги качества." />
+  <meta name="twitter:image" content="https://www.imagetoprompt.dev/og-image.png" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="48x48" href="/favicon-48.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+  <link rel="manifest" href="/site.webmanifest" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="/fonts/space-grotesk-700.woff2" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="/fonts/inter-400.woff2" />
+  <link rel="stylesheet" href="/theme.css">
+  <link rel="preload" href="/blog.css" as="style" onload="this.onload=null;this.rel='stylesheet'"><noscript><link rel="stylesheet" href="/blog.css"></noscript>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Руководство по промптам Stable Diffusion 2026: от основ до продвинутых техник",
+    "description": "Полное руководство по промптам Stable Diffusion на 2026 год. Синтаксис весов, негативные промпты, теги качества для SD 1.5, SDXL и SD 3.5.",
+    "image": "https://www.imagetoprompt.dev/og-image.png",
+    "datePublished": "2026-03-08",
+    "dateModified": "2026-03-24",
+    "inLanguage": "ru",
+    "author": {
+      "@type": "Person",
+      "name": "ImageToPrompt Team",
+      "url": "https://www.imagetoprompt.dev/"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "ImageToPrompt",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://www.imagetoprompt.dev/favicon.svg"
+      }
+    },
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https://www.imagetoprompt.dev/ru/blog/rukovodstvo-po-promptam-stable-diffusion/"
+    }
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "inLanguage": "ru",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Как работает синтаксис весов в Stable Diffusion?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Синтаксис весов использует скобки и двоеточие для увеличения или уменьшения важности каждого термина. (term:1.3) увеличивает вес на 30%, (term:0.7) уменьшает на 30%. Значение по умолчанию — 1.0. Также доступны сокращения: (term) = (term:1.1), ((term)) = (term:1.21). Избегайте весов выше 1.5, так как они вызывают артефакты."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Какие негативные промпты лучше всего подходят для Stable Diffusion?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Универсальный негативный промпт: '(worst quality:1.4), (low quality:1.4), (normal quality:1.2), lowres, bad anatomy, bad hands, extra digits, fewer digits, cropped, watermark, signature, blurry, deformed'. Для портретов добавьте 'extra fingers, mutated hands, poorly drawn face, ugly, disfigured'. Настраивайте под используемый чекпоинт."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "В чём разница между промптами для SD 1.5, SDXL и SD 3.5?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "SD 1.5 требует высокоструктурированных промптов с тегами качества (masterpiece, best quality) и хорошо реагирует на синтаксис весов. SDXL лучше понимает естественный язык, теги качества менее необходимы, но веса по-прежнему полезны. SD 3.5 использует новую систему и наиболее эффективен с подробными описаниями на естественном языке, подобно Flux."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Как выбрать оптимальный CFG Scale для промптов Stable Diffusion?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "CFG Scale контролирует точность следования промпту. Низкие значения (3-5) дают более творческие результаты, но менее точно следуют промпту. Средние значения (7-9) обеспечивают лучший баланс и оптимальны для большинства задач. Высокие значения (10-15) очень точно следуют промпту, но есть риск перенасыщения. Начните с 7 и корректируйте по результатам."
+        }
+      }
+    ]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "inLanguage": "ru",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Главная",
+        "item": "https://www.imagetoprompt.dev/ru/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Блог",
+        "item": "https://www.imagetoprompt.dev/ru/blog/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "Руководство по промптам Stable Diffusion 2026"
+      }
+    ]
+  }
+  </script>
+    <!-- Google AdSense -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4499206373485728" crossorigin="anonymous"></script>
+    <!-- Web Push Notifications -->
+<script src="https://cdn.onesignal.com/sdks/web/v16/OneSignalSDK.page.js" defer></script>
+<script>
+  window.OneSignalDeferred = window.OneSignalDeferred || [];
+  OneSignalDeferred.push(async function(OneSignal) {
+    await OneSignal.init({
+      appId: "REPLACE_WITH_ONESIGNAL_APP_ID",
+      notifyButton: { enable: false }
+    });
+  });
+</script>
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="inner">
+      <a href="/ru/" class="site-logo"><img src="/favicon.svg" alt="ImageToPrompt" width="48" height="48"><div class="site-logo-text">ImageTo<span class="accent">Prompt</span><span class="site-logo-sub">Бесплатный AI генератор промптов</span></div></a>
+      <nav class="site-nav" aria-label="Основная навигация">
+        <div class="nav-dropdown">
+          <button class="nav-dropdown-trigger" aria-haspopup="true" aria-expanded="false">Tools <span class="nav-chevron" aria-hidden="true">&#9660;</span></button>
+          <div class="nav-dropdown-menu" role="menu">
+            <div class="nav-mega-grid">
+              <div class="nav-mega-col">
+                <div class="nav-mega-heading">&#128444; IMAGE TOOLS</div>
+                <a href="/" role="menuitem" class="nav-mega-tool">Image to Prompt <span class="nav-mega-arrow">&#8594;</span></a>
+                <a href="/text-to-prompt/" role="menuitem" class="nav-mega-tool">Text to Prompt <span class="nav-mega-arrow">&#8594;</span></a>
+                <a href="/describe-image/" role="menuitem" class="nav-mega-tool">Describe Image <span class="nav-new-badge">NEW</span> <span class="nav-mega-arrow">&#8594;</span></a>
+                <div class="nav-mega-models-label">Models</div>
+                <div class="nav-mega-models"><a href="/midjourney-prompt-generator/">Midjourney</a><span class="nav-dot">&#xB7;</span><a href="/stable-diffusion-prompt-generator/">SD</a></div>
+                <div class="nav-mega-models"><a href="/flux-prompt-generator/">Flux</a><span class="nav-dot">&#xB7;</span><a href="/dall-e-prompt-generator/">DALL&#xB7;E&#xA0;3</a></div>
+                <div class="nav-mega-models"><a href="/adobe-firefly-prompt-generator/">Firefly</a><span class="nav-dot">&#xB7;</span><a href="/leonardo-ai-prompt-generator/">Leonardo</a></div>
+                <div class="nav-mega-models"><a href="/ideogram-prompt-generator/">Ideogram</a></div>
+              </div>
+              <div class="nav-mega-divider" aria-hidden="true"></div>
+              <div class="nav-mega-col">
+                <div class="nav-mega-heading">&#127909; VIDEO TOOLS</div>
+                <a href="/?tab=image-to-video" role="menuitem" class="nav-mega-tool">Image to Video <span class="nav-mega-arrow">&#8594;</span></a>
+                <a href="/?tab=text-to-video" role="menuitem" class="nav-mega-tool">Text to Video <span class="nav-mega-arrow">&#8594;</span></a>
+                <div class="nav-mega-models-label">Models</div>
+                <div class="nav-mega-models"><a href="/veo-prompt-generator/">Veo</a><span class="nav-dot">&#xB7;</span><a href="/kling-prompt-generator/">Kling</a></div>
+                <div class="nav-mega-models"><a href="/runway-prompt-generator/">Runway</a><span class="nav-dot">&#xB7;</span><a href="/pika-prompt-generator/">Pika</a></div>
+                <div class="nav-mega-models"><a href="/luma-prompt-generator/">Luma</a><span class="nav-dot">&#xB7;</span><a href="/sora-prompt-generator/">Sora</a></div>
+                <div class="nav-mega-models"><a href="/minimax-prompt-generator/">Minimax</a><span class="nav-dot">&#xB7;</span><a href="/stable-video-prompt-generator/">Stable</a></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <a href="/ru/blog/">Блог</a>
+        <a href="/ru/pricing/" class="nav-pill-pricing">Цены</a>
+        <a href="/ru/about/" class="nav-pill-about">О нас</a>
+        <a href="/ru/" class="nav-try-free">Попробовать &#8594;</a>
+        <button id="theme-toggle" onclick="toggleTheme()" aria-label="Переключить тему" title="Переключить тему">&#9728;&#xFE0F;</button>
+  </nav>
+    </div>
+  </header>
+
+  <nav class="breadcrumb" aria-label="Хлебные крошки"><a href="/ru/">Главная</a> <span aria-hidden="true">›</span> <a href="/ru/blog/">Блог</a> <span aria-hidden="true">›</span> <span aria-current="page">Руководство по промптам Stable Diffusion</span></nav>
+
+  <div class="page-wrapper">
+
+    <header class="article-header">
+      <p class="article-tag">Stable Diffusion</p>
+      <h1>Руководство по промптам Stable Diffusion 2026</h1>
+      <div class="article-meta">
+        <span>Март 2026</span>
+        <span class="dot">·</span>
+        <span>Время чтения: 11 мин</span>
+        <span class="dot">·</span>
+        <span>SD 1.5 · SDXL · SD 3.5 · ComfyUI</span>
+        <span class="dot">·</span>
+        <span>Обновлено: март 2026</span>
+      </div>
+    </header>
+
+    <div class="article-body">
+
+      <p>Stable Diffusion — самый гибкий и технически сложный инструмент для AI-генерации изображений. В то время как Midjourney и DALL-E 3 упрощают пользовательский опыт, Stable Diffusion предоставляет детальный контроль над каждым аспектом генерации. Однако для этого необходимо освоить специфический синтаксис промптов и технические параметры, которых нет в других моделях.</p>
+
+      <nav class="toc" aria-label="Содержание">
+        <details open>
+          <summary>Содержание руководства</summary>
+          <ol>
+            <li><a href="#sintaksis-vesov">Синтаксис весов</a></li>
+            <li><a href="#negativnye-prompty">Негативные промпты</a></li>
+            <li><a href="#tegi-kachestva">Необходимые теги качества</a></li>
+            <li><a href="#versii-sd">Различия SD 1.5, SDXL и SD 3.5</a></li>
+            <li><a href="#chekpointy">Совместимость с чекпоинтами</a></li>
+            <li><a href="#tehnicheskie-parametry">CFG Scale, Steps и Samplers</a></li>
+            <li><a href="#prodvinutye-shablony">Продвинутые шаблоны промптов</a></li>
+            <li><a href="#voprosy">Часто задаваемые вопросы</a></li>
+          </ol>
+        </details>
+      </nav>
+
+      <div class="callout">
+        <p><strong>Автоматическая генерация:</strong> Наш <a href="/stable-diffusion-prompt-generator/">генератор промптов Stable Diffusion</a> автоматически создаёт оптимизированные промпты с синтаксисом весов, тегами качества и негативными промптами. Загрузите референс-изображение, чтобы начать.</p>
+      </div>
+
+      <h2 id="sintaksis-vesov">Синтаксис весов</h2>
+
+      <p>Синтаксис весов — уникальная функция, которая выделяет Stable Diffusion среди всех AI-инструментов генерации изображений. Он позволяет увеличивать или уменьшать относительную важность каждого термина в промпте.</p>
+
+      <h3>Базовый синтаксис</h3>
+      <p>Формат: <code>(термин:вес)</code>, где вес — десятичное число. Значение по умолчанию — 1.0.</p>
+      <ul>
+        <li><code>(golden hour:1.3)</code> — увеличение важности «golden hour» на 30%</li>
+        <li><code>(bokeh:0.7)</code> — уменьшение важности «bokeh» на 30%</li>
+        <li><code>(masterpiece:1.2), (best quality:1.1)</code> — теги качества с весами</li>
+      </ul>
+
+      <h3>Сокращения весов</h3>
+      <p>Stable Diffusion также поддерживает сокращения с вложенными скобками.</p>
+      <ul>
+        <li><code>(term)</code> = <code>(term:1.1)</code></li>
+        <li><code>((term))</code> = <code>(term:1.21)</code></li>
+        <li><code>(((term)))</code> = <code>(term:1.33)</code></li>
+        <li><code>[term]</code> = <code>(term:0.9)</code> — уменьшение веса</li>
+      </ul>
+
+      <h3>Правила использования весов</h3>
+      <p>Весы — мощный инструмент, но использовать их нужно с осторожностью.</p>
+      <ul>
+        <li><strong>Держитесь в диапазоне от 0.5 до 1.5:</strong> за пределами этого диапазона появляется риск визуальных артефактов и искажений</li>
+        <li><strong>Задавайте вес немногим терминам:</strong> если всё поставить на 1.3, ничего фактически не будет усилено</li>
+        <li><strong>Используйте веса для решения проблем:</strong> если элемент не появляется — увеличьте вес, если доминирует — уменьшите</li>
+      </ul>
+
+      <h3>Полный пример</h3>
+      <p><code>(masterpiece:1.2), (best quality:1.1), 1girl, (flowing red hair:1.2), green eyes, (medieval dress:1.1), standing in a (enchanted forest:1.3), (golden hour lighting:1.2), (bokeh:0.8), detailed face, soft shadows</code></p>
+
+      <h2 id="negativnye-prompty">Негативные промпты</h2>
+
+      <p>Негативные промпты — уникальная функция Stable Diffusion (и производных моделей). Они указывают модели, что не должно появляться на изображении. Именно они часто становятся решающим фактором, отличающим любительские результаты от профессиональных.</p>
+
+      <h3>Универсальный негативный промпт</h3>
+      <p>Этот негативный промпт эффективен как основа для большинства генераций.</p>
+      <p><code>(worst quality:1.4), (low quality:1.4), (normal quality:1.2), lowres, bad anatomy, bad hands, extra digits, fewer digits, cropped, watermark, signature, username, blurry, deformed, jpeg artifacts</code></p>
+
+      <h3>Специализированные негативные промпты</h3>
+
+      <p><strong>Для портретов:</strong></p>
+      <p><code>(worst quality:1.4), (low quality:1.4), bad anatomy, bad hands, extra fingers, mutated hands, poorly drawn face, ugly, disfigured, cross-eyed, asymmetric face, extra limbs, fused fingers</code></p>
+
+      <p><strong>Для пейзажей:</strong></p>
+      <p><code>(worst quality:1.4), (low quality:1.4), blurry, watermark, text, logo, oversaturated, distorted horizon, unnatural colors</code></p>
+
+      <p><strong>Для аниме:</strong></p>
+      <p><code>(worst quality:1.4), (low quality:1.4), bad anatomy, bad hands, extra digits, missing fingers, poorly drawn face, simple background, flat colors, bad proportions</code></p>
+
+      <h2 id="tegi-kachestva">Необходимые теги качества</h2>
+
+      <p>Теги качества — это ключевые слова, повышающие общее качество изображения. Их эффективность зависит от версии Stable Diffusion и используемого чекпоинта.</p>
+
+      <h3>Наиболее эффективные теги</h3>
+      <div class="table-wrap">
+      <table class="comparison-table">
+        <thead>
+          <tr>
+            <th>Тег</th>
+            <th>Эффект</th>
+            <th>Работает в версиях</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><code>masterpiece</code></td>
+            <td>Высшее качество, аккуратная композиция</td>
+            <td>SD 1.5, некоторые SDXL</td>
+          </tr>
+          <tr>
+            <td><code>best quality</code></td>
+            <td>Тонкость деталей, чистая отрисовка</td>
+            <td>SD 1.5, SDXL</td>
+          </tr>
+          <tr>
+            <td><code>highly detailed</code></td>
+            <td>Повышение уровня детализации</td>
+            <td>Все версии</td>
+          </tr>
+          <tr>
+            <td><code>sharp focus</code></td>
+            <td>Повышение резкости</td>
+            <td>Все версии</td>
+          </tr>
+          <tr>
+            <td><code>8k uhd</code></td>
+            <td>Визуальное повышение разрешения</td>
+            <td>SD 1.5, в SDXL нестабильно</td>
+          </tr>
+          <tr>
+            <td><code>intricate details</code></td>
+            <td>Сложная тонкая детализация</td>
+            <td>Все версии</td>
+          </tr>
+        </tbody>
+      </table>
+      </div>
+
+      <h2 id="versii-sd">Различия SD 1.5, SDXL и SD 3.5</h2>
+
+      <h3>SD 1.5</h3>
+      <p>Наиболее зрелая версия с крупнейшей экосистемой чекпоинтов и LoRA. Промпты SD 1.5 сильно зависят от тегов качества и синтаксиса весов. Нативное разрешение: 512x512.</p>
+      <p>Пример: <code>(masterpiece:1.2), (best quality:1.1), highly detailed, 1girl, long blonde hair, blue eyes, white dress, standing in flower field, golden hour, (bokeh:0.8), sharp focus</code></p>
+
+      <h3>SDXL</h3>
+      <p>Нативное разрешение 1024x1024 и улучшенное понимание естественного языка. SDXL требует меньше тегов качества, но веса по-прежнему полезны для точного контроля. Двойная система текстовых энкодеров (CLIP ViT-L и OpenCLIP ViT-bigG) обеспечивает улучшенное семантическое понимание.</p>
+      <p>Пример: <code>beautiful young woman with long blonde hair, wearing an elegant white dress, standing in a sunlit wildflower meadow, (golden hour:1.2), soft bokeh background, detailed skin texture, professional photography</code></p>
+
+      <h3>SD 3.5</h3>
+      <p>Новейшая версия на архитектуре MMDiT (Multi-Modal Diffusion Transformer), значительно улучшившая понимание естественного языка. Влияние традиционных тегов качества снижено. Как и в Flux, наиболее эффективны подробные описания на естественном языке.</p>
+      <p>Пример: <code>A beautiful young woman with flowing blonde hair and bright blue eyes stands in a vast field of wildflowers during golden hour. She wears an elegant white summer dress that catches the warm breeze. The background is softly blurred with warm amber tones. Professional portrait photography with detailed skin texture and natural soft lighting.</code></p>
+
+      <h2 id="chekpointy">Совместимость с чекпоинтами</h2>
+
+      <p>Чекпоинты (пользовательские модели) — одна из главных сильных сторон Stable Diffusion. Каждый чекпоинт обучен на определённых настройках промптов.</p>
+
+      <ul>
+        <li><strong>Realistic Vision:</strong> отлично подходит для фотографических промптов с терминами камеры (<code>Canon EOS R5, 85mm f/1.4, RAW photo</code>)</li>
+        <li><strong>DreamShaper:</strong> универсальный, хорошо работает с комбинацией арт-стилей и фотографии</li>
+        <li><strong>Anything V5:</strong> оптимизирован для аниме, использует теги Danbooru (<code>1girl, long_hair, blue_eyes, school_uniform</code>)</li>
+        <li><strong>Juggernaut XL:</strong> популярный SDXL-чекпоинт, предпочитает естественный язык с умеренными тегами качества</li>
+      </ul>
+
+      <p>Важный совет: всегда проверяйте страницу чекпоинта на CivitAI, чтобы узнать рекомендуемые промпты и теги качества. Идеальный промпт для одного чекпоинта может быть неэффективен для другого.</p>
+
+      <h2 id="tehnicheskie-parametry">CFG Scale, Steps и Samplers</h2>
+
+      <h3>CFG Scale (Classifier-Free Guidance)</h3>
+      <p>CFG Scale контролирует точность следования промпту. Это важный параметр, который многие новички упускают из виду.</p>
+      <ul>
+        <li><strong>CFG 3-5:</strong> творческий и свободный — модель интерпретирует промпт более вольно</li>
+        <li><strong>CFG 7-9:</strong> сбалансированный — хорошее сочетание креативности и точности (рекомендуется)</li>
+        <li><strong>CFG 10-15:</strong> строгий — точно следует промпту, но может быть перенасыщение</li>
+        <li><strong>CFG 15+:</strong> не рекомендуется — частые артефакты, неестественные цвета</li>
+      </ul>
+
+      <h3>Steps (количество шагов диффузии)</h3>
+      <p>Количество шагов влияет на время генерации и качество результата.</p>
+      <ul>
+        <li><strong>15-20 шагов:</strong> быстро, приемлемое качество для тестирования</li>
+        <li><strong>25-35 шагов:</strong> хороший баланс качества и скорости (рекомендуется)</li>
+        <li><strong>40-50 шагов:</strong> высокое качество, более длительная генерация</li>
+        <li><strong>50+ шагов:</strong> убывающая отдача — в большинстве случаев не нужно</li>
+      </ul>
+
+      <h3>Samplers</h3>
+      <p>Выбор сэмплера влияет на качество и стиль результата. Популярные сэмплеры в 2026 году:</p>
+      <ul>
+        <li><strong>DPM++ 2M Karras:</strong> стандартный выбор — быстрый и качественный</li>
+        <li><strong>Euler a:</strong> творческий, лучше для художественных композиций</li>
+        <li><strong>DPM++ SDE Karras:</strong> превосходен для детализации и текстур</li>
+        <li><strong>UniPC:</strong> быстрый и эффективный, идеален для прототипирования</li>
+      </ul>
+
+      <h2 id="prodvinutye-shablony">Продвинутые шаблоны промптов</h2>
+
+      <h3>Фотореалистичный портрет (SD 1.5)</h3>
+      <p>Промпт: <code>(masterpiece:1.2), (best quality:1.1), (RAW photo:1.2), portrait of a 30 year old woman, (detailed skin texture:1.2), natural skin, freckles, green eyes, auburn hair, (natural lighting:1.1), f/2.8, Canon EOS R5, 85mm lens, shallow depth of field</code></p>
+      <p>Негативный: <code>(worst quality:1.4), (low quality:1.4), bad anatomy, deformed iris, extra fingers, poorly drawn face, airbrushed skin, plastic skin, doll-like</code></p>
+
+      <h3>Фэнтезийный пейзаж (SDXL)</h3>
+      <p>Промпт: <code>majestic fantasy landscape, ancient ruins overgrown with luminescent plants, (floating islands:1.2) in a purple twilight sky, waterfalls cascading into mist, (volumetric lighting:1.3), ethereal atmosphere, concept art quality, highly detailed, 8k</code></p>
+      <p>Негативный: <code>(worst quality:1.4), blurry, watermark, text, oversaturated, flat lighting</code></p>
+
+      <h3>Аниме (Anything V5)</h3>
+      <p>Промпт: <code>(masterpiece:1.2), (best quality:1.1), 1girl, long silver hair, violet eyes, detailed eyes, (fantasy armor:1.2), glowing runes, dynamic pose, magical particles, night sky background, (bloom:0.8), detailed face</code></p>
+      <p>Негативный: <code>(worst quality:1.4), (low quality:1.4), bad anatomy, extra limbs, poorly drawn hands, simple background, flat shading</code></p>
+
+      <div class="cta-box">
+        <h3>Сгенерируйте оптимизированный промпт для Stable Diffusion</h3>
+        <p>Загрузите референс-изображение и получите полный промпт Stable Diffusion с синтаксисом весов, тегами качества и негативным промптом.</p>
+        <a href="/stable-diffusion-prompt-generator/" class="cta-btn">Попробовать SD-генератор &#8594;</a>
+      </div>
+
+      <h2 id="voprosy">Часто задаваемые вопросы</h2>
+
+      <h3>Как работает синтаксис весов в Stable Diffusion?</h3>
+      <p>Синтаксис весов использует скобки и двоеточие для увеличения или уменьшения важности каждого термина. <code>(term:1.3)</code> увеличивает вес на 30%, <code>(term:0.7)</code> уменьшает на 30%. Значение по умолчанию — 1.0. Избегайте весов выше 1.5, так как они вызывают визуальные артефакты и искажения.</p>
+
+      <h3>Какие негативные промпты лучше всего подходят для Stable Diffusion?</h3>
+      <p>Универсальный негативный промпт: <code>(worst quality:1.4), (low quality:1.4), (normal quality:1.2), lowres, bad anatomy, bad hands, extra digits, fewer digits, cropped, watermark, signature, blurry, deformed</code>. Для портретов добавьте специализированные термины: <code>extra fingers, mutated hands, poorly drawn face</code>. Настраивайте под используемый чекпоинт.</p>
+
+      <h3>В чём разница между промптами для SD 1.5, SDXL и SD 3.5?</h3>
+      <p>SD 1.5 требует высокоструктурированных промптов с тегами качества и хорошо реагирует на синтаксис весов. SDXL лучше понимает естественный язык, и теги качества менее необходимы, но веса по-прежнему полезны. SD 3.5 использует новую систему и предпочитает подробные описания на естественном языке, подобно Flux, с меньшей зависимостью от технических тегов.</p>
+
+      <h3>Как выбрать оптимальный CFG Scale для промптов Stable Diffusion?</h3>
+      <p>CFG Scale контролирует точность следования промпту. Низкие значения (3-5) дают творческие результаты, но менее точно следуют промпту. Средние значения (7-9) обеспечивают лучший баланс и оптимальны для большинства задач. Высокие значения (10-15) очень точно следуют промпту, но есть риск перенасыщения. Начните с 7 и корректируйте по результатам.</p>
+
+    </div>
+
+    <div class="author-bio">
+      <img src="/favicon.svg" alt="ImageToPrompt Team" width="44" height="44">
+      <div>
+        <strong>ImageToPrompt Team</strong>
+        <p>Мы — команда экспертов, помогающая креативщикам освоить генерацию AI-изображений. Мы делимся актуальными руководствами по лучшим практикам и новым техникам в генерации AI-изображений.</p>
+        <a href="https://x.com/ImageToPrompt" target="_blank" rel="noopener" class="author-follow">Подписаться на X</a>
+      </div>
+    </div>
+
+    <div class="related-posts">
+      <h2>Связанные руководства</h2>
+      <div class="related-grid">
+        <a href="/ru/blog/rukovodstvo-po-promptam-flux-ai/" class="related-card">
+          <p class="tag">Flux AI</p>
+          <h3>Руководство по промптам Flux AI 2026</h3>
+        </a>
+        <a href="/ru/blog/rukovodstvo-po-promptam-dall-e-3/" class="related-card">
+          <p class="tag">DALL-E 3</p>
+          <h3>Полное руководство по промптам DALL-E 3</h3>
+        </a>
+        <a href="/ru/blog/rukovodstvo-po-promptam-ideogram/" class="related-card">
+          <p class="tag">Ideogram</p>
+          <h3>Полное руководство по промптам Ideogram</h3>
+        </a>
+      </div>
+    </div>
+
+  </div>
+
+  <footer class="footer-4col">
+    <div class="f4-inner">
+      <div class="f4-brand">
+        <img src="/favicon.svg" alt="ImageToPrompt" width="28" height="28">
+        <span class="f4-brand-name">ImageTo<span class="accent">Prompt</span></span>
+        <span class="f4-brand-sub">&mdash; Free AI Prompt Generator</span>
+      </div>
+      <div class="f4-grid">
+        <div class="f4-section">
+          <h4 class="f4-heading">Image Prompt Tools</h4>
+          <a href="/">Image to Prompt</a>
+          <a href="/text-to-prompt/">Text to Prompt</a>
+          <a href="/describe-image/">Describe Image</a>
+          <a href="/midjourney-prompt-generator/">Midjourney</a>
+          <a href="/stable-diffusion-prompt-generator/">Stable Diffusion</a>
+          <a href="/flux-prompt-generator/">Flux</a>
+          <a href="/dall-e-prompt-generator/">DALL-E 3</a>
+          <a href="/adobe-firefly-prompt-generator/">Adobe Firefly</a>
+          <a href="/leonardo-ai-prompt-generator/">Leonardo AI</a>
+          <a href="/ideogram-prompt-generator/">Ideogram</a>
+        </div>
+        <div class="f4-section">
+          <h4 class="f4-heading">Video Prompt Tools</h4>
+          <a href="/image-to-video-prompt/">Image to Video Prompt</a>
+          <a href="/text-to-video-prompt/">Text to Video Prompt</a>
+          <a href="/veo-prompt-generator/">Veo / Flow Studio</a>
+          <a href="/kling-prompt-generator/">Kling AI</a>
+          <a href="/runway-prompt-generator/">Runway Gen-3</a>
+          <a href="/pika-prompt-generator/">Pika</a>
+          <a href="/luma-prompt-generator/">Luma Dream Machine</a>
+          <a href="/sora-prompt-generator/">Sora</a>
+          <a href="/minimax-prompt-generator/">Minimax</a>
+          <a href="/stable-video-prompt-generator/">Stable Video</a>
+        </div>
+        <div class="f4-section">
+          <h4 class="f4-heading">Resources</h4>
+          <a href="/ru/blog/">Блог</a>
+          <a href="/ru/about/">О нас</a>
+          <a href="/ru/pricing/">Цены</a>
+          <a href="/contact/">Contact</a>
+          <a href="/privacy-policy/">Privacy Policy</a>
+          <a href="/terms-of-service/">Terms of Service</a>
+        </div>
+        <div class="f4-section">
+          <h4 class="f4-heading">Languages</h4>
+          <a href="/">English</a>
+          <a href="/fr/">Fran&#231;ais</a>
+          <a href="/ar/">&#1575;&#1604;&#1593;&#1585;&#1576;&#1610;&#1577;</a>
+          <a href="/es/">Espa&#241;ol</a>
+          <a href="/ko/">&#54620;&#44397;&#50612;</a>
+          <a href="/ja/">&#26085;&#26412;&#35486;</a>
+          <a href="/ru/">&#1056;&#1091;&#1089;&#1089;&#1082;&#1080;&#1081;</a>
+        </div>
+      </div>
+      <div class="f4-bottom">
+        <p>&copy; 2026 ImageToPrompt.dev &mdash; Free AI Prompt Generator</p>
+        <p>Your images are never stored. All analysis is ephemeral and private.</p>
+      </div>
+    </div>
+  </footer>
+
+<script src="/newsletter-inject.js" defer></script>
+<script src="/nav.js" defer></script>
+  <script>
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', function() {
+    navigator.serviceWorker.register('/sw.js')
+      .catch(function(err) { console.warn('SW registration failed:', err); });
+  });
+}
+</script>
+</body>
+</html>
